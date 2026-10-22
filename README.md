@@ -1,30 +1,30 @@
-# REACH Scout discoveries — public staging
+# REACH Scout discoveries — unreviewed public staging
 
-This repository is a **human-reviewed staging channel**, not the official REACH output catalog. ChatGPT Scout proposes new dated discovery CSV batches on separate branches and opens pull requests. A human reviewer decides whether to merge each PR. Once merged, GitHub Actions validates all batches and refreshes the public manifest. Discovery Hub reads the manifest and places new findings in its *unreviewed* queue. **Nothing here automatically approves or inserts a record into REACH.**
+This separate public repository is a staging feed for **unreviewed** REACH Scout findings. It is **not** the live REACH catalog. Scout commits validated, append-only daily CSV batches directly to `main`; Discovery Hub reads the manifest and handles **all decisions about whether individual research outputs should be added to REACH**.
 
-## Contents
+## Daily workflow
 
-- `scout-discoveries/batches/YYYY-MM-DD-unique-run.csv`: append-only, exact 24-column Discovery Hub CSV. Existing batches must never be modified.
-- `scout-discoveries/manifest.json`: verified SHA-256s, counts, paths and source run IDs.
-- `scout-discoveries/tools/build_manifest.py`: batch schema and safety checks.
-- `.github/workflows/build-scout-discovery-manifest.yml`: validates proposed batches in PRs and updates manifest on merge.
+1. ChatGPT Scout performs research on public sources and checks funding attribution against the complete public REACH catalog.
+2. Scout saves the full evidence report, exactly 24-column Discovery Hub import CSV, and investigation/coverage ledger to ChatGPT Library `/REACH Scout`.
+3. Scout checks that the CSV contains **only public evidence and metadata**; `Candidate ID` and `Principal Investigator Email(s)` must remain blank. It excludes private Smartsheet row IDs, credentials, personal details and reviewer decisions.
+4. When **new findings** exist, Scout creates one **new, uniquely named file** directly on this repository's `main` branch at `scout-discoveries/batches/YYYY-MM-DD-unique-run.csv`. Existing batches are immutable. **No branches or pull requests are needed.**
+5. GitHub Actions validates the batches and automatically regenerates `scout-discoveries/manifest.json` with counts and SHA-256 hashes. Scout verifies publication; if the workflow is delayed or fails, the Library CSV is retained and the run reports the error.
+6. Discovery Hub v1.24 uses **Sync from Scout** to retrieve new batches from the public manifest and add them to its existing *unreviewed* queue. Prior reviewer decisions remain untouched.
+7. A person reviews the research evidence and controls any final addition to Smartsheet/REACH. Publishing here **never** constitutes approval for insertion.
 
-The manifest is publicly readable at:
+## Files
+
+- `scout-discoveries/batches/*.csv` — append-only public finding batches with the exact 24-column import schema
+- `scout-discoveries/manifest.json` — manifest of verified batches, checksums, counts and run IDs
+- `scout-discoveries/tools/build_manifest.py` — strict schema validation, content checks and manifest builder
+- `.github/workflows/build-scout-discovery-manifest.yml` — runs checks and refreshes manifest on `main` pushes
+
+Public manifest URL:
+
 https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json
 
-## Daily Scout PR process
+## Boundaries
 
-1. Research all available public sources for the current award investigation backlog, verifying funded workstream attribution and full REACH deduplication.
-2. Save the detailed research report, exact 24-column discovery CSV and award-coverage ledger in ChatGPT Library `/REACH Scout`, preserving the registry and previous decisions.
-3. Screen CSV for nonpublic information, personal emails, tokens, private Smartsheet IDs and notes. Publish **public source metadata only**; leave Candidate ID and investigator-email fields empty. If no new results, do not publish an empty CSV.
-4. Create a new `scout/YYYY-MM-DD-run-ID` branch in this repository. Add a **new** `scout-discoveries/batches/YYYY-MM-DD-run-ID.csv`; never overwrite a previous batch or push directly to `main`.
-5. Open a pull request with counts, funding sources, duplicate assessments, and research limitations. **Do not merge.** The repository owner reviews and merges.
-6. After merge, GitHub Actions refreshes the manifest and Discovery Hub's `Sync from Scout` fetches new findings, without resetting earlier human decisions.
+ChatGPT has write access to **this repository only**. The production `PART-WPO/reach-dashboard` and `PART-WPO/SPARK` repositories are read-only public sources. No output is approved, inserted into Smartsheet, or added to the public REACH dashboard until the separate Discovery Hub human review and insertion steps.
 
-## Security and review
-
-This repository is public. Do not upload private information, NOAA restricted records, PI email addresses, Smartsheet tokens or native private row IDs, API credentials, or human decisions. `main` should use repository rules requiring PR review before changes are accepted where available. Grant ChatGPT GitHub App access to this repository **only**, not `reach-dashboard` or `SPARK`.
-
-`github-actions[bot]` may need permission to update `manifest.json` after PR merge. If a branch protection rule blocks the bot's update, include the regenerated manifest in each PR instead.
-
-Discovery Hub v1.24 uses read-only GitHub GETs to this dedicated repo, with per-batch checksum checks and a separate import ledger. Human review in Discovery Hub and the Smartsheet insertion confirmation remain mandatory.
+This repository is **public**. Do not publish restricted NOAA information, private investigator contact details, Smartsheet native identifiers or authorization details, API secrets, or human-review records. If a batch does not pass the public-only screening or data checks, do not publish it. 
