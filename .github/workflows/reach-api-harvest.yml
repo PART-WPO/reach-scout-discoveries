@@ -27,7 +27,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: reach-api-harvest-${{ github.event_name }}-${{ github.ref }}
+  group: reach-api-harvest-${{ github.ref }}
   cancel-in-progress: false
 jobs:
   scan:
@@ -112,7 +112,18 @@ jobs:
           done
           if ! git diff --cached --quiet; then
             git commit -m "Publish complete ${HARVEST_MODE} API harvest to Scout-only research inbox"
-            git push
+            for attempt in 1 2 3 4 5; do
+              if git push origin HEAD:main; then
+                echo "Published complete API harvest after push attempt $attempt."
+                exit 0
+              fi
+              echo "Remote main advanced; rebasing immutable harvest commit (attempt $attempt)."
+              git fetch origin main
+              git rebase origin/main
+              sleep "$((attempt * 2))"
+            done
+            echo "Unable to push after rebase retries; no partial publication." >&2
+            exit 1
           else
             echo "No new immutable batches; idempotent rerun."
           fi
