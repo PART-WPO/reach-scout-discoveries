@@ -1,0 +1,11 @@
+{
+  "schema": "reach-scout-metadata-blockers-v1",
+  "repository": "PART-WPO/reach-scout-discoveries",
+  "policy": {
+    "max_distinct_checks_per_cycle": 5,
+    "max_delayed_retries": 1,
+    "retry_delay_days": 7,
+    "review_gate": "Scout-completed-research-only"
+  },
+  "entries": []
+}
