@@ -107,7 +107,7 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          for path in api-discoveries/batches api-discoveries/historical api-discoveries/runs api-discoveries/manifest.json; do
+          for path in api-discoveries/batches api-discoveries/historical api-discoveries/runs api-discoveries/manifest.json scout-operations/coverage.json; do
             if [ -e "$path" ]; then git add -- "$path"; fi
           done
           if ! git diff --cached --quiet; then
