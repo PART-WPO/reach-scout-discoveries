@@ -40,6 +40,12 @@ Human-review feed: https://raw.githubusercontent.com/PART-WPO/reach-scout-discov
 - **Run evidence:** see `api-discoveries/runs/monthly-YYYY-MM.json` or historical run summary for complete award counts and output counts. To rerun a month, use Actions → Run workflow → `monthly` with override `YYYY-MM`; a rerun with different output must be handled explicitly as a new correction batch, not silently overwrite a prior batch.
 - **Scout gate:** only `scout-discoveries/manifest.json` is imported into the Discovery Hub. Scout reads monthly and historical raw API manifests, independently investigates REACH novelty, award attribution, linked research and missing metadata, and publishes only review-ready checked candidates. Human approval remains unchanged.
 
+### Excel comparison workbook (starting with November 1, 2026)
+
+For the first months of the GitHub transition, the same completed monthly Action automatically creates a **read-only Excel comparison report** at [api-discoveries/reports/](reports/README.md), named `REACH_API_Comparison_YYYY-MM.xlsx`. For the November 1 run, the month is `2026-10`, covering October 1–31 inclusive. The file is both committed as a durable public snapshot and uploaded to the run's downloadable `reach-monthly-api-excel-comparison` artifact (90-day retention).
+
+The seven-sheet workbook includes a five-column **Crossref Legacy View** matching the old Google Apps Script headers, separate detailed Crossref/DataCite results, DOI-deduplicated combined results, complete per-award counts, a summary and comparison notes. It uses the same validated API shard results as the Scout research intake, but **is never imported into the Discovery Hub**.
+
 ### Google Sheets transition
 
 The original monthly Google Apps Script and its spreadsheet tabs are **not used by this GitHub Actions pipeline**. Once the new GitHub pipeline has been validated, disable any pre-existing Apps Script scheduled triggers for `monthlyPublicationsTrigger`, `getLastMonthPublications`, `monthlyAwardOutputsTrigger` and continuation functions that would otherwise re-run overlapping API searches. The GitHub connection cannot change those Apps Script triggers itself. Do not delete historical spreadsheet reports.
