@@ -106,6 +106,9 @@ def main():
     p.add_argument("--input",default="api-discoveries/tmp")
     p.add_argument("--shards",type=int,default=8)
     args=p.parse_args()
+    if args.mode=="monthly" and not args.month:
+        first=dt.datetime.now(dt.timezone.utc).date().replace(day=1)
+        args.month=(first-dt.timedelta(days=1)).strftime("%Y-%m")
     parts=sorted(Path(args.input).glob(args.mode+"-*-shard*.json"))
     sources=["datacite","crossref"] if args.mode=="monthly" else ["datacite"]
     expected={f"{args.mode}-{source}-shard{shard:02d}.json" for source in sources for shard in range(args.shards)}
