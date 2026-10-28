@@ -54,7 +54,26 @@ def inspect_batch(p):
             u = (row.get(k) or "").strip()
             if u and not u.startswith(("https://", "http://")):
                 raise ValueError(f"Unsupported external URL in {p.name}:{line} / {k}")
-        runs.add((row.get("Source Run ID") or "").strip())
+        rationale = row.get("Scout Discovery Rationale") or ""
+        run = (row.get("Source Run ID") or "").strip()
+        monthly = re.search(r"(?im)^\\s*Intake origin:\\s*Monthly API\\s*$", rationale) or run.startswith("REACH-MONTHLY-API-")
+        if monthly:
+            if run.startswith("REACH-MONTHLY-API-"):
+                raise ValueError(f"Raw monthly API records cannot enter Scout-reviewed batches: {p.name}:{line}")
+            if not re.search(r"(?im)^\\s*Scout verification:\\s*Completed\\s*$", rationale):
+                raise ValueError(f"Monthly-origin review proposal lacks Scout verification: {p.name}:{line}")
+            if not re.search(r"(?im)^\\s*Monthly intake:\\s*\\d{4}-\\d{2}\\s*$", rationale):
+                raise ValueError(f"Missing monthly cohort in verified proposal: {p.name}:{line}")
+            classification = re.search(r"(?im)^\\s*Scout classification:\\s*(.+?)\\s*$", rationale)
+            if not classification or not re.search(
+                r"\\b(?:NEW CANDIDATE|POSSIBLE DUPLICATE|KNOWN DUPLICATE|NEEDS INVESTIGATION|NEEDS EVIDENCE|HOLD|REACH METADATA UPDATE)\\b",
+                classification.group(1), re.I
+            ):
+                raise ValueError(f"Missing supported Scout assessment: {p.name}:{line}")
+            existing_match = (row.get("Existing REACH Match") or "").strip()
+            if not existing_match or existing_match.lower() in ("unchecked", "pending", "unknown", "not assessed", "not checked"):
+                raise ValueError(f"Monthly-origin proposal has no completed REACH comparison: {p.name}:{line}")
+        runs.add(run)
     if not 1 <= count <= 3000:
         raise ValueError(f"Invalid record count in {p.name}: {count}")
     return {
