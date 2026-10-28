@@ -1,0 +1,45 @@
+name: Verify Scout API-to-historical workstream switching
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scout-operations/tools/select_workstream.py'
+      - 'scout-operations/tests/test_select_workstream.py'
+      - 'scout-operations/coverage.json'
+      - 'scout-operations/historical-coverage.json'
+      - 'api-discoveries/manifest.json'
+      - 'api-discoveries/historical/manifest.json'
+      - '.github/workflows/select-scout-workstream.yml'
+  schedule:
+    - cron: '31 12 * * 1-5'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: scout-select-workstream
+  cancel-in-progress: false
+jobs:
+  route:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test monthly API priority, pilot backlog priority and return to discovery
+        run: |
+          python3 -m unittest discover -v -s scout-operations/tests
+      - name: Calculate current workstream from real inbox coverage
+        run: python3 scout-operations/tools/select_workstream.py
+      - name: Save priority selector output when changed
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add scout-operations/active-workstream.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Select Scout workstream from API backlog coverage'
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then exit 0; fi
+            git fetch origin main
+            git rebase origin/main
+            sleep "$((attempt * 2))"
+          done
+          exit 1
