@@ -4,16 +4,23 @@
   "entries": [
     {
       "identity": "doi:10.13012/b2idb-0704763_v1",
-      "status": "awaiting_research",
+      "status": "forwarded_to_hub",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T19:02:21.671632+00:00",
-      "research_notes": "",
-      "checked_sources": [],
-      "reach_snapshot": "",
-      "funding_basis": "",
-      "related_outputs_checked": "",
-      "verified_at": "",
-      "verified_awards": [],
+      "updated_at": "2026-10-28T19:35:19Z",
+      "research_notes": "Verified independent University of Illinois dataset and actual archive files; DataCite metadata enrichment independently corroborates release date 2024-12-17. Full 10-shard REACH index (1238 rows) and all eight pre-existing Scout batches (33 rows) checked, no exact DOI/title match. Published a verified review proposal in the cited immutable Scout batch; human approval pending.",
+      "checked_sources": [
+        "https://databank.illinois.edu/datasets/IDB-0704763",
+        "https://experts.illinois.edu/en/datasets/parsivel-data-from-university-of-illinois-system-for-characterizi/",
+        "https://journals.ametsoc.org/view/journals/wefo/40/11/WAF-D-24-0249.1.xml",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json"
+      ],
+      "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+      "funding_basis": "Official Illinois Data Bank record explicitly lists NOAA award NA21OAR4590367 for this exact 2024-12-17 Parsivel/MRR-2 dataset.",
+      "related_outputs_checked": "Related 2025 Hutson et al. Weather and Forecasting paper DOI 10.1175/WAF-D-24-0249.1 inspected; separate dataset and article, both absent from REACH and prior Scout batches.",
+      "verified_at": "2026-10-28T19:35:19Z",
+      "verified_awards": [
+        "NA21OAR4590367"
+      ],
       "source_batch_ids": [
         "2026-10-28-historical-datacite-spark-all-part001"
       ],
@@ -25,7 +32,9 @@
       ],
       "source_evidence_urls": [
         "https://api.datacite.org/dois/10.13012/b2idb-0704763_v1"
-      ]
+      ],
+      "scout_batch_path": "scout-discoveries/batches/2026-10-28-afternoon-historical-datacite-verified-001.csv",
+      "reach_match": "No exact DOI/title/URL match in current REACH 1238-row index."
     },
     {
       "identity": "doi:10.15139/s3/uy6rda",
@@ -54,16 +63,24 @@
     },
     {
       "identity": "doi:10.17603/ds2-05s8-ah21",
-      "status": "awaiting_research",
+      "status": "metadata_update_forwarded",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T19:02:21.671632+00:00",
-      "research_notes": "",
-      "checked_sources": [],
-      "reach_snapshot": "",
-      "funding_basis": "",
-      "related_outputs_checked": "",
-      "verified_at": "",
-      "verified_awards": [],
+      "updated_at": "2026-10-28T19:35:19Z",
+      "research_notes": "Exact DOI matched current REACH reach-000811 (reachuid-v1-67c25b143e67d77722d97e135501204e) in complete 1238-record index and detail shard 096; REACH award list is NA20OAR4590469 only. Official DesignSafe project page explicitly lists both awards and contains this exact DOI; propose ADDITIONAL AWARD ATTRIBUTION NA19OAR0220119 only. No new output; existing title/date mismatches require separate human audit, not automatic metadata edit. Verified Scout review batch staged; no human decision modified.",
+      "checked_sources": [
+        "https://doi.org/10.17603/ds2-05s8-ah21",
+        "https://doi.org/10.17603/ds2-n1rz-ak22",
+        "https://doi.org/10.1016/j.crsus.2025.100628",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-096.csv"
+      ],
+      "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+      "funding_basis": "Official DesignSafe PRJ-3975 dataset project explicitly lists both NA19OAR0220119 and NA20OAR4590469, with this exact DOI in the project; corroborated by linked Cell Reports Sustainability article funding acknowledgment.",
+      "related_outputs_checked": "Related Henri and Ian survey instruments and deidentified data deposits were distinguished by exact DOI; journal data availability statement links those four outputs, and each is already in REACH.",
+      "verified_at": "2026-10-28T19:35:19Z",
+      "verified_awards": [
+        "NA19OAR0220119",
+        "NA20OAR4590469"
+      ],
       "source_batch_ids": [
         "2026-10-28-historical-datacite-spark-all-part001"
       ],
@@ -76,7 +93,9 @@
       ],
       "source_evidence_urls": [
         "https://api.datacite.org/dois/10.17603/ds2-05s8-ah21"
-      ]
+      ],
+      "scout_batch_path": "scout-discoveries/batches/2026-10-28-afternoon-historical-datacite-verified-001.csv",
+      "reach_match": "reach-000811 reachuid-v1-67c25b143e67d77722d97e135501204e; existing awards NA20OAR4590469; missing NA19OAR0220119."
     },
     {
       "identity": "doi:10.17603/ds2-0fwc-wy13",
@@ -181,16 +200,24 @@
     },
     {
       "identity": "doi:10.17603/ds2-66t0-a761",
-      "status": "awaiting_research",
+      "status": "metadata_update_forwarded",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T19:02:21.671632+00:00",
-      "research_notes": "",
-      "checked_sources": [],
-      "reach_snapshot": "",
-      "funding_basis": "",
-      "related_outputs_checked": "",
-      "verified_at": "",
-      "verified_awards": [],
+      "updated_at": "2026-10-28T19:35:19Z",
+      "research_notes": "Exact DOI matched current REACH reach-000806 (reachuid-v1-34f97ed20b1a68fc7d63aeb5f3e168ad) in complete 1238-record index and detail shard 096; REACH award list is NA20OAR4590469 only. Official DesignSafe project page explicitly lists both awards and contains this exact DOI; propose ADDITIONAL AWARD ATTRIBUTION NA19OAR0220119 only. No new output; existing title/date mismatches require separate human audit, not automatic metadata edit. Verified Scout review batch staged; no human decision modified.",
+      "checked_sources": [
+        "https://doi.org/10.17603/ds2-66t0-a761",
+        "https://doi.org/10.17603/ds2-n1rz-ak22",
+        "https://doi.org/10.1016/j.crsus.2025.100628",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-096.csv"
+      ],
+      "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+      "funding_basis": "Official DesignSafe PRJ-3975 dataset project explicitly lists both NA19OAR0220119 and NA20OAR4590469, with this exact DOI in the project; corroborated by linked Cell Reports Sustainability article funding acknowledgment.",
+      "related_outputs_checked": "Related Henri and Ian survey instruments and deidentified data deposits were distinguished by exact DOI; journal data availability statement links those four outputs, and each is already in REACH.",
+      "verified_at": "2026-10-28T19:35:19Z",
+      "verified_awards": [
+        "NA19OAR0220119",
+        "NA20OAR4590469"
+      ],
       "source_batch_ids": [
         "2026-10-28-historical-datacite-spark-all-part001"
       ],
@@ -203,7 +230,9 @@
       ],
       "source_evidence_urls": [
         "https://api.datacite.org/dois/10.17603/ds2-66t0-a761"
-      ]
+      ],
+      "scout_batch_path": "scout-discoveries/batches/2026-10-28-afternoon-historical-datacite-verified-001.csv",
+      "reach_match": "reach-000806 reachuid-v1-34f97ed20b1a68fc7d63aeb5f3e168ad; existing awards NA20OAR4590469; missing NA19OAR0220119."
     },
     {
       "identity": "doi:10.17603/ds2-6g47-4387",
@@ -386,16 +415,24 @@
     },
     {
       "identity": "doi:10.17603/ds2-fhf3-ga95",
-      "status": "awaiting_research",
+      "status": "metadata_update_forwarded",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T19:02:21.671632+00:00",
-      "research_notes": "",
-      "checked_sources": [],
-      "reach_snapshot": "",
-      "funding_basis": "",
-      "related_outputs_checked": "",
-      "verified_at": "",
-      "verified_awards": [],
+      "updated_at": "2026-10-28T19:35:19Z",
+      "research_notes": "Exact DOI matched current REACH reach-000808 (reachuid-v1-ace39ba839d9a036c3319c7f84cf4da6) in complete 1238-record index and detail shard 096; REACH award list is NA20OAR4590469 only. Official DesignSafe project page explicitly lists both awards and contains this exact DOI; propose ADDITIONAL AWARD ATTRIBUTION NA19OAR0220119 only. No new output; existing title/date mismatches require separate human audit, not automatic metadata edit. Verified Scout review batch staged; no human decision modified.",
+      "checked_sources": [
+        "https://doi.org/10.17603/ds2-fhf3-ga95",
+        "https://doi.org/10.17603/ds2-n1rz-ak22",
+        "https://doi.org/10.1016/j.crsus.2025.100628",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-096.csv"
+      ],
+      "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+      "funding_basis": "Official DesignSafe PRJ-3975 dataset project explicitly lists both NA19OAR0220119 and NA20OAR4590469, with this exact DOI in the project; corroborated by linked Cell Reports Sustainability article funding acknowledgment.",
+      "related_outputs_checked": "Related Henri and Ian survey instruments and deidentified data deposits were distinguished by exact DOI; journal data availability statement links those four outputs, and each is already in REACH.",
+      "verified_at": "2026-10-28T19:35:19Z",
+      "verified_awards": [
+        "NA19OAR0220119",
+        "NA20OAR4590469"
+      ],
       "source_batch_ids": [
         "2026-10-28-historical-datacite-spark-all-part001"
       ],
@@ -408,7 +445,9 @@
       ],
       "source_evidence_urls": [
         "https://api.datacite.org/dois/10.17603/ds2-fhf3-ga95"
-      ]
+      ],
+      "scout_batch_path": "scout-discoveries/batches/2026-10-28-afternoon-historical-datacite-verified-001.csv",
+      "reach_match": "reach-000808 reachuid-v1-ace39ba839d9a036c3319c7f84cf4da6; existing awards NA20OAR4590469; missing NA19OAR0220119."
     },
     {
       "identity": "doi:10.17603/ds2-gc4p-2m64",
@@ -515,16 +554,24 @@
     },
     {
       "identity": "doi:10.17603/ds2-n1rz-ak22",
-      "status": "awaiting_research",
+      "status": "metadata_update_forwarded",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T19:02:21.671632+00:00",
-      "research_notes": "",
-      "checked_sources": [],
-      "reach_snapshot": "",
-      "funding_basis": "",
-      "related_outputs_checked": "",
-      "verified_at": "",
-      "verified_awards": [],
+      "updated_at": "2026-10-28T19:35:19Z",
+      "research_notes": "Exact DOI matched current REACH reach-000810 (reachuid-v1-33aa2f028eeae11d5647dcf1358c17e8) in complete 1238-record index and detail shard 096; REACH award list is NA20OAR4590469 only. Official DesignSafe project page explicitly lists both awards and contains this exact DOI; propose ADDITIONAL AWARD ATTRIBUTION NA19OAR0220119 only. No new output; existing title/date mismatches require separate human audit, not automatic metadata edit. Verified Scout review batch staged; no human decision modified.",
+      "checked_sources": [
+        "https://doi.org/10.17603/ds2-n1rz-ak22",
+        "https://doi.org/10.17603/ds2-n1rz-ak22",
+        "https://doi.org/10.1016/j.crsus.2025.100628",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-096.csv"
+      ],
+      "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+      "funding_basis": "Official DesignSafe PRJ-3975 dataset project explicitly lists both NA19OAR0220119 and NA20OAR4590469, with this exact DOI in the project; corroborated by linked Cell Reports Sustainability article funding acknowledgment.",
+      "related_outputs_checked": "Related Henri and Ian survey instruments and deidentified data deposits were distinguished by exact DOI; journal data availability statement links those four outputs, and each is already in REACH.",
+      "verified_at": "2026-10-28T19:35:19Z",
+      "verified_awards": [
+        "NA19OAR0220119",
+        "NA20OAR4590469"
+      ],
       "source_batch_ids": [
         "2026-10-28-historical-datacite-spark-all-part001"
       ],
@@ -537,7 +584,9 @@
       ],
       "source_evidence_urls": [
         "https://api.datacite.org/dois/10.17603/ds2-n1rz-ak22"
-      ]
+      ],
+      "scout_batch_path": "scout-discoveries/batches/2026-10-28-afternoon-historical-datacite-verified-001.csv",
+      "reach_match": "reach-000810 reachuid-v1-33aa2f028eeae11d5647dcf1358c17e8; existing awards NA20OAR4590469; missing NA19OAR0220119."
     },
     {
       "identity": "doi:10.17603/ds2-qar3-zx34",
