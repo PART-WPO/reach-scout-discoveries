@@ -102,16 +102,34 @@ jobs:
           python api-discoveries/tools/publish_harvest.py \
             --mode "$HARVEST_MODE" --shards 8 \
             --input api-discoveries/tmp "${MONTH_ARGS[@]}"
+      - name: Create monthly Excel comparison workbook
+        if: env.HARVEST_MODE == 'monthly'
+        run: |
+          set -euo pipefail
+          MONTH_ARGS=()
+          if [ -n "$MONTH_OVERRIDE" ]; then
+            MONTH_ARGS=(--month "$MONTH_OVERRIDE")
+          fi
+          python api-discoveries/tools/export_comparison_xlsx.py \
+            --input api-discoveries/tmp "${MONTH_ARGS[@]}"
+      - name: Upload monthly Excel report for easy download
+        if: env.HARVEST_MODE == 'monthly'
+        uses: actions/upload-artifact@v4
+        with:
+          name: reach-monthly-api-excel-comparison
+          path: api-discoveries/reports/REACH_API_Comparison_*.xlsx
+          if-no-files-found: error
+          retention-days: 90
       - name: Commit only immutable raw research inputs and manifests
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          for path in api-discoveries/batches api-discoveries/historical api-discoveries/runs api-discoveries/manifest.json scout-operations/coverage.json; do
+          for path in api-discoveries/batches api-discoveries/historical api-discoveries/runs api-discoveries/reports api-discoveries/manifest.json scout-operations/coverage.json; do
             if [ -e "$path" ]; then git add -- "$path"; fi
           done
           if ! git diff --cached --quiet; then
-            git commit -m "Publish complete ${HARVEST_MODE} API harvest to Scout-only research inbox"
+            git commit -m "Publish complete ${HARVEST_MODE} API harvest and monthly comparison workbook"
             for attempt in 1 2 3 4 5; do
               if git push origin HEAD:main; then
                 echo "Published complete API harvest after push attempt $attempt."
