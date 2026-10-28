@@ -70,6 +70,15 @@ def inspect_batch(p):
                 classification.group(1), re.I
             ):
                 raise ValueError(f"Missing supported Scout assessment: {p.name}:{line}")
+            proof = {
+                "REACH snapshot": r"(?im)^\s*REACH snapshot:\s*[0-9a-f]{40,64}\s*$",
+                "Sources checked": r"(?im)^\s*Sources checked:\s*[^\r\n]*https://[^\s]+",
+                "Funding basis": r"(?im)^\s*Funding basis:\s*[^\r\n]{12,}",
+                "Related outputs checked": r"(?im)^\s*Related outputs checked:\s*[^\r\n]{12,}",
+            }
+            for label, pattern in proof.items():
+                if not re.search(pattern, rationale):
+                    raise ValueError(f"Monthly Scout review lacks {label}: {p.name}:{line}")
             existing_match = (row.get("Existing REACH Match") or "").strip()
             if not existing_match or existing_match.lower() in ("unchecked", "pending", "unknown", "not assessed", "not checked"):
                 raise ValueError(f"Monthly-origin proposal has no completed REACH comparison: {p.name}:{line}")
