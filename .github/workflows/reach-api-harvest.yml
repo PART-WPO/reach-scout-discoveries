@@ -1,0 +1,118 @@
+name: REACH API harvest - DataCite and Crossref
+on:
+  schedule:
+    # First day of month, 12:17 UTC. On 2026-11-01 this is 7:17 AM EST.
+    # Month window is previous FULL UTC calendar month, e.g. Oct 01-31.
+    - cron: '17 12 1 * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Monthly both APIs or historical DataCite all SPARK awards'
+        type: choice
+        required: true
+        default: monthly
+        options:
+          - monthly
+          - historical_datacite
+      month:
+        description: 'Optional override for monthly window (YYYY-MM)'
+        type: string
+        required: false
+        default: ''
+  push:
+    branches: [main]
+    paths:
+      # Explicit, ONE-TIME test trigger; not activated on normal code pushes
+      - 'api-discoveries/jobs/historical-pilot-2026-10-28.trigger'
+permissions:
+  contents: write
+concurrency:
+  group: reach-api-harvest-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 100
+    strategy:
+      fail-fast: false
+      matrix:
+        source: [datacite, crossref]
+        shard: [0,1,2,3,4,5,6,7]
+    env:
+      HARVEST_MODE: ${{ github.event_name == 'push' && 'historical' || inputs.mode == 'historical_datacite' && 'historical' || 'monthly' }}
+      MONTH_OVERRIDE: ${{ inputs.month || '' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install API client
+        if: env.HARVEST_MODE == 'monthly' || matrix.source == 'datacite'
+        run: python -m pip install --disable-pip-version-check requests
+      - name: Search SPARK awards and save shard provenance
+        if: env.HARVEST_MODE == 'monthly' || matrix.source == 'datacite'
+        env:
+          SOURCE: ${{ matrix.source }}
+          SHARD: ${{ matrix.shard }}
+        run: |
+          set -euo pipefail
+          MONTH_ARGS=()
+          if [ -n "$MONTH_OVERRIDE" ] && [ "$HARVEST_MODE" = "monthly" ]; then
+            MONTH_ARGS=(--month "$MONTH_OVERRIDE")
+          fi
+          python api-discoveries/tools/harvest.py \
+            --mode "$HARVEST_MODE" --source "$SOURCE" \
+            --shard "$SHARD" --shards 8 \
+            --output api-discoveries/tmp "${MONTH_ARGS[@]}"
+      - name: Upload shard results for completeness check
+        if: (env.HARVEST_MODE == 'monthly' || matrix.source == 'datacite') && always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: api-shard-${{ matrix.source }}-${{ matrix.shard }}
+          path: api-discoveries/tmp/*.json
+          retention-days: 14
+          if-no-files-found: warn
+  publish:
+    needs: scan
+    if: needs.scan.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      HARVEST_MODE: ${{ github.event_name == 'push' && 'historical' || inputs.mode == 'historical_datacite' && 'historical' || 'monthly' }}
+      MONTH_OVERRIDE: ${{ inputs.month || '' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: api-shard-*
+          path: api-discoveries/tmp
+          merge-multiple: true
+      - name: Verify all award+API shards and build immutable Scout research batches
+        run: |
+          set -euo pipefail
+          MONTH_ARGS=()
+          if [ -n "$MONTH_OVERRIDE" ] && [ "$HARVEST_MODE" = "monthly" ]; then
+            MONTH_ARGS=(--month "$MONTH_OVERRIDE")
+          fi
+          python api-discoveries/tools/publish_harvest.py \
+            --mode "$HARVEST_MODE" --shards 8 \
+            --input api-discoveries/tmp "${MONTH_ARGS[@]}"
+      - name: Commit only immutable raw research inputs and manifests
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for path in api-discoveries/batches api-discoveries/historical api-discoveries/runs api-discoveries/manifest.json; do
+            if [ -e "$path" ]; then git add -- "$path"; fi
+          done
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish complete ${HARVEST_MODE} API harvest to Scout-only research inbox"
+            git push
+          else
+            echo "No new immutable batches; idempotent rerun."
+          fi
