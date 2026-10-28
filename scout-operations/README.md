@@ -38,3 +38,18 @@ Scout records inaccessible Zenodo and other output metadata problems in `scout-o
 Human referrals need substantive verification against full public REACH, output identity, public supporting evidence, and documented funding. Publish ONLY eligible investigated candidates in the standard `scout-discoveries/batches/` feed. Rationale must contain `Research escalation: Human Metadata Needed`, `Metadata recovery: Exhausted`, `Metadata missing:`, `Metadata checks:`, `Scout verification: Completed`, and `Scout classification: C NEEDS INVESTIGATION`. The Discovery Hub requires human completion before final Smartsheet insertion.
 
 GitHub Actions validates blocker ledgers using `scout-operations/tools/validate_metadata_blockers.py`. The ledger is public: do not expose private review notes, staff identities, Smartsheet IDs, secrets, or restricted information.
+
+## Historical DataCite backlog — every DOI stays in queue until researched
+
+The October 28, 2026 historical SPARK/DataCite run yielded **188 distinct DOI cases**. This is a **separate persistent workload** from the monthly inbox, not a one-off report.
+
+- `historical-triage.json` contains **one entry per canonical DOI** from all historical batches, including every associated award. New items start `awaiting_research`.
+- `historical-coverage.json` is computed from the entire historical manifest and the ledger. It exposes `total_distinct_dois`, `fully_investigated`, `remaining`, and `research_complete`.
+- [Reconcile historical DataCite Scout backlog](https://github.com/PART-WPO/reach-scout-discoveries/actions/workflows/reconcile-historical-backlog.yml) runs on historical source or ledger changes and checks the queue on weekdays. The reconciliation script verifies all immutable batch checksums, imports previously unseen DOIs into the queue, preserves existing dispositions and **does not count API metadata retrieval or opening a DOI as completed research**.
+- An item counts as fully investigated only if a terminal `status` (`already_in_reach`, `forwarded_to_hub`, `metadata_update_forwarded`, or `no_action`) has a real public REACH snapshot, records of sources actually checked, review of **all associated awards**, documented funding and related-output checks, and the required disposition-specific evidence. Human-review proposals must exist in the actual checked Scout batch manifest.
+- Other statuses (`awaiting_research`, `investigating`, `needs_more_research`) continue to count as `remaining`. DataCite date enrichment alone never closes a case.
+- Scout's four scheduled missions explicitly keep revisiting the backlog, allocating historical investigation time even after a new monthly API batch arrives, until `research_complete=true`. This is a multi-mission process; an Action does not itself conduct scholarly investigations or approve outputs.
+
+**Initial verified baseline:** 188 received, 0 fully investigated, 188 remaining. The coverage report is the live source of truth, not this historical note.
+
+The ledger is public: never add reviewer identities, private Smartsheet data or secrets. Do not rewrite finished cases to hide outstanding research.
