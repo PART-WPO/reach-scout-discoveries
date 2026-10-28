@@ -5,6 +5,7 @@ on:
     paths:
       - 'api-discoveries/tools/harvest.py'
       - 'api-discoveries/tools/publish_harvest.py'
+      - 'api-discoveries/tools/export_comparison_xlsx.py'
       - 'api-discoveries/tests/**'
       - '.github/workflows/reach-api-checks.yml'
   workflow_dispatch:
