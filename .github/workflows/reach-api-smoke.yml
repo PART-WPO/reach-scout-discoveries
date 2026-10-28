@@ -1,0 +1,36 @@
+name: REACH DataCite and Crossref live API smoke test
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'api-discoveries/jobs/smoke-2026-10-28.trigger'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install --disable-pip-version-check requests
+      - name: Test known NOAA grant through DataCite and Crossref
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import sys
+          sys.path.insert(0,"api-discoveries/tools")
+          import harvest as h
+          grant="NA16OAR4590234"
+          rows=h.query_datacite(grant,"historical","",max_pages=5)
+          print("Historical DataCite exact grant",grant,"found",len(rows),"records")
+          for a in rows[:3]:print("DataCite DOI",a.get("doi"))
+          d=h.query_datacite(grant,"monthly","2026-10",max_pages=5)
+          print("October 2026 DataCite candidates",len(d))
+          x=h.query_crossref(grant,"2026-10",max_pages=5)
+          print("October 2026 Crossref candidates",len(x))
+          print("SMOKE COMPLETE; no publication performed")
+          PY
