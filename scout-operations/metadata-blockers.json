@@ -7,5 +7,56 @@
     "retry_delay_days": 7,
     "review_gate": "Scout-completed-research-only"
   },
-  "entries": []
+  "entries": [
+    {
+      "identity": "doi:10.17603/ds2-bpav-8w29",
+      "award_numbers": [
+        "NA18OAR4590306"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "record-specific full YYYY-MM-DD dataset publication date"
+      ],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "historical_datacite_source",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
+          "outcome": "Captured DataCite source supplies DOI/title/creators/exact award but no full publication date.",
+          "checked_at": "2026-10-28T22:09:00Z"
+        },
+        {
+          "round": 0,
+          "method": "designsafe_landing",
+          "url": "https://doi.org/10.17603/ds2-bpav-8w29",
+          "outcome": "DOI landing not retrievable; no native full Date Published confirmed.",
+          "checked_at": "2026-10-28T22:09:00Z"
+        },
+        {
+          "round": 0,
+          "method": "publisher_data_statement",
+          "url": "https://ascelibrary.org/doi/10.1061/%28ASCE%29ST.1943-541X.0003275",
+          "outcome": "2022 article data availability directly links this distinct dataset and acknowledgments identify award; article date is not dataset date.",
+          "checked_at": "2026-10-28T22:09:00Z"
+        },
+        {
+          "round": 0,
+          "method": "author_publication_list",
+          "url": "https://fphlm.cs.fiu.edu/docs/cv/Gurley_CV_December_202025.pdf",
+          "outcome": "Author CV lists dataset as 2021 without exact month/day; cannot infer full publication date.",
+          "checked_at": "2026-10-28T22:09:00Z"
+        }
+      ],
+      "last_attempt_at": "2026-10-28T22:09:00Z",
+      "retry_count": 0,
+      "next_retry_at": "2026-11-05T00:00:00Z",
+      "evidence_urls": [
+        "https://doi.org/10.17603/ds2-bpav-8w29",
+        "https://ascelibrary.org/doi/10.1061/%28ASCE%29ST.1943-541X.0003275"
+      ],
+      "funding_basis": "Historical DataCite fundingReferences and linked ASCE publisher acknowledgment explicitly identify NOAA award NA18OAR4590306 for related infrasound experiments; exact dataset date remains unverified.",
+      "next_action": "On or after 2026-11-05 UTC perform one bounded metadata recovery round for the DesignSafe record, including native project date or authoritative metadata; if still blocked, consider human metadata referral with complete evidence."
+    }
+  ]
 }
