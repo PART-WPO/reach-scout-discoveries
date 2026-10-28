@@ -96,6 +96,20 @@ def inspect_batch(p):
                 raise ValueError(f"Human metadata referral requires a persistent identifier: {p.name}:{line}")
             if not (row.get("Existing REACH Match") or "").strip() or (row.get("Existing REACH Match") or "").strip().lower() in {"unchecked","pending","unknown"}:
                 raise ValueError(f"Human metadata referral requires completed REACH comparison: {p.name}:{line}")
+        route = re.search(r"(?im)^\s*Scout discovery route:\s*([^\r\n]+)", rationale)
+        if route:
+            choice = route.group(1).strip().lower()
+            if choice in {"api-seeded expansion", "independent discovery", "direct api"}:
+                if not re.search(r"(?im)^\s*Scout discovery path evidence:\s*https://\S+", rationale):
+                    raise ValueError(f"Scout discovery route needs actual public evidence: {p.name}:{line}")
+            if choice == "api-seeded expansion":
+                if not re.search(r"(?im)^\s*Scout seed DOI:\s*10\.\d{4,9}/[^\s]+", rationale):
+                    raise ValueError(f"API expansion requires a distinct seed DOI: {p.name}:{line}")
+            if choice == "independent discovery":
+                if not re.search(r"(?im)^\s*Scout discovery method:\s*[^\r\n]{12,}", rationale):
+                    raise ValueError(f"Independent Scout discovery requires a research method: {p.name}:{line}")
+            if choice not in {"api-seeded expansion", "independent discovery", "direct api", "unclassified", "metadata correction"}:
+                raise ValueError(f"Unsupported Scout discovery route: {p.name}:{line}")
         runs.add(run)
     if not 1 <= count <= 3000:
         raise ValueError(f"Invalid record count in {p.name}: {count}")
