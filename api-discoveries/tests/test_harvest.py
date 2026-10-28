@@ -16,6 +16,8 @@ class HarvestUnitTests(unittest.TestCase):
         self.assertEqual(h.clean_award('"'),"")
         self.assertEqual(h.clean_award("  'NA16OAR4590234'  "),"NA16OAR4590234")
         self.assertEqual(h.clean_award("OWAQ16-JTTI-I-1"),"OWAQ16-JTTI-I-1")
+        self.assertEqual(h.clean_award("WPO20-SSP-E-1(SSP"),"WPO20-SSP-E-1")
+        self.assertEqual(h.clean_award("OWAQOBS001(IAA"),"OWAQOBS001")
 
     def test_exact_award_not_substring(self):
         self.assertTrue(h.exact_awards(["NA16OAR4590234"],"NA16OAR4590234"))
