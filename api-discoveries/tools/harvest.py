@@ -124,15 +124,17 @@ def datacite_date(a,month):
     return "","out_of_window"
 
 def crossref_date(a,month):
+    dates=[]
     for k in ("published-online","published-print","published","issued"):
         dp=(a.get(k) or {}).get("date-parts") or []
         if dp and dp[0]:
             parts=dp[0]
             date="-".join([str(parts[0]).zfill(4)]+[str(v).zfill(2) for v in parts[1:3]])
-            if date_in_month(date,month):
-                return (date if len(parts)>=3 else ""),("published_exact" if len(parts)>=3 else "published_month_only")
-            if len(parts)>=2:return "","published_outside_window"
-    return "","out_of_window"
+            dates.append((date,len(parts)))
+    for date,length in dates:
+        if date_in_month(date,month):
+            return (date if length>=3 else ""),("published_exact" if length>=3 else "published_month_only")
+    return "","published_outside_window" if dates else "out_of_window"
 
 def match_datacite(a,award):
     return exact_awards([f.get("awardNumber","") for f in a.get("fundingReferences",[]) or []],award)
