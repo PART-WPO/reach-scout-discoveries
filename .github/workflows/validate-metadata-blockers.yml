@@ -1,0 +1,17 @@
+name: Validate Scout metadata blocker ledger
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scout-operations/metadata-blockers.json'
+      - 'scout-operations/tools/validate_metadata_blockers.py'
+      - '.github/workflows/validate-metadata-blockers.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scout-operations/tools/validate_metadata_blockers.py
