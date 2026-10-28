@@ -5,6 +5,7 @@ No spreadsheet intermediary, third-party Excel dependency, human decisions or
 changes to Scout's 24-column discovery feed. Writes standard OOXML with stdlib.
 """
 import argparse
+import io
 import collections
 import datetime as dt
 import json
@@ -127,14 +128,26 @@ def make_xlsx(target,sheets):
     q(xfs,"xf",{"numFmtId":"0","fontId":"0","fillId":"0","borderId":"0","xfId":"0"})
     styles_q=q(styles,"cellStyles",{"count":"1"})
     q(styles_q,"cellStyle",{"name":"Normal","xfId":"0","builtinId":"0"})
-    with zipfile.ZipFile(target,"w",zipfile.ZIP_DEFLATED,compresslevel=6) as z:
-        z.writestr("[Content_Types].xml",xml_bytes(content))
-        z.writestr("_rels/.rels",xml_bytes(package_rels))
-        z.writestr("xl/workbook.xml",xml_bytes(wb))
-        z.writestr("xl/_rels/workbook.xml.rels",xml_bytes(wrels))
-        z.writestr("xl/styles.xml",xml_bytes(styles))
+    # Fixed OOXML timestamps ensure byte-for-byte idempotence across reruns.
+    stream=io.BytesIO()
+    with zipfile.ZipFile(stream,"w",zipfile.ZIP_DEFLATED,compresslevel=6) as z:
+        def put(name,content):
+            item=zipfile.ZipInfo(name,date_time=(1980,1,1,0,0,0))
+            item.compress_type=zipfile.ZIP_DEFLATED
+            z.writestr(item,content,compress_type=zipfile.ZIP_DEFLATED,compresslevel=6)
+        put("[Content_Types].xml",xml_bytes(content))
+        put("_rels/.rels",xml_bytes(package_rels))
+        put("xl/workbook.xml",xml_bytes(wb))
+        put("xl/_rels/workbook.xml.rels",xml_bytes(wrels))
+        put("xl/styles.xml",xml_bytes(styles))
         for idx,name in enumerate(names,1):
-            z.writestr("xl/worksheets/sheet%d.xml"%idx,add_sheet(sheets[name],WIDTHS[name]))
+            put("xl/worksheets/sheet%d.xml"%idx,add_sheet(sheets[name],WIDTHS[name]))
+    data=stream.getvalue()
+    if target.exists():
+        if target.read_bytes()!=data:
+            raise RuntimeError("Monthly report exists with different content; publish a correction version instead: "+str(target))
+    else:
+        target.write_bytes(data)
 
 def group_records(pieces,source):
     grouped=collections.defaultdict(list)
@@ -196,7 +209,7 @@ def build(pieces,month,output):
     for doi,records in sorted(bydoi.items()):
         best=sorted(records,key=lambda x:(not bool(x.get("date")),x.get("src")!="datacite"))[0]
         awards=sorted(set(x["award"] for x in records))
-        sources=sorted(set(x["src"].title() if x["src"]=="datacite" else "Crossref" for x in records))
+        sources=sorted(set("DataCite" if x["src"]=="datacite" else "Crossref" for x in records))
         programs=sorted(set(p for x in records for p in (x.get("programs") or [])))
         dates=sorted(set(x.get("date_basis") or "" for x in records))
         combined.append(["https://doi.org/"+doi,best.get("title",""),
@@ -272,7 +285,6 @@ def main():
     data=[json.loads(x.read_text()) for x in files]
     if len(data)!=16:raise ValueError("16 monthly DataCite and Crossref shards are required")
     target=Path(args.output) if args.output else Path("api-discoveries/reports")/(f"REACH_API_Comparison_{args.month}.xlsx")
-    if target.exists():raise RuntimeError("Refuse to overwrite an immutable monthly comparison workbook: "+str(target))
     res=build(data,args.month,target)
     print(json.dumps(res,indent=2))
 if __name__=="__main__":main()
