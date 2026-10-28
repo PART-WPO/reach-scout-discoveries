@@ -2,7 +2,7 @@
 
 **Important: This is NOT a Discovery Hub import feed.** Monthly API outputs must be investigated by REACH Scout *before* any review card is created for a human reviewer.
 
-The completed monthly Apps Script harvest publishes public, immutable 24-column CSVs to `api-discoveries/batches/`. GitHub Actions validates them and updates `api-discoveries/manifest.json`. These raw records have `Source Run ID: REACH-MONTHLY-API-YYYY-MM`, `Intake origin: Monthly API`, and `Existing REACH Match: Unchecked`; they are **research leads**, not verified candidates.
+The primary monthly process now runs **directly in GitHub Actions**, reading every award shard from the public SPARK index, querying DataCite and Crossref, and publishing immutable 24-column CSVs into `api-discoveries/batches/`. It generates and validates `api-discoveries/manifest.json` in the same workflow run. The original Google Sheets/Apps Script approach is retained only as an optional fallback until the new run is verified. These raw records have `Source Run ID: REACH-MONTHLY-API-YYYY-MM`, `Intake origin: Monthly API`, and `Existing REACH Match: Unchecked`; they are **research leads**, not verified candidates.
 
 ## Required path to human review
 
@@ -28,3 +28,22 @@ No GitHub publication approves an output, edits Smartsheet, or publishes to publ
 Monthly inbox: https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/manifest.json
 
 Human-review feed: https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json
+
+## GitHub Actions API harvest — installed October 28, 2026
+
+- **Workflow:** [REACH API harvest - DataCite and Crossref](https://github.com/PART-WPO/reach-scout-discoveries/actions/workflows/reach-api-harvest.yml).
+- **Scheduled:** 12:17 UTC on the **first day of each month**. On November 1, 2026 this is 7:17 AM Eastern Standard Time; it searches **October 1–31, 2026 inclusive**. The month is calculated as the previous full UTC calendar month (not the last 30 rolling days). GitHub schedules may be delayed.
+- **Search scope:** all six SPARK award shards (990 award-to-project records, 764 unique identifiers as of 2026-10-28), including standard NOAA OAR and nonstandard public project IDs. Verify source shard SHA-256 and deduplicate award identifiers. Crossref uses its documented `award.number` filter; DataCite uses exact `fundingReferences.awardNumber` search. **Only exact award numbers present in API funding metadata qualify** as matches.
+- **Monthly modes:** both DataCite (datasets, software, articles and other deposited works) and Crossref (scholarly publications and other Crossref types). Records are deduplicated by DOI across APIs/awards; preserve all matching awards/programs. Clear, record-specific publication dates are retained. When DataCite reports an October DOI registration but no month-specific publication date, it is explicitly flagged `registration_only_publication_unverified`, with Pub Date blank, for Scout verification. A dated publication demonstrably outside the month is not labeled new for the month.
+- **Historical DataCite test:** Run workflow manually with `mode=historical_datacite` or use the one-time 2026-10-28 pilot trigger. Search all SPARK award IDs across all years; outputs go to `api-discoveries/historical/batches/*.csv` with independent `api-discoveries/historical/manifest.json`, **not** the monthly feed and not directly to the Hub.
+- **Robustness:** eight award shards per API; retry HTTP 429/5xx with backoff; paginate; retain job artifacts for 14 days; stop publication if any shard fails, any award is skipped, or SPARK snapshots differ. Publication and run summaries are append-only; reruns may not rewrite immutable batch content.
+- **Run evidence:** see `api-discoveries/runs/monthly-YYYY-MM.json` or historical run summary for complete award counts and output counts. To rerun a month, use Actions → Run workflow → `monthly` with override `YYYY-MM`; a rerun with different output must be handled explicitly as a new correction batch, not silently overwrite a prior batch.
+- **Scout gate:** only `scout-discoveries/manifest.json` is imported into the Discovery Hub. Scout reads monthly and historical raw API manifests, independently investigates REACH novelty, award attribution, linked research and missing metadata, and publishes only review-ready checked candidates. Human approval remains unchanged.
+
+### Google Sheets transition
+
+The original monthly Google Apps Script and its spreadsheet tabs are **not used by this GitHub Actions pipeline**. Once the new GitHub pipeline has been validated, disable any pre-existing Apps Script scheduled triggers for `monthlyPublicationsTrigger`, `getLastMonthPublications`, `monthlyAwardOutputsTrigger` and continuation functions that would otherwise re-run overlapping API searches. The GitHub connection cannot change those Apps Script triggers itself. Do not delete historical spreadsheet reports.
+
+### Limitations
+
+Funding metadata may omit the award number or contain unindexed textual acknowledgments. Those outputs cannot be discovered by exact API award searches alone and should be explored via Scout's normal research methods. Crossref / DataCite can deposit metadata late or change historical publication records; the monthly `published` date window does not guarantee detection of late deposits. A periodic backfill/updated-record sweep would improve recall after the initial scheduled migration.
