@@ -39,12 +39,14 @@ jobs:
           PY
       - name: Check every historical DOI and update progress
         run: python3 scout-operations/tools/reconcile_historical.py
+      - name: Calculate next Scout workstream
+        run: python3 scout-operations/tools/select_workstream.py
       - name: Commit durable DOI ledger and coverage, including zero-completion baseline
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add scout-operations/historical-triage.json scout-operations/historical-coverage.json
+          git add scout-operations/historical-triage.json scout-operations/historical-coverage.json scout-operations/active-workstream.json
           if git diff --cached --quiet; then
             echo 'Historical queue already reconciled'
             exit 0
