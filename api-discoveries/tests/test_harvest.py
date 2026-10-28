@@ -12,6 +12,11 @@ class HarvestUnitTests(unittest.TestCase):
         self.assertEqual(h.month_window("2026-02"),("2026-02-01","2026-02-28"))
         self.assertEqual(h.month_window("2024-02"),("2024-02-01","2024-02-29"))
 
+    def test_malformed_public_award_placeholder(self):
+        self.assertEqual(h.clean_award('"'),"")
+        self.assertEqual(h.clean_award("  'NA16OAR4590234'  "),"NA16OAR4590234")
+        self.assertEqual(h.clean_award("OWAQ16-JTTI-I-1"),"OWAQ16-JTTI-I-1")
+
     def test_exact_award_not_substring(self):
         self.assertTrue(h.exact_awards(["NA16OAR4590234"],"NA16OAR4590234"))
         self.assertTrue(h.exact_awards(["NA16OAR4590234; NA16OAR4590235"],"NA16OAR4590234"))
