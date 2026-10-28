@@ -193,6 +193,7 @@ def query_crossref(award,month,max_pages):
     return items
 
 def to_candidate(a,src,award,mode,month):
+    citation=""
     doi=str(a.get("doi") or a.get("DOI") or "").strip().lower()
     if not doi.startswith("10."):return None
     if src=="datacite":
@@ -211,6 +212,13 @@ def to_candidate(a,src,award,mode,month):
         outtype= "3" if "dataset" in typ else "2" if "software" in typ else "1" if typ in ("journal-article","posted-content","proceedings-article","book-chapter","report","dissertation") else "4"
         title=((a.get("title") or [""])[0] or "").strip()
         authors=[" ".join([str(x.get("given","")).strip(),str(x.get("family","")).strip()]).strip() for x in (a.get("author") or [])]
+        # Preserve the family-name citation behavior of the former Google Sheet script.
+        people=a.get("author") or []
+        first=people[0] if people else {}
+        family=first.get("family") or first.get("name") or "Unknown Author"
+        prior_dp=(a.get("published-print") or {}).get("date-parts") or (a.get("published-online") or {}).get("date-parts") or (a.get("issued") or {}).get("date-parts") or []
+        yr=prior_dp[0][0] if prior_dp and prior_dp[0] else "Unknown Year"
+        citation=f"{family} et al. ({yr})"
         abstract=a.get("abstract","") or ""
         evidence="https://api.crossref.org/works/"+quote(doi,safe="/")
         relationships=a.get("relation") or {}
@@ -224,6 +232,7 @@ def to_candidate(a,src,award,mode,month):
       "authors":[x for x in authors if x],"abstract":text[:800],
       "date":pub if len(pub)==10 else "","date_basis":basis,
       "outtype":outtype,"evidence":evidence,"related":bool(relationships),
+      "citation":citation,
       "published_month":month if mode=="monthly" else ""}
 
 def main():
