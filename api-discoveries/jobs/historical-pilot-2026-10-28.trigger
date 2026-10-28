@@ -6,3 +6,5 @@ Output: append-only api-discoveries/historical/ research inbox, never Discovery 
 Stop publication if any API award request or shard fails; preserve workflow artifacts.
 
 Rerun 2026-10-28: skip invalid SPARK placeholder quote; all legitimate IDs remain included. Prior failed shard is retained in GitHub Actions artifacts. No direct Hub publication.
+
+Third run: 2026-10-28 full scan; commit retry/rebase enabled to handle concurrent repository updates.
