@@ -28,3 +28,11 @@ https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-di
 ChatGPT has write access to **this repository only**. The production `PART-WPO/reach-dashboard` and `PART-WPO/SPARK` repositories are read-only public sources. No output is approved, inserted into Smartsheet, or added to the public REACH dashboard until the separate Discovery Hub human review and insertion steps.
 
 This repository is **public**. Do not publish restricted NOAA information, private investigator contact details, Smartsheet native identifiers or authorization details, API secrets, or human-review records. If a batch does not pass the public-only screening or data checks, do not publish it. 
+
+## Monthly Crossref / DataCite API intake (parallel feed)
+
+Monthly API outputs are staged separately at `api-discoveries/batches/*.csv` using the **same** 24-column Discovery Hub schema. An independent GitHub Actions validator publishes `api-discoveries/manifest.json`; this feed has its own batch IDs and provenance. See [monthly intake documentation](api-discoveries/README.md).
+
+**Public monthly manifest:** https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/manifest.json
+
+A monthly API match is **not** automatically a new REACH output: it must be deduplicated against complete REACH index shards, existing staged items and human dispositions. Scout checks the monthly intake first, searches associated datasets/software/publications/reports for additional output discoveries, then returns to historical award work. Review remains exclusively human-controlled in the Discovery Hub, and no CSV in either feed is authority to change Smartsheet or publish to REACH.
