@@ -81,7 +81,7 @@ def main():
         "schema": SCHEMA, "repository": REPO, "generated_at": stamp,
         "batch_count": len(entries), "candidate_rows": sum(x["record_count"] for x in entries),
         "batches": entries,
-        "policy": "PUBLIC MONTHLY API INTAKE FOR HUMAN REVIEW. NOT A CONFIRMATION OF NOVELTY OR A REACH PUBLICATION.",
+        "policy": "PUBLIC MONTHLY API RESEARCH INBOX FOR SCOUT ONLY. NOT HUMAN-REVIEW READY OR A REACH PUBLICATION.",
     }
     MANIFEST.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Validated monthly API feed: {len(entries)} batches / {result['candidate_rows']} candidate rows")
