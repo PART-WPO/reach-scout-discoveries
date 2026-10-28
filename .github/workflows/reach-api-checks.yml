@@ -1,0 +1,23 @@
+name: Validate DataCite and Crossref harvest logic
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'api-discoveries/tools/harvest.py'
+      - 'api-discoveries/tools/publish_harvest.py'
+      - 'api-discoveries/tests/**'
+      - '.github/workflows/reach-api-checks.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install --disable-pip-version-check requests
+      - run: python -m compileall -q api-discoveries/tools
+      - run: python -m unittest discover -v -s api-discoveries/tests
