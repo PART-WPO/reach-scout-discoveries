@@ -1,0 +1,40 @@
+name: Validate and Publish Monthly API Discovery Feed
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'api-discoveries/batches/*.csv'
+      - 'api-discoveries/tools/build_manifest.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: monthly-api-discovery-manifest-main
+  cancel-in-progress: false
+
+jobs:
+  validate-and-refresh-manifest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out public intake repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Validate append-only public API intake CSVs
+        run: python api-discoveries/tools/build_manifest.py
+
+      - name: Commit verified monthly manifest when changed
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- api-discoveries/manifest.json
+          if git diff --cached --quiet; then
+            echo 'Monthly API discovery manifest is current.'
+          else
+            git commit -m 'Update verified monthly API discovery manifest'
+            git push
+          fi
