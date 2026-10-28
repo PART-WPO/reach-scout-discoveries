@@ -1,0 +1,20 @@
+{
+  "historical_api": {
+    "coverage_matches_source_manifest": true,
+    "distinct_dois": 188,
+    "raw_batch_rows": 188,
+    "remaining_or_untracked": 188,
+    "research_completed": 0
+  },
+  "mode": "historical_api_triage",
+  "monthly_api": {
+    "raw_records": 0,
+    "recorded_received": 0,
+    "remaining_or_untracked": 0,
+    "research_completed": 0
+  },
+  "note": "Priority is reevaluated each scheduled Scout mission. GitHub Actions do NOT instantly launch ChatGPT Scout missions. Complete research requires evidence-backed ledger status.",
+  "reason": "Unfinished historical DataCite API test/backfill DOI cases",
+  "schema": "reach-scout-workstream-v1",
+  "switch_policy": "monthly API > historical API test backlog > normal SPARK historical discovery"
+}
