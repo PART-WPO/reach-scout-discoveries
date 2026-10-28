@@ -1,0 +1,1 @@
+Historical follow-up 2026-10-28: recover two SPARK award identifiers truncated by parenthetical annotations, and fetch published/release date metadata for existing DataCite DOI discoveries. Retain original append-only batches.
