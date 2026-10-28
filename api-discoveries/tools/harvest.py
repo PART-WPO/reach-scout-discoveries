@@ -50,7 +50,12 @@ def fetch(url,params=None):
     raise RuntimeError("Unexpected retry exhaustion")
 
 def clean_award(x):
-    return re.sub(r"\s+","",str(x or "")).upper().strip()
+    # Public SPARK data can contain stray quote characters rather than
+    # genuine award identifiers. Keep valid hyphenated WPO/OWAQ IDs.
+    raw=re.sub(r"\s+","",str(x or "")).upper().strip().strip("\"'")
+    if not raw or not re.fullmatch(r"[A-Z0-9][A-Z0-9_.:/-]{1,90}",raw):
+        return ""
+    return raw
 def parse_awards(text):
     z=list(csv.DictReader(io.StringIO(text)))
     if not z or "Award Number" not in z[0]:raise ValueError("SPARK award shard schema unexpected")
