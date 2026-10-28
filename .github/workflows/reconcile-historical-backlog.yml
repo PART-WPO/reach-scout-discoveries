@@ -1,0 +1,63 @@
+name: Reconcile historical DataCite Scout backlog
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'api-discoveries/historical/manifest.json'
+      - 'api-discoveries/historical/batches/*.csv'
+      - 'scout-operations/historical-triage.json'
+      - 'scout-operations/tools/reconcile_historical.py'
+      - '.github/workflows/reconcile-historical-backlog.yml'
+  schedule:
+    # Reconfirm progress on weekdays before Scout's first mission (UTC clock).
+    - cron: '13 12 * * 1-5'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: reach-scout-historical-reconciliation
+  cancel-in-progress: false
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Verify ledger closure rules
+        run: |
+          python3 -m py_compile scout-operations/tools/reconcile_historical.py
+          python3 - <<'PY'
+          import sys
+          sys.path.insert(0, 'scout-operations/tools')
+          from reconcile_historical import verified_terminal
+          assert not verified_terminal({'status':'already_in_reach'},set())
+          assert not verified_terminal({'status':'forwarded_to_hub'},set())
+          assert not verified_terminal({'status':'no_action'},set())
+          print('Unverified completed statuses cannot reduce the historical backlog')
+          PY
+      - name: Check every historical DOI and update progress
+        run: python3 scout-operations/tools/reconcile_historical.py
+      - name: Commit durable DOI ledger and coverage, including zero-completion baseline
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add scout-operations/historical-triage.json scout-operations/historical-coverage.json
+          if git diff --cached --quiet; then
+            echo 'Historical queue already reconciled'
+            exit 0
+          fi
+          git commit -m 'Reconcile all historical DataCite DOI research statuses'
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then
+              echo 'Saved complete historical queue'
+              exit 0
+            fi
+            git fetch origin main
+            git rebase origin/main
+            sleep "$((attempt * 2))"
+          done
+          echo 'Failed to persist historical coverage; review workflow logs' >&2
+          exit 1
