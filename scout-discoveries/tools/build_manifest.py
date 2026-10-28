@@ -82,6 +82,19 @@ def inspect_batch(p):
             existing_match = (row.get("Existing REACH Match") or "").strip()
             if not existing_match or existing_match.lower() in ("unchecked", "pending", "unknown", "not assessed", "not checked"):
                 raise ValueError(f"Monthly-origin proposal has no completed REACH comparison: {p.name}:{line}")
+        if re.search(r"(?im)^\s*Research escalation:\s*Human Metadata Needed\s*$", rationale):
+            if not re.search(r"(?im)^\s*Metadata recovery:\s*Exhausted\s*$", rationale):
+                raise ValueError(f"Unfinished metadata recovery cannot enter review: {p.name}:{line}")
+            if not re.search(r"(?im)^\s*Metadata missing:\s*[^\r\n]{3,}", rationale):
+                raise ValueError(f"Missing fields must be listed for human review: {p.name}:{line}")
+            if not re.search(r"(?im)^\s*Metadata checks:\s*[^\r\n]{12,}", rationale):
+                raise ValueError(f"Recovery sources must be documented: {p.name}:{line}")
+            if not re.search(r"(?im)^\s*Scout verification:\s*Completed\s*$", rationale):
+                raise ValueError(f"Human metadata referral needs finished Scout research: {p.name}:{line}")
+            if not (row.get("DOI") or "").strip() and not (row.get("Output URL") or "").strip():
+                raise ValueError(f"Human metadata referral requires a persistent identifier: {p.name}:{line}")
+            if not (row.get("Existing REACH Match") or "").strip() or (row.get("Existing REACH Match") or "").strip().lower() in {"unchecked","pending","unknown"}:
+                raise ValueError(f"Human metadata referral requires completed REACH comparison: {p.name}:{line}")
         runs.add(run)
     if not 1 <= count <= 3000:
         raise ValueError(f"Invalid record count in {p.name}: {count}")
