@@ -163,6 +163,9 @@ def main():
         # Regenerate existing manifest in THIS job: GITHUB_TOKEN pushes don't
         # trigger separate push-based workflows.
         subprocess.run([sys.executable,str(ROOT/"api-discoveries/tools/build_manifest.py")],check=True)
+        # GITHUB_TOKEN pushes do not trigger downstream push workflows.
+        # Refresh coverage in this same transaction so Operations sees new leads.
+        subprocess.run([sys.executable,str(ROOT/"scout-operations/tools/build_coverage.py")],check=True)
     else:
         manifest=ROOT/"api-discoveries/historical/manifest.json"
         old=json.loads(manifest.read_text()) if manifest.exists() else {}
