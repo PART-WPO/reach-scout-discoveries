@@ -102,6 +102,13 @@ jobs:
           python api-discoveries/tools/publish_harvest.py \
             --mode "$HARVEST_MODE" --shards 8 \
             --input api-discoveries/tmp "${MONTH_ARGS[@]}"
+      - name: Reconcile API intake and select Scout priority
+        run: |
+          set -euo pipefail
+          if [ "$HARVEST_MODE" = "historical" ]; then
+            python3 scout-operations/tools/reconcile_historical.py
+          fi
+          python3 scout-operations/tools/select_workstream.py
       - name: Create monthly Excel comparison workbook
         if: env.HARVEST_MODE == 'monthly'
         run: |
@@ -125,7 +132,7 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          for path in api-discoveries/batches api-discoveries/historical api-discoveries/runs api-discoveries/reports api-discoveries/manifest.json scout-operations/coverage.json; do
+          for path in api-discoveries/batches api-discoveries/historical api-discoveries/runs api-discoveries/reports api-discoveries/manifest.json scout-operations/coverage.json scout-operations/historical-triage.json scout-operations/historical-coverage.json scout-operations/active-workstream.json; do
             if [ -e "$path" ]; then git add -- "$path"; fi
           done
           if ! git diff --cached --quiet; then
