@@ -53,6 +53,9 @@ def clean_award(x):
     # Public SPARK data can contain stray quote characters rather than
     # genuine award identifiers. Keep valid hyphenated WPO/OWAQ IDs.
     raw=re.sub(r"\s+","",str(x or "")).upper().strip().strip("\"'")
+    # SPARK includes partial parenthetical annotations such as (SSP and (IAA.
+    # Preserve the meaningful public project/award identifier before the note.
+    raw=raw.split("(")[0]
     if not raw or not re.fullmatch(r"[A-Z0-9][A-Z0-9_.:/-]{1,90}",raw):
         return ""
     return raw
