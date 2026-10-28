@@ -1,4 +1,5 @@
 import csv,json,re,hashlib
+from datetime import datetime,timezone
 from pathlib import Path
 root=Path(__file__).resolve().parents[2]
 manifest=json.loads((root/'api-discoveries/manifest.json').read_text())
@@ -24,11 +25,12 @@ for batch in manifest['batches']:
 terminal={'already_in_reach','forwarded_to_hub','metadata_update_forwarded','no_action'}
 counts={m:{'received':0,'checked':0,'already_in_reach':0,'forwarded_to_hub':0,'needs_research':0} for m in set(expected.values())}
 for month in expected.values():counts[month]['received']+=1
-seen=set();errors=[];checked=dupes=forwarded=0
+seen=set();errors=[];checked=dupes=forwarded=stale=0
 for e in ledger['entries']:
     k=e['source_batch_id']+'|'+e['identity']
     if k in seen or k not in expected:errors.append('Unknown or repeated ledger case '+k);continue
     seen.add(k)
+    if e['status'] not in terminal|{'awaiting_research','investigating','needs_more_research'}:errors.append('Unsupported status '+k);continue
     if e['status'] in terminal:
         if not re.fullmatch('[a-f0-9]{40,64}',e.get('reach_snapshot','')) or not e.get('evidence_url','').startswith('https://'):
             errors.append('Missing research proof '+k);continue
@@ -38,8 +40,13 @@ for e in ledger['entries']:
         checked+=1;counts[expected[k]]['checked']+=1
         if e['status']=='already_in_reach':dupes+=1;counts[expected[k]]['already_in_reach']+=1
         if e['status'] in {'forwarded_to_hub','metadata_update_forwarded'}:forwarded+=1;counts[expected[k]]['forwarded_to_hub']+=1
+    else:
+        try:
+            t=datetime.fromisoformat(str(e.get('updated_at','')).replace('Z','+00:00'))
+            if t.tzinfo and (datetime.now(timezone.utc)-t).days>=7:stale+=1
+        except (TypeError,ValueError):pass
 for c in counts.values():c['needs_research']=c['received']-c['checked']
-result={'schema':'reach-scout-coverage-v1','repository':'PART-WPO/reach-scout-discoveries','received':len(expected),'checked':checked,'already_in_reach':dupes,'forwarded_to_hub':forwarded,'missing_from_ledger':len(set(expected)-seen),'stale_investigations':0,'by_month':counts,'errors':errors}
+result={'schema':'reach-scout-coverage-v1','repository':'PART-WPO/reach-scout-discoveries','received':len(expected),'checked':checked,'already_in_reach':dupes,'forwarded_to_hub':forwarded,'missing_from_ledger':len(set(expected)-seen),'stale_investigations':stale,'by_month':counts,'errors':errors}
 (root/'scout-operations/coverage.json').write_text(json.dumps(result,indent=2,sort_keys=True)+'\n')
 if errors:raise ValueError('; '.join(errors[:5]))
 print('Research coverage:',len(expected),'received,',checked,'completed')
