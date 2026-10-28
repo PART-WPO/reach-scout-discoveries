@@ -57,12 +57,13 @@ def inspect_batch(p):
         rationale = row.get("Scout Discovery Rationale") or ""
         run = (row.get("Source Run ID") or "").strip()
         monthly = re.search(r"(?im)^\s*Intake origin:\s*Monthly API\s*$", rationale) or run.startswith("REACH-MONTHLY-API-")
-        if monthly:
-            if run.startswith("REACH-MONTHLY-API-"):
+        historical = re.search(r"(?im)^\s*Intake origin:\s*Historical DataCite API Backfill\s*$", rationale) or run.startswith("REACH-HISTORICAL-DATACITE-")
+        if monthly or historical:
+            if run.startswith(("REACH-MONTHLY-API-", "REACH-HISTORICAL-DATACITE-")):
                 raise ValueError(f"Raw monthly API records cannot enter Scout-reviewed batches: {p.name}:{line}")
             if not re.search(r"(?im)^\s*Scout verification:\s*Completed\s*$", rationale):
                 raise ValueError(f"Monthly-origin review proposal lacks Scout verification: {p.name}:{line}")
-            if not re.search(r"(?im)^\s*Monthly intake:\s*\d{4}-\d{2}\s*$", rationale):
+            if monthly and not re.search(r"(?im)^\s*Monthly intake:\s*\d{4}-\d{2}\s*$", rationale):
                 raise ValueError(f"Missing monthly cohort in verified proposal: {p.name}:{line}")
             classification = re.search(r"(?im)^\s*Scout classification:\s*(.+?)\s*$", rationale)
             if not classification or not re.search(
