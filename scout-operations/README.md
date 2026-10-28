@@ -30,3 +30,11 @@ Scout must check the source and current REACH catalog again when feedback or a n
 **Publication verification** is separate: the Hub's `REACH_Scout_Operations.gs` checks previously inserted Smartsheet candidates against *all* current public REACH index shards, using exact DOI/URL when possible and labeling title+award matches as **possible**, never confirmed. Nothing on this public repository grants permission to insert a source row.
 
 **Safety:** no raw private review notes or sheet identifiers in any public GitHub file, no automated human approval, no direct Smartsheet write, no credential content.
+
+## Metadata recovery and human referral
+
+Scout records inaccessible Zenodo and other output metadata problems in `scout-operations/metadata-blockers.json`. Check up to five distinct metadata sources per investigation; do not count repeated refreshes. Wait at least seven days before one additional bounded retry, unless genuinely new source evidence warrants a documented exception. Stop afterward: mark `resolved`, `suppressed`, or `human_review` and continue other work.
+
+Human referrals need substantive verification against full public REACH, output identity, public supporting evidence, and documented funding. Publish ONLY eligible investigated candidates in the standard `scout-discoveries/batches/` feed. Rationale must contain `Research escalation: Human Metadata Needed`, `Metadata recovery: Exhausted`, `Metadata missing:`, `Metadata checks:`, `Scout verification: Completed`, and `Scout classification: C NEEDS INVESTIGATION`. The Discovery Hub requires human completion before final Smartsheet insertion.
+
+GitHub Actions validates blocker ledgers using `scout-operations/tools/validate_metadata_blockers.py`. The ledger is public: do not expose private review notes, staff identities, Smartsheet IDs, secrets, or restricted information.
