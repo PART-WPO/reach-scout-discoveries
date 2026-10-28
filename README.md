@@ -37,3 +37,7 @@ Only *Scout-checked* monthly findings that merit human review (new candidates, i
 
 See [Scout-only monthly intake protocol](api-discoveries/README.md) for the checked-publication schema and strict review gate.
 
+
+## Monthly Excel comparison reports
+
+Starting with the November 1, 2026 run for the October 2026 publication window, the DataCite/Crossref GitHub Action saves a read-only, seven-sheet Excel workbook in [api-discoveries/reports/](api-discoveries/reports/README.md), plus a downloadable 90-day GitHub Actions artifact. It includes a five-column Crossref legacy view to compare with existing Google Sheets results. The workbook is for verification only and does not feed the Discovery Hub.
