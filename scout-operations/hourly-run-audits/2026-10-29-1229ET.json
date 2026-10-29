@@ -1,0 +1,296 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-29-HOURLY-1229ET",
+  "run_timestamp": "2026-10-29T16:29:47.822626+00:00",
+  "selected_mode": "normal_historical_discovery",
+  "audit_result": "PARTIAL",
+  "feed_integrity_status": "VERIFIED_EXISTING_15_BATCH_FEED_NO_NEW_BATCH",
+  "github_action_verification_status": "SUCCESS_PREVIOUS_PUBLISH_40903812254_NO_NEW_BATCH_THIS_RUN",
+  "github_action_run_id": 40903812254,
+  "manifest_verification": {
+    "public_manifest_batches": 15,
+    "public_manifest_candidate_rows": 55,
+    "exact_csv_sha256_matches": 15,
+    "record_count_matches": 15,
+    "run_id_matches": 15,
+    "prior_batches_unchanged": 15,
+    "newly_staged_csv_ids": [],
+    "manifest_written_by_scout": false
+  },
+  "source_checks": {
+    "monthly_manifest_rows": 0,
+    "monthly_ledger_entries": 0,
+    "historical_source_dois": 188,
+    "historical_ledger_dois": 188,
+    "reach_index_shards": 10,
+    "reach_index_records": 1238,
+    "spark_index_shards": 6,
+    "spark_projects": 578,
+    "scout_review_batches": 15,
+    "scout_review_rows": 55,
+    "complete_reach_detail_shards": "NOT_EXHAUSTIVELY_CHECKED",
+    "private_reviewer_decisions": "NOT_VERIFIABLE"
+  },
+  "coverage_before": {
+    "monthly_completed": 0,
+    "monthly_remaining": 0,
+    "historical_completed": 150,
+    "historical_remaining": 38,
+    "historical_initial_uninvestigated": 0,
+    "original_no_action": 103,
+    "original_already_in_reach": 37,
+    "original_forwarded": 2,
+    "original_metadata_updates": 8
+  },
+  "coverage_after_expected": {
+    "monthly_completed": 0,
+    "monthly_remaining": 0,
+    "historical_completed": 150,
+    "historical_remaining": 38,
+    "historical_initial_uninvestigated": 0,
+    "original_no_action": 103,
+    "original_already_in_reach": 37,
+    "original_forwarded": 2,
+    "original_metadata_updates": 8
+  },
+  "original_seeds_independently_disposed_this_run": [],
+  "normal_spark_awards_examined": [
+    {
+      "awards": "NA16OAR4590238",
+      "project": "Extreme-rainfall probabilistic forecasts",
+      "finding": "6 existing REACH outputs; searched publisher/NOAA IR examples, no new eligible unique output established.",
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/index/part-001.csv",
+        "https://wpo.noaa.gov/spark/",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json"
+      ]
+    },
+    {
+      "awards": "NA16OAR4590232; NA16OAR4590235",
+      "project": "Multi-sensor QPE data fusion",
+      "finding": "6 REACH records under first award; second award is same SPARK project; no distinct missing output verified.",
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/index/part-001.csv",
+        "https://wpo.noaa.gov/spark/",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json"
+      ]
+    },
+    {
+      "awards": "NA16OAR4590241",
+      "project": "AERI convective-scale assimilation",
+      "finding": "Existing REACH AERI impact paper found; no distinct missing output verified.",
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/index/part-001.csv",
+        "https://wpo.noaa.gov/spark/",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json"
+      ]
+    },
+    {
+      "awards": "NA16OAR4590239",
+      "project": "Probabilistic hail forecasts and machine learning",
+      "finding": "Calibration of Machine Learning-Based Probabilistic Hail Predictions absent from public REACH, but ALREADY STAGED in immutable 2026-10-27-morning-jtti-2016-2017-001 batch; do not republish.",
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/index/part-001.csv",
+        "https://wpo.noaa.gov/spark/",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json"
+      ]
+    },
+    {
+      "awards": "NA16OAR4590234",
+      "project": "Stream radar observing capabilities",
+      "finding": "2021 Journal of Hydrology paper already in REACH; no distinct missing output verified.",
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/index/part-001.csv",
+        "https://wpo.noaa.gov/spark/",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json"
+      ]
+    },
+    {
+      "awards": "NA16OAR4590230",
+      "project": "Stochastic convective-scale forcing",
+      "finding": "2019 multiple-instance superparameterization article already in REACH; no distinct missing output verified.",
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/index/part-001.csv",
+        "https://wpo.noaa.gov/spark/",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json"
+      ]
+    },
+    {
+      "awards": "NA16OAR4590236",
+      "project": "GSI-based hybrid EnVar radar assimilation",
+      "finding": "2019, 2020 and 2021 radar DA papers already in REACH; no distinct missing output verified.",
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/index/part-001.csv",
+        "https://wpo.noaa.gov/spark/",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json"
+      ]
+    },
+    {
+      "awards": "NA16OAR4590233",
+      "project": "Non-Gaussian cloud-related error assimilation",
+      "finding": "Award and SPARK project checked; targeted public source search did not verify a new eligible unique output.",
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/index/part-001.csv",
+        "https://wpo.noaa.gov/spark/",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json"
+      ]
+    },
+    {
+      "awards": "NA16OAR4590231",
+      "project": "Airborne hyperspectral convective lifted index",
+      "finding": "Award and SPARK project checked; targeted public source search did not verify a new eligible unique output.",
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/index/part-001.csv",
+        "https://wpo.noaa.gov/spark/",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json"
+      ]
+    },
+    {
+      "awards": "NA16OAR4590242",
+      "project": "Remote-sensing convective-scale NWP assimilation",
+      "finding": "Award and SPARK project checked; targeted public source search did not verify a new eligible unique output.",
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/index/part-001.csv",
+        "https://wpo.noaa.gov/spark/",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json"
+      ]
+    }
+  ],
+  "attribution_followups_rechecked": [
+    {
+      "identity": "doi:10.25923/b2b3-m644",
+      "output": "Predicting Probabilistic Lightning Flash Density from the HREF Calibrated Thunder Guidance",
+      "award": "NA21OAR4320204",
+      "classification": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "finding": "The source identifies SPC/CIWRO lightning-HREF work funded by a broad CI cooperative agreement. SPARK uses that agreement as related support for extreme-weather/emergency-management and flood-survey projects; neither project describes lightning calibration or this output. No positive project-specific bridge in the examined authoritative sources.",
+      "source_urls": [
+        "https://repository.library.noaa.gov/view/noaa/76789",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-021.csv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-022.csv"
+      ],
+      "question": "Is there direct documentation that this lightning-HREF work was a deliverable of one of the named WPO survey projects?",
+      "outcome": "close_followup_no_project_bridge"
+    },
+    {
+      "identity": "doi:10.25923/d7j4-gx12",
+      "output": "Initialization of upper ocean temperature towards forecast improvements in GFSv17",
+      "award": "NA19NES4320002",
+      "classification": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "finding": "The NCEP Office Note concerns SST initialization and GFSv17; source lists NESDIS CI awards NA19NES4320002 and NA24NESX432C0001. SPARK references NA19NES4320002 only as a related award to a JTTI project on particle-filter non-Gaussian global data assimilation. Shared UFS/GFS terminology is not proof of the project workstream.",
+      "source_urls": [
+        "https://repository.library.noaa.gov/view/noaa/72662",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-011.csv",
+        "https://wpo.noaa.gov/spark/"
+      ],
+      "question": "Is this GFSv17 SST initialization office note directly listed as a product of WPO NA23OAR4590379?",
+      "outcome": "close_followup_no_project_bridge"
+    },
+    {
+      "identity": "doi:10.25923/nm97-m303",
+      "output": "The FireHouse 1.0: Unified end-user insights on fire weather",
+      "award": "NA24OARX432C0007",
+      "classification": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "finding": "NOAA IR attributes the report to GSL/CIRA Fire Weather Testbed and lists multiple NOAA awards. NOAA GSL describes Fire Weather Testbed as a separate fire-management effort. SPARK links the broad CI award as related to a tropical-cyclone AI forecast project; no specific deliverable bridge.",
+      "source_urls": [
+        "https://repository.library.noaa.gov/view/noaa/76365",
+        "https://gsl.noaa.gov/fire-weather/testbeds/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-018.csv",
+        "https://wpo.noaa.gov/spark/"
+      ],
+      "question": "Does a primary WPO project report link FireHouse to the tropical-cyclone AI workstream rather than independent fire-weather testbed activity?",
+      "outcome": "close_followup_no_project_bridge"
+    },
+    {
+      "identity": "doi:10.25923/y7ft-hn02",
+      "output": "Performance and operational utility of NBM v5.0 probabilistic fire weather elements",
+      "award": "NA19OAR4320073",
+      "classification": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "finding": "The source is a GSL NBM v5 fire-weather evaluation with broad CI support. NWS documentation independently identifies NBM as a distinct forecast guidance suite; SPARK links the CI award only as related to a tropical-cyclone MET-TC diagnostics project. No positive specific WPO project bridge.",
+      "source_urls": [
+        "https://repository.library.noaa.gov/view/noaa/74128",
+        "https://vlab.noaa.gov/web/mdl/nbm",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-008.csv",
+        "https://wpo.noaa.gov/spark/"
+      ],
+      "question": "Is this NBM fire-weather verification report documented as a product of the MET-TC tropical-cyclone diagnostics project?",
+      "outcome": "close_followup_no_project_bridge"
+    }
+  ],
+  "attribution_queue_before": {
+    "total": 66,
+    "queued": 66,
+    "closed": 0
+  },
+  "attribution_queue_expected_after": {
+    "total": 66,
+    "queued": 62,
+    "closed": 4
+  },
+  "no_action_subtype_changed": 0,
+  "new_no_action_original_seeds": 0,
+  "original_seed_statuses_changed": 0,
+  "metadata_blockers": {
+    "total": 42,
+    "original": 38,
+    "expansion": 4,
+    "due_followups": 0,
+    "overdue_followups": 0,
+    "human_metadata_needed_pending": 0,
+    "next_research_at_alias_missing_before": 11,
+    "next_research_at_alias_expected_after": 0,
+    "next_research_at_alias_verified_after": 0
+  },
+  "discovery_routes_cumulative": {
+    "Direct API": 1,
+    "API-seeded expansion": 9,
+    "Independent discovery": 0,
+    "Metadata correction": 5,
+    "UNCLASSIFIED_LEGACY": 40
+  },
+  "new_candidates_by_route": {
+    "Direct API": 0,
+    "API-seeded expansion": 0,
+    "Independent discovery": 0,
+    "Metadata correction": 0
+  },
+  "expansion_leads": [],
+  "staged_existing_duplicate": {
+    "doi": "10.1175/WAF-D-19-0105.1",
+    "title": "Calibration of Machine Learning–Based Probabilistic Hail Predictions for Operational Forecasting",
+    "existing_batch": "scout-discoveries/batches/2026-10-27-morning-jtti-2016-2017-001.csv",
+    "route": "Independent award-centered search; existing candidate has missing explicit route (legacy UNCLASSIFIED)",
+    "source_urls": [
+      "https://repository.library.noaa.gov/view/noaa/27459",
+      "https://journals.ametsoc.org/view/journals/wefo/35/1/waf-d-19-0105.1.xml",
+      "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+    ],
+    "action": "No new CSV; preserve existing staged candidate and human review."
+  },
+  "new_candidate_csv": "HEADER_ONLY_LIBRARY_ARTIFACT_NO_GITHUB_BATCH",
+  "hub_investigate_delivered": 0,
+  "human_approvals_verified": false,
+  "public_reach_verified_rows": 1238,
+  "public_reach_additions_verified_this_run": 0,
+  "metadata_correction_findings_this_run": 0,
+  "research_finished": true,
+  "csv_staged_to_github": false,
+  "manifest_new_batch_verified": false,
+  "human_disposition_verified": false,
+  "repository_writes_status": "VERIFIED_MAIN_BRANCH_READBACK",
+  "limitations": [
+    "Private reviewer dispositions not available",
+    "Full REACH detail shard collection not exhaustively checked",
+    "No eligible unique output established for publication; pre-existing staged article must not be duplicated"
+  ],
+  "repository_write_commits": {
+    "attribution_followups": "53f2dc13279da0a919c36c3f57fd5072dcad4a24",
+    "metadata_blockers": "71c34f1caf62828007096be48cb65472fd507103"
+  },
+  "attribution_queue_verified_after": {
+    "total": 66,
+    "queued": 62,
+    "closed": 4
+  },
+  "repository_readback_verified_at": "2026-10-29T16:30:34.750436+00:00"
+}
