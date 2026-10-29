@@ -17,8 +17,8 @@
   "original_seed_dois_forwarded_to_hub": 0,
   "original_seed_dois_no_action": 0,
   "existing_metadata_blockers_scheduled": 10,
-  "api_seed_related_outputs_checked": 2,
-  "api_seed_related_outputs_already_in_reach": 2,
+  "api_seed_related_outputs_checked": 4,
+  "api_seed_related_outputs_already_in_reach": 4,
   "discovery_routes": {
     "direct_api_new_candidates": 0,
     "api_seeded_expansion_new_candidates": 0,
@@ -71,6 +71,18 @@
       "related_doi": "10.1175/JHM-D-23-0203.1",
       "reach_record_id": "reach-000340",
       "result": "already_in_reach"
+    },
+    {
+      "seed_doi": "10.5061/dryad.c2fqz61cv",
+      "related_doi": "10.1175/WAF-D-22-0143.1",
+      "reach_record_id": "reach-000308",
+      "result": "already_in_reach"
+    },
+    {
+      "seed_doi": "10.5061/dryad.kwh70rzdx",
+      "related_doi": "10.1175/WAF-D-24-0033.1",
+      "reach_record_id": "reach-000341",
+      "result": "already_in_reach"
     }
   ],
   "attribution_leads_unverified": [
@@ -80,5 +92,6 @@
   ],
   "audit_status": "PARTIAL",
   "audit_limitations": "Full REACH index and matching detail shards, not every REACH detail shard; full SPARK index and all staged Scout batches checked. No human approval data. No new candidate claimed.",
-  "local_report_library_path": "/REACH Scout Library/2026-10-28-2233ET-report.md"
+  "local_report_library_path": "/REACH Scout Library/2026-10-28-2233ET-report.md",
+  "expansion_note": "All five original seeds independently checked; four directly related journal publications found through dataset-to-article links and verified already in REACH. Fifth dataset cites background methodological works, not independently confirmed as a distinct new output."
 }
