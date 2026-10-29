@@ -1,0 +1,314 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-29-HOURLY-1329ET",
+  "run_timestamp": "2026-10-29T17:30:25.127238Z",
+  "selected_mode": "normal_historical_discovery",
+  "audit_result": "PARTIAL",
+  "feed_integrity_status": "VERIFIED_EXISTING_15_BATCH_FEED_NO_NEW_BATCH",
+  "github_action_verification_status": "SUCCESS_PREVIOUS_PUBLISH_40903812254_NO_NEW_BATCH_THIS_RUN",
+  "github_action_run_id": 40903812254,
+  "manifest_verification": {
+    "public_manifest_batches": 15,
+    "public_manifest_candidate_rows": 55,
+    "exact_csv_sha256_matches": 15,
+    "record_count_matches": 15,
+    "run_id_matches": 15,
+    "prior_batches_unchanged": 15,
+    "newly_staged_csv_ids": [],
+    "manifest_written_by_scout": false,
+    "latest_batch_id": "2026-10-29-hourly-1131ET-verified-article-expansion-001",
+    "latest_batch_sha256": "ed0c7dfed02cd3a58424993146bf48574257aa0fc0a9c4ddcf3e52f5bc686d2a",
+    "public_main_manifest_readback_after_writes": true
+  },
+  "source_checks": {
+    "monthly_manifest_rows": 0,
+    "monthly_ledger_entries": 0,
+    "historical_source_dois": 188,
+    "historical_ledger_dois": 188,
+    "reach_index_shards": 10,
+    "reach_index_records": 1238,
+    "spark_index_shards": 6,
+    "spark_projects": 578,
+    "scout_review_batches": 15,
+    "scout_review_rows": 55,
+    "complete_reach_detail_shards": "NOT_EXHAUSTIVELY_CHECKED",
+    "private_reviewer_decisions": "NOT_VERIFIABLE"
+  },
+  "coverage_before": {
+    "monthly": {
+      "completed_before": 0,
+      "completed_after": 0,
+      "remaining_before": 0,
+      "remaining_after": 0
+    },
+    "historical": {
+      "completed_before": 150,
+      "completed_after": 150,
+      "remaining_before": 38,
+      "remaining_after": 38,
+      "awaiting_initial": 0,
+      "future_due": 38,
+      "already_in_reach": 37,
+      "forwarded_original_seeds": 2,
+      "metadata_updates": 8,
+      "no_action": 103
+    }
+  },
+  "coverage_after_expected": {
+    "monthly": {
+      "completed_before": 0,
+      "completed_after": 0,
+      "remaining_before": 0,
+      "remaining_after": 0
+    },
+    "historical": {
+      "completed_before": 150,
+      "completed_after": 150,
+      "remaining_before": 38,
+      "remaining_after": 38,
+      "awaiting_initial": 0,
+      "future_due": 38,
+      "already_in_reach": 37,
+      "forwarded_original_seeds": 2,
+      "metadata_updates": 8,
+      "no_action": 103
+    }
+  },
+  "original_seeds_independently_disposed_this_run": [],
+  "normal_spark_awards_examined": [
+    {
+      "spark_id": "spark-000201",
+      "award": "NA15OAR4590205",
+      "project": "Satellite microwave imagery for tropical-cyclone rapid intensification",
+      "result": "Official NHC final report is distinct, award-explicit, publicly accessible; first public publication date unverified. 2018 Fischer related journal paper credits NASA grant, not WPO.",
+      "sources": [
+        "https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_reportFINAL_092718.pdf",
+        "https://journals.ametsoc.org/view/journals/mwre/146/4/mwr-d-17-0239.1.xml"
+      ]
+    },
+    {
+      "spark_id": "spark-000202",
+      "award": "NA15OAR4590204",
+      "project": "Operational statistical tropical-cyclone forecast models",
+      "result": "2018 final report already staged in immutable 2026-10-21 batch; 2017/2018 progress reports found, no separate candidate forwarded.",
+      "sources": [
+        "https://www.nhc.noaa.gov/jht/15-17reports/Chirokova_204_progress_reportFINAL_112918.pdf"
+      ]
+    },
+    {
+      "spark_id": "spark-000207",
+      "award": "NA15OAR4590201;NA15OAR4590202",
+      "project": "Tropical Cyclone Genesis Index improvements",
+      "result": "Revised 2019 final and 2017 Year 2 report already staged in Oct 21 batch; no duplicate candidate.",
+      "sources": [
+        "https://www.nhc.noaa.gov/jht/15-17reports/Dunion_201_Schumacher_202_progress_reportFINAL_rev030619.pdf"
+      ]
+    },
+    {
+      "spark_id": "spark-000208",
+      "award": "NA15OAR4590198",
+      "project": "Coastal and Estuarine Storm Tide operational transition",
+      "result": "2017 progress report already staged with award-bridge caveat; no independent eligible new output established.",
+      "sources": [
+        "https://www.nhc.noaa.gov/jht/15-17reports/Zhang_198_progress_report4_100217.pdf"
+      ]
+    },
+    {
+      "spark_id": "spark-000203",
+      "award": "NA15OAR4590197",
+      "project": "ARCHER eyewall replacement cycle prediction",
+      "result": "2018 final report already staged; 2023 M-PERC article already in REACH reach-000584.",
+      "sources": [
+        "https://www.nhc.noaa.gov/jht/15-17reports/Wimmers_197_progress_reportFINAL_113018.pdf",
+        "https://repository.library.noaa.gov/view/noaa/53696"
+      ]
+    },
+    {
+      "spark_id": "spark-000460",
+      "award": "NA15OAR4590225",
+      "project": "Tennessee tornado-warning response",
+      "result": "2018–2023 articles and survey datasets already represented in REACH (nine award-linked records); no unique new output verified.",
+      "sources": [
+        "https://repository.library.noaa.gov/view/noaa/52391",
+        "https://repository.library.noaa.gov/view/noaa/49521"
+      ]
+    },
+    {
+      "spark_id": "spark-000462",
+      "award": "NA15OAR4590237",
+      "project": "Tornado false alarms and complacency",
+      "result": "Four exact source titles already in REACH; no new eligible output verified.",
+      "sources": [
+        "https://repository.library.noaa.gov/view/noaa/52390",
+        "https://repository.library.noaa.gov/view/noaa/52389"
+      ]
+    },
+    {
+      "spark_id": "spark-000459",
+      "award": "NA15OAR4590231;NA15OAR4590232",
+      "project": "VORTEX-SE tornado development and risk",
+      "result": "Related journal items already staged for attribution/duplicate correction in Oct 21 batch; no new distinct candidate.",
+      "sources": [
+        "https://repository.library.noaa.gov/view/noaa/53740",
+        "https://repository.library.noaa.gov/view/noaa/31968"
+      ]
+    },
+    {
+      "spark_id": "spark-000182",
+      "award": "NA15OAR4590157",
+      "project": "HMT ensemble hydrometeorological forecasting",
+      "result": "Targeted exact-award public searches did not establish a distinct missing output.",
+      "sources": [
+        "https://wpo.noaa.gov/spark/"
+      ]
+    }
+  ],
+  "attribution_followups_rechecked": [
+    {
+      "identity": "doi:10.25923/cckr-7v25",
+      "title": "A Climatology of the conditional probability of significant severe hazards and its operational implications",
+      "finding": "SPC/CIWRO conditional severe-hazard outlook research; NOAA IR only lists umbrella NA21OAR4320204. SPARK ties umbrella award to separate extreme-weather/emergency-management and flood-survey projects; no specific funded deliverable bridge.",
+      "sources": [
+        "https://repository.library.noaa.gov/view/noaa/76799",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-021.csv"
+      ],
+      "question": "Does an award-specific WPO survey project report identify this SPC outlook-climatology presentation as its funded deliverable?"
+    },
+    {
+      "identity": "doi:10.25923/fssj-fe85",
+      "title": "Evaluation of First-Guess Watch Guidance in the 2022 HWT Spring Forecasting Experiment",
+      "finding": "SPC watch-guidance machine-learning research is described as HWT/FACETs activity; only CI umbrella award NA21OAR4320204 cited. WPO survey projects under that umbrella address emergency-management and flood communication, not this watch algorithm.",
+      "sources": [
+        "https://repository.library.noaa.gov/view/noaa/76788",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-021.csv"
+      ],
+      "question": "Is this exact first-guess watch guidance study named as a funded output of a WPO SPARK project rather than broader HWT research?"
+    },
+    {
+      "identity": "doi:10.25923/fye2-yk53",
+      "title": "Spring Forecasting Experiment 2025: Preliminary Findings and Results",
+      "finding": "NOAA HWT experiment-wide report with numerous participating workstreams and broad CI award; source does not attribute whole report to either WPO emergency-management survey project.",
+      "sources": [
+        "https://repository.library.noaa.gov/view/noaa/71354",
+        "https://inside.nssl.noaa.gov/tgalarneau/publications/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-021.csv"
+      ],
+      "question": "Does a WPO award-specific project deliverables list directly identify the 2025 experiment-wide report as an output?"
+    },
+    {
+      "identity": "doi:10.25923/gy19-2j41",
+      "title": "The 2026 NOAA Hazardous Weather Testbed Spring Forecasting Experiment: Preliminary Findings and Results",
+      "finding": "2026 HWT-wide experiment report with SPC/NSSL/CIWRO attribution; only broad CI support in NOAA IR and no independent connection to the WPO survey/flood projects.",
+      "sources": [
+        "https://repository.library.noaa.gov/view/noaa/74405",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-021.csv"
+      ],
+      "question": "Is the 2026 HWT summary a named output of a specific WPO survey award rather than a multi-program HWT report?"
+    }
+  ],
+  "attribution_queue_before": {
+    "total": 66,
+    "queued": 62,
+    "closed": 4
+  },
+  "attribution_queue_expected_after": {
+    "total": 66,
+    "queued": 58,
+    "closed": 8
+  },
+  "new_no_action_original_seeds": 0,
+  "original_seed_statuses_changed": 0,
+  "no_action_subtype_changed": 0,
+  "metadata_blockers": {
+    "before_total": 42,
+    "expected_after_total": 43,
+    "original": 38,
+    "existing_expansion": 4,
+    "new_normal_award_leads": 1,
+    "due_followups": 0,
+    "overdue_followups": 0,
+    "human_metadata_needed_pending": 0,
+    "hub_investigate_candidates_delivered": 0,
+    "new_lead_next_research_at": "2026-11-05T17:30:25.127238Z",
+    "verified_after_total": 43,
+    "new_lead_persisted_to": "scout-operations/metadata-blockers.json"
+  },
+  "discovery_routes_cumulative": {
+    "Direct API": 1,
+    "API-seeded expansion": 9,
+    "Independent discovery": 0,
+    "Metadata correction": 5,
+    "UNCLASSIFIED_LEGACY": 40
+  },
+  "new_candidates_by_route": {
+    "Direct API": 0,
+    "API-seeded expansion": 0,
+    "Independent discovery": 0,
+    "Metadata correction": 0
+  },
+  "expansion_leads": [
+    {
+      "identity": "url:https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_reportFINAL_092718.pdf",
+      "title": "Probabilistic Prediction of Tropical Cyclone Rapid Intensification Using Satellite Passive Microwave Imagery — Final Report",
+      "cohort": "Normal historical SPARK award discovery 2026-10-29",
+      "source_award": "NA15OAR4590205",
+      "spark_id": "spark-000201",
+      "source_url": "https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_reportFINAL_092718.pdf",
+      "discovery_route": "Independent discovery",
+      "discovery_path": "2015 SPARK award NA15OAR4590205 -> official NHC Joint Hurricane Testbed 2015–17 reports -> Rozoff/Velden final report PDF",
+      "verified_identity": "Final report, not a grant notice",
+      "authors": [
+        "Christopher M. Rozoff",
+        "Christopher S. Velden"
+      ],
+      "document_submission_date": "2018-09-30",
+      "publication_date": null,
+      "missing_fields": [
+        "First public publication date (YYYY-MM-DD) independently established, not the report submission date"
+      ],
+      "first_investigated_at": "2026-10-29T17:30:25.127238Z",
+      "next_research_at": "2026-11-05T17:30:25.127238Z",
+      "followup_rounds_completed": 0,
+      "max_followup_rounds": 1,
+      "followup_question": "Can an authoritative NHC or institutional record establish the first public availability date for this distinct 2018 final report, and confirm it is an eligible publicly issued report?",
+      "checked_sources": [
+        "https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_reportFINAL_092718.pdf",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "reach_match": "No exact report title or URL in all 1238 REACH index records",
+      "scout_match": "Not in any of 15 immutable Scout batch CSVs; related project final reports already staged",
+      "status": "needs_more_research_first_round_bounded",
+      "human_review": "Not delivered; date unresolved and Hub requires truthful mandatory metadata"
+    }
+  ],
+  "new_candidate_csv": "HEADER_ONLY_LIBRARY_ARTIFACT_NO_GITHUB_BATCH",
+  "human_approvals_verified": false,
+  "public_reach_verified_rows": 1238,
+  "public_reach_additions_verified_this_run": 0,
+  "research_finished": true,
+  "csv_staged_to_github": false,
+  "manifest_new_batch_verified": false,
+  "human_disposition_verified": false,
+  "repository_writes_status": "VERIFIED_MAIN_BRANCH_READBACK",
+  "limitations": [
+    "Private human-review decisions inaccessible",
+    "Full REACH detail shards not exhaustively verified",
+    "Final-report submission date is not verified first public publication date; no invalid Hub CSV staged"
+  ],
+  "repository_write_commits": {
+    "attribution_followups": "68ed286726b217b94ed8f638eabdfba761a27c93",
+    "metadata_blockers": "e04c5cd9c93c69155cd92d649d632b9e7798d708"
+  },
+  "attribution_queue_verified_after": {
+    "total": 66,
+    "queued": 58,
+    "closed": 8
+  },
+  "attribution_followups_committed": true
+}
