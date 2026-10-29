@@ -3,7 +3,7 @@
   "created_date": "2026-10-29",
   "origin": "77 no_action original historical DOI dispositions after the 2026-10-29 08:33 ET hourly run: 29 administrative non-outputs; 2 NASA-only funding; 46 real outputs without verified WPO project attribution. The 8:00 ET briefing snapshot was 65, including 34 attribution gaps. No original status or human decision changed.",
   "policy": "These are discovery research leads, not 34 confirmed WPO outputs or 34 automatic Hub findings. Don't promote without evidence bridge and independent corroboration. Preserve no_action historical completed count.",
-  "total": 66,
+  "total": 67,
   "queued": 52,
   "entries": [
     {
@@ -1917,6 +1917,49 @@
       "last_source_research_at": "2026-10-29T15:34:47Z",
       "followup_rounds_completed": 0,
       "max_followup_rounds": 1
+    },
+    {
+      "identity": "doi:10.25923/0vz0-ra19",
+      "source_status": "no_action",
+      "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "stage": "closed_no_project_bridge",
+      "priority": "medium",
+      "original_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1632ET",
+      "existing_source_evidence": [
+        "https://repository.library.noaa.gov/view/noaa/72837",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-008.csv",
+        "https://www.noaa.gov/news-release/noaa-unveils-powerful-convergence-of-ai-and-science-with-revolutionary-next-generation-fire-system",
+        "https://gsl.noaa.gov/fire-weather/testbeds/",
+        "https://doi.org/10.1175/bams-d-24-0204.1",
+        "https://gsl.noaa.gov/docs/Windshift_1.0_2025.pdf"
+      ],
+      "existing_funding_basis": "NOAA IR GSL-79 report identifies NA19OAR4320073 as broad CIRA cooperative agreement. SPARK spark-000105 lists that number only as RELATED to tropical-cyclone MET-TC diagnostics, not primary funding for NGFS Fire Weather Testbed.",
+      "recheck_question": "Is there primary WPO project-specific evidence identifying this NGFS evaluation as a funded deliverable?",
+      "next_action": "Closed after one bounded project-bridge research round; do not retry without new project-specific primary evidence.",
+      "source_disposition_preserved": true,
+      "new_direct_award_evidence_found": false,
+      "hub_publication_authorized": false,
+      "recheck_attempts": 1,
+      "max_recheck_rounds_without_material_evidence": 1,
+      "recheck_trigger": "Only new primary WPO project-specific evidence or explicit human request",
+      "last_source_research_at": "2026-10-29T20:37:22.474Z",
+      "recheck_completed_at": "2026-10-29T20:37:22.474Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1632ET",
+      "checked_source_urls": [
+        "https://repository.library.noaa.gov/view/noaa/72837",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-008.csv",
+        "https://www.noaa.gov/news-release/noaa-unveils-powerful-convergence-of-ai-and-science-with-revolutionary-next-generation-fire-system",
+        "https://gsl.noaa.gov/fire-weather/testbeds/",
+        "https://doi.org/10.1175/bams-d-24-0204.1",
+        "https://gsl.noaa.gov/docs/Windshift_1.0_2025.pdf"
+      ],
+      "recheck_finding": "Official NOAA NGFS and Fire Weather Testbed sources establish a distinct NOAA Satellites/GSL/CIRA workstream; only shared broad cooperative agreement links it to a SPARK project about unrelated tropical-cyclone verification.",
+      "negative_or_contradictory_evidence": "SPARK spark-000105 is tropical-cyclone MET-TC diagnostics; no NGFS deliverable. NOAA GSL FWT project is independent of that award's documented WPO workstream.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "recheck_final_question": "Does a WPO-funded project technical report explicitly list DOI 10.25923/0vz0-ra19 as its own deliverable?",
+      "artifact_not_grant": true,
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "original_seed_doi": "10.25923/0vz0-ra19"
     }
   ],
   "baseline_0800": {
@@ -1931,25 +1974,21 @@
     "alternative_funding": 2,
     "unattributed_outputs": 46
   },
-  "last_updated_at": "2026-10-29T18:37:55.682235Z",
+  "last_updated_at": "2026-10-29T20:37:22.474Z",
   "latest_addition": {
     "run_id": "REACH-SCOUT-2026-10-29-HOURLY-1131ET",
     "new_qualified_attribution_gaps": 9,
     "previous_total": 57,
     "total": 66
   },
-  "closed": 14,
+  "closed": 15,
   "latest_recheck": {
-    "run_id": "REACH-SCOUT-2026-10-29-HOURLY-1434ET",
+    "run_id": "REACH-SCOUT-2026-10-29-HOURLY-1632ET",
     "closed": [
-      "doi:10.25923/hq4k-bw52",
-      "doi:10.25923/jxrb-a760",
-      "doi:10.4211/hs.9460830270ec4d8b9d9c4260cca2114d",
-      "doi:10.5061/dryad.05qfttf5h",
-      "doi:10.5061/dryad.0gb5mkm6t",
-      "doi:10.5061/dryad.0gb5mkmbc"
+      "doi:10.25923/0vz0-ra19"
     ],
-    "closed_count": 6,
-    "original_seed_status_unchanged": true
+    "closed_count": 1,
+    "original_seed_status_unchanged": false,
+    "note": "Original DOI research status changed needs_more_research -> evidence-backed no_action, not a private human decision; 2026-10-29 08:00/08:33 baseline snapshots preserved."
   }
 }
