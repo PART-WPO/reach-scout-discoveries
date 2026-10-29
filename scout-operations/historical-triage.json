@@ -217,20 +217,27 @@
     },
     {
       "identity": "doi:10.17603/ds2-58ft-kp27",
-      "status": "needs_more_research",
+      "status": "human_metadata_needed",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T22:08:00Z",
-      "research_notes": "HTI interview protocol DOI verified by DataCite source and NCAR listing, 2025 Prestley references; parent PRJ-5889 already REACH 000816. Individual component date and scope unresolved.",
+      "updated_at": "2026-10-29T20:36:42.360Z",
+      "research_notes": "HTI interview protocol DOI verified by DataCite source and NCAR listing, 2025 Prestley references; parent PRJ-5889 already REACH 000816. Individual component date and scope unresolved.\nREACH-SCOUT-2026-10-29-HOURLY-1632ET: Second bounded distinct-source round: primary SPARK interview project and NCAR author catalog corroborate the protocol; complete REACH index and exact parent detail confirm PRJ-5889 reach-000816, so component-level duplication remains a genuine human question. Native component date/scope inaccessible.",
       "checked_sources": [
         "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
         "https://impacts.ucar.edu/en/organisations/mesoscale-microscale-meteorology-lab-2/datasets/",
-        "https://bmcnoldy.earth.miami.edu/papers/PMMMMCE2025_WCS.pdf"
+        "https://bmcnoldy.earth.miami.edu/papers/PMMMMCE2025_WCS.pdf",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+        "https://impacts.ucar.edu/en/persons/robert-prestley/",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-097.csv",
+        "https://doi.org/10.17603/ds2-58ft-kp27",
+        "https://impacts.ucar.edu/en/organisations/national-center-for-atmospheric-research-3/datasets/"
       ],
       "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
-      "funding_basis": "Captured DataCite fundingReferences identify NA21OAR4590206; eligibility or metadata remains unverified.",
+      "funding_basis": "Exact DataCite NOAA award NA21OAR4590206; SPARK primary spark-000244 is user-centered risk visualization interviews; NCAR author listing and 2025 paper reference identify the interview protocol; REACH reach-000816 already covers the parent dataset.",
       "related_outputs_checked": "Related HTI de-identification guide 10.17603/ds2-6vmm-2g61 and parent REACH 000816 compared; component eligibility unresolved.",
-      "verified_at": "",
-      "verified_awards": [],
+      "verified_at": "2026-10-29T20:36:42.360Z",
+      "verified_awards": [
+        "NA21OAR4590206"
+      ],
       "source_batch_ids": [
         "2026-10-28-historical-datacite-spark-all-part001"
       ],
@@ -247,8 +254,9 @@
       "first_investigated_timestamp_basis": "Earliest existing triage updated_at retained as conservative documented evidence of investigation; actual initial check may be earlier",
       "next_research_at": "2026-11-04T22:08:00.000Z",
       "missing_evidence": [
-        "record-specific full publication date",
-        "public component scope and distinctness"
+        "record-specific full YYYY-MM-DD component publication date",
+        "native public interview protocol file scope",
+        "separate eligibility versus existing REACH parent reach-000816"
       ],
       "initial_checked_sources": [
         "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
@@ -256,10 +264,30 @@
         "https://bmcnoldy.earth.miami.edu/papers/PMMMMCE2025_WCS.pdf"
       ],
       "followup_question": "Can an authoritative source resolve record-specific full publication date; public component scope and distinctness and establish a separate eligible NOAA-funded output?",
-      "followup_rounds_completed": 0,
+      "followup_rounds_completed": 1,
       "max_followup_rounds": 1,
       "escalation_policy": "After ONE follow-up on/after next_research_at, either verified Hub candidate, evidence-backed no-action, or human_metadata_needed escalation; never fabricate mandatory metadata or reset retry date.",
-      "schedule_updated_at": "2026-10-29T02:36:10Z"
+      "schedule_updated_at": "2026-10-29T02:36:10Z",
+      "followup_completed_at": "2026-10-29T20:36:42.360Z",
+      "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1632ET",
+      "followup_checked_sources": [
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+        "https://impacts.ucar.edu/en/persons/robert-prestley/",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-097.csv",
+        "https://doi.org/10.17603/ds2-58ft-kp27",
+        "https://impacts.ucar.edu/en/organisations/national-center-for-atmospheric-research-3/datasets/"
+      ],
+      "early_retry_reason": "2026-10-29 authoritative API follow-up-first policy: one distinct-source recovery round now, preserving original next_research_at",
+      "research_completed": true,
+      "reviewer_question": "Should the HTI interview protocol DOI be cataloged separately, or does REACH reach-000816 already cover this protocol as part of DesignSafe parent PRJ-5889?",
+      "original_seed_artifact_type": "true_research_artifact_not_grant_notice",
+      "original_seed_doi": "10.17603/ds2-58ft-kp27",
+      "scout_discovery_route": "Direct API",
+      "metadata_recovery_exhausted": true,
+      "human_handoff_status": "pending_hub_intake",
+      "hub_delivery_status": "not_delivered",
+      "hub_intake_blocker": "No verified current Discovery Hub importer support for a truthful blank mandatory Publication Date and/or unknown public component scope; 24-column candidate not staged and reviewer UI acceptance NOT verified.",
+      "reviewer_visibility": "NOT_DELIVERED_TO_HUB"
     },
     {
       "identity": "doi:10.17603/ds2-66t0-a761",
@@ -457,20 +485,25 @@
     },
     {
       "identity": "doi:10.17603/ds2-bpav-8w29",
-      "status": "needs_more_research",
+      "status": "human_metadata_needed",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T22:08:00Z",
-      "research_notes": "DesignSafe experimental dataset DOI linked by ASCE 2022 article; grant NA18OAR4590306 supported. Dataset's exact full publication date unverified; author CV says 2021 only. Metadata blocker seven-day retry; separate 2022 article forwarded as expansion.",
+      "updated_at": "2026-10-29T20:36:42.360Z",
+      "research_notes": "DesignSafe experimental dataset DOI linked by ASCE 2022 article; grant NA18OAR4590306 supported. Dataset's exact full publication date unverified; author CV says 2021 only. Metadata blocker seven-day retry; separate 2022 article forwarded as expansion.\nREACH-SCOUT-2026-10-29-HOURLY-1632ET: Second bounded distinct-source round: SPARK primary project, University of Florida dissertation and author manuscript confirm the dataset's identity and award-specific research; author cites 2021 only, no reliable full date. Linked 2022 article remains a separate already-staged API-seeded expansion; no new batch.",
       "checked_sources": [
         "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
         "https://ascelibrary.org/doi/10.1061/%28ASCE%29ST.1943-541X.0003275",
-        "https://fphlm.cs.fiu.edu/docs/cv/Gurley_CV_December_202025.pdf"
+        "https://fphlm.cs.fiu.edu/docs/cv/Gurley_CV_December_202025.pdf",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-024.csv",
+        "https://ufdcimages.uflib.ufl.edu/UF/E0/05/82/10/00001/Zhang_T.pdf",
+        "https://saemiller.com/publications/Zhang_ASCE_2022_Preprint.pdf"
       ],
       "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
-      "funding_basis": "Captured DataCite fundingReferences identify NA18OAR4590306; eligibility or metadata remains unverified.",
+      "funding_basis": "Exact DataCite award NA18OAR4590306; SPARK primary spark-000300 explicitly studies infrasound propagation in turbulent boundary layers; publisher ASCE article and University of Florida dissertation link the exact dataset to the funded experiments.",
       "related_outputs_checked": "Linked 2022 ASCE article separately staged; related 2023 article already REACH reach-000029.",
-      "verified_at": "",
-      "verified_awards": [],
+      "verified_at": "2026-10-29T20:36:42.360Z",
+      "verified_awards": [
+        "NA18OAR4590306"
+      ],
       "source_batch_ids": [
         "2026-10-28-historical-datacite-spark-all-part001"
       ],
@@ -487,7 +520,8 @@
       "first_investigated_timestamp_basis": "Earliest existing triage updated_at retained as conservative documented evidence of investigation; actual initial check may be earlier",
       "next_research_at": "2026-11-05T00:00:00Z",
       "missing_evidence": [
-        "record-specific full YYYY-MM-DD dataset publication date"
+        "record-specific full YYYY-MM-DD DesignSafe dataset publication date",
+        "native public file/version validation"
       ],
       "initial_checked_sources": [
         "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
@@ -495,10 +529,28 @@
         "https://fphlm.cs.fiu.edu/docs/cv/Gurley_CV_December_202025.pdf"
       ],
       "followup_question": "Can an authoritative source resolve record-specific full YYYY-MM-DD dataset publication date and establish a separate eligible NOAA-funded output?",
-      "followup_rounds_completed": 0,
+      "followup_rounds_completed": 1,
       "max_followup_rounds": 1,
       "escalation_policy": "After ONE follow-up on/after next_research_at, either verified Hub candidate, evidence-backed no-action, or human_metadata_needed escalation; never fabricate mandatory metadata or reset retry date.",
-      "schedule_updated_at": "2026-10-29T02:36:10Z"
+      "schedule_updated_at": "2026-10-29T02:36:10Z",
+      "followup_completed_at": "2026-10-29T20:36:42.360Z",
+      "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1632ET",
+      "followup_checked_sources": [
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-024.csv",
+        "https://ufdcimages.uflib.ufl.edu/UF/E0/05/82/10/00001/Zhang_T.pdf",
+        "https://saemiller.com/publications/Zhang_ASCE_2022_Preprint.pdf"
+      ],
+      "early_retry_reason": "2026-10-29 authoritative API follow-up-first policy: one distinct-source recovery round now, preserving original next_research_at",
+      "research_completed": true,
+      "reviewer_question": "Should this separately DOI-identified 2021 infrasound dataset be reviewed for REACH despite an unavailable full publication date, after checking whether its native public file/version is accessible?",
+      "original_seed_artifact_type": "true_research_artifact_not_grant_notice",
+      "original_seed_doi": "10.17603/ds2-bpav-8w29",
+      "scout_discovery_route": "Direct API",
+      "metadata_recovery_exhausted": true,
+      "human_handoff_status": "pending_hub_intake",
+      "hub_delivery_status": "not_delivered",
+      "hub_intake_blocker": "No verified current Discovery Hub importer support for a truthful blank mandatory Publication Date and/or unknown public component scope; 24-column candidate not staged and reviewer UI acceptance NOT verified.",
+      "reviewer_visibility": "NOT_DELIVERED_TO_HUB"
     },
     {
       "identity": "doi:10.17603/ds2-crsw-jr87",
@@ -668,21 +720,27 @@
     },
     {
       "identity": "doi:10.17603/ds2-jfsc-8902",
-      "status": "needs_more_research",
+      "status": "human_metadata_needed",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-29T00:29:43Z",
-      "research_notes": "Hurricane Irma tweet documentation dataset; historical DataCite source names NA19OAR0220119, absent exact REACH DOI. Publisher 2023 WCAS paper directly cites this DOI and explicitly acknowledges the same grant; linked article independently verified new and published for human review. Seed dataset release date and parent scope not verified; hold seed only.",
+      "updated_at": "2026-10-29T20:36:42.360Z",
+      "research_notes": "Hurricane Irma tweet documentation dataset; historical DataCite source names NA19OAR0220119, absent exact REACH DOI. Publisher 2023 WCAS paper directly cites this DOI and explicitly acknowledges the same grant; linked article independently verified new and published for human review. Seed dataset release date and parent scope not verified; hold seed only.\nREACH-SCOUT-2026-10-29-HOURLY-1632ET: Second bounded distinct-source round: SPARK primary project and independent author/NCAR dataset listings corroborate identity, but NCAR lists 2025 whereas the cited 2023 Hurricane Irma version 1 may be a component/version. Native DOI inaccessible. The separate 2023 WCAS paper remains previously staged; no duplicate candidate.",
       "checked_sources": [
         "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
         "https://journals.ametsoc.org/view/journals/wcas/15/4/WCAS-D-23-0046.1.xml",
         "https://repository.library.noaa.gov/view/noaa/60113/noaa_60113_DS1.pdf",
-        "https://impacts.ucar.edu/en/organisations/mesoscale-microscale-meteorology-lab-2/datasets/"
+        "https://impacts.ucar.edu/en/organisations/mesoscale-microscale-meteorology-lab-2/datasets/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-019.csv",
+        "https://impacts.ucar.edu/en/persons/robert-prestley/",
+        "https://impacts.ucar.edu/en/organisations/national-center-for-atmospheric-research-3/datasets/",
+        "https://doi.org/10.17603/ds2-jfsc-8902"
       ],
       "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
-      "funding_basis": "Exact historical DataCite award NA19OAR0220119 plus linked WCAS article publisher acknowledgment.",
+      "funding_basis": "DataCite directly names NOAA NA19OAR0220119; SPARK primary spark-000237 investigates changing hurricane forecasts and risk communication; 2023 WCAS article references this exact Hurricane Irma DesignSafe dataset and acknowledges the project award.",
       "related_outputs_checked": "API-seeded expansion: new 2023 WCAS article DOI 10.1175/WCAS-D-23-0046.1 verified absent REACH and 43 Scout batches, forwarded for human review in scout-discoveries/batches/2026-10-28-hourly-datacite-expansion-award-fixes-001.csv. Separate 2024 Harvey paper and dataset need individual research.",
-      "verified_at": "",
-      "verified_awards": [],
+      "verified_at": "2026-10-29T20:36:42.360Z",
+      "verified_awards": [
+        "NA19OAR0220119"
+      ],
       "source_batch_ids": [
         "2026-10-28-historical-datacite-spark-all-part001"
       ],
@@ -710,7 +768,8 @@
       "first_investigated_timestamp_basis": "Earliest existing triage updated_at retained as conservative documented evidence of investigation; actual initial check may be earlier",
       "next_research_at": "2026-11-05T00:29:43.000Z",
       "missing_evidence": [
-        "record-specific full dataset publication date",
+        "native full YYYY-MM-DD dataset publication date",
+        "version-specific 2023 versus 2025 citation difference",
         "public parent project scope"
       ],
       "initial_checked_sources": [
@@ -720,10 +779,29 @@
         "https://impacts.ucar.edu/en/organisations/mesoscale-microscale-meteorology-lab-2/datasets/"
       ],
       "followup_question": "Verify seed dataset full date and parent DesignSafe project scope; follow 2024 Harvey paper and dataset separately.",
-      "followup_rounds_completed": 0,
+      "followup_rounds_completed": 1,
       "max_followup_rounds": 1,
       "escalation_policy": "After ONE follow-up on/after next_research_at, either verified Hub candidate, evidence-backed no-action, or human_metadata_needed escalation; never fabricate mandatory metadata or reset retry date.",
-      "schedule_updated_at": "2026-10-29T02:36:10Z"
+      "schedule_updated_at": "2026-10-29T02:36:10Z",
+      "followup_completed_at": "2026-10-29T20:36:42.360Z",
+      "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1632ET",
+      "followup_checked_sources": [
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-019.csv",
+        "https://impacts.ucar.edu/en/persons/robert-prestley/",
+        "https://impacts.ucar.edu/en/organisations/national-center-for-atmospheric-research-3/datasets/",
+        "https://doi.org/10.17603/ds2-jfsc-8902"
+      ],
+      "early_retry_reason": "2026-10-29 authoritative API follow-up-first policy: one distinct-source recovery round now, preserving original next_research_at",
+      "research_completed": true,
+      "reviewer_question": "Is the Hurricane Irma tweet dataset a separately catalogable public output, and which native DesignSafe version and date should the reviewer use?",
+      "original_seed_artifact_type": "true_research_artifact_not_grant_notice",
+      "original_seed_doi": "10.17603/ds2-jfsc-8902",
+      "scout_discovery_route": "Direct API",
+      "metadata_recovery_exhausted": true,
+      "human_handoff_status": "pending_hub_intake",
+      "hub_delivery_status": "not_delivered",
+      "hub_intake_blocker": "No verified current Discovery Hub importer support for a truthful blank mandatory Publication Date and/or unknown public component scope; 24-column candidate not staged and reviewer UI acceptance NOT verified.",
+      "reviewer_visibility": "NOT_DELIVERED_TO_HUB"
     },
     {
       "identity": "doi:10.17603/ds2-jmwe-bm11",
@@ -1457,21 +1535,28 @@
     },
     {
       "identity": "doi:10.25923/0vz0-ra19",
-      "status": "needs_more_research",
+      "status": "no_action",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-29T01:32:07Z",
-      "research_notes": "Official NOAA IR record confirms distinct 2026 GSL-79 technical memorandum and PDF explicitly acknowledges NOAA cooperative agreement NA19OAR4320073. Complete REACH index and all 47 Scout staged findings have no exact title/DOI. Exact full publication date (YYYY-MM-DD) remains unverified; not forwarded or assigned an invented date.",
+      "updated_at": "2026-10-29T20:36:42.360Z",
+      "research_notes": "Official NOAA IR record confirms distinct 2026 GSL-79 technical memorandum and PDF explicitly acknowledges NOAA cooperative agreement NA19OAR4320073. Complete REACH index and all 47 Scout staged findings have no exact title/DOI. Exact full publication date (YYYY-MM-DD) remains unverified; not forwarded or assigned an invented date.\nREACH-SCOUT-2026-10-29-HOURLY-1632ET: Second bounded project-bridge round: NOAA IR GSL-79 is a genuine report, but five additional official/publisher checks tie it to NOAA Fire Weather Testbed/NGFS and CIRA broad agreement, while SPARK's only match is a different tropical-cyclone MET-TC project. No specific WPO funded deliverable link; no-action, not a metadata-only human referral.",
       "checked_sources": [
         "https://api.datacite.org/dois/10.25923/0vz0-ra19",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
         "https://repository.library.noaa.gov/view/noaa/72837",
-        "https://repository.library.noaa.gov/view/noaa/72837/noaa_72837_DS1.pdf"
+        "https://repository.library.noaa.gov/view/noaa/72837/noaa_72837_DS1.pdf",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-008.csv",
+        "https://www.noaa.gov/news-release/noaa-unveils-powerful-convergence-of-ai-and-science-with-revolutionary-next-generation-fire-system",
+        "https://gsl.noaa.gov/fire-weather/testbeds/",
+        "https://doi.org/10.1175/bams-d-24-0204.1",
+        "https://gsl.noaa.gov/docs/Windshift_1.0_2025.pdf"
       ],
       "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
-      "funding_basis": "Captured DataCite fundingReference NA19OAR4320073 corroborated by the report's own PDF acknowledgments naming this exact cooperative agreement.",
-      "related_outputs_checked": "Examined NOAA Fire Weather Testbed report on NGFS, its 2025 evaluation and its references to NESDIS fire detection and predictive services; no distinct related output with verified NOAA funding and REACH absence confirmed.",
-      "verified_at": "",
-      "verified_awards": [],
+      "funding_basis": "NOAA IR directly credits cooperative agreement NA19OAR4320073 for GSL Fire Weather Testbed NGFS evaluation; SPARK lists this broad CI agreement only as a RELATED award for unrelated spark-000105 MET-TC tropical-cyclone diagnostics, not a primary NGFS project. No project-specific WPO link demonstrated.",
+      "related_outputs_checked": "Examined NOAA Fire Weather Testbed report on NGFS, its 2025 evaluation and its references to NESDIS fire detection and predictive services; no distinct related output with verified NOAA funding and REACH absence confirmed. Separate NOAA GSL-71 FWT report DOI 10.25923/4pqf-7g49 and 2025 BAMS Fire Weather Testbed article DOI 10.1175/BAMS-D-24-0204.1 identified; no specific WPO bridge, neither staged.",
+      "verified_at": "2026-10-29T20:36:42.360Z",
+      "verified_awards": [
+        "NA19OAR4320073"
+      ],
       "source_batch_ids": [
         "2026-10-28-historical-datacite-spark-all-part001"
       ],
@@ -1498,10 +1583,29 @@
         "https://repository.library.noaa.gov/view/noaa/72837/noaa_72837_DS1.pdf"
       ],
       "followup_question": "Obtain NOAA IR record-specific full YYYY-MM-DD date or authoritative repository deposit date and recheck report uniqueness; do not stage until metadata complete.",
-      "followup_rounds_completed": 0,
+      "followup_rounds_completed": 1,
       "max_followup_rounds": 1,
       "escalation_policy": "After ONE follow-up on/after next_research_at, either verified Hub candidate, evidence-backed no-action, or human_metadata_needed escalation; never fabricate mandatory metadata or reset retry date.",
-      "schedule_updated_at": "2026-10-29T02:36:10Z"
+      "schedule_updated_at": "2026-10-29T02:36:10Z",
+      "followup_completed_at": "2026-10-29T20:36:42.360Z",
+      "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1632ET",
+      "followup_checked_sources": [
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-008.csv",
+        "https://www.noaa.gov/news-release/noaa-unveils-powerful-convergence-of-ai-and-science-with-revolutionary-next-generation-fire-system",
+        "https://gsl.noaa.gov/fire-weather/testbeds/",
+        "https://doi.org/10.1175/bams-d-24-0204.1",
+        "https://gsl.noaa.gov/docs/Windshift_1.0_2025.pdf"
+      ],
+      "early_retry_reason": "2026-10-29 authoritative API follow-up-first policy: one distinct-source recovery round now, preserving original next_research_at",
+      "research_completed": true,
+      "reviewer_question": "Does any specific WPO project technical report identify NOAA GSL-79 NGFS evaluation as a deliverable, rather than merely citing the CIRA umbrella award?",
+      "original_seed_artifact_type": "true_research_artifact_not_grant_notice",
+      "original_seed_doi": "10.25923/0vz0-ra19",
+      "scout_discovery_route": "Direct API",
+      "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "no_action_reason": "True public NOAA GSL Fire Weather Testbed NGFS technical memorandum funded by broad CIRA cooperative agreement; no demonstrated WPO SPARK project-specific attribution after independent bounded checks of the only related SPARK project and official NOAA fire-weather workstream.",
+      "artifact_not_grant": true,
+      "metadata_recovery_exhausted": true
     },
     {
       "identity": "doi:10.25923/65kx-0a28",
