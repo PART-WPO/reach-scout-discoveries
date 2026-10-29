@@ -13,3 +13,7 @@ The parallel monthly DataCite/Crossref pull remains separate: it runs on the fir
 ## Excel comparison workbook
 
 For a read-only, side-by-side comparison of the original historical DataCite API findings and Scout's current research assessment, see the [Historical DataCite and Scout Excel comparison](../reports/REACH_DataCite_Historical_2026-10-28_Scout_Comparison.xlsx). The daily [comparison workflow](https://github.com/PART-WPO/reach-scout-discoveries/actions/workflows/historical-datacite-report.yml) refreshes the report as Scout's investigation progresses, without re-querying DataCite or changing the original 188 DOI records. The workbook is never used for Discovery Hub intake or human-review decisions.
+
+### Historical evidence follow-ups take priority
+
+After Scout's first examination of the 188 original DataCite records, 38 remained unresolved at the October 29 checkpoint. These cases now take priority over normal older-award discovery. Scout conducts one bounded additional-source research round for each; cases that still lack essential metadata receive a documented human Investigate handoff when the Hub supports truthful intake. Future seven-day retry dates do not automatically defer the whole cohort. See [follow-up-first research policy](../../scout-operations/api-followup-priority-policy.md).
