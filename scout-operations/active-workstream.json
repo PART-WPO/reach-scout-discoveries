@@ -4,17 +4,21 @@
     "distinct_dois": 188,
     "raw_batch_rows": 188,
     "remaining_or_untracked": 38,
-    "research_completed": 150
+    "research_completed": 150,
+    "actionable_now": 0,
+    "blocked_until_future_retry": 38,
+    "next_research_at": "2026-11-04T22:08:00Z"
   },
-  "mode": "historical_api_triage",
+  "mode": "normal_historical_discovery",
   "monthly_api": {
     "raw_records": 0,
     "recorded_received": 0,
     "remaining_or_untracked": 0,
     "research_completed": 0
   },
-  "note": "Priority is reevaluated each scheduled Scout mission. GitHub Actions do NOT instantly launch ChatGPT Scout missions. Complete research requires evidence-backed ledger status.",
-  "reason": "Unfinished historical DataCite API test/backfill DOI cases",
+  "note": "Reevaluate actual manifests and ledgers every hourly run; monthly > actionable historical > normal SPARK. Never disable after pilot completion. Do not confuse temporarily blocked with research_complete.",
+  "reason": "Monthly API has no actionable records; all 38 remaining historical DataCite DOIs have future metadata retry dates (earliest 2026-11-04T22:08:00Z); conduct systematic SPARK award-centered discovery and bounded attribution followups.",
   "schema": "reach-scout-workstream-v1",
-  "switch_policy": "monthly API > historical API test backlog > normal SPARK historical discovery"
+  "switch_policy": "monthly API > historical API test backlog > normal SPARK historical discovery",
+  "last_reconciled_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1434ET"
 }
