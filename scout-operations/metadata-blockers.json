@@ -866,6 +866,798 @@
       "scout_seed_doi": "10.25923/na23oar4590363",
       "confidence": "Medium",
       "hub_delivered": false
+    },
+    {
+      "identity": "doi:10.5281/zenodo.21048459",
+      "award_numbers": [
+        "NA21OAR4590367"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "Full dataset publication YYYY-MM-DD, native file accessibility, version relation to 21048460"
+      ],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "historical_datacite_capture",
+          "url": "https://api.datacite.org/dois/10.5281/zenodo.21048459",
+          "outcome": "Exact award, output identity and author/title captured; no verified full publication date.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "spark_primary_award_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "outcome": "Primary WPO SPARK award and matching project workstream verified.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "complete_reach_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "outcome": "No exact DOI/title in all 1238 index records.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "scout_manifest_and_14_batches",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+          "outcome": "No exact DOI/title in 53 existing staged candidates; private reviewer decisions unavailable.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "native_zenodo_landing_attempt",
+          "url": "https://zenodo.org/records/21048459",
+          "outcome": "Native record not independently retrievable; full publication date, file availability and version identity remain unverified.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        }
+      ],
+      "first_investigated_at": "2026-10-29T14:34:00Z",
+      "last_attempt_at": "2026-10-29T14:34:00Z",
+      "retry_count": 0,
+      "next_retry_at": "2026-11-05T14:34:00Z",
+      "next_research_at": "2026-11-05T14:34:00Z",
+      "followup_question": "Can the authoritative repository or publisher verify Full dataset publication YYYY-MM-DD, native file accessibility, version relation to 21048460 without substituting observation/citation year for publication date?",
+      "evidence_urls": [
+        "https://api.datacite.org/dois/10.5281/zenodo.21048459",
+        "https://zenodo.org/records/21048459"
+      ],
+      "funding_basis": "Captured DataCite structured fundingReference identifies exact WPO primary SPARK award NA21OAR4590367 and matching project workstream; native Zenodo record could not be independently retrieved to establish full date, files or version identity.",
+      "next_action": "ONE bounded different-source follow-up on/after 2026-11-05T14:34:00Z; if still credible but metadata incomplete, escalate human_metadata_needed outside ordinary research queue, not invalid Hub CSV.",
+      "triage_identity": "doi:10.5281/zenodo.21048459",
+      "discovery_route": "Direct API",
+      "scout_seed_doi": "10.5281/zenodo.21048459",
+      "confidence": "Medium",
+      "hub_delivered": false,
+      "ready_for_human_review": false
+    },
+    {
+      "identity": "doi:10.5281/zenodo.21048460",
+      "award_numbers": [
+        "NA21OAR4590367"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "Full dataset publication YYYY-MM-DD, native file accessibility, version relation to 21048459"
+      ],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "historical_datacite_capture",
+          "url": "https://api.datacite.org/dois/10.5281/zenodo.21048460",
+          "outcome": "Exact award, output identity and author/title captured; no verified full publication date.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "spark_primary_award_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "outcome": "Primary WPO SPARK award and matching project workstream verified.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "complete_reach_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "outcome": "No exact DOI/title in all 1238 index records.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "scout_manifest_and_14_batches",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+          "outcome": "No exact DOI/title in 53 existing staged candidates; private reviewer decisions unavailable.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "native_zenodo_landing_attempt",
+          "url": "https://zenodo.org/records/21048460",
+          "outcome": "Native record not independently retrievable; full publication date, file availability and version identity remain unverified.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        }
+      ],
+      "first_investigated_at": "2026-10-29T14:34:00Z",
+      "last_attempt_at": "2026-10-29T14:34:00Z",
+      "retry_count": 0,
+      "next_retry_at": "2026-11-05T14:34:00Z",
+      "next_research_at": "2026-11-05T14:34:00Z",
+      "followup_question": "Can the authoritative repository or publisher verify Full dataset publication YYYY-MM-DD, native file accessibility, version relation to 21048459 without substituting observation/citation year for publication date?",
+      "evidence_urls": [
+        "https://api.datacite.org/dois/10.5281/zenodo.21048460",
+        "https://zenodo.org/records/21048460"
+      ],
+      "funding_basis": "Captured DataCite structured fundingReference identifies exact WPO primary SPARK award NA21OAR4590367 and matching project workstream; native Zenodo record could not be independently retrieved to establish full date, files or version identity.",
+      "next_action": "ONE bounded different-source follow-up on/after 2026-11-05T14:34:00Z; if still credible but metadata incomplete, escalate human_metadata_needed outside ordinary research queue, not invalid Hub CSV.",
+      "triage_identity": "doi:10.5281/zenodo.21048460",
+      "discovery_route": "Direct API",
+      "scout_seed_doi": "10.5281/zenodo.21048460",
+      "confidence": "Medium",
+      "hub_delivered": false,
+      "ready_for_human_review": false
+    },
+    {
+      "identity": "doi:10.5281/zenodo.23044469",
+      "award_numbers": [
+        "NA22OAR4590188"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "Full source-code publication YYYY-MM-DD, native files, version relation to 23044470"
+      ],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "historical_datacite_capture",
+          "url": "https://api.datacite.org/dois/10.5281/zenodo.23044469",
+          "outcome": "Exact award, output identity and author/title captured; no verified full publication date.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "spark_primary_award_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "outcome": "Primary WPO SPARK award and matching project workstream verified.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "complete_reach_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "outcome": "No exact DOI/title in all 1238 index records.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "scout_manifest_and_14_batches",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+          "outcome": "No exact DOI/title in 53 existing staged candidates; private reviewer decisions unavailable.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "native_zenodo_landing_attempt",
+          "url": "https://zenodo.org/records/23044469",
+          "outcome": "Native record not independently retrievable; full publication date, file availability and version identity remain unverified.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        }
+      ],
+      "first_investigated_at": "2026-10-29T14:34:00Z",
+      "last_attempt_at": "2026-10-29T14:34:00Z",
+      "retry_count": 0,
+      "next_retry_at": "2026-11-05T14:34:00Z",
+      "next_research_at": "2026-11-05T14:34:00Z",
+      "followup_question": "Can the authoritative repository or publisher verify Full source-code publication YYYY-MM-DD, native files, version relation to 23044470 without substituting observation/citation year for publication date?",
+      "evidence_urls": [
+        "https://api.datacite.org/dois/10.5281/zenodo.23044469",
+        "https://zenodo.org/records/23044469"
+      ],
+      "funding_basis": "Captured DataCite structured fundingReference identifies exact WPO primary SPARK award NA22OAR4590188 and matching project workstream; native Zenodo record could not be independently retrieved to establish full date, files or version identity.",
+      "next_action": "ONE bounded different-source follow-up on/after 2026-11-05T14:34:00Z; if still credible but metadata incomplete, escalate human_metadata_needed outside ordinary research queue, not invalid Hub CSV.",
+      "triage_identity": "doi:10.5281/zenodo.23044469",
+      "discovery_route": "Direct API",
+      "scout_seed_doi": "10.5281/zenodo.23044469",
+      "confidence": "Medium",
+      "hub_delivered": false,
+      "ready_for_human_review": false
+    },
+    {
+      "identity": "doi:10.5281/zenodo.23044470",
+      "award_numbers": [
+        "NA22OAR4590188"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "Full source-code publication YYYY-MM-DD, native files, version relation to 23044469"
+      ],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "historical_datacite_capture",
+          "url": "https://api.datacite.org/dois/10.5281/zenodo.23044470",
+          "outcome": "Exact award, output identity and author/title captured; no verified full publication date.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "spark_primary_award_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "outcome": "Primary WPO SPARK award and matching project workstream verified.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "complete_reach_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "outcome": "No exact DOI/title in all 1238 index records.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "scout_manifest_and_14_batches",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+          "outcome": "No exact DOI/title in 53 existing staged candidates; private reviewer decisions unavailable.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "native_zenodo_landing_attempt",
+          "url": "https://zenodo.org/records/23044470",
+          "outcome": "Native record not independently retrievable; full publication date, file availability and version identity remain unverified.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        }
+      ],
+      "first_investigated_at": "2026-10-29T14:34:00Z",
+      "last_attempt_at": "2026-10-29T14:34:00Z",
+      "retry_count": 0,
+      "next_retry_at": "2026-11-05T14:34:00Z",
+      "next_research_at": "2026-11-05T14:34:00Z",
+      "followup_question": "Can the authoritative repository or publisher verify Full source-code publication YYYY-MM-DD, native files, version relation to 23044469 without substituting observation/citation year for publication date?",
+      "evidence_urls": [
+        "https://api.datacite.org/dois/10.5281/zenodo.23044470",
+        "https://zenodo.org/records/23044470"
+      ],
+      "funding_basis": "Captured DataCite structured fundingReference identifies exact WPO primary SPARK award NA22OAR4590188 and matching project workstream; native Zenodo record could not be independently retrieved to establish full date, files or version identity.",
+      "next_action": "ONE bounded different-source follow-up on/after 2026-11-05T14:34:00Z; if still credible but metadata incomplete, escalate human_metadata_needed outside ordinary research queue, not invalid Hub CSV.",
+      "triage_identity": "doi:10.5281/zenodo.23044470",
+      "discovery_route": "Direct API",
+      "scout_seed_doi": "10.5281/zenodo.23044470",
+      "confidence": "Medium",
+      "hub_delivered": false,
+      "ready_for_human_review": false
+    },
+    {
+      "identity": "doi:10.5281/zenodo.23289230",
+      "award_numbers": [
+        "NA22OAR0110487"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "Full dataset publication YYYY-MM-DD, native files, version relation to 23289231"
+      ],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "historical_datacite_capture",
+          "url": "https://api.datacite.org/dois/10.5281/zenodo.23289230",
+          "outcome": "Exact award, output identity and author/title captured; no verified full publication date.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "spark_primary_award_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "outcome": "Primary WPO SPARK award and matching project workstream verified.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "complete_reach_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "outcome": "No exact DOI/title in all 1238 index records.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "scout_manifest_and_14_batches",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+          "outcome": "No exact DOI/title in 53 existing staged candidates; private reviewer decisions unavailable.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "native_zenodo_landing_attempt",
+          "url": "https://zenodo.org/records/23289230",
+          "outcome": "Native record not independently retrievable; full publication date, file availability and version identity remain unverified.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        }
+      ],
+      "first_investigated_at": "2026-10-29T14:34:00Z",
+      "last_attempt_at": "2026-10-29T14:34:00Z",
+      "retry_count": 0,
+      "next_retry_at": "2026-11-05T14:34:00Z",
+      "next_research_at": "2026-11-05T14:34:00Z",
+      "followup_question": "Can the authoritative repository or publisher verify Full dataset publication YYYY-MM-DD, native files, version relation to 23289231 without substituting observation/citation year for publication date?",
+      "evidence_urls": [
+        "https://api.datacite.org/dois/10.5281/zenodo.23289230",
+        "https://zenodo.org/records/23289230"
+      ],
+      "funding_basis": "Captured DataCite structured fundingReference identifies exact WPO primary SPARK award NA22OAR0110487 and matching project workstream; native Zenodo record could not be independently retrieved to establish full date, files or version identity.",
+      "next_action": "ONE bounded different-source follow-up on/after 2026-11-05T14:34:00Z; if still credible but metadata incomplete, escalate human_metadata_needed outside ordinary research queue, not invalid Hub CSV.",
+      "triage_identity": "doi:10.5281/zenodo.23289230",
+      "discovery_route": "Direct API",
+      "scout_seed_doi": "10.5281/zenodo.23289230",
+      "confidence": "Medium",
+      "hub_delivered": false,
+      "ready_for_human_review": false
+    },
+    {
+      "identity": "doi:10.5281/zenodo.23289231",
+      "award_numbers": [
+        "NA22OAR0110487"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "Full dataset publication YYYY-MM-DD, native files, version relation to 23289230"
+      ],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "historical_datacite_capture",
+          "url": "https://api.datacite.org/dois/10.5281/zenodo.23289231",
+          "outcome": "Exact award, output identity and author/title captured; no verified full publication date.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "spark_primary_award_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "outcome": "Primary WPO SPARK award and matching project workstream verified.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "complete_reach_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "outcome": "No exact DOI/title in all 1238 index records.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "scout_manifest_and_14_batches",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+          "outcome": "No exact DOI/title in 53 existing staged candidates; private reviewer decisions unavailable.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "native_zenodo_landing_attempt",
+          "url": "https://zenodo.org/records/23289231",
+          "outcome": "Native record not independently retrievable; full publication date, file availability and version identity remain unverified.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        }
+      ],
+      "first_investigated_at": "2026-10-29T14:34:00Z",
+      "last_attempt_at": "2026-10-29T14:34:00Z",
+      "retry_count": 0,
+      "next_retry_at": "2026-11-05T14:34:00Z",
+      "next_research_at": "2026-11-05T14:34:00Z",
+      "followup_question": "Can the authoritative repository or publisher verify Full dataset publication YYYY-MM-DD, native files, version relation to 23289230 without substituting observation/citation year for publication date?",
+      "evidence_urls": [
+        "https://api.datacite.org/dois/10.5281/zenodo.23289231",
+        "https://zenodo.org/records/23289231"
+      ],
+      "funding_basis": "Captured DataCite structured fundingReference identifies exact WPO primary SPARK award NA22OAR0110487 and matching project workstream; native Zenodo record could not be independently retrieved to establish full date, files or version identity.",
+      "next_action": "ONE bounded different-source follow-up on/after 2026-11-05T14:34:00Z; if still credible but metadata incomplete, escalate human_metadata_needed outside ordinary research queue, not invalid Hub CSV.",
+      "triage_identity": "doi:10.5281/zenodo.23289231",
+      "discovery_route": "Direct API",
+      "scout_seed_doi": "10.5281/zenodo.23289231",
+      "confidence": "Medium",
+      "hub_delivered": false,
+      "ready_for_human_review": false
+    },
+    {
+      "identity": "doi:10.57969/s93w23",
+      "award_numbers": [
+        "NA21OAR4590374"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "Exact first-publication YYYY-MM-DD and public ERDDAP data scope"
+      ],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "historical_datacite_capture",
+          "url": "https://api.datacite.org/dois/10.57969/s93w23",
+          "outcome": "Exact award, output identity and author/title captured; no verified full publication date.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "spark_primary_award_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "outcome": "Primary WPO SPARK award and matching project workstream verified.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "complete_reach_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "outcome": "No exact DOI/title in all 1238 index records.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "scout_manifest_and_14_batches",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+          "outcome": "No exact DOI/title in 53 existing staged candidates; private reviewer decisions unavailable.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "publisher_nopp_data_catalog",
+          "url": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+          "outcome": "Publisher confirms named year-specific dataset but citation year is not exact first-release date; one DOI/version ambiguity noted.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        }
+      ],
+      "first_investigated_at": "2026-10-29T14:34:00Z",
+      "last_attempt_at": "2026-10-29T14:34:00Z",
+      "retry_count": 0,
+      "next_retry_at": "2026-11-05T14:34:00Z",
+      "next_research_at": "2026-11-05T14:34:00Z",
+      "followup_question": "Can the authoritative repository or publisher verify Exact first-publication YYYY-MM-DD and public ERDDAP data scope without substituting observation/citation year for publication date?",
+      "evidence_urls": [
+        "https://api.datacite.org/dois/10.57969/s93w23",
+        "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/"
+      ],
+      "funding_basis": "Captured DataCite structured fundingReference identifies exact WPO primary SPARK award NA21OAR4590374; Scripps NOPP NHCI official catalog corroborates sensor/first-five family, but does not establish full publication day or all alternate DOI identities.",
+      "next_action": "ONE bounded different-source follow-up on/after 2026-11-05T14:34:00Z; if still credible but metadata incomplete, escalate human_metadata_needed outside ordinary research queue, not invalid Hub CSV.",
+      "triage_identity": "doi:10.57969/s93w23",
+      "discovery_route": "Direct API",
+      "scout_seed_doi": "10.57969/s93w23",
+      "confidence": "Medium",
+      "hub_delivered": false,
+      "ready_for_human_review": false
+    },
+    {
+      "identity": "doi:10.57969/s9k013",
+      "award_numbers": [
+        "NA21OAR4590374"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "Exact first-publication YYYY-MM-DD and public ERDDAP data scope"
+      ],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "historical_datacite_capture",
+          "url": "https://api.datacite.org/dois/10.57969/s9k013",
+          "outcome": "Exact award, output identity and author/title captured; no verified full publication date.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "spark_primary_award_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "outcome": "Primary WPO SPARK award and matching project workstream verified.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "complete_reach_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "outcome": "No exact DOI/title in all 1238 index records.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "scout_manifest_and_14_batches",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+          "outcome": "No exact DOI/title in 53 existing staged candidates; private reviewer decisions unavailable.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "publisher_nopp_data_catalog",
+          "url": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+          "outcome": "Publisher confirms named year-specific dataset but citation year is not exact first-release date; one DOI/version ambiguity noted.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        }
+      ],
+      "first_investigated_at": "2026-10-29T14:34:00Z",
+      "last_attempt_at": "2026-10-29T14:34:00Z",
+      "retry_count": 0,
+      "next_retry_at": "2026-11-05T14:34:00Z",
+      "next_research_at": "2026-11-05T14:34:00Z",
+      "followup_question": "Can the authoritative repository or publisher verify Exact first-publication YYYY-MM-DD and public ERDDAP data scope without substituting observation/citation year for publication date?",
+      "evidence_urls": [
+        "https://api.datacite.org/dois/10.57969/s9k013",
+        "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/"
+      ],
+      "funding_basis": "Captured DataCite structured fundingReference identifies exact WPO primary SPARK award NA21OAR4590374; Scripps NOPP NHCI official catalog corroborates sensor/first-five family, but does not establish full publication day or all alternate DOI identities.",
+      "next_action": "ONE bounded different-source follow-up on/after 2026-11-05T14:34:00Z; if still credible but metadata incomplete, escalate human_metadata_needed outside ordinary research queue, not invalid Hub CSV.",
+      "triage_identity": "doi:10.57969/s9k013",
+      "discovery_route": "Direct API",
+      "scout_seed_doi": "10.57969/s9k013",
+      "confidence": "Medium",
+      "hub_delivered": false,
+      "ready_for_human_review": false
+    },
+    {
+      "identity": "doi:10.57969/s9f59m",
+      "award_numbers": [
+        "NA21OAR4590374"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "Exact first-publication YYYY-MM-DD and separate first-five vs sensor identity"
+      ],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "historical_datacite_capture",
+          "url": "https://api.datacite.org/dois/10.57969/s9f59m",
+          "outcome": "Exact award, output identity and author/title captured; no verified full publication date.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "spark_primary_award_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "outcome": "Primary WPO SPARK award and matching project workstream verified.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "complete_reach_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "outcome": "No exact DOI/title in all 1238 index records.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "scout_manifest_and_14_batches",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+          "outcome": "No exact DOI/title in 53 existing staged candidates; private reviewer decisions unavailable.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "publisher_nopp_data_catalog",
+          "url": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+          "outcome": "Publisher confirms named year-specific dataset but citation year is not exact first-release date; one DOI/version ambiguity noted.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        }
+      ],
+      "first_investigated_at": "2026-10-29T14:34:00Z",
+      "last_attempt_at": "2026-10-29T14:34:00Z",
+      "retry_count": 0,
+      "next_retry_at": "2026-11-05T14:34:00Z",
+      "next_research_at": "2026-11-05T14:34:00Z",
+      "followup_question": "Can the authoritative repository or publisher verify Exact first-publication YYYY-MM-DD and separate first-five vs sensor identity without substituting observation/citation year for publication date?",
+      "evidence_urls": [
+        "https://api.datacite.org/dois/10.57969/s9f59m",
+        "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/"
+      ],
+      "funding_basis": "Captured DataCite structured fundingReference identifies exact WPO primary SPARK award NA21OAR4590374; Scripps NOPP NHCI official catalog corroborates sensor/first-five family, but does not establish full publication day or all alternate DOI identities.",
+      "next_action": "ONE bounded different-source follow-up on/after 2026-11-05T14:34:00Z; if still credible but metadata incomplete, escalate human_metadata_needed outside ordinary research queue, not invalid Hub CSV.",
+      "triage_identity": "doi:10.57969/s9f59m",
+      "discovery_route": "Direct API",
+      "scout_seed_doi": "10.57969/s9f59m",
+      "confidence": "Medium",
+      "hub_delivered": false,
+      "ready_for_human_review": false
+    },
+    {
+      "identity": "doi:10.57969/s9z598",
+      "award_numbers": [
+        "NA21OAR4590374"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "Exact first-publication YYYY-MM-DD and public ERDDAP data scope"
+      ],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "historical_datacite_capture",
+          "url": "https://api.datacite.org/dois/10.57969/s9z598",
+          "outcome": "Exact award, output identity and author/title captured; no verified full publication date.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "spark_primary_award_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "outcome": "Primary WPO SPARK award and matching project workstream verified.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "complete_reach_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "outcome": "No exact DOI/title in all 1238 index records.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "scout_manifest_and_14_batches",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+          "outcome": "No exact DOI/title in 53 existing staged candidates; private reviewer decisions unavailable.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "publisher_nopp_data_catalog",
+          "url": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+          "outcome": "Publisher confirms named year-specific dataset but citation year is not exact first-release date; one DOI/version ambiguity noted.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        }
+      ],
+      "first_investigated_at": "2026-10-29T14:34:00Z",
+      "last_attempt_at": "2026-10-29T14:34:00Z",
+      "retry_count": 0,
+      "next_retry_at": "2026-11-05T14:34:00Z",
+      "next_research_at": "2026-11-05T14:34:00Z",
+      "followup_question": "Can the authoritative repository or publisher verify Exact first-publication YYYY-MM-DD and public ERDDAP data scope without substituting observation/citation year for publication date?",
+      "evidence_urls": [
+        "https://api.datacite.org/dois/10.57969/s9z598",
+        "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/"
+      ],
+      "funding_basis": "Captured DataCite structured fundingReference identifies exact WPO primary SPARK award NA21OAR4590374; Scripps NOPP NHCI official catalog corroborates sensor/first-five family, but does not establish full publication day or all alternate DOI identities.",
+      "next_action": "ONE bounded different-source follow-up on/after 2026-11-05T14:34:00Z; if still credible but metadata incomplete, escalate human_metadata_needed outside ordinary research queue, not invalid Hub CSV.",
+      "triage_identity": "doi:10.57969/s9z598",
+      "discovery_route": "Direct API",
+      "scout_seed_doi": "10.57969/s9z598",
+      "confidence": "Medium",
+      "hub_delivered": false,
+      "ready_for_human_review": false
+    },
+    {
+      "identity": "doi:10.57969/s9pp42",
+      "award_numbers": [
+        "NA21OAR4590374"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "Exact first-publication YYYY-MM-DD and separate first-five vs sensor identity"
+      ],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "historical_datacite_capture",
+          "url": "https://api.datacite.org/dois/10.57969/s9pp42",
+          "outcome": "Exact award, output identity and author/title captured; no verified full publication date.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "spark_primary_award_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "outcome": "Primary WPO SPARK award and matching project workstream verified.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "complete_reach_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "outcome": "No exact DOI/title in all 1238 index records.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "scout_manifest_and_14_batches",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+          "outcome": "No exact DOI/title in 53 existing staged candidates; private reviewer decisions unavailable.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "publisher_nopp_data_catalog",
+          "url": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+          "outcome": "Publisher confirms named year-specific dataset but citation year is not exact first-release date; one DOI/version ambiguity noted.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        }
+      ],
+      "first_investigated_at": "2026-10-29T14:34:00Z",
+      "last_attempt_at": "2026-10-29T14:34:00Z",
+      "retry_count": 0,
+      "next_retry_at": "2026-11-05T14:34:00Z",
+      "next_research_at": "2026-11-05T14:34:00Z",
+      "followup_question": "Can the authoritative repository or publisher verify Exact first-publication YYYY-MM-DD and separate first-five vs sensor identity without substituting observation/citation year for publication date?",
+      "evidence_urls": [
+        "https://api.datacite.org/dois/10.57969/s9pp42",
+        "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/"
+      ],
+      "funding_basis": "Captured DataCite structured fundingReference identifies exact WPO primary SPARK award NA21OAR4590374; Scripps NOPP NHCI official catalog corroborates sensor/first-five family, but does not establish full publication day or all alternate DOI identities.",
+      "next_action": "ONE bounded different-source follow-up on/after 2026-11-05T14:34:00Z; if still credible but metadata incomplete, escalate human_metadata_needed outside ordinary research queue, not invalid Hub CSV.",
+      "triage_identity": "doi:10.57969/s9pp42",
+      "discovery_route": "Direct API",
+      "scout_seed_doi": "10.57969/s9pp42",
+      "confidence": "Medium",
+      "hub_delivered": false,
+      "ready_for_human_review": false
+    },
+    {
+      "identity": "doi:10.57969/s9tg60",
+      "award_numbers": [
+        "NA21OAR4590374"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "Exact first-publication YYYY-MM-DD and whether this is an alternate/version of S9PP42 rather than distinct dataset"
+      ],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "historical_datacite_capture",
+          "url": "https://api.datacite.org/dois/10.57969/s9tg60",
+          "outcome": "Exact award, output identity and author/title captured; no verified full publication date.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "spark_primary_award_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "outcome": "Primary WPO SPARK award and matching project workstream verified.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "complete_reach_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "outcome": "No exact DOI/title in all 1238 index records.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "scout_manifest_and_14_batches",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+          "outcome": "No exact DOI/title in 53 existing staged candidates; private reviewer decisions unavailable.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 0,
+          "method": "publisher_nopp_data_catalog",
+          "url": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+          "outcome": "Publisher confirms named year-specific dataset but citation year is not exact first-release date; one DOI/version ambiguity noted.",
+          "checked_at": "2026-10-29T14:34:00Z"
+        }
+      ],
+      "first_investigated_at": "2026-10-29T14:34:00Z",
+      "last_attempt_at": "2026-10-29T14:34:00Z",
+      "retry_count": 0,
+      "next_retry_at": "2026-11-05T14:34:00Z",
+      "next_research_at": "2026-11-05T14:34:00Z",
+      "followup_question": "Can the authoritative repository or publisher verify Exact first-publication YYYY-MM-DD and whether this is an alternate/version of S9PP42 rather than distinct dataset without substituting observation/citation year for publication date?",
+      "evidence_urls": [
+        "https://api.datacite.org/dois/10.57969/s9tg60",
+        "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/"
+      ],
+      "funding_basis": "Captured DataCite structured fundingReference identifies exact WPO primary SPARK award NA21OAR4590374; Scripps NOPP NHCI official catalog corroborates sensor/first-five family, but does not establish full publication day or all alternate DOI identities.",
+      "next_action": "ONE bounded different-source follow-up on/after 2026-11-05T14:34:00Z; if still credible but metadata incomplete, escalate human_metadata_needed outside ordinary research queue, not invalid Hub CSV.",
+      "triage_identity": "doi:10.57969/s9tg60",
+      "discovery_route": "Direct API",
+      "scout_seed_doi": "10.57969/s9tg60",
+      "confidence": "Medium",
+      "hub_delivered": false,
+      "ready_for_human_review": false
     }
   ]
 }
