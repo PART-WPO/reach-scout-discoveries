@@ -27,11 +27,14 @@ def _pending(entries, key=None):
 
 
 def _blocker_counts(blockers):
-    """A pending metadata handoff is still work; human-approved intake is not."""
+    """Count unresolved metadata research, not evidence-complete human handoffs.
+
+    Pending Hub integration remains reportable but must not hold Scout hostage.
+    """
     counts={"monthly":0,"historical":0}
     for e in (blockers or {}).get("entries", []):
         if e.get("status") not in {
-            "blocked", "retry_due", "human_metadata_needed", "pending_hub_handoff"
+            "blocked", "retry_due"
         }:
             continue
         cohort=str(e.get("cohort", "")).lower()
