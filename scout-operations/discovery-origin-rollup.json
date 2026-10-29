@@ -1,13 +1,13 @@
 {
   "schema": "reach-scout-discovery-origin-rollup-v1",
   "snapshot_date": "2026-10-29",
-  "source": "scout-discoveries/manifest.json and all 16 24-column GitHub batch CSVs individually parsed and SHA-256 verified",
-  "batch_count": 16,
-  "staged_review_rows": 56,
+  "source": "scout-discoveries/manifest.json and all 17 immutable 24-column GitHub CSVs individually re-read and SHA-256/record_count/run-ID verified",
+  "batch_count": 17,
+  "staged_review_rows": 59,
   "manifest_rows_verified": true,
   "route_counts": {
     "Direct API": 1,
-    "API-seeded expansion": 9,
+    "API-seeded expansion": 12,
     "Independent discovery": 1,
     "Metadata correction": 5,
     "Unclassified explicit": 0,
@@ -30,16 +30,17 @@
     "source_manifest": "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json",
     "source_manifest_sha": "ab844173f761617a2fe1def5cf218b1fc94b3e7d"
   },
-  "human_review_status": "Not verifiable from public GitHub",
-  "note": "16 immutable batches / 56 staged review proposals: 1 Direct API, 9 API-seeded expansion, 1 Independent discovery, 5 metadata correction, 40 legacy unclassified. New 2016 AMS severe-hail conference poster is independently discovered and pending human review; presentation date is verified, file upload date unknown. Private reviewer decisions unavailable; public REACH remains 1238.",
+  "human_review_status": "Not publicly verifiable; 59 staged proposals are not human approvals",
+  "note": "17 immutable batches / 59 staged review proposals: 1 Direct API, 12 API-seeded expansion, 1 Independent discovery, 5 metadata correction, 40 legacy unclassified. New 19:29 ET author/project-linked articles from historical Zenodo DOI research have publisher-confirmed exact WPO awards and verified dates; no direct citation to exact original Zenodo DOI is asserted. Private human decisions unavailable; public REACH remains 1238.",
   "latest_verified_run": {
-    "run_id": "REACH-SCOUT-2026-10-29-HOURLY-1526ET",
-    "batch_id": "2026-10-29-hourly-1526ET-nssl-hail-poster-001",
-    "new_review_proposals": 1,
-    "route": "Independent discovery",
+    "run_id": "REACH-SCOUT-2026-10-29-HOURLY-1929ET",
+    "batch_id": "2026-10-29-hourly-1929ET-verified-article-expansion-001",
+    "new_review_proposals": 3,
+    "route": "API-seeded expansion",
     "manifest_verified": true,
-    "github_action_verification_status": "NOT_VERIFIABLE_FROM_AVAILABLE_CONNECTOR",
-    "sha256": "da5f669f7ccf8cfba380d010ac3a1e624ec4ec7660fcd0c28da5035a845ffa63",
+    "github_action_verification_status": "SUCCESS",
+    "github_action_run_id": 40973940264,
+    "sha256": "8b97ef0c393621aab33d7fad5b417798c0077279f8277d8d2a52713f07f40909",
     "human_review_verified": false
   }
 }
