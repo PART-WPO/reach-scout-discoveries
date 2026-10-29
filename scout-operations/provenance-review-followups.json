@@ -1,0 +1,75 @@
+{
+  "schema": "reach-scout-provenance-review-followups-v1",
+  "date": "2026-10-29",
+  "scope": "Six overnight API-seeded expansion proposals; public operational review prompts ONLY, not actual human decisions",
+  "entries": [
+    {
+      "output_identity": "10.1175/WCAS-D-23-0046.1",
+      "original_seed_doi": "10.17603/ds2-jfsc-8902",
+      "batch_path": "scout-discoveries/batches/2026-10-28-hourly-datacite-expansion-award-fixes-001.csv",
+      "route": "API-seeded expansion",
+      "status": "requires_human_origin_and_eligibility_review",
+      "review_question": "Verify related dataset-to-article path and compare with captured original API cohort",
+      "review_checks": "Check original source DOI disposition, captured direct DataCite/Crossref cohort, source path evidence, existing REACH exact output and versions, Scout batches and private reviewer disposition.",
+      "reviewer_approved": null,
+      "public_reach_added": null
+    },
+    {
+      "output_identity": "10.5194/gmd-18-7969-2025",
+      "original_seed_doi": "10.5281/zenodo.15002615",
+      "batch_path": "scout-discoveries/batches/2026-10-28-hourly-2331ET-datacite-original-and-expansion-001.csv",
+      "route": "API-seeded expansion",
+      "status": "requires_human_origin_and_eligibility_review",
+      "review_question": "Check whether final journal article is a distinct eligible output rather than already cataloged preprint reach-000460",
+      "review_checks": "Check original source DOI disposition, captured direct DataCite/Crossref cohort, source path evidence, existing REACH exact output and versions, Scout batches and private reviewer disposition.",
+      "reviewer_approved": null,
+      "public_reach_added": null
+    },
+    {
+      "output_identity": "https://storymaps.arcgis.com/stories/71fafa36fd124974943b7816de2377a7",
+      "original_seed_doi": "10.25923/na21oar4590212",
+      "batch_path": "scout-discoveries/batches/2026-10-29-hourly-0029ET-bvot-expansion-001.csv",
+      "route": "API-seeded expansion",
+      "status": "requires_human_origin_and_eligibility_review",
+      "review_question": "Confirm stand-alone StoryMap identity and primary award-specific linkage",
+      "review_checks": "Check original source DOI disposition, captured direct DataCite/Crossref cohort, source path evidence, existing REACH exact output and versions, Scout batches and private reviewer disposition.",
+      "reviewer_approved": null,
+      "public_reach_added": null
+    },
+    {
+      "output_identity": "https://storymaps.arcgis.com/stories/fba773ea40274be0901380a83234ec3a",
+      "original_seed_doi": "10.25923/na21oar4590212",
+      "batch_path": "scout-discoveries/batches/2026-10-29-hourly-0029ET-bvot-expansion-001.csv",
+      "route": "API-seeded expansion",
+      "status": "requires_human_origin_and_eligibility_review",
+      "review_question": "Confirm separate StoryMap work and absence of duplicate existing REACH output",
+      "review_checks": "Check original source DOI disposition, captured direct DataCite/Crossref cohort, source path evidence, existing REACH exact output and versions, Scout batches and private reviewer disposition.",
+      "reviewer_approved": null,
+      "public_reach_added": null
+    },
+    {
+      "output_identity": "10.1175/BAMS-D-25-0032.1",
+      "original_seed_doi": "10.25923/na21oar4590205",
+      "batch_path": "scout-discoveries/batches/2026-10-29-hourly-0329ET-social-science-expansion-001.csv",
+      "route": "API-seeded expansion",
+      "status": "requires_human_origin_and_eligibility_review",
+      "review_question": "Verify original-seed linkage (also related grant 10.25923/na21oar4590206) and direct API captured cohort non-membership",
+      "review_checks": "Check original source DOI disposition, captured direct DataCite/Crossref cohort, source path evidence, existing REACH exact output and versions, Scout batches and private reviewer disposition.",
+      "reviewer_approved": null,
+      "public_reach_added": null
+    },
+    {
+      "output_identity": "10.36227/techrxiv.175035136.63535291/v2",
+      "original_seed_doi": "10.25923/na21oar4590216",
+      "batch_path": "scout-discoveries/batches/2026-10-29-hourly-0329ET-social-science-expansion-001.csv",
+      "route": "API-seeded expansion",
+      "status": "requires_human_origin_and_eligibility_review",
+      "review_question": "Verify version-2 identity vs earlier versions and avoid double-counting DOI version records",
+      "review_checks": "Check original source DOI disposition, captured direct DataCite/Crossref cohort, source path evidence, existing REACH exact output and versions, Scout batches and private reviewer disposition.",
+      "reviewer_approved": null,
+      "public_reach_added": null
+    }
+  ],
+  "human_dispositions": "Not publicly verifiable; do not infer completion from GitHub staging or overwrite human decisions",
+  "note": "These six were already staged in GitHub. Do not re-publish as new candidates or add empty batches."
+}
