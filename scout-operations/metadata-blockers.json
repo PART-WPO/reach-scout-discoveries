@@ -5,7 +5,8 @@
     "max_distinct_checks_per_cycle": 5,
     "max_delayed_retries": 1,
     "retry_delay_days": 7,
-    "review_gate": "Scout-completed-research-only"
+    "review_gate": "Scout-completed-research-only",
+    "human_metadata_escalation": "After at most one >=7-day follow-up, route credible but metadata-incomplete candidates to human_metadata_needed outside ordinary needs_more_research. Do not publish invalid 24-column CSV or claim Hub delivery."
   },
   "entries": [
     {
@@ -56,7 +57,285 @@
         "https://ascelibrary.org/doi/10.1061/%28ASCE%29ST.1943-541X.0003275"
       ],
       "funding_basis": "Historical DataCite fundingReferences and linked ASCE publisher acknowledgment explicitly identify NOAA award NA18OAR4590306 for related infrasound experiments; exact dataset date remains unverified.",
-      "next_action": "On or after 2026-11-05 UTC perform one bounded metadata recovery round for the DesignSafe record, including native project date or authoritative metadata; if still blocked, consider human metadata referral with complete evidence."
+      "next_action": "On or after 2026-11-05 UTC perform one bounded metadata recovery round for the DesignSafe record, including native project date or authoritative metadata; if still blocked, consider human metadata referral with complete evidence.",
+      "first_investigated_at": "2026-10-28T22:08:00Z",
+      "next_research_at": "2026-11-05T00:00:00Z",
+      "followup_question": "Can an authoritative source resolve record-specific full YYYY-MM-DD dataset publication date and establish a separate eligible NOAA-funded output?",
+      "max_delayed_retries": 1
+    },
+    {
+      "identity": "doi:10.15139/s3/uy6rda",
+      "award_numbers": [
+        "NA25OARX459C0174-T1-01"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "accessible standalone plan document and public eligibility/type"
+      ],
+      "attempts": [],
+      "prior_documented_checks": [
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
+        "https://api.datacite.org/dois/10.15139/s3/uy6rda",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json"
+      ],
+      "first_investigated_at": "2026-10-29T00:29:43Z",
+      "first_investigated_timestamp_basis": "Earliest existing triage updated_at retained as conservative documented evidence of investigation; actual initial check may be earlier",
+      "last_attempt_at": "2026-10-29T00:29:43Z",
+      "retry_count": 0,
+      "next_retry_at": "2026-11-05T00:29:43.000Z",
+      "followup_question": "Inspect NCEI or institutional repository plan PDF and source-linked works; distinguish data-management plan from data deposit.",
+      "evidence_urls": [
+        "https://api.datacite.org/dois/10.15139/s3/uy6rda"
+      ],
+      "funding_basis": "Captured exact DataCite award NA25OARX459C0174-T1-01; independent document content not yet verified.",
+      "next_action": "One bounded follow-up at or after next_retry_at; if unresolved and credible, escalate human_metadata_needed without inventing metadata. See historical-triage for source notes.",
+      "triage_identity": "doi:10.15139/s3/uy6rda"
+    },
+    {
+      "identity": "doi:10.17603/ds2-58ft-kp27",
+      "award_numbers": [
+        "NA21OAR4590206"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "record-specific full publication date",
+        "public component scope and distinctness"
+      ],
+      "attempts": [],
+      "prior_documented_checks": [
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
+        "https://impacts.ucar.edu/en/organisations/mesoscale-microscale-meteorology-lab-2/datasets/",
+        "https://bmcnoldy.earth.miami.edu/papers/PMMMMCE2025_WCS.pdf"
+      ],
+      "first_investigated_at": "2026-10-28T22:08:00Z",
+      "first_investigated_timestamp_basis": "Earliest existing triage updated_at retained as conservative documented evidence of investigation; actual initial check may be earlier",
+      "last_attempt_at": "2026-10-28T22:08:00Z",
+      "retry_count": 0,
+      "next_retry_at": "2026-11-04T22:08:00.000Z",
+      "followup_question": "Can an authoritative source resolve record-specific full publication date; public component scope and distinctness and establish a separate eligible NOAA-funded output?",
+      "evidence_urls": [
+        "https://api.datacite.org/dois/10.17603/ds2-58ft-kp27"
+      ],
+      "funding_basis": "Captured DataCite fundingReferences identify NA21OAR4590206; eligibility or metadata remains unverified.",
+      "next_action": "One bounded follow-up at or after next_retry_at; if unresolved and credible, escalate human_metadata_needed without inventing metadata. See historical-triage for source notes.",
+      "triage_identity": "doi:10.17603/ds2-58ft-kp27"
+    },
+    {
+      "identity": "doi:10.17603/ds2-6vmm-2g61",
+      "award_numbers": [
+        "NA21OAR4590206"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "record-specific full publication date",
+        "public component scope and distinctness"
+      ],
+      "attempts": [],
+      "prior_documented_checks": [
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
+        "https://bmcnoldy.earth.miami.edu/papers/PMMMMCE2025_WCS.pdf",
+        "https://impacts.ucar.edu/en/organisations/mesoscale-microscale-meteorology-lab-2/datasets/"
+      ],
+      "first_investigated_at": "2026-10-28T22:08:00Z",
+      "first_investigated_timestamp_basis": "Earliest existing triage updated_at retained as conservative documented evidence of investigation; actual initial check may be earlier",
+      "last_attempt_at": "2026-10-28T22:08:00Z",
+      "retry_count": 0,
+      "next_retry_at": "2026-11-04T22:08:00.000Z",
+      "followup_question": "Can an authoritative source resolve record-specific full publication date; public component scope and distinctness and establish a separate eligible NOAA-funded output?",
+      "evidence_urls": [
+        "https://api.datacite.org/dois/10.17603/ds2-6vmm-2g61"
+      ],
+      "funding_basis": "Captured DataCite fundingReferences identify NA21OAR4590206; eligibility or metadata remains unverified.",
+      "next_action": "One bounded follow-up at or after next_retry_at; if unresolved and credible, escalate human_metadata_needed without inventing metadata. See historical-triage for source notes.",
+      "triage_identity": "doi:10.17603/ds2-6vmm-2g61"
+    },
+    {
+      "identity": "doi:10.17603/ds2-967n-t829",
+      "award_numbers": [
+        "NA19OAR0220121",
+        "NA19OAR0220192"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "record-specific full publication date",
+        "public survey instrument scope"
+      ],
+      "attempts": [],
+      "prior_documented_checks": [
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
+        "https://repository.library.noaa.gov/view/noaa/47957/noaa_47957_DS1.pdf",
+        "https://www.weather.gov/media/nws/IHC2022/SocialScience_effectivewarnings_IHC.pdf"
+      ],
+      "first_investigated_at": "2026-10-29T00:29:43Z",
+      "first_investigated_timestamp_basis": "Earliest existing triage updated_at retained as conservative documented evidence of investigation; actual initial check may be earlier",
+      "last_attempt_at": "2026-10-29T00:29:43Z",
+      "retry_count": 0,
+      "next_retry_at": "2026-11-05T00:29:43.000Z",
+      "followup_question": "Inspect native DesignSafe project publication and exact survey component release date; compare Part 2 survey paper with REACH.",
+      "evidence_urls": [
+        "https://api.datacite.org/dois/10.17603/ds2-967n-t829"
+      ],
+      "funding_basis": "Captured structured DataCite NOAA awards NA19OAR0220121 and NA19OAR0220192; project context independently supported.",
+      "next_action": "One bounded follow-up at or after next_retry_at; if unresolved and credible, escalate human_metadata_needed without inventing metadata. See historical-triage for source notes.",
+      "triage_identity": "doi:10.17603/ds2-967n-t829"
+    },
+    {
+      "identity": "doi:10.17603/ds2-jfsc-8902",
+      "award_numbers": [
+        "NA19OAR0220119"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "record-specific full dataset publication date",
+        "public parent project scope"
+      ],
+      "attempts": [],
+      "prior_documented_checks": [
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
+        "https://journals.ametsoc.org/view/journals/wcas/15/4/WCAS-D-23-0046.1.xml",
+        "https://repository.library.noaa.gov/view/noaa/60113/noaa_60113_DS1.pdf",
+        "https://impacts.ucar.edu/en/organisations/mesoscale-microscale-meteorology-lab-2/datasets/"
+      ],
+      "first_investigated_at": "2026-10-29T00:29:43Z",
+      "first_investigated_timestamp_basis": "Earliest existing triage updated_at retained as conservative documented evidence of investigation; actual initial check may be earlier",
+      "last_attempt_at": "2026-10-29T00:29:43Z",
+      "retry_count": 0,
+      "next_retry_at": "2026-11-05T00:29:43.000Z",
+      "followup_question": "Verify seed dataset full date and parent DesignSafe project scope; follow 2024 Harvey paper and dataset separately.",
+      "evidence_urls": [
+        "https://api.datacite.org/dois/10.17603/ds2-jfsc-8902"
+      ],
+      "funding_basis": "Exact historical DataCite award NA19OAR0220119 plus linked WCAS article publisher acknowledgment.",
+      "next_action": "One bounded follow-up at or after next_retry_at; if unresolved and credible, escalate human_metadata_needed without inventing metadata. See historical-triage for source notes.",
+      "triage_identity": "doi:10.17603/ds2-jfsc-8902"
+    },
+    {
+      "identity": "doi:10.17603/ds2-qm3n-6h83",
+      "award_numbers": [
+        "NA19OAR0220121",
+        "NA19OAR0220192"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "record-specific full publication date",
+        "public protocol components distinct from restricted raw interview data"
+      ],
+      "attempts": [],
+      "prior_documented_checks": [
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
+        "https://repository.library.noaa.gov/view/noaa/47957/noaa_47957_DS1.pdf",
+        "https://www.weather.gov/media/nws/IHC2022/SocialScience_effectivewarnings_IHC.pdf"
+      ],
+      "first_investigated_at": "2026-10-29T00:29:43Z",
+      "first_investigated_timestamp_basis": "Earliest existing triage updated_at retained as conservative documented evidence of investigation; actual initial check may be earlier",
+      "last_attempt_at": "2026-10-29T00:29:43Z",
+      "retry_count": 0,
+      "next_retry_at": "2026-11-05T00:29:43.000Z",
+      "followup_question": "Inspect repository publication metadata for public protocol files only; never stage restricted interview responses.",
+      "evidence_urls": [
+        "https://api.datacite.org/dois/10.17603/ds2-qm3n-6h83"
+      ],
+      "funding_basis": "Captured exact DataCite awards NA19OAR0220121 and NA19OAR0220192, project relationship supported.",
+      "next_action": "One bounded follow-up at or after next_retry_at; if unresolved and credible, escalate human_metadata_needed without inventing metadata. See historical-triage for source notes.",
+      "triage_identity": "doi:10.17603/ds2-qm3n-6h83"
+    },
+    {
+      "identity": "doi:10.17605/osf.io/jr7pv",
+      "award_numbers": [
+        "NA21OAR4590210"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "public OSF file identities and accessible scope",
+        "record-specific full publication date"
+      ],
+      "attempts": [],
+      "prior_documented_checks": [
+        "https://api.datacite.org/dois/10.17605/osf.io/jr7pv",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://osf.io/jr7pv",
+        "https://doi.org/10.17605/osf.io/jr7pv"
+      ],
+      "first_investigated_at": "2026-10-29T01:32:07Z",
+      "first_investigated_timestamp_basis": "Earliest existing triage updated_at retained as conservative documented evidence of investigation; actual initial check may be earlier",
+      "last_attempt_at": "2026-10-29T01:32:07Z",
+      "retry_count": 0,
+      "next_retry_at": "2026-11-05T01:32:07.000Z",
+      "followup_question": "Access public OSF project metadata/files or author repository via a distinct endpoint; establish exact date and whether files are separate public outputs.",
+      "evidence_urls": [
+        "https://api.datacite.org/dois/10.17605/osf.io/jr7pv"
+      ],
+      "funding_basis": "Captured DataCite structured award NA21OAR4590210 for this OSF project; no independent project file or author acknowledgement accessible in this round.",
+      "next_action": "One bounded follow-up at or after next_retry_at; if unresolved and credible, escalate human_metadata_needed without inventing metadata. See historical-triage for source notes.",
+      "triage_identity": "doi:10.17605/osf.io/jr7pv"
+    },
+    {
+      "identity": "doi:10.17605/osf.io/rbdfv",
+      "award_numbers": [
+        "NA21OAR4590212"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "distinctness from existing REACH BVOT outputs",
+        "public accessible artifact and full publication date"
+      ],
+      "attempts": [],
+      "prior_documented_checks": [
+        "https://api.datacite.org/dois/10.17605/osf.io/rbdfv",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://osf.io/rbdfv",
+        "https://doi.org/10.17605/osf.io/rbdfv"
+      ],
+      "first_investigated_at": "2026-10-29T01:32:07Z",
+      "first_investigated_timestamp_basis": "Earliest existing triage updated_at retained as conservative documented evidence of investigation; actual initial check may be earlier",
+      "last_attempt_at": "2026-10-29T01:32:07Z",
+      "retry_count": 0,
+      "next_retry_at": "2026-11-05T01:32:07.000Z",
+      "followup_question": "Inspect native OSF project metadata and public files through alternate authoritative endpoint, then determine whether new distinct artifact versus existing REACH BVOT materials.",
+      "evidence_urls": [
+        "https://api.datacite.org/dois/10.17605/osf.io/rbdfv"
+      ],
+      "funding_basis": "Captured DataCite structured award NA21OAR4590212; related REACH BVOT journal work includes that award, but does not independently establish OSF project's publication date.",
+      "next_action": "One bounded follow-up at or after next_retry_at; if unresolved and credible, escalate human_metadata_needed without inventing metadata. See historical-triage for source notes.",
+      "triage_identity": "doi:10.17605/osf.io/rbdfv"
+    },
+    {
+      "identity": "doi:10.25923/0vz0-ra19",
+      "award_numbers": [
+        "NA19OAR4320073"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "NOAA IR record-specific full YYYY-MM-DD publication date"
+      ],
+      "attempts": [],
+      "prior_documented_checks": [
+        "https://api.datacite.org/dois/10.25923/0vz0-ra19",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://repository.library.noaa.gov/view/noaa/72837",
+        "https://repository.library.noaa.gov/view/noaa/72837/noaa_72837_DS1.pdf"
+      ],
+      "first_investigated_at": "2026-10-29T01:32:07Z",
+      "first_investigated_timestamp_basis": "Earliest existing triage updated_at retained as conservative documented evidence of investigation; actual initial check may be earlier",
+      "last_attempt_at": "2026-10-29T01:32:07Z",
+      "retry_count": 0,
+      "next_retry_at": "2026-11-05T01:32:07.000Z",
+      "followup_question": "Obtain NOAA IR record-specific full YYYY-MM-DD date or authoritative repository deposit date and recheck report uniqueness; do not stage until metadata complete.",
+      "evidence_urls": [
+        "https://api.datacite.org/dois/10.25923/0vz0-ra19"
+      ],
+      "funding_basis": "Captured DataCite fundingReference NA19OAR4320073 corroborated by the report's own PDF acknowledgments naming this exact cooperative agreement.",
+      "next_action": "One bounded follow-up at or after next_retry_at; if unresolved and credible, escalate human_metadata_needed without inventing metadata. See historical-triage for source notes.",
+      "triage_identity": "doi:10.25923/0vz0-ra19"
     }
   ]
 }
