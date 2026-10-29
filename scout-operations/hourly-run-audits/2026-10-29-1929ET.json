@@ -1,0 +1,471 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-29-HOURLY-1929ET",
+  "run_timestamp_utc": "2026-10-29T23:31:51.600054+00:00",
+  "selected_mode": "historical_api_triage",
+  "phase": "additional_evidence_research",
+  "audit_result": "PARTIAL",
+  "audit_reason": "Six original Zenodo DOI cases passed bounded research and reconciliation; metadata-blocker validator and historical coverage Actions succeeded. Three article proposals were committed as one immutable 24-column CSV, the authorized manifest generator Action succeeded, and all 17 public batches passed independent SHA-256/row-count/run-ID verification. Discovery Hub actual intake, private human decisions and complete REACH detail catalog remain unverified.",
+  "monthly_coverage_before": {
+    "completed": 0,
+    "remaining": 0
+  },
+  "monthly_coverage_expected_after": {
+    "completed": 0,
+    "remaining": 0
+  },
+  "historical_coverage_before": {
+    "completed": 164,
+    "remaining": 24,
+    "total": 188
+  },
+  "historical_coverage_expected_after": {
+    "completed": 170,
+    "remaining": 18,
+    "total": 188
+  },
+  "seeds_independently_disposed": [
+    {
+      "doi": "10.5281/zenodo.21048459",
+      "identity": "doi:10.5281/zenodo.21048459",
+      "title": "SCAMP Parsivel disdrometer Buffalo dataset, DOI family",
+      "funding_awards": [
+        "NA21OAR4590367"
+      ],
+      "outcome": "human_metadata_needed",
+      "grant_vs_artifact": "research_dataset",
+      "discovery_route": "Direct API",
+      "original_seed_doi": "10.5281/zenodo.21048459",
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+        "https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2022JD037132",
+        "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+        "https://zenodo.org/api/records/21048459",
+        "https://api.datacite.org/dois/10.5281/zenodo.21048459"
+      ],
+      "sources_checked": [
+        {
+          "method": "spark_primary_project_detail",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+          "outcome": "Official SPARK project detail confirms NA21OAR4590367 as primary WPO project award and the project-specific relevant workstream; output-level DOI still requires native version verification."
+        },
+        {
+          "method": "independent_publisher_project_publication",
+          "url": "https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2022JD037132",
+          "outcome": "2023 Shates article corroborates WPO award and author Pettersen but concerns different Marquette observations; already REACH reach-000132; not a duplicate of SCAMP."
+        },
+        {
+          "method": "official_wpo_award_project_list",
+          "url": "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+          "outcome": "Official WPO project roster independently identifies primary award NA21OAR4590367 and funded project, but dates there are project dates, not DOI release dates."
+        },
+        {
+          "method": "native_zenodo_api_alternate",
+          "url": "https://zenodo.org/api/records/21048459",
+          "outcome": "Native Zenodo record API was inaccessible through available retrieval; exact file list, first release date and concept/version mapping could not be independently verified."
+        }
+      ],
+      "missing_fields": [
+        "exact first-publication YYYY-MM-DD of this DOI",
+        "native publicly accessible file scope and version/concept relation to 10.5281/zenodo.21048460"
+      ],
+      "funding_basis": "Captured DataCite record explicitly names NA21OAR4590367; primary WPO project corroborated by SPARK and official WPO award list. Native file/version verification unavailable.",
+      "reach_comparison": "No exact DOI/title match across all 1,238 public REACH index rows or 56 staged Scout proposals; private human decisions not publicly verifiable.",
+      "reviewer_question": "For 10.5281/zenodo.21048459, can the record owner verify the first public release date and files, and determine whether this DOI and 10.5281/zenodo.21048460 represent one version family? If catalogable, is a date omission technically permissible under REACH publishing rules?",
+      "hub_delivery_status": "NOT_DELIVERED_TO_HUB",
+      "hub_intake_blocker": "Current 24-column Discovery Hub intake has not been verified to permit a truthful blank mandatory publication date; no invalid candidate staged.",
+      "early_retry_reason": "2026-10-29 user-directed one bounded different-source research round ahead of original 2026-11-05 date; original scheduling evidence preserved."
+    },
+    {
+      "doi": "10.5281/zenodo.21048460",
+      "identity": "doi:10.5281/zenodo.21048460",
+      "title": "SCAMP Parsivel disdrometer Buffalo dataset, DOI family",
+      "funding_awards": [
+        "NA21OAR4590367"
+      ],
+      "outcome": "human_metadata_needed",
+      "grant_vs_artifact": "research_dataset",
+      "discovery_route": "Direct API",
+      "original_seed_doi": "10.5281/zenodo.21048460",
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+        "https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2022JD037132",
+        "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+        "https://zenodo.org/api/records/21048460",
+        "https://api.datacite.org/dois/10.5281/zenodo.21048460"
+      ],
+      "sources_checked": [
+        {
+          "method": "spark_primary_project_detail",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+          "outcome": "Official SPARK project detail confirms NA21OAR4590367 as primary WPO project award and the project-specific relevant workstream; output-level DOI still requires native version verification."
+        },
+        {
+          "method": "independent_publisher_project_publication",
+          "url": "https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2022JD037132",
+          "outcome": "2023 Shates article corroborates WPO award and author Pettersen but concerns different Marquette observations; already REACH reach-000132; not a duplicate of SCAMP."
+        },
+        {
+          "method": "official_wpo_award_project_list",
+          "url": "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+          "outcome": "Official WPO project roster independently identifies primary award NA21OAR4590367 and funded project, but dates there are project dates, not DOI release dates."
+        },
+        {
+          "method": "native_zenodo_api_alternate",
+          "url": "https://zenodo.org/api/records/21048460",
+          "outcome": "Native Zenodo record API was inaccessible through available retrieval; exact file list, first release date and concept/version mapping could not be independently verified."
+        }
+      ],
+      "missing_fields": [
+        "exact first-publication YYYY-MM-DD of this DOI",
+        "native publicly accessible file scope and version/concept relation to 10.5281/zenodo.21048459"
+      ],
+      "funding_basis": "Captured DataCite record explicitly names NA21OAR4590367; primary WPO project corroborated by SPARK and official WPO award list. Native file/version verification unavailable.",
+      "reach_comparison": "No exact DOI/title match across all 1,238 public REACH index rows or 56 staged Scout proposals; private human decisions not publicly verifiable.",
+      "reviewer_question": "For 10.5281/zenodo.21048460, can the record owner verify the first public release date and files, and determine whether this DOI and 10.5281/zenodo.21048459 represent one version family? If catalogable, is a date omission technically permissible under REACH publishing rules?",
+      "hub_delivery_status": "NOT_DELIVERED_TO_HUB",
+      "hub_intake_blocker": "Current 24-column Discovery Hub intake has not been verified to permit a truthful blank mandatory publication date; no invalid candidate staged.",
+      "early_retry_reason": "2026-10-29 user-directed one bounded different-source research round ahead of original 2026-11-05 date; original scheduling evidence preserved."
+    },
+    {
+      "doi": "10.5281/zenodo.23044469",
+      "identity": "doi:10.5281/zenodo.23044469",
+      "title": "FVCOM source codes with MYNN mixed layer model",
+      "funding_awards": [
+        "NA22OAR4590188"
+      ],
+      "outcome": "human_metadata_needed",
+      "grant_vs_artifact": "research_software",
+      "discovery_route": "Direct API",
+      "original_seed_doi": "10.5281/zenodo.23044469",
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-011.csv",
+        "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024WR037507",
+        "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+        "https://zenodo.org/api/records/23044469",
+        "https://api.datacite.org/dois/10.5281/zenodo.23044469"
+      ],
+      "sources_checked": [
+        {
+          "method": "spark_primary_project_detail",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-011.csv",
+          "outcome": "Official SPARK project detail confirms NA22OAR4590188 as primary WPO project award and the project-specific relevant workstream; output-level DOI still requires native version verification."
+        },
+        {
+          "method": "independent_publisher_project_publication",
+          "url": "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024WR037507",
+          "outcome": "2024 Yeo article identifies same primary WPO JTTI award and overlapping project investigator Fujisaki-Manome, but does not verify the exact Zenodo source archive release."
+        },
+        {
+          "method": "official_wpo_award_project_list",
+          "url": "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+          "outcome": "Official WPO project roster independently identifies primary award NA22OAR4590188 and funded project, but dates there are project dates, not DOI release dates."
+        },
+        {
+          "method": "native_zenodo_api_alternate",
+          "url": "https://zenodo.org/api/records/23044469",
+          "outcome": "Native Zenodo record API was inaccessible through available retrieval; exact file list, first release date and concept/version mapping could not be independently verified."
+        }
+      ],
+      "missing_fields": [
+        "exact first-publication YYYY-MM-DD of this DOI",
+        "native publicly accessible file scope and version/concept relation to 10.5281/zenodo.23044470"
+      ],
+      "funding_basis": "Captured DataCite record explicitly names NA22OAR4590188; primary WPO project corroborated by SPARK and official WPO award list. Native file/version verification unavailable.",
+      "reach_comparison": "No exact DOI/title match across all 1,238 public REACH index rows or 56 staged Scout proposals; private human decisions not publicly verifiable.",
+      "reviewer_question": "For 10.5281/zenodo.23044469, can the record owner verify the first public release date and files, and determine whether this DOI and 10.5281/zenodo.23044470 represent one version family? If catalogable, is a date omission technically permissible under REACH publishing rules?",
+      "hub_delivery_status": "NOT_DELIVERED_TO_HUB",
+      "hub_intake_blocker": "Current 24-column Discovery Hub intake has not been verified to permit a truthful blank mandatory publication date; no invalid candidate staged.",
+      "early_retry_reason": "2026-10-29 user-directed one bounded different-source research round ahead of original 2026-11-05 date; original scheduling evidence preserved."
+    },
+    {
+      "doi": "10.5281/zenodo.23044470",
+      "identity": "doi:10.5281/zenodo.23044470",
+      "title": "FVCOM source codes with MYNN mixed layer model",
+      "funding_awards": [
+        "NA22OAR4590188"
+      ],
+      "outcome": "human_metadata_needed",
+      "grant_vs_artifact": "research_software",
+      "discovery_route": "Direct API",
+      "original_seed_doi": "10.5281/zenodo.23044470",
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-011.csv",
+        "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024WR037507",
+        "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+        "https://zenodo.org/api/records/23044470",
+        "https://api.datacite.org/dois/10.5281/zenodo.23044470"
+      ],
+      "sources_checked": [
+        {
+          "method": "spark_primary_project_detail",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-011.csv",
+          "outcome": "Official SPARK project detail confirms NA22OAR4590188 as primary WPO project award and the project-specific relevant workstream; output-level DOI still requires native version verification."
+        },
+        {
+          "method": "independent_publisher_project_publication",
+          "url": "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024WR037507",
+          "outcome": "2024 Yeo article identifies same primary WPO JTTI award and overlapping project investigator Fujisaki-Manome, but does not verify the exact Zenodo source archive release."
+        },
+        {
+          "method": "official_wpo_award_project_list",
+          "url": "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+          "outcome": "Official WPO project roster independently identifies primary award NA22OAR4590188 and funded project, but dates there are project dates, not DOI release dates."
+        },
+        {
+          "method": "native_zenodo_api_alternate",
+          "url": "https://zenodo.org/api/records/23044470",
+          "outcome": "Native Zenodo record API was inaccessible through available retrieval; exact file list, first release date and concept/version mapping could not be independently verified."
+        }
+      ],
+      "missing_fields": [
+        "exact first-publication YYYY-MM-DD of this DOI",
+        "native publicly accessible file scope and version/concept relation to 10.5281/zenodo.23044469"
+      ],
+      "funding_basis": "Captured DataCite record explicitly names NA22OAR4590188; primary WPO project corroborated by SPARK and official WPO award list. Native file/version verification unavailable.",
+      "reach_comparison": "No exact DOI/title match across all 1,238 public REACH index rows or 56 staged Scout proposals; private human decisions not publicly verifiable.",
+      "reviewer_question": "For 10.5281/zenodo.23044470, can the record owner verify the first public release date and files, and determine whether this DOI and 10.5281/zenodo.23044469 represent one version family? If catalogable, is a date omission technically permissible under REACH publishing rules?",
+      "hub_delivery_status": "NOT_DELIVERED_TO_HUB",
+      "hub_intake_blocker": "Current 24-column Discovery Hub intake has not been verified to permit a truthful blank mandatory publication date; no invalid candidate staged.",
+      "early_retry_reason": "2026-10-29 user-directed one bounded different-source research round ahead of original 2026-11-05 date; original scheduling evidence preserved."
+    },
+    {
+      "doi": "10.5281/zenodo.23289230",
+      "identity": "doi:10.5281/zenodo.23289230",
+      "title": "MOM6 global tidally forced simulation baroclinic sea level data",
+      "funding_awards": [
+        "NA22OAR0110487"
+      ],
+      "outcome": "human_metadata_needed",
+      "grant_vs_artifact": "research_dataset",
+      "discovery_route": "Direct API",
+      "original_seed_doi": "10.5281/zenodo.23289230",
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-031.csv",
+        "https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2025MS005126",
+        "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+        "https://zenodo.org/api/records/23289230",
+        "https://api.datacite.org/dois/10.5281/zenodo.23289230"
+      ],
+      "sources_checked": [
+        {
+          "method": "spark_primary_project_detail",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-031.csv",
+          "outcome": "Official SPARK project detail confirms NA22OAR0110487 as primary WPO project award and the project-specific relevant workstream; output-level DOI still requires native version verification."
+        },
+        {
+          "method": "independent_publisher_project_publication",
+          "url": "https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2025MS005126",
+          "outcome": "2025 Xu/Zaron article confirms same WPO grant and model workstream; its availability statement cites a different Zenodo DOI (16905128), not proof of exact original DOI files."
+        },
+        {
+          "method": "official_wpo_award_project_list",
+          "url": "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+          "outcome": "Official WPO project roster independently identifies primary award NA22OAR0110487 and funded project, but dates there are project dates, not DOI release dates."
+        },
+        {
+          "method": "native_zenodo_api_alternate",
+          "url": "https://zenodo.org/api/records/23289230",
+          "outcome": "Native Zenodo record API was inaccessible through available retrieval; exact file list, first release date and concept/version mapping could not be independently verified."
+        }
+      ],
+      "missing_fields": [
+        "exact first-publication YYYY-MM-DD of this DOI",
+        "native publicly accessible file scope and version/concept relation to 10.5281/zenodo.23289231"
+      ],
+      "funding_basis": "Captured DataCite record explicitly names NA22OAR0110487; primary WPO project corroborated by SPARK and official WPO award list. Native file/version verification unavailable.",
+      "reach_comparison": "No exact DOI/title match across all 1,238 public REACH index rows or 56 staged Scout proposals; private human decisions not publicly verifiable.",
+      "reviewer_question": "For 10.5281/zenodo.23289230, can the record owner verify the first public release date and files, and determine whether this DOI and 10.5281/zenodo.23289231 represent one version family? If catalogable, is a date omission technically permissible under REACH publishing rules?",
+      "hub_delivery_status": "NOT_DELIVERED_TO_HUB",
+      "hub_intake_blocker": "Current 24-column Discovery Hub intake has not been verified to permit a truthful blank mandatory publication date; no invalid candidate staged.",
+      "early_retry_reason": "2026-10-29 user-directed one bounded different-source research round ahead of original 2026-11-05 date; original scheduling evidence preserved."
+    },
+    {
+      "doi": "10.5281/zenodo.23289231",
+      "identity": "doi:10.5281/zenodo.23289231",
+      "title": "MOM6 global tidally forced simulation baroclinic sea level data",
+      "funding_awards": [
+        "NA22OAR0110487"
+      ],
+      "outcome": "human_metadata_needed",
+      "grant_vs_artifact": "research_dataset",
+      "discovery_route": "Direct API",
+      "original_seed_doi": "10.5281/zenodo.23289231",
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-031.csv",
+        "https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2025MS005126",
+        "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+        "https://zenodo.org/api/records/23289231",
+        "https://api.datacite.org/dois/10.5281/zenodo.23289231"
+      ],
+      "sources_checked": [
+        {
+          "method": "spark_primary_project_detail",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-031.csv",
+          "outcome": "Official SPARK project detail confirms NA22OAR0110487 as primary WPO project award and the project-specific relevant workstream; output-level DOI still requires native version verification."
+        },
+        {
+          "method": "independent_publisher_project_publication",
+          "url": "https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2025MS005126",
+          "outcome": "2025 Xu/Zaron article confirms same WPO grant and model workstream; its availability statement cites a different Zenodo DOI (16905128), not proof of exact original DOI files."
+        },
+        {
+          "method": "official_wpo_award_project_list",
+          "url": "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+          "outcome": "Official WPO project roster independently identifies primary award NA22OAR0110487 and funded project, but dates there are project dates, not DOI release dates."
+        },
+        {
+          "method": "native_zenodo_api_alternate",
+          "url": "https://zenodo.org/api/records/23289231",
+          "outcome": "Native Zenodo record API was inaccessible through available retrieval; exact file list, first release date and concept/version mapping could not be independently verified."
+        }
+      ],
+      "missing_fields": [
+        "exact first-publication YYYY-MM-DD of this DOI",
+        "native publicly accessible file scope and version/concept relation to 10.5281/zenodo.23289230"
+      ],
+      "funding_basis": "Captured DataCite record explicitly names NA22OAR0110487; primary WPO project corroborated by SPARK and official WPO award list. Native file/version verification unavailable.",
+      "reach_comparison": "No exact DOI/title match across all 1,238 public REACH index rows or 56 staged Scout proposals; private human decisions not publicly verifiable.",
+      "reviewer_question": "For 10.5281/zenodo.23289231, can the record owner verify the first public release date and files, and determine whether this DOI and 10.5281/zenodo.23289230 represent one version family? If catalogable, is a date omission technically permissible under REACH publishing rules?",
+      "hub_delivery_status": "NOT_DELIVERED_TO_HUB",
+      "hub_intake_blocker": "Current 24-column Discovery Hub intake has not been verified to permit a truthful blank mandatory publication date; no invalid candidate staged.",
+      "early_retry_reason": "2026-10-29 user-directed one bounded different-source research round ahead of original 2026-11-05 date; original scheduling evidence preserved."
+    }
+  ],
+  "verified_candidates_by_route": {
+    "Direct API": 0,
+    "API-seeded expansion": 3,
+    "Independent discovery": 0,
+    "Metadata correction": 0
+  },
+  "expansion_leads": [
+    {
+      "doi": "10.1029/2024WR037507",
+      "seed": "10.5281/zenodo.23044469",
+      "route": "API-seeded expansion",
+      "award": "NA22OAR4590188",
+      "source": "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024WR037507",
+      "publication_date": "2024-08-29",
+      "candidate_batch_id": "2026-10-29-hourly-1929ET-verified-article-expansion-001"
+    },
+    {
+      "doi": "10.1029/2024MS004319",
+      "seed": "10.5281/zenodo.23289230",
+      "route": "API-seeded expansion",
+      "award": "NA22OAR0110487",
+      "source": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2024MS004319",
+      "publication_date": "2024-10-13",
+      "candidate_batch_id": "2026-10-29-hourly-1929ET-verified-article-expansion-001"
+    },
+    {
+      "doi": "10.1029/2025MS005126",
+      "seed": "10.5281/zenodo.23289230",
+      "route": "API-seeded expansion",
+      "award": "NA22OAR0110487",
+      "source": "https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2025MS005126",
+      "publication_date": "2025-11-10",
+      "candidate_batch_id": "2026-10-29-hourly-1929ET-verified-article-expansion-001"
+    },
+    {
+      "doi": "10.5281/zenodo.16905128",
+      "status": "unverified_lead",
+      "source": "https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2025MS005126"
+    },
+    {
+      "doi": "10.5281/zenodo.13379023",
+      "status": "unverified_lead",
+      "source": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2024MS004319"
+    },
+    {
+      "doi": "10.1029/2022JD037132",
+      "status": "already_in_reach",
+      "reach_uid": "reach-000132"
+    }
+  ],
+  "original_seed_forwarded_to_hub": 0,
+  "original_seed_already_in_reach_new": 0,
+  "original_seed_no_action_new": 0,
+  "original_seed_metadata_blockers_to_human": 6,
+  "historical_original_seed_disposition_gaps": 0,
+  "newly_staged_csv_ids": [
+    "2026-10-29-hourly-1929ET-verified-article-expansion-001"
+  ],
+  "new_candidate_batch_id_planned": "2026-10-29-hourly-1929ET-verified-article-expansion-001",
+  "feed_integrity_status": "VERIFIED_17_OF_17_PUBLIC_BATCHES",
+  "feed_verification_evidence": {
+    "manifest_path": "scout-discoveries/manifest.json",
+    "manifest_generated_at": "2026-10-29T23:33:30Z",
+    "batch_count": 17,
+    "manifest_record_count": 59,
+    "actual_csv_row_count": 59,
+    "all_17_sha256_exact_utf8_verified": true,
+    "all_17_csv_columns_24": true,
+    "all_17_run_ids_verified": true,
+    "all_17_record_counts_verified": true,
+    "previous_16_batch_hashes_unchanged": true,
+    "no_prior_manifest_entry_dropped": true,
+    "new_batch_id": "2026-10-29-hourly-1929ET-verified-article-expansion-001",
+    "new_batch_path": "scout-discoveries/batches/2026-10-29-hourly-1929ET-verified-article-expansion-001.csv",
+    "new_batch_sha256_expected_and_observed": "8b97ef0c393621aab33d7fad5b417798c0077279f8277d8d2a52713f07f40909",
+    "new_batch_record_count": 3,
+    "new_batch_run_ids": [
+      "REACH-SCOUT-2026-10-29-HOURLY-1929ET"
+    ],
+    "manifest_written_by_scout": false
+  },
+  "github_action_verification_status": "SUCCESS",
+  "reviewer_visibility": {
+    "new_staged_candidates_feed_verified": 3,
+    "new_hub_visible_confirmed": 0,
+    "pending_hub_handoffs_total": 18,
+    "new_human_metadata_needed": 6,
+    "hub_delivery_verified": false,
+    "private_reviewer_decisions": "NOT_VERIFIABLE",
+    "public_reach_rows": 1238,
+    "public_reach_new_additions_verified": 0,
+    "reviewer_approved_new": 0
+  },
+  "no_action_subtype_changes": [],
+  "attribution_queue_changes": {
+    "new": 0,
+    "closed": 0,
+    "existing_queued": 52
+  },
+  "due_followups": 18,
+  "overdue_followups": 0,
+  "hub_investigate_candidates_delivered": 0,
+  "human_metadata_needed_pending_expected": 18,
+  "closed_no_actions_new": 0,
+  "normal_awards_examined": 0,
+  "metadata_correction_findings_new": 0,
+  "blockers": [
+    "Native Zenodo API inaccessible for six original DOI files/dates/version mapping; no invented dates.",
+    "Discovery Hub mandatory-blank metadata intake not verified; six referrals NOT DELIVERED TO HUB.",
+    "Private reviewer decisions not publicly verifiable.",
+    "Full 140-shard REACH detail catalog not independently revalidated; all 1238 index rows checked."
+  ],
+  "historical_coverage_after": {
+    "completed": 170,
+    "remaining": 18,
+    "total": 188,
+    "needs_more_research": 18,
+    "human_metadata_needed": 18,
+    "no_action": 105,
+    "already_in_reach": 37,
+    "forwarded_to_hub": 2,
+    "metadata_update_forwarded": 8,
+    "reconciliation_action_id": 40973879378,
+    "reconciliation_action_status": "SUCCESS"
+  },
+  "monthly_coverage_after": {
+    "completed": 0,
+    "remaining": 0
+  },
+  "newly_staged_csv_paths": [
+    "scout-discoveries/batches/2026-10-29-hourly-1929ET-verified-article-expansion-001.csv"
+  ],
+  "github_action_run_id": 40973940264,
+  "github_action_url": "https://github.com/PART-WPO/reach-scout-discoveries/actions/runs/40973940264",
+  "metadata_blocker_validation_action_status": "SUCCESS",
+  "metadata_blocker_validation_action_id": 40973886570
+}
