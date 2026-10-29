@@ -29,3 +29,15 @@ Rows are filterable, header rows are frozen, column widths are bounded, and text
 **Comparison cautions:** The old Google Sheets code might have searched a different division-specific award list and prioritized `published-print` dates, while this GitHub workflow uses **all SPARK awards** and deliberately retains record-specific date-basis uncertainty. Compare DOI+award, then inspect `WPO Program` and `Date Basis` for discrepancies before interpreting count differences. A DOI associated with two awards appears twice in source tabs but once in Combined Results.
 
 The underlying 24-column **Scout-only research inbox** still resides in `api-discoveries/batches/`; the workbook does **not** enter the Discovery Hub and does not affect automated Scout triage.
+
+## Historical DataCite backfill — comparison with Scout
+
+The original **October 28, 2026 historical DataCite** award-number search has its own regularly refreshed Excel comparison workbook:
+
+**[REACH_DataCite_Historical_2026-10-28_Scout_Comparison.xlsx](REACH_DataCite_Historical_2026-10-28_Scout_Comparison.xlsx)**
+
+It has seven sheets: **Summary**, **Historical DataCite Results** (all 188 raw API DOI records), **Scout DOI Comparison** (original DOIs matched to current Scout research), **Related Scout Findings** (separately staged API-seeded expansion candidates), **Awards with API Matches**, **Scout Status Breakdown**, and **Read Me**. The API run searched 761 unique award identifiers, finding 188 unique DOIs and 212 award/DOI matches. Original API evidence is clearly separated from subsequent Scout research; neither API matches nor GitHub staging imply human approval or publication in REACH.
+
+The report is refreshed daily at 14:10 UTC or by manually running [Historical DataCite — Excel comparison with Scout](https://github.com/PART-WPO/reach-scout-discoveries/actions/workflows/historical-datacite-report.yml). The workflow also provides a 90-day Actions artifact named `reach-historical-datacite-scout-comparison`. The GitHub file above is retained normally.
+
+**Read-only and report-only:** This never alters the immutable API batches, Scout's research ledger, Discovery Hub, Smartsheet, or REACH.
