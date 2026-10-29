@@ -13,7 +13,7 @@ for b in d['entries']:
     assert re.match(r'^(doi:10\.\d{4,9}/|url:https://)',identity,re.I)
     assert identity not in seen
     seen.add(identity)
-    assert b.get('status') in {'blocked','retry_due','human_review','resolved','suppressed'}
+    assert b.get('status') in {'blocked','retry_due','human_review','pending_hub_handoff','resolved','suppressed'}
     retry=b.get('retry_count',0)
     assert type(retry)==int and retry in (0,1)
     methods={0:set(),1:set()};times={0:[],1:[]}
@@ -36,8 +36,18 @@ for b in d['entries']:
         target=dt(b['next_retry_at'])
         if times[0]:assert (target-max(times[0])).total_seconds()>=604800
         if b['status']=='retry_due':assert target<=datetime.now(timezone.utc)
-    if b['status']=='human_review':
+    if b['status'] in {'human_review','pending_hub_handoff'}:
         assert b.get('research_completed') is True and b.get('missing_fields') and b.get('funding_basis')
-        assert re.fullmatch(r'scout-discoveries/batches/[A-Za-z0-9_.-]+[.]csv',str(b.get('scout_batch_path','')))
         assert any(str(u).startswith('https://') for u in b.get('evidence_urls',[]))
+        assert b.get('metadata_recovery_exhausted') is True
+        assert str(b.get('reviewer_question','')).strip()
+        if b['status']=='human_review':
+            assert re.fullmatch(r'scout-discoveries/batches/[A-Za-z0-9_.-]+[.]csv',str(b.get('scout_batch_path','')))
+            assert b.get('hub_delivery_status')=='staged_for_review'
+        else:
+            # Human decision is ready but existing Hub import cannot represent
+            # truthful missing metadata; no fabricated date and no fake delivery.
+            assert b.get('hub_delivery_status')=='not_delivered'
+            assert str(b.get('hub_intake_blocker','')).strip()
+            assert not b.get('scout_batch_path')
 print('Validated Scout metadata blockers',len(seen))
