@@ -109,4 +109,23 @@ class RouterTests(unittest.TestCase):
         self.assertEqual(r["mode"],"monthly_api_triage")
         self.assertEqual(r["phase"],"additional_evidence_research")
 
+
+    def test_completed_human_handoff_does_not_block_older_award_discovery(self):
+        mm,mc=m(0,0,0)
+        hh,hc=h(188,188,0)
+        ht={"entries":[{"status":"human_metadata_needed","human_handoff_status":"pending_hub_intake"}]}
+        blockers={"entries":[{"cohort":"Historical DataCite API Backfill 2026-10-28",
+                              "status":"pending_hub_handoff","research_completed":True}]}
+        r=decide(mm,mc,hh,hc,SHA,historical_triage=ht,metadata_blockers=blockers)
+        self.assertEqual(r["mode"],"normal_historical_discovery")
+
+    def test_unfinished_metadata_research_still_preempts_awards(self):
+        mm,mc=m(0,0,0)
+        hh,hc=h(188,188,0)
+        blockers={"entries":[{"cohort":"Historical DataCite API Backfill 2026-10-28",
+                              "status":"blocked","research_completed":False}]}
+        r=decide(mm,mc,hh,hc,SHA,metadata_blockers=blockers)
+        self.assertEqual(r["mode"],"historical_api_triage")
+        self.assertEqual(r["phase"],"additional_evidence_research")
+
 if __name__=="__main__":unittest.main()
