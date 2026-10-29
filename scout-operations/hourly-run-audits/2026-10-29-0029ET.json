@@ -1,0 +1,59 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-29-HOURLY-0029ET",
+  "mode": "historical_api_triage",
+  "monthly_source_rows": 0,
+  "historical_source_rows": 188,
+  "reach_index_shards_read": 10,
+  "reach_index_rows": 1238,
+  "spark_index_shards_read": 6,
+  "spark_index_rows": 578,
+  "scout_batch_files_read": 12,
+  "scout_batch_rows_read": 49,
+  "relevant_reach_detail_shards_read": [
+    "agent-data/details/part-101.csv",
+    "agent-data/details/part-102.csv",
+    "agent-data/details/part-103.csv"
+  ],
+  "original_seed_dois_evaluated": 7,
+  "original_seed_dois_completed": 5,
+  "original_seed_dois_no_action": 5,
+  "original_seed_dois_new_metadata_blockers": 2,
+  "api_seed_related_outputs_checked": 4,
+  "discovery_routes": {
+    "direct_api_new_candidates": 0,
+    "api_seeded_expansion_new_candidates": 2,
+    "independent_scout_new_candidates": 0,
+    "metadata_corrections": 0,
+    "unclassified": 0
+  },
+  "new_hub_batch_path": "scout-discoveries/batches/2026-10-29-hourly-0029ET-bvot-expansion-001.csv",
+  "public_reach_records_verified": 1238,
+  "public_reach_records_added_by_scout_this_run": 0,
+  "metadata_followups_due_now": 0,
+  "metadata_followups_overdue_now": 0,
+  "human_metadata_needed_escalations_pending": 0,
+  "hub_investigate_candidates_delivered": 0,
+  "audit_status": "PARTIAL",
+  "audit_limitations": "All 10 REACH index shards, 6 SPARK index shards, 12 prior Scout batches and relevant REACH detail shards 101-103 checked; not all 140 REACH detail shards or private Hub decisions. Two public StoryMaps independently linked to NOAA award, awaiting human review. GitHub candidate batch, manifest, triage, blockers and coverage re-read/verified.",
+  "original_seed_no_action": [
+    "10.25923/na21oar4320204",
+    "10.25923/na21oar4590207",
+    "10.25923/na21oar4590208",
+    "10.25923/na21oar4590209",
+    "10.25923/na21oar4590212"
+  ],
+  "new_expansion_candidate_urls": [
+    "https://storymaps.arcgis.com/stories/71fafa36fd124974943b7816de2377a7",
+    "https://storymaps.arcgis.com/stories/fba773ea40274be0901380a83234ec3a"
+  ],
+  "historical_completed_before": 42,
+  "historical_completed_after": 47,
+  "historical_remaining_before": 146,
+  "historical_remaining_after": 141,
+  "new_hub_batch_verified": true,
+  "new_hub_manifest_verified": true,
+  "historical_coverage_reconciled": true,
+  "metadata_blockers_total": 14,
+  "new_human_metadata_needed": 0
+}
