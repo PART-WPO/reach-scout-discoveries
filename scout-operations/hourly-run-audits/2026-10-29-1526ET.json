@@ -1,0 +1,424 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-29-HOURLY-1526ET",
+  "run_timestamp": "2026-10-29T19:31:41Z",
+  "selected_mode": "normal_historical_discovery",
+  "audit_result": "PARTIAL",
+  "feed_integrity_status": "VERIFIED_MANIFEST_AND_ALL_16_CSVS_MATCH",
+  "github_action_verification_status": "NOT_VERIFIABLE_FROM_AVAILABLE_CONNECTOR; MANIFEST_GENERATED_AT_2026-10-29T19:32:46Z",
+  "manifest_verification": {
+    "public_manifest_batches_before": 15,
+    "public_manifest_candidate_rows_before": 55,
+    "exact_csv_sha256_matches_before": 15,
+    "record_count_matches_before": 15,
+    "run_id_matches_before": 15,
+    "all_existing_batches_24_columns": true,
+    "prior_batches_unchanged_before": 15,
+    "newly_staged_csv_ids": [
+      "2026-10-29-hourly-1526ET-nssl-hail-poster-001"
+    ],
+    "manifest_written_by_scout": false,
+    "public_manifest_batches_after": 16,
+    "public_manifest_candidate_rows_after": 56,
+    "all_16_sha256_exact_utf8_matches": true,
+    "all_16_row_counts_match": true,
+    "all_16_run_ids_match": true,
+    "all_16_24_columns": true,
+    "prior_15_batch_ids_and_hashes_preserved": true,
+    "new_batch_path": "scout-discoveries/batches/2026-10-29-hourly-1526ET-nssl-hail-poster-001.csv",
+    "new_batch_sha256": "da5f669f7ccf8cfba380d010ac3a1e624ec4ec7660fcd0c28da5035a845ffa63",
+    "new_batch_record_count": 1,
+    "new_batch_source_run_ids": [
+      "REACH-SCOUT-2026-10-29-HOURLY-1526ET"
+    ],
+    "manifest_generated_at": "2026-10-29T19:32:46Z"
+  },
+  "source_checks": {
+    "monthly_manifest_rows": 0,
+    "monthly_ledger_entries": 0,
+    "historical_source_rows": 188,
+    "historical_ledger_distinct_dois": 188,
+    "reach_index_shards": 10,
+    "reach_index_records": 1238,
+    "spark_index_shards": 6,
+    "spark_projects": 578,
+    "scout_review_batches_before": 15,
+    "scout_review_rows_before": 55,
+    "complete_reach_detail_shards": 140,
+    "private_reviewer_decisions": "NOT_VERIFIABLE",
+    "source_urls": [
+      "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+      "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-014.csv",
+      "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+    ],
+    "reach_detail_rows": 1238
+  },
+  "coverage_before": {
+    "received": 188,
+    "completed": 150,
+    "remaining": 38,
+    "already_in_reach": 37,
+    "forwarded_original": 2,
+    "metadata_update_forwarded": 8,
+    "no_action": 103
+  },
+  "coverage_after_expected": {
+    "received": 188,
+    "completed": 150,
+    "remaining": 38,
+    "already_in_reach": 37,
+    "forwarded_original": 2,
+    "metadata_update_forwarded": 8,
+    "no_action": 103
+  },
+  "monthly_coverage_before_after": {
+    "received": 0,
+    "completed": 0,
+    "remaining": 0
+  },
+  "original_seeds_independently_disposed_this_run": [],
+  "original_seed_no_action_cumulative": 103,
+  "original_seed_no_action_new": 0,
+  "original_seed_no_action_subtypes_changed": 0,
+  "original_seed_disposition_gaps": 0,
+  "original_seed_metadata_blockers": 38,
+  "original_seeds_forwarded_cumulative": 2,
+  "original_seeds_already_in_reach_cumulative": 37,
+  "expanded_outputs_forwarded_this_run": 0,
+  "independent_discovery_candidates_researched": [
+    {
+      "title": "Verification of Severe Weather Proxies from the NSSL-WRF for Hail Forecasting — 2016 AMS Conference Poster",
+      "identity": "https://ams.confex.com/ams/28SLS/webprogram/Handout/Paper300913/nawendt_sls28_poster.pdf",
+      "award": "NA15OAR4590192",
+      "route": "Independent discovery",
+      "path_evidence": "https://ams.confex.com/ams/28SLS/webprogram/Paper300913.html",
+      "funding_evidence": "https://ams.confex.com/ams/28SLS/webprogram/Handout/Paper300913/nawendt_sls28_poster.pdf",
+      "candidate_csv": "2026-10-29-1526ET-discovery_hub.csv",
+      "human_review_required": true,
+      "verified_date_type": "AMS presentation date, not upload date"
+    }
+  ],
+  "normal_spark_awards_examined": [
+    {
+      "award": "NA15OAR4590192",
+      "project_id": "spark-000163",
+      "outcome": "one independent new candidate for human review",
+      "source_urls": [
+        "https://ams.confex.com/ams/28SLS/webprogram/Paper300913.html",
+        "https://ams.confex.com/ams/28SLS/webprogram/Handout/Paper300913/nawendt_sls28_poster.pdf",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-014.csv"
+      ]
+    },
+    {
+      "award": "NA15OAR4590198",
+      "outcome": "2017 progress report already staged in older Scout batch",
+      "source_urls": [
+        "https://www.nhc.noaa.gov/jht/15-17reports/Zhang_198_progress_report4_100217.pdf"
+      ]
+    },
+    {
+      "award": "NA15OAR4590197",
+      "outcome": "2018 ARCHER final report already staged in older Scout batch",
+      "source_urls": [
+        "https://www.nhc.noaa.gov/jht/15-17reports/Wimmers_197_progress_reportFINAL_113018.pdf"
+      ]
+    },
+    {
+      "award": "NA22OAR4590188",
+      "project_id": "spark-000135",
+      "outcome": "existing REACH lake-ice and RRFS items; no distinct new output verified",
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-011.csv",
+        "https://repository.library.noaa.gov/view/noaa/67984"
+      ]
+    }
+  ],
+  "attribution_followups_rechecked": [
+    {
+      "identity": "doi:10.57969/s9159w",
+      "original_seed_status": "no_action",
+      "artifact_not_grant": true,
+      "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "stage_after": "closed_no_project_bridge",
+      "research_rounds_completed": 1,
+      "source_urls": [
+        "https://gdp.ucsd.edu/ldl/hurricane-michael-drifters-2018/",
+        "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2023GL105730",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-028.csv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-029.csv"
+      ],
+      "evidence_finding": "UCSD LDL explicitly identifies the directional first-five wave Hurricane Michael 2018 dataset as a distinct Scripps drifter data product; linked 2024 GRL article credits broad CI NA20OAR4320278 plus other NOAA/ONR support. SPARK spark-000355 and spark-000364 describe 2023-24 San Francisco Bay AQPI precipitation radar/modeling projects, not the Hurricane Michael 2018 deployment.",
+      "contradiction_or_negative_evidence": "Independent Scripps hurricane-ocean observation program and AQPI urban precipitation radar program are different workstreams; no project-specific WPO AQPI bridge found.",
+      "followup_question": "Does a signed AQPI Phase 2 award report explicitly list this exact Hurricane Michael drifter DOI as a funded deliverable?",
+      "next_action": "No further scheduled attribution retries without new primary-source WPO project-specific evidence. Original no_action remains unchanged.",
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "group": "Hurricane Michael LDL",
+      "recheck_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1526ET",
+      "recheck_completed_at": "2026-10-29T19:31:41Z"
+    },
+    {
+      "identity": "doi:10.57969/s94w2d",
+      "original_seed_status": "no_action",
+      "artifact_not_grant": true,
+      "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "stage_after": "closed_no_project_bridge",
+      "research_rounds_completed": 1,
+      "source_urls": [
+        "https://gdp.ucsd.edu/ldl/hurricane-michael-drifters-2018/",
+        "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2023GL105730",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-028.csv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-029.csv"
+      ],
+      "evidence_finding": "UCSD LDL explicitly identifies the sensor/bulk drifter Hurricane Michael 2018 dataset as a distinct Scripps drifter data product; linked 2024 GRL article credits broad CI NA20OAR4320278 plus other NOAA/ONR support. SPARK spark-000355 and spark-000364 describe 2023-24 San Francisco Bay AQPI precipitation radar/modeling projects, not the Hurricane Michael 2018 deployment.",
+      "contradiction_or_negative_evidence": "Independent Scripps hurricane-ocean observation program and AQPI urban precipitation radar program are different workstreams; no project-specific WPO AQPI bridge found.",
+      "followup_question": "Does a signed AQPI Phase 2 award report explicitly list this exact Hurricane Michael drifter DOI as a funded deliverable?",
+      "next_action": "No further scheduled attribution retries without new primary-source WPO project-specific evidence. Original no_action remains unchanged.",
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "group": "Hurricane Michael LDL",
+      "recheck_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1526ET",
+      "recheck_completed_at": "2026-10-29T19:31:41Z"
+    },
+    {
+      "identity": "doi:10.57969/s99g6b",
+      "original_seed_status": "no_action",
+      "artifact_not_grant": true,
+      "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "stage_after": "closed_no_project_bridge",
+      "research_rounds_completed": 1,
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part002.csv",
+        "https://gdp.ucsd.edu/ldl/gdp-drifter-data/",
+        "https://www.aoml.noaa.gov/global-drifter-program/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-028.csv"
+      ],
+      "evidence_finding": "Historical DataCite source identifies a 2021 R/V Thomas G. Thompson drifter subset; LDL GDP program documents global ocean drifter data supported by the broad CI award NA20OAR4320278. NOAA AOML independently identifies GDP as a global ocean observing program. SPARK AQPI is a San Francisco Bay radar/precipitation decision-support effort.",
+      "contradiction_or_negative_evidence": "Global ship-deployed drifter data are not shown as products of the WPO AQPI radar/modeling workstream; shared base cooperative award is insufficient.",
+      "followup_question": "Does an AQPI Phase 2 product list expressly include this exact R/V Thompson subset?",
+      "next_action": "No further scheduled attribution retries without new primary-source WPO project-specific evidence. Original no_action remains unchanged.",
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "group": "GDP/LDL",
+      "recheck_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1526ET",
+      "recheck_completed_at": "2026-10-29T19:31:41Z"
+    },
+    {
+      "identity": "doi:10.57969/s9bc70",
+      "original_seed_status": "no_action",
+      "artifact_not_grant": true,
+      "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "stage_after": "closed_no_project_bridge",
+      "research_rounds_completed": 1,
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part002.csv",
+        "https://gdp.ucsd.edu/ldl/gdp-drifter-data/",
+        "https://erddap.ldl.ucsd.edu/erddap/tabledap/GDP_GtsDrifterData.html",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-028.csv"
+      ],
+      "evidence_finding": "Captured DataCite identifies Scripps LDL WIS2 Recommended global drifter feed. LDL states GDP global GTS time series are supported by NA20OAR4320278 and another NOAA grant; live ERDDAP confirms an ocean-observation data stream. SPARK spark-000355 concerns AQPI San Francisco Bay gap-filling radars and precipitation decision support.",
+      "contradiction_or_negative_evidence": "Global drifter/GTS data stream is an independently operated GDP product; no direct evidence ties the exact DOI to the AQPI project.",
+      "followup_question": "Is DOI 10.57969/s9bc70 named in an AQPI-funded technical report or project deliverables list?",
+      "next_action": "No further scheduled attribution retries without new primary-source WPO project-specific evidence. Original no_action remains unchanged.",
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "group": "GDP/LDL",
+      "recheck_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1526ET",
+      "recheck_completed_at": "2026-10-29T19:31:41Z"
+    },
+    {
+      "identity": "doi:10.57969/s9g59x",
+      "original_seed_status": "no_action",
+      "artifact_not_grant": true,
+      "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "stage_after": "closed_no_project_bridge",
+      "research_rounds_completed": 1,
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part002.csv",
+        "https://gdp.ucsd.edu/ldl/gdp-drifter-data/",
+        "https://erddap.ldl.ucsd.edu/erddap/tabledap/GDP_GtsDrifterData.html",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-028.csv"
+      ],
+      "evidence_finding": "Captured DataCite identifies Scripps LDL WIS2 Core global drifter feed. LDL states GDP global GTS time series are supported by NA20OAR4320278 and another NOAA grant; live ERDDAP confirms an ocean-observation data stream. SPARK spark-000355 concerns AQPI San Francisco Bay gap-filling radars and precipitation decision support.",
+      "contradiction_or_negative_evidence": "Global drifter/GTS data stream is an independently operated GDP product; no direct evidence ties the exact DOI to the AQPI project.",
+      "followup_question": "Is DOI 10.57969/s9g59x named in an AQPI-funded technical report or project deliverables list?",
+      "next_action": "No further scheduled attribution retries without new primary-source WPO project-specific evidence. Original no_action remains unchanged.",
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "group": "GDP/LDL",
+      "recheck_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1526ET",
+      "recheck_completed_at": "2026-10-29T19:31:41Z"
+    },
+    {
+      "identity": "doi:10.57969/s9kw2f",
+      "original_seed_status": "no_action",
+      "artifact_not_grant": true,
+      "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "stage_after": "closed_no_project_bridge",
+      "research_rounds_completed": 1,
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part002.csv",
+        "https://gdp.ucsd.edu/ldl/gdp-drifter-data/",
+        "https://erddap.ldl.ucsd.edu/erddap/tabledap/GDP_GtsDrifterData.html",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-028.csv"
+      ],
+      "evidence_finding": "Captured DataCite identifies Scripps LDL GDP GTS global drifter feed. LDL states GDP global GTS time series are supported by NA20OAR4320278 and another NOAA grant; live ERDDAP confirms an ocean-observation data stream. SPARK spark-000355 concerns AQPI San Francisco Bay gap-filling radars and precipitation decision support.",
+      "contradiction_or_negative_evidence": "Global drifter/GTS data stream is an independently operated GDP product; no direct evidence ties the exact DOI to the AQPI project.",
+      "followup_question": "Is DOI 10.57969/s9kw2f named in an AQPI-funded technical report or project deliverables list?",
+      "next_action": "No further scheduled attribution retries without new primary-source WPO project-specific evidence. Original no_action remains unchanged.",
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "group": "GDP/LDL",
+      "recheck_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1526ET",
+      "recheck_completed_at": "2026-10-29T19:31:41Z"
+    },
+    {
+      "identity": "doi:10.6084/m9.figshare.13138757",
+      "original_seed_status": "no_action",
+      "artifact_not_grant": true,
+      "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "stage_after": "closed_no_project_bridge",
+      "research_rounds_completed": 1,
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part002.csv",
+        "https://cchdo.ucsd.edu/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-028.csv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-029.csv"
+      ],
+      "evidence_finding": "DataCite source identifies the same one-page CCHDO reference-quality CTD/bottle-data informational handout (concept DOI); CCHDO official site documents ocean hydrographic data services. SPARK AQPI projects concern urban rainfall radar and forecasting, not CTD/bottle-data services.",
+      "contradiction_or_negative_evidence": "CCHDO hydrography informational material is not demonstrated as an AQPI funded deliverable; concept and version DOI represent the same handout, not two distinct new outputs.",
+      "followup_question": "Does an AQPI project-specific output list name the exact CCHDO handout DOI 10.6084/m9.figshare.13138757?",
+      "next_action": "No further scheduled attribution retries without new primary-source WPO project-specific evidence. Original no_action remains unchanged.",
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "group": "CCHDO",
+      "recheck_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1526ET",
+      "recheck_completed_at": "2026-10-29T19:31:41Z"
+    },
+    {
+      "identity": "doi:10.6084/m9.figshare.13138757.v1",
+      "original_seed_status": "no_action",
+      "artifact_not_grant": true,
+      "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "stage_after": "closed_no_project_bridge",
+      "research_rounds_completed": 1,
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part002.csv",
+        "https://cchdo.ucsd.edu/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-028.csv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-029.csv"
+      ],
+      "evidence_finding": "DataCite source identifies the same one-page CCHDO reference-quality CTD/bottle-data informational handout (version 1 DOI); CCHDO official site documents ocean hydrographic data services. SPARK AQPI projects concern urban rainfall radar and forecasting, not CTD/bottle-data services.",
+      "contradiction_or_negative_evidence": "CCHDO hydrography informational material is not demonstrated as an AQPI funded deliverable; concept and version DOI represent the same handout, not two distinct new outputs.",
+      "followup_question": "Does an AQPI project-specific output list name the exact CCHDO handout DOI 10.6084/m9.figshare.13138757.v1?",
+      "next_action": "No further scheduled attribution retries without new primary-source WPO project-specific evidence. Original no_action remains unchanged.",
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "group": "CCHDO",
+      "recheck_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1526ET",
+      "recheck_completed_at": "2026-10-29T19:31:41Z"
+    },
+    {
+      "identity": "doi:10.7302/y2qt-7f47",
+      "original_seed_status": "no_action",
+      "artifact_not_grant": true,
+      "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "stage_after": "closed_no_project_bridge",
+      "research_rounds_completed": 1,
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part002.csv",
+        "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021GL093727",
+        "https://repository.library.noaa.gov/view/noaa/59615/noaa_59615_DS1.pdf",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-011.csv"
+      ],
+      "evidence_finding": "DataCite seed and linked 2021 peer-reviewed article identify WRF-Chem lake-spray aerosol emissions/nitrogen partitioning. Publisher and NOAA IR credit CIGLR umbrella NA17OAR4320152. SPARK spark-000135 is a different 2022 UFS FVCOM-CICE Great Lakes temperature/ice coupling project funded primarily by NA22OAR4590188, with the CIGLR award only related.",
+      "contradiction_or_negative_evidence": "2021 chemistry aerosol dataset predates 2022 UFS ice/lake-coupling project and has separate CIGLR funding; no WPO project-specific output bridge.",
+      "followup_question": "Does NA22OAR4590188 project deliverables documentation specifically list this lake-spray aerosol DOI?",
+      "next_action": "No further scheduled attribution retries without new primary-source WPO project-specific evidence. Original no_action remains unchanged.",
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "group": "Great Lakes CIGLR",
+      "recheck_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1526ET",
+      "recheck_completed_at": "2026-10-29T19:31:41Z"
+    }
+  ],
+  "attribution_queue_before": {
+    "total": 66,
+    "queued": 52,
+    "closed": 14
+  },
+  "attribution_queue_after_expected": {
+    "total": 66,
+    "queued": 43,
+    "closed": 23
+  },
+  "metadata_followups_due": 0,
+  "metadata_followups_overdue": 0,
+  "human_metadata_needed_escalations_pending": 0,
+  "hub_investigate_candidates_delivered_this_run": 0,
+  "metadata_blockers_total": 43,
+  "closed_original_no_actions_cumulative": 103,
+  "candidate_staged_research_only": 1,
+  "new_hub_ready_candidates": 1,
+  "human_review_dispositions_verified": 0,
+  "public_reach_additions_verified": 0,
+  "public_reach_total": 1238,
+  "provenance_rollup_before": {
+    "batches": 15,
+    "rows": 55,
+    "Direct API": 1,
+    "API-seeded expansion": 9,
+    "Independent discovery": 0,
+    "Metadata correction": 5,
+    "legacy_unclassified": 40
+  },
+  "provenance_rollup_expected_if_manifest_verified": {
+    "batches": 16,
+    "rows": 56,
+    "Direct API": 1,
+    "API-seeded expansion": 9,
+    "Independent discovery": 1,
+    "Metadata correction": 5,
+    "legacy_unclassified": 40
+  },
+  "prior_six_api_seeded_review_followups_preserved": true,
+  "blockers": [
+    "Primary attribution-followups.json ledger merge blocked by connector safety size limit; nine closed cases saved as public delta and in Library",
+    "GitHub Actions workflow run status not directly accessible; independent manifest/CSV checks passed",
+    "Private Hub reviewer dispositions unavailable"
+  ],
+  "next_priorities": [
+    "Recheck monthly API queue hourly",
+    "Verify automated manifest for new CSV",
+    "Continue 43 remaining attribution followups and open-ended old SPARK award research",
+    "Historical retry Nov 4 or later"
+  ],
+  "attribution_queue_after_actual_primary_ledger": {
+    "total": 66,
+    "queued": 52,
+    "closed": 14
+  },
+  "attribution_queue_after_effective_if_delta_honored": {
+    "total": 66,
+    "queued": 43,
+    "closed": 23
+  },
+  "attribution_followup_delta": {
+    "path": "scout-operations/attribution-followup-deltas/2026-10-29-1526ET.json",
+    "count": 9,
+    "github_published": true,
+    "primary_ledger_merge": "PENDING",
+    "reason": "GitHub connector safety check blocked replacement of 148-kB existing attribution ledger. All nine evidence-based decisions are saved in Library and an append-only public-safe delta; do not repeat these nine investigations."
+  },
+  "hub_import_attempted": false,
+  "newly_staged_csv_ids": [
+    "2026-10-29-hourly-1526ET-nssl-hail-poster-001"
+  ],
+  "provenance_rollup_after_verified": {
+    "batches": 16,
+    "rows": 56,
+    "Direct API": 1,
+    "API-seeded expansion": 9,
+    "Independent discovery": 1,
+    "Metadata correction": 5,
+    "legacy_unclassified": 40
+  },
+  "reviewer_visibility": {
+    "feed_verified": true,
+    "discovery_hub_import_confirmed": false,
+    "human_approval_confirmed": false,
+    "public_reach_addition_confirmed": false,
+    "human_metadata_needed_escalations": 0
+  }
+}
