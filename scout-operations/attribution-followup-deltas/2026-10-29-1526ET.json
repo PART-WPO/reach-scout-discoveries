@@ -1,0 +1,167 @@
+{
+  "schema": "reach-scout-attribution-followup-delta-v1",
+  "run_id": "REACH-SCOUT-2026-10-29-HOURLY-1526ET",
+  "created_at": "2026-10-29T19:31:41Z",
+  "primary_ledger": "scout-operations/attribution-followups.json",
+  "merge_status": "PENDING_PRIMARY_LEDGER_MERGE",
+  "reason": "Primary 66-entry attribution ledger update exceeded GitHub connector safety size limit; preserve exact bounded followup evidence as append-only delta, do not re-research these nine identities.",
+  "original_seed_status_unchanged": true,
+  "closed_count": 9,
+  "closed": [
+    {
+      "identity": "doi:10.57969/s9159w",
+      "stage": "closed_no_project_bridge",
+      "subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "source_urls": [
+        "https://gdp.ucsd.edu/ldl/hurricane-michael-drifters-2018/",
+        "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2023GL105730",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-028.csv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-029.csv"
+      ],
+      "evidence_finding": "UCSD LDL explicitly identifies the directional first-five wave Hurricane Michael 2018 dataset as a distinct Scripps drifter data product; linked 2024 GRL article credits broad CI NA20OAR4320278 plus other NOAA/ONR support. SPARK spark-000355 and spark-000364 describe 2023-24 San Francisco Bay AQPI precipitation radar/modeling projects, not the Hurricane Michael 2018 deployment.",
+      "contradiction_or_negative_evidence": "Independent Scripps hurricane-ocean observation program and AQPI urban precipitation radar program are different workstreams; no project-specific WPO AQPI bridge found.",
+      "followup_question": "Does a signed AQPI Phase 2 award report explicitly list this exact Hurricane Michael drifter DOI as a funded deliverable?",
+      "recheck_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1526ET",
+      "recheck_completed_at": "2026-10-29T19:31:41Z"
+    },
+    {
+      "identity": "doi:10.57969/s94w2d",
+      "stage": "closed_no_project_bridge",
+      "subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "source_urls": [
+        "https://gdp.ucsd.edu/ldl/hurricane-michael-drifters-2018/",
+        "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2023GL105730",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-028.csv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-029.csv"
+      ],
+      "evidence_finding": "UCSD LDL explicitly identifies the sensor/bulk drifter Hurricane Michael 2018 dataset as a distinct Scripps drifter data product; linked 2024 GRL article credits broad CI NA20OAR4320278 plus other NOAA/ONR support. SPARK spark-000355 and spark-000364 describe 2023-24 San Francisco Bay AQPI precipitation radar/modeling projects, not the Hurricane Michael 2018 deployment.",
+      "contradiction_or_negative_evidence": "Independent Scripps hurricane-ocean observation program and AQPI urban precipitation radar program are different workstreams; no project-specific WPO AQPI bridge found.",
+      "followup_question": "Does a signed AQPI Phase 2 award report explicitly list this exact Hurricane Michael drifter DOI as a funded deliverable?",
+      "recheck_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1526ET",
+      "recheck_completed_at": "2026-10-29T19:31:41Z"
+    },
+    {
+      "identity": "doi:10.57969/s99g6b",
+      "stage": "closed_no_project_bridge",
+      "subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part002.csv",
+        "https://gdp.ucsd.edu/ldl/gdp-drifter-data/",
+        "https://www.aoml.noaa.gov/global-drifter-program/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-028.csv"
+      ],
+      "evidence_finding": "Historical DataCite source identifies a 2021 R/V Thomas G. Thompson drifter subset; LDL GDP program documents global ocean drifter data supported by the broad CI award NA20OAR4320278. NOAA AOML independently identifies GDP as a global ocean observing program. SPARK AQPI is a San Francisco Bay radar/precipitation decision-support effort.",
+      "contradiction_or_negative_evidence": "Global ship-deployed drifter data are not shown as products of the WPO AQPI radar/modeling workstream; shared base cooperative award is insufficient.",
+      "followup_question": "Does an AQPI Phase 2 product list expressly include this exact R/V Thompson subset?",
+      "recheck_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1526ET",
+      "recheck_completed_at": "2026-10-29T19:31:41Z"
+    },
+    {
+      "identity": "doi:10.57969/s9bc70",
+      "stage": "closed_no_project_bridge",
+      "subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part002.csv",
+        "https://gdp.ucsd.edu/ldl/gdp-drifter-data/",
+        "https://erddap.ldl.ucsd.edu/erddap/tabledap/GDP_GtsDrifterData.html",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-028.csv"
+      ],
+      "evidence_finding": "Captured DataCite identifies Scripps LDL WIS2 Recommended global drifter feed. LDL states GDP global GTS time series are supported by NA20OAR4320278 and another NOAA grant; live ERDDAP confirms an ocean-observation data stream. SPARK spark-000355 concerns AQPI San Francisco Bay gap-filling radars and precipitation decision support.",
+      "contradiction_or_negative_evidence": "Global drifter/GTS data stream is an independently operated GDP product; no direct evidence ties the exact DOI to the AQPI project.",
+      "followup_question": "Is DOI 10.57969/s9bc70 named in an AQPI-funded technical report or project deliverables list?",
+      "recheck_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1526ET",
+      "recheck_completed_at": "2026-10-29T19:31:41Z"
+    },
+    {
+      "identity": "doi:10.57969/s9g59x",
+      "stage": "closed_no_project_bridge",
+      "subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part002.csv",
+        "https://gdp.ucsd.edu/ldl/gdp-drifter-data/",
+        "https://erddap.ldl.ucsd.edu/erddap/tabledap/GDP_GtsDrifterData.html",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-028.csv"
+      ],
+      "evidence_finding": "Captured DataCite identifies Scripps LDL WIS2 Core global drifter feed. LDL states GDP global GTS time series are supported by NA20OAR4320278 and another NOAA grant; live ERDDAP confirms an ocean-observation data stream. SPARK spark-000355 concerns AQPI San Francisco Bay gap-filling radars and precipitation decision support.",
+      "contradiction_or_negative_evidence": "Global drifter/GTS data stream is an independently operated GDP product; no direct evidence ties the exact DOI to the AQPI project.",
+      "followup_question": "Is DOI 10.57969/s9g59x named in an AQPI-funded technical report or project deliverables list?",
+      "recheck_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1526ET",
+      "recheck_completed_at": "2026-10-29T19:31:41Z"
+    },
+    {
+      "identity": "doi:10.57969/s9kw2f",
+      "stage": "closed_no_project_bridge",
+      "subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part002.csv",
+        "https://gdp.ucsd.edu/ldl/gdp-drifter-data/",
+        "https://erddap.ldl.ucsd.edu/erddap/tabledap/GDP_GtsDrifterData.html",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-028.csv"
+      ],
+      "evidence_finding": "Captured DataCite identifies Scripps LDL GDP GTS global drifter feed. LDL states GDP global GTS time series are supported by NA20OAR4320278 and another NOAA grant; live ERDDAP confirms an ocean-observation data stream. SPARK spark-000355 concerns AQPI San Francisco Bay gap-filling radars and precipitation decision support.",
+      "contradiction_or_negative_evidence": "Global drifter/GTS data stream is an independently operated GDP product; no direct evidence ties the exact DOI to the AQPI project.",
+      "followup_question": "Is DOI 10.57969/s9kw2f named in an AQPI-funded technical report or project deliverables list?",
+      "recheck_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1526ET",
+      "recheck_completed_at": "2026-10-29T19:31:41Z"
+    },
+    {
+      "identity": "doi:10.6084/m9.figshare.13138757",
+      "stage": "closed_no_project_bridge",
+      "subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part002.csv",
+        "https://cchdo.ucsd.edu/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-028.csv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-029.csv"
+      ],
+      "evidence_finding": "DataCite source identifies the same one-page CCHDO reference-quality CTD/bottle-data informational handout (concept DOI); CCHDO official site documents ocean hydrographic data services. SPARK AQPI projects concern urban rainfall radar and forecasting, not CTD/bottle-data services.",
+      "contradiction_or_negative_evidence": "CCHDO hydrography informational material is not demonstrated as an AQPI funded deliverable; concept and version DOI represent the same handout, not two distinct new outputs.",
+      "followup_question": "Does an AQPI project-specific output list name the exact CCHDO handout DOI 10.6084/m9.figshare.13138757?",
+      "recheck_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1526ET",
+      "recheck_completed_at": "2026-10-29T19:31:41Z"
+    },
+    {
+      "identity": "doi:10.6084/m9.figshare.13138757.v1",
+      "stage": "closed_no_project_bridge",
+      "subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part002.csv",
+        "https://cchdo.ucsd.edu/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-028.csv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-029.csv"
+      ],
+      "evidence_finding": "DataCite source identifies the same one-page CCHDO reference-quality CTD/bottle-data informational handout (version 1 DOI); CCHDO official site documents ocean hydrographic data services. SPARK AQPI projects concern urban rainfall radar and forecasting, not CTD/bottle-data services.",
+      "contradiction_or_negative_evidence": "CCHDO hydrography informational material is not demonstrated as an AQPI funded deliverable; concept and version DOI represent the same handout, not two distinct new outputs.",
+      "followup_question": "Does an AQPI project-specific output list name the exact CCHDO handout DOI 10.6084/m9.figshare.13138757.v1?",
+      "recheck_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1526ET",
+      "recheck_completed_at": "2026-10-29T19:31:41Z"
+    },
+    {
+      "identity": "doi:10.7302/y2qt-7f47",
+      "stage": "closed_no_project_bridge",
+      "subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part002.csv",
+        "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021GL093727",
+        "https://repository.library.noaa.gov/view/noaa/59615/noaa_59615_DS1.pdf",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-011.csv"
+      ],
+      "evidence_finding": "DataCite seed and linked 2021 peer-reviewed article identify WRF-Chem lake-spray aerosol emissions/nitrogen partitioning. Publisher and NOAA IR credit CIGLR umbrella NA17OAR4320152. SPARK spark-000135 is a different 2022 UFS FVCOM-CICE Great Lakes temperature/ice coupling project funded primarily by NA22OAR4590188, with the CIGLR award only related.",
+      "contradiction_or_negative_evidence": "2021 chemistry aerosol dataset predates 2022 UFS ice/lake-coupling project and has separate CIGLR funding; no WPO project-specific output bridge.",
+      "followup_question": "Does NA22OAR4590188 project deliverables documentation specifically list this lake-spray aerosol DOI?",
+      "recheck_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1526ET",
+      "recheck_completed_at": "2026-10-29T19:31:41Z"
+    }
+  ],
+  "counts_if_merged": {
+    "total": 66,
+    "queued": 43,
+    "closed": 23
+  },
+  "counts_in_primary_ledger_until_merged": {
+    "total": 66,
+    "queued": 52,
+    "closed": 14
+  },
+  "next_action": "Merge these nine statuses into the primary ledger using an authorized size-capable tool. Until then, router should exclude these nine from repeat attribution research by consulting this delta."
+}
