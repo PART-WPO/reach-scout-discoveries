@@ -4,7 +4,7 @@
   "origin": "77 no_action original historical DOI dispositions after the 2026-10-29 08:33 ET hourly run: 29 administrative non-outputs; 2 NASA-only funding; 46 real outputs without verified WPO project attribution. The 8:00 ET briefing snapshot was 65, including 34 attribution gaps. No original status or human decision changed.",
   "policy": "These are discovery research leads, not 34 confirmed WPO outputs or 34 automatic Hub findings. Don't promote without evidence bridge and independent corroboration. Preserve no_action historical completed count.",
   "total": 66,
-  "queued": 62,
+  "queued": 58,
   "entries": [
     {
       "identity": "doi:10.25923/b2b3-m644",
@@ -49,7 +49,7 @@
       "identity": "doi:10.25923/cckr-7v25",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "medium",
       "original_run_id": "REACH-SCOUT-2026-10-29-HOURLY-0132ET",
       "existing_source_evidence": [
@@ -64,12 +64,24 @@
       "source_disposition_preserved": true,
       "new_direct_award_evidence_found": false,
       "hub_publication_authorized": false,
-      "recheck_attempts": 0,
+      "recheck_attempts": 1,
       "max_recheck_rounds_without_material_evidence": 1,
       "recheck_trigger": "When primary actionable API queues are cleared/blocked, or genuinely new direct attribution evidence arrives",
       "last_source_research_at": "2026-10-29T05:32:21Z",
       "original_notes_preserved_in": "scout-operations/historical-triage.json",
-      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility."
+      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility.",
+      "recheck_completed_at": "2026-10-29T17:30:25.127238Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1329ET",
+      "checked_source_urls": [
+        "https://repository.library.noaa.gov/view/noaa/76799",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-021.csv"
+      ],
+      "recheck_finding": "NOAA IR documents a 2026 SPC conditional severe-hazard outlook climatology supported by broad CI award NA21OAR4320204. SPARK relates that CI award to WPO emergency-management survey/flood survey projects, not this SPC forecast research. No direct project-specific output bridge identified.",
+      "negative_or_contradictory_evidence": "NOAA IR documents a 2026 SPC conditional severe-hazard outlook climatology supported by broad CI award NA21OAR4320204. SPARK relates that CI award to WPO emergency-management survey/flood survey projects, not this SPC forecast research. No direct project-specific output bridge identified.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "recheck_final_question": "Does a named WPO survey project report identify this exact SPC outlook-climatology paper as a funded deliverable?",
+      "recheck_next_action": "No further scheduled attribution retries absent new positive project-specific primary evidence; original no_action preserved."
     },
     {
       "identity": "doi:10.25923/d7j4-gx12",
@@ -113,7 +125,7 @@
       "identity": "doi:10.25923/fssj-fe85",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "medium",
       "original_run_id": "REACH-SCOUT-2026-10-29-HOURLY-0132ET",
       "existing_source_evidence": [
@@ -128,18 +140,30 @@
       "source_disposition_preserved": true,
       "new_direct_award_evidence_found": false,
       "hub_publication_authorized": false,
-      "recheck_attempts": 0,
+      "recheck_attempts": 1,
       "max_recheck_rounds_without_material_evidence": 1,
       "recheck_trigger": "When primary actionable API queues are cleared/blocked, or genuinely new direct attribution evidence arrives",
       "last_source_research_at": "2026-10-29T05:32:21Z",
       "original_notes_preserved_in": "scout-operations/historical-triage.json",
-      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility."
+      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility.",
+      "recheck_completed_at": "2026-10-29T17:30:25.127238Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1329ET",
+      "checked_source_urls": [
+        "https://repository.library.noaa.gov/view/noaa/76788",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-021.csv"
+      ],
+      "recheck_finding": "NOAA IR explicitly identifies this 2022 first-guess SPC watch guidance study as HWT/FACETs machine-learning work under CI award NA21OAR4320204. SPARK's WPO projects tied to that umbrella concern emergency-management and flood surveys; no output-level project connection verified.",
+      "negative_or_contradictory_evidence": "NOAA IR explicitly identifies this 2022 first-guess SPC watch guidance study as HWT/FACETs machine-learning work under CI award NA21OAR4320204. SPARK's WPO projects tied to that umbrella concern emergency-management and flood surveys; no output-level project connection verified.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "recheck_final_question": "Is this exact first-guess watch guidance report documented as a deliverable of a named WPO SPARK project?",
+      "recheck_next_action": "No further scheduled attribution retries absent new positive project-specific primary evidence; original no_action preserved."
     },
     {
       "identity": "doi:10.25923/fye2-yk53",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "medium",
       "original_run_id": "REACH-SCOUT-2026-10-29-HOURLY-0132ET",
       "existing_source_evidence": [
@@ -154,18 +178,31 @@
       "source_disposition_preserved": true,
       "new_direct_award_evidence_found": false,
       "hub_publication_authorized": false,
-      "recheck_attempts": 0,
+      "recheck_attempts": 1,
       "max_recheck_rounds_without_material_evidence": 1,
       "recheck_trigger": "When primary actionable API queues are cleared/blocked, or genuinely new direct attribution evidence arrives",
       "last_source_research_at": "2026-10-29T05:32:21Z",
       "original_notes_preserved_in": "scout-operations/historical-triage.json",
-      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility."
+      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility.",
+      "recheck_completed_at": "2026-10-29T17:30:25.127238Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1329ET",
+      "checked_source_urls": [
+        "https://repository.library.noaa.gov/view/noaa/71354",
+        "https://inside.nssl.noaa.gov/tgalarneau/publications/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-021.csv"
+      ],
+      "recheck_finding": "2025 Spring Forecasting Experiment is an SPC/NSSL/CIWRO experiment-wide report supported under broad CI award. Its scope is much wider than the two WPO survey/flood projects linked to that award; no primary-source bridge identifies this report as a WPO-funded project deliverable.",
+      "negative_or_contradictory_evidence": "2025 Spring Forecasting Experiment is an SPC/NSSL/CIWRO experiment-wide report supported under broad CI award. Its scope is much wider than the two WPO survey/flood projects linked to that award; no primary-source bridge identifies this report as a WPO-funded project deliverable.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "recheck_final_question": "Is this HWT-wide report specifically named in a WPO-funded survey/flood project deliverables list?",
+      "recheck_next_action": "No further scheduled attribution retries absent new positive project-specific primary evidence; original no_action preserved."
     },
     {
       "identity": "doi:10.25923/gy19-2j41",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "medium",
       "original_run_id": "REACH-SCOUT-2026-10-29-HOURLY-0132ET",
       "existing_source_evidence": [
@@ -180,12 +217,24 @@
       "source_disposition_preserved": true,
       "new_direct_award_evidence_found": false,
       "hub_publication_authorized": false,
-      "recheck_attempts": 0,
+      "recheck_attempts": 1,
       "max_recheck_rounds_without_material_evidence": 1,
       "recheck_trigger": "When primary actionable API queues are cleared/blocked, or genuinely new direct attribution evidence arrives",
       "last_source_research_at": "2026-10-29T05:32:21Z",
       "original_notes_preserved_in": "scout-operations/historical-triage.json",
-      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility."
+      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility.",
+      "recheck_completed_at": "2026-10-29T17:30:25.127238Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1329ET",
+      "checked_source_urls": [
+        "https://repository.library.noaa.gov/view/noaa/74405",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-021.csv"
+      ],
+      "recheck_finding": "2026 Spring Forecasting Experiment summary is an HWT-wide SPC/NSSL/CIWRO report, with broad CI award NA21OAR4320204. SPARK does not connect this report to the specific emergency-management or flood survey WPO workstreams; no positive project bridge.",
+      "negative_or_contradictory_evidence": "2026 Spring Forecasting Experiment summary is an HWT-wide SPC/NSSL/CIWRO report, with broad CI award NA21OAR4320204. SPARK does not connect this report to the specific emergency-management or flood survey WPO workstreams; no positive project bridge.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "recheck_final_question": "Does a WPO project-specific report identify this 2026 HWT summary as a funded output?",
+      "recheck_next_action": "No further scheduled attribution retries absent new positive project-specific primary evidence; original no_action preserved."
     },
     {
       "identity": "doi:10.25923/hq4k-bw52",
@@ -1772,24 +1821,23 @@
     "alternative_funding": 2,
     "unattributed_outputs": 46
   },
-  "last_updated_at": "2026-10-29T16:29:47.822626Z",
+  "last_updated_at": "2026-10-29T17:30:25.127238Z",
   "latest_addition": {
     "run_id": "REACH-SCOUT-2026-10-29-HOURLY-1131ET",
     "new_qualified_attribution_gaps": 9,
     "previous_total": 57,
     "total": 66
   },
-  "closed": 4,
+  "closed": 8,
   "latest_recheck": {
-    "run_id": "REACH-SCOUT-2026-10-29-HOURLY-1229ET",
-    "closed_count": 4,
-    "identities": [
-      "doi:10.25923/b2b3-m644",
-      "doi:10.25923/d7j4-gx12",
-      "doi:10.25923/nm97-m303",
-      "doi:10.25923/y7ft-hn02"
+    "run_id": "REACH-SCOUT-2026-10-29-HOURLY-1329ET",
+    "closed": [
+      "doi:10.25923/cckr-7v25",
+      "doi:10.25923/fssj-fe85",
+      "doi:10.25923/fye2-yk53",
+      "doi:10.25923/gy19-2j41"
     ],
-    "queued_after": 62,
-    "total": 66
+    "closed_count": 4,
+    "original_seed_status_unchanged": true
   }
 }
