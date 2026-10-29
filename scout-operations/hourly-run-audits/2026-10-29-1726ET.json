@@ -1,0 +1,323 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-29-HOURLY-1726ET",
+  "run_timestamp_utc": "2026-10-29T21:29:29.645047Z",
+  "selected_mode": "historical_api_triage",
+  "phase": "additional_evidence_research",
+  "audit_result": "PARTIAL",
+  "audit_reason": "Research, GitHub ledger writes, automated blocker validation and historical coverage reconciliation succeeded; current Hub import compatibility and all 140 REACH detail shards not independently verified; no human decisions inferred",
+  "monthly_coverage_before": {
+    "completed": 0,
+    "remaining": 0
+  },
+  "monthly_coverage_after": {
+    "completed": 0,
+    "remaining": 0
+  },
+  "historical_coverage_before": {
+    "completed": 154,
+    "remaining": 34,
+    "total": 188
+  },
+  "historical_coverage_after": {
+    "completed": 159,
+    "remaining": 29,
+    "total": 188,
+    "no_action": 105,
+    "human_metadata_needed": 7,
+    "already_in_reach": 37,
+    "forwarded_to_hub": 2,
+    "metadata_update_forwarded": 8
+  },
+  "expected_historical_after": {
+    "completed": 159,
+    "remaining": 29
+  },
+  "seeds_independently_disposed": [
+    {
+      "doi": "10.15139/s3/uy6rda",
+      "identity": "doi:10.15139/s3/uy6rda",
+      "outcome": "no_action",
+      "grant_vs_artifact": "administrative_plan_not_research_artifact",
+      "no_action_subtype": "NOT_RESEARCH_OUTPUT",
+      "original_seed_doi": "10.15139/s3/uy6rda",
+      "discovery_route": "Direct API \u2014 Historical DataCite source",
+      "sources_checked": [
+        {
+          "method": "spark_primary_project_detail",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-016.csv",
+          "outcome": "SPARK spark-000200 confirms active 2025 excessive-rainfall ML project and matching UNC award; this corroborates grant context, not existence of a released research dataset."
+        },
+        {
+          "method": "pi_current_cv_project_list",
+          "url": "https://draaronhill.com/uploads/CV.pdf",
+          "outcome": "2026 PI CV lists 2025-28 funded project and earlier published datasets separately; no evidence that the plan DOI is a released scientific dataset."
+        },
+        {
+          "method": "captured_original_datacite_metadata",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
+          "outcome": "Original DOI title and abstract explicitly identify a Data Management and Sharing Plan describing future management/sharing strategy, not actual generated data."
+        }
+      ],
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-016.csv",
+        "https://draaronhill.com/uploads/CV.pdf",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
+        "https://doi.org/10.15139/s3/uy6rda",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv"
+      ],
+      "missing_fields": [],
+      "funding_awards": [
+        "NA25OARX459C0174-T1-01"
+      ],
+      "reviewer_question": "No human intake requested: this DOI is an administrative data-management plan for anticipated research data, not a deposited research dataset or scientific result.",
+      "hub_delivery_status": "NOT_APPLICABLE"
+    },
+    {
+      "doi": "10.17603/ds2-6vmm-2g61",
+      "identity": "doi:10.17603/ds2-6vmm-2g61",
+      "outcome": "human_metadata_needed",
+      "grant_vs_artifact": "true_research_method_or_instrument_artifact_with_unverified_public_scope",
+      "no_action_subtype": null,
+      "original_seed_doi": "10.17603/ds2-6vmm-2g61",
+      "discovery_route": "Direct API \u2014 Historical DataCite source",
+      "sources_checked": [
+        {
+          "method": "spark_primary_project_detail",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+          "outcome": "SPARK spark-000244 explicitly includes primary award NA21OAR4590206 for HTI risk communication project."
+        },
+        {
+          "method": "reach_parent_detail_comparison",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-097.csv",
+          "outcome": "REACH reach-000816 already lists DesignSafe parent PRJ-5889 under both project awards; potential component/version overlap."
+        },
+        {
+          "method": "author_dataset_catalog_review",
+          "url": "https://impacts.ucar.edu/en/persons/robert-prestley/",
+          "outcome": "UCAR author catalog lists the HTI parent dataset and 2025 year, not a separate dated public de-identification-guide record."
+        }
+      ],
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-097.csv",
+        "https://impacts.ucar.edu/en/persons/robert-prestley/",
+        "https://doi.org/10.17603/ds2-6vmm-2g61",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv"
+      ],
+      "missing_fields": [
+        "record-specific full YYYY-MM-DD publication date",
+        "native public guide/file scope",
+        "separate catalog eligibility versus REACH parent reach-000816"
+      ],
+      "funding_awards": [
+        "NA21OAR4590206"
+      ],
+      "reviewer_question": "Is the HTI de-identification guide a separately public, catalogable output or only a component of the existing REACH parent, and can a verified release date be provided or permissibly waived?",
+      "hub_delivery_status": "NOT_DELIVERED_TO_HUB"
+    },
+    {
+      "doi": "10.17603/ds2-967n-t829",
+      "identity": "doi:10.17603/ds2-967n-t829",
+      "outcome": "human_metadata_needed",
+      "grant_vs_artifact": "true_research_method_or_instrument_artifact_with_unverified_public_scope",
+      "no_action_subtype": null,
+      "original_seed_doi": "10.17603/ds2-967n-t829",
+      "discovery_route": "Direct API \u2014 Historical DataCite source",
+      "sources_checked": [
+        {
+          "method": "spark_primary_project_detail",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-019.csv",
+          "outcome": "SPARK spark-000240 confirms Minding the Gap primary awards NA19OAR0220121 and NA19OAR0220192."
+        },
+        {
+          "method": "noaa_hfip_project_report",
+          "url": "https://vlab.noaa.gov/documents/17693964/36850290/hfip-annual-report-2021-2022-final.pdf",
+          "outcome": "NOAA HFIP report independently describes Minding the Gap survey of broadcast meteorologists and emergency managers; does not establish the DesignSafe component publication date."
+        },
+        {
+          "method": "researcher_cv_methodology",
+          "url": "https://hazards.colorado.edu/api/v2/uploads/cv/vickery_cv_jan_2022-1641322855132.pdf",
+          "outcome": "Study researcher CV documents development of the online broadcast meteorologist survey for this specific NOAA-funded project; no DOI-specific release date."
+        }
+      ],
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-019.csv",
+        "https://vlab.noaa.gov/documents/17693964/36850290/hfip-annual-report-2021-2022-final.pdf",
+        "https://hazards.colorado.edu/api/v2/uploads/cv/vickery_cv_jan_2022-1641322855132.pdf",
+        "https://doi.org/10.17603/ds2-967n-t829",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv"
+      ],
+      "missing_fields": [
+        "record-specific full YYYY-MM-DD publication date",
+        "native public survey instrument/file scope"
+      ],
+      "funding_awards": [
+        "NA19OAR0220121",
+        "NA19OAR0220192"
+      ],
+      "reviewer_question": "Does the DesignSafe survey-materials DOI represent a distinct publicly accessible output eligible for REACH, and what verified release date or permitted omission applies?",
+      "hub_delivery_status": "NOT_DELIVERED_TO_HUB"
+    },
+    {
+      "doi": "10.17603/ds2-qm3n-6h83",
+      "identity": "doi:10.17603/ds2-qm3n-6h83",
+      "outcome": "human_metadata_needed",
+      "grant_vs_artifact": "true_research_method_or_instrument_artifact_with_unverified_public_scope",
+      "no_action_subtype": null,
+      "original_seed_doi": "10.17603/ds2-qm3n-6h83",
+      "discovery_route": "Direct API \u2014 Historical DataCite source",
+      "sources_checked": [
+        {
+          "method": "spark_primary_project_detail",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-019.csv",
+          "outcome": "SPARK spark-000240 confirms both original WPO Minding the Gap awards."
+        },
+        {
+          "method": "noaa_hfip_project_report",
+          "url": "https://vlab.noaa.gov/documents/17693964/36850290/hfip-annual-report-2021-2022-final.pdf",
+          "outcome": "NOAA report corroborates interviews and survey methodology, not public availability of restricted participant responses."
+        },
+        {
+          "method": "researcher_cv_methodology",
+          "url": "https://hazards.colorado.edu/api/v2/uploads/cv/vickery_cv_jan_2022-1641322855132.pdf",
+          "outcome": "Researcher CV independently documents developing interview guide, interviewing NWS partners and analyzing responses; no component release date."
+        }
+      ],
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-019.csv",
+        "https://vlab.noaa.gov/documents/17693964/36850290/hfip-annual-report-2021-2022-final.pdf",
+        "https://hazards.colorado.edu/api/v2/uploads/cv/vickery_cv_jan_2022-1641322855132.pdf",
+        "https://doi.org/10.17603/ds2-qm3n-6h83",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv"
+      ],
+      "missing_fields": [
+        "record-specific full YYYY-MM-DD publication date",
+        "verified public protocol/method files distinct from restricted participant interview data"
+      ],
+      "funding_awards": [
+        "NA19OAR0220121",
+        "NA19OAR0220192"
+      ],
+      "reviewer_question": "Are the public interview guides or analysis methods independently catalogable without exposing restricted participant data, and what verified release date or permissible omission applies?",
+      "hub_delivery_status": "NOT_DELIVERED_TO_HUB"
+    },
+    {
+      "doi": "10.17603/ds2-ydmk-q397",
+      "identity": "doi:10.17603/ds2-ydmk-q397",
+      "outcome": "human_metadata_needed",
+      "grant_vs_artifact": "true_research_method_or_instrument_artifact_with_unverified_public_scope",
+      "no_action_subtype": null,
+      "original_seed_doi": "10.17603/ds2-ydmk-q397",
+      "discovery_route": "Direct API \u2014 Historical DataCite source",
+      "sources_checked": [
+        {
+          "method": "spark_primary_project_detail",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+          "outcome": "SPARK spark-000244 lists award NA21OAR4590206 for user-centered HTI visualization research."
+        },
+        {
+          "method": "reach_parent_detail_comparison",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-097.csv",
+          "outcome": "REACH reach-000816 already lists DesignSafe PRJ-5889 parent dataset; potential component/version duplicate."
+        },
+        {
+          "method": "author_dataset_catalog_review",
+          "url": "https://impacts.ucar.edu/en/persons/robert-prestley/",
+          "outcome": "Author UCAR dataset catalog lists the HTI parent in 2025 but does not establish separate component release date or public files."
+        }
+      ],
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-097.csv",
+        "https://impacts.ucar.edu/en/persons/robert-prestley/",
+        "https://doi.org/10.17603/ds2-ydmk-q397",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv"
+      ],
+      "missing_fields": [
+        "record-specific full YYYY-MM-DD publication date",
+        "public accessibility of the stimuli component",
+        "distinctness from existing REACH parent reach-000816"
+      ],
+      "funding_awards": [
+        "NA21OAR4590206"
+      ],
+      "reviewer_question": "Should HTI interview stimuli be separately cataloged or treated as part of the existing DesignSafe REACH parent, and what release date or permitted omission is supported?",
+      "hub_delivery_status": "NOT_DELIVERED_TO_HUB"
+    }
+  ],
+  "new_source_checks": 15,
+  "expansion_leads": [],
+  "new_distinct_expanded_outputs_verified": 0,
+  "new_verified_review_candidates_by_route": {
+    "Direct API": 0,
+    "API-seeded expansion": 0,
+    "Independent discovery": 0,
+    "Metadata correction": 0
+  },
+  "new_csv_batch_ids": [],
+  "feed_integrity_status": "VERIFIED_EXISTING_16_BATCHES_NO_NEW_BATCH",
+  "feed_verification_evidence": {
+    "public_main_manifest_batches": 16,
+    "public_main_manifest_rows": 56,
+    "exact_csv_sha256_rowcount_runids_24_columns_verified": 16,
+    "last_successful_manifest_generator_workflow_run": 40941042327,
+    "last_successful_manifest_generator_timestamp": "2026-10-29T19:32:50Z"
+  },
+  "github_action_verification_status": "MANIFEST_GENERATOR_40941042327_COMPLETED_SUCCESS; NO_NEW_CSV; HISTORICAL_RECONCILIATION_40958471533_SUCCESS; BLOCKER_VALIDATOR_40958326485_SUCCESS",
+  "human_metadata_needed_new": 4,
+  "pending_hub_handoff_new": 4,
+  "hub_visible_new": 0,
+  "human_decisions_verified_new": 0,
+  "public_reach_additions_verified_new": 0,
+  "reviewer_visibility": "4 NEW PENDING_HUB_HANDOFF NOT DELIVERED; 3 EXISTING PENDING; NO NEW HUB-VISIBLE CANDIDATES",
+  "no_action_subtype_changes": {
+    "NOT_RESEARCH_OUTPUT": 1
+  },
+  "attribution_queue_changes": {
+    "added": 0,
+    "closed": 0
+  },
+  "blockers": [
+    "Seven research-complete human_metadata_needed cases (four new) are PENDING_HUB_HANDOFF / NOT DELIVERED because blank mandatory publication date or public component scope not verified compatible with Hub and downstream REACH.",
+    "Full 140 REACH detail shards not exhaustively checked; all 10 index shards and relevant parent detail were checked."
+  ],
+  "audit_backfills_2026_10_28": [
+    "2029ET RETROSPECTIVE PARTIAL",
+    "2129ET RETROSPECTIVE PARTIAL"
+  ],
+  "audit_updated_at_utc": "2026-10-29T21:31:44.426722Z",
+  "pending_hub_handoff_total": 7,
+  "metadata_blockers_total": 43,
+  "metadata_blocker_status_counts": {
+    "pending_hub_handoff": 7,
+    "suppressed": 2,
+    "blocked": 34
+  },
+  "github_research_ledger_status": "VERIFIED_COMMITTED_AND_RECONCILED",
+  "github_reconciliation_workflow": {
+    "id": 40958471533,
+    "conclusion": "success"
+  },
+  "github_metadata_blocker_validator": {
+    "id": 40958326485,
+    "conclusion": "success",
+    "note": "Four uppercase legacy method labels normalized to lowercase without changing evidence."
+  },
+  "github_router_workflow": {
+    "id": 40958471496,
+    "conclusion": "success"
+  },
+  "public_reach_total_verified_from_index": 1238,
+  "public_reach_exact_doi_matches_for_five_cases": 0,
+  "due_followups_policy_actionable": 29,
+  "overdue_followups_calendar": 0,
+  "hub_investigate_candidates_delivered_new": 0,
+  "new_human_metadata_needed_handoffs": 4,
+  "closed_no_actions_new": 1,
+  "normal_awards_examined": 0,
+  "research_finished_new": 5,
+  "csv_staged_new": 0,
+  "manifest_verified_new": 0,
+  "public_reach_publications_verified_new": 0
+}
