@@ -1658,6 +1658,686 @@
       "confidence": "Medium",
       "hub_delivered": false,
       "ready_for_human_review": false
+    },
+    {
+      "identity": "doi:10.57969/s9g015",
+      "award_numbers": [
+        "NA20OAR4320278",
+        "NA21OAR4590374"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "record-specific first publication date (YYYY-MM-DD)",
+        "native repository version/identity and public scope confirmation"
+      ],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "historical_datacite_source",
+          "url": "https://api.datacite.org/dois/10.57969/s9g015",
+          "outcome": "Captured original DOI, exact source award references, title and creators; no independently verified full publication date.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "publisher_or_institutional",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "outcome": "Pacific DWSD first-five wave data; direct WPO drifter award captured, but exact dataset publication date and public scope not independently verified.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "spark_award_project",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "outcome": "Pacific DWSD first-five wave data; direct WPO drifter award captured, but exact dataset publication date and public scope not independently verified.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "reach_full_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+          "outcome": "Pacific DWSD first-five wave data; direct WPO drifter award captured, but exact dataset publication date and public scope not independently verified.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        }
+      ],
+      "first_investigated_at": "2026-10-29T15:34:47Z",
+      "last_attempt_at": "2026-10-29T15:34:47Z",
+      "retry_count": 0,
+      "next_retry_at": "2026-11-05T15:35:00Z",
+      "next_research_at": "2026-11-05T15:35:00Z",
+      "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.57969/s9g015 without assuming an article/citation year is the dataset date?",
+      "evidence_urls": [
+        "https://api.datacite.org/dois/10.57969/s9g015",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "funding_basis": "Pacific DWSD first-five wave data; direct WPO drifter award captured, but exact dataset publication date and public scope not independently verified. Captured award references: NA20OAR4320278, NA21OAR4590374.",
+      "next_action": "Perform ONE different-source authoritative follow-up on or after 2026-11-05T15:35:00Z; then verified candidate, evidence-backed no-action, or human_metadata_needed outside unresolved queue.",
+      "triage_identity": "doi:10.57969/s9g015",
+      "max_delayed_retries": 1,
+      "ready_for_human_review": false,
+      "metadata_recovery_rounds": 0,
+      "source_verification_limits": "Full dataset first publication date and public/version scope not independently established. Journal/citation year cannot substitute."
+    },
+    {
+      "identity": "doi:10.57969/s9ks3s",
+      "award_numbers": [
+        "NA20OAR4320278",
+        "NA21OAR4590374"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "record-specific first publication date (YYYY-MM-DD)",
+        "native repository version/identity and public scope confirmation"
+      ],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "historical_datacite_source",
+          "url": "https://api.datacite.org/dois/10.57969/s9ks3s",
+          "outcome": "Captured original DOI, exact source award references, title and creators; no independently verified full publication date.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "publisher_or_institutional",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "outcome": "Pacific DWSD sensor data; direct WPO drifter award captured, but first publication date and distinctness from first-five coefficients unresolved.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "spark_award_project",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "outcome": "Pacific DWSD sensor data; direct WPO drifter award captured, but first publication date and distinctness from first-five coefficients unresolved.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "reach_full_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+          "outcome": "Pacific DWSD sensor data; direct WPO drifter award captured, but first publication date and distinctness from first-five coefficients unresolved.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        }
+      ],
+      "first_investigated_at": "2026-10-29T15:34:47Z",
+      "last_attempt_at": "2026-10-29T15:34:47Z",
+      "retry_count": 0,
+      "next_retry_at": "2026-11-05T15:35:00Z",
+      "next_research_at": "2026-11-05T15:35:00Z",
+      "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.57969/s9ks3s without assuming an article/citation year is the dataset date?",
+      "evidence_urls": [
+        "https://api.datacite.org/dois/10.57969/s9ks3s",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "funding_basis": "Pacific DWSD sensor data; direct WPO drifter award captured, but first publication date and distinctness from first-five coefficients unresolved. Captured award references: NA20OAR4320278, NA21OAR4590374.",
+      "next_action": "Perform ONE different-source authoritative follow-up on or after 2026-11-05T15:35:00Z; then verified candidate, evidence-backed no-action, or human_metadata_needed outside unresolved queue.",
+      "triage_identity": "doi:10.57969/s9ks3s",
+      "max_delayed_retries": 1,
+      "ready_for_human_review": false,
+      "metadata_recovery_rounds": 0,
+      "source_verification_limits": "Full dataset first publication date and public/version scope not independently established. Journal/citation year cannot substitute."
+    },
+    {
+      "identity": "doi:10.57969/s9qp4c",
+      "award_numbers": [
+        "NA20OAR4320278",
+        "NA21OAR4590374"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "record-specific first publication date (YYYY-MM-DD)",
+        "native repository version/identity and public scope confirmation"
+      ],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "historical_datacite_source",
+          "url": "https://api.datacite.org/dois/10.57969/s9qp4c",
+          "outcome": "Captured original DOI, exact source award references, title and creators; no independently verified full publication date.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "publisher_or_institutional",
+          "url": "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+          "outcome": "Atlantic 2024 GTS drifter dataset; LDL cites WPO award but its webpage shows DOI S9QP4CD while captured DOI is S9QP4C; confirm identity and publication date.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "spark_award_project",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "outcome": "Atlantic 2024 GTS drifter dataset; LDL cites WPO award but its webpage shows DOI S9QP4CD while captured DOI is S9QP4C; confirm identity and publication date.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "reach_full_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "outcome": "Atlantic 2024 GTS drifter dataset; LDL cites WPO award but its webpage shows DOI S9QP4CD while captured DOI is S9QP4C; confirm identity and publication date.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "scout_existing_staging",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+          "outcome": "Atlantic 2024 GTS drifter dataset; LDL cites WPO award but its webpage shows DOI S9QP4CD while captured DOI is S9QP4C; confirm identity and publication date.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        }
+      ],
+      "first_investigated_at": "2026-10-29T15:34:47Z",
+      "last_attempt_at": "2026-10-29T15:34:47Z",
+      "retry_count": 0,
+      "next_retry_at": "2026-11-05T15:35:00Z",
+      "next_research_at": "2026-11-05T15:35:00Z",
+      "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.57969/s9qp4c without assuming an article/citation year is the dataset date?",
+      "evidence_urls": [
+        "https://api.datacite.org/dois/10.57969/s9qp4c",
+        "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "funding_basis": "Atlantic 2024 GTS drifter dataset; LDL cites WPO award but its webpage shows DOI S9QP4CD while captured DOI is S9QP4C; confirm identity and publication date. Captured award references: NA20OAR4320278, NA21OAR4590374.",
+      "next_action": "Perform ONE different-source authoritative follow-up on or after 2026-11-05T15:35:00Z; then verified candidate, evidence-backed no-action, or human_metadata_needed outside unresolved queue.",
+      "triage_identity": "doi:10.57969/s9qp4c",
+      "max_delayed_retries": 1,
+      "ready_for_human_review": false,
+      "metadata_recovery_rounds": 0,
+      "source_verification_limits": "Full dataset first publication date and public/version scope not independently established. Journal/citation year cannot substitute."
+    },
+    {
+      "identity": "doi:10.57969/s9rp4p",
+      "award_numbers": [
+        "NA20OAR4320278",
+        "NA21OAR4590374"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "record-specific first publication date (YYYY-MM-DD)",
+        "native repository version/identity and public scope confirmation"
+      ],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "historical_datacite_source",
+          "url": "https://api.datacite.org/dois/10.57969/s9rp4p",
+          "outcome": "Captured original DOI, exact source award references, title and creators; no independently verified full publication date.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "publisher_or_institutional",
+          "url": "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+          "outcome": "Atlantic 2022 GTS drifter dataset; LDL identifies WPO award and 2023 citation year, not exact first-publication date.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "spark_award_project",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "outcome": "Atlantic 2022 GTS drifter dataset; LDL identifies WPO award and 2023 citation year, not exact first-publication date.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "reach_full_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "outcome": "Atlantic 2022 GTS drifter dataset; LDL identifies WPO award and 2023 citation year, not exact first-publication date.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "scout_existing_staging",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+          "outcome": "Atlantic 2022 GTS drifter dataset; LDL identifies WPO award and 2023 citation year, not exact first-publication date.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        }
+      ],
+      "first_investigated_at": "2026-10-29T15:34:47Z",
+      "last_attempt_at": "2026-10-29T15:34:47Z",
+      "retry_count": 0,
+      "next_retry_at": "2026-11-05T15:35:00Z",
+      "next_research_at": "2026-11-05T15:35:00Z",
+      "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.57969/s9rp4p without assuming an article/citation year is the dataset date?",
+      "evidence_urls": [
+        "https://api.datacite.org/dois/10.57969/s9rp4p",
+        "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "funding_basis": "Atlantic 2022 GTS drifter dataset; LDL identifies WPO award and 2023 citation year, not exact first-publication date. Captured award references: NA20OAR4320278, NA21OAR4590374.",
+      "next_action": "Perform ONE different-source authoritative follow-up on or after 2026-11-05T15:35:00Z; then verified candidate, evidence-backed no-action, or human_metadata_needed outside unresolved queue.",
+      "triage_identity": "doi:10.57969/s9rp4p",
+      "max_delayed_retries": 1,
+      "ready_for_human_review": false,
+      "metadata_recovery_rounds": 0,
+      "source_verification_limits": "Full dataset first publication date and public/version scope not independently established. Journal/citation year cannot substitute."
+    },
+    {
+      "identity": "doi:10.57969/s9vc7n",
+      "award_numbers": [
+        "NA20OAR4320278",
+        "NA21OAR4590374"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "record-specific first publication date (YYYY-MM-DD)",
+        "native repository version/identity and public scope confirmation"
+      ],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "historical_datacite_source",
+          "url": "https://api.datacite.org/dois/10.57969/s9vc7n",
+          "outcome": "Captured original DOI, exact source award references, title and creators; no independently verified full publication date.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "publisher_or_institutional",
+          "url": "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+          "outcome": "Atlantic 2023 GTS drifter dataset; LDL identifies WPO award and citation year only; exact date unresolved.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "spark_award_project",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "outcome": "Atlantic 2023 GTS drifter dataset; LDL identifies WPO award and citation year only; exact date unresolved.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "reach_full_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "outcome": "Atlantic 2023 GTS drifter dataset; LDL identifies WPO award and citation year only; exact date unresolved.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "scout_existing_staging",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+          "outcome": "Atlantic 2023 GTS drifter dataset; LDL identifies WPO award and citation year only; exact date unresolved.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        }
+      ],
+      "first_investigated_at": "2026-10-29T15:34:47Z",
+      "last_attempt_at": "2026-10-29T15:34:47Z",
+      "retry_count": 0,
+      "next_retry_at": "2026-11-05T15:35:00Z",
+      "next_research_at": "2026-11-05T15:35:00Z",
+      "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.57969/s9vc7n without assuming an article/citation year is the dataset date?",
+      "evidence_urls": [
+        "https://api.datacite.org/dois/10.57969/s9vc7n",
+        "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "funding_basis": "Atlantic 2023 GTS drifter dataset; LDL identifies WPO award and citation year only; exact date unresolved. Captured award references: NA20OAR4320278, NA21OAR4590374.",
+      "next_action": "Perform ONE different-source authoritative follow-up on or after 2026-11-05T15:35:00Z; then verified candidate, evidence-backed no-action, or human_metadata_needed outside unresolved queue.",
+      "triage_identity": "doi:10.57969/s9vc7n",
+      "max_delayed_retries": 1,
+      "ready_for_human_review": false,
+      "metadata_recovery_rounds": 0,
+      "source_verification_limits": "Full dataset first publication date and public/version scope not independently established. Journal/citation year cannot substitute."
+    },
+    {
+      "identity": "doi:10.57969/s9wc7z",
+      "award_numbers": [
+        "NA20OAR4320278",
+        "NA21OAR4590374"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "record-specific first publication date (YYYY-MM-DD)",
+        "native repository version/identity and public scope confirmation"
+      ],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "historical_datacite_source",
+          "url": "https://api.datacite.org/dois/10.57969/s9wc7z",
+          "outcome": "Captured original DOI, exact source award references, title and creators; no independently verified full publication date.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "publisher_or_institutional",
+          "url": "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+          "outcome": "Atlantic 2021 GTS drifter dataset; LDL identifies WPO award and 2023 citation year, not exact date.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "spark_award_project",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "outcome": "Atlantic 2021 GTS drifter dataset; LDL identifies WPO award and 2023 citation year, not exact date.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "reach_full_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "outcome": "Atlantic 2021 GTS drifter dataset; LDL identifies WPO award and 2023 citation year, not exact date.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "scout_existing_staging",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+          "outcome": "Atlantic 2021 GTS drifter dataset; LDL identifies WPO award and 2023 citation year, not exact date.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        }
+      ],
+      "first_investigated_at": "2026-10-29T15:34:47Z",
+      "last_attempt_at": "2026-10-29T15:34:47Z",
+      "retry_count": 0,
+      "next_retry_at": "2026-11-05T15:35:00Z",
+      "next_research_at": "2026-11-05T15:35:00Z",
+      "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.57969/s9wc7z without assuming an article/citation year is the dataset date?",
+      "evidence_urls": [
+        "https://api.datacite.org/dois/10.57969/s9wc7z",
+        "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "funding_basis": "Atlantic 2021 GTS drifter dataset; LDL identifies WPO award and 2023 citation year, not exact date. Captured award references: NA20OAR4320278, NA21OAR4590374.",
+      "next_action": "Perform ONE different-source authoritative follow-up on or after 2026-11-05T15:35:00Z; then verified candidate, evidence-backed no-action, or human_metadata_needed outside unresolved queue.",
+      "triage_identity": "doi:10.57969/s9wc7z",
+      "max_delayed_retries": 1,
+      "ready_for_human_review": false,
+      "metadata_recovery_rounds": 0,
+      "source_verification_limits": "Full dataset first publication date and public/version scope not independently established. Journal/citation year cannot substitute."
+    },
+    {
+      "identity": "doi:10.6084/m9.figshare.23666259",
+      "award_numbers": [
+        "NA19OAR4590209"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "record-specific first publication date (YYYY-MM-DD)",
+        "native repository version/identity and public scope confirmation"
+      ],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "historical_datacite_source",
+          "url": "https://api.datacite.org/dois/10.6084/m9.figshare.23666259",
+          "outcome": "Captured original DOI, exact source award references, title and creators; no independently verified full publication date.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "publisher_or_institutional",
+          "url": "https://orcid.org/0000-0003-3318-7601",
+          "outcome": "VORTEX-SE polarimetric/lightning poster; direct WPO award and ORCID date 2023-07-12, but native Figshare first-publication date and version identity unverified.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "spark_award_project",
+          "url": "https://journals.ametsoc.org/view/journals/mwre/152/7/MWR-D-23-0144.1.xml",
+          "outcome": "VORTEX-SE polarimetric/lightning poster; direct WPO award and ORCID date 2023-07-12, but native Figshare first-publication date and version identity unverified.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "reach_full_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "outcome": "VORTEX-SE polarimetric/lightning poster; direct WPO award and ORCID date 2023-07-12, but native Figshare first-publication date and version identity unverified.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "scout_existing_staging",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "outcome": "VORTEX-SE polarimetric/lightning poster; direct WPO award and ORCID date 2023-07-12, but native Figshare first-publication date and version identity unverified.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        }
+      ],
+      "first_investigated_at": "2026-10-29T15:34:47Z",
+      "last_attempt_at": "2026-10-29T15:34:47Z",
+      "retry_count": 0,
+      "next_retry_at": "2026-11-05T15:35:00Z",
+      "next_research_at": "2026-11-05T15:35:00Z",
+      "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.6084/m9.figshare.23666259 without assuming an article/citation year is the dataset date?",
+      "evidence_urls": [
+        "https://api.datacite.org/dois/10.6084/m9.figshare.23666259",
+        "https://orcid.org/0000-0003-3318-7601",
+        "https://journals.ametsoc.org/view/journals/mwre/152/7/MWR-D-23-0144.1.xml",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json"
+      ],
+      "funding_basis": "VORTEX-SE polarimetric/lightning poster; direct WPO award and ORCID date 2023-07-12, but native Figshare first-publication date and version identity unverified. Captured award references: NA19OAR4590209.",
+      "next_action": "Perform ONE different-source authoritative follow-up on or after 2026-11-05T15:35:00Z; then verified candidate, evidence-backed no-action, or human_metadata_needed outside unresolved queue.",
+      "triage_identity": "doi:10.6084/m9.figshare.23666259",
+      "max_delayed_retries": 1,
+      "ready_for_human_review": false,
+      "metadata_recovery_rounds": 0,
+      "source_verification_limits": "Full dataset first publication date and public/version scope not independently established. Journal/citation year cannot substitute."
+    },
+    {
+      "identity": "doi:10.6084/m9.figshare.23666259.v1",
+      "award_numbers": [
+        "NA19OAR4590209"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "record-specific first publication date (YYYY-MM-DD)",
+        "native repository version/identity and public scope confirmation"
+      ],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "historical_datacite_source",
+          "url": "https://api.datacite.org/dois/10.6084/m9.figshare.23666259.v1",
+          "outcome": "Captured original DOI, exact source award references, title and creators; no independently verified full publication date.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "publisher_or_institutional",
+          "url": "https://orcid.org/0000-0003-3318-7601",
+          "outcome": "Version 1 of same VORTEX-SE poster; verify native Figshare date and relationship to concept DOI, do not double count.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "spark_award_project",
+          "url": "https://journals.ametsoc.org/view/journals/mwre/152/7/MWR-D-23-0144.1.xml",
+          "outcome": "Version 1 of same VORTEX-SE poster; verify native Figshare date and relationship to concept DOI, do not double count.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "reach_full_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "outcome": "Version 1 of same VORTEX-SE poster; verify native Figshare date and relationship to concept DOI, do not double count.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "scout_existing_staging",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "outcome": "Version 1 of same VORTEX-SE poster; verify native Figshare date and relationship to concept DOI, do not double count.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        }
+      ],
+      "first_investigated_at": "2026-10-29T15:34:47Z",
+      "last_attempt_at": "2026-10-29T15:34:47Z",
+      "retry_count": 0,
+      "next_retry_at": "2026-11-05T15:35:00Z",
+      "next_research_at": "2026-11-05T15:35:00Z",
+      "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.6084/m9.figshare.23666259.v1 without assuming an article/citation year is the dataset date?",
+      "evidence_urls": [
+        "https://api.datacite.org/dois/10.6084/m9.figshare.23666259.v1",
+        "https://orcid.org/0000-0003-3318-7601",
+        "https://journals.ametsoc.org/view/journals/mwre/152/7/MWR-D-23-0144.1.xml",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json"
+      ],
+      "funding_basis": "Version 1 of same VORTEX-SE poster; verify native Figshare date and relationship to concept DOI, do not double count. Captured award references: NA19OAR4590209.",
+      "next_action": "Perform ONE different-source authoritative follow-up on or after 2026-11-05T15:35:00Z; then verified candidate, evidence-backed no-action, or human_metadata_needed outside unresolved queue.",
+      "triage_identity": "doi:10.6084/m9.figshare.23666259.v1",
+      "max_delayed_retries": 1,
+      "ready_for_human_review": false,
+      "metadata_recovery_rounds": 0,
+      "source_verification_limits": "Full dataset first publication date and public/version scope not independently established. Journal/citation year cannot substitute."
+    },
+    {
+      "identity": "doi:10.6084/m9.figshare.23689194",
+      "award_numbers": [
+        "NA19OAR4590245"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "record-specific first publication date (YYYY-MM-DD)",
+        "native repository version/identity and public scope confirmation"
+      ],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "historical_datacite_source",
+          "url": "https://api.datacite.org/dois/10.6084/m9.figshare.23689194",
+          "outcome": "Captured original DOI, exact source award references, title and creators; no independently verified full publication date.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "publisher_or_institutional",
+          "url": "https://journals.ametsoc.org/view/journals/aies/3/1/AIES-D-23-0064.1.xml",
+          "outcome": "ELDORA ML QC dataset directly linked by funded AMS article; exact Figshare dataset publication date and version identity unverified.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "spark_award_project",
+          "url": "https://repository.library.noaa.gov/view/noaa/64095",
+          "outcome": "ELDORA ML QC dataset directly linked by funded AMS article; exact Figshare dataset publication date and version identity unverified.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "reach_full_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "outcome": "ELDORA ML QC dataset directly linked by funded AMS article; exact Figshare dataset publication date and version identity unverified.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "scout_existing_staging",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "outcome": "ELDORA ML QC dataset directly linked by funded AMS article; exact Figshare dataset publication date and version identity unverified.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        }
+      ],
+      "first_investigated_at": "2026-10-29T15:34:47Z",
+      "last_attempt_at": "2026-10-29T15:34:47Z",
+      "retry_count": 0,
+      "next_retry_at": "2026-11-05T15:35:00Z",
+      "next_research_at": "2026-11-05T15:35:00Z",
+      "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.6084/m9.figshare.23689194 without assuming an article/citation year is the dataset date?",
+      "evidence_urls": [
+        "https://api.datacite.org/dois/10.6084/m9.figshare.23689194",
+        "https://journals.ametsoc.org/view/journals/aies/3/1/AIES-D-23-0064.1.xml",
+        "https://repository.library.noaa.gov/view/noaa/64095",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json"
+      ],
+      "funding_basis": "ELDORA ML QC dataset directly linked by funded AMS article; exact Figshare dataset publication date and version identity unverified. Captured award references: NA19OAR4590245.",
+      "next_action": "Perform ONE different-source authoritative follow-up on or after 2026-11-05T15:35:00Z; then verified candidate, evidence-backed no-action, or human_metadata_needed outside unresolved queue.",
+      "triage_identity": "doi:10.6084/m9.figshare.23689194",
+      "max_delayed_retries": 1,
+      "ready_for_human_review": false,
+      "metadata_recovery_rounds": 0,
+      "source_verification_limits": "Full dataset first publication date and public/version scope not independently established. Journal/citation year cannot substitute."
+    },
+    {
+      "identity": "doi:10.6084/m9.figshare.23689194.v1",
+      "award_numbers": [
+        "NA19OAR4590245"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "record-specific first publication date (YYYY-MM-DD)",
+        "native repository version/identity and public scope confirmation"
+      ],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "historical_datacite_source",
+          "url": "https://api.datacite.org/dois/10.6084/m9.figshare.23689194.v1",
+          "outcome": "Captured original DOI, exact source award references, title and creators; no independently verified full publication date.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "publisher_or_institutional",
+          "url": "https://journals.ametsoc.org/view/journals/aies/3/1/AIES-D-23-0064.1.xml",
+          "outcome": "Version 1 of ELDORA ML QC dataset; article confirms WPO award and dataset link, native Figshare first publication date unresolved.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "spark_award_project",
+          "url": "https://repository.library.noaa.gov/view/noaa/64095",
+          "outcome": "Version 1 of ELDORA ML QC dataset; article confirms WPO award and dataset link, native Figshare first publication date unresolved.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "reach_full_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "outcome": "Version 1 of ELDORA ML QC dataset; article confirms WPO award and dataset link, native Figshare first publication date unresolved.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        },
+        {
+          "round": 0,
+          "method": "scout_existing_staging",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "outcome": "Version 1 of ELDORA ML QC dataset; article confirms WPO award and dataset link, native Figshare first publication date unresolved.",
+          "checked_at": "2026-10-29T15:34:47Z"
+        }
+      ],
+      "first_investigated_at": "2026-10-29T15:34:47Z",
+      "last_attempt_at": "2026-10-29T15:34:47Z",
+      "retry_count": 0,
+      "next_retry_at": "2026-11-05T15:35:00Z",
+      "next_research_at": "2026-11-05T15:35:00Z",
+      "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.6084/m9.figshare.23689194.v1 without assuming an article/citation year is the dataset date?",
+      "evidence_urls": [
+        "https://api.datacite.org/dois/10.6084/m9.figshare.23689194.v1",
+        "https://journals.ametsoc.org/view/journals/aies/3/1/AIES-D-23-0064.1.xml",
+        "https://repository.library.noaa.gov/view/noaa/64095",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json"
+      ],
+      "funding_basis": "Version 1 of ELDORA ML QC dataset; article confirms WPO award and dataset link, native Figshare first publication date unresolved. Captured award references: NA19OAR4590245.",
+      "next_action": "Perform ONE different-source authoritative follow-up on or after 2026-11-05T15:35:00Z; then verified candidate, evidence-backed no-action, or human_metadata_needed outside unresolved queue.",
+      "triage_identity": "doi:10.6084/m9.figshare.23689194.v1",
+      "max_delayed_retries": 1,
+      "ready_for_human_review": false,
+      "metadata_recovery_rounds": 0,
+      "source_verification_limits": "Full dataset first publication date and public/version scope not independently established. Journal/citation year cannot substitute."
     }
   ]
 }
