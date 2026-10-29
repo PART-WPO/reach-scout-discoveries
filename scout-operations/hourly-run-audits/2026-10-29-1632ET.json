@@ -1,0 +1,223 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-29-HOURLY-1632ET",
+  "run_timestamp": "2026-10-29T20:32:21Z",
+  "audit_prepared_at": "2026-10-29T20:35:57Z",
+  "selected_mode": "historical_api_triage",
+  "phase": "additional_evidence_research",
+  "audit_result": "PARTIAL",
+  "feed_integrity_status": "VERIFIED_EXISTING_16_BATCHES_56_ROWS_NO_NEW_CSV",
+  "github_action_verification_status": "NOT_VERIFIABLE",
+  "manifest_verification": {
+    "public_manifest_batches": 16,
+    "public_manifest_rows": 56,
+    "verified_sha256": 16,
+    "verified_record_count": 16,
+    "verified_run_ids": 16,
+    "verified_exact_24_columns": 16,
+    "newly_staged_csv_ids": [],
+    "manifest_written_by_scout": false,
+    "prior_batch_entries_unchanged_after_ledger_writes": 16,
+    "no_manifest_write_by_scout": true,
+    "public_manifest_generated_at": "2026-10-29T19:32:46Z",
+    "public_manifest_batch_count_after": 16,
+    "public_manifest_candidate_rows_after": 56
+  },
+  "coverage_before": {
+    "completed": 150,
+    "remaining": 38,
+    "no_action": 103,
+    "human_metadata_needed": 0
+  },
+  "coverage_after_expected": {
+    "completed": 154,
+    "remaining": 34,
+    "no_action": 104,
+    "human_metadata_needed": 3
+  },
+  "monthly_coverage": {
+    "received": 0,
+    "completed": 0,
+    "remaining": 0
+  },
+  "original_seeds_independently_researched": [
+    {
+      "doi": "10.17603/ds2-bpav-8w29",
+      "is_grant_notice": false,
+      "is_true_artifact": true,
+      "proposed_status": "human_metadata_needed",
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-024.csv",
+        "https://ufdcimages.uflib.ufl.edu/UF/E0/05/82/10/00001/Zhang_T.pdf",
+        "https://saemiller.com/publications/Zhang_ASCE_2022_Preprint.pdf"
+      ],
+      "missing_fields": "full YYYY-MM-DD dataset publication date; DesignSafe native version/public file validation",
+      "reviewer_question": "Should the distinct 2021 infrasound dataset be reviewed for inclusion despite unknown full publication date?",
+      "discovery_route": "Direct API",
+      "original_seed_doi": "10.17603/ds2-bpav-8w29"
+    },
+    {
+      "doi": "10.17603/ds2-jfsc-8902",
+      "is_grant_notice": false,
+      "is_true_artifact": true,
+      "proposed_status": "human_metadata_needed",
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-019.csv",
+        "https://impacts.ucar.edu/en/persons/robert-prestley/",
+        "https://impacts.ucar.edu/en/organisations/national-center-for-atmospheric-research-3/datasets/",
+        "https://doi.org/10.17603/ds2-jfsc-8902"
+      ],
+      "missing_fields": "full dataset release date; version-specific 2023 vs 2025 citation discrepancy; public parent scope",
+      "reviewer_question": "Does the DesignSafe Hurricane Irma tweet dataset merit its own REACH record, and which native version/date is appropriate?",
+      "discovery_route": "Direct API",
+      "original_seed_doi": "10.17603/ds2-jfsc-8902"
+    },
+    {
+      "doi": "10.17603/ds2-58ft-kp27",
+      "is_grant_notice": false,
+      "is_true_artifact": true,
+      "proposed_status": "human_metadata_needed",
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+        "https://impacts.ucar.edu/en/persons/robert-prestley/",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-097.csv",
+        "https://doi.org/10.17603/ds2-58ft-kp27",
+        "https://impacts.ucar.edu/en/organisations/national-center-for-atmospheric-research-3/datasets/"
+      ],
+      "missing_fields": "full component release date; public protocol scope; distinctness from existing parent REACH reach-000816",
+      "reviewer_question": "Is the HTI interview protocol a separately catalogable output or a version/component of existing REACH reach-000816?",
+      "discovery_route": "Direct API",
+      "original_seed_doi": "10.17603/ds2-58ft-kp27"
+    },
+    {
+      "doi": "10.25923/0vz0-ra19",
+      "is_grant_notice": false,
+      "is_true_artifact": true,
+      "proposed_status": "no_action",
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-008.csv",
+        "https://www.noaa.gov/news-release/noaa-unveils-powerful-convergence-of-ai-and-science-with-revolutionary-next-generation-fire-system",
+        "https://gsl.noaa.gov/fire-weather/testbeds/",
+        "https://doi.org/10.1175/bams-d-24-0204.1",
+        "https://gsl.noaa.gov/docs/Windshift_1.0_2025.pdf"
+      ],
+      "missing_fields": "No project-specific WPO funding bridge; broad CIRA agreement only",
+      "reviewer_question": "Is there a primary WPO project deliverable document linking NGFS GSL-79 report to a funded SPARK project?",
+      "discovery_route": "Direct API",
+      "original_seed_doi": "10.25923/0vz0-ra19"
+    }
+  ],
+  "expansion_leads": [
+    {
+      "seed_doi": "10.25923/0vz0-ra19",
+      "output_doi": "10.25923/4pqf-7g49",
+      "route": "API-seeded expansion",
+      "outcome": "No specific WPO project attribution; no candidate staged",
+      "source_url": "https://repository.library.noaa.gov/view/noaa/70901"
+    }
+  ],
+  "human_metadata_needed_new": 3,
+  "pending_hub_handoff_new": 3,
+  "confirmed_hub_investigate_delivered_new": 0,
+  "new_review_proposals": 0,
+  "human_decisions_verified": false,
+  "public_reach_additions_verified_new": 0,
+  "attribution_followups_new_closed_expected": 1,
+  "newly_staged_csv_ids": [],
+  "blockers": [
+    "GitHub Actions workflow run status NOT_VERIFIABLE (no new batch published)",
+    "All 10 REACH index shards and specific parent detail were read; all 140 detail shards were not exhaustively verified in this run",
+    "Current Discovery Hub importer cannot be tested; no truthful blank mandatory date candidate submitted",
+    "Human review decisions are private and not verifiable from public GitHub"
+  ],
+  "reviewer_visibility": "THREE_HANDOFFS_NOT_DELIVERED_TO_HUB",
+  "library_first_saved": true,
+  "github_ledger_write": "VERIFIED_ON_MAIN",
+  "audit_finalized_at": "2026-10-29T20:38:23Z",
+  "github_commits": {
+    "historical_triage": "65e8929c4a27d48f2c111299fe4da9768ab0a0fb",
+    "metadata_blockers": "735f7a49e1d2102db6888c6b4163cdc4bd0d52cf",
+    "attribution_followups": "8cbcf7ff39dff9ef859439d71f0383891da0b1e7"
+  },
+  "coverage_after_verified": {
+    "received": 188,
+    "fully_investigated": 154,
+    "remaining": 34,
+    "no_action": 104,
+    "human_metadata_needed": 3,
+    "already_in_reach": 37,
+    "forwarded_original": 2,
+    "metadata_update_forwarded": 8
+  },
+  "attribution_followups_after_verified": {
+    "total": 67,
+    "queued": 52,
+    "closed": 15
+  },
+  "metadata_blockers_after_verified": {
+    "pending_hub_handoff": 3,
+    "blocked": 39,
+    "suppressed": 1
+  },
+  "pending_hub_handoff_total": 3,
+  "genuine_original_research_remaining": 34,
+  "human_review_status": "NOT_VERIFIABLE_FROM_PUBLIC_GITHUB",
+  "audit_limitations": [
+    "GitHub Actions workflow run status NOT_VERIFIABLE (no new batch published)",
+    "All 10 REACH index shards and specific parent detail were read; all 140 detail shards were not exhaustively verified in this run",
+    "Current Discovery Hub importer cannot be tested; no truthful blank mandatory date candidate submitted",
+    "Human review decisions are private and not verifiable from public GitHub"
+  ],
+  "source_checks": {
+    "monthly_manifest_rows": 0,
+    "monthly_triage_entries": 0,
+    "historical_manifest_rows": 188,
+    "historical_triage_entries": 188,
+    "reach_index_shards_read": 10,
+    "reach_index_rows": 1238,
+    "reach_detail_shards_exhaustively_checked": false,
+    "reach_relevant_parent_detail_read": "agent-data/details/part-097.csv",
+    "spark_index_shards_read": 6,
+    "spark_projects": 578,
+    "spark_relevant_detail_shards_read": 4,
+    "scout_batches_verified_exact_utf8_sha256": 16,
+    "scout_review_proposals": 56,
+    "source_manifest_coverage_reconciled": true
+  },
+  "route_counts_new": {
+    "Direct API": 0,
+    "API-seeded expansion": 0,
+    "Independent discovery": 0,
+    "Metadata correction": 0,
+    "UNCLASSIFIED": 0
+  },
+  "route_counts_cumulative": {
+    "Direct API": 1,
+    "API-seeded expansion": 9,
+    "Independent discovery": 1,
+    "Metadata correction": 5,
+    "UNCLASSIFIED_LEGACY": 40
+  },
+  "original_seed_no_action_subtypes_changed_this_run": {
+    "NO_DEMONSTRATED_WPO_CONNECTION": 1
+  },
+  "original_seeds_forwarded_cumulative": 2,
+  "original_seeds_already_in_reach_cumulative": 37,
+  "original_seeds_no_action_cumulative": 104,
+  "original_seed_disposition_gaps": 0,
+  "original_seed_metadata_blockers_remaining": 34,
+  "expanded_outputs_forwarded_this_run": 0,
+  "normal_awards_examined_this_run": 0,
+  "metadata_followups_due_under_current_immediate_policy": 34,
+  "metadata_followups_overdue_by_original_calendar_date": 0,
+  "hub_investigate_candidates_delivered_this_run": 0,
+  "human_metadata_needed_escalations_pending": 3,
+  "closed_no_actions_this_run": [
+    {
+      "doi": "10.25923/0vz0-ra19",
+      "subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "reason": "GSL Fire Weather Testbed NGFS report funded by CIRA umbrella award but no project-specific SPARK WPO link after bounded primary-source recheck"
+    }
+  ],
+  "batch_ids_this_run": []
+}
