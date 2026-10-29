@@ -1024,14 +1024,20 @@
     },
     {
       "identity": "doi:10.17603/ds2-yry6-r324",
-      "status": "awaiting_research",
+      "status": "needs_more_research",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T19:02:21.671632+00:00",
-      "research_notes": "",
-      "checked_sources": [],
-      "reach_snapshot": "",
-      "funding_basis": "",
-      "related_outputs_checked": "",
+      "updated_at": "2026-10-29T05:32:21Z",
+      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-0132ET: DesignSafe Harvey tweet documentation dataset linked to SPARK award NA19OAR0220119; DOI landing and native record full YYYY-MM-DD publication date/public component not retrievable. Related 2024 Morss et al. article DOI 10.1061/nhrefo.nheng-1802 already REACH reach-000789; original dataset independently unresolved. All ten REACH index shards, thirteen prior Scout batches, six SPARK index and six award shards searched for DOI and project match; no exact REACH/Scout DOI. Private human-review status not independently verified.",
+      "checked_sources": [
+        "https://doi.org/10.17603/ds2-yry6-r324",
+        "https://repository.library.noaa.gov/view/noaa/70233",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "reach_snapshot": "REACH source SHA256 054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e, 1238 index rows",
+      "funding_basis": "DesignSafe Harvey tweet documentation dataset linked to SPARK award NA19OAR0220119; DOI landing and native record full YYYY-MM-DD publication date/public component not retrievable. Related 2024 Morss et al. article DOI 10.1061/nhrefo.nheng-1802 already REACH reach-000789; original dataset independently unresolved.",
+      "related_outputs_checked": "Linked 2024 article already REACH; distinct original dataset requires date/public-scope evidence.",
       "verified_at": "",
       "verified_awards": [],
       "source_batch_ids": [
@@ -1044,8 +1050,20 @@
         "SOCIAL SCIENCE"
       ],
       "source_evidence_urls": [
-        "https://api.datacite.org/dois/10.17603/ds2-yry6-r324"
-      ]
+        "https://api.datacite.org/dois/10.17603/ds2-yry6-r324",
+        "https://doi.org/10.17603/ds2-yry6-r324",
+        "https://repository.library.noaa.gov/view/noaa/70233"
+      ],
+      "reach_match": "No exact DOI or title in complete REACH index; relevant 2024 Harvey article already reach-000789, distinct from original seed.",
+      "first_investigated_at": "2026-10-29T05:32:21Z",
+      "next_research_at": "2026-11-05T05:32:21Z",
+      "followup_question": "Can DesignSafe native metadata establish full YYYY-MM-DD public release date and public scope of the original Harvey dataset?",
+      "missing_fields": [
+        "dataset full YYYY-MM-DD publication date",
+        "public scope of original dataset"
+      ],
+      "original_seed_disposition": "needs_more_research: bounded initial investigation",
+      "research_complete": false
     },
     {
       "identity": "doi:10.17603/ds2-zb1x-f792",
@@ -1351,15 +1369,21 @@
     },
     {
       "identity": "doi:10.25820/data.006126",
-      "status": "awaiting_research",
+      "status": "no_action",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T19:02:21.671632+00:00",
-      "research_notes": "",
-      "checked_sources": [],
-      "reach_snapshot": "",
-      "funding_basis": "",
-      "related_outputs_checked": "",
-      "verified_at": "",
+      "updated_at": "2026-10-29T05:32:21Z",
+      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-0132ET: The 2021 journal paper directly links this dataset and explicitly lists NASA NNX16AQ19G and 80NSSC19K094 as financial support. SPARK chemical data assimilation project lists NNX16AQ19G only as a RELATED NASA award; no NOAA/WPO attribution for this India dataset. All ten REACH index shards, thirteen prior Scout batches, six SPARK index and six award shards searched for DOI and project match; no exact REACH/Scout DOI. Private human-review status not independently verified.",
+      "checked_sources": [
+        "https://acp.copernicus.org/articles/21/2837/2021/",
+        "https://doi.org/10.25820/data.006126",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "reach_snapshot": "REACH source SHA256 054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e, 1238 index rows",
+      "funding_basis": "The 2021 journal paper directly links this dataset and explicitly lists NASA NNX16AQ19G and 80NSSC19K094 as financial support. SPARK chemical data assimilation project lists NNX16AQ19G only as a RELATED NASA award; no NOAA/WPO attribution for this India dataset.",
+      "related_outputs_checked": "Related 2021 paper DOI 10.5194/acp-21-2837-2021 reviewed; NASA-only financial support.",
+      "verified_at": "2026-10-29T05:32:21Z",
       "verified_awards": [],
       "source_batch_ids": [
         "2026-10-28-historical-datacite-spark-all-part001"
@@ -1371,20 +1395,32 @@
         "JTTI"
       ],
       "source_evidence_urls": [
-        "https://api.datacite.org/dois/10.25820/data.006126"
-      ]
+        "https://api.datacite.org/dois/10.25820/data.006126",
+        "https://acp.copernicus.org/articles/21/2837/2021/",
+        "https://doi.org/10.25820/data.006126"
+      ],
+      "reach_match": "No exact DOI or title in complete REACH index; relevant 2024 Harvey article already reach-000789, distinct from original seed.",
+      "original_seed_disposition": "no_action: WPO project attribution not established",
+      "no_action_reason": "The 2021 journal paper directly links this dataset and explicitly lists NASA NNX16AQ19G and 80NSSC19K094 as financial support. SPARK chemical data assimilation project lists NNX16AQ19G only as a RELATED NASA award; no NOAA/WPO attribution for this India dataset.",
+      "research_complete": true
     },
     {
       "identity": "doi:10.25820/data.006144",
-      "status": "awaiting_research",
+      "status": "no_action",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T19:02:21.671632+00:00",
-      "research_notes": "",
-      "checked_sources": [],
-      "reach_snapshot": "",
-      "funding_basis": "",
-      "related_outputs_checked": "",
-      "verified_at": "",
+      "updated_at": "2026-10-29T05:32:21Z",
+      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-0132ET: The 2022 journal paper directly links this dataset and explicitly lists NASA HAQAST/ACMAP grants NNX16AQ19G and 80NSSC19K094. SPARK chemical data assimilation project lists NNX16AQ19G only as a RELATED NASA award; no NOAA/WPO attribution for this India dataset. All ten REACH index shards, thirteen prior Scout batches, six SPARK index and six award shards searched for DOI and project match; no exact REACH/Scout DOI. Private human-review status not independently verified.",
+      "checked_sources": [
+        "https://pubs.rsc.org/en/content/articlehtml/2022/ea/d2ea00023g",
+        "https://doi.org/10.25820/data.006144",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "reach_snapshot": "REACH source SHA256 054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e, 1238 index rows",
+      "funding_basis": "The 2022 journal paper directly links this dataset and explicitly lists NASA HAQAST/ACMAP grants NNX16AQ19G and 80NSSC19K094. SPARK chemical data assimilation project lists NNX16AQ19G only as a RELATED NASA award; no NOAA/WPO attribution for this India dataset.",
+      "related_outputs_checked": "Related 2022 paper DOI 10.1039/D2EA00023G reviewed; NASA-only financial support.",
+      "verified_at": "2026-10-29T05:32:21Z",
       "verified_awards": [],
       "source_batch_ids": [
         "2026-10-28-historical-datacite-spark-all-part001"
@@ -1396,8 +1432,14 @@
         "JTTI"
       ],
       "source_evidence_urls": [
-        "https://api.datacite.org/dois/10.25820/data.006144"
-      ]
+        "https://api.datacite.org/dois/10.25820/data.006144",
+        "https://pubs.rsc.org/en/content/articlehtml/2022/ea/d2ea00023g",
+        "https://doi.org/10.25820/data.006144"
+      ],
+      "reach_match": "No exact DOI or title in complete REACH index; relevant 2024 Harvey article already reach-000789, distinct from original seed.",
+      "original_seed_disposition": "no_action: WPO project attribution not established",
+      "no_action_reason": "The 2022 journal paper directly links this dataset and explicitly lists NASA HAQAST/ACMAP grants NNX16AQ19G and 80NSSC19K094. SPARK chemical data assimilation project lists NNX16AQ19G only as a RELATED NASA award; no NOAA/WPO attribution for this India dataset.",
+      "research_complete": true
     },
     {
       "identity": "doi:10.25923/0vz0-ra19",
@@ -1533,15 +1575,20 @@
     },
     {
       "identity": "doi:10.25923/b2b3-m644",
-      "status": "awaiting_research",
+      "status": "no_action",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T19:02:21.671632+00:00",
-      "research_notes": "",
-      "checked_sources": [],
-      "reach_snapshot": "",
-      "funding_basis": "",
-      "related_outputs_checked": "",
-      "verified_at": "",
+      "updated_at": "2026-10-29T05:32:21Z",
+      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-0132ET: The NOAA IR item is a distinct SPC/NSSL/HWT/CIWRO research activity funded under the broad cooperative-institute award NA21OAR4320204. SPARK lists that base award as RELATED to different social-science survey projects, not as evidence this specific item is a WPO-funded project output. No direct project-specific bridge corroborated. Reopen if stronger evidence appears. All ten REACH index shards, thirteen prior Scout batches, six SPARK index and six award shards searched for DOI and project match; no exact REACH/Scout DOI. Private human-review status not independently verified.",
+      "checked_sources": [
+        "https://repository.library.noaa.gov/view/noaa/76789",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "reach_snapshot": "REACH source SHA256 054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e, 1238 index rows",
+      "funding_basis": "The NOAA IR item is a distinct SPC/NSSL/HWT/CIWRO research activity funded under the broad cooperative-institute award NA21OAR4320204. SPARK lists that base award as RELATED to different social-science survey projects, not as evidence this specific item is a WPO-funded project output. No direct project-specific bridge corroborated. Reopen if stronger evidence appears.",
+      "related_outputs_checked": "SPC lightning forecast HREF report distinct from WPO social-science survey projects.",
+      "verified_at": "2026-10-29T05:32:21Z",
       "verified_awards": [],
       "source_batch_ids": [
         "2026-10-28-historical-datacite-spark-all-part001"
@@ -1553,20 +1600,30 @@
         "SOCIAL SCIENCE"
       ],
       "source_evidence_urls": [
-        "https://api.datacite.org/dois/10.25923/b2b3-m644"
-      ]
+        "https://api.datacite.org/dois/10.25923/b2b3-m644",
+        "https://repository.library.noaa.gov/view/noaa/76789"
+      ],
+      "reach_match": "No exact DOI or title in complete REACH index; relevant 2024 Harvey article already reach-000789, distinct from original seed.",
+      "original_seed_disposition": "no_action: WPO project attribution not established",
+      "no_action_reason": "The NOAA IR item is a distinct SPC/NSSL/HWT/CIWRO research activity funded under the broad cooperative-institute award NA21OAR4320204. SPARK lists that base award as RELATED to different social-science survey projects, not as evidence this specific item is a WPO-funded project output. No direct project-specific bridge corroborated. Reopen if stronger evidence appears.",
+      "research_complete": true
     },
     {
       "identity": "doi:10.25923/cckr-7v25",
-      "status": "awaiting_research",
+      "status": "no_action",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T19:02:21.671632+00:00",
-      "research_notes": "",
-      "checked_sources": [],
-      "reach_snapshot": "",
-      "funding_basis": "",
-      "related_outputs_checked": "",
-      "verified_at": "",
+      "updated_at": "2026-10-29T05:32:21Z",
+      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-0132ET: The NOAA IR item is a distinct SPC/NSSL/HWT/CIWRO research activity funded under the broad cooperative-institute award NA21OAR4320204. SPARK lists that base award as RELATED to different social-science survey projects, not as evidence this specific item is a WPO-funded project output. No direct project-specific bridge corroborated. Reopen if stronger evidence appears. All ten REACH index shards, thirteen prior Scout batches, six SPARK index and six award shards searched for DOI and project match; no exact REACH/Scout DOI. Private human-review status not independently verified.",
+      "checked_sources": [
+        "https://repository.library.noaa.gov/view/noaa/76799",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "reach_snapshot": "REACH source SHA256 054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e, 1238 index rows",
+      "funding_basis": "The NOAA IR item is a distinct SPC/NSSL/HWT/CIWRO research activity funded under the broad cooperative-institute award NA21OAR4320204. SPARK lists that base award as RELATED to different social-science survey projects, not as evidence this specific item is a WPO-funded project output. No direct project-specific bridge corroborated. Reopen if stronger evidence appears.",
+      "related_outputs_checked": "SPC severe hazard probability climatology report; not demonstrated as WPO social-science project output.",
+      "verified_at": "2026-10-29T05:32:21Z",
       "verified_awards": [],
       "source_batch_ids": [
         "2026-10-28-historical-datacite-spark-all-part001"
@@ -1578,20 +1635,30 @@
         "SOCIAL SCIENCE"
       ],
       "source_evidence_urls": [
-        "https://api.datacite.org/dois/10.25923/cckr-7v25"
-      ]
+        "https://api.datacite.org/dois/10.25923/cckr-7v25",
+        "https://repository.library.noaa.gov/view/noaa/76799"
+      ],
+      "reach_match": "No exact DOI or title in complete REACH index; relevant 2024 Harvey article already reach-000789, distinct from original seed.",
+      "original_seed_disposition": "no_action: WPO project attribution not established",
+      "no_action_reason": "The NOAA IR item is a distinct SPC/NSSL/HWT/CIWRO research activity funded under the broad cooperative-institute award NA21OAR4320204. SPARK lists that base award as RELATED to different social-science survey projects, not as evidence this specific item is a WPO-funded project output. No direct project-specific bridge corroborated. Reopen if stronger evidence appears.",
+      "research_complete": true
     },
     {
       "identity": "doi:10.25923/d7j4-gx12",
-      "status": "awaiting_research",
+      "status": "no_action",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T19:02:21.671632+00:00",
-      "research_notes": "",
-      "checked_sources": [],
-      "reach_snapshot": "",
-      "funding_basis": "",
-      "related_outputs_checked": "",
-      "verified_at": "",
+      "updated_at": "2026-10-29T05:32:21Z",
+      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-0132ET: NOAA IR NCEP Office Note 526 on upper-ocean temperature initialization in GFSv17 is supported by NA19NES4320002/NA24NESX432C0001. SPARK references NA19NES4320002 only as RELATED award for a different JTTI non-Gaussian ensemble DA project; no project-specific attribution verified. All ten REACH index shards, thirteen prior Scout batches, six SPARK index and six award shards searched for DOI and project match; no exact REACH/Scout DOI. Private human-review status not independently verified.",
+      "checked_sources": [
+        "https://repository.library.noaa.gov/view/noaa/72662",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "reach_snapshot": "REACH source SHA256 054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e, 1238 index rows",
+      "funding_basis": "NOAA IR NCEP Office Note 526 on upper-ocean temperature initialization in GFSv17 is supported by NA19NES4320002/NA24NESX432C0001. SPARK references NA19NES4320002 only as RELATED award for a different JTTI non-Gaussian ensemble DA project; no project-specific attribution verified.",
+      "related_outputs_checked": "Office Note 526 examined; different research topic from SPARK non-Gaussian DA project.",
+      "verified_at": "2026-10-29T05:32:21Z",
       "verified_awards": [],
       "source_batch_ids": [
         "2026-10-28-historical-datacite-spark-all-part001"
@@ -1603,8 +1670,13 @@
         "JTTI"
       ],
       "source_evidence_urls": [
-        "https://api.datacite.org/dois/10.25923/d7j4-gx12"
-      ]
+        "https://api.datacite.org/dois/10.25923/d7j4-gx12",
+        "https://repository.library.noaa.gov/view/noaa/72662"
+      ],
+      "reach_match": "No exact DOI or title in complete REACH index; relevant 2024 Harvey article already reach-000789, distinct from original seed.",
+      "original_seed_disposition": "no_action: WPO project attribution not established",
+      "no_action_reason": "NOAA IR NCEP Office Note 526 on upper-ocean temperature initialization in GFSv17 is supported by NA19NES4320002/NA24NESX432C0001. SPARK references NA19NES4320002 only as RELATED award for a different JTTI non-Gaussian ensemble DA project; no project-specific attribution verified.",
+      "research_complete": true
     },
     {
       "identity": "doi:10.25923/emke-w063",
@@ -1740,15 +1812,20 @@
     },
     {
       "identity": "doi:10.25923/fssj-fe85",
-      "status": "awaiting_research",
+      "status": "no_action",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T19:02:21.671632+00:00",
-      "research_notes": "",
-      "checked_sources": [],
-      "reach_snapshot": "",
-      "funding_basis": "",
-      "related_outputs_checked": "",
-      "verified_at": "",
+      "updated_at": "2026-10-29T05:32:21Z",
+      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-0132ET: The NOAA IR item is a distinct SPC/NSSL/HWT/CIWRO research activity funded under the broad cooperative-institute award NA21OAR4320204. SPARK lists that base award as RELATED to different social-science survey projects, not as evidence this specific item is a WPO-funded project output. No direct project-specific bridge corroborated. Reopen if stronger evidence appears. All ten REACH index shards, thirteen prior Scout batches, six SPARK index and six award shards searched for DOI and project match; no exact REACH/Scout DOI. Private human-review status not independently verified.",
+      "checked_sources": [
+        "https://repository.library.noaa.gov/view/noaa/76788",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "reach_snapshot": "REACH source SHA256 054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e, 1238 index rows",
+      "funding_basis": "The NOAA IR item is a distinct SPC/NSSL/HWT/CIWRO research activity funded under the broad cooperative-institute award NA21OAR4320204. SPARK lists that base award as RELATED to different social-science survey projects, not as evidence this specific item is a WPO-funded project output. No direct project-specific bridge corroborated. Reopen if stronger evidence appears.",
+      "related_outputs_checked": "SPC HWT first-guess watch guidance report, distinct from SPARK survey projects.",
+      "verified_at": "2026-10-29T05:32:21Z",
       "verified_awards": [],
       "source_batch_ids": [
         "2026-10-28-historical-datacite-spark-all-part001"
@@ -1760,20 +1837,30 @@
         "SOCIAL SCIENCE"
       ],
       "source_evidence_urls": [
-        "https://api.datacite.org/dois/10.25923/fssj-fe85"
-      ]
+        "https://api.datacite.org/dois/10.25923/fssj-fe85",
+        "https://repository.library.noaa.gov/view/noaa/76788"
+      ],
+      "reach_match": "No exact DOI or title in complete REACH index; relevant 2024 Harvey article already reach-000789, distinct from original seed.",
+      "original_seed_disposition": "no_action: WPO project attribution not established",
+      "no_action_reason": "The NOAA IR item is a distinct SPC/NSSL/HWT/CIWRO research activity funded under the broad cooperative-institute award NA21OAR4320204. SPARK lists that base award as RELATED to different social-science survey projects, not as evidence this specific item is a WPO-funded project output. No direct project-specific bridge corroborated. Reopen if stronger evidence appears.",
+      "research_complete": true
     },
     {
       "identity": "doi:10.25923/fye2-yk53",
-      "status": "awaiting_research",
+      "status": "no_action",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T19:02:21.671632+00:00",
-      "research_notes": "",
-      "checked_sources": [],
-      "reach_snapshot": "",
-      "funding_basis": "",
-      "related_outputs_checked": "",
-      "verified_at": "",
+      "updated_at": "2026-10-29T05:32:21Z",
+      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-0132ET: The NOAA IR item is a distinct SPC/NSSL/HWT/CIWRO research activity funded under the broad cooperative-institute award NA21OAR4320204. SPARK lists that base award as RELATED to different social-science survey projects, not as evidence this specific item is a WPO-funded project output. No direct project-specific bridge corroborated. Reopen if stronger evidence appears. All ten REACH index shards, thirteen prior Scout batches, six SPARK index and six award shards searched for DOI and project match; no exact REACH/Scout DOI. Private human-review status not independently verified.",
+      "checked_sources": [
+        "https://repository.library.noaa.gov/view/noaa/71354",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "reach_snapshot": "REACH source SHA256 054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e, 1238 index rows",
+      "funding_basis": "The NOAA IR item is a distinct SPC/NSSL/HWT/CIWRO research activity funded under the broad cooperative-institute award NA21OAR4320204. SPARK lists that base award as RELATED to different social-science survey projects, not as evidence this specific item is a WPO-funded project output. No direct project-specific bridge corroborated. Reopen if stronger evidence appears.",
+      "related_outputs_checked": "2025 HWT Spring Forecasting Experiment report; WPO project link not corroborated.",
+      "verified_at": "2026-10-29T05:32:21Z",
       "verified_awards": [],
       "source_batch_ids": [
         "2026-10-28-historical-datacite-spark-all-part001"
@@ -1785,20 +1872,30 @@
         "SOCIAL SCIENCE"
       ],
       "source_evidence_urls": [
-        "https://api.datacite.org/dois/10.25923/fye2-yk53"
-      ]
+        "https://api.datacite.org/dois/10.25923/fye2-yk53",
+        "https://repository.library.noaa.gov/view/noaa/71354"
+      ],
+      "reach_match": "No exact DOI or title in complete REACH index; relevant 2024 Harvey article already reach-000789, distinct from original seed.",
+      "original_seed_disposition": "no_action: WPO project attribution not established",
+      "no_action_reason": "The NOAA IR item is a distinct SPC/NSSL/HWT/CIWRO research activity funded under the broad cooperative-institute award NA21OAR4320204. SPARK lists that base award as RELATED to different social-science survey projects, not as evidence this specific item is a WPO-funded project output. No direct project-specific bridge corroborated. Reopen if stronger evidence appears.",
+      "research_complete": true
     },
     {
       "identity": "doi:10.25923/gy19-2j41",
-      "status": "awaiting_research",
+      "status": "no_action",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T19:02:21.671632+00:00",
-      "research_notes": "",
-      "checked_sources": [],
-      "reach_snapshot": "",
-      "funding_basis": "",
-      "related_outputs_checked": "",
-      "verified_at": "",
+      "updated_at": "2026-10-29T05:32:21Z",
+      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-0132ET: The NOAA IR item is a distinct SPC/NSSL/HWT/CIWRO research activity funded under the broad cooperative-institute award NA21OAR4320204. SPARK lists that base award as RELATED to different social-science survey projects, not as evidence this specific item is a WPO-funded project output. No direct project-specific bridge corroborated. Reopen if stronger evidence appears. All ten REACH index shards, thirteen prior Scout batches, six SPARK index and six award shards searched for DOI and project match; no exact REACH/Scout DOI. Private human-review status not independently verified.",
+      "checked_sources": [
+        "https://repository.library.noaa.gov/view/noaa/74405",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "reach_snapshot": "REACH source SHA256 054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e, 1238 index rows",
+      "funding_basis": "The NOAA IR item is a distinct SPC/NSSL/HWT/CIWRO research activity funded under the broad cooperative-institute award NA21OAR4320204. SPARK lists that base award as RELATED to different social-science survey projects, not as evidence this specific item is a WPO-funded project output. No direct project-specific bridge corroborated. Reopen if stronger evidence appears.",
+      "related_outputs_checked": "2026 HWT Spring Forecasting Experiment report; WPO project link not corroborated.",
+      "verified_at": "2026-10-29T05:32:21Z",
       "verified_awards": [],
       "source_batch_ids": [
         "2026-10-28-historical-datacite-spark-all-part001"
@@ -1810,20 +1907,30 @@
         "SOCIAL SCIENCE"
       ],
       "source_evidence_urls": [
-        "https://api.datacite.org/dois/10.25923/gy19-2j41"
-      ]
+        "https://api.datacite.org/dois/10.25923/gy19-2j41",
+        "https://repository.library.noaa.gov/view/noaa/74405"
+      ],
+      "reach_match": "No exact DOI or title in complete REACH index; relevant 2024 Harvey article already reach-000789, distinct from original seed.",
+      "original_seed_disposition": "no_action: WPO project attribution not established",
+      "no_action_reason": "The NOAA IR item is a distinct SPC/NSSL/HWT/CIWRO research activity funded under the broad cooperative-institute award NA21OAR4320204. SPARK lists that base award as RELATED to different social-science survey projects, not as evidence this specific item is a WPO-funded project output. No direct project-specific bridge corroborated. Reopen if stronger evidence appears.",
+      "research_complete": true
     },
     {
       "identity": "doi:10.25923/hq4k-bw52",
-      "status": "awaiting_research",
+      "status": "no_action",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T19:02:21.671632+00:00",
-      "research_notes": "",
-      "checked_sources": [],
-      "reach_snapshot": "",
-      "funding_basis": "",
-      "related_outputs_checked": "",
-      "verified_at": "",
+      "updated_at": "2026-10-29T05:32:21Z",
+      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-0132ET: The NOAA IR item is a distinct SPC/NSSL/HWT/CIWRO research activity funded under the broad cooperative-institute award NA21OAR4320204. SPARK lists that base award as RELATED to different social-science survey projects, not as evidence this specific item is a WPO-funded project output. No direct project-specific bridge corroborated. Reopen if stronger evidence appears. All ten REACH index shards, thirteen prior Scout batches, six SPARK index and six award shards searched for DOI and project match; no exact REACH/Scout DOI. Private human-review status not independently verified.",
+      "checked_sources": [
+        "https://repository.library.noaa.gov/view/noaa/71175",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "reach_snapshot": "REACH source SHA256 054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e, 1238 index rows",
+      "funding_basis": "The NOAA IR item is a distinct SPC/NSSL/HWT/CIWRO research activity funded under the broad cooperative-institute award NA21OAR4320204. SPARK lists that base award as RELATED to different social-science survey projects, not as evidence this specific item is a WPO-funded project output. No direct project-specific bridge corroborated. Reopen if stronger evidence appears.",
+      "related_outputs_checked": "HWT Experimental Warning Program 2024 report; WPO project link not corroborated.",
+      "verified_at": "2026-10-29T05:32:21Z",
       "verified_awards": [],
       "source_batch_ids": [
         "2026-10-28-historical-datacite-spark-all-part001"
@@ -1835,20 +1942,30 @@
         "SOCIAL SCIENCE"
       ],
       "source_evidence_urls": [
-        "https://api.datacite.org/dois/10.25923/hq4k-bw52"
-      ]
+        "https://api.datacite.org/dois/10.25923/hq4k-bw52",
+        "https://repository.library.noaa.gov/view/noaa/71175"
+      ],
+      "reach_match": "No exact DOI or title in complete REACH index; relevant 2024 Harvey article already reach-000789, distinct from original seed.",
+      "original_seed_disposition": "no_action: WPO project attribution not established",
+      "no_action_reason": "The NOAA IR item is a distinct SPC/NSSL/HWT/CIWRO research activity funded under the broad cooperative-institute award NA21OAR4320204. SPARK lists that base award as RELATED to different social-science survey projects, not as evidence this specific item is a WPO-funded project output. No direct project-specific bridge corroborated. Reopen if stronger evidence appears.",
+      "research_complete": true
     },
     {
       "identity": "doi:10.25923/jxrb-a760",
-      "status": "awaiting_research",
+      "status": "no_action",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T19:02:21.671632+00:00",
-      "research_notes": "",
-      "checked_sources": [],
-      "reach_snapshot": "",
-      "funding_basis": "",
-      "related_outputs_checked": "",
-      "verified_at": "",
+      "updated_at": "2026-10-29T05:32:21Z",
+      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-0132ET: The NOAA IR item is a distinct SPC/NSSL/HWT/CIWRO research activity funded under the broad cooperative-institute award NA21OAR4320204. SPARK lists that base award as RELATED to different social-science survey projects, not as evidence this specific item is a WPO-funded project output. No direct project-specific bridge corroborated. Reopen if stronger evidence appears. All ten REACH index shards, thirteen prior Scout batches, six SPARK index and six award shards searched for DOI and project match; no exact REACH/Scout DOI. Private human-review status not independently verified.",
+      "checked_sources": [
+        "https://repository.library.noaa.gov/view/noaa/73921",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "reach_snapshot": "REACH source SHA256 054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e, 1238 index rows",
+      "funding_basis": "The NOAA IR item is a distinct SPC/NSSL/HWT/CIWRO research activity funded under the broad cooperative-institute award NA21OAR4320204. SPARK lists that base award as RELATED to different social-science survey projects, not as evidence this specific item is a WPO-funded project output. No direct project-specific bridge corroborated. Reopen if stronger evidence appears.",
+      "related_outputs_checked": "NSSL adaptive radar scanning technical report; WPO project link not corroborated.",
+      "verified_at": "2026-10-29T05:32:21Z",
       "verified_awards": [],
       "source_batch_ids": [
         "2026-10-28-historical-datacite-spark-all-part001"
@@ -1860,8 +1977,13 @@
         "SOCIAL SCIENCE"
       ],
       "source_evidence_urls": [
-        "https://api.datacite.org/dois/10.25923/jxrb-a760"
-      ]
+        "https://api.datacite.org/dois/10.25923/jxrb-a760",
+        "https://repository.library.noaa.gov/view/noaa/73921"
+      ],
+      "reach_match": "No exact DOI or title in complete REACH index; relevant 2024 Harvey article already reach-000789, distinct from original seed.",
+      "original_seed_disposition": "no_action: WPO project attribution not established",
+      "no_action_reason": "The NOAA IR item is a distinct SPC/NSSL/HWT/CIWRO research activity funded under the broad cooperative-institute award NA21OAR4320204. SPARK lists that base award as RELATED to different social-science survey projects, not as evidence this specific item is a WPO-funded project output. No direct project-specific bridge corroborated. Reopen if stronger evidence appears.",
+      "research_complete": true
     },
     {
       "identity": "doi:10.25923/k9kh-y971",
@@ -1903,14 +2025,19 @@
     },
     {
       "identity": "doi:10.25923/mpqr-r886",
-      "status": "awaiting_research",
+      "status": "needs_more_research",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T19:02:21.671632+00:00",
-      "research_notes": "",
-      "checked_sources": [],
-      "reach_snapshot": "",
-      "funding_basis": "",
-      "related_outputs_checked": "",
+      "updated_at": "2026-10-29T05:32:21Z",
+      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-0132ET: NOAA IR identifies WPO office and CIWRO award NA21OAR4320204 for Tornado Tales survey reference report, but SPARK lists base award as RELATED to survey projects; output-specific WPO bridge and full YYYY-MM-DD publication date unverified. Credible candidate; bounded follow-up, not permanent hold. All ten REACH index shards, thirteen prior Scout batches, six SPARK index and six award shards searched for DOI and project match; no exact REACH/Scout DOI. Private human-review status not independently verified.",
+      "checked_sources": [
+        "https://repository.library.noaa.gov/view/noaa/74392",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "reach_snapshot": "REACH source SHA256 054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e, 1238 index rows",
+      "funding_basis": "NOAA IR identifies WPO office and CIWRO award NA21OAR4320204 for Tornado Tales survey reference report, but SPARK lists base award as RELATED to survey projects; output-specific WPO bridge and full YYYY-MM-DD publication date unverified. Credible candidate; bounded follow-up, not permanent hold.",
+      "related_outputs_checked": "Potential WPO social-science survey relationship not established; inspect project documentation and native report metadata at follow-up.",
       "verified_at": "",
       "verified_awards": [],
       "source_batch_ids": [
@@ -1923,8 +2050,19 @@
         "SOCIAL SCIENCE"
       ],
       "source_evidence_urls": [
-        "https://api.datacite.org/dois/10.25923/mpqr-r886"
-      ]
+        "https://api.datacite.org/dois/10.25923/mpqr-r886",
+        "https://repository.library.noaa.gov/view/noaa/74392"
+      ],
+      "reach_match": "No exact DOI or title in complete REACH index; relevant 2024 Harvey article already reach-000789, distinct from original seed.",
+      "first_investigated_at": "2026-10-29T05:32:21Z",
+      "next_research_at": "2026-11-05T05:32:21Z",
+      "followup_question": "Can NOAA IR native metadata provide full YYYY-MM-DD report publication date and can an independent source tie Tornado Tales to a specific SPARK WPO-funded project rather than only the CI umbrella?",
+      "missing_fields": [
+        "report full YYYY-MM-DD publication date",
+        "direct WPO SPARK project attribution beyond CI umbrella"
+      ],
+      "original_seed_disposition": "needs_more_research: bounded initial investigation",
+      "research_complete": false
     },
     {
       "identity": "doi:10.25923/na21oar4320204",
@@ -2715,15 +2853,20 @@
     },
     {
       "identity": "doi:10.25923/nm97-m303",
-      "status": "awaiting_research",
+      "status": "no_action",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T19:02:21.671632+00:00",
-      "research_notes": "",
-      "checked_sources": [],
-      "reach_snapshot": "",
-      "funding_basis": "",
-      "related_outputs_checked": "",
-      "verified_at": "",
+      "updated_at": "2026-10-29T05:32:21Z",
+      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-0132ET: NOAA IR FireHouse GSL/CIRA fire-weather synthesis is funded in part by NA24OARX432C0007, but SPARK lists that broad CI award only as RELATED to an AI tropical-cyclone forecasting project; no direct project bridge. Also two other CI grants listed. Reopen if output-specific WPO funding is shown. All ten REACH index shards, thirteen prior Scout batches, six SPARK index and six award shards searched for DOI and project match; no exact REACH/Scout DOI. Private human-review status not independently verified.",
+      "checked_sources": [
+        "https://repository.library.noaa.gov/view/noaa/76365",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "reach_snapshot": "REACH source SHA256 054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e, 1238 index rows",
+      "funding_basis": "NOAA IR FireHouse GSL/CIRA fire-weather synthesis is funded in part by NA24OARX432C0007, but SPARK lists that broad CI award only as RELATED to an AI tropical-cyclone forecasting project; no direct project bridge. Also two other CI grants listed. Reopen if output-specific WPO funding is shown.",
+      "related_outputs_checked": "FireHouse report not established as output of SPARK AI tropical cyclone project.",
+      "verified_at": "2026-10-29T05:32:21Z",
       "verified_awards": [],
       "source_batch_ids": [
         "2026-10-28-historical-datacite-spark-all-part001"
@@ -2735,8 +2878,13 @@
         "TESTBEDS"
       ],
       "source_evidence_urls": [
-        "https://api.datacite.org/dois/10.25923/nm97-m303"
-      ]
+        "https://api.datacite.org/dois/10.25923/nm97-m303",
+        "https://repository.library.noaa.gov/view/noaa/76365"
+      ],
+      "reach_match": "No exact DOI or title in complete REACH index; relevant 2024 Harvey article already reach-000789, distinct from original seed.",
+      "original_seed_disposition": "no_action: WPO project attribution not established",
+      "no_action_reason": "NOAA IR FireHouse GSL/CIRA fire-weather synthesis is funded in part by NA24OARX432C0007, but SPARK lists that broad CI award only as RELATED to an AI tropical-cyclone forecasting project; no direct project bridge. Also two other CI grants listed. Reopen if output-specific WPO funding is shown.",
+      "research_complete": true
     },
     {
       "identity": "doi:10.25923/t7t6-m677",
