@@ -3,8 +3,8 @@
     "coverage_matches_source_manifest": true,
     "distinct_dois": 188,
     "raw_batch_rows": 188,
-    "remaining_or_untracked": 96,
-    "research_completed": 92
+    "remaining_or_untracked": 78,
+    "research_completed": 110
   },
   "mode": "historical_api_triage",
   "monthly_api": {
@@ -13,8 +13,8 @@
     "remaining_or_untracked": 0,
     "research_completed": 0
   },
-  "note": "Recomputed from 2026-10-29 06:29 ET reconciled ledger. Reevaluate monthly each hour; never disable on pilot completion.",
-  "reason": "Monthly API queue empty; 80 historical original DOIs awaiting first review and 16 bounded original blockers",
+  "note": "Recomputed from 2026-10-29 07:34 ET reconciled ledger. Recheck monthly every hour; continue indefinitely and switch to normal historical award discovery after pilot completes.",
+  "reason": "Monthly API queue empty; 62 original historical DOIs awaiting initial research and 16 original bounded blockers.",
   "schema": "reach-scout-workstream-v1",
   "switch_policy": "monthly API > historical API test backlog > normal SPARK historical discovery"
 }
