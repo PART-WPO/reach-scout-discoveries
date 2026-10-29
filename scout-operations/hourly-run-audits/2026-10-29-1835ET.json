@@ -1,0 +1,351 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-29-HOURLY-1835ET",
+  "run_timestamp_utc": "2026-10-29T22:35:47.313524+00:00",
+  "selected_mode": "historical_api_triage",
+  "phase": "additional_evidence_research",
+  "audit_result": "PARTIAL",
+  "audit_reason": "Research completed for five original DOI cases; blocker validator and historical reconciliation GitHub Actions succeeded; current Discovery Hub blank-metadata intake, private reviewer decisions and full 140-shard REACH detail audit remain unverified.",
+  "monthly_coverage_before": {
+    "completed": 0,
+    "remaining": 0
+  },
+  "monthly_coverage_expected_after": {
+    "completed": 0,
+    "remaining": 0
+  },
+  "historical_coverage_before": {
+    "completed": 159,
+    "remaining": 29,
+    "total": 188
+  },
+  "seeds_independently_disposed": [
+    {
+      "doi": "10.17605/osf.io/jr7pv",
+      "outcome": "human_metadata_needed",
+      "grant_vs_artifact": "research_artifact_or_public_method_project_not_administrative_grant_notice",
+      "original_seed_doi": "10.17605/osf.io/jr7pv",
+      "discovery_route": "Direct API",
+      "sources_checked": [
+        {
+          "method": "spark_primary_project_detail",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+          "outcome": "SPARK spark-000248 confirms NA21OAR4590210 as primary WPO project; proposed work explicitly includes IDSS exercise methodology and emergency-manager surveys; project dates are not output release dates."
+        },
+        {
+          "method": "wpo_original_funding_award_list",
+          "url": "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+          "outcome": "Independent WPO project list identifies University of Oklahoma/Jackson State University and NA21OAR4590210/0211 for the exact IDSS project."
+        },
+        {
+          "method": "osf_alternate_native_api",
+          "url": "https://api.osf.io/v2/nodes/jr7pv",
+          "outcome": "Alternate OSF node API was not accessible through available retrieval; file list, public visibility and native date remain unverified."
+        },
+        {
+          "method": "captured_datacite_project_record",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
+          "outcome": "Original captured DataCite DOI metadata describes an actual survey instrument, exercise method and after-action reviews, rather than a grant notice; exact individual files not verified."
+        }
+      ],
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+        "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+        "https://api.osf.io/v2/nodes/jr7pv",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv"
+      ],
+      "funding_awards": [
+        "NA21OAR4590210"
+      ],
+      "missing_fields": [
+        "native public OSF file identities and accessible component scope",
+        "record-specific full YYYY-MM-DD publication date",
+        "whether one project DOI or individual components merit separate REACH records"
+      ],
+      "reviewer_question": "Are the OSF survey instrument, IDSS exercise method and after-action files publicly accessible distinct eligible outputs; can a verified release date be supplied or permissibly omitted?",
+      "hub_delivery_status": "NOT_DELIVERED_TO_HUB",
+      "no_action_subtype": null
+    },
+    {
+      "doi": "10.17605/osf.io/rbdfv",
+      "outcome": "human_metadata_needed",
+      "grant_vs_artifact": "research_artifact_or_public_method_project_not_administrative_grant_notice",
+      "original_seed_doi": "10.17605/osf.io/rbdfv",
+      "discovery_route": "Direct API",
+      "sources_checked": [
+        {
+          "method": "spark_primary_project_detail",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+          "outcome": "SPARK spark-000249 confirms NA21OAR4590212 primary WPO-funded BVOT transition-methods project."
+        },
+        {
+          "method": "wpo_original_funding_award_list",
+          "url": "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+          "outcome": "WPO official award list independently confirms NA21OAR4590212 and BVOT methods project; project dates do not establish OSF release."
+        },
+        {
+          "method": "bvot_author_training_material",
+          "url": "https://storymaps.arcgis.com/stories/fba773ea40274be0901380a83234ec3a",
+          "outcome": "Project-authored Google Earth BVOT tutorial explicitly credits NA21OAR4590212, corroborating project-specific methods outputs; not proof that OSF DOI is a separate artifact."
+        },
+        {
+          "method": "noaa_ir_bvot_publication",
+          "url": "https://repository.library.noaa.gov/view/noaa/70235",
+          "outcome": "Published BVOT methods article shares authors and method but cites older grants; it is already REACH reach-000892, not a verified match to the OSF DOI."
+        },
+        {
+          "method": "osf_alternate_native_api",
+          "url": "https://api.osf.io/v2/nodes/rbdfv",
+          "outcome": "OSF node API unavailable; exact public OSF files, release date and version/duplicate status unresolved."
+        }
+      ],
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+        "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+        "https://storymaps.arcgis.com/stories/fba773ea40274be0901380a83234ec3a",
+        "https://repository.library.noaa.gov/view/noaa/70235",
+        "https://api.osf.io/v2/nodes/rbdfv"
+      ],
+      "funding_awards": [
+        "NA21OAR4590212"
+      ],
+      "missing_fields": [
+        "native OSF public file identities and release date",
+        "distinctness from existing REACH BVOT StoryMap and journal articles",
+        "whether project-level DOI itself qualifies as a separately catalogable research output"
+      ],
+      "reviewer_question": "Does OSF BVOT Method Development contain a separately eligible public method artifact, or does existing REACH BVOT content already represent it; what date or permissible waiver applies?",
+      "hub_delivery_status": "NOT_DELIVERED_TO_HUB",
+      "no_action_subtype": null
+    },
+    {
+      "doi": "10.17603/ds2-yry6-r324",
+      "outcome": "human_metadata_needed",
+      "grant_vs_artifact": "research_artifact_or_public_method_project_not_administrative_grant_notice",
+      "original_seed_doi": "10.17603/ds2-yry6-r324",
+      "discovery_route": "Direct API",
+      "sources_checked": [
+        {
+          "method": "spark_primary_project_detail",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-019.csv",
+          "outcome": "SPARK spark-000237 primary WPO award NA19OAR0220119 confirms hurricane forecast-change risk-information methods project."
+        },
+        {
+          "method": "publisher_article_data_availability",
+          "url": "https://ascelibrary.org/doi/10.1061/NHREFO.NHENG-1802",
+          "outcome": "Publisher states Prestley and Morss 2024 coding schemes published in DesignSafe; article release 2024-04-26 cannot be substituted for dataset release."
+        },
+        {
+          "method": "author_datasets_catalog",
+          "url": "https://impacts.ucar.edu/en/persons/robert-prestley/",
+          "outcome": "NCAR author catalog lists related DesignSafe tropical cyclone tweet analysis DOI 10.17603/ds2-jfsc-8902, a possible distinctness/version question, not the same DOI."
+        },
+        {
+          "method": "noaa_ir_article_record",
+          "url": "https://repository.library.noaa.gov/view/noaa/70233",
+          "outcome": "NOAA IR corroborates WPO-associated 2024 Harvey research article already in REACH reach-000789; this does not resolve original dataset date or public files."
+        }
+      ],
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-019.csv",
+        "https://ascelibrary.org/doi/10.1061/NHREFO.NHENG-1802",
+        "https://impacts.ucar.edu/en/persons/robert-prestley/",
+        "https://repository.library.noaa.gov/view/noaa/70233"
+      ],
+      "funding_awards": [
+        "NA19OAR0220119"
+      ],
+      "missing_fields": [
+        "record-specific full YYYY-MM-DD dataset release date",
+        "native public DesignSafe component/file scope",
+        "whether dataset documentation overlaps a separately indexed DesignSafe deposit 10.17603/ds2-jfsc-8902"
+      ],
+      "reviewer_question": "Is this DOI a separately public, catalogable dataset documentation artifact distinct from 10.17603/ds2-jfsc-8902 and the already-published Harvey article; can its release date be verified or omitted lawfully?",
+      "hub_delivery_status": "NOT_DELIVERED_TO_HUB",
+      "no_action_subtype": null
+    },
+    {
+      "doi": "10.57969/s93w23",
+      "outcome": "human_metadata_needed",
+      "grant_vs_artifact": "research_artifact_or_public_method_project_not_administrative_grant_notice",
+      "original_seed_doi": "10.57969/s93w23",
+      "discovery_route": "Direct API",
+      "sources_checked": [
+        {
+          "method": "spark_primary_award_project",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+          "outcome": "SPARK spark-000336 confirms primary NA21OAR4590374 drifter/pressure/wave-observation WPO project."
+        },
+        {
+          "method": "publisher_nopp_dataset_catalog",
+          "url": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+          "outcome": "Scripps LDL lists S93W23 as 2022 NHCI sensor data distinct from 2022 First-Five S9059K and 2024 First-Five S9F59M; citation year is not release day."
+        },
+        {
+          "method": "native_erddap_doi_metadata",
+          "url": "https://erddap.ldl.ucsd.edu/erddap/info/ONR_NOPP2022/index.html",
+          "outcome": "Live ERDDAP metadata resolves exact DOI S93W23, public sensor data variables, license and time coverage 2022-04-30 to 2022-11-30; no first-publication day given."
+        }
+      ],
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+        "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+        "https://erddap.ldl.ucsd.edu/erddap/info/ONR_NOPP2022/index.html"
+      ],
+      "funding_awards": [
+        "NA21OAR4590374"
+      ],
+      "missing_fields": [
+        "record-specific first public publication date (YYYY-MM-DD)",
+        "whether downstream REACH rules permit date omission"
+      ],
+      "reviewer_question": "Can Scripps confirm first publication day for public 2022 NHCI sensor data, or may reviewer explicitly accept an otherwise verified dataset without date under existing REACH publishing rules?",
+      "hub_delivery_status": "NOT_DELIVERED_TO_HUB",
+      "no_action_subtype": null
+    },
+    {
+      "doi": "10.57969/s9f59m",
+      "outcome": "human_metadata_needed",
+      "grant_vs_artifact": "research_artifact_or_public_method_project_not_administrative_grant_notice",
+      "original_seed_doi": "10.57969/s9f59m",
+      "discovery_route": "Direct API",
+      "sources_checked": [
+        {
+          "method": "spark_primary_award_project",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+          "outcome": "SPARK spark-000336 primary WPO drifter award; this supports project linkage but not a dataset publication day."
+        },
+        {
+          "method": "publisher_nopp_dataset_catalog",
+          "url": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+          "outcome": "Scripps LDL lists 2024 First-Five DOI S9F59M as wave coefficients distinct from 2024 sensor data S9K013 and 2022 sensor S93W23."
+        },
+        {
+          "method": "native_erddap_doi_metadata",
+          "url": "https://erddap.ldl.ucsd.edu/erddap/info/ONR_NOPP2024_First5/index.html",
+          "outcome": "Live ERDDAP metadata resolves exact S9F59M DOI, public first-five a0/a1/b1/a2/b2 wave coefficient fields, license and observation time coverage 2024-04-30 to 2024-11-30; no first-publication day."
+        }
+      ],
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+        "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+        "https://erddap.ldl.ucsd.edu/erddap/info/ONR_NOPP2024_First5/index.html"
+      ],
+      "funding_awards": [
+        "NA21OAR4590374"
+      ],
+      "missing_fields": [
+        "record-specific first public publication date (YYYY-MM-DD)",
+        "whether downstream REACH rules permit date omission"
+      ],
+      "reviewer_question": "Can Scripps confirm first publication day for 2024 first-five wave dataset, or can a human explicitly accept a permissible date omission?",
+      "hub_delivery_status": "NOT_DELIVERED_TO_HUB",
+      "no_action_subtype": null
+    }
+  ],
+  "original_seeds_forwarded_to_hub_new": 0,
+  "expanded_outputs_forwarded_new": 0,
+  "new_expansion_leads": [
+    {
+      "url": "https://storymaps.arcgis.com/stories/fba773ea40274be0901380a83234ec3a",
+      "award": "NA21OAR4590212",
+      "reason": "BVOT Google Earth training StoryMap with direct award credit; check full REACH detail and other Scout/Hub candidates before any distinct proposal; not asserted as new."
+    }
+  ],
+  "new_verified_candidates_by_route": {
+    "Direct API": 0,
+    "API-seeded expansion": 0,
+    "Independent discovery": 0,
+    "Metadata correction": 0
+  },
+  "newly_staged_csv_ids": [],
+  "feed_integrity_status": "VERIFIED_EXISTING_16_BATCHES_56_ROWS",
+  "feed_integrity_evidence": {
+    "batch_count": 16,
+    "candidate_rows": 56,
+    "sha256_exact_utf8_and_record_count_and_run_ids": "16/16 independently verified from GitHub fetched CSV bytes; no mismatch",
+    "manifest_generated_at": "2026-10-29T19:32:46Z",
+    "previous_batch_ids_unchanged": true,
+    "new_batches": 0,
+    "manifest_sha_blob": "ec3db1e0c70b3c9778039bd26cb474724ba771b5",
+    "manifest_unchanged_after_ledger_writes": true
+  },
+  "github_action_verification_status": "COMPLETED_SUCCESS_PREEXISTING",
+  "github_action_url": "https://github.com/PART-WPO/reach-scout-discoveries/actions/runs/40941042327",
+  "research_finished_this_run": 5,
+  "new_distinct_source_checks": 19,
+  "human_metadata_needed_pending_expected": 12,
+  "human_metadata_needed_new": 5,
+  "hub_investigate_candidates_delivered_new": 0,
+  "hub_intake_pending_integration_new": 5,
+  "public_reach_additions_verified_new": 0,
+  "public_reach_count_snapshot": 1238,
+  "reach_source_sha256": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+  "attribution_queue_before": {
+    "total": 67,
+    "queued": 52
+  },
+  "attribution_queue_changes": 0,
+  "no_action_subtypes_new": {},
+  "original_no_action_unchanged": 105,
+  "retrospective_audits_preserved_as_partial": [
+    "2026-10-28-2029ET.json",
+    "2026-10-28-2129ET.json"
+  ],
+  "blockers": [
+    "Hub importer truthful blank publication-date compatibility not verified; five pending_hub_handoff cases NOT DELIVERED",
+    "Only REACH index 10/10 shards and relevant 4 detail shards independently checked, not all 140 detail shards",
+    "Private reviewer decisions not visible",
+    "No new eligible complete-metadata CSV candidates; header-only Library CSV, no GitHub batch"
+  ],
+  "next_priority": "Continue remaining 24 historical original DOI research cases, then separate attribution follow-ups; do not retry these five without new evidence.",
+  "library_saved_before_github_writes": true,
+  "github_ledger_write_status": "VERIFIED_COMMITTED_AND_RECONCILED",
+  "github_audit_write_status": "PREPARED_FOR_PUBLIC_GITHUB_AUDIT_COMMIT",
+  "historical_coverage_after": {
+    "completed": 164,
+    "remaining": 24,
+    "total": 188,
+    "human_metadata_needed": 12,
+    "no_action": 105,
+    "already_in_reach": 37,
+    "forwarded_to_hub": 2,
+    "metadata_update_forwarded": 8
+  },
+  "monthly_coverage_after": {
+    "completed": 0,
+    "remaining": 0
+  },
+  "github_ledger_commit_shas": {
+    "metadata_blockers": "6177a56f227187f4621833ad551e58fa6fed82c0",
+    "historical_triage": "69077509da8a1122812fd87a944f7a40814d4377"
+  },
+  "historical_reconciliation_action": {
+    "status": "COMPLETED_SUCCESS",
+    "url": "https://github.com/PART-WPO/reach-scout-discoveries/actions/runs/40967216356",
+    "verified_coverage": {
+      "fully_investigated": 164,
+      "remaining": 24,
+      "human_metadata_needed": 12,
+      "no_action": 105,
+      "already_in_reach": 37,
+      "forwarded_to_hub": 2,
+      "metadata_update_forwarded": 8
+    }
+  },
+  "metadata_blocker_validation_action": {
+    "status": "COMPLETED_SUCCESS",
+    "url": "https://github.com/PART-WPO/reach-scout-discoveries/actions/runs/40967174272"
+  },
+  "attribution_queue_after": {
+    "total": 67,
+    "queued": 52
+  },
+  "due_followups_count_at_run_start": 29,
+  "overdue_followups_count_at_run_start": 0,
+  "hub_investigate_candidates_delivered_total_verified": 0,
+  "human_metadata_needed_pending_total": 12,
+  "human_decisions_verified_new": 0,
+  "source_manifest_coverage_verified": true,
+  "existing_provenance_review_candidates_preserved": true
+}
