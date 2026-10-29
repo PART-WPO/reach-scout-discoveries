@@ -1,0 +1,89 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-29-HOURLY-0429ET",
+  "mode": "historical_api_triage",
+  "cohort": "Historical DataCite API Backfill 2026-10-28",
+  "monthly_manifest_rows": 0,
+  "historical_manifest_rows": 188,
+  "original_seed_dispositions": {
+    "no_action_grant_description": [
+      "10.25923/na23oar4590360",
+      "10.25923/na23oar4590361",
+      "10.25923/na23oar4590362",
+      "10.25923/na23oar4590367",
+      "10.25923/na23oar4590368",
+      "10.25923/na23oar4590369"
+    ],
+    "already_in_reach_new": 0,
+    "previously_already_in_reach_rechecked": [
+      "10.25923/nkn2-vt59"
+    ],
+    "forwarded": 0,
+    "new_original_metadata_blockers": 0,
+    "disposition_gaps_added": 0
+  },
+  "new_review_candidates": {
+    "direct_api": 0,
+    "api_seeded_expansion": 0,
+    "independent_discovery": 0,
+    "metadata_correction": 0,
+    "unclassified": 0
+  },
+  "new_expansion_leads": 1,
+  "expansion_lead": {
+    "title": "When will severe weather hit my jurisdiction?",
+    "url": "https://www.iaem.org/Portals/IAEMconf/documents/2025/posters2025/Alex-Marmo-Poster.pdf",
+    "seed_doi": "10.25923/na23oar4590362",
+    "award": "NA23OAR4590362",
+    "route": "API-seeded expansion",
+    "status": "needs_more_research",
+    "next_retry_at": "2026-11-05T09:00:00Z",
+    "blocker_identity": "url:https://www.iaem.org/Portals/IAEMconf/documents/2025/posters2025/Alex-Marmo-Poster.pdf",
+    "reason": "Exact first public publication date unavailable; Nov 18 2025 is conference presentation date, not verified PDF release date."
+  },
+  "historical_before": {
+    "resolved": 70,
+    "remaining": 118,
+    "awaiting_research": 102,
+    "original_blockers": 16,
+    "no_action": 27,
+    "already_in_reach": 33
+  },
+  "historical_after": {
+    "resolved": 76,
+    "remaining": 112,
+    "awaiting_research": 96,
+    "original_blockers": 16,
+    "no_action": 33,
+    "already_in_reach": 33
+  },
+  "checks": {
+    "reach_index_shards": 10,
+    "reach_index_rows": 1238,
+    "reach_detail_shards": [
+      101
+    ],
+    "reach_detail_shards_total": 140,
+    "scout_prior_batches": 14,
+    "scout_prior_candidates": 53,
+    "historical_source_shards": 2,
+    "monthly_source_shards": 0
+  },
+  "metadata_followups": {
+    "due": 0,
+    "overdue": 0,
+    "human_metadata_needed": 0,
+    "original_blockers_pending": 16,
+    "expansion_blockers_pending": 2
+  },
+  "batch_path": null,
+  "hub_investigate_candidates_delivered": 0,
+  "manifest_verified": {
+    "batch_count": 14,
+    "candidate_rows": 53
+  },
+  "status": "PARTIAL",
+  "limitation": "All index shards and prior Scout batches checked, but not all 140 REACH detail shards or private reviewer decisions. The 2025 IAEM poster is a metadata lead, not a valid Hub submission.",
+  "public_reach_baseline": 1238,
+  "verified_new_public_reach_additions": 0
+}
