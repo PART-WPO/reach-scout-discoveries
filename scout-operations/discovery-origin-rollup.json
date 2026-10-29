@@ -1,13 +1,13 @@
 {
   "schema": "reach-scout-discovery-origin-rollup-v1",
   "snapshot_date": "2026-10-29",
-  "source": "scout-discoveries/manifest.json and all 14 24-column GitHub batch CSVs individually parsed",
-  "batch_count": 14,
-  "staged_review_rows": 53,
+  "source": "scout-discoveries/manifest.json and all 15 24-column GitHub batch CSVs individually parsed and SHA-256 verified",
+  "batch_count": 15,
+  "staged_review_rows": 55,
   "manifest_rows_verified": true,
   "route_counts": {
     "Direct API": 1,
-    "API-seeded expansion": 7,
+    "API-seeded expansion": 9,
     "Independent discovery": 0,
     "Metadata correction": 5,
     "Unclassified explicit": 0,
@@ -31,5 +31,15 @@
     "source_manifest_sha": "ab844173f761617a2fe1def5cf218b1fc94b3e7d"
   },
   "human_review_status": "Not verifiable from public GitHub",
-  "note": "Legacy 40 rows with no explicit route MUST NOT be inferred as independently discovered. Staged proposals are neither reviewer-approved nor publicly added. Check current manifests at each subsequent run."
+  "note": "15 immutable batches / 55 staged review proposals: 1 Direct API, 9 API-seeded expansion, 5 metadata correction, 40 legacy unclassified; no independent discovery routes explicitly labeled. Private reviewer decisions unavailable; public REACH baseline remains 1238. Prior 6 API-seeded provenance followups preserved.",
+  "latest_verified_run": {
+    "run_id": "REACH-SCOUT-2026-10-29-HOURLY-1131ET",
+    "batch_id": "2026-10-29-hourly-1131ET-verified-article-expansion-001",
+    "new_review_proposals": 2,
+    "route": "API-seeded expansion",
+    "manifest_verified": true,
+    "github_action_run_id": 40903812254,
+    "sha256": "ed0c7dfed02cd3a58424993146bf48574257aa0fc0a9c4ddcf3e52f5bc686d2a",
+    "human_review_verified": false
+  }
 }
