@@ -2,6 +2,9 @@
 
 ## Cumulative discovery-origin rollup — October 29 reconciliation
 
+Six overnight API-seeded expansion proposals remain flagged for **human origin, eligibility and duplicate/version validation** in [provenance-review-followups.json](provenance-review-followups.json). These are existing staged rows, not additional outputs; no new batch was created for the follow-up queue. Human approval remains unverified.
+
+
 [Machine-readable rollup](discovery-origin-rollup.json) reconciles all 14 published GitHub batch CSVs against the 53-row manifest: **Direct API 1; API-seeded expansion 7; Independent discovery 0; Metadata correction 5; legacy rows without explicit discovery route 40.** Missing legacy origin labels are NOT independent discoveries. For the 20:29 ET–07:34 ET overnight window, the verified four new batches hold **10 review proposals**: Direct API 1, API-seeded expansion 6, Metadata correction 3. These are staged for review, not approvals or public outputs. The authoritative REACH agent-data manifest still has 1,238 records at blob ab844173f761617a2fe1def5cf218b1fc94b3e7d; no incremental publication is asserted from staged files.
 
 The Oct 28 **20:29 ET** and **21:29 ET** missing hourly audit JSON files have now been backfilled as **PARTIAL**, with original commit links, independent seed dispositions, proposal routes, and explicit unrecoverable evidence gaps. See [20:29 reconstruction](hourly-run-audits/2026-10-28-2029ET.json) and [21:29 reconstruction](hourly-run-audits/2026-10-28-2129ET.json). Reconstructed is not equivalent to an original real-time PASS. Future runs must emit provenance audit files contemporaneously. Historical no-action dispositions now have explicit subtypes and [bounded targeted attribution follow-ups](attribution-followups.json) distinct from terminal original-seed status; do not convert these follow-up leads into Hub proposals without corroborated WPO workstream evidence.
