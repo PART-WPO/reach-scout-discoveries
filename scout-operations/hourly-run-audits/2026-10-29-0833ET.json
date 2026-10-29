@@ -1,0 +1,124 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-29-HOURLY-0833ET",
+  "checked_at": "2026-10-29T12:33:11Z",
+  "mode": "historical_api_triage",
+  "monthly": {
+    "source_rows": 0,
+    "before_completed": 0,
+    "after_completed": 0,
+    "remaining": 0
+  },
+  "historical": {
+    "source_rows": 188,
+    "source_distinct_dois": 188,
+    "ledger_rows": 188,
+    "before_completed": 110,
+    "after_completed": 123,
+    "before_remaining": 78,
+    "after_remaining": 65,
+    "before_awaiting": 62,
+    "after_awaiting": 49,
+    "original_blockers": 16,
+    "before_no_action": 65,
+    "after_no_action": 77,
+    "before_already_in_reach": 35,
+    "after_already_in_reach": 36,
+    "forwarded_to_hub": 2,
+    "metadata_update_forwarded": 8,
+    "research_complete": false,
+    "source_ledger_reconciles": true
+  },
+  "original_seed": {
+    "examined": 13,
+    "no_action": 12,
+    "already_in_reach": 1,
+    "forwarded_new": 0,
+    "metadata_blockers_new": 0,
+    "disposition_gaps_in_examined": 0,
+    "terminal_disposition_evidence_gaps": 0,
+    "dois": [
+      "10.5281/zenodo.12557264",
+      "10.5281/zenodo.12557265",
+      "10.5281/zenodo.12557521",
+      "10.5281/zenodo.12557547",
+      "10.5281/zenodo.12560367",
+      "10.5281/zenodo.12560629",
+      "10.5281/zenodo.12625308",
+      "10.5281/zenodo.12638402",
+      "10.5281/zenodo.13625364",
+      "10.5281/zenodo.13625365",
+      "10.5281/zenodo.15238131",
+      "10.5281/zenodo.15238132",
+      "10.5281/zenodo.17675895"
+    ]
+  },
+  "expansion": {
+    "distinct_related_output_families_checked": 4,
+    "new_hub_candidates": 0,
+    "metadata_correction_leads": 1,
+    "source_to_expansion_links": [
+      "ProxyVis software -> 10.1175/WAF-D-23-0038.1",
+      "Lake Erie code/data -> 10.1016/j.hal.2024.102731",
+      "Beaufort Sea dataset -> SWOT/ICESat-2 research",
+      "Freezing-rain dataset v2 -> reach-000377 v1 and reach-000375 article"
+    ]
+  },
+  "discovery_routes": {
+    "direct_api": 0,
+    "api_seeded_expansion": 0,
+    "independent_discovery": 0,
+    "metadata_correction": 0
+  },
+  "source_checks": {
+    "reach_index_shards": 10,
+    "reach_index_rows": 1238,
+    "spark_index_shards": 6,
+    "spark_index_rows": 578,
+    "scout_batches": 14,
+    "scout_staged_candidates": 53,
+    "historical_source_batches": 2,
+    "historical_source_distinct_dois": 188,
+    "reach_detail_shards_selected": 1,
+    "full_reach_details_checked": false,
+    "private_feedback_checked": false
+  },
+  "metadata_followups": {
+    "total": 20,
+    "original": 16,
+    "expansion": 4,
+    "due": 0,
+    "overdue": 0,
+    "human_metadata_needed": 0,
+    "hub_investigate_delivered": 0
+  },
+  "github": {
+    "historical_ledger_updated": true,
+    "historical_coverage_updated": true,
+    "active_router_updated": true,
+    "discovery_metrics_updated": true,
+    "batch_published": false,
+    "hub_batch_reason": "No eligible verified unique WPO-funded output; header-only local 24-column CSV. No empty GitHub batch."
+  },
+  "library": {
+    "persisted_before_github_writes": true,
+    "artifacts": [
+      "/REACH Scout Library/2026-10-29-0833ET-report.md",
+      "/REACH Scout Library/2026-10-29-0833ET-research_leads.csv",
+      "/REACH Scout Library/2026-10-29-0833ET-checkpoint.json",
+      "/REACH Scout Library/2026-10-29-0833ET-discovery_hub.csv",
+      "/REACH Scout Library/2026-10-29-0833ET-hourly_provenance_audit.json"
+    ]
+  },
+  "public_reach": {
+    "baseline": 1238,
+    "new_additions_verified": 0
+  },
+  "audit_status": "PARTIAL",
+  "limitations": [
+    "Complete REACH index and staged batches checked, but not all 140 REACH detail shards or private reviewer dispositions.",
+    "Zenodo native API unavailable or rate-limited for some concept/version DOIs; original DataCite batch, native repository pages, author code repository and SPARK project detail checked.",
+    "Broad cooperative-institute award is not evidence of a specific WPO project contribution.",
+    "Freezing-rain v2 is an existing output version and any REACH link correction requires human review."
+  ]
+}
