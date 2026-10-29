@@ -664,12 +664,49 @@
         "NA21OAR4590210"
       ],
       "cohort": "Historical DataCite API Backfill 2026-10-28",
-      "status": "blocked",
+      "status": "pending_hub_handoff",
       "missing_fields": [
-        "public OSF file identities and accessible scope",
-        "record-specific full publication date"
+        "native public OSF file identities and accessible component scope",
+        "record-specific full YYYY-MM-DD publication date",
+        "whether project DOI or individual components merit separate REACH records"
       ],
-      "attempts": [],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "documented_initial_source",
+          "url": "https://api.datacite.org/dois/10.17605/osf.io/jr7pv",
+          "outcome": "Initial investigation already documented in historical-triage at conservative first_investigated_at; original evidence retained.",
+          "checked_at": "2026-10-29T01:32:07Z"
+        },
+        {
+          "round": 1,
+          "method": "spark_primary_project_detail",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+          "outcome": "SPARK spark-000248 verifies primary WPO award and IDSS survey/exercise research workstream.",
+          "checked_at": "2026-10-29T22:36:34.326Z"
+        },
+        {
+          "round": 1,
+          "method": "wpo_award_list",
+          "url": "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+          "outcome": "Official WPO award list independently confirms project and awards NA21OAR4590210/0211.",
+          "checked_at": "2026-10-29T22:36:34.326Z"
+        },
+        {
+          "round": 1,
+          "method": "osf_alternate_api",
+          "url": "https://api.osf.io/v2/nodes/jr7pv",
+          "outcome": "Alternate native OSF API inaccessible; file identities and public dates unverified.",
+          "checked_at": "2026-10-29T22:36:34.326Z"
+        },
+        {
+          "round": 1,
+          "method": "datacite_original_capture",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
+          "outcome": "Captured source describes research survey, exercise method and after-action files, not grant-only notice.",
+          "checked_at": "2026-10-29T22:36:34.326Z"
+        }
+      ],
       "prior_documented_checks": [
         "https://api.datacite.org/dois/10.17605/osf.io/jr7pv",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
@@ -678,18 +715,33 @@
       ],
       "first_investigated_at": "2026-10-29T01:32:07Z",
       "first_investigated_timestamp_basis": "Earliest existing triage updated_at retained as conservative documented evidence of investigation; actual initial check may be earlier",
-      "last_attempt_at": "2026-10-29T01:32:07Z",
-      "retry_count": 0,
+      "last_attempt_at": "2026-10-29T22:36:34.326Z",
+      "retry_count": 1,
       "next_retry_at": "2026-11-05T01:32:07.000Z",
       "followup_question": "Access public OSF project metadata/files or author repository via a distinct endpoint; establish exact date and whether files are separate public outputs.",
       "evidence_urls": [
-        "https://api.datacite.org/dois/10.17605/osf.io/jr7pv"
+        "https://api.datacite.org/dois/10.17605/osf.io/jr7pv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+        "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+        "https://api.osf.io/v2/nodes/jr7pv",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv"
       ],
-      "funding_basis": "Captured DataCite structured award NA21OAR4590210 for this OSF project; no independent project file or author acknowledgement accessible in this round.",
-      "next_action": "One bounded follow-up at or after next_retry_at; if unresolved and credible, escalate human_metadata_needed without inventing metadata. See historical-triage for source notes.",
+      "funding_basis": "Captured DataCite structured award NA21OAR4590210 for this OSF project; no independent project file or author acknowledgement accessible in this round. Additional primary SPARK project detail and independent publisher/official WPO corroboration recorded; output-specific limits preserved.",
+      "next_action": "RESEARCH COMPLETE; human decision needed, pending compatible Hub intake. Do not repeat metadata searches without new evidence or explicit human request.",
       "triage_identity": "doi:10.17605/osf.io/jr7pv",
       "next_research_at": "2026-11-05T01:32:07.000Z",
-      "next_research_at_basis": "Existing recorded next_retry_at alias; no change to first investigation, retry date, retry count, or evidence."
+      "next_research_at_basis": "Existing recorded next_retry_at alias; no change to first investigation, retry date, retry count, or evidence.",
+      "followup_completed_at": "2026-10-29T22:36:34.326Z",
+      "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1835ET",
+      "research_completed": true,
+      "metadata_recovery_exhausted": true,
+      "reviewer_question": "Are OSF survey, IDSS exercise and after-action files public distinct outputs, and can release dates be verified or permissibly omitted?",
+      "hub_delivery_status": "not_delivered",
+      "hub_intake_blocker": "Current Hub importer support for truthful blank mandatory Publication Date and, where relevant, unknown public file/component scope not verified. No candidate batch or Hub acceptance claimed.",
+      "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
+      "early_retry_reason": "2026-10-29 authoritative bounded different-source recovery before preserved seven-day retry date; do not repeat without new evidence.",
+      "original_seed_doi": "10.17605/osf.io/jr7pv",
+      "research_cohort": "Historical DataCite API Backfill 2026-10-28"
     },
     {
       "identity": "doi:10.17605/osf.io/rbdfv",
@@ -697,12 +749,56 @@
         "NA21OAR4590212"
       ],
       "cohort": "Historical DataCite API Backfill 2026-10-28",
-      "status": "blocked",
+      "status": "pending_hub_handoff",
       "missing_fields": [
-        "distinctness from existing REACH BVOT outputs",
-        "public accessible artifact and full publication date"
+        "native OSF public file identities and release date",
+        "distinctness from REACH BVOT StoryMap and journal outputs",
+        "separate project DOI eligibility"
       ],
-      "attempts": [],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "documented_initial_source",
+          "url": "https://api.datacite.org/dois/10.17605/osf.io/rbdfv",
+          "outcome": "Initial investigation already documented in historical-triage at conservative first_investigated_at; original evidence retained.",
+          "checked_at": "2026-10-29T01:32:07Z"
+        },
+        {
+          "round": 1,
+          "method": "spark_primary_project_detail",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+          "outcome": "SPARK spark-000249 verifies primary WPO BVOT methods award NA21OAR4590212.",
+          "checked_at": "2026-10-29T22:36:34.326Z"
+        },
+        {
+          "round": 1,
+          "method": "wpo_award_list",
+          "url": "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+          "outcome": "WPO original award list independently confirms exact funded BVOT project.",
+          "checked_at": "2026-10-29T22:36:34.326Z"
+        },
+        {
+          "round": 1,
+          "method": "bvot_author_training",
+          "url": "https://storymaps.arcgis.com/stories/fba773ea40274be0901380a83234ec3a",
+          "outcome": "Project-authored BVOT training StoryMap directly cites NA21OAR4590212, but not OSF DOI identity.",
+          "checked_at": "2026-10-29T22:36:34.326Z"
+        },
+        {
+          "round": 1,
+          "method": "noaa_ir_bvot_article",
+          "url": "https://repository.library.noaa.gov/view/noaa/70235",
+          "outcome": "BVOT methods article already REACH reach-000892; older listed funding and version overlap need human judgment.",
+          "checked_at": "2026-10-29T22:36:34.326Z"
+        },
+        {
+          "round": 1,
+          "method": "osf_alternate_api",
+          "url": "https://api.osf.io/v2/nodes/rbdfv",
+          "outcome": "OSF native API inaccessible; files and date not independently verifiable.",
+          "checked_at": "2026-10-29T22:36:34.326Z"
+        }
+      ],
       "prior_documented_checks": [
         "https://api.datacite.org/dois/10.17605/osf.io/rbdfv",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
@@ -711,18 +807,34 @@
       ],
       "first_investigated_at": "2026-10-29T01:32:07Z",
       "first_investigated_timestamp_basis": "Earliest existing triage updated_at retained as conservative documented evidence of investigation; actual initial check may be earlier",
-      "last_attempt_at": "2026-10-29T01:32:07Z",
-      "retry_count": 0,
+      "last_attempt_at": "2026-10-29T22:36:34.326Z",
+      "retry_count": 1,
       "next_retry_at": "2026-11-05T01:32:07.000Z",
       "followup_question": "Inspect native OSF project metadata and public files through alternate authoritative endpoint, then determine whether new distinct artifact versus existing REACH BVOT materials.",
       "evidence_urls": [
-        "https://api.datacite.org/dois/10.17605/osf.io/rbdfv"
+        "https://api.datacite.org/dois/10.17605/osf.io/rbdfv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+        "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+        "https://storymaps.arcgis.com/stories/fba773ea40274be0901380a83234ec3a",
+        "https://repository.library.noaa.gov/view/noaa/70235",
+        "https://api.osf.io/v2/nodes/rbdfv"
       ],
-      "funding_basis": "Captured DataCite structured award NA21OAR4590212; related REACH BVOT journal work includes that award, but does not independently establish OSF project's publication date.",
-      "next_action": "One bounded follow-up at or after next_retry_at; if unresolved and credible, escalate human_metadata_needed without inventing metadata. See historical-triage for source notes.",
+      "funding_basis": "Captured DataCite structured award NA21OAR4590212; related REACH BVOT journal work includes that award, but does not independently establish OSF project's publication date. Additional primary SPARK project detail and independent publisher/official WPO corroboration recorded; output-specific limits preserved.",
+      "next_action": "RESEARCH COMPLETE; human decision needed, pending compatible Hub intake. Do not repeat metadata searches without new evidence or explicit human request.",
       "triage_identity": "doi:10.17605/osf.io/rbdfv",
       "next_research_at": "2026-11-05T01:32:07.000Z",
-      "next_research_at_basis": "Existing recorded next_retry_at alias; no change to first investigation, retry date, retry count, or evidence."
+      "next_research_at_basis": "Existing recorded next_retry_at alias; no change to first investigation, retry date, retry count, or evidence.",
+      "followup_completed_at": "2026-10-29T22:36:34.326Z",
+      "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1835ET",
+      "research_completed": true,
+      "metadata_recovery_exhausted": true,
+      "reviewer_question": "Does the OSF BVOT project contain a distinct eligible public method artifact, or is it covered by REACH BVOT content?",
+      "hub_delivery_status": "not_delivered",
+      "hub_intake_blocker": "Current Hub importer support for truthful blank mandatory Publication Date and, where relevant, unknown public file/component scope not verified. No candidate batch or Hub acceptance claimed.",
+      "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
+      "early_retry_reason": "2026-10-29 authoritative bounded different-source recovery before preserved seven-day retry date; do not repeat without new evidence.",
+      "original_seed_doi": "10.17605/osf.io/rbdfv",
+      "research_cohort": "Historical DataCite API Backfill 2026-10-28"
     },
     {
       "identity": "doi:10.25923/0vz0-ra19",
@@ -997,10 +1109,11 @@
         "NA19OAR0220119"
       ],
       "cohort": "Historical DataCite API Backfill 2026-10-28",
-      "status": "blocked",
+      "status": "pending_hub_handoff",
       "missing_fields": [
-        "full YYYY-MM-DD dataset publication date",
-        "public scope of original DesignSafe dataset"
+        "record-specific full YYYY-MM-DD dataset release date",
+        "native public DesignSafe component/file scope",
+        "overlap with 10.17603/ds2-jfsc-8902"
       ],
       "attempts": [
         {
@@ -1037,22 +1150,64 @@
           "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
           "outcome": "All ten REACH index shards and thirteen Scout batch files searched; no exact seed DOI.",
           "checked_at": "2026-10-29T05:32:21Z"
+        },
+        {
+          "round": 1,
+          "method": "spark_primary_project_detail",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-019.csv",
+          "outcome": "SPARK spark-000237 verifies primary NOAA WPO award NA19OAR0220119.",
+          "checked_at": "2026-10-29T22:36:34.326Z"
+        },
+        {
+          "round": 1,
+          "method": "publisher_data_availability",
+          "url": "https://ascelibrary.org/doi/10.1061/NHREFO.NHENG-1802",
+          "outcome": "2024 publisher article says DesignSafe coding schemes are available; article date cannot stand in for dataset date.",
+          "checked_at": "2026-10-29T22:36:34.326Z"
+        },
+        {
+          "round": 1,
+          "method": "ncar_author_catalog",
+          "url": "https://impacts.ucar.edu/en/persons/robert-prestley/",
+          "outcome": "Author catalog lists related tropical-cyclone tweet dataset 10.17603/ds2-jfsc-8902, possible family/overlap.",
+          "checked_at": "2026-10-29T22:36:34.326Z"
+        },
+        {
+          "round": 1,
+          "method": "noaa_ir_harvey_article",
+          "url": "https://repository.library.noaa.gov/view/noaa/70233",
+          "outcome": "Related Harvey article already REACH reach-000789; not a DOI-level duplicate of original dataset.",
+          "checked_at": "2026-10-29T22:36:34.326Z"
         }
       ],
       "first_investigated_at": "2026-10-29T05:32:21Z",
-      "last_attempt_at": "2026-10-29T05:32:21Z",
-      "retry_count": 0,
+      "last_attempt_at": "2026-10-29T22:36:34.326Z",
+      "retry_count": 1,
       "max_delayed_retries": 1,
       "next_retry_at": "2026-11-05T05:32:21Z",
       "next_research_at": "2026-11-05T05:32:21Z",
       "followup_question": "Can authoritative DesignSafe native metadata resolve full YYYY-MM-DD publication date and public scope of this exact Harvey tweet documentation dataset?",
       "evidence_urls": [
         "https://doi.org/10.17603/ds2-yry6-r324",
-        "https://repository.library.noaa.gov/view/noaa/70233"
+        "https://repository.library.noaa.gov/view/noaa/70233",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-019.csv",
+        "https://ascelibrary.org/doi/10.1061/NHREFO.NHENG-1802",
+        "https://impacts.ucar.edu/en/persons/robert-prestley/"
       ],
-      "funding_basis": "Original historical DataCite structured award NA19OAR0220119 matches a primary SPARK social-science project Wait, that forecast changed? Related 2024 journal article independently linked, but the dataset native full date and public component remain unverified.",
-      "next_action": "One bounded follow-up on or after 2026-11-05T05:32:21Z using different authoritative sources; if credible but still metadata-incomplete escalate to human_metadata_needed without inventing date or invalid Hub CSV; if evidence insufficient document no_action.",
-      "triage_identity": "doi:10.17603/ds2-yry6-r324"
+      "funding_basis": "Original historical DataCite structured award NA19OAR0220119 matches a primary SPARK social-science project Wait, that forecast changed? Related 2024 journal article independently linked, but the dataset native full date and public component remain unverified. Additional primary SPARK project detail and independent publisher/official WPO corroboration recorded; output-specific limits preserved.",
+      "next_action": "RESEARCH COMPLETE; human decision needed, pending compatible Hub intake. Do not repeat metadata searches without new evidence or explicit human request.",
+      "triage_identity": "doi:10.17603/ds2-yry6-r324",
+      "followup_completed_at": "2026-10-29T22:36:34.326Z",
+      "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1835ET",
+      "research_completed": true,
+      "metadata_recovery_exhausted": true,
+      "reviewer_question": "Is Harvey documentation a separate public dataset from related DesignSafe deposit and already-in-REACH article?",
+      "hub_delivery_status": "not_delivered",
+      "hub_intake_blocker": "Current Hub importer support for truthful blank mandatory Publication Date and, where relevant, unknown public file/component scope not verified. No candidate batch or Hub acceptance claimed.",
+      "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
+      "early_retry_reason": "2026-10-29 authoritative bounded different-source recovery before preserved seven-day retry date; do not repeat without new evidence.",
+      "original_seed_doi": "10.17603/ds2-yry6-r324",
+      "research_cohort": "Historical DataCite API Backfill 2026-10-28"
     },
     {
       "identity": "doi:10.25923/mpqr-r886",
@@ -1731,9 +1886,10 @@
         "NA21OAR4590374"
       ],
       "cohort": "Historical DataCite API Backfill 2026-10-28",
-      "status": "blocked",
+      "status": "pending_hub_handoff",
       "missing_fields": [
-        "Exact first-publication YYYY-MM-DD and public ERDDAP data scope"
+        "record-specific first publication YYYY-MM-DD",
+        "whether downstream publishing permits date omission"
       ],
       "attempts": [
         {
@@ -1770,26 +1926,60 @@
           "url": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
           "outcome": "Publisher confirms named year-specific dataset but citation year is not exact first-release date; one DOI/version ambiguity noted.",
           "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 1,
+          "method": "spark_primary_project_detail",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+          "outcome": "SPARK spark-000336 verifies primary WPO award NA21OAR4590374.",
+          "checked_at": "2026-10-29T22:36:34.326Z"
+        },
+        {
+          "round": 1,
+          "method": "scripps_official_catalog",
+          "url": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+          "outcome": "Scripps lists 2022 sensor S93W23 distinct from 2022 first-five S9059K and 2024 first-five S9F59M.",
+          "checked_at": "2026-10-29T22:36:34.326Z"
+        },
+        {
+          "round": 1,
+          "method": "native_erddap_doi_metadata",
+          "url": "https://erddap.ldl.ucsd.edu/erddap/info/ONR_NOPP2022/index.html",
+          "outcome": "ERDDAP verifies exact DOI, public data/variables, observation period and license; no release date.",
+          "checked_at": "2026-10-29T22:36:34.326Z"
         }
       ],
       "first_investigated_at": "2026-10-29T14:34:00Z",
-      "last_attempt_at": "2026-10-29T14:34:00Z",
-      "retry_count": 0,
+      "last_attempt_at": "2026-10-29T22:36:34.326Z",
+      "retry_count": 1,
       "next_retry_at": "2026-11-05T14:34:00Z",
       "next_research_at": "2026-11-05T14:34:00Z",
       "followup_question": "Can the authoritative repository or publisher verify Exact first-publication YYYY-MM-DD and public ERDDAP data scope without substituting observation/citation year for publication date?",
       "evidence_urls": [
         "https://api.datacite.org/dois/10.57969/s93w23",
-        "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/"
+        "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+        "https://erddap.ldl.ucsd.edu/erddap/info/ONR_NOPP2022/index.html"
       ],
-      "funding_basis": "Captured DataCite structured fundingReference identifies exact WPO primary SPARK award NA21OAR4590374; Scripps NOPP NHCI official catalog corroborates sensor/first-five family, but does not establish full publication day or all alternate DOI identities.",
-      "next_action": "ONE bounded different-source follow-up on/after 2026-11-05T14:34:00Z; if still credible but metadata incomplete, escalate human_metadata_needed outside ordinary research queue, not invalid Hub CSV.",
+      "funding_basis": "Captured DataCite structured fundingReference identifies exact WPO primary SPARK award NA21OAR4590374; Scripps NOPP NHCI official catalog corroborates sensor/first-five family, but does not establish full publication day or all alternate DOI identities. Additional primary SPARK project detail and independent publisher/official WPO corroboration recorded; output-specific limits preserved.",
+      "next_action": "RESEARCH COMPLETE; human decision needed, pending compatible Hub intake. Do not repeat metadata searches without new evidence or explicit human request.",
       "triage_identity": "doi:10.57969/s93w23",
       "discovery_route": "Direct API",
       "scout_seed_doi": "10.57969/s93w23",
       "confidence": "Medium",
       "hub_delivered": false,
-      "ready_for_human_review": false
+      "ready_for_human_review": false,
+      "followup_completed_at": "2026-10-29T22:36:34.326Z",
+      "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1835ET",
+      "research_completed": true,
+      "metadata_recovery_exhausted": true,
+      "reviewer_question": "Can Scripps verify first public release date for 2022 sensor dataset or permit explicit human waiver?",
+      "hub_delivery_status": "not_delivered",
+      "hub_intake_blocker": "Current Hub importer support for truthful blank mandatory Publication Date and, where relevant, unknown public file/component scope not verified. No candidate batch or Hub acceptance claimed.",
+      "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
+      "early_retry_reason": "2026-10-29 authoritative bounded different-source recovery before preserved seven-day retry date; do not repeat without new evidence.",
+      "original_seed_doi": "10.57969/s93w23",
+      "research_cohort": "Historical DataCite API Backfill 2026-10-28"
     },
     {
       "identity": "doi:10.57969/s9k013",
@@ -1863,9 +2053,10 @@
         "NA21OAR4590374"
       ],
       "cohort": "Historical DataCite API Backfill 2026-10-28",
-      "status": "blocked",
+      "status": "pending_hub_handoff",
       "missing_fields": [
-        "Exact first-publication YYYY-MM-DD and separate first-five vs sensor identity"
+        "record-specific first publication YYYY-MM-DD",
+        "whether downstream publishing permits date omission"
       ],
       "attempts": [
         {
@@ -1902,26 +2093,60 @@
           "url": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
           "outcome": "Publisher confirms named year-specific dataset but citation year is not exact first-release date; one DOI/version ambiguity noted.",
           "checked_at": "2026-10-29T14:34:00Z"
+        },
+        {
+          "round": 1,
+          "method": "spark_primary_project_detail",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+          "outcome": "SPARK spark-000336 verifies primary WPO award NA21OAR4590374.",
+          "checked_at": "2026-10-29T22:36:34.326Z"
+        },
+        {
+          "round": 1,
+          "method": "scripps_official_catalog",
+          "url": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+          "outcome": "Scripps lists 2024 first-five S9F59M separate from 2024 sensor S9K013.",
+          "checked_at": "2026-10-29T22:36:34.326Z"
+        },
+        {
+          "round": 1,
+          "method": "native_erddap_doi_metadata",
+          "url": "https://erddap.ldl.ucsd.edu/erddap/info/ONR_NOPP2024_First5/index.html",
+          "outcome": "ERDDAP verifies exact DOI, public a0/a1/b1/a2/b2 data and observation period; no publication day.",
+          "checked_at": "2026-10-29T22:36:34.326Z"
         }
       ],
       "first_investigated_at": "2026-10-29T14:34:00Z",
-      "last_attempt_at": "2026-10-29T14:34:00Z",
-      "retry_count": 0,
+      "last_attempt_at": "2026-10-29T22:36:34.326Z",
+      "retry_count": 1,
       "next_retry_at": "2026-11-05T14:34:00Z",
       "next_research_at": "2026-11-05T14:34:00Z",
       "followup_question": "Can the authoritative repository or publisher verify Exact first-publication YYYY-MM-DD and separate first-five vs sensor identity without substituting observation/citation year for publication date?",
       "evidence_urls": [
         "https://api.datacite.org/dois/10.57969/s9f59m",
-        "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/"
+        "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+        "https://erddap.ldl.ucsd.edu/erddap/info/ONR_NOPP2024_First5/index.html"
       ],
-      "funding_basis": "Captured DataCite structured fundingReference identifies exact WPO primary SPARK award NA21OAR4590374; Scripps NOPP NHCI official catalog corroborates sensor/first-five family, but does not establish full publication day or all alternate DOI identities.",
-      "next_action": "ONE bounded different-source follow-up on/after 2026-11-05T14:34:00Z; if still credible but metadata incomplete, escalate human_metadata_needed outside ordinary research queue, not invalid Hub CSV.",
+      "funding_basis": "Captured DataCite structured fundingReference identifies exact WPO primary SPARK award NA21OAR4590374; Scripps NOPP NHCI official catalog corroborates sensor/first-five family, but does not establish full publication day or all alternate DOI identities. Additional primary SPARK project detail and independent publisher/official WPO corroboration recorded; output-specific limits preserved.",
+      "next_action": "RESEARCH COMPLETE; human decision needed, pending compatible Hub intake. Do not repeat metadata searches without new evidence or explicit human request.",
       "triage_identity": "doi:10.57969/s9f59m",
       "discovery_route": "Direct API",
       "scout_seed_doi": "10.57969/s9f59m",
       "confidence": "Medium",
       "hub_delivered": false,
-      "ready_for_human_review": false
+      "ready_for_human_review": false,
+      "followup_completed_at": "2026-10-29T22:36:34.326Z",
+      "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1835ET",
+      "research_completed": true,
+      "metadata_recovery_exhausted": true,
+      "reviewer_question": "Can Scripps verify first public release date for 2024 first-five dataset or permit explicit human waiver?",
+      "hub_delivery_status": "not_delivered",
+      "hub_intake_blocker": "Current Hub importer support for truthful blank mandatory Publication Date and, where relevant, unknown public file/component scope not verified. No candidate batch or Hub acceptance claimed.",
+      "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
+      "early_retry_reason": "2026-10-29 authoritative bounded different-source recovery before preserved seven-day retry date; do not repeat without new evidence.",
+      "original_seed_doi": "10.57969/s9f59m",
+      "research_cohort": "Historical DataCite API Backfill 2026-10-28"
     },
     {
       "identity": "doi:10.57969/s9z598",
