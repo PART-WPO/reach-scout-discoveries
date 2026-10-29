@@ -38,14 +38,18 @@
     },
     {
       "identity": "doi:10.15139/s3/uy6rda",
-      "status": "awaiting_research",
+      "status": "needs_more_research",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T19:02:21.671632+00:00",
-      "research_notes": "",
-      "checked_sources": [],
-      "reach_snapshot": "",
-      "funding_basis": "",
-      "related_outputs_checked": "",
+      "updated_at": "2026-10-29T00:29:43Z",
+      "research_notes": "Historical DataCite source identifies award-linked data-management plan; 2026-02-12 DOI-specific DataCite Available date in enrichment; no exact REACH DOI/title. Live DOI/API inaccessible; independent plan document, type and linked outputs not confirmed. Hold without staging.",
+      "checked_sources": [
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
+        "https://api.datacite.org/dois/10.15139/s3/uy6rda",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json"
+      ],
+      "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+      "funding_basis": "Captured exact DataCite award NA25OARX459C0174-T1-01; independent document content not yet verified.",
+      "related_outputs_checked": "Search for NCEI plan and associated excessive-rainfall ML outputs inconclusive; no distinct article/code/dataset attributed.",
       "verified_at": "",
       "verified_awards": [],
       "source_batch_ids": [
@@ -59,7 +63,8 @@
       ],
       "source_evidence_urls": [
         "https://api.datacite.org/dois/10.15139/s3/uy6rda"
-      ]
+      ],
+      "next_action": "Inspect NCEI or institutional repository plan PDF and source-linked works; distinguish data-management plan from data deposit."
     },
     {
       "identity": "doi:10.17603/ds2-05s8-ah21",
@@ -322,14 +327,18 @@
     },
     {
       "identity": "doi:10.17603/ds2-967n-t829",
-      "status": "awaiting_research",
+      "status": "needs_more_research",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T19:02:21.671632+00:00",
-      "research_notes": "",
-      "checked_sources": [],
-      "reach_snapshot": "",
-      "funding_basis": "",
-      "related_outputs_checked": "",
+      "updated_at": "2026-10-29T00:29:43Z",
+      "research_notes": "Minding the Gap broadcast meteorologist/emergency manager survey instrument; historical DataCite lists two NOAA awards, absent exact REACH DOI. NOAA IR 2022 partner survey paper and NWS presentation support workstream, but exact dataset date and public scope unavailable. Hold.",
+      "checked_sources": [
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
+        "https://repository.library.noaa.gov/view/noaa/47957/noaa_47957_DS1.pdf",
+        "https://www.weather.gov/media/nws/IHC2022/SocialScience_effectivewarnings_IHC.pdf"
+      ],
+      "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+      "funding_basis": "Captured structured DataCite NOAA awards NA19OAR0220121 and NA19OAR0220192; project context independently supported.",
+      "related_outputs_checked": "Minding the Gap NOAA IR survey publication and conference presentation located; exact dataset date and paper REACH comparison pending.",
       "verified_at": "",
       "verified_awards": [],
       "source_batch_ids": [
@@ -344,7 +353,8 @@
       ],
       "source_evidence_urls": [
         "https://api.datacite.org/dois/10.17603/ds2-967n-t829"
-      ]
+      ],
+      "next_action": "Inspect native DesignSafe project publication and exact survey component release date; compare Part 2 survey paper with REACH."
     },
     {
       "identity": "doi:10.17603/ds2-9jv0-9m71",
@@ -575,14 +585,19 @@
     },
     {
       "identity": "doi:10.17603/ds2-jfsc-8902",
-      "status": "awaiting_research",
+      "status": "needs_more_research",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T19:02:21.671632+00:00",
-      "research_notes": "",
-      "checked_sources": [],
-      "reach_snapshot": "",
-      "funding_basis": "",
-      "related_outputs_checked": "",
+      "updated_at": "2026-10-29T00:29:43Z",
+      "research_notes": "Hurricane Irma tweet documentation dataset; historical DataCite source names NA19OAR0220119, absent exact REACH DOI. Publisher 2023 WCAS paper directly cites this DOI and explicitly acknowledges the same grant; linked article independently verified new and published for human review. Seed dataset release date and parent scope not verified; hold seed only.",
+      "checked_sources": [
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
+        "https://journals.ametsoc.org/view/journals/wcas/15/4/WCAS-D-23-0046.1.xml",
+        "https://repository.library.noaa.gov/view/noaa/60113/noaa_60113_DS1.pdf",
+        "https://impacts.ucar.edu/en/organisations/mesoscale-microscale-meteorology-lab-2/datasets/"
+      ],
+      "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+      "funding_basis": "Exact historical DataCite award NA19OAR0220119 plus linked WCAS article publisher acknowledgment.",
+      "related_outputs_checked": "API-seeded expansion: new 2023 WCAS article DOI 10.1175/WCAS-D-23-0046.1 verified absent REACH and 43 Scout batches, forwarded for human review in scout-discoveries/batches/2026-10-28-hourly-datacite-expansion-award-fixes-001.csv. Separate 2024 Harvey paper and dataset need individual research.",
       "verified_at": "",
       "verified_awards": [],
       "source_batch_ids": [
@@ -596,6 +611,17 @@
       ],
       "source_evidence_urls": [
         "https://api.datacite.org/dois/10.17603/ds2-jfsc-8902"
+      ],
+      "next_action": "Verify seed dataset full date and parent DesignSafe project scope; follow 2024 Harvey paper and dataset separately.",
+      "expansion_leads": [
+        {
+          "seed_doi": "10.17603/ds2-jfsc-8902",
+          "output_doi": "10.1175/WCAS-D-23-0046.1",
+          "relationship_evidence_url": "https://journals.ametsoc.org/view/journals/wcas/15/4/WCAS-D-23-0046.1.xml",
+          "classification": "A NEW CANDIDATE",
+          "scout_batch_path": "scout-discoveries/batches/2026-10-28-hourly-datacite-expansion-award-fixes-001.csv",
+          "first_mission": "REACH-SCOUT-2026-10-28-HOURLY-2029ET"
+        }
       ]
     },
     {
@@ -668,16 +694,22 @@
     },
     {
       "identity": "doi:10.17603/ds2-qar3-zx34",
-      "status": "awaiting_research",
+      "status": "already_in_reach",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T19:02:21.671632+00:00",
-      "research_notes": "",
-      "checked_sources": [],
-      "reach_snapshot": "",
-      "funding_basis": "",
-      "related_outputs_checked": "",
-      "verified_at": "",
-      "verified_awards": [],
+      "updated_at": "2026-10-29T00:29:43Z",
+      "research_notes": "Exact source DOI matches reach-000732, UID reachuid-v1-2821e3d5a961cd51dfe041fc64c8b2a0; award NA18OAR4590366 already recorded. Complete 1238-row REACH index, detail shard 088, raw DataCite source, and related graphical-consistency cluster 000726–000734 checked; no additional award supported.",
+      "checked_sources": [
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
+        "https://doi.org/10.17603/ds2-qar3-zx34",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json"
+      ],
+      "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+      "funding_basis": "Exact historical DataCite award NA18OAR4590366 already exists on matching REACH record.",
+      "related_outputs_checked": "Previously documented graphical-consistency project cluster 000726–000734 checked; no independently corroborated missing output in bounded pass.",
+      "verified_at": "2026-10-29T00:29:43Z",
+      "verified_awards": [
+        "NA18OAR4590366"
+      ],
       "source_batch_ids": [
         "2026-10-28-historical-datacite-spark-all-part001"
       ],
@@ -689,18 +721,23 @@
       ],
       "source_evidence_urls": [
         "https://api.datacite.org/dois/10.17603/ds2-qar3-zx34"
-      ]
+      ],
+      "reach_match": "reach-000732; reachuid-v1-2821e3d5a961cd51dfe041fc64c8b2a0"
     },
     {
       "identity": "doi:10.17603/ds2-qm3n-6h83",
-      "status": "awaiting_research",
+      "status": "needs_more_research",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T19:02:21.671632+00:00",
-      "research_notes": "",
-      "checked_sources": [],
-      "reach_snapshot": "",
-      "funding_basis": "",
-      "related_outputs_checked": "",
+      "updated_at": "2026-10-29T00:29:43Z",
+      "research_notes": "Minding the Gap interview instruments/analysis methods; DataCite lists two NOAA awards, no exact REACH match. Raw interview data explicitly restricted in source description. NOAA IR survey publication and NWS presentation corroborate workstream, not release date; hold public component until verified.",
+      "checked_sources": [
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
+        "https://repository.library.noaa.gov/view/noaa/47957/noaa_47957_DS1.pdf",
+        "https://www.weather.gov/media/nws/IHC2022/SocialScience_effectivewarnings_IHC.pdf"
+      ],
+      "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+      "funding_basis": "Captured exact DataCite awards NA19OAR0220121 and NA19OAR0220192, project relationship supported.",
+      "related_outputs_checked": "Minding the Gap survey paper and conference summary checked; public interview instrument scope and date unresolved.",
       "verified_at": "",
       "verified_awards": [],
       "source_batch_ids": [
@@ -715,20 +752,28 @@
       ],
       "source_evidence_urls": [
         "https://api.datacite.org/dois/10.17603/ds2-qm3n-6h83"
-      ]
+      ],
+      "next_action": "Inspect repository publication metadata for public protocol files only; never stage restricted interview responses."
     },
     {
       "identity": "doi:10.17603/ds2-rgbs-xd77",
-      "status": "awaiting_research",
+      "status": "metadata_update_forwarded",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T19:02:21.671632+00:00",
-      "research_notes": "",
-      "checked_sources": [],
-      "reach_snapshot": "",
-      "funding_basis": "",
-      "related_outputs_checked": "",
-      "verified_at": "",
-      "verified_awards": [],
+      "updated_at": "2026-10-29T00:29:43Z",
+      "research_notes": "Exact source DOI matches reach-000807 UID reachuid-v1-f2fb8924efed393b1bc653a7068ec090, current awards NA20OAR4590469 only. Official DesignSafe PRJ-3975 explicitly lists exact dataset component and NOAA awards NA19OAR0220119 and NA20OAR4590469. Verified additional-award-only proposal staged for human review.",
+      "checked_sources": [
+        "https://doi.org/10.17603/ds2-n1rz-ak22",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json"
+      ],
+      "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+      "funding_basis": "Official DesignSafe project page directly lists the exact 2020 Laura/Marco dataset DOI and both NOAA grants; missing award NA19OAR0220119.",
+      "related_outputs_checked": "Other 2020–2022 project survey/data components inspected in PRJ-3975; many are in REACH or already proposed for correction, no duplicate new output.",
+      "verified_at": "2026-10-29T00:29:43Z",
+      "verified_awards": [
+        "NA19OAR0220119",
+        "NA20OAR4590469"
+      ],
       "source_batch_ids": [
         "2026-10-28-historical-datacite-spark-all-part001"
       ],
@@ -741,20 +786,28 @@
       ],
       "source_evidence_urls": [
         "https://api.datacite.org/dois/10.17603/ds2-rgbs-xd77"
-      ]
+      ],
+      "reach_match": "reach-000807; reachuid-v1-f2fb8924efed393b1bc653a7068ec090",
+      "scout_batch_path": "scout-discoveries/batches/2026-10-28-hourly-datacite-expansion-award-fixes-001.csv"
     },
     {
       "identity": "doi:10.17603/ds2-wqy9-rj81",
-      "status": "awaiting_research",
+      "status": "already_in_reach",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T19:02:21.671632+00:00",
-      "research_notes": "",
-      "checked_sources": [],
-      "reach_snapshot": "",
-      "funding_basis": "",
-      "related_outputs_checked": "",
-      "verified_at": "",
-      "verified_awards": [],
+      "updated_at": "2026-10-29T00:29:43Z",
+      "research_notes": "Exact source DOI matches reach-000730, UID reachuid-v1-6baba1475796dd871e33da4dd66b31d4; award NA18OAR4590366 already recorded. Complete REACH index and detail shard 088, captured DataCite source, and related graphical-consistency project cluster checked.",
+      "checked_sources": [
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
+        "https://doi.org/10.17603/ds2-wqy9-rj81",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json"
+      ],
+      "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+      "funding_basis": "Exact historical DataCite award NA18OAR4590366 already exists on matching REACH record.",
+      "related_outputs_checked": "Related graphical-consistency study artifacts within REACH 000726–000734 checked; no verified distinct missing output identified.",
+      "verified_at": "2026-10-29T00:29:43Z",
+      "verified_awards": [
+        "NA18OAR4590366"
+      ],
       "source_batch_ids": [
         "2026-10-28-historical-datacite-spark-all-part001"
       ],
@@ -766,20 +819,28 @@
       ],
       "source_evidence_urls": [
         "https://api.datacite.org/dois/10.17603/ds2-wqy9-rj81"
-      ]
+      ],
+      "reach_match": "reach-000730; reachuid-v1-6baba1475796dd871e33da4dd66b31d4"
     },
     {
       "identity": "doi:10.17603/ds2-xjyf-nc93",
-      "status": "awaiting_research",
+      "status": "metadata_update_forwarded",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T19:02:21.671632+00:00",
-      "research_notes": "",
-      "checked_sources": [],
-      "reach_snapshot": "",
-      "funding_basis": "",
-      "related_outputs_checked": "",
-      "verified_at": "",
-      "verified_awards": [],
+      "updated_at": "2026-10-29T00:29:43Z",
+      "research_notes": "Exact source DOI matches reach-000937 UID reachuid-v1-4fbd71dd53bc14a1722d257a60d28e1b, current award NA19OAR4590212. Captured official DataCite structured fundingReferences identify NA16OAR4320115 for this DOI, corroborated by directly related BAMS article acknowledging both WPO grants. Live API inaccessible, reviewer must reconfirm native record.",
+      "checked_sources": [
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
+        "https://journals.ametsoc.org/view/journals/bams/105/8/BAMS-D-23-0036.1.xml",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json"
+      ],
+      "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+      "funding_basis": "Captured output-specific DataCite fundingReference for NA16OAR4320115 and direct WPO acknowledgment in related protocol article.",
+      "related_outputs_checked": "Linked 2024 BAMS protocol paper already exists as reach-000936; separately forwarded article-specific additional-award correction, not a new output.",
+      "verified_at": "2026-10-29T00:29:43Z",
+      "verified_awards": [
+        "NA16OAR4320115",
+        "NA19OAR4590212"
+      ],
       "source_batch_ids": [
         "2026-10-28-historical-datacite-spark-all-part001"
       ],
@@ -793,7 +854,9 @@
       ],
       "source_evidence_urls": [
         "https://api.datacite.org/dois/10.17603/ds2-xjyf-nc93"
-      ]
+      ],
+      "reach_match": "reach-000937; reachuid-v1-4fbd71dd53bc14a1722d257a60d28e1b",
+      "scout_batch_path": "scout-discoveries/batches/2026-10-28-hourly-datacite-expansion-award-fixes-001.csv"
     },
     {
       "identity": "doi:10.17603/ds2-ydmk-q397",
