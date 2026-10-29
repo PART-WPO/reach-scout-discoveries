@@ -1,0 +1,387 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-29-HOURLY-0934ET",
+  "run_started_at": "2026-10-29T13:34:08Z",
+  "recorded_at": "2026-10-29T13:37:00Z",
+  "mode": "historical_api_triage",
+  "selected_mode_reason": "Monthly API manifest and ledger empty; historical DataCite original seed queue has 37 actionable uninvestigated DOI records and 16 scheduled bounded blockers.",
+  "monthly": {
+    "source_rows": 0,
+    "before_completed": 0,
+    "after_completed": 0,
+    "remaining": 0
+  },
+  "historical": {
+    "source_distinct_dois": 188,
+    "source_batches": 2,
+    "ledger_rows": 188,
+    "before_completed": 123,
+    "after_completed": 135,
+    "before_remaining": 65,
+    "after_remaining": 53,
+    "before_awaiting": 49,
+    "after_awaiting": 37,
+    "original_blockers": 16,
+    "before_no_action": 77,
+    "after_no_action": 89,
+    "already_in_reach": 36,
+    "forwarded_to_hub": 2,
+    "metadata_update_forwarded": 8,
+    "research_complete": false,
+    "coverage_reconciles": true
+  },
+  "original_seeds": {
+    "examined": 12,
+    "no_action": 12,
+    "already_in_reach_new": 0,
+    "forwarded_new": 0,
+    "metadata_blockers_new": 0,
+    "disposition_gaps_in_examined": 0,
+    "records": [
+      {
+        "doi": "10.5281/zenodo.15538547",
+        "status": "no_action",
+        "original_artifact_type": "team logo drawing",
+        "no_action_subtype": "NOT_RESEARCH_OUTPUT",
+        "award_numbers": [
+          "NA21OAR4590208"
+        ],
+        "disposition_reason": "Team Meander Logos is a Zenodo drawing of team branding assets (EPS/JPG/PNG/SVG), not an independently eligible research knowledge product. Related journal articles are separate identities requiring their own checks.",
+        "source_urls": [
+          "https://api.datacite.org/dois/10.5281/zenodo.15538547",
+          "https://zenodo.org/records/15538548",
+          "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+        ],
+        "related_outputs_checked": "10.1175/BAMS-D-22-0220.1; 10.1175/BAMS-D-18-0186.1; 10.5194/gc-4-517-2021; https://www.dri.edu/weather-communications/",
+        "original_seed_independent_disposition": true
+      },
+      {
+        "doi": "10.5281/zenodo.15538548",
+        "status": "no_action",
+        "original_artifact_type": "team logo drawing",
+        "no_action_subtype": "NOT_RESEARCH_OUTPUT",
+        "award_numbers": [
+          "NA21OAR4590208"
+        ],
+        "disposition_reason": "Team Meander Logos is a Zenodo drawing of team branding assets (EPS/JPG/PNG/SVG), not an independently eligible research knowledge product. Related journal articles are separate identities requiring their own checks.",
+        "source_urls": [
+          "https://api.datacite.org/dois/10.5281/zenodo.15538548",
+          "https://zenodo.org/records/15538548",
+          "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+        ],
+        "related_outputs_checked": "10.1175/BAMS-D-22-0220.1; 10.1175/BAMS-D-18-0186.1; 10.5194/gc-4-517-2021; https://www.dri.edu/weather-communications/",
+        "original_seed_independent_disposition": true
+      },
+      {
+        "doi": "10.5281/zenodo.15691877",
+        "status": "no_action",
+        "original_artifact_type": "research dataset/software/model",
+        "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION_ALTERNATIVE_FUNDING",
+        "award_numbers": [
+          "NA21OAR4310383"
+        ],
+        "disposition_reason": "Publisher acknowledgment identifies NOAA Climate and Global Change Postdoctoral Fellowship funding under NA21OAR4310383 for Pine Island Glacier modeling; SPARK spark-000285 is a distinct UFS Senior Advisor workstream. No project-specific bridge.",
+        "source_urls": [
+          "https://api.datacite.org/dois/10.5281/zenodo.15691877",
+          "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025GL117691",
+          "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+        ],
+        "related_outputs_checked": "Related article DOI 10.1029/2025GL117691 is fellowship-supported and not demonstrated as a WPO UFS advisory output.",
+        "original_seed_independent_disposition": true
+      },
+      {
+        "doi": "10.5281/zenodo.15691878",
+        "status": "no_action",
+        "original_artifact_type": "research dataset/software/model",
+        "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION_ALTERNATIVE_FUNDING",
+        "award_numbers": [
+          "NA21OAR4310383"
+        ],
+        "disposition_reason": "Publisher acknowledgment identifies NOAA Climate and Global Change Postdoctoral Fellowship funding under NA21OAR4310383 for Pine Island Glacier modeling; SPARK spark-000285 is a distinct UFS Senior Advisor workstream. No project-specific bridge.",
+        "source_urls": [
+          "https://api.datacite.org/dois/10.5281/zenodo.15691878",
+          "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025GL117691",
+          "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+        ],
+        "related_outputs_checked": "Related article DOI 10.1029/2025GL117691 is fellowship-supported and not demonstrated as a WPO UFS advisory output.",
+        "original_seed_independent_disposition": true
+      },
+      {
+        "doi": "10.5281/zenodo.16583937",
+        "status": "no_action",
+        "original_artifact_type": "research dataset/software/model",
+        "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION_ALTERNATIVE_FUNDING",
+        "award_numbers": [
+          "NA19OAR4320073"
+        ],
+        "disposition_reason": "Zenodo names CIRA/NESDIS NOAA Center for Artificial Intelligence climate information partnership and responsible-AI training as the funding workstream under broad award NA19OAR4320073; SPARK MET-TC project is distinct.",
+        "source_urls": [
+          "https://api.datacite.org/dois/10.5281/zenodo.16583937",
+          "https://zenodo.org/records/16583938",
+          "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+        ],
+        "related_outputs_checked": "Tropical Cyclone Rapid Intensification Learning Journey and TC PRIMED connections reviewed; no verified WPO MET-TC project bridge.",
+        "original_seed_independent_disposition": true
+      },
+      {
+        "doi": "10.5281/zenodo.16583938",
+        "status": "no_action",
+        "original_artifact_type": "research dataset/software/model",
+        "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION_ALTERNATIVE_FUNDING",
+        "award_numbers": [
+          "NA19OAR4320073"
+        ],
+        "disposition_reason": "Zenodo names CIRA/NESDIS NOAA Center for Artificial Intelligence climate information partnership and responsible-AI training as the funding workstream under broad award NA19OAR4320073; SPARK MET-TC project is distinct.",
+        "source_urls": [
+          "https://api.datacite.org/dois/10.5281/zenodo.16583938",
+          "https://zenodo.org/records/16583938",
+          "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+        ],
+        "related_outputs_checked": "Tropical Cyclone Rapid Intensification Learning Journey and TC PRIMED connections reviewed; no verified WPO MET-TC project bridge.",
+        "original_seed_independent_disposition": true
+      },
+      {
+        "doi": "10.5281/zenodo.18408782",
+        "status": "no_action",
+        "original_artifact_type": "research dataset/software/model",
+        "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+        "award_numbers": [
+          "NA20OAR4320278"
+        ],
+        "disposition_reason": "Author-maintained repository identifies a distinct WOA23 global internal-tide parameter dataset (including 10.5281/zenodo.18423546) and NASA contributor. SPARK award NA20OAR4320278 concerns AQPI radar and precipitation decision support; no project-specific bridge.",
+        "source_urls": [
+          "https://api.datacite.org/dois/10.5281/zenodo.18408782",
+          "https://github.com/youranli001/plane-wave-fit",
+          "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+        ],
+        "related_outputs_checked": "PlaneWaveFit code and pending JOSS manuscript are related leads; no confirmed WPO AQPI funding bridge.",
+        "original_seed_independent_disposition": true
+      },
+      {
+        "doi": "10.5281/zenodo.18423546",
+        "status": "no_action",
+        "original_artifact_type": "research dataset/software/model",
+        "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+        "award_numbers": [
+          "NA20OAR4320278"
+        ],
+        "disposition_reason": "Author-maintained repository identifies a distinct WOA23 global internal-tide parameter dataset (including 10.5281/zenodo.18423546) and NASA contributor. SPARK award NA20OAR4320278 concerns AQPI radar and precipitation decision support; no project-specific bridge.",
+        "source_urls": [
+          "https://api.datacite.org/dois/10.5281/zenodo.18423546",
+          "https://github.com/youranli001/plane-wave-fit",
+          "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+        ],
+        "related_outputs_checked": "PlaneWaveFit code and pending JOSS manuscript are related leads; no confirmed WPO AQPI funding bridge.",
+        "original_seed_independent_disposition": true
+      },
+      {
+        "doi": "10.5281/zenodo.18842182",
+        "status": "no_action",
+        "original_artifact_type": "research dataset/software/model",
+        "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+        "award_numbers": [
+          "NA21OAR4320204"
+        ],
+        "disposition_reason": "Zenodo explicitly identifies NOAA–University of Oklahoma cooperative agreement NA21OAR4320204 for a lightning parallax-correction model, while SPARK's related WPO projects concern social-science surveys; no output-level WPO workstream bridge.",
+        "source_urls": [
+          "https://api.datacite.org/dois/10.5281/zenodo.18842182",
+          "https://zenodo.org/records/18842183",
+          "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+        ],
+        "related_outputs_checked": "GLM lightning parallax model notebook and serialized model are one software/model output family, not distinct verified WPO expansion findings.",
+        "original_seed_independent_disposition": true
+      },
+      {
+        "doi": "10.5281/zenodo.18842183",
+        "status": "no_action",
+        "original_artifact_type": "research dataset/software/model",
+        "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+        "award_numbers": [
+          "NA21OAR4320204"
+        ],
+        "disposition_reason": "Zenodo explicitly identifies NOAA–University of Oklahoma cooperative agreement NA21OAR4320204 for a lightning parallax-correction model, while SPARK's related WPO projects concern social-science surveys; no output-level WPO workstream bridge.",
+        "source_urls": [
+          "https://api.datacite.org/dois/10.5281/zenodo.18842183",
+          "https://zenodo.org/records/18842183",
+          "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+        ],
+        "related_outputs_checked": "GLM lightning parallax model notebook and serialized model are one software/model output family, not distinct verified WPO expansion findings.",
+        "original_seed_independent_disposition": true
+      },
+      {
+        "doi": "10.5281/zenodo.19444632",
+        "status": "no_action",
+        "original_artifact_type": "research dataset/software/model",
+        "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+        "award_numbers": [
+          "NA19OAR4320073"
+        ],
+        "disposition_reason": "2026 AMS article cites CONUS5 dataset DOI 10.5281/zenodo.19444633 for satellite-image overshooting-top ML research. SPARK's related umbrella award NA19OAR4320073 belongs to a distinct MET-TC verification project; no WPO project-specific bridge demonstrated.",
+        "source_urls": [
+          "https://api.datacite.org/dois/10.5281/zenodo.19444632",
+          "https://journals.ametsoc.org/view/journals/aies/aop/AIES-D-25-0059.1/AIES-D-25-0059.1.xml",
+          "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+        ],
+        "related_outputs_checked": "Related AMS article DOI 10.1175/AIES-D-25-0059.1; no verified WPO MET-TC project attribution.",
+        "original_seed_independent_disposition": true
+      },
+      {
+        "doi": "10.5281/zenodo.19444633",
+        "status": "no_action",
+        "original_artifact_type": "research dataset/software/model",
+        "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+        "award_numbers": [
+          "NA19OAR4320073"
+        ],
+        "disposition_reason": "2026 AMS article cites CONUS5 dataset DOI 10.5281/zenodo.19444633 for satellite-image overshooting-top ML research. SPARK's related umbrella award NA19OAR4320073 belongs to a distinct MET-TC verification project; no WPO project-specific bridge demonstrated.",
+        "source_urls": [
+          "https://api.datacite.org/dois/10.5281/zenodo.19444633",
+          "https://journals.ametsoc.org/view/journals/aies/aop/AIES-D-25-0059.1/AIES-D-25-0059.1.xml",
+          "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+        ],
+        "related_outputs_checked": "Related AMS article DOI 10.1175/AIES-D-25-0059.1; no verified WPO MET-TC project attribution.",
+        "original_seed_independent_disposition": true
+      }
+    ]
+  },
+  "expansion": {
+    "related_output_families_checked": 6,
+    "distinct_new_forwarded": 0,
+    "new_leads_retained": 6,
+    "source_to_expansion_links": [
+      "Team Meander logos -> BAMS and Geoscience Communication related publications (funding and duplicate checks needed)",
+      "Glacier modeling scripts -> Geophysical Research Letters 10.1029/2025GL117691 (fellowship, not WPO UFS workstream)",
+      "Rapid Intensification Learning Journey dataset -> NCAI/TC PRIMED materials (NESDIS, not WPO MET-TC)",
+      "WOA23 internal tides -> plane-wave-fit package (not WPO AQPI)",
+      "GLM parallax model -> Jupyter demonstration and NOAA CI research (not WPO social-science survey)",
+      "CONUS5 dataset -> AMS 10.1175/AIES-D-25-0059.1 (not demonstrated WPO MET-TC)"
+    ]
+  },
+  "discovery_routes": {
+    "direct_api": 0,
+    "api_seeded_expansion": 0,
+    "independent_discovery": 0,
+    "metadata_correction": 0,
+    "unclassified_legacy_staged": 40
+  },
+  "source_checks": {
+    "reach_index_shards": 10,
+    "reach_index_rows": 1238,
+    "spark_index_shards": 6,
+    "spark_index_rows": 578,
+    "scout_batches": 14,
+    "scout_staged_candidates": 53,
+    "historical_source_batches": 2,
+    "historical_source_distinct_dois": 188,
+    "complete_reach_detail_shards_checked": false,
+    "private_human_feedback_verified": false
+  },
+  "no_action_subtypes_cumulative": {
+    "NO_DEMONSTRATED_WPO_CONNECTION_ALTERNATIVE_FUNDING": 6,
+    "NO_DEMONSTRATED_WPO_CONNECTION": 52,
+    "NOT_RESEARCH_OUTPUT": 31
+  },
+  "attribution_followups": {
+    "before": 46,
+    "added": 6,
+    "after": 52,
+    "queued": 52,
+    "rechecks_performed": 0,
+    "prior_0800_snapshot_65_no_actions_preserved": true,
+    "prior_0833_snapshot_77_no_actions_preserved": true
+  },
+  "metadata_followups": {
+    "total": 20,
+    "original": 16,
+    "expansion": 4,
+    "due": 0,
+    "overdue": 0,
+    "human_metadata_needed": 0,
+    "hub_investigate_candidates_delivered": 0
+  },
+  "provenance_review_followups": {
+    "six_prior_api_seeded_candidates_preserved": true,
+    "private_reviewer_decisions_not_inferred": true
+  },
+  "feed_integrity_status": "FEED_BLOCKED_VALIDATION_FAILURE",
+  "newly_staged_csv_ids": [],
+  "manifest_verification": {
+    "manifest_batches": 14,
+    "manifest_rows": 53,
+    "sha256_matching_batches": 14,
+    "sha256_mismatches": 0,
+    "unmanifested_existing_batches": 0,
+    "missing_manifest_entries": 0,
+    "record_counts_and_source_run_ids_match": true,
+    "manifest_blob_sha": "96a77d4a00b837966eacaa5fd5008df28146bf52",
+    "exact_csv_sha256_verified": "Independent SHA-256 over exact fetched UTF-8 contents of each of 14 public batches; all matched manifest",
+    "manifest_author": "GitHub Actions only; Scout did not write manifest"
+  },
+  "github_action_verification": {
+    "status": "FAILURE",
+    "latest_run_id": 40835835954,
+    "latest_run_url": "https://github.com/PART-WPO/reach-scout-discoveries/actions/runs/40835835954",
+    "latest_run_at": "2026-10-29T07:30:13Z",
+    "prior_failed_runs": [
+      40818355384,
+      40813031190
+    ],
+    "exact_error": "Monthly-origin review proposal lacks Scout verification: 2026-10-28-hourly-2331ET-datacite-original-and-expansion-001.csv:2",
+    "cause": "Existing immutable batch says 'Scout verification: Completed for ...'; build_manifest.py demands exact standalone 'Scout verification: Completed'. No observed checksum mismatch.",
+    "next_action": "Automated manifest generator validation must be repaired compatibly without altering immutable CSV or weakening checksum checks; hold new batch publication until workflow succeeds."
+  },
+  "library": {
+    "persisted_before_github_writes": true,
+    "paths": [
+      "/REACH Scout Library/2026-10-29-0934ET-report.md",
+      "/REACH Scout Library/2026-10-29-0934ET-research_leads.json",
+      "/REACH Scout Library/2026-10-29-0934ET-checkpoint.json",
+      "/REACH Scout Library/2026-10-29-0934ET-discovery_hub.csv",
+      "/REACH Scout Library/2026-10-29-0934ET-hourly_provenance_audit.json",
+      "/REACH Scout Library/2026-10-29-0934ET-ledger_delta.json"
+    ]
+  },
+  "github": {
+    "ledger_commit": "028d2d81b747896e0e0542da7ab5d87c3578918b",
+    "attribution_commit": "2107436b3e4a373961b308e1e4d0260da11df726",
+    "coverage_commit": "e89fd38e04eb9ede6890d69efb73ce5115729fc1",
+    "router_commit": "aeacc59a0a28ba1d478fd487ed59725bbcda1e9a",
+    "metrics_commit": "3cad04dbd338ddeac732885cda53aef5b7b6203e",
+    "batch_published": false,
+    "manifest_modified_by_scout": false
+  },
+  "public_reach": {
+    "authoritative_index_rows": 1238,
+    "new_additions_verified": 0
+  },
+  "audit_status": "PARTIAL",
+  "limitations": [
+    "Automated feed validator failed three consecutive runs, so no new CSV batch published or claimed Hub-ready despite existing 14 matching SHA-256 digests.",
+    "Complete REACH index and all Scout batches checked; full 140 REACH detail shards and private human reviewer decisions not exhaustively verified.",
+    "Some concept DOI native Zenodo pages unavailable/rate-limited; version-family identities retained separately using captured DataCite input and native paired records."
+  ]
+}
