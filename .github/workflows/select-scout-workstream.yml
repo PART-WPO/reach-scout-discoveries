@@ -7,6 +7,10 @@ on:
       - 'scout-operations/tests/test_select_workstream.py'
       - 'scout-operations/coverage.json'
       - 'scout-operations/historical-coverage.json'
+      - 'scout-operations/monthly-triage.json'
+      - 'scout-operations/historical-triage.json'
+      - 'scout-operations/metadata-blockers.json'
+      - 'scout-operations/attribution-followups.json'
       - 'api-discoveries/manifest.json'
       - 'api-discoveries/historical/manifest.json'
       - '.github/workflows/select-scout-workstream.yml'
@@ -23,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Test monthly API priority, pilot backlog priority and return to discovery
+      - name: Test monthly and historical first-pass, follow-up and human-handoff priority
         run: |
           python3 -m unittest discover -v -s scout-operations/tests
       - name: Calculate current workstream from real inbox coverage
