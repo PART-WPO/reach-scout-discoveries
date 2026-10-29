@@ -1,0 +1,97 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-29-HOURLY-0329ET",
+  "mode": "historical_api_triage",
+  "cohort": "Historical DataCite API Backfill 2026-10-28",
+  "source_manifest_rows": 188,
+  "monthly_manifest_rows": 0,
+  "original_seed_dispositions": {
+    "no_action_grant_description": [
+      "10.25923/na21oar4590205",
+      "10.25923/na21oar4590206",
+      "10.25923/na21oar4590210",
+      "10.25923/na21oar4590211",
+      "10.25923/na21oar4590216",
+      "10.25923/na21oar4590217"
+    ],
+    "already_in_reach": 0,
+    "forwarded": 0,
+    "new_metadata_blockers": 0,
+    "disposition_gaps_added": 0
+  },
+  "historical_before": {
+    "resolved": 64,
+    "remaining": 124,
+    "awaiting_research": 108,
+    "original_blockers": 16,
+    "no_action": 21
+  },
+  "historical_after": {
+    "resolved": 70,
+    "remaining": 118,
+    "awaiting_research": 102,
+    "original_blockers": 16,
+    "no_action": 27
+  },
+  "new_review_candidates": {
+    "direct_api": 0,
+    "api_seeded_expansion": 2,
+    "independent_discovery": 0,
+    "metadata_correction": 0,
+    "unclassified": 0,
+    "outputs": [
+      {
+        "doi": "10.1175/BAMS-D-25-0032.1",
+        "seed_doi": "10.25923/na21oar4590205",
+        "verified_awards": [
+          "NA21OAR4590205",
+          "NA21OAR4590206"
+        ],
+        "source": "https://journals.ametsoc.org/view/journals/bams/107/10/BAMS-D-25-0032.1.xml"
+      },
+      {
+        "doi": "10.36227/techrxiv.175035136.63535291/v2",
+        "seed_doi": "10.25923/na21oar4590216",
+        "verified_awards": [
+          "NA21OAR4590216"
+        ],
+        "source": "https://doi.org/10.36227/techrxiv.175035136.63535291/v2"
+      }
+    ]
+  },
+  "batch_path": "scout-discoveries/batches/2026-10-29-hourly-0329ET-social-science-expansion-001.csv",
+  "batch_sha256": "ca437c011baca1dbc8a92159170deb581505743a4781f4fbe517c7e3daaa37b2",
+  "manifest_verified": {
+    "batch_count": 14,
+    "candidate_rows": 53
+  },
+  "checks": {
+    "reach_index_shards": 10,
+    "reach_index_rows": 1238,
+    "reach_detail_shards": [
+      96,
+      97,
+      98,
+      99,
+      100
+    ],
+    "reach_detail_shards_total": 140,
+    "spark_index_shards": 6,
+    "spark_index_rows": 578,
+    "scout_prior_batches": 13,
+    "scout_prior_candidates": 51,
+    "historical_source_shards": 2,
+    "public_feedback_signals": 0
+  },
+  "metadata_followups": {
+    "due": 0,
+    "overdue": 0,
+    "human_metadata_needed": 0,
+    "original_blockers_pending": 16,
+    "expansion_blockers_pending": 1
+  },
+  "status": "PARTIAL",
+  "limitation": "All REACH index shards, staged Scout batches, and relevant detail shards checked, but not the full 140 detail shards or private reviewer decisions. Human approval and public REACH insertion not claimed.",
+  "public_reach_baseline": 1238,
+  "verified_new_public_reach_additions": 0
+}
