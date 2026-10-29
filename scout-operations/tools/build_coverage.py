@@ -22,8 +22,8 @@ for batch in manifest['batches']:
         run=row['Source Run ID']
         m=re.search(r'(20[0-9]{2}-[0-9]{2})',run)
         expected[k]=m.group(1) if m else 'unknown'
-terminal={'already_in_reach','forwarded_to_hub','metadata_update_forwarded','no_action'}
-counts={m:{'received':0,'checked':0,'already_in_reach':0,'forwarded_to_hub':0,'needs_research':0} for m in set(expected.values())}
+terminal={'already_in_reach','forwarded_to_hub','metadata_update_forwarded','no_action','human_metadata_needed'}
+counts={m:{'received':0,'checked':0,'already_in_reach':0,'forwarded_to_hub':0,'human_metadata_needed':0,'needs_research':0} for m in set(expected.values())}
 for month in expected.values():counts[month]['received']+=1
 seen=set();errors=[];checked=dupes=forwarded=stale=0
 for e in ledger['entries']:
@@ -37,8 +37,20 @@ for e in ledger['entries']:
         if e['status']=='already_in_reach' and not e.get('reach_match'):errors.append('Missing exact REACH match '+k);continue
         if e['status'] in {'forwarded_to_hub','metadata_update_forwarded'} and not e.get('scout_batch_path','').startswith('scout-discoveries/batches/'):
             errors.append('Missing reviewed batch '+k);continue
+        if e['status']=='human_metadata_needed':
+            # The Scout research round is closed, NOT an automatic Hub submission.
+            if not (e.get('metadata_recovery_exhausted') is True and e.get('missing_evidence') and
+                    e.get('reviewer_question') and e.get('verified_awards') and
+                    e.get('human_handoff_status') in {'pending_hub_intake','staged_for_review'}):
+                errors.append('Human metadata handoff missing completed research proof '+k);continue
+            if e['human_handoff_status']=='pending_hub_intake':
+                if not e.get('hub_intake_blocker') or e.get('scout_batch_path'):
+                    errors.append('Pending Hub handoff has invalid delivery evidence '+k);continue
+            elif not e.get('scout_batch_path','').startswith('scout-discoveries/batches/'):
+                errors.append('Hub-visible human handoff missing reviewed batch '+k);continue
         checked+=1;counts[expected[k]]['checked']+=1
         if e['status']=='already_in_reach':dupes+=1;counts[expected[k]]['already_in_reach']+=1
+        if e['status']=='human_metadata_needed':counts[expected[k]]['human_metadata_needed']+=1
         if e['status'] in {'forwarded_to_hub','metadata_update_forwarded'}:forwarded+=1;counts[expected[k]]['forwarded_to_hub']+=1
     else:
         try:
@@ -46,7 +58,7 @@ for e in ledger['entries']:
             if t.tzinfo and (datetime.now(timezone.utc)-t).days>=7:stale+=1
         except (TypeError,ValueError):pass
 for c in counts.values():c['needs_research']=c['received']-c['checked']
-result={'schema':'reach-scout-coverage-v1','repository':'PART-WPO/reach-scout-discoveries','received':len(expected),'checked':checked,'already_in_reach':dupes,'forwarded_to_hub':forwarded,'missing_from_ledger':len(set(expected)-seen),'stale_investigations':stale,'by_month':counts,'errors':errors}
+result={'schema':'reach-scout-coverage-v1','repository':'PART-WPO/reach-scout-discoveries','received':len(expected),'checked':checked,'already_in_reach':dupes,'forwarded_to_hub':forwarded,'missing_from_ledger':len(set(expected)-seen),'stale_investigations':stale,'human_metadata_needed':sum(c['human_metadata_needed'] for c in counts.values()),'by_month':counts,'errors':errors}
 (root/'scout-operations/coverage.json').write_text(json.dumps(result,indent=2,sort_keys=True)+'\n')
 if errors:raise ValueError('; '.join(errors[:5]))
 print('Research coverage:',len(expected),'received,',checked,'completed')
