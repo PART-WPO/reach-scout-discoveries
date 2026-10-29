@@ -1,0 +1,114 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-29-HOURLY-0734ET",
+  "checked_at": "2026-10-29T11:36:43Z",
+  "mode": "historical_api_triage",
+  "monthly": {
+    "before_completed": 0,
+    "after_completed": 0,
+    "remaining": 0,
+    "source_rows": 0
+  },
+  "historical": {
+    "source_rows": 188,
+    "before_completed": 92,
+    "before_remaining": 96,
+    "before_awaiting": 80,
+    "before_blockers": 16,
+    "after_completed": 110,
+    "after_remaining": 78,
+    "after_awaiting": 62,
+    "after_blockers": 16,
+    "no_action_before": 49,
+    "no_action_after": 65,
+    "already_in_reach_before": 33,
+    "already_in_reach_after": 35,
+    "source_ledger_reconciles": true
+  },
+  "original_seed": {
+    "examined": 18,
+    "no_action": 16,
+    "already_in_reach": 2,
+    "forwarded_new": 0,
+    "metadata_blockers_new": 0,
+    "disposition_gaps_in_examined": 0,
+    "dois": [
+      "10.4211/hs.9460830270ec4d8b9d9c4260cca2114d",
+      "10.5061/dryad.05qfttf5h",
+      "10.5061/dryad.0gb5mkm6t",
+      "10.5061/dryad.2bvq83br4",
+      "10.5061/dryad.3n5tb2rq4",
+      "10.5061/dryad.7pvmcvf39",
+      "10.5061/dryad.8pk0p2npb",
+      "10.5061/dryad.b2rbnzsp5",
+      "10.5061/dryad.f4qrfj71p",
+      "10.5061/dryad.gf1vhhmw0",
+      "10.5061/dryad.gtht76hsk",
+      "10.5061/dryad.kwh70rzfc",
+      "10.5061/dryad.v15dv4209",
+      "10.5061/dryad.v41ns1s4v",
+      "10.5281/zenodo.11623053",
+      "10.5281/zenodo.11623054",
+      "10.5281/zenodo.15002614",
+      "10.5281/zenodo.15352578"
+    ]
+  },
+  "expansion": {
+    "related_leads_recorded": 23,
+    "new_hub_candidates": 0,
+    "no_automatic_approval": true
+  },
+  "discovery_routes": {
+    "direct_api": 0,
+    "api_seeded_expansion": 0,
+    "independent_discovery": 0,
+    "metadata_correction": 0
+  },
+  "source_checks": {
+    "reach_index_shards": 10,
+    "reach_index_rows": 1238,
+    "scout_batches": 14,
+    "scout_staged_candidates": 53,
+    "reach_detail_shards_selected": 2,
+    "full_reach_details_checked": false,
+    "private_feedback_checked": false,
+    "spark_full_shards_checked": false
+  },
+  "metadata_followups": {
+    "total": 20,
+    "original": 16,
+    "expansion": 4,
+    "due": 0,
+    "overdue": 0,
+    "human_metadata_needed": 0
+  },
+  "github": {
+    "historical_ledger_updated": true,
+    "historical_coverage_updated": true,
+    "active_router_updated": true,
+    "discovery_metrics_updated": true,
+    "batch_published": false,
+    "hub_batch_reason": "No eligible verified unique WPO-funded output; 24-column review CSV intentionally header-only."
+  },
+  "library": {
+    "persisted_before_github_writes": true,
+    "artifacts": [
+      "/REACH Scout Library/2026-10-29-0734ET-report.md",
+      "/REACH Scout Library/2026-10-29-0734ET-research_leads.csv",
+      "/REACH Scout Library/2026-10-29-0734ET-checkpoint.json",
+      "/REACH Scout Library/2026-10-29-0734ET-discovery_hub.csv",
+      "/REACH Scout Library/2026-10-29-0734ET-hourly_provenance_audit.json"
+    ]
+  },
+  "public_reach": {
+    "baseline": 1238,
+    "new_additions_verified": 0
+  },
+  "audit_status": "PARTIAL",
+  "limitations": [
+    "All 10 REACH index shards and 14 Scout review batches were compared for exact DOI and titles; selected two detail shards for known matches; full 140 detail shards and private reviewer decisions were not exhaustively checked.",
+    "Project attribution for cooperative institute award matches is not established solely by matching an award identifier.",
+    "Zenodo native API was inaccessible for glacier concept DOI; publisher explicitly references version DOI and fellowship funding.",
+    "Related output leads are not new WPO candidate assertions."
+  ]
+}
