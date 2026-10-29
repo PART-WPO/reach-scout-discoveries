@@ -1,0 +1,125 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-29-HOURLY-0529ET",
+  "checked_at": "2026-10-29T09:30:30Z",
+  "mode": "historical_api_triage",
+  "monthly": {
+    "source_rows": 0,
+    "triage_entries": 0,
+    "received": 0,
+    "completed": 0,
+    "remaining": 0
+  },
+  "historical": {
+    "source_rows": 188,
+    "source_batch_count": 2,
+    "before": {
+      "completed": 76,
+      "remaining": 112,
+      "awaiting": 96,
+      "original_blockers": 16,
+      "no_action": 33
+    },
+    "after": {
+      "completed": 84,
+      "remaining": 104,
+      "awaiting": 88,
+      "original_blockers": 16,
+      "no_action": 41
+    },
+    "source_ledger_reconciles": true
+  },
+  "original_seed": {
+    "examined": 8,
+    "no_action": 8,
+    "already_in_reach_new": 0,
+    "forwarded_new": 0,
+    "metadata_blockers_new": 0,
+    "disposition_gaps_in_examined": 0,
+    "dois": [
+      "10.25923/na21oar4590214",
+      "10.25923/na21oar4590215",
+      "10.25923/na21oar4590218",
+      "10.25923/na21oar4590219",
+      "10.25923/na23oar4050503i",
+      "10.25923/na23oar4590363",
+      "10.25923/na23oar4590364",
+      "10.25923/na23oar4590366"
+    ],
+    "evidence_limit": "Exact NOAA IR Grant document type independently verified for NA23OAR4590366; other original records classified from captured prospective grant descriptions plus official WPO award roster, without claiming inaccessible exact NOAA IR document types."
+  },
+  "expansion": {
+    "new_leads": 3,
+    "verified_new_candidates": 0,
+    "new_bounded_metadata_blockers": 2,
+    "lead_urls": [
+      "https://ams.confex.com/ams/51BC7WxComm/webprogram/Paper443444.html",
+      "https://ams.confex.com/ams/51BC7WxComm/webprogram/Paper443443.html",
+      "https://csde.washington.edu/wp-content/uploads/2025/03/Final-report-for-the-NOAA-SDII-D4-hackweek_20Feb2025.pdf"
+    ],
+    "source_seed_dois": [
+      "10.25923/na21oar4590214",
+      "10.25923/na23oar4590363",
+      "10.25923/na23oar4050503i"
+    ],
+    "first_two_followup_at": "2026-11-05T09:30:30Z",
+    "uw_lead_not_ready": "PDF 403; exact award attribution and public release date not verified"
+  },
+  "discovery_routes": {
+    "direct_api": 0,
+    "api_seeded_expansion": 0,
+    "independent_discovery": 0,
+    "metadata_correction": 0,
+    "unclassified": 0
+  },
+  "source_checks": {
+    "reach_index_shards": 10,
+    "reach_index_rows": 1238,
+    "spark_index_shards": 6,
+    "spark_index_rows": 578,
+    "scout_prior_batches": 14,
+    "scout_prior_candidates": 53,
+    "full_reach_detail_shards_checked": false,
+    "private_reviewer_decisions_checked": false
+  },
+  "metadata_followups": {
+    "due": 0,
+    "overdue": 0,
+    "human_metadata_needed_pending": 0,
+    "hub_investigate_delivered": 0,
+    "total_blockers": 20,
+    "original_blockers": 16,
+    "expansion_blockers": 4
+  },
+  "github": {
+    "historical_ledger_updated": true,
+    "historical_coverage_updated": true,
+    "active_router_updated": true,
+    "metadata_blockers_updated": true,
+    "discovery_metrics_updated": true,
+    "hub_candidate_batch_published": false,
+    "hub_batch_reason": "No verified unique eligible outputs with required truthful metadata; no empty GitHub batch"
+  },
+  "library": {
+    "artifacts": [
+      "/REACH Scout Library/2026-10-29-0529ET-report.md",
+      "/REACH Scout Library/2026-10-29-0529ET-research_leads.csv",
+      "/REACH Scout Library/2026-10-29-0529ET-checkpoint.json",
+      "/REACH Scout Library/2026-10-29-0529ET-discovery_hub.csv",
+      "/REACH Scout Library/2026-10-29-0529ET-hourly_provenance_audit.json"
+    ],
+    "persisted_before_github_writes": true
+  },
+  "public_reach": {
+    "baseline_count": 1238,
+    "new_additions_verified": 0
+  },
+  "audit_status": "PARTIAL",
+  "limitations": [
+    "Not all 140 REACH detail shards checked",
+    "Private human-review dispositions unavailable",
+    "NOAA IR intermittent 503 for several exact grant records",
+    "AMS presentation dates not verified public first-publication dates",
+    "UW report PDF returned 403"
+  ]
+}
