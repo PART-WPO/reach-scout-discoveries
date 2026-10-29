@@ -1,7 +1,7 @@
 {
   "schema": "reach-scout-attribution-followups-v1",
   "created_date": "2026-10-29",
-  "origin": "Reclassification of 65 evidenced historical no_action DOI seeds; no new source research and no changes to original dispositions",
+  "origin": "77 no_action original historical DOI dispositions after the 2026-10-29 08:33 ET hourly run: 29 administrative non-outputs; 2 NASA-only funding; 46 real outputs without verified WPO project attribution. The 8:00 ET briefing snapshot was 65, including 34 attribution gaps. No original status or human decision changed.",
   "policy": "These are discovery research leads, not 34 confirmed WPO outputs or 34 automatic Hub findings. Don't promote without evidence bridge and independent corroboration. Preserve no_action historical completed count.",
   "total": 46,
   "queued": 46,
@@ -1217,5 +1217,17 @@
       "original_notes_preserved_in": "scout-operations/historical-triage.json",
       "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility."
     }
-  ]
+  ],
+  "baseline_0800": {
+    "no_action": 65,
+    "grant_notices": 29,
+    "alternative_funding": 2,
+    "unattributed_outputs": 34
+  },
+  "after_0833": {
+    "no_action": 77,
+    "grant_notices": 29,
+    "alternative_funding": 2,
+    "unattributed_outputs": 46
+  }
 }
