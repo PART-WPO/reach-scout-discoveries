@@ -1,0 +1,65 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "audit_method": "Historical reconstruction on 2026-10-29 from immutable GitHub batch, source_run_id, commits, and historical triage/coverage at commit refs. NOT an audit actually authored during the original run.",
+  "provenance_audit_status": "PARTIAL",
+  "evidence_limits": [
+    "This is a retrospective audit, not the original runtime evidence report.",
+    "Full 140 REACH detail-shard corpus and private human reviewer decisions cannot be certified from these sources.",
+    "Original source URLs and identity checks are retained in historical-triage entries; not all individual external sources were reopened during backfill."
+  ],
+  "no_manual_approvals_or_source_edits": true,
+  "run_id": "REACH-SCOUT-2026-10-28-HOURLY-2129ET",
+  "scheduled_local": "2026-10-28 21:29 America/New_York",
+  "evidence_commit_times_utc": [
+    "2026-10-29T01:32:07Z",
+    "2026-10-29T01:35:08Z",
+    "2026-10-29T01:35:15Z"
+  ],
+  "selected_mode": "historical_api_triage",
+  "batch": {
+    "published": false,
+    "reason": "No new source_run_id batch is present in the manifest or append-only batch files for this run; this is a verified zero PUBLISHED, not a verified zero research leads.",
+    "rows": 0,
+    "api_seeded_expansion": 0,
+    "direct_api": 0,
+    "independent_discovery": 0,
+    "metadata_correction": 0,
+    "unclassified": 0
+  },
+  "original_seed": {
+    "source_doi_examined_from_diff": 9,
+    "source_disposition_changes": {
+      "already_in_reach": 6,
+      "needs_more_research": 3
+    },
+    "source_identities": [
+      "10.17603/ds2-zb1x-f792",
+      "10.17605/osf.io/jr7pv",
+      "10.17605/osf.io/rbdfv",
+      "10.18738/t8/momo42",
+      "10.25394/pgs.14916606",
+      "10.25394/pgs.14916606.v1",
+      "10.25394/pgs.20392422",
+      "10.25394/pgs.20392422.v1",
+      "10.25923/0vz0-ra19"
+    ]
+  },
+  "historical_ledger_before": {
+    "completed": 19,
+    "remaining": 169,
+    "needs_more_research": 7,
+    "already_in_reach": 10
+  },
+  "historical_ledger_after": {
+    "completed": 25,
+    "remaining": 163,
+    "needs_more_research": 10,
+    "already_in_reach": 16
+  },
+  "reconstruction_refs": [
+    "https://github.com/PART-WPO/reach-scout-discoveries/commit/62b71f7630",
+    "https://github.com/PART-WPO/reach-scout-discoveries/commit/63a04ff47b",
+    "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/historical-triage.json"
+  ],
+  "notes": "Three OSF/GSL items were held for missing metadata and project scope; 6 original seed DOIs matched already cataloged REACH outputs, including DOI version/concept equivalence. Expansion of another related publication was examined but no eligible proposal published."
+}
