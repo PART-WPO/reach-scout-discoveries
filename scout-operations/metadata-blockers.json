@@ -336,6 +336,106 @@
       "funding_basis": "Captured DataCite fundingReference NA19OAR4320073 corroborated by the report's own PDF acknowledgments naming this exact cooperative agreement.",
       "next_action": "One bounded follow-up at or after next_retry_at; if unresolved and credible, escalate human_metadata_needed without inventing metadata. See historical-triage for source notes.",
       "triage_identity": "doi:10.25923/0vz0-ra19"
+    },
+    {
+      "identity": "doi:10.25923/65kx-0a28",
+      "award_numbers": [
+        "NA21OAR4320204"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "record-specific YYYY-MM-DD report publication date",
+        "award-to-WPO project scope (broad CIWRO cooperative agreement)"
+      ],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "authoritative_publisher_or_doi",
+          "url": "https://repository.library.noaa.gov/view/noaa/72846",
+          "outcome": "Reviewed; essential exact publication date or WPO project scope remains unresolved.",
+          "checked_at": "2026-10-29T03:34:15Z"
+        },
+        {
+          "round": 0,
+          "method": "linked_scholarly_source",
+          "url": "https://hwt.nssl.noaa.gov/publications/",
+          "outcome": "Reviewed; essential exact publication date or WPO project scope remains unresolved.",
+          "checked_at": "2026-10-29T03:34:15Z"
+        },
+        {
+          "round": 0,
+          "method": "spark_project_crosscheck",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "outcome": "Reviewed; essential exact publication date or WPO project scope remains unresolved.",
+          "checked_at": "2026-10-29T03:34:15Z"
+        }
+      ],
+      "first_investigated_at": "2026-10-29T03:34:15Z",
+      "last_attempt_at": "2026-10-29T03:34:15Z",
+      "retry_count": 0,
+      "next_retry_at": "2026-11-05T03:34:15Z",
+      "next_research_at": "2026-11-05T03:34:15Z",
+      "followup_question": "Can the full official release date and a WPO project-specific funding bridge be established for this distinct NOAA HWT program report?",
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/72846",
+        "https://hwt.nssl.noaa.gov/publications/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json"
+      ],
+      "funding_basis": "Historical DataCite seed identifies NA21OAR4320204; independent date and/or project-specific funding bridge unresolved.",
+      "next_action": "At most one scheduled follow-up at or after next_retry_at, then verified Hub candidate, evidence-backed no-action, or human_metadata_needed escalation; no invented dates or awards.",
+      "triage_identity": "doi:10.25923/65kx-0a28",
+      "max_delayed_retries": 1
+    },
+    {
+      "identity": "doi:10.17603/ds2-ydmk-q397",
+      "award_numbers": [
+        "NA21OAR4590206"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "record-specific full publication date",
+        "public accessibility and distinctness of HTI interview stimuli files"
+      ],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "authoritative_publisher_or_doi",
+          "url": "https://doi.org/10.17603/ds2-ydmk-q397",
+          "outcome": "Reviewed; essential exact publication date or WPO project scope remains unresolved.",
+          "checked_at": "2026-10-29T03:34:15Z"
+        },
+        {
+          "round": 0,
+          "method": "linked_scholarly_source",
+          "url": "https://bmcnoldy.earth.miami.edu/papers/PMMMMCE2025_WCS.pdf",
+          "outcome": "Reviewed; essential exact publication date or WPO project scope remains unresolved.",
+          "checked_at": "2026-10-29T03:34:15Z"
+        },
+        {
+          "round": 0,
+          "method": "spark_project_crosscheck",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "outcome": "Reviewed; essential exact publication date or WPO project scope remains unresolved.",
+          "checked_at": "2026-10-29T03:34:15Z"
+        }
+      ],
+      "first_investigated_at": "2026-10-29T03:34:15Z",
+      "last_attempt_at": "2026-10-29T03:34:15Z",
+      "retry_count": 0,
+      "next_retry_at": "2026-11-05T03:34:15Z",
+      "next_research_at": "2026-11-05T03:34:15Z",
+      "followup_question": "Does the DesignSafe deposit expose a distinct public HTI stimuli output, and what exact release date applies?",
+      "evidence_urls": [
+        "https://doi.org/10.17603/ds2-ydmk-q397",
+        "https://bmcnoldy.earth.miami.edu/papers/PMMMMCE2025_WCS.pdf",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json"
+      ],
+      "funding_basis": "Historical DataCite seed identifies NA21OAR4590206; independent date and/or project-specific funding bridge unresolved.",
+      "next_action": "At most one scheduled follow-up at or after next_retry_at, then verified Hub candidate, evidence-backed no-action, or human_metadata_needed escalation; no invented dates or awards.",
+      "triage_identity": "doi:10.17603/ds2-ydmk-q397",
+      "max_delayed_retries": 1
     }
   ]
 }
