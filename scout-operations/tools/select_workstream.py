@@ -124,7 +124,7 @@ def decide(monthly_manifest,monthly_coverage,historical_manifest,historical_cove
             "remaining_or_untracked":monthly_unfinished,
             "initial_cases":monthly_initial,
             "unresolved_followups":monthly_followup,
-            "related_metadata_blockers":blockers["monthly"]
+            "pending_metadata_blockers_including_originals":blockers["monthly"]
         },
         "historical_api":{
             "raw_batch_rows":hist_rows,"distinct_dois":h_total,
@@ -133,7 +133,7 @@ def decide(monthly_manifest,monthly_coverage,historical_manifest,historical_cove
             "coverage_matches_source_manifest":hist_matches,
             "initial_cases":historical_initial,
             "unresolved_followups":historical_followup,
-            "related_metadata_blockers":blockers["historical"]
+            "pending_metadata_blockers_including_originals":blockers["historical"]
         },
         "attribution_followups_pending":attribution_pending,
         "note":"Future follow-up dates do not clear API research. Make bounded distinct-source checks now; use documented early-retry exceptions as needed. An unavailable or invalid Hub metadata-needed handoff remains outstanding. This selector does NOT conduct research, verify human approval, or launch Scout."
