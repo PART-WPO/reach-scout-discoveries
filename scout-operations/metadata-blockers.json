@@ -725,6 +725,75 @@
       "next_action": "One bounded follow-up no sooner than 2026-11-05T06:31:49Z using native Dataverse citation/metadata and accessible files. If date/scope verified and not duplicate, stage a separate 24-column API-seeded expansion candidate for human approval; if still credible but missing mandatory fields, human_metadata_needed escalation outside normal research queue; no fabricated date.",
       "human_review_status": "not yet delivered to Discovery Hub; metadata blocked",
       "review_ready": false
+    },
+    {
+      "identity": "url:https://www.iaem.org/Portals/IAEMconf/documents/2025/posters2025/Alex-Marmo-Poster.pdf",
+      "award_numbers": [
+        "NA23OAR4590362"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28 — API-seeded expansion from grant DOI 10.25923/na23oar4590362",
+      "status": "blocked",
+      "triage_identity": "doi:10.25923/na23oar4590362",
+      "discovery_route": "API-seeded expansion",
+      "seed_doi": "10.25923/na23oar4590362",
+      "output_title": "When will severe weather hit my jurisdiction?",
+      "output_url": "https://www.iaem.org/Portals/IAEMconf/documents/2025/posters2025/Alex-Marmo-Poster.pdf",
+      "missing_fields": [
+        "Independently verified first public publication date YYYY-MM-DD for the exact poster PDF"
+      ],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "noaa_ir_seed",
+          "url": "https://repository.library.noaa.gov/view/noaa/67024",
+          "outcome": "Original DOI is grant description, not the poster; confirms relevant WPO award.",
+          "checked_at": "2026-10-29T08:29:00Z"
+        },
+        {
+          "round": 0,
+          "method": "iaem_poster",
+          "url": "https://www.iaem.org/Portals/IAEMconf/documents/2025/posters2025/Alex-Marmo-Poster.pdf",
+          "outcome": "Distinct poster publicly hosted by IAEM, author Alex Marmo, with explicit NOAA WPO award NA23OAR4590362; no first-publication date on poster.",
+          "checked_at": "2026-10-29T08:29:00Z"
+        },
+        {
+          "round": 0,
+          "method": "iaem_guidance",
+          "url": "https://www.iaem.org/Portals/IAEMconf/documents/2025/Poster-Showcase-Guidance-2025.pdf",
+          "outcome": "IAEM 2025 showcase presentation date Nov 18, 2025; conference event date does not prove PDF first-publication date.",
+          "checked_at": "2026-10-29T08:29:00Z"
+        },
+        {
+          "round": 0,
+          "method": "reach_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "outcome": "All 10 index shards (1238 outputs) checked; no exact poster title or PDF URL.",
+          "checked_at": "2026-10-29T08:29:00Z"
+        },
+        {
+          "round": 0,
+          "method": "scout_batches",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+          "outcome": "All 14 existing Scout batches (53 review rows) checked; no exact poster title or PDF URL.",
+          "checked_at": "2026-10-29T08:29:00Z"
+        }
+      ],
+      "first_investigated_at": "2026-10-29T08:29:00Z",
+      "last_attempt_at": "2026-10-29T08:29:00Z",
+      "retry_count": 0,
+      "max_delayed_retries": 1,
+      "next_retry_at": "2026-11-05T09:00:00Z",
+      "next_research_at": "2026-11-05T09:00:00Z",
+      "followup_question": "Can IAEM archive page metadata or author provide the exact first public online release date for this poster PDF, distinct from the Nov 18, 2025 presentation date?",
+      "evidence_urls": [
+        "https://www.iaem.org/Portals/IAEMconf/documents/2025/posters2025/Alex-Marmo-Poster.pdf",
+        "https://www.iaem.org/Portals/IAEMconf/documents/2025/Poster-Showcase-Guidance-2025.pdf",
+        "https://repository.library.noaa.gov/view/noaa/67024"
+      ],
+      "funding_basis": "Poster acknowledgments explicitly identify NOAA Weather Program Office award NA23OAR4590362; original seed grant notice independently corroborates award and project.",
+      "next_action": "After >=7 days conduct one bounded authoritative publication-date verification. If still incomplete, escalate as human_metadata_needed in blocker/lead queue; do not fabricate date or submit invalid 24-column CSV.",
+      "human_review_status": "not_yet_submitted_missing_mandatory_date",
+      "review_ready": false
     }
   ]
 }
