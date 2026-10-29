@@ -436,6 +436,102 @@
       "next_action": "At most one scheduled follow-up at or after next_retry_at, then verified Hub candidate, evidence-backed no-action, or human_metadata_needed escalation; no invented dates or awards.",
       "triage_identity": "doi:10.17603/ds2-ydmk-q397",
       "max_delayed_retries": 1
+    },
+    {
+      "identity": "doi:10.25923/emke-w063",
+      "award_numbers": [
+        "NA21OAR4320204"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "exact report-specific YYYY-MM-DD publication date",
+        "specific WPO-funded SPARK project attribution beyond broad cooperative-institute award"
+      ],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "noaa_ir_original_report",
+          "url": "https://repository.library.noaa.gov/view/noaa/71567",
+          "outcome": "Official NOAA IR report verifies DOI, title, authors, publication year and grant NA21OAR4320204; no exact day/month confirmed.",
+          "checked_at": "2026-10-29T04:28:11Z"
+        },
+        {
+          "round": 0,
+          "method": "reach_index_and_scout_batch_dedup",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "outcome": "Full REACH 1238 index and 12 Scout batches (49 candidate rows) checked; exact DOI/title not represented.",
+          "checked_at": "2026-10-29T04:28:11Z"
+        },
+        {
+          "round": 0,
+          "method": "spark_project_attribution",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "outcome": "Cooperative agreement NA21OAR4320204 appears on several distinct SPARK projects; no project-specific bridge confirmed for this report.",
+          "checked_at": "2026-10-29T04:28:11Z"
+        }
+      ],
+      "first_investigated_at": "2026-10-29T04:28:11Z",
+      "last_attempt_at": "2026-10-29T04:28:11Z",
+      "retry_count": 0,
+      "max_delayed_retries": 1,
+      "next_retry_at": "2026-11-05T04:28:11Z",
+      "next_research_at": "2026-11-05T04:28:11Z",
+      "followup_question": "Find exact publication YYYY-MM-DD and independent project-specific funding attribution for 'Tornado Tales: 2025 Survey Reference Report', or determine documented no-action.",
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/71567"
+      ],
+      "funding_basis": "NOAA IR report names broad cooperative institute grant NA21OAR4320204, not a uniquely attributable WPO project.",
+      "next_action": "One bounded alternate-source follow-up after due date; then publish only valid Hub candidate or escalate to human_metadata_needed if credible but still incomplete, otherwise evidence-backed no_action.",
+      "triage_identity": "doi:10.25923/emke-w063"
+    },
+    {
+      "identity": "doi:10.25923/fkzg-kt33",
+      "award_numbers": [
+        "NA21OAR4320204"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "exact report-specific YYYY-MM-DD publication date",
+        "specific WPO-funded SPARK project attribution beyond broad cooperative-institute award"
+      ],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "noaa_ir_original_report",
+          "url": "https://repository.library.noaa.gov/view/noaa/76790",
+          "outcome": "Official NOAA IR report verifies DOI, title, authors, publication year and grant NA21OAR4320204; no exact day/month confirmed.",
+          "checked_at": "2026-10-29T04:28:11Z"
+        },
+        {
+          "round": 0,
+          "method": "reach_index_and_scout_batch_dedup",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "outcome": "Full REACH 1238 index and 12 Scout batches (49 candidate rows) checked; exact DOI/title not represented.",
+          "checked_at": "2026-10-29T04:28:11Z"
+        },
+        {
+          "round": 0,
+          "method": "spark_project_attribution",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "outcome": "Cooperative agreement NA21OAR4320204 appears on several distinct SPARK projects; no project-specific bridge confirmed for this report.",
+          "checked_at": "2026-10-29T04:28:11Z"
+        }
+      ],
+      "first_investigated_at": "2026-10-29T04:28:11Z",
+      "last_attempt_at": "2026-10-29T04:28:11Z",
+      "retry_count": 0,
+      "max_delayed_retries": 1,
+      "next_retry_at": "2026-11-05T04:28:11Z",
+      "next_research_at": "2026-11-05T04:28:11Z",
+      "followup_question": "Find exact publication YYYY-MM-DD and independent project-specific funding attribution for 'Developing and Evaluating First-Guess Watch Guidance Within SPC Operations', or determine documented no-action.",
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/76790"
+      ],
+      "funding_basis": "NOAA IR report names broad cooperative institute grant NA21OAR4320204, not a uniquely attributable WPO project.",
+      "next_action": "One bounded alternate-source follow-up after due date; then publish only valid Hub candidate or escalate to human_metadata_needed if credible but still incomplete, otherwise evidence-backed no_action.",
+      "triage_identity": "doi:10.25923/fkzg-kt33"
     }
   ]
 }
