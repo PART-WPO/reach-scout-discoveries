@@ -1,0 +1,84 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-28-HOURLY-2233ET",
+  "mode": "historical_api_triage",
+  "cohort": "Historical DataCite API Backfill 2026-10-28",
+  "monthly_source_rows": 0,
+  "historical_source_rows": 188,
+  "reach_index_shards_read": 10,
+  "reach_index_rows": 1238,
+  "reach_matching_detail_shards_read": 2,
+  "spark_index_shards_read": 6,
+  "spark_index_rows": 578,
+  "scout_batch_files_read": 11,
+  "scout_batch_rows_read": 47,
+  "original_seed_dois_evaluated": 5,
+  "original_seed_dois_already_in_reach": 5,
+  "original_seed_dois_forwarded_to_hub": 0,
+  "original_seed_dois_no_action": 0,
+  "existing_metadata_blockers_scheduled": 10,
+  "api_seed_related_outputs_checked": 2,
+  "api_seed_related_outputs_already_in_reach": 2,
+  "discovery_routes": {
+    "direct_api_new_candidates": 0,
+    "api_seeded_expansion_new_candidates": 0,
+    "independent_scout_new_candidates": 0,
+    "metadata_corrections": 0,
+    "unclassified": 0
+  },
+  "new_hub_batch_path": null,
+  "public_reach_records_verified": 1238,
+  "public_reach_records_added_by_scout_this_run": 0,
+  "human_metadata_needed_escalations_pending": 0,
+  "hub_investigate_candidates_delivered": 0,
+  "metadata_followups_due_now": 0,
+  "metadata_followups_overdue_now": 0,
+  "historical_completed_before": 25,
+  "historical_completed_after": 30,
+  "historical_remaining_before": 163,
+  "historical_remaining_after": 158,
+  "original_seed_reach_matches": [
+    {
+      "doi": "10.5061/dryad.0rxwdbs7w",
+      "reach_record_id": "reach-000310"
+    },
+    {
+      "doi": "10.5061/dryad.c2fqz61cv",
+      "reach_record_id": "reach-000311"
+    },
+    {
+      "doi": "10.5061/dryad.2z34tmpzp",
+      "reach_record_id": "reach-000343"
+    },
+    {
+      "doi": "10.5061/dryad.kwh70rzdx",
+      "reach_record_id": "reach-000344"
+    },
+    {
+      "doi": "10.5061/dryad.gxd2547rt",
+      "reach_record_id": "reach-000345"
+    }
+  ],
+  "expansion_evidence": [
+    {
+      "seed_doi": "10.5061/dryad.0rxwdbs7w",
+      "related_doi": "10.1175/WAF-D-23-0193.1",
+      "reach_record_id": "reach-000309",
+      "result": "already_in_reach"
+    },
+    {
+      "seed_doi": "10.5061/dryad.gxd2547rt",
+      "related_doi": "10.1175/JHM-D-23-0203.1",
+      "reach_record_id": "reach-000340",
+      "result": "already_in_reach"
+    }
+  ],
+  "attribution_leads_unverified": [
+    "10.5061/dryad.h9w0vt4nq",
+    "10.5061/dryad.zs7h44jf2",
+    "10.5061/dryad.2jm63xstt"
+  ],
+  "audit_status": "PARTIAL",
+  "audit_limitations": "Full REACH index and matching detail shards, not every REACH detail shard; full SPARK index and all staged Scout batches checked. No human approval data. No new candidate claimed.",
+  "local_report_library_path": "/REACH Scout Library/2026-10-28-2233ET-report.md"
+}
