@@ -794,6 +794,78 @@
       "next_action": "After >=7 days conduct one bounded authoritative publication-date verification. If still incomplete, escalate as human_metadata_needed in blocker/lead queue; do not fabricate date or submit invalid 24-column CSV.",
       "human_review_status": "not_yet_submitted_missing_mandatory_date",
       "review_ready": false
+    },
+    {
+      "identity": "url:https://ams.confex.com/ams/51BC7WxComm/webprogram/Paper443444.html",
+      "award_numbers": [
+        "NA21OAR4590214"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28 — API-seeded expansion",
+      "status": "blocked",
+      "missing_fields": [
+        "authoritatively documented first-publication date of AMS public abstract",
+        "whether conference abstract constitutes a separately eligible REACH other output"
+      ],
+      "attempts": [],
+      "prior_documented_checks": [
+        "https://api.datacite.org/dois/10.25923/na21oar4590214",
+        "https://ams.confex.com/ams/51BC7WxComm/webprogram/Paper443444.html",
+        "https://wpo.noaa.gov/2024-ams-broadcast-and-warnings-comm/",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "first_investigated_at": "2026-10-29T09:30:30Z",
+      "last_attempt_at": "2026-10-29T09:30:30Z",
+      "retry_count": 0,
+      "next_retry_at": "2026-11-05T09:30:30Z",
+      "followup_question": "Can AMS or an author archive verify the exact first-publication date and separate eligible scope of this publicly accessible conference abstract?",
+      "evidence_urls": [
+        "https://ams.confex.com/ams/51BC7WxComm/webprogram/Paper443444.html",
+        "https://wpo.noaa.gov/2024-ams-broadcast-and-warnings-comm/"
+      ],
+      "funding_basis": "Official NOAA WPO conference recap explicitly attributes the exact presentation to NA21OAR4590214; AMS provides matching title and author identity.",
+      "next_action": "One bounded authoritative follow-up no earlier than 2026-11-05T09:30:30Z. If still missing metadata but credible distinct output, escalate human_metadata_needed (do not stage invalid CSV).",
+      "triage_identity": "doi:10.25923/na21oar4590214",
+      "discovery_route": "API-seeded expansion",
+      "scout_seed_doi": "10.25923/na21oar4590214",
+      "confidence": "Medium",
+      "hub_delivered": false
+    },
+    {
+      "identity": "url:https://ams.confex.com/ams/51BC7WxComm/webprogram/Paper443443.html",
+      "award_numbers": [
+        "NA23OAR4590363"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28 — API-seeded expansion",
+      "status": "blocked",
+      "missing_fields": [
+        "authoritatively documented first-publication date of AMS public abstract",
+        "eligibility of public conference abstract as standalone REACH other output"
+      ],
+      "attempts": [],
+      "prior_documented_checks": [
+        "https://api.datacite.org/dois/10.25923/na23oar4590363",
+        "https://ams.confex.com/ams/51BC7WxComm/webprogram/Paper443443.html",
+        "https://wpo.noaa.gov/2024-ams-broadcast-and-warnings-comm/",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "first_investigated_at": "2026-10-29T09:30:30Z",
+      "last_attempt_at": "2026-10-29T09:30:30Z",
+      "retry_count": 0,
+      "next_retry_at": "2026-11-05T09:30:30Z",
+      "followup_question": "Can AMS or the research team establish the exact public first-release date and separate eligible output identity for this abstract?",
+      "evidence_urls": [
+        "https://ams.confex.com/ams/51BC7WxComm/webprogram/Paper443443.html",
+        "https://wpo.noaa.gov/2024-ams-broadcast-and-warnings-comm/"
+      ],
+      "funding_basis": "Official NOAA WPO conference recap explicitly attributes the exact presentation to NA23OAR4590363; AMS abstract describes NOAA-funded project with matching investigators.",
+      "next_action": "One bounded authoritative follow-up no earlier than 2026-11-05T09:30:30Z; if still credible but metadata missing, escalate human_metadata_needed without fabricating date or publishing invalid CSV.",
+      "triage_identity": "doi:10.25923/na23oar4590363",
+      "discovery_route": "API-seeded expansion",
+      "scout_seed_doi": "10.25923/na23oar4590363",
+      "confidence": "Medium",
+      "hub_delivered": false
     }
   ]
 }
