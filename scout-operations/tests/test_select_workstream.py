@@ -48,4 +48,65 @@ class RouterTests(unittest.TestCase):
         mm,mc=m(1,0,0,1)
         hh,hc=h(188,188,0)
         self.assertEqual(decide(mm,mc,hh,hc,SHA)["mode"],"monthly_api_triage")
+
+    def test_historical_38_future_dated_followups_take_priority_over_older_awards(self):
+        mm,mc=m(0,0,0)
+        hh,hc=h(188,150,38)
+        hc["awaiting_research"]=0
+        hc["needs_more_research"]=38
+        ht={"entries":[
+            {"identity":"doi:10.1234/test"+str(i),"status":"needs_more_research",
+             "next_research_at":"2026-11-05T00:00:00Z"} for i in range(38)
+        ]}
+        r=decide(mm,mc,hh,hc,SHA,historical_triage=ht)
+        self.assertEqual(r["mode"],"historical_api_triage")
+        self.assertEqual(r["phase"],"additional_evidence_research")
+        self.assertEqual(r["historical_api"]["unresolved_followups"],38)
+
+    def test_monthly_followups_preempt_historical_further_evidence(self):
+        mm,mc=m(12,12,2)
+        hh,hc=h(188,150,38)
+        mt={"entries":[{"status":"needs_more_research"} for _ in range(10)]}
+        r=decide(mm,mc,hh,hc,SHA,monthly_triage=mt)
+        self.assertEqual(r["mode"],"monthly_api_triage")
+        self.assertEqual(r["phase"],"additional_evidence_research")
+        self.assertEqual(r["monthly_api"]["unresolved_followups"],10)
+
+    def test_new_monthly_cases_preempt_old_monthly_followups(self):
+        mm,mc=m(12,12,2)
+        hh,hc=h(188,150,38)
+        mt={"entries":[{"status":"needs_more_research"} for _ in range(7)]
+                      +[{"status":"awaiting_research"} for _ in range(3)]}
+        r=decide(mm,mc,hh,hc,SHA,monthly_triage=mt)
+        self.assertEqual(r["mode"],"monthly_api_triage")
+        self.assertEqual(r["phase"],"initial_research")
+
+    def test_linked_historical_metadata_blockers_are_not_cleared(self):
+        mm,mc=m(0,0,0)
+        hh,hc=h(188,188,0)
+        blockers={"entries":[{"cohort":"Historical DataCite API Backfill 2026-10-28 — API-seeded expansion",
+                              "status":"blocked","next_retry_at":"2026-11-05T00:00:00Z"}]}
+        r=decide(mm,mc,hh,hc,SHA,metadata_blockers=blockers)
+        self.assertEqual(r["mode"],"historical_api_triage")
+        self.assertEqual(r["phase"],"additional_evidence_research")
+
+    def test_attribution_rechecks_preempt_normal_after_api_resolution(self):
+        mm,mc=m(0,0,0)
+        hh,hc=h(188,188,0)
+        followups={"entries":[{"stage":"closed_no_project_bridge"},
+                              {"stage":"queued_targeted_attribution_review"}]}
+        r=decide(mm,mc,hh,hc,SHA,attribution_followups=followups)
+        self.assertEqual(r["mode"],"historical_api_triage")
+        self.assertEqual(r["phase"],"attribution_followups")
+        self.assertEqual(r["attribution_followups_pending"],1)
+
+    def test_monthly_blocker_alone_preempts_historical(self):
+        mm,mc=m(12,12,12)
+        hh,hc=h(188,150,38)
+        blockers={"entries":[{"cohort":"Monthly API 2026-10 — API-seeded expansion",
+                              "status":"blocked"}]}
+        r=decide(mm,mc,hh,hc,SHA,metadata_blockers=blockers)
+        self.assertEqual(r["mode"],"monthly_api_triage")
+        self.assertEqual(r["phase"],"additional_evidence_research")
+
 if __name__=="__main__":unittest.main()
