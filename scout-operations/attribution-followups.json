@@ -4,7 +4,7 @@
   "origin": "77 no_action original historical DOI dispositions after the 2026-10-29 08:33 ET hourly run: 29 administrative non-outputs; 2 NASA-only funding; 46 real outputs without verified WPO project attribution. The 8:00 ET briefing snapshot was 65, including 34 attribution gaps. No original status or human decision changed.",
   "policy": "These are discovery research leads, not 34 confirmed WPO outputs or 34 automatic Hub findings. Don't promote without evidence bridge and independent corroboration. Preserve no_action historical completed count.",
   "total": 66,
-  "queued": 58,
+  "queued": 52,
   "entries": [
     {
       "identity": "doi:10.25923/b2b3-m644",
@@ -240,7 +240,7 @@
       "identity": "doi:10.25923/hq4k-bw52",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "medium",
       "original_run_id": "REACH-SCOUT-2026-10-29-HOURLY-0132ET",
       "existing_source_evidence": [
@@ -255,18 +255,37 @@
       "source_disposition_preserved": true,
       "new_direct_award_evidence_found": false,
       "hub_publication_authorized": false,
-      "recheck_attempts": 0,
+      "recheck_attempts": 1,
       "max_recheck_rounds_without_material_evidence": 1,
       "recheck_trigger": "When primary actionable API queues are cleared/blocked, or genuinely new direct attribution evidence arrives",
       "last_source_research_at": "2026-10-29T05:32:21Z",
       "original_notes_preserved_in": "scout-operations/historical-triage.json",
-      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility."
+      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility.",
+      "recheck_completed_at": "2026-10-29T18:37:55.682235Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1434ET",
+      "checked_source_urls": [
+        "https://repository.library.noaa.gov/view/noaa/71175",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-021.csv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-022.csv"
+      ],
+      "checked_source_findings": [
+        "NOAA IR identifies an HWT Experimental Warning Program experiment-wide report supported by broad CIWRO cooperative agreement NA21OAR4320204.",
+        "WPO project spark-000250 is the Extreme Weather and Emergency Management Survey, primarily NA21OAR4590213; CIWRO agreement appears as related support.",
+        "WPO project spark-000254 concerns longitudinal societal/flood surveys; no HWT experimental-warning report deliverable named.",
+        "Related BIL compound-flood survey project spark-000269 also does not document HWT experimental-warning report as its deliverable."
+      ],
+      "recheck_finding": "No specific WPO survey-workstream bridge; HWT-wide warning technology experiment is distinct from longitudinal emergency-management and flood surveys.",
+      "negative_or_contradictory_evidence": "No specific WPO survey-workstream bridge; HWT-wide warning technology experiment is distinct from longitudinal emergency-management and flood surveys.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "recheck_final_question": "Does a named WPO survey project final report expressly identify this HWT EWP report as its funded deliverable?",
+      "recheck_next_action": "Closed after one bounded round. Reopen only with genuinely new positive WPO project-specific evidence."
     },
     {
       "identity": "doi:10.25923/jxrb-a760",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "medium",
       "original_run_id": "REACH-SCOUT-2026-10-29-HOURLY-0132ET",
       "existing_source_evidence": [
@@ -281,12 +300,31 @@
       "source_disposition_preserved": true,
       "new_direct_award_evidence_found": false,
       "hub_publication_authorized": false,
-      "recheck_attempts": 0,
+      "recheck_attempts": 1,
       "max_recheck_rounds_without_material_evidence": 1,
       "recheck_trigger": "When primary actionable API queues are cleared/blocked, or genuinely new direct attribution evidence arrives",
       "last_source_research_at": "2026-10-29T05:32:21Z",
       "original_notes_preserved_in": "scout-operations/historical-triage.json",
-      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility."
+      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility.",
+      "recheck_completed_at": "2026-10-29T18:37:55.682235Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1434ET",
+      "checked_source_urls": [
+        "https://repository.library.noaa.gov/view/noaa/73921",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-021.csv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-022.csv"
+      ],
+      "checked_source_findings": [
+        "NOAA IR identifies NSSL phased-array radar adaptive-scanning research and broad CIWRO funding.",
+        "WPO spark-000250 surveys emergency managers, not phased-array radar instrumentation.",
+        "WPO spark-000254 analyzes societal/flood survey data, not ATD radar scanning.",
+        "WPO spark-000269 focuses compound-flood communication; no ATD report named."
+      ],
+      "recheck_finding": "ATD radar work and WPO survey deliverables are distinct; broad cooperative award alone cannot bridge them.",
+      "negative_or_contradictory_evidence": "ATD radar work and WPO survey deliverables are distinct; broad cooperative award alone cannot bridge them.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "recheck_final_question": "Is the NSSL ATD adaptive-scanning report specifically listed as a WPO survey award product?",
+      "recheck_next_action": "Closed after one bounded round. Reopen only with genuinely new positive WPO project-specific evidence."
     },
     {
       "identity": "doi:10.25923/nm97-m303",
@@ -370,8 +408,8 @@
     {
       "identity": "doi:10.4211/hs.9460830270ec4d8b9d9c4260cca2114d",
       "source_status": "no_action",
-      "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION_ALTERNATIVE_FUNDING",
+      "stage": "closed_no_project_bridge",
       "priority": "low",
       "original_run_id": null,
       "existing_source_evidence": [
@@ -385,18 +423,37 @@
       "source_disposition_preserved": true,
       "new_direct_award_evidence_found": false,
       "hub_publication_authorized": false,
-      "recheck_attempts": 0,
+      "recheck_attempts": 1,
       "max_recheck_rounds_without_material_evidence": 1,
       "recheck_trigger": "When primary actionable API queues are cleared/blocked, or genuinely new direct attribution evidence arrives",
       "last_source_research_at": "2026-10-29T11:36:43Z",
       "original_notes_preserved_in": "scout-operations/historical-triage.json",
-      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility."
+      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility.",
+      "recheck_completed_at": "2026-10-29T18:37:55.682235Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1434ET",
+      "checked_source_urls": [
+        "https://hydroshare.org/resource/9460830270ec4d8b9d9c4260cca2114d/",
+        "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2022GL100667",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-011.csv",
+        "https://gmd.copernicus.org/articles/16/1925/2023/"
+      ],
+      "checked_source_findings": [
+        "HydroShare dataset concerns agricultural edge-of-field runoff in the Great Lakes region.",
+        "Linked 2022 paper credits Great Lakes Restoration Initiative through EPA/NOAA and CIGLR umbrella NA17OAR4320152; data availability links exact HydroShare DOI.",
+        "SPARK spark-000135 is NA22OAR4590188 lake-atmosphere coupling in UFS with FVCOM-CICE; NA17OAR4320152 appears only as related institutional award.",
+        "Independent runoff-modeling paper cites same HydroShare dataset and distinct Zenodo code; no WPO UFS lake-coupling attribution."
+      ],
+      "recheck_finding": "Hydrologic agricultural runoff under GLRI/CIGLR is not shown to be an output of WPO FVCOM-CICE/UFS lake-coupling project.",
+      "negative_or_contradictory_evidence": "Hydrologic agricultural runoff under GLRI/CIGLR is not shown to be an output of WPO FVCOM-CICE/UFS lake-coupling project.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION_ALTERNATIVE_FUNDING",
+      "recheck_final_question": "Does NA22OAR4590188 project documentation explicitly name the agricultural runoff dataset as a funded output?",
+      "recheck_next_action": "Closed after one bounded round. Reopen only with genuinely new positive WPO project-specific evidence."
     },
     {
       "identity": "doi:10.5061/dryad.05qfttf5h",
       "source_status": "no_action",
-      "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION_ALTERNATIVE_FUNDING",
+      "stage": "closed_no_project_bridge",
       "priority": "low",
       "original_run_id": null,
       "existing_source_evidence": [
@@ -410,18 +467,35 @@
       "source_disposition_preserved": true,
       "new_direct_award_evidence_found": false,
       "hub_publication_authorized": false,
-      "recheck_attempts": 0,
+      "recheck_attempts": 1,
       "max_recheck_rounds_without_material_evidence": 1,
       "recheck_trigger": "When primary actionable API queues are cleared/blocked, or genuinely new direct attribution evidence arrives",
       "last_source_research_at": "2026-10-29T11:36:43Z",
       "original_notes_preserved_in": "scout-operations/historical-triage.json",
-      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility."
+      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility.",
+      "recheck_completed_at": "2026-10-29T18:37:55.682235Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1434ET",
+      "checked_source_urls": [
+        "https://datadryad.org/dataset/doi%3A10.5061/dryad.05qfttf5h",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-011.csv",
+        "https://wpo.noaa.gov/spark/"
+      ],
+      "checked_source_findings": [
+        "Dryad funding includes NSF, NASA, NOAA Global Ocean Monitoring and Observing Program and NOAA CISESS umbrella NA19NES4320002; dataset is biogeochemical cruise observations.",
+        "SPARK spark-000136 is NA23OAR4590379 global non-Gaussian particle-filter DA for UFS/JEDI, with NA19NES4320002 listed as related support.",
+        "Official WPO project catalog supports distinct modeling/data-assimilation project identity, not cruise biogeochemistry."
+      ],
+      "recheck_finding": "Native dataset identifies other science funding and a broad CISESS award; no source identifies the GO-POPCORN dataset as a deliverable of WPO global DA project.",
+      "negative_or_contradictory_evidence": "Native dataset identifies other science funding and a broad CISESS award; no source identifies the GO-POPCORN dataset as a deliverable of WPO global DA project.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION_ALTERNATIVE_FUNDING",
+      "recheck_final_question": "Is GO-POPCORN named in an award-specific NA23OAR4590379 UFS/JEDI deliverables list?",
+      "recheck_next_action": "Closed after one bounded round. Reopen only with genuinely new positive WPO project-specific evidence."
     },
     {
       "identity": "doi:10.5061/dryad.0gb5mkm6t",
       "source_status": "no_action",
-      "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION_ALTERNATIVE_FUNDING",
+      "stage": "closed_no_project_bridge",
       "priority": "low",
       "original_run_id": null,
       "existing_source_evidence": [
@@ -435,18 +509,35 @@
       "source_disposition_preserved": true,
       "new_direct_award_evidence_found": false,
       "hub_publication_authorized": false,
-      "recheck_attempts": 0,
+      "recheck_attempts": 1,
       "max_recheck_rounds_without_material_evidence": 1,
       "recheck_trigger": "When primary actionable API queues are cleared/blocked, or genuinely new direct attribution evidence arrives",
       "last_source_research_at": "2026-10-29T11:36:43Z",
       "original_notes_preserved_in": "scout-operations/historical-triage.json",
-      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility."
+      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility.",
+      "recheck_completed_at": "2026-10-29T18:37:55.682235Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1434ET",
+      "checked_source_urls": [
+        "https://datadryad.org/dataset/doi%3A10.5061/dryad.0gb5mkm6t",
+        "https://doi.org/10.5751/es-14371-280310",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-011.csv"
+      ],
+      "checked_source_findings": [
+        "Dryad dataset contains Lake Erie fisheries historical productivity and commercial harvest data.",
+        "Linked Ecology & Society article credits Great Lakes Fishery Commission, EPA and CIGLR umbrella NA17OAR4320152; data availability identifies exact Dryad DOI.",
+        "SPARK spark-000135 describes UFS FVCOM-CICE lake coupling and operational weather forecasting, not historical fishery yield analysis."
+      ],
+      "recheck_finding": "Fisheries/ecological research is independently funded and lacks project-specific bridge to WPO UFS lake-coupling deliverables.",
+      "negative_or_contradictory_evidence": "Fisheries/ecological research is independently funded and lacks project-specific bridge to WPO UFS lake-coupling deliverables.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION_ALTERNATIVE_FUNDING",
+      "recheck_final_question": "Does a WPO NA22OAR4590188 technical report name this fisheries dataset as an output?",
+      "recheck_next_action": "Closed after one bounded round. Reopen only with genuinely new positive WPO project-specific evidence."
     },
     {
       "identity": "doi:10.5061/dryad.0gb5mkmbc",
       "source_status": "no_action",
-      "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION_ALTERNATIVE_FUNDING",
+      "stage": "closed_no_project_bridge",
       "priority": "low",
       "original_run_id": null,
       "existing_source_evidence": [
@@ -461,12 +552,31 @@
       "source_disposition_preserved": true,
       "new_direct_award_evidence_found": false,
       "hub_publication_authorized": false,
-      "recheck_attempts": 0,
+      "recheck_attempts": 1,
       "max_recheck_rounds_without_material_evidence": 1,
       "recheck_trigger": "When primary actionable API queues are cleared/blocked, or genuinely new direct attribution evidence arrives",
       "last_source_research_at": "2026-10-29T10:33:00Z",
       "original_notes_preserved_in": "scout-operations/historical-triage.json",
-      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility."
+      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility.",
+      "recheck_completed_at": "2026-10-29T18:37:55.682235Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1434ET",
+      "checked_source_urls": [
+        "https://datadryad.org/dataset/doi%3A10.5061/dryad.0gb5mkmbc",
+        "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2024EA004082",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-008.csv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-018.csv"
+      ],
+      "checked_source_findings": [
+        "Dryad identifies curated historical bioluminescence sightings and NOAA JPSS Program Office funding under two CI awards.",
+        "Linked peer-reviewed article explicitly attributes work to NOAA Joint Polar Satellite System Program Office and links Dryad, GitHub code, and Zenodo archive.",
+        "SPARK spark-000105 concerns MET-TC environmental diagnostics and verification, not ocean bioluminescence observations.",
+        "SPARK spark-000222 concerns operational AI tropical-cyclone guidance, not milky-sea dataset."
+      ],
+      "recheck_finding": "Positive alternate NOAA JPSS funding is documented; shared institutional awards do not establish WPO MET-TC or tropical-cyclone AI deliverable status.",
+      "negative_or_contradictory_evidence": "Positive alternate NOAA JPSS funding is documented; shared institutional awards do not establish WPO MET-TC or tropical-cyclone AI deliverable status.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION_ALTERNATIVE_FUNDING",
+      "recheck_final_question": "Is there a primary WPO project deliverables record explicitly linking the milky-sea dataset to MET-TC or AI TC guidance?",
+      "recheck_next_action": "Closed after one bounded round. Reopen only with genuinely new positive WPO project-specific evidence."
     },
     {
       "identity": "doi:10.5061/dryad.2bvq83br4",
@@ -1821,23 +1931,25 @@
     "alternative_funding": 2,
     "unattributed_outputs": 46
   },
-  "last_updated_at": "2026-10-29T17:30:25.127238Z",
+  "last_updated_at": "2026-10-29T18:37:55.682235Z",
   "latest_addition": {
     "run_id": "REACH-SCOUT-2026-10-29-HOURLY-1131ET",
     "new_qualified_attribution_gaps": 9,
     "previous_total": 57,
     "total": 66
   },
-  "closed": 8,
+  "closed": 14,
   "latest_recheck": {
-    "run_id": "REACH-SCOUT-2026-10-29-HOURLY-1329ET",
+    "run_id": "REACH-SCOUT-2026-10-29-HOURLY-1434ET",
     "closed": [
-      "doi:10.25923/cckr-7v25",
-      "doi:10.25923/fssj-fe85",
-      "doi:10.25923/fye2-yk53",
-      "doi:10.25923/gy19-2j41"
+      "doi:10.25923/hq4k-bw52",
+      "doi:10.25923/jxrb-a760",
+      "doi:10.4211/hs.9460830270ec4d8b9d9c4260cca2114d",
+      "doi:10.5061/dryad.05qfttf5h",
+      "doi:10.5061/dryad.0gb5mkm6t",
+      "doi:10.5061/dryad.0gb5mkmbc"
     ],
-    "closed_count": 4,
+    "closed_count": 6,
     "original_seed_status_unchanged": true
   }
 }
