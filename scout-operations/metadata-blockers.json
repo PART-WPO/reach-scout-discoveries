@@ -532,6 +532,131 @@
       "funding_basis": "NOAA IR report names broad cooperative institute grant NA21OAR4320204, not a uniquely attributable WPO project.",
       "next_action": "One bounded alternate-source follow-up after due date; then publish only valid Hub candidate or escalate to human_metadata_needed if credible but still incomplete, otherwise evidence-backed no_action.",
       "triage_identity": "doi:10.25923/fkzg-kt33"
+    },
+    {
+      "identity": "doi:10.17603/ds2-yry6-r324",
+      "award_numbers": [
+        "NA19OAR0220119"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "full YYYY-MM-DD dataset publication date",
+        "public scope of original DesignSafe dataset"
+      ],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "historical_datacite_source",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
+          "outcome": "Seed title, creators, exact award and abstract captured; no full publication date.",
+          "checked_at": "2026-10-29T05:32:21Z"
+        },
+        {
+          "round": 0,
+          "method": "designsafe_doi_resolver",
+          "url": "https://doi.org/10.17603/ds2-yry6-r324",
+          "outcome": "Native landing not accessible through available web tool; no record-specific full date verified.",
+          "checked_at": "2026-10-29T05:32:21Z"
+        },
+        {
+          "round": 0,
+          "method": "publisher_related_article",
+          "url": "https://repository.library.noaa.gov/view/noaa/70233",
+          "outcome": "2024 Morss et al. Harvey journal article linked; already in REACH reach-000789; date cannot substitute for dataset date.",
+          "checked_at": "2026-10-29T05:32:21Z"
+        },
+        {
+          "round": 0,
+          "method": "spark_project_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "outcome": "SPARK primary award NA19OAR0220119 matches tropical cyclone forecast change project.",
+          "checked_at": "2026-10-29T05:32:21Z"
+        },
+        {
+          "round": 0,
+          "method": "reach_and_scout_duplicate_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "outcome": "All ten REACH index shards and thirteen Scout batch files searched; no exact seed DOI.",
+          "checked_at": "2026-10-29T05:32:21Z"
+        }
+      ],
+      "first_investigated_at": "2026-10-29T05:32:21Z",
+      "last_attempt_at": "2026-10-29T05:32:21Z",
+      "retry_count": 0,
+      "max_delayed_retries": 1,
+      "next_retry_at": "2026-11-05T05:32:21Z",
+      "next_research_at": "2026-11-05T05:32:21Z",
+      "followup_question": "Can authoritative DesignSafe native metadata resolve full YYYY-MM-DD publication date and public scope of this exact Harvey tweet documentation dataset?",
+      "evidence_urls": [
+        "https://doi.org/10.17603/ds2-yry6-r324",
+        "https://repository.library.noaa.gov/view/noaa/70233"
+      ],
+      "funding_basis": "Original historical DataCite structured award NA19OAR0220119 matches a primary SPARK social-science project Wait, that forecast changed? Related 2024 journal article independently linked, but the dataset native full date and public component remain unverified.",
+      "next_action": "One bounded follow-up on or after 2026-11-05T05:32:21Z using different authoritative sources; if credible but still metadata-incomplete escalate to human_metadata_needed without inventing date or invalid Hub CSV; if evidence insufficient document no_action.",
+      "triage_identity": "doi:10.17603/ds2-yry6-r324"
+    },
+    {
+      "identity": "doi:10.25923/mpqr-r886",
+      "award_numbers": [
+        "NA21OAR4320204"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28",
+      "status": "blocked",
+      "missing_fields": [
+        "full YYYY-MM-DD publication date",
+        "direct WPO project-specific funding bridge beyond cooperative-institute umbrella"
+      ],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "historical_datacite_source",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
+          "outcome": "Seed DOI, title, creators and base award captured; no full publication date.",
+          "checked_at": "2026-10-29T05:32:21Z"
+        },
+        {
+          "round": 0,
+          "method": "noaa_ir_record",
+          "url": "https://repository.library.noaa.gov/view/noaa/74392",
+          "outcome": "Original NOAA IR report confirmed, WPO office and base award listed, year 2026 only.",
+          "checked_at": "2026-10-29T05:32:21Z"
+        },
+        {
+          "round": 0,
+          "method": "spark_project_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "outcome": "NA21OAR4320204 appears as RELATED award on survey projects; no direct Tornado Tales project bridge.",
+          "checked_at": "2026-10-29T05:32:21Z"
+        },
+        {
+          "round": 0,
+          "method": "reach_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "outcome": "All ten REACH index shards searched; no exact DOI/title match.",
+          "checked_at": "2026-10-29T05:32:21Z"
+        },
+        {
+          "round": 0,
+          "method": "scout_staging_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+          "outcome": "All thirteen existing Scout batches checked; no exact DOI.",
+          "checked_at": "2026-10-29T05:32:21Z"
+        }
+      ],
+      "first_investigated_at": "2026-10-29T05:32:21Z",
+      "last_attempt_at": "2026-10-29T05:32:21Z",
+      "retry_count": 0,
+      "max_delayed_retries": 1,
+      "next_retry_at": "2026-11-05T05:32:21Z",
+      "next_research_at": "2026-11-05T05:32:21Z",
+      "followup_question": "Can native NOAA IR/PDF metadata resolve full report publication date and can a project source directly link Tornado Tales to a particular SPARK WPO award?",
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/74392"
+      ],
+      "funding_basis": "NOAA IR identifies WPO among program offices and broad CIWRO award NA21OAR4320204. SPARK lists this as RELATED award for WPO social-science survey projects, but no direct project-specific attribution established.",
+      "next_action": "One bounded follow-up on or after 2026-11-05T05:32:21Z using different authoritative sources; if credible but still metadata-incomplete escalate to human_metadata_needed without inventing date or invalid Hub CSV; if evidence insufficient document no_action.",
+      "triage_identity": "doi:10.25923/mpqr-r886"
     }
   ]
 }
