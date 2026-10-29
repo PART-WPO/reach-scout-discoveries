@@ -27,6 +27,11 @@ INPUT = [
 ]
 NAME = re.compile(r"\d{4}-\d\d-\d\d-[A-Za-z0-9][A-Za-z0-9_.-]{0,70}\.csv\Z")
 MAX_SIZE = 1_900_000
+# Accept a completed verification with optional specific evidence ("Completed for ...").
+# Reject missing, pending or partial verification and empty "for" statements.
+SCOUT_VERIFICATION_COMPLETE = re.compile(
+    r"(?im)^[ \t]*Scout verification:[ \t]*Completed(?:[ \t]+for[ \t]+\S[^\r\n]*)?[ \t]*$"
+)
 
 
 def inspect_batch(p):
@@ -61,7 +66,7 @@ def inspect_batch(p):
         if monthly or historical:
             if run.startswith(("REACH-MONTHLY-API-", "REACH-HISTORICAL-DATACITE-")):
                 raise ValueError(f"Raw monthly API records cannot enter Scout-reviewed batches: {p.name}:{line}")
-            if not re.search(r"(?im)^\s*Scout verification:\s*Completed\s*$", rationale):
+            if not SCOUT_VERIFICATION_COMPLETE.search(rationale):
                 raise ValueError(f"Monthly-origin review proposal lacks Scout verification: {p.name}:{line}")
             if monthly and not re.search(r"(?im)^\s*Monthly intake:\s*\d{4}-\d{2}\s*$", rationale):
                 raise ValueError(f"Missing monthly cohort in verified proposal: {p.name}:{line}")
@@ -90,7 +95,7 @@ def inspect_batch(p):
                 raise ValueError(f"Missing fields must be listed for human review: {p.name}:{line}")
             if not re.search(r"(?im)^\s*Metadata checks:\s*[^\r\n]{12,}", rationale):
                 raise ValueError(f"Recovery sources must be documented: {p.name}:{line}")
-            if not re.search(r"(?im)^\s*Scout verification:\s*Completed\s*$", rationale):
+            if not SCOUT_VERIFICATION_COMPLETE.search(rationale):
                 raise ValueError(f"Human metadata referral needs finished Scout research: {p.name}:{line}")
             if not (row.get("DOI") or "").strip() and not (row.get("Output URL") or "").strip():
                 raise ValueError(f"Human metadata referral requires a persistent identifier: {p.name}:{line}")
