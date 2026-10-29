@@ -1,0 +1,475 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-29-HOURLY-1131ET",
+  "run_timestamp": "2026-10-29T15:34:47Z",
+  "selected_mode": "historical_api_triage",
+  "source_checks": {
+    "monthly_manifest_count": 0,
+    "monthly_ledger_count": 0,
+    "historical_source_dois": 188,
+    "historical_ledger_dois": 188,
+    "reach_index_shards": 10,
+    "reach_index_records": 1238,
+    "spark_index_shards": 6,
+    "spark_projects": 578,
+    "scout_batches": 15,
+    "scout_candidates": 55,
+    "scout_manifest_digest_matches": 15,
+    "scout_manifest_run_id_count_checks": "15/15",
+    "github_action_status": "SUCCESS",
+    "github_action_run_id": 40903812254,
+    "github_action_status_checked_at": "2026-10-29T15:40:00Z",
+    "full_reach_detail_shards": "NOT_EXHAUSTIVELY_CHECKED",
+    "private_reviewer_dispositions": "NOT_VERIFIABLE",
+    "historical_reconciliation_workflow": "SUCCESS run 40903567240",
+    "metadata_blocker_validation_workflow": "SUCCESS run 40903607555"
+  },
+  "coverage_before": {
+    "total": 188,
+    "completed_before": 141,
+    "completed_after": 150,
+    "remaining_before": 47,
+    "remaining_after": 38,
+    "awaiting_before": 19,
+    "awaiting_after": 0,
+    "bounded_original_before": 28,
+    "bounded_original_after": 38,
+    "no_action_before": 94,
+    "no_action_after": 103
+  },
+  "coverage_after_expected": {
+    "completed": 150,
+    "remaining": 38,
+    "awaiting_research": 0,
+    "needs_more_research": 38,
+    "no_action": 103,
+    "already_in_reach": 37,
+    "forwarded_to_hub": 2,
+    "metadata_update_forwarded": 8
+  },
+  "monthly": {
+    "completed_before": 0,
+    "completed_after": 0,
+    "remaining_before": 0,
+    "remaining_after": 0
+  },
+  "original_seeds_disposed": [
+    {
+      "doi": "10.57969/s9159w",
+      "status": "no_action",
+      "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "grant_vs_artifact": "research artifact",
+      "source_urls": [
+        "https://api.datacite.org/dois/10.57969/s9159w",
+        "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2023GL105730",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "reason": "Hurricane Michael first-five wave data; 2024 publisher explicitly identifies broad NOAA CI funding, not the SPARK AQPI project.",
+      "followup_at": null,
+      "followup_question": null
+    },
+    {
+      "doi": "10.57969/s94w2d",
+      "status": "no_action",
+      "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "grant_vs_artifact": "research artifact",
+      "source_urls": [
+        "https://api.datacite.org/dois/10.57969/s94w2d",
+        "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2023GL105730",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "reason": "Hurricane Michael drifter data; related journal identifies broad NOAA CI support, not the WPO AQPI project.",
+      "followup_at": null,
+      "followup_question": null
+    },
+    {
+      "doi": "10.57969/s99g6b",
+      "status": "no_action",
+      "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "grant_vs_artifact": "research artifact",
+      "source_urls": [
+        "https://api.datacite.org/dois/10.57969/s99g6b",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "reason": "2021 R/V Thompson drifter subset; only shared broad CI award, no output-to-AQPI workstream bridge.",
+      "followup_at": null,
+      "followup_question": null
+    },
+    {
+      "doi": "10.57969/s9bc70",
+      "status": "no_action",
+      "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "grant_vs_artifact": "research artifact",
+      "source_urls": [
+        "https://api.datacite.org/dois/10.57969/s9bc70",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "reason": "WIS2 recommended global drifter data; broad CI award only, not linked to AQPI WPO project.",
+      "followup_at": null,
+      "followup_question": null
+    },
+    {
+      "doi": "10.57969/s9g59x",
+      "status": "no_action",
+      "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "grant_vs_artifact": "research artifact",
+      "source_urls": [
+        "https://api.datacite.org/dois/10.57969/s9g59x",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "reason": "WIS2 core global drifter dataset; broad CI award only, no specific AQPI connection.",
+      "followup_at": null,
+      "followup_question": null
+    },
+    {
+      "doi": "10.57969/s9kw2f",
+      "status": "no_action",
+      "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "grant_vs_artifact": "research artifact",
+      "source_urls": [
+        "https://api.datacite.org/dois/10.57969/s9kw2f",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "reason": "GDP GTS drifter observations; broad CI award only, no specific WPO project connection.",
+      "followup_at": null,
+      "followup_question": null
+    },
+    {
+      "doi": "10.57969/s9g015",
+      "status": "needs_more_research",
+      "no_action_subtype": null,
+      "grant_vs_artifact": "research artifact requiring metadata",
+      "source_urls": [
+        "https://api.datacite.org/dois/10.57969/s9g015",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "reason": "Pacific DWSD first-five wave data; direct WPO drifter award captured, but exact dataset publication date and public scope not independently verified.",
+      "followup_at": "2026-11-05T15:35:00Z",
+      "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.57969/s9g015 without assuming an article/citation year is the dataset date?"
+    },
+    {
+      "doi": "10.57969/s9ks3s",
+      "status": "needs_more_research",
+      "no_action_subtype": null,
+      "grant_vs_artifact": "research artifact requiring metadata",
+      "source_urls": [
+        "https://api.datacite.org/dois/10.57969/s9ks3s",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "reason": "Pacific DWSD sensor data; direct WPO drifter award captured, but first publication date and distinctness from first-five coefficients unresolved.",
+      "followup_at": "2026-11-05T15:35:00Z",
+      "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.57969/s9ks3s without assuming an article/citation year is the dataset date?"
+    },
+    {
+      "doi": "10.57969/s9qp4c",
+      "status": "needs_more_research",
+      "no_action_subtype": null,
+      "grant_vs_artifact": "research artifact requiring metadata",
+      "source_urls": [
+        "https://api.datacite.org/dois/10.57969/s9qp4c",
+        "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "reason": "Atlantic 2024 GTS drifter dataset; LDL cites WPO award but its webpage shows DOI S9QP4CD while captured DOI is S9QP4C; confirm identity and publication date.",
+      "followup_at": "2026-11-05T15:35:00Z",
+      "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.57969/s9qp4c without assuming an article/citation year is the dataset date?"
+    },
+    {
+      "doi": "10.57969/s9rp4p",
+      "status": "needs_more_research",
+      "no_action_subtype": null,
+      "grant_vs_artifact": "research artifact requiring metadata",
+      "source_urls": [
+        "https://api.datacite.org/dois/10.57969/s9rp4p",
+        "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "reason": "Atlantic 2022 GTS drifter dataset; LDL identifies WPO award and 2023 citation year, not exact first-publication date.",
+      "followup_at": "2026-11-05T15:35:00Z",
+      "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.57969/s9rp4p without assuming an article/citation year is the dataset date?"
+    },
+    {
+      "doi": "10.57969/s9vc7n",
+      "status": "needs_more_research",
+      "no_action_subtype": null,
+      "grant_vs_artifact": "research artifact requiring metadata",
+      "source_urls": [
+        "https://api.datacite.org/dois/10.57969/s9vc7n",
+        "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "reason": "Atlantic 2023 GTS drifter dataset; LDL identifies WPO award and citation year only; exact date unresolved.",
+      "followup_at": "2026-11-05T15:35:00Z",
+      "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.57969/s9vc7n without assuming an article/citation year is the dataset date?"
+    },
+    {
+      "doi": "10.57969/s9wc7z",
+      "status": "needs_more_research",
+      "no_action_subtype": null,
+      "grant_vs_artifact": "research artifact requiring metadata",
+      "source_urls": [
+        "https://api.datacite.org/dois/10.57969/s9wc7z",
+        "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "reason": "Atlantic 2021 GTS drifter dataset; LDL identifies WPO award and 2023 citation year, not exact date.",
+      "followup_at": "2026-11-05T15:35:00Z",
+      "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.57969/s9wc7z without assuming an article/citation year is the dataset date?"
+    },
+    {
+      "doi": "10.6084/m9.figshare.13138757",
+      "status": "no_action",
+      "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "grant_vs_artifact": "research artifact",
+      "source_urls": [
+        "https://api.datacite.org/dois/10.6084/m9.figshare.13138757",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+        "https://cchdo.ucsd.edu/"
+      ],
+      "reason": "CCHDO informational handout; no link to SPARK AQPI project beyond broad NOAA CI award.",
+      "followup_at": null,
+      "followup_question": null
+    },
+    {
+      "doi": "10.6084/m9.figshare.13138757.v1",
+      "status": "no_action",
+      "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "grant_vs_artifact": "research artifact",
+      "source_urls": [
+        "https://api.datacite.org/dois/10.6084/m9.figshare.13138757.v1",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+        "https://cchdo.ucsd.edu/"
+      ],
+      "reason": "Version 1 of same CCHDO informational handout, not an additional project output; broad CI award only.",
+      "followup_at": null,
+      "followup_question": null
+    },
+    {
+      "doi": "10.6084/m9.figshare.23666259",
+      "status": "needs_more_research",
+      "no_action_subtype": null,
+      "grant_vs_artifact": "research artifact requiring metadata",
+      "source_urls": [
+        "https://api.datacite.org/dois/10.6084/m9.figshare.23666259",
+        "https://orcid.org/0000-0003-3318-7601",
+        "https://journals.ametsoc.org/view/journals/mwre/152/7/MWR-D-23-0144.1.xml",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json"
+      ],
+      "reason": "VORTEX-SE polarimetric/lightning poster; direct WPO award and ORCID date 2023-07-12, but native Figshare first-publication date and version identity unverified.",
+      "followup_at": "2026-11-05T15:35:00Z",
+      "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.6084/m9.figshare.23666259 without assuming an article/citation year is the dataset date?"
+    },
+    {
+      "doi": "10.6084/m9.figshare.23666259.v1",
+      "status": "needs_more_research",
+      "no_action_subtype": null,
+      "grant_vs_artifact": "research artifact requiring metadata",
+      "source_urls": [
+        "https://api.datacite.org/dois/10.6084/m9.figshare.23666259.v1",
+        "https://orcid.org/0000-0003-3318-7601",
+        "https://journals.ametsoc.org/view/journals/mwre/152/7/MWR-D-23-0144.1.xml",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json"
+      ],
+      "reason": "Version 1 of same VORTEX-SE poster; verify native Figshare date and relationship to concept DOI, do not double count.",
+      "followup_at": "2026-11-05T15:35:00Z",
+      "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.6084/m9.figshare.23666259.v1 without assuming an article/citation year is the dataset date?"
+    },
+    {
+      "doi": "10.6084/m9.figshare.23689194",
+      "status": "needs_more_research",
+      "no_action_subtype": null,
+      "grant_vs_artifact": "research artifact requiring metadata",
+      "source_urls": [
+        "https://api.datacite.org/dois/10.6084/m9.figshare.23689194",
+        "https://journals.ametsoc.org/view/journals/aies/3/1/AIES-D-23-0064.1.xml",
+        "https://repository.library.noaa.gov/view/noaa/64095",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json"
+      ],
+      "reason": "ELDORA ML QC dataset directly linked by funded AMS article; exact Figshare dataset publication date and version identity unverified.",
+      "followup_at": "2026-11-05T15:35:00Z",
+      "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.6084/m9.figshare.23689194 without assuming an article/citation year is the dataset date?"
+    },
+    {
+      "doi": "10.6084/m9.figshare.23689194.v1",
+      "status": "needs_more_research",
+      "no_action_subtype": null,
+      "grant_vs_artifact": "research artifact requiring metadata",
+      "source_urls": [
+        "https://api.datacite.org/dois/10.6084/m9.figshare.23689194.v1",
+        "https://journals.ametsoc.org/view/journals/aies/3/1/AIES-D-23-0064.1.xml",
+        "https://repository.library.noaa.gov/view/noaa/64095",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json"
+      ],
+      "reason": "Version 1 of ELDORA ML QC dataset; article confirms WPO award and dataset link, native Figshare first publication date unresolved.",
+      "followup_at": "2026-11-05T15:35:00Z",
+      "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.6084/m9.figshare.23689194.v1 without assuming an article/citation year is the dataset date?"
+    },
+    {
+      "doi": "10.7302/y2qt-7f47",
+      "status": "no_action",
+      "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "grant_vs_artifact": "research artifact",
+      "source_urls": [
+        "https://api.datacite.org/dois/10.7302/y2qt-7f47",
+        "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021GL093727",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "reason": "Lake-spray aerosol WRF-Chem data linked to 2021 article, funded under broad CIGLR cooperative agreement, not the WPO UFS lake-coupling project.",
+      "followup_at": null,
+      "followup_question": null
+    }
+  ],
+  "expansion_leads": [
+    {
+      "doi": "10.1175/MWR-D-23-0144.1",
+      "route": "API-seeded expansion",
+      "original_seed_doi": "10.6084/m9.figshare.23666259",
+      "discovery_path": "https://orcid.org/0000-0003-3318-7601",
+      "publication_date": "2024-07-11",
+      "award": "NA19OAR4590209",
+      "verified_for_review": true,
+      "github_batch_id": "2026-10-29-hourly-1131ET-verified-article-expansion-001",
+      "reviewer_approved": null,
+      "public_reach_added": false,
+      "github_manifest_verified": true
+    },
+    {
+      "doi": "10.1175/AIES-D-23-0064.1",
+      "route": "API-seeded expansion",
+      "original_seed_doi": "10.6084/m9.figshare.23689194",
+      "discovery_path": "https://journals.ametsoc.org/view/journals/aies/3/1/AIES-D-23-0064.1.xml",
+      "publication_date": "2024-01-30",
+      "award": "NA19OAR4590245",
+      "verified_for_review": true,
+      "github_batch_id": "2026-10-29-hourly-1131ET-verified-article-expansion-001",
+      "reviewer_approved": null,
+      "public_reach_added": false,
+      "github_manifest_verified": true
+    }
+  ],
+  "newly_staged_csv_ids": [
+    "2026-10-29-hourly-1131ET-verified-article-expansion-001"
+  ],
+  "planned_batch_id": "2026-10-29-hourly-1131ET-verified-article-expansion-001",
+  "new_hub_ready_verified": 2,
+  "feed_integrity_status": "FEED_VERIFIED; ACTION_SUCCESS; 15_OF_15_MANIFEST_CSV_SHA256_COUNT_RUNID_SCHEMA_MATCH",
+  "manifest_verification_evidence": "Post-push independently re-read PUBLIC main manifest and all 15 exact UTF-8 CSVs; SHA-256, row counts, run IDs, 24 columns all match; 14 prior batches unchanged; new batch digest ed0c7dfed02cd3a58424993146bf48574257aa0fc0a9c4ddcf3e52f5bc686d2a; GitHub Action run 40903812254 completed successfully.",
+  "no_action_subtype_changes": {
+    "NO_DEMONSTRATED_WPO_CONNECTION": 9
+  },
+  "attribution_queue": {
+    "before": 57,
+    "expected_after": 66,
+    "new_identities": [
+      "doi:10.57969/s9159w",
+      "doi:10.57969/s94w2d",
+      "doi:10.57969/s99g6b",
+      "doi:10.57969/s9bc70",
+      "doi:10.57969/s9g59x",
+      "doi:10.57969/s9kw2f",
+      "doi:10.6084/m9.figshare.13138757",
+      "doi:10.6084/m9.figshare.13138757.v1",
+      "doi:10.7302/y2qt-7f47"
+    ],
+    "verified_after": 66
+  },
+  "metadata_blockers": {
+    "before": 32,
+    "expected_after": 42,
+    "new_original_dois": [
+      "10.57969/s9g015",
+      "10.57969/s9ks3s",
+      "10.57969/s9qp4c",
+      "10.57969/s9rp4p",
+      "10.57969/s9vc7n",
+      "10.57969/s9wc7z",
+      "10.6084/m9.figshare.23666259",
+      "10.6084/m9.figshare.23666259.v1",
+      "10.6084/m9.figshare.23689194",
+      "10.6084/m9.figshare.23689194.v1"
+    ],
+    "due": 0,
+    "overdue": 0,
+    "human_metadata_needed": 0,
+    "verified_after": 42
+  },
+  "hub_investigate_delivered": 0,
+  "closed_no_actions_new": 9,
+  "normal_awards_examined": 0,
+  "public_reach_additions_verified": 0,
+  "original_seed_disposition_gaps": 0,
+  "historical_validator_status": "PASS after documented structural proof-field repair: GitHub Action 40903567240; 188=150 completed+38 future-due; no historic investigation dates backdated.",
+  "audit_result": "PARTIAL",
+  "library_first": true,
+  "privacy": "Public evidence only; no emails, private decisions or native Smartsheet IDs",
+  "next_priorities": [
+    "Recheck monthly API each hour; if empty and historical 38 original metadata follow-ups future-due, use normal historical award discovery and bounded attribution follow-ups.",
+    "Review two Hub-ready staged articles in Discovery Hub; no autoapproval or direct REACH edits.",
+    "Perform one bounded follow-up per DOI on/after Nov 4/5, then human metadata-needed escalation or terminal evidence-based disposition."
+  ],
+  "coverage_after_verified": {
+    "completed": 150,
+    "remaining": 38,
+    "awaiting_research": 0,
+    "needs_more_research": 38,
+    "no_action": 103,
+    "already_in_reach": 37,
+    "forwarded_to_hub": 2,
+    "metadata_update_forwarded": 8,
+    "research_complete": false
+  },
+  "historical_proof_reconciliation": {
+    "terminal_entries_repaired": 104,
+    "missing_snapshot_backfilled_from_current_shards": 91,
+    "source_award_reference_fields_reconciled": 73,
+    "no_action_reasons_from_existing_notes": 16,
+    "exact_existing_REACH_match_fields_recovered": 5,
+    "limitations": "Repaired structural validator fields from current complete REACH index and captured evidence; no claim of new primary-source research for all 104 historical cases."
+  },
+  "verified_candidates_by_route": {
+    "Direct API": 1,
+    "API-seeded expansion": 9,
+    "Independent discovery": 0,
+    "Metadata correction": 5,
+    "Unclassified legacy (route missing)": 40
+  },
+  "audit_limitations": [
+    "Full 140-shard REACH detail collection not exhaustively rechecked; complete 10-shard index and targeted details checked.",
+    "Private Discovery Hub human dispositions unavailable; staged candidates are not approvals.",
+    "Historical proof-field repair from documented evidence is structural; not a new independent source investigation for all repaired entries."
+  ]
+}
