@@ -1,0 +1,109 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-28-HOURLY-2331ET",
+  "mode": "historical_api_triage",
+  "cohort": "Historical DataCite API Backfill 2026-10-28",
+  "monthly_source_rows": 0,
+  "historical_source_rows": 188,
+  "reach_index_shards_read": 10,
+  "reach_index_rows": 1238,
+  "spark_index_shards_read": 6,
+  "spark_index_rows": 578,
+  "scout_batch_files_read": 11,
+  "scout_batch_rows_read": 47,
+  "original_seed_dois_evaluated": 14,
+  "original_seed_dois_completed": 12,
+  "original_seed_dois_already_in_reach": 10,
+  "original_seed_dois_forwarded_to_hub": 1,
+  "original_seed_dois_no_action": 1,
+  "original_seed_new_metadata_blockers": 2,
+  "api_seed_related_outputs_checked": 4,
+  "api_seed_related_outputs_already_in_reach": 3,
+  "discovery_routes": {
+    "direct_api_new_candidates": 1,
+    "api_seeded_expansion_new_candidates": 1,
+    "independent_scout_new_candidates": 0,
+    "metadata_corrections": 0,
+    "unclassified": 0
+  },
+  "new_hub_batch_path": "scout-discoveries/batches/2026-10-28-hourly-2331ET-datacite-original-and-expansion-001.csv",
+  "public_reach_records_verified": 1238,
+  "public_reach_records_added_by_scout_this_run": 0,
+  "existing_metadata_blockers_scheduled": 10,
+  "metadata_followups_due_now": 0,
+  "metadata_followups_overdue_now": 0,
+  "human_metadata_needed_escalations_pending": 0,
+  "hub_investigate_candidates_to_publish": 2,
+  "historical_completed_before": 30,
+  "historical_completed_after_expected": 42,
+  "historical_remaining_before": 158,
+  "historical_remaining_after_expected": 146,
+  "original_seed_reach_matches": [
+    {
+      "doi": "10.5061/dryad.rbnzs7hq0",
+      "reach_match": "reach-000696; related article reach-000693"
+    },
+    {
+      "doi": "10.25923/aess-6m62",
+      "reach_match": "reach-000709"
+    },
+    {
+      "doi": "10.25923/fcqx-1009",
+      "reach_match": "reach-000501; reach-000511"
+    },
+    {
+      "doi": "10.25923/k9kh-y971",
+      "reach_match": "reach-000821"
+    },
+    {
+      "doi": "10.25923/nkn2-vt59",
+      "reach_match": "reach-000867"
+    },
+    {
+      "doi": "10.25923/xtmp-8529",
+      "reach_match": "reach-000727"
+    },
+    {
+      "doi": "10.3886/e109964",
+      "reach_match": "reach-000902"
+    },
+    {
+      "doi": "10.3886/e109964v1",
+      "reach_match": "reach-000901"
+    },
+    {
+      "doi": "10.4211/hs.3c3a2f3d491c4e4aa4ccb6764806eb8a",
+      "reach_match": "reach-000536; related BAMS article reach-000535"
+    },
+    {
+      "doi": "10.5281/zenodo.15002615",
+      "reach_match": "reach-000462; final GMD article newly staged for human review"
+    }
+  ],
+  "expansion_evidence": [
+    {
+      "seed_doi": "10.5281/zenodo.15002615",
+      "related_doi": "10.5194/gmd-18-7969-2025",
+      "result": "new final journal DOI, same-work preprint exists, human review needed",
+      "source": "https://gmd.copernicus.org/articles/18/7969/2025/index.html"
+    },
+    {
+      "seed_doi": "10.5061/dryad.b5mkkwhh9",
+      "related_doi": "10.1016/j.ocemod.2023.102200",
+      "result": "related journal article already in REACH reach-001209"
+    },
+    {
+      "seed_doi": "10.5061/dryad.rbnzs7hq0",
+      "related_doi": "10.1175/MWR-D-24-0280.1",
+      "result": "related journal article already in REACH reach-000693"
+    },
+    {
+      "seed_doi": "10.4211/hs.3c3a2f3d491c4e4aa4ccb6764806eb8a",
+      "related_doi": "10.1175/BAMS-D-19-0253.1",
+      "result": "related journal article already in REACH reach-000535"
+    }
+  ],
+  "audit_status": "PARTIAL",
+  "audit_limitations": "Complete REACH and SPARK index shards and all existing Scout batches checked; selected relevant REACH detail shards checked, not all details. Final GMD publication is same work as an existing preprint, requiring human decision. Source ledgers must be verified after GitHub write.",
+  "local_report_library_path": "/REACH Scout Library/2026-10-28-2331ET-report.md"
+}
