@@ -105,11 +105,54 @@
         "NA25OARX459C0174-T1-01"
       ],
       "cohort": "Historical DataCite API Backfill 2026-10-28",
-      "status": "blocked",
+      "status": "suppressed",
       "missing_fields": [
-        "accessible standalone plan document and public eligibility/type"
+        "standalone plan document not accessible; research-output eligibility fails from captured title and abstract"
       ],
-      "attempts": [],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "historical_source_check",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
+          "outcome": "Previously documented first-pass check retained; no record-specific full release date or independent public component scope established.",
+          "checked_at": "2026-10-29T00:29:43Z"
+        },
+        {
+          "round": 0,
+          "method": "initial_scholarly_or_doi",
+          "url": "https://api.datacite.org/dois/10.15139/s3/uy6rda",
+          "outcome": "Previously documented first-pass check retained; no record-specific full release date or independent public component scope established.",
+          "checked_at": "2026-10-29T00:29:43Z"
+        },
+        {
+          "round": 0,
+          "method": "initial_reach_or_project",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "outcome": "Previously documented first-pass check retained; no record-specific full release date or independent public component scope established.",
+          "checked_at": "2026-10-29T00:29:43Z"
+        },
+        {
+          "round": 1,
+          "method": "spark_primary_project_detail",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-016.csv",
+          "outcome": "2025 SPARK spark-000200 confirms funded ML project, not a released research dataset.",
+          "checked_at": "2026-10-29T21:30:09.782Z"
+        },
+        {
+          "round": 1,
+          "method": "pi_current_cv_project_list",
+          "url": "https://draaronhill.com/uploads/CV.pdf",
+          "outcome": "Current PI CV distinguishes this funded project from published scientific datasets.",
+          "checked_at": "2026-10-29T21:30:09.782Z"
+        },
+        {
+          "round": 1,
+          "method": "captured_original_datacite_metadata",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
+          "outcome": "Original captured DOI title/abstract identifies an administrative data management and sharing plan for future data, not a released scientific dataset.",
+          "checked_at": "2026-10-29T21:30:09.782Z"
+        }
+      ],
       "prior_documented_checks": [
         "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
         "https://api.datacite.org/dois/10.15139/s3/uy6rda",
@@ -117,18 +160,30 @@
       ],
       "first_investigated_at": "2026-10-29T00:29:43Z",
       "first_investigated_timestamp_basis": "Earliest existing triage updated_at retained as conservative documented evidence of investigation; actual initial check may be earlier",
-      "last_attempt_at": "2026-10-29T00:29:43Z",
-      "retry_count": 0,
+      "last_attempt_at": "2026-10-29T21:30:09.782Z",
+      "retry_count": 1,
       "next_retry_at": "2026-11-05T00:29:43.000Z",
       "followup_question": "Inspect NCEI or institutional repository plan PDF and source-linked works; distinguish data-management plan from data deposit.",
       "evidence_urls": [
-        "https://api.datacite.org/dois/10.15139/s3/uy6rda"
+        "https://api.datacite.org/dois/10.15139/s3/uy6rda",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-016.csv",
+        "https://draaronhill.com/uploads/CV.pdf",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
+        "https://doi.org/10.15139/s3/uy6rda"
       ],
-      "funding_basis": "Captured exact DataCite award NA25OARX459C0174-T1-01; independent document content not yet verified.",
-      "next_action": "One bounded follow-up at or after next_retry_at; if unresolved and credible, escalate human_metadata_needed without inventing metadata. See historical-triage for source notes.",
+      "funding_basis": "SPARK spark-000200 confirms matching award; captured original DOI is a prospective data-management plan, not research data.",
+      "next_action": "Closed as NOT_RESEARCH_OUTPUT; continue independent discovery of actual research data and papers.",
       "triage_identity": "doi:10.15139/s3/uy6rda",
       "next_research_at": "2026-11-05T00:29:43.000Z",
-      "next_research_at_basis": "Existing recorded next_retry_at alias; no change to first investigation, retry date, retry count, or evidence."
+      "next_research_at_basis": "Existing recorded next_retry_at alias; no change to first investigation, retry date, retry count, or evidence.",
+      "followup_completed_at": "2026-10-29T21:30:09.782Z",
+      "early_retry_reason": "User-directed 2026-10-29 immediate one-time distinct-source recovery, earlier than existing seven-day next_retry_at; original retry date preserved.",
+      "reviewer_question": "No reviewer handoff: administrative plan is not a research artifact.",
+      "research_completed": true,
+      "metadata_recovery_exhausted": true,
+      "no_action_subtype": "NOT_RESEARCH_OUTPUT",
+      "suppression_reason": "NOT_RESEARCH_OUTPUT: administrative data-management and sharing plan for prospective project data; not a released dataset.",
+      "hub_delivery_status": "not_applicable"
     },
     {
       "identity": "doi:10.17603/ds2-58ft-kp27",
@@ -242,12 +297,56 @@
         "NA21OAR4590206"
       ],
       "cohort": "Historical DataCite API Backfill 2026-10-28",
-      "status": "blocked",
+      "status": "pending_hub_handoff",
       "missing_fields": [
-        "record-specific full publication date",
-        "public component scope and distinctness"
+        "record-specific full YYYY-MM-DD publication date",
+        "native public guide/file scope",
+        "separate catalog eligibility versus REACH parent reach-000816"
       ],
-      "attempts": [],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "historical_source_check",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
+          "outcome": "Previously documented first-pass check retained; no record-specific full release date or independent public component scope established.",
+          "checked_at": "2026-10-28T22:08:00Z"
+        },
+        {
+          "round": 0,
+          "method": "initial_scholarly_or_doi",
+          "url": "https://bmcnoldy.earth.miami.edu/papers/PMMMMCE2025_WCS.pdf",
+          "outcome": "Previously documented first-pass check retained; no record-specific full release date or independent public component scope established.",
+          "checked_at": "2026-10-28T22:08:00Z"
+        },
+        {
+          "round": 0,
+          "method": "initial_reach_or_project",
+          "url": "https://impacts.ucar.edu/en/organisations/mesoscale-microscale-meteorology-lab-2/datasets/",
+          "outcome": "Previously documented first-pass check retained; no record-specific full release date or independent public component scope established.",
+          "checked_at": "2026-10-28T22:08:00Z"
+        },
+        {
+          "round": 1,
+          "method": "spark_primary_project_detail",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+          "outcome": "SPARK spark-000244 includes exact primary HTI award NA21OAR4590206.",
+          "checked_at": "2026-10-29T21:30:09.782Z"
+        },
+        {
+          "round": 1,
+          "method": "reach_parent_detail_comparison",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-097.csv",
+          "outcome": "REACH reach-000816 already catalogs DesignSafe parent PRJ-5889, so component may be version/duplicate.",
+          "checked_at": "2026-10-29T21:30:09.782Z"
+        },
+        {
+          "round": 1,
+          "method": "author_dataset_catalog_review",
+          "url": "https://impacts.ucar.edu/en/persons/robert-prestley/",
+          "outcome": "UCAR author catalog shows 2025 parent HTI dataset but no separate full-date public de-identification guide.",
+          "checked_at": "2026-10-29T21:30:09.782Z"
+        }
+      ],
       "prior_documented_checks": [
         "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
         "https://bmcnoldy.earth.miami.edu/papers/PMMMMCE2025_WCS.pdf",
@@ -255,18 +354,29 @@
       ],
       "first_investigated_at": "2026-10-28T22:08:00Z",
       "first_investigated_timestamp_basis": "Earliest existing triage updated_at retained as conservative documented evidence of investigation; actual initial check may be earlier",
-      "last_attempt_at": "2026-10-28T22:08:00Z",
-      "retry_count": 0,
+      "last_attempt_at": "2026-10-29T21:30:09.782Z",
+      "retry_count": 1,
       "next_retry_at": "2026-11-04T22:08:00.000Z",
       "followup_question": "Can an authoritative source resolve record-specific full publication date; public component scope and distinctness and establish a separate eligible NOAA-funded output?",
       "evidence_urls": [
-        "https://api.datacite.org/dois/10.17603/ds2-6vmm-2g61"
+        "https://api.datacite.org/dois/10.17603/ds2-6vmm-2g61",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-097.csv",
+        "https://impacts.ucar.edu/en/persons/robert-prestley/",
+        "https://doi.org/10.17603/ds2-6vmm-2g61"
       ],
-      "funding_basis": "Captured DataCite fundingReferences identify NA21OAR4590206; eligibility or metadata remains unverified.",
-      "next_action": "One bounded follow-up at or after next_retry_at; if unresolved and credible, escalate human_metadata_needed without inventing metadata. See historical-triage for source notes.",
+      "funding_basis": "Captured exact NOAA award NA21OAR4590206; SPARK spark-000244 confirms primary project; 2025 Prestley/Morss scholarly citation names the guide.",
+      "next_action": "Pending compatible Hub intake for truthful blank date; human reviewer to determine separate public eligibility and permitted metadata omission.",
       "triage_identity": "doi:10.17603/ds2-6vmm-2g61",
       "next_research_at": "2026-11-04T22:08:00.000Z",
-      "next_research_at_basis": "Existing recorded next_retry_at alias; no change to first investigation, retry date, retry count, or evidence."
+      "next_research_at_basis": "Existing recorded next_retry_at alias; no change to first investigation, retry date, retry count, or evidence.",
+      "followup_completed_at": "2026-10-29T21:30:09.782Z",
+      "early_retry_reason": "User-directed 2026-10-29 immediate one-time distinct-source recovery, earlier than existing seven-day next_retry_at; original retry date preserved.",
+      "reviewer_question": "Is the guide a separately public catalogable output or part of REACH parent reach-000816, and what exact release date or permitted omission applies?",
+      "research_completed": true,
+      "metadata_recovery_exhausted": true,
+      "hub_delivery_status": "not_delivered",
+      "hub_intake_blocker": "Existing 24-column Discovery Hub importer/REACH mandatory date handling has not been validated for truthful blank publication date and component scope; no valid CSV staged; NOT DELIVERED TO HUB."
     },
     {
       "identity": "doi:10.17603/ds2-967n-t829",
@@ -275,12 +385,55 @@
         "NA19OAR0220192"
       ],
       "cohort": "Historical DataCite API Backfill 2026-10-28",
-      "status": "blocked",
+      "status": "pending_hub_handoff",
       "missing_fields": [
-        "record-specific full publication date",
-        "public survey instrument scope"
+        "record-specific full YYYY-MM-DD publication date",
+        "native public survey instrument/file scope"
       ],
-      "attempts": [],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "historical_source_check",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
+          "outcome": "Previously documented first-pass check retained; no record-specific full release date or independent public component scope established.",
+          "checked_at": "2026-10-29T00:29:43Z"
+        },
+        {
+          "round": 0,
+          "method": "initial_scholarly_or_doi",
+          "url": "https://repository.library.noaa.gov/view/noaa/47957/noaa_47957_DS1.pdf",
+          "outcome": "Previously documented first-pass check retained; no record-specific full release date or independent public component scope established.",
+          "checked_at": "2026-10-29T00:29:43Z"
+        },
+        {
+          "round": 0,
+          "method": "initial_reach_or_project",
+          "url": "https://www.weather.gov/media/nws/IHC2022/SocialScience_effectivewarnings_IHC.pdf",
+          "outcome": "Previously documented first-pass check retained; no record-specific full release date or independent public component scope established.",
+          "checked_at": "2026-10-29T00:29:43Z"
+        },
+        {
+          "round": 1,
+          "method": "spark_primary_project_detail",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-019.csv",
+          "outcome": "SPARK spark-000240 identifies both primary Minding the Gap awards.",
+          "checked_at": "2026-10-29T21:30:09.782Z"
+        },
+        {
+          "round": 1,
+          "method": "noaa_hfip_project_report",
+          "url": "https://vlab.noaa.gov/documents/17693964/36850290/hfip-annual-report-2021-2022-final.pdf",
+          "outcome": "NOAA HFIP annual report confirms project surveys of broadcast meteorologists and emergency managers; not DOI release date.",
+          "checked_at": "2026-10-29T21:30:09.782Z"
+        },
+        {
+          "round": 1,
+          "method": "researcher_cv_methodology",
+          "url": "https://hazards.colorado.edu/api/v2/uploads/cv/vickery_cv_jan_2022-1641322855132.pdf",
+          "outcome": "Vickery CV confirms online survey development for this specific NOAA project; no DOI release day.",
+          "checked_at": "2026-10-29T21:30:09.782Z"
+        }
+      ],
       "prior_documented_checks": [
         "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
         "https://repository.library.noaa.gov/view/noaa/47957/noaa_47957_DS1.pdf",
@@ -288,18 +441,29 @@
       ],
       "first_investigated_at": "2026-10-29T00:29:43Z",
       "first_investigated_timestamp_basis": "Earliest existing triage updated_at retained as conservative documented evidence of investigation; actual initial check may be earlier",
-      "last_attempt_at": "2026-10-29T00:29:43Z",
-      "retry_count": 0,
+      "last_attempt_at": "2026-10-29T21:30:09.782Z",
+      "retry_count": 1,
       "next_retry_at": "2026-11-05T00:29:43.000Z",
       "followup_question": "Inspect native DesignSafe project publication and exact survey component release date; compare Part 2 survey paper with REACH.",
       "evidence_urls": [
-        "https://api.datacite.org/dois/10.17603/ds2-967n-t829"
+        "https://api.datacite.org/dois/10.17603/ds2-967n-t829",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-019.csv",
+        "https://vlab.noaa.gov/documents/17693964/36850290/hfip-annual-report-2021-2022-final.pdf",
+        "https://hazards.colorado.edu/api/v2/uploads/cv/vickery_cv_jan_2022-1641322855132.pdf",
+        "https://doi.org/10.17603/ds2-967n-t829"
       ],
-      "funding_basis": "Captured structured DataCite NOAA awards NA19OAR0220121 and NA19OAR0220192; project context independently supported.",
-      "next_action": "One bounded follow-up at or after next_retry_at; if unresolved and credible, escalate human_metadata_needed without inventing metadata. See historical-triage for source notes.",
+      "funding_basis": "Captured DataCite exact awards NA19OAR0220121 and NA19OAR0220192; SPARK primary project, NOAA HFIP report and Vickery CV corroborate surveys.",
+      "next_action": "Pending compatible Hub intake for truthful blank date; human reviewer to determine separate public eligibility and permitted metadata omission.",
       "triage_identity": "doi:10.17603/ds2-967n-t829",
       "next_research_at": "2026-11-05T00:29:43.000Z",
-      "next_research_at_basis": "Existing recorded next_retry_at alias; no change to first investigation, retry date, retry count, or evidence."
+      "next_research_at_basis": "Existing recorded next_retry_at alias; no change to first investigation, retry date, retry count, or evidence.",
+      "followup_completed_at": "2026-10-29T21:30:09.782Z",
+      "early_retry_reason": "User-directed 2026-10-29 immediate one-time distinct-source recovery, earlier than existing seven-day next_retry_at; original retry date preserved.",
+      "reviewer_question": "Is the public DesignSafe survey instrument independently eligible, and what verified date or permissible omission applies?",
+      "research_completed": true,
+      "metadata_recovery_exhausted": true,
+      "hub_delivery_status": "not_delivered",
+      "hub_intake_blocker": "Existing 24-column Discovery Hub importer/REACH mandatory date handling has not been validated for truthful blank publication date and component scope; no valid CSV staged; NOT DELIVERED TO HUB."
     },
     {
       "identity": "doi:10.17603/ds2-jfsc-8902",
@@ -414,12 +578,55 @@
         "NA19OAR0220192"
       ],
       "cohort": "Historical DataCite API Backfill 2026-10-28",
-      "status": "blocked",
+      "status": "pending_hub_handoff",
       "missing_fields": [
-        "record-specific full publication date",
-        "public protocol components distinct from restricted raw interview data"
+        "record-specific full YYYY-MM-DD publication date",
+        "verified public protocol/method files distinct from restricted participant interview data"
       ],
-      "attempts": [],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "historical_source_check",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
+          "outcome": "Previously documented first-pass check retained; no record-specific full release date or independent public component scope established.",
+          "checked_at": "2026-10-29T00:29:43Z"
+        },
+        {
+          "round": 0,
+          "method": "initial_scholarly_or_doi",
+          "url": "https://repository.library.noaa.gov/view/noaa/47957/noaa_47957_DS1.pdf",
+          "outcome": "Previously documented first-pass check retained; no record-specific full release date or independent public component scope established.",
+          "checked_at": "2026-10-29T00:29:43Z"
+        },
+        {
+          "round": 0,
+          "method": "initial_reach_or_project",
+          "url": "https://www.weather.gov/media/nws/IHC2022/SocialScience_effectivewarnings_IHC.pdf",
+          "outcome": "Previously documented first-pass check retained; no record-specific full release date or independent public component scope established.",
+          "checked_at": "2026-10-29T00:29:43Z"
+        },
+        {
+          "round": 1,
+          "method": "spark_primary_project_detail",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-019.csv",
+          "outcome": "SPARK confirms both Minding the Gap WPO awards.",
+          "checked_at": "2026-10-29T21:30:09.782Z"
+        },
+        {
+          "round": 1,
+          "method": "noaa_hfip_project_report",
+          "url": "https://vlab.noaa.gov/documents/17693964/36850290/hfip-annual-report-2021-2022-final.pdf",
+          "outcome": "NOAA report confirms interview methods but not release of participant data.",
+          "checked_at": "2026-10-29T21:30:09.782Z"
+        },
+        {
+          "round": 1,
+          "method": "researcher_cv_methodology",
+          "url": "https://hazards.colorado.edu/api/v2/uploads/cv/vickery_cv_jan_2022-1641322855132.pdf",
+          "outcome": "Vickery CV documents interviewing partners and interview-guide analysis; no public protocol release date.",
+          "checked_at": "2026-10-29T21:30:09.782Z"
+        }
+      ],
       "prior_documented_checks": [
         "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
         "https://repository.library.noaa.gov/view/noaa/47957/noaa_47957_DS1.pdf",
@@ -427,18 +634,29 @@
       ],
       "first_investigated_at": "2026-10-29T00:29:43Z",
       "first_investigated_timestamp_basis": "Earliest existing triage updated_at retained as conservative documented evidence of investigation; actual initial check may be earlier",
-      "last_attempt_at": "2026-10-29T00:29:43Z",
-      "retry_count": 0,
+      "last_attempt_at": "2026-10-29T21:30:09.782Z",
+      "retry_count": 1,
       "next_retry_at": "2026-11-05T00:29:43.000Z",
       "followup_question": "Inspect repository publication metadata for public protocol files only; never stage restricted interview responses.",
       "evidence_urls": [
-        "https://api.datacite.org/dois/10.17603/ds2-qm3n-6h83"
+        "https://api.datacite.org/dois/10.17603/ds2-qm3n-6h83",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-019.csv",
+        "https://vlab.noaa.gov/documents/17693964/36850290/hfip-annual-report-2021-2022-final.pdf",
+        "https://hazards.colorado.edu/api/v2/uploads/cv/vickery_cv_jan_2022-1641322855132.pdf",
+        "https://doi.org/10.17603/ds2-qm3n-6h83"
       ],
-      "funding_basis": "Captured exact DataCite awards NA19OAR0220121 and NA19OAR0220192, project relationship supported.",
-      "next_action": "One bounded follow-up at or after next_retry_at; if unresolved and credible, escalate human_metadata_needed without inventing metadata. See historical-triage for source notes.",
+      "funding_basis": "Captured DataCite exact WPO awards; SPARK primary project and independent HFIP/CV corroborate interviews; original DOI explicitly says raw interview data are restricted.",
+      "next_action": "Pending compatible Hub intake for truthful blank date; human reviewer to determine separate public eligibility and permitted metadata omission.",
       "triage_identity": "doi:10.17603/ds2-qm3n-6h83",
       "next_research_at": "2026-11-05T00:29:43.000Z",
-      "next_research_at_basis": "Existing recorded next_retry_at alias; no change to first investigation, retry date, retry count, or evidence."
+      "next_research_at_basis": "Existing recorded next_retry_at alias; no change to first investigation, retry date, retry count, or evidence.",
+      "followup_completed_at": "2026-10-29T21:30:09.782Z",
+      "early_retry_reason": "User-directed 2026-10-29 immediate one-time distinct-source recovery, earlier than existing seven-day next_retry_at; original retry date preserved.",
+      "reviewer_question": "Can public interview methods/protocol be cataloged separately without exposing restricted participant data, and what verified date or permitted omission applies?",
+      "research_completed": true,
+      "metadata_recovery_exhausted": true,
+      "hub_delivery_status": "not_delivered",
+      "hub_intake_blocker": "Existing 24-column Discovery Hub importer/REACH mandatory date handling has not been validated for truthful blank publication date and component scope; no valid CSV staged; NOT DELIVERED TO HUB."
     },
     {
       "identity": "doi:10.17605/osf.io/jr7pv",
@@ -601,10 +819,11 @@
         "NA21OAR4590206"
       ],
       "cohort": "Historical DataCite API Backfill 2026-10-28",
-      "status": "blocked",
+      "status": "pending_hub_handoff",
       "missing_fields": [
-        "record-specific full publication date",
-        "public accessibility and distinctness of HTI interview stimuli files"
+        "record-specific full YYYY-MM-DD publication date",
+        "public accessibility of the stimuli component",
+        "distinctness from existing REACH parent reach-000816"
       ],
       "attempts": [
         {
@@ -627,23 +846,54 @@
           "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
           "outcome": "Reviewed; essential exact publication date or WPO project scope remains unresolved.",
           "checked_at": "2026-10-29T03:34:15Z"
+        },
+        {
+          "round": 1,
+          "method": "spark_primary_project_detail",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+          "outcome": "SPARK spark-000244 confirms exact HTI award.",
+          "checked_at": "2026-10-29T21:30:09.782Z"
+        },
+        {
+          "round": 1,
+          "method": "reach_parent_detail_comparison",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-097.csv",
+          "outcome": "REACH reach-000816 already catalogs PRJ-5889 parent; potential component/version duplicate.",
+          "checked_at": "2026-10-29T21:30:09.782Z"
+        },
+        {
+          "round": 1,
+          "method": "author_dataset_catalog_review",
+          "url": "https://impacts.ucar.edu/en/persons/robert-prestley/",
+          "outcome": "UCAR catalog lists 2025 HTI parent but no separate stimuli date or file scope.",
+          "checked_at": "2026-10-29T21:30:09.782Z"
         }
       ],
       "first_investigated_at": "2026-10-29T03:34:15Z",
-      "last_attempt_at": "2026-10-29T03:34:15Z",
-      "retry_count": 0,
+      "last_attempt_at": "2026-10-29T21:30:09.782Z",
+      "retry_count": 1,
       "next_retry_at": "2026-11-05T03:34:15Z",
       "next_research_at": "2026-11-05T03:34:15Z",
       "followup_question": "Does the DesignSafe deposit expose a distinct public HTI stimuli output, and what exact release date applies?",
       "evidence_urls": [
         "https://doi.org/10.17603/ds2-ydmk-q397",
         "https://bmcnoldy.earth.miami.edu/papers/PMMMMCE2025_WCS.pdf",
-        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json"
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-097.csv",
+        "https://impacts.ucar.edu/en/persons/robert-prestley/"
       ],
-      "funding_basis": "Historical DataCite seed identifies NA21OAR4590206; independent date and/or project-specific funding bridge unresolved.",
-      "next_action": "At most one scheduled follow-up at or after next_retry_at, then verified Hub candidate, evidence-backed no-action, or human_metadata_needed escalation; no invented dates or awards.",
+      "funding_basis": "Captured exact WPO award and 2025 Prestley/Morss article explicitly cites HTI interview stimuli version 2; SPARK confirms primary project.",
+      "next_action": "Pending compatible Hub intake for truthful blank date; human reviewer to determine separate public eligibility and permitted metadata omission.",
       "triage_identity": "doi:10.17603/ds2-ydmk-q397",
-      "max_delayed_retries": 1
+      "max_delayed_retries": 1,
+      "followup_completed_at": "2026-10-29T21:30:09.782Z",
+      "early_retry_reason": "User-directed 2026-10-29 immediate one-time distinct-source recovery, earlier than existing seven-day next_retry_at; original retry date preserved.",
+      "reviewer_question": "Should stimuli be cataloged separately from REACH parent, and what verified release date or permitted omission applies?",
+      "research_completed": true,
+      "metadata_recovery_exhausted": true,
+      "hub_delivery_status": "not_delivered",
+      "hub_intake_blocker": "Existing 24-column Discovery Hub importer/REACH mandatory date handling has not been validated for truthful blank publication date and component scope; no valid CSV staged; NOT DELIVERED TO HUB."
     },
     {
       "identity": "doi:10.25923/emke-w063",
@@ -2566,28 +2816,28 @@
       "attempts": [
         {
           "round": 0,
-          "method": "official_NHC_final_report",
+          "method": "official_nhc_final_report",
           "url": "https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_reportFINAL_092718.pdf",
           "outcome": "Exact report identity, WPO award, authors, and 2018-09-30 submission date verified; public release date not stated.",
           "checked_at": "2026-10-29T17:30:25.127238Z"
         },
         {
           "round": 0,
-          "method": "SPARK_primary_award",
+          "method": "spark_primary_award",
           "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
           "outcome": "2015 project NA15OAR4590205 confirmed as primary WPO-funded workstream.",
           "checked_at": "2026-10-29T17:30:25.127238Z"
         },
         {
           "round": 0,
-          "method": "complete_REACH_index",
+          "method": "complete_reach_index",
           "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
           "outcome": "No exact report URL or title in 1238 public REACH index records across ten shards.",
           "checked_at": "2026-10-29T17:30:25.127238Z"
         },
         {
           "round": 0,
-          "method": "Scout_immutable_batches",
+          "method": "scout_immutable_batches",
           "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
           "outcome": "No matching final report in 55 previously staged review candidates across 15 batches.",
           "checked_at": "2026-10-29T17:30:25.127238Z"
