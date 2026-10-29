@@ -1,0 +1,66 @@
+name: Historical DataCite - Excel comparison with Scout
+on:
+  workflow_dispatch:
+  schedule:
+    # Refresh current public Scout research dispositions once a day.
+    - cron: '10 14 * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'api-discoveries/tools/export_historical_comparison_xlsx.py'
+      - 'api-discoveries/historical/batches/*.csv'
+      - '.github/workflows/historical-datacite-report.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: reach-historical-datacite-excel-report-main
+  cancel-in-progress: false
+
+jobs:
+  build-report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out public research evidence
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Build historical DataCite and Scout comparison workbook
+        run: |
+          set -euo pipefail
+          python3 api-discoveries/tools/export_historical_comparison_xlsx.py
+          test -s api-discoveries/reports/REACH_DataCite_Historical_2026-10-28_Scout_Comparison.xlsx
+
+      - name: Upload downloadable Excel comparison artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: reach-historical-datacite-scout-comparison
+          path: api-discoveries/reports/REACH_DataCite_Historical_2026-10-28_Scout_Comparison.xlsx
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Publish current workbook in reports folder
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- api-discoveries/reports/REACH_DataCite_Historical_2026-10-28_Scout_Comparison.xlsx
+          if git diff --cached --quiet; then
+            echo 'Historical DataCite Excel comparison already current.'
+            exit 0
+          fi
+          git commit -m 'Refresh historical DataCite versus Scout Excel report'
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then
+              echo "Published report after attempt $attempt."
+              exit 0
+            fi
+            git fetch origin main
+            git rebase origin/main
+            sleep "$((attempt * 2))"
+          done
+          echo 'Unable to publish historical Excel workbook.' >&2
+          exit 1
