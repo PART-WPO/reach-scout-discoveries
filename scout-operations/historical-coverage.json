@@ -3,15 +3,20 @@
   "source_manifest": "api-discoveries/historical/manifest.json",
   "source_manifest_sha256": "b21e3b81cf47c3187eb851d1d2b5ec0200d8ed54970c01f871bbd8b96475921e",
   "total_distinct_dois": 188,
-  "fully_investigated": 123,
-  "remaining": 65,
-  "awaiting_research": 49,
+  "fully_investigated": 135,
+  "remaining": 53,
+  "awaiting_research": 37,
   "investigating": 0,
   "needs_more_research": 16,
   "already_in_reach": 36,
   "forwarded_to_hub": 2,
   "metadata_update_forwarded": 8,
-  "no_action": 77,
+  "no_action": 89,
   "research_complete": false,
-  "note": "2026-10-29 08:33 ET: 13 original historical DOIs independently resolved (12 no_action for broad CI attribution mismatches: 8 ProxyVis, 2 Lake Erie algal, 2 sea-ice; one freezing-rain v2 already represented in REACH reach-000377). 188=123 resolved+16 bounded original blockers+49 awaiting. All 10 REACH index shards, 6 SPARK index shards, 14 Scout batches and selected detail records checked; private feedback and full REACH detail shards not exhaustive. No Hub batch or public addition."
+  "note": "2026-10-29 09:34 ET: 12 original historical DataCite DOI seeds independently closed no_action (2 nonresearch team logos; 4 alternate NOAA fellowship/NESDIS workstreams; 6 broad-CI workstream gaps). No new Hub CSV due both absence of verified eligible new output and existing automated feed validator failure. 188=135 completed+16 bounded original blockers+37 awaiting. 52 separate attribution follow-ups (46 prior + 6 new); no private human decisions inferred.",
+  "no_action_subtypes": {
+    "NO_DEMONSTRATED_WPO_CONNECTION_ALTERNATIVE_FUNDING": 6,
+    "NO_DEMONSTRATED_WPO_CONNECTION": 52,
+    "NOT_RESEARCH_OUTPUT": 31
+  }
 }
