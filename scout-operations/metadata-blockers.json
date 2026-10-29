@@ -2360,6 +2360,69 @@
       "ready_for_human_review": false,
       "metadata_recovery_rounds": 0,
       "source_verification_limits": "Full dataset first publication date and public/version scope not independently established. Journal/citation year cannot substitute."
+    },
+    {
+      "identity": "url:https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_reportFINAL_092718.pdf",
+      "award_numbers": [
+        "NA15OAR4590205"
+      ],
+      "cohort": "Normal historical SPARK award discovery 2026-10-29",
+      "status": "blocked",
+      "output_type": "Other output — publicly accessible final report",
+      "title": "Probabilistic Prediction of Tropical Cyclone Rapid Intensification Using Satellite Passive Microwave Imagery — Final Report",
+      "missing_fields": [
+        "First public publication date YYYY-MM-DD (report submission date 2018-09-30 is not proof of public release date)"
+      ],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "official_NHC_final_report",
+          "url": "https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_reportFINAL_092718.pdf",
+          "outcome": "Exact report identity, WPO award, authors, and 2018-09-30 submission date verified; public release date not stated.",
+          "checked_at": "2026-10-29T17:30:25.127238Z"
+        },
+        {
+          "round": 0,
+          "method": "SPARK_primary_award",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "outcome": "2015 project NA15OAR4590205 confirmed as primary WPO-funded workstream.",
+          "checked_at": "2026-10-29T17:30:25.127238Z"
+        },
+        {
+          "round": 0,
+          "method": "complete_REACH_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "outcome": "No exact report URL or title in 1238 public REACH index records across ten shards.",
+          "checked_at": "2026-10-29T17:30:25.127238Z"
+        },
+        {
+          "round": 0,
+          "method": "Scout_immutable_batches",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+          "outcome": "No matching final report in 55 previously staged review candidates across 15 batches.",
+          "checked_at": "2026-10-29T17:30:25.127238Z"
+        }
+      ],
+      "last_attempt_at": "2026-10-29T17:30:25.127238Z",
+      "first_investigated_at": "2026-10-29T17:30:25.127238Z",
+      "retry_count": 0,
+      "max_delayed_retries": 1,
+      "next_retry_at": "2026-11-05T17:30:25.127238Z",
+      "next_research_at": "2026-11-05T17:30:25.127238Z",
+      "followup_question": "Can an authoritative NHC or institutional source verify the first public availability date for this distinct WPO-funded 2018 final report, and confirm its public scope?",
+      "evidence_urls": [
+        "https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_reportFINAL_092718.pdf",
+        "https://wpo.noaa.gov/spark/"
+      ],
+      "funding_basis": "Official NOAA/NHC Joint Hurricane Testbed final report cover explicitly identifies federal grant NA15OAR4590205 and project title matching SPARK.",
+      "source_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1329ET",
+      "discovery_route": "Independent discovery",
+      "discovery_path": "SPARK 2015 award NA15OAR4590205 -> official NHC Joint Hurricane Testbed report archive -> exact final report PDF",
+      "verified_report_submission_date": "2018-09-30",
+      "publication_date": null,
+      "next_action": "One bounded independent date/source follow-up no earlier than next_research_at; if public publication date remains unavailable, escalate human_metadata_needed outside normal research queue, without fabricated Hub metadata.",
+      "hub_delivery": "NOT_DELIVERED_MANDATORY_DATE_MISSING",
+      "reviewer_question": "Can the official NHC archive or records owner supply a verifiable first-publication date, and should this final report be cataloged as an Other output?"
     }
   ],
   "latest_due_date_alias_audit": {
