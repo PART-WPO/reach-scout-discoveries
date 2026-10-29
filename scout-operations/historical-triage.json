@@ -910,16 +910,23 @@
     },
     {
       "identity": "doi:10.17603/ds2-zb1x-f792",
-      "status": "awaiting_research",
+      "status": "already_in_reach",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T19:02:21.671632+00:00",
-      "research_notes": "",
-      "checked_sources": [],
-      "reach_snapshot": "",
-      "funding_basis": "",
-      "related_outputs_checked": "",
-      "verified_at": "",
-      "verified_awards": [],
+      "updated_at": "2026-10-29T01:32:07Z",
+      "research_notes": "Full 10-shard REACH index (1238 outputs), relevant detail shard part-092.csv, and 11 existing Scout batches (47 review candidates) checked; exact DOI or same-work version/title/author/abstract matches existing reach-000769. No new row staged. Checked 2026 AMS conference extended abstract 'When the Grid Goes Down, Neighbors Show Up' by Corrales and Trujillo-Falcón; distinct lead, no verified output-specific NOAA award attribution, held in Library lead queue.",
+      "checked_sources": [
+        "https://api.datacite.org/dois/10.17603/ds2-zb1x-f792",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-092.csv",
+        "https://ams.confex.com/ams/37Hurricanes/mediafile/Manuscript/Paper479952/10D-05%20Extended%20AMS%20Tropical%20Abstract%202026.pdf"
+      ],
+      "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+      "funding_basis": "Captured DataCite exact fundingReference NA22OAR4590187 matches existing REACH output award NA22OAR4590187; same dataset DOI and title.",
+      "related_outputs_checked": "Checked 2026 AMS conference extended abstract 'When the Grid Goes Down, Neighbors Show Up' by Corrales and Trujillo-Falcón; distinct lead, no verified output-specific NOAA award attribution, held in Library lead queue.",
+      "verified_at": "2026-10-29T01:32:07Z",
+      "verified_awards": [
+        "NA22OAR4590187"
+      ],
       "source_batch_ids": [
         "2026-10-28-historical-datacite-spark-all-part001"
       ],
@@ -932,18 +939,24 @@
       ],
       "source_evidence_urls": [
         "https://api.datacite.org/dois/10.17603/ds2-zb1x-f792"
-      ]
+      ],
+      "reach_match": "reach-000769 reachuid-v1-239f7caf7ba18c7c7dabece6ed9277b6; same underlying output; existing awards include NA22OAR4590187"
     },
     {
       "identity": "doi:10.17605/osf.io/jr7pv",
-      "status": "awaiting_research",
+      "status": "needs_more_research",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T19:02:21.671632+00:00",
-      "research_notes": "",
-      "checked_sources": [],
-      "reach_snapshot": "",
-      "funding_basis": "",
-      "related_outputs_checked": "",
+      "updated_at": "2026-10-29T01:32:07Z",
+      "research_notes": "Historical DataCite captured OSF project describes an IDSS exercise method, national emergency-manager survey instrument and after-action reviews. No exact REACH title/DOI in all 1238 index records or 47 Scout findings. OSF landing returned 403 and DOI resolver/API unavailable; full release date and public component scope not independently established.",
+      "checked_sources": [
+        "https://api.datacite.org/dois/10.17605/osf.io/jr7pv",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://osf.io/jr7pv",
+        "https://doi.org/10.17605/osf.io/jr7pv"
+      ],
+      "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+      "funding_basis": "Captured DataCite structured award NA21OAR4590210 for this OSF project; no independent project file or author acknowledgement accessible in this round.",
+      "related_outputs_checked": "Compared existing REACH records and searched public OSF/project references; no distinct linked publication or code repository with verified output-specific funding confirmed.",
       "verified_at": "",
       "verified_awards": [],
       "source_batch_ids": [
@@ -957,18 +970,24 @@
       ],
       "source_evidence_urls": [
         "https://api.datacite.org/dois/10.17605/osf.io/jr7pv"
-      ]
+      ],
+      "next_action": "Access public OSF project metadata/files or author repository via a distinct endpoint; establish exact date and whether files are separate public outputs."
     },
     {
       "identity": "doi:10.17605/osf.io/rbdfv",
-      "status": "awaiting_research",
+      "status": "needs_more_research",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T19:02:21.671632+00:00",
-      "research_notes": "",
-      "checked_sources": [],
-      "reach_snapshot": "",
-      "funding_basis": "",
-      "related_outputs_checked": "",
+      "updated_at": "2026-10-29T01:32:07Z",
+      "research_notes": "Historical DataCite captured BVOT method-development project. No exact OSF DOI in REACH or staged Scout batches; related BVOT StoryMap and journal works already in REACH reach-000862 and reach-000892. OSF and DOI landing inaccessible; exact date, public files and distinctness unverified.",
+      "checked_sources": [
+        "https://api.datacite.org/dois/10.17605/osf.io/rbdfv",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://osf.io/rbdfv",
+        "https://doi.org/10.17605/osf.io/rbdfv"
+      ],
+      "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+      "funding_basis": "Captured DataCite structured award NA21OAR4590212; related REACH BVOT journal work includes that award, but does not independently establish OSF project's publication date.",
+      "related_outputs_checked": "Compared existing BVOT StoryMap reach-000862 and publication reach-000892, plus other related BVOT outputs; separate OSF files or version relationships not verified.",
       "verified_at": "",
       "verified_awards": [],
       "source_batch_ids": [
@@ -982,20 +1001,27 @@
       ],
       "source_evidence_urls": [
         "https://api.datacite.org/dois/10.17605/osf.io/rbdfv"
-      ]
+      ],
+      "next_action": "Inspect native OSF project metadata and public files through alternate authoritative endpoint, then determine whether new distinct artifact versus existing REACH BVOT materials."
     },
     {
       "identity": "doi:10.18738/t8/momo42",
-      "status": "awaiting_research",
+      "status": "already_in_reach",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T19:02:21.671632+00:00",
-      "research_notes": "",
-      "checked_sources": [],
-      "reach_snapshot": "",
-      "funding_basis": "",
-      "related_outputs_checked": "",
-      "verified_at": "",
-      "verified_awards": [],
+      "updated_at": "2026-10-29T01:32:07Z",
+      "research_notes": "Full 10-shard REACH index (1238 outputs), relevant detail shard part-036.csv, and 11 existing Scout batches (47 review candidates) checked; exact DOI or same-work version/title/author/abstract matches existing reach-000287. No new row staged. Reviewed existing related flood mapping paper 'Application of a Large-Scale Terrain-Analysis-Based Flood Mapping System to Hurricane Harvey', already in REACH reach-000285; no separately verified novel output from this seed.",
+      "checked_sources": [
+        "https://api.datacite.org/dois/10.18738/t8/momo42",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-036.csv"
+      ],
+      "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+      "funding_basis": "Captured DataCite exact fundingReference NA19OAR4590229 and existing REACH record award NA19OAR4590229 agree for the identical HAND dataset DOI.",
+      "related_outputs_checked": "Reviewed existing related flood mapping paper 'Application of a Large-Scale Terrain-Analysis-Based Flood Mapping System to Hurricane Harvey', already in REACH reach-000285; no separately verified novel output from this seed.",
+      "verified_at": "2026-10-29T01:32:07Z",
+      "verified_awards": [
+        "NA19OAR4590229"
+      ],
       "source_batch_ids": [
         "2026-10-28-historical-datacite-spark-all-part001"
       ],
@@ -1007,20 +1033,29 @@
       ],
       "source_evidence_urls": [
         "https://api.datacite.org/dois/10.18738/t8/momo42"
-      ]
+      ],
+      "reach_match": "reach-000287 reachuid-v1-402dc080ffd34c5dfb61c20a46929136; same underlying output; existing awards include NA19OAR4590229"
     },
     {
       "identity": "doi:10.25394/pgs.14916606",
-      "status": "awaiting_research",
+      "status": "already_in_reach",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T19:02:21.671632+00:00",
-      "research_notes": "",
-      "checked_sources": [],
-      "reach_snapshot": "",
-      "funding_basis": "",
-      "related_outputs_checked": "",
-      "verified_at": "",
-      "verified_awards": [],
+      "updated_at": "2026-10-29T01:32:07Z",
+      "research_notes": "Full 10-shard REACH index (1238 outputs), relevant detail shard part-081.csv, and 11 existing Scout batches (47 review candidates) checked; exact DOI or same-work version/title/author/abstract matches existing reach-000666. No new row staged. Checked Purdue dissertation record and UCAR VORTEX-SE thesis listing. Version 1 DOI 10.25394/pgs.14916606.v1 is the same thesis, not an additional output; no distinct linked publication confirmed.",
+      "checked_sources": [
+        "https://api.datacite.org/dois/10.25394/pgs.14916606",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-081.csv",
+        "https://docs.lib.purdue.edu/dissertations/AAI30505162/",
+        "https://www.eol.ucar.edu/node/11823/publications"
+      ],
+      "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+      "funding_basis": "Captured DataCite exact fundingReference NA18OAR4590313 and existing REACH thesis award NA18OAR4590313 match; Purdue institutional thesis page corroborates title, author Susan Beveridge and subject.",
+      "related_outputs_checked": "Checked Purdue dissertation record and UCAR VORTEX-SE thesis listing. Version 1 DOI 10.25394/pgs.14916606.v1 is the same thesis, not an additional output; no distinct linked publication confirmed.",
+      "verified_at": "2026-10-29T01:32:07Z",
+      "verified_awards": [
+        "NA18OAR4590313"
+      ],
       "source_batch_ids": [
         "2026-10-28-historical-datacite-spark-all-part001"
       ],
@@ -1032,20 +1067,29 @@
       ],
       "source_evidence_urls": [
         "https://api.datacite.org/dois/10.25394/pgs.14916606"
-      ]
+      ],
+      "reach_match": "reach-000666 reachuid-v1-8874044445e89b3beba48320b810eaef; same underlying output; existing awards include NA18OAR4590313"
     },
     {
       "identity": "doi:10.25394/pgs.14916606.v1",
-      "status": "awaiting_research",
+      "status": "already_in_reach",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T19:02:21.671632+00:00",
-      "research_notes": "",
-      "checked_sources": [],
-      "reach_snapshot": "",
-      "funding_basis": "",
-      "related_outputs_checked": "",
-      "verified_at": "",
-      "verified_awards": [],
+      "updated_at": "2026-10-29T01:32:07Z",
+      "research_notes": "Full 10-shard REACH index (1238 outputs), relevant detail shard part-081.csv, and 11 existing Scout batches (47 review candidates) checked; exact DOI or same-work version/title/author/abstract matches existing reach-000666. No new row staged. Compared root DOI 10.25394/pgs.14916606 and Purdue dissertation page; version alias is not a second thesis. No separate unindexed article was established.",
+      "checked_sources": [
+        "https://api.datacite.org/dois/10.25394/pgs.14916606.v1",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-081.csv",
+        "https://docs.lib.purdue.edu/dissertations/AAI30505162/",
+        "https://doi.org/10.25394/PGS.14916606"
+      ],
+      "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+      "funding_basis": "Captured DataCite award NA18OAR4590313; this versioned DOI has same title, Susan Beveridge authorship, 2021-07-22 issued date and abstract as canonical root DOI already listed under REACH reach-000666.",
+      "related_outputs_checked": "Compared root DOI 10.25394/pgs.14916606 and Purdue dissertation page; version alias is not a second thesis. No separate unindexed article was established.",
+      "verified_at": "2026-10-29T01:32:07Z",
+      "verified_awards": [
+        "NA18OAR4590313"
+      ],
       "source_batch_ids": [
         "2026-10-28-historical-datacite-spark-all-part001"
       ],
@@ -1057,20 +1101,30 @@
       ],
       "source_evidence_urls": [
         "https://api.datacite.org/dois/10.25394/pgs.14916606.v1"
-      ]
+      ],
+      "reach_match": "reach-000666 reachuid-v1-8874044445e89b3beba48320b810eaef; same underlying output; existing awards include NA18OAR4590313"
     },
     {
       "identity": "doi:10.25394/pgs.20392422",
-      "status": "awaiting_research",
+      "status": "already_in_reach",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T19:02:21.671632+00:00",
-      "research_notes": "",
-      "checked_sources": [],
-      "reach_snapshot": "",
-      "funding_basis": "",
-      "related_outputs_checked": "",
-      "verified_at": "",
-      "verified_awards": [],
+      "updated_at": "2026-10-29T01:32:07Z",
+      "research_notes": "Full 10-shard REACH index (1238 outputs), relevant detail shard part-082.csv, and 11 existing Scout batches (47 review candidates) checked; exact DOI or same-work version/title/author/abstract matches existing reach-000671. No new row staged. Checked Purdue dissertation and UCAR thesis record plus Sharma ORCID. Separate 2024 Monthly Weather Review article 'Investigating Temporal Characteristics...' already exists in REACH reach-000673; no new output from this branch.",
+      "checked_sources": [
+        "https://api.datacite.org/dois/10.25394/pgs.20392422",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-082.csv",
+        "https://docs.lib.purdue.edu/dissertations/AAI30505969/",
+        "https://www.eol.ucar.edu/publication/relationship-between-cloud-microphysics-and-electrification-southeast-us-storms",
+        "https://orcid.org/0000-0003-3318-7601"
+      ],
+      "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+      "funding_basis": "Captured DataCite fundingReference NA19OAR4590209 is already among REACH reach-000671 awards NA19OAR4590209 and NA19OAR4590210; Purdue dissertation record confirms author Milind Sharma and exact 2022 thesis title/abstract.",
+      "related_outputs_checked": "Checked Purdue dissertation and UCAR thesis record plus Sharma ORCID. Separate 2024 Monthly Weather Review article 'Investigating Temporal Characteristics...' already exists in REACH reach-000673; no new output from this branch.",
+      "verified_at": "2026-10-29T01:32:07Z",
+      "verified_awards": [
+        "NA19OAR4590209"
+      ],
       "source_batch_ids": [
         "2026-10-28-historical-datacite-spark-all-part001"
       ],
@@ -1082,20 +1136,30 @@
       ],
       "source_evidence_urls": [
         "https://api.datacite.org/dois/10.25394/pgs.20392422"
-      ]
+      ],
+      "reach_match": "reach-000671 reachuid-v1-b23672bd5efaad19bf24e9d13a5df368; same underlying output; existing awards include NA19OAR4590209"
     },
     {
       "identity": "doi:10.25394/pgs.20392422.v1",
-      "status": "awaiting_research",
+      "status": "already_in_reach",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T19:02:21.671632+00:00",
-      "research_notes": "",
-      "checked_sources": [],
-      "reach_snapshot": "",
-      "funding_basis": "",
-      "related_outputs_checked": "",
-      "verified_at": "",
-      "verified_awards": [],
+      "updated_at": "2026-10-29T01:32:07Z",
+      "research_notes": "Full 10-shard REACH index (1238 outputs), relevant detail shard part-082.csv, and 11 existing Scout batches (47 review candidates) checked; exact DOI or same-work version/title/author/abstract matches existing reach-000671. No new row staged. Compared root DOI 10.25394/pgs.20392422, Purdue dissertation and UCAR record; separate 2024 MWR paper already in REACH reach-000673. Version 1 is not a new thesis.",
+      "checked_sources": [
+        "https://api.datacite.org/dois/10.25394/pgs.20392422.v1",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-082.csv",
+        "https://orcid.org/0000-0003-3318-7601",
+        "https://docs.lib.purdue.edu/dissertations/AAI30505969/",
+        "https://doi.org/10.25394/PGS.20392422"
+      ],
+      "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+      "funding_basis": "Captured DataCite fundingReference NA19OAR4590209; Sharma ORCID explicitly records the version DOI as the same Purdue 2022 dissertation matching REACH reach-000671 title, author, date and abstract.",
+      "related_outputs_checked": "Compared root DOI 10.25394/pgs.20392422, Purdue dissertation and UCAR record; separate 2024 MWR paper already in REACH reach-000673. Version 1 is not a new thesis.",
+      "verified_at": "2026-10-29T01:32:07Z",
+      "verified_awards": [
+        "NA19OAR4590209"
+      ],
       "source_batch_ids": [
         "2026-10-28-historical-datacite-spark-all-part001"
       ],
@@ -1107,7 +1171,8 @@
       ],
       "source_evidence_urls": [
         "https://api.datacite.org/dois/10.25394/pgs.20392422.v1"
-      ]
+      ],
+      "reach_match": "reach-000671 reachuid-v1-b23672bd5efaad19bf24e9d13a5df368; same underlying output; existing awards include NA19OAR4590209"
     },
     {
       "identity": "doi:10.25820/data.006126",
@@ -1161,14 +1226,19 @@
     },
     {
       "identity": "doi:10.25923/0vz0-ra19",
-      "status": "awaiting_research",
+      "status": "needs_more_research",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-28T19:02:21.671632+00:00",
-      "research_notes": "",
-      "checked_sources": [],
-      "reach_snapshot": "",
-      "funding_basis": "",
-      "related_outputs_checked": "",
+      "updated_at": "2026-10-29T01:32:07Z",
+      "research_notes": "Official NOAA IR record confirms distinct 2026 GSL-79 technical memorandum and PDF explicitly acknowledges NOAA cooperative agreement NA19OAR4320073. Complete REACH index and all 47 Scout staged findings have no exact title/DOI. Exact full publication date (YYYY-MM-DD) remains unverified; not forwarded or assigned an invented date.",
+      "checked_sources": [
+        "https://api.datacite.org/dois/10.25923/0vz0-ra19",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://repository.library.noaa.gov/view/noaa/72837",
+        "https://repository.library.noaa.gov/view/noaa/72837/noaa_72837_DS1.pdf"
+      ],
+      "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+      "funding_basis": "Captured DataCite fundingReference NA19OAR4320073 corroborated by the report's own PDF acknowledgments naming this exact cooperative agreement.",
+      "related_outputs_checked": "Examined NOAA Fire Weather Testbed report on NGFS, its 2025 evaluation and its references to NESDIS fire detection and predictive services; no distinct related output with verified NOAA funding and REACH absence confirmed.",
       "verified_at": "",
       "verified_awards": [],
       "source_batch_ids": [
@@ -1182,7 +1252,8 @@
       ],
       "source_evidence_urls": [
         "https://api.datacite.org/dois/10.25923/0vz0-ra19"
-      ]
+      ],
+      "next_action": "Obtain NOAA IR record-specific full YYYY-MM-DD date or authoritative repository deposit date and recheck report uniqueness; do not stage until metadata complete."
     },
     {
       "identity": "doi:10.25923/65kx-0a28",
