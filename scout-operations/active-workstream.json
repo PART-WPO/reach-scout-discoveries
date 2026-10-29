@@ -8,11 +8,9 @@
     "related_metadata_blockers": 42,
     "remaining_or_untracked": 38,
     "research_completed": 150,
-    "unresolved_followups": 38,
-    "next_due_at": "2026-11-04T22:08:00Z",
-    "actionable_now": 0
+    "unresolved_followups": 38
   },
-  "mode": "normal_historical_discovery",
+  "mode": "historical_api_triage",
   "monthly_api": {
     "initial_cases": 0,
     "raw_records": 0,
@@ -20,17 +18,11 @@
     "related_metadata_blockers": 0,
     "remaining_or_untracked": 0,
     "research_completed": 0,
-    "unresolved_followups": 0,
-    "actionable_now": 0
+    "unresolved_followups": 0
   },
-  "note": "Do not prematurely retry the 38 future-due historical cases. 9 attribution followups have verified closure evidence in scout-operations/attribution-followup-deltas/2026-10-29-1526ET.json but primary 148-kB ledger merge is pending due connector size safety block; exclude those nine from repeated research. 2016 AMS severe-hail poster independently discovered and verified in 16-batch manifest; human review pending.",
-  "phase": "award_centered_discovery_and_bounded_attribution_followups",
-  "reason": "Monthly queue has 0 actionable cases; historical 38 remaining are blocked by documented future >=7-day metadata retry dates. Work on independent SPARK award discovery and qualified attribution followups until higher-priority queue becomes actionable.",
+  "note": "Future follow-up dates do not clear API research. Make bounded distinct-source checks now; use documented early-retry exceptions as needed. An unavailable or invalid Hub metadata-needed handoff remains outstanding. This selector does NOT conduct research, verify human approval, or launch Scout.",
+  "phase": "additional_evidence_research",
+  "reason": "Prioritize unresolved historical DataCite DOI follow-ups and linked-output metadata recovery; future retry dates are NOT clearance",
   "schema": "reach-scout-workstream-v1",
-  "switch_policy": "monthly actionable > historical DataCite actionable > normal historical SPARK discovery (including attribution followups); recheck every hour",
-  "attribution_followups_closed_unmerged_delta": 9,
-  "attribution_followups_effectively_pending": 43,
-  "last_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1526ET",
-  "last_run_at": "2026-10-29T19:31:41Z",
-  "feed_integrity_status": "VERIFIED_MANIFEST_AND_ALL_16_CSVS_MATCH"
+  "switch_policy": "monthly first-pass > monthly follow-ups > historical first-pass > historical follow-ups > attribution follow-ups > normal SPARK historical discovery"
 }
