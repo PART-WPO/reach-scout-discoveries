@@ -1,0 +1,99 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-29-HOURLY-0132ET",
+  "completed_at": "2026-10-29T05:32:21Z",
+  "primary_mode": "historical_api_triage",
+  "monthly_source_rows": 0,
+  "historical_source_rows": 188,
+  "historical_before": {
+    "completed": 47,
+    "remaining": 141,
+    "awaiting_research": 127,
+    "needs_more_research": 14,
+    "no_action": 6
+  },
+  "historical_after": {
+    "completed": 58,
+    "remaining": 130,
+    "awaiting_research": 114,
+    "needs_more_research": 16,
+    "no_action": 17
+  },
+  "original_seed_investigated": 13,
+  "original_seed_no_action_dois": [
+    "10.25820/data.006126",
+    "10.25820/data.006144",
+    "10.25923/b2b3-m644",
+    "10.25923/cckr-7v25",
+    "10.25923/d7j4-gx12",
+    "10.25923/fssj-fe85",
+    "10.25923/fye2-yk53",
+    "10.25923/gy19-2j41",
+    "10.25923/hq4k-bw52",
+    "10.25923/jxrb-a760",
+    "10.25923/nm97-m303"
+  ],
+  "original_seed_blocked_dois": [
+    "10.17603/ds2-yry6-r324",
+    "10.25923/mpqr-r886"
+  ],
+  "original_seed_forwarded": 0,
+  "already_in_reach_new": 0,
+  "expanded_output_forwarded": 0,
+  "api_seeded_expansion_leads": [
+    {
+      "seed": "10.25820/data.006126",
+      "related": "10.5194/acp-21-2837-2021",
+      "disposition": "NASA-only financial support, not WPO"
+    },
+    {
+      "seed": "10.25820/data.006144",
+      "related": "10.1039/D2EA00023G",
+      "disposition": "NASA-only financial support, not WPO"
+    },
+    {
+      "seed": "10.17603/ds2-yry6-r324",
+      "related": "10.1061/nhrefo.nheng-1802",
+      "disposition": "Already in REACH reach-000789; distinct dataset blocked"
+    }
+  ],
+  "discovery_route_candidate_counts": {
+    "Direct API": 0,
+    "API-seeded expansion": 0,
+    "Independent discovery": 0,
+    "Metadata correction": 0,
+    "Unclassified": 0
+  },
+  "reach_source_rows": 1238,
+  "reach_source_sha256": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+  "reach_index_shards_checked": 10,
+  "spark_index_shards_checked": 6,
+  "spark_award_shards_checked": 6,
+  "existing_scout_batches_checked": 13,
+  "relevant_reach_detail_shards_checked": [
+    "agent-data/details/part-094.csv"
+  ],
+  "provenance_audit_status": "PARTIAL",
+  "limits": [
+    "No exhaustive REACH detail-shard audit",
+    "Private human dispositions not available",
+    "Some DOI native metadata unavailable; two bounded blockers opened"
+  ],
+  "new_hub_batches": 0,
+  "new_hub_candidates": 0,
+  "new_hub_investigate_candidates": 0,
+  "human_metadata_needed_pending": 0,
+  "due_metadata_followups": 0,
+  "overdue_metadata_followups": 0,
+  "new_blocker_followup_due": "2026-11-05T05:32:21Z",
+  "new_public_reach_additions_verified": 0,
+  "public_reach_baseline": 1238,
+  "library_files": [
+    "/REACH Scout Library/2026-10-29-0132ET-report.md",
+    "/REACH Scout Library/2026-10-29-0132ET-research_leads.csv",
+    "/REACH Scout Library/2026-10-29-0132ET-checkpoint.json",
+    "/REACH Scout Library/2026-10-29-0132ET-discovery_hub.csv",
+    "/REACH Scout Library/2026-10-29-0132ET-hourly_provenance_audit.json"
+  ],
+  "note": "No verified new eligible review candidate; do not publish an empty batch. NOAA CI umbrella award overlap and NASA related-award overlap are not sufficient WPO output attribution. No-action decisions can be reopened with direct funding evidence."
+}
