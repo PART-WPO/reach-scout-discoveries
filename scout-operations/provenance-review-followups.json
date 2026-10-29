@@ -1,7 +1,7 @@
 {
   "schema": "reach-scout-provenance-review-followups-v1",
   "date": "2026-10-29",
-  "scope": "Eight tracked API-seeded expansion proposals requiring human origin, eligibility and duplicate/version checks; six earlier entries retained unchanged; public operational review prompts only, not actual human decisions",
+  "scope": "Eleven tracked API-seeded expansion proposals; original six and subsequent two preserved; three new 2026-10-29 19:29 ET author/project-linked candidates pending human origin/eligibility and duplicate/version review.",
   "entries": [
     {
       "output_identity": "10.1175/WCAS-D-23-0046.1",
@@ -90,8 +90,41 @@
       "review_checks": "Source path: https://journals.ametsoc.org/view/journals/aies/3/1/AIES-D-23-0064.1.xml links exact Figshare DOI in data availability; publisher acknowledges NA19OAR4590245; absent 1238 REACH index and 53 prior Scout candidates.",
       "reviewer_approved": null,
       "public_reach_added": null
+    },
+    {
+      "output_identity": "10.1029/2024WR037507",
+      "original_seed_doi": "10.5281/zenodo.23044469",
+      "batch_path": "scout-discoveries/batches/2026-10-29-hourly-1929ET-verified-article-expansion-001.csv",
+      "route": "API-seeded expansion",
+      "status": "requires_human_origin_and_eligibility_review",
+      "review_question": "Verify whether author/project-linked discovery path is appropriate; confirm original captured API cohort, public REACH and privately reviewed duplicate/version status before any approval.",
+      "review_checks": "Yeo et al. 2024 ice forecasts article is linked through shared FVCOM project investigator Fujisaki-Manome and exact WPO JTTI grant; publisher does NOT cite exact original Zenodo software DOI. Full 1,238-row public REACH index and 56 prior Scout staged candidates had no exact DOI/title. Publisher and NOAA IR directly identify exact primary WPO award. Do not equate shared author/project with direct DOI citation.",
+      "reviewer_approved": null,
+      "public_reach_added": null
+    },
+    {
+      "output_identity": "10.1029/2024MS004319",
+      "original_seed_doi": "10.5281/zenodo.23289230",
+      "batch_path": "scout-discoveries/batches/2026-10-29-hourly-1929ET-verified-article-expansion-001.csv",
+      "route": "API-seeded expansion",
+      "status": "requires_human_origin_and_eligibility_review",
+      "review_question": "Verify whether author/project-linked discovery path is appropriate; confirm original captured API cohort, public REACH and privately reviewed duplicate/version status before any approval.",
+      "review_checks": "Xu/Zaron 2024 streaming-filter article shares authors and exact WPO ocean-tides award with seed, but publisher cites different Zenodo 13379023; not a direct seed citation. Full 1,238-row public REACH index and 56 prior Scout staged candidates had no exact DOI/title. Publisher and NOAA IR directly identify exact primary WPO award. Do not equate shared author/project with direct DOI citation.",
+      "reviewer_approved": null,
+      "public_reach_added": null
+    },
+    {
+      "output_identity": "10.1029/2025MS005126",
+      "original_seed_doi": "10.5281/zenodo.23289230",
+      "batch_path": "scout-discoveries/batches/2026-10-29-hourly-1929ET-verified-article-expansion-001.csv",
+      "route": "API-seeded expansion",
+      "status": "requires_human_origin_and_eligibility_review",
+      "review_question": "Verify whether author/project-linked discovery path is appropriate; confirm original captured API cohort, public REACH and privately reviewed duplicate/version status before any approval.",
+      "review_checks": "Xu/Zaron 2025 drag-parameterization article shares authors and exact WPO ocean-tides award with seed; availability cites different Zenodo 16905128, not original seed. Full 1,238-row public REACH index and 56 prior Scout staged candidates had no exact DOI/title. Publisher and NOAA IR directly identify exact primary WPO award. Do not equate shared author/project with direct DOI citation.",
+      "reviewer_approved": null,
+      "public_reach_added": null
     }
   ],
   "human_dispositions": "Not publicly verifiable; do not infer completion from GitHub staging or overwrite human decisions",
-  "note": "Two 2026-10-29 11:31 ET proposals are new immutable GitHub batch candidates, verified in manifest, not approvals. All six prior proposals preserved without re-publication."
+  "note": "Three new proposals in immutable 19:29 ET CSV; no private human decision inferred. Original 8 followups preserved unchanged; no duplicate candidate staged."
 }
