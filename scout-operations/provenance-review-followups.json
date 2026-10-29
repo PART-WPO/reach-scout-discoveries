@@ -1,7 +1,7 @@
 {
   "schema": "reach-scout-provenance-review-followups-v1",
   "date": "2026-10-29",
-  "scope": "Six overnight API-seeded expansion proposals; public operational review prompts ONLY, not actual human decisions",
+  "scope": "Eight tracked API-seeded expansion proposals requiring human origin, eligibility and duplicate/version checks; six earlier entries retained unchanged; public operational review prompts only, not actual human decisions",
   "entries": [
     {
       "output_identity": "10.1175/WCAS-D-23-0046.1",
@@ -68,8 +68,30 @@
       "review_checks": "Check original source DOI disposition, captured direct DataCite/Crossref cohort, source path evidence, existing REACH exact output and versions, Scout batches and private reviewer disposition.",
       "reviewer_approved": null,
       "public_reach_added": null
+    },
+    {
+      "output_identity": "10.1175/MWR-D-23-0144.1",
+      "original_seed_doi": "10.6084/m9.figshare.23666259",
+      "batch_path": "scout-discoveries/batches/2026-10-29-hourly-1131ET-verified-article-expansion-001.csv",
+      "route": "API-seeded expansion",
+      "status": "requires_human_origin_and_eligibility_review",
+      "review_question": "Confirm distinct 2024 peer-reviewed article versus 2023 VORTEX-SE poster, source-path author linkage, funding attribution and any private prior review decision.",
+      "review_checks": "Source path: https://orcid.org/0000-0003-3318-7601; publisher funding: https://journals.ametsoc.org/view/journals/mwre/152/7/MWR-D-23-0144.1.xml; DOI absent in 1238 REACH index and 53 prior Scout candidates. Human review remains required.",
+      "reviewer_approved": null,
+      "public_reach_added": null
+    },
+    {
+      "output_identity": "10.1175/AIES-D-23-0064.1",
+      "original_seed_doi": "10.6084/m9.figshare.23689194",
+      "batch_path": "scout-discoveries/batches/2026-10-29-hourly-1131ET-verified-article-expansion-001.csv",
+      "route": "API-seeded expansion",
+      "status": "requires_human_origin_and_eligibility_review",
+      "review_question": "Verify separately eligible 2024 article versus ELDORA Figshare dataset, original API cohort and any privately reviewed duplicate or version.",
+      "review_checks": "Source path: https://journals.ametsoc.org/view/journals/aies/3/1/AIES-D-23-0064.1.xml links exact Figshare DOI in data availability; publisher acknowledges NA19OAR4590245; absent 1238 REACH index and 53 prior Scout candidates.",
+      "reviewer_approved": null,
+      "public_reach_added": null
     }
   ],
   "human_dispositions": "Not publicly verifiable; do not infer completion from GitHub staging or overwrite human decisions",
-  "note": "These six were already staged in GitHub. Do not re-publish as new candidates or add empty batches."
+  "note": "Two 2026-10-29 11:31 ET proposals are new immutable GitHub batch candidates, verified in manifest, not approvals. All six prior proposals preserved without re-publication."
 }
