@@ -21,7 +21,7 @@ REPORT=ROOT/"scout-operations/historical-coverage.json"
 DOI_RE=re.compile(r"10\.[0-9]{4,9}/[^\s]+",re.I)
 BATCH_RE=re.compile(r"api-discoveries/historical/batches/[A-Za-z0-9_.-]+\.csv")
 STATUS_PENDING={"awaiting_research","investigating","needs_more_research"}
-STATUS_DONE={"already_in_reach","forwarded_to_hub","metadata_update_forwarded","no_action"}
+STATUS_DONE={"already_in_reach","forwarded_to_hub","metadata_update_forwarded","no_action","human_metadata_needed"}
 STATUS_ALL=STATUS_PENDING|STATUS_DONE
 REVIEW=ROOT/"scout-discoveries/manifest.json"
 
@@ -77,6 +77,23 @@ def verified_terminal(entry,reviewed_paths):
         if path not in reviewed_paths:return False
     if entry["status"]=="no_action" and len(str(entry.get("no_action_reason","")).strip())<20:
         return False
+    if entry["status"]=="human_metadata_needed":
+        # Metadata research can be complete before a real human decision.
+        # A pending intake handoff is NOT equivalent to a Hub submission.
+        if not entry.get("metadata_recovery_exhausted") is True:
+            return False
+        if not entry.get("missing_evidence") or not str(entry.get("reviewer_question","")).strip():
+            return False
+        if not entry.get("human_handoff_status") in {"pending_hub_intake","staged_for_review"}:
+            return False
+        if not entry.get("verified_awards") or not set(entry["verified_awards"]).issubset(set(entry.get("award_numbers",[]))):
+            return False
+        if entry["human_handoff_status"]=="pending_hub_intake":
+            if not str(entry.get("hub_intake_blocker","")).strip() or entry.get("scout_batch_path"):
+                return False
+        elif entry.get("scout_batch_path") not in reviewed_paths:
+            return False
+        return True
     if sorted(entry.get("verified_awards",[]))!=sorted(entry.get("award_numbers",[])):
         return False
     return True
@@ -149,6 +166,7 @@ def reconcile():
         "forwarded_to_hub":counts["forwarded_to_hub"],
         "metadata_update_forwarded":counts["metadata_update_forwarded"],
         "no_action":counts["no_action"],
+        "human_metadata_needed":counts["human_metadata_needed"],
         "research_complete":bool(total and counts["completed"]==total),
         "note":"A completed status requires individual Scout evidence and REACH comparison; DataCite date enrichment alone does not close an item."
     }
