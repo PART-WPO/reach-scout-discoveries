@@ -3,8 +3,8 @@
     "coverage_matches_source_manifest": true,
     "distinct_dois": 188,
     "raw_batch_rows": 188,
-    "remaining_or_untracked": 47,
-    "research_completed": 141
+    "remaining_or_untracked": 38,
+    "research_completed": 150
   },
   "mode": "historical_api_triage",
   "monthly_api": {
@@ -13,8 +13,8 @@
     "remaining_or_untracked": 0,
     "research_completed": 0
   },
-  "note": "Recomputed 2026-10-29 10:31 ET from 188 source identities and live historical ledger; continue indefinite hourly routing after pilot.",
-  "reason": "Monthly empty; 19 historical original DOIs actionable and 28 original metadata blockers future-due Nov 5. 57 separate attribution follow-ups lower priority; no new feed batches while validator failure persists.",
+  "note": "Priority is reevaluated each scheduled Scout mission. GitHub Actions do NOT instantly launch ChatGPT Scout missions. Complete research requires evidence-backed ledger status.",
+  "reason": "Unfinished historical DataCite API test/backfill DOI cases",
   "schema": "reach-scout-workstream-v1",
   "switch_policy": "monthly API > historical API test backlog > normal SPARK historical discovery"
 }
