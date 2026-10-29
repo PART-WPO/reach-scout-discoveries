@@ -657,6 +657,74 @@
       "funding_basis": "NOAA IR identifies WPO among program offices and broad CIWRO award NA21OAR4320204. SPARK lists this as RELATED award for WPO social-science survey projects, but no direct project-specific attribution established.",
       "next_action": "One bounded follow-up on or after 2026-11-05T05:32:21Z using different authoritative sources; if credible but still metadata-incomplete escalate to human_metadata_needed without inventing date or invalid Hub CSV; if evidence insufficient document no_action.",
       "triage_identity": "doi:10.25923/mpqr-r886"
+    },
+    {
+      "identity": "doi:10.7910/dvn/jwzewf",
+      "award_numbers": [
+        "NA23OAR4590137"
+      ],
+      "cohort": "Historical DataCite API Backfill 2026-10-28 — API-seeded expansion from grant DOI 10.25923/t7t6-m677",
+      "status": "blocked",
+      "triage_identity": "doi:10.25923/t7t6-m677",
+      "discovery_route": "API-seeded expansion",
+      "seed_doi": "10.25923/t7t6-m677",
+      "missing_fields": [
+        "Harvard Dataverse record-specific full YYYY-MM-DD dataset publication date",
+        "native publisher verification of publicly accessible dataset files and scope"
+      ],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "publisher_article_data_availability",
+          "url": "https://journals.ametsoc.org/view/journals/bams/107/3/BAMS-D-25-0309.1.xml",
+          "outcome": "2026 BAMS article directly names Harvard Dataverse DOI 10.7910/DVN/JWZEWF and cites 2025; acknowledgments explicitly name NOAA NA23OAR4590137. Article itself already in REACH.",
+          "checked_at": "2026-10-29T06:31:49Z"
+        },
+        {
+          "round": 0,
+          "method": "harvard_dataverse_landing",
+          "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/JWZEWF",
+          "outcome": "Landing required JavaScript/anti-robot verification; no native full YYYY-MM-DD dataset date or file accessibility established.",
+          "checked_at": "2026-10-29T06:31:49Z"
+        },
+        {
+          "round": 0,
+          "method": "complete_reach_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "outcome": "All ten index shards, 1238 records searched; no exact dataset DOI/title; related BAMS paper already REACH.",
+          "checked_at": "2026-10-29T06:31:49Z"
+        },
+        {
+          "round": 0,
+          "method": "scout_batch_deduplication",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+          "outcome": "All thirteen existing Scout batch CSVs, 51 rows searched; no exact dataset DOI/title.",
+          "checked_at": "2026-10-29T06:31:49Z"
+        },
+        {
+          "round": 0,
+          "method": "spark_award_index",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+          "outcome": "All six SPARK index shards; primary NA23OAR4590137 DRSA PRECIP1 project matches publisher article and dataset topic.",
+          "checked_at": "2026-10-29T06:31:49Z"
+        }
+      ],
+      "first_investigated_at": "2026-10-29T06:31:49Z",
+      "last_attempt_at": "2026-10-29T06:31:49Z",
+      "retry_count": 0,
+      "max_delayed_retries": 1,
+      "next_retry_at": "2026-11-05T06:31:49Z",
+      "next_research_at": "2026-11-05T06:31:49Z",
+      "followup_question": "Can authoritative Harvard Dataverse/DOI metadata establish the exact first publication YYYY-MM-DD and verify publicly accessible dataset files, distinct from the already-REACH BAMS paper and survey instrument?",
+      "evidence_urls": [
+        "https://doi.org/10.7910/DVN/JWZEWF",
+        "https://journals.ametsoc.org/view/journals/bams/107/3/BAMS-D-25-0309.1.xml",
+        "https://repository.library.noaa.gov/view/noaa/67019"
+      ],
+      "funding_basis": "BAMS article explicitly acknowledges NOAA NA23OAR4590137 and names this Dataverse dataset as its publicly available data; SPARK primary DRSA PRECIP1 award matches exact grant and research topic.",
+      "next_action": "One bounded follow-up no sooner than 2026-11-05T06:31:49Z using native Dataverse citation/metadata and accessible files. If date/scope verified and not duplicate, stage a separate 24-column API-seeded expansion candidate for human approval; if still credible but missing mandatory fields, human_metadata_needed escalation outside normal research queue; no fabricated date.",
+      "human_review_status": "not yet delivered to Discovery Hub; metadata blocked",
+      "review_ready": false
     }
   ]
 }
