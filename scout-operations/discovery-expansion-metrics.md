@@ -1,5 +1,12 @@
 # Scout discovery expansion: provenance and impact measurement
 
+## Cumulative discovery-origin rollup — October 29 reconciliation
+
+[Machine-readable rollup](discovery-origin-rollup.json) reconciles all 14 published GitHub batch CSVs against the 53-row manifest: **Direct API 1; API-seeded expansion 7; Independent discovery 0; Metadata correction 5; legacy rows without explicit discovery route 40.** Missing legacy origin labels are NOT independent discoveries. For the 20:29 ET–07:34 ET overnight window, the verified four new batches hold **10 review proposals**: Direct API 1, API-seeded expansion 6, Metadata correction 3. These are staged for review, not approvals or public outputs. The authoritative REACH agent-data manifest still has 1,238 records at blob ab844173f761617a2fe1def5cf218b1fc94b3e7d; no incremental publication is asserted from staged files.
+
+The Oct 28 **20:29 ET** and **21:29 ET** missing hourly audit JSON files have now been backfilled as **PARTIAL**, with original commit links, independent seed dispositions, proposal routes, and explicit unrecoverable evidence gaps. See [20:29 reconstruction](hourly-run-audits/2026-10-28-2029ET.json) and [21:29 reconstruction](hourly-run-audits/2026-10-28-2129ET.json). Reconstructed is not equivalent to an original real-time PASS. Future runs must emit provenance audit files contemporaneously. Historical no-action dispositions now have explicit subtypes and [bounded targeted attribution follow-ups](attribution-followups.json) distinct from terminal original-seed status; do not convert these follow-up leads into Hub proposals without corroborated WPO workstream evidence.
+
+
 **Purpose:** Scout's distinctive benefit is research **beyond** directly retrieved award-number DataCite/Crossref records. Count direct API outputs separately from (a) additional outputs reached by following an API seed's citations, related identifiers, data availability/code links, authors, or repositories and (b) independently discovered outputs from award/project/researcher exploration.
 
 ## Required human-auditable route in every NEW Scout-verified finding
