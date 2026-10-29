@@ -1,0 +1,484 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-29-HOURLY-1434ET",
+  "run_timestamp": "2026-10-29T18:37:55.682235Z",
+  "selected_mode": "normal_historical_discovery",
+  "routing_source_stale": {
+    "file": "scout-operations/active-workstream.json",
+    "observed_mode": "historical_api_triage",
+    "recomputed_mode": "normal_historical_discovery",
+    "reason": "38 historical cases future-blocked; zero actionable monthly candidates"
+  },
+  "audit_result": "PARTIAL",
+  "feed_integrity_status": "VERIFIED_EXISTING_15_BATCH_FEED_NO_NEW_BATCH",
+  "github_action_verification_status": "SUCCESS_PREVIOUS_PUBLISH_40903812254_NO_NEW_BATCH_THIS_RUN",
+  "github_action_run_id": 40903812254,
+  "manifest_verification": {
+    "public_manifest_batches": 15,
+    "public_manifest_candidate_rows": 55,
+    "exact_csv_sha256_matches": 15,
+    "record_count_matches": 15,
+    "run_id_matches": 15,
+    "all_batches_exactly_24_columns": true,
+    "newly_staged_csv_ids": [],
+    "manifest_written_by_scout": false,
+    "prior_batches_unchanged": 15,
+    "public_manifest_path": "scout-discoveries/manifest.json"
+  },
+  "source_checks": {
+    "monthly_manifest_rows": 0,
+    "monthly_ledger_entries": 0,
+    "historical_source_rows": 188,
+    "historical_ledger_distinct_dois": 188,
+    "reach_index_shards": 10,
+    "reach_index_records": 1238,
+    "spark_index_shards": 6,
+    "spark_projects": 578,
+    "scout_review_batches": 15,
+    "scout_review_rows": 55,
+    "complete_reach_detail_shards": "NOT_EXHAUSTIVELY_CHECKED",
+    "private_reviewer_decisions": "NOT_VERIFIABLE",
+    "source_url_examples": [
+      "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+      "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+      "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/manifest.json"
+    ]
+  },
+  "coverage_before": {
+    "total": 188,
+    "completed_before": 150,
+    "completed_after": 150,
+    "remaining_before": 38,
+    "remaining_after": 38,
+    "awaiting_initial": 0,
+    "scheduled_followups": 38,
+    "already_in_reach": 37,
+    "forwarded_original": 2,
+    "metadata_update_forwarded": 8,
+    "no_action": 103,
+    "monthly_completed": 0,
+    "monthly_remaining": 0
+  },
+  "coverage_after_expected": {
+    "total": 188,
+    "completed_before": 150,
+    "completed_after": 150,
+    "remaining_before": 38,
+    "remaining_after": 38,
+    "awaiting_initial": 0,
+    "scheduled_followups": 38,
+    "already_in_reach": 37,
+    "forwarded_original": 2,
+    "metadata_update_forwarded": 8,
+    "no_action": 103,
+    "monthly_completed": 0,
+    "monthly_remaining": 0
+  },
+  "original_seeds_independently_disposed_this_run": [],
+  "original_seed_no_action_cumulative": 103,
+  "original_seed_no_action_new": 0,
+  "original_seed_no_action_subtypes_changed": 4,
+  "attribution_followups_rechecked": [
+    {
+      "identity": "doi:10.25923/hq4k-bw52",
+      "original_seed_status": "no_action",
+      "artifact_not_grant": true,
+      "subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "source_urls": [
+        "https://repository.library.noaa.gov/view/noaa/71175",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-021.csv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-022.csv"
+      ],
+      "evidence_findings": [
+        "NOAA IR identifies an HWT Experimental Warning Program experiment-wide report supported by broad CIWRO cooperative agreement NA21OAR4320204.",
+        "WPO project spark-000250 is the Extreme Weather and Emergency Management Survey, primarily NA21OAR4590213; CIWRO agreement appears as related support.",
+        "WPO project spark-000254 concerns longitudinal societal/flood surveys; no HWT experimental-warning report deliverable named.",
+        "Related BIL compound-flood survey project spark-000269 also does not document HWT experimental-warning report as its deliverable."
+      ],
+      "contradiction_or_negative_evidence": "No specific WPO survey-workstream bridge; HWT-wide warning technology experiment is distinct from longitudinal emergency-management and flood surveys.",
+      "review_question": "Does a named WPO survey project final report expressly identify this HWT EWP report as its funded deliverable?",
+      "outcome": "close_followup_no_project_bridge",
+      "research_rounds": 1,
+      "original_seed_doi": "10.25923/hq4k-bw52"
+    },
+    {
+      "identity": "doi:10.25923/jxrb-a760",
+      "original_seed_status": "no_action",
+      "artifact_not_grant": true,
+      "subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "source_urls": [
+        "https://repository.library.noaa.gov/view/noaa/73921",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-021.csv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-022.csv"
+      ],
+      "evidence_findings": [
+        "NOAA IR identifies NSSL phased-array radar adaptive-scanning research and broad CIWRO funding.",
+        "WPO spark-000250 surveys emergency managers, not phased-array radar instrumentation.",
+        "WPO spark-000254 analyzes societal/flood survey data, not ATD radar scanning.",
+        "WPO spark-000269 focuses compound-flood communication; no ATD report named."
+      ],
+      "contradiction_or_negative_evidence": "ATD radar work and WPO survey deliverables are distinct; broad cooperative award alone cannot bridge them.",
+      "review_question": "Is the NSSL ATD adaptive-scanning report specifically listed as a WPO survey award product?",
+      "outcome": "close_followup_no_project_bridge",
+      "research_rounds": 1,
+      "original_seed_doi": "10.25923/jxrb-a760"
+    },
+    {
+      "identity": "doi:10.4211/hs.9460830270ec4d8b9d9c4260cca2114d",
+      "original_seed_status": "no_action",
+      "artifact_not_grant": true,
+      "subtype": "NO_DEMONSTRATED_WPO_CONNECTION_ALTERNATIVE_FUNDING",
+      "source_urls": [
+        "https://hydroshare.org/resource/9460830270ec4d8b9d9c4260cca2114d/",
+        "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2022GL100667",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-011.csv",
+        "https://gmd.copernicus.org/articles/16/1925/2023/"
+      ],
+      "evidence_findings": [
+        "HydroShare dataset concerns agricultural edge-of-field runoff in the Great Lakes region.",
+        "Linked 2022 paper credits Great Lakes Restoration Initiative through EPA/NOAA and CIGLR umbrella NA17OAR4320152; data availability links exact HydroShare DOI.",
+        "SPARK spark-000135 is NA22OAR4590188 lake-atmosphere coupling in UFS with FVCOM-CICE; NA17OAR4320152 appears only as related institutional award.",
+        "Independent runoff-modeling paper cites same HydroShare dataset and distinct Zenodo code; no WPO UFS lake-coupling attribution."
+      ],
+      "contradiction_or_negative_evidence": "Hydrologic agricultural runoff under GLRI/CIGLR is not shown to be an output of WPO FVCOM-CICE/UFS lake-coupling project.",
+      "review_question": "Does NA22OAR4590188 project documentation explicitly name the agricultural runoff dataset as a funded output?",
+      "outcome": "close_followup_no_project_bridge",
+      "research_rounds": 1,
+      "original_seed_doi": "10.4211/hs.9460830270ec4d8b9d9c4260cca2114d"
+    },
+    {
+      "identity": "doi:10.5061/dryad.05qfttf5h",
+      "original_seed_status": "no_action",
+      "artifact_not_grant": true,
+      "subtype": "NO_DEMONSTRATED_WPO_CONNECTION_ALTERNATIVE_FUNDING",
+      "source_urls": [
+        "https://datadryad.org/dataset/doi%3A10.5061/dryad.05qfttf5h",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-011.csv",
+        "https://wpo.noaa.gov/spark/"
+      ],
+      "evidence_findings": [
+        "Dryad funding includes NSF, NASA, NOAA Global Ocean Monitoring and Observing Program and NOAA CISESS umbrella NA19NES4320002; dataset is biogeochemical cruise observations.",
+        "SPARK spark-000136 is NA23OAR4590379 global non-Gaussian particle-filter DA for UFS/JEDI, with NA19NES4320002 listed as related support.",
+        "Official WPO project catalog supports distinct modeling/data-assimilation project identity, not cruise biogeochemistry."
+      ],
+      "contradiction_or_negative_evidence": "Native dataset identifies other science funding and a broad CISESS award; no source identifies the GO-POPCORN dataset as a deliverable of WPO global DA project.",
+      "review_question": "Is GO-POPCORN named in an award-specific NA23OAR4590379 UFS/JEDI deliverables list?",
+      "outcome": "close_followup_no_project_bridge",
+      "research_rounds": 1,
+      "original_seed_doi": "10.5061/dryad.05qfttf5h"
+    },
+    {
+      "identity": "doi:10.5061/dryad.0gb5mkm6t",
+      "original_seed_status": "no_action",
+      "artifact_not_grant": true,
+      "subtype": "NO_DEMONSTRATED_WPO_CONNECTION_ALTERNATIVE_FUNDING",
+      "source_urls": [
+        "https://datadryad.org/dataset/doi%3A10.5061/dryad.0gb5mkm6t",
+        "https://doi.org/10.5751/es-14371-280310",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-011.csv"
+      ],
+      "evidence_findings": [
+        "Dryad dataset contains Lake Erie fisheries historical productivity and commercial harvest data.",
+        "Linked Ecology & Society article credits Great Lakes Fishery Commission, EPA and CIGLR umbrella NA17OAR4320152; data availability identifies exact Dryad DOI.",
+        "SPARK spark-000135 describes UFS FVCOM-CICE lake coupling and operational weather forecasting, not historical fishery yield analysis."
+      ],
+      "contradiction_or_negative_evidence": "Fisheries/ecological research is independently funded and lacks project-specific bridge to WPO UFS lake-coupling deliverables.",
+      "review_question": "Does a WPO NA22OAR4590188 technical report name this fisheries dataset as an output?",
+      "outcome": "close_followup_no_project_bridge",
+      "research_rounds": 1,
+      "original_seed_doi": "10.5061/dryad.0gb5mkm6t"
+    },
+    {
+      "identity": "doi:10.5061/dryad.0gb5mkmbc",
+      "original_seed_status": "no_action",
+      "artifact_not_grant": true,
+      "subtype": "NO_DEMONSTRATED_WPO_CONNECTION_ALTERNATIVE_FUNDING",
+      "source_urls": [
+        "https://datadryad.org/dataset/doi%3A10.5061/dryad.0gb5mkmbc",
+        "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2024EA004082",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-008.csv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-018.csv"
+      ],
+      "evidence_findings": [
+        "Dryad identifies curated historical bioluminescence sightings and NOAA JPSS Program Office funding under two CI awards.",
+        "Linked peer-reviewed article explicitly attributes work to NOAA Joint Polar Satellite System Program Office and links Dryad, GitHub code, and Zenodo archive.",
+        "SPARK spark-000105 concerns MET-TC environmental diagnostics and verification, not ocean bioluminescence observations.",
+        "SPARK spark-000222 concerns operational AI tropical-cyclone guidance, not milky-sea dataset."
+      ],
+      "contradiction_or_negative_evidence": "Positive alternate NOAA JPSS funding is documented; shared institutional awards do not establish WPO MET-TC or tropical-cyclone AI deliverable status.",
+      "review_question": "Is there a primary WPO project deliverables record explicitly linking the milky-sea dataset to MET-TC or AI TC guidance?",
+      "outcome": "close_followup_no_project_bridge",
+      "research_rounds": 1,
+      "original_seed_doi": "10.5061/dryad.0gb5mkmbc"
+    }
+  ],
+  "attribution_queue_before": {
+    "total": 66,
+    "queued": 58,
+    "closed": 8
+  },
+  "attribution_queue_expected_after": {
+    "total": 66,
+    "queued": 52,
+    "closed": 14
+  },
+  "normal_spark_awards_examined": [
+    {
+      "award_numbers": "NA15OAR4590191; NA15OAR4590189",
+      "project_family": "Convection-permitting NCAR ensemble",
+      "finding": "Existing six REACH titles include NCAR real-time ensemble BAMS article and mountain-precipitation validation; no unique missing output verified.",
+      "source_urls": [
+        "https://repository.library.noaa.gov/view/noaa/64854",
+        "https://repository.library.noaa.gov/view/noaa/48401"
+      ],
+      "route": "Independent award-centered discovery",
+      "candidate_disposition": "existing_reach_or_scout_or_no_verified_new_output"
+    },
+    {
+      "award_numbers": "NA15OAR4590193",
+      "project_family": "GSI-based EnKF/EnVar convection-allowing DA",
+      "finding": "Five existing REACH titles include 2019 radar assimilation, 2020 model-error, and 2018 surface assimilation papers; a 2021 MDPI paper was already staged, not a new submission.",
+      "source_urls": [
+        "https://repository.library.noaa.gov/view/noaa/28019",
+        "https://doi.org/10.3390/atmos12101286"
+      ],
+      "route": "Independent award-centered discovery",
+      "candidate_disposition": "existing_reach_or_scout_or_no_verified_new_output"
+    },
+    {
+      "award_numbers": "NA15OAR4590186",
+      "project_family": "Storm-scale ensemble initial conditions",
+      "finding": "Six REACH award-linked titles, including hail and EnKF configuration papers; no distinct missing item confirmed.",
+      "source_urls": [
+        "https://repository.library.noaa.gov/view/noaa/63762"
+      ],
+      "route": "Independent award-centered discovery",
+      "candidate_disposition": "existing_reach_or_scout_or_no_verified_new_output"
+    },
+    {
+      "award_numbers": "NA15OAR4590187; NA15OAR4590188",
+      "project_family": "ProbSevere and PHI tool",
+      "finding": "Human-machine severe forecasting paper already in REACH; no new unique output verified.",
+      "source_urls": [
+        "https://repository.library.noaa.gov/view/noaa/22218"
+      ],
+      "route": "Independent award-centered discovery",
+      "candidate_disposition": "existing_reach_or_scout_or_no_verified_new_output"
+    },
+    {
+      "award_numbers": "NA15OAR4590158",
+      "project_family": "HMT MRMS Hydro experiment",
+      "finding": "BAMS HMT multi-radar article already staged in immutable Oct 22 batch; no duplicate publication.",
+      "source_urls": [
+        "https://journals.ametsoc.org/view/journals/bams/98/2/bams-d-15-00283.1.xml"
+      ],
+      "route": "Independent award-centered discovery",
+      "candidate_disposition": "existing_reach_or_scout_or_no_verified_new_output"
+    },
+    {
+      "award_numbers": "NA15OAR4590159",
+      "project_family": "HMT storm-scale heavy precipitation ensembles",
+      "finding": "SPARK project checked; no independently verified distinct missing output from targeted award search.",
+      "source_urls": [
+        "https://wpo.noaa.gov/spark/"
+      ],
+      "route": "Independent award-centered discovery",
+      "candidate_disposition": "existing_reach_or_scout_or_no_verified_new_output"
+    },
+    {
+      "award_numbers": "NA15OAR4590160",
+      "project_family": "Orographic microphysics parameterization",
+      "finding": "2018 prognostic moisture paper already in REACH; no new unique output.",
+      "source_urls": [
+        "https://repository.library.noaa.gov/view/noaa/21602"
+      ],
+      "route": "Independent award-centered discovery",
+      "candidate_disposition": "existing_reach_or_scout_or_no_verified_new_output"
+    },
+    {
+      "award_numbers": "NA15OAR4590203",
+      "project_family": "Observational undersampling over TC lifecycle",
+      "finding": "NHC Nolan/Uhlhorn final report absent from public REACH but ALREADY staged Oct 21; SFMR article in REACH. Existing report publication-date question not altered.",
+      "source_urls": [
+        "https://www.nhc.noaa.gov/jht/15-17reports/Nolan_203_progress_reportFINAL_112818.pdf",
+        "https://repository.library.noaa.gov/view/noaa/20143"
+      ],
+      "route": "Independent award-centered discovery",
+      "candidate_disposition": "existing_reach_or_scout_or_no_verified_new_output"
+    },
+    {
+      "award_numbers": "NA15OAR4590199; NA15OAR4590200",
+      "project_family": "Microwave ring rapid intensification index",
+      "finding": "Seven related REACH titles; no unique new item verified.",
+      "source_urls": [
+        "https://wpo.noaa.gov/spark/"
+      ],
+      "route": "Independent award-centered discovery",
+      "candidate_disposition": "existing_reach_or_scout_or_no_verified_new_output"
+    },
+    {
+      "award_numbers": "NA15OAR4590226",
+      "project_family": "VORTEX-SE tornado development and prediction",
+      "finding": "One exact REACH journal article verified; no new unique candidate.",
+      "source_urls": [
+        "https://repository.library.noaa.gov/view/noaa/52372"
+      ],
+      "route": "Independent award-centered discovery",
+      "candidate_disposition": "existing_reach_or_scout_or_no_verified_new_output"
+    },
+    {
+      "award_numbers": "NA15OAR4590227; NA15OAR4590228; NA15OAR4590229",
+      "project_family": "VORTEX-SE built/natural environment damage surveys",
+      "finding": "Forest damage severity paper already in REACH; no new eligible unique output.",
+      "source_urls": [
+        "https://repository.library.noaa.gov/view/noaa/65098"
+      ],
+      "route": "Independent award-centered discovery",
+      "candidate_disposition": "existing_reach_or_scout_or_no_verified_new_output"
+    },
+    {
+      "award_numbers": "NA15OAR4590230",
+      "project_family": "VORTEX-SE polarimetric radar storm studies",
+      "finding": "Thesis already in REACH; no distinct new item.",
+      "source_urls": [
+        "https://louis.uah.edu/uah-theses/203/"
+      ],
+      "route": "Independent award-centered discovery",
+      "candidate_disposition": "existing_reach_or_scout_or_no_verified_new_output"
+    },
+    {
+      "award_numbers": "NA15OAR4590233",
+      "project_family": "Concurrent tornado and flash-flood warning hazards",
+      "finding": "Hazard Multiple paper and related outputs already in REACH.",
+      "source_urls": [
+        "https://repository.library.noaa.gov/view/noaa/31989"
+      ],
+      "route": "Independent award-centered discovery",
+      "candidate_disposition": "existing_reach_or_scout_or_no_verified_new_output"
+    }
+  ],
+  "expansion_leads": [
+    {
+      "identity": "url:https://www.nhc.noaa.gov/jht/15-17reports/Nolan_203_progress_reportFINAL_112818.pdf",
+      "batch": "2026-10-21-30-award-followup-001",
+      "finding": "Previously staged final report, not a new candidate; document date is not independent proof of first public publication date."
+    },
+    {
+      "identity": "doi:10.1175/BAMS-D-15-00283.1",
+      "batch": "2026-10-22-live-2015-output-research-001",
+      "finding": "Previously staged HMT Hydro article."
+    },
+    {
+      "identity": "doi:10.3390/atmos12101286",
+      "batch": "2026-10-22-live-2015-output-research-001",
+      "finding": "Previously staged EnVar radar assimilation paper."
+    }
+  ],
+  "new_distinct_expansion_candidates": 0,
+  "new_candidates_by_route": {
+    "Direct API": 0,
+    "API-seeded expansion": 0,
+    "Independent discovery": 0,
+    "Metadata correction": 0
+  },
+  "discovery_routes_cumulative": {
+    "Direct API": 1,
+    "API-seeded expansion": 9,
+    "Independent discovery": 0,
+    "Metadata correction": 5,
+    "UNCLASSIFIED_LEGACY": 40
+  },
+  "metadata_blockers": {
+    "total": 43,
+    "original": 38,
+    "expansion_or_normal": 5,
+    "due_followups": 0,
+    "overdue_followups": 0,
+    "human_metadata_needed_pending": 0,
+    "hub_investigate_candidates_delivered": 0,
+    "earliest_due": "2026-11-04T22:08:00Z"
+  },
+  "reviewer_visibility": "Private human decisions NOT VERIFIABLE; staged candidate rows do not imply approval.",
+  "public_reach": {
+    "verified_index_rows": 1238,
+    "newly_verified_additions_this_run": 0
+  },
+  "new_batch_publication": {
+    "csv_staged": false,
+    "manifest_verified_for_new_batch": false,
+    "hub_ready_new_candidates": 0
+  },
+  "privacy_and_immutability": {
+    "existing_batches_edited": false,
+    "manifest_written_by_scout": false,
+    "reach_or_spark_or_smartsheet_modified": false
+  },
+  "audit_limitations": [
+    "Complete REACH detail shards not exhaustively fetched; indexed title/award/link and Scout batch comparisons were performed.",
+    "Private human-review decisions unavailable; no approval claims.",
+    "Normal historical discovery is nonexhaustive for all 578 SPARK projects; this run examined 13 project families."
+  ],
+  "no_action_subtype_changes": [
+    {
+      "identity": "doi:10.4211/hs.9460830270ec4d8b9d9c4260cca2114d",
+      "from": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "to": "NO_DEMONSTRATED_WPO_CONNECTION_ALTERNATIVE_FUNDING",
+      "status_remains": "no_action"
+    },
+    {
+      "identity": "doi:10.5061/dryad.05qfttf5h",
+      "from": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "to": "NO_DEMONSTRATED_WPO_CONNECTION_ALTERNATIVE_FUNDING",
+      "status_remains": "no_action"
+    },
+    {
+      "identity": "doi:10.5061/dryad.0gb5mkm6t",
+      "from": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "to": "NO_DEMONSTRATED_WPO_CONNECTION_ALTERNATIVE_FUNDING",
+      "status_remains": "no_action"
+    },
+    {
+      "identity": "doi:10.5061/dryad.0gb5mkmbc",
+      "from": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "to": "NO_DEMONSTRATED_WPO_CONNECTION_ALTERNATIVE_FUNDING",
+      "status_remains": "no_action"
+    }
+  ],
+  "github_post_write_verification": {
+    "checked_at": "2026-10-29T18:43:00Z",
+    "attribution_queue": {
+      "total": 66,
+      "queued": 52,
+      "closed": 14
+    },
+    "historical_statuses": {
+      "total": 188,
+      "no_action": 103,
+      "blocked": 38,
+      "alternative_funding_subtypes": 10
+    },
+    "active_router_mode": "normal_historical_discovery",
+    "ledger_commits": {
+      "attribution": "6ebfa15cc83e58fd0e23953e496d1a2d90ad8701",
+      "historical_subtypes": "667241d2014c165e36e5f3dce4492367b317a2c4",
+      "router": "f1d343a347f5da93bb33d7423a6986dacd61f6b1"
+    }
+  },
+  "attribution_queue_verified_after": {
+    "total": 66,
+    "queued": 52,
+    "closed": 14
+  },
+  "coverage_after_verified": {
+    "historical_completed": 150,
+    "historical_remaining": 38,
+    "monthly_completed": 0,
+    "monthly_remaining": 0,
+    "original_no_action": 103,
+    "original_already_in_reach": 37,
+    "original_forwarded": 2,
+    "original_metadata_updates": 8
+  }
+}
