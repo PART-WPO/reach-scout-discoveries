@@ -53,3 +53,7 @@ The original monthly Google Apps Script and its spreadsheet tabs are **not used 
 ### Limitations
 
 Funding metadata may omit the award number or contain unindexed textual acknowledgments. Those outputs cannot be discovered by exact API award searches alone and should be explored via Scout's normal research methods. Crossref / DataCite can deposit metadata late or change historical publication records; the monthly `published` date window does not guarantee detection of late deposits. A periodic backfill/updated-record sweep would improve recall after the initial scheduled migration.
+
+### Follow-up-first monthly research priority (October 29, 2026)
+
+Every monthly DataCite/Crossref record is researched individually. After the initial pass, unresolved cases and related-output evidence gaps stay ahead of older-award discovery. Scout performs a bounded additional round with genuinely different sources, documents any early-retry exception, and either closes the case with evidence or prepares a truthful human Investigate request. A case lacking essential metadata must never be represented as imported to Discovery Hub unless the Hub actually accepts it. See [the API follow-up priority policy](../scout-operations/api-followup-priority-policy.md).
