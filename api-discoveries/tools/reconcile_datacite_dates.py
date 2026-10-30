@@ -43,11 +43,12 @@ HEADERS = ["DOI", "Original API Title", "NOAA Award(s)", "Output Type",
     "Other Typed Dates", "Native Page", "Native Publication Date",
     "Native DOI Matched?", "Date Evidence Classification",
     "Verified REACH Date", "Provisional Date to Check", "Date Basis / Reviewer Question",
+    "Default REACH Pub Date (DataCite created; editable)", "Default Date Basis",
     "Related Version DOI(s)", "API Retrieval", "DataCite Evidence URL",
     "Source Batch"]
 excel.WIDTHS.update({
     "Summary": [38, 94],
-    "Date Reconciliation": [37, 66, 36, 24, 67, 67, 23, 19, 31, 31, 31, 39, 39, 52, 69, 26, 20, 35, 23, 25, 96, 55, 38, 67, 78],
+    "Date Reconciliation": [37, 66, 36, 24, 67, 67, 23, 19, 31, 31, 31, 39, 39, 52, 69, 26, 20, 35, 23, 25, 96, 27, 40, 55, 38, 67, 78],
     "Repository Breakdown": [35, 21, 24, 24, 24, 24, 22, 25],
     "Needs Reviewer Check": [37, 66, 25, 35, 25, 82, 60],
     "Read Me": [34, 112],
@@ -289,7 +290,7 @@ def date_recommendation(a,doi,try_native=True):
         "created":text(a.get("created")),"registered":text(a.get("registered")),"updated":text(a.get("updated")),
         "native_url":nativeurl,"native_dates":native_dates,"native_identity_match":native_seen,
         "native_check":native_note,"status":status,"verified_date":verified,"provisional_date":candidate,
-        "reason":basis,"related_versions":related,
+        "reason":basis,"default_pub_date":created,"default_pub_date_basis":("DataCite created (editable default; not independently verified)" if created else "No DataCite created full date; human review"),"related_versions":related,
     }
 
 def build(mode,month,offline=False,native=True):
@@ -327,7 +328,7 @@ def build(mode,month,offline=False,native=True):
                 "issued_dates":[],"available_dates":[],"native_url":"","native_dates":[],
                 "native_identity_match":False,"native_check":"not checked",
                 "reason":"Could not retrieve DataCite DOI; absence of retrieved metadata is NOT evidence that no date exists.",
-                "related_versions":[],"data_title":"","retrieval":"unavailable","api_failure":result})
+                "related_versions":[],"default_pub_date":"","default_pub_date_basis":"DataCite API unavailable; cannot supply default","data_title":"","retrieval":"unavailable","api_failure":result})
         return entry
     # A modest pool bounds runtime without hammering the public DataCite API.
     # Executor.map retains stable DOI order, keeping reports idempotent.
@@ -346,6 +347,7 @@ def build(mode,month,offline=False,native=True):
             "; ".join(r["issued_dates"]),"; ".join(r["available_dates"]),datecell(r["all_typed_dates"]),
             r["native_url"],"; ".join(r["native_dates"]),"Yes" if r["native_identity_match"] else "No",
             r["status"],r["verified_date"],r["provisional_date"],r["reason"],
+            r.get("default_pub_date",""),r.get("default_pub_date_basis",""),
             "; ".join(r["related_versions"]),r["retrieval"],r["api_evidence_url"],r["source_batch"]])
     problems=[["DOI","Title","Award Number(s)","Date Category","Suggested Date","Why Reviewer Should Check","DataCite Evidence URL"]]
     for r in results:
@@ -374,6 +376,7 @@ def build(mode,month,offline=False,native=True):
         ["DOI created/registered date only — candidate, not publication",counts["doi_record_timestamp_only"]],
         ["Year-only/other unresolved",counts["year_only_or_unknown"]],
         ["Conflicting dates requiring individual review",sum(v for k,v in counts.items() if k.startswith("conflicting"))],
+        ["Defaults available from DataCite created",sum(bool(r.get("default_pub_date")) for r in results)],
         ["Original source manifest SHA-256",manifestsha],
         ["DataCite date semantics","created = DOI record created; registered = DOI became registered; published = Issued or fallback publication year; updated = metadata change"],
         ["REACH publication dates modified","NONE — all proposed dates remain separate, no automated approval"],
@@ -381,6 +384,7 @@ def build(mode,month,offline=False,native=True):
     notes=[
         ["Field / status","Meaning"],
         ["Verified REACH Date","Full date on native repository machine-readable metadata with exact DOI identity. Still verify output/version and eligibility before insertion."],
+        ["Default REACH Pub Date","User-authorized preparation default: calendar date portion of DataCite created. EDITABLE by reviewer, not a verified first public release. Never silently insert into REACH."],
         ["Structured date pending","Typed DataCite Issued or Available full date exists, but independent native DOI-level evidence was not extracted. The candidate is not auto-published."],
         ["Provisional Date","DataCite created/registered is NOT first publication; it is just a suggested date to compare with native source. Dates can predate repository publication."],
         ["Publication Year","Retain 2025 as 2025 when exact month/day is not confirmed. Never synthesize 2025-01-01."],
