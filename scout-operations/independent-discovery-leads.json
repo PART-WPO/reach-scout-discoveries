@@ -1,0 +1,78 @@
+{
+  "schema": "reach-scout-independent-discovery-leads-v1",
+  "created_at": "2026-10-30T15:31:19Z",
+  "policy": "Public research leads only. No human decisions, Hub approval, or REACH insertion inferred. Recheck complete REACH/Scout identities and preserve one initial + one distinct-source follow-up limit.",
+  "entries": [
+    {
+      "identity": "doi:10.5281/zenodo.4526127",
+      "title": "Eight-station ANCHOR stream-radar time-series dataset (exact repository title not verified)",
+      "cohort": "Normal historical SPARK award discovery 2026-10-30",
+      "original_seed_doi": null,
+      "status": "RESEARCH_ACTIVE",
+      "research_round": 0,
+      "source_type": "Zenodo cited dataset",
+      "project": "spark-000005",
+      "award_numbers": [
+        "NA16OAR4590234"
+      ],
+      "funding_basis": "Publisher article directly acknowledges NA16OAR4590234 for ANCHOR stream-radar research, and cites this exact Zenodo DOI as the eight-station public time-series dataset; independent NOAA IR copy reproduces funding and data-availability statement; SPARK primary project NA16OAR4590234 specifically installs stream radars.",
+      "discovery_route": "Independent discovery",
+      "discovery_path": "SPARK spark-000005 -> Journal of Hydrology 2021 article -> explicit data-availability DOI -> independent NOAA IR copy -> public REACH and Scout comparisons",
+      "checked_sources": [
+        {
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-001.csv",
+          "method": "primary_spark_project_record",
+          "outcome": "spark-000005 names project Improving Hydrologic Observing Capabilities with Stream Radars, award NA16OAR4590234, 2016, CIMMS/OU; project intended 14 radar installations."
+        },
+        {
+          "url": "https://doi.org/10.1016/j.jhydrol.2021.126809",
+          "method": "publisher_data_availability_and_acknowledgments",
+          "outcome": "Publisher explicitly credits NA16OAR4590234 and states eight-station time series are public at doi:10.5281/zenodo.4526127; publication is separate existing REACH article reach-000195."
+        },
+        {
+          "url": "https://repository.library.noaa.gov/view/noaa/32601/noaa_32601_DS1.pdf",
+          "method": "independent_noaa_ir_pdf",
+          "outcome": "Independent archived copy confirms same grant and Zenodo DOI in data availability."
+        },
+        {
+          "url": "https://api.datacite.org/dois/10.5281/zenodo.4526127",
+          "method": "native_datacite_metadata",
+          "outcome": "ACCESS FAILURE through available web retrieval; no title, creator, dateType or exact first-public date independently verified.",
+          "source_failure": "ACCESS_FAILURE_NOT_METADATA_ABSENT"
+        },
+        {
+          "url": "https://zenodo.org/records/4526127",
+          "method": "native_zenodo_landing",
+          "outcome": "ACCESS FAILURE through available web retrieval; cannot verify files, version family, public scope or date.",
+          "source_failure": "ACCESS_FAILURE_NOT_METADATA_ABSENT"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "method": "complete_public_reach_index",
+          "outcome": "All 1238 index rows checked for exact Zenodo DOI; none found. Full detail shards not reread."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+          "method": "all_19_immutable_scout_batches",
+          "outcome": "All 62 staged rows searched for exact Zenodo DOI; none found; SHA256 for 19 CSVs matches manifest."
+        }
+      ],
+      "missing_fields": [
+        "native repository title and creators",
+        "first-public YYYY-MM-DD date and source dateType",
+        "public file inventory and access",
+        "concept/version DOI identity and relation"
+      ],
+      "date_evidence": {
+        "paper_date": "2021",
+        "source_dateType": "article_publication_not_dataset_publication",
+        "dataset_first_public_date": null
+      },
+      "next_action": "One bounded DIFFERENT-SOURCE recovery round using Zenodo alternate API/DOI relation, independent institutional ANCHOR data catalog or repository snapshot; if access remains blocked, evaluate RESEARCH_COMPLETE_HUMAN_INTAKE and reconcile review unit without fabricating date. No repetitive search beyond one round.",
+      "reviewer_question": "Is the Zenodo DOI a public, distinct ANCHOR dataset attributable to NA16OAR4590234, and what is its verified first public release date and accessible file scope?",
+      "hub_delivery": "NOT_DELIVERED",
+      "human_decisions": "NOT_VERIFIED",
+      "acknowledgment_absence_verified": false
+    }
+  ]
+}
