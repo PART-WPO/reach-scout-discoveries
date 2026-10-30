@@ -27,8 +27,16 @@
       0,
       0
     ],
-    "current_reconciliation": "FAILED_ON_FOUR_LEGACY_TRIAGE_PROOF_RECORDS",
-    "validated_completed_this_run": "NOT_VERIFIED"
+    "current_reconciliation": "REPAIRED_AND_VALIDATED_SUCCESS_41108445867",
+    "validated_completed_this_run": 188,
+    "validated_remaining_this_run": 0,
+    "status_counts_after": {
+      "already_in_reach": 37,
+      "forwarded_to_hub": 6,
+      "metadata_update_forwarded": 8,
+      "no_action": 109,
+      "human_metadata_needed": 28
+    }
   },
   "original_seeds_disposed_this_run": [],
   "original_seed_artifact_vs_grant_decisions": [],
@@ -131,7 +139,11 @@
       "doi:10.57969/s9pp42",
       "doi:10.57969/s9tg60",
       "doi:10.57969/s9z598"
-    ]
+    ],
+    "historical_reconciliation_repair_run_id": 41108445867,
+    "historical_reconciliation_repair_conclusion": "success",
+    "workstream_selector_run_id": 41108445870,
+    "workstream_selector_conclusion": "success"
   },
   "metadata_intake": {
     "source_cases": 42,
@@ -161,13 +173,13 @@
   "reviewer_confirmed_without_acknowledgment": "NOT_VERIFIED",
   "blockers": [
     "Automated manifest generator failed on previously committed immutable 2-row CSV: required discovery path evidence line missing; requires separately authorized repair, no new batch publishing.",
-    "Historical reconciliation validator failed on four old human_metadata_needed statuses whose research proof/normal feed routing does not satisfy strict validator; reported 188/188 is not freshly revalidated.",
     "Figshare and DataCite native endpoints inaccessible; no DOI-specific created timestamp or live file inventory.",
-    "Private Hub import and reviewer decisions not observable."
+    "Private Hub import and reviewer decisions not observable.",
+    "Historical reconciliation initially failed on four Scripps proof records, but six targeted historical records were repaired and fresh workflow 41108445867 succeeded; original history and private decisions preserved."
   ],
   "audit_result": "PARTIAL",
   "library_path": "/REACH Scout Library/2026-10-30_1435ET",
-  "github_audit_published": "NOT_ATTEMPTED_AT_FILE_CREATION",
+  "github_audit_published": "GITHUB_MAIN_COMMIT_OBSERVED_025a1b6fe801ea8e6036e0c9122a4237417a8e77",
   "no_csv_reason": "No new fully verified candidate and feed blocked; no fake, incomplete or header-only 24-column batch created.",
   "safety": {
     "source_batches_unchanged": true,
@@ -176,5 +188,15 @@
     "human_decisions_unchanged": true,
     "reach_spark_smartsheet_unchanged": true,
     "datacite_created_pub_date_policy_preserved": true
-  }
+  },
+  "post_audit_updates": [
+    {
+      "timestamp_utc": "2026-10-30T18:37:19Z",
+      "action": "Six historical original DOI proof records reconciled. Four valid DataCite-created date-only cases now map to existing 1229ET verified normal-review CSV; two canonical version/alternate cases remain pending human intake with only non-date questions. Previous automated statuses preserved in history fields; no private human decisions altered.",
+      "ledger_commit": "501119f0a11272ac513d1223bb20a522c540bd91",
+      "historical_reconciliation_run_id": 41108445867,
+      "historical_reconciliation_result": "SUCCESS",
+      "historical_coverage": "188/188 research complete; 0 active; 28 non-date human intake originals"
+    }
+  ]
 }
