@@ -66,5 +66,46 @@ class CrossrefMetadataTests(unittest.TestCase):
     def test_doi_identity(self):
         self.assertEqual(m.doi("DOI:10.1175/BAMS-D-23-0036.1"),"10.1175/bams-d-23-0036.1")
 
+    def test_office_date_is_crossref_created_not_published(self):
+        from unittest.mock import patch
+        source={"message":{"DOI":"10.1109/TGRS.2020.2984458",
+                 "type":"journal-article",
+                 "title":["Ceilometer-Based Rain-Rate Estimation"],
+                 "author":[{"given":"Ruben","family":"Barragan"}],
+                 "created":{"date-parts":[[2020,5,6]],"date-time":"2020-05-06T16:03:17Z"},
+                 "published-print":{"date-parts":[[2020,12]]}}}
+        with patch.object(m,"get",return_value=source):
+            r=m.fetch("10.1109/tgrs.2020.2984458")
+        self.assertEqual(r["status"],"ok")
+        self.assertEqual(r["pub_date"],"2020-05-06")
+        self.assertIn("Crossref created",r["pub_date_basis"])
+        self.assertEqual(r["source_publication_date"],"")
+        self.assertEqual(r["best_partial_date"],"2020-12")
+        self.assertEqual(r["checkpoint_schema"],"crossref-publication-v3-created-accepted")
+
+    def test_prior_online_date_is_retained_separately(self):
+        from unittest.mock import patch
+        source={"message":{"DOI":"10.1175/JAS-D-17-0385.1",
+                 "type":"journal-article",
+                 "created":{"date-parts":[[2018,6,13]]},
+                 "published-online":{"date-parts":[[2018,8,15]]},
+                 "published-print":{"date-parts":[[2018,9,1]]}}}
+        with patch.object(m,"get",return_value=source):
+            r=m.fetch("10.1175/jas-d-17-0385.1")
+        self.assertEqual(r["pub_date"],"2018-06-13")
+        self.assertEqual(r["source_publication_date"],"2018-08-15")
+        self.assertEqual(r["source_publication_basis"],"published-online")
+        self.assertEqual(r["publication_dates"]["published-print"]["full_date"],"2018-09-01")
+
+    def test_record_without_created_can_use_exact_published(self):
+        from unittest.mock import patch
+        source={"message":{"DOI":"10.1175/example",
+                 "type":"journal-article",
+                 "published-online":{"date-parts":[[2020,8,12]]}}}
+        with patch.object(m,"get",return_value=source):
+            r=m.fetch("10.1175/example")
+        self.assertEqual(r["pub_date"],"2020-08-12")
+        self.assertEqual(r["pub_date_basis"],"Crossref published-online")
+
 if __name__=="__main__":
     unittest.main()
