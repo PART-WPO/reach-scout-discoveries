@@ -24,6 +24,35 @@
       "hub_import_verified": false,
       "required_action": "Before any approval or publication, check existing private Hub decision and duplicate identity, establish a permitted date basis or an explicit lawful/technical waiver. Do not alter immutable batch or insert REACH/Smartsheet.",
       "status": "OPEN_REVIEW_REQUIRED"
+    },
+    {
+      "alert_id": "2026-10-30-1129ET-calibration-hail-already-in-reach",
+      "run_id": "REACH-SCOUT-2026-10-30-HOURLY-1129ET",
+      "severity": "HOLD_DUPLICATE_REVIEW_AND_POSSIBLE_AWARD_CORRECTION",
+      "identity": "doi:10.1175/WAF-D-19-0105.1",
+      "batch_id": "2026-10-27-morning-jtti-2016-2017-001",
+      "batch_path": "scout-discoveries/batches/2026-10-27-morning-jtti-2016-2017-001.csv",
+      "field": "Existing REACH Match / proposed action",
+      "staged_value": "A / NEW, No DOI/title/URL match in 1,238 REACH rows",
+      "actual_public_reach_match": "reach-000245 / reachuid-v1-a191782c0b21f3b606bd85805d73214f / https://repository.library.noaa.gov/view/noaa/27459",
+      "current_reach_awards": [
+        "NA18OAR4590371"
+      ],
+      "publisher_and_ir_funding_awards": [
+        "NA16OAR4590239",
+        "NA18OAR4590371"
+      ],
+      "semantic_issue": "The immutable Scout proposal labels this paper NEW, but the same DOI/title is already in public REACH under reach-000245. It is NOT a novel output; direct publisher and NOAA IR funding evidence supports potential additional-award correction NA16OAR4590239, subject to human review.",
+      "evidence_urls": [
+        "https://journals.ametsoc.org/view/journals/wefo/35/1/waf-d-19-0105.1.xml",
+        "https://repository.library.noaa.gov/view/noaa/27459",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/index/part-002.csv",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/batches/2026-10-27-morning-jtti-2016-2017-001.csv"
+      ],
+      "human_decision_verified": false,
+      "hub_import_verified": false,
+      "required_action": "Do not publish as a new output. Check private human decision and exact DOI match; if justified, route as an existing-record additional-award correction preserving NA18OAR4590371, with NA16OAR4590239 evidence. Do not edit immutable batch or REACH/Smartsheet automatically.",
+      "status": "OPEN_REVIEW_REQUIRED"
     }
   ]
 }
