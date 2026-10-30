@@ -8,6 +8,7 @@ Python stdlib only; all source files and batch checksums are validated.
 import argparse
 import collections
 import csv
+from concurrent.futures import ThreadPoolExecutor
 import datetime as dt
 import hashlib
 from html.parser import HTMLParser
@@ -182,7 +183,7 @@ def safe_http(url,expected_host,max_bytes):
             raise urllib.error.HTTPError(req.full_url,code,"Redirect not followed",headers,fp)
     opener=urllib.request.build_opener(NoRedirect())
     req=urllib.request.Request(url,headers={"Accept":"application/json, text/html;q=0.8","User-Agent":"REACH-Scout-Date-Audit/1.0 (public research metadata)"})
-    with opener.open(req,timeout=16) as response:
+    with opener.open(req,timeout=10) as response:
         if response.status!=200:raise RuntimeError("HTTP "+str(response.status))
         blob=response.read(max_bytes+1)
         if len(blob)>max_bytes:raise ValueError("Source exceeds byte limit")
@@ -305,15 +306,12 @@ def build(mode,month,offline=False,native=True):
     if jsonout.exists():
         old=json.loads(jsonout.read_text(encoding="utf-8"))
         previous={r["doi"]:r for r in old.get("records",[])}
-    results=[]
-    for i,(doi,src) in enumerate(source.items(),1):
+    def process(item):
+        doi,src=item
         entry={"doi":doi,"original_title":src.get("Title",""),"award_numbers":src.get("NOAA Award Number(s)",""),
             "output_type":src.get("Output Type",""),"proposed_parent":src.get("Proposed Project Title",""),
             "source_batch":src["_source_batch"],"api_evidence_url":"https://api.datacite.org/dois/"+doi}
-        a=None
-        result="offline"
-        if not offline:
-            a,result=api_record(doi)
+        a,result=(None,"offline") if offline else api_record(doi)
         if a:
             findings=date_recommendation(a,doi,try_native=native)
             entry.update(findings)
@@ -330,8 +328,11 @@ def build(mode,month,offline=False,native=True):
                 "native_identity_match":False,"native_check":"not checked",
                 "reason":"Could not retrieve DataCite DOI; absence of retrieved metadata is NOT evidence that no date exists.",
                 "related_versions":[],"data_title":"","retrieval":"unavailable","api_failure":result})
-        results.append(entry)
-        if i%25==0:print("Date audit",i,"/",len(source),flush=True)
+        return entry
+    # A modest pool bounds runtime without hammering the public DataCite API.
+    # Executor.map retains stable DOI order, keeping reports idempotent.
+    with ThreadPoolExecutor(max_workers=(1 if offline else 5)) as pool:
+        results=list(pool.map(process,source.items()))
     counts=collections.Counter(x["status"] for x in results)
     groups=collections.defaultdict(list)
     for row in results:groups[row["doi"].split("/")[0]].append(row)
