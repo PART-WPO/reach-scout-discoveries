@@ -1846,7 +1846,9 @@
       "hub_intake_blocker": "Current 24-column Discovery Hub importer support for truthful blank mandatory Publication Date and unresolved scope/identity not verified; no candidate staged, no Hub acceptance claimed.",
       "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
       "reviewer_handoff_library_path": "/REACH Scout/2026-10-29-2329ET-lead_queue.json",
-      "reach_comparison": "Current public REACH 10 index shards / 1,238 records checked; no exact DOI/URL match. Prior 22:29 ET complete 140 detail-shard check and 59 Scout candidates; manifest unchanged, detail shards not reread this run; private human feedback NOT VERIFIED."
+      "reach_comparison": "Current public REACH 10 index shards / 1,238 records checked; no exact DOI/URL match. Prior 22:29 ET complete 140 detail-shard check and 59 Scout candidates; manifest unchanged, detail shards not reread this run; private human feedback NOT VERIFIED.",
+      "provenance_exception": "LEGACY_INITIAL_ROUND_NOT_RECORDED",
+      "provenance_exception_note": "Existing round-1 source checks are preserved with actual timestamps. No round-0 timestamp was invented; audit remains PARTIAL and validator still flags this until a truthful reconciliation is approved."
     },
     {
       "identity": "url:https://ams.confex.com/ams/51BC7WxComm/webprogram/Paper443443.html",
@@ -1913,7 +1915,9 @@
       "hub_intake_blocker": "Current 24-column Discovery Hub importer support for truthful blank mandatory Publication Date and unresolved scope/identity not verified; no candidate staged, no Hub acceptance claimed.",
       "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
       "reviewer_handoff_library_path": "/REACH Scout/2026-10-29-2329ET-lead_queue.json",
-      "reach_comparison": "Current public REACH 10 index shards / 1,238 records checked; no exact DOI/URL match. Prior 22:29 ET complete 140 detail-shard check and 59 Scout candidates; manifest unchanged, detail shards not reread this run; private human feedback NOT VERIFIED."
+      "reach_comparison": "Current public REACH 10 index shards / 1,238 records checked; no exact DOI/URL match. Prior 22:29 ET complete 140 detail-shard check and 59 Scout candidates; manifest unchanged, detail shards not reread this run; private human feedback NOT VERIFIED.",
+      "provenance_exception": "LEGACY_INITIAL_ROUND_NOT_RECORDED",
+      "provenance_exception_note": "Existing round-1 source checks are preserved with actual timestamps. No round-0 timestamp was invented; audit remains PARTIAL and validator still flags this until a truthful reconciliation is approved."
     },
     {
       "identity": "doi:10.5281/zenodo.21048459",
@@ -3168,17 +3172,21 @@
         },
         {
           "round": 1,
-          "method": "bounded_distinct_source_recovery",
+          "method": "distinct_source_source",
           "url": "https://doi.org/10.57969/S9PP42",
           "outcome": "DOI redirects to EZID tombstone; active DOI validity unresolved.",
-          "checked_at": "2026-10-30T02:33:23Z"
+          "checked_at": "2026-10-30T02:33:23Z",
+          "original_method_before_provenance_normalization": "bounded_distinct_source_recovery",
+          "provenance_method_renamed_only": true
         },
         {
           "round": 1,
-          "method": "bounded_distinct_source_recovery",
+          "method": "distinct_source_2",
           "url": "https://erddap.ldl.ucsd.edu/erddap/info/NOPP_Storm_First5/index.html",
           "outcome": "Related 2025 targeted-storm first-five DOI S9H01G is distinct; cannot resolve S9PP42/S9TG60 identity.",
-          "checked_at": "2026-10-30T02:33:23Z"
+          "checked_at": "2026-10-30T02:33:23Z",
+          "original_method_before_provenance_normalization": "bounded_distinct_source_recovery",
+          "provenance_method_renamed_only": true
         }
       ],
       "first_investigated_at": "2026-10-29T14:34:00Z",
@@ -3286,17 +3294,21 @@
         },
         {
           "round": 1,
-          "method": "bounded_distinct_source_recovery",
+          "method": "distinct_source_source",
           "url": "https://doi.org/10.57969/S9TG60",
           "outcome": "DOI landing inaccessible; native identity/date not verified.",
-          "checked_at": "2026-10-30T02:33:23Z"
+          "checked_at": "2026-10-30T02:33:23Z",
+          "original_method_before_provenance_normalization": "bounded_distinct_source_recovery",
+          "provenance_method_renamed_only": true
         },
         {
           "round": 1,
-          "method": "bounded_distinct_source_recovery",
+          "method": "distinct_source_2",
           "url": "https://erddap.ldl.ucsd.edu/erddap/info/NOPP_Storm_First5/index.html",
           "outcome": "Related 2025 targeted-storm first-five DOI S9H01G is distinct; cannot resolve S9PP42/S9TG60 identity.",
-          "checked_at": "2026-10-30T02:33:23Z"
+          "checked_at": "2026-10-30T02:33:23Z",
+          "original_method_before_provenance_normalization": "bounded_distinct_source_recovery",
+          "provenance_method_renamed_only": true
         }
       ],
       "first_investigated_at": "2026-10-29T14:34:00Z",
@@ -3398,17 +3410,21 @@
         },
         {
           "round": 1,
-          "method": "bounded_distinct_source_recovery",
+          "method": "distinct_source_source",
           "url": "https://ldl.ucsd.edu/ldl/gdp-drifter-data/",
           "outcome": "Official GDP catalog distinguishes separate NOAA funding, not proof of exclusive WPO output.",
-          "checked_at": "2026-10-30T02:33:23Z"
+          "checked_at": "2026-10-30T02:33:23Z",
+          "original_method_before_provenance_normalization": "bounded_distinct_source_recovery",
+          "provenance_method_renamed_only": true
         },
         {
           "round": 1,
-          "method": "bounded_distinct_source_recovery",
+          "method": "distinct_source_2",
           "url": "https://doi.org/10.57969/S9G015",
           "outcome": "Native DOI metadata inaccessible; full date/public scope not confirmed.",
-          "checked_at": "2026-10-30T02:33:23Z"
+          "checked_at": "2026-10-30T02:33:23Z",
+          "original_method_before_provenance_normalization": "bounded_distinct_source_recovery",
+          "provenance_method_renamed_only": true
         }
       ],
       "first_investigated_at": "2026-10-29T15:34:47Z",
@@ -3514,17 +3530,21 @@
         },
         {
           "round": 1,
-          "method": "bounded_distinct_source_recovery",
+          "method": "distinct_source_source",
           "url": "https://ldl.ucsd.edu/ldl/gdp-drifter-data/",
           "outcome": "Official GDP catalog distinguishes separate NOAA funding, not proof of exclusive WPO output.",
-          "checked_at": "2026-10-30T02:33:23Z"
+          "checked_at": "2026-10-30T02:33:23Z",
+          "original_method_before_provenance_normalization": "bounded_distinct_source_recovery",
+          "provenance_method_renamed_only": true
         },
         {
           "round": 1,
-          "method": "bounded_distinct_source_recovery",
+          "method": "distinct_source_2",
           "url": "https://doi.org/10.57969/S9KS3S",
           "outcome": "Native DOI metadata inaccessible; full date/public scope not confirmed.",
-          "checked_at": "2026-10-30T02:33:23Z"
+          "checked_at": "2026-10-30T02:33:23Z",
+          "original_method_before_provenance_normalization": "bounded_distinct_source_recovery",
+          "provenance_method_renamed_only": true
         }
       ],
       "first_investigated_at": "2026-10-29T15:34:47Z",
@@ -3763,17 +3783,21 @@
         },
         {
           "round": 1,
-          "method": "bounded_distinct_source_recovery",
+          "method": "distinct_source_source",
           "url": "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
           "outcome": "Official catalog lists exact DOI, WPO grant among mixed NOAA funding, citation year only.",
-          "checked_at": "2026-10-30T02:33:23Z"
+          "checked_at": "2026-10-30T02:33:23Z",
+          "original_method_before_provenance_normalization": "bounded_distinct_source_recovery",
+          "provenance_method_renamed_only": true
         },
         {
           "round": 1,
-          "method": "bounded_distinct_source_recovery",
+          "method": "distinct_source_2",
           "url": "https://ldl.ucsd.edu/ldl/data/",
           "outcome": "LDL documents distinction between observation/transmission and public release dates.",
-          "checked_at": "2026-10-30T02:33:23Z"
+          "checked_at": "2026-10-30T02:33:23Z",
+          "original_method_before_provenance_normalization": "bounded_distinct_source_recovery",
+          "provenance_method_renamed_only": true
         }
       ],
       "first_investigated_at": "2026-10-29T15:34:47Z",
@@ -3886,17 +3910,21 @@
         },
         {
           "round": 1,
-          "method": "bounded_distinct_source_recovery",
+          "method": "distinct_source_source",
           "url": "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
           "outcome": "Official catalog lists exact DOI, WPO grant among mixed NOAA funding, citation year only.",
-          "checked_at": "2026-10-30T02:33:23Z"
+          "checked_at": "2026-10-30T02:33:23Z",
+          "original_method_before_provenance_normalization": "bounded_distinct_source_recovery",
+          "provenance_method_renamed_only": true
         },
         {
           "round": 1,
-          "method": "bounded_distinct_source_recovery",
+          "method": "distinct_source_2",
           "url": "https://ldl.ucsd.edu/ldl/data/",
           "outcome": "LDL documents distinction between observation/transmission and public release dates.",
-          "checked_at": "2026-10-30T02:33:23Z"
+          "checked_at": "2026-10-30T02:33:23Z",
+          "original_method_before_provenance_normalization": "bounded_distinct_source_recovery",
+          "provenance_method_renamed_only": true
         }
       ],
       "first_investigated_at": "2026-10-29T15:34:47Z",
@@ -4009,17 +4037,21 @@
         },
         {
           "round": 1,
-          "method": "bounded_distinct_source_recovery",
+          "method": "distinct_source_source",
           "url": "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
           "outcome": "Official catalog lists exact DOI, WPO grant among mixed NOAA funding, citation year only.",
-          "checked_at": "2026-10-30T02:33:23Z"
+          "checked_at": "2026-10-30T02:33:23Z",
+          "original_method_before_provenance_normalization": "bounded_distinct_source_recovery",
+          "provenance_method_renamed_only": true
         },
         {
           "round": 1,
-          "method": "bounded_distinct_source_recovery",
+          "method": "distinct_source_2",
           "url": "https://ldl.ucsd.edu/ldl/data/",
           "outcome": "LDL documents distinction between observation/transmission and public release dates.",
-          "checked_at": "2026-10-30T02:33:23Z"
+          "checked_at": "2026-10-30T02:33:23Z",
+          "original_method_before_provenance_normalization": "bounded_distinct_source_recovery",
+          "provenance_method_renamed_only": true
         }
       ],
       "first_investigated_at": "2026-10-29T15:34:47Z",
@@ -4131,24 +4163,30 @@
         },
         {
           "round": 1,
-          "method": "bounded_distinct_source_recovery",
+          "method": "distinct_source_source",
           "url": "https://orcid.org/0000-0003-3318-7601",
           "outcome": "Figshare-sourced ORCID lists 2023-07-12, not native verified Figshare first release.",
-          "checked_at": "2026-10-30T02:33:23Z"
+          "checked_at": "2026-10-30T02:33:23Z",
+          "original_method_before_provenance_normalization": "bounded_distinct_source_recovery",
+          "provenance_method_renamed_only": true
         },
         {
           "round": 1,
-          "method": "bounded_distinct_source_recovery",
+          "method": "distinct_source_2",
           "url": "https://api.figshare.com/v2/articles/23666259",
           "outcome": "Native Figshare API inaccessible; version and first publication timestamp unresolved.",
-          "checked_at": "2026-10-30T02:33:23Z"
+          "checked_at": "2026-10-30T02:33:23Z",
+          "original_method_before_provenance_normalization": "bounded_distinct_source_recovery",
+          "provenance_method_renamed_only": true
         },
         {
           "round": 1,
-          "method": "bounded_distinct_source_recovery",
+          "method": "distinct_source_3",
           "url": "https://repository.library.noaa.gov/view/noaa/70846",
           "outcome": "Related 2024 article is a separate output already staged, not poster version.",
-          "checked_at": "2026-10-30T02:33:23Z"
+          "checked_at": "2026-10-30T02:33:23Z",
+          "original_method_before_provenance_normalization": "bounded_distinct_source_recovery",
+          "provenance_method_renamed_only": true
         }
       ],
       "first_investigated_at": "2026-10-29T15:34:47Z",
@@ -4261,24 +4299,30 @@
         },
         {
           "round": 1,
-          "method": "bounded_distinct_source_recovery",
+          "method": "distinct_source_source",
           "url": "https://orcid.org/0000-0003-3318-7601",
           "outcome": "Figshare-sourced ORCID lists 2023-07-12, not native verified Figshare first release.",
-          "checked_at": "2026-10-30T02:33:23Z"
+          "checked_at": "2026-10-30T02:33:23Z",
+          "original_method_before_provenance_normalization": "bounded_distinct_source_recovery",
+          "provenance_method_renamed_only": true
         },
         {
           "round": 1,
-          "method": "bounded_distinct_source_recovery",
+          "method": "distinct_source_2",
           "url": "https://api.figshare.com/v2/articles/23666259",
           "outcome": "Native Figshare API inaccessible; version and first publication timestamp unresolved.",
-          "checked_at": "2026-10-30T02:33:23Z"
+          "checked_at": "2026-10-30T02:33:23Z",
+          "original_method_before_provenance_normalization": "bounded_distinct_source_recovery",
+          "provenance_method_renamed_only": true
         },
         {
           "round": 1,
-          "method": "bounded_distinct_source_recovery",
+          "method": "distinct_source_3",
           "url": "https://repository.library.noaa.gov/view/noaa/70846",
           "outcome": "Related 2024 article is a separate output already staged, not poster version.",
-          "checked_at": "2026-10-30T02:33:23Z"
+          "checked_at": "2026-10-30T02:33:23Z",
+          "original_method_before_provenance_normalization": "bounded_distinct_source_recovery",
+          "provenance_method_renamed_only": true
         }
       ],
       "first_investigated_at": "2026-10-29T15:34:47Z",
@@ -4391,24 +4435,30 @@
         },
         {
           "round": 1,
-          "method": "bounded_distinct_source_recovery",
+          "method": "distinct_source_source",
           "url": "https://repository.library.noaa.gov/view/noaa/64095",
           "outcome": "NOAA IR independently corroborates exact APAR award for article, not dataset release date.",
-          "checked_at": "2026-10-30T02:33:23Z"
+          "checked_at": "2026-10-30T02:33:23Z",
+          "original_method_before_provenance_normalization": "bounded_distinct_source_recovery",
+          "provenance_method_renamed_only": true
         },
         {
           "round": 1,
-          "method": "bounded_distinct_source_recovery",
+          "method": "distinct_source_2",
           "url": "https://api.figshare.com/v2/articles/23689194",
           "outcome": "Native Figshare API inaccessible; first publication and version details unresolved.",
-          "checked_at": "2026-10-30T02:33:23Z"
+          "checked_at": "2026-10-30T02:33:23Z",
+          "original_method_before_provenance_normalization": "bounded_distinct_source_recovery",
+          "provenance_method_renamed_only": true
         },
         {
           "round": 1,
-          "method": "bounded_distinct_source_recovery",
+          "method": "distinct_source_3",
           "url": "https://doi.org/10.6084/m9.figshare.23689194",
           "outcome": "DOI resolver inaccessible; native version history unavailable.",
-          "checked_at": "2026-10-30T02:33:23Z"
+          "checked_at": "2026-10-30T02:33:23Z",
+          "original_method_before_provenance_normalization": "bounded_distinct_source_recovery",
+          "provenance_method_renamed_only": true
         }
       ],
       "first_investigated_at": "2026-10-29T15:34:47Z",
@@ -4521,24 +4571,30 @@
         },
         {
           "round": 1,
-          "method": "bounded_distinct_source_recovery",
+          "method": "distinct_source_source",
           "url": "https://repository.library.noaa.gov/view/noaa/64095",
           "outcome": "NOAA IR independently corroborates exact APAR award for article, not dataset release date.",
-          "checked_at": "2026-10-30T02:33:23Z"
+          "checked_at": "2026-10-30T02:33:23Z",
+          "original_method_before_provenance_normalization": "bounded_distinct_source_recovery",
+          "provenance_method_renamed_only": true
         },
         {
           "round": 1,
-          "method": "bounded_distinct_source_recovery",
+          "method": "distinct_source_2",
           "url": "https://api.figshare.com/v2/articles/23689194",
           "outcome": "Native Figshare API inaccessible; first publication and version details unresolved.",
-          "checked_at": "2026-10-30T02:33:23Z"
+          "checked_at": "2026-10-30T02:33:23Z",
+          "original_method_before_provenance_normalization": "bounded_distinct_source_recovery",
+          "provenance_method_renamed_only": true
         },
         {
           "round": 1,
-          "method": "bounded_distinct_source_recovery",
+          "method": "distinct_source_3",
           "url": "https://doi.org/10.6084/m9.figshare.23689194",
           "outcome": "DOI resolver inaccessible; native version history unavailable.",
-          "checked_at": "2026-10-30T02:33:23Z"
+          "checked_at": "2026-10-30T02:33:23Z",
+          "original_method_before_provenance_normalization": "bounded_distinct_source_recovery",
+          "provenance_method_renamed_only": true
         }
       ],
       "first_investigated_at": "2026-10-29T15:34:47Z",
@@ -4869,7 +4925,8 @@
       "source_dateType": "report_submission_not_first_publication",
       "acknowledgment_absence_verified": false,
       "private_reviewer_decisions": "NOT VERIFIED",
-      "human_review_key": "case-33"
+      "human_review_key": "case-33",
+      "early_retry_reason": "2026-10-29 user-directed bounded immediate different-source recovery superseded prior seven-day wait; actual recorded round timestamps preserved."
     },
     {
       "identity": "url:https://pubs.ssec.wisc.edu/research_Resources/publications/pdfs/SSECPUBS/SSEC_Publication_No_17_09_R1.pdf",
@@ -4965,7 +5022,8 @@
       "source_dateType": "report_submission_not_first_publication",
       "acknowledgment_absence_verified": false,
       "private_reviewer_decisions": "NOT VERIFIED",
-      "human_review_key": "case-34"
+      "human_review_key": "case-34",
+      "early_retry_reason": "2026-10-29 user-directed bounded immediate different-source recovery superseded prior seven-day wait; actual recorded round timestamps preserved."
     },
     {
       "identity": "url:https://www.nhc.noaa.gov/jht/15-17reports/Velden_midyear3.pdf",
@@ -5054,7 +5112,8 @@
       "source_dateType": "report_submission_not_first_publication",
       "acknowledgment_absence_verified": false,
       "private_reviewer_decisions": "NOT VERIFIED",
-      "human_review_key": "case-35"
+      "human_review_key": "case-35",
+      "early_retry_reason": "2026-10-29 user-directed bounded immediate different-source recovery superseded prior seven-day wait; actual recorded round timestamps preserved."
     },
     {
       "identity": "doi:10.5281/zenodo.4526127",
@@ -5160,7 +5219,8 @@
       "original_seed_doi": null,
       "source_access_failure": true,
       "date_policy_applies_if_created_verified": true,
-      "first_pass_and_one_bounded_followup_complete": true
+      "first_pass_and_one_bounded_followup_complete": true,
+      "early_retry_reason": "2026-10-30 bounded different-source follow-up immediately after first pass, explicitly authorized by latest metadata recovery policy; original round-0 and round-1 times preserved."
     }
   ],
   "latest_due_date_alias_audit": {
