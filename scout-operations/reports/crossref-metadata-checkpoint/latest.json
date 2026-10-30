@@ -2,28 +2,32 @@
   "counts": {
     "abstract_missing_in_scout_and_crossref": 0,
     "abstract_missing_in_scout_recoverable": 1,
-    "api_full_pub_date": 20,
-    "created_differs_from_existing_scout_date": 19,
-    "created_matches_existing_scout_date": 10,
+    "api_full_pub_date": 17,
     "crossref_has_abstract": 31,
     "crossref_has_funder_awards": 22,
     "crossref_publications": 36,
-    "crossref_vs_scout_date_differs": 6,
+    "crossref_vs_scout_date_differs": 17,
     "no_publication_date": 0,
-    "partial_only_pub_date": 16,
+    "partial_only_pub_date": 19,
     "reach_pub_date_satisfied": 36,
     "scout_missing_date": 7,
     "scout_missing_date_recoverable": 7,
-    "scout_missing_date_resolved_by_created": 7,
-    "scout_missing_date_still_unresolved": 0
+    "scout_missing_date_still_unresolved": 0,
+    "scout_missing_date_resolved_by_month_first": 6,
+    "scout_missing_date_resolved_by_exact_pub": 1,
+    "preferred_date_matches_existing_scout": 12,
+    "preferred_date_differs_from_existing_scout": 17,
+    "first_of_month_defaults": 19,
+    "source_field_print": 30,
+    "source_field_online": 5
   },
-  "policy": "WPO accepts Crossref created YYYY-MM-DD as completed REACH Pub Date, not necessarily first publication; original online/print/issued dates remain reference evidence. Never overwrite existing human edits, stage, approve or publish automatically.",
+  "policy": "WPO Crossref Pub Date: published-print prioritized, online fallback, then published/issued (posted first for preprints); YYYY-MM normalized to YYYY-MM-01, with original source/precision preserved. Crossref created is NOT used as Pub Date. Existing reviewer entries untouched.",
   "records": [
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
-      "accepted_reach_pub_date": "2024-08-16",
-      "accepted_reach_pub_date_source": "Crossref created (WPO-accepted Pub Date)",
+      "accepted_reach_pub_date": "2024-08-28",
+      "accepted_reach_pub_date_source": "Crossref published-print",
       "authors": [
         "Abby Hutson",
         "Ayumi Fujisaki‐Manome",
@@ -36,11 +40,9 @@
       ],
       "best_partial_basis": "published-online",
       "best_partial_date": "2024-08-15",
-      "created_differs_from_existing_scout_date": true,
-      "created_matches_existing_scout_date": false,
-      "crossref_publication_date": "2024-08-15",
-      "crossref_publication_date_basis": "published-online",
-      "date_comparison": "matched",
+      "crossref_publication_date": "2024-08-28",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "different_date_review_option",
       "doi": "10.1029/2024gl109890",
       "doi_registered_date": {
         "full_date": "2024-08-16",
@@ -106,13 +108,17 @@
       "source": "crossref",
       "title": "Historical Trends in Cold‐Season Mid‐Latitude Cyclones in the Great Lakes Region",
       "volume": "51",
-      "work_type": "journal-article"
+      "work_type": "journal-article",
+      "accepted_date_precision": "day",
+      "first_of_month_default": false,
+      "preferred_date_matches_existing_scout": false,
+      "preferred_date_differs_from_existing_scout": true
     },
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
-      "accepted_reach_pub_date": "2024-10-14",
-      "accepted_reach_pub_date_source": "Crossref created (WPO-accepted Pub Date)",
+      "accepted_reach_pub_date": "2024-10-01",
+      "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
       "authors": [
         "Chengzhu Xu",
         "Edward D. Zaron"
@@ -123,11 +129,9 @@
       ],
       "best_partial_basis": "published-online",
       "best_partial_date": "2024-10-13",
-      "created_differs_from_existing_scout_date": true,
-      "created_matches_existing_scout_date": false,
-      "crossref_publication_date": "2024-10-13",
-      "crossref_publication_date_basis": "published-online",
-      "date_comparison": "matched",
+      "crossref_publication_date": "",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "different_date_review_option",
       "doi": "10.1029/2024ms004319",
       "doi_registered_date": {
         "full_date": "2024-10-14",
@@ -192,13 +196,17 @@
       "source": "crossref",
       "title": "Detecting Instantaneous Tidal Signals in Ocean Models Utilizing Streaming Band‐Pass Filters",
       "volume": "16",
-      "work_type": "journal-article"
+      "work_type": "journal-article",
+      "accepted_date_precision": "month",
+      "first_of_month_default": true,
+      "preferred_date_matches_existing_scout": false,
+      "preferred_date_differs_from_existing_scout": true
     },
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
-      "accepted_reach_pub_date": "2024-08-29",
-      "accepted_reach_pub_date_source": "Crossref created (WPO-accepted Pub Date)",
+      "accepted_reach_pub_date": "2024-09-01",
+      "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
       "authors": [
         "A. J. Yeo",
         "E. J. Anderson",
@@ -216,11 +224,9 @@
       ],
       "best_partial_basis": "published-online",
       "best_partial_date": "2024-08-29",
-      "created_differs_from_existing_scout_date": false,
-      "created_matches_existing_scout_date": true,
-      "crossref_publication_date": "2024-08-29",
-      "crossref_publication_date_basis": "published-online",
-      "date_comparison": "matched",
+      "crossref_publication_date": "",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "different_date_review_option",
       "doi": "10.1029/2024wr037507",
       "doi_registered_date": {
         "full_date": "2024-08-29",
@@ -290,13 +296,17 @@
       "source": "crossref",
       "title": "Assessing the Potential for Medium‐Range Ice Forecasts in the Laurentian Great Lakes",
       "volume": "60",
-      "work_type": "journal-article"
+      "work_type": "journal-article",
+      "accepted_date_precision": "month",
+      "first_of_month_default": true,
+      "preferred_date_matches_existing_scout": false,
+      "preferred_date_differs_from_existing_scout": true
     },
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
-      "accepted_reach_pub_date": "2025-11-10",
-      "accepted_reach_pub_date_source": "Crossref created (WPO-accepted Pub Date)",
+      "accepted_reach_pub_date": "2025-11-01",
+      "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
       "authors": [
         "Chengzhu Xu",
         "Edward D. Zaron"
@@ -307,11 +317,9 @@
       ],
       "best_partial_basis": "published-online",
       "best_partial_date": "2025-11-10",
-      "created_differs_from_existing_scout_date": false,
-      "created_matches_existing_scout_date": true,
-      "crossref_publication_date": "2025-11-10",
-      "crossref_publication_date_basis": "published-online",
-      "date_comparison": "matched",
+      "crossref_publication_date": "",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "different_date_review_option",
       "doi": "10.1029/2025ms005126",
       "doi_registered_date": {
         "full_date": "2025-11-10",
@@ -377,13 +385,17 @@
       "source": "crossref",
       "title": "Parameterization of Frequency‐Dependent Internal Wave Drag in Global Ocean Models",
       "volume": "17",
-      "work_type": "journal-article"
+      "work_type": "journal-article",
+      "accepted_date_precision": "month",
+      "first_of_month_default": true,
+      "preferred_date_matches_existing_scout": false,
+      "preferred_date_differs_from_existing_scout": true
     },
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": false,
       "accepted_reach_pub_date": "2020-06-02",
-      "accepted_reach_pub_date_source": "Crossref created (WPO-accepted Pub Date)",
+      "accepted_reach_pub_date_source": "Crossref published-online",
       "authors": [
         "Russ S. Schumacher",
         "Kristen L. Rasmussen"
@@ -392,8 +404,6 @@
       "awards_in_crossref_funder": [],
       "best_partial_basis": "published-online",
       "best_partial_date": "2020-06-02",
-      "created_differs_from_existing_scout_date": false,
-      "created_matches_existing_scout_date": true,
       "crossref_publication_date": "2020-06-02",
       "crossref_publication_date_basis": "published-online",
       "date_comparison": "matched",
@@ -460,13 +470,17 @@
       "source": "crossref",
       "title": "The formation, character and changing nature of mesoscale convective systems",
       "volume": "1",
-      "work_type": "journal-article"
+      "work_type": "journal-article",
+      "accepted_date_precision": "day",
+      "first_of_month_default": false,
+      "preferred_date_matches_existing_scout": true,
+      "preferred_date_differs_from_existing_scout": false
     },
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": false,
-      "accepted_reach_pub_date": "2022-02-17",
-      "accepted_reach_pub_date_source": "Crossref created (WPO-accepted Pub Date)",
+      "accepted_reach_pub_date": "2022-05-01",
+      "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
       "authors": [
         "Tianshu Zhang",
         "Mariel A. Ojeda-Tuz",
@@ -477,11 +491,9 @@
       "awards_in_crossref_funder": [],
       "best_partial_basis": "published-print",
       "best_partial_date": "2022-05",
-      "created_differs_from_existing_scout_date": false,
-      "created_matches_existing_scout_date": true,
       "crossref_publication_date": "",
-      "crossref_publication_date_basis": "",
-      "date_comparison": "no_crossref_exact_date",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "different_date_review_option",
       "doi": "10.1061/(asce)st.1943-541x.0003275",
       "doi_registered_date": {
         "full_date": "2022-02-17",
@@ -542,13 +554,17 @@
       "source": "crossref",
       "title": "Experiments in a Large Boundary Layer Wind Tunnel: Propagation of Noise through the Turbulent Boundary Layer",
       "volume": "148",
-      "work_type": "journal-article"
+      "work_type": "journal-article",
+      "accepted_date_precision": "month",
+      "first_of_month_default": true,
+      "preferred_date_matches_existing_scout": false,
+      "preferred_date_differs_from_existing_scout": true
     },
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": false,
-      "accepted_reach_pub_date": "2018-02-15",
-      "accepted_reach_pub_date_source": "Crossref created (WPO-accepted Pub Date)",
+      "accepted_reach_pub_date": "2018-02-17",
+      "accepted_reach_pub_date_source": "Crossref published-print",
       "authors": [
         "Maurizio Mazzoleni",
         "Seong Jin Noh",
@@ -567,11 +583,9 @@
       ],
       "best_partial_basis": "published-online",
       "best_partial_date": "2018-02-15",
-      "created_differs_from_existing_scout_date": false,
-      "created_matches_existing_scout_date": true,
-      "crossref_publication_date": "2018-02-15",
-      "crossref_publication_date_basis": "published-online",
-      "date_comparison": "matched",
+      "crossref_publication_date": "2018-02-17",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "different_date_review_option",
       "doi": "10.1080/02626667.2018.1430898",
       "doi_registered_date": {
         "full_date": "2018-02-15",
@@ -637,13 +651,17 @@
       "source": "crossref",
       "title": "Real-time assimilation of streamflow observations into a hydrological routing model: effects of model structures and updating methods",
       "volume": "63",
-      "work_type": "journal-article"
+      "work_type": "journal-article",
+      "accepted_date_precision": "day",
+      "first_of_month_default": false,
+      "preferred_date_matches_existing_scout": false,
+      "preferred_date_differs_from_existing_scout": true
     },
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
-      "accepted_reach_pub_date": "2020-06-02",
-      "accepted_reach_pub_date_source": "Crossref created (WPO-accepted Pub Date)",
+      "accepted_reach_pub_date": "2020-08-01",
+      "accepted_reach_pub_date_source": "Crossref published-print",
       "authors": [
         "Katharina Lengfeld",
         "Pierre-Emmanuel Kirstetter",
@@ -657,11 +675,9 @@
       "awards_in_crossref_funder": [],
       "best_partial_basis": "published-online",
       "best_partial_date": "2020-08-05",
-      "created_differs_from_existing_scout_date": true,
-      "created_matches_existing_scout_date": false,
-      "crossref_publication_date": "2020-08-05",
-      "crossref_publication_date_basis": "published-online",
-      "date_comparison": "matched",
+      "crossref_publication_date": "2020-08-01",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "different_date_review_option",
       "doi": "10.1088/1748-9326/ab98b4",
       "doi_registered_date": {
         "full_date": "2020-06-02",
@@ -725,13 +741,17 @@
       "source": "crossref",
       "title": "Use of radar data for characterizing extreme precipitation at fine scales and short durations",
       "volume": "15",
-      "work_type": "journal-article"
+      "work_type": "journal-article",
+      "accepted_date_precision": "day",
+      "first_of_month_default": false,
+      "preferred_date_matches_existing_scout": false,
+      "preferred_date_differs_from_existing_scout": true
     },
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": false,
-      "accepted_reach_pub_date": "2020-05-06",
-      "accepted_reach_pub_date_source": "Crossref created (WPO-accepted Pub Date)",
+      "accepted_reach_pub_date": "2020-12-01",
+      "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
       "authors": [
         "Francesc Rocadenbosch",
         "Ruben Barragan",
@@ -753,10 +773,8 @@
       ],
       "best_partial_basis": "published-print",
       "best_partial_date": "2020-12",
-      "created_differs_from_existing_scout_date": false,
-      "created_matches_existing_scout_date": false,
       "crossref_publication_date": "",
-      "crossref_publication_date_basis": "",
+      "crossref_publication_date_basis": "published-print",
       "date_comparison": "no_scout_date",
       "doi": "10.1109/tgrs.2020.2984458",
       "doi_registered_date": {
@@ -829,13 +847,17 @@
       "source": "crossref",
       "title": "Ceilometer-Based Rain-Rate Estimation: A Case-Study Comparison With S-Band Radar and Disdrometer Retrievals in the Context of VORTEX-SE",
       "volume": "58",
-      "work_type": "journal-article"
+      "work_type": "journal-article",
+      "accepted_date_precision": "month",
+      "first_of_month_default": true,
+      "preferred_date_matches_existing_scout": false,
+      "preferred_date_differs_from_existing_scout": false
     },
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
-      "accepted_reach_pub_date": "2023-12-27",
-      "accepted_reach_pub_date_source": "Crossref created (WPO-accepted Pub Date)",
+      "accepted_reach_pub_date": "2024-01-01",
+      "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
       "authors": [
         "Alexander J. DesRosiers",
         "Michael M. Bell"
@@ -849,11 +871,9 @@
       ],
       "best_partial_basis": "published-print",
       "best_partial_date": "2024-01",
-      "created_differs_from_existing_scout_date": true,
-      "created_matches_existing_scout_date": false,
       "crossref_publication_date": "",
-      "crossref_publication_date_basis": "",
-      "date_comparison": "no_crossref_exact_date",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "different_date_review_option",
       "doi": "10.1175/aies-d-23-0064.1",
       "doi_registered_date": {
         "full_date": "2023-12-27",
@@ -921,13 +941,17 @@
       "source": "crossref",
       "title": "Airborne Radar Quality Control with Machine Learning",
       "volume": "3",
-      "work_type": "journal-article"
+      "work_type": "journal-article",
+      "accepted_date_precision": "month",
+      "first_of_month_default": true,
+      "preferred_date_matches_existing_scout": false,
+      "preferred_date_differs_from_existing_scout": true
     },
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
-      "accepted_reach_pub_date": "2016-07-19",
-      "accepted_reach_pub_date_source": "Crossref created (WPO-accepted Pub Date)",
+      "accepted_reach_pub_date": "2017-02-01",
+      "accepted_reach_pub_date_source": "Crossref published-print",
       "authors": [
         "Steven M. Martinaitis",
         "Jonathan J. Gourley",
@@ -944,10 +968,8 @@
       "awards_in_crossref_funder": [],
       "best_partial_basis": "published-online",
       "best_partial_date": "2017-03-07",
-      "created_differs_from_existing_scout_date": false,
-      "created_matches_existing_scout_date": true,
-      "crossref_publication_date": "2017-03-07",
-      "crossref_publication_date_basis": "published-online",
+      "crossref_publication_date": "2017-02-01",
+      "crossref_publication_date_basis": "published-print",
       "date_comparison": "different_date_review_option",
       "doi": "10.1175/bams-d-15-00283.1",
       "doi_registered_date": {
@@ -1009,13 +1031,17 @@
       "source": "crossref",
       "title": "The HMT Multi-Radar Multi-Sensor Hydro Experiment",
       "volume": "98",
-      "work_type": "journal-article"
+      "work_type": "journal-article",
+      "accepted_date_precision": "day",
+      "first_of_month_default": false,
+      "preferred_date_matches_existing_scout": false,
+      "preferred_date_differs_from_existing_scout": true
     },
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": false,
-      "accepted_reach_pub_date": "2020-07-22",
-      "accepted_reach_pub_date_source": "Crossref created (WPO-accepted Pub Date)",
+      "accepted_reach_pub_date": "2020-10-01",
+      "accepted_reach_pub_date_source": "Crossref published-print",
       "authors": [
         "Kelsey Ellis",
         "Lisa Reyes Mason",
@@ -1025,8 +1051,6 @@
       "awards_in_crossref_funder": [],
       "best_partial_basis": "published-print",
       "best_partial_date": "2020-10-01",
-      "created_differs_from_existing_scout_date": false,
-      "created_matches_existing_scout_date": false,
       "crossref_publication_date": "2020-10-01",
       "crossref_publication_date_basis": "published-print",
       "date_comparison": "no_scout_date",
@@ -1090,13 +1114,17 @@
       "source": "crossref",
       "title": "In the Dark: Public Perceptions of and National Weather Service Forecaster Considerations for Nocturnal Tornadoes in Tennessee",
       "volume": "101",
-      "work_type": "journal-article"
+      "work_type": "journal-article",
+      "accepted_date_precision": "day",
+      "first_of_month_default": false,
+      "preferred_date_matches_existing_scout": false,
+      "preferred_date_differs_from_existing_scout": false
     },
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
-      "accepted_reach_pub_date": "2021-05-24",
-      "accepted_reach_pub_date_source": "Crossref created (WPO-accepted Pub Date)",
+      "accepted_reach_pub_date": "2021-09-01",
+      "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
       "authors": [
         "Russ S. Schumacher",
         "Aaron J. Hill",
@@ -1110,11 +1138,9 @@
       "awards_in_crossref_funder": [],
       "best_partial_basis": "published-print",
       "best_partial_date": "2021-09",
-      "created_differs_from_existing_scout_date": true,
-      "created_matches_existing_scout_date": false,
       "crossref_publication_date": "",
-      "crossref_publication_date_basis": "",
-      "date_comparison": "no_crossref_exact_date",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "matched",
       "doi": "10.1175/bams-d-20-0186.1",
       "doi_registered_date": {
         "full_date": "2021-05-24",
@@ -1177,13 +1203,17 @@
       "source": "crossref",
       "title": "From Random Forests to Flood Forecasts: A Research to Operations Success Story",
       "volume": "102",
-      "work_type": "journal-article"
+      "work_type": "journal-article",
+      "accepted_date_precision": "month",
+      "first_of_month_default": true,
+      "preferred_date_matches_existing_scout": true,
+      "preferred_date_differs_from_existing_scout": false
     },
     {
       "abstract_already_in_scout": false,
       "abstract_available_from_crossref": true,
-      "accepted_reach_pub_date": "2024-05-23",
-      "accepted_reach_pub_date_source": "Crossref created (WPO-accepted Pub Date)",
+      "accepted_reach_pub_date": "2024-08-01",
+      "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
       "authors": [
         "Daphne S. LaDue",
         "David Roueche",
@@ -1194,11 +1224,9 @@
       "awards_in_crossref_funder": [],
       "best_partial_basis": "published-print",
       "best_partial_date": "2024-08",
-      "created_differs_from_existing_scout_date": true,
-      "created_matches_existing_scout_date": false,
       "crossref_publication_date": "",
-      "crossref_publication_date_basis": "",
-      "date_comparison": "no_crossref_exact_date",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "different_date_review_option",
       "doi": "10.1175/bams-d-23-0036.1",
       "doi_registered_date": {
         "full_date": "2024-05-23",
@@ -1263,13 +1291,17 @@
       "source": "crossref",
       "title": "Linking Survivor Stories to Forensic Engineering: How an Interscience Approach Reveals Opportunities for Reducing Tornado Vulnerability in Residential Structures",
       "volume": "105",
-      "work_type": "journal-article"
+      "work_type": "journal-article",
+      "accepted_date_precision": "month",
+      "first_of_month_default": true,
+      "preferred_date_matches_existing_scout": false,
+      "preferred_date_differs_from_existing_scout": true
     },
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
-      "accepted_reach_pub_date": "2026-08-24",
-      "accepted_reach_pub_date_source": "Crossref created (WPO-accepted Pub Date)",
+      "accepted_reach_pub_date": "2026-10-01",
+      "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
       "authors": [
         "Barbara Millet",
         "Alberto Cairo",
@@ -1283,11 +1315,9 @@
       "awards_in_crossref_funder": [],
       "best_partial_basis": "published-print",
       "best_partial_date": "2026-10",
-      "created_differs_from_existing_scout_date": true,
-      "created_matches_existing_scout_date": false,
       "crossref_publication_date": "",
-      "crossref_publication_date_basis": "",
-      "date_comparison": "no_crossref_exact_date",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "different_date_review_option",
       "doi": "10.1175/bams-d-25-0032.1",
       "doi_registered_date": {
         "full_date": "2026-08-24",
@@ -1350,13 +1380,17 @@
       "source": "crossref",
       "title": "Visualizing Weather Risks: Participatory Design Workshops for Hurricane Threats and Impacts Graphics",
       "volume": "107",
-      "work_type": "journal-article"
+      "work_type": "journal-article",
+      "accepted_date_precision": "month",
+      "first_of_month_default": true,
+      "preferred_date_matches_existing_scout": false,
+      "preferred_date_differs_from_existing_scout": true
     },
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
-      "accepted_reach_pub_date": "2018-11-28",
-      "accepted_reach_pub_date_source": "Crossref created (WPO-accepted Pub Date)",
+      "accepted_reach_pub_date": "2019-02-01",
+      "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
       "authors": [
         "Haiyan Jiang",
         "Cheng Tao",
@@ -1371,10 +1405,8 @@
       ],
       "best_partial_basis": "published-print",
       "best_partial_date": "2019-02",
-      "created_differs_from_existing_scout_date": false,
-      "created_matches_existing_scout_date": false,
       "crossref_publication_date": "",
-      "crossref_publication_date_basis": "",
+      "crossref_publication_date_basis": "published-print",
       "date_comparison": "no_scout_date",
       "doi": "10.1175/jamc-d-18-0094.1",
       "doi_registered_date": {
@@ -1441,13 +1473,17 @@
       "source": "crossref",
       "title": "Estimation of Tropical Cyclone Intensity in the North Atlantic and Northeastern Pacific Basins Using TRMM Satellite Passive Microwave Observations",
       "volume": "58",
-      "work_type": "journal-article"
+      "work_type": "journal-article",
+      "accepted_date_precision": "month",
+      "first_of_month_default": true,
+      "preferred_date_matches_existing_scout": false,
+      "preferred_date_differs_from_existing_scout": false
     },
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
-      "accepted_reach_pub_date": "2018-06-13",
-      "accepted_reach_pub_date_source": "Crossref created (WPO-accepted Pub Date)",
+      "accepted_reach_pub_date": "2018-09-01",
+      "accepted_reach_pub_date_source": "Crossref published-print",
       "authors": [
         "Erik R. Nielsen",
         "Russ S. Schumacher"
@@ -1461,11 +1497,9 @@
       ],
       "best_partial_basis": "published-online",
       "best_partial_date": "2018-08-15",
-      "created_differs_from_existing_scout_date": true,
-      "created_matches_existing_scout_date": false,
-      "crossref_publication_date": "2018-08-15",
-      "crossref_publication_date_basis": "published-online",
-      "date_comparison": "different_date_review_option",
+      "crossref_publication_date": "2018-09-01",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "matched",
       "doi": "10.1175/jas-d-17-0385.1",
       "doi_registered_date": {
         "full_date": "2018-06-13",
@@ -1533,13 +1567,17 @@
       "source": "crossref",
       "title": "Dynamical Insights into Extreme Short-Term Precipitation Associated with Supercells and Mesovortices",
       "volume": "75",
-      "work_type": "journal-article"
+      "work_type": "journal-article",
+      "accepted_date_precision": "day",
+      "first_of_month_default": false,
+      "preferred_date_matches_existing_scout": true,
+      "preferred_date_differs_from_existing_scout": false
     },
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
-      "accepted_reach_pub_date": "2021-01-07",
-      "accepted_reach_pub_date_source": "Crossref created (WPO-accepted Pub Date)",
+      "accepted_reach_pub_date": "2021-05-01",
+      "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
       "authors": [
         "Andrew R. Wade",
         "Matthew D. Parker"
@@ -1548,10 +1586,8 @@
       "awards_in_crossref_funder": [],
       "best_partial_basis": "published-print",
       "best_partial_date": "2021-05",
-      "created_differs_from_existing_scout_date": false,
-      "created_matches_existing_scout_date": false,
       "crossref_publication_date": "",
-      "crossref_publication_date_basis": "",
+      "crossref_publication_date_basis": "published-print",
       "date_comparison": "no_scout_date",
       "doi": "10.1175/jas-d-20-0117.1",
       "doi_registered_date": {
@@ -1615,13 +1651,17 @@
       "source": "crossref",
       "title": "Dynamics of Simulated High-Shear, Low-CAPE Supercells",
       "volume": "78",
-      "work_type": "journal-article"
+      "work_type": "journal-article",
+      "accepted_date_precision": "month",
+      "first_of_month_default": true,
+      "preferred_date_matches_existing_scout": false,
+      "preferred_date_differs_from_existing_scout": false
     },
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
-      "accepted_reach_pub_date": "2015-08-10",
-      "accepted_reach_pub_date_source": "Crossref created (WPO-accepted Pub Date)",
+      "accepted_reach_pub_date": "2015-11-15",
+      "accepted_reach_pub_date_source": "Crossref published-print",
       "authors": [
         "Cheng Tao",
         "Haiyan Jiang"
@@ -1630,11 +1670,9 @@
       "awards_in_crossref_funder": [],
       "best_partial_basis": "published-online",
       "best_partial_date": "2015-11-16",
-      "created_differs_from_existing_scout_date": true,
-      "created_matches_existing_scout_date": false,
-      "crossref_publication_date": "2015-11-16",
-      "crossref_publication_date_basis": "published-online",
-      "date_comparison": "different_date_review_option",
+      "crossref_publication_date": "2015-11-15",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "matched",
       "doi": "10.1175/jcli-d-14-00448.1",
       "doi_registered_date": {
         "full_date": "2015-08-10",
@@ -1695,13 +1733,17 @@
       "source": "crossref",
       "title": "Distributions of Shallow to Very Deep Precipitation–Convection in Rapidly Intensifying Tropical Cyclones",
       "volume": "28",
-      "work_type": "journal-article"
+      "work_type": "journal-article",
+      "accepted_date_precision": "day",
+      "first_of_month_default": false,
+      "preferred_date_matches_existing_scout": true,
+      "preferred_date_differs_from_existing_scout": false
     },
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
-      "accepted_reach_pub_date": "2020-11-12",
-      "accepted_reach_pub_date_source": "Crossref created (WPO-accepted Pub Date)",
+      "accepted_reach_pub_date": "2021-02-01",
+      "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
       "authors": [
         "Xinxi Wang",
         "Haiyan Jiang"
@@ -1710,11 +1752,9 @@
       "awards_in_crossref_funder": [],
       "best_partial_basis": "published-print",
       "best_partial_date": "2021-02",
-      "created_differs_from_existing_scout_date": true,
-      "created_matches_existing_scout_date": false,
       "crossref_publication_date": "",
-      "crossref_publication_date_basis": "",
-      "date_comparison": "no_crossref_exact_date",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "different_date_review_option",
       "doi": "10.1175/jcli-d-19-0908.1",
       "doi_registered_date": {
         "full_date": "2020-11-12",
@@ -1775,13 +1815,17 @@
       "source": "crossref",
       "title": "Contrasting Behaviors between the Rapidly Intensifying and Slowly Intensifying Tropical Cyclones in the North Atlantic and Eastern Pacific Basins",
       "volume": "34",
-      "work_type": "journal-article"
+      "work_type": "journal-article",
+      "accepted_date_precision": "month",
+      "first_of_month_default": true,
+      "preferred_date_matches_existing_scout": false,
+      "preferred_date_differs_from_existing_scout": true
     },
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
-      "accepted_reach_pub_date": "2019-09-09",
-      "accepted_reach_pub_date_source": "Crossref created (WPO-accepted Pub Date)",
+      "accepted_reach_pub_date": "2019-11-01",
+      "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
       "authors": [
         "Robin L. Tanamachi",
         "Stephen J. Frasier",
@@ -1797,10 +1841,8 @@
       ],
       "best_partial_basis": "published-print",
       "best_partial_date": "2019-11",
-      "created_differs_from_existing_scout_date": false,
-      "created_matches_existing_scout_date": false,
       "crossref_publication_date": "",
-      "crossref_publication_date_basis": "",
+      "crossref_publication_date_basis": "published-print",
       "date_comparison": "no_scout_date",
       "doi": "10.1175/jtech-d-18-0224.1",
       "doi_registered_date": {
@@ -1865,13 +1907,17 @@
       "source": "crossref",
       "title": "Progress toward Characterization of the Atmospheric Boundary Layer over Northern Alabama Using Observations by a Vertically Pointing, S-Band Profiling Radar during VORTEX-Southeast",
       "volume": "36",
-      "work_type": "journal-article"
+      "work_type": "journal-article",
+      "accepted_date_precision": "month",
+      "first_of_month_default": true,
+      "preferred_date_matches_existing_scout": false,
+      "preferred_date_differs_from_existing_scout": false
     },
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
-      "accepted_reach_pub_date": "2019-04-08",
-      "accepted_reach_pub_date_source": "Crossref created (WPO-accepted Pub Date)",
+      "accepted_reach_pub_date": "2019-06-01",
+      "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
       "authors": [
         "Keith D. Sherburn",
         "Matthew D. Parker"
@@ -1885,10 +1931,8 @@
       ],
       "best_partial_basis": "published-print",
       "best_partial_date": "2019-06",
-      "created_differs_from_existing_scout_date": false,
-      "created_matches_existing_scout_date": false,
       "crossref_publication_date": "",
-      "crossref_publication_date_basis": "",
+      "crossref_publication_date_basis": "published-print",
       "date_comparison": "no_scout_date",
       "doi": "10.1175/mwr-d-18-0246.1",
       "doi_registered_date": {
@@ -1955,13 +1999,17 @@
       "source": "crossref",
       "title": "The Development of Severe Vortices within Simulated High-Shear, Low-CAPE Convection",
       "volume": "147",
-      "work_type": "journal-article"
+      "work_type": "journal-article",
+      "accepted_date_precision": "month",
+      "first_of_month_default": true,
+      "preferred_date_matches_existing_scout": false,
+      "preferred_date_differs_from_existing_scout": false
     },
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
-      "accepted_reach_pub_date": "2019-10-03",
-      "accepted_reach_pub_date_source": "Crossref created (WPO-accepted Pub Date)",
+      "accepted_reach_pub_date": "2020-01-01",
+      "accepted_reach_pub_date_source": "Crossref published-print",
       "authors": [
         "Erik R. Nielsen",
         "Russ S. Schumacher"
@@ -1975,11 +2023,9 @@
       ],
       "best_partial_basis": "published-online",
       "best_partial_date": "2019-12-17",
-      "created_differs_from_existing_scout_date": true,
-      "created_matches_existing_scout_date": false,
-      "crossref_publication_date": "2019-12-17",
-      "crossref_publication_date_basis": "published-online",
-      "date_comparison": "different_date_review_option",
+      "crossref_publication_date": "2020-01-01",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "matched",
       "doi": "10.1175/mwr-d-19-0146.1",
       "doi_registered_date": {
         "full_date": "2019-10-03",
@@ -2047,13 +2093,17 @@
       "source": "crossref",
       "title": "Observations of Extreme Short-Term Precipitation Associated with Supercells and Mesovortices",
       "volume": "148",
-      "work_type": "journal-article"
+      "work_type": "journal-article",
+      "accepted_date_precision": "day",
+      "first_of_month_default": false,
+      "preferred_date_matches_existing_scout": true,
+      "preferred_date_differs_from_existing_scout": false
     },
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
-      "accepted_reach_pub_date": "2023-03-06",
-      "accepted_reach_pub_date_source": "Crossref created (WPO-accepted Pub Date)",
+      "accepted_reach_pub_date": "2023-06-01",
+      "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
       "authors": [
         "Allison T. LaFleur",
         "Robin L. Tanamachi",
@@ -2066,10 +2116,8 @@
       ],
       "best_partial_basis": "published-print",
       "best_partial_date": "2023-06",
-      "created_differs_from_existing_scout_date": false,
-      "created_matches_existing_scout_date": false,
       "crossref_publication_date": "",
-      "crossref_publication_date_basis": "",
+      "crossref_publication_date_basis": "published-print",
       "date_comparison": "no_scout_date",
       "doi": "10.1175/mwr-d-22-0051.1",
       "doi_registered_date": {
@@ -2133,13 +2181,17 @@
       "source": "crossref",
       "title": "Factors Affecting the Rapid Recovery of CAPE on 31 March 2016 during VORTEX-Southeast",
       "volume": "151",
-      "work_type": "journal-article"
+      "work_type": "journal-article",
+      "accepted_date_precision": "month",
+      "first_of_month_default": true,
+      "preferred_date_matches_existing_scout": false,
+      "preferred_date_differs_from_existing_scout": false
     },
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
-      "accepted_reach_pub_date": "2024-04-16",
-      "accepted_reach_pub_date_source": "Crossref created (WPO-accepted Pub Date)",
+      "accepted_reach_pub_date": "2024-07-01",
+      "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
       "authors": [
         "Milind Sharma",
         "Robin L. Tanamachi",
@@ -2151,11 +2203,9 @@
       ],
       "best_partial_basis": "published-print",
       "best_partial_date": "2024-07",
-      "created_differs_from_existing_scout_date": true,
-      "created_matches_existing_scout_date": false,
       "crossref_publication_date": "",
-      "crossref_publication_date_basis": "",
-      "date_comparison": "no_crossref_exact_date",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "different_date_review_option",
       "doi": "10.1175/mwr-d-23-0144.1",
       "doi_registered_date": {
         "full_date": "2024-04-16",
@@ -2220,13 +2270,17 @@
       "source": "crossref",
       "title": "Investigating Temporal Characteristics of Polarimetric and Electrical Signatures in Three Severe Storms: Insights from the VORTEX-Southeast Field Campaign",
       "volume": "152",
-      "work_type": "journal-article"
+      "work_type": "journal-article",
+      "accepted_date_precision": "month",
+      "first_of_month_default": true,
+      "preferred_date_matches_existing_scout": false,
+      "preferred_date_differs_from_existing_scout": true
     },
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
-      "accepted_reach_pub_date": "2018-03-12",
-      "accepted_reach_pub_date_source": "Crossref created (WPO-accepted Pub Date)",
+      "accepted_reach_pub_date": "2018-06-01",
+      "accepted_reach_pub_date_source": "Crossref published-print",
       "authors": [
         "Samuel J. Childs",
         "Russ S. Schumacher",
@@ -2240,11 +2294,9 @@
       ],
       "best_partial_basis": "published-online",
       "best_partial_date": "2018-04-27",
-      "created_differs_from_existing_scout_date": true,
-      "created_matches_existing_scout_date": false,
-      "crossref_publication_date": "2018-04-27",
-      "crossref_publication_date_basis": "published-online",
-      "date_comparison": "different_date_review_option",
+      "crossref_publication_date": "2018-06-01",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "matched",
       "doi": "10.1175/waf-d-17-0120.1",
       "doi_registered_date": {
         "full_date": "2018-03-12",
@@ -2311,13 +2363,17 @@
       "source": "crossref",
       "title": "Cold-Season Tornadoes: Climatological and Meteorological Insights",
       "volume": "33",
-      "work_type": "journal-article"
+      "work_type": "journal-article",
+      "accepted_date_precision": "day",
+      "first_of_month_default": false,
+      "preferred_date_matches_existing_scout": true,
+      "preferred_date_differs_from_existing_scout": false
     },
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
-      "accepted_reach_pub_date": "2019-11-26",
-      "accepted_reach_pub_date_source": "Crossref created (WPO-accepted Pub Date)",
+      "accepted_reach_pub_date": "2020-02-01",
+      "accepted_reach_pub_date_source": "Crossref published-print",
       "authors": [
         "Amanda Burke",
         "Nathan Snook",
@@ -2331,10 +2387,8 @@
       ],
       "best_partial_basis": "published-online",
       "best_partial_date": "2020-01-23",
-      "created_differs_from_existing_scout_date": true,
-      "created_matches_existing_scout_date": false,
-      "crossref_publication_date": "2020-01-23",
-      "crossref_publication_date_basis": "published-online",
+      "crossref_publication_date": "2020-02-01",
+      "crossref_publication_date_basis": "published-print",
       "date_comparison": "different_date_review_option",
       "doi": "10.1175/waf-d-19-0105.1",
       "doi_registered_date": {
@@ -2400,13 +2454,17 @@
       "source": "crossref",
       "title": "Calibration of Machine Learning–Based Probabilistic Hail Predictions for Operational Forecasting",
       "volume": "35",
-      "work_type": "journal-article"
+      "work_type": "journal-article",
+      "accepted_date_precision": "day",
+      "first_of_month_default": false,
+      "preferred_date_matches_existing_scout": false,
+      "preferred_date_differs_from_existing_scout": true
     },
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
-      "accepted_reach_pub_date": "2020-05-21",
-      "accepted_reach_pub_date_source": "Crossref created (WPO-accepted Pub Date)",
+      "accepted_reach_pub_date": "2020-08-01",
+      "accepted_reach_pub_date_source": "Crossref published-print",
       "authors": [
         "Jen Henderson",
         "Erik R. Nielsen",
@@ -2423,8 +2481,6 @@
       ],
       "best_partial_basis": "published-print",
       "best_partial_date": "2020-08-01",
-      "created_differs_from_existing_scout_date": true,
-      "created_matches_existing_scout_date": false,
       "crossref_publication_date": "2020-08-01",
       "crossref_publication_date_basis": "published-print",
       "date_comparison": "matched",
@@ -2494,13 +2550,17 @@
       "source": "crossref",
       "title": "A Hazard Multiple: Overlapping Tornado and Flash Flood Warnings in a National Weather Service Forecast Office in the Southeastern United States",
       "volume": "35",
-      "work_type": "journal-article"
+      "work_type": "journal-article",
+      "accepted_date_precision": "day",
+      "first_of_month_default": false,
+      "preferred_date_matches_existing_scout": true,
+      "preferred_date_differs_from_existing_scout": false
     },
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
-      "accepted_reach_pub_date": "2023-05-23",
-      "accepted_reach_pub_date_source": "Crossref created (WPO-accepted Pub Date)",
+      "accepted_reach_pub_date": "2023-08-01",
+      "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
       "authors": [
         "James P. Kossin",
         "Derrick C. Herndon",
@@ -2514,11 +2574,9 @@
       ],
       "best_partial_basis": "published-print",
       "best_partial_date": "2023-08",
-      "created_differs_from_existing_scout_date": true,
-      "created_matches_existing_scout_date": false,
       "crossref_publication_date": "",
-      "crossref_publication_date_basis": "",
-      "date_comparison": "no_crossref_exact_date",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "different_date_review_option",
       "doi": "10.1175/waf-d-22-0178.1",
       "doi_registered_date": {
         "full_date": "2023-05-23",
@@ -2583,13 +2641,17 @@
       "source": "crossref",
       "title": "M-PERC: A New Satellite Microwave-Based Model to Diagnose the Onset of Tropical Cyclone Eyewall Replacement Cycles",
       "volume": "38",
-      "work_type": "journal-article"
+      "work_type": "journal-article",
+      "accepted_date_precision": "month",
+      "first_of_month_default": true,
+      "preferred_date_matches_existing_scout": false,
+      "preferred_date_differs_from_existing_scout": true
     },
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
-      "accepted_reach_pub_date": "2025-08-04",
-      "accepted_reach_pub_date_source": "Crossref created (WPO-accepted Pub Date)",
+      "accepted_reach_pub_date": "2025-11-01",
+      "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
       "authors": [
         "Abby Hutson",
         "Claire Pettersen",
@@ -2605,11 +2667,9 @@
       ],
       "best_partial_basis": "published-print",
       "best_partial_date": "2025-11",
-      "created_differs_from_existing_scout_date": true,
-      "created_matches_existing_scout_date": false,
       "crossref_publication_date": "",
-      "crossref_publication_date_basis": "",
-      "date_comparison": "no_crossref_exact_date",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "different_date_review_option",
       "doi": "10.1175/waf-d-24-0249.1",
       "doi_registered_date": {
         "full_date": "2025-08-04",
@@ -2675,13 +2735,17 @@
       "source": "crossref",
       "title": "Evaluating the Performance of Microphysics Schemes against Observations during High-Impact Lake-Effect Snow Events",
       "volume": "40",
-      "work_type": "journal-article"
+      "work_type": "journal-article",
+      "accepted_date_precision": "month",
+      "first_of_month_default": true,
+      "preferred_date_matches_existing_scout": false,
+      "preferred_date_differs_from_existing_scout": true
     },
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
-      "accepted_reach_pub_date": "2023-09-25",
-      "accepted_reach_pub_date_source": "Crossref created (WPO-accepted Pub Date)",
+      "accepted_reach_pub_date": "2023-10-01",
+      "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
       "authors": [
         "Robert Prestley",
         "Rebecca E. Morss"
@@ -2692,11 +2756,9 @@
       ],
       "best_partial_basis": "published-print",
       "best_partial_date": "2023-10",
-      "created_differs_from_existing_scout_date": true,
-      "created_matches_existing_scout_date": false,
       "crossref_publication_date": "",
-      "crossref_publication_date_basis": "",
-      "date_comparison": "no_crossref_exact_date",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "different_date_review_option",
       "doi": "10.1175/wcas-d-23-0046.1",
       "doi_registered_date": {
         "full_date": "2023-09-25",
@@ -2761,13 +2823,17 @@
       "source": "crossref",
       "title": "Contextualizing Disaster Phases Using Social Media Data: Hurricane Risk Visualizations during the Forecast and Warning Phase of Hurricane Irma",
       "volume": "15",
-      "work_type": "journal-article"
+      "work_type": "journal-article",
+      "accepted_date_precision": "month",
+      "first_of_month_default": true,
+      "preferred_date_matches_existing_scout": false,
+      "preferred_date_differs_from_existing_scout": true
     },
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
       "accepted_reach_pub_date": "2023-09-07",
-      "accepted_reach_pub_date_source": "Crossref created (WPO-accepted Pub Date)",
+      "accepted_reach_pub_date_source": "Crossref published-online",
       "authors": [
         "KATIE A. WILSON",
         "NUSRAT YUSSOUF",
@@ -2783,8 +2849,6 @@
       "awards_in_crossref_funder": [],
       "best_partial_basis": "published-online",
       "best_partial_date": "2023-09-07",
-      "created_differs_from_existing_scout_date": false,
-      "created_matches_existing_scout_date": true,
       "crossref_publication_date": "2023-09-07",
       "crossref_publication_date_basis": "published-online",
       "date_comparison": "matched",
@@ -2848,13 +2912,17 @@
       "source": "crossref",
       "title": "The NOAA Weather Prediction Center’s Use and Evaluation of Experimental Warn-on-Forecast System Guidance",
       "volume": "",
-      "work_type": "journal-article"
+      "work_type": "journal-article",
+      "accepted_date_precision": "day",
+      "first_of_month_default": false,
+      "preferred_date_matches_existing_scout": true,
+      "preferred_date_differs_from_existing_scout": false
     },
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
       "accepted_reach_pub_date": "2023-12-19",
-      "accepted_reach_pub_date_source": "Crossref created (WPO-accepted Pub Date)",
+      "accepted_reach_pub_date_source": "Crossref published-online",
       "authors": [
         "Patrick S. Skinner",
         "Katie A. Wilson",
@@ -2877,8 +2945,6 @@
       "awards_in_crossref_funder": [],
       "best_partial_basis": "published-online",
       "best_partial_date": "2023-12-19",
-      "created_differs_from_existing_scout_date": false,
-      "created_matches_existing_scout_date": true,
       "crossref_publication_date": "2023-12-19",
       "crossref_publication_date_basis": "published-online",
       "date_comparison": "matched",
@@ -2942,13 +3008,17 @@
       "source": "crossref",
       "title": "Interpreting Warn-on-Forecast System Guidance, Part I: Review of Probabilistic Guidance Concepts, Product Design, and Best Practices",
       "volume": "",
-      "work_type": "journal-article"
+      "work_type": "journal-article",
+      "accepted_date_precision": "day",
+      "first_of_month_default": false,
+      "preferred_date_matches_existing_scout": true,
+      "preferred_date_differs_from_existing_scout": false
     },
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
-      "accepted_reach_pub_date": "2021-10-04",
-      "accepted_reach_pub_date_source": "Crossref created (WPO-accepted Pub Date)",
+      "accepted_reach_pub_date": "2021-10-02",
+      "accepted_reach_pub_date_source": "Crossref published-online",
       "authors": [
         "Yongming Wang",
         "Xuguang Wang"
@@ -2959,8 +3029,6 @@
       ],
       "best_partial_basis": "published-online",
       "best_partial_date": "2021-10-02",
-      "created_differs_from_existing_scout_date": true,
-      "created_matches_existing_scout_date": false,
       "crossref_publication_date": "2021-10-02",
       "crossref_publication_date_basis": "published-online",
       "date_comparison": "matched",
@@ -3028,13 +3096,17 @@
       "source": "crossref",
       "title": "Rapid Update with EnVar Direct Radar Reflectivity Data Assimilation for the NOAA Regional Convection-Allowing NMMB Model over the CONUS: System Description and Initial Experiment Results",
       "volume": "12",
-      "work_type": "journal-article"
+      "work_type": "journal-article",
+      "accepted_date_precision": "day",
+      "first_of_month_default": false,
+      "preferred_date_matches_existing_scout": true,
+      "preferred_date_differs_from_existing_scout": false
     },
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
       "accepted_reach_pub_date": "2025-12-09",
-      "accepted_reach_pub_date_source": "Crossref created (WPO-accepted Pub Date)",
+      "accepted_reach_pub_date_source": "Crossref posted",
       "authors": [
         "Olivia McAnirlin",
         "Mondira Bardhan",
@@ -3048,8 +3120,6 @@
       "awards_in_crossref_funder": [],
       "best_partial_basis": "posted",
       "best_partial_date": "2025-12-09",
-      "created_differs_from_existing_scout_date": false,
-      "created_matches_existing_scout_date": true,
       "crossref_publication_date": "2025-12-09",
       "crossref_publication_date_basis": "posted",
       "date_comparison": "matched",
@@ -3115,13 +3185,17 @@
       "source": "crossref",
       "title": "Preparing for disasters triggered by natural hazards with immersive technologies: A scoping review",
       "volume": "",
-      "work_type": "posted-content"
+      "work_type": "posted-content",
+      "accepted_date_precision": "day",
+      "first_of_month_default": false,
+      "preferred_date_matches_existing_scout": true,
+      "preferred_date_differs_from_existing_scout": false
     },
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
       "accepted_reach_pub_date": "2025-10-28",
-      "accepted_reach_pub_date_source": "Crossref created (WPO-accepted Pub Date)",
+      "accepted_reach_pub_date_source": "Crossref published-online",
       "authors": [
         "Cristiana Stan",
         "Saisri Kollapaneni",
@@ -3139,8 +3213,6 @@
       ],
       "best_partial_basis": "published-online",
       "best_partial_date": "2025-10-28",
-      "created_differs_from_existing_scout_date": false,
-      "created_matches_existing_scout_date": true,
       "crossref_publication_date": "2025-10-28",
       "crossref_publication_date_basis": "published-online",
       "date_comparison": "matched",
@@ -3270,7 +3342,11 @@
       "source": "crossref",
       "title": "A Python diagnostics package for evaluation of  Madden–Julian Oscillation (MJO) teleconnections  in subseasonal-to-seasonal (S2S) forecast systems",
       "volume": "18",
-      "work_type": "journal-article"
+      "work_type": "journal-article",
+      "accepted_date_precision": "day",
+      "first_of_month_default": false,
+      "preferred_date_matches_existing_scout": true,
+      "preferred_date_differs_from_existing_scout": false
     }
   ],
   "schema": "reach-scout-crossref-publication-checkpoint-v1",
@@ -3301,5 +3377,6 @@
       "batches": 20,
       "rows": 66
     }
-  }
+  },
+  "recalculated_from_cached_verified_crossref_doi_metadata": true
 }
