@@ -1,0 +1,322 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-30-HOURLY-1329ET",
+  "timestamp_utc": "2026-10-30T17:39:00Z",
+  "mode": "normal_historical_discovery",
+  "phase": "scripps_attribution_bounded_followup_and_flood_output_discovery",
+  "original_seeds_disposed_this_run": [],
+  "monthly_before_after": {
+    "received": [
+      0,
+      0
+    ],
+    "completed": [
+      0,
+      0
+    ],
+    "remaining": [
+      0,
+      0
+    ]
+  },
+  "historical_before_after": {
+    "completed": [
+      188,
+      188
+    ],
+    "remaining": [
+      0,
+      0
+    ]
+  },
+  "original_historical_statuses_unchanged": true,
+  "original_historical_seed_disposition_counts": {
+    "already_in_reach": 37,
+    "forwarded_to_hub": 2,
+    "metadata_update_forwarded": 8,
+    "no_action": 109,
+    "human_metadata_needed_legacy": 32
+  },
+  "normal_projects_examined": [
+    "spark-000336",
+    "spark-000338",
+    "spark-000337"
+  ],
+  "attribution_followups": {
+    "existing_historical_total": 71,
+    "existing_historical_queued": 0,
+    "new_independent_leads_closed": 3,
+    "historical_attribution_ledger_changed": 0
+  },
+  "independent_followup_doi_dispositions": [
+    {
+      "identity": "doi:10.57969/s9059k",
+      "title": "2022 NHCI first-five wave data",
+      "status": "FOLLOWUP_CLOSED_NO_DEMONSTRATED_WPO_PROJECT_BRIDGE",
+      "discovery_route": "Independent discovery",
+      "source_project": "spark-000336",
+      "award_considered": "NA21OAR4590374",
+      "reason": "Scripps official NHCI family identifies NOPP NHCI funding and additional GDP records; distinct Scripps Atlantic Hurricane Drifters family explicitly lists WPO award NA21OAR4590374. Shared authors/drifter technology do not establish funding of this specific NHCI DOI. DOI-specific DataCite fundingReference could not be retrieved; reopen only with new positive DOI-specific award/project evidence.",
+      "checks": [
+        {
+          "url": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+          "result": "Exact NHCI DOI and NOPP NHCI funding; some GDP additional observations"
+        },
+        {
+          "url": "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+          "result": "Separate Atlantic Hurricane Drifters family explicitly names NA21OAR4590374; no license to attribute NHCI family by association"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+          "result": "spark-000336 funded WPO barometer enhancements to GDP DWSD buoys, not explicit NHCI data output"
+        },
+        {
+          "url": "https://erddap.ldl.ucsd.edu/erddap/info/",
+          "result": "NHCI storm datasets exist as distinct ERDDAP identities; this is output identity, not WPO funding"
+        },
+        {
+          "url": "https://api.datacite.org/dois/10.57969/s9059k",
+          "result": "ACCESS FAILURE; no DOI-specific fundingReference or created timestamp verified; no metadata absence inferred"
+        }
+      ],
+      "reach_index_exact_doi_match": false,
+      "scout_batches_exact_doi_match": false,
+      "hub_delivery": "NOT_DELIVERED",
+      "human_decision": "NOT_VERIFIED",
+      "reopen_condition": "New positive DOI-specific funding or project-output bridge; human request"
+    },
+    {
+      "identity": "doi:10.57969/s9ms33",
+      "title": "2022-2024 targeted-storm NHCI sensor data",
+      "status": "FOLLOWUP_CLOSED_NO_DEMONSTRATED_WPO_PROJECT_BRIDGE",
+      "discovery_route": "Independent discovery",
+      "source_project": "spark-000336",
+      "award_considered": "NA21OAR4590374",
+      "reason": "Scripps official NHCI family identifies NOPP NHCI funding and additional GDP records; distinct Scripps Atlantic Hurricane Drifters family explicitly lists WPO award NA21OAR4590374. Shared authors/drifter technology do not establish funding of this specific NHCI DOI. DOI-specific DataCite fundingReference could not be retrieved; reopen only with new positive DOI-specific award/project evidence.",
+      "checks": [
+        {
+          "url": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+          "result": "Exact NHCI DOI and NOPP NHCI funding; some GDP additional observations"
+        },
+        {
+          "url": "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+          "result": "Separate Atlantic Hurricane Drifters family explicitly names NA21OAR4590374; no license to attribute NHCI family by association"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+          "result": "spark-000336 funded WPO barometer enhancements to GDP DWSD buoys, not explicit NHCI data output"
+        },
+        {
+          "url": "https://erddap.ldl.ucsd.edu/erddap/info/",
+          "result": "NHCI storm datasets exist as distinct ERDDAP identities; this is output identity, not WPO funding"
+        },
+        {
+          "url": "https://api.datacite.org/dois/10.57969/s9ms33",
+          "result": "ACCESS FAILURE; no DOI-specific fundingReference or created timestamp verified; no metadata absence inferred"
+        }
+      ],
+      "reach_index_exact_doi_match": false,
+      "scout_batches_exact_doi_match": false,
+      "hub_delivery": "NOT_DELIVERED",
+      "human_decision": "NOT_VERIFIED",
+      "reopen_condition": "New positive DOI-specific funding or project-output bridge; human request"
+    },
+    {
+      "identity": "doi:10.57969/s9h01g",
+      "title": "2022-2024 targeted-storm NHCI first-five wave data",
+      "status": "FOLLOWUP_CLOSED_NO_DEMONSTRATED_WPO_PROJECT_BRIDGE",
+      "discovery_route": "Independent discovery",
+      "source_project": "spark-000336",
+      "award_considered": "NA21OAR4590374",
+      "reason": "Scripps official NHCI family identifies NOPP NHCI funding and additional GDP records; distinct Scripps Atlantic Hurricane Drifters family explicitly lists WPO award NA21OAR4590374. Shared authors/drifter technology do not establish funding of this specific NHCI DOI. DOI-specific DataCite fundingReference could not be retrieved; reopen only with new positive DOI-specific award/project evidence.",
+      "checks": [
+        {
+          "url": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+          "result": "Exact NHCI DOI and NOPP NHCI funding; some GDP additional observations"
+        },
+        {
+          "url": "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+          "result": "Separate Atlantic Hurricane Drifters family explicitly names NA21OAR4590374; no license to attribute NHCI family by association"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+          "result": "spark-000336 funded WPO barometer enhancements to GDP DWSD buoys, not explicit NHCI data output"
+        },
+        {
+          "url": "https://erddap.ldl.ucsd.edu/erddap/info/",
+          "result": "NHCI storm datasets exist as distinct ERDDAP identities; this is output identity, not WPO funding"
+        },
+        {
+          "url": "https://api.datacite.org/dois/10.57969/s9h01g",
+          "result": "ACCESS FAILURE; no DOI-specific fundingReference or created timestamp verified; no metadata absence inferred"
+        }
+      ],
+      "reach_index_exact_doi_match": false,
+      "scout_batches_exact_doi_match": false,
+      "hub_delivery": "NOT_DELIVERED",
+      "human_decision": "NOT_VERIFIED",
+      "reopen_condition": "New positive DOI-specific funding or project-output bridge; human request"
+    }
+  ],
+  "new_candidates": [
+    {
+      "identity": "doi:10.1038/s41597-025-04554-3",
+      "route": "Independent discovery",
+      "project": "spark-000338",
+      "original_seed_doi": null,
+      "award_numbers": [
+        "NA21OAR4590358"
+      ],
+      "pub_date": "2025-02-15",
+      "pub_date_source": "publisher",
+      "batch_id": "2026-10-30-hourly-1329ET-independent-flood-mapping-001",
+      "source_urls": [
+        "https://doi.org/10.1038/s41597-025-04554-3",
+        "https://www.nature.com/articles/s41597-025-04554-3",
+        "https://www.nature.com/articles/s41597-025-04554-3"
+      ],
+      "hub_import": "NOT_VERIFIED"
+    },
+    {
+      "identity": "doi:10.1109/ACCESS.2025.3636732",
+      "route": "Independent discovery",
+      "project": "spark-000338",
+      "original_seed_doi": null,
+      "award_numbers": [
+        "NA21OAR4590358"
+      ],
+      "pub_date": "2025-11-25",
+      "pub_date_source": "publisher",
+      "batch_id": "2026-10-30-hourly-1329ET-independent-flood-mapping-001",
+      "source_urls": [
+        "https://doi.org/10.1109/ACCESS.2025.3636732",
+        "https://ieeexplore.ieee.org/document/11267202",
+        "https://www.researchgate.net/publication/397977185_Multi-Resolution_Data_Fusion_for_Resilient_Flood_Mapping"
+      ],
+      "hub_import": "NOT_VERIFIED"
+    }
+  ],
+  "new_expansion_leads": [
+    {
+      "identity": "doi:10.6084/m9.figshare.26791243",
+      "title": "DeepFlood High Resolution Dataset for Accurate Flood Mapping and Segmentation",
+      "status": "NEW_EXPANSION_LEAD_NEEDS_IDENTITY_AND_REACH_REVIEW",
+      "discovery_route": "Independent discovery",
+      "origin": "https://www.nature.com/articles/s41597-025-04554-3",
+      "original_seed_doi": null,
+      "parent_article_doi": "10.1038/s41597-025-04554-3",
+      "award_numbers": [
+        "NA21OAR4590358"
+      ],
+      "funding_basis": "Nature article directly acknowledges NA21OAR4590358 and explicitly cites distinct Figshare data DOI; dataset-specific record, public files, DataCite created, REACH/Scout duplicate and private decisions need separate verification.",
+      "hub_delivery": "NOT_DELIVERED",
+      "human_decision": "NOT_VERIFIED",
+      "source_urls": [
+        "https://www.nature.com/articles/s41597-025-04554-3",
+        "https://doi.org/10.6084/m9.figshare.26791243"
+      ],
+      "next_action": "Inspect Figshare native record and exact DOI DataCite created; check all REACH index/detail shards and Scout batches; verify public scope and article-versus-dataset distinctness before human proposal."
+    }
+  ],
+  "existing_reach_duplicates": [
+    {
+      "identity": "10.3389/frsen.2022.868104",
+      "reach_id": "reach-000144",
+      "reason": "Exact normalized title match in full REACH index despite DOI absent from index link"
+    },
+    {
+      "identity": "10.3390/rs14246374",
+      "reach_id": "reach-000145",
+      "reason": "Exact normalized title match in full REACH index despite DOI absent from index link"
+    },
+    {
+      "identity": "10.1016/j.jag.2024.103662",
+      "reach_id": "reach-000148",
+      "reason": "Exact normalized title match in full REACH index despite DOI absent from index link"
+    },
+    {
+      "identity": "10.3390/rs16142679",
+      "reach_id": "reach-000149",
+      "reason": "Exact normalized title match in full REACH index despite DOI absent from index link"
+    },
+    {
+      "identity": "10.1080/19475705.2025.2493225",
+      "reach_id": "reach-000151",
+      "reason": "Exact normalized title match in full REACH index despite DOI absent from index link"
+    }
+  ],
+  "source_catalog_checks": {
+    "reach_index_files": 10,
+    "reach_index_rows": 1238,
+    "scout_batch_files": 20,
+    "scout_staged_rows": 66,
+    "index_and_batch_doi_title_search": "COMPLETED",
+    "reach_full_detail_shards": "NOT_VERIFIED",
+    "private_feedback_decisions": "NOT_VERIFIED"
+  },
+  "metadata_intake": {
+    "source_cases": 42,
+    "review_units": 36,
+    "human_intake_pending": 38,
+    "normal_review_feed_preexisting": 4,
+    "hub_imports_observed": "NOT_VERIFIED",
+    "private_companion": "PREPARED_TESTED_OFFLINE_NOT_INSTALLED",
+    "human_decisions": "NOT_VERIFIED",
+    "date_policy": "DataCite created valid YYYY-MM-DD is fully accepted Pub Date; no date-only metadata blocker"
+  },
+  "discovery_routes_this_run": {
+    "Direct API": 0,
+    "API-seeded expansion": 0,
+    "Independent discovery": 2,
+    "Metadata correction": 0
+  },
+  "discovery_origin_rollup_before": {
+    "staged_rows": 66,
+    "Direct API": 5,
+    "API-seeded expansion": 12,
+    "Independent discovery": 3,
+    "Metadata correction": 6,
+    "Unclassified legacy": 40
+  },
+  "feed_integrity_status": "PENDING_MANIFEST_VALIDATION_FEED_BLOCKED",
+  "new_batch_ids": [
+    "2026-10-30-hourly-1329ET-independent-flood-mapping-001"
+  ],
+  "manifest_verification_evidence": {
+    "prior_manifest_batch_count": 20,
+    "prior_manifest_rows": 66,
+    "prior_manifest_blob_sha": "1d048cf0b5552aff8eb9b6afc36302d8147afbe8",
+    "previous_run_all_20_sha_verified": true,
+    "new_csv_sha256_exact_utf8": "97905d8908bcfca04cff68b5cf54e8635e3660184279e2a9fc01ca996deb0402",
+    "new_csv_row_count": 2,
+    "new_csv_column_count": 24,
+    "automated_manifest_owner_only": true,
+    "new_csv_sha256_exact_utf8_re_read_from_public_main": "97905d8908bcfca04cff68b5cf54e8635e3660184279e2a9fc01ca996deb0402",
+    "new_csv_bytes_match_library": true,
+    "new_csv_manifest_entry_present": false
+  },
+  "github_action_verification": {
+    "run_id": 41100661636,
+    "status": "queued_at_last_successful_action_read",
+    "conclusion": "PENDING",
+    "head_sha": "8d10c8751a04e2d961364409e5aef83118ef7207"
+  },
+  "hub_imports": "NOT_VERIFIED",
+  "reviewer_confirmed_without_acknowledgment": "NOT_VERIFIED",
+  "public_reach": {
+    "rows": 1238,
+    "new_additions_verified": 0,
+    "manifest_sha": "ab844173f761617a2fe1def5cf218b1fc94b3e7d"
+  },
+  "blockers": [
+    "Native DataCite DOI endpoints for three NHCI independent leads inaccessible; WPO funding not established",
+    "Figshare DeepFlood dataset identity/date/public scope not yet checked",
+    "Full REACH detail shards and private Hub import/decisions not verified",
+    "New immutable 2-row CSV committed and exact UTF-8 SHA verified, but automated checksum manifest still has 20 batches / 66 rows; no Hub-ready assertion."
+  ],
+  "audit_result": "PARTIAL",
+  "library_path": "/REACH Scout/2026-10-30/1329ET",
+  "github_audit_published": "GITHUB_CREATE_REQUEST_PENDING_VERIFICATION",
+  "github_csv_commit_sha": "8d10c8751a04e2d961364409e5aef83118ef7207",
+  "github_lead_ledger_commit_sha": "1faedfaaba97f169e96fd4d635ffa657c106a2a6"
+}
