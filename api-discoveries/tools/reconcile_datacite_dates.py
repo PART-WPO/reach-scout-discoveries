@@ -43,14 +43,14 @@ HEADERS = ["DOI", "Original API Title", "NOAA Award(s)", "Output Type",
     "Other Typed Dates", "Native Page", "Native Publication Date",
     "Native DOI Matched?", "Date Evidence Classification",
     "Verified REACH Date", "Provisional Date to Check", "Date Basis / Reviewer Question",
-    "Default REACH Pub Date (DataCite created; editable)", "Default Date Basis",
+    "REACH Pub Date (DataCite created; editable)", "REACH Pub Date Source",
     "Related Version DOI(s)", "API Retrieval", "DataCite Evidence URL",
     "Source Batch"]
 excel.WIDTHS.update({
     "Summary": [38, 94],
     "Date Reconciliation": [37, 66, 36, 24, 67, 67, 23, 19, 31, 31, 31, 39, 39, 52, 69, 26, 20, 35, 23, 25, 96, 27, 40, 55, 38, 67, 78],
     "Repository Breakdown": [35, 21, 24, 24, 24, 24, 22, 25],
-    "Needs Reviewer Check": [37, 66, 25, 35, 25, 82, 60],
+    "Optional Date Evidence": [37, 66, 25, 35, 25, 82, 60],
     "Read Me": [34, 112],
 })
 
@@ -290,7 +290,7 @@ def date_recommendation(a,doi,try_native=True):
         "created":text(a.get("created")),"registered":text(a.get("registered")),"updated":text(a.get("updated")),
         "native_url":nativeurl,"native_dates":native_dates,"native_identity_match":native_seen,
         "native_check":native_note,"status":status,"verified_date":verified,"provisional_date":candidate,
-        "reason":basis,"default_pub_date":created,"default_pub_date_basis":("DataCite created (editable default; not independently verified)" if created else "No DataCite created full date; human review"),"related_versions":related,
+        "reason":basis,"default_pub_date":created,"default_pub_date_basis":("REACH office Pub Date: DataCite created (reviewer may edit)" if created else "No valid DataCite created date"),"pub_date_requirement_satisfied":bool(created),"remaining_pub_date_missing":not bool(created),"related_versions":related,
     }
 
 def build(mode,month,offline=False,native=True):
@@ -328,7 +328,14 @@ def build(mode,month,offline=False,native=True):
                 "issued_dates":[],"available_dates":[],"native_url":"","native_dates":[],
                 "native_identity_match":False,"native_check":"not checked",
                 "reason":"Could not retrieve DataCite DOI; absence of retrieved metadata is NOT evidence that no date exists.",
-                "related_versions":[],"default_pub_date":"","default_pub_date_basis":"DataCite API unavailable; cannot supply default","data_title":"","retrieval":"unavailable","api_failure":result})
+                "related_versions":[],"default_pub_date":"","default_pub_date_basis":"DataCite API unavailable; cannot supply Pub Date","pub_date_requirement_satisfied":False,"remaining_pub_date_missing":True,"data_title":"","retrieval":"unavailable","api_failure":result})
+        # Even when retaining a previous successful snapshot, the office's Pub
+        # Date is satisfied by a valid DOI-specific DataCite created timestamp.
+        effective=iso_date(entry.get("created",""))
+        entry["default_pub_date"]=effective
+        entry["default_pub_date_basis"]=("REACH office Pub Date: DataCite created (reviewer may edit)" if effective else "No valid DataCite created date")
+        entry["pub_date_requirement_satisfied"]=bool(effective)
+        entry["remaining_pub_date_missing"]=not bool(effective)
         return entry
     # A modest pool bounds runtime without hammering the public DataCite API.
     # Executor.map retains stable DOI order, keeping reports idempotent.
@@ -349,7 +356,7 @@ def build(mode,month,offline=False,native=True):
             r["status"],r["verified_date"],r["provisional_date"],r["reason"],
             r.get("default_pub_date",""),r.get("default_pub_date_basis",""),
             "; ".join(r["related_versions"]),r["retrieval"],r["api_evidence_url"],r["source_batch"]])
-    problems=[["DOI","Title","Award Number(s)","Date Category","Suggested Date","Why Reviewer Should Check","DataCite Evidence URL"]]
+    problems=[["DOI","Title","Award Number(s)","Evidence Category","Alternative Date","Evidence Detail (informational only)","DataCite Evidence URL"]]
     for r in results:
         if r["status"]!="verified_native_exact_doi":
             problems.append(["https://doi.org/"+r["doi"],r["original_title"],r["award_numbers"],
@@ -373,10 +380,11 @@ def build(mode,month,offline=False,native=True):
         ["Exact date supported by DOI-matched native page metadata",counts["verified_native_exact_doi"]],
         ["Typed Issued/Available exact date needs independent native verification",counts["structured_date_needs_native"]],
         ["Published full date lacks typed context",counts["published_fulldate_untyped"]],
-        ["DOI created/registered date only — candidate, not publication",counts["doi_record_timestamp_only"]],
+        ["DOI-created/registered only (research evidence; not a REACH Pub Date blocker)",counts["doi_record_timestamp_only"]],
         ["Year-only/other unresolved",counts["year_only_or_unknown"]],
-        ["Conflicting dates requiring individual review",sum(v for k,v in counts.items() if k.startswith("conflicting"))],
-        ["Defaults available from DataCite created",sum(bool(r.get("default_pub_date")) for r in results)],
+        ["Conflicting publication histories (informational, not Pub Date blockers)",sum(v for k,v in counts.items() if k.startswith("conflicting"))],
+        ["REACH Pub Date satisfied under office created-date policy",sum(r.get("pub_date_requirement_satisfied",False) for r in results)],
+        ["Still missing REACH Pub Date (no valid DataCite created)",sum(r.get("remaining_pub_date_missing",True) for r in results)],
         ["Original source manifest SHA-256",manifestsha],
         ["DataCite date semantics","created = DOI record created; registered = DOI became registered; published = Issued or fallback publication year; updated = metadata change"],
         ["REACH publication dates modified","NONE — all proposed dates remain separate, no automated approval"],
@@ -384,13 +392,13 @@ def build(mode,month,offline=False,native=True):
     notes=[
         ["Field / status","Meaning"],
         ["Verified REACH Date","Full date on native repository machine-readable metadata with exact DOI identity. Still verify output/version and eligibility before insertion."],
-        ["Default REACH Pub Date","User-authorized preparation default: calendar date portion of DataCite created. EDITABLE by reviewer, not a verified first public release. Never silently insert into REACH."],
-        ["Structured date pending","Typed DataCite Issued or Available full date exists, but independent native DOI-level evidence was not extracted. The candidate is not auto-published."],
-        ["Provisional Date","DataCite created/registered is NOT first publication; it is just a suggested date to compare with native source. Dates can predate repository publication."],
+        ["REACH Pub Date (DataCite created)","Office-approved complete Pub Date for DataCite DOI: use YYYY-MM-DD from created without requiring independent date corroboration, acknowledgment or date-only human referral. Reviewer may edit normally before authorized insertion."],
+        ["Structured date evidence","Typed Issued/Available date may differ from DataCite created, but this does NOT make the REACH Pub Date missing under WPO policy. Keep differences as optional provenance."],
+        ["Date meaning","DataCite created is the date of DOI metadata-record creation. The office knowingly accepts its calendar date as Pub Date; the value is not a claim about first public release."],
         ["Publication Year","Retain 2025 as 2025 when exact month/day is not confirmed. Never synthesize 2025-01-01."],
         ["DataCite Published","May be a year-only value; based on Issued date if present, otherwise publicationYear (DataCite documentation)."],
         ["Native checks","Read only allowlisted repository HTML; only DOI-matched citation metadata or DOI-specific JSON-LD date counts. Dynamic pages, login barriers and API-only landing pages remain unresolved."],
-        ["Conflicts","Different full Issued/Available dates can be reasonable, e.g. embargo; never silently pick earliest or latest. Version DOI relationships also require review."],
+        ["Conflicts","Alternative Issued/Available dates are retained as supplemental information, not automatic date-blocker flags. DOI version/identity uncertainty still needs separate review."],
         ["Date types","An observation-period, submission, acceptance, last-updated or DOI registration date is not a substitute for the first public release."],
         ["Original catalog metadata","Title, output type, award and parent are taken from the original checksum-verified DataCite intake; no overwrites."],
         ["Reviewer action","This sheet is evidence for Scout or a human reviewer, not a Discovery Hub intake, decision, Smartsheet update or REACH publication."],
@@ -402,7 +410,7 @@ def build(mode,month,offline=False,native=True):
     output={"schema":"reach-datacite-date-reconciliation-v1","cohort":suffix,
         "source_manifest_sha256":manifestsha,"original_dois":len(source),
         "status_counts":dict(sorted(counts.items())),"records":results,
-        "policy":"Read-only. Dates are suggestions/evidence only; no automatic REACH date, reviewer decision or CSV change."}
+        "policy":"DataCite created calendar date SATISFIES WPO REACH Pub Date requirement for the same DOI. Date-only human metadata flags not required; no automatic approval, staging, or source write."}
     newjson=json.dumps(output,indent=2,ensure_ascii=False,sort_keys=True)+"\n"
     if not jsonout.exists() or jsonout.read_text(encoding="utf-8")!=newjson:
         jsonout.write_text(newjson,encoding="utf-8")
@@ -411,7 +419,7 @@ def build(mode,month,offline=False,native=True):
     if xlsxout.exists():xlsxout.unlink()
     excel.make_xlsx(xlsxout,{
         "Summary":summary,"Date Reconciliation":sheet,
-        "Repository Breakdown":repo_rows,"Needs Reviewer Check":problems,"Read Me":notes
+        "Repository Breakdown":repo_rows,"Optional Date Evidence":problems,"Read Me":notes
     })
     import zipfile
     with zipfile.ZipFile(xlsxout) as z:
