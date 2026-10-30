@@ -4,7 +4,7 @@
   "origin": "77 no_action original historical DOI dispositions after the 2026-10-29 08:33 ET hourly run: 29 administrative non-outputs; 2 NASA-only funding; 46 real outputs without verified WPO project attribution. The 8:00 ET briefing snapshot was 65, including 34 attribution gaps. No original status or human decision changed.",
   "policy": "These are discovery research leads, not 34 confirmed WPO outputs or 34 automatic Hub findings. Don't promote without evidence bridge and independent corroboration. Preserve no_action historical completed count.",
   "total": 71,
-  "queued": 13,
+  "queued": 0,
   "entries": [
     {
       "identity": "doi:10.25923/b2b3-m644",
@@ -1770,7 +1770,7 @@
       "identity": "doi:10.5281/zenodo.13625364",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "low",
       "original_run_id": null,
       "existing_source_evidence": [
@@ -1787,18 +1787,31 @@
       "source_disposition_preserved": true,
       "new_direct_award_evidence_found": false,
       "hub_publication_authorized": false,
-      "recheck_attempts": 0,
+      "recheck_attempts": 1,
       "max_recheck_rounds_without_material_evidence": 1,
       "recheck_trigger": "When primary actionable API queues are cleared/blocked, or genuinely new direct attribution evidence arrives",
       "last_source_research_at": "2026-10-29T12:33:11Z",
       "original_notes_preserved_in": "scout-operations/historical-triage.json",
-      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility."
+      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility.",
+      "recheck_completed_at": "2026-10-30T10:34:06Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-30-HOURLY-0634ET",
+      "checked_source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/39567068/",
+        "https://researchdiscovery.drexel.edu/esploro/outputs/journalArticle/Defining-algal-bloom-phenology-in-Lake/991021930442804721",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-011.csv"
+      ],
+      "recheck_finding": "PubMed and Drexel independently identify Maguire/Isabwe/Stow/Godwin Lake Erie harmful-algal-bloom phenology research (10.1016/j.hal.2024.102731) with CIGLR/GLERL support. SPARK spark-000135 specifically funds FVCOM-CICE-UFS lake/ice coupling and weather forecasts, not algal phenology. NA17OAR4320152 is a RELATED umbrella award, not output-level evidence for primary NA22OAR4590188. No project-specific WPO output bridge.",
+      "negative_or_contradictory_evidence": "PubMed and Drexel independently identify Maguire/Isabwe/Stow/Godwin Lake Erie harmful-algal-bloom phenology research (10.1016/j.hal.2024.102731) with CIGLR/GLERL support. SPARK spark-000135 specifically funds FVCOM-CICE-UFS lake/ice coupling and weather forecasts, not algal phenology. NA17OAR4320152 is a RELATED umbrella award, not output-level evidence for primary NA22OAR4590188. No project-specific WPO output bridge.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "recheck_final_question": "Does this exact DOI have a primary-source bridge to a specific WPO-funded SPARK workstream (not merely a related/umbrella award), corroborated independently?",
+      "recheck_next_action": "No further scheduled retries absent NEW positive WPO project-specific evidence or explicit human request. Preserve original no_action.",
+      "project_workstream_compared": "spark-000135, UFS lake-coupling, primary NA22OAR4590188; related umbrella NA17OAR4320152"
     },
     {
       "identity": "doi:10.5281/zenodo.13625365",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "low",
       "original_run_id": null,
       "existing_source_evidence": [
@@ -1815,18 +1828,31 @@
       "source_disposition_preserved": true,
       "new_direct_award_evidence_found": false,
       "hub_publication_authorized": false,
-      "recheck_attempts": 0,
+      "recheck_attempts": 1,
       "max_recheck_rounds_without_material_evidence": 1,
       "recheck_trigger": "When primary actionable API queues are cleared/blocked, or genuinely new direct attribution evidence arrives",
       "last_source_research_at": "2026-10-29T12:33:11Z",
       "original_notes_preserved_in": "scout-operations/historical-triage.json",
-      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility."
+      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility.",
+      "recheck_completed_at": "2026-10-30T10:34:06Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-30-HOURLY-0634ET",
+      "checked_source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/39567068/",
+        "https://researchdiscovery.drexel.edu/esploro/outputs/journalArticle/Defining-algal-bloom-phenology-in-Lake/991021930442804721",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-011.csv"
+      ],
+      "recheck_finding": "PubMed and Drexel independently identify Maguire/Isabwe/Stow/Godwin Lake Erie harmful-algal-bloom phenology research (10.1016/j.hal.2024.102731) with CIGLR/GLERL support. SPARK spark-000135 specifically funds FVCOM-CICE-UFS lake/ice coupling and weather forecasts, not algal phenology. NA17OAR4320152 is a RELATED umbrella award, not output-level evidence for primary NA22OAR4590188. No project-specific WPO output bridge.",
+      "negative_or_contradictory_evidence": "PubMed and Drexel independently identify Maguire/Isabwe/Stow/Godwin Lake Erie harmful-algal-bloom phenology research (10.1016/j.hal.2024.102731) with CIGLR/GLERL support. SPARK spark-000135 specifically funds FVCOM-CICE-UFS lake/ice coupling and weather forecasts, not algal phenology. NA17OAR4320152 is a RELATED umbrella award, not output-level evidence for primary NA22OAR4590188. No project-specific WPO output bridge.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "recheck_final_question": "Does this exact DOI have a primary-source bridge to a specific WPO-funded SPARK workstream (not merely a related/umbrella award), corroborated independently?",
+      "recheck_next_action": "No further scheduled retries absent NEW positive WPO project-specific evidence or explicit human request. Preserve original no_action.",
+      "project_workstream_compared": "spark-000135, UFS lake-coupling, primary NA22OAR4590188; related umbrella NA17OAR4320152"
     },
     {
       "identity": "doi:10.5281/zenodo.15238131",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "low",
       "original_run_id": null,
       "existing_source_evidence": [
@@ -1842,18 +1868,31 @@
       "source_disposition_preserved": true,
       "new_direct_award_evidence_found": false,
       "hub_publication_authorized": false,
-      "recheck_attempts": 0,
+      "recheck_attempts": 1,
       "max_recheck_rounds_without_material_evidence": 1,
       "recheck_trigger": "When primary actionable API queues are cleared/blocked, or genuinely new direct attribution evidence arrives",
       "last_source_research_at": "2026-10-29T12:33:11Z",
       "original_notes_preserved_in": "scout-operations/historical-triage.json",
-      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility."
+      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility.",
+      "recheck_completed_at": "2026-10-30T10:34:06Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-30-HOURLY-0634ET",
+      "checked_source_urls": [
+        "https://zenodo.org/records/15238132",
+        "https://meetingorganizer.copernicus.org/EGU24/EGU24-13614.html",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-011.csv"
+      ],
+      "recheck_finding": "Native Zenodo version documents Beaufort Sea ice height/backscatter data and NOAA CISESS NA19NES4320002/NA24NESX432C0001; EGU24 author project presentation concerns satellite polar altimetry. SPARK spark-000136 funds non-Gaussian ensemble data assimilation in global UFS/JEDI under NA23OAR4590379. Related CISESS award is not a workstream bridge. Version/concept DOI pair is one dataset family.",
+      "negative_or_contradictory_evidence": "Native Zenodo version documents Beaufort Sea ice height/backscatter data and NOAA CISESS NA19NES4320002/NA24NESX432C0001; EGU24 author project presentation concerns satellite polar altimetry. SPARK spark-000136 funds non-Gaussian ensemble data assimilation in global UFS/JEDI under NA23OAR4590379. Related CISESS award is not a workstream bridge. Version/concept DOI pair is one dataset family.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "recheck_final_question": "Does this exact DOI have a primary-source bridge to a specific WPO-funded SPARK workstream (not merely a related/umbrella award), corroborated independently?",
+      "recheck_next_action": "No further scheduled retries absent NEW positive WPO project-specific evidence or explicit human request. Preserve original no_action.",
+      "project_workstream_compared": "spark-000136, non-Gaussian ensemble DA, primary NA23OAR4590379; related CISESS NA19NES4320002"
     },
     {
       "identity": "doi:10.5281/zenodo.15238132",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "low",
       "original_run_id": null,
       "existing_source_evidence": [
@@ -1869,18 +1908,31 @@
       "source_disposition_preserved": true,
       "new_direct_award_evidence_found": false,
       "hub_publication_authorized": false,
-      "recheck_attempts": 0,
+      "recheck_attempts": 1,
       "max_recheck_rounds_without_material_evidence": 1,
       "recheck_trigger": "When primary actionable API queues are cleared/blocked, or genuinely new direct attribution evidence arrives",
       "last_source_research_at": "2026-10-29T12:33:11Z",
       "original_notes_preserved_in": "scout-operations/historical-triage.json",
-      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility."
+      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility.",
+      "recheck_completed_at": "2026-10-30T10:34:06Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-30-HOURLY-0634ET",
+      "checked_source_urls": [
+        "https://zenodo.org/records/15238132",
+        "https://meetingorganizer.copernicus.org/EGU24/EGU24-13614.html",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-011.csv"
+      ],
+      "recheck_finding": "Native Zenodo version documents Beaufort Sea ice height/backscatter data and NOAA CISESS NA19NES4320002/NA24NESX432C0001; EGU24 author project presentation concerns satellite polar altimetry. SPARK spark-000136 funds non-Gaussian ensemble data assimilation in global UFS/JEDI under NA23OAR4590379. Related CISESS award is not a workstream bridge. Version/concept DOI pair is one dataset family.",
+      "negative_or_contradictory_evidence": "Native Zenodo version documents Beaufort Sea ice height/backscatter data and NOAA CISESS NA19NES4320002/NA24NESX432C0001; EGU24 author project presentation concerns satellite polar altimetry. SPARK spark-000136 funds non-Gaussian ensemble data assimilation in global UFS/JEDI under NA23OAR4590379. Related CISESS award is not a workstream bridge. Version/concept DOI pair is one dataset family.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "recheck_final_question": "Does this exact DOI have a primary-source bridge to a specific WPO-funded SPARK workstream (not merely a related/umbrella award), corroborated independently?",
+      "recheck_next_action": "No further scheduled retries absent NEW positive WPO project-specific evidence or explicit human request. Preserve original no_action.",
+      "project_workstream_compared": "spark-000136, non-Gaussian ensemble DA, primary NA23OAR4590379; related CISESS NA19NES4320002"
     },
     {
       "identity": "doi:10.5281/zenodo.18408782",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "low",
       "original_run_id": "REACH-SCOUT-2026-10-29-HOURLY-0934ET",
       "existing_source_evidence": [
@@ -1896,18 +1948,32 @@
       "source_disposition_preserved": true,
       "new_direct_award_evidence_found": false,
       "hub_publication_authorized": false,
-      "recheck_attempts": 0,
+      "recheck_attempts": 1,
       "max_recheck_rounds_without_material_evidence": 1,
       "recheck_trigger": "When primary actionable API queues are cleared or blocked, or substantive new positive output-specific evidence arrives",
       "last_source_research_at": "2026-10-29T13:37:00Z",
       "original_notes_preserved_in": "scout-operations/historical-triage.json",
-      "disposition_after_unsuccessful_recheck": "Keep original no_action and close separate follow-up with evidence; do not endlessly retry or infer WPO eligibility."
+      "disposition_after_unsuccessful_recheck": "Keep original no_action and close separate follow-up with evidence; do not endlessly retry or infer WPO eligibility.",
+      "recheck_completed_at": "2026-10-30T10:34:06Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-30-HOURLY-0634ET",
+      "checked_source_urls": [
+        "https://github.com/youranli001/plane-wave-fit",
+        "https://github.com/youranli001/plane-wave-fit/blob/main/README.md",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-028.csv",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-029.csv"
+      ],
+      "recheck_finding": "Author-maintained PlaneWaveFit repository links global M2 internal-tide WOA23 dataset 10.5281/zenodo.18423546, a pending JOSS software paper and NASA contributor. SPARK NA20OAR4320278-funded AQPI project addresses SF Bay radar, high-resolution precipitation modeling and decision support. No documentary bridge to this ocean-tide software/data workstream. DOI identities are software/related dataset, not two proven WPO outputs.",
+      "negative_or_contradictory_evidence": "Author-maintained PlaneWaveFit repository links global M2 internal-tide WOA23 dataset 10.5281/zenodo.18423546, a pending JOSS software paper and NASA contributor. SPARK NA20OAR4320278-funded AQPI project addresses SF Bay radar, high-resolution precipitation modeling and decision support. No documentary bridge to this ocean-tide software/data workstream. DOI identities are software/related dataset, not two proven WPO outputs.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "recheck_final_question": "Does this exact DOI have a primary-source bridge to a specific WPO-funded SPARK workstream (not merely the umbrella cooperative-institute award), independently corroborated?",
+      "recheck_next_action": "No further scheduled retries absent NEW positive WPO project-specific evidence or explicit human request. Preserve original no_action.",
+      "project_workstream_compared": "spark-000355 and spark-000364, San Francisco AQPI radar/precipitation project, NA20OAR4320278 and subaward"
     },
     {
       "identity": "doi:10.5281/zenodo.18423546",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "low",
       "original_run_id": "REACH-SCOUT-2026-10-29-HOURLY-0934ET",
       "existing_source_evidence": [
@@ -1923,18 +1989,32 @@
       "source_disposition_preserved": true,
       "new_direct_award_evidence_found": false,
       "hub_publication_authorized": false,
-      "recheck_attempts": 0,
+      "recheck_attempts": 1,
       "max_recheck_rounds_without_material_evidence": 1,
       "recheck_trigger": "When primary actionable API queues are cleared or blocked, or substantive new positive output-specific evidence arrives",
       "last_source_research_at": "2026-10-29T13:37:00Z",
       "original_notes_preserved_in": "scout-operations/historical-triage.json",
-      "disposition_after_unsuccessful_recheck": "Keep original no_action and close separate follow-up with evidence; do not endlessly retry or infer WPO eligibility."
+      "disposition_after_unsuccessful_recheck": "Keep original no_action and close separate follow-up with evidence; do not endlessly retry or infer WPO eligibility.",
+      "recheck_completed_at": "2026-10-30T10:34:06Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-30-HOURLY-0634ET",
+      "checked_source_urls": [
+        "https://github.com/youranli001/plane-wave-fit",
+        "https://github.com/youranli001/plane-wave-fit/blob/main/README.md",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-028.csv",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-029.csv"
+      ],
+      "recheck_finding": "Author-maintained PlaneWaveFit repository links global M2 internal-tide WOA23 dataset 10.5281/zenodo.18423546, a pending JOSS software paper and NASA contributor. SPARK NA20OAR4320278-funded AQPI project addresses SF Bay radar, high-resolution precipitation modeling and decision support. No documentary bridge to this ocean-tide software/data workstream. DOI identities are software/related dataset, not two proven WPO outputs.",
+      "negative_or_contradictory_evidence": "Author-maintained PlaneWaveFit repository links global M2 internal-tide WOA23 dataset 10.5281/zenodo.18423546, a pending JOSS software paper and NASA contributor. SPARK NA20OAR4320278-funded AQPI project addresses SF Bay radar, high-resolution precipitation modeling and decision support. No documentary bridge to this ocean-tide software/data workstream. DOI identities are software/related dataset, not two proven WPO outputs.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "recheck_final_question": "Does this exact DOI have a primary-source bridge to a specific WPO-funded SPARK workstream (not merely the umbrella cooperative-institute award), independently corroborated?",
+      "recheck_next_action": "No further scheduled retries absent NEW positive WPO project-specific evidence or explicit human request. Preserve original no_action.",
+      "project_workstream_compared": "spark-000355 and spark-000364, San Francisco AQPI radar/precipitation project, NA20OAR4320278 and subaward"
     },
     {
       "identity": "doi:10.5281/zenodo.18842182",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "low",
       "original_run_id": "REACH-SCOUT-2026-10-29-HOURLY-0934ET",
       "existing_source_evidence": [
@@ -1950,18 +2030,31 @@
       "source_disposition_preserved": true,
       "new_direct_award_evidence_found": false,
       "hub_publication_authorized": false,
-      "recheck_attempts": 0,
+      "recheck_attempts": 1,
       "max_recheck_rounds_without_material_evidence": 1,
       "recheck_trigger": "When primary actionable API queues are cleared or blocked, or substantive new positive output-specific evidence arrives",
       "last_source_research_at": "2026-10-29T13:37:00Z",
       "original_notes_preserved_in": "scout-operations/historical-triage.json",
-      "disposition_after_unsuccessful_recheck": "Keep original no_action and close separate follow-up with evidence; do not endlessly retry or infer WPO eligibility."
+      "disposition_after_unsuccessful_recheck": "Keep original no_action and close separate follow-up with evidence; do not endlessly retry or infer WPO eligibility.",
+      "recheck_completed_at": "2026-10-30T10:34:06Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-30-HOURLY-0634ET",
+      "checked_source_urls": [
+        "https://zenodo.org/records/18842183",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-020.csv",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-021.csv"
+      ],
+      "recheck_finding": "Native Zenodo code/notebook record explicitly credits NOAA–University of Oklahoma CI NA21OAR4320204 for GLM parallax-correction model, with NSSL/CIWRO contributors. SPARK linked WPO projects are emergency-management and flood/longitudinal public survey research, not GLM algorithm development. Same umbrella CI number does not prove project-specific funding. Version/concept DOIs are one model family.",
+      "negative_or_contradictory_evidence": "Native Zenodo code/notebook record explicitly credits NOAA–University of Oklahoma CI NA21OAR4320204 for GLM parallax-correction model, with NSSL/CIWRO contributors. SPARK linked WPO projects are emergency-management and flood/longitudinal public survey research, not GLM algorithm development. Same umbrella CI number does not prove project-specific funding. Version/concept DOIs are one model family.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "recheck_final_question": "Does this exact DOI have a primary-source bridge to a specific WPO-funded SPARK workstream (not merely the umbrella cooperative-institute award), independently corroborated?",
+      "recheck_next_action": "No further scheduled retries absent NEW positive WPO project-specific evidence or explicit human request. Preserve original no_action.",
+      "project_workstream_compared": "spark-000250/254, WPO social-science survey workstreams; related CI NA21OAR4320204"
     },
     {
       "identity": "doi:10.5281/zenodo.18842183",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "low",
       "original_run_id": "REACH-SCOUT-2026-10-29-HOURLY-0934ET",
       "existing_source_evidence": [
@@ -1977,18 +2070,31 @@
       "source_disposition_preserved": true,
       "new_direct_award_evidence_found": false,
       "hub_publication_authorized": false,
-      "recheck_attempts": 0,
+      "recheck_attempts": 1,
       "max_recheck_rounds_without_material_evidence": 1,
       "recheck_trigger": "When primary actionable API queues are cleared or blocked, or substantive new positive output-specific evidence arrives",
       "last_source_research_at": "2026-10-29T13:37:00Z",
       "original_notes_preserved_in": "scout-operations/historical-triage.json",
-      "disposition_after_unsuccessful_recheck": "Keep original no_action and close separate follow-up with evidence; do not endlessly retry or infer WPO eligibility."
+      "disposition_after_unsuccessful_recheck": "Keep original no_action and close separate follow-up with evidence; do not endlessly retry or infer WPO eligibility.",
+      "recheck_completed_at": "2026-10-30T10:34:06Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-30-HOURLY-0634ET",
+      "checked_source_urls": [
+        "https://zenodo.org/records/18842183",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-020.csv",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-021.csv"
+      ],
+      "recheck_finding": "Native Zenodo code/notebook record explicitly credits NOAA–University of Oklahoma CI NA21OAR4320204 for GLM parallax-correction model, with NSSL/CIWRO contributors. SPARK linked WPO projects are emergency-management and flood/longitudinal public survey research, not GLM algorithm development. Same umbrella CI number does not prove project-specific funding. Version/concept DOIs are one model family.",
+      "negative_or_contradictory_evidence": "Native Zenodo code/notebook record explicitly credits NOAA–University of Oklahoma CI NA21OAR4320204 for GLM parallax-correction model, with NSSL/CIWRO contributors. SPARK linked WPO projects are emergency-management and flood/longitudinal public survey research, not GLM algorithm development. Same umbrella CI number does not prove project-specific funding. Version/concept DOIs are one model family.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "recheck_final_question": "Does this exact DOI have a primary-source bridge to a specific WPO-funded SPARK workstream (not merely the umbrella cooperative-institute award), independently corroborated?",
+      "recheck_next_action": "No further scheduled retries absent NEW positive WPO project-specific evidence or explicit human request. Preserve original no_action.",
+      "project_workstream_compared": "spark-000250/254, WPO social-science survey workstreams; related CI NA21OAR4320204"
     },
     {
       "identity": "doi:10.5281/zenodo.19444632",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "low",
       "original_run_id": "REACH-SCOUT-2026-10-29-HOURLY-0934ET",
       "existing_source_evidence": [
@@ -2004,18 +2110,31 @@
       "source_disposition_preserved": true,
       "new_direct_award_evidence_found": false,
       "hub_publication_authorized": false,
-      "recheck_attempts": 0,
+      "recheck_attempts": 1,
       "max_recheck_rounds_without_material_evidence": 1,
       "recheck_trigger": "When primary actionable API queues are cleared or blocked, or substantive new positive output-specific evidence arrives",
       "last_source_research_at": "2026-10-29T13:37:00Z",
       "original_notes_preserved_in": "scout-operations/historical-triage.json",
-      "disposition_after_unsuccessful_recheck": "Keep original no_action and close separate follow-up with evidence; do not endlessly retry or infer WPO eligibility."
+      "disposition_after_unsuccessful_recheck": "Keep original no_action and close separate follow-up with evidence; do not endlessly retry or infer WPO eligibility.",
+      "recheck_completed_at": "2026-10-30T10:34:06Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-30-HOURLY-0634ET",
+      "checked_source_urls": [
+        "https://doi.org/10.1175/AIES-D-25-0059.1",
+        "https://journals.ametsoc.org/view/journals/aies/5/3/AIES-D-25-0059.1.xml",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-008.csv"
+      ],
+      "recheck_finding": "AMS 2026 Mitchell et al. article identifies explainable boosting machine detection of overshooting convective tops using GOES/MRMS scenes and CIRA-affiliated authors. SPARK spark-000105 funds tropical-cyclone large-scale environmental diagnostics for MET-TC verification, not this satellite-image ML dataset. Broad related CIRA CI NA19OAR4320073 does not establish the WPO project produced the CONUS5 dataset. No specific funding bridge verified.",
+      "negative_or_contradictory_evidence": "AMS 2026 Mitchell et al. article identifies explainable boosting machine detection of overshooting convective tops using GOES/MRMS scenes and CIRA-affiliated authors. SPARK spark-000105 funds tropical-cyclone large-scale environmental diagnostics for MET-TC verification, not this satellite-image ML dataset. Broad related CIRA CI NA19OAR4320073 does not establish the WPO project produced the CONUS5 dataset. No specific funding bridge verified.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "recheck_final_question": "Does this exact DOI have a primary-source bridge to a specific WPO-funded SPARK workstream (not merely the umbrella cooperative-institute award), independently corroborated?",
+      "recheck_next_action": "No further scheduled retries absent NEW positive WPO project-specific evidence or explicit human request. Preserve original no_action.",
+      "project_workstream_compared": "spark-000105 MET-TC verification, primary NA21OAR4590181/0182; related CIRA NA19OAR4320073"
     },
     {
       "identity": "doi:10.5281/zenodo.19444633",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "low",
       "original_run_id": "REACH-SCOUT-2026-10-29-HOURLY-0934ET",
       "existing_source_evidence": [
@@ -2031,12 +2150,25 @@
       "source_disposition_preserved": true,
       "new_direct_award_evidence_found": false,
       "hub_publication_authorized": false,
-      "recheck_attempts": 0,
+      "recheck_attempts": 1,
       "max_recheck_rounds_without_material_evidence": 1,
       "recheck_trigger": "When primary actionable API queues are cleared or blocked, or substantive new positive output-specific evidence arrives",
       "last_source_research_at": "2026-10-29T13:37:00Z",
       "original_notes_preserved_in": "scout-operations/historical-triage.json",
-      "disposition_after_unsuccessful_recheck": "Keep original no_action and close separate follow-up with evidence; do not endlessly retry or infer WPO eligibility."
+      "disposition_after_unsuccessful_recheck": "Keep original no_action and close separate follow-up with evidence; do not endlessly retry or infer WPO eligibility.",
+      "recheck_completed_at": "2026-10-30T10:34:06Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-30-HOURLY-0634ET",
+      "checked_source_urls": [
+        "https://doi.org/10.1175/AIES-D-25-0059.1",
+        "https://journals.ametsoc.org/view/journals/aies/5/3/AIES-D-25-0059.1.xml",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-008.csv"
+      ],
+      "recheck_finding": "AMS 2026 Mitchell et al. article identifies explainable boosting machine detection of overshooting convective tops using GOES/MRMS scenes and CIRA-affiliated authors. SPARK spark-000105 funds tropical-cyclone large-scale environmental diagnostics for MET-TC verification, not this satellite-image ML dataset. Broad related CIRA CI NA19OAR4320073 does not establish the WPO project produced the CONUS5 dataset. No specific funding bridge verified.",
+      "negative_or_contradictory_evidence": "AMS 2026 Mitchell et al. article identifies explainable boosting machine detection of overshooting convective tops using GOES/MRMS scenes and CIRA-affiliated authors. SPARK spark-000105 funds tropical-cyclone large-scale environmental diagnostics for MET-TC verification, not this satellite-image ML dataset. Broad related CIRA CI NA19OAR4320073 does not establish the WPO project produced the CONUS5 dataset. No specific funding bridge verified.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "recheck_final_question": "Does this exact DOI have a primary-source bridge to a specific WPO-funded SPARK workstream (not merely the umbrella cooperative-institute award), independently corroborated?",
+      "recheck_next_action": "No further scheduled retries absent NEW positive WPO project-specific evidence or explicit human request. Preserve original no_action.",
+      "project_workstream_compared": "spark-000105 MET-TC verification, primary NA21OAR4590181/0182; related CIRA NA19OAR4320073"
     },
     {
       "identity": "doi:10.5281/zenodo.19484121",
@@ -2508,7 +2640,7 @@
       "identity": "doi:10.57969/s9g59x",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "medium",
       "original_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1131ET",
       "existing_source_evidence": [
@@ -2523,7 +2655,24 @@
       "next_action": "Seek independent primary project report/product list or publisher/repository acknowledgment bridging this exact output to a specific WPO SPARK workstream; shared CI funding alone is insufficient.",
       "last_source_research_at": "2026-10-29T15:34:47Z",
       "followup_rounds_completed": 0,
-      "max_followup_rounds": 1
+      "max_followup_rounds": 1,
+      "recheck_attempts": 1,
+      "recheck_completed_at": "2026-10-30T10:34:06Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-30-HOURLY-0634ET",
+      "checked_source_urls": [
+        "https://gdp.ucsd.edu/ldl/gdp-drifter-data/",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-028.csv",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-029.csv"
+      ],
+      "recheck_finding": "Scripps Lagrangian Drifter Laboratory describes global, real-time WIS2/GDP drifter datasets and NOAA grants NA20OAR4320278/NA20OAR4600265_932F5A. The SPARK projects using NA20OAR4320278 concern SF Bay gap-filling radars and AQPI precipitation resilience, not global ocean drifter measurements. No output-to-project bridge; this exact DOI was not resolved in a separate native DOI page during this run, so rely on previously recorded DOI identity and corroborated institutional family context.",
+      "negative_or_contradictory_evidence": "Scripps Lagrangian Drifter Laboratory describes global, real-time WIS2/GDP drifter datasets and NOAA grants NA20OAR4320278/NA20OAR4600265_932F5A. The SPARK projects using NA20OAR4320278 concern SF Bay gap-filling radars and AQPI precipitation resilience, not global ocean drifter measurements. No output-to-project bridge; this exact DOI was not resolved in a separate native DOI page during this run, so rely on previously recorded DOI identity and corroborated institutional family context.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "recheck_final_question": "Is there independently corroborated WPO-funded project-specific evidence for this exact output?",
+      "recheck_next_action": "No further scheduled retries absent NEW positive WPO project-specific evidence or explicit human request. Preserve original no_action.",
+      "new_direct_award_evidence_found": false,
+      "hub_publication_authorized": false,
+      "source_disposition_preserved": true,
+      "project_workstream_compared": "spark-000355/364 AQPI, primary NA20OAR4320278; distinct global drifter program funded under same broad CI"
     },
     {
       "identity": "doi:10.57969/s9kw2f",
@@ -2570,7 +2719,7 @@
       "identity": "doi:10.6084/m9.figshare.13138757",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "medium",
       "original_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1131ET",
       "existing_source_evidence": [
@@ -2586,13 +2735,31 @@
       "next_action": "Seek independent primary project report/product list or publisher/repository acknowledgment bridging this exact output to a specific WPO SPARK workstream; shared CI funding alone is insufficient.",
       "last_source_research_at": "2026-10-29T15:34:47Z",
       "followup_rounds_completed": 0,
-      "max_followup_rounds": 1
+      "max_followup_rounds": 1,
+      "recheck_attempts": 1,
+      "recheck_completed_at": "2026-10-30T10:34:06Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-30-HOURLY-0634ET",
+      "checked_source_urls": [
+        "https://cchdo.ucsd.edu/",
+        "https://doi.org/10.6075/J0CCHAM8",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-028.csv",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-029.csv"
+      ],
+      "recheck_finding": "CCHDO institutional home and UCSD digital collection establish global hydrographic archive supported by NSF 1829814 and NOAA NA20OAR4320278. The exact original Figshare identity is an informational handout, with v1 a version rather than independent output. SPARK AQPI funded workstream is radar/precipitation in SF Bay; no documentary CCHDO-to-AQPI project link. Figshare native landing page was unavailable during this run; prior ledger identity preserved.",
+      "negative_or_contradictory_evidence": "CCHDO institutional home and UCSD digital collection establish global hydrographic archive supported by NSF 1829814 and NOAA NA20OAR4320278. The exact original Figshare identity is an informational handout, with v1 a version rather than independent output. SPARK AQPI funded workstream is radar/precipitation in SF Bay; no documentary CCHDO-to-AQPI project link. Figshare native landing page was unavailable during this run; prior ledger identity preserved.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "recheck_final_question": "Is there independently corroborated WPO-funded project-specific evidence for this exact output?",
+      "recheck_next_action": "No further scheduled retries absent NEW positive WPO project-specific evidence or explicit human request. Preserve original no_action.",
+      "new_direct_award_evidence_found": false,
+      "hub_publication_authorized": false,
+      "source_disposition_preserved": true,
+      "project_workstream_compared": "spark-000355/364 AQPI, primary NA20OAR4320278; CCHDO NSF/NOAA archive separate program"
     },
     {
       "identity": "doi:10.6084/m9.figshare.13138757.v1",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "medium",
       "original_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1131ET",
       "existing_source_evidence": [
@@ -2608,7 +2775,25 @@
       "next_action": "Seek independent primary project report/product list or publisher/repository acknowledgment bridging this exact output to a specific WPO SPARK workstream; shared CI funding alone is insufficient.",
       "last_source_research_at": "2026-10-29T15:34:47Z",
       "followup_rounds_completed": 0,
-      "max_followup_rounds": 1
+      "max_followup_rounds": 1,
+      "recheck_attempts": 1,
+      "recheck_completed_at": "2026-10-30T10:34:06Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-30-HOURLY-0634ET",
+      "checked_source_urls": [
+        "https://cchdo.ucsd.edu/",
+        "https://doi.org/10.6075/J0CCHAM8",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-028.csv",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-029.csv"
+      ],
+      "recheck_finding": "CCHDO institutional home and UCSD digital collection establish global hydrographic archive supported by NSF 1829814 and NOAA NA20OAR4320278. The exact original Figshare identity is an informational handout, with v1 a version rather than independent output. SPARK AQPI funded workstream is radar/precipitation in SF Bay; no documentary CCHDO-to-AQPI project link. Figshare native landing page was unavailable during this run; prior ledger identity preserved.",
+      "negative_or_contradictory_evidence": "CCHDO institutional home and UCSD digital collection establish global hydrographic archive supported by NSF 1829814 and NOAA NA20OAR4320278. The exact original Figshare identity is an informational handout, with v1 a version rather than independent output. SPARK AQPI funded workstream is radar/precipitation in SF Bay; no documentary CCHDO-to-AQPI project link. Figshare native landing page was unavailable during this run; prior ledger identity preserved.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "recheck_final_question": "Is there independently corroborated WPO-funded project-specific evidence for this exact output?",
+      "recheck_next_action": "No further scheduled retries absent NEW positive WPO project-specific evidence or explicit human request. Preserve original no_action.",
+      "new_direct_award_evidence_found": false,
+      "hub_publication_authorized": false,
+      "source_disposition_preserved": true,
+      "project_workstream_compared": "spark-000355/364 AQPI, primary NA20OAR4320278; CCHDO NSF/NOAA archive separate program"
     },
     {
       "identity": "doi:10.7302/y2qt-7f47",
@@ -2875,33 +3060,31 @@
     "alternative_funding": 2,
     "unattributed_outputs": 46
   },
-  "last_updated_at": "2026-10-30T09:27:53.961641+00:00",
+  "last_updated_at": "2026-10-30T10:34:06Z",
   "latest_addition": {
     "run_id": "REACH-SCOUT-2026-10-29-HOURLY-1131ET",
     "new_qualified_attribution_gaps": 9,
     "previous_total": 57,
     "total": 66
   },
-  "closed": 58,
+  "closed": 71,
   "latest_recheck": {
-    "run_id": "REACH-SCOUT-2026-10-30-HOURLY-0527ET",
-    "closed_this_run": [
-      "doi:10.5281/zenodo.12557264",
-      "doi:10.5281/zenodo.12557265",
-      "doi:10.5281/zenodo.12557521",
-      "doi:10.5281/zenodo.12557547",
-      "doi:10.5281/zenodo.12560367",
-      "doi:10.5281/zenodo.12560629",
-      "doi:10.5281/zenodo.12625308",
-      "doi:10.5281/zenodo.12638402",
-      "doi:10.5281/zenodo.19484121",
-      "doi:10.5281/zenodo.19484122",
-      "doi:10.5281/zenodo.19889377",
-      "doi:10.5281/zenodo.19890221",
-      "doi:10.5281/zenodo.19890222"
+    "run_id": "REACH-SCOUT-2026-10-30-HOURLY-0634ET",
+    "closed_this_run": 13,
+    "closed_total": 71,
+    "queued_remaining": 0,
+    "families": [
+      "Lake Erie algal phenology",
+      "Beaufort Sea SWOT/ICESat-2",
+      "Internal tides PlaneWaveFit",
+      "Lightning parallax correction",
+      "CONUS5 overshooting tops",
+      "Global drifter WIS2",
+      "CCHDO handout"
     ],
-    "closed_count": 13,
-    "queued_remaining": 13,
-    "findings": "Eight ProxyVis/GeoProxyVis and five BinMod1D original DOI identities (two output families) closed after publisher/native records, software repositories and SPARK project details; no WPO-specific project bridge. Related articles retained as non-WPO-attributed expansion traces."
+    "verified_new_WPO_candidates": 0,
+    "hub_delivered": 0,
+    "public_reach_added": 0,
+    "notes": "Bounded family-specific checks, project comparison, original no_action preserved; see hourly provenance audit."
   }
 }
