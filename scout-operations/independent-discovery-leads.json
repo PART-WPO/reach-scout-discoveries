@@ -103,8 +103,8 @@
     },
     {
       "identity": "doi:10.57969/s9059k",
-      "status": "CREDIBLE_EXPANSION_LEAD_FUNDING_NOT_VERIFIED",
-      "research_round": 0,
+      "status": "FOLLOWUP_CLOSED_NO_DEMONSTRATED_WPO_PROJECT_BRIDGE",
+      "research_round": 1,
       "discovery_route": "Independent discovery",
       "discovery_path": "SPARK spark-000336 / primary WPO award NA21OAR4590374 -> official Scripps NHCI output-family catalog -> distinct DOI",
       "source_type": "Official Scripps NHCI dataset catalog",
@@ -112,12 +112,38 @@
       "award_numbers": [
         "NA21OAR4590374"
       ],
-      "funding_basis": "Project-family association only; output-specific funding under WPO primary award versus NOPP/GDP contributions NOT YET INDEPENDENTLY VERIFIED.",
+      "funding_basis": "Scripps NHCI family lists NOPP NHCI funding and mixed GDP observations; WPO NA21OAR4590374 is explicit only on a different Atlantic Hurricane Drifters family. No verified DOI-specific WPO fundingReference for this NHCI DOI; do not infer funding from common drifters/authors/SPARK project.",
       "checked_sources": [
         {
           "url": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
           "method": "official_dataset_family_catalog",
           "outcome": "2022 NHCI first-five wave data; separate from 2022 sensor S93W23"
+        },
+        {
+          "url": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+          "method": "native_nhci_dataset_catalog",
+          "outcome": "Three distinct NHCI DOIs named; funding references NOPP NHCI and some GDP drifters; WPO NA21OAR4590374 not named for this family."
+        },
+        {
+          "url": "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+          "method": "contrast_explicit_wpo_funded_family",
+          "outcome": "Separate Atlantic Hurricane Drifters family explicitly names WPO NA21OAR4590374; shared lab and instruments cannot transfer attribution to NHCI family."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+          "method": "primary_spark_project_scope",
+          "outcome": "spark-000336 describes WPO-funded barometer enhancements to GDP DWSD drifters, not these three exact NHCI DOIs."
+        },
+        {
+          "url": "https://erddap.ldl.ucsd.edu/erddap/info/",
+          "method": "native_dataset_catalog_identity",
+          "outcome": "NHCI targeted-storm sensor/first-five datasets are separately listed; catalog identity is not output-level WPO funding."
+        },
+        {
+          "url": "https://api.datacite.org/dois/10.57969/s9059k",
+          "method": "exact_datacite_funding_reference_and_created_attempt",
+          "outcome": "ACCESS FAILURE through current web retrieval; neither missing metadata nor absent funding inferred.",
+          "source_failure": "ACCESS_FAILURE_NOT_METADATA_ABSENT"
         }
       ],
       "missing_fields": [
@@ -125,16 +151,20 @@
         "exact DOI-specific DataCite created timestamp and native file/version details",
         "full REACH/Scout duplicate check for this DOI"
       ],
-      "next_action": "One bounded project-specific funding and exact DOI/REACH check; do not stage or attribute WPO funding until corroborated.",
+      "next_action": "Bounded follow-up closed without WPO output-specific bridge. Reopen only with NEW positive DOI-specific fundingReference/project deliverable evidence or explicit human request.",
       "hub_delivery": "NOT_DELIVERED",
       "human_decisions": "NOT_VERIFIED",
       "acknowledgment_absence_verified": false,
-      "original_seed_doi": null
+      "original_seed_doi": null,
+      "previous_status_before_bounded_followup": "CREDIBLE_EXPANSION_LEAD_FUNDING_NOT_VERIFIED",
+      "research_completed": true,
+      "attribution_followup_closed": true,
+      "date_policy_note": "If later verified, valid DOI-specific DataCite created YYYY-MM-DD is accepted REACH Pub Date without extra corroboration; no date-based attribution conclusion."
     },
     {
       "identity": "doi:10.57969/s9ms33",
-      "status": "CREDIBLE_EXPANSION_LEAD_FUNDING_NOT_VERIFIED",
-      "research_round": 0,
+      "status": "FOLLOWUP_CLOSED_NO_DEMONSTRATED_WPO_PROJECT_BRIDGE",
+      "research_round": 1,
       "discovery_route": "Independent discovery",
       "discovery_path": "SPARK spark-000336 / primary WPO award NA21OAR4590374 -> official Scripps NHCI output-family catalog -> distinct DOI",
       "source_type": "Official Scripps NHCI dataset catalog",
@@ -142,12 +172,38 @@
       "award_numbers": [
         "NA21OAR4590374"
       ],
-      "funding_basis": "Project-family association only; output-specific funding under WPO primary award versus NOPP/GDP contributions NOT YET INDEPENDENTLY VERIFIED.",
+      "funding_basis": "Scripps NHCI family lists NOPP NHCI funding and mixed GDP observations; WPO NA21OAR4590374 is explicit only on a different Atlantic Hurricane Drifters family. No verified DOI-specific WPO fundingReference for this NHCI DOI; do not infer funding from common drifters/authors/SPARK project.",
       "checked_sources": [
         {
           "url": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
           "method": "official_dataset_family_catalog",
           "outcome": "2025 NHCI targeted-storms 2022–2024 sensor data; check mixed Global Drifter Program scope"
+        },
+        {
+          "url": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+          "method": "native_nhci_dataset_catalog",
+          "outcome": "Three distinct NHCI DOIs named; funding references NOPP NHCI and some GDP drifters; WPO NA21OAR4590374 not named for this family."
+        },
+        {
+          "url": "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+          "method": "contrast_explicit_wpo_funded_family",
+          "outcome": "Separate Atlantic Hurricane Drifters family explicitly names WPO NA21OAR4590374; shared lab and instruments cannot transfer attribution to NHCI family."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+          "method": "primary_spark_project_scope",
+          "outcome": "spark-000336 describes WPO-funded barometer enhancements to GDP DWSD drifters, not these three exact NHCI DOIs."
+        },
+        {
+          "url": "https://erddap.ldl.ucsd.edu/erddap/info/",
+          "method": "native_dataset_catalog_identity",
+          "outcome": "NHCI targeted-storm sensor/first-five datasets are separately listed; catalog identity is not output-level WPO funding."
+        },
+        {
+          "url": "https://api.datacite.org/dois/10.57969/s9ms33",
+          "method": "exact_datacite_funding_reference_and_created_attempt",
+          "outcome": "ACCESS FAILURE through current web retrieval; neither missing metadata nor absent funding inferred.",
+          "source_failure": "ACCESS_FAILURE_NOT_METADATA_ABSENT"
         }
       ],
       "missing_fields": [
@@ -155,16 +211,20 @@
         "exact DOI-specific DataCite created timestamp and native file/version details",
         "full REACH/Scout duplicate check for this DOI"
       ],
-      "next_action": "One bounded project-specific funding and exact DOI/REACH check; do not stage or attribute WPO funding until corroborated.",
+      "next_action": "Bounded follow-up closed without WPO output-specific bridge. Reopen only with NEW positive DOI-specific fundingReference/project deliverable evidence or explicit human request.",
       "hub_delivery": "NOT_DELIVERED",
       "human_decisions": "NOT_VERIFIED",
       "acknowledgment_absence_verified": false,
-      "original_seed_doi": null
+      "original_seed_doi": null,
+      "previous_status_before_bounded_followup": "CREDIBLE_EXPANSION_LEAD_FUNDING_NOT_VERIFIED",
+      "research_completed": true,
+      "attribution_followup_closed": true,
+      "date_policy_note": "If later verified, valid DOI-specific DataCite created YYYY-MM-DD is accepted REACH Pub Date without extra corroboration; no date-based attribution conclusion."
     },
     {
       "identity": "doi:10.57969/s9h01g",
-      "status": "CREDIBLE_EXPANSION_LEAD_FUNDING_NOT_VERIFIED",
-      "research_round": 0,
+      "status": "FOLLOWUP_CLOSED_NO_DEMONSTRATED_WPO_PROJECT_BRIDGE",
+      "research_round": 1,
       "discovery_route": "Independent discovery",
       "discovery_path": "SPARK spark-000336 / primary WPO award NA21OAR4590374 -> official Scripps NHCI output-family catalog -> distinct DOI",
       "source_type": "Official Scripps NHCI dataset catalog",
@@ -172,12 +232,38 @@
       "award_numbers": [
         "NA21OAR4590374"
       ],
-      "funding_basis": "Project-family association only; output-specific funding under WPO primary award versus NOPP/GDP contributions NOT YET INDEPENDENTLY VERIFIED.",
+      "funding_basis": "Scripps NHCI family lists NOPP NHCI funding and mixed GDP observations; WPO NA21OAR4590374 is explicit only on a different Atlantic Hurricane Drifters family. No verified DOI-specific WPO fundingReference for this NHCI DOI; do not infer funding from common drifters/authors/SPARK project.",
       "checked_sources": [
         {
           "url": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
           "method": "official_dataset_family_catalog",
           "outcome": "2025 NHCI targeted-storms 2022–2024 first-five wave data; check mixed Global Drifter Program scope"
+        },
+        {
+          "url": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+          "method": "native_nhci_dataset_catalog",
+          "outcome": "Three distinct NHCI DOIs named; funding references NOPP NHCI and some GDP drifters; WPO NA21OAR4590374 not named for this family."
+        },
+        {
+          "url": "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+          "method": "contrast_explicit_wpo_funded_family",
+          "outcome": "Separate Atlantic Hurricane Drifters family explicitly names WPO NA21OAR4590374; shared lab and instruments cannot transfer attribution to NHCI family."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+          "method": "primary_spark_project_scope",
+          "outcome": "spark-000336 describes WPO-funded barometer enhancements to GDP DWSD drifters, not these three exact NHCI DOIs."
+        },
+        {
+          "url": "https://erddap.ldl.ucsd.edu/erddap/info/",
+          "method": "native_dataset_catalog_identity",
+          "outcome": "NHCI targeted-storm sensor/first-five datasets are separately listed; catalog identity is not output-level WPO funding."
+        },
+        {
+          "url": "https://api.datacite.org/dois/10.57969/s9h01g",
+          "method": "exact_datacite_funding_reference_and_created_attempt",
+          "outcome": "ACCESS FAILURE through current web retrieval; neither missing metadata nor absent funding inferred.",
+          "source_failure": "ACCESS_FAILURE_NOT_METADATA_ABSENT"
         }
       ],
       "missing_fields": [
@@ -185,18 +271,59 @@
         "exact DOI-specific DataCite created timestamp and native file/version details",
         "full REACH/Scout duplicate check for this DOI"
       ],
-      "next_action": "One bounded project-specific funding and exact DOI/REACH check; do not stage or attribute WPO funding until corroborated.",
+      "next_action": "Bounded follow-up closed without WPO output-specific bridge. Reopen only with NEW positive DOI-specific fundingReference/project deliverable evidence or explicit human request.",
       "hub_delivery": "NOT_DELIVERED",
       "human_decisions": "NOT_VERIFIED",
       "acknowledgment_absence_verified": false,
+      "original_seed_doi": null,
+      "previous_status_before_bounded_followup": "CREDIBLE_EXPANSION_LEAD_FUNDING_NOT_VERIFIED",
+      "research_completed": true,
+      "attribution_followup_closed": true,
+      "date_policy_note": "If later verified, valid DOI-specific DataCite created YYYY-MM-DD is accepted REACH Pub Date without extra corroboration; no date-based attribution conclusion."
+    },
+    {
+      "identity": "doi:10.6084/m9.figshare.26791243",
+      "title": "DeepFlood High Resolution Dataset for Accurate Flood Mapping and Segmentation",
+      "status": "NEW_EXPANSION_LEAD_NEEDS_IDENTITY_AND_REACH_REVIEW",
+      "research_round": 0,
+      "discovery_route": "Independent discovery",
+      "discovery_path": "SPARK spark-000338 / award NA21OAR4590358 -> publisher Scientific Data article DOI 10.1038/s41597-025-04554-3 -> cited distinct Figshare data DOI",
+      "source_type": "Figshare dataset cited by peer-reviewed data article",
+      "project": "spark-000338",
+      "award_numbers": [
+        "NA21OAR4590358"
+      ],
+      "funding_basis": "Nature article explicitly acknowledges NA21OAR4590358 and cites Figshare DOI; exact dataset public scope, DOI-specific DataCite created, REACH/Scout identity and human decisions still need verification.",
+      "checked_sources": [
+        {
+          "url": "https://www.nature.com/articles/s41597-025-04554-3",
+          "method": "publisher_data_records_and_funding",
+          "outcome": "Publisher identifies Figshare DOI 10.6084/m9.figshare.26791243 and explicitly names WPO award NA21OAR4590358."
+        },
+        {
+          "url": "https://doi.org/10.6084/m9.figshare.26791243",
+          "method": "native_dataset_doi_followup",
+          "outcome": "Not independently inspected in this run; future substantive check required."
+        }
+      ],
+      "missing_fields": [
+        "exact DOI-specific DataCite created Pub Date",
+        "public Figshare file inventory and standalone eligibility",
+        "REACH/Scout full identity comparison",
+        "private human decision"
+      ],
+      "next_action": "Research native Figshare/DataCite DOI and all REACH/Scout shards before considering separate data output; do not conflate article and dataset.",
+      "hub_delivery": "NOT_DELIVERED",
+      "human_decisions": "NOT_VERIFIED",
       "original_seed_doi": null
     }
   ],
   "latest_update": {
-    "run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
-    "anchor_research_complete": true,
-    "anchor_handoff_key": "case-36-anchor-stream-radar",
-    "new_unverified_expansion_leads": 3,
-    "hub_imports": "NOT_VERIFIED"
+    "run_id": "REACH-SCOUT-2026-10-30-HOURLY-1329ET",
+    "timestamp_utc": "2026-10-30T17:39:00Z",
+    "closed_no_demonstrated_bridge": 3,
+    "new_expansion_leads": 1,
+    "source": "bounded NHCI attribution contrast and independent flood-paper data availability",
+    "reviewer_decisions": "NOT_VERIFIED"
   }
 }
