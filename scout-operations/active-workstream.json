@@ -20,9 +20,21 @@
     "research_completed": 0,
     "unresolved_followups": 0
   },
-  "note": "Future follow-up dates do not clear API research. Make bounded distinct-source checks now; use documented early-retry exceptions as needed. An unavailable or invalid Hub metadata-needed handoff remains outstanding. This selector does NOT conduct research, verify human approval, or launch Scout.",
+  "note": "DataCite created YYYY-MM-DD completes office-accepted Pub Date. Continue monthly first, then genuine historical research, attribution, and older-award discovery. No repeat date-only searches or Hub integration stalls; private Hub approval not inferred.",
   "phase": "normal_discovery",
-  "reason": "Monthly and historical API research and handoffs are clear",
+  "reason": "Monthly 0; historical 188/188 research complete; attribution queued 0. Four accepted-date normal review proposals feed-verified. Completed human handoffs do not block new research.",
   "schema": "reach-scout-workstream-v1",
-  "switch_policy": "monthly first-pass > monthly follow-ups > historical first-pass > historical follow-ups > attribution follow-ups > normal SPARK historical discovery"
+  "switch_policy": "monthly first-pass > monthly follow-ups > historical first-pass > historical follow-ups > attribution follow-ups > normal SPARK historical discovery",
+  "executive_pub_date_policy": {
+    "run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
+    "valid_created_accepted": 32,
+    "date_only_rerouted_normal_review": 4,
+    "normal_review_batch_id": "2026-10-30-hourly-1229ET-nhci-date-policy-normal-review-001",
+    "normal_review_feed_verified": true,
+    "source_cases": 42,
+    "review_units": 36,
+    "private_human_intake_pending": 38,
+    "hub_imports": "NOT_VERIFIED",
+    "no_date_only_research_followups": true
+  }
 }
