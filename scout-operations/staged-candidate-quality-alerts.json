@@ -1,0 +1,29 @@
+{
+  "schema": "reach-scout-staged-candidate-quality-alerts-v1",
+  "created_at": "2026-10-30T13:29:57Z",
+  "policy": "Research/audit alerts only; do not edit immutable CSV, overwrite private human decisions, or autoapprove. Resolve with reviewer and downstream publication-date validation.",
+  "alerts": [
+    {
+      "alert_id": "2026-10-30-0929ET-jht-final-report-submission-date",
+      "run_id": "REACH-SCOUT-2026-10-30-HOURLY-0929ET",
+      "severity": "HOLD_FOR_HUMAN_DATE_VALIDATION",
+      "identity": "url:https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_reportFINAL_092718.pdf",
+      "batch_id": "2026-10-30-hourly-0829ET-jht-ri-final-report-001",
+      "batch_path": "scout-discoveries/batches/2026-10-30-hourly-0829ET-jht-ri-final-report-001.csv",
+      "field": "Publication Date",
+      "staged_value": "2018-09-30",
+      "actual_source_date_type": "REPORT_SUBMISSION_DATE",
+      "first_public_release_date_verified": false,
+      "semantic_issue": "Staged CSV populated Publication Date from the report cover's Submission Date, despite the batch rationale explicitly saying the first public web posting/deposit date is NOT VERIFIED. Submission is a real date but not verified publication date; do not treat as compliant without reviewer/destination policy decision.",
+      "duplicate_workflow_issue": "Same exact report identity already pending_hub_handoff in metadata-blockers.json and metadata-review-units.json review_key case-31; two research/review pathways require reconciliation, not duplicate publication.",
+      "evidence_urls": [
+        "https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_reportFINAL_092718.pdf",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/batches/2026-10-30-hourly-0829ET-jht-ri-final-report-001.csv"
+      ],
+      "human_decision_verified": false,
+      "hub_import_verified": false,
+      "required_action": "Before any approval or publication, check existing private Hub decision and duplicate identity, establish a permitted date basis or an explicit lawful/technical waiver. Do not alter immutable batch or insert REACH/Smartsheet.",
+      "status": "OPEN_REVIEW_REQUIRED"
+    }
+  ]
+}
