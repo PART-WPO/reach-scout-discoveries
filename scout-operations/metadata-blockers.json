@@ -881,7 +881,7 @@
         "NA21OAR4320204"
       ],
       "cohort": "Historical DataCite API Backfill 2026-10-28",
-      "status": "blocked",
+      "status": "resolved",
       "missing_fields": [
         "record-specific YYYY-MM-DD report publication date",
         "award-to-WPO project scope (broad CIWRO cooperative agreement)"
@@ -907,23 +907,51 @@
           "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
           "outcome": "Reviewed; essential exact publication date or WPO project scope remains unresolved.",
           "checked_at": "2026-10-29T03:34:15Z"
+        },
+        {
+          "round": 1,
+          "method": "authoritative_report_recheck",
+          "url": "https://repository.library.noaa.gov/view/noaa/72846",
+          "checked_at": "2026-10-30T00:28:49.296091Z",
+          "outcome": "Specific WPO-funded project attribution for this original artifact not established; broad CIWRO award alone insufficient. Publication day remains unknown; no invented date."
+        },
+        {
+          "round": 1,
+          "method": "independent_project_or_author_source",
+          "url": "https://hwt.nssl.noaa.gov/publications/",
+          "checked_at": "2026-10-30T00:28:49.296091Z",
+          "outcome": "Specific WPO-funded project attribution for this original artifact not established; broad CIWRO award alone insufficient. Publication day remains unknown; no invented date."
+        },
+        {
+          "round": 1,
+          "method": "spark_all_award_shards_project_bridge",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/awards/part-003.csv",
+          "checked_at": "2026-10-30T00:28:49.296091Z",
+          "outcome": "Specific WPO-funded project attribution for this original artifact not established; broad CIWRO award alone insufficient. Publication day remains unknown; no invented date."
         }
       ],
       "first_investigated_at": "2026-10-29T03:34:15Z",
-      "last_attempt_at": "2026-10-29T03:34:15Z",
-      "retry_count": 0,
+      "last_attempt_at": "2026-10-30T00:28:49.296091Z",
+      "retry_count": 1,
       "next_retry_at": "2026-11-05T03:34:15Z",
       "next_research_at": "2026-11-05T03:34:15Z",
       "followup_question": "Can the full official release date and a WPO project-specific funding bridge be established for this distinct NOAA HWT program report?",
       "evidence_urls": [
         "https://repository.library.noaa.gov/view/noaa/72846",
         "https://hwt.nssl.noaa.gov/publications/",
-        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json"
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/awards/part-003.csv"
       ],
       "funding_basis": "Historical DataCite seed identifies NA21OAR4320204; independent date and/or project-specific funding bridge unresolved.",
-      "next_action": "At most one scheduled follow-up at or after next_retry_at, then verified Hub candidate, evidence-backed no-action, or human_metadata_needed escalation; no invented dates or awards.",
+      "next_action": "No further metadata retry without new WPO project-specific evidence or human request; original DOI remains no_action.",
       "triage_identity": "doi:10.25923/65kx-0a28",
-      "max_delayed_retries": 1
+      "max_delayed_retries": 1,
+      "resolution": "no_action",
+      "resolution_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "resolved_at": "2026-10-30T00:28:49.296091Z",
+      "research_completed": true,
+      "hub_delivery_status": "not_applicable",
+      "early_retry_reason": "Authoritative 2026-10-29 user-directed different-source bounded recovery, preserving original next_retry_at."
     },
     {
       "identity": "doi:10.17603/ds2-ydmk-q397",
@@ -1013,7 +1041,7 @@
         "NA21OAR4320204"
       ],
       "cohort": "Historical DataCite API Backfill 2026-10-28",
-      "status": "blocked",
+      "status": "resolved",
       "missing_fields": [
         "exact report-specific YYYY-MM-DD publication date",
         "specific WPO-funded SPARK project attribution beyond broad cooperative-institute award"
@@ -1039,21 +1067,58 @@
           "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
           "outcome": "Cooperative agreement NA21OAR4320204 appears on several distinct SPARK projects; no project-specific bridge confirmed for this report.",
           "checked_at": "2026-10-29T04:28:11Z"
+        },
+        {
+          "round": 1,
+          "method": "authoritative_report_recheck",
+          "url": "https://repository.library.noaa.gov/view/noaa/71567",
+          "checked_at": "2026-10-30T00:28:49.296091Z",
+          "outcome": "Specific WPO-funded project attribution for this original artifact not established; broad CIWRO award alone insufficient. Publication day remains unknown; no invented date."
+        },
+        {
+          "round": 1,
+          "method": "independent_project_or_author_source",
+          "url": "https://www.star.nesdis.noaa.gov/star/NOAAScienceSeminars_2024.php",
+          "checked_at": "2026-10-30T00:28:49.296091Z",
+          "outcome": "Specific WPO-funded project attribution for this original artifact not established; broad CIWRO award alone insufficient. Publication day remains unknown; no invented date."
+        },
+        {
+          "round": 1,
+          "method": "independent_project_or_author_source",
+          "url": "https://inside.nssl.noaa.gov/tornado-tales/",
+          "checked_at": "2026-10-30T00:28:49.296091Z",
+          "outcome": "Specific WPO-funded project attribution for this original artifact not established; broad CIWRO award alone insufficient. Publication day remains unknown; no invented date."
+        },
+        {
+          "round": 1,
+          "method": "spark_all_award_shards_project_bridge",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/awards/part-003.csv",
+          "checked_at": "2026-10-30T00:28:49.296091Z",
+          "outcome": "Specific WPO-funded project attribution for this original artifact not established; broad CIWRO award alone insufficient. Publication day remains unknown; no invented date."
         }
       ],
       "first_investigated_at": "2026-10-29T04:28:11Z",
-      "last_attempt_at": "2026-10-29T04:28:11Z",
-      "retry_count": 0,
+      "last_attempt_at": "2026-10-30T00:28:49.296091Z",
+      "retry_count": 1,
       "max_delayed_retries": 1,
       "next_retry_at": "2026-11-05T04:28:11Z",
       "next_research_at": "2026-11-05T04:28:11Z",
       "followup_question": "Find exact publication YYYY-MM-DD and independent project-specific funding attribution for 'Tornado Tales: 2025 Survey Reference Report', or determine documented no-action.",
       "evidence_urls": [
-        "https://repository.library.noaa.gov/view/noaa/71567"
+        "https://repository.library.noaa.gov/view/noaa/71567",
+        "https://www.star.nesdis.noaa.gov/star/NOAAScienceSeminars_2024.php",
+        "https://inside.nssl.noaa.gov/tornado-tales/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/awards/part-003.csv"
       ],
       "funding_basis": "NOAA IR report names broad cooperative institute grant NA21OAR4320204, not a uniquely attributable WPO project.",
-      "next_action": "One bounded alternate-source follow-up after due date; then publish only valid Hub candidate or escalate to human_metadata_needed if credible but still incomplete, otherwise evidence-backed no_action.",
-      "triage_identity": "doi:10.25923/emke-w063"
+      "next_action": "No further metadata retry without new WPO project-specific evidence or human request; original DOI remains no_action.",
+      "triage_identity": "doi:10.25923/emke-w063",
+      "resolution": "no_action",
+      "resolution_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "resolved_at": "2026-10-30T00:28:49.296091Z",
+      "research_completed": true,
+      "hub_delivery_status": "not_applicable",
+      "early_retry_reason": "Authoritative 2026-10-29 user-directed different-source bounded recovery, preserving original next_retry_at."
     },
     {
       "identity": "doi:10.25923/fkzg-kt33",
@@ -1061,7 +1126,7 @@
         "NA21OAR4320204"
       ],
       "cohort": "Historical DataCite API Backfill 2026-10-28",
-      "status": "blocked",
+      "status": "resolved",
       "missing_fields": [
         "exact report-specific YYYY-MM-DD publication date",
         "specific WPO-funded SPARK project attribution beyond broad cooperative-institute award"
@@ -1087,21 +1152,58 @@
           "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
           "outcome": "Cooperative agreement NA21OAR4320204 appears on several distinct SPARK projects; no project-specific bridge confirmed for this report.",
           "checked_at": "2026-10-29T04:28:11Z"
+        },
+        {
+          "round": 1,
+          "method": "authoritative_report_recheck",
+          "url": "https://repository.library.noaa.gov/view/noaa/76790",
+          "checked_at": "2026-10-30T00:28:49.296091Z",
+          "outcome": "Specific WPO-funded project attribution for this original artifact not established; broad CIWRO award alone insufficient. Publication day remains unknown; no invented date."
+        },
+        {
+          "round": 1,
+          "method": "independent_project_or_author_source",
+          "url": "https://ou.edu/ciwro/about/people/staff/david-harrison",
+          "checked_at": "2026-10-30T00:28:49.296091Z",
+          "outcome": "Specific WPO-funded project attribution for this original artifact not established; broad CIWRO award alone insufficient. Publication day remains unknown; no invented date."
+        },
+        {
+          "round": 1,
+          "method": "independent_project_or_author_source",
+          "url": "https://origin-west-www-spc.woc.noaa.gov/publications/",
+          "checked_at": "2026-10-30T00:28:49.296091Z",
+          "outcome": "Specific WPO-funded project attribution for this original artifact not established; broad CIWRO award alone insufficient. Publication day remains unknown; no invented date."
+        },
+        {
+          "round": 1,
+          "method": "spark_all_award_shards_project_bridge",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/awards/part-003.csv",
+          "checked_at": "2026-10-30T00:28:49.296091Z",
+          "outcome": "Specific WPO-funded project attribution for this original artifact not established; broad CIWRO award alone insufficient. Publication day remains unknown; no invented date."
         }
       ],
       "first_investigated_at": "2026-10-29T04:28:11Z",
-      "last_attempt_at": "2026-10-29T04:28:11Z",
-      "retry_count": 0,
+      "last_attempt_at": "2026-10-30T00:28:49.296091Z",
+      "retry_count": 1,
       "max_delayed_retries": 1,
       "next_retry_at": "2026-11-05T04:28:11Z",
       "next_research_at": "2026-11-05T04:28:11Z",
       "followup_question": "Find exact publication YYYY-MM-DD and independent project-specific funding attribution for 'Developing and Evaluating First-Guess Watch Guidance Within SPC Operations', or determine documented no-action.",
       "evidence_urls": [
-        "https://repository.library.noaa.gov/view/noaa/76790"
+        "https://repository.library.noaa.gov/view/noaa/76790",
+        "https://ou.edu/ciwro/about/people/staff/david-harrison",
+        "https://origin-west-www-spc.woc.noaa.gov/publications/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/awards/part-003.csv"
       ],
       "funding_basis": "NOAA IR report names broad cooperative institute grant NA21OAR4320204, not a uniquely attributable WPO project.",
-      "next_action": "One bounded alternate-source follow-up after due date; then publish only valid Hub candidate or escalate to human_metadata_needed if credible but still incomplete, otherwise evidence-backed no_action.",
-      "triage_identity": "doi:10.25923/fkzg-kt33"
+      "next_action": "No further metadata retry without new WPO project-specific evidence or human request; original DOI remains no_action.",
+      "triage_identity": "doi:10.25923/fkzg-kt33",
+      "resolution": "no_action",
+      "resolution_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "resolved_at": "2026-10-30T00:28:49.296091Z",
+      "research_completed": true,
+      "hub_delivery_status": "not_applicable",
+      "early_retry_reason": "Authoritative 2026-10-29 user-directed different-source bounded recovery, preserving original next_retry_at."
     },
     {
       "identity": "doi:10.17603/ds2-yry6-r324",
@@ -1215,7 +1317,7 @@
         "NA21OAR4320204"
       ],
       "cohort": "Historical DataCite API Backfill 2026-10-28",
-      "status": "blocked",
+      "status": "resolved",
       "missing_fields": [
         "full YYYY-MM-DD publication date",
         "direct WPO project-specific funding bridge beyond cooperative-institute umbrella"
@@ -1255,21 +1357,58 @@
           "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
           "outcome": "All thirteen existing Scout batches checked; no exact DOI.",
           "checked_at": "2026-10-29T05:32:21Z"
+        },
+        {
+          "round": 1,
+          "method": "authoritative_report_recheck",
+          "url": "https://repository.library.noaa.gov/view/noaa/74392",
+          "checked_at": "2026-10-30T00:28:49.296091Z",
+          "outcome": "Specific WPO-funded project attribution for this original artifact not established; broad CIWRO award alone insufficient. Publication day remains unknown; no invented date."
+        },
+        {
+          "round": 1,
+          "method": "independent_project_or_author_source",
+          "url": "https://inside.nssl.noaa.gov/tornado-tales/",
+          "checked_at": "2026-10-30T00:28:49.296091Z",
+          "outcome": "Specific WPO-funded project attribution for this original artifact not established; broad CIWRO award alone insufficient. Publication day remains unknown; no invented date."
+        },
+        {
+          "round": 1,
+          "method": "independent_project_or_author_source",
+          "url": "https://www.star.nesdis.noaa.gov/star/NOAAScienceSeminars_2024.php",
+          "checked_at": "2026-10-30T00:28:49.296091Z",
+          "outcome": "Specific WPO-funded project attribution for this original artifact not established; broad CIWRO award alone insufficient. Publication day remains unknown; no invented date."
+        },
+        {
+          "round": 1,
+          "method": "spark_all_award_shards_project_bridge",
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/awards/part-003.csv",
+          "checked_at": "2026-10-30T00:28:49.296091Z",
+          "outcome": "Specific WPO-funded project attribution for this original artifact not established; broad CIWRO award alone insufficient. Publication day remains unknown; no invented date."
         }
       ],
       "first_investigated_at": "2026-10-29T05:32:21Z",
-      "last_attempt_at": "2026-10-29T05:32:21Z",
-      "retry_count": 0,
+      "last_attempt_at": "2026-10-30T00:28:49.296091Z",
+      "retry_count": 1,
       "max_delayed_retries": 1,
       "next_retry_at": "2026-11-05T05:32:21Z",
       "next_research_at": "2026-11-05T05:32:21Z",
       "followup_question": "Can native NOAA IR/PDF metadata resolve full report publication date and can a project source directly link Tornado Tales to a particular SPARK WPO award?",
       "evidence_urls": [
-        "https://repository.library.noaa.gov/view/noaa/74392"
+        "https://repository.library.noaa.gov/view/noaa/74392",
+        "https://inside.nssl.noaa.gov/tornado-tales/",
+        "https://www.star.nesdis.noaa.gov/star/NOAAScienceSeminars_2024.php",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/awards/part-003.csv"
       ],
       "funding_basis": "NOAA IR identifies WPO among program offices and broad CIWRO award NA21OAR4320204. SPARK lists this as RELATED award for WPO social-science survey projects, but no direct project-specific attribution established.",
-      "next_action": "One bounded follow-up on or after 2026-11-05T05:32:21Z using different authoritative sources; if credible but still metadata-incomplete escalate to human_metadata_needed without inventing date or invalid Hub CSV; if evidence insufficient document no_action.",
-      "triage_identity": "doi:10.25923/mpqr-r886"
+      "next_action": "No further metadata retry without new WPO project-specific evidence or human request; original DOI remains no_action.",
+      "triage_identity": "doi:10.25923/mpqr-r886",
+      "resolution": "no_action",
+      "resolution_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "resolved_at": "2026-10-30T00:28:49.296091Z",
+      "research_completed": true,
+      "hub_delivery_status": "not_applicable",
+      "early_retry_reason": "Authoritative 2026-10-29 user-directed different-source bounded recovery, preserving original next_retry_at."
     },
     {
       "identity": "doi:10.7910/dvn/jwzewf",
