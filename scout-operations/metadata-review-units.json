@@ -1,0 +1,2971 @@
+{
+  "schema": "reach-scout-metadata-review-units-v1",
+  "created_from": "scout-operations/metadata-blockers.json",
+  "created_from_sha": "d702f7c561fa8d20cd4ba9635a264f38abf3b633",
+  "generated_on": "2026-10-30",
+  "source_cases": 37,
+  "review_units": 31,
+  "version_or_alternate_groups": 6,
+  "source_cases_not_necessarily_distinct_outputs": true,
+  "workflow_status": "PREPARED_FOR_HUMAN_INTAKE_NOT_VISIBLE_IN_HUB",
+  "delivery_verified": false,
+  "privacy": "public output and source evidence only; no email, reviewer decisions or restricted data",
+  "policy": "No publishing to Scout batches, no changes to original blockers or decisions, no inferred missing dates. Reviewer determines canonical output identity and acceptance. Separate Hub intake from REACH insertion validation.",
+  "units": [
+    {
+      "review_key": "zenodo-scamp",
+      "source_identities": [
+        "doi:10.5281/zenodo.21048459",
+        "doi:10.5281/zenodo.21048460"
+      ],
+      "review_type": "POTENTIAL_VERSION_OR_ALTERNATE",
+      "priority": "HIGH",
+      "reviewer_question": "Potential Zenodo concept/version family; confirm before treating as one output",
+      "canonical_identity": "UNDECIDED",
+      "all_original_decisions_preserved": true,
+      "source_records": [
+        {
+          "identity": "doi:10.5281/zenodo.21048459",
+          "missing_fields": [
+            "exact first-publication YYYY-MM-DD of this DOI",
+            "native publicly accessible file scope and version/concept relation to 10.5281/zenodo.21048460"
+          ],
+          "reviewer_question": "For 10.5281/zenodo.21048459, can the record owner verify the first public release date and files, and determine whether this DOI and 10.5281/zenodo.21048460 represent one version family? If catalogable, is a date omission technically permissible under REACH publishing rules?",
+          "award_numbers": [
+            "NA21OAR4590367"
+          ],
+          "evidence_urls": [
+            "https://api.datacite.org/dois/10.5281/zenodo.21048459",
+            "https://zenodo.org/records/21048459",
+            "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+            "https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2022JD037132",
+            "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+            "https://zenodo.org/api/records/21048459"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://api.datacite.org/dois/10.5281/zenodo.21048459",
+              "method": "historical_datacite_capture",
+              "outcome": "Exact award, output identity and author/title captured; no verified full publication date.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+              "method": "spark_primary_award_index",
+              "outcome": "Primary WPO SPARK award and matching project workstream verified.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+              "method": "complete_reach_index",
+              "outcome": "No exact DOI/title in all 1238 index records.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+              "method": "scout_manifest_and_14_batches",
+              "outcome": "No exact DOI/title in 53 existing staged candidates; private reviewer decisions unavailable.",
+              "round": 0
+            },
+            {
+              "url": "https://zenodo.org/records/21048459",
+              "method": "native_zenodo_landing_attempt",
+              "outcome": "Native record not independently retrievable; full publication date, file availability and version identity remain unverified.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+              "method": "spark_primary_project_detail",
+              "outcome": "SPARK identifies NA21OAR4590367 as primary WPO project award with matching dataset research workstream; primary award not proof of Zenodo date/version.",
+              "round": 1
+            },
+            {
+              "url": "https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2022JD037132",
+              "method": "independent_publisher_project_publication",
+              "outcome": "Shates 2023 study uses separate Marquette observations and is already REACH reach-000132; confirms award and shared Pettersen author but not original Buffalo SCAMP files.",
+              "round": 1
+            },
+            {
+              "url": "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+              "method": "official_wpo_award_project_list",
+              "outcome": "WPO original award list independently identifies NA21OAR4590367 primary project, but its award period cannot be substituted for a DOI release date.",
+              "round": 1
+            },
+            {
+              "url": "https://zenodo.org/api/records/21048459",
+              "method": "native_zenodo_api_alternate",
+              "outcome": "Attempted native Zenodo record API; inaccessible through available retrieval. No first-publication date, files, or concept/version relation established.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "Captured DataCite fundingReference identifies NA21OAR4590367, corroborated as primary WPO project in SPARK and original WPO roster; exact DOI file/date/version remains unavailable.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        },
+        {
+          "identity": "doi:10.5281/zenodo.21048460",
+          "missing_fields": [
+            "exact first-publication YYYY-MM-DD of this DOI",
+            "native publicly accessible file scope and version/concept relation to 10.5281/zenodo.21048459"
+          ],
+          "reviewer_question": "For 10.5281/zenodo.21048460, can the record owner verify the first public release date and files, and determine whether this DOI and 10.5281/zenodo.21048459 represent one version family? If catalogable, is a date omission technically permissible under REACH publishing rules?",
+          "award_numbers": [
+            "NA21OAR4590367"
+          ],
+          "evidence_urls": [
+            "https://api.datacite.org/dois/10.5281/zenodo.21048460",
+            "https://zenodo.org/records/21048460",
+            "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+            "https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2022JD037132",
+            "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+            "https://zenodo.org/api/records/21048460"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://api.datacite.org/dois/10.5281/zenodo.21048460",
+              "method": "historical_datacite_capture",
+              "outcome": "Exact award, output identity and author/title captured; no verified full publication date.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+              "method": "spark_primary_award_index",
+              "outcome": "Primary WPO SPARK award and matching project workstream verified.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+              "method": "complete_reach_index",
+              "outcome": "No exact DOI/title in all 1238 index records.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+              "method": "scout_manifest_and_14_batches",
+              "outcome": "No exact DOI/title in 53 existing staged candidates; private reviewer decisions unavailable.",
+              "round": 0
+            },
+            {
+              "url": "https://zenodo.org/records/21048460",
+              "method": "native_zenodo_landing_attempt",
+              "outcome": "Native record not independently retrievable; full publication date, file availability and version identity remain unverified.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+              "method": "spark_primary_project_detail",
+              "outcome": "SPARK identifies NA21OAR4590367 as primary WPO project award with matching dataset research workstream; primary award not proof of Zenodo date/version.",
+              "round": 1
+            },
+            {
+              "url": "https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2022JD037132",
+              "method": "independent_publisher_project_publication",
+              "outcome": "Shates 2023 study uses separate Marquette observations and is already REACH reach-000132; confirms award and shared Pettersen author but not original Buffalo SCAMP files.",
+              "round": 1
+            },
+            {
+              "url": "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+              "method": "official_wpo_award_project_list",
+              "outcome": "WPO original award list independently identifies NA21OAR4590367 primary project, but its award period cannot be substituted for a DOI release date.",
+              "round": 1
+            },
+            {
+              "url": "https://zenodo.org/api/records/21048460",
+              "method": "native_zenodo_api_alternate",
+              "outcome": "Attempted native Zenodo record API; inaccessible through available retrieval. No first-publication date, files, or concept/version relation established.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "Captured DataCite fundingReference identifies NA21OAR4590367, corroborated as primary WPO project in SPARK and original WPO roster; exact DOI file/date/version remains unavailable.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        }
+      ]
+    },
+    {
+      "review_key": "zenodo-fvcom",
+      "source_identities": [
+        "doi:10.5281/zenodo.23044469",
+        "doi:10.5281/zenodo.23044470"
+      ],
+      "review_type": "POTENTIAL_VERSION_OR_ALTERNATE",
+      "priority": "HIGH",
+      "reviewer_question": "Potential Zenodo concept/version family; confirm before treating as one output",
+      "canonical_identity": "UNDECIDED",
+      "all_original_decisions_preserved": true,
+      "source_records": [
+        {
+          "identity": "doi:10.5281/zenodo.23044469",
+          "missing_fields": [
+            "exact first-publication YYYY-MM-DD of this DOI",
+            "native publicly accessible file scope and version/concept relation to 10.5281/zenodo.23044470"
+          ],
+          "reviewer_question": "For 10.5281/zenodo.23044469, can the record owner verify the first public release date and files, and determine whether this DOI and 10.5281/zenodo.23044470 represent one version family? If catalogable, is a date omission technically permissible under REACH publishing rules?",
+          "award_numbers": [
+            "NA22OAR4590188"
+          ],
+          "evidence_urls": [
+            "https://api.datacite.org/dois/10.5281/zenodo.23044469",
+            "https://zenodo.org/records/23044469",
+            "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-011.csv",
+            "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024WR037507",
+            "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+            "https://zenodo.org/api/records/23044469"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://api.datacite.org/dois/10.5281/zenodo.23044469",
+              "method": "historical_datacite_capture",
+              "outcome": "Exact award, output identity and author/title captured; no verified full publication date.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+              "method": "spark_primary_award_index",
+              "outcome": "Primary WPO SPARK award and matching project workstream verified.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+              "method": "complete_reach_index",
+              "outcome": "No exact DOI/title in all 1238 index records.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+              "method": "scout_manifest_and_14_batches",
+              "outcome": "No exact DOI/title in 53 existing staged candidates; private reviewer decisions unavailable.",
+              "round": 0
+            },
+            {
+              "url": "https://zenodo.org/records/23044469",
+              "method": "native_zenodo_landing_attempt",
+              "outcome": "Native record not independently retrievable; full publication date, file availability and version identity remain unverified.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-011.csv",
+              "method": "spark_primary_project_detail",
+              "outcome": "SPARK identifies NA22OAR4590188 as primary WPO project award with matching software research workstream; primary award not proof of Zenodo date/version.",
+              "round": 1
+            },
+            {
+              "url": "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024WR037507",
+              "method": "independent_publisher_project_publication",
+              "outcome": "Yeo 2024 paper identifies same WPO JTTI award and shared investigator Fujisaki-Manome; not proof of exact native FVCOM source archive release.",
+              "round": 1
+            },
+            {
+              "url": "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+              "method": "official_wpo_award_project_list",
+              "outcome": "WPO original award list independently identifies NA22OAR4590188 primary project, but its award period cannot be substituted for a DOI release date.",
+              "round": 1
+            },
+            {
+              "url": "https://zenodo.org/api/records/23044469",
+              "method": "native_zenodo_api_alternate",
+              "outcome": "Attempted native Zenodo record API; inaccessible through available retrieval. No first-publication date, files, or concept/version relation established.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "Captured DataCite fundingReference identifies NA22OAR4590188, corroborated as primary WPO project in SPARK and original WPO roster; exact DOI file/date/version remains unavailable.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        },
+        {
+          "identity": "doi:10.5281/zenodo.23044470",
+          "missing_fields": [
+            "exact first-publication YYYY-MM-DD of this DOI",
+            "native publicly accessible file scope and version/concept relation to 10.5281/zenodo.23044469"
+          ],
+          "reviewer_question": "For 10.5281/zenodo.23044470, can the record owner verify the first public release date and files, and determine whether this DOI and 10.5281/zenodo.23044469 represent one version family? If catalogable, is a date omission technically permissible under REACH publishing rules?",
+          "award_numbers": [
+            "NA22OAR4590188"
+          ],
+          "evidence_urls": [
+            "https://api.datacite.org/dois/10.5281/zenodo.23044470",
+            "https://zenodo.org/records/23044470",
+            "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-011.csv",
+            "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024WR037507",
+            "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+            "https://zenodo.org/api/records/23044470"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://api.datacite.org/dois/10.5281/zenodo.23044470",
+              "method": "historical_datacite_capture",
+              "outcome": "Exact award, output identity and author/title captured; no verified full publication date.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+              "method": "spark_primary_award_index",
+              "outcome": "Primary WPO SPARK award and matching project workstream verified.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+              "method": "complete_reach_index",
+              "outcome": "No exact DOI/title in all 1238 index records.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+              "method": "scout_manifest_and_14_batches",
+              "outcome": "No exact DOI/title in 53 existing staged candidates; private reviewer decisions unavailable.",
+              "round": 0
+            },
+            {
+              "url": "https://zenodo.org/records/23044470",
+              "method": "native_zenodo_landing_attempt",
+              "outcome": "Native record not independently retrievable; full publication date, file availability and version identity remain unverified.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-011.csv",
+              "method": "spark_primary_project_detail",
+              "outcome": "SPARK identifies NA22OAR4590188 as primary WPO project award with matching software research workstream; primary award not proof of Zenodo date/version.",
+              "round": 1
+            },
+            {
+              "url": "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024WR037507",
+              "method": "independent_publisher_project_publication",
+              "outcome": "Yeo 2024 paper identifies same WPO JTTI award and shared investigator Fujisaki-Manome; not proof of exact native FVCOM source archive release.",
+              "round": 1
+            },
+            {
+              "url": "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+              "method": "official_wpo_award_project_list",
+              "outcome": "WPO original award list independently identifies NA22OAR4590188 primary project, but its award period cannot be substituted for a DOI release date.",
+              "round": 1
+            },
+            {
+              "url": "https://zenodo.org/api/records/23044470",
+              "method": "native_zenodo_api_alternate",
+              "outcome": "Attempted native Zenodo record API; inaccessible through available retrieval. No first-publication date, files, or concept/version relation established.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "Captured DataCite fundingReference identifies NA22OAR4590188, corroborated as primary WPO project in SPARK and original WPO roster; exact DOI file/date/version remains unavailable.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        }
+      ]
+    },
+    {
+      "review_key": "zenodo-mom6",
+      "source_identities": [
+        "doi:10.5281/zenodo.23289230",
+        "doi:10.5281/zenodo.23289231"
+      ],
+      "review_type": "POTENTIAL_VERSION_OR_ALTERNATE",
+      "priority": "HIGH",
+      "reviewer_question": "Potential Zenodo concept/version family; confirm before treating as one output",
+      "canonical_identity": "UNDECIDED",
+      "all_original_decisions_preserved": true,
+      "source_records": [
+        {
+          "identity": "doi:10.5281/zenodo.23289230",
+          "missing_fields": [
+            "exact first-publication YYYY-MM-DD of this DOI",
+            "native publicly accessible file scope and version/concept relation to 10.5281/zenodo.23289231"
+          ],
+          "reviewer_question": "For 10.5281/zenodo.23289230, can the record owner verify the first public release date and files, and determine whether this DOI and 10.5281/zenodo.23289231 represent one version family? If catalogable, is a date omission technically permissible under REACH publishing rules?",
+          "award_numbers": [
+            "NA22OAR0110487"
+          ],
+          "evidence_urls": [
+            "https://api.datacite.org/dois/10.5281/zenodo.23289230",
+            "https://zenodo.org/records/23289230",
+            "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-031.csv",
+            "https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2025MS005126",
+            "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+            "https://zenodo.org/api/records/23289230"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://api.datacite.org/dois/10.5281/zenodo.23289230",
+              "method": "historical_datacite_capture",
+              "outcome": "Exact award, output identity and author/title captured; no verified full publication date.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+              "method": "spark_primary_award_index",
+              "outcome": "Primary WPO SPARK award and matching project workstream verified.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+              "method": "complete_reach_index",
+              "outcome": "No exact DOI/title in all 1238 index records.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+              "method": "scout_manifest_and_14_batches",
+              "outcome": "No exact DOI/title in 53 existing staged candidates; private reviewer decisions unavailable.",
+              "round": 0
+            },
+            {
+              "url": "https://zenodo.org/records/23289230",
+              "method": "native_zenodo_landing_attempt",
+              "outcome": "Native record not independently retrievable; full publication date, file availability and version identity remain unverified.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-031.csv",
+              "method": "spark_primary_project_detail",
+              "outcome": "SPARK identifies NA22OAR0110487 as primary WPO project award with matching dataset research workstream; primary award not proof of Zenodo date/version.",
+              "round": 1
+            },
+            {
+              "url": "https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2025MS005126",
+              "method": "independent_publisher_project_publication",
+              "outcome": "Xu/Zaron 2025 paper identifies exact WPO grant and MOM6 simulation, but availability points to distinct Zenodo DOI 16905128; original DOI files/date not verified.",
+              "round": 1
+            },
+            {
+              "url": "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+              "method": "official_wpo_award_project_list",
+              "outcome": "WPO original award list independently identifies NA22OAR0110487 primary project, but its award period cannot be substituted for a DOI release date.",
+              "round": 1
+            },
+            {
+              "url": "https://zenodo.org/api/records/23289230",
+              "method": "native_zenodo_api_alternate",
+              "outcome": "Attempted native Zenodo record API; inaccessible through available retrieval. No first-publication date, files, or concept/version relation established.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "Captured DataCite fundingReference identifies NA22OAR0110487, corroborated as primary WPO project in SPARK and original WPO roster; exact DOI file/date/version remains unavailable.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        },
+        {
+          "identity": "doi:10.5281/zenodo.23289231",
+          "missing_fields": [
+            "exact first-publication YYYY-MM-DD of this DOI",
+            "native publicly accessible file scope and version/concept relation to 10.5281/zenodo.23289230"
+          ],
+          "reviewer_question": "For 10.5281/zenodo.23289231, can the record owner verify the first public release date and files, and determine whether this DOI and 10.5281/zenodo.23289230 represent one version family? If catalogable, is a date omission technically permissible under REACH publishing rules?",
+          "award_numbers": [
+            "NA22OAR0110487"
+          ],
+          "evidence_urls": [
+            "https://api.datacite.org/dois/10.5281/zenodo.23289231",
+            "https://zenodo.org/records/23289231",
+            "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-031.csv",
+            "https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2025MS005126",
+            "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+            "https://zenodo.org/api/records/23289231"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://api.datacite.org/dois/10.5281/zenodo.23289231",
+              "method": "historical_datacite_capture",
+              "outcome": "Exact award, output identity and author/title captured; no verified full publication date.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+              "method": "spark_primary_award_index",
+              "outcome": "Primary WPO SPARK award and matching project workstream verified.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+              "method": "complete_reach_index",
+              "outcome": "No exact DOI/title in all 1238 index records.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+              "method": "scout_manifest_and_14_batches",
+              "outcome": "No exact DOI/title in 53 existing staged candidates; private reviewer decisions unavailable.",
+              "round": 0
+            },
+            {
+              "url": "https://zenodo.org/records/23289231",
+              "method": "native_zenodo_landing_attempt",
+              "outcome": "Native record not independently retrievable; full publication date, file availability and version identity remain unverified.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-031.csv",
+              "method": "spark_primary_project_detail",
+              "outcome": "SPARK identifies NA22OAR0110487 as primary WPO project award with matching dataset research workstream; primary award not proof of Zenodo date/version.",
+              "round": 1
+            },
+            {
+              "url": "https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2025MS005126",
+              "method": "independent_publisher_project_publication",
+              "outcome": "Xu/Zaron 2025 paper identifies exact WPO grant and MOM6 simulation, but availability points to distinct Zenodo DOI 16905128; original DOI files/date not verified.",
+              "round": 1
+            },
+            {
+              "url": "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+              "method": "official_wpo_award_project_list",
+              "outcome": "WPO original award list independently identifies NA22OAR0110487 primary project, but its award period cannot be substituted for a DOI release date.",
+              "round": 1
+            },
+            {
+              "url": "https://zenodo.org/api/records/23289231",
+              "method": "native_zenodo_api_alternate",
+              "outcome": "Attempted native Zenodo record API; inaccessible through available retrieval. No first-publication date, files, or concept/version relation established.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "Captured DataCite fundingReference identifies NA22OAR0110487, corroborated as primary WPO project in SPARK and original WPO roster; exact DOI file/date/version remains unavailable.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        }
+      ]
+    },
+    {
+      "review_key": "figshare-poster",
+      "source_identities": [
+        "doi:10.6084/m9.figshare.23666259",
+        "doi:10.6084/m9.figshare.23666259.v1"
+      ],
+      "review_type": "POTENTIAL_VERSION_OR_ALTERNATE",
+      "priority": "HIGH",
+      "reviewer_question": "Potential Figshare concept/version family; confirm before treating as one output",
+      "canonical_identity": "UNDECIDED",
+      "all_original_decisions_preserved": true,
+      "source_records": [
+        {
+          "identity": "doi:10.6084/m9.figshare.23666259",
+          "missing_fields": [
+            "record-specific first publication date (YYYY-MM-DD)",
+            "native repository version/identity and public scope confirmation"
+          ],
+          "reviewer_question": "Select ONE canonical concept/v1 poster record and decide whether Figshare-sourced ORCID date is acceptable.",
+          "award_numbers": [
+            "NA19OAR4590209"
+          ],
+          "evidence_urls": [
+            "https://api.datacite.org/dois/10.6084/m9.figshare.23666259",
+            "https://orcid.org/0000-0003-3318-7601",
+            "https://journals.ametsoc.org/view/journals/mwre/152/7/MWR-D-23-0144.1.xml",
+            "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+            "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+            "https://www.ametsoc.org/stac/committees/committee-on-severe-local-storms/summary-of-30th-sls-conference/",
+            "https://api.figshare.com/v2/articles/23666259",
+            "https://repository.library.noaa.gov/view/noaa/70846"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://api.datacite.org/dois/10.6084/m9.figshare.23666259",
+              "method": "historical_datacite_source",
+              "outcome": "Captured original DOI, exact source award references, title and creators; no independently verified full publication date.",
+              "round": 0
+            },
+            {
+              "url": "https://orcid.org/0000-0003-3318-7601",
+              "method": "publisher_or_institutional",
+              "outcome": "VORTEX-SE polarimetric/lightning poster; direct WPO award and ORCID date 2023-07-12, but native Figshare first-publication date and version identity unverified.",
+              "round": 0
+            },
+            {
+              "url": "https://journals.ametsoc.org/view/journals/mwre/152/7/MWR-D-23-0144.1.xml",
+              "method": "spark_award_project",
+              "outcome": "VORTEX-SE polarimetric/lightning poster; direct WPO award and ORCID date 2023-07-12, but native Figshare first-publication date and version identity unverified.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+              "method": "reach_full_index",
+              "outcome": "VORTEX-SE polarimetric/lightning poster; direct WPO award and ORCID date 2023-07-12, but native Figshare first-publication date and version identity unverified.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+              "method": "scout_existing_staging",
+              "outcome": "VORTEX-SE polarimetric/lightning poster; direct WPO award and ORCID date 2023-07-12, but native Figshare first-publication date and version identity unverified.",
+              "round": 0
+            },
+            {
+              "url": "https://www.ametsoc.org/stac/committees/committee-on-severe-local-storms/summary-of-30th-sls-conference/",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "Official AMS conference program confirms exact P9 poster and author.",
+              "round": 1
+            },
+            {
+              "url": "https://orcid.org/0000-0003-3318-7601",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "Figshare-sourced ORCID lists 2023-07-12, not native verified Figshare first release.",
+              "round": 1
+            },
+            {
+              "url": "https://api.figshare.com/v2/articles/23666259",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "Native Figshare API inaccessible; version and first publication timestamp unresolved.",
+              "round": 1
+            },
+            {
+              "url": "https://repository.library.noaa.gov/view/noaa/70846",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "Related 2024 article is a separate output already staged, not poster version.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "VORTEX-SE polarimetric/lightning poster; direct WPO award and ORCID date 2023-07-12, but native Figshare first-publication date and version identity unverified. Captured award references: NA19OAR4590209.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        },
+        {
+          "identity": "doi:10.6084/m9.figshare.23666259.v1",
+          "missing_fields": [
+            "record-specific first publication date (YYYY-MM-DD)",
+            "native repository version/identity and public scope confirmation"
+          ],
+          "reviewer_question": "Select ONE canonical concept/v1 poster record and decide whether Figshare-sourced ORCID date is acceptable.",
+          "award_numbers": [
+            "NA19OAR4590209"
+          ],
+          "evidence_urls": [
+            "https://api.datacite.org/dois/10.6084/m9.figshare.23666259.v1",
+            "https://orcid.org/0000-0003-3318-7601",
+            "https://journals.ametsoc.org/view/journals/mwre/152/7/MWR-D-23-0144.1.xml",
+            "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+            "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+            "https://www.ametsoc.org/stac/committees/committee-on-severe-local-storms/summary-of-30th-sls-conference/",
+            "https://api.figshare.com/v2/articles/23666259",
+            "https://repository.library.noaa.gov/view/noaa/70846"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://api.datacite.org/dois/10.6084/m9.figshare.23666259.v1",
+              "method": "historical_datacite_source",
+              "outcome": "Captured original DOI, exact source award references, title and creators; no independently verified full publication date.",
+              "round": 0
+            },
+            {
+              "url": "https://orcid.org/0000-0003-3318-7601",
+              "method": "publisher_or_institutional",
+              "outcome": "Version 1 of same VORTEX-SE poster; verify native Figshare date and relationship to concept DOI, do not double count.",
+              "round": 0
+            },
+            {
+              "url": "https://journals.ametsoc.org/view/journals/mwre/152/7/MWR-D-23-0144.1.xml",
+              "method": "spark_award_project",
+              "outcome": "Version 1 of same VORTEX-SE poster; verify native Figshare date and relationship to concept DOI, do not double count.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+              "method": "reach_full_index",
+              "outcome": "Version 1 of same VORTEX-SE poster; verify native Figshare date and relationship to concept DOI, do not double count.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+              "method": "scout_existing_staging",
+              "outcome": "Version 1 of same VORTEX-SE poster; verify native Figshare date and relationship to concept DOI, do not double count.",
+              "round": 0
+            },
+            {
+              "url": "https://www.ametsoc.org/stac/committees/committee-on-severe-local-storms/summary-of-30th-sls-conference/",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "Official AMS conference program confirms exact P9 poster and author.",
+              "round": 1
+            },
+            {
+              "url": "https://orcid.org/0000-0003-3318-7601",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "Figshare-sourced ORCID lists 2023-07-12, not native verified Figshare first release.",
+              "round": 1
+            },
+            {
+              "url": "https://api.figshare.com/v2/articles/23666259",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "Native Figshare API inaccessible; version and first publication timestamp unresolved.",
+              "round": 1
+            },
+            {
+              "url": "https://repository.library.noaa.gov/view/noaa/70846",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "Related 2024 article is a separate output already staged, not poster version.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "Version 1 of same VORTEX-SE poster; verify native Figshare date and relationship to concept DOI, do not double count. Captured award references: NA19OAR4590209.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        }
+      ]
+    },
+    {
+      "review_key": "figshare-eldora",
+      "source_identities": [
+        "doi:10.6084/m9.figshare.23689194",
+        "doi:10.6084/m9.figshare.23689194.v1"
+      ],
+      "review_type": "POTENTIAL_VERSION_OR_ALTERNATE",
+      "priority": "HIGH",
+      "reviewer_question": "Potential Figshare concept/version family; confirm before treating as one output",
+      "canonical_identity": "UNDECIDED",
+      "all_original_decisions_preserved": true,
+      "source_records": [
+        {
+          "identity": "doi:10.6084/m9.figshare.23689194",
+          "missing_fields": [
+            "record-specific first publication date (YYYY-MM-DD)",
+            "native repository version/identity and public scope confirmation"
+          ],
+          "reviewer_question": "Select ONE canonical concept/v1 dataset record and decide on unknown first date, separate from staged article.",
+          "award_numbers": [
+            "NA19OAR4590245"
+          ],
+          "evidence_urls": [
+            "https://api.datacite.org/dois/10.6084/m9.figshare.23689194",
+            "https://journals.ametsoc.org/view/journals/aies/3/1/AIES-D-23-0064.1.xml",
+            "https://repository.library.noaa.gov/view/noaa/64095",
+            "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+            "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+            "https://journals.ametsoc.org/view/journals/aies/aop/AIES-D-23-0064.1/AIES-D-23-0064.1.xml",
+            "https://api.figshare.com/v2/articles/23689194",
+            "https://doi.org/10.6084/m9.figshare.23689194"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://api.datacite.org/dois/10.6084/m9.figshare.23689194",
+              "method": "historical_datacite_source",
+              "outcome": "Captured original DOI, exact source award references, title and creators; no independently verified full publication date.",
+              "round": 0
+            },
+            {
+              "url": "https://journals.ametsoc.org/view/journals/aies/3/1/AIES-D-23-0064.1.xml",
+              "method": "publisher_or_institutional",
+              "outcome": "ELDORA ML QC dataset directly linked by funded AMS article; exact Figshare dataset publication date and version identity unverified.",
+              "round": 0
+            },
+            {
+              "url": "https://repository.library.noaa.gov/view/noaa/64095",
+              "method": "spark_award_project",
+              "outcome": "ELDORA ML QC dataset directly linked by funded AMS article; exact Figshare dataset publication date and version identity unverified.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+              "method": "reach_full_index",
+              "outcome": "ELDORA ML QC dataset directly linked by funded AMS article; exact Figshare dataset publication date and version identity unverified.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+              "method": "scout_existing_staging",
+              "outcome": "ELDORA ML QC dataset directly linked by funded AMS article; exact Figshare dataset publication date and version identity unverified.",
+              "round": 0
+            },
+            {
+              "url": "https://journals.ametsoc.org/view/journals/aies/aop/AIES-D-23-0064.1/AIES-D-23-0064.1.xml",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "Publisher paper data availability explicitly links Figshare dataset and WPO award.",
+              "round": 1
+            },
+            {
+              "url": "https://repository.library.noaa.gov/view/noaa/64095",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "NOAA IR independently corroborates exact APAR award for article, not dataset release date.",
+              "round": 1
+            },
+            {
+              "url": "https://api.figshare.com/v2/articles/23689194",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "Native Figshare API inaccessible; first publication and version details unresolved.",
+              "round": 1
+            },
+            {
+              "url": "https://doi.org/10.6084/m9.figshare.23689194",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "DOI resolver inaccessible; native version history unavailable.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "ELDORA ML QC dataset directly linked by funded AMS article; exact Figshare dataset publication date and version identity unverified. Captured award references: NA19OAR4590245.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        },
+        {
+          "identity": "doi:10.6084/m9.figshare.23689194.v1",
+          "missing_fields": [
+            "record-specific first publication date (YYYY-MM-DD)",
+            "native repository version/identity and public scope confirmation"
+          ],
+          "reviewer_question": "Select ONE canonical concept/v1 dataset record and decide on unknown first date, separate from staged article.",
+          "award_numbers": [
+            "NA19OAR4590245"
+          ],
+          "evidence_urls": [
+            "https://api.datacite.org/dois/10.6084/m9.figshare.23689194.v1",
+            "https://journals.ametsoc.org/view/journals/aies/3/1/AIES-D-23-0064.1.xml",
+            "https://repository.library.noaa.gov/view/noaa/64095",
+            "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+            "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+            "https://journals.ametsoc.org/view/journals/aies/aop/AIES-D-23-0064.1/AIES-D-23-0064.1.xml",
+            "https://api.figshare.com/v2/articles/23689194",
+            "https://doi.org/10.6084/m9.figshare.23689194"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://api.datacite.org/dois/10.6084/m9.figshare.23689194.v1",
+              "method": "historical_datacite_source",
+              "outcome": "Captured original DOI, exact source award references, title and creators; no independently verified full publication date.",
+              "round": 0
+            },
+            {
+              "url": "https://journals.ametsoc.org/view/journals/aies/3/1/AIES-D-23-0064.1.xml",
+              "method": "publisher_or_institutional",
+              "outcome": "Version 1 of ELDORA ML QC dataset; article confirms WPO award and dataset link, native Figshare first publication date unresolved.",
+              "round": 0
+            },
+            {
+              "url": "https://repository.library.noaa.gov/view/noaa/64095",
+              "method": "spark_award_project",
+              "outcome": "Version 1 of ELDORA ML QC dataset; article confirms WPO award and dataset link, native Figshare first publication date unresolved.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+              "method": "reach_full_index",
+              "outcome": "Version 1 of ELDORA ML QC dataset; article confirms WPO award and dataset link, native Figshare first publication date unresolved.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+              "method": "scout_existing_staging",
+              "outcome": "Version 1 of ELDORA ML QC dataset; article confirms WPO award and dataset link, native Figshare first publication date unresolved.",
+              "round": 0
+            },
+            {
+              "url": "https://journals.ametsoc.org/view/journals/aies/aop/AIES-D-23-0064.1/AIES-D-23-0064.1.xml",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "Publisher paper data availability explicitly links Figshare dataset and WPO award.",
+              "round": 1
+            },
+            {
+              "url": "https://repository.library.noaa.gov/view/noaa/64095",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "NOAA IR independently corroborates exact APAR award for article, not dataset release date.",
+              "round": 1
+            },
+            {
+              "url": "https://api.figshare.com/v2/articles/23689194",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "Native Figshare API inaccessible; first publication and version details unresolved.",
+              "round": 1
+            },
+            {
+              "url": "https://doi.org/10.6084/m9.figshare.23689194",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "DOI resolver inaccessible; native version history unavailable.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "Version 1 of ELDORA ML QC dataset; article confirms WPO award and dataset link, native Figshare first publication date unresolved. Captured award references: NA19OAR4590245.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        }
+      ]
+    },
+    {
+      "review_key": "scripps-alternate",
+      "source_identities": [
+        "doi:10.57969/s9pp42",
+        "doi:10.57969/s9tg60"
+      ],
+      "review_type": "POTENTIAL_VERSION_OR_ALTERNATE",
+      "priority": "HIGH",
+      "reviewer_question": "POSSIBLE ALTERNATE/TOMBSTONE, not a verified duplicate; determine true distinct dataset identity",
+      "canonical_identity": "UNDECIDED",
+      "all_original_decisions_preserved": true,
+      "source_records": [
+        {
+          "identity": "doi:10.57969/s9pp42",
+          "missing_fields": [
+            "Exact first-publication YYYY-MM-DD and separate first-five vs sensor identity"
+          ],
+          "reviewer_question": "Which single DOI, if any, should represent NHCI 2023 first-five; how to handle tombstone and missing date?",
+          "award_numbers": [
+            "NA21OAR4590374"
+          ],
+          "evidence_urls": [
+            "https://api.datacite.org/dois/10.57969/s9pp42",
+            "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+            "https://doi.org/10.57969/S9PP42",
+            "https://erddap.ldl.ucsd.edu/erddap/info/NOPP_Storm_First5/index.html"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://api.datacite.org/dois/10.57969/s9pp42",
+              "method": "historical_datacite_capture",
+              "outcome": "Exact award, output identity and author/title captured; no verified full publication date.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+              "method": "spark_primary_award_index",
+              "outcome": "Primary WPO SPARK award and matching project workstream verified.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+              "method": "complete_reach_index",
+              "outcome": "No exact DOI/title in all 1238 index records.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+              "method": "scout_manifest_and_14_batches",
+              "outcome": "No exact DOI/title in 53 existing staged candidates; private reviewer decisions unavailable.",
+              "round": 0
+            },
+            {
+              "url": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+              "method": "publisher_nopp_data_catalog",
+              "outcome": "Publisher confirms named year-specific dataset but citation year is not exact first-release date; one DOI/version ambiguity noted.",
+              "round": 0
+            },
+            {
+              "url": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "Publisher lists 2023 NHCI first-five under S9PP42 with citation year only.",
+              "round": 1
+            },
+            {
+              "url": "https://doi.org/10.57969/S9PP42",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "DOI redirects to EZID tombstone; active DOI validity unresolved.",
+              "round": 1
+            },
+            {
+              "url": "https://erddap.ldl.ucsd.edu/erddap/info/NOPP_Storm_First5/index.html",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "Related 2025 targeted-storm first-five DOI S9H01G is distinct; cannot resolve S9PP42/S9TG60 identity.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "Captured DataCite structured fundingReference identifies exact WPO primary SPARK award NA21OAR4590374; Scripps NOPP NHCI official catalog corroborates sensor/first-five family, but does not establish full publication day or all alternate DOI identities.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        },
+        {
+          "identity": "doi:10.57969/s9tg60",
+          "missing_fields": [
+            "Exact first-publication YYYY-MM-DD and whether this is an alternate/version of S9PP42 rather than distinct dataset"
+          ],
+          "reviewer_question": "Which single DOI, if any, should represent NHCI 2023 first-five; is S9TG60 alternate or superseded?",
+          "award_numbers": [
+            "NA21OAR4590374"
+          ],
+          "evidence_urls": [
+            "https://api.datacite.org/dois/10.57969/s9tg60",
+            "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+            "https://doi.org/10.57969/S9TG60",
+            "https://erddap.ldl.ucsd.edu/erddap/info/NOPP_Storm_First5/index.html"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://api.datacite.org/dois/10.57969/s9tg60",
+              "method": "historical_datacite_capture",
+              "outcome": "Exact award, output identity and author/title captured; no verified full publication date.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+              "method": "spark_primary_award_index",
+              "outcome": "Primary WPO SPARK award and matching project workstream verified.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+              "method": "complete_reach_index",
+              "outcome": "No exact DOI/title in all 1238 index records.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+              "method": "scout_manifest_and_14_batches",
+              "outcome": "No exact DOI/title in 53 existing staged candidates; private reviewer decisions unavailable.",
+              "round": 0
+            },
+            {
+              "url": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+              "method": "publisher_nopp_data_catalog",
+              "outcome": "Publisher confirms named year-specific dataset but citation year is not exact first-release date; one DOI/version ambiguity noted.",
+              "round": 0
+            },
+            {
+              "url": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "Publisher lists same 2023 first-five title under S9PP42, not S9TG60.",
+              "round": 1
+            },
+            {
+              "url": "https://doi.org/10.57969/S9TG60",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "DOI landing inaccessible; native identity/date not verified.",
+              "round": 1
+            },
+            {
+              "url": "https://erddap.ldl.ucsd.edu/erddap/info/NOPP_Storm_First5/index.html",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "Related 2025 targeted-storm first-five DOI S9H01G is distinct; cannot resolve S9PP42/S9TG60 identity.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "Captured DataCite structured fundingReference identifies exact WPO primary SPARK award NA21OAR4590374; Scripps NOPP NHCI official catalog corroborates sensor/first-five family, but does not establish full publication day or all alternate DOI identities.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        }
+      ]
+    },
+    {
+      "review_key": "case-18",
+      "source_identities": [
+        "url:https://www.iaem.org/Portals/IAEMconf/documents/2025/posters2025/Alex-Marmo-Poster.pdf"
+      ],
+      "review_type": "DATE_ONLY",
+      "priority": "HIGH",
+      "reviewer_question": "Can IAEM confirm first public online date of exact poster and whether abstract is separate eligible output?",
+      "canonical_identity": "url:https://www.iaem.org/Portals/IAEMconf/documents/2025/posters2025/Alex-Marmo-Poster.pdf",
+      "all_original_decisions_preserved": true,
+      "source_records": [
+        {
+          "identity": "url:https://www.iaem.org/Portals/IAEMconf/documents/2025/posters2025/Alex-Marmo-Poster.pdf",
+          "missing_fields": [
+            "Independently verified first public publication date YYYY-MM-DD for the exact poster PDF"
+          ],
+          "reviewer_question": "Can IAEM confirm first public online date of exact poster and whether abstract is separate eligible output?",
+          "award_numbers": [
+            "NA23OAR4590362"
+          ],
+          "evidence_urls": [
+            "https://www.iaem.org/Portals/IAEMconf/documents/2025/posters2025/Alex-Marmo-Poster.pdf",
+            "https://www.iaem.org/Portals/IAEMconf/documents/2025/Poster-Showcase-Guidance-2025.pdf",
+            "https://repository.library.noaa.gov/view/noaa/67024"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://repository.library.noaa.gov/view/noaa/67024",
+              "method": "noaa_ir_seed",
+              "outcome": "Original DOI is grant description, not the poster; confirms relevant WPO award.",
+              "round": 0
+            },
+            {
+              "url": "https://www.iaem.org/Portals/IAEMconf/documents/2025/posters2025/Alex-Marmo-Poster.pdf",
+              "method": "iaem_poster",
+              "outcome": "Distinct poster publicly hosted by IAEM, author Alex Marmo, with explicit NOAA WPO award NA23OAR4590362; no first-publication date on poster.",
+              "round": 0
+            },
+            {
+              "url": "https://www.iaem.org/Portals/IAEMconf/documents/2025/Poster-Showcase-Guidance-2025.pdf",
+              "method": "iaem_guidance",
+              "outcome": "IAEM 2025 showcase presentation date Nov 18, 2025; conference event date does not prove PDF first-publication date.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+              "method": "reach_index",
+              "outcome": "All 10 index shards (1238 outputs) checked; no exact poster title or PDF URL.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+              "method": "scout_batches",
+              "outcome": "All 14 existing Scout batches (53 review rows) checked; no exact poster title or PDF URL.",
+              "round": 0
+            },
+            {
+              "url": "https://www.iaem.org/Portals/IAEMconf/documents/2025/Poster-Showcase-Guidance-2025.pdf",
+              "method": "official_iaem_2025_poster_guidance",
+              "outcome": "PDF due 2025-09-30, presentation 2025-11-18; neither proves first public online date.",
+              "round": 1
+            },
+            {
+              "url": "https://www.iaem.org/Portals/IAEMconf/documents/2025/posters2025/Alex-Marmo-Abstract%20.pdf",
+              "method": "official_iaem_abstract_catalog",
+              "outcome": "Independent IAEM abstract found via search but direct retrieval 404; no first-publication date.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "Poster acknowledgments explicitly identify NOAA Weather Program Office award NA23OAR4590362; original seed grant notice independently corroborates award and project.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        }
+      ]
+    },
+    {
+      "review_key": "case-22",
+      "source_identities": [
+        "doi:10.57969/s9k013"
+      ],
+      "review_type": "DATE_ONLY",
+      "priority": "HIGH",
+      "reviewer_question": "Should the NOPP 2024 sensor dataset be separately added with missing first-publication date?",
+      "canonical_identity": "doi:10.57969/s9k013",
+      "all_original_decisions_preserved": true,
+      "source_records": [
+        {
+          "identity": "doi:10.57969/s9k013",
+          "missing_fields": [
+            "record-specific first-publication YYYY-MM-DD"
+          ],
+          "reviewer_question": "Should the NOPP 2024 sensor dataset be separately added with missing first-publication date?",
+          "award_numbers": [
+            "NA21OAR4590374"
+          ],
+          "evidence_urls": [
+            "https://api.datacite.org/dois/10.57969/s9k013",
+            "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+            "https://erddap.ldl.ucsd.edu/erddap/info/ONR_NOPP2024/index.html",
+            "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+            "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+            "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://api.datacite.org/dois/10.57969/s9k013",
+              "method": "historical_datacite_capture",
+              "outcome": "Exact award, output identity and author/title captured; no verified full publication date.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+              "method": "spark_primary_award_index",
+              "outcome": "Primary WPO SPARK award and matching project workstream verified.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+              "method": "complete_reach_index",
+              "outcome": "No exact DOI/title in all 1238 index records.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+              "method": "scout_manifest_and_14_batches",
+              "outcome": "No exact DOI/title in 53 existing staged candidates; private reviewer decisions unavailable.",
+              "round": 0
+            },
+            {
+              "url": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+              "method": "publisher_nopp_data_catalog",
+              "outcome": "Publisher confirms named year-specific dataset but citation year is not exact first-release date; one DOI/version ambiguity noted.",
+              "round": 0
+            },
+            {
+              "url": "https://erddap.ldl.ucsd.edu/erddap/info/ONR_NOPP2024/index.html",
+              "method": "native_scripps_erddap",
+              "outcome": "Native ERDDAP verifies original DOI, scientific data scope, observation period; no exact first-publication date.",
+              "round": 1
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+              "method": "spark_primary_award_detail",
+              "outcome": "SPARK spark-000336 primary award NA21OAR4590374 specifically funds drifting buoy pressure/wave observations.",
+              "round": 1
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+              "method": "complete_reach_index_recheck",
+              "outcome": "All 10 public REACH index shards (1238 records) checked; no exact DOI/title; full detail shards not checked.",
+              "round": 1
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+              "method": "all_scout_batch_recheck",
+              "outcome": "All 17 existing Scout CSV batch contents (59 candidates) checked; no exact DOI/title; private feedback inaccessible.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "Captured DataCite structured fundingReference identifies exact WPO primary SPARK award NA21OAR4590374; Scripps NOPP NHCI official catalog corroborates sensor/first-five family, but does not establish full publication day or all alternate DOI identities. Primary SPARK spark-000336 project detail independently corroborates exact WPO award NA21OAR4590374 and drifter observations.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        }
+      ]
+    },
+    {
+      "review_key": "case-24",
+      "source_identities": [
+        "doi:10.57969/s9z598"
+      ],
+      "review_type": "DATE_ONLY",
+      "priority": "HIGH",
+      "reviewer_question": "Should the NOPP 2023 sensor dataset be separately added with missing first-publication date?",
+      "canonical_identity": "doi:10.57969/s9z598",
+      "all_original_decisions_preserved": true,
+      "source_records": [
+        {
+          "identity": "doi:10.57969/s9z598",
+          "missing_fields": [
+            "record-specific first-publication YYYY-MM-DD"
+          ],
+          "reviewer_question": "Should the NOPP 2023 sensor dataset be separately added with missing first-publication date?",
+          "award_numbers": [
+            "NA21OAR4590374"
+          ],
+          "evidence_urls": [
+            "https://api.datacite.org/dois/10.57969/s9z598",
+            "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+            "https://erddap.ldl.ucsd.edu/erddap/info/ONR_NOPP2023/index.html",
+            "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+            "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+            "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://api.datacite.org/dois/10.57969/s9z598",
+              "method": "historical_datacite_capture",
+              "outcome": "Exact award, output identity and author/title captured; no verified full publication date.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+              "method": "spark_primary_award_index",
+              "outcome": "Primary WPO SPARK award and matching project workstream verified.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+              "method": "complete_reach_index",
+              "outcome": "No exact DOI/title in all 1238 index records.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+              "method": "scout_manifest_and_14_batches",
+              "outcome": "No exact DOI/title in 53 existing staged candidates; private reviewer decisions unavailable.",
+              "round": 0
+            },
+            {
+              "url": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+              "method": "publisher_nopp_data_catalog",
+              "outcome": "Publisher confirms named year-specific dataset but citation year is not exact first-release date; one DOI/version ambiguity noted.",
+              "round": 0
+            },
+            {
+              "url": "https://erddap.ldl.ucsd.edu/erddap/info/ONR_NOPP2023/index.html",
+              "method": "native_scripps_erddap",
+              "outcome": "Native ERDDAP verifies original DOI, scientific data scope, observation period; no exact first-publication date.",
+              "round": 1
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+              "method": "spark_primary_award_detail",
+              "outcome": "SPARK spark-000336 primary award NA21OAR4590374 specifically funds drifting buoy pressure/wave observations.",
+              "round": 1
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+              "method": "complete_reach_index_recheck",
+              "outcome": "All 10 public REACH index shards (1238 records) checked; no exact DOI/title; full detail shards not checked.",
+              "round": 1
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+              "method": "all_scout_batch_recheck",
+              "outcome": "All 17 existing Scout CSV batch contents (59 candidates) checked; no exact DOI/title; private feedback inaccessible.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "Captured DataCite structured fundingReference identifies exact WPO primary SPARK award NA21OAR4590374; Scripps NOPP NHCI official catalog corroborates sensor/first-five family, but does not establish full publication day or all alternate DOI identities. Primary SPARK spark-000336 project detail independently corroborates exact WPO award NA21OAR4590374 and drifter observations.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        }
+      ]
+    },
+    {
+      "review_key": "case-31",
+      "source_identities": [
+        "url:https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_reportFINAL_092718.pdf"
+      ],
+      "review_type": "DATE_ONLY",
+      "priority": "HIGH",
+      "reviewer_question": "Confirm first public availability of exact final report and its eligibility as Other output; no substitution of submission date.",
+      "canonical_identity": "url:https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_reportFINAL_092718.pdf",
+      "all_original_decisions_preserved": true,
+      "source_records": [
+        {
+          "identity": "url:https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_reportFINAL_092718.pdf",
+          "missing_fields": [
+            "First public publication date YYYY-MM-DD (report submission date 2018-09-30 is not proof of public release date)"
+          ],
+          "reviewer_question": "Confirm first public availability of exact final report and its eligibility as Other output; no substitution of submission date.",
+          "award_numbers": [
+            "NA15OAR4590205"
+          ],
+          "evidence_urls": [
+            "https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_reportFINAL_092718.pdf",
+            "https://wpo.noaa.gov/spark/"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_reportFINAL_092718.pdf",
+              "method": "official_nhc_final_report",
+              "outcome": "Exact report identity, WPO award, authors, and 2018-09-30 submission date verified; public release date not stated.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+              "method": "spark_primary_award",
+              "outcome": "2015 project NA15OAR4590205 confirmed as primary WPO-funded workstream.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+              "method": "complete_reach_index",
+              "outcome": "No exact report URL or title in 1238 public REACH index records across ten shards.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+              "method": "scout_immutable_batches",
+              "outcome": "No matching final report in 55 previously staged review candidates across 15 batches.",
+              "round": 0
+            },
+            {
+              "url": "https://www.nhc.noaa.gov/jht/past_projects.php",
+              "method": "official_nhc_jht_archive",
+              "outcome": "NHC past projects archive confirms 2015-17 and 2017-19 JHT project cohorts; no public release date for report.",
+              "round": 1
+            },
+            {
+              "url": "https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_reportFINAL_092718.pdf",
+              "method": "final_report_products_section",
+              "outcome": "Final report submitted 2018-09-30, references separate AMS poster and website; no date proving public release.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "Official NOAA/NHC Joint Hurricane Testbed final report cover explicitly identifies federal grant NA15OAR4590205 and project title matching SPARK.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        }
+      ]
+    },
+    {
+      "review_key": "case-07",
+      "source_identities": [
+        "doi:10.17603/ds2-bpav-8w29"
+      ],
+      "review_type": "METADATA_AND_ELIGIBILITY",
+      "priority": "MEDIUM",
+      "reviewer_question": "Should the separately DOI-identified infrasound dataset be reviewed for REACH with missing date after project-specific funding and identity verification?",
+      "canonical_identity": "doi:10.17603/ds2-bpav-8w29",
+      "all_original_decisions_preserved": true,
+      "source_records": [
+        {
+          "identity": "doi:10.17603/ds2-bpav-8w29",
+          "missing_fields": [
+            "record-specific full YYYY-MM-DD dataset publication date",
+            "native public file/version validation"
+          ],
+          "reviewer_question": "Should the separately DOI-identified infrasound dataset be reviewed for REACH with missing date after project-specific funding and identity verification?",
+          "award_numbers": [
+            "NA18OAR4590306"
+          ],
+          "evidence_urls": [
+            "https://doi.org/10.17603/ds2-bpav-8w29",
+            "https://ascelibrary.org/doi/10.1061/%28ASCE%29ST.1943-541X.0003275",
+            "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-024.csv",
+            "https://ufdcimages.uflib.ufl.edu/UF/E0/05/82/10/00001/Zhang_T.pdf",
+            "https://saemiller.com/publications/Zhang_ASCE_2022_Preprint.pdf"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
+              "method": "historical_datacite_source",
+              "outcome": "Captured DataCite source supplies DOI/title/creators/exact award but no full publication date.",
+              "round": 0
+            },
+            {
+              "url": "https://doi.org/10.17603/ds2-bpav-8w29",
+              "method": "designsafe_landing",
+              "outcome": "DOI landing not retrievable; no native full Date Published confirmed.",
+              "round": 0
+            },
+            {
+              "url": "https://ascelibrary.org/doi/10.1061/%28ASCE%29ST.1943-541X.0003275",
+              "method": "publisher_data_statement",
+              "outcome": "2022 article data availability directly links this distinct dataset and acknowledgments identify award; article date is not dataset date.",
+              "round": 0
+            },
+            {
+              "url": "https://fphlm.cs.fiu.edu/docs/cv/Gurley_CV_December_202025.pdf",
+              "method": "author_publication_list",
+              "outcome": "Author CV lists dataset as 2021 without exact month/day; cannot infer full publication date.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-024.csv",
+              "method": "spark_primary_award_detail",
+              "outcome": "SPARK spark-000300 primary award NA18OAR4590306 directly matches infrasound experiments.",
+              "round": 1
+            },
+            {
+              "url": "https://ufdcimages.uflib.ufl.edu/UF/E0/05/82/10/00001/Zhang_T.pdf",
+              "method": "uf_dissertation_reference",
+              "outcome": "Independent dissertation cites DesignSafe dataset as 2021, no full date.",
+              "round": 1
+            },
+            {
+              "url": "https://saemiller.com/publications/Zhang_ASCE_2022_Preprint.pdf",
+              "method": "author_preprint_data_statement",
+              "outcome": "Author manuscript links exact dataset to research; article date is not dataset date.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "Historical DataCite fundingReferences and linked ASCE publisher acknowledgment explicitly identify NOAA award NA18OAR4590306 for related infrasound experiments; exact dataset date remains unverified. Additional primary SPARK project-specific award connection verified: NA18OAR4590306.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        }
+      ]
+    },
+    {
+      "review_key": "case-08",
+      "source_identities": [
+        "doi:10.17603/ds2-58ft-kp27"
+      ],
+      "review_type": "METADATA_AND_ELIGIBILITY",
+      "priority": "MEDIUM",
+      "reviewer_question": "Is the HTI interview protocol a distinct REACH output or part of already cataloged PRJ-5889 parent reach-000816?",
+      "canonical_identity": "doi:10.17603/ds2-58ft-kp27",
+      "all_original_decisions_preserved": true,
+      "source_records": [
+        {
+          "identity": "doi:10.17603/ds2-58ft-kp27",
+          "missing_fields": [
+            "record-specific full publication date",
+            "native public protocol component scope",
+            "separate eligibility versus REACH parent reach-000816"
+          ],
+          "reviewer_question": "Is the HTI interview protocol a distinct REACH output or part of already cataloged PRJ-5889 parent reach-000816?",
+          "award_numbers": [
+            "NA21OAR4590206"
+          ],
+          "evidence_urls": [
+            "https://api.datacite.org/dois/10.17603/ds2-58ft-kp27",
+            "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+            "https://impacts.ucar.edu/en/persons/robert-prestley/",
+            "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-097.csv",
+            "https://doi.org/10.17603/ds2-58ft-kp27",
+            "https://impacts.ucar.edu/en/organisations/national-center-for-atmospheric-research-3/datasets/"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
+              "method": "initial_documented_1",
+              "outcome": "Prior source check documented in historical-triage checked_sources; original outcome preserved there. Timestamp conservatively reused from recorded first_investigated_at, not newly invented.",
+              "round": 0
+            },
+            {
+              "url": "https://impacts.ucar.edu/en/organisations/mesoscale-microscale-meteorology-lab-2/datasets/",
+              "method": "initial_documented_2",
+              "outcome": "Prior source check documented in historical-triage checked_sources; original outcome preserved there. Timestamp conservatively reused from recorded first_investigated_at, not newly invented.",
+              "round": 0
+            },
+            {
+              "url": "https://bmcnoldy.earth.miami.edu/papers/PMMMMCE2025_WCS.pdf",
+              "method": "initial_documented_3",
+              "outcome": "Prior source check documented in historical-triage checked_sources; original outcome preserved there. Timestamp conservatively reused from recorded first_investigated_at, not newly invented.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+              "method": "spark_primary_award_detail",
+              "outcome": "SPARK spark-000244 primary award directly supports risk-visualization interview work.",
+              "round": 1
+            },
+            {
+              "url": "https://impacts.ucar.edu/en/persons/robert-prestley/",
+              "method": "ncar_author_dataset_profile",
+              "outcome": "Author lists dataset year 2025 but not component release date.",
+              "round": 1
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-097.csv",
+              "method": "reach_parent_detail",
+              "outcome": "REACH reach-000816 covers DesignSafe parent PRJ-5889; duplicate/version uncertainty remains.",
+              "round": 1
+            },
+            {
+              "url": "https://doi.org/10.17603/ds2-58ft-kp27",
+              "method": "native_doi_resolver",
+              "outcome": "Native component DOI inaccessible, no authoritative full date or public component scope.",
+              "round": 1
+            },
+            {
+              "url": "https://impacts.ucar.edu/en/organisations/national-center-for-atmospheric-research-3/datasets/",
+              "method": "ncar_central_dataset_catalog",
+              "outcome": "NCAR catalog confirms parent but no separate component-level full date.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "Captured DataCite fundingReferences identify NA21OAR4590206; eligibility or metadata remains unverified. Additional primary SPARK project-specific award connection verified: NA21OAR4590206.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        }
+      ]
+    },
+    {
+      "review_key": "case-09",
+      "source_identities": [
+        "doi:10.17603/ds2-6vmm-2g61"
+      ],
+      "review_type": "METADATA_AND_ELIGIBILITY",
+      "priority": "MEDIUM",
+      "reviewer_question": "Is the guide a separately public catalogable output or part of REACH parent reach-000816, and what exact release date or permitted omission applies?",
+      "canonical_identity": "doi:10.17603/ds2-6vmm-2g61",
+      "all_original_decisions_preserved": true,
+      "source_records": [
+        {
+          "identity": "doi:10.17603/ds2-6vmm-2g61",
+          "missing_fields": [
+            "record-specific full YYYY-MM-DD publication date",
+            "native public guide/file scope",
+            "separate catalog eligibility versus REACH parent reach-000816"
+          ],
+          "reviewer_question": "Is the guide a separately public catalogable output or part of REACH parent reach-000816, and what exact release date or permitted omission applies?",
+          "award_numbers": [
+            "NA21OAR4590206"
+          ],
+          "evidence_urls": [
+            "https://api.datacite.org/dois/10.17603/ds2-6vmm-2g61",
+            "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+            "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-097.csv",
+            "https://impacts.ucar.edu/en/persons/robert-prestley/",
+            "https://doi.org/10.17603/ds2-6vmm-2g61"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
+              "method": "historical_source_check",
+              "outcome": "Previously documented first-pass check retained; no record-specific full release date or independent public component scope established.",
+              "round": 0
+            },
+            {
+              "url": "https://bmcnoldy.earth.miami.edu/papers/PMMMMCE2025_WCS.pdf",
+              "method": "initial_scholarly_or_doi",
+              "outcome": "Previously documented first-pass check retained; no record-specific full release date or independent public component scope established.",
+              "round": 0
+            },
+            {
+              "url": "https://impacts.ucar.edu/en/organisations/mesoscale-microscale-meteorology-lab-2/datasets/",
+              "method": "initial_reach_or_project",
+              "outcome": "Previously documented first-pass check retained; no record-specific full release date or independent public component scope established.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+              "method": "spark_primary_project_detail",
+              "outcome": "SPARK spark-000244 includes exact primary HTI award NA21OAR4590206.",
+              "round": 1
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-097.csv",
+              "method": "reach_parent_detail_comparison",
+              "outcome": "REACH reach-000816 already catalogs DesignSafe parent PRJ-5889, so component may be version/duplicate.",
+              "round": 1
+            },
+            {
+              "url": "https://impacts.ucar.edu/en/persons/robert-prestley/",
+              "method": "author_dataset_catalog_review",
+              "outcome": "UCAR author catalog shows 2025 parent HTI dataset but no separate full-date public de-identification guide.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "Captured exact NOAA award NA21OAR4590206; SPARK spark-000244 confirms primary project; 2025 Prestley/Morss scholarly citation names the guide.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        }
+      ]
+    },
+    {
+      "review_key": "case-10",
+      "source_identities": [
+        "doi:10.17603/ds2-967n-t829"
+      ],
+      "review_type": "METADATA_AND_ELIGIBILITY",
+      "priority": "MEDIUM",
+      "reviewer_question": "Is the public DesignSafe survey instrument independently eligible, and what verified date or permissible omission applies?",
+      "canonical_identity": "doi:10.17603/ds2-967n-t829",
+      "all_original_decisions_preserved": true,
+      "source_records": [
+        {
+          "identity": "doi:10.17603/ds2-967n-t829",
+          "missing_fields": [
+            "record-specific full YYYY-MM-DD publication date",
+            "native public survey instrument/file scope"
+          ],
+          "reviewer_question": "Is the public DesignSafe survey instrument independently eligible, and what verified date or permissible omission applies?",
+          "award_numbers": [
+            "NA19OAR0220121",
+            "NA19OAR0220192"
+          ],
+          "evidence_urls": [
+            "https://api.datacite.org/dois/10.17603/ds2-967n-t829",
+            "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-019.csv",
+            "https://vlab.noaa.gov/documents/17693964/36850290/hfip-annual-report-2021-2022-final.pdf",
+            "https://hazards.colorado.edu/api/v2/uploads/cv/vickery_cv_jan_2022-1641322855132.pdf",
+            "https://doi.org/10.17603/ds2-967n-t829"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
+              "method": "historical_source_check",
+              "outcome": "Previously documented first-pass check retained; no record-specific full release date or independent public component scope established.",
+              "round": 0
+            },
+            {
+              "url": "https://repository.library.noaa.gov/view/noaa/47957/noaa_47957_DS1.pdf",
+              "method": "initial_scholarly_or_doi",
+              "outcome": "Previously documented first-pass check retained; no record-specific full release date or independent public component scope established.",
+              "round": 0
+            },
+            {
+              "url": "https://www.weather.gov/media/nws/IHC2022/SocialScience_effectivewarnings_IHC.pdf",
+              "method": "initial_reach_or_project",
+              "outcome": "Previously documented first-pass check retained; no record-specific full release date or independent public component scope established.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-019.csv",
+              "method": "spark_primary_project_detail",
+              "outcome": "SPARK spark-000240 identifies both primary Minding the Gap awards.",
+              "round": 1
+            },
+            {
+              "url": "https://vlab.noaa.gov/documents/17693964/36850290/hfip-annual-report-2021-2022-final.pdf",
+              "method": "noaa_hfip_project_report",
+              "outcome": "NOAA HFIP annual report confirms project surveys of broadcast meteorologists and emergency managers; not DOI release date.",
+              "round": 1
+            },
+            {
+              "url": "https://hazards.colorado.edu/api/v2/uploads/cv/vickery_cv_jan_2022-1641322855132.pdf",
+              "method": "researcher_cv_methodology",
+              "outcome": "Vickery CV confirms online survey development for this specific NOAA project; no DOI release day.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "Captured DataCite exact awards NA19OAR0220121 and NA19OAR0220192; SPARK primary project, NOAA HFIP report and Vickery CV corroborate surveys.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        }
+      ]
+    },
+    {
+      "review_key": "case-11",
+      "source_identities": [
+        "doi:10.17603/ds2-jfsc-8902"
+      ],
+      "review_type": "METADATA_AND_ELIGIBILITY",
+      "priority": "MEDIUM",
+      "reviewer_question": "Does the Hurricane Irma tweet dataset merit a separate REACH record, and what is its true native version/date?",
+      "canonical_identity": "doi:10.17603/ds2-jfsc-8902",
+      "all_original_decisions_preserved": true,
+      "source_records": [
+        {
+          "identity": "doi:10.17603/ds2-jfsc-8902",
+          "missing_fields": [
+            "record-specific full YYYY-MM-DD dataset publication date",
+            "2023 vs 2025 version-specific citation discrepancy",
+            "public parent project scope"
+          ],
+          "reviewer_question": "Does the Hurricane Irma tweet dataset merit a separate REACH record, and what is its true native version/date?",
+          "award_numbers": [
+            "NA19OAR0220119"
+          ],
+          "evidence_urls": [
+            "https://api.datacite.org/dois/10.17603/ds2-jfsc-8902",
+            "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-019.csv",
+            "https://impacts.ucar.edu/en/persons/robert-prestley/",
+            "https://impacts.ucar.edu/en/organisations/national-center-for-atmospheric-research-3/datasets/",
+            "https://doi.org/10.17603/ds2-jfsc-8902"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
+              "method": "initial_documented_1",
+              "outcome": "Prior source check documented in historical-triage checked_sources; original outcome preserved there. Timestamp conservatively reused from recorded first_investigated_at, not newly invented.",
+              "round": 0
+            },
+            {
+              "url": "https://journals.ametsoc.org/view/journals/wcas/15/4/WCAS-D-23-0046.1.xml",
+              "method": "initial_documented_2",
+              "outcome": "Prior source check documented in historical-triage checked_sources; original outcome preserved there. Timestamp conservatively reused from recorded first_investigated_at, not newly invented.",
+              "round": 0
+            },
+            {
+              "url": "https://repository.library.noaa.gov/view/noaa/60113/noaa_60113_DS1.pdf",
+              "method": "initial_documented_3",
+              "outcome": "Prior source check documented in historical-triage checked_sources; original outcome preserved there. Timestamp conservatively reused from recorded first_investigated_at, not newly invented.",
+              "round": 0
+            },
+            {
+              "url": "https://impacts.ucar.edu/en/organisations/mesoscale-microscale-meteorology-lab-2/datasets/",
+              "method": "initial_documented_4",
+              "outcome": "Prior source check documented in historical-triage checked_sources; original outcome preserved there. Timestamp conservatively reused from recorded first_investigated_at, not newly invented.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-019.csv",
+              "method": "spark_primary_award_detail",
+              "outcome": "SPARK spark-000237 primary award studies hurricane risk information.",
+              "round": 1
+            },
+            {
+              "url": "https://impacts.ucar.edu/en/persons/robert-prestley/",
+              "method": "ncar_author_dataset_profile",
+              "outcome": "Author profile identifies 2025 DesignSafe dataset but not exact full date.",
+              "round": 1
+            },
+            {
+              "url": "https://impacts.ucar.edu/en/organisations/national-center-for-atmospheric-research-3/datasets/",
+              "method": "ncar_central_dataset_catalog",
+              "outcome": "NCAR central catalog says 2025; 2023 article citation references Hurricane Irma version 1; date/version unresolved.",
+              "round": 1
+            },
+            {
+              "url": "https://doi.org/10.17603/ds2-jfsc-8902",
+              "method": "native_doi_resolver",
+              "outcome": "Native DOI landing inaccessible; exact date not independently retrieved.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "Exact historical DataCite award NA19OAR0220119 plus linked WCAS article publisher acknowledgment. Additional primary SPARK project-specific award connection verified: NA19OAR0220119.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        }
+      ]
+    },
+    {
+      "review_key": "case-12",
+      "source_identities": [
+        "doi:10.17603/ds2-qm3n-6h83"
+      ],
+      "review_type": "METADATA_AND_ELIGIBILITY",
+      "priority": "MEDIUM",
+      "reviewer_question": "Can public interview methods/protocol be cataloged separately without exposing restricted participant data, and what verified date or permitted omission applies?",
+      "canonical_identity": "doi:10.17603/ds2-qm3n-6h83",
+      "all_original_decisions_preserved": true,
+      "source_records": [
+        {
+          "identity": "doi:10.17603/ds2-qm3n-6h83",
+          "missing_fields": [
+            "record-specific full YYYY-MM-DD publication date",
+            "verified public protocol/method files distinct from restricted participant interview data"
+          ],
+          "reviewer_question": "Can public interview methods/protocol be cataloged separately without exposing restricted participant data, and what verified date or permitted omission applies?",
+          "award_numbers": [
+            "NA19OAR0220121",
+            "NA19OAR0220192"
+          ],
+          "evidence_urls": [
+            "https://api.datacite.org/dois/10.17603/ds2-qm3n-6h83",
+            "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-019.csv",
+            "https://vlab.noaa.gov/documents/17693964/36850290/hfip-annual-report-2021-2022-final.pdf",
+            "https://hazards.colorado.edu/api/v2/uploads/cv/vickery_cv_jan_2022-1641322855132.pdf",
+            "https://doi.org/10.17603/ds2-qm3n-6h83"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
+              "method": "historical_source_check",
+              "outcome": "Previously documented first-pass check retained; no record-specific full release date or independent public component scope established.",
+              "round": 0
+            },
+            {
+              "url": "https://repository.library.noaa.gov/view/noaa/47957/noaa_47957_DS1.pdf",
+              "method": "initial_scholarly_or_doi",
+              "outcome": "Previously documented first-pass check retained; no record-specific full release date or independent public component scope established.",
+              "round": 0
+            },
+            {
+              "url": "https://www.weather.gov/media/nws/IHC2022/SocialScience_effectivewarnings_IHC.pdf",
+              "method": "initial_reach_or_project",
+              "outcome": "Previously documented first-pass check retained; no record-specific full release date or independent public component scope established.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-019.csv",
+              "method": "spark_primary_project_detail",
+              "outcome": "SPARK confirms both Minding the Gap WPO awards.",
+              "round": 1
+            },
+            {
+              "url": "https://vlab.noaa.gov/documents/17693964/36850290/hfip-annual-report-2021-2022-final.pdf",
+              "method": "noaa_hfip_project_report",
+              "outcome": "NOAA report confirms interview methods but not release of participant data.",
+              "round": 1
+            },
+            {
+              "url": "https://hazards.colorado.edu/api/v2/uploads/cv/vickery_cv_jan_2022-1641322855132.pdf",
+              "method": "researcher_cv_methodology",
+              "outcome": "Vickery CV documents interviewing partners and interview-guide analysis; no public protocol release date.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "Captured DataCite exact WPO awards; SPARK primary project and independent HFIP/CV corroborate interviews; original DOI explicitly says raw interview data are restricted.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        }
+      ]
+    },
+    {
+      "review_key": "case-13",
+      "source_identities": [
+        "doi:10.17605/osf.io/jr7pv"
+      ],
+      "review_type": "METADATA_AND_ELIGIBILITY",
+      "priority": "MEDIUM",
+      "reviewer_question": "Are OSF survey, IDSS exercise and after-action files public distinct outputs, and can release dates be verified or permissibly omitted?",
+      "canonical_identity": "doi:10.17605/osf.io/jr7pv",
+      "all_original_decisions_preserved": true,
+      "source_records": [
+        {
+          "identity": "doi:10.17605/osf.io/jr7pv",
+          "missing_fields": [
+            "native public OSF file identities and accessible component scope",
+            "record-specific full YYYY-MM-DD publication date",
+            "whether project DOI or individual components merit separate REACH records"
+          ],
+          "reviewer_question": "Are OSF survey, IDSS exercise and after-action files public distinct outputs, and can release dates be verified or permissibly omitted?",
+          "award_numbers": [
+            "NA21OAR4590210"
+          ],
+          "evidence_urls": [
+            "https://api.datacite.org/dois/10.17605/osf.io/jr7pv",
+            "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+            "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+            "https://api.osf.io/v2/nodes/jr7pv",
+            "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://api.datacite.org/dois/10.17605/osf.io/jr7pv",
+              "method": "documented_initial_source",
+              "outcome": "Initial investigation already documented in historical-triage at conservative first_investigated_at; original evidence retained.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+              "method": "spark_primary_project_detail",
+              "outcome": "SPARK spark-000248 verifies primary WPO award and IDSS survey/exercise research workstream.",
+              "round": 1
+            },
+            {
+              "url": "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+              "method": "wpo_award_list",
+              "outcome": "Official WPO award list independently confirms project and awards NA21OAR4590210/0211.",
+              "round": 1
+            },
+            {
+              "url": "https://api.osf.io/v2/nodes/jr7pv",
+              "method": "osf_alternate_api",
+              "outcome": "Alternate native OSF API inaccessible; file identities and public dates unverified.",
+              "round": 1
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
+              "method": "datacite_original_capture",
+              "outcome": "Captured source describes research survey, exercise method and after-action files, not grant-only notice.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "Captured DataCite structured award NA21OAR4590210 for this OSF project; no independent project file or author acknowledgement accessible in this round. Additional primary SPARK project detail and independent publisher/official WPO corroboration recorded; output-specific limits preserved.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        }
+      ]
+    },
+    {
+      "review_key": "case-14",
+      "source_identities": [
+        "doi:10.17605/osf.io/rbdfv"
+      ],
+      "review_type": "METADATA_AND_ELIGIBILITY",
+      "priority": "MEDIUM",
+      "reviewer_question": "Does the OSF BVOT project contain a distinct eligible public method artifact, or is it covered by REACH BVOT content?",
+      "canonical_identity": "doi:10.17605/osf.io/rbdfv",
+      "all_original_decisions_preserved": true,
+      "source_records": [
+        {
+          "identity": "doi:10.17605/osf.io/rbdfv",
+          "missing_fields": [
+            "native OSF public file identities and release date",
+            "distinctness from REACH BVOT StoryMap and journal outputs",
+            "separate project DOI eligibility"
+          ],
+          "reviewer_question": "Does the OSF BVOT project contain a distinct eligible public method artifact, or is it covered by REACH BVOT content?",
+          "award_numbers": [
+            "NA21OAR4590212"
+          ],
+          "evidence_urls": [
+            "https://api.datacite.org/dois/10.17605/osf.io/rbdfv",
+            "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+            "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+            "https://storymaps.arcgis.com/stories/fba773ea40274be0901380a83234ec3a",
+            "https://repository.library.noaa.gov/view/noaa/70235",
+            "https://api.osf.io/v2/nodes/rbdfv"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://api.datacite.org/dois/10.17605/osf.io/rbdfv",
+              "method": "documented_initial_source",
+              "outcome": "Initial investigation already documented in historical-triage at conservative first_investigated_at; original evidence retained.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+              "method": "spark_primary_project_detail",
+              "outcome": "SPARK spark-000249 verifies primary WPO BVOT methods award NA21OAR4590212.",
+              "round": 1
+            },
+            {
+              "url": "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+              "method": "wpo_award_list",
+              "outcome": "WPO original award list independently confirms exact funded BVOT project.",
+              "round": 1
+            },
+            {
+              "url": "https://storymaps.arcgis.com/stories/fba773ea40274be0901380a83234ec3a",
+              "method": "bvot_author_training",
+              "outcome": "Project-authored BVOT training StoryMap directly cites NA21OAR4590212, but not OSF DOI identity.",
+              "round": 1
+            },
+            {
+              "url": "https://repository.library.noaa.gov/view/noaa/70235",
+              "method": "noaa_ir_bvot_article",
+              "outcome": "BVOT methods article already REACH reach-000892; older listed funding and version overlap need human judgment.",
+              "round": 1
+            },
+            {
+              "url": "https://api.osf.io/v2/nodes/rbdfv",
+              "method": "osf_alternate_api",
+              "outcome": "OSF native API inaccessible; files and date not independently verifiable.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "Captured DataCite structured award NA21OAR4590212; related REACH BVOT journal work includes that award, but does not independently establish OSF project's publication date. Additional primary SPARK project detail and independent publisher/official WPO corroboration recorded; output-specific limits preserved.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        }
+      ]
+    },
+    {
+      "review_key": "case-15",
+      "source_identities": [
+        "doi:10.17603/ds2-ydmk-q397"
+      ],
+      "review_type": "METADATA_AND_ELIGIBILITY",
+      "priority": "MEDIUM",
+      "reviewer_question": "Should stimuli be cataloged separately from REACH parent, and what verified release date or permitted omission applies?",
+      "canonical_identity": "doi:10.17603/ds2-ydmk-q397",
+      "all_original_decisions_preserved": true,
+      "source_records": [
+        {
+          "identity": "doi:10.17603/ds2-ydmk-q397",
+          "missing_fields": [
+            "record-specific full YYYY-MM-DD publication date",
+            "public accessibility of the stimuli component",
+            "distinctness from existing REACH parent reach-000816"
+          ],
+          "reviewer_question": "Should stimuli be cataloged separately from REACH parent, and what verified release date or permitted omission applies?",
+          "award_numbers": [
+            "NA21OAR4590206"
+          ],
+          "evidence_urls": [
+            "https://doi.org/10.17603/ds2-ydmk-q397",
+            "https://bmcnoldy.earth.miami.edu/papers/PMMMMCE2025_WCS.pdf",
+            "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+            "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+            "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-097.csv",
+            "https://impacts.ucar.edu/en/persons/robert-prestley/"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://doi.org/10.17603/ds2-ydmk-q397",
+              "method": "authoritative_publisher_or_doi",
+              "outcome": "Reviewed; essential exact publication date or WPO project scope remains unresolved.",
+              "round": 0
+            },
+            {
+              "url": "https://bmcnoldy.earth.miami.edu/papers/PMMMMCE2025_WCS.pdf",
+              "method": "linked_scholarly_source",
+              "outcome": "Reviewed; essential exact publication date or WPO project scope remains unresolved.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+              "method": "spark_project_crosscheck",
+              "outcome": "Reviewed; essential exact publication date or WPO project scope remains unresolved.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
+              "method": "spark_primary_project_detail",
+              "outcome": "SPARK spark-000244 confirms exact HTI award.",
+              "round": 1
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-097.csv",
+              "method": "reach_parent_detail_comparison",
+              "outcome": "REACH reach-000816 already catalogs PRJ-5889 parent; potential component/version duplicate.",
+              "round": 1
+            },
+            {
+              "url": "https://impacts.ucar.edu/en/persons/robert-prestley/",
+              "method": "author_dataset_catalog_review",
+              "outcome": "UCAR catalog lists 2025 HTI parent but no separate stimuli date or file scope.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "Captured exact WPO award and 2025 Prestley/Morss article explicitly cites HTI interview stimuli version 2; SPARK confirms primary project.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        }
+      ]
+    },
+    {
+      "review_key": "case-16",
+      "source_identities": [
+        "doi:10.17603/ds2-yry6-r324"
+      ],
+      "review_type": "METADATA_AND_ELIGIBILITY",
+      "priority": "MEDIUM",
+      "reviewer_question": "Is Harvey documentation a separate public dataset from related DesignSafe deposit and already-in-REACH article?",
+      "canonical_identity": "doi:10.17603/ds2-yry6-r324",
+      "all_original_decisions_preserved": true,
+      "source_records": [
+        {
+          "identity": "doi:10.17603/ds2-yry6-r324",
+          "missing_fields": [
+            "record-specific full YYYY-MM-DD dataset release date",
+            "native public DesignSafe component/file scope",
+            "overlap with 10.17603/ds2-jfsc-8902"
+          ],
+          "reviewer_question": "Is Harvey documentation a separate public dataset from related DesignSafe deposit and already-in-REACH article?",
+          "award_numbers": [
+            "NA19OAR0220119"
+          ],
+          "evidence_urls": [
+            "https://doi.org/10.17603/ds2-yry6-r324",
+            "https://repository.library.noaa.gov/view/noaa/70233",
+            "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-019.csv",
+            "https://ascelibrary.org/doi/10.1061/NHREFO.NHENG-1802",
+            "https://impacts.ucar.edu/en/persons/robert-prestley/"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv",
+              "method": "historical_datacite_source",
+              "outcome": "Seed title, creators, exact award and abstract captured; no full publication date.",
+              "round": 0
+            },
+            {
+              "url": "https://doi.org/10.17603/ds2-yry6-r324",
+              "method": "designsafe_doi_resolver",
+              "outcome": "Native landing not accessible through available web tool; no record-specific full date verified.",
+              "round": 0
+            },
+            {
+              "url": "https://repository.library.noaa.gov/view/noaa/70233",
+              "method": "publisher_related_article",
+              "outcome": "2024 Morss et al. Harvey journal article linked; already in REACH reach-000789; date cannot substitute for dataset date.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+              "method": "spark_project_index",
+              "outcome": "SPARK primary award NA19OAR0220119 matches tropical cyclone forecast change project.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+              "method": "reach_and_scout_duplicate_index",
+              "outcome": "All ten REACH index shards and thirteen Scout batch files searched; no exact seed DOI.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-019.csv",
+              "method": "spark_primary_project_detail",
+              "outcome": "SPARK spark-000237 verifies primary NOAA WPO award NA19OAR0220119.",
+              "round": 1
+            },
+            {
+              "url": "https://ascelibrary.org/doi/10.1061/NHREFO.NHENG-1802",
+              "method": "publisher_data_availability",
+              "outcome": "2024 publisher article says DesignSafe coding schemes are available; article date cannot stand in for dataset date.",
+              "round": 1
+            },
+            {
+              "url": "https://impacts.ucar.edu/en/persons/robert-prestley/",
+              "method": "ncar_author_catalog",
+              "outcome": "Author catalog lists related tropical-cyclone tweet dataset 10.17603/ds2-jfsc-8902, possible family/overlap.",
+              "round": 1
+            },
+            {
+              "url": "https://repository.library.noaa.gov/view/noaa/70233",
+              "method": "noaa_ir_harvey_article",
+              "outcome": "Related Harvey article already REACH reach-000789; not a DOI-level duplicate of original dataset.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "Original historical DataCite structured award NA19OAR0220119 matches a primary SPARK social-science project Wait, that forecast changed? Related 2024 journal article independently linked, but the dataset native full date and public component remain unverified. Additional primary SPARK project detail and independent publisher/official WPO corroboration recorded; output-specific limits preserved.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        }
+      ]
+    },
+    {
+      "review_key": "case-17",
+      "source_identities": [
+        "doi:10.7910/dvn/jwzewf"
+      ],
+      "review_type": "METADATA_AND_ELIGIBILITY",
+      "priority": "MEDIUM",
+      "reviewer_question": "Verify exact Dataverse V1 public release date and file accessibility, then determine separate dataset eligibility without borrowing BAMS article date.",
+      "canonical_identity": "doi:10.7910/dvn/jwzewf",
+      "all_original_decisions_preserved": true,
+      "source_records": [
+        {
+          "identity": "doi:10.7910/dvn/jwzewf",
+          "missing_fields": [
+            "Harvard Dataverse record-specific full YYYY-MM-DD dataset publication date",
+            "native publisher verification of publicly accessible dataset files and scope"
+          ],
+          "reviewer_question": "Verify exact Dataverse V1 public release date and file accessibility, then determine separate dataset eligibility without borrowing BAMS article date.",
+          "award_numbers": [
+            "NA23OAR4590137"
+          ],
+          "evidence_urls": [
+            "https://doi.org/10.7910/DVN/JWZEWF",
+            "https://journals.ametsoc.org/view/journals/bams/107/3/BAMS-D-25-0309.1.xml",
+            "https://repository.library.noaa.gov/view/noaa/67019"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://journals.ametsoc.org/view/journals/bams/107/3/BAMS-D-25-0309.1.xml",
+              "method": "publisher_article_data_availability",
+              "outcome": "2026 BAMS article directly names Harvard Dataverse DOI 10.7910/DVN/JWZEWF and cites 2025; acknowledgments explicitly name NOAA NA23OAR4590137. Article itself already in REACH.",
+              "round": 0
+            },
+            {
+              "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/JWZEWF",
+              "method": "harvard_dataverse_landing",
+              "outcome": "Landing required JavaScript/anti-robot verification; no native full YYYY-MM-DD dataset date or file accessibility established.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+              "method": "complete_reach_index",
+              "outcome": "All ten index shards, 1238 records searched; no exact dataset DOI/title; related BAMS paper already REACH.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+              "method": "scout_batch_deduplication",
+              "outcome": "All thirteen existing Scout batch CSVs, 51 rows searched; no exact dataset DOI/title.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+              "method": "spark_award_index",
+              "outcome": "All six SPARK index shards; primary NA23OAR4590137 DRSA PRECIP1 project matches publisher article and dataset topic.",
+              "round": 0
+            },
+            {
+              "url": "https://repository.library.noaa.gov/view/noaa/67019",
+              "method": "independent_noaa_ir_project_record",
+              "outcome": "WPO DRSA PRECIP1 grant record confirms NA23OAR4590137 but not Dataverse publication date.",
+              "round": 1
+            },
+            {
+              "url": "https://dataverse.harvard.edu/api/datasets/:persistentId/?persistentId=doi:10.7910/DVN/JWZEWF",
+              "method": "native_dataverse_api_attempt",
+              "outcome": "Native API inaccessible; no exact first-publication date or file scope confirmed.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "BAMS article explicitly acknowledges NOAA NA23OAR4590137 and names this Dataverse dataset as its publicly available data; SPARK primary DRSA PRECIP1 award matches exact grant and research topic.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        }
+      ]
+    },
+    {
+      "review_key": "case-19",
+      "source_identities": [
+        "url:https://ams.confex.com/ams/51BC7WxComm/webprogram/Paper443444.html"
+      ],
+      "review_type": "METADATA_AND_ELIGIBILITY",
+      "priority": "MEDIUM",
+      "reviewer_question": "Determine conference abstract standalone eligibility and exact first-publication date, or permitted omission.",
+      "canonical_identity": "url:https://ams.confex.com/ams/51BC7WxComm/webprogram/Paper443444.html",
+      "all_original_decisions_preserved": true,
+      "source_records": [
+        {
+          "identity": "url:https://ams.confex.com/ams/51BC7WxComm/webprogram/Paper443444.html",
+          "missing_fields": [
+            "authoritatively documented first-publication date of AMS public abstract",
+            "whether conference abstract constitutes a separately eligible REACH other output"
+          ],
+          "reviewer_question": "Determine conference abstract standalone eligibility and exact first-publication date, or permitted omission.",
+          "award_numbers": [
+            "NA21OAR4590214"
+          ],
+          "evidence_urls": [
+            "https://ams.confex.com/ams/51BC7WxComm/webprogram/Paper443444.html",
+            "https://wpo.noaa.gov/2024-ams-broadcast-and-warnings-comm/"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://ams.confex.com/ams/51BC7WxComm/webprogram/WXCOMM.html",
+              "method": "ams_2024_conference_schedule",
+              "outcome": "Independent AMS schedule confirms June 13, 2024 presentation, not public abstract release date.",
+              "round": 1
+            },
+            {
+              "url": "https://ams.confex.com/ams/51BC7WxComm/webprogram/Paper443444.html",
+              "method": "ams_abstract_page_recheck",
+              "outcome": "Public abstract distinct from conference presentation; no first-posted date shown.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "Official NOAA WPO conference recap explicitly attributes the exact presentation to NA21OAR4590214; AMS provides matching title and author identity.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        }
+      ]
+    },
+    {
+      "review_key": "case-20",
+      "source_identities": [
+        "url:https://ams.confex.com/ams/51BC7WxComm/webprogram/Paper443443.html"
+      ],
+      "review_type": "METADATA_AND_ELIGIBILITY",
+      "priority": "MEDIUM",
+      "reviewer_question": "Resolve January vs June same-title AMS abstract duplicate/standalone identity and first public date.",
+      "canonical_identity": "url:https://ams.confex.com/ams/51BC7WxComm/webprogram/Paper443443.html",
+      "all_original_decisions_preserved": true,
+      "source_records": [
+        {
+          "identity": "url:https://ams.confex.com/ams/51BC7WxComm/webprogram/Paper443443.html",
+          "missing_fields": [
+            "authoritatively documented first-publication date of AMS public abstract",
+            "eligibility of public conference abstract as standalone REACH other output"
+          ],
+          "reviewer_question": "Resolve January vs June same-title AMS abstract duplicate/standalone identity and first public date.",
+          "award_numbers": [
+            "NA23OAR4590363"
+          ],
+          "evidence_urls": [
+            "https://ams.confex.com/ams/51BC7WxComm/webprogram/Paper443443.html",
+            "https://wpo.noaa.gov/2024-ams-broadcast-and-warnings-comm/"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://ams.confex.com/ams/104ANNUAL/webprogram/Paper439036.html",
+              "method": "earlier_ams_2024_same_title",
+              "outcome": "Jan 29, 2024 AMS abstract has same title, overlapping authors and similar text; potential duplicate presentation family.",
+              "round": 1
+            },
+            {
+              "url": "https://ams.confex.com/ams/51BC7WxComm/webprogram/BROADCAST.html",
+              "method": "june_ams_program_crosscheck",
+              "outcome": "Confirms June 12, 2024 slot; not first online publication date.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "Official NOAA WPO conference recap explicitly attributes the exact presentation to NA23OAR4590363; AMS abstract describes NOAA-funded project with matching investigators.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        }
+      ]
+    },
+    {
+      "review_key": "case-21",
+      "source_identities": [
+        "doi:10.57969/s93w23"
+      ],
+      "review_type": "METADATA_AND_ELIGIBILITY",
+      "priority": "MEDIUM",
+      "reviewer_question": "Can Scripps verify first public release date for 2022 sensor dataset or permit explicit human waiver?",
+      "canonical_identity": "doi:10.57969/s93w23",
+      "all_original_decisions_preserved": true,
+      "source_records": [
+        {
+          "identity": "doi:10.57969/s93w23",
+          "missing_fields": [
+            "record-specific first publication YYYY-MM-DD",
+            "whether downstream publishing permits date omission"
+          ],
+          "reviewer_question": "Can Scripps verify first public release date for 2022 sensor dataset or permit explicit human waiver?",
+          "award_numbers": [
+            "NA21OAR4590374"
+          ],
+          "evidence_urls": [
+            "https://api.datacite.org/dois/10.57969/s93w23",
+            "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+            "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+            "https://erddap.ldl.ucsd.edu/erddap/info/ONR_NOPP2022/index.html"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://api.datacite.org/dois/10.57969/s93w23",
+              "method": "historical_datacite_capture",
+              "outcome": "Exact award, output identity and author/title captured; no verified full publication date.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+              "method": "spark_primary_award_index",
+              "outcome": "Primary WPO SPARK award and matching project workstream verified.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+              "method": "complete_reach_index",
+              "outcome": "No exact DOI/title in all 1238 index records.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+              "method": "scout_manifest_and_14_batches",
+              "outcome": "No exact DOI/title in 53 existing staged candidates; private reviewer decisions unavailable.",
+              "round": 0
+            },
+            {
+              "url": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+              "method": "publisher_nopp_data_catalog",
+              "outcome": "Publisher confirms named year-specific dataset but citation year is not exact first-release date; one DOI/version ambiguity noted.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+              "method": "spark_primary_project_detail",
+              "outcome": "SPARK spark-000336 verifies primary WPO award NA21OAR4590374.",
+              "round": 1
+            },
+            {
+              "url": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+              "method": "scripps_official_catalog",
+              "outcome": "Scripps lists 2022 sensor S93W23 distinct from 2022 first-five S9059K and 2024 first-five S9F59M.",
+              "round": 1
+            },
+            {
+              "url": "https://erddap.ldl.ucsd.edu/erddap/info/ONR_NOPP2022/index.html",
+              "method": "native_erddap_doi_metadata",
+              "outcome": "ERDDAP verifies exact DOI, public data/variables, observation period and license; no release date.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "Captured DataCite structured fundingReference identifies exact WPO primary SPARK award NA21OAR4590374; Scripps NOPP NHCI official catalog corroborates sensor/first-five family, but does not establish full publication day or all alternate DOI identities. Additional primary SPARK project detail and independent publisher/official WPO corroboration recorded; output-specific limits preserved.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        }
+      ]
+    },
+    {
+      "review_key": "case-23",
+      "source_identities": [
+        "doi:10.57969/s9f59m"
+      ],
+      "review_type": "METADATA_AND_ELIGIBILITY",
+      "priority": "MEDIUM",
+      "reviewer_question": "Can Scripps verify first public release date for 2024 first-five dataset or permit explicit human waiver?",
+      "canonical_identity": "doi:10.57969/s9f59m",
+      "all_original_decisions_preserved": true,
+      "source_records": [
+        {
+          "identity": "doi:10.57969/s9f59m",
+          "missing_fields": [
+            "record-specific first publication YYYY-MM-DD",
+            "whether downstream publishing permits date omission"
+          ],
+          "reviewer_question": "Can Scripps verify first public release date for 2024 first-five dataset or permit explicit human waiver?",
+          "award_numbers": [
+            "NA21OAR4590374"
+          ],
+          "evidence_urls": [
+            "https://api.datacite.org/dois/10.57969/s9f59m",
+            "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+            "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+            "https://erddap.ldl.ucsd.edu/erddap/info/ONR_NOPP2024_First5/index.html"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://api.datacite.org/dois/10.57969/s9f59m",
+              "method": "historical_datacite_capture",
+              "outcome": "Exact award, output identity and author/title captured; no verified full publication date.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+              "method": "spark_primary_award_index",
+              "outcome": "Primary WPO SPARK award and matching project workstream verified.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+              "method": "complete_reach_index",
+              "outcome": "No exact DOI/title in all 1238 index records.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+              "method": "scout_manifest_and_14_batches",
+              "outcome": "No exact DOI/title in 53 existing staged candidates; private reviewer decisions unavailable.",
+              "round": 0
+            },
+            {
+              "url": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+              "method": "publisher_nopp_data_catalog",
+              "outcome": "Publisher confirms named year-specific dataset but citation year is not exact first-release date; one DOI/version ambiguity noted.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+              "method": "spark_primary_project_detail",
+              "outcome": "SPARK spark-000336 verifies primary WPO award NA21OAR4590374.",
+              "round": 1
+            },
+            {
+              "url": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+              "method": "scripps_official_catalog",
+              "outcome": "Scripps lists 2024 first-five S9F59M separate from 2024 sensor S9K013.",
+              "round": 1
+            },
+            {
+              "url": "https://erddap.ldl.ucsd.edu/erddap/info/ONR_NOPP2024_First5/index.html",
+              "method": "native_erddap_doi_metadata",
+              "outcome": "ERDDAP verifies exact DOI, public a0/a1/b1/a2/b2 data and observation period; no publication day.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "Captured DataCite structured fundingReference identifies exact WPO primary SPARK award NA21OAR4590374; Scripps NOPP NHCI official catalog corroborates sensor/first-five family, but does not establish full publication day or all alternate DOI identities. Additional primary SPARK project detail and independent publisher/official WPO corroboration recorded; output-specific limits preserved.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        }
+      ]
+    },
+    {
+      "review_key": "case-25",
+      "source_identities": [
+        "doi:10.57969/s9g015"
+      ],
+      "review_type": "METADATA_AND_ELIGIBILITY",
+      "priority": "MEDIUM",
+      "reviewer_question": "Confirm Pacific first-five public date, scope, and separate WPO-funded eligibility.",
+      "canonical_identity": "doi:10.57969/s9g015",
+      "all_original_decisions_preserved": true,
+      "source_records": [
+        {
+          "identity": "doi:10.57969/s9g015",
+          "missing_fields": [
+            "record-specific first publication date (YYYY-MM-DD)",
+            "native repository version/identity and public scope confirmation"
+          ],
+          "reviewer_question": "Confirm Pacific first-five public date, scope, and separate WPO-funded eligibility.",
+          "award_numbers": [
+            "NA20OAR4320278",
+            "NA21OAR4590374"
+          ],
+          "evidence_urls": [
+            "https://api.datacite.org/dois/10.57969/s9g015",
+            "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+            "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+            "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+            "https://ldl.ucsd.edu/ldl/data/",
+            "https://ldl.ucsd.edu/ldl/gdp-drifter-data/",
+            "https://doi.org/10.57969/S9G015"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://api.datacite.org/dois/10.57969/s9g015",
+              "method": "historical_datacite_source",
+              "outcome": "Captured original DOI, exact source award references, title and creators; no independently verified full publication date.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+              "method": "publisher_or_institutional",
+              "outcome": "Pacific DWSD first-five wave data; direct WPO drifter award captured, but exact dataset publication date and public scope not independently verified.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+              "method": "spark_award_project",
+              "outcome": "Pacific DWSD first-five wave data; direct WPO drifter award captured, but exact dataset publication date and public scope not independently verified.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+              "method": "reach_full_index",
+              "outcome": "Pacific DWSD first-five wave data; direct WPO drifter award captured, but exact dataset publication date and public scope not independently verified.",
+              "round": 0
+            },
+            {
+              "url": "https://ldl.ucsd.edu/ldl/data/",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "Official LDL policy: release can follow data collection; no record-specific date.",
+              "round": 1
+            },
+            {
+              "url": "https://ldl.ucsd.edu/ldl/gdp-drifter-data/",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "Official GDP catalog distinguishes separate NOAA funding, not proof of exclusive WPO output.",
+              "round": 1
+            },
+            {
+              "url": "https://doi.org/10.57969/S9G015",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "Native DOI metadata inaccessible; full date/public scope not confirmed.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "Pacific DWSD first-five wave data; direct WPO drifter award captured, but exact dataset publication date and public scope not independently verified. Captured award references: NA20OAR4320278, NA21OAR4590374.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        }
+      ]
+    },
+    {
+      "review_key": "case-26",
+      "source_identities": [
+        "doi:10.57969/s9ks3s"
+      ],
+      "review_type": "METADATA_AND_ELIGIBILITY",
+      "priority": "MEDIUM",
+      "reviewer_question": "Confirm Pacific sensor public date, scope, and separate WPO-funded eligibility.",
+      "canonical_identity": "doi:10.57969/s9ks3s",
+      "all_original_decisions_preserved": true,
+      "source_records": [
+        {
+          "identity": "doi:10.57969/s9ks3s",
+          "missing_fields": [
+            "record-specific first publication date (YYYY-MM-DD)",
+            "native repository version/identity and public scope confirmation"
+          ],
+          "reviewer_question": "Confirm Pacific sensor public date, scope, and separate WPO-funded eligibility.",
+          "award_numbers": [
+            "NA20OAR4320278",
+            "NA21OAR4590374"
+          ],
+          "evidence_urls": [
+            "https://api.datacite.org/dois/10.57969/s9ks3s",
+            "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+            "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+            "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+            "https://ldl.ucsd.edu/ldl/data/",
+            "https://ldl.ucsd.edu/ldl/gdp-drifter-data/",
+            "https://doi.org/10.57969/S9KS3S"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://api.datacite.org/dois/10.57969/s9ks3s",
+              "method": "historical_datacite_source",
+              "outcome": "Captured original DOI, exact source award references, title and creators; no independently verified full publication date.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+              "method": "publisher_or_institutional",
+              "outcome": "Pacific DWSD sensor data; direct WPO drifter award captured, but first publication date and distinctness from first-five coefficients unresolved.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+              "method": "spark_award_project",
+              "outcome": "Pacific DWSD sensor data; direct WPO drifter award captured, but first publication date and distinctness from first-five coefficients unresolved.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+              "method": "reach_full_index",
+              "outcome": "Pacific DWSD sensor data; direct WPO drifter award captured, but first publication date and distinctness from first-five coefficients unresolved.",
+              "round": 0
+            },
+            {
+              "url": "https://ldl.ucsd.edu/ldl/data/",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "Official LDL policy: release can follow data collection; no record-specific date.",
+              "round": 1
+            },
+            {
+              "url": "https://ldl.ucsd.edu/ldl/gdp-drifter-data/",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "Official GDP catalog distinguishes separate NOAA funding, not proof of exclusive WPO output.",
+              "round": 1
+            },
+            {
+              "url": "https://doi.org/10.57969/S9KS3S",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "Native DOI metadata inaccessible; full date/public scope not confirmed.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "Pacific DWSD sensor data; direct WPO drifter award captured, but first publication date and distinctness from first-five coefficients unresolved. Captured award references: NA20OAR4320278, NA21OAR4590374.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        }
+      ]
+    },
+    {
+      "review_key": "case-27",
+      "source_identities": [
+        "doi:10.57969/s9qp4c"
+      ],
+      "review_type": "METADATA_AND_ELIGIBILITY",
+      "priority": "MEDIUM",
+      "reviewer_question": "Should the Atlantic 2024 GTS dataset be added under the native S9QP4C DOI, despite catalog S9QP4CD mismatch and unknown publication day?",
+      "canonical_identity": "doi:10.57969/s9qp4c",
+      "all_original_decisions_preserved": true,
+      "source_records": [
+        {
+          "identity": "doi:10.57969/s9qp4c",
+          "missing_fields": [
+            "record-specific first-publication YYYY-MM-DD",
+            "publisher catalog DOI S9QP4CD vs native ERDDAP S9QP4C discrepancy"
+          ],
+          "reviewer_question": "Should the Atlantic 2024 GTS dataset be added under the native S9QP4C DOI, despite catalog S9QP4CD mismatch and unknown publication day?",
+          "award_numbers": [
+            "NA20OAR4320278",
+            "NA21OAR4590374"
+          ],
+          "evidence_urls": [
+            "https://api.datacite.org/dois/10.57969/s9qp4c",
+            "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+            "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+            "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+            "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+            "https://erddap.ldl.ucsd.edu/erddap/info/LDL_AtlanticHurricane2024/index.html",
+            "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://api.datacite.org/dois/10.57969/s9qp4c",
+              "method": "historical_datacite_source",
+              "outcome": "Captured original DOI, exact source award references, title and creators; no independently verified full publication date.",
+              "round": 0
+            },
+            {
+              "url": "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+              "method": "publisher_or_institutional",
+              "outcome": "Atlantic 2024 GTS drifter dataset; LDL cites WPO award but its webpage shows DOI S9QP4CD while captured DOI is S9QP4C; confirm identity and publication date.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+              "method": "spark_award_project",
+              "outcome": "Atlantic 2024 GTS drifter dataset; LDL cites WPO award but its webpage shows DOI S9QP4CD while captured DOI is S9QP4C; confirm identity and publication date.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+              "method": "reach_full_index",
+              "outcome": "Atlantic 2024 GTS drifter dataset; LDL cites WPO award but its webpage shows DOI S9QP4CD while captured DOI is S9QP4C; confirm identity and publication date.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+              "method": "scout_existing_staging",
+              "outcome": "Atlantic 2024 GTS drifter dataset; LDL cites WPO award but its webpage shows DOI S9QP4CD while captured DOI is S9QP4C; confirm identity and publication date.",
+              "round": 0
+            },
+            {
+              "url": "https://erddap.ldl.ucsd.edu/erddap/info/LDL_AtlanticHurricane2024/index.html",
+              "method": "native_scripps_erddap",
+              "outcome": "Native ERDDAP verifies original DOI, scientific data scope, observation period; no exact first-publication date.",
+              "round": 1
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+              "method": "spark_primary_award_detail",
+              "outcome": "SPARK spark-000336 primary award NA21OAR4590374 specifically funds drifting buoy pressure/wave observations.",
+              "round": 1
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+              "method": "complete_reach_index_recheck",
+              "outcome": "All 10 public REACH index shards (1238 records) checked; no exact DOI/title; full detail shards not checked.",
+              "round": 1
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+              "method": "all_scout_batch_recheck",
+              "outcome": "All 17 existing Scout CSV batch contents (59 candidates) checked; no exact DOI/title; private feedback inaccessible.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "Atlantic 2024 GTS drifter dataset; LDL cites WPO award but its webpage shows DOI S9QP4CD while captured DOI is S9QP4C; confirm identity and publication date. Captured award references: NA20OAR4320278, NA21OAR4590374. Primary SPARK spark-000336 project detail independently corroborates exact WPO award NA21OAR4590374 and drifter observations.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        }
+      ]
+    },
+    {
+      "review_key": "case-28",
+      "source_identities": [
+        "doi:10.57969/s9rp4p"
+      ],
+      "review_type": "METADATA_AND_ELIGIBILITY",
+      "priority": "MEDIUM",
+      "reviewer_question": "Should this distinct 2022 GTS Atlantic dataset be considered with unknown first publication date and mixed NOAA funding?",
+      "canonical_identity": "doi:10.57969/s9rp4p",
+      "all_original_decisions_preserved": true,
+      "source_records": [
+        {
+          "identity": "doi:10.57969/s9rp4p",
+          "missing_fields": [
+            "record-specific first publication date (YYYY-MM-DD)",
+            "native repository version/identity and public scope confirmation"
+          ],
+          "reviewer_question": "Should this distinct 2022 GTS Atlantic dataset be considered with unknown first publication date and mixed NOAA funding?",
+          "award_numbers": [
+            "NA20OAR4320278",
+            "NA21OAR4590374"
+          ],
+          "evidence_urls": [
+            "https://api.datacite.org/dois/10.57969/s9rp4p",
+            "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+            "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+            "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+            "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+            "https://erddap.ldl.ucsd.edu/erddap/info/LDL_AtlanticHurricane2022/index.html",
+            "https://ldl.ucsd.edu/ldl/data/"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://api.datacite.org/dois/10.57969/s9rp4p",
+              "method": "historical_datacite_source",
+              "outcome": "Captured original DOI, exact source award references, title and creators; no independently verified full publication date.",
+              "round": 0
+            },
+            {
+              "url": "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+              "method": "publisher_or_institutional",
+              "outcome": "Atlantic 2022 GTS drifter dataset; LDL identifies WPO award and 2023 citation year, not exact first-publication date.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+              "method": "spark_award_project",
+              "outcome": "Atlantic 2022 GTS drifter dataset; LDL identifies WPO award and 2023 citation year, not exact first-publication date.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+              "method": "reach_full_index",
+              "outcome": "Atlantic 2022 GTS drifter dataset; LDL identifies WPO award and 2023 citation year, not exact first-publication date.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+              "method": "scout_existing_staging",
+              "outcome": "Atlantic 2022 GTS drifter dataset; LDL identifies WPO award and 2023 citation year, not exact first-publication date.",
+              "round": 0
+            },
+            {
+              "url": "https://erddap.ldl.ucsd.edu/erddap/info/LDL_AtlanticHurricane2022/index.html",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "Native ERDDAP confirms exact DOI and 2022 data period; no first-publication day.",
+              "round": 1
+            },
+            {
+              "url": "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "Official catalog lists exact DOI, WPO grant among mixed NOAA funding, citation year only.",
+              "round": 1
+            },
+            {
+              "url": "https://ldl.ucsd.edu/ldl/data/",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "LDL documents distinction between observation/transmission and public release dates.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "Atlantic 2022 GTS drifter dataset; LDL identifies WPO award and 2023 citation year, not exact first-publication date. Captured award references: NA20OAR4320278, NA21OAR4590374.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        }
+      ]
+    },
+    {
+      "review_key": "case-29",
+      "source_identities": [
+        "doi:10.57969/s9vc7n"
+      ],
+      "review_type": "METADATA_AND_ELIGIBILITY",
+      "priority": "MEDIUM",
+      "reviewer_question": "Should this distinct 2023 GTS Atlantic dataset be considered with unknown first publication date and mixed NOAA funding?",
+      "canonical_identity": "doi:10.57969/s9vc7n",
+      "all_original_decisions_preserved": true,
+      "source_records": [
+        {
+          "identity": "doi:10.57969/s9vc7n",
+          "missing_fields": [
+            "record-specific first publication date (YYYY-MM-DD)",
+            "native repository version/identity and public scope confirmation"
+          ],
+          "reviewer_question": "Should this distinct 2023 GTS Atlantic dataset be considered with unknown first publication date and mixed NOAA funding?",
+          "award_numbers": [
+            "NA20OAR4320278",
+            "NA21OAR4590374"
+          ],
+          "evidence_urls": [
+            "https://api.datacite.org/dois/10.57969/s9vc7n",
+            "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+            "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+            "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+            "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+            "https://erddap.ldl.ucsd.edu/erddap/info/LDL_AtlanticHurricane2023/index.html",
+            "https://ldl.ucsd.edu/ldl/data/"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://api.datacite.org/dois/10.57969/s9vc7n",
+              "method": "historical_datacite_source",
+              "outcome": "Captured original DOI, exact source award references, title and creators; no independently verified full publication date.",
+              "round": 0
+            },
+            {
+              "url": "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+              "method": "publisher_or_institutional",
+              "outcome": "Atlantic 2023 GTS drifter dataset; LDL identifies WPO award and citation year only; exact date unresolved.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+              "method": "spark_award_project",
+              "outcome": "Atlantic 2023 GTS drifter dataset; LDL identifies WPO award and citation year only; exact date unresolved.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+              "method": "reach_full_index",
+              "outcome": "Atlantic 2023 GTS drifter dataset; LDL identifies WPO award and citation year only; exact date unresolved.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+              "method": "scout_existing_staging",
+              "outcome": "Atlantic 2023 GTS drifter dataset; LDL identifies WPO award and citation year only; exact date unresolved.",
+              "round": 0
+            },
+            {
+              "url": "https://erddap.ldl.ucsd.edu/erddap/info/LDL_AtlanticHurricane2023/index.html",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "Native ERDDAP confirms exact DOI and 2023 data period; no first-publication day.",
+              "round": 1
+            },
+            {
+              "url": "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "Official catalog lists exact DOI, WPO grant among mixed NOAA funding, citation year only.",
+              "round": 1
+            },
+            {
+              "url": "https://ldl.ucsd.edu/ldl/data/",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "LDL documents distinction between observation/transmission and public release dates.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "Atlantic 2023 GTS drifter dataset; LDL identifies WPO award and citation year only; exact date unresolved. Captured award references: NA20OAR4320278, NA21OAR4590374.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        }
+      ]
+    },
+    {
+      "review_key": "case-30",
+      "source_identities": [
+        "doi:10.57969/s9wc7z"
+      ],
+      "review_type": "METADATA_AND_ELIGIBILITY",
+      "priority": "MEDIUM",
+      "reviewer_question": "Should this distinct 2021 GTS Atlantic dataset be considered with unknown first publication date and mixed NOAA funding?",
+      "canonical_identity": "doi:10.57969/s9wc7z",
+      "all_original_decisions_preserved": true,
+      "source_records": [
+        {
+          "identity": "doi:10.57969/s9wc7z",
+          "missing_fields": [
+            "record-specific first publication date (YYYY-MM-DD)",
+            "native repository version/identity and public scope confirmation"
+          ],
+          "reviewer_question": "Should this distinct 2021 GTS Atlantic dataset be considered with unknown first publication date and mixed NOAA funding?",
+          "award_numbers": [
+            "NA20OAR4320278",
+            "NA21OAR4590374"
+          ],
+          "evidence_urls": [
+            "https://api.datacite.org/dois/10.57969/s9wc7z",
+            "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+            "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+            "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+            "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+            "https://erddap.ldl.ucsd.edu/erddap/info/LDL_AtlanticHurricane2021/index.html",
+            "https://ldl.ucsd.edu/ldl/data/"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://api.datacite.org/dois/10.57969/s9wc7z",
+              "method": "historical_datacite_source",
+              "outcome": "Captured original DOI, exact source award references, title and creators; no independently verified full publication date.",
+              "round": 0
+            },
+            {
+              "url": "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+              "method": "publisher_or_institutional",
+              "outcome": "Atlantic 2021 GTS drifter dataset; LDL identifies WPO award and 2023 citation year, not exact date.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+              "method": "spark_award_project",
+              "outcome": "Atlantic 2021 GTS drifter dataset; LDL identifies WPO award and 2023 citation year, not exact date.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+              "method": "reach_full_index",
+              "outcome": "Atlantic 2021 GTS drifter dataset; LDL identifies WPO award and 2023 citation year, not exact date.",
+              "round": 0
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+              "method": "scout_existing_staging",
+              "outcome": "Atlantic 2021 GTS drifter dataset; LDL identifies WPO award and 2023 citation year, not exact date.",
+              "round": 0
+            },
+            {
+              "url": "https://erddap.ldl.ucsd.edu/erddap/info/LDL_AtlanticHurricane2021/index.html",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "Native ERDDAP confirms exact DOI and 2021 data period; no first-publication day.",
+              "round": 1
+            },
+            {
+              "url": "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "Official catalog lists exact DOI, WPO grant among mixed NOAA funding, citation year only.",
+              "round": 1
+            },
+            {
+              "url": "https://ldl.ucsd.edu/ldl/data/",
+              "method": "bounded_distinct_source_recovery",
+              "outcome": "LDL documents distinction between observation/transmission and public release dates.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "Atlantic 2021 GTS drifter dataset; LDL identifies WPO award and 2023 citation year, not exact date. Captured award references: NA20OAR4320278, NA21OAR4590374.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff"
+        }
+      ]
+    }
+  ]
+}
