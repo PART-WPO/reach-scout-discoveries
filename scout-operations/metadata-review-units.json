@@ -1,10 +1,10 @@
 {
   "schema": "reach-scout-metadata-review-units-v1",
   "created_from": "scout-operations/metadata-blockers.json",
-  "created_from_sha": "24e5b238aaa27cc83d536e776a42b3f7bcd0a406",
+  "created_from_sha": "574abbc5541a453de9ad23540cf5ed4814b64ae3",
   "generated_on": "2026-10-30",
-  "source_cases": 38,
-  "review_units": 32,
+  "source_cases": 41,
+  "review_units": 35,
   "version_or_alternate_groups": 6,
   "source_cases_not_necessarily_distinct_outputs": true,
   "workflow_status": "PREPARED_FOR_HUMAN_INTAKE_NOT_VISIBLE_IN_HUB",
@@ -3044,6 +3044,269 @@
           "acknowledgment_absence_verified": false
         }
       ]
+    },
+    {
+      "review_key": "case-33",
+      "source_identities": [
+        "url:https://www.nhc.noaa.gov/jht/15-17reports/Rozoff_yr1_annualrpt.pdf"
+      ],
+      "review_type": "METADATA_AND_ELIGIBILITY",
+      "priority": "MEDIUM",
+      "reviewer_question": "Should the 2016 first-year interim JHT report be included as a standalone REACH Other Knowledge Product, distinct from the 2018 final report, despite an unverified first public posting date? Can a permissible date waiver be applied if needed?",
+      "canonical_identity": "url:https://www.nhc.noaa.gov/jht/15-17reports/Rozoff_yr1_annualrpt.pdf",
+      "all_original_decisions_preserved": true,
+      "source_records": [
+        {
+          "identity": "url:https://www.nhc.noaa.gov/jht/15-17reports/Rozoff_yr1_annualrpt.pdf",
+          "original_seed_doi": null,
+          "missing_fields": [
+            "Exact first public release/posting date YYYY-MM-DD for this specific report",
+            "Whether interim grant progress reports qualify as independent Other Knowledge Products rather than administrative project reporting"
+          ],
+          "reviewer_question": "Should the 2016 first-year interim JHT report be included as a standalone REACH Other Knowledge Product, distinct from the 2018 final report, despite an unverified first public posting date? Can a permissible date waiver be applied if needed?",
+          "award_numbers": [
+            "NA15OAR4590205"
+          ],
+          "evidence_urls": [
+            "https://www.nhc.noaa.gov/jht/15-17reports/Rozoff_yr1_annualrpt.pdf",
+            "https://www.nhc.noaa.gov/jht/15-17_proj.php",
+            "https://www.nhc.noaa.gov/hot/archive.php",
+            "https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_reportFINAL_092718.pdf",
+            "https://pubs.ssec.wisc.edu/research_Resources/publications/pdfs/SSECPUBS/SSEC_Publication_No_17_09_R1.pdf",
+            "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+            "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+          ],
+          "checked_sources": [
+            {
+              "round": 0,
+              "method": "official_nhc_2015_17_roster",
+              "url": "https://www.nhc.noaa.gov/jht/15-17_proj.php",
+              "outcome": "Lists the 2016 first-year report for the specific Rozoff/Velden project.",
+              "checked_at": "2026-10-30T13:29:57Z"
+            },
+            {
+              "round": 0,
+              "method": "search_indexed_2016_report_cover",
+              "url": "https://www.nhc.noaa.gov/jht/15-17reports/Rozoff_yr1_annualrpt.pdf",
+              "outcome": "Indexed report cover states award NA15OAR4590205 and submission 2016-09-29; internally calls itself ANNUAL PROJECT REPORT but report term Semi-Annual; final report No.",
+              "checked_at": "2026-10-30T13:29:57Z",
+              "source_dateType": "report_submission_not_publication"
+            },
+            {
+              "round": 1,
+              "method": "native_2016_report_retrieval",
+              "url": "https://www.nhc.noaa.gov/jht/15-17reports/Rozoff_yr1_annualrpt.pdf",
+              "outcome": "Native direct PDF fetch HTTP 403; search-indexed cover is available. ACCESS FAILURE not missing metadata.",
+              "checked_at": "2026-10-30T14:33:47Z",
+              "source_failure": "HTTP_403_NATIVE_PDF"
+            },
+            {
+              "round": 1,
+              "method": "dated_nhc_news_archive",
+              "url": "https://www.nhc.noaa.gov/hot/archive.php",
+              "outcome": "Archive has dated 2016 presentation notices but no record-specific first public posting date for the 2016 project report.",
+              "checked_at": "2026-10-30T14:33:47Z"
+            },
+            {
+              "round": 1,
+              "method": "subsequent_2017_independent_report",
+              "url": "https://pubs.ssec.wisc.edu/research_Resources/publications/pdfs/SSECPUBS/SSEC_Publication_No_17_09_R1.pdf",
+              "outcome": "2017 semiannual report documents subsequent 2017 work, confirming separate reporting periods; neither report submission date establishes public release.",
+              "checked_at": "2026-10-30T14:33:47Z",
+              "source_dateType": "report_submission_not_publication"
+            },
+            {
+              "round": 1,
+              "method": "later_2018_final_comparison",
+              "url": "https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_reportFINAL_092718.pdf",
+              "outcome": "2018 final report documents later milestones and is distinct from the 2016 interim period; not proof of 2016 report public release.",
+              "checked_at": "2026-10-30T14:33:47Z"
+            }
+          ],
+          "funding_basis": "The official NHC JHT project roster ties this named report to the specific WPO project spark-000201, and the report cover independently identifies federal award NA15OAR4590205; this is not an inference from a broad NOAA cooperative-institute award.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff",
+          "source_dateType": "report_submission_not_first_publication",
+          "report_submission_date": "2016-09-29",
+          "first_publication_date": null,
+          "native_access_failure": true,
+          "report_version_identity": "PROVISIONAL_REVIEW",
+          "original_decisions_preserved": true
+        }
+      ]
+    },
+    {
+      "review_key": "case-34",
+      "source_identities": [
+        "url:https://pubs.ssec.wisc.edu/research_Resources/publications/pdfs/SSECPUBS/SSEC_Publication_No_17_09_R1.pdf"
+      ],
+      "review_type": "METADATA_AND_ELIGIBILITY",
+      "priority": "MEDIUM",
+      "reviewer_question": "Is SSEC Publication No. 17-09-R1 a distinct eligible REACH Other Knowledge Product, and is the NHC 2017 second-year report merely an alternate copy? Can its first public posting date be established or permissibly waived?",
+      "canonical_identity": "url:https://pubs.ssec.wisc.edu/research_Resources/publications/pdfs/SSECPUBS/SSEC_Publication_No_17_09_R1.pdf",
+      "all_original_decisions_preserved": true,
+      "source_records": [
+        {
+          "identity": "url:https://pubs.ssec.wisc.edu/research_Resources/publications/pdfs/SSECPUBS/SSEC_Publication_No_17_09_R1.pdf",
+          "original_seed_doi": null,
+          "missing_fields": [
+            "Exact first public release/posting date YYYY-MM-DD for this specific report",
+            "Confirm whether the NHC mirror and SSEC 17-09-R1 are the same report/version, and whether interim project reports qualify for REACH"
+          ],
+          "reviewer_question": "Is SSEC Publication No. 17-09-R1 a distinct eligible REACH Other Knowledge Product, and is the NHC 2017 second-year report merely an alternate copy? Can its first public posting date be established or permissibly waived?",
+          "award_numbers": [
+            "NA15OAR4590205"
+          ],
+          "evidence_urls": [
+            "https://pubs.ssec.wisc.edu/research_Resources/publications/pdfs/SSECPUBS/SSEC_Publication_No_17_09_R1.pdf",
+            "https://www.nhc.noaa.gov/jht/15-17_proj.php",
+            "https://www.nhc.noaa.gov/hot/archive.php",
+            "https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_reportFINAL_092718.pdf",
+            "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+            "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+            "https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_report4_092917.pdf",
+            "https://pubs.ssec.wisc.edu/research_Resources/publications/"
+          ],
+          "checked_sources": [
+            {
+              "round": 0,
+              "method": "native_ssec_2017_report_pdf",
+              "url": "https://pubs.ssec.wisc.edu/research_Resources/publications/pdfs/SSECPUBS/SSEC_Publication_No_17_09_R1.pdf",
+              "outcome": "Full 13-page SSEC PDF accessible. Cover explicitly states NOAA award NA15OAR4590205, project title, submission 2017-09-30, report term Semi-Annual, Final Annual Report? No.",
+              "checked_at": "2026-10-30T13:29:57Z",
+              "source_dateType": "report_submission_not_publication"
+            },
+            {
+              "round": 0,
+              "method": "nhc_project_roster_and_alternate",
+              "url": "https://www.nhc.noaa.gov/jht/15-17_proj.php",
+              "outcome": "Official project table links the second-year report; NHC alternate mirror Velden_205_progress_report4_092917.pdf is indexed but file identity/version equality not verified.",
+              "checked_at": "2026-10-30T13:29:57Z"
+            },
+            {
+              "round": 1,
+              "method": "nhc_alternate_pdf_access",
+              "url": "https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_report4_092917.pdf",
+              "outcome": "Direct native NHC mirror fetch HTTP 403. ACCESS FAILURE; cannot establish byte-identical copies.",
+              "checked_at": "2026-10-30T14:33:47Z",
+              "source_failure": "HTTP_403_NATIVE_PDF"
+            },
+            {
+              "round": 1,
+              "method": "nhc_news_archive_no_report_date",
+              "url": "https://www.nhc.noaa.gov/hot/archive.php",
+              "outcome": "No record-specific announcement of the first public posting date for this 2017 report; 2017-04-13 announcement pertains to presentation slides.",
+              "checked_at": "2026-10-30T14:33:47Z"
+            },
+            {
+              "round": 1,
+              "method": "institutional_ssec_catalog_search",
+              "url": "https://pubs.ssec.wisc.edu/research_Resources/publications/",
+              "outcome": "SSEC hosts the series PDF, but bounded publication catalog search did not produce a record-specific YYYY-MM-DD public posting timestamp; absence from search is not proof none exists.",
+              "checked_at": "2026-10-30T14:33:47Z"
+            },
+            {
+              "round": 1,
+              "method": "compare_later_2018_final_report",
+              "url": "https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_reportFINAL_092718.pdf",
+              "outcome": "2018 final report describes later period; the 2017 report is interim, not the 2018 final report.",
+              "checked_at": "2026-10-30T14:33:47Z"
+            }
+          ],
+          "funding_basis": "The official NHC JHT project roster ties this named report to the specific WPO project spark-000201, and the report cover independently identifies federal award NA15OAR4590205; this is not an inference from a broad NOAA cooperative-institute award.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff",
+          "source_dateType": "report_submission_not_first_publication",
+          "report_submission_date": "2017-09-30",
+          "first_publication_date": null,
+          "native_access_failure": true,
+          "report_version_identity": "PROVISIONAL_REVIEW",
+          "original_decisions_preserved": true
+        }
+      ]
+    },
+    {
+      "review_key": "case-35",
+      "source_identities": [
+        "url:https://www.nhc.noaa.gov/jht/15-17reports/Velden_midyear3.pdf"
+      ],
+      "review_type": "METADATA_AND_ELIGIBILITY",
+      "priority": "MEDIUM",
+      "reviewer_question": "Should the 2018 nonfinal midyear report be cataloged as a separate Other Knowledge Product from the 2018 final report? Can the first public posting date be established or lawfully/technically waived?",
+      "canonical_identity": "url:https://www.nhc.noaa.gov/jht/15-17reports/Velden_midyear3.pdf",
+      "all_original_decisions_preserved": true,
+      "source_records": [
+        {
+          "identity": "url:https://www.nhc.noaa.gov/jht/15-17reports/Velden_midyear3.pdf",
+          "original_seed_doi": null,
+          "missing_fields": [
+            "Exact first public release/posting date YYYY-MM-DD for this specific report",
+            "Whether the interim progress report is a distinct catalogable Other Knowledge Product or only administrative reporting"
+          ],
+          "reviewer_question": "Should the 2018 nonfinal midyear report be cataloged as a separate Other Knowledge Product from the 2018 final report? Can the first public posting date be established or lawfully/technically waived?",
+          "award_numbers": [
+            "NA15OAR4590205"
+          ],
+          "evidence_urls": [
+            "https://www.nhc.noaa.gov/jht/15-17reports/Velden_midyear3.pdf",
+            "https://www.nhc.noaa.gov/jht/15-17_proj.php",
+            "https://www.nhc.noaa.gov/hot/archive.php",
+            "https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_reportFINAL_092718.pdf",
+            "https://pubs.ssec.wisc.edu/research_Resources/publications/pdfs/SSECPUBS/SSEC_Publication_No_17_09_R1.pdf",
+            "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+            "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+          ],
+          "checked_sources": [
+            {
+              "round": 0,
+              "method": "official_nhc_2018_midyear_roster",
+              "url": "https://www.nhc.noaa.gov/jht/15-17_proj.php",
+              "outcome": "Official NHC 2015–2017 project table includes 2018 midyear report for the funded Rozoff/Velden project.",
+              "checked_at": "2026-10-30T13:29:57Z"
+            },
+            {
+              "round": 0,
+              "method": "search_indexed_2018_midyear_cover",
+              "url": "https://www.nhc.noaa.gov/jht/15-17reports/Velden_midyear3.pdf",
+              "outcome": "Indexed cover identifies exact award NA15OAR4590205, submission 2018-03-30, semiannual report term, and Final Annual Report? No.",
+              "checked_at": "2026-10-30T13:29:57Z",
+              "source_dateType": "report_submission_not_publication"
+            },
+            {
+              "round": 1,
+              "method": "native_2018_midyear_access",
+              "url": "https://www.nhc.noaa.gov/jht/15-17reports/Velden_midyear3.pdf",
+              "outcome": "Direct native PDF fetch HTTP 403; source ACCESS FAILURE, not proof of absent publication date or award acknowledgment.",
+              "checked_at": "2026-10-30T14:33:47Z",
+              "source_failure": "HTTP_403_NATIVE_PDF"
+            },
+            {
+              "round": 1,
+              "method": "independent_2018_final_report_comparison",
+              "url": "https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_reportFINAL_092718.pdf",
+              "outcome": "Later 2018-09-30 final report describes full-project completion and is a distinct reporting period, but does not establish 2018 midyear first posting.",
+              "checked_at": "2026-10-30T14:33:47Z"
+            },
+            {
+              "round": 1,
+              "method": "dated_nhc_news_archive_2018",
+              "url": "https://www.nhc.noaa.gov/hot/archive.php",
+              "outcome": "Official NHC dated news archive has no item-specific first public release timestamp for the midyear report; the submission date cannot substitute.",
+              "checked_at": "2026-10-30T14:33:47Z",
+              "source_dateType": "report_submission_not_publication"
+            }
+          ],
+          "funding_basis": "The official NHC JHT project roster ties this named report to the specific WPO project spark-000201, and the report cover independently identifies federal award NA15OAR4590205; this is not an inference from a broad NOAA cooperative-institute award.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff",
+          "source_dateType": "report_submission_not_first_publication",
+          "report_submission_date": "2018-03-30",
+          "first_publication_date": null,
+          "native_access_failure": true,
+          "report_version_identity": "PROVISIONAL_REVIEW",
+          "original_decisions_preserved": true
+        }
+      ]
     }
   ],
   "last_incremental_update": {
@@ -3057,5 +3320,15 @@
     "prior_31_units_preserved": true,
     "source_blocker_blob_sha": "24e5b238aaa27cc83d536e776a42b3f7bcd0a406",
     "hub_import_observed": false
+  },
+  "latest_reconciliation": {
+    "run_id": "REACH-SCOUT-2026-10-30-HOURLY-1029ET",
+    "added_source_cases": 3,
+    "added_review_units": 3,
+    "previous_source_cases": 38,
+    "previous_review_units": 32,
+    "previous_provisional_groups_preserved": 6,
+    "hub_imports_observed": "NOT VERIFIED",
+    "private_companion_intake": "PREPARED_TESTED_OFFLINE_NOT_INSTALLED"
   }
 }
