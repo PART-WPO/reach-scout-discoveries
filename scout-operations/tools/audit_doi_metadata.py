@@ -42,7 +42,7 @@ def crossref_date_parts(obj):
 
 def crossref_date_info(work):
  """Publication dates first; Crossref created is NOT REACH Pub Date."""
- keys=("published-online","posted","published-print","published","issued")
+ keys=("posted","published-online","published-print","published","issued") if work.get("type")=="posted-content" else ("published-online","published-print","published","issued","posted")
  all_dates={k:crossref_date_parts(work.get(k)) for k in keys}
  choice=next(((k,v["full_date"]) for k,v in all_dates.items() if v["full_date"]),None)
  partial=next(((k,v["value"]) for k,v in all_dates.items() if v["value"]),None)
