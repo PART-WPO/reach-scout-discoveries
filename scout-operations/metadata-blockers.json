@@ -17,7 +17,6 @@
       "cohort": "Historical DataCite API Backfill 2026-10-28",
       "status": "pending_hub_handoff",
       "missing_fields": [
-        "record-specific full YYYY-MM-DD dataset publication date",
         "native public file/version validation"
       ],
       "attempts": [
@@ -82,22 +81,40 @@
         "https://saemiller.com/publications/Zhang_ASCE_2022_Preprint.pdf"
       ],
       "funding_basis": "Historical DataCite fundingReferences and linked ASCE publisher acknowledgment explicitly identify NOAA award NA18OAR4590306 for related infrasound experiments; exact dataset date remains unverified. Additional primary SPARK project-specific award connection verified: NA18OAR4590306.",
-      "next_action": "RESEARCH COMPLETE: pending human reviewer tool integration, NOT DELIVERED TO HUB. No repeat metadata searches without new evidence or human request.",
+      "next_action": "Research complete. Accepted Pub Date supplied from DOI-specific DataCite created. Await compatible private human intake for remaining non-date questions; no date re-research.",
       "first_investigated_at": "2026-10-28T22:08:00Z",
       "next_research_at": "2026-11-05T00:00:00Z",
-      "followup_question": "Can an authoritative source resolve record-specific full YYYY-MM-DD dataset publication date and establish a separate eligible NOAA-funded output?",
+      "followup_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native public file/version validation. ",
       "max_delayed_retries": 1,
       "research_completed": true,
       "metadata_recovery_exhausted": true,
-      "reviewer_question": "Should the separately DOI-identified infrasound dataset be reviewed for REACH with missing date after project-specific funding and identity verification?",
+      "reviewer_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native public file/version validation. ",
       "hub_delivery_status": "not_delivered",
-      "hub_intake_blocker": "Discovery Hub importer acceptance of a truthful blank mandatory Publication Date (and where relevant unknown public component scope) has not been verified; no candidate batch published. Requires tested compatible human intake path, without fabricating date.",
+      "hub_intake_blocker": "Non-date eligibility/identity/public-scope review needs compatible private intake; NOT DELIVERED TO HUB. Pub Date is complete.",
       "early_retry_reason": "User-directed 2026-10-29 follow-up-first bounded different-source recovery, earlier than preserved seven-day retry date",
       "followup_completed_at": "2026-10-29T20:37:07.064Z",
       "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1632ET",
       "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
       "original_seed_doi": "10.17603/ds2-bpav-8w29",
-      "research_cohort": "Historical DataCite API Backfill 2026-10-28"
+      "research_cohort": "Historical DataCite API Backfill 2026-10-28",
+      "historical_missing_fields_before_executive_rule": [
+        "record-specific full YYYY-MM-DD dataset publication date",
+        "native public file/version validation"
+      ],
+      "historical_reviewer_question_before_executive_rule": "Should the separately DOI-identified infrasound dataset be reviewed for REACH with missing date after project-specific funding and identity verification?",
+      "historical_followup_question_before_executive_rule": "Can an authoritative source resolve record-specific full YYYY-MM-DD dataset publication date and establish a separate eligible NOAA-funded output?",
+      "historical_hub_intake_blocker_before_executive_rule": "Discovery Hub importer acceptance of a truthful blank mandatory Publication Date (and where relevant unknown public component scope) has not been verified; no candidate batch published. Requires tested compatible human intake path, without fabricating date.",
+      "datacite_created": "2021-06-04T17:40:30.000Z",
+      "accepted_reach_pub_date": "2021-06-04",
+      "pub_date_source_url": "https://api.datacite.org/dois/10.17603/ds2-bpav-8w29",
+      "pub_date_source_dateType": "DataCite created",
+      "pub_date_policy": "2026-10-30 office-accepted complete REACH Pub Date; no native corroboration or separate date acknowledgement required",
+      "date_policy_applied_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
+      "date_only_research_followup_required": false,
+      "historical_original_triage_status_preserved": true,
+      "ready_for_human_review": true,
+      "hub_delivered": false,
+      "operational_review_route": "HUMAN_INTAKE_NON_DATE_QUESTIONS"
     },
     {
       "identity": "doi:10.15139/s3/uy6rda",
@@ -193,7 +210,6 @@
       "cohort": "Historical DataCite API Backfill 2026-10-28",
       "status": "pending_hub_handoff",
       "missing_fields": [
-        "record-specific full publication date",
         "native public protocol component scope",
         "separate eligibility versus REACH parent reach-000816"
       ],
@@ -265,7 +281,7 @@
       "last_attempt_at": "2026-10-29T20:37:07.064Z",
       "retry_count": 1,
       "next_retry_at": "2026-11-04T22:08:00.000Z",
-      "followup_question": "Can an authoritative source resolve record-specific full publication date; public component scope and distinctness and establish a separate eligible NOAA-funded output?",
+      "followup_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native public protocol component scope; separate eligibility versus REACH parent reach-000816. ",
       "evidence_urls": [
         "https://api.datacite.org/dois/10.17603/ds2-58ft-kp27",
         "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
@@ -275,21 +291,40 @@
         "https://impacts.ucar.edu/en/organisations/national-center-for-atmospheric-research-3/datasets/"
       ],
       "funding_basis": "Captured DataCite fundingReferences identify NA21OAR4590206; eligibility or metadata remains unverified. Additional primary SPARK project-specific award connection verified: NA21OAR4590206.",
-      "next_action": "RESEARCH COMPLETE: pending human reviewer tool integration, NOT DELIVERED TO HUB. No repeat metadata searches without new evidence or human request.",
+      "next_action": "Research complete. Accepted Pub Date supplied from DOI-specific DataCite created. Await compatible private human intake for remaining non-date questions; no date re-research.",
       "triage_identity": "doi:10.17603/ds2-58ft-kp27",
       "next_research_at": "2026-11-04T22:08:00.000Z",
       "next_research_at_basis": "Existing recorded next_retry_at alias; no change to first investigation, retry date, retry count, or evidence.",
       "research_completed": true,
       "metadata_recovery_exhausted": true,
-      "reviewer_question": "Is the HTI interview protocol a distinct REACH output or part of already cataloged PRJ-5889 parent reach-000816?",
+      "reviewer_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native public protocol component scope; separate eligibility versus REACH parent reach-000816. ",
       "hub_delivery_status": "not_delivered",
-      "hub_intake_blocker": "Discovery Hub importer acceptance of a truthful blank mandatory Publication Date (and where relevant unknown public component scope) has not been verified; no candidate batch published. Requires tested compatible human intake path, without fabricating date.",
+      "hub_intake_blocker": "Non-date eligibility/identity/public-scope review needs compatible private intake; NOT DELIVERED TO HUB. Pub Date is complete.",
       "early_retry_reason": "User-directed 2026-10-29 follow-up-first bounded different-source recovery, earlier than preserved seven-day retry date",
       "followup_completed_at": "2026-10-29T20:37:07.064Z",
       "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1632ET",
       "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
       "original_seed_doi": "10.17603/ds2-58ft-kp27",
-      "research_cohort": "Historical DataCite API Backfill 2026-10-28"
+      "research_cohort": "Historical DataCite API Backfill 2026-10-28",
+      "historical_missing_fields_before_executive_rule": [
+        "record-specific full publication date",
+        "native public protocol component scope",
+        "separate eligibility versus REACH parent reach-000816"
+      ],
+      "historical_reviewer_question_before_executive_rule": "Is the HTI interview protocol a distinct REACH output or part of already cataloged PRJ-5889 parent reach-000816?",
+      "historical_followup_question_before_executive_rule": "Can an authoritative source resolve record-specific full publication date; public component scope and distinctness and establish a separate eligible NOAA-funded output?",
+      "historical_hub_intake_blocker_before_executive_rule": "Discovery Hub importer acceptance of a truthful blank mandatory Publication Date (and where relevant unknown public component scope) has not been verified; no candidate batch published. Requires tested compatible human intake path, without fabricating date.",
+      "datacite_created": "2025-04-10T21:52:56.000Z",
+      "accepted_reach_pub_date": "2025-04-10",
+      "pub_date_source_url": "https://api.datacite.org/dois/10.17603/ds2-58ft-kp27",
+      "pub_date_source_dateType": "DataCite created",
+      "pub_date_policy": "2026-10-30 office-accepted complete REACH Pub Date; no native corroboration or separate date acknowledgement required",
+      "date_policy_applied_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
+      "date_only_research_followup_required": false,
+      "historical_original_triage_status_preserved": true,
+      "ready_for_human_review": true,
+      "hub_delivered": false,
+      "operational_review_route": "HUMAN_INTAKE_NON_DATE_QUESTIONS"
     },
     {
       "identity": "doi:10.17603/ds2-6vmm-2g61",
@@ -299,7 +334,6 @@
       "cohort": "Historical DataCite API Backfill 2026-10-28",
       "status": "pending_hub_handoff",
       "missing_fields": [
-        "record-specific full YYYY-MM-DD publication date",
         "native public guide/file scope",
         "separate catalog eligibility versus REACH parent reach-000816"
       ],
@@ -357,7 +391,7 @@
       "last_attempt_at": "2026-10-29T21:30:09.782Z",
       "retry_count": 1,
       "next_retry_at": "2026-11-04T22:08:00.000Z",
-      "followup_question": "Can an authoritative source resolve record-specific full publication date; public component scope and distinctness and establish a separate eligible NOAA-funded output?",
+      "followup_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native public guide/file scope; separate catalog eligibility versus REACH parent reach-000816. ",
       "evidence_urls": [
         "https://api.datacite.org/dois/10.17603/ds2-6vmm-2g61",
         "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
@@ -366,17 +400,36 @@
         "https://doi.org/10.17603/ds2-6vmm-2g61"
       ],
       "funding_basis": "Captured exact NOAA award NA21OAR4590206; SPARK spark-000244 confirms primary project; 2025 Prestley/Morss scholarly citation names the guide.",
-      "next_action": "Pending compatible Hub intake for truthful blank date; human reviewer to determine separate public eligibility and permitted metadata omission.",
+      "next_action": "Research complete. Accepted Pub Date supplied from DOI-specific DataCite created. Await compatible private human intake for remaining non-date questions; no date re-research.",
       "triage_identity": "doi:10.17603/ds2-6vmm-2g61",
       "next_research_at": "2026-11-04T22:08:00.000Z",
       "next_research_at_basis": "Existing recorded next_retry_at alias; no change to first investigation, retry date, retry count, or evidence.",
       "followup_completed_at": "2026-10-29T21:30:09.782Z",
       "early_retry_reason": "User-directed 2026-10-29 immediate one-time distinct-source recovery, earlier than existing seven-day next_retry_at; original retry date preserved.",
-      "reviewer_question": "Is the guide a separately public catalogable output or part of REACH parent reach-000816, and what exact release date or permitted omission applies?",
+      "reviewer_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native public guide/file scope; separate catalog eligibility versus REACH parent reach-000816. ",
       "research_completed": true,
       "metadata_recovery_exhausted": true,
       "hub_delivery_status": "not_delivered",
-      "hub_intake_blocker": "Existing 24-column Discovery Hub importer/REACH mandatory date handling has not been validated for truthful blank publication date and component scope; no valid CSV staged; NOT DELIVERED TO HUB."
+      "hub_intake_blocker": "Non-date eligibility/identity/public-scope review needs compatible private intake; NOT DELIVERED TO HUB. Pub Date is complete.",
+      "historical_missing_fields_before_executive_rule": [
+        "record-specific full YYYY-MM-DD publication date",
+        "native public guide/file scope",
+        "separate catalog eligibility versus REACH parent reach-000816"
+      ],
+      "historical_reviewer_question_before_executive_rule": "Is the guide a separately public catalogable output or part of REACH parent reach-000816, and what exact release date or permitted omission applies?",
+      "historical_followup_question_before_executive_rule": "Can an authoritative source resolve record-specific full publication date; public component scope and distinctness and establish a separate eligible NOAA-funded output?",
+      "historical_hub_intake_blocker_before_executive_rule": "Existing 24-column Discovery Hub importer/REACH mandatory date handling has not been validated for truthful blank publication date and component scope; no valid CSV staged; NOT DELIVERED TO HUB.",
+      "datacite_created": "2025-04-10T21:52:58.000Z",
+      "accepted_reach_pub_date": "2025-04-10",
+      "pub_date_source_url": "https://api.datacite.org/dois/10.17603/ds2-6vmm-2g61",
+      "pub_date_source_dateType": "DataCite created",
+      "pub_date_policy": "2026-10-30 office-accepted complete REACH Pub Date; no native corroboration or separate date acknowledgement required",
+      "date_policy_applied_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
+      "date_only_research_followup_required": false,
+      "historical_original_triage_status_preserved": true,
+      "ready_for_human_review": true,
+      "hub_delivered": false,
+      "operational_review_route": "HUMAN_INTAKE_NON_DATE_QUESTIONS"
     },
     {
       "identity": "doi:10.17603/ds2-967n-t829",
@@ -387,7 +440,6 @@
       "cohort": "Historical DataCite API Backfill 2026-10-28",
       "status": "pending_hub_handoff",
       "missing_fields": [
-        "record-specific full YYYY-MM-DD publication date",
         "native public survey instrument/file scope"
       ],
       "attempts": [
@@ -444,7 +496,7 @@
       "last_attempt_at": "2026-10-29T21:30:09.782Z",
       "retry_count": 1,
       "next_retry_at": "2026-11-05T00:29:43.000Z",
-      "followup_question": "Inspect native DesignSafe project publication and exact survey component release date; compare Part 2 survey paper with REACH.",
+      "followup_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native public survey instrument/file scope. ",
       "evidence_urls": [
         "https://api.datacite.org/dois/10.17603/ds2-967n-t829",
         "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-019.csv",
@@ -453,17 +505,35 @@
         "https://doi.org/10.17603/ds2-967n-t829"
       ],
       "funding_basis": "Captured DataCite exact awards NA19OAR0220121 and NA19OAR0220192; SPARK primary project, NOAA HFIP report and Vickery CV corroborate surveys.",
-      "next_action": "Pending compatible Hub intake for truthful blank date; human reviewer to determine separate public eligibility and permitted metadata omission.",
+      "next_action": "Research complete. Accepted Pub Date supplied from DOI-specific DataCite created. Await compatible private human intake for remaining non-date questions; no date re-research.",
       "triage_identity": "doi:10.17603/ds2-967n-t829",
       "next_research_at": "2026-11-05T00:29:43.000Z",
       "next_research_at_basis": "Existing recorded next_retry_at alias; no change to first investigation, retry date, retry count, or evidence.",
       "followup_completed_at": "2026-10-29T21:30:09.782Z",
       "early_retry_reason": "User-directed 2026-10-29 immediate one-time distinct-source recovery, earlier than existing seven-day next_retry_at; original retry date preserved.",
-      "reviewer_question": "Is the public DesignSafe survey instrument independently eligible, and what verified date or permissible omission applies?",
+      "reviewer_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native public survey instrument/file scope. ",
       "research_completed": true,
       "metadata_recovery_exhausted": true,
       "hub_delivery_status": "not_delivered",
-      "hub_intake_blocker": "Existing 24-column Discovery Hub importer/REACH mandatory date handling has not been validated for truthful blank publication date and component scope; no valid CSV staged; NOT DELIVERED TO HUB."
+      "hub_intake_blocker": "Non-date eligibility/identity/public-scope review needs compatible private intake; NOT DELIVERED TO HUB. Pub Date is complete.",
+      "historical_missing_fields_before_executive_rule": [
+        "record-specific full YYYY-MM-DD publication date",
+        "native public survey instrument/file scope"
+      ],
+      "historical_reviewer_question_before_executive_rule": "Is the public DesignSafe survey instrument independently eligible, and what verified date or permissible omission applies?",
+      "historical_followup_question_before_executive_rule": "Inspect native DesignSafe project publication and exact survey component release date; compare Part 2 survey paper with REACH.",
+      "historical_hub_intake_blocker_before_executive_rule": "Existing 24-column Discovery Hub importer/REACH mandatory date handling has not been validated for truthful blank publication date and component scope; no valid CSV staged; NOT DELIVERED TO HUB.",
+      "datacite_created": "2024-10-23T23:32:44.000Z",
+      "accepted_reach_pub_date": "2024-10-23",
+      "pub_date_source_url": "https://api.datacite.org/dois/10.17603/ds2-967n-t829",
+      "pub_date_source_dateType": "DataCite created",
+      "pub_date_policy": "2026-10-30 office-accepted complete REACH Pub Date; no native corroboration or separate date acknowledgement required",
+      "date_policy_applied_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
+      "date_only_research_followup_required": false,
+      "historical_original_triage_status_preserved": true,
+      "ready_for_human_review": true,
+      "hub_delivered": false,
+      "operational_review_route": "HUMAN_INTAKE_NON_DATE_QUESTIONS"
     },
     {
       "identity": "doi:10.17603/ds2-jfsc-8902",
@@ -473,7 +543,6 @@
       "cohort": "Historical DataCite API Backfill 2026-10-28",
       "status": "pending_hub_handoff",
       "missing_fields": [
-        "record-specific full YYYY-MM-DD dataset publication date",
         "2023 vs 2025 version-specific citation discrepancy",
         "public parent project scope"
       ],
@@ -546,7 +615,7 @@
       "last_attempt_at": "2026-10-29T20:37:07.064Z",
       "retry_count": 1,
       "next_retry_at": "2026-11-05T00:29:43.000Z",
-      "followup_question": "Verify seed dataset full date and parent DesignSafe project scope; follow 2024 Harvey paper and dataset separately.",
+      "followup_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: 2023 vs 2025 version-specific citation discrepancy; public parent project scope. ",
       "evidence_urls": [
         "https://api.datacite.org/dois/10.17603/ds2-jfsc-8902",
         "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-019.csv",
@@ -555,21 +624,40 @@
         "https://doi.org/10.17603/ds2-jfsc-8902"
       ],
       "funding_basis": "Exact historical DataCite award NA19OAR0220119 plus linked WCAS article publisher acknowledgment. Additional primary SPARK project-specific award connection verified: NA19OAR0220119.",
-      "next_action": "RESEARCH COMPLETE: pending human reviewer tool integration, NOT DELIVERED TO HUB. No repeat metadata searches without new evidence or human request.",
+      "next_action": "Research complete. Accepted Pub Date supplied from DOI-specific DataCite created. Await compatible private human intake for remaining non-date questions; no date re-research.",
       "triage_identity": "doi:10.17603/ds2-jfsc-8902",
       "next_research_at": "2026-11-05T00:29:43.000Z",
       "next_research_at_basis": "Existing recorded next_retry_at alias; no change to first investigation, retry date, retry count, or evidence.",
       "research_completed": true,
       "metadata_recovery_exhausted": true,
-      "reviewer_question": "Does the Hurricane Irma tweet dataset merit a separate REACH record, and what is its true native version/date?",
+      "reviewer_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: 2023 vs 2025 version-specific citation discrepancy; public parent project scope. ",
       "hub_delivery_status": "not_delivered",
-      "hub_intake_blocker": "Discovery Hub importer acceptance of a truthful blank mandatory Publication Date (and where relevant unknown public component scope) has not been verified; no candidate batch published. Requires tested compatible human intake path, without fabricating date.",
+      "hub_intake_blocker": "Non-date eligibility/identity/public-scope review needs compatible private intake; NOT DELIVERED TO HUB. Pub Date is complete.",
       "early_retry_reason": "User-directed 2026-10-29 follow-up-first bounded different-source recovery, earlier than preserved seven-day retry date",
       "followup_completed_at": "2026-10-29T20:37:07.064Z",
       "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1632ET",
       "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
       "original_seed_doi": "10.17603/ds2-jfsc-8902",
-      "research_cohort": "Historical DataCite API Backfill 2026-10-28"
+      "research_cohort": "Historical DataCite API Backfill 2026-10-28",
+      "historical_missing_fields_before_executive_rule": [
+        "record-specific full YYYY-MM-DD dataset publication date",
+        "2023 vs 2025 version-specific citation discrepancy",
+        "public parent project scope"
+      ],
+      "historical_reviewer_question_before_executive_rule": "Does the Hurricane Irma tweet dataset merit a separate REACH record, and what is its true native version/date?",
+      "historical_followup_question_before_executive_rule": "Verify seed dataset full date and parent DesignSafe project scope; follow 2024 Harvey paper and dataset separately.",
+      "historical_hub_intake_blocker_before_executive_rule": "Discovery Hub importer acceptance of a truthful blank mandatory Publication Date (and where relevant unknown public component scope) has not been verified; no candidate batch published. Requires tested compatible human intake path, without fabricating date.",
+      "datacite_created": "2023-08-18T23:32:41.000Z",
+      "accepted_reach_pub_date": "2023-08-18",
+      "pub_date_source_url": "https://api.datacite.org/dois/10.17603/ds2-jfsc-8902",
+      "pub_date_source_dateType": "DataCite created",
+      "pub_date_policy": "2026-10-30 office-accepted complete REACH Pub Date; no native corroboration or separate date acknowledgement required",
+      "date_policy_applied_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
+      "date_only_research_followup_required": false,
+      "historical_original_triage_status_preserved": true,
+      "ready_for_human_review": true,
+      "hub_delivered": false,
+      "operational_review_route": "HUMAN_INTAKE_NON_DATE_QUESTIONS"
     },
     {
       "identity": "doi:10.17603/ds2-qm3n-6h83",
@@ -580,7 +668,6 @@
       "cohort": "Historical DataCite API Backfill 2026-10-28",
       "status": "pending_hub_handoff",
       "missing_fields": [
-        "record-specific full YYYY-MM-DD publication date",
         "verified public protocol/method files distinct from restricted participant interview data"
       ],
       "attempts": [
@@ -637,7 +724,7 @@
       "last_attempt_at": "2026-10-29T21:30:09.782Z",
       "retry_count": 1,
       "next_retry_at": "2026-11-05T00:29:43.000Z",
-      "followup_question": "Inspect repository publication metadata for public protocol files only; never stage restricted interview responses.",
+      "followup_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: verified public protocol/method files distinct from restricted participant interview data. ",
       "evidence_urls": [
         "https://api.datacite.org/dois/10.17603/ds2-qm3n-6h83",
         "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-019.csv",
@@ -646,17 +733,35 @@
         "https://doi.org/10.17603/ds2-qm3n-6h83"
       ],
       "funding_basis": "Captured DataCite exact WPO awards; SPARK primary project and independent HFIP/CV corroborate interviews; original DOI explicitly says raw interview data are restricted.",
-      "next_action": "Pending compatible Hub intake for truthful blank date; human reviewer to determine separate public eligibility and permitted metadata omission.",
+      "next_action": "Research complete. Accepted Pub Date supplied from DOI-specific DataCite created. Await compatible private human intake for remaining non-date questions; no date re-research.",
       "triage_identity": "doi:10.17603/ds2-qm3n-6h83",
       "next_research_at": "2026-11-05T00:29:43.000Z",
       "next_research_at_basis": "Existing recorded next_retry_at alias; no change to first investigation, retry date, retry count, or evidence.",
       "followup_completed_at": "2026-10-29T21:30:09.782Z",
       "early_retry_reason": "User-directed 2026-10-29 immediate one-time distinct-source recovery, earlier than existing seven-day next_retry_at; original retry date preserved.",
-      "reviewer_question": "Can public interview methods/protocol be cataloged separately without exposing restricted participant data, and what verified date or permitted omission applies?",
+      "reviewer_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: verified public protocol/method files distinct from restricted participant interview data. ",
       "research_completed": true,
       "metadata_recovery_exhausted": true,
       "hub_delivery_status": "not_delivered",
-      "hub_intake_blocker": "Existing 24-column Discovery Hub importer/REACH mandatory date handling has not been validated for truthful blank publication date and component scope; no valid CSV staged; NOT DELIVERED TO HUB."
+      "hub_intake_blocker": "Non-date eligibility/identity/public-scope review needs compatible private intake; NOT DELIVERED TO HUB. Pub Date is complete.",
+      "historical_missing_fields_before_executive_rule": [
+        "record-specific full YYYY-MM-DD publication date",
+        "verified public protocol/method files distinct from restricted participant interview data"
+      ],
+      "historical_reviewer_question_before_executive_rule": "Can public interview methods/protocol be cataloged separately without exposing restricted participant data, and what verified date or permitted omission applies?",
+      "historical_followup_question_before_executive_rule": "Inspect repository publication metadata for public protocol files only; never stage restricted interview responses.",
+      "historical_hub_intake_blocker_before_executive_rule": "Existing 24-column Discovery Hub importer/REACH mandatory date handling has not been validated for truthful blank publication date and component scope; no valid CSV staged; NOT DELIVERED TO HUB.",
+      "datacite_created": "2024-10-23T23:32:45.000Z",
+      "accepted_reach_pub_date": "2024-10-23",
+      "pub_date_source_url": "https://api.datacite.org/dois/10.17603/ds2-qm3n-6h83",
+      "pub_date_source_dateType": "DataCite created",
+      "pub_date_policy": "2026-10-30 office-accepted complete REACH Pub Date; no native corroboration or separate date acknowledgement required",
+      "date_policy_applied_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
+      "date_only_research_followup_required": false,
+      "historical_original_triage_status_preserved": true,
+      "ready_for_human_review": true,
+      "hub_delivered": false,
+      "operational_review_route": "HUMAN_INTAKE_NON_DATE_QUESTIONS"
     },
     {
       "identity": "doi:10.17605/osf.io/jr7pv",
@@ -667,7 +772,6 @@
       "status": "pending_hub_handoff",
       "missing_fields": [
         "native public OSF file identities and accessible component scope",
-        "record-specific full YYYY-MM-DD publication date",
         "whether project DOI or individual components merit separate REACH records"
       ],
       "attempts": [
@@ -718,7 +822,7 @@
       "last_attempt_at": "2026-10-29T22:36:34.326Z",
       "retry_count": 1,
       "next_retry_at": "2026-11-05T01:32:07.000Z",
-      "followup_question": "Access public OSF project metadata/files or author repository via a distinct endpoint; establish exact date and whether files are separate public outputs.",
+      "followup_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native public OSF file identities and accessible component scope; whether project DOI or individual components merit separate REACH records. ",
       "evidence_urls": [
         "https://api.datacite.org/dois/10.17605/osf.io/jr7pv",
         "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
@@ -727,7 +831,7 @@
         "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/api-discoveries/historical/batches/2026-10-28-historical-datacite-spark-all-part001.csv"
       ],
       "funding_basis": "Captured DataCite structured award NA21OAR4590210 for this OSF project; no independent project file or author acknowledgement accessible in this round. Additional primary SPARK project detail and independent publisher/official WPO corroboration recorded; output-specific limits preserved.",
-      "next_action": "RESEARCH COMPLETE; human decision needed, pending compatible Hub intake. Do not repeat metadata searches without new evidence or explicit human request.",
+      "next_action": "Research complete. Accepted Pub Date supplied from DOI-specific DataCite created. Await compatible private human intake for remaining non-date questions; no date re-research.",
       "triage_identity": "doi:10.17605/osf.io/jr7pv",
       "next_research_at": "2026-11-05T01:32:07.000Z",
       "next_research_at_basis": "Existing recorded next_retry_at alias; no change to first investigation, retry date, retry count, or evidence.",
@@ -735,13 +839,32 @@
       "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1835ET",
       "research_completed": true,
       "metadata_recovery_exhausted": true,
-      "reviewer_question": "Are OSF survey, IDSS exercise and after-action files public distinct outputs, and can release dates be verified or permissibly omitted?",
+      "reviewer_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native public OSF file identities and accessible component scope; whether project DOI or individual components merit separate REACH records. ",
       "hub_delivery_status": "not_delivered",
-      "hub_intake_blocker": "Current Hub importer support for truthful blank mandatory Publication Date and, where relevant, unknown public file/component scope not verified. No candidate batch or Hub acceptance claimed.",
+      "hub_intake_blocker": "Non-date eligibility/identity/public-scope review needs compatible private intake; NOT DELIVERED TO HUB. Pub Date is complete.",
       "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
       "early_retry_reason": "2026-10-29 authoritative bounded different-source recovery before preserved seven-day retry date; do not repeat without new evidence.",
       "original_seed_doi": "10.17605/osf.io/jr7pv",
-      "research_cohort": "Historical DataCite API Backfill 2026-10-28"
+      "research_cohort": "Historical DataCite API Backfill 2026-10-28",
+      "historical_missing_fields_before_executive_rule": [
+        "native public OSF file identities and accessible component scope",
+        "record-specific full YYYY-MM-DD publication date",
+        "whether project DOI or individual components merit separate REACH records"
+      ],
+      "historical_reviewer_question_before_executive_rule": "Are OSF survey, IDSS exercise and after-action files public distinct outputs, and can release dates be verified or permissibly omitted?",
+      "historical_followup_question_before_executive_rule": "Access public OSF project metadata/files or author repository via a distinct endpoint; establish exact date and whether files are separate public outputs.",
+      "historical_hub_intake_blocker_before_executive_rule": "Current Hub importer support for truthful blank mandatory Publication Date and, where relevant, unknown public file/component scope not verified. No candidate batch or Hub acceptance claimed.",
+      "datacite_created": "2023-03-06T20:41:48.000Z",
+      "accepted_reach_pub_date": "2023-03-06",
+      "pub_date_source_url": "https://api.datacite.org/dois/10.17605/osf.io/jr7pv",
+      "pub_date_source_dateType": "DataCite created",
+      "pub_date_policy": "2026-10-30 office-accepted complete REACH Pub Date; no native corroboration or separate date acknowledgement required",
+      "date_policy_applied_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
+      "date_only_research_followup_required": false,
+      "historical_original_triage_status_preserved": true,
+      "ready_for_human_review": true,
+      "hub_delivered": false,
+      "operational_review_route": "HUMAN_INTAKE_NON_DATE_QUESTIONS"
     },
     {
       "identity": "doi:10.17605/osf.io/rbdfv",
@@ -751,7 +874,7 @@
       "cohort": "Historical DataCite API Backfill 2026-10-28",
       "status": "pending_hub_handoff",
       "missing_fields": [
-        "native OSF public file identities and release date",
+        "native OSF public file identities",
         "distinctness from REACH BVOT StoryMap and journal outputs",
         "separate project DOI eligibility"
       ],
@@ -810,7 +933,7 @@
       "last_attempt_at": "2026-10-29T22:36:34.326Z",
       "retry_count": 1,
       "next_retry_at": "2026-11-05T01:32:07.000Z",
-      "followup_question": "Inspect native OSF project metadata and public files through alternate authoritative endpoint, then determine whether new distinct artifact versus existing REACH BVOT materials.",
+      "followup_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native OSF public file identities; distinctness from REACH BVOT StoryMap and journal outputs; separate project DOI eligibility. ",
       "evidence_urls": [
         "https://api.datacite.org/dois/10.17605/osf.io/rbdfv",
         "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-020.csv",
@@ -820,7 +943,7 @@
         "https://api.osf.io/v2/nodes/rbdfv"
       ],
       "funding_basis": "Captured DataCite structured award NA21OAR4590212; related REACH BVOT journal work includes that award, but does not independently establish OSF project's publication date. Additional primary SPARK project detail and independent publisher/official WPO corroboration recorded; output-specific limits preserved.",
-      "next_action": "RESEARCH COMPLETE; human decision needed, pending compatible Hub intake. Do not repeat metadata searches without new evidence or explicit human request.",
+      "next_action": "Research complete. Accepted Pub Date supplied from DOI-specific DataCite created. Await compatible private human intake for remaining non-date questions; no date re-research.",
       "triage_identity": "doi:10.17605/osf.io/rbdfv",
       "next_research_at": "2026-11-05T01:32:07.000Z",
       "next_research_at_basis": "Existing recorded next_retry_at alias; no change to first investigation, retry date, retry count, or evidence.",
@@ -828,13 +951,32 @@
       "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1835ET",
       "research_completed": true,
       "metadata_recovery_exhausted": true,
-      "reviewer_question": "Does the OSF BVOT project contain a distinct eligible public method artifact, or is it covered by REACH BVOT content?",
+      "reviewer_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native OSF public file identities; distinctness from REACH BVOT StoryMap and journal outputs; separate project DOI eligibility. ",
       "hub_delivery_status": "not_delivered",
-      "hub_intake_blocker": "Current Hub importer support for truthful blank mandatory Publication Date and, where relevant, unknown public file/component scope not verified. No candidate batch or Hub acceptance claimed.",
+      "hub_intake_blocker": "Non-date eligibility/identity/public-scope review needs compatible private intake; NOT DELIVERED TO HUB. Pub Date is complete.",
       "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
       "early_retry_reason": "2026-10-29 authoritative bounded different-source recovery before preserved seven-day retry date; do not repeat without new evidence.",
       "original_seed_doi": "10.17605/osf.io/rbdfv",
-      "research_cohort": "Historical DataCite API Backfill 2026-10-28"
+      "research_cohort": "Historical DataCite API Backfill 2026-10-28",
+      "historical_missing_fields_before_executive_rule": [
+        "native OSF public file identities and release date",
+        "distinctness from REACH BVOT StoryMap and journal outputs",
+        "separate project DOI eligibility"
+      ],
+      "historical_reviewer_question_before_executive_rule": "Does the OSF BVOT project contain a distinct eligible public method artifact, or is it covered by REACH BVOT content?",
+      "historical_followup_question_before_executive_rule": "Inspect native OSF project metadata and public files through alternate authoritative endpoint, then determine whether new distinct artifact versus existing REACH BVOT materials.",
+      "historical_hub_intake_blocker_before_executive_rule": "Current Hub importer support for truthful blank mandatory Publication Date and, where relevant, unknown public file/component scope not verified. No candidate batch or Hub acceptance claimed.",
+      "datacite_created": "2024-11-26T17:07:36.000Z",
+      "accepted_reach_pub_date": "2024-11-26",
+      "pub_date_source_url": "https://api.datacite.org/dois/10.17605/osf.io/rbdfv",
+      "pub_date_source_dateType": "DataCite created",
+      "pub_date_policy": "2026-10-30 office-accepted complete REACH Pub Date; no native corroboration or separate date acknowledgement required",
+      "date_policy_applied_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
+      "date_only_research_followup_required": false,
+      "historical_original_triage_status_preserved": true,
+      "ready_for_human_review": true,
+      "hub_delivered": false,
+      "operational_review_route": "HUMAN_INTAKE_NON_DATE_QUESTIONS"
     },
     {
       "identity": "doi:10.25923/0vz0-ra19",
@@ -961,7 +1103,6 @@
       "cohort": "Historical DataCite API Backfill 2026-10-28",
       "status": "pending_hub_handoff",
       "missing_fields": [
-        "record-specific full YYYY-MM-DD publication date",
         "public accessibility of the stimuli component",
         "distinctness from existing REACH parent reach-000816"
       ],
@@ -1014,7 +1155,7 @@
       "retry_count": 1,
       "next_retry_at": "2026-11-05T03:34:15Z",
       "next_research_at": "2026-11-05T03:34:15Z",
-      "followup_question": "Does the DesignSafe deposit expose a distinct public HTI stimuli output, and what exact release date applies?",
+      "followup_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: public accessibility of the stimuli component; distinctness from existing REACH parent reach-000816. ",
       "evidence_urls": [
         "https://doi.org/10.17603/ds2-ydmk-q397",
         "https://bmcnoldy.earth.miami.edu/papers/PMMMMCE2025_WCS.pdf",
@@ -1024,16 +1165,35 @@
         "https://impacts.ucar.edu/en/persons/robert-prestley/"
       ],
       "funding_basis": "Captured exact WPO award and 2025 Prestley/Morss article explicitly cites HTI interview stimuli version 2; SPARK confirms primary project.",
-      "next_action": "Pending compatible Hub intake for truthful blank date; human reviewer to determine separate public eligibility and permitted metadata omission.",
+      "next_action": "Research complete. Accepted Pub Date supplied from DOI-specific DataCite created. Await compatible private human intake for remaining non-date questions; no date re-research.",
       "triage_identity": "doi:10.17603/ds2-ydmk-q397",
       "max_delayed_retries": 1,
       "followup_completed_at": "2026-10-29T21:30:09.782Z",
       "early_retry_reason": "User-directed 2026-10-29 immediate one-time distinct-source recovery, earlier than existing seven-day next_retry_at; original retry date preserved.",
-      "reviewer_question": "Should stimuli be cataloged separately from REACH parent, and what verified release date or permitted omission applies?",
+      "reviewer_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: public accessibility of the stimuli component; distinctness from existing REACH parent reach-000816. ",
       "research_completed": true,
       "metadata_recovery_exhausted": true,
       "hub_delivery_status": "not_delivered",
-      "hub_intake_blocker": "Existing 24-column Discovery Hub importer/REACH mandatory date handling has not been validated for truthful blank publication date and component scope; no valid CSV staged; NOT DELIVERED TO HUB."
+      "hub_intake_blocker": "Non-date eligibility/identity/public-scope review needs compatible private intake; NOT DELIVERED TO HUB. Pub Date is complete.",
+      "historical_missing_fields_before_executive_rule": [
+        "record-specific full YYYY-MM-DD publication date",
+        "public accessibility of the stimuli component",
+        "distinctness from existing REACH parent reach-000816"
+      ],
+      "historical_reviewer_question_before_executive_rule": "Should stimuli be cataloged separately from REACH parent, and what verified release date or permitted omission applies?",
+      "historical_followup_question_before_executive_rule": "Does the DesignSafe deposit expose a distinct public HTI stimuli output, and what exact release date applies?",
+      "historical_hub_intake_blocker_before_executive_rule": "Existing 24-column Discovery Hub importer/REACH mandatory date handling has not been validated for truthful blank publication date and component scope; no valid CSV staged; NOT DELIVERED TO HUB.",
+      "datacite_created": "2025-04-10T21:52:57.000Z",
+      "accepted_reach_pub_date": "2025-04-10",
+      "pub_date_source_url": "https://api.datacite.org/dois/10.17603/ds2-ydmk-q397",
+      "pub_date_source_dateType": "DataCite created",
+      "pub_date_policy": "2026-10-30 office-accepted complete REACH Pub Date; no native corroboration or separate date acknowledgement required",
+      "date_policy_applied_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
+      "date_only_research_followup_required": false,
+      "historical_original_triage_status_preserved": true,
+      "ready_for_human_review": true,
+      "hub_delivered": false,
+      "operational_review_route": "HUMAN_INTAKE_NON_DATE_QUESTIONS"
     },
     {
       "identity": "doi:10.25923/emke-w063",
@@ -1213,7 +1373,6 @@
       "cohort": "Historical DataCite API Backfill 2026-10-28",
       "status": "pending_hub_handoff",
       "missing_fields": [
-        "record-specific full YYYY-MM-DD dataset release date",
         "native public DesignSafe component/file scope",
         "overlap with 10.17603/ds2-jfsc-8902"
       ],
@@ -1288,7 +1447,7 @@
       "max_delayed_retries": 1,
       "next_retry_at": "2026-11-05T05:32:21Z",
       "next_research_at": "2026-11-05T05:32:21Z",
-      "followup_question": "Can authoritative DesignSafe native metadata resolve full YYYY-MM-DD publication date and public scope of this exact Harvey tweet documentation dataset?",
+      "followup_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native public DesignSafe component/file scope; overlap with 10.17603/ds2-jfsc-8902. ",
       "evidence_urls": [
         "https://doi.org/10.17603/ds2-yry6-r324",
         "https://repository.library.noaa.gov/view/noaa/70233",
@@ -1297,19 +1456,38 @@
         "https://impacts.ucar.edu/en/persons/robert-prestley/"
       ],
       "funding_basis": "Original historical DataCite structured award NA19OAR0220119 matches a primary SPARK social-science project Wait, that forecast changed? Related 2024 journal article independently linked, but the dataset native full date and public component remain unverified. Additional primary SPARK project detail and independent publisher/official WPO corroboration recorded; output-specific limits preserved.",
-      "next_action": "RESEARCH COMPLETE; human decision needed, pending compatible Hub intake. Do not repeat metadata searches without new evidence or explicit human request.",
+      "next_action": "Research complete. Accepted Pub Date supplied from DOI-specific DataCite created. Await compatible private human intake for remaining non-date questions; no date re-research.",
       "triage_identity": "doi:10.17603/ds2-yry6-r324",
       "followup_completed_at": "2026-10-29T22:36:34.326Z",
       "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1835ET",
       "research_completed": true,
       "metadata_recovery_exhausted": true,
-      "reviewer_question": "Is Harvey documentation a separate public dataset from related DesignSafe deposit and already-in-REACH article?",
+      "reviewer_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native public DesignSafe component/file scope; overlap with 10.17603/ds2-jfsc-8902. ",
       "hub_delivery_status": "not_delivered",
-      "hub_intake_blocker": "Current Hub importer support for truthful blank mandatory Publication Date and, where relevant, unknown public file/component scope not verified. No candidate batch or Hub acceptance claimed.",
+      "hub_intake_blocker": "Non-date eligibility/identity/public-scope review needs compatible private intake; NOT DELIVERED TO HUB. Pub Date is complete.",
       "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
       "early_retry_reason": "2026-10-29 authoritative bounded different-source recovery before preserved seven-day retry date; do not repeat without new evidence.",
       "original_seed_doi": "10.17603/ds2-yry6-r324",
-      "research_cohort": "Historical DataCite API Backfill 2026-10-28"
+      "research_cohort": "Historical DataCite API Backfill 2026-10-28",
+      "historical_missing_fields_before_executive_rule": [
+        "record-specific full YYYY-MM-DD dataset release date",
+        "native public DesignSafe component/file scope",
+        "overlap with 10.17603/ds2-jfsc-8902"
+      ],
+      "historical_reviewer_question_before_executive_rule": "Is Harvey documentation a separate public dataset from related DesignSafe deposit and already-in-REACH article?",
+      "historical_followup_question_before_executive_rule": "Can authoritative DesignSafe native metadata resolve full YYYY-MM-DD publication date and public scope of this exact Harvey tweet documentation dataset?",
+      "historical_hub_intake_blocker_before_executive_rule": "Current Hub importer support for truthful blank mandatory Publication Date and, where relevant, unknown public file/component scope not verified. No candidate batch or Hub acceptance claimed.",
+      "datacite_created": "2024-01-27T00:05:17.000Z",
+      "accepted_reach_pub_date": "2024-01-27",
+      "pub_date_source_url": "https://api.datacite.org/dois/10.17603/ds2-yry6-r324",
+      "pub_date_source_dateType": "DataCite created",
+      "pub_date_policy": "2026-10-30 office-accepted complete REACH Pub Date; no native corroboration or separate date acknowledgement required",
+      "date_policy_applied_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
+      "date_only_research_followup_required": false,
+      "historical_original_triage_status_preserved": true,
+      "ready_for_human_review": true,
+      "hub_delivered": false,
+      "operational_review_route": "HUMAN_INTAKE_NON_DATE_QUESTIONS"
     },
     {
       "identity": "doi:10.25923/mpqr-r886",
@@ -1745,7 +1923,6 @@
       "cohort": "Historical DataCite API Backfill 2026-10-28",
       "status": "pending_hub_handoff",
       "missing_fields": [
-        "exact first-publication YYYY-MM-DD of this DOI",
         "native publicly accessible file scope and version/concept relation to 10.5281/zenodo.21048460"
       ],
       "attempts": [
@@ -1818,7 +1995,7 @@
       "retry_count": 1,
       "next_retry_at": "2026-11-05T14:34:00Z",
       "next_research_at": "2026-11-05T14:34:00Z",
-      "followup_question": "Can the authoritative repository or publisher verify Full dataset publication YYYY-MM-DD, native file accessibility, version relation to 21048460 without substituting observation/citation year for publication date?",
+      "followup_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native publicly accessible file scope and version/concept relation to 10.5281/zenodo.21048460. ",
       "evidence_urls": [
         "https://api.datacite.org/dois/10.5281/zenodo.21048459",
         "https://zenodo.org/records/21048459",
@@ -1828,19 +2005,35 @@
         "https://zenodo.org/api/records/21048459"
       ],
       "funding_basis": "Captured DataCite fundingReference identifies NA21OAR4590367, corroborated as primary WPO project in SPARK and original WPO roster; exact DOI file/date/version remains unavailable.",
-      "next_action": "Research complete; wait for verified compatible human Hub intake or explicit new evidence; do not retry automated metadata recovery.",
+      "next_action": "Research complete. Accepted Pub Date supplied from DOI-specific DataCite created. Await compatible private human intake for remaining non-date questions; no date re-research.",
       "triage_identity": "doi:10.5281/zenodo.21048459",
       "discovery_route": "Direct API",
       "scout_seed_doi": "10.5281/zenodo.21048459",
       "confidence": "Medium",
       "hub_delivered": false,
-      "ready_for_human_review": false,
+      "ready_for_human_review": true,
       "metadata_recovery_exhausted": true,
       "research_completed": true,
-      "reviewer_question": "For 10.5281/zenodo.21048459, can the record owner verify the first public release date and files, and determine whether this DOI and 10.5281/zenodo.21048460 represent one version family? If catalogable, is a date omission technically permissible under REACH publishing rules?",
-      "hub_intake_blocker": "Current 24-column Discovery Hub intake not verified to support blank mandatory publication date and native version/identity ambiguity; no invalid CSV was published, NOT DELIVERED TO HUB.",
+      "reviewer_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native publicly accessible file scope and version/concept relation to 10.5281/zenodo.21048460. ",
+      "hub_intake_blocker": "Non-date eligibility/identity/public-scope review needs compatible private intake; NOT DELIVERED TO HUB. Pub Date is complete.",
       "hub_delivery_status": "not_delivered",
-      "early_retry_reason": "2026-10-29 user-directed one bounded distinct-source recovery before previously scheduled 2026-11-05 retry; preserved initial investigation dates."
+      "early_retry_reason": "2026-10-29 user-directed one bounded distinct-source recovery before previously scheduled 2026-11-05 retry; preserved initial investigation dates.",
+      "historical_missing_fields_before_executive_rule": [
+        "exact first-publication YYYY-MM-DD of this DOI",
+        "native publicly accessible file scope and version/concept relation to 10.5281/zenodo.21048460"
+      ],
+      "historical_reviewer_question_before_executive_rule": "For 10.5281/zenodo.21048459, can the record owner verify the first public release date and files, and determine whether this DOI and 10.5281/zenodo.21048460 represent one version family? If catalogable, is a date omission technically permissible under REACH publishing rules?",
+      "historical_followup_question_before_executive_rule": "Can the authoritative repository or publisher verify Full dataset publication YYYY-MM-DD, native file accessibility, version relation to 21048460 without substituting observation/citation year for publication date?",
+      "historical_hub_intake_blocker_before_executive_rule": "Current 24-column Discovery Hub intake not verified to support blank mandatory publication date and native version/identity ambiguity; no invalid CSV was published, NOT DELIVERED TO HUB.",
+      "datacite_created": "2026-06-29T22:27:07.000Z",
+      "accepted_reach_pub_date": "2026-06-29",
+      "pub_date_source_url": "https://api.datacite.org/dois/10.5281/zenodo.21048459",
+      "pub_date_source_dateType": "DataCite created",
+      "pub_date_policy": "2026-10-30 office-accepted complete REACH Pub Date; no native corroboration or separate date acknowledgement required",
+      "date_policy_applied_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
+      "date_only_research_followup_required": false,
+      "historical_original_triage_status_preserved": true,
+      "operational_review_route": "HUMAN_INTAKE_NON_DATE_QUESTIONS"
     },
     {
       "identity": "doi:10.5281/zenodo.21048460",
@@ -1850,7 +2043,6 @@
       "cohort": "Historical DataCite API Backfill 2026-10-28",
       "status": "pending_hub_handoff",
       "missing_fields": [
-        "exact first-publication YYYY-MM-DD of this DOI",
         "native publicly accessible file scope and version/concept relation to 10.5281/zenodo.21048459"
       ],
       "attempts": [
@@ -1923,7 +2115,7 @@
       "retry_count": 1,
       "next_retry_at": "2026-11-05T14:34:00Z",
       "next_research_at": "2026-11-05T14:34:00Z",
-      "followup_question": "Can the authoritative repository or publisher verify Full dataset publication YYYY-MM-DD, native file accessibility, version relation to 21048459 without substituting observation/citation year for publication date?",
+      "followup_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native publicly accessible file scope and version/concept relation to 10.5281/zenodo.21048459. ",
       "evidence_urls": [
         "https://api.datacite.org/dois/10.5281/zenodo.21048460",
         "https://zenodo.org/records/21048460",
@@ -1933,19 +2125,35 @@
         "https://zenodo.org/api/records/21048460"
       ],
       "funding_basis": "Captured DataCite fundingReference identifies NA21OAR4590367, corroborated as primary WPO project in SPARK and original WPO roster; exact DOI file/date/version remains unavailable.",
-      "next_action": "Research complete; wait for verified compatible human Hub intake or explicit new evidence; do not retry automated metadata recovery.",
+      "next_action": "Research complete. Accepted Pub Date supplied from DOI-specific DataCite created. Await compatible private human intake for remaining non-date questions; no date re-research.",
       "triage_identity": "doi:10.5281/zenodo.21048460",
       "discovery_route": "Direct API",
       "scout_seed_doi": "10.5281/zenodo.21048460",
       "confidence": "Medium",
       "hub_delivered": false,
-      "ready_for_human_review": false,
+      "ready_for_human_review": true,
       "metadata_recovery_exhausted": true,
       "research_completed": true,
-      "reviewer_question": "For 10.5281/zenodo.21048460, can the record owner verify the first public release date and files, and determine whether this DOI and 10.5281/zenodo.21048459 represent one version family? If catalogable, is a date omission technically permissible under REACH publishing rules?",
-      "hub_intake_blocker": "Current 24-column Discovery Hub intake not verified to support blank mandatory publication date and native version/identity ambiguity; no invalid CSV was published, NOT DELIVERED TO HUB.",
+      "reviewer_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native publicly accessible file scope and version/concept relation to 10.5281/zenodo.21048459. ",
+      "hub_intake_blocker": "Non-date eligibility/identity/public-scope review needs compatible private intake; NOT DELIVERED TO HUB. Pub Date is complete.",
       "hub_delivery_status": "not_delivered",
-      "early_retry_reason": "2026-10-29 user-directed one bounded distinct-source recovery before previously scheduled 2026-11-05 retry; preserved initial investigation dates."
+      "early_retry_reason": "2026-10-29 user-directed one bounded distinct-source recovery before previously scheduled 2026-11-05 retry; preserved initial investigation dates.",
+      "historical_missing_fields_before_executive_rule": [
+        "exact first-publication YYYY-MM-DD of this DOI",
+        "native publicly accessible file scope and version/concept relation to 10.5281/zenodo.21048459"
+      ],
+      "historical_reviewer_question_before_executive_rule": "For 10.5281/zenodo.21048460, can the record owner verify the first public release date and files, and determine whether this DOI and 10.5281/zenodo.21048459 represent one version family? If catalogable, is a date omission technically permissible under REACH publishing rules?",
+      "historical_followup_question_before_executive_rule": "Can the authoritative repository or publisher verify Full dataset publication YYYY-MM-DD, native file accessibility, version relation to 21048459 without substituting observation/citation year for publication date?",
+      "historical_hub_intake_blocker_before_executive_rule": "Current 24-column Discovery Hub intake not verified to support blank mandatory publication date and native version/identity ambiguity; no invalid CSV was published, NOT DELIVERED TO HUB.",
+      "datacite_created": "2026-06-29T22:27:07.000Z",
+      "accepted_reach_pub_date": "2026-06-29",
+      "pub_date_source_url": "https://api.datacite.org/dois/10.5281/zenodo.21048460",
+      "pub_date_source_dateType": "DataCite created",
+      "pub_date_policy": "2026-10-30 office-accepted complete REACH Pub Date; no native corroboration or separate date acknowledgement required",
+      "date_policy_applied_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
+      "date_only_research_followup_required": false,
+      "historical_original_triage_status_preserved": true,
+      "operational_review_route": "HUMAN_INTAKE_NON_DATE_QUESTIONS"
     },
     {
       "identity": "doi:10.5281/zenodo.23044469",
@@ -1955,7 +2163,6 @@
       "cohort": "Historical DataCite API Backfill 2026-10-28",
       "status": "pending_hub_handoff",
       "missing_fields": [
-        "exact first-publication YYYY-MM-DD of this DOI",
         "native publicly accessible file scope and version/concept relation to 10.5281/zenodo.23044470"
       ],
       "attempts": [
@@ -2028,7 +2235,7 @@
       "retry_count": 1,
       "next_retry_at": "2026-11-05T14:34:00Z",
       "next_research_at": "2026-11-05T14:34:00Z",
-      "followup_question": "Can the authoritative repository or publisher verify Full source-code publication YYYY-MM-DD, native files, version relation to 23044470 without substituting observation/citation year for publication date?",
+      "followup_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native publicly accessible file scope and version/concept relation to 10.5281/zenodo.23044470. ",
       "evidence_urls": [
         "https://api.datacite.org/dois/10.5281/zenodo.23044469",
         "https://zenodo.org/records/23044469",
@@ -2038,19 +2245,35 @@
         "https://zenodo.org/api/records/23044469"
       ],
       "funding_basis": "Captured DataCite fundingReference identifies NA22OAR4590188, corroborated as primary WPO project in SPARK and original WPO roster; exact DOI file/date/version remains unavailable.",
-      "next_action": "Research complete; wait for verified compatible human Hub intake or explicit new evidence; do not retry automated metadata recovery.",
+      "next_action": "Research complete. Accepted Pub Date supplied from DOI-specific DataCite created. Await compatible private human intake for remaining non-date questions; no date re-research.",
       "triage_identity": "doi:10.5281/zenodo.23044469",
       "discovery_route": "Direct API",
       "scout_seed_doi": "10.5281/zenodo.23044469",
       "confidence": "Medium",
       "hub_delivered": false,
-      "ready_for_human_review": false,
+      "ready_for_human_review": true,
       "metadata_recovery_exhausted": true,
       "research_completed": true,
-      "reviewer_question": "For 10.5281/zenodo.23044469, can the record owner verify the first public release date and files, and determine whether this DOI and 10.5281/zenodo.23044470 represent one version family? If catalogable, is a date omission technically permissible under REACH publishing rules?",
-      "hub_intake_blocker": "Current 24-column Discovery Hub intake not verified to support blank mandatory publication date and native version/identity ambiguity; no invalid CSV was published, NOT DELIVERED TO HUB.",
+      "reviewer_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native publicly accessible file scope and version/concept relation to 10.5281/zenodo.23044470. ",
+      "hub_intake_blocker": "Non-date eligibility/identity/public-scope review needs compatible private intake; NOT DELIVERED TO HUB. Pub Date is complete.",
       "hub_delivery_status": "not_delivered",
-      "early_retry_reason": "2026-10-29 user-directed one bounded distinct-source recovery before previously scheduled 2026-11-05 retry; preserved initial investigation dates."
+      "early_retry_reason": "2026-10-29 user-directed one bounded distinct-source recovery before previously scheduled 2026-11-05 retry; preserved initial investigation dates.",
+      "historical_missing_fields_before_executive_rule": [
+        "exact first-publication YYYY-MM-DD of this DOI",
+        "native publicly accessible file scope and version/concept relation to 10.5281/zenodo.23044470"
+      ],
+      "historical_reviewer_question_before_executive_rule": "For 10.5281/zenodo.23044469, can the record owner verify the first public release date and files, and determine whether this DOI and 10.5281/zenodo.23044470 represent one version family? If catalogable, is a date omission technically permissible under REACH publishing rules?",
+      "historical_followup_question_before_executive_rule": "Can the authoritative repository or publisher verify Full source-code publication YYYY-MM-DD, native files, version relation to 23044470 without substituting observation/citation year for publication date?",
+      "historical_hub_intake_blocker_before_executive_rule": "Current 24-column Discovery Hub intake not verified to support blank mandatory publication date and native version/identity ambiguity; no invalid CSV was published, NOT DELIVERED TO HUB.",
+      "datacite_created": "2026-09-29T19:59:03.000Z",
+      "accepted_reach_pub_date": "2026-09-29",
+      "pub_date_source_url": "https://api.datacite.org/dois/10.5281/zenodo.23044469",
+      "pub_date_source_dateType": "DataCite created",
+      "pub_date_policy": "2026-10-30 office-accepted complete REACH Pub Date; no native corroboration or separate date acknowledgement required",
+      "date_policy_applied_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
+      "date_only_research_followup_required": false,
+      "historical_original_triage_status_preserved": true,
+      "operational_review_route": "HUMAN_INTAKE_NON_DATE_QUESTIONS"
     },
     {
       "identity": "doi:10.5281/zenodo.23044470",
@@ -2060,7 +2283,6 @@
       "cohort": "Historical DataCite API Backfill 2026-10-28",
       "status": "pending_hub_handoff",
       "missing_fields": [
-        "exact first-publication YYYY-MM-DD of this DOI",
         "native publicly accessible file scope and version/concept relation to 10.5281/zenodo.23044469"
       ],
       "attempts": [
@@ -2133,7 +2355,7 @@
       "retry_count": 1,
       "next_retry_at": "2026-11-05T14:34:00Z",
       "next_research_at": "2026-11-05T14:34:00Z",
-      "followup_question": "Can the authoritative repository or publisher verify Full source-code publication YYYY-MM-DD, native files, version relation to 23044469 without substituting observation/citation year for publication date?",
+      "followup_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native publicly accessible file scope and version/concept relation to 10.5281/zenodo.23044469. ",
       "evidence_urls": [
         "https://api.datacite.org/dois/10.5281/zenodo.23044470",
         "https://zenodo.org/records/23044470",
@@ -2143,19 +2365,35 @@
         "https://zenodo.org/api/records/23044470"
       ],
       "funding_basis": "Captured DataCite fundingReference identifies NA22OAR4590188, corroborated as primary WPO project in SPARK and original WPO roster; exact DOI file/date/version remains unavailable.",
-      "next_action": "Research complete; wait for verified compatible human Hub intake or explicit new evidence; do not retry automated metadata recovery.",
+      "next_action": "Research complete. Accepted Pub Date supplied from DOI-specific DataCite created. Await compatible private human intake for remaining non-date questions; no date re-research.",
       "triage_identity": "doi:10.5281/zenodo.23044470",
       "discovery_route": "Direct API",
       "scout_seed_doi": "10.5281/zenodo.23044470",
       "confidence": "Medium",
       "hub_delivered": false,
-      "ready_for_human_review": false,
+      "ready_for_human_review": true,
       "metadata_recovery_exhausted": true,
       "research_completed": true,
-      "reviewer_question": "For 10.5281/zenodo.23044470, can the record owner verify the first public release date and files, and determine whether this DOI and 10.5281/zenodo.23044469 represent one version family? If catalogable, is a date omission technically permissible under REACH publishing rules?",
-      "hub_intake_blocker": "Current 24-column Discovery Hub intake not verified to support blank mandatory publication date and native version/identity ambiguity; no invalid CSV was published, NOT DELIVERED TO HUB.",
+      "reviewer_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native publicly accessible file scope and version/concept relation to 10.5281/zenodo.23044469. ",
+      "hub_intake_blocker": "Non-date eligibility/identity/public-scope review needs compatible private intake; NOT DELIVERED TO HUB. Pub Date is complete.",
       "hub_delivery_status": "not_delivered",
-      "early_retry_reason": "2026-10-29 user-directed one bounded distinct-source recovery before previously scheduled 2026-11-05 retry; preserved initial investigation dates."
+      "early_retry_reason": "2026-10-29 user-directed one bounded distinct-source recovery before previously scheduled 2026-11-05 retry; preserved initial investigation dates.",
+      "historical_missing_fields_before_executive_rule": [
+        "exact first-publication YYYY-MM-DD of this DOI",
+        "native publicly accessible file scope and version/concept relation to 10.5281/zenodo.23044469"
+      ],
+      "historical_reviewer_question_before_executive_rule": "For 10.5281/zenodo.23044470, can the record owner verify the first public release date and files, and determine whether this DOI and 10.5281/zenodo.23044469 represent one version family? If catalogable, is a date omission technically permissible under REACH publishing rules?",
+      "historical_followup_question_before_executive_rule": "Can the authoritative repository or publisher verify Full source-code publication YYYY-MM-DD, native files, version relation to 23044469 without substituting observation/citation year for publication date?",
+      "historical_hub_intake_blocker_before_executive_rule": "Current 24-column Discovery Hub intake not verified to support blank mandatory publication date and native version/identity ambiguity; no invalid CSV was published, NOT DELIVERED TO HUB.",
+      "datacite_created": "2026-09-29T19:59:02.000Z",
+      "accepted_reach_pub_date": "2026-09-29",
+      "pub_date_source_url": "https://api.datacite.org/dois/10.5281/zenodo.23044470",
+      "pub_date_source_dateType": "DataCite created",
+      "pub_date_policy": "2026-10-30 office-accepted complete REACH Pub Date; no native corroboration or separate date acknowledgement required",
+      "date_policy_applied_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
+      "date_only_research_followup_required": false,
+      "historical_original_triage_status_preserved": true,
+      "operational_review_route": "HUMAN_INTAKE_NON_DATE_QUESTIONS"
     },
     {
       "identity": "doi:10.5281/zenodo.23289230",
@@ -2165,7 +2403,6 @@
       "cohort": "Historical DataCite API Backfill 2026-10-28",
       "status": "pending_hub_handoff",
       "missing_fields": [
-        "exact first-publication YYYY-MM-DD of this DOI",
         "native publicly accessible file scope and version/concept relation to 10.5281/zenodo.23289231"
       ],
       "attempts": [
@@ -2238,7 +2475,7 @@
       "retry_count": 1,
       "next_retry_at": "2026-11-05T14:34:00Z",
       "next_research_at": "2026-11-05T14:34:00Z",
-      "followup_question": "Can the authoritative repository or publisher verify Full dataset publication YYYY-MM-DD, native files, version relation to 23289231 without substituting observation/citation year for publication date?",
+      "followup_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native publicly accessible file scope and version/concept relation to 10.5281/zenodo.23289231. ",
       "evidence_urls": [
         "https://api.datacite.org/dois/10.5281/zenodo.23289230",
         "https://zenodo.org/records/23289230",
@@ -2248,19 +2485,35 @@
         "https://zenodo.org/api/records/23289230"
       ],
       "funding_basis": "Captured DataCite fundingReference identifies NA22OAR0110487, corroborated as primary WPO project in SPARK and original WPO roster; exact DOI file/date/version remains unavailable.",
-      "next_action": "Research complete; wait for verified compatible human Hub intake or explicit new evidence; do not retry automated metadata recovery.",
+      "next_action": "Research complete. Accepted Pub Date supplied from DOI-specific DataCite created. Await compatible private human intake for remaining non-date questions; no date re-research.",
       "triage_identity": "doi:10.5281/zenodo.23289230",
       "discovery_route": "Direct API",
       "scout_seed_doi": "10.5281/zenodo.23289230",
       "confidence": "Medium",
       "hub_delivered": false,
-      "ready_for_human_review": false,
+      "ready_for_human_review": true,
       "metadata_recovery_exhausted": true,
       "research_completed": true,
-      "reviewer_question": "For 10.5281/zenodo.23289230, can the record owner verify the first public release date and files, and determine whether this DOI and 10.5281/zenodo.23289231 represent one version family? If catalogable, is a date omission technically permissible under REACH publishing rules?",
-      "hub_intake_blocker": "Current 24-column Discovery Hub intake not verified to support blank mandatory publication date and native version/identity ambiguity; no invalid CSV was published, NOT DELIVERED TO HUB.",
+      "reviewer_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native publicly accessible file scope and version/concept relation to 10.5281/zenodo.23289231. ",
+      "hub_intake_blocker": "Non-date eligibility/identity/public-scope review needs compatible private intake; NOT DELIVERED TO HUB. Pub Date is complete.",
       "hub_delivery_status": "not_delivered",
-      "early_retry_reason": "2026-10-29 user-directed one bounded distinct-source recovery before previously scheduled 2026-11-05 retry; preserved initial investigation dates."
+      "early_retry_reason": "2026-10-29 user-directed one bounded distinct-source recovery before previously scheduled 2026-11-05 retry; preserved initial investigation dates.",
+      "historical_missing_fields_before_executive_rule": [
+        "exact first-publication YYYY-MM-DD of this DOI",
+        "native publicly accessible file scope and version/concept relation to 10.5281/zenodo.23289231"
+      ],
+      "historical_reviewer_question_before_executive_rule": "For 10.5281/zenodo.23289230, can the record owner verify the first public release date and files, and determine whether this DOI and 10.5281/zenodo.23289231 represent one version family? If catalogable, is a date omission technically permissible under REACH publishing rules?",
+      "historical_followup_question_before_executive_rule": "Can the authoritative repository or publisher verify Full dataset publication YYYY-MM-DD, native files, version relation to 23289231 without substituting observation/citation year for publication date?",
+      "historical_hub_intake_blocker_before_executive_rule": "Current 24-column Discovery Hub intake not verified to support blank mandatory publication date and native version/identity ambiguity; no invalid CSV was published, NOT DELIVERED TO HUB.",
+      "datacite_created": "2026-10-10T23:58:17.000Z",
+      "accepted_reach_pub_date": "2026-10-10",
+      "pub_date_source_url": "https://api.datacite.org/dois/10.5281/zenodo.23289230",
+      "pub_date_source_dateType": "DataCite created",
+      "pub_date_policy": "2026-10-30 office-accepted complete REACH Pub Date; no native corroboration or separate date acknowledgement required",
+      "date_policy_applied_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
+      "date_only_research_followup_required": false,
+      "historical_original_triage_status_preserved": true,
+      "operational_review_route": "HUMAN_INTAKE_NON_DATE_QUESTIONS"
     },
     {
       "identity": "doi:10.5281/zenodo.23289231",
@@ -2270,7 +2523,6 @@
       "cohort": "Historical DataCite API Backfill 2026-10-28",
       "status": "pending_hub_handoff",
       "missing_fields": [
-        "exact first-publication YYYY-MM-DD of this DOI",
         "native publicly accessible file scope and version/concept relation to 10.5281/zenodo.23289230"
       ],
       "attempts": [
@@ -2343,7 +2595,7 @@
       "retry_count": 1,
       "next_retry_at": "2026-11-05T14:34:00Z",
       "next_research_at": "2026-11-05T14:34:00Z",
-      "followup_question": "Can the authoritative repository or publisher verify Full dataset publication YYYY-MM-DD, native files, version relation to 23289230 without substituting observation/citation year for publication date?",
+      "followup_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native publicly accessible file scope and version/concept relation to 10.5281/zenodo.23289230. ",
       "evidence_urls": [
         "https://api.datacite.org/dois/10.5281/zenodo.23289231",
         "https://zenodo.org/records/23289231",
@@ -2353,19 +2605,35 @@
         "https://zenodo.org/api/records/23289231"
       ],
       "funding_basis": "Captured DataCite fundingReference identifies NA22OAR0110487, corroborated as primary WPO project in SPARK and original WPO roster; exact DOI file/date/version remains unavailable.",
-      "next_action": "Research complete; wait for verified compatible human Hub intake or explicit new evidence; do not retry automated metadata recovery.",
+      "next_action": "Research complete. Accepted Pub Date supplied from DOI-specific DataCite created. Await compatible private human intake for remaining non-date questions; no date re-research.",
       "triage_identity": "doi:10.5281/zenodo.23289231",
       "discovery_route": "Direct API",
       "scout_seed_doi": "10.5281/zenodo.23289231",
       "confidence": "Medium",
       "hub_delivered": false,
-      "ready_for_human_review": false,
+      "ready_for_human_review": true,
       "metadata_recovery_exhausted": true,
       "research_completed": true,
-      "reviewer_question": "For 10.5281/zenodo.23289231, can the record owner verify the first public release date and files, and determine whether this DOI and 10.5281/zenodo.23289230 represent one version family? If catalogable, is a date omission technically permissible under REACH publishing rules?",
-      "hub_intake_blocker": "Current 24-column Discovery Hub intake not verified to support blank mandatory publication date and native version/identity ambiguity; no invalid CSV was published, NOT DELIVERED TO HUB.",
+      "reviewer_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native publicly accessible file scope and version/concept relation to 10.5281/zenodo.23289230. ",
+      "hub_intake_blocker": "Non-date eligibility/identity/public-scope review needs compatible private intake; NOT DELIVERED TO HUB. Pub Date is complete.",
       "hub_delivery_status": "not_delivered",
-      "early_retry_reason": "2026-10-29 user-directed one bounded distinct-source recovery before previously scheduled 2026-11-05 retry; preserved initial investigation dates."
+      "early_retry_reason": "2026-10-29 user-directed one bounded distinct-source recovery before previously scheduled 2026-11-05 retry; preserved initial investigation dates.",
+      "historical_missing_fields_before_executive_rule": [
+        "exact first-publication YYYY-MM-DD of this DOI",
+        "native publicly accessible file scope and version/concept relation to 10.5281/zenodo.23289230"
+      ],
+      "historical_reviewer_question_before_executive_rule": "For 10.5281/zenodo.23289231, can the record owner verify the first public release date and files, and determine whether this DOI and 10.5281/zenodo.23289230 represent one version family? If catalogable, is a date omission technically permissible under REACH publishing rules?",
+      "historical_followup_question_before_executive_rule": "Can the authoritative repository or publisher verify Full dataset publication YYYY-MM-DD, native files, version relation to 23289230 without substituting observation/citation year for publication date?",
+      "historical_hub_intake_blocker_before_executive_rule": "Current 24-column Discovery Hub intake not verified to support blank mandatory publication date and native version/identity ambiguity; no invalid CSV was published, NOT DELIVERED TO HUB.",
+      "datacite_created": "2026-10-10T23:58:17.000Z",
+      "accepted_reach_pub_date": "2026-10-10",
+      "pub_date_source_url": "https://api.datacite.org/dois/10.5281/zenodo.23289231",
+      "pub_date_source_dateType": "DataCite created",
+      "pub_date_policy": "2026-10-30 office-accepted complete REACH Pub Date; no native corroboration or separate date acknowledgement required",
+      "date_policy_applied_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
+      "date_only_research_followup_required": false,
+      "historical_original_triage_status_preserved": true,
+      "operational_review_route": "HUMAN_INTAKE_NON_DATE_QUESTIONS"
     },
     {
       "identity": "doi:10.57969/s93w23",
@@ -2373,11 +2641,8 @@
         "NA21OAR4590374"
       ],
       "cohort": "Historical DataCite API Backfill 2026-10-28",
-      "status": "pending_hub_handoff",
-      "missing_fields": [
-        "record-specific first publication YYYY-MM-DD",
-        "whether downstream publishing permits date omission"
-      ],
+      "status": "resolved",
+      "missing_fields": [],
       "attempts": [
         {
           "round": 0,
@@ -2441,7 +2706,7 @@
       "retry_count": 1,
       "next_retry_at": "2026-11-05T14:34:00Z",
       "next_research_at": "2026-11-05T14:34:00Z",
-      "followup_question": "Can the authoritative repository or publisher verify Exact first-publication YYYY-MM-DD and public ERDDAP data scope without substituting observation/citation year for publication date?",
+      "followup_question": "Confirm this exact DOI is a distinct eligible WPO-funded public dataset and that no prior private reviewer decision or version conflict prevents addition.",
       "evidence_urls": [
         "https://api.datacite.org/dois/10.57969/s93w23",
         "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
@@ -2449,24 +2714,42 @@
         "https://erddap.ldl.ucsd.edu/erddap/info/ONR_NOPP2022/index.html"
       ],
       "funding_basis": "Captured DataCite structured fundingReference identifies exact WPO primary SPARK award NA21OAR4590374; Scripps NOPP NHCI official catalog corroborates sensor/first-five family, but does not establish full publication day or all alternate DOI identities. Additional primary SPARK project detail and independent publisher/official WPO corroboration recorded; output-specific limits preserved.",
-      "next_action": "RESEARCH COMPLETE; human decision needed, pending compatible Hub intake. Do not repeat metadata searches without new evidence or explicit human request.",
+      "next_action": "Four valid complete 24-column proposals are staged in verified immutable batch 2026-10-30-hourly-1229ET-nhci-date-policy-normal-review-001; normal human eligibility/dedup review via Hub sync. No separate Pub Date verification; no automatic approval.",
       "triage_identity": "doi:10.57969/s93w23",
       "discovery_route": "Direct API",
       "scout_seed_doi": "10.57969/s93w23",
       "confidence": "Medium",
       "hub_delivered": false,
-      "ready_for_human_review": false,
+      "ready_for_human_review": true,
       "followup_completed_at": "2026-10-29T22:36:34.326Z",
       "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1835ET",
       "research_completed": true,
       "metadata_recovery_exhausted": true,
-      "reviewer_question": "Can Scripps verify first public release date for 2022 sensor dataset or permit explicit human waiver?",
-      "hub_delivery_status": "not_delivered",
-      "hub_intake_blocker": "Current Hub importer support for truthful blank mandatory Publication Date and, where relevant, unknown public file/component scope not verified. No candidate batch or Hub acceptance claimed.",
-      "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
+      "reviewer_question": "Confirm this exact DOI is a distinct eligible WPO-funded public dataset and that no prior private reviewer decision or version conflict prevents addition.",
+      "hub_delivery_status": "feed_verified_hub_import_not_verified",
+      "hub_intake_blocker": "Hub sync/import and private reviewer decisions NOT VERIFIED; accepted Pub Date is NOT a blocker.",
+      "reviewer_visibility": "FEED_VERIFIED_HUB_IMPORT_NOT_VERIFIED",
       "early_retry_reason": "2026-10-29 authoritative bounded different-source recovery before preserved seven-day retry date; do not repeat without new evidence.",
       "original_seed_doi": "10.57969/s93w23",
-      "research_cohort": "Historical DataCite API Backfill 2026-10-28"
+      "research_cohort": "Historical DataCite API Backfill 2026-10-28",
+      "historical_missing_fields_before_executive_rule": [
+        "record-specific first publication YYYY-MM-DD",
+        "whether downstream publishing permits date omission"
+      ],
+      "historical_reviewer_question_before_executive_rule": "Can Scripps verify first public release date for 2022 sensor dataset or permit explicit human waiver?",
+      "historical_followup_question_before_executive_rule": "Can the authoritative repository or publisher verify Exact first-publication YYYY-MM-DD and public ERDDAP data scope without substituting observation/citation year for publication date?",
+      "historical_hub_intake_blocker_before_executive_rule": "Current Hub importer support for truthful blank mandatory Publication Date and, where relevant, unknown public file/component scope not verified. No candidate batch or Hub acceptance claimed.",
+      "datacite_created": "2024-02-28T21:11:56.000Z",
+      "accepted_reach_pub_date": "2024-02-28",
+      "pub_date_source_url": "https://api.datacite.org/dois/10.57969/s93w23",
+      "pub_date_source_dateType": "DataCite created",
+      "pub_date_policy": "2026-10-30 office-accepted complete REACH Pub Date; no native corroboration or separate date acknowledgement required",
+      "date_policy_applied_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
+      "date_only_research_followup_required": false,
+      "historical_original_triage_status_preserved": true,
+      "prior_status_before_date_policy": "pending_hub_handoff",
+      "operational_review_route": "POTENTIAL_NEW_OUTPUT_NORMAL_REVIEW_FEED_VERIFIED_HUB_IMPORT_NOT_VERIFIED",
+      "scout_batch_path": "scout-discoveries/batches/2026-10-30-hourly-1229ET-nhci-date-policy-normal-review-001.csv"
     },
     {
       "identity": "doi:10.57969/s9k013",
@@ -2474,10 +2757,8 @@
         "NA21OAR4590374"
       ],
       "cohort": "Historical DataCite API Backfill 2026-10-28",
-      "status": "pending_hub_handoff",
-      "missing_fields": [
-        "record-specific first-publication YYYY-MM-DD"
-      ],
+      "status": "resolved",
+      "missing_fields": [],
       "attempts": [
         {
           "round": 0,
@@ -2548,7 +2829,7 @@
       "retry_count": 1,
       "next_retry_at": "2026-11-05T14:34:00Z",
       "next_research_at": "2026-11-05T14:34:00Z",
-      "followup_question": "Can the authoritative repository or publisher verify Exact first-publication YYYY-MM-DD and public ERDDAP data scope without substituting observation/citation year for publication date?",
+      "followup_question": "Confirm this exact DOI is a distinct eligible WPO-funded public dataset and that no prior private reviewer decision or version conflict prevents addition.",
       "evidence_urls": [
         "https://api.datacite.org/dois/10.57969/s9k013",
         "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
@@ -2558,7 +2839,7 @@
         "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
       ],
       "funding_basis": "Captured DataCite structured fundingReference identifies exact WPO primary SPARK award NA21OAR4590374; Scripps NOPP NHCI official catalog corroborates sensor/first-five family, but does not establish full publication day or all alternate DOI identities. Primary SPARK spark-000336 project detail independently corroborates exact WPO award NA21OAR4590374 and drifter observations.",
-      "next_action": "RESEARCH COMPLETE; pending compatible human reviewer intake, NOT DELIVERED TO HUB. Do not repeat research absent new evidence or explicit human request.",
+      "next_action": "Four valid complete 24-column proposals are staged in verified immutable batch 2026-10-30-hourly-1229ET-nhci-date-policy-normal-review-001; normal human eligibility/dedup review via Hub sync. No separate Pub Date verification; no automatic approval.",
       "triage_identity": "doi:10.57969/s9k013",
       "discovery_route": "Direct API",
       "scout_seed_doi": "10.57969/s9k013",
@@ -2567,14 +2848,31 @@
       "ready_for_human_review": true,
       "research_completed": true,
       "metadata_recovery_exhausted": true,
-      "hub_delivery_status": "not_delivered",
-      "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
-      "hub_intake_blocker": "Existing Discovery Hub import acceptance of blank mandatory Publication Date not verified; no CSV published or Hub acceptance claimed.",
+      "hub_delivery_status": "feed_verified_hub_import_not_verified",
+      "reviewer_visibility": "FEED_VERIFIED_HUB_IMPORT_NOT_VERIFIED",
+      "hub_intake_blocker": "Hub sync/import and private reviewer decisions NOT VERIFIED; accepted Pub Date is NOT a blocker.",
       "followup_completed_at": "2026-10-30T01:29:42.031Z",
       "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-2129ET",
       "early_retry_reason": "2026-10-29 user-directed immediate distinct-source recovery before preserved seven-day retry; original schedule retained.",
-      "reviewer_question": "Should the NOPP 2024 sensor dataset be separately added with missing first-publication date?",
-      "original_seed_doi": "10.57969/s9k013"
+      "reviewer_question": "Confirm this exact DOI is a distinct eligible WPO-funded public dataset and that no prior private reviewer decision or version conflict prevents addition.",
+      "original_seed_doi": "10.57969/s9k013",
+      "historical_missing_fields_before_executive_rule": [
+        "record-specific first-publication YYYY-MM-DD"
+      ],
+      "historical_reviewer_question_before_executive_rule": "Should the NOPP 2024 sensor dataset be separately added with missing first-publication date?",
+      "historical_followup_question_before_executive_rule": "Can the authoritative repository or publisher verify Exact first-publication YYYY-MM-DD and public ERDDAP data scope without substituting observation/citation year for publication date?",
+      "historical_hub_intake_blocker_before_executive_rule": "Existing Discovery Hub import acceptance of blank mandatory Publication Date not verified; no CSV published or Hub acceptance claimed.",
+      "datacite_created": "2024-04-30T20:17:18.000Z",
+      "accepted_reach_pub_date": "2024-04-30",
+      "pub_date_source_url": "https://api.datacite.org/dois/10.57969/s9k013",
+      "pub_date_source_dateType": "DataCite created",
+      "pub_date_policy": "2026-10-30 office-accepted complete REACH Pub Date; no native corroboration or separate date acknowledgement required",
+      "date_policy_applied_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
+      "date_only_research_followup_required": false,
+      "historical_original_triage_status_preserved": true,
+      "prior_status_before_date_policy": "pending_hub_handoff",
+      "operational_review_route": "POTENTIAL_NEW_OUTPUT_NORMAL_REVIEW_FEED_VERIFIED_HUB_IMPORT_NOT_VERIFIED",
+      "scout_batch_path": "scout-discoveries/batches/2026-10-30-hourly-1229ET-nhci-date-policy-normal-review-001.csv"
     },
     {
       "identity": "doi:10.57969/s9f59m",
@@ -2582,11 +2880,8 @@
         "NA21OAR4590374"
       ],
       "cohort": "Historical DataCite API Backfill 2026-10-28",
-      "status": "pending_hub_handoff",
-      "missing_fields": [
-        "record-specific first publication YYYY-MM-DD",
-        "whether downstream publishing permits date omission"
-      ],
+      "status": "resolved",
+      "missing_fields": [],
       "attempts": [
         {
           "round": 0,
@@ -2650,7 +2945,7 @@
       "retry_count": 1,
       "next_retry_at": "2026-11-05T14:34:00Z",
       "next_research_at": "2026-11-05T14:34:00Z",
-      "followup_question": "Can the authoritative repository or publisher verify Exact first-publication YYYY-MM-DD and separate first-five vs sensor identity without substituting observation/citation year for publication date?",
+      "followup_question": "Confirm this exact DOI is a distinct eligible WPO-funded public dataset and that no prior private reviewer decision or version conflict prevents addition.",
       "evidence_urls": [
         "https://api.datacite.org/dois/10.57969/s9f59m",
         "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
@@ -2658,24 +2953,42 @@
         "https://erddap.ldl.ucsd.edu/erddap/info/ONR_NOPP2024_First5/index.html"
       ],
       "funding_basis": "Captured DataCite structured fundingReference identifies exact WPO primary SPARK award NA21OAR4590374; Scripps NOPP NHCI official catalog corroborates sensor/first-five family, but does not establish full publication day or all alternate DOI identities. Additional primary SPARK project detail and independent publisher/official WPO corroboration recorded; output-specific limits preserved.",
-      "next_action": "RESEARCH COMPLETE; human decision needed, pending compatible Hub intake. Do not repeat metadata searches without new evidence or explicit human request.",
+      "next_action": "Four valid complete 24-column proposals are staged in verified immutable batch 2026-10-30-hourly-1229ET-nhci-date-policy-normal-review-001; normal human eligibility/dedup review via Hub sync. No separate Pub Date verification; no automatic approval.",
       "triage_identity": "doi:10.57969/s9f59m",
       "discovery_route": "Direct API",
       "scout_seed_doi": "10.57969/s9f59m",
       "confidence": "Medium",
       "hub_delivered": false,
-      "ready_for_human_review": false,
+      "ready_for_human_review": true,
       "followup_completed_at": "2026-10-29T22:36:34.326Z",
       "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1835ET",
       "research_completed": true,
       "metadata_recovery_exhausted": true,
-      "reviewer_question": "Can Scripps verify first public release date for 2024 first-five dataset or permit explicit human waiver?",
-      "hub_delivery_status": "not_delivered",
-      "hub_intake_blocker": "Current Hub importer support for truthful blank mandatory Publication Date and, where relevant, unknown public file/component scope not verified. No candidate batch or Hub acceptance claimed.",
-      "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
+      "reviewer_question": "Confirm this exact DOI is a distinct eligible WPO-funded public dataset and that no prior private reviewer decision or version conflict prevents addition.",
+      "hub_delivery_status": "feed_verified_hub_import_not_verified",
+      "hub_intake_blocker": "Hub sync/import and private reviewer decisions NOT VERIFIED; accepted Pub Date is NOT a blocker.",
+      "reviewer_visibility": "FEED_VERIFIED_HUB_IMPORT_NOT_VERIFIED",
       "early_retry_reason": "2026-10-29 authoritative bounded different-source recovery before preserved seven-day retry date; do not repeat without new evidence.",
       "original_seed_doi": "10.57969/s9f59m",
-      "research_cohort": "Historical DataCite API Backfill 2026-10-28"
+      "research_cohort": "Historical DataCite API Backfill 2026-10-28",
+      "historical_missing_fields_before_executive_rule": [
+        "record-specific first publication YYYY-MM-DD",
+        "whether downstream publishing permits date omission"
+      ],
+      "historical_reviewer_question_before_executive_rule": "Can Scripps verify first public release date for 2024 first-five dataset or permit explicit human waiver?",
+      "historical_followup_question_before_executive_rule": "Can the authoritative repository or publisher verify Exact first-publication YYYY-MM-DD and separate first-five vs sensor identity without substituting observation/citation year for publication date?",
+      "historical_hub_intake_blocker_before_executive_rule": "Current Hub importer support for truthful blank mandatory Publication Date and, where relevant, unknown public file/component scope not verified. No candidate batch or Hub acceptance claimed.",
+      "datacite_created": "2024-04-30T20:26:29.000Z",
+      "accepted_reach_pub_date": "2024-04-30",
+      "pub_date_source_url": "https://api.datacite.org/dois/10.57969/s9f59m",
+      "pub_date_source_dateType": "DataCite created",
+      "pub_date_policy": "2026-10-30 office-accepted complete REACH Pub Date; no native corroboration or separate date acknowledgement required",
+      "date_policy_applied_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
+      "date_only_research_followup_required": false,
+      "historical_original_triage_status_preserved": true,
+      "prior_status_before_date_policy": "pending_hub_handoff",
+      "operational_review_route": "POTENTIAL_NEW_OUTPUT_NORMAL_REVIEW_FEED_VERIFIED_HUB_IMPORT_NOT_VERIFIED",
+      "scout_batch_path": "scout-discoveries/batches/2026-10-30-hourly-1229ET-nhci-date-policy-normal-review-001.csv"
     },
     {
       "identity": "doi:10.57969/s9z598",
@@ -2683,10 +2996,8 @@
         "NA21OAR4590374"
       ],
       "cohort": "Historical DataCite API Backfill 2026-10-28",
-      "status": "pending_hub_handoff",
-      "missing_fields": [
-        "record-specific first-publication YYYY-MM-DD"
-      ],
+      "status": "resolved",
+      "missing_fields": [],
       "attempts": [
         {
           "round": 0,
@@ -2757,7 +3068,7 @@
       "retry_count": 1,
       "next_retry_at": "2026-11-05T14:34:00Z",
       "next_research_at": "2026-11-05T14:34:00Z",
-      "followup_question": "Can the authoritative repository or publisher verify Exact first-publication YYYY-MM-DD and public ERDDAP data scope without substituting observation/citation year for publication date?",
+      "followup_question": "Confirm this exact DOI is a distinct eligible WPO-funded public dataset and that no prior private reviewer decision or version conflict prevents addition.",
       "evidence_urls": [
         "https://api.datacite.org/dois/10.57969/s9z598",
         "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
@@ -2767,7 +3078,7 @@
         "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
       ],
       "funding_basis": "Captured DataCite structured fundingReference identifies exact WPO primary SPARK award NA21OAR4590374; Scripps NOPP NHCI official catalog corroborates sensor/first-five family, but does not establish full publication day or all alternate DOI identities. Primary SPARK spark-000336 project detail independently corroborates exact WPO award NA21OAR4590374 and drifter observations.",
-      "next_action": "RESEARCH COMPLETE; pending compatible human reviewer intake, NOT DELIVERED TO HUB. Do not repeat research absent new evidence or explicit human request.",
+      "next_action": "Four valid complete 24-column proposals are staged in verified immutable batch 2026-10-30-hourly-1229ET-nhci-date-policy-normal-review-001; normal human eligibility/dedup review via Hub sync. No separate Pub Date verification; no automatic approval.",
       "triage_identity": "doi:10.57969/s9z598",
       "discovery_route": "Direct API",
       "scout_seed_doi": "10.57969/s9z598",
@@ -2776,14 +3087,31 @@
       "ready_for_human_review": true,
       "research_completed": true,
       "metadata_recovery_exhausted": true,
-      "hub_delivery_status": "not_delivered",
-      "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
-      "hub_intake_blocker": "Existing Discovery Hub import acceptance of blank mandatory Publication Date not verified; no CSV published or Hub acceptance claimed.",
+      "hub_delivery_status": "feed_verified_hub_import_not_verified",
+      "reviewer_visibility": "FEED_VERIFIED_HUB_IMPORT_NOT_VERIFIED",
+      "hub_intake_blocker": "Hub sync/import and private reviewer decisions NOT VERIFIED; accepted Pub Date is NOT a blocker.",
       "followup_completed_at": "2026-10-30T01:29:42.031Z",
       "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-2129ET",
       "early_retry_reason": "2026-10-29 user-directed immediate distinct-source recovery before preserved seven-day retry; original schedule retained.",
-      "reviewer_question": "Should the NOPP 2023 sensor dataset be separately added with missing first-publication date?",
-      "original_seed_doi": "10.57969/s9z598"
+      "reviewer_question": "Confirm this exact DOI is a distinct eligible WPO-funded public dataset and that no prior private reviewer decision or version conflict prevents addition.",
+      "original_seed_doi": "10.57969/s9z598",
+      "historical_missing_fields_before_executive_rule": [
+        "record-specific first-publication YYYY-MM-DD"
+      ],
+      "historical_reviewer_question_before_executive_rule": "Should the NOPP 2023 sensor dataset be separately added with missing first-publication date?",
+      "historical_followup_question_before_executive_rule": "Can the authoritative repository or publisher verify Exact first-publication YYYY-MM-DD and public ERDDAP data scope without substituting observation/citation year for publication date?",
+      "historical_hub_intake_blocker_before_executive_rule": "Existing Discovery Hub import acceptance of blank mandatory Publication Date not verified; no CSV published or Hub acceptance claimed.",
+      "datacite_created": "2024-04-29T15:50:55.000Z",
+      "accepted_reach_pub_date": "2024-04-29",
+      "pub_date_source_url": "https://api.datacite.org/dois/10.57969/s9z598",
+      "pub_date_source_dateType": "DataCite created",
+      "pub_date_policy": "2026-10-30 office-accepted complete REACH Pub Date; no native corroboration or separate date acknowledgement required",
+      "date_policy_applied_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
+      "date_only_research_followup_required": false,
+      "historical_original_triage_status_preserved": true,
+      "prior_status_before_date_policy": "pending_hub_handoff",
+      "operational_review_route": "POTENTIAL_NEW_OUTPUT_NORMAL_REVIEW_FEED_VERIFIED_HUB_IMPORT_NOT_VERIFIED",
+      "scout_batch_path": "scout-discoveries/batches/2026-10-30-hourly-1229ET-nhci-date-policy-normal-review-001.csv"
     },
     {
       "identity": "doi:10.57969/s9pp42",
@@ -2793,7 +3121,7 @@
       "cohort": "Historical DataCite API Backfill 2026-10-28",
       "status": "pending_hub_handoff",
       "missing_fields": [
-        "Exact first-publication YYYY-MM-DD and separate first-five vs sensor identity"
+        "separate first-five vs sensor identity"
       ],
       "attempts": [
         {
@@ -2858,7 +3186,7 @@
       "retry_count": 1,
       "next_retry_at": "2026-11-05T14:34:00Z",
       "next_research_at": "2026-11-05T14:34:00Z",
-      "followup_question": "Can the authoritative repository or publisher verify Exact first-publication YYYY-MM-DD and separate first-five vs sensor identity without substituting observation/citation year for publication date?",
+      "followup_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: separate first-five vs sensor identity. ",
       "evidence_urls": [
         "https://api.datacite.org/dois/10.57969/s9pp42",
         "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
@@ -2866,27 +3194,42 @@
         "https://erddap.ldl.ucsd.edu/erddap/info/NOPP_Storm_First5/index.html"
       ],
       "funding_basis": "Captured DataCite structured fundingReference identifies exact WPO primary SPARK award NA21OAR4590374; Scripps NOPP NHCI official catalog corroborates sensor/first-five family, but does not establish full publication day or all alternate DOI identities.",
-      "next_action": "RESEARCH COMPLETE; HUMAN DECISION NEEDED. Pending Hub integration, NOT DELIVERED TO HUB. Do not retry without material new evidence or human request.",
+      "next_action": "Research complete. Accepted Pub Date supplied from DOI-specific DataCite created. Await compatible private human intake for remaining non-date questions; no date re-research.",
       "triage_identity": "doi:10.57969/s9pp42",
       "discovery_route": "Direct API",
       "scout_seed_doi": "10.57969/s9pp42",
       "confidence": "Medium",
       "hub_delivered": false,
-      "ready_for_human_review": false,
+      "ready_for_human_review": true,
       "research_completed": true,
       "metadata_recovery_exhausted": true,
       "review_ready": true,
-      "reviewer_question": "Which single DOI, if any, should represent NHCI 2023 first-five; how to handle tombstone and missing date?",
+      "reviewer_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: separate first-five vs sensor identity. ",
       "hub_delivery_status": "not_delivered",
       "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
-      "hub_intake_blocker": "Existing 24-column Discovery Hub importer acceptance of truthful blank Publication Date and unresolved version/scope not verified; no candidate batch published; requires tested compatible human intake path.",
+      "hub_intake_blocker": "Non-date eligibility/identity/public-scope review needs compatible private intake; NOT DELIVERED TO HUB. Pub Date is complete.",
       "early_retry_reason": "User-authorized 2026-10-29 one bounded different-source recovery round before preserved original November 5 retry",
       "followup_completed_at": "2026-10-30T02:33:23Z",
       "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-2229ET",
       "original_seed_doi": "10.57969/s9pp42",
       "research_cohort": "Historical DataCite API Backfill 2026-10-28",
       "reach_comparison": "No exact original DOI/title in 1238 REACH index rows, all 140 detail shards, or 59 Scout staged rows; private decisions unverified.",
-      "handoff_library_path": "/REACH Scout/2026-10-29-2229ET-lead_queue.json"
+      "handoff_library_path": "/REACH Scout/2026-10-29-2229ET-lead_queue.json",
+      "historical_missing_fields_before_executive_rule": [
+        "Exact first-publication YYYY-MM-DD and separate first-five vs sensor identity"
+      ],
+      "historical_reviewer_question_before_executive_rule": "Which single DOI, if any, should represent NHCI 2023 first-five; how to handle tombstone and missing date?",
+      "historical_followup_question_before_executive_rule": "Can the authoritative repository or publisher verify Exact first-publication YYYY-MM-DD and separate first-five vs sensor identity without substituting observation/citation year for publication date?",
+      "historical_hub_intake_blocker_before_executive_rule": "Existing 24-column Discovery Hub importer acceptance of truthful blank Publication Date and unresolved version/scope not verified; no candidate batch published; requires tested compatible human intake path.",
+      "datacite_created": "2024-04-30T19:57:31.000Z",
+      "accepted_reach_pub_date": "2024-04-30",
+      "pub_date_source_url": "https://api.datacite.org/dois/10.57969/s9pp42",
+      "pub_date_source_dateType": "DataCite created",
+      "pub_date_policy": "2026-10-30 office-accepted complete REACH Pub Date; no native corroboration or separate date acknowledgement required",
+      "date_policy_applied_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
+      "date_only_research_followup_required": false,
+      "historical_original_triage_status_preserved": true,
+      "operational_review_route": "HUMAN_INTAKE_NON_DATE_QUESTIONS"
     },
     {
       "identity": "doi:10.57969/s9tg60",
@@ -2896,7 +3239,7 @@
       "cohort": "Historical DataCite API Backfill 2026-10-28",
       "status": "pending_hub_handoff",
       "missing_fields": [
-        "Exact first-publication YYYY-MM-DD and whether this is an alternate/version of S9PP42 rather than distinct dataset"
+        "whether this is an alternate/version of S9PP42 rather than distinct dataset"
       ],
       "attempts": [
         {
@@ -2961,7 +3304,7 @@
       "retry_count": 1,
       "next_retry_at": "2026-11-05T14:34:00Z",
       "next_research_at": "2026-11-05T14:34:00Z",
-      "followup_question": "Can the authoritative repository or publisher verify Exact first-publication YYYY-MM-DD and whether this is an alternate/version of S9PP42 rather than distinct dataset without substituting observation/citation year for publication date?",
+      "followup_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: whether this is an alternate/version of S9PP42 rather than distinct dataset. ",
       "evidence_urls": [
         "https://api.datacite.org/dois/10.57969/s9tg60",
         "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
@@ -2969,27 +3312,42 @@
         "https://erddap.ldl.ucsd.edu/erddap/info/NOPP_Storm_First5/index.html"
       ],
       "funding_basis": "Captured DataCite structured fundingReference identifies exact WPO primary SPARK award NA21OAR4590374; Scripps NOPP NHCI official catalog corroborates sensor/first-five family, but does not establish full publication day or all alternate DOI identities.",
-      "next_action": "RESEARCH COMPLETE; HUMAN DECISION NEEDED. Pending Hub integration, NOT DELIVERED TO HUB. Do not retry without material new evidence or human request.",
+      "next_action": "Research complete. Accepted Pub Date supplied from DOI-specific DataCite created. Await compatible private human intake for remaining non-date questions; no date re-research.",
       "triage_identity": "doi:10.57969/s9tg60",
       "discovery_route": "Direct API",
       "scout_seed_doi": "10.57969/s9tg60",
       "confidence": "Medium",
       "hub_delivered": false,
-      "ready_for_human_review": false,
+      "ready_for_human_review": true,
       "research_completed": true,
       "metadata_recovery_exhausted": true,
       "review_ready": true,
-      "reviewer_question": "Which single DOI, if any, should represent NHCI 2023 first-five; is S9TG60 alternate or superseded?",
+      "reviewer_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: whether this is an alternate/version of S9PP42 rather than distinct dataset. ",
       "hub_delivery_status": "not_delivered",
       "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
-      "hub_intake_blocker": "Existing 24-column Discovery Hub importer acceptance of truthful blank Publication Date and unresolved version/scope not verified; no candidate batch published; requires tested compatible human intake path.",
+      "hub_intake_blocker": "Non-date eligibility/identity/public-scope review needs compatible private intake; NOT DELIVERED TO HUB. Pub Date is complete.",
       "early_retry_reason": "User-authorized 2026-10-29 one bounded different-source recovery round before preserved original November 5 retry",
       "followup_completed_at": "2026-10-30T02:33:23Z",
       "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-2229ET",
       "original_seed_doi": "10.57969/s9tg60",
       "research_cohort": "Historical DataCite API Backfill 2026-10-28",
       "reach_comparison": "No exact original DOI/title in 1238 REACH index rows, all 140 detail shards, or 59 Scout staged rows; private decisions unverified.",
-      "handoff_library_path": "/REACH Scout/2026-10-29-2229ET-lead_queue.json"
+      "handoff_library_path": "/REACH Scout/2026-10-29-2229ET-lead_queue.json",
+      "historical_missing_fields_before_executive_rule": [
+        "Exact first-publication YYYY-MM-DD and whether this is an alternate/version of S9PP42 rather than distinct dataset"
+      ],
+      "historical_reviewer_question_before_executive_rule": "Which single DOI, if any, should represent NHCI 2023 first-five; is S9TG60 alternate or superseded?",
+      "historical_followup_question_before_executive_rule": "Can the authoritative repository or publisher verify Exact first-publication YYYY-MM-DD and whether this is an alternate/version of S9PP42 rather than distinct dataset without substituting observation/citation year for publication date?",
+      "historical_hub_intake_blocker_before_executive_rule": "Existing 24-column Discovery Hub importer acceptance of truthful blank Publication Date and unresolved version/scope not verified; no candidate batch published; requires tested compatible human intake path.",
+      "datacite_created": "2024-04-30T19:43:53.000Z",
+      "accepted_reach_pub_date": "2024-04-30",
+      "pub_date_source_url": "https://api.datacite.org/dois/10.57969/s9tg60",
+      "pub_date_source_dateType": "DataCite created",
+      "pub_date_policy": "2026-10-30 office-accepted complete REACH Pub Date; no native corroboration or separate date acknowledgement required",
+      "date_policy_applied_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
+      "date_only_research_followup_required": false,
+      "historical_original_triage_status_preserved": true,
+      "operational_review_route": "HUMAN_INTAKE_NON_DATE_QUESTIONS"
     },
     {
       "identity": "doi:10.57969/s9g015",
@@ -3000,7 +3358,6 @@
       "cohort": "Historical DataCite API Backfill 2026-10-28",
       "status": "pending_hub_handoff",
       "missing_fields": [
-        "record-specific first publication date (YYYY-MM-DD)",
         "native repository version/identity and public scope confirmation"
       ],
       "attempts": [
@@ -3059,7 +3416,7 @@
       "retry_count": 1,
       "next_retry_at": "2026-11-05T15:35:00Z",
       "next_research_at": "2026-11-05T15:35:00Z",
-      "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.57969/s9g015 without assuming an article/citation year is the dataset date?",
+      "followup_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native repository version/identity and public scope confirmation. ",
       "evidence_urls": [
         "https://api.datacite.org/dois/10.57969/s9g015",
         "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
@@ -3070,26 +3427,43 @@
         "https://doi.org/10.57969/S9G015"
       ],
       "funding_basis": "Pacific DWSD first-five wave data; direct WPO drifter award captured, but exact dataset publication date and public scope not independently verified. Captured award references: NA20OAR4320278, NA21OAR4590374.",
-      "next_action": "RESEARCH COMPLETE; HUMAN DECISION NEEDED. Pending Hub integration, NOT DELIVERED TO HUB. Do not retry without material new evidence or human request.",
+      "next_action": "Research complete. Accepted Pub Date supplied from DOI-specific DataCite created. Await compatible private human intake for remaining non-date questions; no date re-research.",
       "triage_identity": "doi:10.57969/s9g015",
       "max_delayed_retries": 1,
-      "ready_for_human_review": false,
+      "ready_for_human_review": true,
       "metadata_recovery_rounds": 0,
       "source_verification_limits": "Full dataset first publication date and public/version scope not independently established. Journal/citation year cannot substitute.",
       "research_completed": true,
       "metadata_recovery_exhausted": true,
       "review_ready": true,
-      "reviewer_question": "Confirm Pacific first-five public date, scope, and separate WPO-funded eligibility.",
+      "reviewer_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native repository version/identity and public scope confirmation. ",
       "hub_delivery_status": "not_delivered",
       "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
-      "hub_intake_blocker": "Existing 24-column Discovery Hub importer acceptance of truthful blank Publication Date and unresolved version/scope not verified; no candidate batch published; requires tested compatible human intake path.",
+      "hub_intake_blocker": "Non-date eligibility/identity/public-scope review needs compatible private intake; NOT DELIVERED TO HUB. Pub Date is complete.",
       "early_retry_reason": "User-authorized 2026-10-29 one bounded different-source recovery round before preserved original November 5 retry",
       "followup_completed_at": "2026-10-30T02:33:23Z",
       "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-2229ET",
       "original_seed_doi": "10.57969/s9g015",
       "research_cohort": "Historical DataCite API Backfill 2026-10-28",
       "reach_comparison": "No exact original DOI/title in 1238 REACH index rows, all 140 detail shards, or 59 Scout staged rows; private decisions unverified.",
-      "handoff_library_path": "/REACH Scout/2026-10-29-2229ET-lead_queue.json"
+      "handoff_library_path": "/REACH Scout/2026-10-29-2229ET-lead_queue.json",
+      "historical_missing_fields_before_executive_rule": [
+        "record-specific first publication date (YYYY-MM-DD)",
+        "native repository version/identity and public scope confirmation"
+      ],
+      "historical_reviewer_question_before_executive_rule": "Confirm Pacific first-five public date, scope, and separate WPO-funded eligibility.",
+      "historical_followup_question_before_executive_rule": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.57969/s9g015 without assuming an article/citation year is the dataset date?",
+      "historical_hub_intake_blocker_before_executive_rule": "Existing 24-column Discovery Hub importer acceptance of truthful blank Publication Date and unresolved version/scope not verified; no candidate batch published; requires tested compatible human intake path.",
+      "datacite_created": "2025-07-13T14:55:30.000Z",
+      "accepted_reach_pub_date": "2025-07-13",
+      "pub_date_source_url": "https://api.datacite.org/dois/10.57969/s9g015",
+      "pub_date_source_dateType": "DataCite created",
+      "pub_date_policy": "2026-10-30 office-accepted complete REACH Pub Date; no native corroboration or separate date acknowledgement required",
+      "date_policy_applied_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
+      "date_only_research_followup_required": false,
+      "historical_original_triage_status_preserved": true,
+      "hub_delivered": false,
+      "operational_review_route": "HUMAN_INTAKE_NON_DATE_QUESTIONS"
     },
     {
       "identity": "doi:10.57969/s9ks3s",
@@ -3100,7 +3474,6 @@
       "cohort": "Historical DataCite API Backfill 2026-10-28",
       "status": "pending_hub_handoff",
       "missing_fields": [
-        "record-specific first publication date (YYYY-MM-DD)",
         "native repository version/identity and public scope confirmation"
       ],
       "attempts": [
@@ -3159,7 +3532,7 @@
       "retry_count": 1,
       "next_retry_at": "2026-11-05T15:35:00Z",
       "next_research_at": "2026-11-05T15:35:00Z",
-      "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.57969/s9ks3s without assuming an article/citation year is the dataset date?",
+      "followup_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native repository version/identity and public scope confirmation. ",
       "evidence_urls": [
         "https://api.datacite.org/dois/10.57969/s9ks3s",
         "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
@@ -3170,26 +3543,43 @@
         "https://doi.org/10.57969/S9KS3S"
       ],
       "funding_basis": "Pacific DWSD sensor data; direct WPO drifter award captured, but first publication date and distinctness from first-five coefficients unresolved. Captured award references: NA20OAR4320278, NA21OAR4590374.",
-      "next_action": "RESEARCH COMPLETE; HUMAN DECISION NEEDED. Pending Hub integration, NOT DELIVERED TO HUB. Do not retry without material new evidence or human request.",
+      "next_action": "Research complete. Accepted Pub Date supplied from DOI-specific DataCite created. Await compatible private human intake for remaining non-date questions; no date re-research.",
       "triage_identity": "doi:10.57969/s9ks3s",
       "max_delayed_retries": 1,
-      "ready_for_human_review": false,
+      "ready_for_human_review": true,
       "metadata_recovery_rounds": 0,
       "source_verification_limits": "Full dataset first publication date and public/version scope not independently established. Journal/citation year cannot substitute.",
       "research_completed": true,
       "metadata_recovery_exhausted": true,
       "review_ready": true,
-      "reviewer_question": "Confirm Pacific sensor public date, scope, and separate WPO-funded eligibility.",
+      "reviewer_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native repository version/identity and public scope confirmation. ",
       "hub_delivery_status": "not_delivered",
       "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
-      "hub_intake_blocker": "Existing 24-column Discovery Hub importer acceptance of truthful blank Publication Date and unresolved version/scope not verified; no candidate batch published; requires tested compatible human intake path.",
+      "hub_intake_blocker": "Non-date eligibility/identity/public-scope review needs compatible private intake; NOT DELIVERED TO HUB. Pub Date is complete.",
       "early_retry_reason": "User-authorized 2026-10-29 one bounded different-source recovery round before preserved original November 5 retry",
       "followup_completed_at": "2026-10-30T02:33:23Z",
       "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-2229ET",
       "original_seed_doi": "10.57969/s9ks3s",
       "research_cohort": "Historical DataCite API Backfill 2026-10-28",
       "reach_comparison": "No exact original DOI/title in 1238 REACH index rows, all 140 detail shards, or 59 Scout staged rows; private decisions unverified.",
-      "handoff_library_path": "/REACH Scout/2026-10-29-2229ET-lead_queue.json"
+      "handoff_library_path": "/REACH Scout/2026-10-29-2229ET-lead_queue.json",
+      "historical_missing_fields_before_executive_rule": [
+        "record-specific first publication date (YYYY-MM-DD)",
+        "native repository version/identity and public scope confirmation"
+      ],
+      "historical_reviewer_question_before_executive_rule": "Confirm Pacific sensor public date, scope, and separate WPO-funded eligibility.",
+      "historical_followup_question_before_executive_rule": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.57969/s9ks3s without assuming an article/citation year is the dataset date?",
+      "historical_hub_intake_blocker_before_executive_rule": "Existing 24-column Discovery Hub importer acceptance of truthful blank Publication Date and unresolved version/scope not verified; no candidate batch published; requires tested compatible human intake path.",
+      "datacite_created": "2025-07-13T14:46:16.000Z",
+      "accepted_reach_pub_date": "2025-07-13",
+      "pub_date_source_url": "https://api.datacite.org/dois/10.57969/s9ks3s",
+      "pub_date_source_dateType": "DataCite created",
+      "pub_date_policy": "2026-10-30 office-accepted complete REACH Pub Date; no native corroboration or separate date acknowledgement required",
+      "date_policy_applied_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
+      "date_only_research_followup_required": false,
+      "historical_original_triage_status_preserved": true,
+      "hub_delivered": false,
+      "operational_review_route": "HUMAN_INTAKE_NON_DATE_QUESTIONS"
     },
     {
       "identity": "doi:10.57969/s9qp4c",
@@ -3200,7 +3590,6 @@
       "cohort": "Historical DataCite API Backfill 2026-10-28",
       "status": "pending_hub_handoff",
       "missing_fields": [
-        "record-specific first-publication YYYY-MM-DD",
         "publisher catalog DOI S9QP4CD vs native ERDDAP S9QP4C discrepancy"
       ],
       "attempts": [
@@ -3273,7 +3662,7 @@
       "retry_count": 1,
       "next_retry_at": "2026-11-05T15:35:00Z",
       "next_research_at": "2026-11-05T15:35:00Z",
-      "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.57969/s9qp4c without assuming an article/citation year is the dataset date?",
+      "followup_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: publisher catalog DOI S9QP4CD vs native ERDDAP S9QP4C discrepancy. ",
       "evidence_urls": [
         "https://api.datacite.org/dois/10.57969/s9qp4c",
         "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
@@ -3284,7 +3673,7 @@
         "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv"
       ],
       "funding_basis": "Atlantic 2024 GTS drifter dataset; LDL cites WPO award but its webpage shows DOI S9QP4CD while captured DOI is S9QP4C; confirm identity and publication date. Captured award references: NA20OAR4320278, NA21OAR4590374. Primary SPARK spark-000336 project detail independently corroborates exact WPO award NA21OAR4590374 and drifter observations.",
-      "next_action": "RESEARCH COMPLETE; pending compatible human reviewer intake, NOT DELIVERED TO HUB. Do not repeat research absent new evidence or explicit human request.",
+      "next_action": "Research complete. Accepted Pub Date supplied from DOI-specific DataCite created. Await compatible private human intake for remaining non-date questions; no date re-research.",
       "triage_identity": "doi:10.57969/s9qp4c",
       "max_delayed_retries": 1,
       "ready_for_human_review": true,
@@ -3295,12 +3684,28 @@
       "hub_delivered": false,
       "hub_delivery_status": "not_delivered",
       "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
-      "hub_intake_blocker": "Existing Discovery Hub import acceptance of blank mandatory Publication Date not verified; no CSV published or Hub acceptance claimed.",
+      "hub_intake_blocker": "Non-date eligibility/identity/public-scope review needs compatible private intake; NOT DELIVERED TO HUB. Pub Date is complete.",
       "followup_completed_at": "2026-10-30T01:29:42.031Z",
       "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-2129ET",
       "early_retry_reason": "2026-10-29 user-directed immediate distinct-source recovery before preserved seven-day retry; original schedule retained.",
-      "reviewer_question": "Should the Atlantic 2024 GTS dataset be added under the native S9QP4C DOI, despite catalog S9QP4CD mismatch and unknown publication day?",
-      "original_seed_doi": "10.57969/s9qp4c"
+      "reviewer_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: publisher catalog DOI S9QP4CD vs native ERDDAP S9QP4C discrepancy. ",
+      "original_seed_doi": "10.57969/s9qp4c",
+      "historical_missing_fields_before_executive_rule": [
+        "record-specific first-publication YYYY-MM-DD",
+        "publisher catalog DOI S9QP4CD vs native ERDDAP S9QP4C discrepancy"
+      ],
+      "historical_reviewer_question_before_executive_rule": "Should the Atlantic 2024 GTS dataset be added under the native S9QP4C DOI, despite catalog S9QP4CD mismatch and unknown publication day?",
+      "historical_followup_question_before_executive_rule": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.57969/s9qp4c without assuming an article/citation year is the dataset date?",
+      "historical_hub_intake_blocker_before_executive_rule": "Existing Discovery Hub import acceptance of blank mandatory Publication Date not verified; no CSV published or Hub acceptance claimed.",
+      "datacite_created": "2024-04-13T03:34:33.000Z",
+      "accepted_reach_pub_date": "2024-04-13",
+      "pub_date_source_url": "https://api.datacite.org/dois/10.57969/s9qp4c",
+      "pub_date_source_dateType": "DataCite created",
+      "pub_date_policy": "2026-10-30 office-accepted complete REACH Pub Date; no native corroboration or separate date acknowledgement required",
+      "date_policy_applied_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
+      "date_only_research_followup_required": false,
+      "historical_original_triage_status_preserved": true,
+      "operational_review_route": "HUMAN_INTAKE_NON_DATE_QUESTIONS"
     },
     {
       "identity": "doi:10.57969/s9rp4p",
@@ -3311,7 +3716,6 @@
       "cohort": "Historical DataCite API Backfill 2026-10-28",
       "status": "pending_hub_handoff",
       "missing_fields": [
-        "record-specific first publication date (YYYY-MM-DD)",
         "native repository version/identity and public scope confirmation"
       ],
       "attempts": [
@@ -3377,7 +3781,7 @@
       "retry_count": 1,
       "next_retry_at": "2026-11-05T15:35:00Z",
       "next_research_at": "2026-11-05T15:35:00Z",
-      "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.57969/s9rp4p without assuming an article/citation year is the dataset date?",
+      "followup_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native repository version/identity and public scope confirmation. ",
       "evidence_urls": [
         "https://api.datacite.org/dois/10.57969/s9rp4p",
         "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
@@ -3388,26 +3792,43 @@
         "https://ldl.ucsd.edu/ldl/data/"
       ],
       "funding_basis": "Atlantic 2022 GTS drifter dataset; LDL identifies WPO award and 2023 citation year, not exact first-publication date. Captured award references: NA20OAR4320278, NA21OAR4590374.",
-      "next_action": "RESEARCH COMPLETE; HUMAN DECISION NEEDED. Pending Hub integration, NOT DELIVERED TO HUB. Do not retry without material new evidence or human request.",
+      "next_action": "Research complete. Accepted Pub Date supplied from DOI-specific DataCite created. Await compatible private human intake for remaining non-date questions; no date re-research.",
       "triage_identity": "doi:10.57969/s9rp4p",
       "max_delayed_retries": 1,
-      "ready_for_human_review": false,
+      "ready_for_human_review": true,
       "metadata_recovery_rounds": 0,
       "source_verification_limits": "Full dataset first publication date and public/version scope not independently established. Journal/citation year cannot substitute.",
       "research_completed": true,
       "metadata_recovery_exhausted": true,
       "review_ready": true,
-      "reviewer_question": "Should this distinct 2022 GTS Atlantic dataset be considered with unknown first publication date and mixed NOAA funding?",
+      "reviewer_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native repository version/identity and public scope confirmation. ",
       "hub_delivery_status": "not_delivered",
       "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
-      "hub_intake_blocker": "Existing 24-column Discovery Hub importer acceptance of truthful blank Publication Date and unresolved version/scope not verified; no candidate batch published; requires tested compatible human intake path.",
+      "hub_intake_blocker": "Non-date eligibility/identity/public-scope review needs compatible private intake; NOT DELIVERED TO HUB. Pub Date is complete.",
       "early_retry_reason": "User-authorized 2026-10-29 one bounded different-source recovery round before preserved original November 5 retry",
       "followup_completed_at": "2026-10-30T02:33:23Z",
       "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-2229ET",
       "original_seed_doi": "10.57969/s9rp4p",
       "research_cohort": "Historical DataCite API Backfill 2026-10-28",
       "reach_comparison": "No exact original DOI/title in 1238 REACH index rows, all 140 detail shards, or 59 Scout staged rows; private decisions unverified.",
-      "handoff_library_path": "/REACH Scout/2026-10-29-2229ET-lead_queue.json"
+      "handoff_library_path": "/REACH Scout/2026-10-29-2229ET-lead_queue.json",
+      "historical_missing_fields_before_executive_rule": [
+        "record-specific first publication date (YYYY-MM-DD)",
+        "native repository version/identity and public scope confirmation"
+      ],
+      "historical_reviewer_question_before_executive_rule": "Should this distinct 2022 GTS Atlantic dataset be considered with unknown first publication date and mixed NOAA funding?",
+      "historical_followup_question_before_executive_rule": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.57969/s9rp4p without assuming an article/citation year is the dataset date?",
+      "historical_hub_intake_blocker_before_executive_rule": "Existing 24-column Discovery Hub importer acceptance of truthful blank Publication Date and unresolved version/scope not verified; no candidate batch published; requires tested compatible human intake path.",
+      "datacite_created": "2024-04-13T03:39:59.000Z",
+      "accepted_reach_pub_date": "2024-04-13",
+      "pub_date_source_url": "https://api.datacite.org/dois/10.57969/s9rp4p",
+      "pub_date_source_dateType": "DataCite created",
+      "pub_date_policy": "2026-10-30 office-accepted complete REACH Pub Date; no native corroboration or separate date acknowledgement required",
+      "date_policy_applied_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
+      "date_only_research_followup_required": false,
+      "historical_original_triage_status_preserved": true,
+      "hub_delivered": false,
+      "operational_review_route": "HUMAN_INTAKE_NON_DATE_QUESTIONS"
     },
     {
       "identity": "doi:10.57969/s9vc7n",
@@ -3418,7 +3839,6 @@
       "cohort": "Historical DataCite API Backfill 2026-10-28",
       "status": "pending_hub_handoff",
       "missing_fields": [
-        "record-specific first publication date (YYYY-MM-DD)",
         "native repository version/identity and public scope confirmation"
       ],
       "attempts": [
@@ -3484,7 +3904,7 @@
       "retry_count": 1,
       "next_retry_at": "2026-11-05T15:35:00Z",
       "next_research_at": "2026-11-05T15:35:00Z",
-      "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.57969/s9vc7n without assuming an article/citation year is the dataset date?",
+      "followup_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native repository version/identity and public scope confirmation. ",
       "evidence_urls": [
         "https://api.datacite.org/dois/10.57969/s9vc7n",
         "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
@@ -3495,26 +3915,43 @@
         "https://ldl.ucsd.edu/ldl/data/"
       ],
       "funding_basis": "Atlantic 2023 GTS drifter dataset; LDL identifies WPO award and citation year only; exact date unresolved. Captured award references: NA20OAR4320278, NA21OAR4590374.",
-      "next_action": "RESEARCH COMPLETE; HUMAN DECISION NEEDED. Pending Hub integration, NOT DELIVERED TO HUB. Do not retry without material new evidence or human request.",
+      "next_action": "Research complete. Accepted Pub Date supplied from DOI-specific DataCite created. Await compatible private human intake for remaining non-date questions; no date re-research.",
       "triage_identity": "doi:10.57969/s9vc7n",
       "max_delayed_retries": 1,
-      "ready_for_human_review": false,
+      "ready_for_human_review": true,
       "metadata_recovery_rounds": 0,
       "source_verification_limits": "Full dataset first publication date and public/version scope not independently established. Journal/citation year cannot substitute.",
       "research_completed": true,
       "metadata_recovery_exhausted": true,
       "review_ready": true,
-      "reviewer_question": "Should this distinct 2023 GTS Atlantic dataset be considered with unknown first publication date and mixed NOAA funding?",
+      "reviewer_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native repository version/identity and public scope confirmation. ",
       "hub_delivery_status": "not_delivered",
       "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
-      "hub_intake_blocker": "Existing 24-column Discovery Hub importer acceptance of truthful blank Publication Date and unresolved version/scope not verified; no candidate batch published; requires tested compatible human intake path.",
+      "hub_intake_blocker": "Non-date eligibility/identity/public-scope review needs compatible private intake; NOT DELIVERED TO HUB. Pub Date is complete.",
       "early_retry_reason": "User-authorized 2026-10-29 one bounded different-source recovery round before preserved original November 5 retry",
       "followup_completed_at": "2026-10-30T02:33:23Z",
       "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-2229ET",
       "original_seed_doi": "10.57969/s9vc7n",
       "research_cohort": "Historical DataCite API Backfill 2026-10-28",
       "reach_comparison": "No exact original DOI/title in 1238 REACH index rows, all 140 detail shards, or 59 Scout staged rows; private decisions unverified.",
-      "handoff_library_path": "/REACH Scout/2026-10-29-2229ET-lead_queue.json"
+      "handoff_library_path": "/REACH Scout/2026-10-29-2229ET-lead_queue.json",
+      "historical_missing_fields_before_executive_rule": [
+        "record-specific first publication date (YYYY-MM-DD)",
+        "native repository version/identity and public scope confirmation"
+      ],
+      "historical_reviewer_question_before_executive_rule": "Should this distinct 2023 GTS Atlantic dataset be considered with unknown first publication date and mixed NOAA funding?",
+      "historical_followup_question_before_executive_rule": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.57969/s9vc7n without assuming an article/citation year is the dataset date?",
+      "historical_hub_intake_blocker_before_executive_rule": "Existing 24-column Discovery Hub importer acceptance of truthful blank Publication Date and unresolved version/scope not verified; no candidate batch published; requires tested compatible human intake path.",
+      "datacite_created": "2024-04-13T03:37:10.000Z",
+      "accepted_reach_pub_date": "2024-04-13",
+      "pub_date_source_url": "https://api.datacite.org/dois/10.57969/s9vc7n",
+      "pub_date_source_dateType": "DataCite created",
+      "pub_date_policy": "2026-10-30 office-accepted complete REACH Pub Date; no native corroboration or separate date acknowledgement required",
+      "date_policy_applied_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
+      "date_only_research_followup_required": false,
+      "historical_original_triage_status_preserved": true,
+      "hub_delivered": false,
+      "operational_review_route": "HUMAN_INTAKE_NON_DATE_QUESTIONS"
     },
     {
       "identity": "doi:10.57969/s9wc7z",
@@ -3525,7 +3962,6 @@
       "cohort": "Historical DataCite API Backfill 2026-10-28",
       "status": "pending_hub_handoff",
       "missing_fields": [
-        "record-specific first publication date (YYYY-MM-DD)",
         "native repository version/identity and public scope confirmation"
       ],
       "attempts": [
@@ -3591,7 +4027,7 @@
       "retry_count": 1,
       "next_retry_at": "2026-11-05T15:35:00Z",
       "next_research_at": "2026-11-05T15:35:00Z",
-      "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.57969/s9wc7z without assuming an article/citation year is the dataset date?",
+      "followup_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native repository version/identity and public scope confirmation. ",
       "evidence_urls": [
         "https://api.datacite.org/dois/10.57969/s9wc7z",
         "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
@@ -3602,26 +4038,43 @@
         "https://ldl.ucsd.edu/ldl/data/"
       ],
       "funding_basis": "Atlantic 2021 GTS drifter dataset; LDL identifies WPO award and 2023 citation year, not exact date. Captured award references: NA20OAR4320278, NA21OAR4590374.",
-      "next_action": "RESEARCH COMPLETE; HUMAN DECISION NEEDED. Pending Hub integration, NOT DELIVERED TO HUB. Do not retry without material new evidence or human request.",
+      "next_action": "Research complete. Accepted Pub Date supplied from DOI-specific DataCite created. Await compatible private human intake for remaining non-date questions; no date re-research.",
       "triage_identity": "doi:10.57969/s9wc7z",
       "max_delayed_retries": 1,
-      "ready_for_human_review": false,
+      "ready_for_human_review": true,
       "metadata_recovery_rounds": 0,
       "source_verification_limits": "Full dataset first publication date and public/version scope not independently established. Journal/citation year cannot substitute.",
       "research_completed": true,
       "metadata_recovery_exhausted": true,
       "review_ready": true,
-      "reviewer_question": "Should this distinct 2021 GTS Atlantic dataset be considered with unknown first publication date and mixed NOAA funding?",
+      "reviewer_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native repository version/identity and public scope confirmation. ",
       "hub_delivery_status": "not_delivered",
       "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
-      "hub_intake_blocker": "Existing 24-column Discovery Hub importer acceptance of truthful blank Publication Date and unresolved version/scope not verified; no candidate batch published; requires tested compatible human intake path.",
+      "hub_intake_blocker": "Non-date eligibility/identity/public-scope review needs compatible private intake; NOT DELIVERED TO HUB. Pub Date is complete.",
       "early_retry_reason": "User-authorized 2026-10-29 one bounded different-source recovery round before preserved original November 5 retry",
       "followup_completed_at": "2026-10-30T02:33:23Z",
       "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-2229ET",
       "original_seed_doi": "10.57969/s9wc7z",
       "research_cohort": "Historical DataCite API Backfill 2026-10-28",
       "reach_comparison": "No exact original DOI/title in 1238 REACH index rows, all 140 detail shards, or 59 Scout staged rows; private decisions unverified.",
-      "handoff_library_path": "/REACH Scout/2026-10-29-2229ET-lead_queue.json"
+      "handoff_library_path": "/REACH Scout/2026-10-29-2229ET-lead_queue.json",
+      "historical_missing_fields_before_executive_rule": [
+        "record-specific first publication date (YYYY-MM-DD)",
+        "native repository version/identity and public scope confirmation"
+      ],
+      "historical_reviewer_question_before_executive_rule": "Should this distinct 2021 GTS Atlantic dataset be considered with unknown first publication date and mixed NOAA funding?",
+      "historical_followup_question_before_executive_rule": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.57969/s9wc7z without assuming an article/citation year is the dataset date?",
+      "historical_hub_intake_blocker_before_executive_rule": "Existing 24-column Discovery Hub importer acceptance of truthful blank Publication Date and unresolved version/scope not verified; no candidate batch published; requires tested compatible human intake path.",
+      "datacite_created": "2024-04-12T19:54:12.000Z",
+      "accepted_reach_pub_date": "2024-04-12",
+      "pub_date_source_url": "https://api.datacite.org/dois/10.57969/s9wc7z",
+      "pub_date_source_dateType": "DataCite created",
+      "pub_date_policy": "2026-10-30 office-accepted complete REACH Pub Date; no native corroboration or separate date acknowledgement required",
+      "date_policy_applied_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
+      "date_only_research_followup_required": false,
+      "historical_original_triage_status_preserved": true,
+      "hub_delivered": false,
+      "operational_review_route": "HUMAN_INTAKE_NON_DATE_QUESTIONS"
     },
     {
       "identity": "doi:10.6084/m9.figshare.23666259",
@@ -3631,7 +4084,6 @@
       "cohort": "Historical DataCite API Backfill 2026-10-28",
       "status": "pending_hub_handoff",
       "missing_fields": [
-        "record-specific first publication date (YYYY-MM-DD)",
         "native repository version/identity and public scope confirmation"
       ],
       "attempts": [
@@ -3704,7 +4156,7 @@
       "retry_count": 1,
       "next_retry_at": "2026-11-05T15:35:00Z",
       "next_research_at": "2026-11-05T15:35:00Z",
-      "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.6084/m9.figshare.23666259 without assuming an article/citation year is the dataset date?",
+      "followup_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native repository version/identity and public scope confirmation. ",
       "evidence_urls": [
         "https://api.datacite.org/dois/10.6084/m9.figshare.23666259",
         "https://orcid.org/0000-0003-3318-7601",
@@ -3716,26 +4168,43 @@
         "https://repository.library.noaa.gov/view/noaa/70846"
       ],
       "funding_basis": "VORTEX-SE polarimetric/lightning poster; direct WPO award and ORCID date 2023-07-12, but native Figshare first-publication date and version identity unverified. Captured award references: NA19OAR4590209.",
-      "next_action": "RESEARCH COMPLETE; HUMAN DECISION NEEDED. Pending Hub integration, NOT DELIVERED TO HUB. Do not retry without material new evidence or human request.",
+      "next_action": "Research complete. Accepted Pub Date supplied from DOI-specific DataCite created. Await compatible private human intake for remaining non-date questions; no date re-research.",
       "triage_identity": "doi:10.6084/m9.figshare.23666259",
       "max_delayed_retries": 1,
-      "ready_for_human_review": false,
+      "ready_for_human_review": true,
       "metadata_recovery_rounds": 0,
       "source_verification_limits": "Full dataset first publication date and public/version scope not independently established. Journal/citation year cannot substitute.",
       "research_completed": true,
       "metadata_recovery_exhausted": true,
       "review_ready": true,
-      "reviewer_question": "Select ONE canonical concept/v1 poster record and decide whether Figshare-sourced ORCID date is acceptable.",
+      "reviewer_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native repository version/identity and public scope confirmation. ",
       "hub_delivery_status": "not_delivered",
       "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
-      "hub_intake_blocker": "Existing 24-column Discovery Hub importer acceptance of truthful blank Publication Date and unresolved version/scope not verified; no candidate batch published; requires tested compatible human intake path.",
+      "hub_intake_blocker": "Non-date eligibility/identity/public-scope review needs compatible private intake; NOT DELIVERED TO HUB. Pub Date is complete.",
       "early_retry_reason": "User-authorized 2026-10-29 one bounded different-source recovery round before preserved original November 5 retry",
       "followup_completed_at": "2026-10-30T02:33:23Z",
       "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-2229ET",
       "original_seed_doi": "10.6084/m9.figshare.23666259",
       "research_cohort": "Historical DataCite API Backfill 2026-10-28",
       "reach_comparison": "No exact original DOI/title in 1238 REACH index rows, all 140 detail shards, or 59 Scout staged rows; private decisions unverified.",
-      "handoff_library_path": "/REACH Scout/2026-10-29-2229ET-lead_queue.json"
+      "handoff_library_path": "/REACH Scout/2026-10-29-2229ET-lead_queue.json",
+      "historical_missing_fields_before_executive_rule": [
+        "record-specific first publication date (YYYY-MM-DD)",
+        "native repository version/identity and public scope confirmation"
+      ],
+      "historical_reviewer_question_before_executive_rule": "Select ONE canonical concept/v1 poster record and decide whether Figshare-sourced ORCID date is acceptable.",
+      "historical_followup_question_before_executive_rule": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.6084/m9.figshare.23666259 without assuming an article/citation year is the dataset date?",
+      "historical_hub_intake_blocker_before_executive_rule": "Existing 24-column Discovery Hub importer acceptance of truthful blank Publication Date and unresolved version/scope not verified; no candidate batch published; requires tested compatible human intake path.",
+      "datacite_created": "2023-07-12T05:01:58.000Z",
+      "accepted_reach_pub_date": "2023-07-12",
+      "pub_date_source_url": "https://api.datacite.org/dois/10.6084/m9.figshare.23666259",
+      "pub_date_source_dateType": "DataCite created",
+      "pub_date_policy": "2026-10-30 office-accepted complete REACH Pub Date; no native corroboration or separate date acknowledgement required",
+      "date_policy_applied_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
+      "date_only_research_followup_required": false,
+      "historical_original_triage_status_preserved": true,
+      "hub_delivered": false,
+      "operational_review_route": "HUMAN_INTAKE_NON_DATE_QUESTIONS"
     },
     {
       "identity": "doi:10.6084/m9.figshare.23666259.v1",
@@ -3745,7 +4214,6 @@
       "cohort": "Historical DataCite API Backfill 2026-10-28",
       "status": "pending_hub_handoff",
       "missing_fields": [
-        "record-specific first publication date (YYYY-MM-DD)",
         "native repository version/identity and public scope confirmation"
       ],
       "attempts": [
@@ -3818,7 +4286,7 @@
       "retry_count": 1,
       "next_retry_at": "2026-11-05T15:35:00Z",
       "next_research_at": "2026-11-05T15:35:00Z",
-      "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.6084/m9.figshare.23666259.v1 without assuming an article/citation year is the dataset date?",
+      "followup_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native repository version/identity and public scope confirmation. ",
       "evidence_urls": [
         "https://api.datacite.org/dois/10.6084/m9.figshare.23666259.v1",
         "https://orcid.org/0000-0003-3318-7601",
@@ -3830,26 +4298,43 @@
         "https://repository.library.noaa.gov/view/noaa/70846"
       ],
       "funding_basis": "Version 1 of same VORTEX-SE poster; verify native Figshare date and relationship to concept DOI, do not double count. Captured award references: NA19OAR4590209.",
-      "next_action": "RESEARCH COMPLETE; HUMAN DECISION NEEDED. Pending Hub integration, NOT DELIVERED TO HUB. Do not retry without material new evidence or human request.",
+      "next_action": "Research complete. Accepted Pub Date supplied from DOI-specific DataCite created. Await compatible private human intake for remaining non-date questions; no date re-research.",
       "triage_identity": "doi:10.6084/m9.figshare.23666259.v1",
       "max_delayed_retries": 1,
-      "ready_for_human_review": false,
+      "ready_for_human_review": true,
       "metadata_recovery_rounds": 0,
       "source_verification_limits": "Full dataset first publication date and public/version scope not independently established. Journal/citation year cannot substitute.",
       "research_completed": true,
       "metadata_recovery_exhausted": true,
       "review_ready": true,
-      "reviewer_question": "Select ONE canonical concept/v1 poster record and decide whether Figshare-sourced ORCID date is acceptable.",
+      "reviewer_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native repository version/identity and public scope confirmation. ",
       "hub_delivery_status": "not_delivered",
       "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
-      "hub_intake_blocker": "Existing 24-column Discovery Hub importer acceptance of truthful blank Publication Date and unresolved version/scope not verified; no candidate batch published; requires tested compatible human intake path.",
+      "hub_intake_blocker": "Non-date eligibility/identity/public-scope review needs compatible private intake; NOT DELIVERED TO HUB. Pub Date is complete.",
       "early_retry_reason": "User-authorized 2026-10-29 one bounded different-source recovery round before preserved original November 5 retry",
       "followup_completed_at": "2026-10-30T02:33:23Z",
       "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-2229ET",
       "original_seed_doi": "10.6084/m9.figshare.23666259.v1",
       "research_cohort": "Historical DataCite API Backfill 2026-10-28",
       "reach_comparison": "No exact original DOI/title in 1238 REACH index rows, all 140 detail shards, or 59 Scout staged rows; private decisions unverified.",
-      "handoff_library_path": "/REACH Scout/2026-10-29-2229ET-lead_queue.json"
+      "handoff_library_path": "/REACH Scout/2026-10-29-2229ET-lead_queue.json",
+      "historical_missing_fields_before_executive_rule": [
+        "record-specific first publication date (YYYY-MM-DD)",
+        "native repository version/identity and public scope confirmation"
+      ],
+      "historical_reviewer_question_before_executive_rule": "Select ONE canonical concept/v1 poster record and decide whether Figshare-sourced ORCID date is acceptable.",
+      "historical_followup_question_before_executive_rule": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.6084/m9.figshare.23666259.v1 without assuming an article/citation year is the dataset date?",
+      "historical_hub_intake_blocker_before_executive_rule": "Existing 24-column Discovery Hub importer acceptance of truthful blank Publication Date and unresolved version/scope not verified; no candidate batch published; requires tested compatible human intake path.",
+      "datacite_created": "2023-07-12T05:02:15.000Z",
+      "accepted_reach_pub_date": "2023-07-12",
+      "pub_date_source_url": "https://api.datacite.org/dois/10.6084/m9.figshare.23666259.v1",
+      "pub_date_source_dateType": "DataCite created",
+      "pub_date_policy": "2026-10-30 office-accepted complete REACH Pub Date; no native corroboration or separate date acknowledgement required",
+      "date_policy_applied_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
+      "date_only_research_followup_required": false,
+      "historical_original_triage_status_preserved": true,
+      "hub_delivered": false,
+      "operational_review_route": "HUMAN_INTAKE_NON_DATE_QUESTIONS"
     },
     {
       "identity": "doi:10.6084/m9.figshare.23689194",
@@ -3859,7 +4344,6 @@
       "cohort": "Historical DataCite API Backfill 2026-10-28",
       "status": "pending_hub_handoff",
       "missing_fields": [
-        "record-specific first publication date (YYYY-MM-DD)",
         "native repository version/identity and public scope confirmation"
       ],
       "attempts": [
@@ -3932,7 +4416,7 @@
       "retry_count": 1,
       "next_retry_at": "2026-11-05T15:35:00Z",
       "next_research_at": "2026-11-05T15:35:00Z",
-      "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.6084/m9.figshare.23689194 without assuming an article/citation year is the dataset date?",
+      "followup_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native repository version/identity and public scope confirmation. ",
       "evidence_urls": [
         "https://api.datacite.org/dois/10.6084/m9.figshare.23689194",
         "https://journals.ametsoc.org/view/journals/aies/3/1/AIES-D-23-0064.1.xml",
@@ -3944,26 +4428,43 @@
         "https://doi.org/10.6084/m9.figshare.23689194"
       ],
       "funding_basis": "ELDORA ML QC dataset directly linked by funded AMS article; exact Figshare dataset publication date and version identity unverified. Captured award references: NA19OAR4590245.",
-      "next_action": "RESEARCH COMPLETE; HUMAN DECISION NEEDED. Pending Hub integration, NOT DELIVERED TO HUB. Do not retry without material new evidence or human request.",
+      "next_action": "Research complete. Accepted Pub Date supplied from DOI-specific DataCite created. Await compatible private human intake for remaining non-date questions; no date re-research.",
       "triage_identity": "doi:10.6084/m9.figshare.23689194",
       "max_delayed_retries": 1,
-      "ready_for_human_review": false,
+      "ready_for_human_review": true,
       "metadata_recovery_rounds": 0,
       "source_verification_limits": "Full dataset first publication date and public/version scope not independently established. Journal/citation year cannot substitute.",
       "research_completed": true,
       "metadata_recovery_exhausted": true,
       "review_ready": true,
-      "reviewer_question": "Select ONE canonical concept/v1 dataset record and decide on unknown first date, separate from staged article.",
+      "reviewer_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native repository version/identity and public scope confirmation. ",
       "hub_delivery_status": "not_delivered",
       "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
-      "hub_intake_blocker": "Existing 24-column Discovery Hub importer acceptance of truthful blank Publication Date and unresolved version/scope not verified; no candidate batch published; requires tested compatible human intake path.",
+      "hub_intake_blocker": "Non-date eligibility/identity/public-scope review needs compatible private intake; NOT DELIVERED TO HUB. Pub Date is complete.",
       "early_retry_reason": "User-authorized 2026-10-29 one bounded different-source recovery round before preserved original November 5 retry",
       "followup_completed_at": "2026-10-30T02:33:23Z",
       "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-2229ET",
       "original_seed_doi": "10.6084/m9.figshare.23689194",
       "research_cohort": "Historical DataCite API Backfill 2026-10-28",
       "reach_comparison": "No exact original DOI/title in 1238 REACH index rows, all 140 detail shards, or 59 Scout staged rows; private decisions unverified.",
-      "handoff_library_path": "/REACH Scout/2026-10-29-2229ET-lead_queue.json"
+      "handoff_library_path": "/REACH Scout/2026-10-29-2229ET-lead_queue.json",
+      "historical_missing_fields_before_executive_rule": [
+        "record-specific first publication date (YYYY-MM-DD)",
+        "native repository version/identity and public scope confirmation"
+      ],
+      "historical_reviewer_question_before_executive_rule": "Select ONE canonical concept/v1 dataset record and decide on unknown first date, separate from staged article.",
+      "historical_followup_question_before_executive_rule": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.6084/m9.figshare.23689194 without assuming an article/citation year is the dataset date?",
+      "historical_hub_intake_blocker_before_executive_rule": "Existing 24-column Discovery Hub importer acceptance of truthful blank Publication Date and unresolved version/scope not verified; no candidate batch published; requires tested compatible human intake path.",
+      "datacite_created": "2023-07-14T23:46:03.000Z",
+      "accepted_reach_pub_date": "2023-07-14",
+      "pub_date_source_url": "https://api.datacite.org/dois/10.6084/m9.figshare.23689194",
+      "pub_date_source_dateType": "DataCite created",
+      "pub_date_policy": "2026-10-30 office-accepted complete REACH Pub Date; no native corroboration or separate date acknowledgement required",
+      "date_policy_applied_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
+      "date_only_research_followup_required": false,
+      "historical_original_triage_status_preserved": true,
+      "hub_delivered": false,
+      "operational_review_route": "HUMAN_INTAKE_NON_DATE_QUESTIONS"
     },
     {
       "identity": "doi:10.6084/m9.figshare.23689194.v1",
@@ -3973,7 +4474,6 @@
       "cohort": "Historical DataCite API Backfill 2026-10-28",
       "status": "pending_hub_handoff",
       "missing_fields": [
-        "record-specific first publication date (YYYY-MM-DD)",
         "native repository version/identity and public scope confirmation"
       ],
       "attempts": [
@@ -4046,7 +4546,7 @@
       "retry_count": 1,
       "next_retry_at": "2026-11-05T15:35:00Z",
       "next_research_at": "2026-11-05T15:35:00Z",
-      "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.6084/m9.figshare.23689194.v1 without assuming an article/citation year is the dataset date?",
+      "followup_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native repository version/identity and public scope confirmation. ",
       "evidence_urls": [
         "https://api.datacite.org/dois/10.6084/m9.figshare.23689194.v1",
         "https://journals.ametsoc.org/view/journals/aies/3/1/AIES-D-23-0064.1.xml",
@@ -4058,26 +4558,43 @@
         "https://doi.org/10.6084/m9.figshare.23689194"
       ],
       "funding_basis": "Version 1 of ELDORA ML QC dataset; article confirms WPO award and dataset link, native Figshare first publication date unresolved. Captured award references: NA19OAR4590245.",
-      "next_action": "RESEARCH COMPLETE; HUMAN DECISION NEEDED. Pending Hub integration, NOT DELIVERED TO HUB. Do not retry without material new evidence or human request.",
+      "next_action": "Research complete. Accepted Pub Date supplied from DOI-specific DataCite created. Await compatible private human intake for remaining non-date questions; no date re-research.",
       "triage_identity": "doi:10.6084/m9.figshare.23689194.v1",
       "max_delayed_retries": 1,
-      "ready_for_human_review": false,
+      "ready_for_human_review": true,
       "metadata_recovery_rounds": 0,
       "source_verification_limits": "Full dataset first publication date and public/version scope not independently established. Journal/citation year cannot substitute.",
       "research_completed": true,
       "metadata_recovery_exhausted": true,
       "review_ready": true,
-      "reviewer_question": "Select ONE canonical concept/v1 dataset record and decide on unknown first date, separate from staged article.",
+      "reviewer_question": "Resolve remaining non-date eligibility, identity, version, funding or public-scope questions: native repository version/identity and public scope confirmation. ",
       "hub_delivery_status": "not_delivered",
       "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
-      "hub_intake_blocker": "Existing 24-column Discovery Hub importer acceptance of truthful blank Publication Date and unresolved version/scope not verified; no candidate batch published; requires tested compatible human intake path.",
+      "hub_intake_blocker": "Non-date eligibility/identity/public-scope review needs compatible private intake; NOT DELIVERED TO HUB. Pub Date is complete.",
       "early_retry_reason": "User-authorized 2026-10-29 one bounded different-source recovery round before preserved original November 5 retry",
       "followup_completed_at": "2026-10-30T02:33:23Z",
       "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-2229ET",
       "original_seed_doi": "10.6084/m9.figshare.23689194.v1",
       "research_cohort": "Historical DataCite API Backfill 2026-10-28",
       "reach_comparison": "No exact original DOI/title in 1238 REACH index rows, all 140 detail shards, or 59 Scout staged rows; private decisions unverified.",
-      "handoff_library_path": "/REACH Scout/2026-10-29-2229ET-lead_queue.json"
+      "handoff_library_path": "/REACH Scout/2026-10-29-2229ET-lead_queue.json",
+      "historical_missing_fields_before_executive_rule": [
+        "record-specific first publication date (YYYY-MM-DD)",
+        "native repository version/identity and public scope confirmation"
+      ],
+      "historical_reviewer_question_before_executive_rule": "Select ONE canonical concept/v1 dataset record and decide on unknown first date, separate from staged article.",
+      "historical_followup_question_before_executive_rule": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.6084/m9.figshare.23689194.v1 without assuming an article/citation year is the dataset date?",
+      "historical_hub_intake_blocker_before_executive_rule": "Existing 24-column Discovery Hub importer acceptance of truthful blank Publication Date and unresolved version/scope not verified; no candidate batch published; requires tested compatible human intake path.",
+      "datacite_created": "2023-12-09T23:04:55.000Z",
+      "accepted_reach_pub_date": "2023-12-09",
+      "pub_date_source_url": "https://api.datacite.org/dois/10.6084/m9.figshare.23689194.v1",
+      "pub_date_source_dateType": "DataCite created",
+      "pub_date_policy": "2026-10-30 office-accepted complete REACH Pub Date; no native corroboration or separate date acknowledgement required",
+      "date_policy_applied_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
+      "date_only_research_followup_required": false,
+      "historical_original_triage_status_preserved": true,
+      "hub_delivered": false,
+      "operational_review_route": "HUMAN_INTAKE_NON_DATE_QUESTIONS"
     },
     {
       "identity": "url:https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_reportFINAL_092718.pdf",
@@ -4538,6 +5055,112 @@
       "acknowledgment_absence_verified": false,
       "private_reviewer_decisions": "NOT VERIFIED",
       "human_review_key": "case-35"
+    },
+    {
+      "identity": "doi:10.5281/zenodo.4526127",
+      "award_numbers": [
+        "NA16OAR4590234"
+      ],
+      "cohort": "Normal historical SPARK award discovery 2026-10-30",
+      "status": "pending_hub_handoff",
+      "operational_review_route": "HUMAN_INTAKE_NON_DATE_QUESTIONS",
+      "missing_fields": [
+        "native exact title and creators",
+        "public Zenodo file inventory and accessibility",
+        "concept/version DOI identity",
+        "valid DOI-specific DataCite created timestamp not accessible (native ACCESS FAILURE)"
+      ],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "publisher_data_availability_and_acknowledgments",
+          "url": "https://doi.org/10.1016/j.jhydrol.2021.126809",
+          "outcome": "Article acknowledges NA16OAR4590234 and explicitly cites this distinct eight-station dataset DOI.",
+          "checked_at": "2026-10-30T15:31:19Z"
+        },
+        {
+          "round": 0,
+          "method": "independent_noaa_ir",
+          "url": "https://repository.library.noaa.gov/view/noaa/32601/noaa_32601_DS1.pdf",
+          "outcome": "Independent NOAA IR PDF repeats exact award and dataset DOI.",
+          "checked_at": "2026-10-30T15:31:19Z"
+        },
+        {
+          "round": 0,
+          "method": "native_datacite",
+          "url": "https://api.datacite.org/dois/10.5281/zenodo.4526127",
+          "outcome": "ACCESS_FAILURE_NOT_METADATA_ABSENT; no created timestamp verified.",
+          "checked_at": "2026-10-30T15:31:19Z"
+        },
+        {
+          "round": 0,
+          "method": "native_zenodo_landing",
+          "url": "https://zenodo.org/records/4526127",
+          "outcome": "ACCESS_FAILURE_NOT_METADATA_ABSENT; public files and title not verified.",
+          "checked_at": "2026-10-30T15:31:19Z"
+        },
+        {
+          "round": 1,
+          "method": "different_native_zenodo_api",
+          "url": "https://zenodo.org/api/records/4526127",
+          "outcome": "ACCESS_FAILURE_NOT_METADATA_ABSENT; no title, file inventory or version chain recovered.",
+          "checked_at": "2026-10-30T16:38:46Z"
+        },
+        {
+          "round": 1,
+          "method": "doi_redirect",
+          "url": "https://doi.org/10.5281/zenodo.4526127",
+          "outcome": "ACCESS_FAILURE_NOT_METADATA_ABSENT; no DOI-specific created date or native files inferred.",
+          "checked_at": "2026-10-30T16:38:46Z"
+        },
+        {
+          "round": 1,
+          "method": "independent_nssl_project_page",
+          "url": "https://www.nssl.noaa.gov/projects/anchor/",
+          "outcome": "Official ANCHOR project independently documents noncontact stream-radar data and hydrologic use; does not identify this DOI's file inventory.",
+          "checked_at": "2026-10-30T16:38:46Z"
+        },
+        {
+          "round": 1,
+          "method": "reach_and_scout_dedup",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "outcome": "Exact DOI absent from 1,238 public REACH index records and 62 pre-existing Scout rows; full detail shards and private decisions NOT VERIFIED.",
+          "checked_at": "2026-10-30T16:38:46Z"
+        }
+      ],
+      "first_investigated_at": "2026-10-30T15:31:19Z",
+      "last_attempt_at": "2026-10-30T16:38:46Z",
+      "retry_count": 1,
+      "next_retry_at": null,
+      "next_research_at": null,
+      "followup_question": "Human to confirm exact DOI public files, creators, version/identity and eligibility; if a valid DOI-specific DataCite created timestamp becomes accessible, its calendar day is automatically accepted for Pub Date.",
+      "evidence_urls": [
+        "https://doi.org/10.1016/j.jhydrol.2021.126809",
+        "https://repository.library.noaa.gov/view/noaa/32601/noaa_32601_DS1.pdf",
+        "https://www.nssl.noaa.gov/projects/anchor/",
+        "https://zenodo.org/api/records/4526127",
+        "https://doi.org/10.5281/zenodo.4526127",
+        "https://api.datacite.org/dois/10.5281/zenodo.4526127",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-001.csv"
+      ],
+      "funding_basis": "Exact ANCHOR eight-station Zenodo DOI in publisher and independent NOAA IR paper funded by NA16OAR4590234; SPARK spark-000005 primary award confirms the specific stream-radar project, official NSSL page independently confirms project objectives.",
+      "next_action": "RESEARCH COMPLETE; private human metadata intake needed, NOT DELIVERED TO HUB. Do not repeat generic native searches without material new evidence or human request.",
+      "triage_identity": "doi:10.5281/zenodo.4526127",
+      "discovery_route": "Independent discovery",
+      "scout_seed_doi": null,
+      "confidence": "Medium",
+      "hub_delivered": false,
+      "ready_for_human_review": true,
+      "research_completed": true,
+      "metadata_recovery_exhausted": true,
+      "hub_delivery_status": "not_delivered",
+      "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
+      "hub_intake_blocker": "Native Zenodo/DataCite ACCESS FAILURE; exact title/creators, public files, version and valid created date unavailable; cannot truthfully fill standard 24-column Hub candidate. Private companion not installed.",
+      "reviewer_question": "Does the exact DOI represent a distinct publicly accessible ANCHOR eight-station dataset, and what are the verified title, creators, file scope and version identity?",
+      "original_seed_doi": null,
+      "source_access_failure": true,
+      "date_policy_applies_if_created_verified": true,
+      "first_pass_and_one_bounded_followup_complete": true
     }
   ],
   "latest_due_date_alias_audit": {
@@ -4558,5 +5181,23 @@
       "url:https://ams.confex.com/ams/51BC7WxComm/webprogram/Paper443443.html"
     ],
     "no_retry_clocks_reset": true
+  },
+  "latest_executive_date_policy_reconciliation": {
+    "run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
+    "timestamp_utc": "2026-10-30T16:38:46Z",
+    "source_date_audit_sha": "a88ddf3eb49d2790bdad246b185c49b0b0c754d0",
+    "valid_created_applied": 32,
+    "date_only_moved_to_normal_review": 4,
+    "mixed_non_date_pending": 28,
+    "prior_no_created_unchanged": 9,
+    "new_anchor_handoff": 1,
+    "source_cases_after": 42,
+    "review_units_expected": 36,
+    "operational_human_intake_pending": 38,
+    "normal_review_staged": 4,
+    "batch_id": "2026-10-30-hourly-1229ET-nhci-date-policy-normal-review-001",
+    "manifest_verified_sha": "1d048cf0b5552aff8eb9b6afc36302d8147afbe8",
+    "human_hub_import": "NOT_VERIFIED",
+    "original_decisions_preserved": true
   }
 }
