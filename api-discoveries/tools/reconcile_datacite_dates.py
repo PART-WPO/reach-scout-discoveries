@@ -149,20 +149,22 @@ def native_date(raw,doi):
     p.feed(raw)
     validids=p.meta.get("citation_doi",[])+p.meta.get("dc.identifier",[])
     allvalues=[]
+    matched=False
     def walk(node):
+        nonlocal matched
         if isinstance(node,dict):
             ids=node.get("identifier") or node.get("sameAs") or node.get("@id") or []
             for v in (ids if isinstance(ids,list) else [ids]):
                 if isinstance(v,dict):v=v.get("value","")
                 try:
                     if canonical_doi(v)==doi:
+                        matched=True
                         allvalues.append(node.get("datePublished",""))
                 except ValueError:pass
             for x in node.values():walk(x)
         elif isinstance(node,list):
             for x in node:walk(x)
     for obj in p.jsonld:walk(obj)
-    matched=False
     for value in validids:
         try:
             if canonical_doi(value)==doi:
