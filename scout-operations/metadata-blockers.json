@@ -4168,6 +4168,95 @@
       "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
       "reviewer_handoff_library_path": "/REACH Scout/2026-10-29-2329ET-lead_queue.json",
       "reach_comparison": "Current public REACH 10 index shards / 1,238 records checked; no exact DOI/URL match. Prior 22:29 ET complete 140 detail-shard check and 59 Scout candidates; manifest unchanged, detail shards not reread this run; private human feedback NOT VERIFIED."
+    },
+    {
+      "identity": "url:https://www.nhc.noaa.gov/jht/ihc_17/ihc17_Rozoff.pdf",
+      "award_numbers": [
+        "NA15OAR4590205"
+      ],
+      "cohort": "Normal historical SPARK award discovery 2026-10-30",
+      "status": "pending_hub_handoff",
+      "research_disposition": "RESEARCH_COMPLETE_HUMAN_INTAKE",
+      "research_completed": true,
+      "metadata_recovery_exhausted": true,
+      "output_type": "Other output — 2017 IHC conference presentation",
+      "title": "Probabilistic Prediction of Tropical Cyclone Rapid Intensification Using Passive Microwave Imagery — 2017 IHC Presentation",
+      "missing_fields": [
+        "Exact first public release/posting date of this specific slide deck (NHC announces public availability by 2017-04-13)",
+        "Direct inspection of native slide PDF and whether the slide itself explicitly acknowledges NA15OAR4590205 (native access failure)"
+      ],
+      "attempts": [
+        {
+          "round": 0,
+          "method": "official_nhc_project_roster",
+          "url": "https://www.nhc.noaa.gov/jht/15-17_proj.php",
+          "outcome": "Official JHT 2015–2017 roster identifies exact project and IHC 2017 presentation link.",
+          "checked_at": "2026-10-30T13:29:57Z"
+        },
+        {
+          "round": 0,
+          "method": "native_nhc_slide_retrieval",
+          "url": "https://www.nhc.noaa.gov/jht/ihc_17/ihc17_Rozoff.pdf",
+          "outcome": "Search-indexed slide title and sample content available, direct PDF open returned HTTP 403: ACCESS FAILURE, not proof metadata absent.",
+          "checked_at": "2026-10-30T13:29:57Z"
+        },
+        {
+          "round": 0,
+          "method": "public_reach_scout_comparison",
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "outcome": "All ten SHA-256-verified public REACH index shards (1,238) and 19 SHA-256-verified Scout batches (62) checked; no exact presentation URL/identity; private decisions NOT VERIFIED.",
+          "checked_at": "2026-10-30T13:29:57Z"
+        },
+        {
+          "round": 1,
+          "method": "dated_nhc_news_archive",
+          "url": "https://www.nhc.noaa.gov/hot/archive.php",
+          "outcome": "Official news archive announces 2017 IHC presentation set available 2017-04-13: public availability BY this date, not exact first posting.",
+          "source_dateType": "public_availability_announced_by",
+          "source_date": "2017-04-13",
+          "checked_at": "2026-10-30T13:29:57Z"
+        },
+        {
+          "round": 1,
+          "method": "independent_ssec_report",
+          "url": "https://pubs.ssec.wisc.edu/research_Resources/publications/pdfs/SSECPUBS/SSEC_Publication_No_17_09_R1.pdf",
+          "outcome": "2017 SSEC report names exact award NA15OAR4590205 and explicitly lists the Rozoff/Velden 2017 IHC presentation as funded deliverable. Printed 16 March 2016 conflicts with 2017 IHC.",
+          "checked_at": "2026-10-30T13:29:57Z"
+        },
+        {
+          "round": 1,
+          "method": "independent_noaa_midyear",
+          "url": "https://www.nhc.noaa.gov/jht/15-17reports/JHT_Velden_midyear2.pdf",
+          "outcome": "Independent NOAA report corroborates exact project/presentation and alternate OFCM slide URL, no first public slide date or internal acknowledgment.",
+          "checked_at": "2026-10-30T13:29:57Z"
+        }
+      ],
+      "first_investigated_at": "2026-10-30T13:29:57Z",
+      "followup_completed_at": "2026-10-30T13:29:57Z",
+      "retry_count": 1,
+      "max_delayed_retries": 1,
+      "early_retry_reason": "User-authorized October 30 one initial plus one bounded genuinely different-source metadata recovery in the same research mission; dated NHC archive and independent SSEC/NOAA reports are different sources; no automatic further retry.",
+      "evidence_urls": [
+        "https://www.nhc.noaa.gov/jht/15-17_proj.php",
+        "https://www.nhc.noaa.gov/jht/ihc_17/ihc17_Rozoff.pdf",
+        "https://www.nhc.noaa.gov/hot/archive.php",
+        "https://pubs.ssec.wisc.edu/research_Resources/publications/pdfs/SSECPUBS/SSEC_Publication_No_17_09_R1.pdf",
+        "https://www.nhc.noaa.gov/jht/15-17reports/JHT_Velden_midyear2.pdf"
+      ],
+      "funding_basis": "SPARK spark-000201 primary WPO JHT award NA15OAR4590205; NHC roster and independent SSEC/NOAA 2017 grant-funded reports identify this exact presentation as project output. Internal slide-level acknowledgment NOT VERIFIED.",
+      "reach_comparison": "No exact URL/presentation identity in all 10 REACH index shards (1,238 rows) or 19 Scout immutable batches (62 rows). Full detail shards and private reviewer decisions NOT VERIFIED.",
+      "next_action": "RESEARCH COMPLETE; human decision needed, pending compatible private metadata intake. No further automated searches absent material new evidence or human request.",
+      "reviewer_question": "Is this 2017 JHT IHC slide deck a distinct eligible Other Knowledge Product under NA15OAR4590205? Confirm exact first public posting date, native file access, and whether slides themselves acknowledge the grant. Official NHC confirms publicly available by 2017-04-13, not necessarily first posted that day.",
+      "hub_delivery_status": "not_delivered",
+      "human_handoff_status": "pending_hub_intake",
+      "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
+      "hub_intake_blocker": "Existing 24-column importer has not been validated for truthful blank publication date; additive Apps Script companion intake prepared/tested OFFLINE but NOT INSTALLED or imported.",
+      "source_run_id": "REACH-SCOUT-2026-10-30-HOURLY-0929ET",
+      "discovery_route": "Independent discovery",
+      "discovery_path": "SPARK spark-000201 -> official NHC JHT roster -> indexed 2017 IHC slides -> dated NHC archive -> independent funded SSEC/NOAA project reports",
+      "publication_date": null,
+      "verified_available_by": "2017-04-13",
+      "acknowledgment_absence_verified": false
     }
   ],
   "latest_due_date_alias_audit": {
