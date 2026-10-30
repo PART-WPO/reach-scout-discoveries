@@ -2,7 +2,7 @@
 """Read-only DOI metadata enrichment across historical, staged and Scout leads."""
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
-import argparse,csv,datetime as dt,hashlib,io,json,re,threading,time
+import argparse,csv,datetime as dt,hashlib,io,json,re,threading,time,html
 from pathlib import Path
 from urllib.request import Request,build_opener,HTTPRedirectHandler
 from urllib.error import HTTPError,URLError
@@ -23,6 +23,39 @@ def date(v):
  s=str(v or "")[:10]
  try:return dt.date.fromisoformat(s).isoformat() if re.match(r"^\d{4}-\d\d-\d\d",s) else ""
  except ValueError:return ""
+def crossref_date_parts(obj):
+ """A Crossref partial date is never silently expanded to YYYY-MM-DD."""
+ try:
+  row=(obj or {}).get("date-parts") or []
+  parts=row[0] if row else []
+  if not parts or len(parts)>3:return {"value":"","precision":"missing","full_date":""}
+  values=[int(x) for x in parts]
+  if not 1<=values[0]<=9999:return {"value":"","precision":"invalid","full_date":""}
+  if len(values)>1 and not 1<=values[1]<=12:return {"value":"","precision":"invalid","full_date":""}
+  if len(values)==3:
+   full=dt.date(*values).isoformat()
+   return {"value":full,"precision":"day","full_date":full}
+  value=str(values[0]).zfill(4)
+  if len(values)==2:value+="-"+str(values[1]).zfill(2)
+  return {"value":value,"precision":"month" if len(values)==2 else "year","full_date":""}
+ except (TypeError,ValueError,OverflowError):return {"value":"","precision":"invalid","full_date":""}
+
+def crossref_date_info(work):
+ """Publication dates first; Crossref created is NOT REACH Pub Date."""
+ keys=("published-online","posted","published-print","published","issued")
+ all_dates={k:crossref_date_parts(work.get(k)) for k in keys}
+ choice=next(((k,v["full_date"]) for k,v in all_dates.items() if v["full_date"]),None)
+ partial=next(((k,v["value"]) for k,v in all_dates.items() if v["value"]),None)
+ return {"publication_dates":all_dates,"pub_date":choice[1] if choice else "",
+         "pub_date_basis":choice[0] if choice else "",
+         "best_partial_date":partial[1] if partial else "",
+         "best_partial_basis":partial[0] if partial else "",
+         "crossref_created":crossref_date_parts(work.get("created")),
+         "crossref_deposited":crossref_date_parts(work.get("deposited"))}
+
+def strip_markup(raw):
+ return re.sub(r"\s+"," ",html.unescape(re.sub(r"<[^>]+>"," ",str(raw or "")))).strip()
+
 def j(path):return json.loads((ROOT/path).read_text(encoding="utf8"))
 def merge(index,id,origin,row=None,key=""):
  if not id:return
@@ -121,12 +154,30 @@ def fetch(id):
       "listed_formats":len(a.get("formats") or []),"listed_sizes":len(a.get("sizes") or [])}
    title="; ".join((a.get("title") or [])[:3])
    authors=[" ".join(filter(None,[c.get("given"),c.get("family")])) for c in a.get("author") or []]
-   abstract=re.sub(r"<[^>]+>"," ",str(a.get("abstract") or ""))
+   abstract=strip_markup(a.get("abstract"))
+   dateinfo=crossref_date_info(a)
+   types=str(a.get("type") or "")
+   reachtype="3" if "dataset" in types.lower() else "2" if "software" in types.lower() else "4" if types.lower()=="grant" else "1"
+   awards=sorted(set(str(y) for x in a.get("funder") or [] for y in x.get("award") or []))
+   journal="; ".join(a.get("container-title") or [])
    return {"status":"ok","source":"crossref","evidence":url,"title":title[:550],"creators":authors[:30],
-       "abstract":re.sub(r"\s+"," ",abstract)[:3500],"publisher":str(a.get("publisher") or ""),
-       "resource_type":str(a.get("type") or ""),"reach_type":"1","created":"","registered":"",
-       "pub_date":"","funding_structured":sorted(set(y for x in a.get("funder") or [] for y in x.get("award") or [])),
-       "funding_in_description":sorted(set(AWARD.findall(abstract))),"related":[],"access_rights":[]}
+       "abstract":abstract[:3500],"publisher":str(a.get("publisher") or ""),
+       "resource_type":types,"reach_type":reachtype,"created":"","registered":"",
+       "pub_date":dateinfo["pub_date"],"pub_date_basis":dateinfo["pub_date_basis"],
+       "publication_dates":dateinfo["publication_dates"],
+       "best_partial_date":dateinfo["best_partial_date"],
+       "best_partial_basis":dateinfo["best_partial_basis"],
+       "crossref_created":dateinfo["crossref_created"],
+       "crossref_deposited":dateinfo["crossref_deposited"],
+       "journal":journal[:300],"volume":str(a.get("volume") or ""),
+       "issue":str(a.get("issue") or ""),"pages":str(a.get("page") or a.get("article-number") or ""),
+       "publisher_url":str(a.get("URL") or ""),
+       "funding_structured":awards,
+       "funding_in_description":sorted(set(AWARD.findall(abstract+" "+title))),
+       "funders":[str(x.get("name") or "") for x in a.get("funder") or []],
+       "relations":a.get("relation") or {},
+       "access_rights":[str(x.get("URL") or "") for x in a.get("license") or []],
+       "checkpoint_schema":"crossref-publication-v2"}
   except HTTPError as e:
    if e.code==404:continue
    return {"status":"source_unavailable","source":src,"evidence":url,"error":"HTTP "+str(e.code)}
@@ -161,7 +212,7 @@ def main():
   id,x=pair
   if args.offline:
    meta={"status":"offline"}
-  elif not args.refresh_all and id in previous and previous[id].get("metadata",{}).get("status")=="ok":
+  elif not args.refresh_all and id in previous and previous[id].get("metadata",{}).get("status")=="ok" and (previous[id]["metadata"].get("source")!="crossref" or previous[id]["metadata"].get("checkpoint_schema")=="crossref-publication-v2"):
    meta=dict(previous[id]["metadata"])
   else:
    meta=fetch(id)
