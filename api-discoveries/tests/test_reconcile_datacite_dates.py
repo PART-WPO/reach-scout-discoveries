@@ -41,6 +41,9 @@ class DatesTests(unittest.TestCase):
         self.assertEqual(r["verified_date"],"")
         self.assertEqual(r["provisional_date"],"2025-04-11")
         self.assertEqual(r["publication_year"],"2025")
+        self.assertEqual(r["default_pub_date"],"2025-04-10")
+        self.assertIn("editable default",r["default_pub_date_basis"])
+        self.assertEqual(r["verified_date"],"")
 
     def test_issued_exact_requires_repository_check(self):
         a={"dates":[{"date":"2025-04-10","dateType":"Issued"}],
