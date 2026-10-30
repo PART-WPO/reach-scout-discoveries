@@ -1,0 +1,230 @@
+{
+  "run_id": "REACH-SCOUT-2026-10-29-HOURLY-2129ET",
+  "timestamp_utc": "2026-10-30T01:29:07.371126+00:00",
+  "selected_mode": "historical_api_triage",
+  "policy_read": [
+    "scout-operations/api-followup-priority-policy.md",
+    "scout-operations/no-action-disposition-policy.md",
+    "scout-operations/discovery-expansion-metrics.md"
+  ],
+  "monthly": {
+    "source_records": 0,
+    "unresolved": 0
+  },
+  "historical": {
+    "source_original_dois": 188,
+    "before_completed": 174,
+    "before_remaining": 14,
+    "original_dois": [
+      {
+        "doi": "10.57969/s9k013",
+        "name": "NOPP NHCI 2024 sensor data",
+        "native": "https://erddap.ldl.ucsd.edu/erddap/info/ONR_NOPP2024/index.html",
+        "missing": [
+          "exact first-publication YYYY-MM-DD"
+        ],
+        "question": "Should the 2024 NOPP sensor dataset be a separate REACH dataset record with its verified award but no available first-publication date? The companion 2024 first-five dataset is a different variable product, not a version.",
+        "funding_award": "NA21OAR4590374",
+        "spark_project": "spark-000336",
+        "evidence_urls": [
+          "https://api.datacite.org/dois/10.57969/s9k013",
+          "https://erddap.ldl.ucsd.edu/erddap/info/ONR_NOPP2024/index.html",
+          "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+          "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+          "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+          "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+        ],
+        "new_checks": [
+          {
+            "source": "native_ERDDAP",
+            "url": "https://erddap.ldl.ucsd.edu/erddap/info/ONR_NOPP2024/index.html",
+            "outcome": "Exact DOI, public scientific variables and observation coverage verified; no first-publication date in record."
+          },
+          {
+            "source": "SPARK_project_detail",
+            "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+            "outcome": "spark-000336 primary WPO award NA21OAR4590374 explicitly funds drifting buoy observations."
+          },
+          {
+            "source": "complete_REACH_index_refresh",
+            "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+            "outcome": "All ten index shards (1,238 rows) re-read; no exact DOI/title."
+          },
+          {
+            "source": "Scout_staged_batch_refresh",
+            "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+            "outcome": "All 17 published batch files (59 rows) re-read; no exact DOI/title."
+          }
+        ]
+      },
+      {
+        "doi": "10.57969/s9z598",
+        "name": "NOPP NHCI 2023 sensor data",
+        "native": "https://erddap.ldl.ucsd.edu/erddap/info/ONR_NOPP2023/index.html",
+        "missing": [
+          "exact first-publication YYYY-MM-DD"
+        ],
+        "question": "Should the 2023 NOPP sensor dataset be separately cataloged while the native release day is unknown? The publisher lists the distinct 2023 first-five dataset under 10.57969/S9PP42, whose DOI currently fails to resolve.",
+        "funding_award": "NA21OAR4590374",
+        "spark_project": "spark-000336",
+        "evidence_urls": [
+          "https://api.datacite.org/dois/10.57969/s9z598",
+          "https://erddap.ldl.ucsd.edu/erddap/info/ONR_NOPP2023/index.html",
+          "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+          "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+          "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+          "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+        ],
+        "new_checks": [
+          {
+            "source": "native_ERDDAP",
+            "url": "https://erddap.ldl.ucsd.edu/erddap/info/ONR_NOPP2023/index.html",
+            "outcome": "Exact DOI, public scientific variables and observation coverage verified; no first-publication date in record."
+          },
+          {
+            "source": "SPARK_project_detail",
+            "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+            "outcome": "spark-000336 primary WPO award NA21OAR4590374 explicitly funds drifting buoy observations."
+          },
+          {
+            "source": "complete_REACH_index_refresh",
+            "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+            "outcome": "All ten index shards (1,238 rows) re-read; no exact DOI/title."
+          },
+          {
+            "source": "Scout_staged_batch_refresh",
+            "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+            "outcome": "All 17 published batch files (59 rows) re-read; no exact DOI/title."
+          }
+        ]
+      },
+      {
+        "doi": "10.57969/s9qp4c",
+        "name": "Atlantic Hurricane 2024 GTS drifter data",
+        "native": "https://erddap.ldl.ucsd.edu/erddap/info/LDL_AtlanticHurricane2024/index.html",
+        "missing": [
+          "exact first-publication YYYY-MM-DD",
+          "publisher landing-page DOI discrepancy S9QP4CD vs verified native S9QP4C"
+        ],
+        "question": "Should the 2024 Atlantic GTS drifter dataset be cataloged using the DOI embedded in native ERDDAP and captured by DataCite (S9QP4C), notwithstanding the publisher webpage typo S9QP4CD and unknown release day?",
+        "funding_award": "NA21OAR4590374",
+        "spark_project": "spark-000336",
+        "evidence_urls": [
+          "https://api.datacite.org/dois/10.57969/s9qp4c",
+          "https://erddap.ldl.ucsd.edu/erddap/info/LDL_AtlanticHurricane2024/index.html",
+          "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+          "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+          "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+          "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+        ],
+        "new_checks": [
+          {
+            "source": "native_ERDDAP",
+            "url": "https://erddap.ldl.ucsd.edu/erddap/info/LDL_AtlanticHurricane2024/index.html",
+            "outcome": "Exact DOI, public scientific variables and observation coverage verified; no first-publication date in record."
+          },
+          {
+            "source": "SPARK_project_detail",
+            "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+            "outcome": "spark-000336 primary WPO award NA21OAR4590374 explicitly funds drifting buoy observations."
+          },
+          {
+            "source": "complete_REACH_index_refresh",
+            "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+            "outcome": "All ten index shards (1,238 rows) re-read; no exact DOI/title."
+          },
+          {
+            "source": "Scout_staged_batch_refresh",
+            "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+            "outcome": "All 17 published batch files (59 rows) re-read; no exact DOI/title."
+          }
+        ]
+      }
+    ],
+    "original_seed_type": "real_dataset_not_grant_notice",
+    "no_action_before_after": [
+      109,
+      109
+    ],
+    "metadata_handoffs_before_after": [
+      18,
+      21
+    ],
+    "after_completed_reconciled": 177,
+    "after_remaining_reconciled": 11
+  },
+  "funding_basis": "Primary SPARK spark-000336, WPO award NA21OAR4590374, plus original DataCite fundingReference and publisher Scripps catalog",
+  "source_verification": {
+    "reach_index_shards_checked": 10,
+    "reach_index_rows": 1238,
+    "spark_index_shards_checked": 6,
+    "scout_batch_csv_files_checked": 17,
+    "scout_candidate_rows": 59,
+    "full_reach_detail_shards_checked": false,
+    "private_human_feedback_accessible": false
+  },
+  "expansion_leads": [
+    {
+      "doi": "10.57969/s9pp42",
+      "relation": "distinct 2023 first-five wave-coefficient data linked to 2023 sensor dataset; original remains unresolved, not new candidate",
+      "status": "existing_historical_original_needs_more_research"
+    },
+    {
+      "doi": "10.57969/s9f59m",
+      "relation": "distinct 2024 first-five wave-coefficient data linked to 2024 sensor dataset",
+      "status": "existing_original_human_metadata_needed; do not duplicate"
+    }
+  ],
+  "new_verified_candidate_counts_by_route": {
+    "Direct API": 0,
+    "API-seeded expansion": 0,
+    "Independent discovery": 0,
+    "Metadata correction": 0
+  },
+  "new_batch_ids": [],
+  "feed_integrity_status": "NO_NEW_BATCH; existing manifest has 17 batches and 59 candidates; prior feed checks preserved; this run re-read batch contents but did not independently recalculate every SHA256",
+  "github_action_verification": "NOT_VERIFIABLE",
+  "hub_delivered_this_run": 0,
+  "hub_visible_total": "NOT_VERIFIED",
+  "human_reviewer_decisions": "NOT_VERIFIED",
+  "missing_acknowledgment_recoveries": "NOT_VERIFIED",
+  "public_reach_new_additions": 0,
+  "public_reach_baseline": 1238,
+  "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
+  "blockers": [
+    "Discovery Hub import compatibility for missing publication date not verified",
+    "complete REACH detail shards not all checked",
+    "private reviewer decisions unavailable",
+    "native first-publication dates unavailable"
+  ],
+  "audit_result": "PARTIAL",
+  "library_first": true,
+  "github_ledger_status": "COMMITTED_AND_INDEPENDENTLY_RECONCILED",
+  "ledger_commit_shas": {
+    "historical_triage": "b3c92a3f3b2e4ee51877fad498e3136143cfbf41",
+    "metadata_blockers": "de49abdf0f4bb9381293132a9d101e9241f489dd",
+    "historical_coverage": "ebd74ddd4ba087de9b4e6ce3c2164a1a861bfa6f",
+    "active_workstream": "b49d7b01c4dc177a9689c1953203d8731bfbd741"
+  },
+  "ledger_reconciliation": {
+    "historical_total": 188,
+    "status_sum": 188,
+    "research_completed": 177,
+    "remaining_needs_more_research": 11,
+    "human_metadata_needed": 21,
+    "pending_hub_handoff_blocker_entries": 21,
+    "no_action": 109,
+    "already_in_reach": 37,
+    "forwarded_to_hub": 2,
+    "metadata_update_forwarded": 8,
+    "passed": true
+  },
+  "new_evidence_checks": 12,
+  "github_audit_publication": "Audit JSON prepared in Library before GitHub create; publication status must be verified by independent GitHub read",
+  "human_metadata_needed_this_run": 3,
+  "confirmed_hub_deliveries_this_run": 0,
+  "public_reach_new_additions_basis": "No direct REACH write and public index remains at 1238; no Scout-attributable publication claimed."
+}
