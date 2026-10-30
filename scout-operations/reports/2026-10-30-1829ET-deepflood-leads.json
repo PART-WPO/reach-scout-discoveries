@@ -1,0 +1,81 @@
+{
+  "schema": "reach-scout-normal-discovery-leads-v1",
+  "run_id": "REACH-SCOUT-2026-10-30-HOURLY-1829ET",
+  "timestamp_utc": "2026-10-30T22:33:22Z",
+  "source_project": {
+    "spark_id": "spark-000338",
+    "award": "NA21OAR4590358",
+    "title": "Rapid Floodwater Extent and Depth Measurements Using Optical UAV and SAR",
+    "status": "Complete",
+    "source": "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-026.csv"
+  },
+  "review_unit": "deepflood-figshare-26791243-versus-28328339",
+  "related_output_family": [
+    {
+      "identity": "doi:10.6084/m9.figshare.26791243",
+      "source": "https://www.nature.com/articles/s41597-025-04554-3",
+      "source_relationship": "2025 Scientific Data article reference 34 directly cites this DOI as 2024 DeepFlood data",
+      "doi_resolution_observation": "DOI redirect identifies figshare.com/articles/journal_contribution/DEEPFLOOD_DATASET/26791243; native page inaccessible",
+      "datacite_lookup": "ACCESS_FAILURE",
+      "created_timestamp": null,
+      "reach_pub_date": null,
+      "output_type": "UNVERIFIED_NATIVE_TYPE",
+      "funding_bridge": "Article acknowledgment names NA21OAR4590358; dataset itself has not been independently shown to carry that funding metadata",
+      "research_status": "RESEARCH_ACTIVE_BOUNDED_DIFFERENT_SOURCE_FOLLOWUP"
+    },
+    {
+      "identity": "doi:10.6084/m9.figshare.28328339",
+      "source": "https://link.springer.com/article/10.1007/s12145-026-02164-0",
+      "source_relationship": "2026 paper explicitly identifies this as public DeepFlood dataset; third-party Figshare listings also point here",
+      "doi_resolution_observation": "DOI/native API inaccessible; no verified DOI-specific DataCite created or native version metadata",
+      "datacite_lookup": "ACCESS_FAILURE",
+      "created_timestamp": null,
+      "reach_pub_date": null,
+      "output_type": "DATASET_INDICATED_BY_PUBLISHER_NOT_NATIVE_VERIFIED",
+      "funding_bridge": "Likely related to 2025 WPO-supported article but separate exact DOI funding and canonical relation require checking",
+      "research_status": "RESEARCH_ACTIVE_BOUNDED_DIFFERENT_SOURCE_FOLLOWUP"
+    }
+  ],
+  "not_new_output_claim": true,
+  "sources_checked": [
+    {
+      "url": "https://www.nature.com/articles/s41597-025-04554-3",
+      "result": "2025 article directly cites 26791243 and explicitly acknowledges NOAA NA21OAR4590358; states data openly available in Figshare."
+    },
+    {
+      "url": "https://link.springer.com/article/10.1007/s12145-026-02164-0",
+      "result": "2026 follow-on study directly names 28328339 as DeepFlood dataset, but this later study itself acknowledges NASA and NSF funding, not WPO."
+    },
+    {
+      "url": "https://doi.org/10.6084/m9.figshare.26791243",
+      "result": "DOI redirect to Figshare journal_contribution path; native record fetch unavailable."
+    },
+    {
+      "url": "https://api.datacite.org/dois/10.6084/m9.figshare.26791243",
+      "result": "ACCESS_FAILURE, not missing metadata."
+    },
+    {
+      "url": "https://api.datacite.org/dois/10.6084/m9.figshare.28328339",
+      "result": "ACCESS_FAILURE, not missing metadata."
+    },
+    {
+      "url": "https://doi.org/10.6084/m9.figshare.28328339",
+      "result": "ACCESS_FAILURE, not missing DOI."
+    }
+  ],
+  "deduplication": {
+    "reach_index_files_read_this_run": 10,
+    "reach_index_rows": 1238,
+    "matched_doi_or_deepflood_title": false,
+    "reach_detail_files_read_this_run": 0,
+    "reach_detail_files_read_previous_2026_10_30_1732ET": 140,
+    "scout_manifest_batches_read_this_run": 20,
+    "scout_rows": 66,
+    "unmanifested_1329ET_batch_separate_article_candidates": true,
+    "private_hub_decisions": "NOT_VERIFIED"
+  },
+  "next_action": "One bounded different-source native DOI metadata/record/file/version verification for each exact DOI; distinguish journal_contribution 26791243 from dataset 28328339 and potential version/alternate; verify public files and exact funding. Do not invent DataCite-created dates or stage before identity resolution.",
+  "hub_delivery": "NOT_DELIVERED",
+  "human_decisions": "NOT_VERIFIED",
+  "new_candidate_csv_published": false
+}
