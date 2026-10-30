@@ -7837,20 +7837,23 @@
     },
     {
       "identity": "doi:10.57969/s9g015",
-      "status": "needs_more_research",
+      "status": "human_metadata_needed",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-29T15:34:47Z",
-      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-1131ET: Pacific DWSD first-five wave data; direct WPO drifter award captured, but exact dataset publication date and public scope not independently verified. Original DOI evaluated independently from expanded articles; complete 1238-row REACH index and all 53 existing Scout candidate rows checked; private reviewer decisions not accessible.",
+      "updated_at": "2026-10-30T02:33:23Z",
+      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-1131ET: Pacific DWSD first-five wave data; direct WPO drifter award captured, but exact dataset publication date and public scope not independently verified. Original DOI evaluated independently from expanded articles; complete 1238-row REACH index and all 53 existing Scout candidate rows checked; private reviewer decisions not accessible.\nREACH-SCOUT-2026-10-29-HOURLY-2229ET: One substantive bounded different-source recovery round; Publisher general data policy and GDP funding examined; exact native dataset date/scope not retrievable. Full REACH index 10/10 and detail 140/140 shards, SPARK 6/6 index, and Scout 17 immutable batches/59 rows checked; no exact original DOI/title match. Missing metadata and version questions require human decision; NOT DELIVERED TO HUB.",
       "checked_sources": [
         "https://api.datacite.org/dois/10.57969/s9g015",
         "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
-        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+        "https://ldl.ucsd.edu/ldl/data/",
+        "https://ldl.ucsd.edu/ldl/gdp-drifter-data/",
+        "https://doi.org/10.57969/S9G015"
       ],
       "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
       "funding_basis": "Captured DataCite structured award reference(s): NA20OAR4320278, NA21OAR4590374. SPARK primary award and publisher/repository evidence support a potential WPO project connection, with essential dataset metadata still unresolved.",
       "related_outputs_checked": "Checked related publisher/repository data and current REACH/Scout candidates; no separate eligible WPO-funded expansion output verified in this original-seed round.",
-      "verified_at": "",
+      "verified_at": "2026-10-30T02:33:23Z",
       "verified_awards": [
         "NA20OAR4320278",
         "NA21OAR4590374"
@@ -7882,12 +7885,34 @@
         "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
       ],
       "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.57969/s9g015 without assuming an article/citation year is the dataset date?",
-      "followup_rounds_completed": 0,
+      "followup_rounds_completed": 1,
       "max_followup_rounds": 1,
       "next_research_at": "2026-11-05T15:35:00Z",
       "schedule_updated_at": "2026-10-29T15:34:47Z",
       "first_investigated_timestamp_basis": "Actual first source checks in this 2026-10-29 11:31 ET run; no retrospective backdating",
-      "next_action": "One different-source authoritative metadata/identity follow-up on or after 2026-11-05T15:35:00Z; then verified candidate, evidence-backed no-action, or human_metadata_needed escalation."
+      "next_action": "One different-source authoritative metadata/identity follow-up on or after 2026-11-05T15:35:00Z; then verified candidate, evidence-backed no-action, or human_metadata_needed escalation.",
+      "followup_checked_sources": [
+        "https://ldl.ucsd.edu/ldl/data/",
+        "https://ldl.ucsd.edu/ldl/gdp-drifter-data/",
+        "https://doi.org/10.57969/S9G015"
+      ],
+      "followup_count": 1,
+      "followup_completed_at": "2026-10-30T02:33:23Z",
+      "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-2229ET",
+      "early_retry_reason": "2026-10-29 user-authorized API follow-up-first bounded different-source recovery ahead of preserved November 5 retry date",
+      "research_completed": true,
+      "metadata_recovery_exhausted": true,
+      "reviewer_question": "Confirm native Pacific DWSD first-five data public scope and first-release date; is this an eligible WPO-funded distinct dataset?",
+      "original_seed_artifact_type": "dataset_true_research_artifact",
+      "original_seed_doi": "10.57969/s9g015",
+      "original_seed_disposition": "human_metadata_needed",
+      "scout_discovery_route": "Direct API",
+      "human_handoff_status": "pending_hub_intake",
+      "hub_delivery_status": "not_delivered",
+      "hub_intake_blocker": "Existing 24-column Discovery Hub import support for truthful blank mandatory Publication Date and unresolved version/public scope not verified; no valid candidate staged, no Hub arrival claimed.",
+      "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
+      "reach_comparison": "All 1,238 REACH index records and 140 detail shards plus 59 staged Scout proposals scanned: no exact original DOI/title match; private reviewer feedback NOT VERIFIED.",
+      "reviewer_handoff_library_path": "/REACH Scout/2026-10-29-2229ET-lead_queue.json"
     },
     {
       "identity": "doi:10.57969/s9g59x",
@@ -8001,20 +8026,23 @@
     },
     {
       "identity": "doi:10.57969/s9ks3s",
-      "status": "needs_more_research",
+      "status": "human_metadata_needed",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-29T15:34:47Z",
-      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-1131ET: Pacific DWSD sensor data; direct WPO drifter award captured, but first publication date and distinctness from first-five coefficients unresolved. Original DOI evaluated independently from expanded articles; complete 1238-row REACH index and all 53 existing Scout candidate rows checked; private reviewer decisions not accessible.",
+      "updated_at": "2026-10-30T02:33:23Z",
+      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-1131ET: Pacific DWSD sensor data; direct WPO drifter award captured, but first publication date and distinctness from first-five coefficients unresolved. Original DOI evaluated independently from expanded articles; complete 1238-row REACH index and all 53 existing Scout candidate rows checked; private reviewer decisions not accessible.\nREACH-SCOUT-2026-10-29-HOURLY-2229ET: One substantive bounded different-source recovery round; Publisher general data policy and GDP funding examined; exact native dataset date/scope not retrievable. Full REACH index 10/10 and detail 140/140 shards, SPARK 6/6 index, and Scout 17 immutable batches/59 rows checked; no exact original DOI/title match. Missing metadata and version questions require human decision; NOT DELIVERED TO HUB.",
       "checked_sources": [
         "https://api.datacite.org/dois/10.57969/s9ks3s",
         "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
-        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+        "https://ldl.ucsd.edu/ldl/data/",
+        "https://ldl.ucsd.edu/ldl/gdp-drifter-data/",
+        "https://doi.org/10.57969/S9KS3S"
       ],
       "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
       "funding_basis": "Captured DataCite structured award reference(s): NA20OAR4320278, NA21OAR4590374. SPARK primary award and publisher/repository evidence support a potential WPO project connection, with essential dataset metadata still unresolved.",
       "related_outputs_checked": "Checked related publisher/repository data and current REACH/Scout candidates; no separate eligible WPO-funded expansion output verified in this original-seed round.",
-      "verified_at": "",
+      "verified_at": "2026-10-30T02:33:23Z",
       "verified_awards": [
         "NA20OAR4320278",
         "NA21OAR4590374"
@@ -8046,12 +8074,34 @@
         "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
       ],
       "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.57969/s9ks3s without assuming an article/citation year is the dataset date?",
-      "followup_rounds_completed": 0,
+      "followup_rounds_completed": 1,
       "max_followup_rounds": 1,
       "next_research_at": "2026-11-05T15:35:00Z",
       "schedule_updated_at": "2026-10-29T15:34:47Z",
       "first_investigated_timestamp_basis": "Actual first source checks in this 2026-10-29 11:31 ET run; no retrospective backdating",
-      "next_action": "One different-source authoritative metadata/identity follow-up on or after 2026-11-05T15:35:00Z; then verified candidate, evidence-backed no-action, or human_metadata_needed escalation."
+      "next_action": "One different-source authoritative metadata/identity follow-up on or after 2026-11-05T15:35:00Z; then verified candidate, evidence-backed no-action, or human_metadata_needed escalation.",
+      "followup_checked_sources": [
+        "https://ldl.ucsd.edu/ldl/data/",
+        "https://ldl.ucsd.edu/ldl/gdp-drifter-data/",
+        "https://doi.org/10.57969/S9KS3S"
+      ],
+      "followup_count": 1,
+      "followup_completed_at": "2026-10-30T02:33:23Z",
+      "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-2229ET",
+      "early_retry_reason": "2026-10-29 user-authorized API follow-up-first bounded different-source recovery ahead of preserved November 5 retry date",
+      "research_completed": true,
+      "metadata_recovery_exhausted": true,
+      "reviewer_question": "Confirm native Pacific DWSD sensor data public scope and first-release date; is this an eligible WPO-funded distinct dataset?",
+      "original_seed_artifact_type": "dataset_true_research_artifact",
+      "original_seed_doi": "10.57969/s9ks3s",
+      "original_seed_disposition": "human_metadata_needed",
+      "scout_discovery_route": "Direct API",
+      "human_handoff_status": "pending_hub_intake",
+      "hub_delivery_status": "not_delivered",
+      "hub_intake_blocker": "Existing 24-column Discovery Hub import support for truthful blank mandatory Publication Date and unresolved version/public scope not verified; no valid candidate staged, no Hub arrival claimed.",
+      "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
+      "reach_comparison": "All 1,238 REACH index records and 140 detail shards plus 59 staged Scout proposals scanned: no exact original DOI/title match; private reviewer feedback NOT VERIFIED.",
+      "reviewer_handoff_library_path": "/REACH Scout/2026-10-29-2229ET-lead_queue.json"
     },
     {
       "identity": "doi:10.57969/s9kw2f",
@@ -8093,21 +8143,23 @@
     },
     {
       "identity": "doi:10.57969/s9pp42",
-      "status": "needs_more_research",
+      "status": "human_metadata_needed",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-29T14:34:00Z",
-      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-1031ET: First bounded round (five distinct source checks). Captured DataCite structured fundingReference identifies exact WPO primary SPARK award NA21OAR4590374; Scripps NOPP NHCI official catalog corroborates sensor/first-five family, but does not establish full publication day or all alternate DOI identities. Missing: Exact first-publication YYYY-MM-DD and separate first-five vs sensor identity. Retry only on or after 2026-11-05T14:34:00Z using genuinely different authoritative source; then human_metadata_needed or evidenced no-action, no repeated reset.",
+      "updated_at": "2026-10-30T02:33:23Z",
+      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-1031ET: First bounded round (five distinct source checks). Captured DataCite structured fundingReference identifies exact WPO primary SPARK award NA21OAR4590374; Scripps NOPP NHCI official catalog corroborates sensor/first-five family, but does not establish full publication day or all alternate DOI identities. Missing: Exact first-publication YYYY-MM-DD and separate first-five vs sensor identity. Retry only on or after 2026-11-05T14:34:00Z using genuinely different authoritative source; then human_metadata_needed or evidenced no-action, no repeated reset.\nREACH-SCOUT-2026-10-29-HOURLY-2229ET: One substantive bounded different-source recovery round; Publisher lists S9PP42 but DOI tombstones; S9TG60 shares captured title, and a different 2025 targeted-storm DOI exists. Full REACH index 10/10 and detail 140/140 shards, SPARK 6/6 index, and Scout 17 immutable batches/59 rows checked; no exact original DOI/title match. Missing metadata and version questions require human decision; NOT DELIVERED TO HUB.",
       "checked_sources": [
         "https://api.datacite.org/dois/10.57969/s9pp42",
         "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
         "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
-        "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/"
+        "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+        "https://erddap.ldl.ucsd.edu/erddap/info/NOPP_Storm_First5/index.html",
+        "https://doi.org/10.57969/S9PP42"
       ],
       "reach_snapshot": "Complete 1238-row REACH index and 53 Scout staged rows: no exact DOI or title match",
       "funding_basis": "Captured DataCite structured fundingReference identifies exact WPO primary SPARK award NA21OAR4590374; Scripps NOPP NHCI official catalog corroborates sensor/first-five family, but does not establish full publication day or all alternate DOI identities.",
       "related_outputs_checked": "Separate year-specific NHCI sensor/first-five data; S9TG60 versus S9PP42 identity conflict requires native publisher resolution.",
-      "verified_at": "",
+      "verified_at": "2026-10-30T02:33:23Z",
       "verified_awards": [
         "NA21OAR4590374"
       ],
@@ -8126,13 +8178,35 @@
       "first_investigated_at": "2026-10-29T14:34:00Z",
       "last_investigated_at": "2026-10-29T14:34:00Z",
       "next_research_at": "2026-11-05T14:34:00Z",
-      "followup_count": 0,
+      "followup_count": 1,
       "missing_evidence": [
         "Exact first-publication YYYY-MM-DD and separate first-five vs sensor identity"
       ],
       "exact_followup_question": "Can the authoritative repository or publisher verify Exact first-publication YYYY-MM-DD and separate first-five vs sensor identity without substituting observation/citation year for publication date?",
-      "original_seed_disposition": "needs_more_research: bounded initial metadata verification",
-      "research_complete": false
+      "original_seed_disposition": "human_metadata_needed",
+      "research_complete": false,
+      "followup_checked_sources": [
+        "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+        "https://erddap.ldl.ucsd.edu/erddap/info/NOPP_Storm_First5/index.html",
+        "https://doi.org/10.57969/S9PP42"
+      ],
+      "followup_rounds_completed": 1,
+      "max_followup_rounds": 1,
+      "followup_completed_at": "2026-10-30T02:33:23Z",
+      "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-2229ET",
+      "early_retry_reason": "2026-10-29 user-authorized API follow-up-first bounded different-source recovery ahead of preserved November 5 retry date",
+      "research_completed": true,
+      "metadata_recovery_exhausted": true,
+      "reviewer_question": "Which of S9PP42/S9TG60 is the valid canonical NHCI 2023 first-five DOI? S9PP42 redirects to EZID tombstone; avoid duplicate REACH entries.",
+      "original_seed_artifact_type": "dataset_true_research_artifact",
+      "original_seed_doi": "10.57969/s9pp42",
+      "scout_discovery_route": "Direct API",
+      "human_handoff_status": "pending_hub_intake",
+      "hub_delivery_status": "not_delivered",
+      "hub_intake_blocker": "Existing 24-column Discovery Hub import support for truthful blank mandatory Publication Date and unresolved version/public scope not verified; no valid candidate staged, no Hub arrival claimed.",
+      "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
+      "reach_comparison": "All 1,238 REACH index records and 140 detail shards plus 59 staged Scout proposals scanned: no exact original DOI/title match; private reviewer feedback NOT VERIFIED.",
+      "reviewer_handoff_library_path": "/REACH Scout/2026-10-29-2229ET-lead_queue.json"
     },
     {
       "identity": "doi:10.57969/s9qp4c",
@@ -8219,21 +8293,23 @@
     },
     {
       "identity": "doi:10.57969/s9rp4p",
-      "status": "needs_more_research",
+      "status": "human_metadata_needed",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-29T15:34:47Z",
-      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-1131ET: Atlantic 2022 GTS drifter dataset; LDL identifies WPO award and 2023 citation year, not exact first-publication date. Original DOI evaluated independently from expanded articles; complete 1238-row REACH index and all 53 existing Scout candidate rows checked; private reviewer decisions not accessible.",
+      "updated_at": "2026-10-30T02:33:23Z",
+      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-1131ET: Atlantic 2022 GTS drifter dataset; LDL identifies WPO award and 2023 citation year, not exact first-publication date. Original DOI evaluated independently from expanded articles; complete 1238-row REACH index and all 53 existing Scout candidate rows checked; private reviewer decisions not accessible.\nREACH-SCOUT-2026-10-29-HOURLY-2229ET: One substantive bounded different-source recovery round; Native ERDDAP verifies 2022 observation season and DOI; citation year/observation dates are not release date. Full REACH index 10/10 and detail 140/140 shards, SPARK 6/6 index, and Scout 17 immutable batches/59 rows checked; no exact original DOI/title match. Missing metadata and version questions require human decision; NOT DELIVERED TO HUB.",
       "checked_sources": [
         "https://api.datacite.org/dois/10.57969/s9rp4p",
         "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
         "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
-        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+        "https://erddap.ldl.ucsd.edu/erddap/info/LDL_AtlanticHurricane2022/index.html",
+        "https://ldl.ucsd.edu/ldl/data/"
       ],
       "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
       "funding_basis": "Captured DataCite structured award reference(s): NA20OAR4320278, NA21OAR4590374. SPARK primary award and publisher/repository evidence support a potential WPO project connection, with essential dataset metadata still unresolved.",
       "related_outputs_checked": "Checked related publisher/repository data and current REACH/Scout candidates; no separate eligible WPO-funded expansion output verified in this original-seed round.",
-      "verified_at": "",
+      "verified_at": "2026-10-30T02:33:23Z",
       "verified_awards": [
         "NA20OAR4320278",
         "NA21OAR4590374"
@@ -8266,30 +8342,54 @@
         "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
       ],
       "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.57969/s9rp4p without assuming an article/citation year is the dataset date?",
-      "followup_rounds_completed": 0,
+      "followup_rounds_completed": 1,
       "max_followup_rounds": 1,
       "next_research_at": "2026-11-05T15:35:00Z",
       "schedule_updated_at": "2026-10-29T15:34:47Z",
       "first_investigated_timestamp_basis": "Actual first source checks in this 2026-10-29 11:31 ET run; no retrospective backdating",
-      "next_action": "One different-source authoritative metadata/identity follow-up on or after 2026-11-05T15:35:00Z; then verified candidate, evidence-backed no-action, or human_metadata_needed escalation."
+      "next_action": "One different-source authoritative metadata/identity follow-up on or after 2026-11-05T15:35:00Z; then verified candidate, evidence-backed no-action, or human_metadata_needed escalation.",
+      "followup_checked_sources": [
+        "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+        "https://erddap.ldl.ucsd.edu/erddap/info/LDL_AtlanticHurricane2022/index.html",
+        "https://ldl.ucsd.edu/ldl/data/"
+      ],
+      "followup_count": 1,
+      "followup_completed_at": "2026-10-30T02:33:23Z",
+      "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-2229ET",
+      "early_retry_reason": "2026-10-29 user-authorized API follow-up-first bounded different-source recovery ahead of preserved November 5 retry date",
+      "research_completed": true,
+      "metadata_recovery_exhausted": true,
+      "reviewer_question": "Can reviewer accept this separately public 2022 GTS Atlantic dataset with unknown exact release date and mixed NOAA funding?",
+      "original_seed_artifact_type": "dataset_true_research_artifact",
+      "original_seed_doi": "10.57969/s9rp4p",
+      "original_seed_disposition": "human_metadata_needed",
+      "scout_discovery_route": "Direct API",
+      "human_handoff_status": "pending_hub_intake",
+      "hub_delivery_status": "not_delivered",
+      "hub_intake_blocker": "Existing 24-column Discovery Hub import support for truthful blank mandatory Publication Date and unresolved version/public scope not verified; no valid candidate staged, no Hub arrival claimed.",
+      "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
+      "reach_comparison": "All 1,238 REACH index records and 140 detail shards plus 59 staged Scout proposals scanned: no exact original DOI/title match; private reviewer feedback NOT VERIFIED.",
+      "reviewer_handoff_library_path": "/REACH Scout/2026-10-29-2229ET-lead_queue.json"
     },
     {
       "identity": "doi:10.57969/s9tg60",
-      "status": "needs_more_research",
+      "status": "human_metadata_needed",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-29T14:34:00Z",
-      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-1031ET: First bounded round (five distinct source checks). Captured DataCite structured fundingReference identifies exact WPO primary SPARK award NA21OAR4590374; Scripps NOPP NHCI official catalog corroborates sensor/first-five family, but does not establish full publication day or all alternate DOI identities. Missing: Exact first-publication YYYY-MM-DD and whether this is an alternate/version of S9PP42 rather than distinct dataset. Retry only on or after 2026-11-05T14:34:00Z using genuinely different authoritative source; then human_metadata_needed or evidenced no-action, no repeated reset.",
+      "updated_at": "2026-10-30T02:33:23Z",
+      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-1031ET: First bounded round (five distinct source checks). Captured DataCite structured fundingReference identifies exact WPO primary SPARK award NA21OAR4590374; Scripps NOPP NHCI official catalog corroborates sensor/first-five family, but does not establish full publication day or all alternate DOI identities. Missing: Exact first-publication YYYY-MM-DD and whether this is an alternate/version of S9PP42 rather than distinct dataset. Retry only on or after 2026-11-05T14:34:00Z using genuinely different authoritative source; then human_metadata_needed or evidenced no-action, no repeated reset.\nREACH-SCOUT-2026-10-29-HOURLY-2229ET: One substantive bounded different-source recovery round; Publisher lists S9PP42 but DOI tombstones; S9TG60 shares captured title, and a different 2025 targeted-storm DOI exists. Full REACH index 10/10 and detail 140/140 shards, SPARK 6/6 index, and Scout 17 immutable batches/59 rows checked; no exact original DOI/title match. Missing metadata and version questions require human decision; NOT DELIVERED TO HUB.",
       "checked_sources": [
         "https://api.datacite.org/dois/10.57969/s9tg60",
         "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
         "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
-        "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/"
+        "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+        "https://erddap.ldl.ucsd.edu/erddap/info/NOPP_Storm_First5/index.html",
+        "https://doi.org/10.57969/S9TG60"
       ],
       "reach_snapshot": "Complete 1238-row REACH index and 53 Scout staged rows: no exact DOI or title match",
       "funding_basis": "Captured DataCite structured fundingReference identifies exact WPO primary SPARK award NA21OAR4590374; Scripps NOPP NHCI official catalog corroborates sensor/first-five family, but does not establish full publication day or all alternate DOI identities.",
       "related_outputs_checked": "Separate year-specific NHCI sensor/first-five data; S9TG60 versus S9PP42 identity conflict requires native publisher resolution.",
-      "verified_at": "",
+      "verified_at": "2026-10-30T02:33:23Z",
       "verified_awards": [
         "NA21OAR4590374"
       ],
@@ -8308,31 +8408,55 @@
       "first_investigated_at": "2026-10-29T14:34:00Z",
       "last_investigated_at": "2026-10-29T14:34:00Z",
       "next_research_at": "2026-11-05T14:34:00Z",
-      "followup_count": 0,
+      "followup_count": 1,
       "missing_evidence": [
         "Exact first-publication YYYY-MM-DD and whether this is an alternate/version of S9PP42 rather than distinct dataset"
       ],
       "exact_followup_question": "Can the authoritative repository or publisher verify Exact first-publication YYYY-MM-DD and whether this is an alternate/version of S9PP42 rather than distinct dataset without substituting observation/citation year for publication date?",
-      "original_seed_disposition": "needs_more_research: bounded initial metadata verification",
-      "research_complete": false
+      "original_seed_disposition": "human_metadata_needed",
+      "research_complete": false,
+      "followup_checked_sources": [
+        "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+        "https://erddap.ldl.ucsd.edu/erddap/info/NOPP_Storm_First5/index.html",
+        "https://doi.org/10.57969/S9TG60"
+      ],
+      "followup_rounds_completed": 1,
+      "max_followup_rounds": 1,
+      "followup_completed_at": "2026-10-30T02:33:23Z",
+      "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-2229ET",
+      "early_retry_reason": "2026-10-29 user-authorized API follow-up-first bounded different-source recovery ahead of preserved November 5 retry date",
+      "research_completed": true,
+      "metadata_recovery_exhausted": true,
+      "reviewer_question": "Which of S9TG60/S9PP42 is the valid canonical NHCI 2023 first-five DOI? S9TG60 not in current publisher catalog; avoid duplicate REACH entries.",
+      "original_seed_artifact_type": "dataset_true_research_artifact",
+      "original_seed_doi": "10.57969/s9tg60",
+      "scout_discovery_route": "Direct API",
+      "human_handoff_status": "pending_hub_intake",
+      "hub_delivery_status": "not_delivered",
+      "hub_intake_blocker": "Existing 24-column Discovery Hub import support for truthful blank mandatory Publication Date and unresolved version/public scope not verified; no valid candidate staged, no Hub arrival claimed.",
+      "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
+      "reach_comparison": "All 1,238 REACH index records and 140 detail shards plus 59 staged Scout proposals scanned: no exact original DOI/title match; private reviewer feedback NOT VERIFIED.",
+      "reviewer_handoff_library_path": "/REACH Scout/2026-10-29-2229ET-lead_queue.json"
     },
     {
       "identity": "doi:10.57969/s9vc7n",
-      "status": "needs_more_research",
+      "status": "human_metadata_needed",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-29T15:34:47Z",
-      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-1131ET: Atlantic 2023 GTS drifter dataset; LDL identifies WPO award and citation year only; exact date unresolved. Original DOI evaluated independently from expanded articles; complete 1238-row REACH index and all 53 existing Scout candidate rows checked; private reviewer decisions not accessible.",
+      "updated_at": "2026-10-30T02:33:23Z",
+      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-1131ET: Atlantic 2023 GTS drifter dataset; LDL identifies WPO award and citation year only; exact date unresolved. Original DOI evaluated independently from expanded articles; complete 1238-row REACH index and all 53 existing Scout candidate rows checked; private reviewer decisions not accessible.\nREACH-SCOUT-2026-10-29-HOURLY-2229ET: One substantive bounded different-source recovery round; Native ERDDAP verifies 2023 observation season and DOI; citation year/observation dates are not release date. Full REACH index 10/10 and detail 140/140 shards, SPARK 6/6 index, and Scout 17 immutable batches/59 rows checked; no exact original DOI/title match. Missing metadata and version questions require human decision; NOT DELIVERED TO HUB.",
       "checked_sources": [
         "https://api.datacite.org/dois/10.57969/s9vc7n",
         "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
         "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
-        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+        "https://erddap.ldl.ucsd.edu/erddap/info/LDL_AtlanticHurricane2023/index.html",
+        "https://ldl.ucsd.edu/ldl/data/"
       ],
       "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
       "funding_basis": "Captured DataCite structured award reference(s): NA20OAR4320278, NA21OAR4590374. SPARK primary award and publisher/repository evidence support a potential WPO project connection, with essential dataset metadata still unresolved.",
       "related_outputs_checked": "Checked related publisher/repository data and current REACH/Scout candidates; no separate eligible WPO-funded expansion output verified in this original-seed round.",
-      "verified_at": "",
+      "verified_at": "2026-10-30T02:33:23Z",
       "verified_awards": [
         "NA20OAR4320278",
         "NA21OAR4590374"
@@ -8365,30 +8489,54 @@
         "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
       ],
       "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.57969/s9vc7n without assuming an article/citation year is the dataset date?",
-      "followup_rounds_completed": 0,
+      "followup_rounds_completed": 1,
       "max_followup_rounds": 1,
       "next_research_at": "2026-11-05T15:35:00Z",
       "schedule_updated_at": "2026-10-29T15:34:47Z",
       "first_investigated_timestamp_basis": "Actual first source checks in this 2026-10-29 11:31 ET run; no retrospective backdating",
-      "next_action": "One different-source authoritative metadata/identity follow-up on or after 2026-11-05T15:35:00Z; then verified candidate, evidence-backed no-action, or human_metadata_needed escalation."
+      "next_action": "One different-source authoritative metadata/identity follow-up on or after 2026-11-05T15:35:00Z; then verified candidate, evidence-backed no-action, or human_metadata_needed escalation.",
+      "followup_checked_sources": [
+        "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+        "https://erddap.ldl.ucsd.edu/erddap/info/LDL_AtlanticHurricane2023/index.html",
+        "https://ldl.ucsd.edu/ldl/data/"
+      ],
+      "followup_count": 1,
+      "followup_completed_at": "2026-10-30T02:33:23Z",
+      "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-2229ET",
+      "early_retry_reason": "2026-10-29 user-authorized API follow-up-first bounded different-source recovery ahead of preserved November 5 retry date",
+      "research_completed": true,
+      "metadata_recovery_exhausted": true,
+      "reviewer_question": "Can reviewer accept this separately public 2023 GTS Atlantic dataset with unknown exact release date and mixed NOAA funding?",
+      "original_seed_artifact_type": "dataset_true_research_artifact",
+      "original_seed_doi": "10.57969/s9vc7n",
+      "original_seed_disposition": "human_metadata_needed",
+      "scout_discovery_route": "Direct API",
+      "human_handoff_status": "pending_hub_intake",
+      "hub_delivery_status": "not_delivered",
+      "hub_intake_blocker": "Existing 24-column Discovery Hub import support for truthful blank mandatory Publication Date and unresolved version/public scope not verified; no valid candidate staged, no Hub arrival claimed.",
+      "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
+      "reach_comparison": "All 1,238 REACH index records and 140 detail shards plus 59 staged Scout proposals scanned: no exact original DOI/title match; private reviewer feedback NOT VERIFIED.",
+      "reviewer_handoff_library_path": "/REACH Scout/2026-10-29-2229ET-lead_queue.json"
     },
     {
       "identity": "doi:10.57969/s9wc7z",
-      "status": "needs_more_research",
+      "status": "human_metadata_needed",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-29T15:34:47Z",
-      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-1131ET: Atlantic 2021 GTS drifter dataset; LDL identifies WPO award and 2023 citation year, not exact date. Original DOI evaluated independently from expanded articles; complete 1238-row REACH index and all 53 existing Scout candidate rows checked; private reviewer decisions not accessible.",
+      "updated_at": "2026-10-30T02:33:23Z",
+      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-1131ET: Atlantic 2021 GTS drifter dataset; LDL identifies WPO award and 2023 citation year, not exact date. Original DOI evaluated independently from expanded articles; complete 1238-row REACH index and all 53 existing Scout candidate rows checked; private reviewer decisions not accessible.\nREACH-SCOUT-2026-10-29-HOURLY-2229ET: One substantive bounded different-source recovery round; Native ERDDAP verifies 2021 observation season and DOI; citation year/observation dates are not release date. Full REACH index 10/10 and detail 140/140 shards, SPARK 6/6 index, and Scout 17 immutable batches/59 rows checked; no exact original DOI/title match. Missing metadata and version questions require human decision; NOT DELIVERED TO HUB.",
       "checked_sources": [
         "https://api.datacite.org/dois/10.57969/s9wc7z",
         "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
         "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
-        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+        "https://erddap.ldl.ucsd.edu/erddap/info/LDL_AtlanticHurricane2021/index.html",
+        "https://ldl.ucsd.edu/ldl/data/"
       ],
       "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
       "funding_basis": "Captured DataCite structured award reference(s): NA20OAR4320278, NA21OAR4590374. SPARK primary award and publisher/repository evidence support a potential WPO project connection, with essential dataset metadata still unresolved.",
       "related_outputs_checked": "Checked related publisher/repository data and current REACH/Scout candidates; no separate eligible WPO-funded expansion output verified in this original-seed round.",
-      "verified_at": "",
+      "verified_at": "2026-10-30T02:33:23Z",
       "verified_awards": [
         "NA20OAR4320278",
         "NA21OAR4590374"
@@ -8421,12 +8569,34 @@
         "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
       ],
       "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.57969/s9wc7z without assuming an article/citation year is the dataset date?",
-      "followup_rounds_completed": 0,
+      "followup_rounds_completed": 1,
       "max_followup_rounds": 1,
       "next_research_at": "2026-11-05T15:35:00Z",
       "schedule_updated_at": "2026-10-29T15:34:47Z",
       "first_investigated_timestamp_basis": "Actual first source checks in this 2026-10-29 11:31 ET run; no retrospective backdating",
-      "next_action": "One different-source authoritative metadata/identity follow-up on or after 2026-11-05T15:35:00Z; then verified candidate, evidence-backed no-action, or human_metadata_needed escalation."
+      "next_action": "One different-source authoritative metadata/identity follow-up on or after 2026-11-05T15:35:00Z; then verified candidate, evidence-backed no-action, or human_metadata_needed escalation.",
+      "followup_checked_sources": [
+        "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+        "https://erddap.ldl.ucsd.edu/erddap/info/LDL_AtlanticHurricane2021/index.html",
+        "https://ldl.ucsd.edu/ldl/data/"
+      ],
+      "followup_count": 1,
+      "followup_completed_at": "2026-10-30T02:33:23Z",
+      "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-2229ET",
+      "early_retry_reason": "2026-10-29 user-authorized API follow-up-first bounded different-source recovery ahead of preserved November 5 retry date",
+      "research_completed": true,
+      "metadata_recovery_exhausted": true,
+      "reviewer_question": "Can reviewer accept this separately public 2021 GTS Atlantic dataset with unknown exact release date and mixed NOAA funding?",
+      "original_seed_artifact_type": "dataset_true_research_artifact",
+      "original_seed_doi": "10.57969/s9wc7z",
+      "original_seed_disposition": "human_metadata_needed",
+      "scout_discovery_route": "Direct API",
+      "human_handoff_status": "pending_hub_intake",
+      "hub_delivery_status": "not_delivered",
+      "hub_intake_blocker": "Existing 24-column Discovery Hub import support for truthful blank mandatory Publication Date and unresolved version/public scope not verified; no valid candidate staged, no Hub arrival claimed.",
+      "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
+      "reach_comparison": "All 1,238 REACH index records and 140 detail shards plus 59 staged Scout proposals scanned: no exact original DOI/title match; private reviewer feedback NOT VERIFIED.",
+      "reviewer_handoff_library_path": "/REACH Scout/2026-10-29-2229ET-lead_queue.json"
     },
     {
       "identity": "doi:10.57969/s9z598",
@@ -8580,21 +8750,24 @@
     },
     {
       "identity": "doi:10.6084/m9.figshare.23666259",
-      "status": "needs_more_research",
+      "status": "human_metadata_needed",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-29T15:34:47Z",
-      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-1131ET: VORTEX-SE polarimetric/lightning poster; direct WPO award and ORCID date 2023-07-12, but native Figshare first-publication date and version identity unverified. Original DOI evaluated independently from expanded articles; complete 1238-row REACH index and all 53 existing Scout candidate rows checked; private reviewer decisions not accessible.",
+      "updated_at": "2026-10-30T02:33:23Z",
+      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-1131ET: VORTEX-SE polarimetric/lightning poster; direct WPO award and ORCID date 2023-07-12, but native Figshare first-publication date and version identity unverified. Original DOI evaluated independently from expanded articles; complete 1238-row REACH index and all 53 existing Scout candidate rows checked; private reviewer decisions not accessible.\nREACH-SCOUT-2026-10-29-HOURLY-2229ET: One substantive bounded different-source recovery round; AMS 30th SLS confirms exact poster; ORCID Figshare-sourced 2023-07-12; Figshare API inaccessible; concept/v1 are same output family. Full REACH index 10/10 and detail 140/140 shards, SPARK 6/6 index, and Scout 17 immutable batches/59 rows checked; no exact original DOI/title match. Missing metadata and version questions require human decision; NOT DELIVERED TO HUB.",
       "checked_sources": [
         "https://api.datacite.org/dois/10.6084/m9.figshare.23666259",
         "https://orcid.org/0000-0003-3318-7601",
         "https://journals.ametsoc.org/view/journals/mwre/152/7/MWR-D-23-0144.1.xml",
         "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
-        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json"
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://www.ametsoc.org/stac/committees/committee-on-severe-local-storms/summary-of-30th-sls-conference/",
+        "https://api.figshare.com/v2/articles/23666259",
+        "https://repository.library.noaa.gov/view/noaa/70846"
       ],
       "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
       "funding_basis": "Captured DataCite structured award reference(s): NA19OAR4590209. SPARK primary award and publisher/repository evidence support a potential WPO project connection, with essential dataset metadata still unresolved.",
       "related_outputs_checked": "Distinct 2024 Monthly Weather Review article DOI 10.1175/MWR-D-23-0144.1 independently verified as a separate output; poster version/date pending.",
-      "verified_at": "",
+      "verified_at": "2026-10-30T02:33:23Z",
       "verified_awards": [
         "NA19OAR4590209"
       ],
@@ -8624,30 +8797,56 @@
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json"
       ],
       "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.6084/m9.figshare.23666259 without assuming an article/citation year is the dataset date?",
-      "followup_rounds_completed": 0,
+      "followup_rounds_completed": 1,
       "max_followup_rounds": 1,
       "next_research_at": "2026-11-05T15:35:00Z",
       "schedule_updated_at": "2026-10-29T15:34:47Z",
       "first_investigated_timestamp_basis": "Actual first source checks in this 2026-10-29 11:31 ET run; no retrospective backdating",
-      "next_action": "One different-source authoritative metadata/identity follow-up on or after 2026-11-05T15:35:00Z; then verified candidate, evidence-backed no-action, or human_metadata_needed escalation."
+      "next_action": "One different-source authoritative metadata/identity follow-up on or after 2026-11-05T15:35:00Z; then verified candidate, evidence-backed no-action, or human_metadata_needed escalation.",
+      "followup_checked_sources": [
+        "https://www.ametsoc.org/stac/committees/committee-on-severe-local-storms/summary-of-30th-sls-conference/",
+        "https://orcid.org/0000-0003-3318-7601",
+        "https://api.figshare.com/v2/articles/23666259",
+        "https://repository.library.noaa.gov/view/noaa/70846"
+      ],
+      "followup_count": 1,
+      "followup_completed_at": "2026-10-30T02:33:23Z",
+      "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-2229ET",
+      "early_retry_reason": "2026-10-29 user-authorized API follow-up-first bounded different-source recovery ahead of preserved November 5 retry date",
+      "research_completed": true,
+      "metadata_recovery_exhausted": true,
+      "reviewer_question": "Confirm ONE canonical Figshare poster DOI (concept vs .v1), public release date and eligibility; ORCID Figshare-sourced 2023-07-12 is not native release proof.",
+      "original_seed_artifact_type": "conference_poster_true_research_artifact",
+      "original_seed_doi": "10.6084/m9.figshare.23666259",
+      "original_seed_disposition": "human_metadata_needed",
+      "scout_discovery_route": "Direct API",
+      "human_handoff_status": "pending_hub_intake",
+      "hub_delivery_status": "not_delivered",
+      "hub_intake_blocker": "Existing 24-column Discovery Hub import support for truthful blank mandatory Publication Date and unresolved version/public scope not verified; no valid candidate staged, no Hub arrival claimed.",
+      "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
+      "reach_comparison": "All 1,238 REACH index records and 140 detail shards plus 59 staged Scout proposals scanned: no exact original DOI/title match; private reviewer feedback NOT VERIFIED.",
+      "reviewer_handoff_library_path": "/REACH Scout/2026-10-29-2229ET-lead_queue.json"
     },
     {
       "identity": "doi:10.6084/m9.figshare.23666259.v1",
-      "status": "needs_more_research",
+      "status": "human_metadata_needed",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-29T15:34:47Z",
-      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-1131ET: Version 1 of same VORTEX-SE poster; verify native Figshare date and relationship to concept DOI, do not double count. Original DOI evaluated independently from expanded articles; complete 1238-row REACH index and all 53 existing Scout candidate rows checked; private reviewer decisions not accessible.",
+      "updated_at": "2026-10-30T02:33:23Z",
+      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-1131ET: Version 1 of same VORTEX-SE poster; verify native Figshare date and relationship to concept DOI, do not double count. Original DOI evaluated independently from expanded articles; complete 1238-row REACH index and all 53 existing Scout candidate rows checked; private reviewer decisions not accessible.\nREACH-SCOUT-2026-10-29-HOURLY-2229ET: One substantive bounded different-source recovery round; AMS 30th SLS confirms exact poster; ORCID Figshare-sourced 2023-07-12; Figshare API inaccessible; concept/v1 are same output family. Full REACH index 10/10 and detail 140/140 shards, SPARK 6/6 index, and Scout 17 immutable batches/59 rows checked; no exact original DOI/title match. Missing metadata and version questions require human decision; NOT DELIVERED TO HUB.",
       "checked_sources": [
         "https://api.datacite.org/dois/10.6084/m9.figshare.23666259.v1",
         "https://orcid.org/0000-0003-3318-7601",
         "https://journals.ametsoc.org/view/journals/mwre/152/7/MWR-D-23-0144.1.xml",
         "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
-        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json"
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://www.ametsoc.org/stac/committees/committee-on-severe-local-storms/summary-of-30th-sls-conference/",
+        "https://api.figshare.com/v2/articles/23666259",
+        "https://repository.library.noaa.gov/view/noaa/70846"
       ],
       "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
       "funding_basis": "Captured DataCite structured award reference(s): NA19OAR4590209. SPARK primary award and publisher/repository evidence support a potential WPO project connection, with essential dataset metadata still unresolved.",
       "related_outputs_checked": "Distinct 2024 Monthly Weather Review article DOI 10.1175/MWR-D-23-0144.1 independently verified as a separate output; poster version/date pending.",
-      "verified_at": "",
+      "verified_at": "2026-10-30T02:33:23Z",
       "verified_awards": [
         "NA19OAR4590209"
       ],
@@ -8677,30 +8876,56 @@
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json"
       ],
       "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.6084/m9.figshare.23666259.v1 without assuming an article/citation year is the dataset date?",
-      "followup_rounds_completed": 0,
+      "followup_rounds_completed": 1,
       "max_followup_rounds": 1,
       "next_research_at": "2026-11-05T15:35:00Z",
       "schedule_updated_at": "2026-10-29T15:34:47Z",
       "first_investigated_timestamp_basis": "Actual first source checks in this 2026-10-29 11:31 ET run; no retrospective backdating",
-      "next_action": "One different-source authoritative metadata/identity follow-up on or after 2026-11-05T15:35:00Z; then verified candidate, evidence-backed no-action, or human_metadata_needed escalation."
+      "next_action": "One different-source authoritative metadata/identity follow-up on or after 2026-11-05T15:35:00Z; then verified candidate, evidence-backed no-action, or human_metadata_needed escalation.",
+      "followup_checked_sources": [
+        "https://www.ametsoc.org/stac/committees/committee-on-severe-local-storms/summary-of-30th-sls-conference/",
+        "https://orcid.org/0000-0003-3318-7601",
+        "https://api.figshare.com/v2/articles/23666259",
+        "https://repository.library.noaa.gov/view/noaa/70846"
+      ],
+      "followup_count": 1,
+      "followup_completed_at": "2026-10-30T02:33:23Z",
+      "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-2229ET",
+      "early_retry_reason": "2026-10-29 user-authorized API follow-up-first bounded different-source recovery ahead of preserved November 5 retry date",
+      "research_completed": true,
+      "metadata_recovery_exhausted": true,
+      "reviewer_question": "Confirm ONE canonical Figshare poster DOI (concept vs .v1), public release date and eligibility; ORCID Figshare-sourced 2023-07-12 is not native release proof.",
+      "original_seed_artifact_type": "conference_poster_true_research_artifact",
+      "original_seed_doi": "10.6084/m9.figshare.23666259.v1",
+      "original_seed_disposition": "human_metadata_needed",
+      "scout_discovery_route": "Direct API",
+      "human_handoff_status": "pending_hub_intake",
+      "hub_delivery_status": "not_delivered",
+      "hub_intake_blocker": "Existing 24-column Discovery Hub import support for truthful blank mandatory Publication Date and unresolved version/public scope not verified; no valid candidate staged, no Hub arrival claimed.",
+      "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
+      "reach_comparison": "All 1,238 REACH index records and 140 detail shards plus 59 staged Scout proposals scanned: no exact original DOI/title match; private reviewer feedback NOT VERIFIED.",
+      "reviewer_handoff_library_path": "/REACH Scout/2026-10-29-2229ET-lead_queue.json"
     },
     {
       "identity": "doi:10.6084/m9.figshare.23689194",
-      "status": "needs_more_research",
+      "status": "human_metadata_needed",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-29T15:34:47Z",
-      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-1131ET: ELDORA ML QC dataset directly linked by funded AMS article; exact Figshare dataset publication date and version identity unverified. Original DOI evaluated independently from expanded articles; complete 1238-row REACH index and all 53 existing Scout candidate rows checked; private reviewer decisions not accessible.",
+      "updated_at": "2026-10-30T02:33:23Z",
+      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-1131ET: ELDORA ML QC dataset directly linked by funded AMS article; exact Figshare dataset publication date and version identity unverified. Original DOI evaluated independently from expanded articles; complete 1238-row REACH index and all 53 existing Scout candidate rows checked; private reviewer decisions not accessible.\nREACH-SCOUT-2026-10-29-HOURLY-2229ET: One substantive bounded different-source recovery round; AMS article explicitly links exact dataset and WPO award; NOAA IR corroborates; Figshare API inaccessible; concept/v1 are same output family. Full REACH index 10/10 and detail 140/140 shards, SPARK 6/6 index, and Scout 17 immutable batches/59 rows checked; no exact original DOI/title match. Missing metadata and version questions require human decision; NOT DELIVERED TO HUB.",
       "checked_sources": [
         "https://api.datacite.org/dois/10.6084/m9.figshare.23689194",
         "https://journals.ametsoc.org/view/journals/aies/3/1/AIES-D-23-0064.1.xml",
         "https://repository.library.noaa.gov/view/noaa/64095",
         "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
-        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json"
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://journals.ametsoc.org/view/journals/aies/aop/AIES-D-23-0064.1/AIES-D-23-0064.1.xml",
+        "https://api.figshare.com/v2/articles/23689194",
+        "https://doi.org/10.6084/m9.figshare.23689194"
       ],
       "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
       "funding_basis": "Captured DataCite structured award reference(s): NA19OAR4590245. SPARK primary award and publisher/repository evidence support a potential WPO project connection, with essential dataset metadata still unresolved.",
       "related_outputs_checked": "Distinct 2024 AMS journal article DOI 10.1175/AIES-D-23-0064.1 independently verified and held for separate review; dataset date/version not borrowed from article.",
-      "verified_at": "",
+      "verified_at": "2026-10-30T02:33:23Z",
       "verified_awards": [
         "NA19OAR4590245"
       ],
@@ -8730,30 +8955,56 @@
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json"
       ],
       "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.6084/m9.figshare.23689194 without assuming an article/citation year is the dataset date?",
-      "followup_rounds_completed": 0,
+      "followup_rounds_completed": 1,
       "max_followup_rounds": 1,
       "next_research_at": "2026-11-05T15:35:00Z",
       "schedule_updated_at": "2026-10-29T15:34:47Z",
       "first_investigated_timestamp_basis": "Actual first source checks in this 2026-10-29 11:31 ET run; no retrospective backdating",
-      "next_action": "One different-source authoritative metadata/identity follow-up on or after 2026-11-05T15:35:00Z; then verified candidate, evidence-backed no-action, or human_metadata_needed escalation."
+      "next_action": "One different-source authoritative metadata/identity follow-up on or after 2026-11-05T15:35:00Z; then verified candidate, evidence-backed no-action, or human_metadata_needed escalation.",
+      "followup_checked_sources": [
+        "https://journals.ametsoc.org/view/journals/aies/aop/AIES-D-23-0064.1/AIES-D-23-0064.1.xml",
+        "https://repository.library.noaa.gov/view/noaa/64095",
+        "https://api.figshare.com/v2/articles/23689194",
+        "https://doi.org/10.6084/m9.figshare.23689194"
+      ],
+      "followup_count": 1,
+      "followup_completed_at": "2026-10-30T02:33:23Z",
+      "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-2229ET",
+      "early_retry_reason": "2026-10-29 user-authorized API follow-up-first bounded different-source recovery ahead of preserved November 5 retry date",
+      "research_completed": true,
+      "metadata_recovery_exhausted": true,
+      "reviewer_question": "Confirm ONE canonical Figshare ELDORA dataset DOI (concept vs .v1), first public date and distinct eligibility from already-staged AMS article.",
+      "original_seed_artifact_type": "dataset_true_research_artifact",
+      "original_seed_doi": "10.6084/m9.figshare.23689194",
+      "original_seed_disposition": "human_metadata_needed",
+      "scout_discovery_route": "Direct API",
+      "human_handoff_status": "pending_hub_intake",
+      "hub_delivery_status": "not_delivered",
+      "hub_intake_blocker": "Existing 24-column Discovery Hub import support for truthful blank mandatory Publication Date and unresolved version/public scope not verified; no valid candidate staged, no Hub arrival claimed.",
+      "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
+      "reach_comparison": "All 1,238 REACH index records and 140 detail shards plus 59 staged Scout proposals scanned: no exact original DOI/title match; private reviewer feedback NOT VERIFIED.",
+      "reviewer_handoff_library_path": "/REACH Scout/2026-10-29-2229ET-lead_queue.json"
     },
     {
       "identity": "doi:10.6084/m9.figshare.23689194.v1",
-      "status": "needs_more_research",
+      "status": "human_metadata_needed",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-29T15:34:47Z",
-      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-1131ET: Version 1 of ELDORA ML QC dataset; article confirms WPO award and dataset link, native Figshare first publication date unresolved. Original DOI evaluated independently from expanded articles; complete 1238-row REACH index and all 53 existing Scout candidate rows checked; private reviewer decisions not accessible.",
+      "updated_at": "2026-10-30T02:33:23Z",
+      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-1131ET: Version 1 of ELDORA ML QC dataset; article confirms WPO award and dataset link, native Figshare first publication date unresolved. Original DOI evaluated independently from expanded articles; complete 1238-row REACH index and all 53 existing Scout candidate rows checked; private reviewer decisions not accessible.\nREACH-SCOUT-2026-10-29-HOURLY-2229ET: One substantive bounded different-source recovery round; AMS article explicitly links exact dataset and WPO award; NOAA IR corroborates; Figshare API inaccessible; concept/v1 are same output family. Full REACH index 10/10 and detail 140/140 shards, SPARK 6/6 index, and Scout 17 immutable batches/59 rows checked; no exact original DOI/title match. Missing metadata and version questions require human decision; NOT DELIVERED TO HUB.",
       "checked_sources": [
         "https://api.datacite.org/dois/10.6084/m9.figshare.23689194.v1",
         "https://journals.ametsoc.org/view/journals/aies/3/1/AIES-D-23-0064.1.xml",
         "https://repository.library.noaa.gov/view/noaa/64095",
         "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
-        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json"
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://journals.ametsoc.org/view/journals/aies/aop/AIES-D-23-0064.1/AIES-D-23-0064.1.xml",
+        "https://api.figshare.com/v2/articles/23689194",
+        "https://doi.org/10.6084/m9.figshare.23689194"
       ],
       "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
       "funding_basis": "Captured DataCite structured award reference(s): NA19OAR4590245. SPARK primary award and publisher/repository evidence support a potential WPO project connection, with essential dataset metadata still unresolved.",
       "related_outputs_checked": "Distinct 2024 AMS journal article DOI 10.1175/AIES-D-23-0064.1 independently verified and held for separate review; dataset date/version not borrowed from article.",
-      "verified_at": "",
+      "verified_at": "2026-10-30T02:33:23Z",
       "verified_awards": [
         "NA19OAR4590245"
       ],
@@ -8783,12 +9034,35 @@
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json"
       ],
       "followup_question": "Can native publisher/DOI metadata establish the full first-publication date, public accessibility and distinct version identity for 10.6084/m9.figshare.23689194.v1 without assuming an article/citation year is the dataset date?",
-      "followup_rounds_completed": 0,
+      "followup_rounds_completed": 1,
       "max_followup_rounds": 1,
       "next_research_at": "2026-11-05T15:35:00Z",
       "schedule_updated_at": "2026-10-29T15:34:47Z",
       "first_investigated_timestamp_basis": "Actual first source checks in this 2026-10-29 11:31 ET run; no retrospective backdating",
-      "next_action": "One different-source authoritative metadata/identity follow-up on or after 2026-11-05T15:35:00Z; then verified candidate, evidence-backed no-action, or human_metadata_needed escalation."
+      "next_action": "One different-source authoritative metadata/identity follow-up on or after 2026-11-05T15:35:00Z; then verified candidate, evidence-backed no-action, or human_metadata_needed escalation.",
+      "followup_checked_sources": [
+        "https://journals.ametsoc.org/view/journals/aies/aop/AIES-D-23-0064.1/AIES-D-23-0064.1.xml",
+        "https://repository.library.noaa.gov/view/noaa/64095",
+        "https://api.figshare.com/v2/articles/23689194",
+        "https://doi.org/10.6084/m9.figshare.23689194"
+      ],
+      "followup_count": 1,
+      "followup_completed_at": "2026-10-30T02:33:23Z",
+      "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-2229ET",
+      "early_retry_reason": "2026-10-29 user-authorized API follow-up-first bounded different-source recovery ahead of preserved November 5 retry date",
+      "research_completed": true,
+      "metadata_recovery_exhausted": true,
+      "reviewer_question": "Confirm ONE canonical Figshare ELDORA dataset DOI (concept vs .v1), first public date and distinct eligibility from already-staged AMS article.",
+      "original_seed_artifact_type": "dataset_true_research_artifact",
+      "original_seed_doi": "10.6084/m9.figshare.23689194.v1",
+      "original_seed_disposition": "human_metadata_needed",
+      "scout_discovery_route": "Direct API",
+      "human_handoff_status": "pending_hub_intake",
+      "hub_delivery_status": "not_delivered",
+      "hub_intake_blocker": "Existing 24-column Discovery Hub import support for truthful blank mandatory Publication Date and unresolved version/public scope not verified; no valid candidate staged, no Hub arrival claimed.",
+      "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
+      "reach_comparison": "All 1,238 REACH index records and 140 detail shards plus 59 staged Scout proposals scanned: no exact original DOI/title match; private reviewer feedback NOT VERIFIED.",
+      "reviewer_handoff_library_path": "/REACH Scout/2026-10-29-2229ET-lead_queue.json"
     },
     {
       "identity": "doi:10.7302/y2qt-7f47",
