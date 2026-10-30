@@ -8,8 +8,8 @@
       "title": "Eight-station ANCHOR stream-radar time-series dataset (exact repository title not verified)",
       "cohort": "Normal historical SPARK award discovery 2026-10-30",
       "original_seed_doi": null,
-      "status": "RESEARCH_ACTIVE",
-      "research_round": 0,
+      "status": "RESEARCH_COMPLETE_HUMAN_INTAKE",
+      "research_round": 1,
       "source_type": "Zenodo cited dataset",
       "project": "spark-000005",
       "award_numbers": [
@@ -55,24 +55,148 @@
           "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
           "method": "all_19_immutable_scout_batches",
           "outcome": "All 62 staged rows searched for exact Zenodo DOI; none found; SHA256 for 19 CSVs matches manifest."
+        },
+        {
+          "url": "https://zenodo.org/api/records/4526127",
+          "method": "alternate_zenodo_api",
+          "outcome": "ACCESS FAILURE; no DOI-specific metadata inferred",
+          "source_failure": "ACCESS_FAILURE_NOT_METADATA_ABSENT",
+          "round": 1
+        },
+        {
+          "url": "https://doi.org/10.5281/zenodo.4526127",
+          "method": "doi_redirect",
+          "outcome": "ACCESS FAILURE; no native file inventory or created date inferred",
+          "source_failure": "ACCESS_FAILURE_NOT_METADATA_ABSENT",
+          "round": 1
+        },
+        {
+          "url": "https://www.nssl.noaa.gov/projects/anchor/",
+          "method": "independent_official_project_page",
+          "outcome": "NSSL confirms ANCHOR project stream-radar datasets and NWM research objectives; does not supply exact DOI-specific file inventory",
+          "round": 1
         }
       ],
       "missing_fields": [
-        "native repository title and creators",
-        "first-public YYYY-MM-DD date and source dateType",
-        "public file inventory and access",
-        "concept/version DOI identity and relation"
+        "native exact title and creators",
+        "public Zenodo file inventory and accessibility",
+        "concept/version DOI identity",
+        "valid DataCite created timestamp not accessible (ACCESS FAILURE)"
       ],
       "date_evidence": {
         "paper_date": "2021",
         "source_dateType": "article_publication_not_dataset_publication",
         "dataset_first_public_date": null
       },
-      "next_action": "One bounded DIFFERENT-SOURCE recovery round using Zenodo alternate API/DOI relation, independent institutional ANCHOR data catalog or repository snapshot; if access remains blocked, evaluate RESEARCH_COMPLETE_HUMAN_INTAKE and reconcile review unit without fabricating date. No repetitive search beyond one round.",
-      "reviewer_question": "Is the Zenodo DOI a public, distinct ANCHOR dataset attributable to NA16OAR4590234, and what is its verified first public release date and accessible file scope?",
+      "next_action": "Research complete; new case-36-anchor-stream-radar in metadata-review-units.json awaits compatible private intake. Do not repeat searches absent material new evidence or human request.",
+      "reviewer_question": "Verify exact DOI's distinct public dataset identity, native files, creators and version. DataCite created date was inaccessible; if later verified use its calendar day automatically.",
       "hub_delivery": "NOT_DELIVERED",
       "human_decisions": "NOT_VERIFIED",
-      "acknowledgment_absence_verified": false
+      "acknowledgment_absence_verified": false,
+      "historical_status_before_bounded_followup": "RESEARCH_ACTIVE",
+      "research_completed": true,
+      "metadata_recovery_exhausted": true,
+      "pub_date": null,
+      "datacite_created": null,
+      "date_policy_applies_if_created_verified": true,
+      "date_policy_applied_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET"
+    },
+    {
+      "identity": "doi:10.57969/s9059k",
+      "status": "CREDIBLE_EXPANSION_LEAD_FUNDING_NOT_VERIFIED",
+      "research_round": 0,
+      "discovery_route": "Independent discovery",
+      "discovery_path": "SPARK spark-000336 / primary WPO award NA21OAR4590374 -> official Scripps NHCI output-family catalog -> distinct DOI",
+      "source_type": "Official Scripps NHCI dataset catalog",
+      "project": "spark-000336",
+      "award_numbers": [
+        "NA21OAR4590374"
+      ],
+      "funding_basis": "Project-family association only; output-specific funding under WPO primary award versus NOPP/GDP contributions NOT YET INDEPENDENTLY VERIFIED.",
+      "checked_sources": [
+        {
+          "url": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+          "method": "official_dataset_family_catalog",
+          "outcome": "2022 NHCI first-five wave data; separate from 2022 sensor S93W23"
+        }
+      ],
+      "missing_fields": [
+        "output-specific WPO award funding bridge",
+        "exact DOI-specific DataCite created timestamp and native file/version details",
+        "full REACH/Scout duplicate check for this DOI"
+      ],
+      "next_action": "One bounded project-specific funding and exact DOI/REACH check; do not stage or attribute WPO funding until corroborated.",
+      "hub_delivery": "NOT_DELIVERED",
+      "human_decisions": "NOT_VERIFIED",
+      "acknowledgment_absence_verified": false,
+      "original_seed_doi": null
+    },
+    {
+      "identity": "doi:10.57969/s9ms33",
+      "status": "CREDIBLE_EXPANSION_LEAD_FUNDING_NOT_VERIFIED",
+      "research_round": 0,
+      "discovery_route": "Independent discovery",
+      "discovery_path": "SPARK spark-000336 / primary WPO award NA21OAR4590374 -> official Scripps NHCI output-family catalog -> distinct DOI",
+      "source_type": "Official Scripps NHCI dataset catalog",
+      "project": "spark-000336",
+      "award_numbers": [
+        "NA21OAR4590374"
+      ],
+      "funding_basis": "Project-family association only; output-specific funding under WPO primary award versus NOPP/GDP contributions NOT YET INDEPENDENTLY VERIFIED.",
+      "checked_sources": [
+        {
+          "url": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+          "method": "official_dataset_family_catalog",
+          "outcome": "2025 NHCI targeted-storms 2022–2024 sensor data; check mixed Global Drifter Program scope"
+        }
+      ],
+      "missing_fields": [
+        "output-specific WPO award funding bridge",
+        "exact DOI-specific DataCite created timestamp and native file/version details",
+        "full REACH/Scout duplicate check for this DOI"
+      ],
+      "next_action": "One bounded project-specific funding and exact DOI/REACH check; do not stage or attribute WPO funding until corroborated.",
+      "hub_delivery": "NOT_DELIVERED",
+      "human_decisions": "NOT_VERIFIED",
+      "acknowledgment_absence_verified": false,
+      "original_seed_doi": null
+    },
+    {
+      "identity": "doi:10.57969/s9h01g",
+      "status": "CREDIBLE_EXPANSION_LEAD_FUNDING_NOT_VERIFIED",
+      "research_round": 0,
+      "discovery_route": "Independent discovery",
+      "discovery_path": "SPARK spark-000336 / primary WPO award NA21OAR4590374 -> official Scripps NHCI output-family catalog -> distinct DOI",
+      "source_type": "Official Scripps NHCI dataset catalog",
+      "project": "spark-000336",
+      "award_numbers": [
+        "NA21OAR4590374"
+      ],
+      "funding_basis": "Project-family association only; output-specific funding under WPO primary award versus NOPP/GDP contributions NOT YET INDEPENDENTLY VERIFIED.",
+      "checked_sources": [
+        {
+          "url": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+          "method": "official_dataset_family_catalog",
+          "outcome": "2025 NHCI targeted-storms 2022–2024 first-five wave data; check mixed Global Drifter Program scope"
+        }
+      ],
+      "missing_fields": [
+        "output-specific WPO award funding bridge",
+        "exact DOI-specific DataCite created timestamp and native file/version details",
+        "full REACH/Scout duplicate check for this DOI"
+      ],
+      "next_action": "One bounded project-specific funding and exact DOI/REACH check; do not stage or attribute WPO funding until corroborated.",
+      "hub_delivery": "NOT_DELIVERED",
+      "human_decisions": "NOT_VERIFIED",
+      "acknowledgment_absence_verified": false,
+      "original_seed_doi": null
     }
-  ]
+  ],
+  "latest_update": {
+    "run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
+    "anchor_research_complete": true,
+    "anchor_handoff_key": "case-36-anchor-stream-radar",
+    "new_unverified_expansion_leads": 3,
+    "hub_imports": "NOT_VERIFIED"
+  }
 }
