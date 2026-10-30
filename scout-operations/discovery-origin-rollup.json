@@ -1,14 +1,14 @@
 {
   "schema": "reach-scout-discovery-origin-rollup-v1",
   "snapshot_date": "2026-10-30",
-  "source": "scout-discoveries/manifest.json (18 batches, 61 rows); prior 17 batches checked in 2026-10-30 06:34 ET audit, new batch independently re-read and exact UTF-8 SHA-256 checked against automated manifest; GitHub Actions succeeded",
-  "batch_count": 18,
-  "staged_review_rows": 61,
+  "source": "scout-discoveries/manifest.json (19 immutable batches, 62 rows); all 19 CSVs independently read for discovery-route reconciliation, 18 prior exact SHA-256 checks passed; new CSV exact UTF-8 SHA-256 and manifest verified; bot-owned manifest update observed; workflow conclusion NOT_VERIFIABLE",
+  "batch_count": 19,
+  "staged_review_rows": 62,
   "manifest_rows_verified": true,
   "route_counts": {
     "Direct API": 1,
     "API-seeded expansion": 12,
-    "Independent discovery": 2,
+    "Independent discovery": 3,
     "Metadata correction": 6,
     "Unclassified explicit": 0,
     "Unclassified legacy (route missing)": 40
@@ -30,20 +30,19 @@
     "source_manifest": "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json",
     "source_manifest_sha": "ab844173f761617a2fe1def5cf218b1fc94b3e7d"
   },
-  "human_review_status": "Not publicly verifiable; 61 staged proposals are not human approvals",
-  "note": "18 immutable batches / 61 staged review proposals: 1 Direct API, 12 API-seeded expansion, 2 Independent discovery, 6 metadata corrections, 40 legacy unclassified. 2026-10-30 07:29 ET new independent WoFS WPC evaluation DOI 10.15191/nwajom.2023.1107 and additional award attribution on existing REACH Part I DOI 10.15191/nwajom.2023.1109; both publisher-confirmed WPO award NA18OAR4590361. No private reviewer decisions or REACH publication claimed.",
+  "human_review_status": "Not publicly verifiable; 62 staged proposals are not human approvals",
+  "note": "19 immutable batches / 62 staged review proposals: 1 Direct API, 12 API-seeded expansion, 3 Independent discovery, 6 metadata corrections, 40 legacy unclassified. 2026-10-30 08:29 ET independently found 2018 NHC JHT final report for SPARK spark-000201 and exact award NA15OAR4590205; final-report submission date 2018-09-30, public upload date NOT VERIFIED. Hub import and private reviewer decisions NOT VERIFIED. Historical 188/188 original research complete; 37 separate human_metadata_needed handoffs (32 original + 5 expansion/report) NOT DELIVERED TO HUB. No public REACH addition asserted.",
   "latest_verified_run": {
-    "run_id": "REACH-SCOUT-2026-10-30-HOURLY-0729ET",
-    "batch_id": "2026-10-30-hourly-0729ET-wofs-jtti-output-001",
-    "new_review_proposals": 2,
+    "run_id": "REACH-SCOUT-2026-10-30-HOURLY-0829ET",
+    "batch_id": "2026-10-30-hourly-0829ET-jht-ri-final-report-001",
+    "new_review_proposals": 1,
     "route_counts": {
-      "Independent discovery": 1,
-      "Metadata correction": 1
+      "Independent discovery": 1
     },
     "manifest_verified": true,
-    "github_action_verification_status": "SUCCESS",
-    "github_action_run_id": 41049030851,
-    "sha256": "9b4ee4fe2bbf7b117f3be25853133cce3e19e5cf224db10ad8e56777cda49639",
+    "github_action_verification_status": "AUTOMATED_MANIFEST_BOT_COMMIT_OBSERVED; WORKFLOW_RUN_CONCLUSION_NOT_VERIFIABLE",
+    "github_manifest_bot_commit": "6a2946f7a6e4b3cc6c2ce7632f67e5991d5e62da",
+    "sha256": "c754f50633c43140c1584ee6d130a23b34004923babd774e29e719f530393abd",
     "human_review_verified": false
   }
 }
