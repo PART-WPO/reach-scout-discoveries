@@ -36,12 +36,13 @@ jobs:
       - name: Check all input manifests, SHA-256 and CSV row counts
         run: |
           set -euo pipefail
+          python3 -m pip install --disable-pip-version-check --quiet requests
           python3 scout-operations/tools/audit_doi_metadata.py --offline
           python3 -m unittest discover -s scout-operations/tests -p "test_crossref_metadata_checkpoint.py" -v
       - name: Enrich all candidate DOIs directly via DataCite / Crossref
         run: |
           set -euo pipefail
-          python3 scout-operations/tools/audit_doi_metadata.py --workers 6
+          python3 scout-operations/tools/audit_doi_metadata.py --workers 6 --refresh-crossref
           python3 - <<'PY'
           import json
           from pathlib import Path
@@ -57,7 +58,9 @@ jobs:
           assert cr.exists(), 'Crossref publication report missing'
           y=json.loads(cr.read_text(encoding='utf8'))
           assert y['counts']['crossref_publications']>=30, 'Crossref publication coverage unexpectedly low'
-          assert y['counts']['api_full_pub_date']>0, 'No Crossref published-online or other full publication dates recovered'
+          assert y['counts']['reach_pub_date_satisfied']==y['counts']['crossref_publications'], 'Crossref print/online month-day selection left unexpected dates blank'
+          assert y['counts']['first_of_month_defaults']>0, 'No month-only Crossref normalization observed'
+          assert not any('Crossref created' in r['accepted_reach_pub_date_source'] for r in y['records']), 'Crossref created incorrectly used for publication date'
           assert len(y['records'])==y['counts']['crossref_publications']
           assert all(r['doi'] and r['evidence'] and r['source']=='crossref' for r in y['records'])
           print('DOI checkpoint summary:',json.dumps({k:v for k,v in x.items() if k!='records'}))
