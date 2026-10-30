@@ -232,7 +232,7 @@ def write_crossref_report(records,source_sizes):
   accepted=x.get("pub_date") or ""
   accepted_source=x.get("pub_date_basis") or ""
   missing_fields=[fld for fld in r["recoverable_fields"] if fld in ("title","creators","abstract","type","pub_date")]
-  difference="no_scout_date" if not old else "no_crossref_exact_date" if not api_date else "matched" if old==[api_date] else "different_date_review_option"
+  difference="no_scout_date" if not old else "no_usable_crossref_publication_date" if not accepted else "matched" if accepted in old else "different_date_review_option"
   cases.append({"doi":r["doi"],"source":"crossref","evidence":x["evidence"],
     "title":x.get("title") or "","authors":x.get("creators") or [],
     "journal":x.get("journal") or "","volume":x.get("volume") or "",
@@ -266,13 +266,16 @@ def write_crossref_report(records,source_sizes):
     "scout_origins":r["origins"],"review_keys":r["review_keys"]})
  counts={
   "crossref_publications":len(cases),
-  "api_full_pub_date":sum(bool(x["crossref_publication_date"]) for x in cases),
-  "partial_only_pub_date":sum(not x["crossref_publication_date"] and bool(x["best_partial_date"]) for x in cases),
-  "no_publication_date":sum(not x["best_partial_date"] and not x["crossref_publication_date"] for x in cases),
+  "api_full_pub_date":sum(x["accepted_date_precision"]=="day" for x in cases),
+  "partial_only_pub_date":sum(x["first_of_month_default"] for x in cases),
+  "no_publication_date":sum(not x["accepted_reach_pub_date"] for x in cases),
   "scout_missing_date":sum(not x["scout_publication_dates"] for x in cases),
   "scout_missing_date_recoverable":sum(not x["scout_publication_dates"] and bool(x["accepted_reach_pub_date"]) for x in cases),
   "reach_pub_date_satisfied":sum(x["pub_date_satisfied"] for x in cases),
   "scout_missing_date_resolved_by_month_first":sum(not x["scout_publication_dates"] and x["first_of_month_default"] for x in cases),
+  "scout_missing_date_resolved_by_exact_pub":sum(not x["scout_publication_dates"] and bool(x["accepted_reach_pub_date"]) and not x["first_of_month_default"] for x in cases),
+  "source_field_print":sum(x["accepted_reach_pub_date_source"].startswith("Crossref published-print") for x in cases),
+  "source_field_online":sum(x["accepted_reach_pub_date_source"].startswith("Crossref published-online") for x in cases),
   "preferred_date_matches_existing_scout":sum(x["preferred_date_matches_existing_scout"] for x in cases),
   "preferred_date_differs_from_existing_scout":sum(x["preferred_date_differs_from_existing_scout"] for x in cases),
   "first_of_month_defaults":sum(x["first_of_month_default"] for x in cases),
@@ -380,7 +383,7 @@ def main():
  lines.extend(["","## Safety boundaries","",
     "An enriched DOI does not prove standalone REACH eligibility, funding, absence of duplicates or file-level access.",
     "DataCite fundingReferences can be empty despite an explicit NOAA award in the abstract.",
-    "The valid created calendar date satisfies Pub Date by office policy, without separate date-only human review.",
+    "DataCite accepts created as Pub Date; Crossref uses print first, online second, and YYYY-MM-01 when month-only.",
     "The discovery route remains Scout expansion when the DOI was first found through related output research.",
     "No original feed, metadata-blocker decision, human-review sheet, Smartsheet row or public REACH record was changed.",""])
  (OUT/"README.md").write_text("\n".join(lines),encoding="utf8")
