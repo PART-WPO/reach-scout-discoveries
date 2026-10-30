@@ -1,0 +1,270 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-30-HOURLY-0527ET",
+  "run_at_utc": "2026-10-30T09:27:53.961641+00:00",
+  "run_at_et": "2026-10-30 05:27 EDT",
+  "mode": "historical_api_triage",
+  "phase": "attribution_followups",
+  "selected_mode_explanation": "Monthly 0; historical original research complete 188/188; 37 metadata handoffs are integration-only NOT DELIVERED; attribution followups next.",
+  "source_checks": {
+    "monthly_manifest": "0 batches / 0 records",
+    "historical_manifest": "188 DOI records",
+    "historical_coverage": "188/188 research-complete, 0 remaining",
+    "spark_complete_index": "578 across 6 shards",
+    "reach_complete_index": "1238 across 10 shards",
+    "scout_manifest": "17 immutable batches, 59 proposals",
+    "scout_csv_sha256": "17/17 match",
+    "scout_csv_record_counts": "17/17 match",
+    "scout_csv_24_columns": "17/17 match",
+    "scout_csv_run_ids": "17/17 present",
+    "full_reach_details": "NOT FULLY VERIFIED"
+  },
+  "cases_researched": [
+    {
+      "identity": "doi:10.5281/zenodo.12557264",
+      "family": "ProxyVis",
+      "original_seed_status": "no_action",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "checked_source_urls": [
+        "https://zenodo.org/records/12557521",
+        "https://zenodo.org/records/12638402",
+        "https://github.com/galina-cira/ProxyVis/blob/main/.zenodo.json",
+        "https://rammb2.cira.colostate.edu/research/goes-r-research/proxyvis/",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-008.csv"
+      ],
+      "finding": "ProxyVis/GeoProxyVis is one geostationary satellite imagery software family, with concept and release DOIs, CIRA authors, and cooperative-institute funding NA19OAR4320073/NA14OAR4320125. CIRA project page and original software metadata identify the satellite imagery workstream; NOAA IR article DOI 10.1175/WAF-D-23-0038.1 is a related distinct publication. SPARK spark-000105 lists NA19OAR4320073 only as RELATED; WPO primary NA21OAR4590181/0182 funds MET-TC large-scale model-environment diagnostic verification, not ProxyVis imagery. No independent project-specific WPO output bridge; do not count release DOIs as distinct outputs.",
+      "source_path": "scout-operations/attribution-followups.json"
+    },
+    {
+      "identity": "doi:10.5281/zenodo.12557265",
+      "family": "ProxyVis",
+      "original_seed_status": "no_action",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "checked_source_urls": [
+        "https://zenodo.org/records/12557521",
+        "https://zenodo.org/records/12638402",
+        "https://github.com/galina-cira/ProxyVis/blob/main/.zenodo.json",
+        "https://rammb2.cira.colostate.edu/research/goes-r-research/proxyvis/",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-008.csv"
+      ],
+      "finding": "ProxyVis/GeoProxyVis is one geostationary satellite imagery software family, with concept and release DOIs, CIRA authors, and cooperative-institute funding NA19OAR4320073/NA14OAR4320125. CIRA project page and original software metadata identify the satellite imagery workstream; NOAA IR article DOI 10.1175/WAF-D-23-0038.1 is a related distinct publication. SPARK spark-000105 lists NA19OAR4320073 only as RELATED; WPO primary NA21OAR4590181/0182 funds MET-TC large-scale model-environment diagnostic verification, not ProxyVis imagery. No independent project-specific WPO output bridge; do not count release DOIs as distinct outputs.",
+      "source_path": "scout-operations/attribution-followups.json"
+    },
+    {
+      "identity": "doi:10.5281/zenodo.12557521",
+      "family": "ProxyVis",
+      "original_seed_status": "no_action",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "checked_source_urls": [
+        "https://zenodo.org/records/12557521",
+        "https://zenodo.org/records/12638402",
+        "https://github.com/galina-cira/ProxyVis/blob/main/.zenodo.json",
+        "https://rammb2.cira.colostate.edu/research/goes-r-research/proxyvis/",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-008.csv"
+      ],
+      "finding": "ProxyVis/GeoProxyVis is one geostationary satellite imagery software family, with concept and release DOIs, CIRA authors, and cooperative-institute funding NA19OAR4320073/NA14OAR4320125. CIRA project page and original software metadata identify the satellite imagery workstream; NOAA IR article DOI 10.1175/WAF-D-23-0038.1 is a related distinct publication. SPARK spark-000105 lists NA19OAR4320073 only as RELATED; WPO primary NA21OAR4590181/0182 funds MET-TC large-scale model-environment diagnostic verification, not ProxyVis imagery. No independent project-specific WPO output bridge; do not count release DOIs as distinct outputs.",
+      "source_path": "scout-operations/attribution-followups.json"
+    },
+    {
+      "identity": "doi:10.5281/zenodo.12557547",
+      "family": "ProxyVis",
+      "original_seed_status": "no_action",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "checked_source_urls": [
+        "https://zenodo.org/records/12557521",
+        "https://zenodo.org/records/12638402",
+        "https://github.com/galina-cira/ProxyVis/blob/main/.zenodo.json",
+        "https://rammb2.cira.colostate.edu/research/goes-r-research/proxyvis/",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-008.csv"
+      ],
+      "finding": "ProxyVis/GeoProxyVis is one geostationary satellite imagery software family, with concept and release DOIs, CIRA authors, and cooperative-institute funding NA19OAR4320073/NA14OAR4320125. CIRA project page and original software metadata identify the satellite imagery workstream; NOAA IR article DOI 10.1175/WAF-D-23-0038.1 is a related distinct publication. SPARK spark-000105 lists NA19OAR4320073 only as RELATED; WPO primary NA21OAR4590181/0182 funds MET-TC large-scale model-environment diagnostic verification, not ProxyVis imagery. No independent project-specific WPO output bridge; do not count release DOIs as distinct outputs.",
+      "source_path": "scout-operations/attribution-followups.json"
+    },
+    {
+      "identity": "doi:10.5281/zenodo.12560367",
+      "family": "ProxyVis",
+      "original_seed_status": "no_action",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "checked_source_urls": [
+        "https://zenodo.org/records/12557521",
+        "https://zenodo.org/records/12638402",
+        "https://github.com/galina-cira/ProxyVis/blob/main/.zenodo.json",
+        "https://rammb2.cira.colostate.edu/research/goes-r-research/proxyvis/",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-008.csv"
+      ],
+      "finding": "ProxyVis/GeoProxyVis is one geostationary satellite imagery software family, with concept and release DOIs, CIRA authors, and cooperative-institute funding NA19OAR4320073/NA14OAR4320125. CIRA project page and original software metadata identify the satellite imagery workstream; NOAA IR article DOI 10.1175/WAF-D-23-0038.1 is a related distinct publication. SPARK spark-000105 lists NA19OAR4320073 only as RELATED; WPO primary NA21OAR4590181/0182 funds MET-TC large-scale model-environment diagnostic verification, not ProxyVis imagery. No independent project-specific WPO output bridge; do not count release DOIs as distinct outputs.",
+      "source_path": "scout-operations/attribution-followups.json"
+    },
+    {
+      "identity": "doi:10.5281/zenodo.12560629",
+      "family": "ProxyVis",
+      "original_seed_status": "no_action",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "checked_source_urls": [
+        "https://zenodo.org/records/12557521",
+        "https://zenodo.org/records/12638402",
+        "https://github.com/galina-cira/ProxyVis/blob/main/.zenodo.json",
+        "https://rammb2.cira.colostate.edu/research/goes-r-research/proxyvis/",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-008.csv"
+      ],
+      "finding": "ProxyVis/GeoProxyVis is one geostationary satellite imagery software family, with concept and release DOIs, CIRA authors, and cooperative-institute funding NA19OAR4320073/NA14OAR4320125. CIRA project page and original software metadata identify the satellite imagery workstream; NOAA IR article DOI 10.1175/WAF-D-23-0038.1 is a related distinct publication. SPARK spark-000105 lists NA19OAR4320073 only as RELATED; WPO primary NA21OAR4590181/0182 funds MET-TC large-scale model-environment diagnostic verification, not ProxyVis imagery. No independent project-specific WPO output bridge; do not count release DOIs as distinct outputs.",
+      "source_path": "scout-operations/attribution-followups.json"
+    },
+    {
+      "identity": "doi:10.5281/zenodo.12625308",
+      "family": "ProxyVis",
+      "original_seed_status": "no_action",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "checked_source_urls": [
+        "https://zenodo.org/records/12557521",
+        "https://zenodo.org/records/12638402",
+        "https://github.com/galina-cira/ProxyVis/blob/main/.zenodo.json",
+        "https://rammb2.cira.colostate.edu/research/goes-r-research/proxyvis/",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-008.csv"
+      ],
+      "finding": "ProxyVis/GeoProxyVis is one geostationary satellite imagery software family, with concept and release DOIs, CIRA authors, and cooperative-institute funding NA19OAR4320073/NA14OAR4320125. CIRA project page and original software metadata identify the satellite imagery workstream; NOAA IR article DOI 10.1175/WAF-D-23-0038.1 is a related distinct publication. SPARK spark-000105 lists NA19OAR4320073 only as RELATED; WPO primary NA21OAR4590181/0182 funds MET-TC large-scale model-environment diagnostic verification, not ProxyVis imagery. No independent project-specific WPO output bridge; do not count release DOIs as distinct outputs.",
+      "source_path": "scout-operations/attribution-followups.json"
+    },
+    {
+      "identity": "doi:10.5281/zenodo.12638402",
+      "family": "ProxyVis",
+      "original_seed_status": "no_action",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "checked_source_urls": [
+        "https://zenodo.org/records/12557521",
+        "https://zenodo.org/records/12638402",
+        "https://github.com/galina-cira/ProxyVis/blob/main/.zenodo.json",
+        "https://rammb2.cira.colostate.edu/research/goes-r-research/proxyvis/",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-008.csv"
+      ],
+      "finding": "ProxyVis/GeoProxyVis is one geostationary satellite imagery software family, with concept and release DOIs, CIRA authors, and cooperative-institute funding NA19OAR4320073/NA14OAR4320125. CIRA project page and original software metadata identify the satellite imagery workstream; NOAA IR article DOI 10.1175/WAF-D-23-0038.1 is a related distinct publication. SPARK spark-000105 lists NA19OAR4320073 only as RELATED; WPO primary NA21OAR4590181/0182 funds MET-TC large-scale model-environment diagnostic verification, not ProxyVis imagery. No independent project-specific WPO output bridge; do not count release DOIs as distinct outputs.",
+      "source_path": "scout-operations/attribution-followups.json"
+    },
+    {
+      "identity": "doi:10.5281/zenodo.19484121",
+      "family": "BinMod1D",
+      "original_seed_status": "no_action",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "checked_source_urls": [
+        "https://gmd.copernicus.org/articles/19/7503/2026/",
+        "https://zenodo.org/records/19890222",
+        "https://github.com/NOAA-National-Severe-Storms-Laboratory/BinMod1D",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-020.csv",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-021.csv"
+      ],
+      "finding": "GMD paper DOI 10.5194/gmd-19-7503-2026 and NOAA NSSL code repository describe BinMod1D microphysics and radar simulations. Publisher explicitly acknowledges only NOAA–University of Oklahoma umbrella NA21OAR4320204. Paper cites software DOI 10.5281/zenodo.19889377; Zenodo documentation DOI 10.5281/zenodo.19890222 identifies a related separate documentation artifact, not an additional WPO-funded project. SPARK spark-000250 and spark-000254 work on emergency-management/flood/societal surveys, not cloud microphysics. No independent WPO project-specific bridge found for the code or documentation DOI families.",
+      "source_path": "scout-operations/attribution-followups.json"
+    },
+    {
+      "identity": "doi:10.5281/zenodo.19484122",
+      "family": "BinMod1D",
+      "original_seed_status": "no_action",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "checked_source_urls": [
+        "https://gmd.copernicus.org/articles/19/7503/2026/",
+        "https://zenodo.org/records/19890222",
+        "https://github.com/NOAA-National-Severe-Storms-Laboratory/BinMod1D",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-020.csv",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-021.csv"
+      ],
+      "finding": "GMD paper DOI 10.5194/gmd-19-7503-2026 and NOAA NSSL code repository describe BinMod1D microphysics and radar simulations. Publisher explicitly acknowledges only NOAA–University of Oklahoma umbrella NA21OAR4320204. Paper cites software DOI 10.5281/zenodo.19889377; Zenodo documentation DOI 10.5281/zenodo.19890222 identifies a related separate documentation artifact, not an additional WPO-funded project. SPARK spark-000250 and spark-000254 work on emergency-management/flood/societal surveys, not cloud microphysics. No independent WPO project-specific bridge found for the code or documentation DOI families.",
+      "source_path": "scout-operations/attribution-followups.json"
+    },
+    {
+      "identity": "doi:10.5281/zenodo.19889377",
+      "family": "BinMod1D",
+      "original_seed_status": "no_action",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "checked_source_urls": [
+        "https://gmd.copernicus.org/articles/19/7503/2026/",
+        "https://zenodo.org/records/19890222",
+        "https://github.com/NOAA-National-Severe-Storms-Laboratory/BinMod1D",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-020.csv",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-021.csv"
+      ],
+      "finding": "GMD paper DOI 10.5194/gmd-19-7503-2026 and NOAA NSSL code repository describe BinMod1D microphysics and radar simulations. Publisher explicitly acknowledges only NOAA–University of Oklahoma umbrella NA21OAR4320204. Paper cites software DOI 10.5281/zenodo.19889377; Zenodo documentation DOI 10.5281/zenodo.19890222 identifies a related separate documentation artifact, not an additional WPO-funded project. SPARK spark-000250 and spark-000254 work on emergency-management/flood/societal surveys, not cloud microphysics. No independent WPO project-specific bridge found for the code or documentation DOI families.",
+      "source_path": "scout-operations/attribution-followups.json"
+    },
+    {
+      "identity": "doi:10.5281/zenodo.19890221",
+      "family": "BinMod1D",
+      "original_seed_status": "no_action",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "checked_source_urls": [
+        "https://gmd.copernicus.org/articles/19/7503/2026/",
+        "https://zenodo.org/records/19890222",
+        "https://github.com/NOAA-National-Severe-Storms-Laboratory/BinMod1D",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-020.csv",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-021.csv"
+      ],
+      "finding": "GMD paper DOI 10.5194/gmd-19-7503-2026 and NOAA NSSL code repository describe BinMod1D microphysics and radar simulations. Publisher explicitly acknowledges only NOAA–University of Oklahoma umbrella NA21OAR4320204. Paper cites software DOI 10.5281/zenodo.19889377; Zenodo documentation DOI 10.5281/zenodo.19890222 identifies a related separate documentation artifact, not an additional WPO-funded project. SPARK spark-000250 and spark-000254 work on emergency-management/flood/societal surveys, not cloud microphysics. No independent WPO project-specific bridge found for the code or documentation DOI families.",
+      "source_path": "scout-operations/attribution-followups.json"
+    },
+    {
+      "identity": "doi:10.5281/zenodo.19890222",
+      "family": "BinMod1D",
+      "original_seed_status": "no_action",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "checked_source_urls": [
+        "https://gmd.copernicus.org/articles/19/7503/2026/",
+        "https://zenodo.org/records/19890222",
+        "https://github.com/NOAA-National-Severe-Storms-Laboratory/BinMod1D",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-020.csv",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-021.csv"
+      ],
+      "finding": "GMD paper DOI 10.5194/gmd-19-7503-2026 and NOAA NSSL code repository describe BinMod1D microphysics and radar simulations. Publisher explicitly acknowledges only NOAA–University of Oklahoma umbrella NA21OAR4320204. Paper cites software DOI 10.5281/zenodo.19889377; Zenodo documentation DOI 10.5281/zenodo.19890222 identifies a related separate documentation artifact, not an additional WPO-funded project. SPARK spark-000250 and spark-000254 work on emergency-management/flood/societal surveys, not cloud microphysics. No independent WPO project-specific bridge found for the code or documentation DOI families.",
+      "source_path": "scout-operations/attribution-followups.json"
+    }
+  ],
+  "cases_researched_count": 13,
+  "distinct_output_families": 2,
+  "original_seed_dispositions_changed": 0,
+  "attribution_followups_before": 26,
+  "attribution_followups_closed_this_run": 13,
+  "attribution_followups_after": 13,
+  "cumulative_followups_total": 71,
+  "cumulative_followups_closed": 58,
+  "no_action_subtypes_updated_in_followup": {
+    "NO_DEMONSTRATED_WPO_CONNECTION": 13
+  },
+  "verified_new_candidate_rows": 0,
+  "new_immutable_csv_batches": [],
+  "feed_integrity_status": "VERIFIED_EXISTING_BATCHES_17_OF_17",
+  "manifest_sha256_verification": {
+    "all_17_exact_utf8_digests_match": true,
+    "all_17_record_counts_match": true,
+    "all_17_24_columns": true,
+    "all_17_run_ids": true,
+    "batch_count": 17,
+    "candidate_rows": 59
+  },
+  "github_action_verification_status": "NOT_VERIFIABLE",
+  "human_metadata_pending_hub": 37,
+  "human_metadata_hub_visible_confirmed": "NOT_VERIFIED",
+  "human_metadata_hub_visible_confirmation": "NOT_VERIFIED",
+  "reviewer_confirmed_missing_acknowledgment_recoveries": "NOT_VERIFIED",
+  "human_decisions": "NOT_VERIFIED",
+  "new_public_reach_additions_verified": 0,
+  "public_reach_count": 1238,
+  "new_missing_acknowledgment_credible_leads": 0,
+  "expansion_leads_logged": [
+    {
+      "doi": "10.1175/WAF-D-23-0038.1",
+      "family": "ProxyVis",
+      "attribution": "not verified WPO"
+    },
+    {
+      "doi": "10.5194/gmd-19-7503-2026",
+      "family": "BinMod1D",
+      "attribution": "not verified WPO"
+    }
+  ],
+  "blockers": [
+    "37 human metadata cases NOT DELIVERED TO HUB",
+    "Private Hub/reviewer state unavailable",
+    "Complete REACH detail shards not inspected"
+  ],
+  "reviewer_visibility": "NOT_VERIFIED",
+  "audit_result": "PARTIAL",
+  "audit_reason": "Research and public feed verified, private reviewer state and full REACH details unavailable. No new candidate or manifest write."
+}
