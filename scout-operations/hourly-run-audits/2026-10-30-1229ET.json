@@ -211,10 +211,36 @@
     "Private Apps Script companion not installed or observed",
     "ANCHOR native Zenodo/DataCite access failure",
     "Harvard Dataverse created not verified",
-    "13 preexisting metadata blocker validator anomalies",
-    "Full REACH detail shards not re-read"
+    "Full REACH detail shards not re-read",
+    "Two legacy AMS initial-round source checks reconstructed conservatively from recorded first_investigated_at/evidence URLs; original HTTP logs NOT VERIFIED, so provenance audit remains PARTIAL."
   ],
   "audit_result": "PARTIAL",
   "library_path": "/REACH Scout Library/2026-10-30_1229ET",
-  "github_audit_published": "PENDING_CREATE_VERIFICATION"
+  "github_audit_published": "VERIFIED_IN_PUBLIC_MAIN",
+  "validator_status": {
+    "metadata_blockers": {
+      "run_id": 41093279028,
+      "conclusion": "success",
+      "validated_entries": 48
+    },
+    "router": {
+      "run_id": 41093278941,
+      "conclusion": "success"
+    },
+    "datacite_date_audit": {
+      "run_id": 41093068784,
+      "conclusion": "success"
+    },
+    "datacite_api_tests": {
+      "run_id": 41093068808,
+      "conclusion": "success"
+    }
+  },
+  "provenance_cleanup": {
+    "method_labels_normalized": 26,
+    "early_retry_reasons_documented": 4,
+    "legacy_ams_initial_source_records_conservatively_reconstructed": 2,
+    "legacy_ams_original_http_logs": "NOT_VERIFIED",
+    "no_fabricated_date_values": true
+  }
 }
