@@ -1,0 +1,44 @@
+{
+  "schema": "reach-scout-hourly-checkpoint-v1",
+  "run_id": "REACH-SCOUT-2026-10-30-HOURLY-1829ET",
+  "timestamp_utc": "2026-10-30T22:33:22Z",
+  "selected_mode": "normal_historical_discovery",
+  "monthly": {
+    "received": 0,
+    "completed": 0,
+    "remaining": 0
+  },
+  "historical": {
+    "received": 188,
+    "completed": 188,
+    "remaining": 0,
+    "research_complete": true,
+    "already_in_reach": 37,
+    "forwarded_to_hub_ledger": 6,
+    "metadata_update_forwarded_ledger": 8,
+    "no_action": 109,
+    "human_metadata_needed": 28
+  },
+  "attribution_followups": {
+    "ledger_entries": 71,
+    "queued": 0
+  },
+  "new_normal_project_awards_examined": [
+    "NA21OAR4590358"
+  ],
+  "new_lead_units": 1,
+  "new_lead_dois": 2,
+  "new_eligible_verified_candidates": 0,
+  "new_feed_batches": 0,
+  "feed": {
+    "status": "FEED_BLOCKED_VALIDATION_FAILURE",
+    "manifest_batches": 20,
+    "manifest_rows": 66,
+    "directory_batches": 21,
+    "invalid_unmanifested_batch": "2026-10-30-hourly-1329ET-independent-flood-mapping-001.csv",
+    "workflow_run": 41100661636,
+    "workflow_conclusion": "failure"
+  },
+  "one_time_four_doi_recheck": "COMPLETED_PREVIOUS_RUN_DO_NOT_REPEAT",
+  "next_priority": "New monthly intake first if present; otherwise bounded DOI-native Figshare identity/public-scope follow-up and continue normal historical awards. No new CSV while feed blocked."
+}
