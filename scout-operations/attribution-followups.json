@@ -4,7 +4,7 @@
   "origin": "77 no_action original historical DOI dispositions after the 2026-10-29 08:33 ET hourly run: 29 administrative non-outputs; 2 NASA-only funding; 46 real outputs without verified WPO project attribution. The 8:00 ET briefing snapshot was 65, including 34 attribution gaps. No original status or human decision changed.",
   "policy": "These are discovery research leads, not 34 confirmed WPO outputs or 34 automatic Hub findings. Don't promote without evidence bridge and independent corroboration. Preserve no_action historical completed count.",
   "total": 71,
-  "queued": 52,
+  "queued": 47,
   "entries": [
     {
       "identity": "doi:10.25923/b2b3-m644",
@@ -1728,7 +1728,7 @@
       "identity": "doi:10.57969/s9159w",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "medium",
       "original_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1131ET",
       "existing_source_evidence": [
@@ -1743,14 +1743,54 @@
       "followup_policy": "After monthly and historical original DOI queues cleared or temporarily blocked, ONE bounded targeted project-bridge round (<=5 meaningful checks), then close or promote only on positive project-specific evidence.",
       "next_action": "Seek independent primary project report/product list or publisher/repository acknowledgment bridging this exact output to a specific WPO SPARK workstream; shared CI funding alone is insufficient.",
       "last_source_research_at": "2026-10-29T15:34:47Z",
-      "followup_rounds_completed": 0,
-      "max_followup_rounds": 1
+      "followup_rounds_completed": 1,
+      "max_followup_rounds": 1,
+      "recheck_attempts": 1,
+      "recheck_completed_at": "2026-10-30T04:35:21.446625Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-30-HOURLY-0029ET",
+      "checked_source_urls": [
+        "https://erddap.ldl.ucsd.edu/erddap/tabledap/LDL_HurricaneMichael_First5.html",
+        "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2023GL105730",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-028.csv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+        "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/"
+      ],
+      "checked_source_findings": [
+        {
+          "url": "https://erddap.ldl.ucsd.edu/erddap/tabledap/LDL_HurricaneMichael_First5.html",
+          "outcome": "Targeted project bridge assessment; no independently corroborated link to specific WPO-funded workstream. See synthesis."
+        },
+        {
+          "url": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2023GL105730",
+          "outcome": "Targeted project bridge assessment; no independently corroborated link to specific WPO-funded workstream. See synthesis."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-028.csv",
+          "outcome": "Targeted project bridge assessment; no independently corroborated link to specific WPO-funded workstream. See synthesis."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+          "outcome": "Targeted project bridge assessment; no independently corroborated link to specific WPO-funded workstream. See synthesis."
+        },
+        {
+          "url": "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+          "outcome": "Targeted project bridge assessment; no independently corroborated link to specific WPO-funded workstream. See synthesis."
+        }
+      ],
+      "recheck_finding": "Publisher 2024 Hurricane Michael article explicitly cites first-five DOI and attributes 2018 observations to NOAA NA20OAR4320278, NA20OAR4600265, NA23NMF4050453D, not the specific WPO buoy award NA21OAR4590374. SPARK NA20OAR4320278 project is AQPI West Coast radar; 2021-24 LDL Atlantic collection explicitly names WPO but is a distinct output family. No DOI-to-WPO project bridge.",
+      "negative_or_contradictory_evidence": "Publisher 2024 Hurricane Michael article explicitly cites first-five DOI and attributes 2018 observations to NOAA NA20OAR4320278, NA20OAR4600265, NA23NMF4050453D, not the specific WPO buoy award NA21OAR4590374. SPARK NA20OAR4320278 project is AQPI West Coast radar; 2021-24 LDL Atlantic collection explicitly names WPO but is a distinct output family. No DOI-to-WPO project bridge.",
+      "recheck_final_disposition": "CLOSED_NO_DEMONSTRATED_WPO_PROJECT_BRIDGE",
+      "recheck_final_question": "Reopen only if new primary project-specific evidence ties this exact DOI to a WPO-funded workstream, or on explicit human request.",
+      "recheck_next_action": "None scheduled. Original no_action disposition unchanged.",
+      "new_direct_award_evidence_found": false,
+      "hub_publication_authorized": false,
+      "source_disposition_preserved": "no_action"
     },
     {
       "identity": "doi:10.57969/s94w2d",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "medium",
       "original_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1131ET",
       "existing_source_evidence": [
@@ -1765,14 +1805,54 @@
       "followup_policy": "After monthly and historical original DOI queues cleared or temporarily blocked, ONE bounded targeted project-bridge round (<=5 meaningful checks), then close or promote only on positive project-specific evidence.",
       "next_action": "Seek independent primary project report/product list or publisher/repository acknowledgment bridging this exact output to a specific WPO SPARK workstream; shared CI funding alone is insufficient.",
       "last_source_research_at": "2026-10-29T15:34:47Z",
-      "followup_rounds_completed": 0,
-      "max_followup_rounds": 1
+      "followup_rounds_completed": 1,
+      "max_followup_rounds": 1,
+      "recheck_attempts": 1,
+      "recheck_completed_at": "2026-10-30T04:35:21.446625Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-30-HOURLY-0029ET",
+      "checked_source_urls": [
+        "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2023GL105730",
+        "https://repository.library.noaa.gov/view/noaa/63752/noaa_63752_DS1.pdf",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-028.csv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+        "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/"
+      ],
+      "checked_source_findings": [
+        {
+          "url": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2023GL105730",
+          "outcome": "Targeted project bridge assessment; no independently corroborated link to specific WPO-funded workstream. See synthesis."
+        },
+        {
+          "url": "https://repository.library.noaa.gov/view/noaa/63752/noaa_63752_DS1.pdf",
+          "outcome": "Targeted project bridge assessment; no independently corroborated link to specific WPO-funded workstream. See synthesis."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-028.csv",
+          "outcome": "Targeted project bridge assessment; no independently corroborated link to specific WPO-funded workstream. See synthesis."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+          "outcome": "Targeted project bridge assessment; no independently corroborated link to specific WPO-funded workstream. See synthesis."
+        },
+        {
+          "url": "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+          "outcome": "Targeted project bridge assessment; no independently corroborated link to specific WPO-funded workstream. See synthesis."
+        }
+      ],
+      "recheck_finding": "Hurricane Michael 2018 dataset directly cited by 2024 article, which acknowledges other NOAA/ONR funding, not specific WPO project NA21OAR4590374. SPARK NA20OAR4320278 AQPI workstream differs from Hurricane Michael. Scripps WPO-funded 2021-24 Atlantic GTS dataset family is distinct; no funding transference.",
+      "negative_or_contradictory_evidence": "Hurricane Michael 2018 dataset directly cited by 2024 article, which acknowledges other NOAA/ONR funding, not specific WPO project NA21OAR4590374. SPARK NA20OAR4320278 AQPI workstream differs from Hurricane Michael. Scripps WPO-funded 2021-24 Atlantic GTS dataset family is distinct; no funding transference.",
+      "recheck_final_disposition": "CLOSED_NO_DEMONSTRATED_WPO_PROJECT_BRIDGE",
+      "recheck_final_question": "Reopen only if new primary project-specific evidence ties this exact DOI to a WPO-funded workstream, or on explicit human request.",
+      "recheck_next_action": "None scheduled. Original no_action disposition unchanged.",
+      "new_direct_award_evidence_found": false,
+      "hub_publication_authorized": false,
+      "source_disposition_preserved": "no_action"
     },
     {
       "identity": "doi:10.57969/s99g6b",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "medium",
       "original_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1131ET",
       "existing_source_evidence": [
@@ -1786,14 +1866,49 @@
       "followup_policy": "After monthly and historical original DOI queues cleared or temporarily blocked, ONE bounded targeted project-bridge round (<=5 meaningful checks), then close or promote only on positive project-specific evidence.",
       "next_action": "Seek independent primary project report/product list or publisher/repository acknowledgment bridging this exact output to a specific WPO SPARK workstream; shared CI funding alone is insufficient.",
       "last_source_research_at": "2026-10-29T15:34:47Z",
-      "followup_rounds_completed": 0,
-      "max_followup_rounds": 1
+      "followup_rounds_completed": 1,
+      "max_followup_rounds": 1,
+      "recheck_attempts": 1,
+      "recheck_completed_at": "2026-10-30T04:35:21.446625Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-30-HOURLY-0029ET",
+      "checked_source_urls": [
+        "https://api.datacite.org/dois/10.57969/s99g6b",
+        "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-028.csv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv"
+      ],
+      "checked_source_findings": [
+        {
+          "url": "https://api.datacite.org/dois/10.57969/s99g6b",
+          "outcome": "Targeted project bridge assessment; no independently corroborated link to specific WPO-funded workstream. See synthesis."
+        },
+        {
+          "url": "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+          "outcome": "Targeted project bridge assessment; no independently corroborated link to specific WPO-funded workstream. See synthesis."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-028.csv",
+          "outcome": "Targeted project bridge assessment; no independently corroborated link to specific WPO-funded workstream. See synthesis."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+          "outcome": "Targeted project bridge assessment; no independently corroborated link to specific WPO-funded workstream. See synthesis."
+        }
+      ],
+      "recheck_finding": "Captured DataCite identifies broad NA20OAR4320278 for 2021 R/V Thompson subset. SPARK primary award corresponds to AQPI radar/modeling; Scripps 2021-24 Atlantic GTS family is not identical to R/V Thompson subset. No output-specific WPO project bridge in bounded cross-source check. Live DataCite not independently retrievable in this mission; original captured record retained.",
+      "negative_or_contradictory_evidence": "Captured DataCite identifies broad NA20OAR4320278 for 2021 R/V Thompson subset. SPARK primary award corresponds to AQPI radar/modeling; Scripps 2021-24 Atlantic GTS family is not identical to R/V Thompson subset. No output-specific WPO project bridge in bounded cross-source check. Live DataCite not independently retrievable in this mission; original captured record retained.",
+      "recheck_final_disposition": "CLOSED_NO_DEMONSTRATED_WPO_PROJECT_BRIDGE",
+      "recheck_final_question": "Reopen only if new primary project-specific evidence ties this exact DOI to a WPO-funded workstream, or on explicit human request.",
+      "recheck_next_action": "None scheduled. Original no_action disposition unchanged.",
+      "new_direct_award_evidence_found": false,
+      "hub_publication_authorized": false,
+      "source_disposition_preserved": "no_action"
     },
     {
       "identity": "doi:10.57969/s9bc70",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "medium",
       "original_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1131ET",
       "existing_source_evidence": [
@@ -1807,8 +1922,43 @@
       "followup_policy": "After monthly and historical original DOI queues cleared or temporarily blocked, ONE bounded targeted project-bridge round (<=5 meaningful checks), then close or promote only on positive project-specific evidence.",
       "next_action": "Seek independent primary project report/product list or publisher/repository acknowledgment bridging this exact output to a specific WPO SPARK workstream; shared CI funding alone is insufficient.",
       "last_source_research_at": "2026-10-29T15:34:47Z",
-      "followup_rounds_completed": 0,
-      "max_followup_rounds": 1
+      "followup_rounds_completed": 1,
+      "max_followup_rounds": 1,
+      "recheck_attempts": 1,
+      "recheck_completed_at": "2026-10-30T04:35:21.446625Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-30-HOURLY-0029ET",
+      "checked_source_urls": [
+        "https://api.datacite.org/dois/10.57969/s9bc70",
+        "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-028.csv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv"
+      ],
+      "checked_source_findings": [
+        {
+          "url": "https://api.datacite.org/dois/10.57969/s9bc70",
+          "outcome": "Targeted project bridge assessment; no independently corroborated link to specific WPO-funded workstream. See synthesis."
+        },
+        {
+          "url": "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+          "outcome": "Targeted project bridge assessment; no independently corroborated link to specific WPO-funded workstream. See synthesis."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-028.csv",
+          "outcome": "Targeted project bridge assessment; no independently corroborated link to specific WPO-funded workstream. See synthesis."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+          "outcome": "Targeted project bridge assessment; no independently corroborated link to specific WPO-funded workstream. See synthesis."
+        }
+      ],
+      "recheck_finding": "Captured DataCite associates WIS2 recommended global drifter dataset with broad NA20OAR4320278; SPARK award points to AQPI. Scripps explicitly WPO-funded Atlantic GTS 2021-24 series is narrower and a different DOI family. No primary workstream-specific link for exact global WIS2 dataset. Live DataCite unavailable; original captured evidence preserved.",
+      "negative_or_contradictory_evidence": "Captured DataCite associates WIS2 recommended global drifter dataset with broad NA20OAR4320278; SPARK award points to AQPI. Scripps explicitly WPO-funded Atlantic GTS 2021-24 series is narrower and a different DOI family. No primary workstream-specific link for exact global WIS2 dataset. Live DataCite unavailable; original captured evidence preserved.",
+      "recheck_final_disposition": "CLOSED_NO_DEMONSTRATED_WPO_PROJECT_BRIDGE",
+      "recheck_final_question": "Reopen only if new primary project-specific evidence ties this exact DOI to a WPO-funded workstream, or on explicit human request.",
+      "recheck_next_action": "None scheduled. Original no_action disposition unchanged.",
+      "new_direct_award_evidence_found": false,
+      "hub_publication_authorized": false,
+      "source_disposition_preserved": "no_action"
     },
     {
       "identity": "doi:10.57969/s9g59x",
@@ -1900,7 +2050,7 @@
       "identity": "doi:10.7302/y2qt-7f47",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "medium",
       "original_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1131ET",
       "existing_source_evidence": [
@@ -1915,8 +2065,43 @@
       "followup_policy": "After monthly and historical original DOI queues cleared or temporarily blocked, ONE bounded targeted project-bridge round (<=5 meaningful checks), then close or promote only on positive project-specific evidence.",
       "next_action": "Seek independent primary project report/product list or publisher/repository acknowledgment bridging this exact output to a specific WPO SPARK workstream; shared CI funding alone is insufficient.",
       "last_source_research_at": "2026-10-29T15:34:47Z",
-      "followup_rounds_completed": 0,
-      "max_followup_rounds": 1
+      "followup_rounds_completed": 1,
+      "max_followup_rounds": 1,
+      "recheck_attempts": 1,
+      "recheck_completed_at": "2026-10-30T04:35:21.446625Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-30-HOURLY-0029ET",
+      "checked_source_urls": [
+        "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021GL093727",
+        "https://repository.library.noaa.gov/view/noaa/59615",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-011.csv",
+        "https://doi.org/10.7302/y2qt-7f47"
+      ],
+      "checked_source_findings": [
+        {
+          "url": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021GL093727",
+          "outcome": "Targeted project bridge assessment; no independently corroborated link to specific WPO-funded workstream. See synthesis."
+        },
+        {
+          "url": "https://repository.library.noaa.gov/view/noaa/59615",
+          "outcome": "Targeted project bridge assessment; no independently corroborated link to specific WPO-funded workstream. See synthesis."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-011.csv",
+          "outcome": "Targeted project bridge assessment; no independently corroborated link to specific WPO-funded workstream. See synthesis."
+        },
+        {
+          "url": "https://doi.org/10.7302/y2qt-7f47",
+          "outcome": "Targeted project bridge assessment; no independently corroborated link to specific WPO-funded workstream. See synthesis."
+        }
+      ],
+      "recheck_finding": "2021 publisher article directly links DOI to 2015 WRF-Chem lake-spray aerosol chemistry simulations, funded by broad CIGLR cooperative NA17OAR4320152. SPARK lake-coupling UFS project spark-000135 starts 2022 and has primary award NA22OAR4590188, distinct methods, goals and team. No specific WPO workstream bridge.",
+      "negative_or_contradictory_evidence": "2021 publisher article directly links DOI to 2015 WRF-Chem lake-spray aerosol chemistry simulations, funded by broad CIGLR cooperative NA17OAR4320152. SPARK lake-coupling UFS project spark-000135 starts 2022 and has primary award NA22OAR4590188, distinct methods, goals and team. No specific WPO workstream bridge.",
+      "recheck_final_disposition": "CLOSED_NO_DEMONSTRATED_WPO_PROJECT_BRIDGE",
+      "recheck_final_question": "Reopen only if new primary project-specific evidence ties this exact DOI to a WPO-funded workstream, or on explicit human request.",
+      "recheck_next_action": "None scheduled. Original no_action disposition unchanged.",
+      "new_direct_award_evidence_found": false,
+      "hub_publication_authorized": false,
+      "source_disposition_preserved": "no_action"
     },
     {
       "identity": "doi:10.25923/0vz0-ra19",
@@ -2126,24 +2311,25 @@
     "alternative_funding": 2,
     "unattributed_outputs": 46
   },
-  "last_updated_at": "2026-10-30T00:28:49.296091Z",
+  "last_updated_at": "2026-10-30T04:35:21.446625Z",
   "latest_addition": {
     "run_id": "REACH-SCOUT-2026-10-29-HOURLY-1131ET",
     "new_qualified_attribution_gaps": 9,
     "previous_total": 57,
     "total": 66
   },
-  "closed": 19,
+  "closed": 24,
   "latest_recheck": {
-    "run_id": "REACH-SCOUT-2026-10-29-HOURLY-2026ET",
+    "run_id": "REACH-SCOUT-2026-10-30-HOURLY-0029ET",
     "closed": [
-      "doi:10.25923/65kx-0a28",
-      "doi:10.25923/emke-w063",
-      "doi:10.25923/fkzg-kt33",
-      "doi:10.25923/mpqr-r886"
+      "doi:10.57969/s9159w",
+      "doi:10.57969/s94w2d",
+      "doi:10.57969/s99g6b",
+      "doi:10.57969/s9bc70",
+      "doi:10.7302/y2qt-7f47"
     ],
-    "closed_count": 4,
+    "closed_count": 5,
     "original_seed_status_unchanged": true,
-    "note": "Original DOI status changed needs_more_research to evidenced no_action in historical triage; separate attribution followup closed after one bounded project bridge check. 08:00 and 08:33 baseline snapshots preserved."
+    "note": "One bounded cross-source attribution round per case; shared CI funding or same laboratory is not project-specific output attribution. 2021-24 WPO Atlantic GTS datasets already have historical human metadata handoffs; no duplicate proposal."
   }
 }
