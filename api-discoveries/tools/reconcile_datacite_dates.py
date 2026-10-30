@@ -154,13 +154,20 @@ def native_date(raw,doi):
                 if isinstance(v,dict):v=v.get("value","")
                 try:
                     if canonical_doi(v)==doi:
-                        allvalues.extend([node.get("datePublished",""),node.get("dateCreated","")])
+                        allvalues.append(node.get("datePublished",""))
                 except ValueError:pass
             for x in node.values():walk(x)
         elif isinstance(node,list):
             for x in node:walk(x)
     for obj in p.jsonld:walk(obj)
-    matched=any((lambda v: canonical_doi(v)==doi)(v) for v in validids if re.fullmatch(r"(?:doi:|https?://(?:dx\.)?doi\.org/)?10\.\d{4,9}/[^\s]+",v,re.I))
+    matched=False
+    for value in validids:
+        try:
+            if canonical_doi(value)==doi:
+                matched=True
+                break
+        except ValueError:
+            continue
     if matched:
         allvalues+=p.meta.get("citation_publication_date",[])+p.meta.get("dc.date.issued",[])
     dates=sorted({iso_date(x) for x in allvalues if iso_date(x)})
