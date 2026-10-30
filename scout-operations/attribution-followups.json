@@ -4,7 +4,7 @@
   "origin": "77 no_action original historical DOI dispositions after the 2026-10-29 08:33 ET hourly run: 29 administrative non-outputs; 2 NASA-only funding; 46 real outputs without verified WPO project attribution. The 8:00 ET briefing snapshot was 65, including 34 attribution gaps. No original status or human decision changed.",
   "policy": "These are discovery research leads, not 34 confirmed WPO outputs or 34 automatic Hub findings. Don't promote without evidence bridge and independent corroboration. Preserve no_action historical completed count.",
   "total": 71,
-  "queued": 47,
+  "queued": 42,
   "entries": [
     {
       "identity": "doi:10.25923/b2b3-m644",
@@ -582,7 +582,7 @@
       "identity": "doi:10.5061/dryad.2bvq83br4",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "low",
       "original_run_id": null,
       "existing_source_evidence": [
@@ -596,18 +596,34 @@
       "source_disposition_preserved": true,
       "new_direct_award_evidence_found": false,
       "hub_publication_authorized": false,
-      "recheck_attempts": 0,
+      "recheck_attempts": 1,
       "max_recheck_rounds_without_material_evidence": 1,
       "recheck_trigger": "When primary actionable API queues are cleared/blocked, or genuinely new direct attribution evidence arrives",
       "last_source_research_at": "2026-10-29T11:36:43Z",
       "original_notes_preserved_in": "scout-operations/historical-triage.json",
-      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility."
+      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility.",
+      "recheck_completed_at": "2026-10-30T05:26:56.711529Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-30-HOURLY-0124ET",
+      "checked_source_urls": [
+        "https://datadryad.org/dataset/doi%3A10.5061/dryad.2bvq83br4",
+        "https://onlinelibrary.wiley.com/doi/full/10.1111/gcb.15902",
+        "https://ci.noaa.gov/wp-content/uploads/2023/03/RPPR_NA17OAR4320152_20200401-20210331.pdf",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-011.csv",
+        "https://repository.library.noaa.gov/view/noaa/67784/noaa_67784_DS1.pdf"
+      ],
+      "recheck_finding": "Dryad and journal article identify 2021 Lake Erie fish-trait ecology funded by Great Lakes Fishery Commission and broad CIGLR NA17OAR4320152. SPARK spark-000135 JTTI UFS lake-coupling begins 2022 with primary NA22OAR4590188, different model objective; CIGLR annual report lists lake-coupling separately. No fish dataset-to-WPO project bridge.",
+      "negative_or_contradictory_evidence": "Dryad and journal article identify 2021 Lake Erie fish-trait ecology funded by Great Lakes Fishery Commission and broad CIGLR NA17OAR4320152. SPARK spark-000135 JTTI UFS lake-coupling begins 2022 with primary NA22OAR4590188, different model objective; CIGLR annual report lists lake-coupling separately. No fish dataset-to-WPO project bridge.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "recheck_final_question": "Does this exact DOI have a primary-source bridge to a specific WPO-funded SPARK workstream (not merely a related/umbrella award), corroborated independently?",
+      "recheck_next_action": "No scheduled repeat absent NEW positive project-specific primary-source evidence or explicit human request; preserve original no_action.",
+      "reviewer_visibility": "NOT_SENT",
+      "scout_batch_id": null
     },
     {
       "identity": "doi:10.5061/dryad.2jm63xstt",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "low",
       "original_run_id": null,
       "existing_source_evidence": [
@@ -622,12 +638,28 @@
       "source_disposition_preserved": true,
       "new_direct_award_evidence_found": false,
       "hub_publication_authorized": false,
-      "recheck_attempts": 0,
+      "recheck_attempts": 1,
       "max_recheck_rounds_without_material_evidence": 1,
       "recheck_trigger": "When primary actionable API queues are cleared/blocked, or genuinely new direct attribution evidence arrives",
       "last_source_research_at": "2026-10-29T10:33:00Z",
       "original_notes_preserved_in": "scout-operations/historical-triage.json",
-      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility."
+      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility.",
+      "recheck_completed_at": "2026-10-30T05:26:56.711529Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-30-HOURLY-0124ET",
+      "checked_source_urls": [
+        "https://datadryad.org/dataset/doi%3A10.5061/dryad.2jm63xstt",
+        "https://rammb2.cira.colostate.edu/wp-content/uploads/2023/04/RAMMB-CIRA_Weekly_2023.04.07.pdf",
+        "https://api.mountainscholar.org/server/api/core/bitstreams/97133a2c-b685-4ac9-9f47-e8b0b4d0984a/content",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-008.csv",
+        "https://repository.library.noaa.gov/view/noaa/67858/noaa_67858_DS1.pdf"
+      ],
+      "recheck_finding": "Dryad GREMLIN CONUS3 2022; CIRA report identifies GOES-R support, dissertation and NOAA peer-reviewed paper identify dataset as GREMLIN research artifact. SPARK spark-000105 is separate MET-TC large-scale tropical cyclone diagnostics project, with only umbrella institutional overlap.",
+      "negative_or_contradictory_evidence": "Dryad GREMLIN CONUS3 2022; CIRA report identifies GOES-R support, dissertation and NOAA peer-reviewed paper identify dataset as GREMLIN research artifact. SPARK spark-000105 is separate MET-TC large-scale tropical cyclone diagnostics project, with only umbrella institutional overlap.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "recheck_final_question": "Does this exact DOI have a primary-source bridge to a specific WPO-funded SPARK workstream (not merely a related/umbrella award), corroborated independently?",
+      "recheck_next_action": "No scheduled repeat absent NEW positive project-specific primary-source evidence or explicit human request; preserve original no_action.",
+      "reviewer_visibility": "NOT_SENT",
+      "scout_batch_id": null
     },
     {
       "identity": "doi:10.5061/dryad.3n5tb2rq4",
@@ -886,7 +918,7 @@
       "identity": "doi:10.5061/dryad.h9w0vt4nq",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "low",
       "original_run_id": null,
       "existing_source_evidence": [
@@ -901,12 +933,28 @@
       "source_disposition_preserved": true,
       "new_direct_award_evidence_found": false,
       "hub_publication_authorized": false,
-      "recheck_attempts": 0,
+      "recheck_attempts": 1,
       "max_recheck_rounds_without_material_evidence": 1,
       "recheck_trigger": "When primary actionable API queues are cleared/blocked, or genuinely new direct attribution evidence arrives",
       "last_source_research_at": "2026-10-29T10:33:00Z",
       "original_notes_preserved_in": "scout-operations/historical-triage.json",
-      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility."
+      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility.",
+      "recheck_completed_at": "2026-10-30T05:26:56.711529Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-30-HOURLY-0124ET",
+      "checked_source_urls": [
+        "https://datadryad.org/dataset/doi%3A10.5061/dryad.h9w0vt4nq",
+        "https://rammb2.cira.colostate.edu/wp-content/uploads/2023/04/RAMMB-CIRA_Weekly_2023.04.07.pdf",
+        "https://api.mountainscholar.org/server/api/core/bitstreams/97133a2c-b685-4ac9-9f47-e8b0b4d0984a/content",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-008.csv",
+        "https://repository.library.noaa.gov/view/noaa/67858/noaa_67858_DS1.pdf"
+      ],
+      "recheck_finding": "Dryad GREMLIN CONUS3 2020; NOAA CIRA 2023-04-07 weekly report attributes all three annual datasets to GOES-R; CSU dissertation and NOAA article cite distinct datasets. SPARK spark-000105 is MET-TC tropical cyclone verification, with NA19OAR4320073 related umbrella only; no project-specific output bridge.",
+      "negative_or_contradictory_evidence": "Dryad GREMLIN CONUS3 2020; NOAA CIRA 2023-04-07 weekly report attributes all three annual datasets to GOES-R; CSU dissertation and NOAA article cite distinct datasets. SPARK spark-000105 is MET-TC tropical cyclone verification, with NA19OAR4320073 related umbrella only; no project-specific output bridge.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "recheck_final_question": "Does this exact DOI have a primary-source bridge to a specific WPO-funded SPARK workstream (not merely a related/umbrella award), corroborated independently?",
+      "recheck_next_action": "No scheduled repeat absent NEW positive project-specific primary-source evidence or explicit human request; preserve original no_action.",
+      "reviewer_visibility": "NOT_SENT",
+      "scout_batch_id": null
     },
     {
       "identity": "doi:10.5061/dryad.kwh70rzfc",
@@ -1013,7 +1061,7 @@
       "identity": "doi:10.5061/dryad.zs7h44jf2",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "low",
       "original_run_id": null,
       "existing_source_evidence": [
@@ -1028,12 +1076,28 @@
       "source_disposition_preserved": true,
       "new_direct_award_evidence_found": false,
       "hub_publication_authorized": false,
-      "recheck_attempts": 0,
+      "recheck_attempts": 1,
       "max_recheck_rounds_without_material_evidence": 1,
       "recheck_trigger": "When primary actionable API queues are cleared/blocked, or genuinely new direct attribution evidence arrives",
       "last_source_research_at": "2026-10-29T10:33:00Z",
       "original_notes_preserved_in": "scout-operations/historical-triage.json",
-      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility."
+      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility.",
+      "recheck_completed_at": "2026-10-30T05:26:56.711529Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-30-HOURLY-0124ET",
+      "checked_source_urls": [
+        "https://datadryad.org/dataset/doi%3A10.5061/dryad.zs7h44jf2",
+        "https://rammb2.cira.colostate.edu/wp-content/uploads/2023/04/RAMMB-CIRA_Weekly_2023.04.07.pdf",
+        "https://api.mountainscholar.org/server/api/core/bitstreams/97133a2c-b685-4ac9-9f47-e8b0b4d0984a/content",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-008.csv",
+        "https://github.com/stockeh/srvit"
+      ],
+      "recheck_finding": "Dryad GREMLIN CONUS3 2021; CIRA 2023-04-07 report assigns GREMLIN dataset to GOES-R. CSU dissertation and independent SRViT repository link dataset as scientific input, not to WPO spark-000105 MET-TC diagnostics integration. Broad NA19OAR4320073 is only related award.",
+      "negative_or_contradictory_evidence": "Dryad GREMLIN CONUS3 2021; CIRA 2023-04-07 report assigns GREMLIN dataset to GOES-R. CSU dissertation and independent SRViT repository link dataset as scientific input, not to WPO spark-000105 MET-TC diagnostics integration. Broad NA19OAR4320073 is only related award.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "recheck_final_question": "Does this exact DOI have a primary-source bridge to a specific WPO-funded SPARK workstream (not merely a related/umbrella award), corroborated independently?",
+      "recheck_next_action": "No scheduled repeat absent NEW positive project-specific primary-source evidence or explicit human request; preserve original no_action.",
+      "reviewer_visibility": "NOT_SENT",
+      "scout_batch_id": null
     },
     {
       "identity": "doi:10.5281/zenodo.11623053",
@@ -1985,7 +2049,7 @@
       "identity": "doi:10.57969/s9kw2f",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "medium",
       "original_run_id": "REACH-SCOUT-2026-10-29-HOURLY-1131ET",
       "existing_source_evidence": [
@@ -2000,7 +2064,27 @@
       "next_action": "Seek independent primary project report/product list or publisher/repository acknowledgment bridging this exact output to a specific WPO SPARK workstream; shared CI funding alone is insufficient.",
       "last_source_research_at": "2026-10-29T15:34:47Z",
       "followup_rounds_completed": 0,
-      "max_followup_rounds": 1
+      "max_followup_rounds": 1,
+      "recheck_attempts": 1,
+      "recheck_completed_at": "2026-10-30T05:26:56.711529Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-30-HOURLY-0124ET",
+      "checked_source_urls": [
+        "https://erddap.ldl.ucsd.edu/erddap/tabledap/GDP_GtsDrifterData.html",
+        "https://gdp.ucsd.edu/ldl/gdp-drifter-data/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-028.csv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-045.csv",
+        "https://repository.library.noaa.gov/view/noaa/45433"
+      ],
+      "recheck_finding": "Scripps native ERDDAP identifies global GDP GTS stream. LDL program page attributes long-running GDP data to broad NA20OAR4320278 and another grant. SPARK spark-000355 is San Francisco AQPI radar and spark-000571 is separate AR marine-boundary-layer modeling; related drifter SST article also only has broad NOAA funding. No exact WPO project output bridge.",
+      "negative_or_contradictory_evidence": "Scripps native ERDDAP identifies global GDP GTS stream. LDL program page attributes long-running GDP data to broad NA20OAR4320278 and another grant. SPARK spark-000355 is San Francisco AQPI radar and spark-000571 is separate AR marine-boundary-layer modeling; related drifter SST article also only has broad NOAA funding. No exact WPO project output bridge.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "recheck_final_question": "Is there independently corroborated output-specific WPO SPARK workstream evidence?",
+      "recheck_next_action": "No scheduled repeat absent NEW positive project-specific primary-source evidence or explicit human request; preserve original no_action.",
+      "source_disposition_preserved": true,
+      "new_direct_award_evidence_found": false,
+      "hub_publication_authorized": false,
+      "reviewer_visibility": "NOT_SENT",
+      "scout_batch_id": null
     },
     {
       "identity": "doi:10.6084/m9.figshare.13138757",
@@ -2311,25 +2395,25 @@
     "alternative_funding": 2,
     "unattributed_outputs": 46
   },
-  "last_updated_at": "2026-10-30T04:35:21.446625Z",
+  "last_updated_at": "2026-10-30T05:26:56.711529Z",
   "latest_addition": {
     "run_id": "REACH-SCOUT-2026-10-29-HOURLY-1131ET",
     "new_qualified_attribution_gaps": 9,
     "previous_total": 57,
     "total": 66
   },
-  "closed": 24,
+  "closed": 29,
   "latest_recheck": {
-    "run_id": "REACH-SCOUT-2026-10-30-HOURLY-0029ET",
+    "run_id": "REACH-SCOUT-2026-10-30-HOURLY-0124ET",
     "closed": [
-      "doi:10.57969/s9159w",
-      "doi:10.57969/s94w2d",
-      "doi:10.57969/s99g6b",
-      "doi:10.57969/s9bc70",
-      "doi:10.7302/y2qt-7f47"
+      "doi:10.5061/dryad.h9w0vt4nq",
+      "doi:10.5061/dryad.zs7h44jf2",
+      "doi:10.5061/dryad.2jm63xstt",
+      "doi:10.5061/dryad.2bvq83br4",
+      "doi:10.57969/s9kw2f"
     ],
     "closed_count": 5,
     "original_seed_status_unchanged": true,
-    "note": "One bounded cross-source attribution round per case; shared CI funding or same laboratory is not project-specific output attribution. 2021-24 WPO Atlantic GTS datasets already have historical human metadata handoffs; no duplicate proposal."
+    "note": "Five independent-source project-bridge attribution checks. GREMLIN datasets supported by GOES-R, fish traits by broad CIGLR, GDP GTS by broad Scripps NOAA program; no WPO SPARK project-specific attribution."
   }
 }
