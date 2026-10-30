@@ -1,0 +1,165 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-30-HOURLY-0829ET",
+  "timestamp": "2026-10-30T08:32:44-04:00",
+  "timestamp_utc": "2026-10-30T12:32:44Z",
+  "mode": "normal_historical_discovery",
+  "phase": "award_centered_broad_net_discovery",
+  "priority_routing": "monthly > historical > attribution > normal; higher-priority research all clear",
+  "original_seeds_disposed_this_run": [],
+  "monthly_before_after": {
+    "before": 0,
+    "after": 0
+  },
+  "historical_before_after": {
+    "completed_before": 188,
+    "completed_after": 188,
+    "remaining_before": 0,
+    "remaining_after": 0,
+    "research_complete": true,
+    "status_counts": {
+      "already_in_reach": 37,
+      "forwarded_to_hub": 2,
+      "metadata_update_forwarded": 8,
+      "no_action": 109,
+      "human_metadata_needed": 32
+    }
+  },
+  "metadata_blockers": {
+    "pending_hub_handoff": 37,
+    "originals": 32,
+    "other_expansion_reports": 5,
+    "new": 0,
+    "hub_delivered": 0,
+    "reviewer_visibility": "NOT_DELIVERED_TO_HUB"
+  },
+  "attribution_followups": {
+    "total": 71,
+    "closed": 71,
+    "queued": 0,
+    "changed_this_run": 0
+  },
+  "source_checks": {
+    "spark_index_shards": 6,
+    "spark_projects": 578,
+    "reach_index_shards": 10,
+    "reach_index_rows": 1238,
+    "reach_detail_shards_full_reread": "NOT VERIFIED",
+    "scout_prior_batches": 18,
+    "scout_prior_rows": 61,
+    "scout_sha256_verified": 18,
+    "scout_header_verified": 18,
+    "scout_record_count_verified": 18,
+    "scout_source_run_ids_verified": 18,
+    "new_research_source_types": [
+      "SPARK project detail",
+      "NHC JHT project roster",
+      "NHC full final technical report",
+      "NHC 2017 presentation index",
+      "NASA/University of Miami journal funding records",
+      "REACH full public index",
+      "Scout full manifest and 18 batches"
+    ]
+  },
+  "normal_projects_examined": [
+    "spark-000201",
+    "spark-000202",
+    "spark-000207",
+    "spark-000208"
+  ],
+  "new_findings": [
+    {
+      "identity": "url:https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_reportFINAL_092718.pdf",
+      "doi": null,
+      "route": "Independent discovery",
+      "path": "SPARK zero-output 2015 JHT project -> NHC project roster -> NHC official final report",
+      "award": "NA15OAR4590205",
+      "spark_project_id": "spark-000201",
+      "source_urls": [
+        "https://www.nhc.noaa.gov/jht/15-17_proj.php",
+        "https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_reportFINAL_092718.pdf",
+        "https://wpo.noaa.gov/spark/"
+      ],
+      "funding_basis": "Exact federal grant on final-report cover and matching independent SPARK project",
+      "date_basis": "Report submission date 2018-09-30; public posting date NOT VERIFIED",
+      "reach_comparison": "No exact URL/title/award in 1,238 REACH index rows and 61 prior Scout proposals",
+      "human_review_required": true,
+      "hub_visibility": "NOT VERIFIED"
+    }
+  ],
+  "discovery_route_counts": {
+    "Direct API": 0,
+    "API-seeded expansion": 0,
+    "Independent discovery": 1,
+    "Metadata correction": 0
+  },
+  "expansion_leads": {
+    "credible_project_specific": 1,
+    "other_unlocated": 1,
+    "distinct_forwarded": 0,
+    "excluded_alternative_funding_doi": "10.1175/MWR-D-17-0239.1"
+  },
+  "missing_acknowledgment": {
+    "credible_project_specific_leads_awaiting_verification": 1,
+    "verified_acknowledgment_absent": 0,
+    "hub_visible": "NOT VERIFIED",
+    "reviewer_confirmed_recovered": "NOT VERIFIED",
+    "public_reach_additions": 0
+  },
+  "new_batch": {
+    "id": "2026-10-30-hourly-0829ET-jht-ri-final-report-001",
+    "path": "scout-discoveries/batches/2026-10-30-hourly-0829ET-jht-ri-final-report-001.csv",
+    "record_count": 1,
+    "source_run_ids": [
+      "REACH-SCOUT-2026-10-30-HOURLY-0829ET"
+    ],
+    "local_sha256": "c754f50633c43140c1584ee6d130a23b34004923babd774e29e719f530393abd",
+    "github_staged": true,
+    "manifest_verified": true,
+    "hub_accepted": "NOT VERIFIED",
+    "github_commit_sha": "1463a04d1fab3e8e586655631dac7fefe2382365",
+    "manifest_bot_commit_sha": "6a2946f7a6e4b3cc6c2ce7632f67e5991d5e62da",
+    "manifest_sha": "56fac70ee80dca77d000472d679d98124b48bfd5",
+    "public_csv_sha256_observed": "c754f50633c43140c1584ee6d130a23b34004923babd774e29e719f530393abd",
+    "prior_18_manifest_entries_preserved": true
+  },
+  "feed_integrity_status": "VERIFIED_19_BATCHES_62_ROWS_NEW_SHA_MATCH_PRIOR_18_PRESERVED",
+  "manifest_before": {
+    "sha": "d86e7ff9b88b5d7cb771d4a9d840f34e315bd452",
+    "batch_count": 18,
+    "candidate_rows": 61
+  },
+  "github_action_status": "AUTOMATED_MANIFEST_BOT_COMMIT_OBSERVED; WORKFLOW_RUN_CONCLUSION_NOT_VERIFIABLE",
+  "private_reviewer_decisions": "NOT VERIFIED",
+  "public_reach": {
+    "rows": 1238,
+    "verified_additions_this_run": 0
+  },
+  "blockers": [
+    "Private Discovery Hub import/decisions cannot be verified from public sources",
+    "Full 140 REACH detail shards not re-read; complete index and all existing Scout batches checked",
+    "GitHub Actions run conclusion not directly accessible; automated github-actions[bot] manifest commit and independently checked exact CSV+manifest prove feed publication, not Hub acceptance."
+  ],
+  "audit_result": "PARTIAL",
+  "manifest_after": {
+    "sha": "56fac70ee80dca77d000472d679d98124b48bfd5",
+    "batch_count": 19,
+    "candidate_rows": 62,
+    "generated_at": "2026-10-30T12:33:34Z",
+    "sha256_matches_new_csv": true,
+    "record_count_matches": true,
+    "source_run_id_matches": true,
+    "prior_batches_unchanged": true
+  },
+  "manifest_verification_evidence": {
+    "new_batch_id": "2026-10-30-hourly-0829ET-jht-ri-final-report-001",
+    "new_batch_path": "scout-discoveries/batches/2026-10-30-hourly-0829ET-jht-ri-final-report-001.csv",
+    "expected_sha256": "c754f50633c43140c1584ee6d130a23b34004923babd774e29e719f530393abd",
+    "observed_sha256": "c754f50633c43140c1584ee6d130a23b34004923babd774e29e719f530393abd",
+    "record_count": 1,
+    "source_run_id": "REACH-SCOUT-2026-10-30-HOURLY-0829ET",
+    "new_manifest_blob_sha": "56fac70ee80dca77d000472d679d98124b48bfd5",
+    "old_manifest_blob_sha": "d86e7ff9b88b5d7cb771d4a9d840f34e315bd452",
+    "bot_manifest_commit": "6a2946f7a6e4b3cc6c2ce7632f67e5991d5e62da"
+  }
+}
