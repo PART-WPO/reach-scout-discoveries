@@ -2,7 +2,7 @@
 """Read-only DOI metadata enrichment across historical, staged and Scout leads."""
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
-import argparse,csv,datetime as dt,hashlib,io,json,re
+import argparse,csv,datetime as dt,hashlib,io,json,re,threading,time
 from pathlib import Path
 from urllib.request import Request,build_opener,HTTPRedirectHandler
 from urllib.error import HTTPError,URLError
@@ -75,6 +75,7 @@ def inventory():
 class NoRedirect(HTTPRedirectHandler):
  def redirect_request(self,req,fp,code,msg,headers,url):raise HTTPError(req.full_url,code,"Redirect rejected",headers,fp)
 OPENER=build_opener(NoRedirect())
+CROSSREF_LOCK=threading.Lock()
 def get(host,url):
  if not url.startswith("https://"+host+"/"):raise ValueError("Unexpected API host")
  with OPENER.open(Request(url,headers={"Accept":"application/json","User-Agent":"NOAA-WPO-REACH-Scout-DOI-Audit/1.0"}),timeout=13) as r:
@@ -85,7 +86,20 @@ def fetch(id):
  for src,host,route in (("datacite","api.datacite.org","/dois/"),("crossref","api.crossref.org","/works/")):
   url="https://"+host+route+quote(id,safe="/")
   try:
-   doc=get(host,url)
+   if src=="crossref":
+    # Serialize lower-volume Crossref fallback requests. The first survey
+    # hit HTTP 429 for several already-complete staged journal DOIs.
+    with CROSSREF_LOCK:
+     for attempt in range(4):
+      try:
+       doc=get(host,url)
+       time.sleep(1.8)
+       break
+      except HTTPError as e:
+       if e.code!=429 or attempt==3:raise
+       time.sleep(7*(attempt+1))
+   else:
+    doc=get(host,url)
    a=doc["data"]["attributes"] if src=="datacite" else doc["message"]
    returned=doi(a.get("doi") or a.get("DOI") or (doc.get("data") or {}).get("id"))
    if returned!=id:return {"status":"identity_mismatch","source":src,"evidence":url}
@@ -136,7 +150,7 @@ def classify(x,meta):
  else:state="HISTORICAL_FIELDS_ALREADY_COVERED"
  return state,recovered,seen
 def main():
- ap=argparse.ArgumentParser();ap.add_argument("--offline",action="store_true");ap.add_argument("--workers",type=int,default=6);args=ap.parse_args()
+ ap=argparse.ArgumentParser();ap.add_argument("--offline",action="store_true");ap.add_argument("--workers",type=int,default=6);ap.add_argument("--refresh-all",action="store_true");args=ap.parse_args()
  index,sizes=inventory()
  print("Validated source inventory:",json.dumps({"sources":sizes,"unique_dois":len(index)}),flush=True)
  previous={}
@@ -145,7 +159,12 @@ def main():
   previous={r["doi"]:r for r in old["records"]}
  def run(pair):
   id,x=pair
-  meta={"status":"offline"} if args.offline else fetch(id)
+  if args.offline:
+   meta={"status":"offline"}
+  elif not args.refresh_all and id in previous and previous[id].get("metadata",{}).get("status")=="ok":
+   meta=dict(previous[id]["metadata"])
+  else:
+   meta=fetch(id)
   if meta["status"]=="source_unavailable" and id in previous:
    saved=previous[id]["metadata"]
    if saved.get("status")=="ok":
