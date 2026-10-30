@@ -1811,19 +1811,20 @@
     },
     {
       "identity": "doi:10.25923/65kx-0a28",
-      "status": "needs_more_research",
+      "status": "no_action",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-29T03:34:15Z",
-      "research_notes": "REACH-SCOUT-2026-10-28-HOURLY-2331ET: Original output absent from REACH index; credible seed but unresolved record-specific YYYY-MM-DD report publication date; award-to-WPO project scope (broad CIWRO cooperative agreement). Hold without staging.",
+      "updated_at": "2026-10-30T00:28:49.296091Z",
+      "research_notes": "REACH-SCOUT-2026-10-28-HOURLY-2331ET: Original output absent from REACH index; credible seed but unresolved record-specific YYYY-MM-DD report publication date; award-to-WPO project scope (broad CIWRO cooperative agreement). Hold without staging.\nREACH-SCOUT-2026-10-29-HOURLY-2026ET: bounded final project-bridge search using NOAA IR, CIWRO/NSSL author/project evidence and all six SPARK award shards. NOAA IR classifies this as an HWT-wide Program & Policy Document with CIWRO base award NA21OAR4320204. Six SPARK award shards reveal only related umbrella use for separate WPO projects, not this FY2025 HWT summary. No project-specific bridge or exact publication day; not eligible for WPO attribution without new positive evidence. Original DOI is a real artifact; no WPO project attribution inferred. No new Hub candidate or private decision.",
       "checked_sources": [
         "https://repository.library.noaa.gov/view/noaa/72846",
         "https://hwt.nssl.noaa.gov/publications/",
-        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json"
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/awards/part-003.csv"
       ],
       "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
       "funding_basis": "Historical DataCite source names NA21OAR4320204; further independent scope verification required.",
-      "related_outputs_checked": "Other HWT technical report DOI 10.25923/fcqx-1009 already in REACH; separate seed identity.",
-      "verified_at": "",
+      "related_outputs_checked": "Other HWT technical report DOI 10.25923/fcqx-1009 already in REACH; separate seed identity. Follow-up expansion lead (not verified or staged): HWT FY2025 experiment-specific outputs may be separately researched.",
+      "verified_at": "2026-10-30T00:28:49.296091Z",
       "verified_awards": [],
       "source_batch_ids": [
         "2026-10-28-historical-datacite-spark-all-part001"
@@ -1835,7 +1836,10 @@
         "SOCIAL SCIENCE"
       ],
       "source_evidence_urls": [
-        "https://api.datacite.org/dois/10.25923/65kx-0a28"
+        "https://api.datacite.org/dois/10.25923/65kx-0a28",
+        "https://repository.library.noaa.gov/view/noaa/72846",
+        "https://hwt.nssl.noaa.gov/publications/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/awards/part-003.csv"
       ],
       "first_investigated_at": "2026-10-29T03:34:15Z",
       "first_investigated_timestamp_basis": "Documented initial investigation in this hourly run",
@@ -1849,11 +1853,25 @@
         "https://hwt.nssl.noaa.gov/publications/",
         "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json"
       ],
-      "followup_question": "Can the full official release date and a WPO project-specific funding bridge be established for this distinct NOAA HWT program report?",
-      "followup_rounds_completed": 0,
+      "followup_question": "Which specific WPO-funded SPARK project, if any, produced the FY2025 HWT activities summary?",
+      "followup_rounds_completed": 1,
       "max_followup_rounds": 1,
       "escalation_policy": "After one scheduled follow-up on/after next_research_at, stage verified output, evidence-backed no_action, or human_metadata_needed; never fabricate fields or reset clock.",
-      "reach_match": "No matching exact DOI/title in full REACH index; essential metadata or project scope unresolved."
+      "reach_match": "No matching exact DOI/title in full REACH index; essential metadata or project scope unresolved.",
+      "research_completed": true,
+      "original_seed_research_completed": true,
+      "original_seed_disposition": "no_action",
+      "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "no_action_reason": "NOAA IR classifies this as an HWT-wide Program & Policy Document with CIWRO base award NA21OAR4320204. Six SPARK award shards reveal only related umbrella use for separate WPO projects, not this FY2025 HWT summary. No project-specific bridge or exact publication day; not eligible for WPO attribution without new positive evidence.",
+      "hub_delivery_status": "not_applicable",
+      "followup_completed_at": "2026-10-30T00:28:49.296091Z",
+      "early_retry_reason": "2026-10-29 authoritative user-directed immediate different-source recovery round; original next_research_at retained as historical schedule, not an open retry.",
+      "followup_checked_sources": [
+        "https://repository.library.noaa.gov/view/noaa/72846",
+        "https://hwt.nssl.noaa.gov/publications/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/awards/part-003.csv"
+      ],
+      "next_action": "No automatic retries. Reopen only on new positive WPO project-specific evidence or explicit human request."
     },
     {
       "identity": "doi:10.25923/aess-6m62",
@@ -2026,19 +2044,22 @@
     },
     {
       "identity": "doi:10.25923/emke-w063",
-      "status": "needs_more_research",
+      "status": "no_action",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-29T04:28:11Z",
-      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-0029ET: Original NOAA IR report 'Tornado Tales: 2025 Survey Reference Report' is public and distinct, has DOI and funding field NA21OAR4320204, and is absent from complete 1,238-record REACH index and 12 prior Scout batches. NOAA IR lists year but not exact full YYYY-MM-DD; SPARK award NA21OAR4320204 is shared by several projects and no direct project-specific attribution for this report was confirmed. Do not infer project from broad award or stage without required date.",
+      "updated_at": "2026-10-30T00:28:49.296091Z",
+      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-0029ET: Original NOAA IR report 'Tornado Tales: 2025 Survey Reference Report' is public and distinct, has DOI and funding field NA21OAR4320204, and is absent from complete 1,238-record REACH index and 12 prior Scout batches. NOAA IR lists year but not exact full YYYY-MM-DD; SPARK award NA21OAR4320204 is shared by several projects and no direct project-specific attribution for this report was confirmed. Do not infer project from broad award or stage without required date.\nREACH-SCOUT-2026-10-29-HOURLY-2026ET: bounded final project-bridge search using NOAA IR, CIWRO/NSSL author/project evidence and all six SPARK award shards. NOAA IR verifies a 2025 Tornado Tales report and CIWRO base award; NSSL/NOAA seminar describes independent NSSL citizen-science survey. Six SPARK award shards show the CIWRO award only as related umbrella for other WPO survey projects. No report-specific WPO funded project bridge or exact YYYY-MM-DD. Original DOI is a real artifact; no WPO project attribution inferred. No new Hub candidate or private decision.",
       "checked_sources": [
         "https://repository.library.noaa.gov/view/noaa/71567",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
-        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json"
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://www.star.nesdis.noaa.gov/star/NOAAScienceSeminars_2024.php",
+        "https://inside.nssl.noaa.gov/tornado-tales/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/awards/part-003.csv"
       ],
       "reach_snapshot": "",
       "funding_basis": "NOAA IR report funding lists cooperative agreement NA21OAR4320204; precise WPO-funded project attribution unverified.",
-      "related_outputs_checked": "Searched related report/topic and WPO project context; no distinct additional verified output staged from this seed in this round.",
-      "verified_at": "",
+      "related_outputs_checked": "Searched related report/topic and WPO project context; no distinct additional verified output staged from this seed in this round. Follow-up expansion lead (not verified or staged): Year-specific Tornado Tales survey reports are distinct NSSL products; no WPO project attribution established.",
+      "verified_at": "2026-10-30T00:28:49.296091Z",
       "verified_awards": [],
       "source_batch_ids": [
         "2026-10-28-historical-datacite-spark-all-part001"
@@ -2050,13 +2071,17 @@
         "SOCIAL SCIENCE"
       ],
       "source_evidence_urls": [
-        "https://api.datacite.org/dois/10.25923/emke-w063"
+        "https://api.datacite.org/dois/10.25923/emke-w063",
+        "https://repository.library.noaa.gov/view/noaa/71567",
+        "https://www.star.nesdis.noaa.gov/star/NOAAScienceSeminars_2024.php",
+        "https://inside.nssl.noaa.gov/tornado-tales/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/awards/part-003.csv"
       ],
       "first_investigated_at": "2026-10-29T04:28:11Z",
       "first_investigated_timestamp_basis": "Source/NOAA IR and REACH/SPARK checked in this run",
       "next_research_at": "2026-11-05T04:28:11Z",
-      "followup_question": "Can an authoritative source establish the exact full publication date and a project-specific WPO funding/attribution bridge beyond broad cooperative agreement NA21OAR4320204 for this report?",
-      "followup_rounds_completed": 0,
+      "followup_question": "Can a WPO project lead document that the Tornado Tales 2025 report was produced under a specific WPO project?",
+      "followup_rounds_completed": 1,
       "max_followup_rounds": 1,
       "missing_evidence": [
         "exact report-specific YYYY-MM-DD publication date",
@@ -2067,8 +2092,22 @@
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
         "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json"
       ],
-      "next_action": "One bounded follow-up on/after 2026-11-05T04:28:11Z using alternative authoritative publication-date and project attribution evidence; if unresolved, escalate credible case to human_metadata_needed rather than reset clock.",
-      "escalation_policy": "After one follow-up on/after next_research_at: valid verified Hub candidate, evidence-based no_action, or human_metadata_needed (not invalid CSV)."
+      "next_action": "No automatic retries. Reopen only on new positive WPO project-specific evidence or explicit human request.",
+      "escalation_policy": "After one follow-up on/after next_research_at: valid verified Hub candidate, evidence-based no_action, or human_metadata_needed (not invalid CSV).",
+      "research_completed": true,
+      "original_seed_research_completed": true,
+      "original_seed_disposition": "no_action",
+      "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "no_action_reason": "NOAA IR verifies a 2025 Tornado Tales report and CIWRO base award; NSSL/NOAA seminar describes independent NSSL citizen-science survey. Six SPARK award shards show the CIWRO award only as related umbrella for other WPO survey projects. No report-specific WPO funded project bridge or exact YYYY-MM-DD.",
+      "hub_delivery_status": "not_applicable",
+      "followup_completed_at": "2026-10-30T00:28:49.296091Z",
+      "early_retry_reason": "2026-10-29 authoritative user-directed immediate different-source recovery round; original next_research_at retained as historical schedule, not an open retry.",
+      "followup_checked_sources": [
+        "https://repository.library.noaa.gov/view/noaa/71567",
+        "https://www.star.nesdis.noaa.gov/star/NOAAScienceSeminars_2024.php",
+        "https://inside.nssl.noaa.gov/tornado-tales/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/awards/part-003.csv"
+      ]
     },
     {
       "identity": "doi:10.25923/fcqx-1009",
@@ -2109,19 +2148,22 @@
     },
     {
       "identity": "doi:10.25923/fkzg-kt33",
-      "status": "needs_more_research",
+      "status": "no_action",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-29T04:28:11Z",
-      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-0029ET: Original NOAA IR report 'Developing and Evaluating First-Guess Watch Guidance Within SPC Operations' is public and distinct, has DOI and funding field NA21OAR4320204, and is absent from complete 1,238-record REACH index and 12 prior Scout batches. NOAA IR lists year but not exact full YYYY-MM-DD; SPARK award NA21OAR4320204 is shared by several projects and no direct project-specific attribution for this report was confirmed. Do not infer project from broad award or stage without required date.",
+      "updated_at": "2026-10-30T00:28:49.296091Z",
+      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-0029ET: Original NOAA IR report 'Developing and Evaluating First-Guess Watch Guidance Within SPC Operations' is public and distinct, has DOI and funding field NA21OAR4320204, and is absent from complete 1,238-record REACH index and 12 prior Scout batches. NOAA IR lists year but not exact full YYYY-MM-DD; SPARK award NA21OAR4320204 is shared by several projects and no direct project-specific attribution for this report was confirmed. Do not infer project from broad award or stage without required date.\nREACH-SCOUT-2026-10-29-HOURLY-2026ET: bounded final project-bridge search using NOAA IR, CIWRO/NSSL author/project evidence and all six SPARK award shards. NOAA IR and independent CIWRO author profile/SPC publication index confirm a 2024 SPC conference paper, but only broad CIWRO base grant NA21OAR4320204 is evidenced. No named WPO-funded SPARK project for this specific SPC guidance work; no exact YYYY-MM-DD. Original DOI is a real artifact; no WPO project attribution inferred. No new Hub candidate or private decision.",
       "checked_sources": [
         "https://repository.library.noaa.gov/view/noaa/76790",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
-        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json"
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://ou.edu/ciwro/about/people/staff/david-harrison",
+        "https://origin-west-www-spc.woc.noaa.gov/publications/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/awards/part-003.csv"
       ],
       "reach_snapshot": "",
       "funding_basis": "NOAA IR report funding lists cooperative agreement NA21OAR4320204; precise WPO-funded project attribution unverified.",
-      "related_outputs_checked": "Searched related report/topic and WPO project context; no distinct additional verified output staged from this seed in this round.",
-      "verified_at": "",
+      "related_outputs_checked": "Searched related report/topic and WPO project context; no distinct additional verified output staged from this seed in this round. Follow-up expansion lead (not verified or staged): Separate 2022 first-guess watch guidance work DOI 10.25923/fssj-fe85 merits project-specific funding check before any candidate.",
+      "verified_at": "2026-10-30T00:28:49.296091Z",
       "verified_awards": [],
       "source_batch_ids": [
         "2026-10-28-historical-datacite-spark-all-part001"
@@ -2133,13 +2175,17 @@
         "SOCIAL SCIENCE"
       ],
       "source_evidence_urls": [
-        "https://api.datacite.org/dois/10.25923/fkzg-kt33"
+        "https://api.datacite.org/dois/10.25923/fkzg-kt33",
+        "https://repository.library.noaa.gov/view/noaa/76790",
+        "https://ou.edu/ciwro/about/people/staff/david-harrison",
+        "https://origin-west-www-spc.woc.noaa.gov/publications/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/awards/part-003.csv"
       ],
       "first_investigated_at": "2026-10-29T04:28:11Z",
       "first_investigated_timestamp_basis": "Source/NOAA IR and REACH/SPARK checked in this run",
       "next_research_at": "2026-11-05T04:28:11Z",
-      "followup_question": "Can an authoritative source establish the exact full publication date and a project-specific WPO funding/attribution bridge beyond broad cooperative agreement NA21OAR4320204 for this report?",
-      "followup_rounds_completed": 0,
+      "followup_question": "Is Harrison's SPC watch guidance a deliverable of a named WPO SPARK project, beyond CIWRO core work?",
+      "followup_rounds_completed": 1,
       "max_followup_rounds": 1,
       "missing_evidence": [
         "exact report-specific YYYY-MM-DD publication date",
@@ -2150,8 +2196,22 @@
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
         "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json"
       ],
-      "next_action": "One bounded follow-up on/after 2026-11-05T04:28:11Z using alternative authoritative publication-date and project attribution evidence; if unresolved, escalate credible case to human_metadata_needed rather than reset clock.",
-      "escalation_policy": "After one follow-up on/after next_research_at: valid verified Hub candidate, evidence-based no_action, or human_metadata_needed (not invalid CSV)."
+      "next_action": "No automatic retries. Reopen only on new positive WPO project-specific evidence or explicit human request.",
+      "escalation_policy": "After one follow-up on/after next_research_at: valid verified Hub candidate, evidence-based no_action, or human_metadata_needed (not invalid CSV).",
+      "research_completed": true,
+      "original_seed_research_completed": true,
+      "original_seed_disposition": "no_action",
+      "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "no_action_reason": "NOAA IR and independent CIWRO author profile/SPC publication index confirm a 2024 SPC conference paper, but only broad CIWRO base grant NA21OAR4320204 is evidenced. No named WPO-funded SPARK project for this specific SPC guidance work; no exact YYYY-MM-DD.",
+      "hub_delivery_status": "not_applicable",
+      "followup_completed_at": "2026-10-30T00:28:49.296091Z",
+      "early_retry_reason": "2026-10-29 authoritative user-directed immediate different-source recovery round; original next_research_at retained as historical schedule, not an open retry.",
+      "followup_checked_sources": [
+        "https://repository.library.noaa.gov/view/noaa/76790",
+        "https://ou.edu/ciwro/about/people/staff/david-harrison",
+        "https://origin-west-www-spc.woc.noaa.gov/publications/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/awards/part-003.csv"
+      ]
     },
     {
       "identity": "doi:10.25923/fssj-fe85",
@@ -2412,20 +2472,23 @@
     },
     {
       "identity": "doi:10.25923/mpqr-r886",
-      "status": "needs_more_research",
+      "status": "no_action",
       "first_seen_at": "2026-10-28T19:02:21.671632+00:00",
-      "updated_at": "2026-10-29T05:32:21Z",
-      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-0132ET: NOAA IR identifies WPO office and CIWRO award NA21OAR4320204 for Tornado Tales survey reference report, but SPARK lists base award as RELATED to survey projects; output-specific WPO bridge and full YYYY-MM-DD publication date unverified. Credible candidate; bounded follow-up, not permanent hold. All ten REACH index shards, thirteen prior Scout batches, six SPARK index and six award shards searched for DOI and project match; no exact REACH/Scout DOI. Private human-review status not independently verified.",
+      "updated_at": "2026-10-30T00:28:49.296091Z",
+      "research_notes": "REACH-SCOUT-2026-10-29-HOURLY-0132ET: NOAA IR identifies WPO office and CIWRO award NA21OAR4320204 for Tornado Tales survey reference report, but SPARK lists base award as RELATED to survey projects; output-specific WPO bridge and full YYYY-MM-DD publication date unverified. Credible candidate; bounded follow-up, not permanent hold. All ten REACH index shards, thirteen prior Scout batches, six SPARK index and six award shards searched for DOI and project match; no exact REACH/Scout DOI. Private human-review status not independently verified.\nREACH-SCOUT-2026-10-29-HOURLY-2026ET: bounded final project-bridge search using NOAA IR, CIWRO/NSSL author/project evidence and all six SPARK award shards. NOAA IR WPO office tag and CIWRO base grant are not evidence of a specific WPO-funded project producing the 2026 Tornado Tales report. NSSL/NOAA seminar identify citizen-science program; SPARK award shards show only umbrella related-award connections, no report-specific project bridge. Full publication day unknown. Original DOI is a real artifact; no WPO project attribution inferred. No new Hub candidate or private decision.",
       "checked_sources": [
         "https://repository.library.noaa.gov/view/noaa/74392",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
         "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
-        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+        "https://inside.nssl.noaa.gov/tornado-tales/",
+        "https://www.star.nesdis.noaa.gov/star/NOAAScienceSeminars_2024.php",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/awards/part-003.csv"
       ],
       "reach_snapshot": "REACH source SHA256 054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e, 1238 index rows",
       "funding_basis": "NOAA IR identifies WPO office and CIWRO award NA21OAR4320204 for Tornado Tales survey reference report, but SPARK lists base award as RELATED to survey projects; output-specific WPO bridge and full YYYY-MM-DD publication date unverified. Credible candidate; bounded follow-up, not permanent hold.",
-      "related_outputs_checked": "Potential WPO social-science survey relationship not established; inspect project documentation and native report metadata at follow-up.",
-      "verified_at": "",
+      "related_outputs_checked": "Potential WPO social-science survey relationship not established; inspect project documentation and native report metadata at follow-up. Follow-up expansion lead (not verified or staged): NOAA IR WPO office tag is an attribution clue only; not a verified funded project connection.",
+      "verified_at": "2026-10-30T00:28:49.296091Z",
       "verified_awards": [],
       "source_batch_ids": [
         "2026-10-28-historical-datacite-spark-all-part001"
@@ -2437,18 +2500,38 @@
         "SOCIAL SCIENCE"
       ],
       "source_evidence_urls": [
-        "https://api.datacite.org/dois/10.25923/mpqr-r886"
+        "https://api.datacite.org/dois/10.25923/mpqr-r886",
+        "https://repository.library.noaa.gov/view/noaa/74392",
+        "https://inside.nssl.noaa.gov/tornado-tales/",
+        "https://www.star.nesdis.noaa.gov/star/NOAAScienceSeminars_2024.php",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/awards/part-003.csv"
       ],
       "reach_match": "No exact DOI or title in complete REACH index; relevant 2024 Harvey article already reach-000789, distinct from original seed.",
       "first_investigated_at": "2026-10-29T05:32:21Z",
       "next_research_at": "2026-11-05T05:32:21Z",
-      "followup_question": "Can NOAA IR native metadata provide full YYYY-MM-DD report publication date and can an independent source tie Tornado Tales to a specific SPARK WPO-funded project rather than only the CI umbrella?",
+      "followup_question": "Does a specific WPO project or subaward directly fund the 2026 Tornado Tales report?",
       "missing_fields": [
         "report full YYYY-MM-DD publication date",
         "direct WPO SPARK project attribution beyond CI umbrella"
       ],
-      "original_seed_disposition": "needs_more_research: bounded initial investigation",
-      "research_complete": false
+      "original_seed_disposition": "no_action",
+      "research_complete": false,
+      "research_completed": true,
+      "original_seed_research_completed": true,
+      "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "no_action_reason": "NOAA IR WPO office tag and CIWRO base grant are not evidence of a specific WPO-funded project producing the 2026 Tornado Tales report. NSSL/NOAA seminar identify citizen-science program; SPARK award shards show only umbrella related-award connections, no report-specific project bridge. Full publication day unknown.",
+      "hub_delivery_status": "not_applicable",
+      "followup_rounds_completed": 1,
+      "max_followup_rounds": 1,
+      "followup_completed_at": "2026-10-30T00:28:49.296091Z",
+      "early_retry_reason": "2026-10-29 authoritative user-directed immediate different-source recovery round; original next_research_at retained as historical schedule, not an open retry.",
+      "followup_checked_sources": [
+        "https://repository.library.noaa.gov/view/noaa/74392",
+        "https://inside.nssl.noaa.gov/tornado-tales/",
+        "https://www.star.nesdis.noaa.gov/star/NOAAScienceSeminars_2024.php",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/awards/part-003.csv"
+      ],
+      "next_action": "No automatic retries. Reopen only on new positive WPO project-specific evidence or explicit human request."
     },
     {
       "identity": "doi:10.25923/na21oar4320204",
