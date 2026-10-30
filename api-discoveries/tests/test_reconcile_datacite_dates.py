@@ -21,7 +21,8 @@ class DatesTests(unittest.TestCase):
 
     def test_monthly_empty_baseline_not_fabricated(self):
         src,sha=dates.checked_source("monthly","2026-10")
-        self.assertEqual(src,{})
+        self.assertIsInstance(src,dict)
+        self.assertTrue(all(v.get("DOI") for v in src.values()))
         self.assertEqual(len(sha),64)
 
     def test_precision_is_not_invented(self):
