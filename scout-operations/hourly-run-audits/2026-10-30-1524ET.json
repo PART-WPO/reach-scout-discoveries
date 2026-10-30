@@ -1,0 +1,151 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-30-HOURLY-1524ET",
+  "timestamp_utc": "2026-10-30T19:27:24.002339Z",
+  "mode": "normal_historical_discovery",
+  "phase": "mandatory_direct_doi_enrichment_case17_and_deepflood_followup",
+  "monthly_before_after": {
+    "received": [
+      0,
+      0
+    ],
+    "completed": [
+      0,
+      0
+    ],
+    "remaining": [
+      0,
+      0
+    ]
+  },
+  "historical_before_after": {
+    "received": [
+      188,
+      188
+    ],
+    "completed": [
+      188,
+      188
+    ],
+    "remaining": [
+      0,
+      0
+    ]
+  },
+  "original_seeds_disposed_this_run": [],
+  "normal_projects_examined": [
+    "spark-000255",
+    "spark-000338"
+  ],
+  "expansion_leads": [
+    {
+      "identity": "doi:10.7910/dvn/jwzewf",
+      "status": "RESEARCH_COMPLETE_NORMAL_REVIEW_PENDING_FEED",
+      "original_seed_doi": "10.25923/t7t6-m677",
+      "route": "API-seeded expansion",
+      "source_urls": [
+        "https://api.datacite.org/dois/10.7910/dvn/jwzewf",
+        "https://journals.ametsoc.org/view/journals/bams/107/3/BAMS-D-25-0309.1.xml",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/index/part-003.csv",
+        "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/JWZEWF"
+      ]
+    },
+    {
+      "identity": "doi:10.6084/m9.figshare.28328339",
+      "status": "RESEARCH_ACTIVE_BOUNDED_IDENTITY_AND_DATACITE_CREATED_CHECK",
+      "original_seed_doi": null,
+      "route": "Independent discovery",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/DEEPFLOOD_DATASET_High-Resolution_Dataset_for_Accurate_Flood_Mappingand_Segmentation/28328339",
+        "https://www.nature.com/articles/s41597-025-04554-3",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11830099/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/index/part-004.csv"
+      ]
+    }
+  ],
+  "source_checks": [
+    {
+      "url": "https://api.datacite.org/dois/10.7910/dvn/jwzewf",
+      "result": "ACCESS_FAILURE this run; user-provided DOI-specific attributes retained from policy"
+    },
+    {
+      "url": "https://api.datacite.org/dois/10.6084/m9.figshare.28328339",
+      "result": "ACCESS_FAILURE; no accepted Pub Date inferred from native posted timestamp"
+    },
+    {
+      "url": "https://api.datacite.org/dois/10.6084/m9.figshare.26791243",
+      "result": "ACCESS_FAILURE; no created timestamp inferred"
+    },
+    {
+      "url": "https://figshare.com/articles/dataset/DEEPFLOOD_DATASET_High-Resolution_Dataset_for_Accurate_Flood_Mappingand_Segmentation/28328339",
+      "result": "SUCCESS: native Figshare page shows 28328339, posted 2025-02-01, 4.53GB, CC BY 4.0, explicit NOAA award NA21OAR4590358-T1-01 and NASA award; no individual file downloads verified"
+    },
+    {
+      "url": "https://www.nature.com/articles/s41597-025-04554-3",
+      "result": "Publisher paper cites alternate 26791243; version/identity relation unresolved"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+      "result": "Six index shards / 578 projects searched; spark-000255 and spark-000338 primary awards confirmed"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+      "result": "Ten index shards / 1238 records searched; no exact DOI match; related URRD papers and survey already in REACH"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+      "result": "20 manifest batches / 66 proposals checked; no exact DOI; invalid 1329ET article CSV separately identified"
+    }
+  ],
+  "feed_integrity_status": "FEED_BLOCKED_VALIDATION_FAILURE",
+  "manifest_verification_evidence": {
+    "manifest_blob_sha": "1d048cf0b5552aff8eb9b6afc36302d8147afbe8",
+    "manifest_batch_count": 20,
+    "manifest_rows": 66,
+    "unmanifested_invalid_csv": "scout-discoveries/batches/2026-10-30-hourly-1329ET-independent-flood-mapping-001.csv",
+    "unmanifested_invalid_rows": 2,
+    "validation_failure": "missing required Scout discovery path evidence line; immutable file not modified; no new CSV published"
+  },
+  "github_action_status_this_run": "NOT_VERIFIABLE; previous manifest action failure recorded in 1435ET audit",
+  "metadata_intake": {
+    "source_cases": 42,
+    "review_units": 36,
+    "case17_date_resolved": true,
+    "case17_remaining_issues": [
+      "file scope",
+      "distinctness"
+    ],
+    "normal_review_after": 5,
+    "human_intake_after": 37,
+    "normal_review_staged": 4,
+    "normal_review_pending_feed": 1,
+    "hub_imports_observed": "NOT_VERIFIED",
+    "human_decisions_verified": "NOT_VERIFIED"
+  },
+  "new_batch_ids": [],
+  "new_csv_staged": false,
+  "public_reach": {
+    "rows": 1238,
+    "new_additions_verified": 0
+  },
+  "audit_result": "PARTIAL",
+  "blockers": [
+    "Existing immutable invalid 1329ET CSV blocks new feed publication; separately authorized repair required",
+    "DataCite and Figshare API endpoints inaccessible, DeepFlood DOI identity relation unresolved",
+    "Private Hub imports and decisions cannot be verified"
+  ],
+  "no_csv_reason": "No new verified eligible candidate and manifest validation blocked; no invalid/empty CSV fabricated",
+  "safety": {
+    "human_decisions_preserved": true,
+    "source_batches_unchanged": true,
+    "scout_batches_unchanged": true,
+    "manifest_not_manually_modified": true,
+    "reach_spark_smartsheet_unchanged": true
+  },
+  "github_ledger_commits": {
+    "metadata_blockers": "507a77d58981289e9e82dbc170b29e1bff24a792",
+    "metadata_review_units": "4c9ca47345f6c19d49f54300ba359b319e878de9"
+  },
+  "library_saved_before_github": true,
+  "github_audit_status": "PUBLISHING"
+}
