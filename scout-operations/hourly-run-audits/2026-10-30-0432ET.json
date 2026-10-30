@@ -1,0 +1,240 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-30-HOURLY-0432ET",
+  "run_at_utc": "2026-10-30T08:34:25.468510Z",
+  "run_at_et": "2026-10-30 04:34:25 EDT",
+  "mode": "historical_api_triage",
+  "phase": "attribution_followups",
+  "selected_mode_explanation": "Monthly manifest and triage empty; historical 188/188 original DOIs complete; 37 human metadata handoffs pending Hub integration but not actionable research. Attribution queue selected.",
+  "source_checks": {
+    "monthly_manifest_rows": 0,
+    "monthly_triage_entries": 0,
+    "historical_source_dois": 188,
+    "historical_research_complete": 188,
+    "historical_research_remaining": 0,
+    "historical_original_human_metadata_needed": 32,
+    "expansion_report_human_metadata_needed": 5,
+    "pending_hub_handoff_not_delivered": 37,
+    "spark_index_shards_checked": 6,
+    "spark_project_rows": 578,
+    "reach_index_shards_checked": 10,
+    "reach_public_rows": 1238,
+    "scout_batch_count": 17,
+    "scout_candidate_rows": 59,
+    "scout_csv_sha256_verified": 17,
+    "scout_csv_schema_verified": 17,
+    "scout_csv_row_counts_verified": 17,
+    "scout_csv_run_ids_verified": 17
+  },
+  "cases_researched": [
+    {
+      "doi": "10.5061/dryad.kwh70rzfc",
+      "title": "Surface drifters in the Lofoten Basin September 2021 to January 2022",
+      "source": "https://datadryad.org/dataset/doi:10.5061/dryad.kwh70rzfc",
+      "additional": "https://gdp.ucsd.edu/ldl/",
+      "funding": "Office of Naval Research N00014-21-1-2742 for NORSE pilot; broad Scripps/CIMEAS NOAA NA20OAR4320278",
+      "spark": "SPARK spark-000355/000364 concern West Coast AQPI precipitation; spark-000571 atmospheric-river boundary-layer work only lists the umbrella as related. None concerns NORSE Lofoten Basin drifters.",
+      "finding": "Dryad native README explicitly identifies ONR-funded NORSE pilot cruise and North Atlantic drifter measurements. The shared Scripps NOAA cooperative agreement is not evidence of a WPO AQPI or atmospheric-river deliverable.",
+      "classification": "NO_DEMONSTRATED_WPO_CONNECTION_ALTERNATIVE_FUNDING",
+      "expansion": "NORSE project output family noted; no separate WPO-funded output corroborated.",
+      "identity": "doi:10.5061/dryad.kwh70rzfc",
+      "source_urls": [
+        "https://datadryad.org/dataset/doi:10.5061/dryad.kwh70rzfc",
+        "https://gdp.ucsd.edu/ldl/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "original_seed_status": "no_action",
+      "attribution_followup_status": "closed_no_project_bridge",
+      "new_positive_project_specific_WPO_evidence": false,
+      "hub_candidate": false,
+      "distinct_meaningful_checks": 4,
+      "review_question": "Is there a primary-source deliverable/project record tying this exact output to a specific WPO-funded SPARK project, corroborated independently? None found in the bounded round."
+    },
+    {
+      "doi": "10.5061/dryad.m905qfv60",
+      "title": "GREMLIN CONUS1 Manually Selected Storms Dataset",
+      "source": "https://datadryad.org/dataset/doi:10.5061/dryad.m905qfv60",
+      "additional": "https://doi.org/10.1175/JAMC-D-20-0084.1",
+      "funding": "NOAA GOES-R Program under CIRA NA19OAR4320073, explicit native Dryad README",
+      "spark": "SPARK spark-000105 is MET-TC large-scale environmental diagnostics with primary NA21OAR4590181/0182; NA19OAR4320073 is only RELATED. No project-specific GREMLIN deliverable shown.",
+      "finding": "Native dataset and linked Hilburn et al. 2021 journal work concern GOES-to-radar synthetic reflectivity and GOES-R program, not MET-TC environmental diagnostic verification; related umbrella is not project attribution.",
+      "classification": "NO_DEMONSTRATED_WPO_CONNECTION_ALTERNATIVE_FUNDING",
+      "expansion": "Linked 2021 JAMC article DOI 10.1175/JAMC-D-20-0084.1 is a distinct paper but not a verified WPO-funded candidate.",
+      "identity": "doi:10.5061/dryad.m905qfv60",
+      "source_urls": [
+        "https://datadryad.org/dataset/doi:10.5061/dryad.m905qfv60",
+        "https://doi.org/10.1175/JAMC-D-20-0084.1",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "original_seed_status": "no_action",
+      "attribution_followup_status": "closed_no_project_bridge",
+      "new_positive_project_specific_WPO_evidence": false,
+      "hub_candidate": false,
+      "distinct_meaningful_checks": 4,
+      "review_question": "Is there a primary-source deliverable/project record tying this exact output to a specific WPO-funded SPARK project, corroborated independently? None found in the bounded round."
+    },
+    {
+      "doi": "10.5061/dryad.v15dv4209",
+      "title": "Hourly Hawaiian Islands HARP echolocation detections with species labels",
+      "source": "https://datadryad.org/dataset/doi:10.5061/dryad.v15dv4209",
+      "additional": "https://onlinelibrary.wiley.com/doi/full/10.1002/ece3.9688",
+      "funding": "NOAA PIFSC/NMFS and CIMEC/CIMEAS NA15OAR43200071 and NA20OAR4320278",
+      "spark": "SPARK spark-000355/000364 AQPI and spark-000571 atmospheric-river work do not concern cetacean acoustic surveys; shared cooperative agreement is insufficient.",
+      "finding": "Publisher paper specifically states NOAA Pacific Islands Fisheries Science Center funded this cetacean study and links exact Dryad DOI; no project-specific WPO bridge.",
+      "classification": "NO_DEMONSTRATED_WPO_CONNECTION_ALTERNATIVE_FUNDING",
+      "expansion": "Journal article DOI 10.1002/ece3.9688 and related Dryad 10.5061/dryad.8pk0p2npb are separate traces, not WPO review candidates.",
+      "identity": "doi:10.5061/dryad.v15dv4209",
+      "source_urls": [
+        "https://datadryad.org/dataset/doi:10.5061/dryad.v15dv4209",
+        "https://onlinelibrary.wiley.com/doi/full/10.1002/ece3.9688",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "original_seed_status": "no_action",
+      "attribution_followup_status": "closed_no_project_bridge",
+      "new_positive_project_specific_WPO_evidence": false,
+      "hub_candidate": false,
+      "distinct_meaningful_checks": 4,
+      "review_question": "Is there a primary-source deliverable/project record tying this exact output to a specific WPO-funded SPARK project, corroborated independently? None found in the bounded round."
+    },
+    {
+      "doi": "10.5061/dryad.v41ns1s4v",
+      "title": "Observed declines in upper ocean phosphate-to-nitrate availability data and scripts",
+      "source": "https://datadryad.org/dataset/doi:10.5061/dryad.v41ns1s4v",
+      "additional": "https://www.pnas.org/doi/pdf/10.1073/pnas.2411835122",
+      "funding": "NSF, NASA, DOE and NOAA CISESS NA19NES4320002/NA24NESX432C0001",
+      "spark": "SPARK spark-000136 is non-Gaussian ensemble data assimilation with primary NA23OAR4590379; NA19NES4320002 only RELATED. No nutrient biogeochemistry WPO project match.",
+      "finding": "PNAS author acknowledgments independently identify NSF/NASA/DOE and CISESS support; Dryad dataset contains global ocean nutrient analysis and MATLAB scripts, not WPO non-Gaussian ensemble assimilation work.",
+      "classification": "NO_DEMONSTRATED_WPO_CONNECTION_ALTERNATIVE_FUNDING",
+      "expansion": "Distinct PNAS 10.1073/pnas.2411835122, Zenodo 10.5281/zenodo.11245428 and preprint 10.26434/chemrxiv-2024-fk05l traced; no WPO project bridge.",
+      "identity": "doi:10.5061/dryad.v41ns1s4v",
+      "source_urls": [
+        "https://datadryad.org/dataset/doi:10.5061/dryad.v41ns1s4v",
+        "https://www.pnas.org/doi/pdf/10.1073/pnas.2411835122",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "original_seed_status": "no_action",
+      "attribution_followup_status": "closed_no_project_bridge",
+      "new_positive_project_specific_WPO_evidence": false,
+      "hub_candidate": false,
+      "distinct_meaningful_checks": 4,
+      "review_question": "Is there a primary-source deliverable/project record tying this exact output to a specific WPO-funded SPARK project, corroborated independently? None found in the bounded round."
+    },
+    {
+      "doi": "10.5281/zenodo.11623053",
+      "title": "Glacier damage evolution simulation scripts and model results (Zenodo concept DOI)",
+      "source": "https://doi.org/10.5281/zenodo.11623053",
+      "additional": "https://tc.copernicus.org/articles/19/1599/2025/",
+      "funding": "NOAA Climate and Global Change Postdoctoral Fellowship NA21OAR4310383; NASA 80NSSC21K1003; NSF PLR-1847173",
+      "spark": "SPARK spark-000285 is UFS Senior Advisor / UFS Science Coordinator, primary NA21OAR4310383. Glacier fracture simulations are not an identified project deliverable.",
+      "finding": "Copernicus paper cites the version DOI 11623054 as simulation scripts/data and explicitly identifies the fellowship as NOAA support, not the WPO UFS Senior Advisor workstream. Concept and version DOI must not be counted as two outputs. Native Zenodo record inaccessible this run; prior ledger relation retained without new assertion.",
+      "classification": "NO_DEMONSTRATED_WPO_CONNECTION_ALTERNATIVE_FUNDING",
+      "expansion": "Distinct article DOI 10.5194/tc-19-1599-2025 and model repositories identified; no WPO bridge.",
+      "identity": "doi:10.5281/zenodo.11623053",
+      "source_urls": [
+        "https://doi.org/10.5281/zenodo.11623053",
+        "https://tc.copernicus.org/articles/19/1599/2025/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "original_seed_status": "no_action",
+      "attribution_followup_status": "closed_no_project_bridge",
+      "new_positive_project_specific_WPO_evidence": false,
+      "hub_candidate": false,
+      "distinct_meaningful_checks": 4,
+      "review_question": "Is there a primary-source deliverable/project record tying this exact output to a specific WPO-funded SPARK project, corroborated independently? None found in the bounded round."
+    },
+    {
+      "doi": "10.5281/zenodo.11623054",
+      "title": "Glacier damage evolution simulation scripts and model results (version DOI)",
+      "source": "https://doi.org/10.5281/zenodo.11623054",
+      "additional": "https://tc.copernicus.org/articles/19/1599/2025/",
+      "funding": "NOAA Climate and Global Change Postdoctoral Fellowship NA21OAR4310383; NASA 80NSSC21K1003; NSF PLR-1847173",
+      "spark": "SPARK spark-000285 UFS Senior Advisor, unrelated to glacier damage simulation despite same broad fellowship umbrella.",
+      "finding": "Publisher explicitly links this exact version DOI to simulation code and data and identifies fellowship, NASA and NSF funding; no independently corroborated connection to the WPO UFS Senior Advisor project.",
+      "classification": "NO_DEMONSTRATED_WPO_CONNECTION_ALTERNATIVE_FUNDING",
+      "expansion": "Same software/data output family as concept DOI 11623053; not two independent outputs.",
+      "identity": "doi:10.5281/zenodo.11623054",
+      "source_urls": [
+        "https://doi.org/10.5281/zenodo.11623054",
+        "https://tc.copernicus.org/articles/19/1599/2025/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "original_seed_status": "no_action",
+      "attribution_followup_status": "closed_no_project_bridge",
+      "new_positive_project_specific_WPO_evidence": false,
+      "hub_candidate": false,
+      "distinct_meaningful_checks": 4,
+      "review_question": "Is there a primary-source deliverable/project record tying this exact output to a specific WPO-funded SPARK project, corroborated independently? None found in the bounded round."
+    }
+  ],
+  "cases_researched_count": 6,
+  "distinct_output_families": 5,
+  "original_seed_dispositions_changed": 0,
+  "attribution_followups_before": 32,
+  "attribution_followups_closed_this_run": 6,
+  "attribution_followups_after": 26,
+  "cumulative_followups_total": 71,
+  "cumulative_followups_closed": 45,
+  "no_action_subtypes_updated_in_followup": {
+    "NO_DEMONSTRATED_WPO_CONNECTION_ALTERNATIVE_FUNDING": 6
+  },
+  "verified_new_candidate_rows": 0,
+  "new_immutable_csv_batches": [],
+  "feed_integrity_status": "VERIFIED_EXISTING_BATCHES_17_OF_17",
+  "manifest_sha256_verification": "Independent UTF-8 byte SHA-256 comparisons for 17 existing batches, plus row count, 24-column schema and run IDs, all matched current public manifest. No new batch staged.",
+  "github_action_verification_status": "NOT_VERIFIABLE_FOR_THIS_RUN_NO_NEW_BATCH",
+  "human_metadata_pending_hub": 37,
+  "human_metadata_hub_visible_confirmed": 0,
+  "human_metadata_hub_visible_confirmation": "NOT VERIFIED (private Hub inaccessible)",
+  "reviewer_confirmed_missing_acknowledgment_recoveries": "NOT VERIFIED",
+  "human_decisions": "NOT VERIFIED",
+  "new_public_reach_additions_verified": 0,
+  "public_reach_count": 1238,
+  "new_missing_acknowledgment_credible_leads": 0,
+  "expansion_leads_logged": [
+    {
+      "source_doi": "10.5061/dryad.kwh70rzfc",
+      "trace": "NORSE project output family noted; no separate WPO-funded output corroborated."
+    },
+    {
+      "source_doi": "10.5061/dryad.m905qfv60",
+      "trace": "Linked 2021 JAMC article DOI 10.1175/JAMC-D-20-0084.1 is a distinct paper but not a verified WPO-funded candidate."
+    },
+    {
+      "source_doi": "10.5061/dryad.v15dv4209",
+      "trace": "Journal article DOI 10.1002/ece3.9688 and related Dryad 10.5061/dryad.8pk0p2npb are separate traces, not WPO review candidates."
+    },
+    {
+      "source_doi": "10.5061/dryad.v41ns1s4v",
+      "trace": "Distinct PNAS 10.1073/pnas.2411835122, Zenodo 10.5281/zenodo.11245428 and preprint 10.26434/chemrxiv-2024-fk05l traced; no WPO project bridge."
+    },
+    {
+      "source_doi": "10.5281/zenodo.11623053",
+      "trace": "Distinct article DOI 10.5194/tc-19-1599-2025 and model repositories identified; no WPO bridge."
+    },
+    {
+      "source_doi": "10.5281/zenodo.11623054",
+      "trace": "Same software/data output family as concept DOI 11623053; not two independent outputs."
+    }
+  ],
+  "blockers": [
+    "Private Discovery Hub acceptance and reviewer decisions unavailable",
+    "Complete REACH detail shards not inspected; full public index and exact DOI/title checks completed",
+    "Zenodo native record 11623053/11623054 inaccessible; publisher directly validates version DOI and funding",
+    "37 research-complete metadata handoffs await compatible Hub intake; NOT DELIVERED"
+  ],
+  "reviewer_visibility": "No new candidates; existing 59 feed proposals are not confirmed Hub-visible. 37 pending_hub_handoff cases remain NOT DELIVERED.",
+  "audit_result": "PARTIAL",
+  "audit_reason": "Research and existing-feed verification performed; private Hub and reviewer status unavailable; full detail-shard review not repeated."
+}
