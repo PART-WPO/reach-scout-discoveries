@@ -200,6 +200,93 @@ def classify(x,meta):
  elif any(z in x["origins"] for z in ("staged","metadata_review","metadata_blocker")):state="SCOUT_FIELDS_ALREADY_COVERED"
  else:state="HISTORICAL_FIELDS_ALREADY_COVERED"
  return state,recovered,seen
+def write_crossref_report(records,source_sizes):
+ """Independent review-only Crossref publication metadata report."""
+ cr=[r for r in records if r["metadata"].get("source")=="crossref" and r["metadata"].get("status")=="ok"]
+ out=ROOT/"scout-operations/reports/crossref-metadata-checkpoint"
+ out.mkdir(parents=True,exist_ok=True)
+ cases=[]
+ for r in sorted(cr,key=lambda x:x["doi"]):
+  x=r["metadata"]
+  old=sorted(set(row["date"] for row in r["original_rows"] if row["date"]))
+  api_date=x.get("pub_date") or ""
+  missing_fields=[fld for fld in r["recoverable_fields"] if fld in ("title","creators","abstract","type","pub_date")]
+  difference="no_scout_date" if not old else "no_crossref_exact_date" if not api_date else "matched" if old==[api_date] else "different_date_review_option"
+  cases.append({"doi":r["doi"],"source":"crossref","evidence":x["evidence"],
+    "title":x.get("title") or "","authors":x.get("creators") or [],
+    "journal":x.get("journal") or "","volume":x.get("volume") or "",
+    "issue":x.get("issue") or "","pages":x.get("pages") or "",
+    "publisher":x.get("publisher") or "",
+    "work_type":x.get("resource_type") or "",
+    "reach_output_type":x.get("reach_type") or "",
+    "crossref_publication_date":api_date,"crossref_publication_date_basis":x.get("pub_date_basis") or "",
+    "publication_dates":x.get("publication_dates") or {},
+    "best_partial_date":x.get("best_partial_date") or "",
+    "best_partial_basis":x.get("best_partial_basis") or "",
+    "doi_registered_date":x.get("crossref_created") or {},
+    "metadata_deposited_date":x.get("crossref_deposited") or {},
+    "scout_publication_dates":old,"date_comparison":difference,
+    "abstract_available_from_crossref":bool(x.get("abstract")),
+    "abstract_already_in_scout":r["prior_fields"]["abstract"],
+    "awards_in_crossref_funder":x.get("funding_structured") or [],
+    "awards_in_abstract":x.get("funding_in_description") or [],
+    "funder_names":x.get("funders") or [],
+    "related_record_evidence":x.get("relations") or {},
+    "license_urls":x.get("access_rights") or [],
+    "reviewable_recovered_fields":missing_fields,
+    "scout_source_rows":len(r["original_rows"]),
+    "scout_origins":r["origins"],"review_keys":r["review_keys"]})
+ counts={
+  "crossref_publications":len(cases),
+  "api_full_pub_date":sum(bool(x["crossref_publication_date"]) for x in cases),
+  "partial_only_pub_date":sum(not x["crossref_publication_date"] and bool(x["best_partial_date"]) for x in cases),
+  "no_publication_date":sum(not x["best_partial_date"] and not x["crossref_publication_date"] for x in cases),
+  "scout_missing_date":sum(not x["scout_publication_dates"] for x in cases),
+  "scout_missing_date_recoverable":sum(not x["scout_publication_dates"] and bool(x["crossref_publication_date"]) for x in cases),
+  "scout_missing_date_still_unresolved":sum(not x["scout_publication_dates"] and not x["crossref_publication_date"] for x in cases),
+  "crossref_vs_scout_date_differs":sum(x["date_comparison"]=="different_date_review_option" for x in cases),
+  "abstract_missing_in_scout_recoverable":sum(not x["abstract_already_in_scout"] and x["abstract_available_from_crossref"] for x in cases),
+  "abstract_missing_in_scout_and_crossref":sum(not x["abstract_already_in_scout"] and not x["abstract_available_from_crossref"] for x in cases),
+  "crossref_has_funder_awards":sum(bool(x["awards_in_crossref_funder"]) for x in cases),
+  "crossref_has_abstract":sum(x["abstract_available_from_crossref"] for x in cases),
+ }
+ report={"schema":"reach-scout-crossref-publication-checkpoint-v1",
+   "policy":"Crossref published-online/print/published/issued/posted are the source of publication dates; Crossref created is DOI registration, NOT default REACH Pub Date. No auto-write or approval.",
+   "source":"https://api.crossref.org/works/{DOI}",
+   "validated_source_sizes":source_sizes,
+   "counts":counts,"records":cases}
+ (out/"latest.json").write_text(json.dumps(report,indent=2,ensure_ascii=False,sort_keys=True)+"\n",encoding="utf8")
+ lines=[
+  "# REACH Scout — Crossref Publication Metadata Audit",
+  "",
+  "Source: DOI-specific Crossref works records. Read only: no changes to Scout input CSVs, reviewer decisions, Smartsheet, or public REACH.",
+  "Crossref created denotes DOI registration, NOT first publication. An exact online/print/published/issued/posted date may populate REACH Pub Date; a partial year or month must remain partial.",
+  "",
+  "## Coverage","","| Measure | Count |","|---|---:|"]
+ for k,v in counts.items():lines.append("| "+k.replace("_"," ").capitalize()+" | "+str(v)+" |")
+ lines+=["","## Individual Crossref publications","","| DOI | Publication title | Scout Pub Date | Crossref Pub Date | Date field | Status | Other recovered fields |",
+         "|---|---|---|---|---|---|---|"]
+ for r in cases:
+  title=str(r["title"]).replace("|","/").replace("\n"," ")[:66]
+  old="; ".join(r["scout_publication_dates"]) or "(missing)"
+  new=r["crossref_publication_date"] or r["best_partial_date"] or "(unavailable)"
+  basis=r["crossref_publication_date_basis"] or r["best_partial_basis"] or "(none)"
+  other=", ".join(x for x in r["reviewable_recovered_fields"] if x!="pub_date") or "—"
+  lines.append("| "+r["doi"]+" | "+title+" | "+old+" | "+new+
+       " | "+basis+" | "+r["date_comparison"]+" | "+other+" |")
+ lines+=["","## How Scout should use this audit","",
+  "- For any newly found publication DOI, attempt the exact Crossref /works/{DOI} record before declaring title, authors, abstract, or publication date missing.",
+  "- Prefer a full published-online date for journal articles. Use posted for posted-content/preprints; preserve published-print, published and issued separately.",
+  "- A published year or month alone does not supply an exact day. Never turn a partial date into January 1.",
+  "- A different date from existing Scout metadata requires source comparison and reviewer judgment; do not overwrite a human-edited Pub Date.",
+  "- A missing Crossref abstract is not proof that the article lacks an abstract. Inspect the publisher article before escalating a genuine abstract gap.",
+  "- Read structured funder awards and the deposited abstract; if missing, consult journal acknowledgments and SPARK. Do not infer WPO funding solely from Crossref retrieval.",
+  "- Research source enrichment never changes independent Scout discovery credit or automatically approves an addition.",
+  "",
+  "Machine-readable per-DOI metadata and date evidence: latest.json.",""]
+ (out/"README.md").write_text("\n".join(lines),encoding="utf8")
+ return counts
+
 def main():
  ap=argparse.ArgumentParser();ap.add_argument("--offline",action="store_true");ap.add_argument("--workers",type=int,default=6);ap.add_argument("--refresh-all",action="store_true");args=ap.parse_args()
  index,sizes=inventory()
@@ -263,4 +350,5 @@ def main():
     "The discovery route remains Scout expansion when the DOI was first found through related output research.",
     "No original feed, metadata-blocker decision, human-review sheet, Smartsheet row or public REACH record was changed.",""])
  (OUT/"README.md").write_text("\n".join(lines),encoding="utf8")
+ print("Crossref publication audit:",json.dumps(write_crossref_report(records,sizes),sort_keys=True),flush=True)
 if __name__=="__main__":main()
