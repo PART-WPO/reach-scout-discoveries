@@ -1,15 +1,15 @@
 {
   "schema": "reach-scout-discovery-origin-rollup-v1",
-  "snapshot_date": "2026-10-29",
-  "source": "scout-discoveries/manifest.json and all 17 immutable 24-column GitHub CSVs individually re-read and SHA-256/record_count/run-ID verified",
-  "batch_count": 17,
-  "staged_review_rows": 59,
+  "snapshot_date": "2026-10-30",
+  "source": "scout-discoveries/manifest.json (18 batches, 61 rows); prior 17 batches checked in 2026-10-30 06:34 ET audit, new batch independently re-read and exact UTF-8 SHA-256 checked against automated manifest; GitHub Actions succeeded",
+  "batch_count": 18,
+  "staged_review_rows": 61,
   "manifest_rows_verified": true,
   "route_counts": {
     "Direct API": 1,
     "API-seeded expansion": 12,
-    "Independent discovery": 1,
-    "Metadata correction": 5,
+    "Independent discovery": 2,
+    "Metadata correction": 6,
     "Unclassified explicit": 0,
     "Unclassified legacy (route missing)": 40
   },
@@ -30,17 +30,20 @@
     "source_manifest": "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json",
     "source_manifest_sha": "ab844173f761617a2fe1def5cf218b1fc94b3e7d"
   },
-  "human_review_status": "Not publicly verifiable; 59 staged proposals are not human approvals",
-  "note": "17 immutable batches / 59 staged review proposals: 1 Direct API, 12 API-seeded expansion, 1 Independent discovery, 5 metadata correction, 40 legacy unclassified. New 19:29 ET author/project-linked articles from historical Zenodo DOI research have publisher-confirmed exact WPO awards and verified dates; no direct citation to exact original Zenodo DOI is asserted. Private human decisions unavailable; public REACH remains 1238.",
+  "human_review_status": "Not publicly verifiable; 61 staged proposals are not human approvals",
+  "note": "18 immutable batches / 61 staged review proposals: 1 Direct API, 12 API-seeded expansion, 2 Independent discovery, 6 metadata corrections, 40 legacy unclassified. 2026-10-30 07:29 ET new independent WoFS WPC evaluation DOI 10.15191/nwajom.2023.1107 and additional award attribution on existing REACH Part I DOI 10.15191/nwajom.2023.1109; both publisher-confirmed WPO award NA18OAR4590361. No private reviewer decisions or REACH publication claimed.",
   "latest_verified_run": {
-    "run_id": "REACH-SCOUT-2026-10-29-HOURLY-1929ET",
-    "batch_id": "2026-10-29-hourly-1929ET-verified-article-expansion-001",
-    "new_review_proposals": 3,
-    "route": "API-seeded expansion",
+    "run_id": "REACH-SCOUT-2026-10-30-HOURLY-0729ET",
+    "batch_id": "2026-10-30-hourly-0729ET-wofs-jtti-output-001",
+    "new_review_proposals": 2,
+    "route_counts": {
+      "Independent discovery": 1,
+      "Metadata correction": 1
+    },
     "manifest_verified": true,
     "github_action_verification_status": "SUCCESS",
-    "github_action_run_id": 40973940264,
-    "sha256": "8b97ef0c393621aab33d7fad5b417798c0077279f8277d8d2a52713f07f40909",
+    "github_action_run_id": 41049030851,
+    "sha256": "9b4ee4fe2bbf7b117f3be25853133cce3e19e5cf224db10ad8e56777cda49639",
     "human_review_verified": false
   }
 }
