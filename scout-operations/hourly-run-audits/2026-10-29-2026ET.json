@@ -1,0 +1,226 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-29-HOURLY-2026ET",
+  "timestamp_utc": "2026-10-30T00:28:49.296091Z",
+  "selected_mode": "historical_api_triage",
+  "phase": "additional_evidence_research",
+  "audit_result": "PARTIAL",
+  "audit_reason": "All public research, coverage and feed checks pass; private Discovery Hub ingestion and human decisions remain NOT_VERIFIABLE, and 18 prior handoffs remain pending Hub intake.",
+  "source_manifests": {
+    "monthly": "api-discoveries/manifest.json",
+    "monthly_received": 0,
+    "historical": "api-discoveries/historical/manifest.json",
+    "historical_received": 188,
+    "reach": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+    "reach_manifest_sha": "ab844173f761617a2fe1def5cf218b1fc94b3e7d"
+  },
+  "coverage": {
+    "monthly_before": 0,
+    "monthly_after": 0,
+    "historical_completed_before": 170,
+    "historical_remaining_before": 18,
+    "historical_completed_after": 174,
+    "historical_remaining_after": 14,
+    "historical_reconciliation_action": "SUCCESS 40980244495",
+    "historical_coverage_verified": true
+  },
+  "seeds_independently_disposed": [
+    {
+      "identity": "doi:10.25923/65kx-0a28",
+      "original_seed_doi": "10.25923/65kx-0a28",
+      "status": "no_action",
+      "artifact_not_grant": true,
+      "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "reason": "NOAA IR classifies this as an HWT-wide Program & Policy Document with CIWRO base award NA21OAR4320204. Six SPARK award shards reveal only related umbrella use for separate WPO projects, not this FY2025 HWT summary. No project-specific bridge or exact publication day; not eligible for WPO attribution without new positive evidence.",
+      "source_urls": [
+        "https://repository.library.noaa.gov/view/noaa/72846",
+        "https://hwt.nssl.noaa.gov/publications/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/awards/part-003.csv"
+      ],
+      "discovery_route": "Direct API original seed",
+      "source_cohort": "Historical DataCite API Backfill 2026-10-28",
+      "award_numbers": [
+        "NA21OAR4320204"
+      ],
+      "project_specific_wpo_bridge_verified": false,
+      "followup_rounds_completed": 1,
+      "early_retry_reason": "2026-10-29 authoritative user-directed immediate different-source recovery round; original next_research_at retained as historical schedule, not an open retry.",
+      "original_next_research_at": "2026-11-05T03:34:15Z",
+      "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+      "scout_batch_id": null,
+      "hub_delivery_status": "not_applicable"
+    },
+    {
+      "identity": "doi:10.25923/emke-w063",
+      "original_seed_doi": "10.25923/emke-w063",
+      "status": "no_action",
+      "artifact_not_grant": true,
+      "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "reason": "NOAA IR verifies a 2025 Tornado Tales report and CIWRO base award; NSSL/NOAA seminar describes independent NSSL citizen-science survey. Six SPARK award shards show the CIWRO award only as related umbrella for other WPO survey projects. No report-specific WPO funded project bridge or exact YYYY-MM-DD.",
+      "source_urls": [
+        "https://repository.library.noaa.gov/view/noaa/71567",
+        "https://www.star.nesdis.noaa.gov/star/NOAAScienceSeminars_2024.php",
+        "https://inside.nssl.noaa.gov/tornado-tales/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/awards/part-003.csv"
+      ],
+      "discovery_route": "Direct API original seed",
+      "source_cohort": "Historical DataCite API Backfill 2026-10-28",
+      "award_numbers": [
+        "NA21OAR4320204"
+      ],
+      "project_specific_wpo_bridge_verified": false,
+      "followup_rounds_completed": 1,
+      "early_retry_reason": "2026-10-29 authoritative user-directed immediate different-source recovery round; original next_research_at retained as historical schedule, not an open retry.",
+      "original_next_research_at": "2026-11-05T04:28:11Z",
+      "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+      "scout_batch_id": null,
+      "hub_delivery_status": "not_applicable"
+    },
+    {
+      "identity": "doi:10.25923/fkzg-kt33",
+      "original_seed_doi": "10.25923/fkzg-kt33",
+      "status": "no_action",
+      "artifact_not_grant": true,
+      "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "reason": "NOAA IR and independent CIWRO author profile/SPC publication index confirm a 2024 SPC conference paper, but only broad CIWRO base grant NA21OAR4320204 is evidenced. No named WPO-funded SPARK project for this specific SPC guidance work; no exact YYYY-MM-DD.",
+      "source_urls": [
+        "https://repository.library.noaa.gov/view/noaa/76790",
+        "https://ou.edu/ciwro/about/people/staff/david-harrison",
+        "https://origin-west-www-spc.woc.noaa.gov/publications/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/awards/part-003.csv"
+      ],
+      "discovery_route": "Direct API original seed",
+      "source_cohort": "Historical DataCite API Backfill 2026-10-28",
+      "award_numbers": [
+        "NA21OAR4320204"
+      ],
+      "project_specific_wpo_bridge_verified": false,
+      "followup_rounds_completed": 1,
+      "early_retry_reason": "2026-10-29 authoritative user-directed immediate different-source recovery round; original next_research_at retained as historical schedule, not an open retry.",
+      "original_next_research_at": "2026-11-05T04:28:11Z",
+      "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+      "scout_batch_id": null,
+      "hub_delivery_status": "not_applicable"
+    },
+    {
+      "identity": "doi:10.25923/mpqr-r886",
+      "original_seed_doi": "10.25923/mpqr-r886",
+      "status": "no_action",
+      "artifact_not_grant": true,
+      "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "reason": "NOAA IR WPO office tag and CIWRO base grant are not evidence of a specific WPO-funded project producing the 2026 Tornado Tales report. NSSL/NOAA seminar identify citizen-science program; SPARK award shards show only umbrella related-award connections, no report-specific project bridge. Full publication day unknown.",
+      "source_urls": [
+        "https://repository.library.noaa.gov/view/noaa/74392",
+        "https://inside.nssl.noaa.gov/tornado-tales/",
+        "https://www.star.nesdis.noaa.gov/star/NOAAScienceSeminars_2024.php",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/awards/part-003.csv"
+      ],
+      "discovery_route": "Direct API original seed",
+      "source_cohort": "Historical DataCite API Backfill 2026-10-28",
+      "award_numbers": [
+        "NA21OAR4320204"
+      ],
+      "project_specific_wpo_bridge_verified": false,
+      "followup_rounds_completed": 1,
+      "early_retry_reason": "2026-10-29 authoritative user-directed immediate different-source recovery round; original next_research_at retained as historical schedule, not an open retry.",
+      "original_next_research_at": "2026-11-05T05:32:21Z",
+      "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+      "scout_batch_id": null,
+      "hub_delivery_status": "not_applicable"
+    }
+  ],
+  "expansion_leads": [
+    {
+      "original_seed_doi": "10.25923/65kx-0a28",
+      "lead": "HWT FY2025 experiment-specific outputs may be separately researched.",
+      "verified": false,
+      "scout_batch_id": null
+    },
+    {
+      "original_seed_doi": "10.25923/emke-w063",
+      "lead": "Year-specific Tornado Tales survey reports are distinct NSSL products; no WPO project attribution established.",
+      "verified": false,
+      "scout_batch_id": null
+    },
+    {
+      "original_seed_doi": "10.25923/fkzg-kt33",
+      "lead": "Separate 2022 first-guess watch guidance work DOI 10.25923/fssj-fe85 merits project-specific funding check before any candidate.",
+      "verified": false,
+      "scout_batch_id": null
+    },
+    {
+      "original_seed_doi": "10.25923/mpqr-r886",
+      "lead": "NOAA IR WPO office tag is an attribution clue only; not a verified funded project connection.",
+      "verified": false,
+      "scout_batch_id": null
+    }
+  ],
+  "verified_candidates_by_route": {
+    "Direct API": 0,
+    "API-seeded expansion": 0,
+    "Independent discovery": 0,
+    "Metadata correction": 0
+  },
+  "no_action_subtype_changes": {
+    "NO_DEMONSTRATED_WPO_CONNECTION": 4
+  },
+  "attribution_followups": {
+    "baseline_0800_no_action": 65,
+    "baseline_0833_no_action": 77,
+    "total_now": 71,
+    "queued_now": 52,
+    "closed_now": 19,
+    "newly_closed": 4,
+    "original_status_preserved_as_no_action": true
+  },
+  "metadata_blockers": {
+    "total": 43,
+    "pending_hub_handoff": 18,
+    "resolved_this_run": 4,
+    "other_blocked": 19,
+    "suppressed": 2,
+    "validator_action": "SUCCESS 40980116070"
+  },
+  "feed_integrity_status": "VERIFIED_EXISTING_FEED_NO_NEW_BATCH",
+  "newly_staged_csv_ids": [],
+  "newly_published_csv_ids": [],
+  "manifest_verification_evidence": {
+    "manifest_path": "scout-discoveries/manifest.json",
+    "public_url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+    "batch_count": 17,
+    "verified_batch_sha256_count": 17,
+    "verified_record_count": 59,
+    "all_24_columns": true,
+    "all_source_run_ids_match": true,
+    "no_prior_batch_changed": true,
+    "no_manifest_entries_dropped": true,
+    "last_batch_id": "2026-10-29-hourly-1929ET-verified-article-expansion-001",
+    "last_batch_sha256": "8b97ef0c393621aab33d7fad5b417798c0077279f8277d8d2a52713f07f40909"
+  },
+  "github_action_verification_status": "SUCCESS last feed publication workflow 40973940264; no new CSV staged this run",
+  "reviewer_visibility": "NOT_VERIFIABLE",
+  "public_reach": {
+    "index_shards_checked": 10,
+    "index_records": 1238,
+    "exact_four_seed_doi_matches": 0,
+    "new_public_outputs_verified": 0
+  },
+  "human_review": {
+    "previous_metadata_handoffs_pending_hub_intake": 18,
+    "hub_investigate_candidates_confirmed_this_run": 0,
+    "private_human_decisions_verified": 0
+  },
+  "library_first": {
+    "report": "/REACH Scout/report_2026-10-29_2026ET.md",
+    "lead_queue": "/REACH Scout/lead_queue_2026-10-29_2026ET.csv",
+    "checkpoint": "/REACH Scout/checkpoint_2026-10-29_2026ET.json",
+    "candidate_csv_header_only": "/REACH Scout/discovery_hub_candidates_2026-10-29_2026ET.csv",
+    "audit": "/REACH Scout/hourly_provenance_audit_2026-10-29_2026ET.json",
+    "saved_before_github_writes": true
+  },
+  "blockers": [
+    "18 prior research-complete human metadata cases await compatible Hub intake; NOT DELIVERED TO HUB",
+    "Private reviewer and Hub intake status unavailable"
+  ],
+  "next_priority": "14 remaining historical original DOI followups and expansion; monthly preempts; then attribution followups and normal older award discovery. No task disable."
+}
