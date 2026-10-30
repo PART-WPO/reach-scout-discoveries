@@ -7,7 +7,7 @@
   "review_units": 36,
   "version_or_alternate_groups": 6,
   "source_cases_not_necessarily_distinct_outputs": true,
-  "workflow_status": "FOUR_NORMAL_FEED_VERIFIED; PRIVATE_HUMAN_INTAKE_PREPARED_NOT_INSTALLED",
+  "workflow_status": "FOUR_NORMAL_FEED_VERIFIED; ONE_NORMAL_FEED_PENDING; PRIVATE_HUMAN_INTAKE_PREPARED_NOT_INSTALLED",
   "delivery_verified": false,
   "privacy": "public output and source evidence only; no email, reviewer decisions or restricted data",
   "policy": "No publishing to Scout batches, no changes to original blockers or decisions, no inferred missing dates. Reviewer determines canonical output identity and acceptance. Separate Hub intake from REACH insertion validation.",
@@ -2576,26 +2576,25 @@
       "source_identities": [
         "doi:10.7910/dvn/jwzewf"
       ],
-      "review_type": "METADATA_AND_ELIGIBILITY",
+      "review_type": "POTENTIAL_NEW_OUTPUT_NORMAL_REVIEW",
       "priority": "MEDIUM",
-      "reviewer_question": "Verify exact Dataverse V1 public release date and file accessibility, then determine separate dataset eligibility without borrowing BAMS article date.",
+      "reviewer_question": "Review whether the exact Dataverse dataset is independently eligible and sufficiently public, and whether it duplicates or overlaps existing related URRD records. Pub Date/title/type/creator/award are complete.",
       "canonical_identity": "doi:10.7910/dvn/jwzewf",
       "all_original_decisions_preserved": true,
       "source_records": [
         {
           "identity": "doi:10.7910/dvn/jwzewf",
-          "missing_fields": [
-            "Harvard Dataverse record-specific full YYYY-MM-DD dataset publication date",
-            "native publisher verification of publicly accessible dataset files and scope"
-          ],
-          "reviewer_question": "Verify exact Dataverse V1 public release date and file accessibility, then determine separate dataset eligibility without borrowing BAMS article date.",
+          "missing_fields": [],
+          "reviewer_question": "Review whether the exact Dataverse dataset is independently eligible and sufficiently public, and whether it duplicates or overlaps existing related URRD records. Pub Date/title/type/creator/award are complete.",
           "award_numbers": [
             "NA23OAR4590137"
           ],
           "evidence_urls": [
             "https://doi.org/10.7910/DVN/JWZEWF",
             "https://journals.ametsoc.org/view/journals/bams/107/3/BAMS-D-25-0309.1.xml",
-            "https://repository.library.noaa.gov/view/noaa/67019"
+            "https://repository.library.noaa.gov/view/noaa/67019",
+            "https://api.datacite.org/dois/10.7910/dvn/jwzewf",
+            "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/index/part-003.csv"
           ],
           "checked_sources": [
             {
@@ -2639,13 +2638,50 @@
               "method": "native_dataverse_api_attempt",
               "outcome": "Native API inaccessible; no exact first-publication date or file scope confirmed.",
               "round": 1
+            },
+            {
+              "url": "https://api.datacite.org/dois/10.7910/dvn/jwzewf",
+              "method": "mandatory_direct_doi_enrichment",
+              "outcome": "Live ACCESS_FAILURE; user-provided DataCite metadata accepted as recorded in office policy. Title, author, type and Pub Date complete. Remaining non-date scope/identity questions only.",
+              "round": "policy_reconciliation"
             }
           ],
           "funding_basis": "BAMS article explicitly acknowledges NOAA NA23OAR4590137 and names this Dataverse dataset as its publicly available data; SPARK primary DRSA PRECIP1 award matches exact grant and research topic.",
           "hub_delivery_status": "not_delivered",
-          "original_status": "pending_hub_handoff"
+          "original_status": "pending_hub_handoff",
+          "previous_missing_fields_for_audit": [
+            "Harvard Dataverse record-specific full YYYY-MM-DD dataset publication date",
+            "native publisher verification of publicly accessible dataset files and scope"
+          ],
+          "previous_reviewer_question_for_audit": "Verify exact Dataverse V1 public release date and file accessibility, then determine separate dataset eligibility without borrowing BAMS article date.",
+          "remaining_review_questions": [
+            "Native Harvard Dataverse file-level public access and restricted-file scope",
+            "Distinct output eligibility versus already-cataloged URRD papers and related outputs"
+          ],
+          "title": "Urban Rain Rate Dashboard - Improving Delivery of Weather Prediction Center Precipitation Products",
+          "creators": [
+            "Kathryn Semmens"
+          ],
+          "publisher": "Harvard Dataverse",
+          "resourceTypeGeneral": "Dataset",
+          "output_type": 3,
+          "pub_date": "2025-10-17",
+          "datacite_created": "2025-10-17T23:15:08Z",
+          "registered": "2025-10-20",
+          "available": "2025-10-20",
+          "datacite_metadata_source": "https://api.datacite.org/dois/10.7910/dvn/jwzewf",
+          "metadata_source_status": "User-provided exact DOI attributes and public policy; live direct API retrieval ACCESS_FAILURE this run",
+          "funding_reference_structured": [],
+          "funding_in_abstract": "NA23OAR4590137",
+          "open_access_indicators": "CC0 openAccess; 19 format/size entries; individual file downloads NOT VERIFIED",
+          "discovery_route": "API-seeded expansion",
+          "review_ready": true
         }
-      ]
+      ],
+      "previous_review_type_for_audit": "METADATA_AND_ELIGIBILITY",
+      "previous_reviewer_question_for_audit": "Verify exact Dataverse V1 public release date and file accessibility, then determine separate dataset eligibility without borrowing BAMS article date.",
+      "review_status": "RESEARCH_COMPLETE_NORMAL_REVIEW_PENDING_FEED",
+      "hub_delivery_status": "not_delivered"
     },
     {
       "review_key": "case-19",
@@ -4074,11 +4110,22 @@
   },
   "operational_route_counts": {
     "normal_potential_new_output_staged": 4,
-    "human_intake_non_date_or_no_created": 38,
+    "human_intake_non_date_or_no_created": 37,
     "total_source_cases": 42,
     "review_units": 36,
     "provisional_pairs": 6,
     "hub_imports_observed": "NOT_VERIFIED",
-    "human_decisions_verified": "NOT_VERIFIED"
+    "human_decisions_verified": "NOT_VERIFIED",
+    "normal_potential_new_output_pending_feed": 1,
+    "normal_potential_new_output_total": 5
+  },
+  "latest_direct_doi_enrichment_reconciliation": {
+    "run_id": "REACH-SCOUT-2026-10-30-HOURLY-1524ET",
+    "case": "case-17",
+    "pub_date": "2025-10-17",
+    "normal_review_pending_feed": true,
+    "hub_import_observed": false,
+    "previous_group_keys_preserved": true,
+    "prior_human_decisions_preserved": true
   }
 }
