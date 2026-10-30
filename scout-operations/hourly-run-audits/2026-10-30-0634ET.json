@@ -19,7 +19,7 @@
     "scout_csv_24_columns": "17/17 match",
     "scout_csv_run_ids": "17/17 match",
     "github_action_scout_feed": "No new CSV batch; no new feed workflow expected",
-    "github_action_router": "Workflow run 41033749019 FAILURE: save step push/rebase conflict; tests and selector calculation success."
+    "github_action_router": "Latest selector workflow 41041905414 SUCCESS; previous run 41033749019 failed due to active-workstream.json rebase conflict."
   },
   "cases_researched": [
     {
@@ -320,14 +320,20 @@
   "verified_public_reach_additions": 0,
   "public_reach_rows": 1238,
   "feed_integrity_status": "VERIFIED_EXISTING_17_OF_17_NO_NEW_BATCH",
-  "github_action_verification_status": "SCOUT_FEED_NO_NEW_RUN; ROUTER_WORKFLOW_FAILURE",
+  "github_action_verification_status": "SCOUT_FEED_NO_NEW_RUN; ROUTER_WORKFLOW_SUCCESS_41041905414",
   "manifest_written_by_scout": false,
   "audit_result": "PARTIAL",
   "audit_limitations": [
     "Private Discovery Hub acceptance/reviewer decisions not accessible",
     "140 REACH detail shards not fully reread",
-    "Native landing pages for several DOI records inaccessible this run; original DOI ledger evidence retained",
-    "Router workflow save step failed on concurrent active-workstream rebase conflict; selector tests passed"
+    "Native landing pages for several DOI records inaccessible this run; original DOI ledger evidence retained"
   ],
-  "next_priority": "New monthly intake first; if none, older SPARK awards, broad-net missing-acknowledgment discovery."
+  "next_priority": "New monthly intake first; if none, older SPARK awards, broad-net missing-acknowledgment discovery.",
+  "post_commit_verification": {
+    "attribution_ledger": "71/71 closed, 0 queued, GitHub main re-read",
+    "hourly_audit": "GitHub main re-read, run ID and 13 case records verified",
+    "workstream": "normal_historical_discovery / normal_discovery, 0 attribution pending, GitHub main re-read",
+    "router_action": "GitHub Actions run 41041905414 completed SUCCESS after attribution ledger update; earlier 41033749019 failed due to concurrent rebase conflict",
+    "scout_manifest": "17 batches, 59 rows, manifest blob unchanged"
+  }
 }
