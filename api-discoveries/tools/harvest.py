@@ -180,7 +180,7 @@ def query_crossref(award,month,max_pages):
         result=fetch(url,params={
           "filter":f"award.number:{award},from-pub-date:{start},until-pub-date:{end}",
           "rows":100,"cursor":cursor,
-          "select":"DOI,title,author,published-online,published-print,published,issued,funder,type,abstract,URL,relation"
+          "select":"DOI,title,author,published-online,published-print,published,issued,created,funder,type,abstract,URL,relation"
         })
         response=result.get("message") or {}
         page=response.get("items") or []
@@ -236,6 +236,18 @@ def to_candidate(a,src,award,mode,month):
         if len(created)==10:
             pub=created
             basis=basis+";reach_pub_date_datacite_created"
+    if src=="crossref":
+        # Apply the same WPO operational convention as DataCite *after*
+        # original Crossref month-of-publication inclusion checks.
+        dp=(a.get("created") or {}).get("date-parts") or []
+        parts=dp[0] if dp else []
+        try:
+            created=dt.date(int(parts[0]),int(parts[1]),int(parts[2])).isoformat() if len(parts)==3 else ""
+        except (ValueError,TypeError,OverflowError,IndexError):
+            created=""
+        if created:
+            pub=created
+            basis=basis+";reach_pub_date_crossref_created"
     text=re.sub(r"<[^>]+>"," ",str(abstract));text=re.sub(r"\s+"," ",text).strip()
     return {"doi":doi,"src":src,"award":award,
       "title":title or "Provisional metadata for DOI "+doi,
