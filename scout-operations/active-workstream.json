@@ -1,5 +1,5 @@
 {
-  "attribution_followups_pending": 32,
+  "attribution_followups_pending": 26,
   "historical_api": {
     "coverage_matches_source_manifest": true,
     "distinct_dois": 188,
@@ -25,9 +25,9 @@
     "research_completed": 0,
     "unresolved_followups": 0
   },
-  "note": "2026-10-30 03:29 ET: five additional Dryad project-bridge followups closed (37 -> 32) after primary-source publisher, SPARK index and complete REACH index checks. No new WPO-linked proposals. 17 Scout CSV SHA-256 digests, counts and 24-column schemas verified; 37 human metadata cases pending Hub intake NOT DELIVERED; public REACH 1238 unchanged.",
+  "note": "2026-10-30 04:32 ET: six original no-action attribution followups closed after bounded primary-source checks (32 -> 26). All 188 historical original DOI research complete; 37 human metadata pending Hub intake NOT DELIVERED. 17/17 Scout feed CSV checksums, row counts, run IDs, 24-column schemas verified; REACH 1238 unchanged.",
   "phase": "attribution_followups",
-  "reason": "Monthly API empty, 188/188 historical original DOI research complete; 37 human metadata pending handoffs are integration cases, not research blockers. 32 attribution followups remain before normal historical SPARK discovery.",
+  "reason": "Monthly empty; 188/188 historical original DOI research complete. 37 pending_hub_handoff integration cases are not actionable research. Continue 26 attribution followups before older-award normal discovery.",
   "schema": "reach-scout-workstream-v1",
   "switch_policy": "monthly first-pass > monthly follow-ups > historical first-pass > historical follow-ups > attribution follow-ups > normal SPARK historical discovery"
 }
