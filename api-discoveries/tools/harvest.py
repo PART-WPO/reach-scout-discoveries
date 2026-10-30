@@ -200,7 +200,7 @@ def query_crossref(award,month,max_pages):
         result=fetch(url,params={
           "filter":f"award.number:{award},from-pub-date:{start},until-pub-date:{end}",
           "rows":100,"cursor":cursor,
-          "select":"DOI,title,author,published-online,published-print,published,issued,created,funder,type,abstract,URL,relation"
+          "select":"DOI,title,author,published-online,published-print,published,issued,posted,created,funder,type,abstract,URL,relation"
         })
         response=result.get("message") or {}
         page=response.get("items") or []
