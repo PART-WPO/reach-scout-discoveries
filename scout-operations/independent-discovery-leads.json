@@ -284,17 +284,102 @@
     {
       "identity": "doi:10.6084/m9.figshare.26791243",
       "title": "DeepFlood High Resolution Dataset for Accurate Flood Mapping and Segmentation",
-      "status": "NEW_EXPANSION_LEAD_NEEDS_IDENTITY_AND_REACH_REVIEW",
+      "status": "RESEARCH_ACTIVE",
       "research_round": 0,
       "discovery_route": "Independent discovery",
-      "discovery_path": "SPARK spark-000338 / award NA21OAR4590358 -> publisher Scientific Data article DOI 10.1038/s41597-025-04554-3 -> cited distinct Figshare data DOI",
-      "source_type": "Figshare dataset cited by peer-reviewed data article",
+      "discovery_path": "SPARK spark-000338 / primary NOAA award NA21OAR4590358 -> Scientific Data article DOI 10.1038/s41597-025-04554-3 -> article Data Records and reference 34 -> separate Figshare DOI 10.6084/m9.figshare.26791243",
+      "source_type": "Figshare cited dataset",
       "project": "spark-000338",
       "award_numbers": [
         "NA21OAR4590358"
       ],
-      "funding_basis": "Nature article explicitly acknowledges NA21OAR4590358 and cites Figshare DOI; exact dataset public scope, DOI-specific DataCite created, REACH/Scout identity and human decisions still need verification.",
+      "funding_basis": "The article itself directly acknowledges NOAA award NA21OAR4590358 and cites this dataset DOI; exact dataset-native funding record not retrievable. Credible project-linked output, not yet human-approved.",
       "checked_sources": [
+        {
+          "url": "https://www.nature.com/articles/s41597-025-04554-3",
+          "method": "primary_publisher_data_records_and_acknowledgment",
+          "result": "Publisher article explicitly identifies Figshare DOI 10.6084/m9.figshare.26791243 as its openly accessible DeepFlood dataset, describes optical/SAR imagery, masks, DEM, shapefiles and tiles; acknowledges NOAA NA21OAR4590358. The article date 2025-02-15 is not the dataset Pub Date."
+        },
+        {
+          "url": "https://api.figshare.com/v2/articles/26791243",
+          "method": "native_figshare_api",
+          "result": "ACCESS FAILURE; no DOI-specific native file inventory, version relation or created date retrieved",
+          "source_failure": "ACCESS_FAILURE_NOT_METADATA_ABSENT"
+        },
+        {
+          "url": "https://api.datacite.org/dois/10.6084/m9.figshare.26791243",
+          "method": "doi_specific_datacite_created",
+          "result": "ACCESS FAILURE; valid DataCite created timestamp not retrieved; do not invent a date or treat the date as verified",
+          "source_failure": "ACCESS_FAILURE_NOT_METADATA_ABSENT"
+        },
+        {
+          "url": "https://doi.org/10.6084/m9.figshare.26791243",
+          "method": "doi_resolution",
+          "result": "ACCESS FAILURE through available retrieval; no absence of public data inferred",
+          "source_failure": "ACCESS_FAILURE_NOT_METADATA_ABSENT"
+        },
+        {
+          "url": "https://figshare.com/articles/dataset/DeepFlood_High_Resolution_Dataset_for_Accurate_Flood_Mapping_and_Segmentation/26791243",
+          "method": "native_figshare_landing",
+          "result": "ACCESS FAILURE through available retrieval; native files/version not verified",
+          "source_failure": "ACCESS_FAILURE_NOT_METADATA_ABSENT"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "method": "complete_public_reach_index_shards",
+          "result": "10/10 index shards and 1238 index records checked for exact DOI 26791243 and normalized DeepFlood dataset title; no exact match. Full detail shards not rechecked."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+          "method": "verified_manifest_scout_batches",
+          "result": "20/20 manifest-listed batch files (66 rows) searched for DOI and title, no exact match. Two new flood articles in unmanifested invalid 1329ET batch are different identities; private human decisions unavailable."
+        },
+        {
+          "url": "https://profiles.ncat.edu/en/publications/deepflood-for-inundated-vegetation-high-resolution-dataset-for-ac/",
+          "method": "institutional_bibliographic_crosscheck",
+          "result": "Institutional profile corroborates article identity, not the dataset-specific DataCite created timestamp or native file inventory."
+        },
+        {
+          "url": "https://www.nature.com/articles/s41597-025-04554-3.pdf",
+          "method": "publisher_pdf_repository_inventory",
+          "result": "Article Figure 6 depicts DEEPFLOOD DATA subfolders; corroborates intended standalone data product, not a live Figshare file-access test."
+        }
+      ],
+      "missing_fields": [
+        "exact DOI-specific DataCite created Pub Date",
+        "public Figshare file inventory and standalone eligibility",
+        "REACH/Scout full identity comparison",
+        "private human decision"
+      ],
+      "next_action": "One bounded different-source follow-up (not an indefinite date hunt); if still credible but missing native identity/scope/created, hand off RESEARCH_COMPLETE_HUMAN_INTAKE and add a new review unit without touching prior decisions.",
+      "hub_delivery": "NOT_DELIVERED",
+      "human_decisions": "NOT_VERIFIED",
+      "original_seed_doi": null,
+      "source_dateType": "DataCite created (required if available; exact timestamp ACCESS FAILURE, not presumed missing)",
+      "pub_date": null,
+      "datacite_created": null,
+      "remaining_questions": [
+        "Retrieve DOI-specific valid DataCite created timestamp; use its calendar date as accepted REACH Pub Date without further corroboration",
+        "Verify native Figshare file accessibility and exact version/concept identity",
+        "Confirm no private prior reviewer decision and distinct eligibility from article"
+      ],
+      "reach_exact_index_match": false,
+      "scout_manifest_exact_match": false,
+      "human_decision": "NOT_VERIFIED",
+      "research_completed": false,
+      "evidence_urls": [
+        "https://www.nature.com/articles/s41597-025-04554-3",
+        "https://api.figshare.com/v2/articles/26791243",
+        "https://api.datacite.org/dois/10.6084/m9.figshare.26791243",
+        "https://doi.org/10.6084/m9.figshare.26791243",
+        "https://figshare.com/articles/dataset/DeepFlood_High_Resolution_Dataset_for_Accurate_Flood_Mapping_and_Segmentation/26791243",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+        "https://profiles.ncat.edu/en/publications/deepflood-for-inundated-vegetation-high-resolution-dataset-for-ac/",
+        "https://www.nature.com/articles/s41597-025-04554-3.pdf"
+      ],
+      "prior_status": "NEW_EXPANSION_LEAD_NEEDS_IDENTITY_AND_REACH_REVIEW",
+      "prior_checked_sources": [
         {
           "url": "https://www.nature.com/articles/s41597-025-04554-3",
           "method": "publisher_data_records_and_funding",
@@ -306,16 +391,7 @@
           "outcome": "Not independently inspected in this run; future substantive check required."
         }
       ],
-      "missing_fields": [
-        "exact DOI-specific DataCite created Pub Date",
-        "public Figshare file inventory and standalone eligibility",
-        "REACH/Scout full identity comparison",
-        "private human decision"
-      ],
-      "next_action": "Research native Figshare/DataCite DOI and all REACH/Scout shards before considering separate data output; do not conflate article and dataset.",
-      "hub_delivery": "NOT_DELIVERED",
-      "human_decisions": "NOT_VERIFIED",
-      "original_seed_doi": null
+      "updated_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1435ET"
     }
   ],
   "latest_update": {
