@@ -1,0 +1,112 @@
+{
+  "schema": "reach-scout-normal-discovery-leads-v1",
+  "run_id": "REACH-SCOUT-2026-10-30-HOURLY-1929ET",
+  "timestamp_utc": "2026-10-30T23:30:38Z",
+  "primary_mode": "normal_historical_discovery",
+  "source_project": {
+    "spark_id": "spark-000338",
+    "award": "NA21OAR4590358",
+    "project": "Rapid Floodwater Extent and Depth Measurements Using Optical UAV and SAR",
+    "program": "Observations",
+    "source": "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-026.csv",
+    "primary_award_confirmed": true
+  },
+  "new_distinct_article": {
+    "doi": "10.1080/19475705.2024.2364777",
+    "title": "A low-cost IoT-based deep learning method of water gauge measurement for flood monitoring",
+    "authors": [
+      "Leila Hashemi-Beni",
+      "Megha Puthenparampil",
+      "Ali Jamali"
+    ],
+    "journal": "Geomatics, Natural Hazards and Risk",
+    "volume": 15,
+    "year": 2024,
+    "output_type": "1",
+    "native_publisher_published_online": "2024-07-08",
+    "crossref_print_preferred_status": "NOT_VERIFIED_API_ACCESS_FAILURE",
+    "funding_evidence": "Publisher Additional information > Funding explicitly states NOAA award NA21OAR4590358 alongside NC Collaboratory and NASA 80NSSC23M0051.",
+    "funding_evidence_url": "https://www.tandfonline.com/doi/abs/10.1080/19475705.2024.2364777",
+    "research_route": "Independent discovery / award-centered project publication search",
+    "deduplication": "No matching DOI, title, or distinctive title fragment in all 10 REACH index shards (1238 records), 20 manifested Scout CSV batches (66 rows), or separately checked invalid unmanifested 13:29 CSV.",
+    "crossref_exact_lookup": "https://api.crossref.org/works/10.1080/19475705.2024.2364777",
+    "crossref_exact_lookup_result": "ACCESS_FAILURE; mandatory direct DOI checkpoint not completed; do not treat as absent metadata.",
+    "research_status": "PUBLISHER_VERIFIED_DISTINCT_CANDIDATE_PENDING_CROSSREF_CHECKPOINT_AND_FEED_REPAIR",
+    "recommended_classification": "Scout classification: NEW CANDIDATE (pending final checkpoint and human approval)",
+    "confidence": "High for identity, publication and project-specific award; pending Crossref print-date comparison and private reviewer check",
+    "hub_delivery": "NOT_DELIVERED_FEED_BLOCKED",
+    "reviewer_decisions": "NOT_VERIFIED",
+    "abstract_summary": "Introduces a low-cost camera/IoT and Mask-RCNN-based automated staff-gauge water-level monitoring method, including low-light testing; publisher notes study data are confidential.",
+    "eligibility_note": "The article is a public scholarly output; the confidential underlying study data should not be treated as a separately available public dataset.",
+    "sources": [
+      "https://www.tandfonline.com/doi/abs/10.1080/19475705.2024.2364777",
+      "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-026.csv",
+      "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json",
+      "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/manifest.json"
+    ]
+  },
+  "existing_deepflood_family_review_unit": {
+    "review_unit": "deepflood-figshare-26791243-versus-28328339",
+    "research_complete_for_bounded_sources": true,
+    "candidate_28328339": {
+      "doi": "10.6084/m9.figshare.28328339",
+      "native_record_url": "https://figshare.com/articles/dataset/DEEPFLOOD_DATASET_High-Resolution_Dataset_for_Accurate_Flood_Mappingand_Segmentation/28328339",
+      "native_title": "DEEPFLOOD DATASET: High-Resolution Dataset for Accurate Flood Mappingand Segmentation",
+      "native_resource_type": "dataset",
+      "native_creator": "Geospatial and Remote Sensing Research Lab",
+      "native_posted_date": "2025-02-01",
+      "native_posted_date_precision": "day",
+      "accepted_datacite_created_date": null,
+      "funding": "Native Figshare page explicitly states NOAA Award NA21OAR4590358-T1-01: Rapid Floodwater Extent and Depth Measurements Using Optical UAV and SAR, plus NASA 80NSSC23M0051.",
+      "access_indicators": "Native page offers Download all (4.53 GB) and CC BY 4.0; this is NOT proof all individual files were downloaded or are complete.",
+      "funding_connection": "Direct, project-specific native repository funding and SPARK primary award corroboration.",
+      "public_reach_comparison": "No DOI/title match in 1238 REACH index records; prior full 140 detail shards scanned 2026-10-30 17:32 ET, same manifest SHA ab844173f761617a2fe1def5cf218b1fc94b3e7d.",
+      "datacite_lookup": "ACCESS_FAILURE (not evidence of missing created field)",
+      "research_status": "RESEARCH_COMPLETE_HUMAN_INTAKE_PENDING_VERSION_IDENTITY_AND_PUBLIC_SCOPE",
+      "recommendation": "Human reviewer to decide whether this is the canonical distinct DeepFlood dataset, versus the 26791243 DOI cited by the 2025 data descriptor; do not create two outputs without identity proof.",
+      "hub_delivery": "NOT_DELIVERED_FEED_BLOCKED",
+      "sources": [
+        "https://figshare.com/articles/dataset/DEEPFLOOD_DATASET_High-Resolution_Dataset_for_Accurate_Flood_Mappingand_Segmentation/28328339",
+        "https://www.nature.com/articles/s41597-025-04554-3",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-026.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ]
+    },
+    "candidate_26791243": {
+      "doi": "10.6084/m9.figshare.26791243",
+      "source": "2025 Scientific Data article reference 34 cites this as 2024 DeepFlood data; prior DOI redirect indicated a Figshare journal_contribution path.",
+      "native_record": "ACCESS_FAILURE",
+      "datacite_lookup": "ACCESS_FAILURE",
+      "created_date": null,
+      "funding_direct_at_exact_doi": "NOT_VERIFIED",
+      "research_status": "RESEARCH_COMPLETE_HUMAN_INTAKE_PENDING_IDENTITY",
+      "recommendation": "Do not assume this is a separate dataset or a duplicate/version of 28328339 without the two native record identities and relationship metadata.",
+      "hub_delivery": "NOT_DELIVERED",
+      "sources": [
+        "https://www.nature.com/articles/s41597-025-04554-3",
+        "https://doi.org/10.6084/m9.figshare.26791243"
+      ]
+    },
+    "exact_human_question": "Which Figshare DOI is the canonical public DeepFlood dataset, and is 26791243 a distinct research output, a prior version, or a journal_contribution reference? Verify file scope and the exact DataCite created timestamp for the selected DOI.",
+    "review_unit_count": 1,
+    "dois": 2,
+    "not_two_confirmed_outputs": true
+  },
+  "feed": {
+    "status": "FEED_BLOCKED_VALIDATION_FAILURE",
+    "manifest_batches": 20,
+    "manifest_candidate_rows": 66,
+    "directory_csv_files": 21,
+    "unmanifested_invalid_batch": "scout-discoveries/batches/2026-10-30-hourly-1329ET-independent-flood-mapping-001.csv",
+    "validation_error": "ValueError: Scout discovery route needs actual public evidence: 2026-10-30-hourly-1329ET-independent-flood-mapping-001.csv:2",
+    "latest_confirmed_manifest_workflow_run": 41100661636,
+    "workflow_conclusion": "failure",
+    "manifest_sha": "1d048cf0b5552aff8eb9b6afc36302d8147afbe8",
+    "repair_authorization": "Human/separately authorized repair required; no immutable batch edit or manual manifest write by Scout."
+  },
+  "private_hub_import": "NOT_VERIFIED",
+  "reviewer_decisions": "NOT_VERIFIED",
+  "new_csv_published": false,
+  "new_public_reach_additions_verified": 0,
+  "one_time_four_doi_recheck": "COMPLETED_1732ET_DO_NOT_REPEAT"
+}
