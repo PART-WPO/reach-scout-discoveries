@@ -1416,7 +1416,7 @@
         "NA23OAR4590137"
       ],
       "cohort": "Historical DataCite API Backfill 2026-10-28 — API-seeded expansion from grant DOI 10.25923/t7t6-m677",
-      "status": "blocked",
+      "status": "pending_hub_handoff",
       "triage_identity": "doi:10.25923/t7t6-m677",
       "discovery_route": "API-seeded expansion",
       "seed_doi": "10.25923/t7t6-m677",
@@ -1459,11 +1459,25 @@
           "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
           "outcome": "All six SPARK index shards; primary NA23OAR4590137 DRSA PRECIP1 project matches publisher article and dataset topic.",
           "checked_at": "2026-10-29T06:31:49Z"
+        },
+        {
+          "round": 1,
+          "method": "independent_noaa_ir_project_record",
+          "url": "https://repository.library.noaa.gov/view/noaa/67019",
+          "outcome": "WPO DRSA PRECIP1 grant record confirms NA23OAR4590137 but not Dataverse publication date.",
+          "checked_at": "2026-10-30T03:36:24.289220Z"
+        },
+        {
+          "round": 1,
+          "method": "native_dataverse_api_attempt",
+          "url": "https://dataverse.harvard.edu/api/datasets/:persistentId/?persistentId=doi:10.7910/DVN/JWZEWF",
+          "outcome": "Native API inaccessible; no exact first-publication date or file scope confirmed.",
+          "checked_at": "2026-10-30T03:36:24.289220Z"
         }
       ],
       "first_investigated_at": "2026-10-29T06:31:49Z",
       "last_attempt_at": "2026-10-29T06:31:49Z",
-      "retry_count": 0,
+      "retry_count": 1,
       "max_delayed_retries": 1,
       "next_retry_at": "2026-11-05T06:31:49Z",
       "next_research_at": "2026-11-05T06:31:49Z",
@@ -1474,9 +1488,23 @@
         "https://repository.library.noaa.gov/view/noaa/67019"
       ],
       "funding_basis": "BAMS article explicitly acknowledges NOAA NA23OAR4590137 and names this Dataverse dataset as its publicly available data; SPARK primary DRSA PRECIP1 award matches exact grant and research topic.",
-      "next_action": "One bounded follow-up no sooner than 2026-11-05T06:31:49Z using native Dataverse citation/metadata and accessible files. If date/scope verified and not duplicate, stage a separate 24-column API-seeded expansion candidate for human approval; if still credible but missing mandatory fields, human_metadata_needed escalation outside normal research queue; no fabricated date.",
+      "next_action": "Await compatible Hub human Investigate intake or explicit reviewer request; research completed, do not automatically re-research.",
       "human_review_status": "not yet delivered to Discovery Hub; metadata blocked",
-      "review_ready": false
+      "review_ready": false,
+      "research_completed": true,
+      "metadata_recovery_exhausted": true,
+      "research_disposition": "human_metadata_needed",
+      "research_completed_at": "2026-10-30T03:36:24.289220Z",
+      "followup_completed_at": "2026-10-30T03:36:24.289220Z",
+      "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-2329ET",
+      "early_retry_reason": "2026-10-29 user-authorized bounded different-source recovery before preserved 2026-11-05 retry date; next_retry_at/next_research_at retained for provenance, no further automatic retry.",
+      "reviewer_question": "Verify exact Dataverse V1 public release date and file accessibility, then determine separate dataset eligibility without borrowing BAMS article date.",
+      "human_handoff_status": "pending_hub_intake",
+      "hub_delivery_status": "not_delivered",
+      "hub_intake_blocker": "Current 24-column Discovery Hub importer support for truthful blank mandatory Publication Date and unresolved scope/identity not verified; no candidate staged, no Hub acceptance claimed.",
+      "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
+      "reviewer_handoff_library_path": "/REACH Scout/2026-10-29-2329ET-lead_queue.json",
+      "reach_comparison": "Current public REACH 10 index shards / 1,238 records checked; no exact DOI/URL match. Prior 22:29 ET complete 140 detail-shard check and 59 Scout candidates; manifest unchanged, detail shards not reread this run; private human feedback NOT VERIFIED."
     },
     {
       "identity": "url:https://www.iaem.org/Portals/IAEMconf/documents/2025/posters2025/Alex-Marmo-Poster.pdf",
@@ -1484,7 +1512,7 @@
         "NA23OAR4590362"
       ],
       "cohort": "Historical DataCite API Backfill 2026-10-28 — API-seeded expansion from grant DOI 10.25923/na23oar4590362",
-      "status": "blocked",
+      "status": "pending_hub_handoff",
       "triage_identity": "doi:10.25923/na23oar4590362",
       "discovery_route": "API-seeded expansion",
       "seed_doi": "10.25923/na23oar4590362",
@@ -1528,11 +1556,25 @@
           "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
           "outcome": "All 14 existing Scout batches (53 review rows) checked; no exact poster title or PDF URL.",
           "checked_at": "2026-10-29T08:29:00Z"
+        },
+        {
+          "round": 1,
+          "method": "official_iaem_2025_poster_guidance",
+          "url": "https://www.iaem.org/Portals/IAEMconf/documents/2025/Poster-Showcase-Guidance-2025.pdf",
+          "outcome": "PDF due 2025-09-30, presentation 2025-11-18; neither proves first public online date.",
+          "checked_at": "2026-10-30T03:36:24.289220Z"
+        },
+        {
+          "round": 1,
+          "method": "official_iaem_abstract_catalog",
+          "url": "https://www.iaem.org/Portals/IAEMconf/documents/2025/posters2025/Alex-Marmo-Abstract%20.pdf",
+          "outcome": "Independent IAEM abstract found via search but direct retrieval 404; no first-publication date.",
+          "checked_at": "2026-10-30T03:36:24.289220Z"
         }
       ],
       "first_investigated_at": "2026-10-29T08:29:00Z",
       "last_attempt_at": "2026-10-29T08:29:00Z",
-      "retry_count": 0,
+      "retry_count": 1,
       "max_delayed_retries": 1,
       "next_retry_at": "2026-11-05T09:00:00Z",
       "next_research_at": "2026-11-05T09:00:00Z",
@@ -1543,9 +1585,23 @@
         "https://repository.library.noaa.gov/view/noaa/67024"
       ],
       "funding_basis": "Poster acknowledgments explicitly identify NOAA Weather Program Office award NA23OAR4590362; original seed grant notice independently corroborates award and project.",
-      "next_action": "After >=7 days conduct one bounded authoritative publication-date verification. If still incomplete, escalate as human_metadata_needed in blocker/lead queue; do not fabricate date or submit invalid 24-column CSV.",
+      "next_action": "Await compatible Hub human Investigate intake or explicit reviewer request; research completed, do not automatically re-research.",
       "human_review_status": "not_yet_submitted_missing_mandatory_date",
-      "review_ready": false
+      "review_ready": false,
+      "research_completed": true,
+      "metadata_recovery_exhausted": true,
+      "research_disposition": "human_metadata_needed",
+      "research_completed_at": "2026-10-30T03:36:24.289220Z",
+      "followup_completed_at": "2026-10-30T03:36:24.289220Z",
+      "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-2329ET",
+      "early_retry_reason": "2026-10-29 user-authorized bounded different-source recovery before preserved 2026-11-05 retry date; next_retry_at/next_research_at retained for provenance, no further automatic retry.",
+      "reviewer_question": "Can IAEM confirm first public online date of exact poster and whether abstract is separate eligible output?",
+      "human_handoff_status": "pending_hub_intake",
+      "hub_delivery_status": "not_delivered",
+      "hub_intake_blocker": "Current 24-column Discovery Hub importer support for truthful blank mandatory Publication Date and unresolved scope/identity not verified; no candidate staged, no Hub acceptance claimed.",
+      "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
+      "reviewer_handoff_library_path": "/REACH Scout/2026-10-29-2329ET-lead_queue.json",
+      "reach_comparison": "Current public REACH 10 index shards / 1,238 records checked; no exact DOI/URL match. Prior 22:29 ET complete 140 detail-shard check and 59 Scout candidates; manifest unchanged, detail shards not reread this run; private human feedback NOT VERIFIED."
     },
     {
       "identity": "url:https://ams.confex.com/ams/51BC7WxComm/webprogram/Paper443444.html",
@@ -1553,12 +1609,27 @@
         "NA21OAR4590214"
       ],
       "cohort": "Historical DataCite API Backfill 2026-10-28 — API-seeded expansion",
-      "status": "blocked",
+      "status": "pending_hub_handoff",
       "missing_fields": [
         "authoritatively documented first-publication date of AMS public abstract",
         "whether conference abstract constitutes a separately eligible REACH other output"
       ],
-      "attempts": [],
+      "attempts": [
+        {
+          "round": 1,
+          "method": "ams_2024_conference_schedule",
+          "url": "https://ams.confex.com/ams/51BC7WxComm/webprogram/WXCOMM.html",
+          "outcome": "Independent AMS schedule confirms June 13, 2024 presentation, not public abstract release date.",
+          "checked_at": "2026-10-30T03:36:24.289220Z"
+        },
+        {
+          "round": 1,
+          "method": "ams_abstract_page_recheck",
+          "url": "https://ams.confex.com/ams/51BC7WxComm/webprogram/Paper443444.html",
+          "outcome": "Public abstract distinct from conference presentation; no first-posted date shown.",
+          "checked_at": "2026-10-30T03:36:24.289220Z"
+        }
+      ],
       "prior_documented_checks": [
         "https://api.datacite.org/dois/10.25923/na21oar4590214",
         "https://ams.confex.com/ams/51BC7WxComm/webprogram/Paper443444.html",
@@ -1568,7 +1639,7 @@
       ],
       "first_investigated_at": "2026-10-29T09:30:30Z",
       "last_attempt_at": "2026-10-29T09:30:30Z",
-      "retry_count": 0,
+      "retry_count": 1,
       "next_retry_at": "2026-11-05T09:30:30Z",
       "followup_question": "Can AMS or an author archive verify the exact first-publication date and separate eligible scope of this publicly accessible conference abstract?",
       "evidence_urls": [
@@ -1576,14 +1647,28 @@
         "https://wpo.noaa.gov/2024-ams-broadcast-and-warnings-comm/"
       ],
       "funding_basis": "Official NOAA WPO conference recap explicitly attributes the exact presentation to NA21OAR4590214; AMS provides matching title and author identity.",
-      "next_action": "One bounded authoritative follow-up no earlier than 2026-11-05T09:30:30Z. If still missing metadata but credible distinct output, escalate human_metadata_needed (do not stage invalid CSV).",
+      "next_action": "Await compatible Hub human Investigate intake or explicit reviewer request; research completed, do not automatically re-research.",
       "triage_identity": "doi:10.25923/na21oar4590214",
       "discovery_route": "API-seeded expansion",
       "scout_seed_doi": "10.25923/na21oar4590214",
       "confidence": "Medium",
       "hub_delivered": false,
       "next_research_at": "2026-11-05T09:30:30Z",
-      "next_research_at_basis": "Existing recorded next_retry_at alias; no change to first investigation, retry date, retry count, or evidence."
+      "next_research_at_basis": "Existing recorded next_retry_at alias; no change to first investigation, retry date, retry count, or evidence.",
+      "research_completed": true,
+      "metadata_recovery_exhausted": true,
+      "research_disposition": "human_metadata_needed",
+      "research_completed_at": "2026-10-30T03:36:24.289220Z",
+      "followup_completed_at": "2026-10-30T03:36:24.289220Z",
+      "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-2329ET",
+      "early_retry_reason": "2026-10-29 user-authorized bounded different-source recovery before preserved 2026-11-05 retry date; next_retry_at/next_research_at retained for provenance, no further automatic retry.",
+      "reviewer_question": "Determine conference abstract standalone eligibility and exact first-publication date, or permitted omission.",
+      "human_handoff_status": "pending_hub_intake",
+      "hub_delivery_status": "not_delivered",
+      "hub_intake_blocker": "Current 24-column Discovery Hub importer support for truthful blank mandatory Publication Date and unresolved scope/identity not verified; no candidate staged, no Hub acceptance claimed.",
+      "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
+      "reviewer_handoff_library_path": "/REACH Scout/2026-10-29-2329ET-lead_queue.json",
+      "reach_comparison": "Current public REACH 10 index shards / 1,238 records checked; no exact DOI/URL match. Prior 22:29 ET complete 140 detail-shard check and 59 Scout candidates; manifest unchanged, detail shards not reread this run; private human feedback NOT VERIFIED."
     },
     {
       "identity": "url:https://ams.confex.com/ams/51BC7WxComm/webprogram/Paper443443.html",
@@ -1591,12 +1676,27 @@
         "NA23OAR4590363"
       ],
       "cohort": "Historical DataCite API Backfill 2026-10-28 — API-seeded expansion",
-      "status": "blocked",
+      "status": "pending_hub_handoff",
       "missing_fields": [
         "authoritatively documented first-publication date of AMS public abstract",
         "eligibility of public conference abstract as standalone REACH other output"
       ],
-      "attempts": [],
+      "attempts": [
+        {
+          "round": 1,
+          "method": "earlier_ams_2024_same_title",
+          "url": "https://ams.confex.com/ams/104ANNUAL/webprogram/Paper439036.html",
+          "outcome": "Jan 29, 2024 AMS abstract has same title, overlapping authors and similar text; potential duplicate presentation family.",
+          "checked_at": "2026-10-30T03:36:24.289220Z"
+        },
+        {
+          "round": 1,
+          "method": "june_ams_program_crosscheck",
+          "url": "https://ams.confex.com/ams/51BC7WxComm/webprogram/BROADCAST.html",
+          "outcome": "Confirms June 12, 2024 slot; not first online publication date.",
+          "checked_at": "2026-10-30T03:36:24.289220Z"
+        }
+      ],
       "prior_documented_checks": [
         "https://api.datacite.org/dois/10.25923/na23oar4590363",
         "https://ams.confex.com/ams/51BC7WxComm/webprogram/Paper443443.html",
@@ -1606,7 +1706,7 @@
       ],
       "first_investigated_at": "2026-10-29T09:30:30Z",
       "last_attempt_at": "2026-10-29T09:30:30Z",
-      "retry_count": 0,
+      "retry_count": 1,
       "next_retry_at": "2026-11-05T09:30:30Z",
       "followup_question": "Can AMS or the research team establish the exact public first-release date and separate eligible output identity for this abstract?",
       "evidence_urls": [
@@ -1614,14 +1714,28 @@
         "https://wpo.noaa.gov/2024-ams-broadcast-and-warnings-comm/"
       ],
       "funding_basis": "Official NOAA WPO conference recap explicitly attributes the exact presentation to NA23OAR4590363; AMS abstract describes NOAA-funded project with matching investigators.",
-      "next_action": "One bounded authoritative follow-up no earlier than 2026-11-05T09:30:30Z; if still credible but metadata missing, escalate human_metadata_needed without fabricating date or publishing invalid CSV.",
+      "next_action": "Await compatible Hub human Investigate intake or explicit reviewer request; research completed, do not automatically re-research.",
       "triage_identity": "doi:10.25923/na23oar4590363",
       "discovery_route": "API-seeded expansion",
       "scout_seed_doi": "10.25923/na23oar4590363",
       "confidence": "Medium",
       "hub_delivered": false,
       "next_research_at": "2026-11-05T09:30:30Z",
-      "next_research_at_basis": "Existing recorded next_retry_at alias; no change to first investigation, retry date, retry count, or evidence."
+      "next_research_at_basis": "Existing recorded next_retry_at alias; no change to first investigation, retry date, retry count, or evidence.",
+      "research_completed": true,
+      "metadata_recovery_exhausted": true,
+      "research_disposition": "human_metadata_needed",
+      "research_completed_at": "2026-10-30T03:36:24.289220Z",
+      "followup_completed_at": "2026-10-30T03:36:24.289220Z",
+      "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-2329ET",
+      "early_retry_reason": "2026-10-29 user-authorized bounded different-source recovery before preserved 2026-11-05 retry date; next_retry_at/next_research_at retained for provenance, no further automatic retry.",
+      "reviewer_question": "Resolve January vs June same-title AMS abstract duplicate/standalone identity and first public date.",
+      "human_handoff_status": "pending_hub_intake",
+      "hub_delivery_status": "not_delivered",
+      "hub_intake_blocker": "Current 24-column Discovery Hub importer support for truthful blank mandatory Publication Date and unresolved scope/identity not verified; no candidate staged, no Hub acceptance claimed.",
+      "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
+      "reviewer_handoff_library_path": "/REACH Scout/2026-10-29-2329ET-lead_queue.json",
+      "reach_comparison": "Current public REACH 10 index shards / 1,238 records checked; no exact DOI/URL match. Prior 22:29 ET complete 140 detail-shard check and 59 Scout candidates; manifest unchanged, detail shards not reread this run; private human feedback NOT VERIFIED."
     },
     {
       "identity": "doi:10.5281/zenodo.21048459",
@@ -3971,7 +4085,7 @@
         "NA15OAR4590205"
       ],
       "cohort": "Normal historical SPARK award discovery 2026-10-29",
-      "status": "blocked",
+      "status": "pending_hub_handoff",
       "output_type": "Other output — publicly accessible final report",
       "title": "Probabilistic Prediction of Tropical Cyclone Rapid Intensification Using Satellite Passive Microwave Imagery — Final Report",
       "missing_fields": [
@@ -4005,11 +4119,25 @@
           "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
           "outcome": "No matching final report in 55 previously staged review candidates across 15 batches.",
           "checked_at": "2026-10-29T17:30:25.127238Z"
+        },
+        {
+          "round": 1,
+          "method": "official_nhc_jht_archive",
+          "url": "https://www.nhc.noaa.gov/jht/past_projects.php",
+          "outcome": "NHC past projects archive confirms 2015-17 and 2017-19 JHT project cohorts; no public release date for report.",
+          "checked_at": "2026-10-30T03:36:24.289220Z"
+        },
+        {
+          "round": 1,
+          "method": "final_report_products_section",
+          "url": "https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_reportFINAL_092718.pdf",
+          "outcome": "Final report submitted 2018-09-30, references separate AMS poster and website; no date proving public release.",
+          "checked_at": "2026-10-30T03:36:24.289220Z"
         }
       ],
       "last_attempt_at": "2026-10-29T17:30:25.127238Z",
       "first_investigated_at": "2026-10-29T17:30:25.127238Z",
-      "retry_count": 0,
+      "retry_count": 1,
       "max_delayed_retries": 1,
       "next_retry_at": "2026-11-05T17:30:25.127238Z",
       "next_research_at": "2026-11-05T17:30:25.127238Z",
@@ -4024,9 +4152,22 @@
       "discovery_path": "SPARK 2015 award NA15OAR4590205 -> official NHC Joint Hurricane Testbed report archive -> exact final report PDF",
       "verified_report_submission_date": "2018-09-30",
       "publication_date": null,
-      "next_action": "One bounded independent date/source follow-up no earlier than next_research_at; if public publication date remains unavailable, escalate human_metadata_needed outside normal research queue, without fabricated Hub metadata.",
+      "next_action": "Await compatible Hub human Investigate intake or explicit reviewer request; research completed, do not automatically re-research.",
       "hub_delivery": "NOT_DELIVERED_MANDATORY_DATE_MISSING",
-      "reviewer_question": "Can the official NHC archive or records owner supply a verifiable first-publication date, and should this final report be cataloged as an Other output?"
+      "reviewer_question": "Confirm first public availability of exact final report and its eligibility as Other output; no substitution of submission date.",
+      "research_completed": true,
+      "metadata_recovery_exhausted": true,
+      "research_disposition": "human_metadata_needed",
+      "research_completed_at": "2026-10-30T03:36:24.289220Z",
+      "followup_completed_at": "2026-10-30T03:36:24.289220Z",
+      "followup_run_id": "REACH-SCOUT-2026-10-29-HOURLY-2329ET",
+      "early_retry_reason": "2026-10-29 user-authorized bounded different-source recovery before preserved 2026-11-05 retry date; next_retry_at/next_research_at retained for provenance, no further automatic retry.",
+      "human_handoff_status": "pending_hub_intake",
+      "hub_delivery_status": "not_delivered",
+      "hub_intake_blocker": "Current 24-column Discovery Hub importer support for truthful blank mandatory Publication Date and unresolved scope/identity not verified; no candidate staged, no Hub acceptance claimed.",
+      "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
+      "reviewer_handoff_library_path": "/REACH Scout/2026-10-29-2329ET-lead_queue.json",
+      "reach_comparison": "Current public REACH 10 index shards / 1,238 records checked; no exact DOI/URL match. Prior 22:29 ET complete 140 detail-shard check and 59 Scout candidates; manifest unchanged, detail shards not reread this run; private human feedback NOT VERIFIED."
     }
   ],
   "latest_due_date_alias_audit": {
