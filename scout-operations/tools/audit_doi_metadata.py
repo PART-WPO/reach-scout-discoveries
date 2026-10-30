@@ -316,7 +316,7 @@ def main():
   id,x=pair
   if args.offline:
    meta={"status":"offline"}
-  elif not args.refresh_all and id in previous and previous[id].get("metadata",{}).get("status")=="ok" and (previous[id]["metadata"].get("source")!="crossref" or previous[id]["metadata"].get("checkpoint_schema")=="crossref-publication-v2"):
+  elif not args.refresh_all and id in previous and previous[id].get("metadata",{}).get("status")=="ok" and (previous[id]["metadata"].get("source")!="crossref" or previous[id]["metadata"].get("checkpoint_schema")=="crossref-publication-v3-created-accepted"):
    meta=dict(previous[id]["metadata"])
   else:
    meta=fetch(id)
