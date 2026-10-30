@@ -1,0 +1,171 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-30-HOURLY-0124ET",
+  "started_at_local": "2026-10-30 01:24 EDT",
+  "audit_generated_at_utc": "2026-10-30T05:26:56.711529Z",
+  "selected_mode": "attribution_followups",
+  "policy_files_read": [
+    "scout-operations/api-followup-priority-policy.md",
+    "scout-operations/no-action-disposition-policy.md",
+    "scout-operations/discovery-expansion-metrics.md"
+  ],
+  "original_seeds_processed": 0,
+  "original_seeds_unchanged_completed": 188,
+  "original_seed_dispositions": {
+    "already_in_reach": 37,
+    "forwarded_to_hub": 2,
+    "metadata_update_forwarded": 8,
+    "no_action": 109,
+    "human_metadata_needed": 32
+  },
+  "expansion_report_human_metadata_needed": 5,
+  "attribution_followups": {
+    "ledger_total": 71,
+    "closed_before": 24,
+    "closed_after": 29,
+    "queued_before": 47,
+    "queued_after": 42,
+    "closed_this_run": [
+      {
+        "doi": "doi:10.5061/dryad.h9w0vt4nq",
+        "original_seed_status": "no_action",
+        "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+        "attribution_followup_status": "closed_no_project_bridge",
+        "checked_source_urls": [
+          "https://datadryad.org/dataset/doi%3A10.5061/dryad.h9w0vt4nq",
+          "https://rammb2.cira.colostate.edu/wp-content/uploads/2023/04/RAMMB-CIRA_Weekly_2023.04.07.pdf",
+          "https://api.mountainscholar.org/server/api/core/bitstreams/97133a2c-b685-4ac9-9f47-e8b0b4d0984a/content",
+          "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-008.csv",
+          "https://repository.library.noaa.gov/view/noaa/67858/noaa_67858_DS1.pdf"
+        ],
+        "recheck_finding": "Dryad GREMLIN CONUS3 2020; NOAA CIRA 2023-04-07 weekly report attributes all three annual datasets to GOES-R; CSU dissertation and NOAA article cite distinct datasets. SPARK spark-000105 is MET-TC tropical cyclone verification, with NA19OAR4320073 related umbrella only; no project-specific output bridge.",
+        "project_bridge_verified": false,
+        "reviewer_visibility": "NOT_SENT",
+        "scout_batch_id": null
+      },
+      {
+        "doi": "doi:10.5061/dryad.zs7h44jf2",
+        "original_seed_status": "no_action",
+        "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+        "attribution_followup_status": "closed_no_project_bridge",
+        "checked_source_urls": [
+          "https://datadryad.org/dataset/doi%3A10.5061/dryad.zs7h44jf2",
+          "https://rammb2.cira.colostate.edu/wp-content/uploads/2023/04/RAMMB-CIRA_Weekly_2023.04.07.pdf",
+          "https://api.mountainscholar.org/server/api/core/bitstreams/97133a2c-b685-4ac9-9f47-e8b0b4d0984a/content",
+          "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-008.csv",
+          "https://github.com/stockeh/srvit"
+        ],
+        "recheck_finding": "Dryad GREMLIN CONUS3 2021; CIRA 2023-04-07 report assigns GREMLIN dataset to GOES-R. CSU dissertation and independent SRViT repository link dataset as scientific input, not to WPO spark-000105 MET-TC diagnostics integration. Broad NA19OAR4320073 is only related award.",
+        "project_bridge_verified": false,
+        "reviewer_visibility": "NOT_SENT",
+        "scout_batch_id": null
+      },
+      {
+        "doi": "doi:10.5061/dryad.2jm63xstt",
+        "original_seed_status": "no_action",
+        "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+        "attribution_followup_status": "closed_no_project_bridge",
+        "checked_source_urls": [
+          "https://datadryad.org/dataset/doi%3A10.5061/dryad.2jm63xstt",
+          "https://rammb2.cira.colostate.edu/wp-content/uploads/2023/04/RAMMB-CIRA_Weekly_2023.04.07.pdf",
+          "https://api.mountainscholar.org/server/api/core/bitstreams/97133a2c-b685-4ac9-9f47-e8b0b4d0984a/content",
+          "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-008.csv",
+          "https://repository.library.noaa.gov/view/noaa/67858/noaa_67858_DS1.pdf"
+        ],
+        "recheck_finding": "Dryad GREMLIN CONUS3 2022; CIRA report identifies GOES-R support, dissertation and NOAA peer-reviewed paper identify dataset as GREMLIN research artifact. SPARK spark-000105 is separate MET-TC large-scale tropical cyclone diagnostics project, with only umbrella institutional overlap.",
+        "project_bridge_verified": false,
+        "reviewer_visibility": "NOT_SENT",
+        "scout_batch_id": null
+      },
+      {
+        "doi": "doi:10.5061/dryad.2bvq83br4",
+        "original_seed_status": "no_action",
+        "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+        "attribution_followup_status": "closed_no_project_bridge",
+        "checked_source_urls": [
+          "https://datadryad.org/dataset/doi%3A10.5061/dryad.2bvq83br4",
+          "https://onlinelibrary.wiley.com/doi/full/10.1111/gcb.15902",
+          "https://ci.noaa.gov/wp-content/uploads/2023/03/RPPR_NA17OAR4320152_20200401-20210331.pdf",
+          "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-011.csv",
+          "https://repository.library.noaa.gov/view/noaa/67784/noaa_67784_DS1.pdf"
+        ],
+        "recheck_finding": "Dryad and journal article identify 2021 Lake Erie fish-trait ecology funded by Great Lakes Fishery Commission and broad CIGLR NA17OAR4320152. SPARK spark-000135 JTTI UFS lake-coupling begins 2022 with primary NA22OAR4590188, different model objective; CIGLR annual report lists lake-coupling separately. No fish dataset-to-WPO project bridge.",
+        "project_bridge_verified": false,
+        "reviewer_visibility": "NOT_SENT",
+        "scout_batch_id": null
+      },
+      {
+        "doi": "doi:10.57969/s9kw2f",
+        "original_seed_status": "no_action",
+        "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+        "attribution_followup_status": "closed_no_project_bridge",
+        "checked_source_urls": [
+          "https://erddap.ldl.ucsd.edu/erddap/tabledap/GDP_GtsDrifterData.html",
+          "https://gdp.ucsd.edu/ldl/gdp-drifter-data/",
+          "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-028.csv",
+          "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-045.csv",
+          "https://repository.library.noaa.gov/view/noaa/45433"
+        ],
+        "recheck_finding": "Scripps native ERDDAP identifies global GDP GTS stream. LDL program page attributes long-running GDP data to broad NA20OAR4320278 and another grant. SPARK spark-000355 is San Francisco AQPI radar and spark-000571 is separate AR marine-boundary-layer modeling; related drifter SST article also only has broad NOAA funding. No exact WPO project output bridge.",
+        "project_bridge_verified": false,
+        "reviewer_visibility": "NOT_SENT",
+        "scout_batch_id": null
+      }
+    ],
+    "original_seed_status_unchanged": true,
+    "ledger_update_commit": "0c3457aea56219f5ee5ec1be327bfc469bea5e99"
+  },
+  "new_evidence_checks_documented": 25,
+  "new_expansion_leads": 0,
+  "new_human_metadata_needed_handoffs": 0,
+  "pending_hub_handoff_before": 37,
+  "pending_hub_handoff_after": 37,
+  "hub_visible_new": 0,
+  "hub_visible_cumulative": "NOT_VERIFIED",
+  "reviewer_confirmed_missing_acknowledgment": "NOT_VERIFIED",
+  "public_reach_additions": 0,
+  "public_reach_rows": 1238,
+  "feed_integrity_status": "VERIFIED_17_OF_17_SHA256_AND_ROW_COUNTS",
+  "feed_batches_manifest_count": 17,
+  "feed_candidates_manifest_count": 59,
+  "new_csv_batch_ids": [],
+  "manifest_verification": {
+    "manifest_generated_at": "2026-10-29T23:33:30Z",
+    "batch_count": 17,
+    "rows": 59,
+    "all_17_exact_utf8_sha256_and_csv_record_counts_match": true,
+    "no_new_batch": true,
+    "verification_method": "GitHub connector main branch: fetch each of 17 immutable CSVs, calculate SHA256 on exact UTF-8 bytes, count logical CSV rows with quoted newlines; compare each manifest record_count and sha256."
+  },
+  "github_action_verification_status": "NOT_VERIFIABLE",
+  "reach_verification": "All 10 REACH public index shards (1,238 records) independently read; no exact DOI match for five closed cases. Full REACH detail shards and private Hub state NOT_VERIFIED.",
+  "human_review_status": "Private Hub decisions and importer blank metadata acceptance NOT_VERIFIED",
+  "coverage_before": {
+    "monthly_research_remaining": 0,
+    "historical_research_completed": 188,
+    "historical_remaining": 0,
+    "attribution_queued": 47
+  },
+  "coverage_after": {
+    "monthly_research_remaining": 0,
+    "historical_research_completed": 188,
+    "historical_remaining": 0,
+    "attribution_queued": 42
+  },
+  "funding_evidence_distinction": "Three GREMLIN yearly datasets have GOES-R support, while SPARK MET-TC is separate JTTI project with umbrella award related only; Lake Erie fish ecology has broad CIGLR funding, not UFS lake coupling; global GDP GTS drifters have broad Scripps NOAA support, not verified WPO AQPI or AR workstream.",
+  "blockers": [
+    "37 human metadata needed cases pending Hub integration, NOT DELIVERED TO HUB",
+    "Private Hub status and full current REACH detail revalidation NOT VERIFIED",
+    "GitHub Actions workflow status NOT_VERIFIABLE"
+  ],
+  "audit_result": "PARTIAL",
+  "audit_reason": "Bounded original attribution follow-ups closed on independently checked sources and full index comparison; no new candidates. Private Hub and full REACH detail state not verified.",
+  "library_files": [
+    "/REACH Scout/2026-10-30-0124ET-report.md",
+    "/REACH Scout/2026-10-30-0124ET-lead_queue.json",
+    "/REACH Scout/2026-10-30-0124ET-checkpoint.json",
+    "/REACH Scout/2026-10-30-0124ET-discovery_hub_candidates.csv",
+    "/REACH Scout/2026-10-30-0124ET-hourly_provenance_audit.json"
+  ],
+  "github_active_workstream_update_commit": "882c0fe13d76637d8b3b2290120dff0def877098"
+}
