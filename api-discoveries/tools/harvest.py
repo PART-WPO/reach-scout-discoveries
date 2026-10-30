@@ -226,6 +226,16 @@ def to_candidate(a,src,award,mode,month):
         return None
     if mode=="monthly" and not (pub or basis=="registration_only_publication_unverified" or basis=="published_month_only"):
         return None
+    # WPO office Pub Date policy (2026-10-30): valid DataCite created day
+    # COMPLETES Pub Date, even if it differs from repository release dates.
+    # Keep the original date basis alongside the accepted office policy.
+    # Apply after the monthly inclusion gate: date convention must never
+    # accidentally expand the monthly search window.
+    if src=="datacite":
+        created=iso_date(a.get("created"))
+        if len(created)==10:
+            pub=created
+            basis=basis+";reach_pub_date_datacite_created"
     text=re.sub(r"<[^>]+>"," ",str(abstract));text=re.sub(r"\s+"," ",text).strip()
     return {"doi":doi,"src":src,"award":award,
       "title":title or "Provisional metadata for DOI "+doi,
