@@ -1,10 +1,10 @@
 {
   "schema": "reach-scout-metadata-review-units-v1",
   "created_from": "scout-operations/metadata-blockers.json",
-  "created_from_sha": "d702f7c561fa8d20cd4ba9635a264f38abf3b633",
+  "created_from_sha": "24e5b238aaa27cc83d536e776a42b3f7bcd0a406",
   "generated_on": "2026-10-30",
-  "source_cases": 37,
-  "review_units": 31,
+  "source_cases": 38,
+  "review_units": 32,
   "version_or_alternate_groups": 6,
   "source_cases_not_necessarily_distinct_outputs": true,
   "workflow_status": "PREPARED_FOR_HUMAN_INTAKE_NOT_VISIBLE_IN_HUB",
@@ -2966,6 +2966,96 @@
           "original_status": "pending_hub_handoff"
         }
       ]
+    },
+    {
+      "review_key": "case-32",
+      "source_identities": [
+        "url:https://www.nhc.noaa.gov/jht/ihc_17/ihc17_Rozoff.pdf"
+      ],
+      "review_type": "METADATA_AND_ELIGIBILITY",
+      "priority": "HIGH",
+      "reviewer_question": "Is this 2017 JHT IHC slide deck a distinct eligible Other Knowledge Product under NA15OAR4590205? Confirm exact first public posting date, native file access, and whether slides themselves acknowledge the grant. Official NHC confirms publicly available by 2017-04-13, not necessarily first posted that day.",
+      "canonical_identity": "url:https://www.nhc.noaa.gov/jht/ihc_17/ihc17_Rozoff.pdf",
+      "all_original_decisions_preserved": true,
+      "source_records": [
+        {
+          "identity": "url:https://www.nhc.noaa.gov/jht/ihc_17/ihc17_Rozoff.pdf",
+          "missing_fields": [
+            "Exact first public release/posting date of this specific slide deck (NHC announces public availability by 2017-04-13)",
+            "Direct inspection of native slide PDF and whether the slide itself explicitly acknowledges NA15OAR4590205 (native access failure)"
+          ],
+          "reviewer_question": "Is this 2017 JHT IHC slide deck a distinct eligible Other Knowledge Product under NA15OAR4590205? Confirm exact first public posting date, native file access, and whether slides themselves acknowledge the grant. Official NHC confirms publicly available by 2017-04-13, not necessarily first posted that day.",
+          "award_numbers": [
+            "NA15OAR4590205"
+          ],
+          "evidence_urls": [
+            "https://www.nhc.noaa.gov/jht/15-17_proj.php",
+            "https://www.nhc.noaa.gov/jht/ihc_17/ihc17_Rozoff.pdf",
+            "https://www.nhc.noaa.gov/hot/archive.php",
+            "https://pubs.ssec.wisc.edu/research_Resources/publications/pdfs/SSECPUBS/SSEC_Publication_No_17_09_R1.pdf",
+            "https://www.nhc.noaa.gov/jht/15-17reports/JHT_Velden_midyear2.pdf"
+          ],
+          "checked_sources": [
+            {
+              "url": "https://www.nhc.noaa.gov/jht/15-17_proj.php",
+              "method": "official_nhc_project_roster",
+              "outcome": "Official JHT 2015–2017 roster identifies exact project and IHC 2017 presentation link.",
+              "round": 0
+            },
+            {
+              "url": "https://www.nhc.noaa.gov/jht/ihc_17/ihc17_Rozoff.pdf",
+              "method": "native_nhc_slide_retrieval",
+              "outcome": "Search-indexed slide title and sample content available, direct PDF open returned HTTP 403: ACCESS FAILURE, not proof metadata absent.",
+              "round": 0,
+              "source_failure": "HTTP_403_NATIVE_PDF"
+            },
+            {
+              "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+              "method": "public_reach_scout_comparison",
+              "outcome": "All ten SHA-256-verified public REACH index shards (1,238) and 19 SHA-256-verified Scout batches (62) checked; no exact presentation URL/identity; private decisions NOT VERIFIED.",
+              "round": 0
+            },
+            {
+              "url": "https://www.nhc.noaa.gov/hot/archive.php",
+              "method": "dated_nhc_news_archive",
+              "outcome": "Official news archive announces 2017 IHC presentation set available 2017-04-13: public availability BY this date, not exact first posting.",
+              "round": 1,
+              "source_dateType": "public_availability_announced_by",
+              "source_date": "2017-04-13"
+            },
+            {
+              "url": "https://pubs.ssec.wisc.edu/research_Resources/publications/pdfs/SSECPUBS/SSEC_Publication_No_17_09_R1.pdf",
+              "method": "independent_ssec_report",
+              "outcome": "2017 SSEC report names exact award NA15OAR4590205 and explicitly lists the Rozoff/Velden 2017 IHC presentation as funded deliverable. Printed 16 March 2016 conflicts with 2017 IHC.",
+              "round": 1
+            },
+            {
+              "url": "https://www.nhc.noaa.gov/jht/15-17reports/JHT_Velden_midyear2.pdf",
+              "method": "independent_noaa_midyear",
+              "outcome": "Independent NOAA report corroborates exact project/presentation and alternate OFCM slide URL, no first public slide date or internal acknowledgment.",
+              "round": 1
+            }
+          ],
+          "funding_basis": "SPARK spark-000201 primary WPO JHT award NA15OAR4590205; NHC roster and independent SSEC/NOAA 2017 grant-funded reports identify this exact presentation as project output. Internal slide-level acknowledgment NOT VERIFIED.",
+          "hub_delivery_status": "not_delivered",
+          "original_status": "pending_hub_handoff",
+          "verified_available_by": "2017-04-13",
+          "first_publication_date": null,
+          "acknowledgment_absence_verified": false
+        }
+      ]
     }
-  ]
+  ],
+  "last_incremental_update": {
+    "run_id": "REACH-SCOUT-2026-10-30-HOURLY-0929ET",
+    "new_review_keys": [
+      "case-32"
+    ],
+    "new_source_identities": [
+      "url:https://www.nhc.noaa.gov/jht/ihc_17/ihc17_Rozoff.pdf"
+    ],
+    "prior_31_units_preserved": true,
+    "source_blocker_blob_sha": "24e5b238aaa27cc83d536e776a42b3f7bcd0a406",
+    "hub_import_observed": false
+  }
 }
