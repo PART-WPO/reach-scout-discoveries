@@ -1,0 +1,180 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-30-HOURLY-1435ET",
+  "timestamp_utc": "2026-10-30T18:35:20Z",
+  "mode": "normal_historical_discovery",
+  "phase": "feed_validation_failure_investigation_and_deepflood_dataset_first_pass",
+  "monthly_before_after": {
+    "received": [
+      0,
+      0
+    ],
+    "completed": [
+      0,
+      0
+    ],
+    "remaining": [
+      0,
+      0
+    ]
+  },
+  "historical_before_after": {
+    "reported_completed": [
+      188,
+      188
+    ],
+    "reported_remaining": [
+      0,
+      0
+    ],
+    "current_reconciliation": "FAILED_ON_FOUR_LEGACY_TRIAGE_PROOF_RECORDS",
+    "validated_completed_this_run": "NOT_VERIFIED"
+  },
+  "original_seeds_disposed_this_run": [],
+  "original_seed_artifact_vs_grant_decisions": [],
+  "expansion_leads": [
+    {
+      "identity": "doi:10.6084/m9.figshare.26791243",
+      "status": "RESEARCH_ACTIVE",
+      "source_urls": [
+        "https://www.nature.com/articles/s41597-025-04554-3",
+        "https://api.figshare.com/v2/articles/26791243",
+        "https://api.datacite.org/dois/10.6084/m9.figshare.26791243",
+        "https://doi.org/10.6084/m9.figshare.26791243",
+        "https://figshare.com/articles/dataset/DeepFlood_High_Resolution_Dataset_for_Accurate_Flood_Mapping_and_Segmentation/26791243",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+        "https://profiles.ncat.edu/en/publications/deepflood-for-inundated-vegetation-high-resolution-dataset-for-ac/",
+        "https://www.nature.com/articles/s41597-025-04554-3.pdf"
+      ],
+      "original_seed_doi": null,
+      "discovery_route": "Independent discovery"
+    }
+  ],
+  "normal_projects_examined": [
+    "spark-000338"
+  ],
+  "source_checks": [
+    {
+      "url": "https://www.nature.com/articles/s41597-025-04554-3",
+      "method": "primary_publisher_data_records_and_acknowledgment",
+      "result": "Publisher article explicitly identifies Figshare DOI 10.6084/m9.figshare.26791243 as its openly accessible DeepFlood dataset, describes optical/SAR imagery, masks, DEM, shapefiles and tiles; acknowledges NOAA NA21OAR4590358. The article date 2025-02-15 is not the dataset Pub Date."
+    },
+    {
+      "url": "https://api.figshare.com/v2/articles/26791243",
+      "method": "native_figshare_api",
+      "result": "ACCESS FAILURE; no DOI-specific native file inventory, version relation or created date retrieved",
+      "source_failure": "ACCESS_FAILURE_NOT_METADATA_ABSENT"
+    },
+    {
+      "url": "https://api.datacite.org/dois/10.6084/m9.figshare.26791243",
+      "method": "doi_specific_datacite_created",
+      "result": "ACCESS FAILURE; valid DataCite created timestamp not retrieved; do not invent a date or treat the date as verified",
+      "source_failure": "ACCESS_FAILURE_NOT_METADATA_ABSENT"
+    },
+    {
+      "url": "https://doi.org/10.6084/m9.figshare.26791243",
+      "method": "doi_resolution",
+      "result": "ACCESS FAILURE through available retrieval; no absence of public data inferred",
+      "source_failure": "ACCESS_FAILURE_NOT_METADATA_ABSENT"
+    },
+    {
+      "url": "https://figshare.com/articles/dataset/DeepFlood_High_Resolution_Dataset_for_Accurate_Flood_Mapping_and_Segmentation/26791243",
+      "method": "native_figshare_landing",
+      "result": "ACCESS FAILURE through available retrieval; native files/version not verified",
+      "source_failure": "ACCESS_FAILURE_NOT_METADATA_ABSENT"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+      "method": "complete_public_reach_index_shards",
+      "result": "10/10 index shards and 1238 index records checked for exact DOI 26791243 and normalized DeepFlood dataset title; no exact match. Full detail shards not rechecked."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+      "method": "verified_manifest_scout_batches",
+      "result": "20/20 manifest-listed batch files (66 rows) searched for DOI and title, no exact match. Two new flood articles in unmanifested invalid 1329ET batch are different identities; private human decisions unavailable."
+    },
+    {
+      "url": "https://profiles.ncat.edu/en/publications/deepflood-for-inundated-vegetation-high-resolution-dataset-for-ac/",
+      "method": "institutional_bibliographic_crosscheck",
+      "result": "Institutional profile corroborates article identity, not the dataset-specific DataCite created timestamp or native file inventory."
+    },
+    {
+      "url": "https://www.nature.com/articles/s41597-025-04554-3.pdf",
+      "method": "publisher_pdf_repository_inventory",
+      "result": "Article Figure 6 depicts DEEPFLOOD DATA subfolders; corroborates intended standalone data product, not a live Figshare file-access test."
+    }
+  ],
+  "new_verified_candidates": [],
+  "new_batch_ids": [],
+  "new_csv_staged": false,
+  "feed_integrity_status": "FEED_BLOCKED_VALIDATION_FAILURE",
+  "manifest_verification_evidence": {
+    "manifest_blob_sha": "1d048cf0b5552aff8eb9b6afc36302d8147afbe8",
+    "manifest_batch_count": 20,
+    "manifest_rows": 66,
+    "unmanifested_invalid_csv_path": "scout-discoveries/batches/2026-10-30-hourly-1329ET-independent-flood-mapping-001.csv",
+    "unmanifested_invalid_csv_rows": 2,
+    "invalid_csv_exact_utf8_sha256_from_prior_run": "97905d8908bcfca04cff68b5cf54e8635e3660184279e2a9fc01ca996deb0402",
+    "validation_failure": "Scout discovery route needs actual public evidence: 2026-10-30-hourly-1329ET-independent-flood-mapping-001.csv:2",
+    "reason": "Missing mandatory Scout discovery path evidence: https://... rationale line in immutable CSV; no direct manifest edits, no CSV edit, delete or duplicate replacement permitted."
+  },
+  "github_action_verification": {
+    "manifest_run_id": 41100661636,
+    "status": "completed",
+    "conclusion": "failure",
+    "job_id": 124217219522,
+    "historical_reconciliation_run_id": 41103138960,
+    "historical_reconciliation_conclusion": "failure",
+    "historical_reconciliation_error_identities": [
+      "doi:10.57969/s9k013",
+      "doi:10.57969/s9pp42",
+      "doi:10.57969/s9tg60",
+      "doi:10.57969/s9z598"
+    ]
+  },
+  "metadata_intake": {
+    "source_cases": 42,
+    "review_units": 36,
+    "human_intake_pending": 38,
+    "four_date_only_normal_review_proposals_feed_verified": true,
+    "hub_imports_observed": "NOT_VERIFIED",
+    "reviewer_decisions": "NOT_VERIFIED",
+    "private_companion": "PREPARED_TESTED_OFFLINE_NOT_INSTALLED"
+  },
+  "discovery_origin_rollup": {
+    "manifest_verified_rows": 66,
+    "direct_api": 5,
+    "api_seeded_expansion": 12,
+    "independent_discovery": 3,
+    "metadata_correction": 6,
+    "unclassified_legacy": 40,
+    "unmanifested_invalid_proposals": 2
+  },
+  "public_reach": {
+    "rows": 1238,
+    "manifest_sha": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+    "new_additions_verified": 0
+  },
+  "hub_imports": "NOT_VERIFIED",
+  "human_decisions": "NOT_VERIFIED",
+  "reviewer_confirmed_without_acknowledgment": "NOT_VERIFIED",
+  "blockers": [
+    "Automated manifest generator failed on previously committed immutable 2-row CSV: required discovery path evidence line missing; requires separately authorized repair, no new batch publishing.",
+    "Historical reconciliation validator failed on four old human_metadata_needed statuses whose research proof/normal feed routing does not satisfy strict validator; reported 188/188 is not freshly revalidated.",
+    "Figshare and DataCite native endpoints inaccessible; no DOI-specific created timestamp or live file inventory.",
+    "Private Hub import and reviewer decisions not observable."
+  ],
+  "audit_result": "PARTIAL",
+  "library_path": "/REACH Scout Library/2026-10-30_1435ET",
+  "github_audit_published": "NOT_ATTEMPTED_AT_FILE_CREATION",
+  "no_csv_reason": "No new fully verified candidate and feed blocked; no fake, incomplete or header-only 24-column batch created.",
+  "safety": {
+    "source_batches_unchanged": true,
+    "scout_batches_unchanged": true,
+    "manifest_not_manually_modified": true,
+    "human_decisions_unchanged": true,
+    "reach_spark_smartsheet_unchanged": true,
+    "datacite_created_pub_date_policy_preserved": true
+  }
+}
