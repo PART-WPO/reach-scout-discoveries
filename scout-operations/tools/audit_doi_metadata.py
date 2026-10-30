@@ -325,7 +325,7 @@ def write_crossref_report(records,source_sizes):
  return counts
 
 def main():
- ap=argparse.ArgumentParser();ap.add_argument("--offline",action="store_true");ap.add_argument("--workers",type=int,default=6);ap.add_argument("--refresh-all",action="store_true");args=ap.parse_args()
+ ap=argparse.ArgumentParser();ap.add_argument("--offline",action="store_true");ap.add_argument("--workers",type=int,default=6);ap.add_argument("--refresh-all",action="store_true");ap.add_argument("--refresh-crossref",action="store_true");args=ap.parse_args()
  index,sizes=inventory()
  print("Validated source inventory:",json.dumps({"sources":sizes,"unique_dois":len(index)}),flush=True)
  previous={}
@@ -336,7 +336,7 @@ def main():
   id,x=pair
   if args.offline:
    meta={"status":"offline"}
-  elif not args.refresh_all and id in previous and previous[id].get("metadata",{}).get("status")=="ok" and (previous[id]["metadata"].get("source")!="crossref" or previous[id]["metadata"].get("checkpoint_schema")=="crossref-publication-v3-created-accepted"):
+  elif not args.refresh_all and id in previous and not (args.refresh_crossref and previous[id].get("metadata",{}).get("source")=="crossref") and previous[id].get("metadata",{}).get("status")=="ok" and (previous[id]["metadata"].get("source")!="crossref" or previous[id]["metadata"].get("checkpoint_schema")=="crossref-publication-v3-created-accepted"):
    meta=dict(previous[id]["metadata"])
   else:
    meta=fetch(id)
