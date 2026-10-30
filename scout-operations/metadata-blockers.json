@@ -1794,6 +1794,15 @@
       ],
       "attempts": [
         {
+          "round": 0,
+          "method": "original_ams_abstract_evidence",
+          "url": "https://ams.confex.com/ams/51BC7WxComm/webprogram/Paper443444.html",
+          "outcome": "Conservative reconstruction of original source capture from existing first_investigated_at and evidence_urls; public AMS abstract identity captured. Exact original HTTP check log absent; no first-public date inferred.",
+          "checked_at": "2026-10-29T09:30:30Z",
+          "checked_at_basis": "existing first_investigated_at ledger timestamp (conservative, not independently logged HTTP request)",
+          "provenance_reconstruction": true
+        },
+        {
           "round": 1,
           "method": "ams_2024_conference_schedule",
           "url": "https://ams.confex.com/ams/51BC7WxComm/webprogram/WXCOMM.html",
@@ -1847,8 +1856,8 @@
       "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
       "reviewer_handoff_library_path": "/REACH Scout/2026-10-29-2329ET-lead_queue.json",
       "reach_comparison": "Current public REACH 10 index shards / 1,238 records checked; no exact DOI/URL match. Prior 22:29 ET complete 140 detail-shard check and 59 Scout candidates; manifest unchanged, detail shards not reread this run; private human feedback NOT VERIFIED.",
-      "provenance_exception": "LEGACY_INITIAL_ROUND_NOT_RECORDED",
-      "provenance_exception_note": "Existing round-1 source checks are preserved with actual timestamps. No round-0 timestamp was invented; audit remains PARTIAL and validator still flags this until a truthful reconciliation is approved."
+      "provenance_exception": "LEGACY_INITIAL_ROUND_RECONSTRUCTED_FROM_RECORDED_EVIDENCE",
+      "provenance_exception_note": "Round-0 source identity and conservative timestamp reconstructed from pre-existing first_investigated_at and evidence_urls; original HTTP log unavailable. Audit remains PARTIAL for this historical limitation."
     },
     {
       "identity": "url:https://ams.confex.com/ams/51BC7WxComm/webprogram/Paper443443.html",
@@ -1862,6 +1871,15 @@
         "eligibility of public conference abstract as standalone REACH other output"
       ],
       "attempts": [
+        {
+          "round": 0,
+          "method": "original_ams_abstract_evidence",
+          "url": "https://ams.confex.com/ams/51BC7WxComm/webprogram/Paper443443.html",
+          "outcome": "Conservative reconstruction of original source capture from existing first_investigated_at and evidence_urls; public AMS abstract identity captured. Exact original HTTP check log absent; no first-public date inferred.",
+          "checked_at": "2026-10-29T09:30:30Z",
+          "checked_at_basis": "existing first_investigated_at ledger timestamp (conservative, not independently logged HTTP request)",
+          "provenance_reconstruction": true
+        },
         {
           "round": 1,
           "method": "earlier_ams_2024_same_title",
@@ -1916,8 +1934,8 @@
       "reviewer_visibility": "NOT_DELIVERED_TO_HUB",
       "reviewer_handoff_library_path": "/REACH Scout/2026-10-29-2329ET-lead_queue.json",
       "reach_comparison": "Current public REACH 10 index shards / 1,238 records checked; no exact DOI/URL match. Prior 22:29 ET complete 140 detail-shard check and 59 Scout candidates; manifest unchanged, detail shards not reread this run; private human feedback NOT VERIFIED.",
-      "provenance_exception": "LEGACY_INITIAL_ROUND_NOT_RECORDED",
-      "provenance_exception_note": "Existing round-1 source checks are preserved with actual timestamps. No round-0 timestamp was invented; audit remains PARTIAL and validator still flags this until a truthful reconciliation is approved."
+      "provenance_exception": "LEGACY_INITIAL_ROUND_RECONSTRUCTED_FROM_RECORDED_EVIDENCE",
+      "provenance_exception_note": "Round-0 source identity and conservative timestamp reconstructed from pre-existing first_investigated_at and evidence_urls; original HTTP log unavailable. Audit remains PARTIAL for this historical limitation."
     },
     {
       "identity": "doi:10.5281/zenodo.21048459",
