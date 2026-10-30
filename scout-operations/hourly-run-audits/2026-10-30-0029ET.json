@@ -1,0 +1,166 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-30-HOURLY-0029ET",
+  "started_at_local": "2026-10-30 00:32 EDT",
+  "audit_generated_at_utc": "2026-10-30T04:35:21Z",
+  "selected_mode": "attribution_followups",
+  "policy_files_read": [
+    "scout-operations/api-followup-priority-policy.md",
+    "scout-operations/no-action-disposition-policy.md",
+    "scout-operations/discovery-expansion-metrics.md"
+  ],
+  "original_seeds_processed": 0,
+  "original_seeds_unchanged_completed": 188,
+  "original_seed_dispositions": {
+    "already_in_reach": 37,
+    "forwarded_to_hub": 2,
+    "metadata_update_forwarded": 8,
+    "no_action": 109,
+    "human_metadata_needed": 32
+  },
+  "expansion_report_human_metadata_needed": 5,
+  "attribution_followups": {
+    "ledger_total": 71,
+    "closed_before": 19,
+    "closed_after": 24,
+    "queued_before": 52,
+    "queued_after": 47,
+    "closed_this_run": [
+      {
+        "doi": "doi:10.57969/s9159w",
+        "original_seed_status": "no_action",
+        "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+        "attribution_followup_status": "closed_no_project_bridge",
+        "checked_source_urls": [
+          "https://erddap.ldl.ucsd.edu/erddap/tabledap/LDL_HurricaneMichael_First5.html",
+          "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2023GL105730",
+          "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-028.csv",
+          "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+          "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/"
+        ],
+        "recheck_finding": "Publisher 2024 Hurricane Michael article explicitly cites first-five DOI and attributes 2018 observations to NOAA NA20OAR4320278, NA20OAR4600265, NA23NMF4050453D, not the specific WPO buoy award NA21OAR4590374. SPARK NA20OAR4320278 project is AQPI West Coast radar; 2021-24 LDL Atlantic collection explicitly names WPO but is a distinct output family. No DOI-to-WPO project bridge.",
+        "project_bridge_verified": false,
+        "reviewer_visibility": "NOT_SENT",
+        "scout_batch_id": null
+      },
+      {
+        "doi": "doi:10.57969/s94w2d",
+        "original_seed_status": "no_action",
+        "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+        "attribution_followup_status": "closed_no_project_bridge",
+        "checked_source_urls": [
+          "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2023GL105730",
+          "https://repository.library.noaa.gov/view/noaa/63752/noaa_63752_DS1.pdf",
+          "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-028.csv",
+          "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+          "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/"
+        ],
+        "recheck_finding": "Hurricane Michael 2018 dataset directly cited by 2024 article, which acknowledges other NOAA/ONR funding, not specific WPO project NA21OAR4590374. SPARK NA20OAR4320278 AQPI workstream differs from Hurricane Michael. Scripps WPO-funded 2021-24 Atlantic GTS dataset family is distinct; no funding transference.",
+        "project_bridge_verified": false,
+        "reviewer_visibility": "NOT_SENT",
+        "scout_batch_id": null
+      },
+      {
+        "doi": "doi:10.57969/s99g6b",
+        "original_seed_status": "no_action",
+        "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+        "attribution_followup_status": "closed_no_project_bridge",
+        "checked_source_urls": [
+          "https://api.datacite.org/dois/10.57969/s99g6b",
+          "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+          "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-028.csv",
+          "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv"
+        ],
+        "recheck_finding": "Captured DataCite identifies broad NA20OAR4320278 for 2021 R/V Thompson subset. SPARK primary award corresponds to AQPI radar/modeling; Scripps 2021-24 Atlantic GTS family is not identical to R/V Thompson subset. No output-specific WPO project bridge in bounded cross-source check. Live DataCite not independently retrievable in this mission; original captured record retained.",
+        "project_bridge_verified": false,
+        "reviewer_visibility": "NOT_SENT",
+        "scout_batch_id": null
+      },
+      {
+        "doi": "doi:10.57969/s9bc70",
+        "original_seed_status": "no_action",
+        "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+        "attribution_followup_status": "closed_no_project_bridge",
+        "checked_source_urls": [
+          "https://api.datacite.org/dois/10.57969/s9bc70",
+          "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+          "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-028.csv",
+          "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv"
+        ],
+        "recheck_finding": "Captured DataCite associates WIS2 recommended global drifter dataset with broad NA20OAR4320278; SPARK award points to AQPI. Scripps explicitly WPO-funded Atlantic GTS 2021-24 series is narrower and a different DOI family. No primary workstream-specific link for exact global WIS2 dataset. Live DataCite unavailable; original captured evidence preserved.",
+        "project_bridge_verified": false,
+        "reviewer_visibility": "NOT_SENT",
+        "scout_batch_id": null
+      },
+      {
+        "doi": "doi:10.7302/y2qt-7f47",
+        "original_seed_status": "no_action",
+        "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
+        "attribution_followup_status": "closed_no_project_bridge",
+        "checked_source_urls": [
+          "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021GL093727",
+          "https://repository.library.noaa.gov/view/noaa/59615",
+          "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-011.csv",
+          "https://doi.org/10.7302/y2qt-7f47"
+        ],
+        "recheck_finding": "2021 publisher article directly links DOI to 2015 WRF-Chem lake-spray aerosol chemistry simulations, funded by broad CIGLR cooperative NA17OAR4320152. SPARK lake-coupling UFS project spark-000135 starts 2022 and has primary award NA22OAR4590188, distinct methods, goals and team. No specific WPO workstream bridge.",
+        "project_bridge_verified": false,
+        "reviewer_visibility": "NOT_SENT",
+        "scout_batch_id": null
+      }
+    ],
+    "original_seed_status_unchanged": true,
+    "ledger_update_commit": "0312879288c1866ff13cb8adf5da86ae35c566c0"
+  },
+  "new_evidence_checks_documented": 22,
+  "new_expansion_leads": 0,
+  "new_human_metadata_needed_handoffs": 0,
+  "pending_hub_handoff_before": 37,
+  "pending_hub_handoff_after": 37,
+  "hub_visible_new": 0,
+  "hub_visible_cumulative": "NOT_VERIFIED",
+  "reviewer_confirmed_missing_acknowledgment": "NOT_VERIFIED",
+  "public_reach_additions": 0,
+  "public_reach_rows": 1238,
+  "feed_integrity_status": "PARTIAL_PRIOR_VERIFIED_NO_NEW_CSV",
+  "feed_batches_manifest_count": 17,
+  "feed_candidates_manifest_count": 59,
+  "new_csv_batch_ids": [],
+  "manifest_verification": {
+    "manifest_sha": "fc9882d48dbad37feff704ccbb120466d1854fdd",
+    "batch_count": 17,
+    "rows": 59,
+    "prior_full_sha_verification": "2026-10-29 23:29 ET",
+    "current_full_sha_rehash": "NOT_PERFORMED",
+    "no_new_batch": true
+  },
+  "github_action_verification_status": "NOT_VERIFIABLE",
+  "reach_verification": "All 10 current index shards (1238 records) and all 17 Scout batches searched for relevant drifter DOIs; full 140 REACH detail shards not reread this run; last full detail check 22:29 ET. No new REACH output claim.",
+  "human_review_status": "Private Hub dispositions and importer blank metadata acceptance NOT_VERIFIED",
+  "coverage_before": {
+    "historical_research_completed": 188,
+    "historical_remaining": 0,
+    "attribution_queued": 52
+  },
+  "coverage_after": {
+    "historical_research_completed": 188,
+    "historical_remaining": 0,
+    "attribution_queued": 47
+  },
+  "funding_evidence_distinction": "The 2018 Michael/global drifter and lake aerosol outputs have broad NOAA cooperative funding but no verified bridge to specific SPARK WPO workstream. The separate 2021-24 Scripps GTS Atlantic family directly names NA21OAR4590374 and is already research complete awaiting human metadata handoff; do not duplicate.",
+  "blockers": [
+    "37 human metadata needed cases pending Hub integration; NOT DELIVERED TO HUB",
+    "Private Hub status and full current REACH detail revalidation NOT VERIFIED",
+    "GitHub Actions workflow status NOT VERIFIABLE"
+  ],
+  "audit_result": "PARTIAL",
+  "audit_reason": "Five evidence-backed attribution followups closed in public ledger and source links recorded. Feed checksum rehash and private Hub acceptance not verified.",
+  "library_files": [
+    "/REACH Scout/2026-10-30-0029ET-report.md",
+    "/REACH Scout/2026-10-30-0029ET-lead_queue.json",
+    "/REACH Scout/2026-10-30-0029ET-checkpoint.json",
+    "/REACH Scout/2026-10-30-0029ET-discovery_hub_candidates.csv",
+    "/REACH Scout/2026-10-30-0029ET-hourly_provenance_audit.json"
+  ],
+  "github_active_workstream_update_commit": "9e5cf9f343c897473a3f1356af2c0adb894487ad"
+}
