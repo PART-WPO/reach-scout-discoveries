@@ -1,18 +1,16 @@
 {
-  "attribution_followups_pending": 42,
+  "attribution_followups_pending": 37,
   "historical_api": {
     "coverage_matches_source_manifest": true,
     "distinct_dois": 188,
     "initial_cases": 0,
-    "pending_metadata_blockers_including_originals": 37,
+    "pending_metadata_blockers_including_originals": 0,
     "raw_batch_rows": 188,
     "remaining_or_untracked": 0,
     "research_completed": 188,
-    "unresolved_followups": 0,
-    "research_complete": true,
-    "actionable_expansion_metadata_blockers": 0
+    "unresolved_followups": 0
   },
-  "mode": "attribution_followups",
+  "mode": "historical_api_triage",
   "monthly_api": {
     "initial_cases": 0,
     "pending_metadata_blockers_including_originals": 0,
@@ -22,9 +20,9 @@
     "research_completed": 0,
     "unresolved_followups": 0
   },
-  "note": "2026-10-30 01:27 ET: five attribution followups closed (47 -> 42), original no_action unchanged; 17/17 Scout batches verified; 37 human_metadata_needed NOT DELIVERED TO HUB; no new candidates or REACH addition.",
+  "note": "Future follow-up dates do not clear API research. Make bounded distinct-source checks now; use documented early-retry exceptions as needed. An unavailable or invalid Hub metadata-needed handoff remains outstanding. This selector does NOT conduct research, verify human approval, or launch Scout.",
   "phase": "attribution_followups",
-  "reason": "Monthly API empty, historical 188/188 original DOI research complete, 37 human metadata handoffs pending Hub integration do not block research; 42 separate attribution followups remain before older SPARK award discovery.",
+  "reason": "Finish bounded API-related award-attribution follow-ups before older-award discovery",
   "schema": "reach-scout-workstream-v1",
   "switch_policy": "monthly first-pass > monthly follow-ups > historical first-pass > historical follow-ups > attribution follow-ups > normal SPARK historical discovery"
 }
