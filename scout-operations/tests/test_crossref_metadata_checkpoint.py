@@ -15,6 +15,15 @@ m=module(ROOT/"scout-operations/tools/audit_doi_metadata.py","doi_checkpoint")
 h=module(ROOT/"api-discoveries/tools/harvest.py","monthly_harvest")
 
 class CrossrefMetadataTests(unittest.TestCase):
+    @staticmethod
+    def crossref_only(doc):
+        from urllib.error import HTTPError
+        def _fetch(host,url):
+            if host=="api.datacite.org":
+                raise HTTPError(url,404,"DOI belongs to Crossref",{},None)
+            return doc
+        return _fetch
+
     def test_date_parts_precision_remains_true(self):
         self.assertEqual(m.crossref_date_parts({"date-parts":[[2024,8,15]]})["full_date"],"2024-08-15")
         self.assertEqual(m.crossref_date_parts({"date-parts":[[2024,8]]})["value"],"2024-08")
@@ -87,7 +96,7 @@ class CrossrefMetadataTests(unittest.TestCase):
               "title":["Ceilometer-Based Rain-Rate Estimation"],
               "created":{"date-parts":[[2020,5,6]]},
               "published-print":{"date-parts":[[2020,12]]}}}
-        with patch.object(m,"get",return_value=doc):
+        with patch.object(m,"get",side_effect=self.crossref_only(doc)):
             r=m.fetch("10.1109/tgrs.2020.2984458")
         self.assertEqual(r["pub_date"],"2020-12-01")
         self.assertEqual(r["source_publication_date"],"")
@@ -102,7 +111,7 @@ class CrossrefMetadataTests(unittest.TestCase):
               "created":{"date-parts":[[2018,6,13]]},
               "published-online":{"date-parts":[[2018,8,15]]},
               "published-print":{"date-parts":[[2018,9,1]]}}}
-        with patch.object(m,"get",return_value=doc):
+        with patch.object(m,"get",side_effect=self.crossref_only(doc)):
             r=m.fetch("10.1175/jas-d-17-0385.1")
         self.assertEqual(r["pub_date"],"2018-09-01")
         self.assertEqual(r["source_publication_date"],"2018-09-01")
