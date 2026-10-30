@@ -1,0 +1,220 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
+  "timestamp_utc": "2026-10-30T16:38:46Z",
+  "mode": "normal_historical_discovery",
+  "phase": "executive_pub_date_reconciliation_and_bounded_anchor_followup",
+  "monthly_before_after": {
+    "received": [
+      0,
+      0
+    ],
+    "completed": [
+      0,
+      0
+    ],
+    "remaining": [
+      0,
+      0
+    ]
+  },
+  "historical_before_after": {
+    "completed": [
+      188,
+      188
+    ],
+    "remaining": [
+      0,
+      0
+    ],
+    "legacy_status_counts": {
+      "already_in_reach": 37,
+      "forwarded_to_hub": 2,
+      "metadata_update_forwarded": 8,
+      "no_action": 109,
+      "human_metadata_needed": 32
+    },
+    "date_only_operational_reroutes": 4,
+    "original_triage_unchanged": true
+  },
+  "attribution_followups": {
+    "total": 71,
+    "closed": 71,
+    "queued": 0,
+    "changed_this_run": 0
+  },
+  "original_seeds_disposed_this_run": [],
+  "normal_projects_examined": [
+    "spark-000005",
+    "spark-000336"
+  ],
+  "research_completed_this_run": [
+    {
+      "identity": "doi:10.5281/zenodo.4526127",
+      "status": "RESEARCH_COMPLETE_HUMAN_INTAKE",
+      "original_seed_doi": null,
+      "discovery_route": "Independent discovery",
+      "award_numbers": [
+        "NA16OAR4590234"
+      ],
+      "project": "spark-000005",
+      "source_urls": [
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-001.csv",
+        "https://doi.org/10.1016/j.jhydrol.2021.126809",
+        "https://repository.library.noaa.gov/view/noaa/32601/noaa_32601_DS1.pdf",
+        "https://api.datacite.org/dois/10.5281/zenodo.4526127",
+        "https://zenodo.org/records/4526127",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+        "https://zenodo.org/api/records/4526127",
+        "https://doi.org/10.5281/zenodo.4526127",
+        "https://www.nssl.noaa.gov/projects/anchor/"
+      ],
+      "source_failures": [
+        "https://api.datacite.org/dois/10.5281/zenodo.4526127",
+        "https://zenodo.org/records/4526127",
+        "https://zenodo.org/api/records/4526127",
+        "https://doi.org/10.5281/zenodo.4526127"
+      ],
+      "hub_delivery": "NOT_DELIVERED",
+      "reviewer_question": "Verify exact DOI's distinct public dataset identity, native files, creators and version. DataCite created date was inaccessible; if later verified use its calendar day automatically."
+    }
+  ],
+  "date_policy_reconciliation": {
+    "historical_date_audit": "api-discoveries/date-audits/historical-2026-10-28.json",
+    "source_cases_checked": 41,
+    "valid_datacite_created_accepted": 32,
+    "date_only_rerouted_to_normal_review": 4,
+    "mixed_cases_non_date_questions_retained": 28,
+    "no_valid_created_unchanged": 9,
+    "original_immutable_source_batches_unchanged": true,
+    "original_human_decisions_preserved": true,
+    "source_dateType": "DataCite created",
+    "no_separate_date_reviewer_acknowledgment": true
+  },
+  "new_review_candidates": [
+    {
+      "identity": "doi:10.57969/s93w23",
+      "route": "Direct API",
+      "pub_date": "2024-02-28",
+      "created": "2024-02-28T21:11:56.000Z",
+      "source_url": "https://api.datacite.org/dois/10.57969/s93w23",
+      "batch_id": "2026-10-30-hourly-1229ET-nhci-date-policy-normal-review-001",
+      "hub_import": "NOT_VERIFIED"
+    },
+    {
+      "identity": "doi:10.57969/s9k013",
+      "route": "Direct API",
+      "pub_date": "2024-04-30",
+      "created": "2024-04-30T20:17:18.000Z",
+      "source_url": "https://api.datacite.org/dois/10.57969/s9k013",
+      "batch_id": "2026-10-30-hourly-1229ET-nhci-date-policy-normal-review-001",
+      "hub_import": "NOT_VERIFIED"
+    },
+    {
+      "identity": "doi:10.57969/s9f59m",
+      "route": "Direct API",
+      "pub_date": "2024-04-30",
+      "created": "2024-04-30T20:26:29.000Z",
+      "source_url": "https://api.datacite.org/dois/10.57969/s9f59m",
+      "batch_id": "2026-10-30-hourly-1229ET-nhci-date-policy-normal-review-001",
+      "hub_import": "NOT_VERIFIED"
+    },
+    {
+      "identity": "doi:10.57969/s9z598",
+      "route": "Direct API",
+      "pub_date": "2024-04-29",
+      "created": "2024-04-29T15:50:55.000Z",
+      "source_url": "https://api.datacite.org/dois/10.57969/s9z598",
+      "batch_id": "2026-10-30-hourly-1229ET-nhci-date-policy-normal-review-001",
+      "hub_import": "NOT_VERIFIED"
+    }
+  ],
+  "expansion_leads": [
+    {
+      "identity": "doi:10.57969/s9059k",
+      "route": "Independent discovery",
+      "origin": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+      "award_attribution": "NOT_VERIFIED",
+      "status": "CREDIBLE_EXPANSION_LEAD_FUNDING_NOT_VERIFIED"
+    },
+    {
+      "identity": "doi:10.57969/s9ms33",
+      "route": "Independent discovery",
+      "origin": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+      "award_attribution": "NOT_VERIFIED",
+      "status": "CREDIBLE_EXPANSION_LEAD_FUNDING_NOT_VERIFIED"
+    },
+    {
+      "identity": "doi:10.57969/s9h01g",
+      "route": "Independent discovery",
+      "origin": "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+      "award_attribution": "NOT_VERIFIED",
+      "status": "CREDIBLE_EXPANSION_LEAD_FUNDING_NOT_VERIFIED"
+    }
+  ],
+  "metadata_intake": {
+    "source_cases_before": 41,
+    "review_units_before": 35,
+    "source_cases_after": 42,
+    "review_units_after": 36,
+    "human_intake_blocked_after": 38,
+    "normal_review_feed_staged": 4,
+    "hub_imports_observed": "NOT_VERIFIED",
+    "private_companion": "PREPARED_TESTED_OFFLINE_NOT_INSTALLED",
+    "human_decisions": "NOT_VERIFIED"
+  },
+  "discovery_route_counts_this_run": {
+    "Direct API": 4,
+    "API-seeded expansion": 0,
+    "Independent discovery": 1,
+    "Metadata correction": 0
+  },
+  "discovery_origin_rollup": {
+    "total_staged": 66,
+    "Direct_API": 5,
+    "API_seeded_expansion": 12,
+    "Independent_discovery": 3,
+    "Metadata_correction": 6,
+    "Unclassified_legacy": 40
+  },
+  "feed_integrity_status": "VERIFIED_20_BATCHES_66_ROWS",
+  "new_batch_ids": [
+    "2026-10-30-hourly-1229ET-nhci-date-policy-normal-review-001"
+  ],
+  "manifest_verification_evidence": {
+    "manifest_blob_sha": "1d048cf0b5552aff8eb9b6afc36302d8147afbe8",
+    "prior_immutable_batches_verified_sha256": 19,
+    "prior_manifest_entries_preserved": 19,
+    "new_batch_record_count": 4,
+    "new_batch_sha256": "efa425bb28b4bf52465e7ccace4c75ea6aa72916292ff960a913f021622c054f",
+    "new_batch_path": "scout-discoveries/batches/2026-10-30-hourly-1229ET-nhci-date-policy-normal-review-001.csv",
+    "new_batch_run_ids": [
+      "REACH-SCOUT-2026-10-30-HOURLY-1229ET"
+    ],
+    "sha256_exact_utf8_matched": true
+  },
+  "github_action_verification": {
+    "run_id": 41091948202,
+    "conclusion": "success",
+    "head_sha": "f660c4d5636fbe7ea8276cdea185804245365c82"
+  },
+  "public_reach": {
+    "rows": 1238,
+    "manifest_blob_sha": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+    "new_additions_verified": 0,
+    "full_detail_shards": "NOT_VERIFIED"
+  },
+  "private_hub_imports": "NOT_VERIFIED",
+  "reviewer_confirmed_recovered_without_acknowledgment": "NOT_VERIFIED",
+  "blockers": [
+    "Private Apps Script companion not installed or observed",
+    "ANCHOR native Zenodo/DataCite access failure",
+    "Harvard Dataverse created not verified",
+    "13 preexisting metadata blocker validator anomalies",
+    "Full REACH detail shards not re-read"
+  ],
+  "audit_result": "PARTIAL",
+  "library_path": "/REACH Scout Library/2026-10-30_1229ET",
+  "github_audit_published": "PENDING_CREATE_VERIFICATION"
+}
