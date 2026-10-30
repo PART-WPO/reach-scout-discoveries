@@ -1,0 +1,344 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-30-HOURLY-1029ET",
+  "timestamp_utc": "2026-10-30T14:33:47Z",
+  "timestamp": "2026-10-30T10:29:43-04:00",
+  "mode": "normal_historical_discovery",
+  "phase": "bounded_distinct_source_recovery_to_human_intake",
+  "priority_routing": "monthly > historical original > attribution > normal; higher-priority research exhausted, human UI handoff not unfinished research",
+  "original_seeds_disposed_this_run": [],
+  "monthly_before_after": {
+    "received_before": 0,
+    "received_after": 0,
+    "completed_before": 0,
+    "completed_after": 0,
+    "remaining_before": 0,
+    "remaining_after": 0
+  },
+  "historical_before_after": {
+    "completed_before": 188,
+    "completed_after": 188,
+    "remaining_before": 0,
+    "remaining_after": 0,
+    "research_complete": true,
+    "status_counts": {
+      "already_in_reach": 37,
+      "forwarded_to_hub": 2,
+      "metadata_update_forwarded": 8,
+      "no_action": 109,
+      "human_metadata_needed": 32
+    }
+  },
+  "attribution_followups": {
+    "total": 71,
+    "closed": 71,
+    "queued": 0,
+    "changed_this_run": 0
+  },
+  "normal_projects_examined": [
+    "spark-000201"
+  ],
+  "research_cases": [
+    {
+      "identity": "url:https://www.nhc.noaa.gov/jht/15-17reports/Rozoff_yr1_annualrpt.pdf",
+      "status": "RESEARCH_COMPLETE_HUMAN_INTAKE",
+      "grant_vs_artifact": "distinct report artifact, not grant notice; standalone REACH eligibility human review needed",
+      "original_seed_doi": null,
+      "source_urls": [
+        "https://www.nhc.noaa.gov/jht/15-17reports/Rozoff_yr1_annualrpt.pdf",
+        "https://www.nhc.noaa.gov/jht/15-17_proj.php",
+        "https://www.nhc.noaa.gov/hot/archive.php",
+        "https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_reportFINAL_092718.pdf",
+        "https://pubs.ssec.wisc.edu/research_Resources/publications/pdfs/SSECPUBS/SSEC_Publication_No_17_09_R1.pdf",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "source_checks": [
+        {
+          "round": 0,
+          "method": "official_nhc_2015_17_roster",
+          "url": "https://www.nhc.noaa.gov/jht/15-17_proj.php",
+          "outcome": "Lists the 2016 first-year report for the specific Rozoff/Velden project.",
+          "checked_at": "2026-10-30T13:29:57Z"
+        },
+        {
+          "round": 0,
+          "method": "search_indexed_2016_report_cover",
+          "url": "https://www.nhc.noaa.gov/jht/15-17reports/Rozoff_yr1_annualrpt.pdf",
+          "outcome": "Indexed report cover states award NA15OAR4590205 and submission 2016-09-29; internally calls itself ANNUAL PROJECT REPORT but report term Semi-Annual; final report No.",
+          "checked_at": "2026-10-30T13:29:57Z",
+          "source_dateType": "report_submission_not_publication"
+        },
+        {
+          "round": 1,
+          "method": "native_2016_report_retrieval",
+          "url": "https://www.nhc.noaa.gov/jht/15-17reports/Rozoff_yr1_annualrpt.pdf",
+          "outcome": "Native direct PDF fetch HTTP 403; search-indexed cover is available. ACCESS FAILURE not missing metadata.",
+          "checked_at": "2026-10-30T14:33:47Z",
+          "source_failure": "HTTP_403_NATIVE_PDF"
+        },
+        {
+          "round": 1,
+          "method": "dated_nhc_news_archive",
+          "url": "https://www.nhc.noaa.gov/hot/archive.php",
+          "outcome": "Archive has dated 2016 presentation notices but no record-specific first public posting date for the 2016 project report.",
+          "checked_at": "2026-10-30T14:33:47Z"
+        },
+        {
+          "round": 1,
+          "method": "subsequent_2017_independent_report",
+          "url": "https://pubs.ssec.wisc.edu/research_Resources/publications/pdfs/SSECPUBS/SSEC_Publication_No_17_09_R1.pdf",
+          "outcome": "2017 semiannual report documents subsequent 2017 work, confirming separate reporting periods; neither report submission date establishes public release.",
+          "checked_at": "2026-10-30T14:33:47Z",
+          "source_dateType": "report_submission_not_publication"
+        },
+        {
+          "round": 1,
+          "method": "later_2018_final_comparison",
+          "url": "https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_reportFINAL_092718.pdf",
+          "outcome": "2018 final report documents later milestones and is distinct from the 2016 interim period; not proof of 2016 report public release.",
+          "checked_at": "2026-10-30T14:33:47Z"
+        }
+      ],
+      "funding_award": "NA15OAR4590205",
+      "discovery_route": "Independent discovery",
+      "discovery_path": "SPARK spark-000201 -> official NHC project roster -> native/indexed interim report -> NHC news archive and cross-period reports -> REACH/Scout deduplication",
+      "new_review_unit": "case-33",
+      "hub_delivery": "NOT DELIVERED",
+      "publication_date": null,
+      "report_submission_date": "2016-09-29"
+    },
+    {
+      "identity": "url:https://pubs.ssec.wisc.edu/research_Resources/publications/pdfs/SSECPUBS/SSEC_Publication_No_17_09_R1.pdf",
+      "status": "RESEARCH_COMPLETE_HUMAN_INTAKE",
+      "grant_vs_artifact": "distinct report artifact, not grant notice; standalone REACH eligibility human review needed",
+      "original_seed_doi": null,
+      "source_urls": [
+        "https://pubs.ssec.wisc.edu/research_Resources/publications/pdfs/SSECPUBS/SSEC_Publication_No_17_09_R1.pdf",
+        "https://www.nhc.noaa.gov/jht/15-17_proj.php",
+        "https://www.nhc.noaa.gov/hot/archive.php",
+        "https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_reportFINAL_092718.pdf",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+        "https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_report4_092917.pdf",
+        "https://pubs.ssec.wisc.edu/research_Resources/publications/"
+      ],
+      "source_checks": [
+        {
+          "round": 0,
+          "method": "native_ssec_2017_report_pdf",
+          "url": "https://pubs.ssec.wisc.edu/research_Resources/publications/pdfs/SSECPUBS/SSEC_Publication_No_17_09_R1.pdf",
+          "outcome": "Full 13-page SSEC PDF accessible. Cover explicitly states NOAA award NA15OAR4590205, project title, submission 2017-09-30, report term Semi-Annual, Final Annual Report? No.",
+          "checked_at": "2026-10-30T13:29:57Z",
+          "source_dateType": "report_submission_not_publication"
+        },
+        {
+          "round": 0,
+          "method": "nhc_project_roster_and_alternate",
+          "url": "https://www.nhc.noaa.gov/jht/15-17_proj.php",
+          "outcome": "Official project table links the second-year report; NHC alternate mirror Velden_205_progress_report4_092917.pdf is indexed but file identity/version equality not verified.",
+          "checked_at": "2026-10-30T13:29:57Z"
+        },
+        {
+          "round": 1,
+          "method": "nhc_alternate_pdf_access",
+          "url": "https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_report4_092917.pdf",
+          "outcome": "Direct native NHC mirror fetch HTTP 403. ACCESS FAILURE; cannot establish byte-identical copies.",
+          "checked_at": "2026-10-30T14:33:47Z",
+          "source_failure": "HTTP_403_NATIVE_PDF"
+        },
+        {
+          "round": 1,
+          "method": "nhc_news_archive_no_report_date",
+          "url": "https://www.nhc.noaa.gov/hot/archive.php",
+          "outcome": "No record-specific announcement of the first public posting date for this 2017 report; 2017-04-13 announcement pertains to presentation slides.",
+          "checked_at": "2026-10-30T14:33:47Z"
+        },
+        {
+          "round": 1,
+          "method": "institutional_ssec_catalog_search",
+          "url": "https://pubs.ssec.wisc.edu/research_Resources/publications/",
+          "outcome": "SSEC hosts the series PDF, but bounded publication catalog search did not produce a record-specific YYYY-MM-DD public posting timestamp; absence from search is not proof none exists.",
+          "checked_at": "2026-10-30T14:33:47Z"
+        },
+        {
+          "round": 1,
+          "method": "compare_later_2018_final_report",
+          "url": "https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_reportFINAL_092718.pdf",
+          "outcome": "2018 final report describes later period; the 2017 report is interim, not the 2018 final report.",
+          "checked_at": "2026-10-30T14:33:47Z"
+        }
+      ],
+      "funding_award": "NA15OAR4590205",
+      "discovery_route": "Independent discovery",
+      "discovery_path": "SPARK spark-000201 -> official NHC project roster -> native/indexed interim report -> NHC news archive and cross-period reports -> REACH/Scout deduplication",
+      "new_review_unit": "case-34",
+      "hub_delivery": "NOT DELIVERED",
+      "publication_date": null,
+      "report_submission_date": "2017-09-30"
+    },
+    {
+      "identity": "url:https://www.nhc.noaa.gov/jht/15-17reports/Velden_midyear3.pdf",
+      "status": "RESEARCH_COMPLETE_HUMAN_INTAKE",
+      "grant_vs_artifact": "distinct report artifact, not grant notice; standalone REACH eligibility human review needed",
+      "original_seed_doi": null,
+      "source_urls": [
+        "https://www.nhc.noaa.gov/jht/15-17reports/Velden_midyear3.pdf",
+        "https://www.nhc.noaa.gov/jht/15-17_proj.php",
+        "https://www.nhc.noaa.gov/hot/archive.php",
+        "https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_reportFINAL_092718.pdf",
+        "https://pubs.ssec.wisc.edu/research_Resources/publications/pdfs/SSECPUBS/SSEC_Publication_No_17_09_R1.pdf",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+      ],
+      "source_checks": [
+        {
+          "round": 0,
+          "method": "official_nhc_2018_midyear_roster",
+          "url": "https://www.nhc.noaa.gov/jht/15-17_proj.php",
+          "outcome": "Official NHC 2015\u20132017 project table includes 2018 midyear report for the funded Rozoff/Velden project.",
+          "checked_at": "2026-10-30T13:29:57Z"
+        },
+        {
+          "round": 0,
+          "method": "search_indexed_2018_midyear_cover",
+          "url": "https://www.nhc.noaa.gov/jht/15-17reports/Velden_midyear3.pdf",
+          "outcome": "Indexed cover identifies exact award NA15OAR4590205, submission 2018-03-30, semiannual report term, and Final Annual Report? No.",
+          "checked_at": "2026-10-30T13:29:57Z",
+          "source_dateType": "report_submission_not_publication"
+        },
+        {
+          "round": 1,
+          "method": "native_2018_midyear_access",
+          "url": "https://www.nhc.noaa.gov/jht/15-17reports/Velden_midyear3.pdf",
+          "outcome": "Direct native PDF fetch HTTP 403; source ACCESS FAILURE, not proof of absent publication date or award acknowledgment.",
+          "checked_at": "2026-10-30T14:33:47Z",
+          "source_failure": "HTTP_403_NATIVE_PDF"
+        },
+        {
+          "round": 1,
+          "method": "independent_2018_final_report_comparison",
+          "url": "https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_reportFINAL_092718.pdf",
+          "outcome": "Later 2018-09-30 final report describes full-project completion and is a distinct reporting period, but does not establish 2018 midyear first posting.",
+          "checked_at": "2026-10-30T14:33:47Z"
+        },
+        {
+          "round": 1,
+          "method": "dated_nhc_news_archive_2018",
+          "url": "https://www.nhc.noaa.gov/hot/archive.php",
+          "outcome": "Official NHC dated news archive has no item-specific first public release timestamp for the midyear report; the submission date cannot substitute.",
+          "checked_at": "2026-10-30T14:33:47Z",
+          "source_dateType": "report_submission_not_publication"
+        }
+      ],
+      "funding_award": "NA15OAR4590205",
+      "discovery_route": "Independent discovery",
+      "discovery_path": "SPARK spark-000201 -> official NHC project roster -> native/indexed interim report -> NHC news archive and cross-period reports -> REACH/Scout deduplication",
+      "new_review_unit": "case-35",
+      "hub_delivery": "NOT DELIVERED",
+      "publication_date": null,
+      "report_submission_date": "2018-03-30"
+    }
+  ],
+  "metadata_intake": {
+    "source_cases_before": 38,
+    "source_cases_expected_after": 41,
+    "review_units_before": 32,
+    "review_units_expected_after": 35,
+    "new_handoffs": 3,
+    "previous_provisional_groups_preserved": 6,
+    "hub_imports_observed": "NOT VERIFIED",
+    "human_decisions_verified": "NOT VERIFIED",
+    "companion_ui": "PREPARED_TESTED_OFFLINE_NOT_INSTALLED",
+    "source_cases_verified_after_github": 41,
+    "review_units_verified_after_github": 35,
+    "pending_hub_handoff_total": 41,
+    "research_active_from_prior_three_reports_after": 0,
+    "source_ledger_entries_total": 47
+  },
+  "source_checks": {
+    "spark_primary_project": "spark-000201",
+    "reach_index_shards_sha256_verified": 10,
+    "reach_index_rows": 1238,
+    "scout_batches_sha256_verified": 19,
+    "scout_rows": 62,
+    "reach_detail_shards_full_reread": "NOT VERIFIED",
+    "native_pdf_access_failures": 3,
+    "source_dateType": "report_submission_not_first_publication"
+  },
+  "new_batch": {
+    "id": null,
+    "path": null,
+    "record_count": 0,
+    "github_staged": false,
+    "manifest_verified": "UNCHANGED_19_BATCHES_VERIFIED",
+    "hub_accepted": "NOT VERIFIED"
+  },
+  "discovery_route_counts_this_run": {
+    "Direct API": 0,
+    "API-seeded expansion": 0,
+    "Independent discovery": 0,
+    "Metadata correction": 0
+  },
+  "missing_acknowledgment": {
+    "credible_new_absent_ack_leads": 0,
+    "hub_visible": "NOT VERIFIED",
+    "reviewer_confirmed_recovered": "NOT VERIFIED",
+    "verified_public_reach_additions": 0
+  },
+  "feed_integrity_status": "VERIFIED_19_BATCHES_62_ROWS_NO_NEW_CSV",
+  "manifest_verification_evidence": {
+    "manifest_blob_sha": "56fac70ee80dca77d000472d679d98124b48bfd5",
+    "batches_sha256_checked": 19,
+    "batches_sha256_matching": 19,
+    "record_counts_and_run_ids_verified": 19,
+    "no_manifest_write": true
+  },
+  "github_action_status": "NOT_VERIFIABLE (no new CSV; action run not inspected)",
+  "public_reach": {
+    "manifest_blob_sha": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+    "index_shards_sha256_verified": 10,
+    "public_rows": 1238,
+    "new_public_additions_verified": 0
+  },
+  "private_reviewer_decisions": "NOT VERIFIED",
+  "quality_alert": {
+    "batch": "2026-10-30-hourly-0829ET-jht-ri-final-report-001",
+    "problem": "2018-09-30 is report submission date not verified public posting; immutable batch unchanged",
+    "review_unit": "case-31"
+  },
+  "preexisting_blocker_validator_issues": {
+    "affected_identities": 13,
+    "duplicate_method_labels": 11,
+    "missing_round_zero_attempts": 2,
+    "validator_result": "NOT PASS"
+  },
+  "blockers": [
+    "Private Hub import and decisions unavailable; no Hub delivery claimed",
+    "Full REACH detail shards not reread",
+    "Native NHC report PDFs returned HTTP 403; indexed cover evidence and independent 2017 SSEC report available",
+    "Existing 08:29 report submission-date quality alert",
+    "Preexisting 13 metadata blocker validation issues"
+  ],
+  "audit_result": "PARTIAL",
+  "library_persistence": {
+    "path": "/REACH Scout Library/2026-10-30_1029ET",
+    "files": [
+      "report.md",
+      "research_leads.json",
+      "checkpoint.json",
+      "provenance_audit.json",
+      "discovery_hub_header_only.csv",
+      "new_metadata_handoffs.json",
+      "new_review_units.json"
+    ],
+    "verified": true
+  },
+  "github_ledger_updates": {
+    "metadata_blockers_commit": "9fa2267cd57a3468427c3cac0df87e2cf848d31b",
+    "metadata_blockers_blob_sha": "574abbc5541a453de9ad23540cf5ed4814b64ae3",
+    "metadata_review_units_commit": "b21e49d46215ffe4b3eed8931cffa3f4b3571300",
+    "metadata_review_units_blob_sha": "dbde5518ecd45ca8459be4be73a613e2cba96c0d",
+    "hourly_audit_commit": null
+  }
+}
