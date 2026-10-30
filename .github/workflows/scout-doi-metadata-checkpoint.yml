@@ -6,6 +6,7 @@ on:
     paths:
       - '.github/workflows/scout-doi-metadata-checkpoint.yml'
       - 'scout-operations/tools/audit_doi_metadata.py'
+      - 'scout-operations/tests/test_crossref_metadata_checkpoint.py'
       - 'scout-discoveries/manifest.json'
       - 'api-discoveries/historical/manifest.json'
       - 'api-discoveries/manifest.json'
@@ -36,6 +37,7 @@ jobs:
         run: |
           set -euo pipefail
           python3 scout-operations/tools/audit_doi_metadata.py --offline
+          python3 -m unittest discover -s scout-operations/tests -p "test_crossref_metadata_checkpoint.py" -v
       - name: Enrich all candidate DOIs directly via DataCite / Crossref
         run: |
           set -euo pipefail
@@ -51,6 +53,13 @@ jobs:
           assert len(x['records'])==x['unique_dois']
           assert len({r['doi'] for r in x['records']})==len(x['records'])
           assert any(r['doi']=='10.7910/dvn/jwzewf' for r in x['records'])
+          cr=Path('scout-operations/reports/crossref-metadata-checkpoint/latest.json')
+          assert cr.exists(), 'Crossref publication report missing'
+          y=json.loads(cr.read_text(encoding='utf8'))
+          assert y['counts']['crossref_publications']>=30, 'Crossref publication coverage unexpectedly low'
+          assert y['counts']['api_full_pub_date']>0, 'No Crossref published-online or other full publication dates recovered'
+          assert len(y['records'])==y['counts']['crossref_publications']
+          assert all(r['doi'] and r['evidence'] and r['source']=='crossref' for r in y['records'])
           print('DOI checkpoint summary:',json.dumps({k:v for k,v in x.items() if k!='records'}))
           PY
       - name: Upload source-verified checkpoint report
@@ -60,6 +69,8 @@ jobs:
           path: |
             scout-operations/reports/doi-metadata-checkpoint/README.md
             scout-operations/reports/doi-metadata-checkpoint/latest.json
+            scout-operations/reports/crossref-metadata-checkpoint/README.md
+            scout-operations/reports/crossref-metadata-checkpoint/latest.json
           if-no-files-found: error
           retention-days: 90
       - name: Commit only read-only audit output to main
@@ -67,7 +78,7 @@ jobs:
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- scout-operations/reports/doi-metadata-checkpoint/README.md scout-operations/reports/doi-metadata-checkpoint/latest.json
+          git add -- scout-operations/reports/doi-metadata-checkpoint/README.md scout-operations/reports/doi-metadata-checkpoint/latest.json scout-operations/reports/crossref-metadata-checkpoint/README.md scout-operations/reports/crossref-metadata-checkpoint/latest.json
           if git diff --cached --quiet; then
             echo 'No changes in DOI metadata audit.'
             exit 0
