@@ -4,7 +4,7 @@
   "origin": "77 no_action original historical DOI dispositions after the 2026-10-29 08:33 ET hourly run: 29 administrative non-outputs; 2 NASA-only funding; 46 real outputs without verified WPO project attribution. The 8:00 ET briefing snapshot was 65, including 34 attribution gaps. No original status or human decision changed.",
   "policy": "These are discovery research leads, not 34 confirmed WPO outputs or 34 automatic Hub findings. Don't promote without evidence bridge and independent corroboration. Preserve no_action historical completed count.",
   "total": 71,
-  "queued": 42,
+  "queued": 37,
   "entries": [
     {
       "identity": "doi:10.25923/b2b3-m644",
@@ -665,7 +665,7 @@
       "identity": "doi:10.5061/dryad.3n5tb2rq4",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "low",
       "original_run_id": null,
       "existing_source_evidence": [
@@ -679,18 +679,30 @@
       "source_disposition_preserved": true,
       "new_direct_award_evidence_found": false,
       "hub_publication_authorized": false,
-      "recheck_attempts": 0,
+      "recheck_attempts": 1,
       "max_recheck_rounds_without_material_evidence": 1,
       "recheck_trigger": "When primary actionable API queues are cleared/blocked, or genuinely new direct attribution evidence arrives",
-      "last_source_research_at": "2026-10-29T11:36:43Z",
+      "last_source_research_at": "2026-10-30T06:36:00Z",
       "original_notes_preserved_in": "scout-operations/historical-triage.json",
-      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility."
+      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility.",
+      "recheck_completed_at": "2026-10-30T06:36:00Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-30-0236ET-ATTRIBUTION",
+      "checked_source_urls": [
+        "https://datadryad.org/dataset/doi:10.5061/dryad.3n5tb2rq4",
+        "https://www.nature.com/articles/s43247-023-01088-7",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json"
+      ],
+      "recheck_finding": "Nature Communications Earth & Environment article directly cites original Dryad dataset and attributes it to NOAA PIFSC CIMEC/CIMEAS awards NA15OAR43200071/NA20OAR4320278; SPARK NA20OAR4320278 projects are West Coast AQPI and later atmospheric-river air-sea interactions, not Hawaiian odontocete acoustics. Related Zenodo 10.5281/zenodo.10011944 remains a non-WPO-linked output-family reference.",
+      "negative_or_contradictory_evidence": "Explicit PIFSC marine mammal research funding; no WPO AQPI or Western Water deliverable link.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "recheck_final_question": "No specific WPO workstream bridge established after bounded independent-source research. Reopen only on new positive project-specific evidence or explicit human request.",
+      "recheck_next_action": "No further routine retry. Preserve original no_action and all human decisions."
     },
     {
       "identity": "doi:10.5061/dryad.4qrfj6qhj",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "low",
       "original_run_id": null,
       "existing_source_evidence": [
@@ -705,18 +717,30 @@
       "source_disposition_preserved": true,
       "new_direct_award_evidence_found": false,
       "hub_publication_authorized": false,
-      "recheck_attempts": 0,
+      "recheck_attempts": 1,
       "max_recheck_rounds_without_material_evidence": 1,
       "recheck_trigger": "When primary actionable API queues are cleared/blocked, or genuinely new direct attribution evidence arrives",
-      "last_source_research_at": "2026-10-29T10:33:00Z",
+      "last_source_research_at": "2026-10-30T06:36:00Z",
       "original_notes_preserved_in": "scout-operations/historical-triage.json",
-      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility."
+      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility.",
+      "recheck_completed_at": "2026-10-30T06:36:00Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-30-0236ET-ATTRIBUTION",
+      "checked_source_urls": [
+        "https://datadryad.org/dataset/doi:10.5061/dryad.4qrfj6qhj",
+        "https://doi.org/10.1029/2024GL114394",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json"
+      ],
+      "recheck_finding": "GRL publisher article cites exact Dryad dataset and explicitly acknowledges CISESS NA19NES4320002. SPARK spark-000136 lists this only as related institutional award to JTTI non-Gaussian ensemble data assimilation project, with primary NA23OAR4590379. No project-specific WPO bridge.",
+      "negative_or_contradictory_evidence": "Oceanic solar radiance/diurnal heating tables distinct from non-Gaussian DA WPO project.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "recheck_final_question": "No specific WPO workstream bridge established after bounded independent-source research. Reopen only on new positive project-specific evidence or explicit human request.",
+      "recheck_next_action": "No further routine retry. Preserve original no_action and all human decisions."
     },
     {
       "identity": "doi:10.5061/dryad.63xsj3v88",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "low",
       "original_run_id": null,
       "existing_source_evidence": [
@@ -731,18 +755,31 @@
       "source_disposition_preserved": true,
       "new_direct_award_evidence_found": false,
       "hub_publication_authorized": false,
-      "recheck_attempts": 0,
+      "recheck_attempts": 1,
       "max_recheck_rounds_without_material_evidence": 1,
       "recheck_trigger": "When primary actionable API queues are cleared/blocked, or genuinely new direct attribution evidence arrives",
-      "last_source_research_at": "2026-10-29T10:33:00Z",
+      "last_source_research_at": "2026-10-30T06:36:00Z",
       "original_notes_preserved_in": "scout-operations/historical-triage.json",
-      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility."
+      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility.",
+      "recheck_completed_at": "2026-10-30T06:36:00Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-30-0236ET-ATTRIBUTION",
+      "checked_source_urls": [
+        "https://datadryad.org/dataset/doi:10.5061/dryad.63xsj3v88",
+        "https://journals.ametsoc.org/view/journals/clim/37/22/JCLI-D-23-0629.1.xml",
+        "https://doi.org/10.1029/2025JC023275",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json"
+      ],
+      "recheck_finding": "AMS Journal of Climate paper by dataset authors explicitly names NOAA MAPP NA19OAR4320073 and NASA/DOE cofunding for equatorial WWEs. SPARK spark-000105 lists umbrella award only as related to a distinct MET-TC tropical cyclone verification project funded by NA21OAR4590181/0182. A 2025 related article 10.1029/2025JC023275 has no WPO workstream bridge.",
+      "negative_or_contradictory_evidence": "Climate MAPP CMIP6 equatorial wind research, not a demonstrated MET-TC deliverable.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "recheck_final_question": "No specific WPO workstream bridge established after bounded independent-source research. Reopen only on new positive project-specific evidence or explicit human request.",
+      "recheck_next_action": "No further routine retry. Preserve original no_action and all human decisions."
     },
     {
       "identity": "doi:10.5061/dryad.7pvmcvf39",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "low",
       "original_run_id": null,
       "existing_source_evidence": [
@@ -756,18 +793,30 @@
       "source_disposition_preserved": true,
       "new_direct_award_evidence_found": false,
       "hub_publication_authorized": false,
-      "recheck_attempts": 0,
+      "recheck_attempts": 1,
       "max_recheck_rounds_without_material_evidence": 1,
       "recheck_trigger": "When primary actionable API queues are cleared/blocked, or genuinely new direct attribution evidence arrives",
-      "last_source_research_at": "2026-10-29T11:36:43Z",
+      "last_source_research_at": "2026-10-30T06:36:00Z",
       "original_notes_preserved_in": "scout-operations/historical-triage.json",
-      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility."
+      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility.",
+      "recheck_completed_at": "2026-10-30T06:36:00Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-30-0236ET-ATTRIBUTION",
+      "checked_source_urls": [
+        "https://datadryad.org/dataset/doi:10.5061/dryad.7pvmcvf39",
+        "https://doi.org/10.1111/1365-2745.14437",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json"
+      ],
+      "recheck_finding": "Journal of Ecology publisher explicitly identifies NOAA NA21OAR4310383 as Climate and Global Change Postdoctoral Fellowship support for Puerto Rico forest ecology dataset, with DOE/USFS/NSF cofunding. SPARK spark-000285 uses same award for UFS Senior Advisor; no project-specific output bridge.",
+      "negative_or_contradictory_evidence": "Fellowship-funded tropical forest ecology is not demonstrated as a UFS Senior Advisor deliverable; publisher flags sensitive plot location data, not retrieved.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "recheck_final_question": "No specific WPO workstream bridge established after bounded independent-source research. Reopen only on new positive project-specific evidence or explicit human request.",
+      "recheck_next_action": "No further routine retry. Preserve original no_action and all human decisions."
     },
     {
       "identity": "doi:10.5061/dryad.8pk0p2npb",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "low",
       "original_run_id": null,
       "existing_source_evidence": [
@@ -781,12 +830,25 @@
       "source_disposition_preserved": true,
       "new_direct_award_evidence_found": false,
       "hub_publication_authorized": false,
-      "recheck_attempts": 0,
+      "recheck_attempts": 1,
       "max_recheck_rounds_without_material_evidence": 1,
       "recheck_trigger": "When primary actionable API queues are cleared/blocked, or genuinely new direct attribution evidence arrives",
-      "last_source_research_at": "2026-10-29T11:36:43Z",
+      "last_source_research_at": "2026-10-30T06:36:00Z",
       "original_notes_preserved_in": "scout-operations/historical-triage.json",
-      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility."
+      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility.",
+      "recheck_completed_at": "2026-10-30T06:36:00Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-30-0236ET-ATTRIBUTION",
+      "checked_source_urls": [
+        "https://doi.org/10.5061/dryad.8pk0p2npb",
+        "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0266424",
+        "https://ci.noaa.gov/wp-content/uploads/2024/03/RPPR_NA20OAR4320278_20220401-20230331.pdf",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json"
+      ],
+      "recheck_finding": "PLOS article cites exact Dryad dataset and identifies NOAA PIFSC CIMEC/CIMEAS awards; NOAA CI RPPR lists dataset under passive acoustic cetacean studies. SPARK NA20OAR4320278 WPO projects are AQPI and later atmospheric-river air-sea research; no project-specific bridge.",
+      "negative_or_contradictory_evidence": "Independent NOAA CI report identifies PIFSC marine-mammal product, not a WPO AQPI/Western Water deliverable.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "recheck_final_question": "No specific WPO workstream bridge established after bounded independent-source research. Reopen only on new positive project-specific evidence or explicit human request.",
+      "recheck_next_action": "No further routine retry. Preserve original no_action and all human decisions."
     },
     {
       "identity": "doi:10.5061/dryad.b2rbnzsp5",
