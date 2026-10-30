@@ -1,0 +1,157 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-30-HOURLY-1633ET",
+  "timestamp_utc": "2026-10-30T20:33:02Z",
+  "mode": "normal_historical_discovery",
+  "phase": "bounded_deepflood_dual_doi_identity_and_public_scope_followup",
+  "monthly_before_after": {
+    "received": [
+      0,
+      0
+    ],
+    "completed": [
+      0,
+      0
+    ],
+    "remaining": [
+      0,
+      0
+    ]
+  },
+  "historical_before_after": {
+    "received": [
+      188,
+      188
+    ],
+    "completed": [
+      188,
+      188
+    ],
+    "remaining": [
+      0,
+      0
+    ],
+    "status_counts": {
+      "already_in_reach": 37,
+      "forwarded_to_hub": 6,
+      "metadata_update_forwarded": 8,
+      "no_action": 109,
+      "human_metadata_needed": 28
+    }
+  },
+  "original_seeds_disposed_this_run": [],
+  "original_seed_artifact_vs_grant_decisions": [],
+  "normal_projects_examined": [
+    "spark-000338"
+  ],
+  "expansion_leads": [
+    {
+      "identities": [
+        "doi:10.6084/m9.figshare.26791243",
+        "doi:10.6084/m9.figshare.28328339"
+      ],
+      "route": "Independent discovery",
+      "original_seed_doi": null,
+      "status": "RESEARCH_COMPLETE_HUMAN_INTAKE_PENDING_PRIVATE_UI",
+      "provisional_review_units": 1,
+      "distinct_new_outputs_verified": 0,
+      "award": "NA21OAR4590358"
+    }
+  ],
+  "source_checks": [
+    {
+      "url": "https://www.nature.com/articles/s41597-025-04554-3.pdf",
+      "result": "Publisher paper reference 34 cites Figshare 26791243 and acknowledgments identify NA21OAR4590358."
+    },
+    {
+      "url": "https://www.selectdataset.com/dataset/bce81a8a16760c82a36fc60ff17d77a2/deepflood-dataset-high-resolution-dataset-for-accurate-flood-mappingand-segmentation",
+      "result": "Third-party listing links Figshare 28328339; 2025-02-01 site label is NOT verified DataCite created."
+    },
+    {
+      "url": "https://openscicode.org/paper/doi_10.1038_s41597-025-04554-3/",
+      "result": "Independent paper-resource index links Figshare 28328339; no canonical/version relation confirmed."
+    },
+    {
+      "url": "https://www.reddit.com/r/remotesensing/comments/1wuus1a/corrupted_missing_uav_data_in_deepflood_dataset/",
+      "result": "Unverified October 2026 community report of corrupted/incomplete UAV downloads; not treated as established file status."
+    },
+    {
+      "url": "https://api.datacite.org/dois/10.6084/m9.figshare.26791243",
+      "result": "ACCESS_FAILURE; exact created not retrieved."
+    },
+    {
+      "url": "https://api.datacite.org/dois/10.6084/m9.figshare.28328339",
+      "result": "ACCESS_FAILURE; exact created not retrieved."
+    },
+    {
+      "url": "https://api.figshare.com/v2/articles/26791243",
+      "result": "ACCESS_FAILURE; native file inventory/version relation unverified."
+    },
+    {
+      "url": "https://api.figshare.com/v2/articles/28328339",
+      "result": "ACCESS_FAILURE; native file inventory/version relation unverified."
+    }
+  ],
+  "new_verified_candidates": [],
+  "new_batch_ids": [],
+  "new_csv_staged": false,
+  "feed_integrity_status": "FEED_BLOCKED_VALIDATION_FAILURE",
+  "manifest_verification_evidence": {
+    "manifest_blob_sha": "1d048cf0b5552aff8eb9b6afc36302d8147afbe8",
+    "manifest_batch_count": 20,
+    "manifest_rows": 66,
+    "unmanifested_invalid_csv": "scout-discoveries/batches/2026-10-30-hourly-1329ET-independent-flood-mapping-001.csv",
+    "validation_error": "Missing mandatory URL-bearing Scout discovery path rationale line; immutable CSV left unchanged."
+  },
+  "github_action_verification": {
+    "known_manifest_run_id": 41100661636,
+    "status": "completed",
+    "conclusion": "failure",
+    "newer_run_status": "NOT_VERIFIABLE"
+  },
+  "crossref_date_policy_audit": {
+    "checkpoint_records": 36,
+    "reach_pub_date_satisfied": 36,
+    "month_only_normalized": 19,
+    "created_not_used": true
+  },
+  "metadata_intake": {
+    "historical_source_cases": 42,
+    "historical_review_units": 36,
+    "normal_discovery_new_provisional_review_units": 1,
+    "private_companion": "PREPARED_TESTED_OFFLINE_NOT_INSTALLED",
+    "hub_imports": "NOT_VERIFIED",
+    "human_decisions": "NOT_VERIFIED"
+  },
+  "discovery_origin_rollup": {
+    "manifest_rows": 66,
+    "direct_api": 5,
+    "api_seeded_expansion": 12,
+    "independent_discovery": 3,
+    "metadata_correction": 6,
+    "unclassified_legacy": 40
+  },
+  "public_reach": {
+    "rows_last_verified": 1238,
+    "new_additions_verified_this_run": 0
+  },
+  "hub_imports": "NOT_VERIFIED",
+  "human_decisions": "NOT_VERIFIED",
+  "blockers": [
+    "Immutable 1329ET CSV fails automated manifest validation; separately authorized repair required.",
+    "Exact DataCite and Figshare API endpoints inaccessible; no DOI-specific created or native file scope verified.",
+    "Private Hub imports and decisions not verifiable."
+  ],
+  "audit_result": "PARTIAL",
+  "no_csv_reason": "No verified distinct new candidate; feed blocked. Header-only local QA CSV is NOT a GitHub feed batch.",
+  "library_path": "/REACH Scout Library/2026-10-30_1633ET",
+  "library_saved_before_github": true,
+  "github_ledger_commit": "203dd723265fdc9da6e8d801d958c84e15cffa75",
+  "safety": {
+    "immutable_api_batches_unchanged": true,
+    "immutable_scout_batches_unchanged": true,
+    "manifest_not_manually_modified": true,
+    "reviewer_decisions_unchanged": true,
+    "reach_spark_smartsheet_unchanged": true
+  }
+}
