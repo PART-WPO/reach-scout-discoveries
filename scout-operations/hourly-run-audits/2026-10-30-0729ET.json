@@ -1,0 +1,137 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-30-HOURLY-0729ET",
+  "timestamp": "2026-10-30T07:29:00-04:00",
+  "mode": "NORMAL HISTORICAL DISCOVERY",
+  "priority_policy": "monthly then historical then attribution then normal",
+  "source_coverage": {
+    "monthly_before": 0,
+    "monthly_after": 0,
+    "historical_completed_before": 188,
+    "historical_completed_after": 188,
+    "historical_remaining_before": 0,
+    "historical_remaining_after": 0,
+    "historical_reconciled": true,
+    "attribution_followups_unresolved": 0,
+    "public_reach_rows_checked": 1238,
+    "public_reach_index_shards_checked": 10,
+    "scout_batches_checked": 17,
+    "scout_candidate_rows_prior": 59,
+    "spark_index_shards_checked": 6,
+    "scout_batches_after": 18,
+    "scout_candidate_rows_after": 61
+  },
+  "normal_projects_examined": [
+    "spark-000005",
+    "spark-000036",
+    "spark-000043",
+    "spark-000033"
+  ],
+  "original_seeds_disposed": [],
+  "new_evidence_checks": {
+    "distinct_source_types": [
+      "SPARK project details",
+      "NOAA IR output identity",
+      "NWA publisher full-text PDF acknowledgments",
+      "REACH complete public index",
+      "Scout 17 published batches"
+    ],
+    "count": 5
+  },
+  "discovery_route_counts": {
+    "Independent discovery": 1,
+    "Metadata correction": 1,
+    "Direct API": 0,
+    "API-seeded expansion": 0
+  },
+  "new_findings": [
+    {
+      "doi": "10.15191/nwajom.2023.1107",
+      "route": "Independent discovery",
+      "award": "NA18OAR4590361",
+      "spark_project_id": "spark-000033",
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/55503",
+        "https://nwafiles.nwas.org/file/nwafiles/jom/articles/2023/2023-JOM7/2023-JOM7.pdf",
+        "https://wpo.noaa.gov/spark/"
+      ],
+      "public_reach_match": false,
+      "reviewer_visibility": "FEED_VERIFIED_HUB_IMPORT_NOT_VERIFIED"
+    },
+    {
+      "doi": "10.15191/nwajom.2023.1109",
+      "route": "Metadata correction",
+      "award": "NA18OAR4590361",
+      "spark_project_id": "spark-000033",
+      "existing_reach_uid": "reachuid-v1-9c4125f66ae7633524ac68fb752a831d",
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/56441",
+        "https://repository.library.noaa.gov/view/noaa/56441/noaa_56441_DS1.pdf",
+        "https://wpo.noaa.gov/spark/"
+      ],
+      "public_reach_match": true,
+      "reviewer_visibility": "FEED_VERIFIED_HUB_IMPORT_NOT_VERIFIED"
+    }
+  ],
+  "no_action_subtype_changes": [],
+  "attribution_queue_changes": [],
+  "expansion_leads": {
+    "checked": 3,
+    "distinct_forwarded": 0,
+    "note": "Compared 2023 Skinner et al Part I, Martinaitis et al, stream radar and HAILCAST project outputs; none newly forwarded as expansion."
+  },
+  "missing_acknowledgment": {
+    "credible_project_specific_leads": 0,
+    "hub_visible": 0,
+    "reviewer_confirmed_recovered": "NOT VERIFIED",
+    "verified_public_reach_additions": 0
+  },
+  "human_metadata_needed": {
+    "pending_hub_handoff": 5,
+    "new_this_run": 0,
+    "hub_visible_new": "NOT VERIFIED"
+  },
+  "batch": {
+    "id": "2026-10-30-hourly-0729ET-wofs-jtti-output-001",
+    "path": "scout-discoveries/batches/2026-10-30-hourly-0729ET-wofs-jtti-output-001.csv",
+    "record_count": 2,
+    "source_run_ids": [
+      "REACH-SCOUT-2026-10-30-HOURLY-0729ET"
+    ],
+    "local_sha256": "9b4ee4fe2bbf7b117f3be25853133cce3e19e5cf224db10ad8e56777cda49639",
+    "csv_staged_on_github": true,
+    "manifest_verified": true,
+    "hub_accepted": "NOT VERIFIED",
+    "github_commit_sha": "18d309a56ca11a9f2e23fcb894dad8968a5da4e2",
+    "manifest_sha": "d86e7ff9b88b5d7cb771d4a9d840f34e315bd452",
+    "public_csv_sha256_verified": "9b4ee4fe2bbf7b117f3be25853133cce3e19e5cf224db10ad8e56777cda49639"
+  },
+  "feed_integrity_status": "VERIFIED_18_BATCHES_61_ROWS_NEW_BATCH_SHA_MATCH",
+  "github_action_status": "SUCCESS",
+  "public_reach": {
+    "total": 1238,
+    "verified_new_additions_this_run": 0
+  },
+  "private_reviewer_decisions": "NOT VERIFIED",
+  "blockers": [
+    "Private Discovery Hub import acceptance and human review decisions cannot be verified from public GitHub; feed verified does not imply Hub visibility or approval."
+  ],
+  "audit_result": "PARTIAL",
+  "github_action_run_id": 41049030851,
+  "github_action_run_url": "https://github.com/PART-WPO/reach-scout-discoveries/actions/runs/41049030851",
+  "manifest_verification_evidence": {
+    "manifest_path": "scout-discoveries/manifest.json",
+    "manifest_git_blob_sha": "d86e7ff9b88b5d7cb771d4a9d840f34e315bd452",
+    "batch_id": "2026-10-30-hourly-0729ET-wofs-jtti-output-001",
+    "sha256_expected": "9b4ee4fe2bbf7b117f3be25853133cce3e19e5cf224db10ad8e56777cda49639",
+    "sha256_observed": "9b4ee4fe2bbf7b117f3be25853133cce3e19e5cf224db10ad8e56777cda49639",
+    "record_count": 2,
+    "run_ids": [
+      "REACH-SCOUT-2026-10-30-HOURLY-0729ET"
+    ],
+    "prior_batch_count_preserved": 17,
+    "new_batch_count": 18,
+    "total_candidate_rows": 61,
+    "workflow_completed_successfully": true
+  }
+}
