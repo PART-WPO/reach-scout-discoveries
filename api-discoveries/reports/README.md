@@ -41,3 +41,13 @@ It has seven sheets: **Summary**, **Historical DataCite Results** (all 188 raw A
 The report is refreshed daily at 14:10 UTC or by manually running [Historical DataCite — Excel comparison with Scout](https://github.com/PART-WPO/reach-scout-discoveries/actions/workflows/historical-datacite-report.yml). The workflow also provides a 90-day Actions artifact named `reach-historical-datacite-scout-comparison`. The GitHub file above is retained normally.
 
 **Read-only and report-only:** This never alters the immutable API batches, Scout's research ledger, Discovery Hub, Smartsheet, or REACH.
+
+## DataCite date evidence audit — historical and future monthly intakes
+
+[GitHub Actions: DataCite date reconciliation](https://github.com/PART-WPO/reach-scout-discoveries/actions/workflows/datacite-date-reconciliation.yml) independently revisits original DataCite DOI records and compares date evidence without altering the immutable 24-column API inputs, the Scout research ledgers, human-review decisions, or public REACH. It runs on changes to the source manifest, weekly and on the first of each month, with manual **Run workflow** support.
+
+The historical workbook is **[REACH_DataCite_Date_Reconciliation_Historical_2026-10-28.xlsx](REACH_DataCite_Date_Reconciliation_Historical_2026-10-28.xlsx)**, covering every original 188 historical DOI records. Each completed monthly intake gets **`REACH_DataCite_Date_Reconciliation_YYYY-MM.xlsx`**. The equivalent machine-readable read-only date snapshots are under [api-discoveries/date-audits/](../date-audits/), with keys `historical-2026-10-28.json` and `monthly-YYYY-MM.json`. The first workbook is available after a successful first workflow run, not merely because this README links to it.
+
+Each workbook contains **Summary**, **Date Reconciliation** (original title, award, parent, output type, typed Issued/Available, full DataCite published/created/registered/updated timestamps, native date evidence and classifications), **Repository Breakdown**, **Needs Reviewer Check**, and **Read Me**. The date categories deliberately separate exact DOI-matched repository publication metadata from typed DataCite dates that still need corroboration and DOI registration/record-creation dates that are **only provisional clues**. A DataCite year is not converted to an invented January 1 date. Access barriers, version ambiguity and conflicting dates are shown, not silently corrected.
+
+**Never use the workbook as a Smartsheet import.** It is a source-first reference for Scout and reviewers. An exact date still requires an eligible, distinct output, the proper parent project and an authorized human approval before publishing.
