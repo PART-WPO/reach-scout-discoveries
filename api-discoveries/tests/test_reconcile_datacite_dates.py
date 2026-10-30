@@ -31,7 +31,7 @@ class DatesTests(unittest.TestCase):
         self.assertEqual(dates.iso_date("2025-04-10T21:52:56.000Z"),"2025-04-10")
         self.assertEqual(dates.iso_date("2025-02-30"),"")
 
-    def test_created_and_registered_do_not_become_reach_pub_date(self):
+    def test_created_is_accepted_office_pub_date_not_first_release(self):
         a={"created":"2025-04-10T21:52:56.000Z",
            "registered":"2025-04-11T10:00:00.000Z",
            "updated":"2025-06-02T16:03:08.000Z","published":"2025",
@@ -42,7 +42,7 @@ class DatesTests(unittest.TestCase):
         self.assertEqual(r["provisional_date"],"2025-04-11")
         self.assertEqual(r["publication_year"],"2025")
         self.assertEqual(r["default_pub_date"],"2025-04-10")
-        self.assertIn("editable default",r["default_pub_date_basis"])
+        self.assertIn("REACH office Pub Date",r["default_pub_date_basis"])
         self.assertEqual(r["verified_date"],"")
 
     def test_issued_exact_requires_repository_check(self):
