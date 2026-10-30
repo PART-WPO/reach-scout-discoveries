@@ -284,8 +284,8 @@
     {
       "identity": "doi:10.6084/m9.figshare.26791243",
       "title": "DeepFlood High Resolution Dataset for Accurate Flood Mapping and Segmentation",
-      "status": "RESEARCH_ACTIVE",
-      "research_round": 0,
+      "status": "RESEARCH_COMPLETE_HUMAN_INTAKE_PENDING_PRIVATE_UI",
+      "research_round": 1,
       "discovery_route": "Independent discovery",
       "discovery_path": "SPARK spark-000338 / primary NOAA award NA21OAR4590358 -> Scientific Data article DOI 10.1038/s41597-025-04554-3 -> article Data Records and reference 34 -> separate Figshare DOI 10.6084/m9.figshare.26791243",
       "source_type": "Figshare cited dataset",
@@ -343,15 +343,55 @@
           "url": "https://www.nature.com/articles/s41597-025-04554-3.pdf",
           "method": "publisher_pdf_repository_inventory",
           "result": "Article Figure 6 depicts DEEPFLOOD DATA subfolders; corroborates intended standalone data product, not a live Figshare file-access test."
+        },
+        {
+          "url": "https://www.nature.com/articles/s41597-025-04554-3.pdf",
+          "method": "primary_publisher_reference_34",
+          "result": "Primary article cites 10.6084/m9.figshare.26791243 as DeepFlood dataset and acknowledges NA21OAR4590358."
+        },
+        {
+          "url": "https://www.selectdataset.com/dataset/bce81a8a16760c82a36fc60ff17d77a2/deepflood-dataset-high-resolution-dataset-for-accurate-flood-mappingand-segmentation",
+          "method": "secondary_dataset_listing",
+          "result": "Secondary listing points to Figshare 28328339 with 2025-02-01 site date; NOT verified DataCite created or accepted Pub Date."
+        },
+        {
+          "url": "https://openscicode.org/paper/doi_10.1038_s41597-025-04554-3/",
+          "method": "secondary_article_resource_link",
+          "result": "Separate research index links same article to Figshare 28328339; does not prove version relation."
+        },
+        {
+          "url": "https://www.reddit.com/r/remotesensing/comments/1wuus1a/corrupted_missing_uav_data_in_deepflood_dataset/",
+          "method": "community_report_unverified",
+          "result": "2026-10-01 user alleges missing/corrupt UAV downloads and mismatch between advertised 4.53GB and listed API files; anecdotal, not independently verified."
+        },
+        {
+          "url": "https://api.datacite.org/dois/10.6084/m9.figshare.26791243",
+          "method": "mandatory_exact_doi_enrichment",
+          "result": "ACCESS FAILURE; exact created timestamp not retrievable."
+        },
+        {
+          "url": "https://api.datacite.org/dois/10.6084/m9.figshare.28328339",
+          "method": "mandatory_exact_doi_enrichment",
+          "result": "ACCESS FAILURE; exact created timestamp not retrievable."
+        },
+        {
+          "url": "https://api.figshare.com/v2/articles/26791243",
+          "method": "native_article_file_and_version",
+          "result": "ACCESS FAILURE; no file inventory/version confirmation."
+        },
+        {
+          "url": "https://api.figshare.com/v2/articles/28328339",
+          "method": "native_article_file_and_version",
+          "result": "ACCESS FAILURE; no file inventory/version confirmation."
         }
       ],
       "missing_fields": [
-        "exact DOI-specific DataCite created Pub Date",
-        "public Figshare file inventory and standalone eligibility",
-        "REACH/Scout full identity comparison",
-        "private human decision"
+        "exact DOI-specific DataCite created Pub Date (API ACCESS FAILURE, not verified absent)",
+        "canonical DOI/version relation with 28328339",
+        "native public file inventory and scope",
+        "private human disposition and full detail comparison"
       ],
-      "next_action": "One bounded different-source follow-up (not an indefinite date hunt); if still credible but missing native identity/scope/created, hand off RESEARCH_COMPLETE_HUMAN_INTAKE and add a new review unit without touching prior decisions.",
+      "next_action": "Bounded research complete; one provisional grouped human intake decision. Do not stage two outputs or infer dates. Private intake delivery not verified.",
       "hub_delivery": "NOT_DELIVERED",
       "human_decisions": "NOT_VERIFIED",
       "original_seed_doi": null,
@@ -359,14 +399,15 @@
       "pub_date": null,
       "datacite_created": null,
       "remaining_questions": [
-        "Retrieve DOI-specific valid DataCite created timestamp; use its calendar date as accepted REACH Pub Date without further corroboration",
-        "Verify native Figshare file accessibility and exact version/concept identity",
-        "Confirm no private prior reviewer decision and distinct eligibility from article"
+        "Do Figshare 26791243 and 28328339 represent one version/replacement family or distinct outputs?",
+        "Can exact DOI DataCite created timestamps and public file inventories be retrieved?",
+        "Is the 2026 community UAV access report reproducible?",
+        "Does private Hub already contain a reviewer decision?"
       ],
       "reach_exact_index_match": false,
       "scout_manifest_exact_match": false,
       "human_decision": "NOT_VERIFIED",
-      "research_completed": false,
+      "research_completed": true,
       "evidence_urls": [
         "https://www.nature.com/articles/s41597-025-04554-3",
         "https://api.figshare.com/v2/articles/26791243",
@@ -391,15 +432,95 @@
           "outcome": "Not independently inspected in this run; future substantive check required."
         }
       ],
-      "updated_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1435ET"
+      "updated_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1633ET",
+      "updated_at": "2026-10-30T20:33:02Z",
+      "provisional_review_group": "deepflood-figshare-26791243-28328339",
+      "canonical_identity": "UNDECIDED",
+      "related_identity": "doi:10.6084/m9.figshare.28328339"
+    },
+    {
+      "identity": "doi:10.6084/m9.figshare.28328339",
+      "title": "DEEPFLOOD DATASET: High-Resolution Dataset for Accurate Flood Mappingand Segmentation",
+      "cohort": "Normal historical SPARK award discovery 2026-10-30",
+      "status": "RESEARCH_COMPLETE_HUMAN_INTAKE_PENDING_PRIVATE_UI",
+      "research_round": 1,
+      "research_completed": true,
+      "discovery_route": "Independent discovery",
+      "source_type": "Figshare linked dataset / possible version or replacement",
+      "discovery_path": "SPARK spark-000338 -> Scientific Data article DOI 10.1038/s41597-025-04554-3 -> external resource indexes -> Figshare 28328339; primary article instead cites 26791243",
+      "project": "spark-000338",
+      "award_numbers": [
+        "NA21OAR4590358"
+      ],
+      "funding_basis": "The parent article explicitly acknowledges NOAA NA21OAR4590358 and is linked to this Figshare identity by secondary indexes; direct dataset-native grant evidence and identity relation remain unverified.",
+      "checked_sources": [
+        {
+          "url": "https://www.nature.com/articles/s41597-025-04554-3.pdf",
+          "method": "primary_publisher_reference_34",
+          "result": "Primary article cites 10.6084/m9.figshare.26791243 as DeepFlood dataset and acknowledges NA21OAR4590358."
+        },
+        {
+          "url": "https://www.selectdataset.com/dataset/bce81a8a16760c82a36fc60ff17d77a2/deepflood-dataset-high-resolution-dataset-for-accurate-flood-mappingand-segmentation",
+          "method": "secondary_dataset_listing",
+          "result": "Secondary listing points to Figshare 28328339 with 2025-02-01 site date; NOT verified DataCite created or accepted Pub Date."
+        },
+        {
+          "url": "https://openscicode.org/paper/doi_10.1038_s41597-025-04554-3/",
+          "method": "secondary_article_resource_link",
+          "result": "Separate research index links same article to Figshare 28328339; does not prove version relation."
+        },
+        {
+          "url": "https://www.reddit.com/r/remotesensing/comments/1wuus1a/corrupted_missing_uav_data_in_deepflood_dataset/",
+          "method": "community_report_unverified",
+          "result": "2026-10-01 user alleges missing/corrupt UAV downloads and mismatch between advertised 4.53GB and listed API files; anecdotal, not independently verified."
+        },
+        {
+          "url": "https://api.datacite.org/dois/10.6084/m9.figshare.26791243",
+          "method": "mandatory_exact_doi_enrichment",
+          "result": "ACCESS FAILURE; exact created timestamp not retrievable."
+        },
+        {
+          "url": "https://api.datacite.org/dois/10.6084/m9.figshare.28328339",
+          "method": "mandatory_exact_doi_enrichment",
+          "result": "ACCESS FAILURE; exact created timestamp not retrievable."
+        },
+        {
+          "url": "https://api.figshare.com/v2/articles/26791243",
+          "method": "native_article_file_and_version",
+          "result": "ACCESS FAILURE; no file inventory/version confirmation."
+        },
+        {
+          "url": "https://api.figshare.com/v2/articles/28328339",
+          "method": "native_article_file_and_version",
+          "result": "ACCESS FAILURE; no file inventory/version confirmation."
+        }
+      ],
+      "pub_date": null,
+      "datacite_created": null,
+      "source_dateType": "DataCite created (exact DOI request access failed)",
+      "missing_fields": [
+        "exact DOI-specific DataCite created Pub Date (API ACCESS FAILURE)",
+        "version/canonical identity vs Figshare 26791243",
+        "public native file inventory and file-scope eligibility",
+        "private human disposition"
+      ],
+      "provisional_review_group": "deepflood-figshare-26791243-28328339",
+      "canonical_identity": "UNDECIDED",
+      "remaining_questions": [
+        "Are these separate outputs or versions?",
+        "Are public UAV files actually downloadable?",
+        "What is exact DOI DataCite created timestamp?"
+      ],
+      "next_action": "Single grouped human identity/scope review, not automatic new output; preserve DOI-specific dates and private decisions.",
+      "hub_delivery": "NOT_DELIVERED",
+      "human_decisions": "NOT_VERIFIED",
+      "updated_run_id": "REACH-SCOUT-2026-10-30-HOURLY-1633ET",
+      "updated_at": "2026-10-30T20:33:02Z"
     }
   ],
   "latest_update": {
-    "run_id": "REACH-SCOUT-2026-10-30-HOURLY-1329ET",
-    "timestamp_utc": "2026-10-30T17:39:00Z",
-    "closed_no_demonstrated_bridge": 3,
-    "new_expansion_leads": 1,
-    "source": "bounded NHCI attribution contrast and independent flood-paper data availability",
-    "reviewer_decisions": "NOT_VERIFIED"
+    "run_id": "REACH-SCOUT-2026-10-30-HOURLY-1633ET",
+    "note": "DeepFlood 26791243 and 28328339 provisionally grouped for ONE identity/version/public-scope human decision; exact DataCite created inaccessible; no date invented or Hub delivery asserted.",
+    "library_path": "/REACH Scout Library/2026-10-30_1633ET/research_lead_delta.json"
   }
 }
