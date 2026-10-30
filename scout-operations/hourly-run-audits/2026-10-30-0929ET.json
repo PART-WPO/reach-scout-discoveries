@@ -1,0 +1,195 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-30-HOURLY-0929ET",
+  "timestamp": "2026-10-30T09:29:57-04:00",
+  "timestamp_utc": "2026-10-30T13:29:57Z",
+  "mode": "normal_historical_discovery",
+  "phase": "award_centered_broad_net_and_metadata_handoff",
+  "priority_routing": "monthly > historical > attribution > normal; all higher-priority genuine research exhausted; pending human UI intake is not unfinished research",
+  "original_seeds_disposed_this_run": [],
+  "monthly_before_after": {
+    "received_before": 0,
+    "received_after": 0,
+    "completed_before": 0,
+    "completed_after": 0,
+    "remaining_before": 0,
+    "remaining_after": 0
+  },
+  "historical_before_after": {
+    "completed_before": 188,
+    "completed_after": 188,
+    "remaining_before": 0,
+    "remaining_after": 0,
+    "research_complete": true,
+    "status_counts": {
+      "already_in_reach": 37,
+      "forwarded_to_hub": 2,
+      "metadata_update_forwarded": 8,
+      "no_action": 109,
+      "human_metadata_needed": 32
+    }
+  },
+  "attribution_followups": {
+    "total": 71,
+    "closed": 71,
+    "queued": 0,
+    "changed_this_run": 0
+  },
+  "normal_projects_examined": [
+    "spark-000201",
+    "spark-000202",
+    "spark-000203",
+    "spark-000204",
+    "spark-000205",
+    "spark-000207",
+    "spark-000208",
+    "spark-000211",
+    "spark-000213"
+  ],
+  "source_checks": {
+    "spark_index_shards": 6,
+    "spark_project_rows": 578,
+    "reach_index_shards": 10,
+    "reach_index_rows": 1238,
+    "reach_sha256_verified": 10,
+    "scout_batches": 19,
+    "scout_candidate_rows": 62,
+    "scout_sha256_verified": 19,
+    "reach_detail_shards_full_reread": "NOT VERIFIED",
+    "native_pdf_access": "HTTP 403 (source failure, not proof metadata absent)",
+    "source_urls": [
+      "https://www.nhc.noaa.gov/jht/15-17_proj.php",
+      "https://www.nhc.noaa.gov/jht/ihc_17/ihc17_Rozoff.pdf",
+      "https://www.nhc.noaa.gov/hot/archive.php",
+      "https://pubs.ssec.wisc.edu/research_Resources/publications/pdfs/SSECPUBS/SSEC_Publication_No_17_09_R1.pdf",
+      "https://www.nhc.noaa.gov/jht/15-17reports/JHT_Velden_midyear2.pdf",
+      "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+      "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+      "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json"
+    ]
+  },
+  "new_findings": [
+    {
+      "identity": "url:https://www.nhc.noaa.gov/jht/ihc_17/ihc17_Rozoff.pdf",
+      "route": "Independent discovery",
+      "discovery_path": "SPARK spark-000201 -> official NHC 2015–2017 roster -> indexed 2017 IHC slide PDF -> independent SSEC/NOAA project reports -> dated NHC availability archive",
+      "award": "NA15OAR4590205",
+      "funding_basis": "Primary WPO SPARK award and two independently corroborating grant-funded project reports identify this specific presentation",
+      "research_status": "RESEARCH_COMPLETE_HUMAN_INTAKE",
+      "first_public_date": null,
+      "verified_public_availability_by": "2017-04-13",
+      "source_dateType": "NHC archive public availability announcement, not exact first posting",
+      "missing_fields": [
+        "exact first slide public posting date",
+        "native slide file accessibility and explicit award acknowledgment"
+      ],
+      "hub_delivery": "NOT DELIVERED",
+      "human_decision": "NOT VERIFIED"
+    }
+  ],
+  "metadata_intake": {
+    "source_cases_before": 37,
+    "source_cases_after": 38,
+    "review_units_before": 31,
+    "review_units_after": 32,
+    "provisional_pair_groups_preserved": 6,
+    "original_historical_handoffs": 32,
+    "other_existing_handoffs": 5,
+    "new_presentation_handoff": 1,
+    "new_research_active_first_pass_reports": 3,
+    "hub_imports_observed": "NOT VERIFIED",
+    "reviewer_decisions_verified": "NOT VERIFIED",
+    "companion_ui_status": "PREPARED_TESTED_OFFLINE_NOT_INSTALLED",
+    "blocker_blob_sha": "24e5b238aaa27cc83d536e776a42b3f7bcd0a406",
+    "review_units_blob_sha": "251d8d67b0aa16083802d52602745b253dc4f8cb",
+    "all_prior_review_keys_preserved": true
+  },
+  "expansion_leads": {
+    "three_report_first_pass_cases": [
+      "https://www.nhc.noaa.gov/jht/15-17reports/Rozoff_yr1_annualrpt.pdf",
+      "https://pubs.ssec.wisc.edu/research_Resources/publications/pdfs/SSECPUBS/SSEC_Publication_No_17_09_R1.pdf",
+      "https://www.nhc.noaa.gov/jht/15-17reports/Velden_midyear3.pdf"
+    ],
+    "unverified_website_or_poster": 2,
+    "already_in_reach_articles_deduplicated": 9,
+    "distinct_forwarded": 0
+  },
+  "new_batch": {
+    "id": null,
+    "path": null,
+    "record_count": 0,
+    "github_staged": false,
+    "manifest_verified": "UNCHANGED_19_BATCHES_VERIFIED",
+    "hub_accepted": "NOT VERIFIED"
+  },
+  "discovery_route_counts_this_run": {
+    "Direct API": 0,
+    "API-seeded expansion": 0,
+    "Independent discovery": 1,
+    "Metadata correction": 0
+  },
+  "missing_acknowledgment": {
+    "credible_new_absent_ack_leads": 0,
+    "absence_of_ack_verified": false,
+    "hub_visible": "NOT VERIFIED",
+    "reviewer_confirmed_recovered": "NOT VERIFIED",
+    "verified_public_reach_additions": 0
+  },
+  "feed_integrity_status": "VERIFIED_19_BATCHES_62_ROWS_NO_NEW_CSV",
+  "manifest_verification_evidence": {
+    "manifest_blob_sha": "56fac70ee80dca77d000472d679d98124b48bfd5",
+    "batches_sha256_checked": 19,
+    "batches_sha256_matching": 19,
+    "candidate_rows": 62,
+    "manifest_unchanged": true,
+    "no_manifest_write": true
+  },
+  "github_action_status": "NOT_VERIFIABLE (no new CSV; workflow conclusion not checked)",
+  "quality_alert": {
+    "identity": "url:https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_reportFINAL_092718.pdf",
+    "batch": "2026-10-30-hourly-0829ET-jht-ri-final-report-001",
+    "problem": "2018-09-30 is report submission date, not verified first public posting; already in metadata-review-units case-31; hold for human date and duplicate workflow reconciliation",
+    "quality_alert_blob_sha": "3540bba5bfd42111bf5dbb8c0badb78f3bf78473",
+    "immutable_batch_unchanged": true
+  },
+  "preexisting_blocker_validator_issues": {
+    "affected_identities": 13,
+    "duplicate_method_labels": 11,
+    "missing_round_zero_attempts": 2,
+    "action": "NOT REPAIRED; do not invent historical checks; separate reconciliation needed",
+    "validator_result": "NOT PASS"
+  },
+  "public_reach": {
+    "manifest_blob_sha": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+    "index_shards_sha256_verified": 10,
+    "public_rows": 1238,
+    "new_public_additions_verified": 0,
+    "detail_shards": "NOT VERIFIED"
+  },
+  "private_reviewer_decisions": "NOT VERIFIED",
+  "library_persistence": {
+    "path": "/REACH Scout Library/2026-10-30_0929ET",
+    "files": [
+      "report.md",
+      "research_leads.json",
+      "checkpoint.json",
+      "provenance_audit.json",
+      "discovery_hub_header_only.csv",
+      "new_metadata_blocker.json"
+    ],
+    "verified": true
+  },
+  "github_ledger_updates": {
+    "metadata_blockers_commit": "b426b9c121b12103bde8dcc40ede101a286d4c87",
+    "metadata_review_units_commit": "c04285540ddbc510a3a9ba3e8c796ca5f0da4e57",
+    "quality_alert_commit": "98a82b36e0c0471537e53c65cb4114af9e5d2d94"
+  },
+  "blockers": [
+    "Private Hub import and decisions unavailable; no Hub delivery claimed",
+    "Full 140 REACH detail shards not reread",
+    "Native IHC PDF direct retrieval 403; indexed content and independent source documents available",
+    "08:29 prior immutable batch used unverified submission date as Publication Date; quality alert recorded",
+    "Preexisting metadata blocker validator issues: 11 duplicate method-label identities and two missing round-0 provenance identities"
+  ],
+  "audit_result": "PARTIAL"
+}
