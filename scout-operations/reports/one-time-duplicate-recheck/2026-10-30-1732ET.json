@@ -1,0 +1,265 @@
+{
+  "schema": "reach-scout-one-time-four-candidate-recheck-v1",
+  "run_id": "REACH-SCOUT-2026-10-30-HOURLY-1732ET",
+  "timestamp_utc": "2026-10-30T21:32:56Z",
+  "primary_mode": "normal_historical_discovery",
+  "special_recheck_requested": "one-time 2026-10-30",
+  "one_time_recheck_complete": true,
+  "do_not_repeat_without_new_evidence_or_user_request": true,
+  "catalog_source": "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json",
+  "scout_feed_source": "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/manifest.json",
+  "catalog_shards_scanned": {
+    "index": 10,
+    "detail": 140,
+    "index_rows": 1238,
+    "detail_rows": 1238,
+    "errors": 0
+  },
+  "staged_feed_scanned": {
+    "batches": 20,
+    "rows": 66,
+    "errors": 0
+  },
+  "counts": {
+    "reviewed": 4,
+    "confirmed_existing_in_reach": 1,
+    "no_public_reach_match_retained_for_human_review": 3,
+    "new_review_candidates_created": 0,
+    "human_decisions_verified": 0,
+    "new_public_reach_additions_verified": 0
+  },
+  "cases": [
+    {
+      "doi": "10.1175/WAF-D-19-0105.1",
+      "title": "Calibration of Machine Learning–Based Probabilistic Hail Predictions for Operational Forecasting",
+      "classification": "KNOWN DUPLICATE / REACH METADATA UPDATE",
+      "candidate_batch": "2026-10-27-morning-jtti-2016-2017-001",
+      "candidate_row": 1,
+      "candidate_id": "",
+      "reach_record_id": "reach-000245",
+      "reach_stable_uid": "reachuid-v1-a191782c0b21f3b606bd85805d73214f",
+      "reach_url": "https://repository.library.noaa.gov/view/noaa/27459",
+      "reach_awards": [
+        "NA18OAR4590371"
+      ],
+      "candidate_awards": [
+        "NA16OAR4590239"
+      ],
+      "funding_evidence": "https://journals.ametsoc.org/view/journals/wefo/35/1/waf-d-19-0105.1.xml",
+      "funding_note": "AMS paper explicitly says NA16OAR4590239 primarily supported this work, supplemented by NA18OAR4590371; NOAA IR lists both. Existing REACH has NA18 only; propose adding NA16 while retaining NA18, subject to human confirmation.",
+      "crossref_print_pub_date": "2020-02-01",
+      "original_candidate_pub_date": "2020-01-01",
+      "recommendation": "Do not add a second article. Existing REACH identity is exact normalized title and identical NOAA IR output URL. Classify known duplicate; refer award-list correction to human reviewer without overwriting REACH or original candidate.",
+      "candidate_source_url": "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/batches/2026-10-27-morning-jtti-2016-2017-001.csv",
+      "crossref_metadata_url": "https://api.crossref.org/works/10.1175/waf-d-19-0105.1",
+      "candidate_identity": "scout-discoveries/batches/2026-10-27-morning-jtti-2016-2017-001.csv#data-row-1",
+      "doi_normalized": "10.1175/waf-d-19-0105.1",
+      "existing_hub_review_history": "NOT_VERIFIED_PRIVATE",
+      "hub_sync": "PENDING_NOT_WRITTEN",
+      "crossref_date_source": "published-print",
+      "duplicate_check": {
+        "index_shards_read": 10,
+        "detail_shards_read": 140,
+        "index_rows_read": 1238,
+        "detail_rows_read": 1238,
+        "existing_staged_batches_read": 20,
+        "existing_staged_rows_read": 66,
+        "comparisons": [
+          "case-insensitive exact DOI string",
+          "DOI URL and output URL",
+          "NFKD normalized title, case/punctuation/Unicode/dashes/whitespace",
+          "distinctive title variants and token overlap",
+          "existing output link",
+          "award and project identity"
+        ],
+        "check_date": "2026-10-30",
+        "per_shard_sha256_recomputed": false
+      }
+    },
+    {
+      "doi": "10.1175/JCLI-D-14-00448.1",
+      "title": "Distributions of Shallow to Very Deep Precipitation–Convection in Rapidly Intensifying Tropical Cyclones",
+      "classification": "NEW CANDIDATE (NOT YET IN PUBLIC REACH)",
+      "candidate_batch": "2026-10-26-midday-jht-2015-001",
+      "candidate_row": 1,
+      "candidate_id": "",
+      "reach_record_id": null,
+      "reach_stable_uid": null,
+      "reach_url": null,
+      "reach_awards": [],
+      "candidate_awards": [
+        "NA15OAR4590199"
+      ],
+      "funding_evidence": "https://faculty.fiu.edu/~hajian/Jiang/research/Tao_and_Jiang_JCLI_2015.pdf",
+      "funding_note": "Original staged candidate cites the published manuscript acknowledgment of NA15OAR4590199 and a SPARK-linked JHT project. Because publication was early in award period and co-funded, retain human eligibility check.",
+      "crossref_print_pub_date": "2015-11-15",
+      "original_candidate_pub_date": "2015-11-15",
+      "recommendation": "Keep original review candidate; no matching DOI, output URL, normalized title, or title variant found across complete public REACH catalog. No duplicate re-publication. Human review of funded-project eligibility remains.",
+      "candidate_source_url": "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/batches/2026-10-26-midday-jht-2015-001.csv",
+      "crossref_metadata_url": "https://api.crossref.org/works/10.1175/jcli-d-14-00448.1",
+      "candidate_identity": "scout-discoveries/batches/2026-10-26-midday-jht-2015-001.csv#data-row-1",
+      "doi_normalized": "10.1175/jcli-d-14-00448.1",
+      "existing_hub_review_history": "NOT_VERIFIED_PRIVATE",
+      "hub_sync": "PENDING_NOT_WRITTEN",
+      "crossref_date_source": "published-print",
+      "duplicate_check": {
+        "index_shards_read": 10,
+        "detail_shards_read": 140,
+        "index_rows_read": 1238,
+        "detail_rows_read": 1238,
+        "existing_staged_batches_read": 20,
+        "existing_staged_rows_read": 66,
+        "comparisons": [
+          "case-insensitive exact DOI string",
+          "DOI URL and output URL",
+          "NFKD normalized title, case/punctuation/Unicode/dashes/whitespace",
+          "distinctive title variants and token overlap",
+          "existing output link",
+          "award and project identity"
+        ],
+        "check_date": "2026-10-30",
+        "per_shard_sha256_recomputed": false
+      }
+    },
+    {
+      "doi": "10.1080/02626667.2018.1430898",
+      "title": "Real-time assimilation of streamflow observations into a hydrological routing model: effects of model structures and updating methods",
+      "classification": "NEW CANDIDATE (NOT YET IN PUBLIC REACH)",
+      "candidate_batch": "2026-10-27-morning-jtti-2016-2017-001",
+      "candidate_row": 2,
+      "candidate_id": "",
+      "reach_record_id": null,
+      "reach_stable_uid": null,
+      "reach_url": null,
+      "reach_awards": [],
+      "candidate_awards": [
+        "NA17OAR4590174"
+      ],
+      "funding_evidence": "https://www.tandfonline.com/doi/full/10.1080/02626667.2018.1430898",
+      "funding_note": "Publisher Funding statement explicitly attributes support for Noh and Seo to NA17OAR4590174; SPARK has the streamflow data assimilation project. Multiple funders acknowledged.",
+      "crossref_print_pub_date": "2018-02-17",
+      "original_candidate_pub_date": "2018-02-15",
+      "recommendation": "Keep original review candidate, not a confirmed public addition. No match in full REACH catalog. Quietly suggest print-preferred 2018-02-17 for unreviewed candidate; do not change reviewed data.",
+      "candidate_source_url": "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/batches/2026-10-27-morning-jtti-2016-2017-001.csv",
+      "crossref_metadata_url": "https://api.crossref.org/works/10.1080/02626667.2018.1430898",
+      "candidate_identity": "scout-discoveries/batches/2026-10-27-morning-jtti-2016-2017-001.csv#data-row-2",
+      "doi_normalized": "10.1080/02626667.2018.1430898",
+      "existing_hub_review_history": "NOT_VERIFIED_PRIVATE",
+      "hub_sync": "PENDING_NOT_WRITTEN",
+      "crossref_date_source": "published-print",
+      "duplicate_check": {
+        "index_shards_read": 10,
+        "detail_shards_read": 140,
+        "index_rows_read": 1238,
+        "detail_rows_read": 1238,
+        "existing_staged_batches_read": 20,
+        "existing_staged_rows_read": 66,
+        "comparisons": [
+          "case-insensitive exact DOI string",
+          "DOI URL and output URL",
+          "NFKD normalized title, case/punctuation/Unicode/dashes/whitespace",
+          "distinctive title variants and token overlap",
+          "existing output link",
+          "award and project identity"
+        ],
+        "check_date": "2026-10-30",
+        "per_shard_sha256_recomputed": false
+      }
+    },
+    {
+      "doi": "10.1088/1748-9326/ab98b4",
+      "title": "Use of radar data for characterizing extreme precipitation at fine scales and short durations",
+      "classification": "NEW CANDIDATE (NOT YET IN PUBLIC REACH)",
+      "candidate_batch": "2026-10-27-evening-lengfeld-jtti-2017-001",
+      "candidate_row": 1,
+      "candidate_id": "",
+      "reach_record_id": null,
+      "reach_stable_uid": null,
+      "reach_url": null,
+      "reach_awards": [],
+      "candidate_awards": [
+        "NA17OAR4590170"
+      ],
+      "funding_evidence": "https://doi.org/10.1088/1748-9326/ab98b4",
+      "funding_note": "IOP article acknowledgments explicitly list NA17OAR4590170 for Kirstetter, alongside other funding; SPARK has the related probabilistic radar QPE project. Preserve cross-funder eligibility question.",
+      "crossref_print_pub_date": "2020-08-01",
+      "original_candidate_pub_date": "2020-08-05",
+      "recommendation": "Keep original review candidate, not a confirmed public addition. No match in full REACH catalog. Quietly suggest print-preferred 2020-08-01 for unreviewed candidate; do not change reviewed data.",
+      "candidate_source_url": "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/batches/2026-10-27-evening-lengfeld-jtti-2017-001.csv",
+      "crossref_metadata_url": "https://api.crossref.org/works/10.1088/1748-9326/ab98b4",
+      "candidate_identity": "scout-discoveries/batches/2026-10-27-evening-lengfeld-jtti-2017-001.csv#data-row-1",
+      "doi_normalized": "10.1088/1748-9326/ab98b4",
+      "existing_hub_review_history": "NOT_VERIFIED_PRIVATE",
+      "hub_sync": "PENDING_NOT_WRITTEN",
+      "crossref_date_source": "published-print",
+      "duplicate_check": {
+        "index_shards_read": 10,
+        "detail_shards_read": 140,
+        "index_rows_read": 1238,
+        "detail_rows_read": 1238,
+        "existing_staged_batches_read": 20,
+        "existing_staged_rows_read": 66,
+        "comparisons": [
+          "case-insensitive exact DOI string",
+          "DOI URL and output URL",
+          "NFKD normalized title, case/punctuation/Unicode/dashes/whitespace",
+          "distinctive title variants and token overlap",
+          "existing output link",
+          "award and project identity"
+        ],
+        "check_date": "2026-10-30",
+        "per_shard_sha256_recomputed": false
+      }
+    }
+  ],
+  "feed_integrity": {
+    "status": "FEED_BLOCKED_VALIDATION_FAILURE",
+    "manifest_batched": 20,
+    "manifest_candidate_rows": 66,
+    "directory_csv_files": 21,
+    "unmanifested_file": "scout-discoveries/batches/2026-10-30-hourly-1329ET-independent-flood-mapping-001.csv",
+    "latest_relevant_workflow_run_id": 41100661636,
+    "latest_relevant_workflow_conclusion": "failure",
+    "workflow_url": "https://github.com/PART-WPO/reach-scout-discoveries/actions/runs/41100661636",
+    "no_new_csv_published": true,
+    "no_manifest_edits": true
+  },
+  "review_status": {
+    "private_hub_import": "NOT_VERIFIED",
+    "private_hub_reclassification": "PENDING",
+    "human_reviewer_decisions": "NOT_VERIFIED",
+    "immutable_original_batches_unchanged": true,
+    "no_auto_approvals": true,
+    "no_smartsheet_reach_spark_edits": true
+  },
+  "normal_research_after_recheck": {
+    "awards_examined": [
+      "NA17OAR4590174",
+      "NA15OAR4590199"
+    ],
+    "related_outputs_checked_against_reach": [
+      {
+        "doi": "10.1016/j.jhydrol.2021.127247",
+        "reach_uid": "reachuid-v1-62dc769550858f6e8f515084dad76913",
+        "record": "reach-000188"
+      },
+      {
+        "doi": "10.1175/JAMC-D-18-0094.1",
+        "reach_uid": "reachuid-v1-8b8312f0c234d3f5c5bdd5d12b49229f",
+        "record": "reach-000576"
+      },
+      {
+        "doi": "10.1029/2018JD028324",
+        "reach_uid": "reachuid-v1-429effd56baafb44836d5811d6648234",
+        "record": "reach-000562"
+      }
+    ],
+    "new_verified_distinct_candidates": 0
+  },
+  "source_notes": [
+    "Crossref exact-DOI checkpoint from scout-operations/reports/crossref-metadata-checkpoint/latest.json used for print-first dates; direct Crossref API was inaccessible from this runtime, so checkpoint values are attributed to that existing audit.",
+    "Public NOAA IR and publisher evidence independently corroborated exact DOI for duplicate and funding support.",
+    "Full catalog comparison confirms no public REACH match for three; it cannot establish private reviewer state.",
+    "No individual shard SHA-256 recalculated, but all manifest-listed shard files were retrieved and parsed without error, and record counts reconcile."
+  ]
+}
