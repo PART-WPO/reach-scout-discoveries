@@ -1,0 +1,147 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-30-HOURLY-1732ET",
+  "timestamp_utc": "2026-10-30T21:32:56Z",
+  "selected_mode": "normal_historical_discovery",
+  "special_task": "one_time_four_candidate_duplicate_recheck",
+  "audit_result": "PARTIAL",
+  "audit_reason": "All public REACH and Scout shards read, but private Hub decisions not verifiable and feed validation blocked.",
+  "monthly_before_after": {
+    "received": [
+      0,
+      0
+    ],
+    "completed": [
+      0,
+      0
+    ],
+    "remaining": [
+      0,
+      0
+    ]
+  },
+  "historical_before_after": {
+    "received": [
+      188,
+      188
+    ],
+    "completed": [
+      188,
+      188
+    ],
+    "remaining": [
+      0,
+      0
+    ]
+  },
+  "original_seeds_disposed_this_run": [],
+  "normal_projects_examined": [
+    "JTTI streamflow DA NA17OAR4590174",
+    "JHT microwave ring NA15OAR4590199"
+  ],
+  "recheck_results": [
+    {
+      "doi": "10.1175/WAF-D-19-0105.1",
+      "classification": "KNOWN DUPLICATE / REACH METADATA UPDATE",
+      "source_candidate": "scout-discoveries/batches/2026-10-27-morning-jtti-2016-2017-001.csv#data-row-1",
+      "public_reach_uid": "reachuid-v1-a191782c0b21f3b606bd85805d73214f",
+      "source_evidence": [
+        "https://journals.ametsoc.org/view/journals/wefo/35/1/waf-d-19-0105.1.xml",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/batches/2026-10-27-morning-jtti-2016-2017-001.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "hub_sync": "PENDING_NOT_VERIFIED"
+    },
+    {
+      "doi": "10.1175/JCLI-D-14-00448.1",
+      "classification": "NEW CANDIDATE (NOT YET IN PUBLIC REACH)",
+      "source_candidate": "scout-discoveries/batches/2026-10-26-midday-jht-2015-001.csv#data-row-1",
+      "public_reach_uid": null,
+      "source_evidence": [
+        "https://faculty.fiu.edu/~hajian/Jiang/research/Tao_and_Jiang_JCLI_2015.pdf",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/batches/2026-10-26-midday-jht-2015-001.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "hub_sync": "PENDING_NOT_VERIFIED"
+    },
+    {
+      "doi": "10.1080/02626667.2018.1430898",
+      "classification": "NEW CANDIDATE (NOT YET IN PUBLIC REACH)",
+      "source_candidate": "scout-discoveries/batches/2026-10-27-morning-jtti-2016-2017-001.csv#data-row-2",
+      "public_reach_uid": null,
+      "source_evidence": [
+        "https://www.tandfonline.com/doi/full/10.1080/02626667.2018.1430898",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/batches/2026-10-27-morning-jtti-2016-2017-001.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "hub_sync": "PENDING_NOT_VERIFIED"
+    },
+    {
+      "doi": "10.1088/1748-9326/ab98b4",
+      "classification": "NEW CANDIDATE (NOT YET IN PUBLIC REACH)",
+      "source_candidate": "scout-discoveries/batches/2026-10-27-evening-lengfeld-jtti-2017-001.csv#data-row-1",
+      "public_reach_uid": null,
+      "source_evidence": [
+        "https://doi.org/10.1088/1748-9326/ab98b4",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/batches/2026-10-27-evening-lengfeld-jtti-2017-001.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "hub_sync": "PENDING_NOT_VERIFIED"
+    }
+  ],
+  "expansion_leads": [
+    {
+      "doi": "10.1016/j.jhydrol.2021.127247",
+      "reach_uid": "reachuid-v1-62dc769550858f6e8f515084dad76913",
+      "record": "reach-000188"
+    },
+    {
+      "doi": "10.1175/JAMC-D-18-0094.1",
+      "reach_uid": "reachuid-v1-8b8312f0c234d3f5c5bdd5d12b49229f",
+      "record": "reach-000576"
+    },
+    {
+      "doi": "10.1029/2018JD028324",
+      "reach_uid": "reachuid-v1-429effd56baafb44836d5811d6648234",
+      "record": "reach-000562"
+    }
+  ],
+  "new_candidates": [],
+  "new_batch_ids": [],
+  "feed_integrity_status": {
+    "status": "FEED_BLOCKED_VALIDATION_FAILURE",
+    "manifest_batched": 20,
+    "manifest_candidate_rows": 66,
+    "directory_csv_files": 21,
+    "unmanifested_file": "scout-discoveries/batches/2026-10-30-hourly-1329ET-independent-flood-mapping-001.csv",
+    "latest_relevant_workflow_run_id": 41100661636,
+    "latest_relevant_workflow_conclusion": "failure",
+    "workflow_url": "https://github.com/PART-WPO/reach-scout-discoveries/actions/runs/41100661636",
+    "no_new_csv_published": true,
+    "no_manifest_edits": true
+  },
+  "manifest_verification_evidence": {
+    "batch_count": 20,
+    "candidate_rows": 66,
+    "directory_batch_count": 21,
+    "manifest_generation_utc": "2026-10-30T16:40:04Z",
+    "full_20_batch_rows_scanned": 66
+  },
+  "reviewer_visibility": "NOT_VERIFIED",
+  "human_decisions": "NOT_VERIFIED",
+  "new_public_reach_additions_verified": 0,
+  "no_action_subtype_changes": [],
+  "attribution_queue_changes": [],
+  "blockers": [
+    "Unmanifested invalid 2026-10-30 13:29 ET CSV and failed automated manifest validation; new feed batches prohibited.",
+    "Private Hub reclassification cannot be confirmed."
+  ],
+  "privacy_integrity": {
+    "immutable_prior_batches_untouched": true,
+    "manifest_not_written": true,
+    "no_publication_or_auto_approval": true,
+    "new_csv_published": false
+  },
+  "one_time_recheck_completed": true,
+  "do_not_repeat_without_new_evidence": true
+}
