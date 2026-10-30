@@ -1,0 +1,356 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-29-HOURLY-2229ET",
+  "timestamp_utc": "2026-10-30T02:33:23Z",
+  "selected_mode": "HISTORICAL DATACITE API TRIAGE",
+  "result": "PARTIAL",
+  "reason": "All original DOI research reconciled and full public shard scans complete; remaining expansion metadata research, GitHub Actions status and private Hub decisions not verified.",
+  "coverage_before": {
+    "historical_fully_investigated": 177,
+    "historical_remaining": 11,
+    "human_metadata_needed": 21
+  },
+  "coverage_after": {
+    "historical_fully_investigated": 188,
+    "historical_remaining": 0,
+    "human_metadata_needed": 32
+  },
+  "original_doi_dispositions": [
+    {
+      "doi": "10.57969/s9g015",
+      "status": "human_metadata_needed",
+      "original_artifact_type": "dataset",
+      "not_grant_notice": true,
+      "award_numbers": [
+        "NA21OAR4590374",
+        "NA20OAR4320278"
+      ],
+      "source_urls": [
+        "https://api.datacite.org/dois/10.57969/s9g015",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://ldl.ucsd.edu/ldl/data/",
+        "https://ldl.ucsd.edu/ldl/gdp-drifter-data/",
+        "https://doi.org/10.57969/S9G015"
+      ],
+      "discovery_route": "Direct API (research only)",
+      "hub_delivery": "NOT_DELIVERED_TO_HUB"
+    },
+    {
+      "doi": "10.57969/s9ks3s",
+      "status": "human_metadata_needed",
+      "original_artifact_type": "dataset",
+      "not_grant_notice": true,
+      "award_numbers": [
+        "NA21OAR4590374",
+        "NA20OAR4320278"
+      ],
+      "source_urls": [
+        "https://api.datacite.org/dois/10.57969/s9ks3s",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://ldl.ucsd.edu/ldl/data/",
+        "https://ldl.ucsd.edu/ldl/gdp-drifter-data/",
+        "https://doi.org/10.57969/S9KS3S"
+      ],
+      "discovery_route": "Direct API (research only)",
+      "hub_delivery": "NOT_DELIVERED_TO_HUB"
+    },
+    {
+      "doi": "10.57969/s9pp42",
+      "status": "human_metadata_needed",
+      "original_artifact_type": "dataset",
+      "not_grant_notice": true,
+      "award_numbers": [
+        "NA21OAR4590374"
+      ],
+      "source_urls": [
+        "https://api.datacite.org/dois/10.57969/s9pp42",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+        "https://doi.org/10.57969/S9PP42",
+        "https://erddap.ldl.ucsd.edu/erddap/info/NOPP_Storm_First5/index.html"
+      ],
+      "discovery_route": "Direct API (research only)",
+      "hub_delivery": "NOT_DELIVERED_TO_HUB"
+    },
+    {
+      "doi": "10.57969/s9tg60",
+      "status": "human_metadata_needed",
+      "original_artifact_type": "dataset",
+      "not_grant_notice": true,
+      "award_numbers": [
+        "NA21OAR4590374"
+      ],
+      "source_urls": [
+        "https://api.datacite.org/dois/10.57969/s9tg60",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://ldl.ucsd.edu/ldl/nopp-hurricane-drifters/",
+        "https://doi.org/10.57969/S9TG60",
+        "https://erddap.ldl.ucsd.edu/erddap/info/NOPP_Storm_First5/index.html"
+      ],
+      "discovery_route": "Direct API (research only)",
+      "hub_delivery": "NOT_DELIVERED_TO_HUB"
+    },
+    {
+      "doi": "10.57969/s9wc7z",
+      "status": "human_metadata_needed",
+      "original_artifact_type": "dataset",
+      "not_grant_notice": true,
+      "award_numbers": [
+        "NA21OAR4590374",
+        "NA20OAR4320278"
+      ],
+      "source_urls": [
+        "https://api.datacite.org/dois/10.57969/s9wc7z",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://erddap.ldl.ucsd.edu/erddap/info/LDL_AtlanticHurricane2021/index.html",
+        "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+        "https://ldl.ucsd.edu/ldl/data/"
+      ],
+      "discovery_route": "Direct API (research only)",
+      "hub_delivery": "NOT_DELIVERED_TO_HUB"
+    },
+    {
+      "doi": "10.57969/s9rp4p",
+      "status": "human_metadata_needed",
+      "original_artifact_type": "dataset",
+      "not_grant_notice": true,
+      "award_numbers": [
+        "NA21OAR4590374",
+        "NA20OAR4320278"
+      ],
+      "source_urls": [
+        "https://api.datacite.org/dois/10.57969/s9rp4p",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://erddap.ldl.ucsd.edu/erddap/info/LDL_AtlanticHurricane2022/index.html",
+        "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+        "https://ldl.ucsd.edu/ldl/data/"
+      ],
+      "discovery_route": "Direct API (research only)",
+      "hub_delivery": "NOT_DELIVERED_TO_HUB"
+    },
+    {
+      "doi": "10.57969/s9vc7n",
+      "status": "human_metadata_needed",
+      "original_artifact_type": "dataset",
+      "not_grant_notice": true,
+      "award_numbers": [
+        "NA21OAR4590374",
+        "NA20OAR4320278"
+      ],
+      "source_urls": [
+        "https://api.datacite.org/dois/10.57969/s9vc7n",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://erddap.ldl.ucsd.edu/erddap/info/LDL_AtlanticHurricane2023/index.html",
+        "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+        "https://ldl.ucsd.edu/ldl/data/"
+      ],
+      "discovery_route": "Direct API (research only)",
+      "hub_delivery": "NOT_DELIVERED_TO_HUB"
+    },
+    {
+      "doi": "10.6084/m9.figshare.23666259",
+      "status": "human_metadata_needed",
+      "original_artifact_type": "conference poster",
+      "not_grant_notice": true,
+      "award_numbers": [
+        "NA19OAR4590209"
+      ],
+      "source_urls": [
+        "https://api.datacite.org/dois/10.6084/m9.figshare.23666259",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://www.ametsoc.org/stac/committees/committee-on-severe-local-storms/summary-of-30th-sls-conference/",
+        "https://orcid.org/0000-0003-3318-7601",
+        "https://api.figshare.com/v2/articles/23666259",
+        "https://repository.library.noaa.gov/view/noaa/70846"
+      ],
+      "discovery_route": "Direct API (research only)",
+      "hub_delivery": "NOT_DELIVERED_TO_HUB"
+    },
+    {
+      "doi": "10.6084/m9.figshare.23666259.v1",
+      "status": "human_metadata_needed",
+      "original_artifact_type": "conference poster",
+      "not_grant_notice": true,
+      "award_numbers": [
+        "NA19OAR4590209"
+      ],
+      "source_urls": [
+        "https://api.datacite.org/dois/10.6084/m9.figshare.23666259.v1",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://www.ametsoc.org/stac/committees/committee-on-severe-local-storms/summary-of-30th-sls-conference/",
+        "https://orcid.org/0000-0003-3318-7601",
+        "https://api.figshare.com/v2/articles/23666259",
+        "https://repository.library.noaa.gov/view/noaa/70846"
+      ],
+      "discovery_route": "Direct API (research only)",
+      "hub_delivery": "NOT_DELIVERED_TO_HUB"
+    },
+    {
+      "doi": "10.6084/m9.figshare.23689194",
+      "status": "human_metadata_needed",
+      "original_artifact_type": "dataset",
+      "not_grant_notice": true,
+      "award_numbers": [
+        "NA19OAR4590245"
+      ],
+      "source_urls": [
+        "https://api.datacite.org/dois/10.6084/m9.figshare.23689194",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://journals.ametsoc.org/view/journals/aies/aop/AIES-D-23-0064.1/AIES-D-23-0064.1.xml",
+        "https://repository.library.noaa.gov/view/noaa/64095",
+        "https://api.figshare.com/v2/articles/23689194",
+        "https://doi.org/10.6084/m9.figshare.23689194"
+      ],
+      "discovery_route": "Direct API (research only)",
+      "hub_delivery": "NOT_DELIVERED_TO_HUB"
+    },
+    {
+      "doi": "10.6084/m9.figshare.23689194.v1",
+      "status": "human_metadata_needed",
+      "original_artifact_type": "dataset",
+      "not_grant_notice": true,
+      "award_numbers": [
+        "NA19OAR4590245"
+      ],
+      "source_urls": [
+        "https://api.datacite.org/dois/10.6084/m9.figshare.23689194.v1",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://journals.ametsoc.org/view/journals/aies/aop/AIES-D-23-0064.1/AIES-D-23-0064.1.xml",
+        "https://repository.library.noaa.gov/view/noaa/64095",
+        "https://api.figshare.com/v2/articles/23689194",
+        "https://doi.org/10.6084/m9.figshare.23689194"
+      ],
+      "discovery_route": "Direct API (research only)",
+      "hub_delivery": "NOT_DELIVERED_TO_HUB"
+    }
+  ],
+  "new_handoffs": 11,
+  "remaining_expansion_blockers": [
+    {
+      "identity": "doi:10.7910/dvn/jwzewf",
+      "seed": "10.25923/t7t6-m677",
+      "issue": "Harvard Dataverse full publication date and public files/scope",
+      "status": "blocked_expansion_research"
+    },
+    {
+      "identity": "url:https://www.iaem.org/Portals/IAEMconf/documents/2025/posters2025/Alex-Marmo-Poster.pdf",
+      "seed": "10.25923/na23oar4590362",
+      "issue": "Poster first public date",
+      "status": "blocked_expansion_research"
+    },
+    {
+      "identity": "url:https://ams.confex.com/ams/51BC7WxComm/webprogram/Paper443444.html",
+      "seed": "10.25923/na21oar4590214",
+      "issue": "Conference abstract date and eligibility",
+      "status": "blocked_expansion_research"
+    },
+    {
+      "identity": "url:https://ams.confex.com/ams/51BC7WxComm/webprogram/Paper443443.html",
+      "seed": "10.25923/na23oar4590363",
+      "issue": "Conference abstract date and eligibility",
+      "status": "blocked_expansion_research"
+    },
+    {
+      "identity": "url:https://www.nhc.noaa.gov/jht/15-17reports/Velden_205_progress_reportFINAL_092718.pdf",
+      "seed": null,
+      "issue": "JHT report first public date vs submission date",
+      "status": "blocked_expansion_research"
+    }
+  ],
+  "new_candidates_by_route": {
+    "Direct API": 0,
+    "API-seeded expansion": 0,
+    "Independent discovery": 0,
+    "Metadata correction": 0
+  },
+  "new_scout_batch_ids": [],
+  "feed_integrity_status": "PASS_EXISTING_BATCHES",
+  "manifest_verification_evidence": {
+    "batch_count": 17,
+    "candidate_rows": 59,
+    "sha256_matches": 17,
+    "count_matches": 17,
+    "source_run_id_matches": 17,
+    "schema_columns": 24,
+    "prior_batches_unchanged": true,
+    "new_batch_published": false
+  },
+  "github_action_verification_status": "NOT_VERIFIABLE",
+  "reviewer_visibility": {
+    "new_handoffs": "NOT_DELIVERED_TO_HUB",
+    "hub_visible_new": 0,
+    "human_decisions": "NOT_VERIFIED"
+  },
+  "monthly": {
+    "raw_records": 0,
+    "actionable": 0,
+    "completed": 0
+  },
+  "historical": {
+    "historical_original_dois": 188,
+    "original_research_completed_before": 177,
+    "original_research_completed_after": 188,
+    "original_research_remaining_before": 11,
+    "original_research_remaining_after": 0,
+    "human_metadata_needed_before": 21,
+    "human_metadata_needed_after": 32,
+    "pending_hub_handoff_before": 21,
+    "pending_hub_handoff_after": 32,
+    "hub_investigate_candidates_new": 0,
+    "hub_visible_new": 0,
+    "new_scout_batches": 0,
+    "staged_review_proposals_total": 59,
+    "immutable_batch_count": 17,
+    "public_reach_outputs_baseline_verified": 1238,
+    "new_public_reach_additions_verified": 0,
+    "remaining_expansion_metadata_blockers": 5,
+    "attribution_followups_queued": 52,
+    "no_action_originals": 109,
+    "already_in_reach_originals": 37,
+    "forwarded_originals": 2,
+    "metadata_update_forwarded_originals": 8,
+    "missing_acknowledgment_credible_leads_new": 0,
+    "missing_acknowledgment_hub_visible": "NOT VERIFIED",
+    "missing_acknowledgment_reviewer_confirmed": "NOT VERIFIED",
+    "missing_acknowledgment_public_reach_new": "NOT VERIFIED",
+    "new_research_checks_case_level": 37,
+    "distinct_handoff_output_families": 9
+  },
+  "discovery_expansion": {
+    "new_distinct_outputs_forwarded": 0,
+    "five_open_metadata_leads": true,
+    "linked_articles_previously_staged": [
+      "10.1175/MWR-D-23-0144.1",
+      "10.1175/AIES-D-23-0064.1"
+    ],
+    "no_duplicate_republication": true
+  },
+  "attribution": {
+    "queued_before": 52,
+    "queued_after": 52,
+    "new_missing_acknowledgment_recoveries": "NOT VERIFIED"
+  },
+  "public_reach": {
+    "total_index_records": 1238,
+    "verified_new_additions": 0
+  },
+  "source_shards": {
+    "reach_index": 10,
+    "reach_details": 140,
+    "spark_index": 6,
+    "scout_batches": 17
+  },
+  "blockers": [
+    "Existing Discovery Hub blank-date intake acceptance unverified; 32 pending human handoffs not Hub-visible",
+    "Five historical API-seeded expansion metadata blockers still actionable",
+    "GitHub Actions status not verifiable via connected GitHub action",
+    "Private human review decisions unavailable"
+  ],
+  "library_first_artifacts": [
+    "report.md",
+    "lead_queue.json",
+    "checkpoint.json",
+    "discovery_hub_candidates.csv",
+    "hourly_provenance_audit.json"
+  ]
+}
