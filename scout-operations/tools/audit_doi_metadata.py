@@ -41,13 +41,26 @@ def crossref_date_parts(obj):
  except (TypeError,ValueError,OverflowError):return {"value":"","precision":"invalid","full_date":""}
 
 def crossref_date_info(work):
- """Preserve true publication history alongside WPO's created-date catalog rule."""
- keys=("posted","published-online","published-print","published","issued") if work.get("type")=="posted-content" else ("published-online","published-print","published","issued","posted")
+ """WPO: prefer print date, then online; normalize YYYY-MM to first of month."""
+ posted=work.get("type")=="posted-content"
+ keys=("posted","published-print","published-online","published","issued") if posted else ("published-print","published-online","published","issued","posted")
  all_dates={k:crossref_date_parts(work.get(k)) for k in keys}
- choice=next(((k,v["full_date"]) for k,v in all_dates.items() if v["full_date"]),None)
+ choice=None
+ for k in keys:
+  v=all_dates[k]
+  if v["precision"]=="day" and v["full_date"]:
+   choice=(k,v["full_date"],"day",False)
+   break
+  if v["precision"]=="month":
+   # Office-accepted representation for month/year metadata, not a claimed exact release day.
+   choice=(k,v["value"]+"-01","month",True)
+   break
  partial=next(((k,v["value"]) for k,v in all_dates.items() if v["value"]),None)
  return {"publication_dates":all_dates,"pub_date":choice[1] if choice else "",
          "pub_date_basis":choice[0] if choice else "",
+         "pub_date_precision":choice[2] if choice else "",
+         "pub_date_imputed_first_of_month":choice[3] if choice else False,
+         "source_full_date":choice[1] if choice and choice[2]=="day" else "",
          "best_partial_date":partial[1] if partial else "",
          "best_partial_basis":partial[0] if partial else "",
          "crossref_created":crossref_date_parts(work.get("created")),
@@ -156,9 +169,8 @@ def fetch(id):
    authors=[" ".join(filter(None,[c.get("given"),c.get("family")])) for c in a.get("author") or []]
    abstract=strip_markup(a.get("abstract"))
    dateinfo=crossref_date_info(a)
-   office_created=dateinfo["crossref_created"]["full_date"]
-   office_pub_date=office_created or dateinfo["pub_date"]
-   office_basis="Crossref created (WPO-accepted Pub Date)" if office_created else ("Crossref "+dateinfo["pub_date_basis"] if dateinfo["pub_date"] else "")
+   office_pub_date=dateinfo["pub_date"]
+   office_basis=("Crossref "+dateinfo["pub_date_basis"]+(" (month -> day 01)" if dateinfo["pub_date_imputed_first_of_month"] else "")) if office_pub_date else ""
    types=str(a.get("type") or "")
    reachtype="3" if "dataset" in types.lower() else "2" if "software" in types.lower() else "4" if types.lower()=="grant" else "1"
    awards=sorted(set(str(y) for x in a.get("funder") or [] for y in x.get("award") or []))
@@ -167,8 +179,10 @@ def fetch(id):
        "abstract":abstract[:3500],"publisher":str(a.get("publisher") or ""),
        "resource_type":types,"reach_type":reachtype,"created":"","registered":"",
        "pub_date":office_pub_date,"pub_date_basis":office_basis,
-       "source_publication_date":dateinfo["pub_date"],
+       "source_publication_date":dateinfo["source_full_date"],
        "source_publication_basis":dateinfo["pub_date_basis"],
+       "source_publication_precision":dateinfo["pub_date_precision"],
+       "pub_date_imputed_first_of_month":dateinfo["pub_date_imputed_first_of_month"],
        "publication_dates":dateinfo["publication_dates"],
        "best_partial_date":dateinfo["best_partial_date"],
        "best_partial_basis":dateinfo["best_partial_basis"],
@@ -182,7 +196,7 @@ def fetch(id):
        "funders":[str(x.get("name") or "") for x in a.get("funder") or []],
        "relations":a.get("relation") or {},
        "access_rights":[str(x.get("URL") or "") for x in a.get("license") or []],
-       "checkpoint_schema":"crossref-publication-v3-created-accepted"}
+       "checkpoint_schema":"crossref-publication-v4-print-online-month-first"}
   except HTTPError as e:
    if e.code==404:continue
    return {"status":"source_unavailable","source":src,"evidence":url,"error":"HTTP "+str(e.code)}
@@ -230,8 +244,10 @@ def write_crossref_report(records,source_sizes):
     "accepted_reach_pub_date":accepted,
     "accepted_reach_pub_date_source":accepted_source,
     "pub_date_satisfied":bool(accepted),
-    "created_matches_existing_scout_date":accepted in old if old else False,
-    "created_differs_from_existing_scout_date":bool(old and accepted and accepted not in old),
+    "preferred_date_matches_existing_scout":accepted in old if old else False,
+    "preferred_date_differs_from_existing_scout":bool(old and accepted and accepted not in old),
+    "accepted_date_precision":x.get("source_publication_precision") or "",
+    "first_of_month_default":bool(x.get("pub_date_imputed_first_of_month")),
     "publication_dates":x.get("publication_dates") or {},
     "best_partial_date":x.get("best_partial_date") or "",
     "best_partial_basis":x.get("best_partial_basis") or "",
@@ -256,9 +272,10 @@ def write_crossref_report(records,source_sizes):
   "scout_missing_date":sum(not x["scout_publication_dates"] for x in cases),
   "scout_missing_date_recoverable":sum(not x["scout_publication_dates"] and bool(x["accepted_reach_pub_date"]) for x in cases),
   "reach_pub_date_satisfied":sum(x["pub_date_satisfied"] for x in cases),
-  "scout_missing_date_resolved_by_created":sum(not x["scout_publication_dates"] and bool(x["doi_registered_date"].get("full_date")) for x in cases),
-  "created_matches_existing_scout_date":sum(x["created_matches_existing_scout_date"] for x in cases),
-  "created_differs_from_existing_scout_date":sum(x["created_differs_from_existing_scout_date"] for x in cases),
+  "scout_missing_date_resolved_by_month_first":sum(not x["scout_publication_dates"] and x["first_of_month_default"] for x in cases),
+  "preferred_date_matches_existing_scout":sum(x["preferred_date_matches_existing_scout"] for x in cases),
+  "preferred_date_differs_from_existing_scout":sum(x["preferred_date_differs_from_existing_scout"] for x in cases),
+  "first_of_month_defaults":sum(x["first_of_month_default"] for x in cases),
   "scout_missing_date_still_unresolved":sum(not x["scout_publication_dates"] and not x["accepted_reach_pub_date"] for x in cases),
   "crossref_vs_scout_date_differs":sum(x["date_comparison"]=="different_date_review_option" for x in cases),
   "abstract_missing_in_scout_recoverable":sum(not x["abstract_already_in_scout"] and x["abstract_available_from_crossref"] for x in cases),
@@ -267,7 +284,7 @@ def write_crossref_report(records,source_sizes):
   "crossref_has_abstract":sum(x["abstract_available_from_crossref"] for x in cases),
  }
  report={"schema":"reach-scout-crossref-publication-checkpoint-v1",
-   "policy":"WPO accepts Crossref created YYYY-MM-DD as completed REACH Pub Date, not necessarily first publication; original online/print/issued dates remain reference evidence. Never overwrite existing human edits, stage, approve or publish automatically.",
+   "policy":"WPO uses Crossref published-print first, else published-online (posted for preprints), else published/issued. If YYYY-MM only, use YYYY-MM-01 with a flag. Crossref created is DOI registration and not Pub Date. Preserve existing human reviews.",
    "source":"https://api.crossref.org/works/{DOI}",
    "validated_source_sizes":source_sizes,
    "counts":counts,"records":cases}
@@ -276,7 +293,7 @@ def write_crossref_report(records,source_sizes):
   "# REACH Scout — Crossref Publication Metadata Audit",
   "",
   "Source: DOI-specific Crossref works records. Read only: no changes to Scout input CSVs, reviewer decisions, Smartsheet, or public REACH.",
-  "Under WPO cataloging policy, valid Crossref created YYYY-MM-DD fully satisfies REACH Pub Date; it is a DOI registration date and not necessarily first publication. Existing reviewer dates are not overwritten. Original online/print/issued dates remain reference evidence.",
+  "For Crossref works the office prefers published-print, falling back to published-online; preprints prefer posted. A month-only date is represented as YYYY-MM-01 and marked normalized. Crossref created NEVER determines Pub Date. Reviewer edits are preserved.",
   "",
   "## Coverage","","| Measure | Count |","|---|---:|"]
  for k,v in counts.items():lines.append("| "+k.replace("_"," ").capitalize()+" | "+str(v)+" |")
@@ -293,9 +310,9 @@ def write_crossref_report(records,source_sizes):
        " | "+new+" ("+basis+") | "+r["date_comparison"]+" | "+other+" |")
  lines+=["","## How Scout should use this audit","",
   "- For any newly found publication DOI, attempt the exact Crossref /works/{DOI} record before declaring title, authors, abstract, or publication date missing.",
-  "- Use Crossref created calendar day as accepted REACH Pub Date under WPO policy; preserve published-online, published-print, posted and issued as alternative factual evidence.",
-  "- A published year or month alone does not supply exact first-release day, but Crossref created full date is the office-approved Pub Date. Never invent a date when created is invalid or absent.",
-  "- Online/print and created-date differences are informational, not Pub Date missing flags. Never automatically overwrite an existing reviewer-edited date.",
+  "- Prefer published-print (even when only YYYY-MM is supplied); fall back to published-online, then published/issued. For posted-content prefer posted. Store the chosen source and precision, and use day 01 for YYYY-MM.",
+  "- The first day of the month for YYYY-MM is an explicitly accepted cataloging convention, not a claim of actual release on that day. A year-only date is not converted to January 1; continue to the next usable source or leave the field unresolved.",
+  "- Online and print differences are informational. A newly deposited print date can change the suggested date for unreviewed records; never overwrite an already-entered human-reviewed value.",
   "- A missing Crossref abstract is not proof that the article lacks an abstract. Inspect the publisher article before escalating a genuine abstract gap.",
   "- Read structured funder awards and the deposited abstract; if missing, consult journal acknowledgments and SPARK. Do not infer WPO funding solely from Crossref retrieval.",
   "- Research source enrichment never changes independent Scout discovery credit or automatically approves an addition.",
@@ -335,7 +352,7 @@ def main():
    "state_counts":dict(statuses),"fields_recoverable":dict(recovered),
    "records_with_new_metadata":sum(bool(r["recoverable_fields"]) for r in records),
    "records":records,
-   "read_only":True,"policy":"Valid DOI created calendar date satisfies WPO REACH Pub Date for BOTH DataCite and Crossref registrations. Existing reviewer dates preserved. No reviewer decision, discovery batch or Smartsheet changed."}
+   "read_only":True,"policy":"DataCite uses created (office policy). Crossref uses published-print first, published-online if print absent, and published/issued/posted fallback; month-only dates get YYYY-MM-01. Crossref created never fills Pub Date. Existing reviewer dates preserved."}
  print(json.dumps({k:v for k,v in output.items() if k!="records"},indent=2),flush=True)
  if args.offline:return
  if not output["successful_lookups"]:raise RuntimeError("All source lookups failed; do not overwrite previous successful report")
