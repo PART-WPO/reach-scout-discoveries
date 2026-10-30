@@ -1,0 +1,92 @@
+{
+  "schema": "reach-scout-post-block-reconciliation-audit-v1",
+  "audit_timestamp_utc": "2026-10-30T23:53:00Z",
+  "scope_missions_et": [
+    "2026-10-30 14:35",
+    "2026-10-30 15:24",
+    "2026-10-30 16:33",
+    "2026-10-30 17:32",
+    "2026-10-30 18:29",
+    "2026-10-30 19:29"
+  ],
+  "feed": {
+    "original_1329_batch_repaired": true,
+    "manifest_verified_batch_count": 21,
+    "manifest_verified_candidate_count": 68,
+    "private_hub_import": "NOT_VERIFIED"
+  },
+  "items": [
+    {
+      "identity": "10.7910/dvn/jwzewf",
+      "source_mission": "2026-10-30 15:24 ET",
+      "priority": 1,
+      "class": "MISSED_NORMAL_REVIEW_FEED_BLOCK_ONLY",
+      "discovery_route": "API-seeded expansion",
+      "original_seed": "10.25923/t7t6-m677",
+      "award": "NA23OAR4590137",
+      "pub_date": "2025-10-17",
+      "research_complete": true,
+      "review_ready": true,
+      "existing_hub_delivery": "NOT_DELIVERED",
+      "remaining_human_questions": [
+        "public file scope",
+        "unique/distinct eligibility"
+      ],
+      "required_action": "Check latest dedup then stage one valid 24-column normal review candidate; verify manifest and private import; no approval"
+    },
+    {
+      "identity": "10.1080/19475705.2024.2364777",
+      "source_mission": "2026-10-30 19:29 ET",
+      "priority": 2,
+      "class": "POTENTIAL_NEW_ARTICLE_FEED_AND_CROSSREF_CHECKPOINT",
+      "discovery_route": "Independent discovery",
+      "award": "NA21OAR4590358",
+      "publisher_online_date": "2024-07-08",
+      "research_complete": false,
+      "existing_hub_delivery": "NOT_DELIVERED",
+      "required_action": "Complete exact Crossref DOI metadata and print-preferred date check, refreshed dedup and attribution before staging"
+    },
+    {
+      "identity": "10.1175/waf-d-19-0105.1",
+      "source_mission": "2026-10-30 17:32 ET",
+      "priority": 3,
+      "class": "EXISTING_REACH_DUPLICATE_PENDING_HUMAN_METADATA_CORRECTION",
+      "existing_reach_uid": "reachuid-v1-a191782c0b21f3b606bd85805d73214f",
+      "existing_reach_id": "reach-000245",
+      "human_review_proposal": "Retain NA18OAR4590371 and consider adding NA16OAR4590239",
+      "required_action": "Reconcile existing candidate in private Hub; do not stage a second new article"
+    },
+    {
+      "identities": [
+        "10.6084/m9.figshare.26791243",
+        "10.6084/m9.figshare.28328339"
+      ],
+      "source_missions": [
+        "2026-10-30 14:35",
+        "2026-10-30 15:24",
+        "2026-10-30 16:33",
+        "2026-10-30 18:29",
+        "2026-10-30 19:29"
+      ],
+      "priority": 4,
+      "class": "PAIRED_HUMAN_IDENTITY_INTAKE_NOT_READY_NORMAL_FEED",
+      "review_units": 1,
+      "verified_distinct_new_outputs": 0,
+      "required_action": "Confirm canonical dataset/version identity, exact DOI DataCite created, file scope; separate human intake only, no automatic candidate"
+    }
+  ],
+  "counts": {
+    "confirmed_missed_ready_normal_review": 1,
+    "conditional_additional_article": 1,
+    "existing_hub_candidate_correction": 1,
+    "paired_dataset_review_units": 1,
+    "original_batch_restored_public_candidates": 2
+  },
+  "safety": {
+    "no_autoapproval": true,
+    "no_manifest_edit": true,
+    "no_immutable_batch_edit": true,
+    "no_private_human_decision_change": true,
+    "public_reach_additions_verified": 0
+  }
+}
