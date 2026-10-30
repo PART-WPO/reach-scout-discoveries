@@ -1,0 +1,215 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-30-HOURLY-1129ET",
+  "timestamp_utc": "2026-10-30T15:31:19Z",
+  "mode": "normal_historical_discovery",
+  "phase": "award_centered_broad_net",
+  "routing": "monthly 0, historical 188/188 complete, attribution queued 0, then normal SPARK",
+  "monthly_before_after": {
+    "received": [
+      0,
+      0
+    ],
+    "completed": [
+      0,
+      0
+    ],
+    "remaining": [
+      0,
+      0
+    ]
+  },
+  "historical_before_after": {
+    "completed": [
+      188,
+      188
+    ],
+    "remaining": [
+      0,
+      0
+    ],
+    "status_counts": {
+      "already_in_reach": 37,
+      "forwarded_to_hub": 2,
+      "metadata_update_forwarded": 8,
+      "no_action": 109,
+      "human_metadata_needed": 32
+    }
+  },
+  "attribution_followups": {
+    "total": 71,
+    "closed": 71,
+    "queued": 0,
+    "changed_this_run": 0
+  },
+  "original_seeds_disposed_this_run": [],
+  "normal_projects_examined": [
+    "spark-000004",
+    "spark-000005"
+  ],
+  "research_leads": [
+    {
+      "identity": "doi:10.5281/zenodo.4526127",
+      "title": "Eight-station ANCHOR stream-radar time-series dataset (exact repository title not verified)",
+      "cohort": "Normal historical SPARK award discovery 2026-10-30",
+      "original_seed_doi": null,
+      "status": "RESEARCH_ACTIVE",
+      "research_round": 0,
+      "source_type": "Zenodo cited dataset",
+      "project": "spark-000005",
+      "award_numbers": [
+        "NA16OAR4590234"
+      ],
+      "funding_basis": "Publisher article directly acknowledges NA16OAR4590234 for ANCHOR stream-radar research, and cites this exact Zenodo DOI as the eight-station public time-series dataset; independent NOAA IR copy reproduces funding and data-availability statement; SPARK primary project NA16OAR4590234 specifically installs stream radars.",
+      "discovery_route": "Independent discovery",
+      "discovery_path": "SPARK spark-000005 -> Journal of Hydrology 2021 article -> explicit data-availability DOI -> independent NOAA IR copy -> public REACH and Scout comparisons",
+      "checked_sources": [
+        {
+          "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-001.csv",
+          "method": "primary_spark_project_record",
+          "outcome": "spark-000005 names project Improving Hydrologic Observing Capabilities with Stream Radars, award NA16OAR4590234, 2016, CIMMS/OU; project intended 14 radar installations."
+        },
+        {
+          "url": "https://doi.org/10.1016/j.jhydrol.2021.126809",
+          "method": "publisher_data_availability_and_acknowledgments",
+          "outcome": "Publisher explicitly credits NA16OAR4590234 and states eight-station time series are public at doi:10.5281/zenodo.4526127; publication is separate existing REACH article reach-000195."
+        },
+        {
+          "url": "https://repository.library.noaa.gov/view/noaa/32601/noaa_32601_DS1.pdf",
+          "method": "independent_noaa_ir_pdf",
+          "outcome": "Independent archived copy confirms same grant and Zenodo DOI in data availability."
+        },
+        {
+          "url": "https://api.datacite.org/dois/10.5281/zenodo.4526127",
+          "method": "native_datacite_metadata",
+          "outcome": "ACCESS FAILURE through available web retrieval; no title, creator, dateType or exact first-public date independently verified.",
+          "source_failure": "ACCESS_FAILURE_NOT_METADATA_ABSENT"
+        },
+        {
+          "url": "https://zenodo.org/records/4526127",
+          "method": "native_zenodo_landing",
+          "outcome": "ACCESS FAILURE through available web retrieval; cannot verify files, version family, public scope or date.",
+          "source_failure": "ACCESS_FAILURE_NOT_METADATA_ABSENT"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "method": "complete_public_reach_index",
+          "outcome": "All 1238 index rows checked for exact Zenodo DOI; none found. Full detail shards not reread."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+          "method": "all_19_immutable_scout_batches",
+          "outcome": "All 62 staged rows searched for exact Zenodo DOI; none found; SHA256 for 19 CSVs matches manifest."
+        }
+      ],
+      "missing_fields": [
+        "native repository title and creators",
+        "first-public YYYY-MM-DD date and source dateType",
+        "public file inventory and access",
+        "concept/version DOI identity and relation"
+      ],
+      "date_evidence": {
+        "paper_date": "2021",
+        "source_dateType": "article_publication_not_dataset_publication",
+        "dataset_first_public_date": null
+      },
+      "next_action": "One bounded DIFFERENT-SOURCE recovery round using Zenodo alternate API/DOI relation, independent institutional ANCHOR data catalog or repository snapshot; if access remains blocked, evaluate RESEARCH_COMPLETE_HUMAN_INTAKE and reconcile review unit without fabricating date. No repetitive search beyond one round.",
+      "reviewer_question": "Is the Zenodo DOI a public, distinct ANCHOR dataset attributable to NA16OAR4590234, and what is its verified first public release date and accessible file scope?",
+      "hub_delivery": "NOT_DELIVERED",
+      "human_decisions": "NOT_VERIFIED",
+      "acknowledgment_absence_verified": false
+    }
+  ],
+  "duplicate_and_metadata_corrections": [
+    {
+      "alert_id": "2026-10-30-1129ET-calibration-hail-already-in-reach",
+      "run_id": "REACH-SCOUT-2026-10-30-HOURLY-1129ET",
+      "severity": "HOLD_DUPLICATE_REVIEW_AND_POSSIBLE_AWARD_CORRECTION",
+      "identity": "doi:10.1175/WAF-D-19-0105.1",
+      "batch_id": "2026-10-27-morning-jtti-2016-2017-001",
+      "batch_path": "scout-discoveries/batches/2026-10-27-morning-jtti-2016-2017-001.csv",
+      "field": "Existing REACH Match / proposed action",
+      "staged_value": "A / NEW, No DOI/title/URL match in 1,238 REACH rows",
+      "actual_public_reach_match": "reach-000245 / reachuid-v1-a191782c0b21f3b606bd85805d73214f / https://repository.library.noaa.gov/view/noaa/27459",
+      "current_reach_awards": [
+        "NA18OAR4590371"
+      ],
+      "publisher_and_ir_funding_awards": [
+        "NA16OAR4590239",
+        "NA18OAR4590371"
+      ],
+      "semantic_issue": "The immutable Scout proposal labels this paper NEW, but the same DOI/title is already in public REACH under reach-000245. It is NOT a novel output; direct publisher and NOAA IR funding evidence supports potential additional-award correction NA16OAR4590239, subject to human review.",
+      "evidence_urls": [
+        "https://journals.ametsoc.org/view/journals/wefo/35/1/waf-d-19-0105.1.xml",
+        "https://repository.library.noaa.gov/view/noaa/27459",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/index/part-002.csv",
+        "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/batches/2026-10-27-morning-jtti-2016-2017-001.csv"
+      ],
+      "human_decision_verified": false,
+      "hub_import_verified": false,
+      "required_action": "Do not publish as a new output. Check private human decision and exact DOI match; if justified, route as an existing-record additional-award correction preserving NA18OAR4590371, with NA16OAR4590239 evidence. Do not edit immutable batch or REACH/Smartsheet automatically.",
+      "status": "OPEN_REVIEW_REQUIRED"
+    }
+  ],
+  "discovery_route_counts_this_run": {
+    "Direct API": 0,
+    "API-seeded expansion": 0,
+    "Independent discovery": 1,
+    "Metadata correction": 1
+  },
+  "research_status_counts_this_run": {
+    "new_active": 1,
+    "new_complete_verified": 0,
+    "new_complete_human_intake": 0,
+    "new_no_action": 0
+  },
+  "metadata_intake": {
+    "source_cases": 41,
+    "review_units": 35,
+    "original_historical_handoffs": 32,
+    "hub_imports_observed": "NOT_VERIFIED",
+    "human_decisions": "NOT_VERIFIED"
+  },
+  "expansion": {
+    "credible_leads": 1,
+    "new_eligible_distinct_outputs_verified": 0,
+    "new_staged_candidates": 0,
+    "missing_acknowledgment_leads": 0,
+    "reviewer_confirmed_without_ack": "NOT_VERIFIED"
+  },
+  "feed_integrity_status": "VERIFIED_19_BATCHES_62_ROWS_NO_NEW_CSV",
+  "manifest_verification_evidence": {
+    "manifest_blob_sha": "56fac70ee80dca77d000472d679d98124b48bfd5",
+    "batches_sha256_checked": 19,
+    "batches_sha256_matching": 19,
+    "manifest_owner": "GitHub Actions",
+    "new_batch_ids": []
+  },
+  "github_action_status": "NOT_APPLICABLE_NO_NEW_BATCH",
+  "public_reach": {
+    "rows": 1238,
+    "manifest_blob_sha": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+    "new_additions_verified": 0,
+    "full_detail_shards": "NOT_VERIFIED"
+  },
+  "private_human_decisions": "NOT_VERIFIED",
+  "blockers": [
+    "Zenodo/DataCite native access failure for new dataset; no publication date or files inferred",
+    "Existing staged candidate exact REACH duplicate; private decision unknown",
+    "13 preexisting metadata blocker validator anomalies",
+    "Full REACH detail shards not re-read"
+  ],
+  "audit_result": "PARTIAL",
+  "library_path": "/REACH Scout Library/2026-10-30_1129ET",
+  "github_audit_published": "PENDING_CREATE_VERIFICATION",
+  "github_quality_alert_published": true,
+  "github_quality_alert_commit": "6adbbccab338077d50fe0604032905e44b7ac393",
+  "github_lead_ledger_published": true,
+  "github_lead_ledger_commit": "cce7fe6433d091341fdb26f9ddcdd25c6280f0bf",
+  "github_public_reread": {
+    "quality_alert_exists": true,
+    "lead_exists": true,
+    "scout_manifest_sha": "56fac70ee80dca77d000472d679d98124b48bfd5",
+    "reach_manifest_sha": "ab844173f761617a2fe1def5cf218b1fc94b3e7d"
+  }
+}
