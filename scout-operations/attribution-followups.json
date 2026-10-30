@@ -4,7 +4,7 @@
   "origin": "77 no_action original historical DOI dispositions after the 2026-10-29 08:33 ET hourly run: 29 administrative non-outputs; 2 NASA-only funding; 46 real outputs without verified WPO project attribution. The 8:00 ET briefing snapshot was 65, including 34 attribution gaps. No original status or human decision changed.",
   "policy": "These are discovery research leads, not 34 confirmed WPO outputs or 34 automatic Hub findings. Don't promote without evidence bridge and independent corroboration. Preserve no_action historical completed count.",
   "total": 71,
-  "queued": 37,
+  "queued": 32,
   "entries": [
     {
       "identity": "doi:10.25923/b2b3-m644",
@@ -854,7 +854,7 @@
       "identity": "doi:10.5061/dryad.b2rbnzsp5",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "low",
       "original_run_id": null,
       "existing_source_evidence": [
@@ -868,18 +868,33 @@
       "source_disposition_preserved": true,
       "new_direct_award_evidence_found": false,
       "hub_publication_authorized": false,
-      "recheck_attempts": 0,
+      "recheck_attempts": 1,
       "max_recheck_rounds_without_material_evidence": 1,
       "recheck_trigger": "When primary actionable API queues are cleared/blocked, or genuinely new direct attribution evidence arrives",
       "last_source_research_at": "2026-10-29T11:36:43Z",
       "original_notes_preserved_in": "scout-operations/historical-triage.json",
-      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility."
+      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility.",
+      "recheck_completed_at": "2026-10-30T07:29:00Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-30-HOURLY-0329ET",
+      "checked_source_urls": [
+        "https://datadryad.org/dataset/doi:10.5061/dryad.b2rbnzsp5",
+        "https://doi.org/10.1029/2023GL105730",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/manifest.json",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/manifest.json"
+      ],
+      "recheck_finding": "The dataset is a COAMPS-TC wind subset from Navy/ONR hurricane research. Publisher identifies drifter observational NOAA support and ONR model support, not the specific WPO AQPI or atmospheric-river deliverable. A shared NA20OAR4320278 does not establish WPO funding of this output.",
+      "negative_or_contradictory_evidence": "The dataset is a COAMPS-TC wind subset from Navy/ONR hurricane research. Publisher identifies drifter observational NOAA support and ONR model support, not the specific WPO AQPI or atmospheric-river deliverable. A shared NA20OAR4320278 does not establish WPO funding of this output.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION_ALTERNATIVE_FUNDING",
+      "recheck_final_question": "Is there an independently corroborated WPO-funded SPARK project deliverable explicitly connecting this exact output to that project? None identified in this bounded follow-up.",
+      "recheck_next_action": "No further scheduled attribution retry absent new positive WPO project-specific evidence or explicit human request; original no_action preserved.",
+      "distinct_meaningful_checks": 4
     },
     {
       "identity": "doi:10.5061/dryad.f4qrfj71p",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "low",
       "original_run_id": null,
       "existing_source_evidence": [
@@ -893,18 +908,33 @@
       "source_disposition_preserved": true,
       "new_direct_award_evidence_found": false,
       "hub_publication_authorized": false,
-      "recheck_attempts": 0,
+      "recheck_attempts": 1,
       "max_recheck_rounds_without_material_evidence": 1,
       "recheck_trigger": "When primary actionable API queues are cleared/blocked, or genuinely new direct attribution evidence arrives",
       "last_source_research_at": "2026-10-29T11:36:43Z",
       "original_notes_preserved_in": "scout-operations/historical-triage.json",
-      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility."
+      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility.",
+      "recheck_completed_at": "2026-10-30T07:29:00Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-30-HOURLY-0329ET",
+      "checked_source_urls": [
+        "https://datadryad.org/dataset/doi:10.5061/dryad.f4qrfj71p",
+        "https://doi.org/10.1126/sciadv.aed8089",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/manifest.json",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/manifest.json"
+      ],
+      "recheck_finding": "Publisher confirms ocean-phytoplankton/nutrient-stress work supported by NASA, NIH and CISESS. The associated NOAA institutional grant is not a WPO SPARK workstream; no WPO project-specific documentary link.",
+      "negative_or_contradictory_evidence": "Publisher confirms ocean-phytoplankton/nutrient-stress work supported by NASA, NIH and CISESS. The associated NOAA institutional grant is not a WPO SPARK workstream; no WPO project-specific documentary link.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION_ALTERNATIVE_FUNDING",
+      "recheck_final_question": "Is there an independently corroborated WPO-funded SPARK project deliverable explicitly connecting this exact output to that project? None identified in this bounded follow-up.",
+      "recheck_next_action": "No further scheduled attribution retry absent new positive WPO project-specific evidence or explicit human request; original no_action preserved.",
+      "distinct_meaningful_checks": 4
     },
     {
       "identity": "doi:10.5061/dryad.gf1vhhmw0",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "low",
       "original_run_id": null,
       "existing_source_evidence": [
@@ -918,18 +948,33 @@
       "source_disposition_preserved": true,
       "new_direct_award_evidence_found": false,
       "hub_publication_authorized": false,
-      "recheck_attempts": 0,
+      "recheck_attempts": 1,
       "max_recheck_rounds_without_material_evidence": 1,
       "recheck_trigger": "When primary actionable API queues are cleared/blocked, or genuinely new direct attribution evidence arrives",
       "last_source_research_at": "2026-10-29T11:36:43Z",
       "original_notes_preserved_in": "scout-operations/historical-triage.json",
-      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility."
+      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility.",
+      "recheck_completed_at": "2026-10-30T07:29:00Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-30-HOURLY-0329ET",
+      "checked_source_urls": [
+        "https://datadryad.org/dataset/doi:10.5061/dryad.gf1vhhmw0",
+        "https://doi.org/10.1371/journal.pone.0304744",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/manifest.json",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/manifest.json"
+      ],
+      "recheck_finding": "Dryad identifies marine mammal acoustic machine-learning work and NOAA NMFS, BOEM, NAVFAC funding. SPARK shared cooperative award is attached to different projects, with no deliverable or project bridge for this dataset.",
+      "negative_or_contradictory_evidence": "Dryad identifies marine mammal acoustic machine-learning work and NOAA NMFS, BOEM, NAVFAC funding. SPARK shared cooperative award is attached to different projects, with no deliverable or project bridge for this dataset.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION_ALTERNATIVE_FUNDING",
+      "recheck_final_question": "Is there an independently corroborated WPO-funded SPARK project deliverable explicitly connecting this exact output to that project? None identified in this bounded follow-up.",
+      "recheck_next_action": "No further scheduled attribution retry absent new positive WPO project-specific evidence or explicit human request; original no_action preserved.",
+      "distinct_meaningful_checks": 4
     },
     {
       "identity": "doi:10.5061/dryad.gtht76hsk",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "low",
       "original_run_id": null,
       "existing_source_evidence": [
@@ -943,18 +988,33 @@
       "source_disposition_preserved": true,
       "new_direct_award_evidence_found": false,
       "hub_publication_authorized": false,
-      "recheck_attempts": 0,
+      "recheck_attempts": 1,
       "max_recheck_rounds_without_material_evidence": 1,
       "recheck_trigger": "When primary actionable API queues are cleared/blocked, or genuinely new direct attribution evidence arrives",
       "last_source_research_at": "2026-10-29T11:36:43Z",
       "original_notes_preserved_in": "scout-operations/historical-triage.json",
-      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility."
+      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility.",
+      "recheck_completed_at": "2026-10-30T07:29:00Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-30-HOURLY-0329ET",
+      "checked_source_urls": [
+        "https://datadryad.org/dataset/doi:10.5061/dryad.gtht76hsk",
+        "https://doi.org/10.1029/2023PA004638",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/manifest.json",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/manifest.json"
+      ],
+      "recheck_finding": "Paleoceanography foraminiferal geochemistry supported by NSF and a NOAA postdoctoral fellowship; no UFS Senior Advisor project-specific deliverable or corroborating WPO bridge.",
+      "negative_or_contradictory_evidence": "Paleoceanography foraminiferal geochemistry supported by NSF and a NOAA postdoctoral fellowship; no UFS Senior Advisor project-specific deliverable or corroborating WPO bridge.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION_ALTERNATIVE_FUNDING",
+      "recheck_final_question": "Is there an independently corroborated WPO-funded SPARK project deliverable explicitly connecting this exact output to that project? None identified in this bounded follow-up.",
+      "recheck_next_action": "No further scheduled attribution retry absent new positive WPO project-specific evidence or explicit human request; original no_action preserved.",
+      "distinct_meaningful_checks": 4
     },
     {
       "identity": "doi:10.5061/dryad.h70rxwdqn",
       "source_status": "no_action",
       "recheck_classification": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "stage": "queued_targeted_attribution_review",
+      "stage": "closed_no_project_bridge",
       "priority": "low",
       "original_run_id": null,
       "existing_source_evidence": [
@@ -969,12 +1029,27 @@
       "source_disposition_preserved": true,
       "new_direct_award_evidence_found": false,
       "hub_publication_authorized": false,
-      "recheck_attempts": 0,
+      "recheck_attempts": 1,
       "max_recheck_rounds_without_material_evidence": 1,
       "recheck_trigger": "When primary actionable API queues are cleared/blocked, or genuinely new direct attribution evidence arrives",
       "last_source_research_at": "2026-10-29T10:33:00Z",
       "original_notes_preserved_in": "scout-operations/historical-triage.json",
-      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility."
+      "disposition_after_unsuccessful_recheck": "Keep original no_action and close attribution follow-up with checked source URLs/reason; don't endlessly cycle or falsely imply WPO eligibility.",
+      "recheck_completed_at": "2026-10-30T07:29:00Z",
+      "recheck_run_id": "REACH-SCOUT-2026-10-30-HOURLY-0329ET",
+      "checked_source_urls": [
+        "https://datadryad.org/dataset/doi:10.5061/dryad.h70rxwdqn",
+        "https://journals.ametsoc.org/view/journals/aies/3/1/AIES-D-22-0090.1.xml",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/manifest.json",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/manifest.json"
+      ],
+      "recheck_finding": "AMS publisher explicitly acknowledges NA19OAR4320073 and cites this Dryad dataset plus separate Zenodo software DOI 10.5281/zenodo.10041772. The paper concerns RAP vertical-profile ML, not the SPARK MET-TC tropical-cyclone verification project. Shared related CIRA award alone is insufficient.",
+      "negative_or_contradictory_evidence": "AMS publisher explicitly acknowledges NA19OAR4320073 and cites this Dryad dataset plus separate Zenodo software DOI 10.5281/zenodo.10041772. The paper concerns RAP vertical-profile ML, not the SPARK MET-TC tropical-cyclone verification project. Shared related CIRA award alone is insufficient.",
+      "recheck_final_disposition": "NO_DEMONSTRATED_WPO_CONNECTION",
+      "recheck_final_question": "Is there an independently corroborated WPO-funded SPARK project deliverable explicitly connecting this exact output to that project? None identified in this bounded follow-up.",
+      "recheck_next_action": "No further scheduled attribution retry absent new positive WPO project-specific evidence or explicit human request; original no_action preserved.",
+      "distinct_meaningful_checks": 5
     },
     {
       "identity": "doi:10.5061/dryad.h9w0vt4nq",
@@ -2457,25 +2532,25 @@
     "alternative_funding": 2,
     "unattributed_outputs": 46
   },
-  "last_updated_at": "2026-10-30T05:26:56.711529Z",
+  "last_updated_at": "2026-10-30T07:29:00Z",
   "latest_addition": {
     "run_id": "REACH-SCOUT-2026-10-29-HOURLY-1131ET",
     "new_qualified_attribution_gaps": 9,
     "previous_total": 57,
     "total": 66
   },
-  "closed": 29,
+  "closed": 39,
   "latest_recheck": {
-    "run_id": "REACH-SCOUT-2026-10-30-HOURLY-0124ET",
+    "run_id": "REACH-SCOUT-2026-10-30-HOURLY-0329ET",
     "closed": [
-      "doi:10.5061/dryad.h9w0vt4nq",
-      "doi:10.5061/dryad.zs7h44jf2",
-      "doi:10.5061/dryad.2jm63xstt",
-      "doi:10.5061/dryad.2bvq83br4",
-      "doi:10.57969/s9kw2f"
+      "doi:10.5061/dryad.b2rbnzsp5",
+      "doi:10.5061/dryad.f4qrfj71p",
+      "doi:10.5061/dryad.gf1vhhmw0",
+      "doi:10.5061/dryad.gtht76hsk",
+      "doi:10.5061/dryad.h70rxwdqn"
     ],
     "closed_count": 5,
     "original_seed_status_unchanged": true,
-    "note": "Five independent-source project-bridge attribution checks. GREMLIN datasets supported by GOES-R, fish traits by broad CIGLR, GDP GTS by broad Scripps NOAA program; no WPO SPARK project-specific attribution."
+    "note": "Five bounded Dryad source/publisher/SPARK/REACH/Scout comparisons; no independent project-specific WPO output bridge."
   }
 }
