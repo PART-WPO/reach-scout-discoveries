@@ -1,21 +1,16 @@
 {
-  "attribution_followups_pending": 13,
+  "attribution_followups_pending": 0,
   "historical_api": {
     "coverage_matches_source_manifest": true,
     "distinct_dois": 188,
     "initial_cases": 0,
-    "pending_metadata_blockers_including_originals": 37,
+    "pending_metadata_blockers_including_originals": 0,
     "raw_batch_rows": 188,
     "remaining_or_untracked": 0,
     "research_completed": 188,
-    "unresolved_followups": 0,
-    "research_complete": true,
-    "actionable_expansion_metadata_blockers": 0,
-    "human_metadata_needed_original": 32,
-    "human_metadata_needed_expansion_report": 5,
-    "human_metadata_hub_delivery_status": "NOT_DELIVERED_TO_HUB"
+    "unresolved_followups": 0
   },
-  "mode": "attribution_followups",
+  "mode": "normal_historical_discovery",
   "monthly_api": {
     "initial_cases": 0,
     "pending_metadata_blockers_including_originals": 0,
@@ -25,9 +20,9 @@
     "research_completed": 0,
     "unresolved_followups": 0
   },
-  "note": "2026-10-30 05:27 ET: 13 ProxyVis/BinMod1D original DOI attribution followups closed (26 -> 13), two output families; no WPO-specific bridge. Historical originals 188/188 complete; 37 human metadata pending Hub intake NOT DELIVERED. 17/17 immutable Scout feed checksums, CSV counts, 24-column schemas and run IDs verified; REACH 1238 unchanged.",
-  "phase": "attribution_followups",
-  "reason": "Monthly empty; 188/188 historical originals research-complete. 37 pending_hub_handoff integration cases are not actionable research. Continue remaining 13 attribution followups before older-award discovery.",
+  "note": "Future follow-up dates do not clear API research. Make bounded distinct-source checks now; use documented early-retry exceptions as needed. An unavailable or invalid Hub metadata-needed handoff remains outstanding. This selector does NOT conduct research, verify human approval, or launch Scout.",
+  "phase": "normal_discovery",
+  "reason": "Monthly and historical API research and handoffs are clear",
   "schema": "reach-scout-workstream-v1",
   "switch_policy": "monthly first-pass > monthly follow-ups > historical first-pass > historical follow-ups > attribution follow-ups > normal SPARK historical discovery"
 }
