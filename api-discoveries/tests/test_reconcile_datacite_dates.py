@@ -78,7 +78,7 @@ class DatesTests(unittest.TestCase):
            "dateCreated":"2025-04-10"
            }</script>'''
         match,found=dates.native_date(html,"10.17603/example")
-        self.assertFalse(match)
+        self.assertTrue(match)  # DOI identity is present, but no publication date.
         self.assertEqual(found,[])
 
     def test_native_jsonld_publication_can_count(self):
