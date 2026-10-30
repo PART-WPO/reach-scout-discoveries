@@ -133,7 +133,7 @@ def datacite_date(a,month):
 
 def crossref_date(a,month):
     dates=[]
-    for k in ("published-online","published-print","published","issued"):
+    for k in (("posted","published-online","published-print","published","issued") if a.get("type")=="posted-content" else ("published-online","published-print","published","issued","posted")):
         dp=(a.get(k) or {}).get("date-parts") or []
         if dp and dp[0]:
             parts=dp[0]
@@ -143,6 +143,26 @@ def crossref_date(a,month):
         if date_in_month(date,month):
             return (date if length>=3 else ""),("published_exact" if length>=3 else "published_month_only")
     return "","published_outside_window" if dates else "out_of_window"
+
+def preferred_crossref_pub_date(a):
+    """Office preference: print, online fallback, month-only => first of month.
+
+    No Crossref created timestamp is used as a publication-date substitute.
+    """
+    keys=("posted","published-print","published-online","published","issued") if a.get("type")=="posted-content" else ("published-print","published-online","published","issued","posted")
+    for key in keys:
+        dp=(a.get(key) or {}).get("date-parts") or []
+        parts=dp[0] if dp else []
+        if len(parts)<2:
+            continue
+        try:
+            year,month=int(parts[0]),int(parts[1])
+            day=int(parts[2]) if len(parts)>=3 else 1
+            value=dt.date(year,month,day).isoformat()
+        except (ValueError,TypeError,OverflowError):
+            continue
+        return value,"reach_pub_date_crossref_"+key.replace("-","_")+("_month_first" if len(parts)==2 else "_exact")
+    return "","no_print_online_or_other_usable_crossref_publication_date"
 
 def match_datacite(a,award):
     return exact_awards([f.get("awardNumber","") for f in a.get("fundingReferences",[]) or []],award)
@@ -237,17 +257,14 @@ def to_candidate(a,src,award,mode,month):
             pub=created
             basis=basis+";reach_pub_date_datacite_created"
     if src=="crossref":
-        # Apply the same WPO operational convention as DataCite *after*
-        # original Crossref month-of-publication inclusion checks.
-        dp=(a.get("created") or {}).get("date-parts") or []
-        parts=dp[0] if dp else []
-        try:
-            created=dt.date(int(parts[0]),int(parts[1]),int(parts[2])).isoformat() if len(parts)==3 else ""
-        except (ValueError,TypeError,OverflowError,IndexError):
-            created=""
-        if created:
-            pub=created
-            basis=basis+";reach_pub_date_crossref_created"
+        # The intake month gate above still checks the actual publication
+        # window; the office's output-date preference is evaluated afterward.
+        # This allows an online-only record initially, and a print preference
+        # on a later source refresh, without changing immutable older intake.
+        suggested,preferred_basis=preferred_crossref_pub_date(a)
+        if suggested:
+            pub=suggested
+            basis=preferred_basis+";intake_window_basis="+basis
     text=re.sub(r"<[^>]+>"," ",str(abstract));text=re.sub(r"\s+"," ",text).strip()
     return {"doi":doi,"src":src,"award":award,
       "title":title or "Provisional metadata for DOI "+doi,
