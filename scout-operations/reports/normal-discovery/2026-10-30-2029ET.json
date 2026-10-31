@@ -1,0 +1,136 @@
+{
+  "schema": "reach-scout-normal-discovery-research-v1",
+  "run_id": "REACH-SCOUT-2026-10-30-HOURLY-2029ET",
+  "timestamp_utc": "2026-10-31T00:32:10Z",
+  "mode": "normal_historical_discovery",
+  "awards_examined": [
+    {
+      "award": "NA23OAR4590137",
+      "spark_id": "spark-000255",
+      "project": "DRSA (PRECIP1): Improving Delivery of Weather Prediction Center Precipitation Products"
+    },
+    {
+      "award": "NA21OAR4590358",
+      "spark_id": "spark-000338",
+      "project": "Rapid Floodwater Extent and Depth Measurements Using Optical UAV and SAR"
+    }
+  ],
+  "new_proposal": {
+    "doi": "10.7910/DVN/JWZEWF",
+    "title": "Urban Rain Rate Dashboard - Improving Delivery of Weather Prediction Center Precipitation Products",
+    "classification": "Scout classification: NEW CANDIDATE",
+    "route": "API-seeded expansion",
+    "original_seed_doi": "10.25923/t7t6-m677",
+    "type": 3,
+    "creator": "Kathryn Semmens",
+    "publisher": "Harvard Dataverse",
+    "version": "1.0",
+    "award": "NA23OAR4590137",
+    "pub_date": "2025-10-17",
+    "pub_date_source": "DataCite created 2025-10-17T23:15:08Z",
+    "source_metadata": "https://api.datacite.org/dois/10.7910/dvn/jwzewf",
+    "funding_evidence": "https://journals.ametsoc.org/view/journals/bams/107/3/BAMS-D-25-0309.1.xml",
+    "grant_evidence": "https://repository.library.noaa.gov/view/noaa/67019",
+    "dedup": {
+      "reach_index_shards": 10,
+      "reach_detail_shards": 140,
+      "reach_records": 1238,
+      "scout_batches": 21,
+      "scout_rows": 68,
+      "exact_doi_or_title_match": false,
+      "related_reach_ids": [
+        "reach-000852",
+        "reach-000853",
+        "reach-000856"
+      ]
+    },
+    "remaining_human_questions": [
+      "Harvard Dataverse file-level public/restricted scope",
+      "Distinct eligibility relative to existing URRD papers/survey"
+    ],
+    "private_hub_import": "NOT_VERIFIED",
+    "csv": "scout-discoveries/batches/2026-10-30-hourly-2029ET-urrd-dataverse-recovery-001.csv",
+    "csv_sha256": "5fd74af4781bfef6c6380e35c4ec437435b2a7add3b358c28709167c8b1f4d4a",
+    "github_csv_staged": true,
+    "manifest_status": "PENDING_VALIDATION"
+  },
+  "research_followup": {
+    "doi": "10.1080/19475705.2024.2364777",
+    "title": "A low-cost IoT-based deep learning method of water gauge measurement for flood monitoring",
+    "classification": "NEW CANDIDATE_PENDING_CROSSREF_CHECKPOINT",
+    "route": "Independent discovery",
+    "award": "NA21OAR4590358",
+    "authors": [
+      "Leila Hashemi-Beni",
+      "Megha Puthenparampil",
+      "Ali Jamali"
+    ],
+    "publisher_online_date": "2024-07-08",
+    "publisher_url": "https://www.tandfonline.com/doi/abs/10.1080/19475705.2024.2364777",
+    "crossref_url": "https://api.crossref.org/works/10.1080/19475705.2024.2364777",
+    "crossref_result": "ACCESS_FAILURE",
+    "pending_gate": "published-print > published-online > published/issued Crossref exact DOI metadata",
+    "funding_evidence": "Publisher explicitly acknowledges NOAA NA21OAR4590358",
+    "data_scope": "Publisher states study data confidential; do not infer public dataset",
+    "reach_exact_match": false,
+    "scout_exact_match": false,
+    "staged": false
+  },
+  "known_existing_reach": [
+    {
+      "doi": "10.3390/rs14246374",
+      "reach_id": "reach-000145",
+      "title": "Inundated Vegetation Mapping Using SAR Data: A Comparison of Polarization Configurations of UAVSAR L-Band and Sentinel C-Band",
+      "evidence": "https://repository.library.noaa.gov/view/noaa/59167"
+    },
+    {
+      "doi": "10.1080/19475705.2025.2493225",
+      "reach_id": "reach-000151",
+      "title": "Flood detection and mapping through multi-resolution sensor fusion: integrating UAV optical imagery and satellite SAR data",
+      "evidence": "https://repository.library.noaa.gov/view/noaa/73126"
+    },
+    {
+      "doi": "10.3390/rs16142679",
+      "reach_id": "reach-000149",
+      "title": "Detection of Individual Corn Crop and Canopy Delineation from Unmanned Aerial Vehicle Imagery",
+      "evidence": "https://repository.library.noaa.gov/view/noaa/70626"
+    },
+    {
+      "doi": "10.1016/j.jag.2024.103662",
+      "reach_id": "reach-000148",
+      "title": "Residual wave vision U-Net for flood mapping using dual polarization Sentinel-1 SAR imagery",
+      "evidence": "https://repository.library.noaa.gov/view/noaa/63872"
+    },
+    {
+      "doi": "10.1007/s10661-024-12342-6",
+      "reach_id": "reach-000150",
+      "title": "UAV and satellite remote sensing for inland water quality assessments: a literature review",
+      "evidence": "https://pubmed.ncbi.nlm.nih.gov/38367097/"
+    }
+  ],
+  "no_action": {
+    "doi": "10.1016/j.ecoinf.2024.102988",
+    "title": "Comparative analysis of Sentinel-2 and PlanetScope imagery for chlorophyll-a prediction using machine learning models",
+    "reason": "Publisher acknowledges NC Attorney General Environmental Enhancement Grant WFU021PRE1, no NOAA WPO project-specific bridge; author overlap insufficient",
+    "evidence": "https://doi.org/10.1016/j.ecoinf.2024.102988"
+  },
+  "separate_existing_human_intake": {
+    "deepflood_figshare_dois": [
+      "10.6084/m9.figshare.26791243",
+      "10.6084/m9.figshare.28328339"
+    ],
+    "review_units": 1,
+    "rechecked_this_run": false
+  },
+  "publication": {
+    "candidate_csv_staged": true,
+    "manifest_verified": false,
+    "private_hub_import": "NOT_VERIFIED",
+    "public_reach_added": 0
+  },
+  "safeguards": {
+    "original_immutable_batches_unchanged": true,
+    "reviewer_decisions_untouched": true,
+    "no_direct_reach_spark_smartsheet_writes": true
+  }
+}
