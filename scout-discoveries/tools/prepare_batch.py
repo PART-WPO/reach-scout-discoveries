@@ -20,7 +20,15 @@ ALLOWED_ROUTES = {
     "Direct API", "API-seeded expansion", "Independent discovery",
     "Metadata correction", "Unclassified",
 }
-REQUIRED_API_FIELDS = ("reach_snapshot", "sources_checked", "funding_basis", "related_outputs_checked")
+PURPOSE_BY_CLASSIFICATION = {
+    "NEW CANDIDATE": "new_output_review",
+    "POSSIBLE DUPLICATE": "possible_duplicate_review",
+    "KNOWN DUPLICATE": "existing_duplicate_review",
+    "NEEDS INVESTIGATION": "needs_investigation",
+    "REACH METADATA UPDATE": "metadata_correction",
+}
+ORIGIN_METHODS = {"Direct API", "API-seeded expansion", "Independent discovery", "Unclassified"}
+
 DOI = re.compile(r"^10\.\d{4,9}/\S+$", re.I)
 SHA = re.compile(r"^[0-9a-f]{40,64}$", re.I)
 URL = re.compile(r"^https://\S+$", re.I)
@@ -28,7 +36,7 @@ RESERVED = {
     "Scout classification", "Scout discovery route", "Scout discovery path evidence",
     "Scout seed DOI", "Scout discovery method", "Intake origin",
     "Monthly intake", "Scout verification", "REACH snapshot", "Sources checked",
-    "Funding basis", "Related outputs checked",
+    "Funding basis", "Related outputs checked", "Scout origin method", "Scout finding purpose",
 }
 
 
@@ -43,6 +51,18 @@ def compose_rationale(prov):
     route = safe_line(prov["route"], "route")
     if classification not in ALLOWED_CLASSIFICATIONS or route not in ALLOWED_ROUTES:
         raise ValueError("Invalid canonical classification or discovery route")
+    original_method = prov.get("origin_method")
+    if route == "Metadata correction":
+        # The old 24-column Hub parser still uses the route value as a
+        # correction-type signal, so record the original method separately.
+        original_method = safe_line(original_method, "origin_method")
+    else:
+        original_method = safe_line(original_method or route, "origin_method")
+        if original_method != route:
+            raise ValueError("Origin method and discovery route conflict")
+    if original_method not in ORIGIN_METHODS:
+        raise ValueError("Original discovery method must be a canonical method")
+    purpose = PURPOSE_BY_CLASSIFICATION[classification]
     lines = []
     origin = prov.get("intake_origin")
     if origin:
@@ -59,18 +79,20 @@ def compose_rationale(prov):
         "Scout verification: Completed",
         f"Scout classification: {classification}",
         f"Scout discovery route: {route}",
+        f"Scout origin method: {original_method}",
+        f"Scout finding purpose: {purpose}",
     ))
-    if route in {"Direct API", "API-seeded expansion", "Independent discovery"}:
+    if original_method in {"Direct API", "API-seeded expansion", "Independent discovery"}:
         path = safe_line(prov.get("path_evidence"), "path_evidence")
         if not URL.fullmatch(path):
             raise ValueError("Path evidence must be a real HTTPS source URL")
         lines.append(f"Scout discovery path evidence: {path}")
-    if route == "API-seeded expansion":
+    if original_method == "API-seeded expansion":
         seed = safe_line(prov.get("seed_doi"), "seed_doi")
         if not DOI.fullmatch(seed):
             raise ValueError("API-seeded expansion requires a valid exact seed DOI")
         lines.append(f"Scout seed DOI: {seed}")
-    if route == "Independent discovery":
+    if original_method == "Independent discovery":
         method = safe_line(prov.get("discovery_method"), "discovery_method")
         if len(method) < 12:
             raise ValueError("Independent discovery requires substantive method")
@@ -121,6 +143,14 @@ def validate_canonical(path):
             route = re.findall(r"(?im)^\s*Scout discovery route:\s*([^\r\n]+)", rationale)
             if len(route) != 1 or route[0].strip() not in ALLOWED_ROUTES:
                 raise ValueError(f"Non-canonical discovery route: {path.name}:{num}")
+            method = re.findall(r"(?im)^\s*Scout origin method:\s*([^\r\n]+)", rationale)
+            purposes = re.findall(r"(?im)^\s*Scout finding purpose:\s*([^\r\n]+)", rationale)
+            if len(method) != 1 or method[0].strip() not in ORIGIN_METHODS:
+                raise ValueError(f"Missing canonical origin method: {path.name}:{num}")
+            if len(purposes) != 1 or purposes[0].strip() != PURPOSE_BY_CLASSIFICATION[found[0].strip()]:
+                raise ValueError(f"Missing canonical finding purpose: {path.name}:{num}")
+            if route[0].strip() != "Metadata correction" and method[0].strip() != route[0].strip():
+                raise ValueError(f"Conflicting origin method/route: {path.name}:{num}")
             if route[0].strip() == "API-seeded expansion":
                 if len(re.findall(r"(?im)^\s*Scout seed DOI:\s*10\.\d{4,9}/[^\s]+\s*$", rationale)) != 1:
                     raise ValueError(f"Missing exact Scout seed DOI: {path.name}:{num}")
