@@ -318,5 +318,83 @@ class ScoutBatchTests(unittest.TestCase):
 
 
 
+    def test_correction_method_recovery_never_changes_existing_finding_purpose(self):
+        correction = candidate()
+        correction["provenance"].update({
+            "classification": "REACH METADATA UPDATE",
+            "route": "Metadata correction",
+            "origin_method": "Independent discovery",
+            "discovery_method": "Started from SPARK award and followed project publication evidence.",
+        })
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d) / "scout-discoveries"
+            batch_dir = root / "batches"
+            batch_dir.mkdir(parents=True)
+            input_json = root.parent / "record.json"
+            input_json.write_text(json.dumps({"candidates": [correction]}))
+            output = batch_dir / "2026-10-30-old-correction.csv"
+            prepare(input_json, output)
+            with output.open(newline="", encoding="utf-8") as inp:
+                rdr = csv.DictReader(inp)
+                fieldnames = rdr.fieldnames
+                row = next(rdr)
+            row["Scout Discovery Rationale"] = row["Scout Discovery Rationale"].replace(
+                "Scout origin method: Independent discovery\n", "").replace(
+                "Scout finding purpose: metadata_correction\n", "")
+            with output.open("w", newline="", encoding="utf-8") as out:
+                w = csv.DictWriter(out, fieldnames=fieldnames, lineterminator="\n")
+                w.writeheader()
+                w.writerow(row)
+            b = {
+                "id": output.stem,
+                "path": "scout-discoveries/batches/" + output.name,
+                "sha256": hashlib.sha256(output.read_bytes()).hexdigest(),
+                "record_count": 1,
+                "source_run_ids": ["REACH-SCOUT-TEST-001"],
+            }
+            manifest = {"schema": "reach-scout-discovery-feed-v1", "batch_count": 1,
+                        "candidate_rows": 1, "batches": [b]}
+            note = {
+                "record_key": output.stem + "#1",
+                "source_batch_id": output.stem,
+                "source_batch_path": b["path"],
+                "source_batch_sha256": b["sha256"],
+                "source_data_row": 1,
+                "source_run_id": row["Source Run ID"],
+                "output_identity": row["DOI"],
+                "output_title": row["Title"],
+                "discovery_method": "Independent discovery",
+                "discovery_method_confidence": "High",
+                "finding_purpose": "metadata_correction",
+                "method_evidence_summary": "Independent mission from SPARK funded award.",
+                "method_evidence_urls": ["https://example.org/project-award"],
+            }
+            companion = {"schema": "reach-scout-existing-correction-method-recovery-v1",
+                         "entries": [note]}
+            previous = rebuild_discovery_rollup.ROOT
+            rebuild_discovery_rollup.ROOT = root
+            try:
+                enriched = rebuild_discovery_rollup.enrich_from_legacy(
+                    manifest, None, companion)
+                self.assertEqual(enriched["discovery_method_counts"]["Independent discovery"], 1)
+                self.assertEqual(enriched["finding_purpose_counts"]["metadata_correction"], 1)
+                self.assertEqual(enriched["metadata_correction_origins_recovered"], 1)
+                self.assertEqual(enriched["beyond_direct_api_new_output_review_proposals"], 0)
+                bad = dict(note, source_batch_sha256="0" * 64)
+                with self.assertRaisesRegex(ValueError, "Correction-origin source identity/digest mismatch"):
+                    rebuild_discovery_rollup.enrich_from_legacy(
+                        manifest, None, dict(companion, entries=[bad]))
+                bad_route = dict(note, discovery_method_confidence="Medium")
+                with self.assertRaisesRegex(ValueError, "Unverified correction-origin"):
+                    rebuild_discovery_rollup.enrich_from_legacy(
+                        manifest, None, dict(companion, entries=[bad_route]))
+                with self.assertRaisesRegex(ValueError, "Duplicate annotation identity"):
+                    rebuild_discovery_rollup.enrich_from_legacy(
+                        manifest, None, dict(companion, entries=[note, note]))
+            finally:
+                rebuild_discovery_rollup.ROOT = previous
+
+
+
 if __name__ == "__main__":
     unittest.main()
