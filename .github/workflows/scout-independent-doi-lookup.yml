@@ -1,17 +1,6 @@
 name: REACH Scout independent DOI lookup
 on:
   workflow_dispatch:
-    inputs:
-      doi:
-        description: 'Optional exact DOI to look up'
-        required: false
-        type: string
-  push:
-    branches: [main]
-    paths:
-      - 'scout-operations/research-leads/**'
-      - 'scout-operations/tools/lookup_independent_dois.py'
-      - '.github/workflows/scout-independent-doi-lookup.yml'
 permissions:
   contents: write
 concurrency:
