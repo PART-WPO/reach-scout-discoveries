@@ -1,0 +1,111 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-30-HOURLY-2325ET",
+  "timestamp_local": "2026-10-30T23:25:53-04:00",
+  "selected_mode": "normal_historical_discovery",
+  "routing": {
+    "monthly": {
+      "raw_records": 0,
+      "completed_before": 0,
+      "completed_after": 0,
+      "remaining_before": 0,
+      "remaining_after": 0
+    },
+    "historical": {
+      "original_records": 188,
+      "completed_before": 188,
+      "completed_after": 188,
+      "remaining_before": 0,
+      "remaining_after": 0,
+      "already_in_reach": 37,
+      "forwarded_to_hub": 6,
+      "metadata_update_forwarded": 8,
+      "no_action": 109,
+      "human_metadata_needed": 28
+    },
+    "attribution_followups_queued": 0,
+    "metadata_review_source_cases": 42,
+    "metadata_review_units": 36
+  },
+  "source_validation": {
+    "monthly_api_manifest_batches": 0,
+    "historical_api_manifest_batches": 2,
+    "historical_source_records": 188,
+    "historical_coverage_reconciled": true,
+    "reach_snapshot_sha": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+    "reach_records": 1238,
+    "reach_index_shards_checked": 10,
+    "reach_detail_shards_checked": 1,
+    "prior_scout_batches_checked": 23,
+    "prior_scout_rows_checked": 70,
+    "rollup_manifest_rows_verified": true
+  },
+  "feed_integrity_status": "NO_NEW_FEED_WRITES; LIVE_MANIFEST_23_BATCHES_70_ROWS; AUTOMATED_ROLLUP_RECONCILED",
+  "effective_discovery_method_counts": {
+    "Direct API": 14,
+    "API-seeded expansion": 16,
+    "Independent discovery": 40,
+    "Unclassified": 0
+  },
+  "effective_finding_purpose_counts": {
+    "new_output_review": 40,
+    "metadata_correction": 23,
+    "possible_duplicate_review": 2,
+    "existing_duplicate_review": 2,
+    "needs_investigation": 3,
+    "unclassified_purpose": 0
+  },
+  "normal_awards_examined": [
+    "NA18OAR4590394"
+  ],
+  "original_seeds_independently_disposed_this_run": 0,
+  "expansion": {
+    "independent_project_family_research_leads": 3,
+    "candidate_researched": 3,
+    "eligible_complete_new_candidates": 0,
+    "inbox_drafts_staged": 0,
+    "feed_published": 0,
+    "private_hub_imports_verified": 0,
+    "reviewer_approved_verified": 0,
+    "public_reach_additions_verified": 0
+  },
+  "newly_staged_csv_ids": [],
+  "newly_staged_csv_count": 0,
+  "no_action_subtypes_changed": 0,
+  "attribution_followups_queue_changes": 0,
+  "metadata_review_handoff_changes": 0,
+  "blocks": [
+    {
+      "type": "EXACT_DATACITE_ZENODO_ACCESS_FAILURE",
+      "identity": "doi:10.5281/zenodo.6385057",
+      "http_status": null,
+      "reason": "Web exact DOI/DataCite and Zenodo landing returned tool-access failures, not proof of missing metadata."
+    },
+    {
+      "type": "SOFTWARE_RELEASE_DATE_NOT_VERIFIED",
+      "identities": [
+        "github:MESH-Team/MESH_Code_irregular@Mesh_Diffusive_CNS_v0.1",
+        "github:MESH-Team/MESH_CNT@MESH_CNT_v0.1"
+      ],
+      "reason": "GitHub connector retrieved tagged README, but release/tag dates were not available from current tool methods."
+    },
+    {
+      "type": "PRIVATE_HUB_DECISIONS_NOT_VERIFIED",
+      "reason": "No private Hub read available; do not infer decisions."
+    }
+  ],
+  "original_immutable_csvs_modified": false,
+  "manual_manifest_edit": false,
+  "private_hub_import": "NOT_VERIFIED",
+  "verified_human_decisions": "NOT_VERIFIED",
+  "public_reach_additions_verified": "NOT_VERIFIED",
+  "audit_result": "PARTIAL",
+  "next_priority": "Resolve exact DOI DataCite metadata and software release dates; then deduplicate full details and stage only if complete. November 1 monthly intake supersedes independent work when available.",
+  "research_lead_report": "scout-operations/research-leads/2026-10-30-2325ET-mesh-channel-routing.json",
+  "library_artifacts": [
+    "/REACH Scout Library/2026-10-30-2325ET/research-leads.json",
+    "/REACH Scout Library/2026-10-30-2325ET/hourly-run-audit.json",
+    "/REACH Scout Library/2026-10-30-2325ET/report.md",
+    "/REACH Scout Library/2026-10-30-2325ET/checkpoint.json"
+  ]
+}
