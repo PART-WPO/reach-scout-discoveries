@@ -1,5 +1,13 @@
 # API follow-up completion and research-priority policy (2026-10-29)
 
+## AUTHORITATIVE: original discovery method is separate from finding purpose — October 30, 2026
+
+The original 40 legacy missing-route Scout rows have an approved, source-backed `scout-operations/legacy-provenance-backfill.json` companion ledger. The automated origin rollup validates each entry's **immutable manifest SHA-256, exact CSV row number, original source run ID, original DOI/URL and title** before counting it. This recovered 39 original research methods (33 SPARK-driven independent methods, five exact original DataCite API methods, one source-proved API-seeded expansion); the Great Lakes cyclone article `10.1029/2024GL109890` remains Unclassified until its exact seed/search trail is recovered. DO NOT re-research every legacy record, duplicate Hub entries, edit published CSVs or assume approval.
+
+For EVERY future candidate, explicitly record **two different concepts**: `Scout origin method: Independent discovery | Direct API | API-seeded expansion | Unclassified` (the verifiable path by which Scout first identified the output); and `Scout finding purpose: new_output_review | metadata_correction | possible_duplicate_review | existing_duplicate_review | needs_investigation` (the recommended reviewer action). Preserve `Scout discovery route` for compatibility with the old 24-column Hub importer. For `Scout discovery route: Metadata correction`, the JSON draft MUST specify separate `origin_method`, with supporting public evidence. Subsequent DOI metadata enrichment does NOT redefine the original discovery method.
+
+**Use `effective_discovery_method_counts`, `effective_finding_purpose_counts`, and `legacy_provenance` in the newest automated scout-operations/discovery-origin-rollup.json** for real, reconciled attribution metrics. The old `route_counts` remain raw original-CSV labels only for audit comparison and still contain 40 missing legacy route lines; do not present that number as the current count of unidentified legacy research. Six other modern metadata corrections still lack explicit method in the original batch, so effective method Unclassified currently includes those six plus one legacy unresolved article; they are NOT seven unresolved legacy cases. Staged output proposals, human-confirmed outcomes, private Hub imports and public REACH additions remain separate metrics; do not assert unverifiable human decisions. No schedule change.
+
 ## SUPERSEDING Scout feed-publishing protocol — October 30, 2026
 
 **This section overrides every older instruction in this document to publish newly discovered CSVs directly to `scout-discoveries/batches/`.** All research routing and human approval rules below remain active.
