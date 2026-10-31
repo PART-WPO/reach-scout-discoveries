@@ -5,9 +5,9 @@ from pathlib import Path
 from urllib.parse import quote
 ROOT=Path(__file__).resolve().parents[2]
 OUT=ROOT/"scout-operations/reports/independent-doi-lookup/latest.json"
-DOI=re.compile(r"10\\.\\d{4,9}/[^\\s<>]+",re.I)
+DOI=re.compile(r"10\.\d{4,9}/[^\s<>]+",re.I)
 def normalize(v):
- v=re.sub(r"^(?:doi:|https?://(?:dx\\.)?doi\\.org/)","",str(v).strip(),flags=re.I).lower().rstrip(".,;")
+ v=re.sub(r"^(?:doi:|https?://(?:dx\.)?doi\.org/)","",str(v).strip(),flags=re.I).lower().rstrip(".,;")
  return v if DOI.fullmatch(v) else ""
 def fetch(host,path):
  url="https://"+host+path
@@ -65,6 +65,6 @@ def main():
   records.append({**entry,"metadata":metadata(d)})
  result={"schema":"reach-scout-independent-doi-lookup-v1","read_only":True,"record_count":len(records),"successful":sum(r["metadata"]["status"]=="ok" for r in records),"records":records,"policy":"DataCite created is office Pub Date; Crossref print then online then published/issued; month-only becomes first day, year-only never invented. Human decisions unchanged."}
  OUT.parent.mkdir(parents=True,exist_ok=True)
- OUT.write_text(json.dumps(result,indent=2,sort_keys=True,ensure_ascii=False)+"\\n",encoding="utf8")
+ OUT.write_text(json.dumps(result,indent=2,sort_keys=True,ensure_ascii=False)+"\n",encoding="utf8")
  print("Independent DOI lookups:",result["record_count"],"successful:",result["successful"])
 if __name__=="__main__":main()
