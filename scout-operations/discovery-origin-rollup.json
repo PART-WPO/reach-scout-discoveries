@@ -1,18 +1,48 @@
 {
   "schema": "reach-scout-discovery-origin-rollup-v1",
-  "snapshot_date": "2026-10-30",
-  "source": "scout-discoveries/manifest.json (20 immutable batches, 66 rows); 19 prior exact SHA-256 verified in current run, new 4-row CSV exact UTF-8 SHA-256 independently matched automated manifest; GitHub Action 41091948202 SUCCESS.",
-  "batch_count": 20,
-  "staged_review_rows": 66,
+  "snapshot_date": "2026-10-31",
+  "source": "Automated SHA-256-verified scout-discoveries/manifest.json and every published batch",
+  "source_manifest_sha256": "94740a389490c45f8af187851727500b35d8ef45a3f9766b5dc21b1aec44888c",
+  "source_manifest_generated_at": "2026-10-31T00:50:45Z",
+  "batch_count": 22,
+  "staged_review_rows": 69,
   "manifest_rows_verified": true,
   "route_counts": {
     "Direct API": 5,
-    "API-seeded expansion": 12,
-    "Independent discovery": 3,
+    "API-seeded expansion": 13,
+    "Independent discovery": 5,
     "Metadata correction": 6,
     "Unclassified explicit": 0,
     "Unclassified legacy (route missing)": 40
   },
+  "attribution_metrics": {
+    "direct_api_staged": 5,
+    "api_seeded_expansion_staged": 13,
+    "independent_discovery_staged": 5,
+    "metadata_correction_staged": 6,
+    "unclassified_staged": 40,
+    "beyond_direct_api_staged_review_candidates": 18,
+    "human_confirmed_attribution_recoveries": "NOT_VERIFIED",
+    "private_hub_imports": "NOT_VERIFIED",
+    "verified_public_reach_additions": "NOT_VERIFIED",
+    "interpretation": "Staged proposals only. Research route does not prove human eligibility or a published outcome."
+  },
+  "public_reach": {
+    "rows": 1238,
+    "source_manifest": "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json",
+    "source_manifest_sha": "ab844173f761617a2fe1def5cf218b1fc94b3e7d"
+  },
+  "human_review_status": "NOT_VERIFIED; 69 staged proposals are not approvals or public REACH additions.",
+  "latest_verified_run": {
+    "batch_id": "2026-10-30-hourly-2029ET-urrd-dataverse-recovery-001",
+    "source_run_ids": [
+      "REACH-SCOUT-2026-10-30-HOURLY-2029ET"
+    ],
+    "record_count": 1,
+    "manifest_verified": true,
+    "human_hub_import": "NOT_VERIFIED"
+  },
+  "note": "Route-missing legacy rows remain UNCLASSIFIED, never inferred as independent. All counts are rebuilt from published CSVs after successful manifest validation. Prior public REACH baseline is retained but not independently refreshed.",
   "overnight_2026_10_28_2029ET_to_2026_10_29_0734ET": {
     "new_batches": 4,
     "staged_proposals": 10,
@@ -24,27 +54,5 @@
   "audit_backfills": [
     "scout-operations/hourly-run-audits/2026-10-28-2029ET.json",
     "scout-operations/hourly-run-audits/2026-10-28-2129ET.json"
-  ],
-  "public_reach": {
-    "rows": 1238,
-    "source_manifest": "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json",
-    "source_manifest_sha": "ab844173f761617a2fe1def5cf218b1fc94b3e7d"
-  },
-  "human_review_status": "Not publicly verifiable; 62 staged proposals are not human approvals",
-  "note": "20 immutable batches / 66 staged proposals: 5 Direct API, 12 API-seeded expansion, 3 Independent discovery, 6 metadata corrections, 40 legacy unclassified. Four Scripps NOPP DOI proposals are normal review after WPO accepted DataCite created dates; no date-only metadata block. Public REACH 1238. Source identities 42 / 36 review units, 38 still require non-date/unverified-date human intake; private Hub import and reviewer decisions NOT VERIFIED.",
-  "latest_verified_run": {
-    "run_id": "REACH-SCOUT-2026-10-30-HOURLY-1229ET",
-    "batch_id": "2026-10-30-hourly-1229ET-nhci-date-policy-normal-review-001",
-    "new_review_proposals": 4,
-    "route_counts": {
-      "Direct API": 4
-    },
-    "manifest_verified": true,
-    "manifest_blob_sha": "1d048cf0b5552aff8eb9b6afc36302d8147afbe8",
-    "csv_sha256": "efa425bb28b4bf52465e7ccace4c75ea6aa72916292ff960a913f021622c054f",
-    "github_action_run_id": 41091948202,
-    "github_action_conclusion": "success",
-    "human_hub_import": "NOT_VERIFIED",
-    "public_reach_additions_verified": 0
-  }
+  ]
 }
