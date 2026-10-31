@@ -124,7 +124,7 @@ OPENER=build_opener(NoRedirect())
 CROSSREF_LOCK=threading.Lock()
 def get(host,url):
  if not url.startswith("https://"+host+"/"):raise ValueError("Unexpected API host")
- with OPENER.open(Request(url,headers={"Accept":"application/json","User-Agent":"NOAA-WPO-REACH-Scout-DOI-Audit/1.0"}),timeout=13) as r:
+ with OPENER.open(Request(url,headers={"Accept":"application/json","User-Agent":"NOAA-WPO-REACH-Scout-DOI-Audit/1.1 (GitHub Actions; public metadata research)"}),timeout=13) as r:
   blob=r.read(1100001)
   if len(blob)>1100000:raise ValueError("Response too large")
   return json.loads(blob)
@@ -199,9 +199,16 @@ def fetch(id):
        "checkpoint_schema":"crossref-publication-v4-print-online-month-first"}
   except HTTPError as e:
    if e.code==404:continue
-   return {"status":"source_unavailable","source":src,"evidence":url,"error":"HTTP "+str(e.code)}
+   if src=="datacite":
+    datacite_failure={"provider":"datacite","url":url,"http_status":e.code,"error_category":"RATE_LIMITED" if e.code==429 else "ACCESS_RESTRICTED" if e.code==403 else "SERVER_ERROR" if e.code>=500 else "HTTP_ERROR"}
+    continue
+   return {"status":"source_unavailable","source":src,"evidence":url,"error":"HTTP "+str(e.code),"http_status":e.code,"error_category":"RATE_LIMITED" if e.code==429 else "ACCESS_RESTRICTED" if e.code==403 else "SERVER_ERROR" if e.code>=500 else "HTTP_ERROR","datacite_fallback_failure":locals().get("datacite_failure")}
   except (OSError,URLError,ValueError,KeyError,TimeoutError) as e:
-   return {"status":"source_unavailable","source":src,"evidence":url,"error":str(e)[:130]}
+   category="TIMEOUT" if isinstance(e,TimeoutError) else "NETWORK_OR_TOOL_FAILURE"
+   if src=="datacite":
+    datacite_failure={"provider":"datacite","url":url,"error_category":category,"error":str(e)[:130]}
+    continue
+   return {"status":"source_unavailable","source":src,"evidence":url,"error":str(e)[:130],"error_category":category,"datacite_fallback_failure":locals().get("datacite_failure")}
  return {"status":"not_found","source":"","evidence":""}
 def classify(x,meta):
  rows=x["source_rows"];seen={
@@ -325,8 +332,15 @@ def write_crossref_report(records,source_sizes):
  return counts
 
 def main():
- ap=argparse.ArgumentParser();ap.add_argument("--offline",action="store_true");ap.add_argument("--workers",type=int,default=6);ap.add_argument("--refresh-all",action="store_true");ap.add_argument("--refresh-crossref",action="store_true");args=ap.parse_args()
+ ap=argparse.ArgumentParser();ap.add_argument("--offline",action="store_true");ap.add_argument("--workers",type=int,default=6);ap.add_argument("--refresh-all",action="store_true");ap.add_argument("--refresh-crossref",action="store_true");ap.add_argument("--doi",action="append",default=[],help="Additional exact DOI to check immediately");args=ap.parse_args()
  index,sizes=inventory()
+ for raw_doi in args.doi:
+  exact=doi(raw_doi)
+  if not exact:raise ValueError("Invalid exact DOI: "+raw_doi)
+  merge(index,exact,"requested_exact_doi")
+ for x in index.values():
+  if isinstance(x["origins"],set):x["origins"]=sorted(x["origins"])
+  if isinstance(x["review_keys"],set):x["review_keys"]=sorted(x["review_keys"])
  print("Validated source inventory:",json.dumps({"sources":sizes,"unique_dois":len(index)}),flush=True)
  previous={}
  if (OUT/"latest.json").exists():
