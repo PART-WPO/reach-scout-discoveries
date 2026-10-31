@@ -41,7 +41,7 @@ The **purpose for all six remains metadata correction**, not a new research outp
 
 Finding purpose remains **39 new-output reviews; 23 metadata corrections; 2 possible duplicates; 2 known duplicates; 3 needs investigation**. No public output additions or private human approvals can be inferred.
 
-The remaining unknown, **Great Lakes cyclone DOI `10.1029/2024GL109890`**, is described as a linked DataCite-era publication in the original mission and chat report. Because an exact original seed-to-article chain is not documented, do not classify it definitively until the path is verified.
+**Later provenance clarification:** Great Lakes cyclone DOI `10.1029/2024GL109890` is classified as **Discovered by following API leads**, supported by the October 28 15:30 ET DataCite mission report identifying it as a linked publication. Its exact seed DOI remains NOT VERIFIED, separately from the now-supported research method. This supersedes the earlier unknown-method status.
 
 ## Implementation and preservation
 
