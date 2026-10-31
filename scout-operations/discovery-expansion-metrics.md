@@ -10,6 +10,12 @@ For safe delivery, Scout creates a draft in `scout-discoveries/inbox/`; only Git
 
 **These are research staging metrics, not human decisions or public REACH additions.** The `beyond_direct_api_staged_review_candidates` aggregate is only the sum of verified API-seeded expansion and independent-discovery staged routes; it does not prove the underlying works are impossible to retrieve by an API. Missing legacy origin remains UNCLASSIFIED. The private Discovery Hub may have additional review decisions that are **not verified** by this public rollup.
 
+### Latest clarification: Great Lakes article original method now classified
+
+The October 28 15:30 ET historical DataCite mission's original report identified the Great Lakes cyclone article DOI `10.1029/2024GL109890` as a **linked publication** during API triage. This supports **Discovered by following API leads** as the original discovery method, even though the exact starting API seed DOI remains **NOT VERIFIED** and must not be invented. The immutable source batch, DOI and reviewer purpose stay unchanged.
+
+**Current verified method counts across 69 staged proposals:** **39 Found through independent research**, **14 Found in API results**, **16 Discovered by following API leads**, **0 Discovery method unknown**. All 40 legacy methods are accounted for. One precise API seed lineage remains pending. Check the live `discovery-origin-rollup.json` for current totals; the dated baseline sections below are historical snapshots.
+
 ## Plain-language discovery-method labels and six recovered correction origins — October 30, 2026
 
 The public [attribution rollup](discovery-origin-rollup.json) publishes both stable machine-readable method identifiers and plain-language labels under `discovery_method_display_labels`:
