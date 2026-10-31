@@ -22,9 +22,9 @@ Companion ledger: [legacy-provenance-backfill.json](../legacy-provenance-backfil
 |---|---:|---|
 | Independent discovery | **33** | Pre-API original award-centered Scout mission timing, batch rationale, SPARK award and publisher/repository source trails |
 | Direct API | **5** | Exact DOI identity verified in immutable historical DataCite original batch part001 (one Parsivel dataset and four DesignSafe records) |
-| API-seeded expansion | **1** | Linked paper DOI `10.1175/WAF-D-24-0249.1` expressly discovered by following dataset seed `10.13012/b2idb-0704763_v1` |
-| Unclassified | **1** | DOI `10.1029/2024GL109890`: original seed-to-paper pathway not explicit in surviving mission file; do **not** infer it |
-| **Total** | **40** | **39 method classifications supported; one still unresolved** |
+| API-seeded expansion | **2** | Lake-effect article DOI `10.1175/WAF-D-24-0249.1` linked to verified dataset seed, plus Great Lakes cyclone DOI `10.1029/2024GL109890` identified as the other linked publication in the original DataCite triage report. The latter's **exact** seed DOI remains unverified |
+| Unclassified | **0** | Original discovery method established for all 40; exact source-to-output path may still be incomplete |
+| **Total** | **40** | **40 method classifications supported; one exact seed lineage remains unresolved** |
 
 ## Backfilled 40 legacy records: finding purpose
 
@@ -48,7 +48,7 @@ The Oct 27 hail article `10.1175/WAF-D-19-0105.1` retains its *original* source 
 | API-seeded expansion | **14** |
 | Unclassified | **7** |
 
-The **seven** original methods still unverified comprise the **one** unresolved legacy article plus **six non-legacy metadata-correction findings** whose original research methods were never explicitly recorded. Therefore, seven is **NOT** seven unresolved original legacy cases.
+**Historical baseline only:** before the later provenance recovery, seven method origins had been unverified. Six non-legacy metadata-correction origins were subsequently recovered through the separate correction ledger. The Great Lakes cyclone method has now also been recovered as API-led; its exact seed DOI is still unknown. Read the current automated rollup for present totals.
 
 | Finding purpose | Count |
 |---|---:|
@@ -66,11 +66,11 @@ The effective rollup's **32 beyond-direct-API new-output review proposals** are 
 
 - The companion ledger keys every recovered record to the **exact published batch ID, manifest CSV SHA-256, source row ordinal, run ID, DOI/URL and title**.
 - Updated `rebuild_discovery_rollup.py` strictly rejects a mismatched ledger row, duplicate ledger identity or attempted override of an explicit original route; all SHA/row/run checks must complete before re-issuing metrics.
-- GitHub Actions successfully published reconciled totals: 22 / 69 and 40 old records accounted for (39 classified, one unresolved). All 22 prior manifest entries compared and unchanged.
+- GitHub Actions has published reconciled totals of 22 batches / 69 staged candidates. All 40 legacy discovery methods have since been classified; original batch entries remain unchanged.
 - Future Scout candidates carry separate `Scout origin method:` and `Scout finding purpose:` lines, while retaining the existing Hub-compatible `Scout discovery route:` field. New metadata corrections are required to supply `origin_method`, so future correction findings need not lose credit for independent research.
 - Existing weekday Scout missions, exceptional weekend month-start task and weekday briefing prompts were updated to use effective metrics; **their schedules are unchanged**.
 - **Private Discovery Hub import, human eligibility, human-approved changes, and REACH publication remain NOT VERIFIED.**
 
 ## Bounded future action
 
-If original 3:30 PM logs or research evidence identify which seed led to Great Lakes cyclone DOI `10.1029/2024GL109890`, update *only the sidecar provenance entry* with exact path evidence after verifying SHA/source record. There is no need to rerun the original research or republish the output. The six modern correction records could similarly be given separate method annotations in a future bounded follow-up, but not without evidence.
+For Great Lakes cyclone DOI `10.1029/2024GL109890`, the discovery METHOD is already categorized as API-seeded expansion based on the original historical DataCite mission report's identification of two linked publications. Its precise source-seed DOI remains unverified; only supplement that narrower lineage information if evidence appears. Six modern correction methods were separately recovered in `scout-operations/method-recovery-followups.json`. Do not repeat original research or republish outputs.
