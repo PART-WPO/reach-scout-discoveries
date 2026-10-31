@@ -267,5 +267,52 @@ class ScoutBatchTests(unittest.TestCase):
 
 
 
+    def test_metadata_correction_records_its_independent_discovery_method(self):
+        correction = candidate()
+        correction["provenance"].update({
+            "classification": "REACH METADATA UPDATE",
+            "route": "Metadata correction",
+            "origin_method": "Independent discovery",
+            "discovery_method": "Started from SPARK award and followed publisher funding.",
+        })
+        rationale = compose_rationale(correction["provenance"])
+        self.assertIn("Scout discovery route: Metadata correction", rationale)
+        self.assertIn("Scout origin method: Independent discovery", rationale)
+        self.assertIn("Scout finding purpose: metadata_correction", rationale)
+        with tempfile.TemporaryDirectory() as temp:
+            base = Path(temp) / "scout-discoveries"
+            batches = base / "batches"
+            batches.mkdir(parents=True)
+            fixture = base.parent / "correction.json"
+            fixture.write_text(json.dumps({"candidates": [correction]}))
+            output = batches / "2026-10-30-test-correction.csv"
+            prepare(fixture, output)
+            digest = hashlib.sha256(output.read_bytes()).hexdigest()
+            manifest = {
+                "schema": "reach-scout-discovery-feed-v1",
+                "batch_count": 1, "candidate_rows": 1,
+                "batches": [{
+                    "id": output.stem,
+                    "path": "scout-discoveries/batches/" + output.name,
+                    "sha256": digest,
+                    "record_count": 1,
+                    "source_run_ids": ["REACH-SCOUT-TEST-001"]
+                }]
+            }
+            previous = rebuild_discovery_rollup.ROOT
+            rebuild_discovery_rollup.ROOT = base
+            try:
+                actual = rebuild_discovery_rollup.enrich_from_legacy(manifest, None)
+                self.assertEqual(actual["discovery_method_counts"]["Independent discovery"], 1)
+                self.assertEqual(actual["finding_purpose_counts"]["metadata_correction"], 1)
+                self.assertEqual(actual["beyond_direct_api_new_output_review_proposals"], 0)
+            finally:
+                rebuild_discovery_rollup.ROOT = previous
+        correction["provenance"].pop("origin_method")
+        with self.assertRaisesRegex(ValueError, "origin_method"):
+            compose_rationale(correction["provenance"])
+
+
+
 if __name__ == "__main__":
     unittest.main()
