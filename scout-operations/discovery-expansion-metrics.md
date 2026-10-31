@@ -10,6 +10,19 @@ For safe delivery, Scout creates a draft in `scout-discoveries/inbox/`; only Git
 
 **These are research staging metrics, not human decisions or public REACH additions.** The `beyond_direct_api_staged_review_candidates` aggregate is only the sum of verified API-seeded expansion and independent-discovery staged routes; it does not prove the underlying works are impossible to retrieve by an API. Missing legacy origin remains UNCLASSIFIED. The private Discovery Hub may have additional review decisions that are **not verified** by this public rollup.
 
+## Verified legacy discovery-method backfill — October 30, 2026
+
+A user-authorized one-time backfill classified the **original method** separately from the **finding's reviewer purpose** in the immutable 40-record legacy cohort, in [legacy-provenance-backfill.json](legacy-provenance-backfill.json). It preserved all 22 published batches, their SHA-256 values, all private review decisions and all 69 staged candidate identities. Every sidecar annotation was checked against the exact manifest batch ID, SHA-256, row ordinal, source-run ID, title and DOI/URL. The automated rollup regenerates on changes to the sidecar or published manifest.
+
+- **Legacy backfill:** 33 confirmed Independent discovery methods before October 28's historical API priority; five exact original historical DataCite source DOIs classified as Direct API; one explicitly source-linked article as API-seeded expansion; **one original seed/path remains unverified** (DOI `10.1029/2024GL109890`).
+- **Method across all 69 currently staged records:** Independent discovery **38**; Direct API **10**; API-seeded expansion **14**; Unclassified **7**. The six other method-unclassified cases are previously explicit `Metadata correction`-route proposals whose original research method was not recorded.
+- **Finding purpose across all 69:** New output review **39**; existing-output metadata correction **23**; possible duplicate review **2**; known duplicate review **2**; needs investigation **3**. These are reviewer proposal types, not completed decisions.
+- **New-output review proposals found by research beyond a captured direct API seed:** **32** (method is Independent or API-seeded expansion AND purpose is new-output review). Not proof of human validation, public REACH publication or impossibility of API retrieval; the exact cohort and search path matter.
+
+**Compatibility note:** `route_counts` and `raw_route_counts` preserve the *literal legacy CSV field* values, including 40 old missing route labels. The enriched values are `effective_discovery_method_counts` and `effective_finding_purpose_counts`, with `legacy_provenance` audit/verification. Downstream Impact readers should use the effective fields for current research-method and purpose charts and not subtract the raw legacy count a second time. Modern metadata correction batches without recorded original method remain `Unclassified` on the **method** axis, even though they are clearly metadata corrections on the **purpose** axis.
+
+For future drafts, `prepare_batch.py` now records both standalone `Scout origin method:` and `Scout finding purpose:` lines while retaining `Scout discovery route:` for compatibility with the existing Discovery Hub parser. A metadata correction requires an explicit `origin_method` (and supporting original-path evidence) rather than assuming a correction is its own discovery pathway.
+
 ## Cumulative discovery-origin rollup — October 29 reconciliation
 
 Eleven API-seeded expansion proposals (six earlier, two from 11:31 ET, three from 19:29 ET) remain flagged for **human origin, eligibility and duplicate/version validation** in [provenance-review-followups.json](provenance-review-followups.json). These are existing staged rows, not additional outputs; no new batch was created for the follow-up queue. Human approval remains unverified.
