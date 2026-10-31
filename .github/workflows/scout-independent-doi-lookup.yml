@@ -1,0 +1,65 @@
+name: REACH Scout independent DOI lookup
+on:
+  workflow_dispatch:
+    inputs:
+      doi:
+        description: 'Optional exact DOI to look up'
+        required: false
+        type: string
+  push:
+    branches: [main]
+    paths:
+      - 'scout-operations/research-leads/**'
+      - 'scout-operations/tools/lookup_independent_dois.py'
+      - '.github/workflows/scout-independent-doi-lookup.yml'
+permissions:
+  contents: write
+concurrency:
+  group: reach-scout-independent-doi-lookup-main
+  cancel-in-progress: false
+jobs:
+  lookup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Look up independent Scout DOIs via DataCite or Crossref
+        env:
+          REQUESTED_DOI: ${{ inputs.doi || '' }}
+        run: |
+          set -euo pipefail
+          DOI_ARGS=()
+          if [[ -n "$REQUESTED_DOI" ]]; then DOI_ARGS=(--doi "$REQUESTED_DOI"); fi
+          python3 scout-operations/tools/lookup_independent_dois.py "${DOI_ARGS[@]}"
+      - name: Verify output and DOI coverage
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.loads(Path('scout-operations/reports/independent-doi-lookup/latest.json').read_text())
+          assert x['record_count']==len(x['records'])
+          assert len({r['doi'] for r in x['records']})==len(x['records'])
+          assert all(r['metadata'].get('attempts') for r in x['records'])
+          print('Independent DOI coverage:',x['record_count'],'successes:',x['successful'])
+          PY
+      - name: Upload source evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: scout-independent-doi-metadata
+          path: scout-operations/reports/independent-doi-lookup/latest.json
+          retention-days: 90
+      - name: Commit read-only lookup results
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add scout-operations/reports/independent-doi-lookup/latest.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Refresh Scout independent DOI lookup'
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then exit 0; fi
+            git fetch origin main
+            git rebase origin/main
+            sleep "$((attempt * 2))"
+          done
+          exit 1
