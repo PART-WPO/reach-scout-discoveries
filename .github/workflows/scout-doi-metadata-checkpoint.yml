@@ -45,10 +45,12 @@ jobs:
           python3 scout-operations/tools/audit_doi_metadata.py --offline
           python3 -m unittest discover -s scout-operations/tests -p "test_crossref_metadata_checkpoint.py" -v
       - name: Enrich all candidate DOIs directly via DataCite / Crossref
+        env:
+          REQUESTED_DOI: ${{ inputs.doi || '' }}
         run: |
           set -euo pipefail
           DOI_ARG=()
-          if [[ -n "${{ inputs.doi || '' }}" ]]; then DOI_ARG=(--doi "${{ inputs.doi }}"); fi
+          if [[ -n "$REQUESTED_DOI" ]]; then DOI_ARG=(--doi "$REQUESTED_DOI"); fi
           python3 scout-operations/tools/audit_doi_metadata.py --workers 6 --refresh-crossref "${DOI_ARG[@]}"
           python3 - <<'PY'
           import json
