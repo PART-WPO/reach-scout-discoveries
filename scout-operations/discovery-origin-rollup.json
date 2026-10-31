@@ -24,10 +24,16 @@
     "Unclassified legacy (route missing)": 40
   },
   "effective_discovery_method_counts": {
-    "Direct API": 10,
-    "API-seeded expansion": 14,
-    "Independent discovery": 38,
-    "Unclassified": 7
+    "Direct API": 14,
+    "API-seeded expansion": 15,
+    "Independent discovery": 39,
+    "Unclassified": 1
+  },
+  "discovery_method_display_labels": {
+    "Direct API": "Found in API results",
+    "API-seeded expansion": "Discovered by following API leads",
+    "Independent discovery": "Found through independent research",
+    "Unclassified": "Discovery method unknown"
   },
   "effective_finding_purpose_counts": {
     "new_output_review": 39,
@@ -36,6 +42,12 @@
     "existing_duplicate_review": 2,
     "needs_investigation": 3,
     "unclassified_purpose": 0
+  },
+  "metadata_correction_method_recovery": {
+    "ledger_path": "scout-operations/method-recovery-followups.json",
+    "ledger_sha256": "fd4d934351fc025384ba4bd15423736ca06554487b5771cc89e5ee035177fa30",
+    "source_verified_records": 6,
+    "validation": "EXACT_MANIFEST_BATCH_SHA_AND_ROW_IDENTITY_VERIFIED"
   },
   "legacy_provenance": {
     "ledger_path": "scout-operations/legacy-provenance-backfill.json",
@@ -57,10 +69,10 @@
     "unclassified_staged": 40,
     "beyond_direct_api_staged_review_candidates": 32,
     "previous_raw_routed_beyond_direct_api_staged": 18,
-    "effective_independent_discovery_method_staged": 38,
-    "effective_api_seeded_expansion_method_staged": 14,
-    "effective_direct_api_method_staged": 10,
-    "effective_unclassified_method_staged": 7,
+    "effective_independent_discovery_method_staged": 39,
+    "effective_api_seeded_expansion_method_staged": 15,
+    "effective_direct_api_method_staged": 14,
+    "effective_unclassified_method_staged": 1,
     "effective_metadata_correction_purpose_staged": 23,
     "human_confirmed_attribution_recoveries": "NOT_VERIFIED",
     "private_hub_imports": "NOT_VERIFIED",
