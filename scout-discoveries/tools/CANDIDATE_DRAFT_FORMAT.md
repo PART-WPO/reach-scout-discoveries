@@ -28,6 +28,7 @@ Prepare a JSON array of research-supported candidates. `fields` uses the exact c
       "provenance": {
         "classification": "NEW CANDIDATE",
         "route": "API-seeded expansion",
+        "origin_method": "API-seeded expansion",
         "seed_doi": "10.25923/t7t6-m677",
         "path_evidence": "https://example.org/publisher-funding",
         "intake_origin": "Historical DataCite API Backfill",
@@ -50,6 +51,15 @@ Prepare a JSON array of research-supported candidates. `fields` uses the exact c
 No sample values above are verified research; replace **every field** with real source-backed data for an actual mission. An example award or DOI must never become a real published candidate without evidence.
 
 For an **independent discovery**, use `"route": "Independent discovery"`, include `"path_evidence": "https://..."` and `"discovery_method": "A substantive source search description..."`. Do **not** invent an API seed. For a **direct API** source, use `"route": "Direct API"` and DOI-specific source evidence. `"Metadata correction"` is not counted as a new output. If the actual origin is uncertain, use `"Unclassified"` and preserve evidence, not an invented route.
+
+**Discovery method and finding purpose are separate and required for all new drafts.** The generator writes two canonical standalone lines:
+`Scout origin method: Direct API | API-seeded expansion | Independent discovery | Unclassified` and
+`Scout finding purpose: new_output_review | metadata_correction | possible_duplicate_review | existing_duplicate_review | needs_investigation`.
+The purpose derives from the canonical classification. The method is inferred from `route` for direct/expansion/independent routes; you may supply the matching `origin_method` explicitly.
+
+**Important for an existing REACH output needing a correction:** Keep `"route": "Metadata correction"` for current Hub parser compatibility, set `"classification": "REACH METADATA UPDATE"`, and **explicitly supply** `"origin_method": "Independent discovery"` or the actual verified Direct API/API-seeded method. Include source-path evidence; for an API-seeded method also supply `seed_doi`; for independent discovery also supply the substantive prose `discovery_method`. Thus a correction can be credited to independent Scout research without being counted as a newly discovered publication. This also applies when a DataCite DOI was only looked up for metadata after an independent discovery; lookup is not proof of direct API origin.
+
+For historical records published before these labels existed, the immutable [legacy provenance sidecar](../../scout-operations/legacy-provenance-backfill.json) records evidence-backed method and purpose separately. The automated [origin rollup](../../scout-operations/discovery-origin-rollup.json) verifies exact batch SHA-256 and record identity before counting recovered methods; it retains the original raw route counts for historical comparisons. Unknown origin remains Unclassified, never guessed.
 
 Accepted classifications are exactly `NEW CANDIDATE`, `POSSIBLE DUPLICATE`, `KNOWN DUPLICATE`, `NEEDS INVESTIGATION`, or `REACH METADATA UPDATE`.
 
