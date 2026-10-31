@@ -1,6 +1,11 @@
 name: REACH Scout direct DOI metadata checkpoint
 on:
   workflow_dispatch:
+    inputs:
+      doi:
+        description: 'Optional exact DOI to check immediately'
+        required: false
+        type: string
   push:
     branches: [main]
     paths:
@@ -42,7 +47,9 @@ jobs:
       - name: Enrich all candidate DOIs directly via DataCite / Crossref
         run: |
           set -euo pipefail
-          python3 scout-operations/tools/audit_doi_metadata.py --workers 6 --refresh-crossref
+          DOI_ARG=()
+          if [[ -n "${{ inputs.doi || '' }}" ]]; then DOI_ARG=(--doi "${{ inputs.doi }}"); fi
+          python3 scout-operations/tools/audit_doi_metadata.py --workers 6 --refresh-crossref "${DOI_ARG[@]}"
           python3 - <<'PY'
           import json
           from pathlib import Path
