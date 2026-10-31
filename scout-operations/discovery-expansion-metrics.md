@@ -1,5 +1,15 @@
 # Scout discovery expansion: provenance and impact measurement
 
+## Current validated-feed accounting (automated; 2026-10-30 evening)
+
+The authoritative machine-readable totals now live in [discovery-origin-rollup.json](discovery-origin-rollup.json), automatically rebuilt by `.github/workflows/build-scout-discovery-manifest.yml` **after** all published CSVs pass validation and their exact SHA-256 digests, record counts and source run IDs reconcile with `scout-discoveries/manifest.json`.
+
+At the first automated reconciliation after the authorized URRD correction, **22 validated batches / 69 staged candidates** comprised **5 Direct API, 13 API-seeded expansion, 5 Independent discovery, 6 Metadata correction, and 40 unclassified legacy rows**. Counts may change with subsequent successful publications; use the JSON for the latest totals. All sections below dated before this reconciliation are historical observations, **not** current dashboard totals.
+
+For safe delivery, Scout creates a draft in `scout-discoveries/inbox/`; only GitHub Actions may promote it to `scout-discoveries/batches/` after exact-template and full 24-column validation. Failed drafts remain out of the published manifest, and previously published batches remain immutable. The Action generates the manifest and reconciled attribution metrics together.
+
+**These are research staging metrics, not human decisions or public REACH additions.** The `beyond_direct_api_staged_review_candidates` aggregate is only the sum of verified API-seeded expansion and independent-discovery staged routes; it does not prove the underlying works are impossible to retrieve by an API. Missing legacy origin remains UNCLASSIFIED. The private Discovery Hub may have additional review decisions that are **not verified** by this public rollup.
+
 ## Cumulative discovery-origin rollup — October 29 reconciliation
 
 Eleven API-seeded expansion proposals (six earlier, two from 11:31 ET, three from 19:29 ET) remain flagged for **human origin, eligibility and duplicate/version validation** in [provenance-review-followups.json](provenance-review-followups.json). These are existing staged rows, not additional outputs; no new batch was created for the follow-up queue. Human approval remains unverified.
