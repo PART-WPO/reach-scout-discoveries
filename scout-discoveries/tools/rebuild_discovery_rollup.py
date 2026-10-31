@@ -24,6 +24,13 @@ ROUTE_LINE = re.compile(r"(?im)^\s*Scout discovery route:\s*([^\r\n]+)")
 # Research method and reviewer action are independent dimensions. Metadata correction
 # is a finding purpose, not an assumption about the original search pathway.
 LEGACY_LEDGER = ROOT.parent / "scout-operations" / "legacy-provenance-backfill.json"
+CORRECTION_LEDGER = ROOT.parent / "scout-operations" / "method-recovery-followups.json"
+DISPLAY_LABELS = {
+    "Direct API": "Found in API results",
+    "API-seeded expansion": "Discovered by following API leads",
+    "Independent discovery": "Found through independent research",
+    "Unclassified": "Discovery method unknown",
+}
 METHODS = ("Direct API", "API-seeded expansion", "Independent discovery", "Unclassified")
 PURPOSES = ("new_output_review", "metadata_correction", "possible_duplicate_review",
             "existing_duplicate_review", "needs_investigation", "unclassified_purpose")
@@ -48,7 +55,7 @@ def _original_purpose(rationale):
     return "unclassified_purpose"
 
 
-def enrich_from_legacy(manifest, ledger):
+def enrich_from_legacy(manifest, ledger, correction_ledger=None):
     """Strictly overlay verified research provenance, never modify staged files.
 
     A legacy annotation is valid only for a row from the same immutable manifest
@@ -72,12 +79,32 @@ def enrich_from_legacy(manifest, ledger):
             raise ValueError(f"Unverified proposed route must be Unclassified: {key}")
         by_key[key] = e
 
+    # Independent sidecar for already-typed metadata corrections whose
+    # original research method was absent. Original CSVs stay immutable.
+    if correction_ledger and correction_ledger.get("schema") != "reach-scout-existing-correction-method-recovery-v1":
+        raise ValueError("Unknown correction-origin ledger schema")
+    corrections = {}
+    for e in (correction_ledger or {}).get("entries", []):
+        key = e["record_key"]
+        if key in corrections or key in by_key:
+            raise ValueError(f"Duplicate annotation identity: {key}")
+        if e["discovery_method"] not in METHODS[:3] or e["finding_purpose"] != "metadata_correction":
+            raise ValueError(f"Invalid correction-origin method or purpose: {key}")
+        if e.get("discovery_method_confidence") != "High":
+            raise ValueError(f"Unverified correction-origin method: {key}")
+        if not e.get("method_evidence_urls") or not e.get("method_evidence_summary"):
+            raise ValueError(f"Missing correction-origin evidence: {key}")
+        if e["discovery_method"] == "API-seeded expansion" and not e.get("api_seed_doi"):
+            raise ValueError(f"Missing linked original DOI for correction: {key}")
+        corrections[key] = e
+
     methods = {m: 0 for m in METHODS}
     purposes = {p: 0 for p in PURPOSES}
     raw_classified = 0
     backfilled = 0
     unresolved_legacy = 0
     seen_keys = set()
+    seen_corrections = set()
     legacy_cohorts = {}
     verified_new_output_non_direct = 0
     for batch in manifest["batches"]:
@@ -96,6 +123,23 @@ def enrich_from_legacy(manifest, ledger):
                 purpose = _original_purpose(rationale)
                 if route == "Metadata correction":
                     purpose = "metadata_correction"
+                    correction = corrections.get(key)
+                    if correction:
+                        if ORIGIN_METHOD_LINE.search(rationale) or FINDING_PURPOSE_LINE.search(rationale):
+                            raise ValueError(f"Refusing override of explicit origin or purpose: {key}")
+                        if (correction["source_batch_id"] != batch["id"] or
+                            correction["source_batch_path"] != batch["path"] or
+                            correction["source_batch_sha256"] != batch["sha256"] or
+                            correction["source_data_row"] != index or
+                            correction["source_run_id"] != row["Source Run ID"] or
+                            correction["output_title"] != row["Title"] or
+                            correction["output_identity"].strip().lower() !=
+                                (row.get("DOI") or row.get("Output URL") or "").strip().lower()):
+                            raise ValueError(f"Correction-origin source identity/digest mismatch: {key}")
+                        method = correction["discovery_method"]
+                        seen_corrections.add(key)
+                elif key in corrections:
+                    raise ValueError(f"Correction-origin ledger targets non-correction route: {key}")
                 stated_method = ORIGIN_METHOD_LINE.search(rationale)
                 if stated_method:
                     value = stated_method.group(1).strip()
@@ -144,6 +188,8 @@ def enrich_from_legacy(manifest, ledger):
             if method in ("API-seeded expansion", "Independent discovery") and purpose == "new_output_review":
                 verified_new_output_non_direct += 1
 
+    if seen_corrections != set(corrections):
+        raise ValueError(f"Correction-origin entries not in manifest: {sorted(set(corrections) - seen_corrections)}")
     if seen_keys != set(by_key):
         raise ValueError(f"Provenance entries not in manifest: {sorted(set(by_key) - seen_keys)}")
     if sum(methods.values()) != manifest["candidate_rows"] or sum(purposes.values()) != manifest["candidate_rows"]:
@@ -154,6 +200,7 @@ def enrich_from_legacy(manifest, ledger):
         "finding_purpose_counts": purposes,
         "legacy_record_count": len(by_key),
         "legacy_method_backfilled": backfilled,
+        "metadata_correction_origins_recovered": len(seen_corrections),
         "legacy_still_unclassified": unresolved_legacy,
         "legacy_cohort_counts": legacy_cohorts,
         "modern_explicit_route_rows": raw_classified,
@@ -224,7 +271,9 @@ def main():
     counts, checked, count = summarize(manifest)
     legacy_bytes = LEGACY_LEDGER.read_bytes() if LEGACY_LEDGER.exists() else None
     ledger = json.loads(legacy_bytes) if legacy_bytes else None
-    effective = enrich_from_legacy(manifest, ledger)
+    correction_bytes = CORRECTION_LEDGER.read_bytes() if CORRECTION_LEDGER.exists() else None
+    correction_ledger = json.loads(correction_bytes) if correction_bytes else None
+    effective = enrich_from_legacy(manifest, ledger, correction_ledger)
     old = json.loads(ROLLUP.read_text(encoding="utf-8")) if ROLLUP.exists() else {}
     generated_at = manifest["generated_at"]
     previous_baseline = old.get("public_reach", {})
@@ -241,7 +290,14 @@ def main():
         "route_counts": counts,
         "raw_route_counts": counts,
         "effective_discovery_method_counts": effective["discovery_method_counts"],
+        "discovery_method_display_labels": DISPLAY_LABELS,
         "effective_finding_purpose_counts": effective["finding_purpose_counts"],
+        "metadata_correction_method_recovery": {
+            "ledger_path": "scout-operations/method-recovery-followups.json" if correction_bytes else None,
+            "ledger_sha256": hashlib.sha256(correction_bytes).hexdigest() if correction_bytes else None,
+            "source_verified_records": effective["metadata_correction_origins_recovered"],
+            "validation": "EXACT_MANIFEST_BATCH_SHA_AND_ROW_IDENTITY_VERIFIED",
+        },
         "legacy_provenance": {
             "ledger_path": "scout-operations/legacy-provenance-backfill.json" if legacy_bytes else None,
             "ledger_sha256": hashlib.sha256(legacy_bytes).hexdigest() if legacy_bytes else None,
