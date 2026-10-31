@@ -15,17 +15,57 @@
     "Unclassified explicit": 0,
     "Unclassified legacy (route missing)": 40
   },
+  "raw_route_counts": {
+    "Direct API": 5,
+    "API-seeded expansion": 13,
+    "Independent discovery": 5,
+    "Metadata correction": 6,
+    "Unclassified explicit": 0,
+    "Unclassified legacy (route missing)": 40
+  },
+  "effective_discovery_method_counts": {
+    "Direct API": 10,
+    "API-seeded expansion": 14,
+    "Independent discovery": 38,
+    "Unclassified": 7
+  },
+  "effective_finding_purpose_counts": {
+    "new_output_review": 39,
+    "metadata_correction": 23,
+    "possible_duplicate_review": 2,
+    "existing_duplicate_review": 2,
+    "needs_investigation": 3,
+    "unclassified_purpose": 0
+  },
+  "legacy_provenance": {
+    "ledger_path": "scout-operations/legacy-provenance-backfill.json",
+    "ledger_sha256": "4250ba87de86a762092ee074be6a0b567d36a9c3b4cf5ab2c0c11bd67a81c860",
+    "annotated_legacy_records": 40,
+    "verified_methods_recovered": 39,
+    "remaining_unclassified_legacy": 1,
+    "cohorts": {
+      "pre_historical_datacite_spark_award_research": 33,
+      "first_historical_datacite_mission_2026_10_28": 7
+    },
+    "validation": "EXACT_MANIFEST_BATCH_SHA_AND_ROW_IDENTITY_VERIFIED"
+  },
   "attribution_metrics": {
     "direct_api_staged": 5,
     "api_seeded_expansion_staged": 13,
     "independent_discovery_staged": 5,
     "metadata_correction_staged": 6,
     "unclassified_staged": 40,
-    "beyond_direct_api_staged_review_candidates": 18,
+    "beyond_direct_api_staged_review_candidates": 32,
+    "previous_raw_routed_beyond_direct_api_staged": 18,
+    "effective_independent_discovery_method_staged": 38,
+    "effective_api_seeded_expansion_method_staged": 14,
+    "effective_direct_api_method_staged": 10,
+    "effective_unclassified_method_staged": 7,
+    "effective_metadata_correction_purpose_staged": 23,
     "human_confirmed_attribution_recoveries": "NOT_VERIFIED",
     "private_hub_imports": "NOT_VERIFIED",
     "verified_public_reach_additions": "NOT_VERIFIED",
-    "interpretation": "Staged proposals only. Research route does not prove human eligibility or a published outcome."
+    "interpretation": "Staged proposals only; effective counts use separate original discovery method and finding purpose. Beyond-direct metric counts only method-confirmed new-output review proposals, not duplicates or corrections. Human eligibility, private Hub import and public REACH additions are not verified."
   },
   "public_reach": {
     "rows": 1238,
@@ -42,7 +82,7 @@
     "manifest_verified": true,
     "human_hub_import": "NOT_VERIFIED"
   },
-  "note": "Route-missing legacy rows remain UNCLASSIFIED, never inferred as independent. All counts are rebuilt from published CSVs after successful manifest validation. Prior public REACH baseline is retained but not independently refreshed.",
+  "note": "route_counts and raw_route_counts preserve literal source-CSV route buckets for historical compatibility; effective_discovery_method_counts and effective_finding_purpose_counts use verified source-identity-matched legacy annotations. A metadata correction is a finding purpose, not a discovery method. Never infer an undocumented route or human approval; prior public REACH baseline is not refreshed.",
   "overnight_2026_10_28_2029ET_to_2026_10_29_0734ET": {
     "new_batches": 4,
     "staged_proposals": 10,
