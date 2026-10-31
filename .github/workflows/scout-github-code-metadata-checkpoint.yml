@@ -1,14 +1,6 @@
 name: REACH Scout GitHub code metadata checkpoint
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - 'scout-operations/research-leads/**'
-      - 'scout-operations/tools/audit_github_code_metadata.py'
-      - '.github/workflows/scout-github-code-metadata-checkpoint.yml'
-  schedule:
-    - cron: '53 14 * * 1'
 permissions:
   contents: write
 concurrency:
