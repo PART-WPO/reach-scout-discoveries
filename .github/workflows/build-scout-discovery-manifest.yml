@@ -10,6 +10,7 @@ on:
       - 'scout-discoveries/tools/prepare_batch.py'
       - 'scout-discoveries/tools/promote_inbox.py'
       - 'scout-discoveries/tools/rebuild_discovery_rollup.py'
+      - 'scout-operations/legacy-provenance-backfill.json'
       - 'scout-discoveries/tools/tests/**'
       - '.github/workflows/build-scout-discovery-manifest.yml'
   workflow_dispatch:
