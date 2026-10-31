@@ -1,0 +1,113 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-30-HOURLY-2029ET",
+  "timestamp_utc": "2026-10-31T00:32:10Z",
+  "selected_mode": "normal_historical_discovery",
+  "phase": "normal_discovery_plus_feed_block_recovery",
+  "routing": {
+    "monthly": {
+      "source_batches": 0,
+      "original_rows": 0,
+      "completed_before": 0,
+      "completed_after": 0,
+      "remaining_before": 0,
+      "remaining_after": 0
+    },
+    "historical": {
+      "source_batches": 2,
+      "original_rows": 188,
+      "completed_before": 188,
+      "completed_after": 188,
+      "remaining_before": 0,
+      "remaining_after": 0,
+      "already_in_reach": 37,
+      "forwarded_to_hub": 6,
+      "metadata_update_forwarded": 8,
+      "no_action": 109,
+      "human_metadata_needed": 28
+    },
+    "attribution_followups_queued": 0,
+    "metadata_review_source_cases": 42,
+    "metadata_review_units": 36,
+    "private_intake_installed": false
+  },
+  "source_validation": {
+    "reach_snapshot_sha": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+    "reach_records": 1238,
+    "reach_index_shards_checked": 10,
+    "reach_detail_shards_checked": 140,
+    "spark_index_shards_checked": 6,
+    "prior_scout_batches": 21,
+    "prior_scout_rows": 68,
+    "prior_1329_csv_sha256": "7c510c57c737c342841d4fc7e2c8f62a63f7b6738743e1493134596059589271",
+    "prior_1329_csv_manifest_sha256_matched": true,
+    "prior_21_batches_preserved": true
+  },
+  "normal_awards_examined": [
+    "NA23OAR4590137",
+    "NA21OAR4590358"
+  ],
+  "original_seeds_independently_disposed_this_run": 0,
+  "expansion": {
+    "new_api_seeded_expansion_candidates_staged": 1,
+    "new_independent_candidates_staged": 0,
+    "original_seed": "10.25923/t7t6-m677",
+    "new_output": "10.7910/dvn/jwzewf",
+    "source_path": [
+      "https://repository.library.noaa.gov/view/noaa/67019",
+      "https://journals.ametsoc.org/view/journals/bams/107/3/BAMS-D-25-0309.1.xml",
+      "https://api.datacite.org/dois/10.7910/dvn/jwzewf"
+    ],
+    "direct_funding_award": "NA23OAR4590137",
+    "review_ready": true,
+    "remaining_human_questions": [
+      "Public/restricted files",
+      "Distinct dataset eligibility"
+    ]
+  },
+  "project_family_sweep": {
+    "identities_examined": 8,
+    "known_reach_duplicates": 5,
+    "alternative_funding_no_WPO_bridge": 1,
+    "publication_pending_crossref_gate": 1,
+    "dataverse_review_candidate": 1,
+    "known_reach_duplicate_ids": [
+      "reach-000145",
+      "reach-000148",
+      "reach-000149",
+      "reach-000150",
+      "reach-000151"
+    ],
+    "crossref_blocked_doi": "10.1080/19475705.2024.2364777",
+    "crossref_exact_url": "https://api.crossref.org/works/10.1080/19475705.2024.2364777",
+    "crossref_access_result": "ACCESS_FAILURE",
+    "publisher_online_date": "2024-07-08",
+    "do_not_claim_separate_public_data": true
+  },
+  "newly_staged_csv_ids": [
+    "2026-10-30-hourly-2029ET-urrd-dataverse-recovery-001"
+  ],
+  "new_csv_path": "scout-discoveries/batches/2026-10-30-hourly-2029ET-urrd-dataverse-recovery-001.csv",
+  "new_csv_sha256": "5fd74af4781bfef6c6380e35c4ec437435b2a7add3b358c28709167c8b1f4d4a",
+  "new_csv_record_count": 1,
+  "new_csv_columns": 24,
+  "new_csv_commit_sha": "60224554c7918631eac485dcf1ed7ec26383525a",
+  "new_csv_fetched_content_exact": true,
+  "feed_integrity_status": "PENDING_MANIFEST_VALIDATION",
+  "new_batch_manifest_verified": false,
+  "github_action_status": "NOT_VERIFIABLE_YET",
+  "private_hub_import": "NOT_VERIFIED",
+  "verified_human_decisions": 0,
+  "public_reach_additions_verified": 0,
+  "original_immutable_csvs_modified": false,
+  "manual_manifest_edit": false,
+  "one_time_four_doi_recheck_repeated": false,
+  "blocks": [
+    "New CSV awaits automated manifest publication; do not claim Hub-ready",
+    "IoT Crossref exact DOI endpoint access failure",
+    "Private Hub import and reviewer decisions not observable",
+    "DeepFlood Figshare version identity remains separate human intake"
+  ],
+  "audit_result": "PARTIAL",
+  "next_priority": "Verify automated manifest for this new candidate; exact Crossref IoT checkpoint; first-of-month monthly intake preempts normal discovery."
+}
