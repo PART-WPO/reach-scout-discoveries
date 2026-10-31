@@ -115,6 +115,19 @@ def inventory():
   id=doi(a.get("doi"))
   merge(index,id,"historical_date_audit")
   index[id]["already_audited_created"]=date(a.get("created"))
+ # Include DOI identities from independent Scout research leads before Hub staging.
+ # Read-only research leads are not review approvals or publication candidates.
+ lead_files=sorted((ROOT/"scout-operations/research-leads").glob("*.json"))
+ lead_count=0
+ for path in lead_files:
+  lead_doc=json.loads(path.read_text(encoding="utf8"))
+  for lead in lead_doc.get("leads",[]):
+   identity=str(lead.get("identity") or "")
+   id=doi(identity)
+   if id:
+    merge(index,id,"independent_research_lead")
+    lead_count+=1
+ sizes["independent_research_leads"]={"doi_leads":lead_count,"files":len(lead_files)}
  for x in index.values():
   x["origins"]=sorted(x["origins"]);x["review_keys"]=sorted(x["review_keys"])
  return index,sizes
