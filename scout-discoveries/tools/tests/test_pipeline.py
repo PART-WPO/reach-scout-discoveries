@@ -11,6 +11,7 @@ TOOLS = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(TOOLS))
 from prepare_batch import compose_rationale, prepare, validate_canonical
 import rebuild_discovery_rollup
+import promote_inbox
 
 
 def candidate():
@@ -122,6 +123,48 @@ class ScoutBatchTests(unittest.TestCase):
                     rebuild_discovery_rollup.summarize(manifest)
             finally:
                 rebuild_discovery_rollup.ROOT = prior
+
+
+    def test_inbox_promotes_only_valid_drafts(self):
+        with tempfile.TemporaryDirectory() as d:
+            base = Path(d)
+            inbox = base / "inbox"
+            batches = base / "batches"
+            inbox.mkdir()
+            src = base / "draft.json"
+            src.write_text(json.dumps({"candidates": [candidate()]}))
+            draft = inbox / "2026-10-30-test-001.csv"
+            prepare(src, draft)
+            old_inbox, old_batches = promote_inbox.INBOX, promote_inbox.BATCHES
+            promote_inbox.INBOX, promote_inbox.BATCHES = inbox, batches
+            try:
+                promote_inbox.promote()
+                self.assertEqual((batches / draft.name).read_bytes(), draft.read_bytes())
+                promote_inbox.promote()  # already published drafts are not published twice
+                self.assertEqual(list(batches.glob("*.csv")), [batches / draft.name])
+            finally:
+                promote_inbox.INBOX, promote_inbox.BATCHES = old_inbox, old_batches
+
+    def test_invalid_inbox_draft_cannot_poison_published_batches(self):
+        with tempfile.TemporaryDirectory() as d:
+            base = Path(d)
+            inbox = base / "inbox"
+            batches = base / "batches"
+            inbox.mkdir()
+            src = base / "draft.json"
+            src.write_text(json.dumps({"candidates": [candidate()]}))
+            valid = inbox / "2026-10-30-test-001.csv"
+            prepare(src, valid)
+            invalid = inbox / "2026-10-30-test-002.csv"
+            invalid.write_text(valid.read_text().replace("Scout seed DOI:", "Original API seed DOI:"))
+            old_inbox, old_batches = promote_inbox.INBOX, promote_inbox.BATCHES
+            promote_inbox.INBOX, promote_inbox.BATCHES = inbox, batches
+            try:
+                with self.assertRaisesRegex(ValueError, "seed DOI"):
+                    promote_inbox.promote()
+                self.assertFalse(batches.exists(), "No candidate should be promoted if any new draft fails")
+            finally:
+                promote_inbox.INBOX, promote_inbox.BATCHES = old_inbox, old_batches
 
 
 if __name__ == "__main__":
