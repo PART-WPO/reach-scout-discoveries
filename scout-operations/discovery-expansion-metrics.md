@@ -10,6 +10,25 @@ For safe delivery, Scout creates a draft in `scout-discoveries/inbox/`; only Git
 
 **These are research staging metrics, not human decisions or public REACH additions.** The `beyond_direct_api_staged_review_candidates` aggregate is only the sum of verified API-seeded expansion and independent-discovery staged routes; it does not prove the underlying works are impossible to retrieve by an API. Missing legacy origin remains UNCLASSIFIED. The private Discovery Hub may have additional review decisions that are **not verified** by this public rollup.
 
+## Plain-language discovery-method labels and six recovered correction origins — October 30, 2026
+
+The public [attribution rollup](discovery-origin-rollup.json) publishes both stable machine-readable method identifiers and plain-language labels under `discovery_method_display_labels`:
+
+| Machine-readable method | Recommended display label | Meaning |
+|---|---|---|
+| `Direct API` | **Found in API results** | The original award-targeted DataCite/Crossref intake already contained the *exact output* |
+| `API-seeded expansion` | **Discovered by following API leads** | An API-returned seed led Scout's subsequent exploration to a **different** associated output |
+| `Independent discovery` | **Found through independent research** | Scout started with SPARK projects, awards, investigators, or publisher research instead of an API-returned seed |
+| `Unclassified` | **Discovery method unknown** | Available original evidence has not established the first discovery path |
+
+**Finding purpose is a separate dimension** and retains `new_output_review`, `metadata_correction`, `possible_duplicate_review`, `existing_duplicate_review`, or `needs_investigation`.
+
+A second source-backed sidecar, [method-recovery-followups.json](method-recovery-followups.json), now recovers **six existing metadata-correction origins**: four exact original historical DataCite DOIs, one related journal article reached from a DataCite protocol DOI, and one WoFS publication from an independent SPARK-led mission. The source batch IDs, exact manifest SHA-256 digests, source-run IDs, titles, DOI values, and evidence are checked by the rollup generator. No immutable CSV, reviewer decision, or public REACH record was changed.
+
+After reconciliation, method counts for **69** published Scout review proposals are **39 Found through independent research**, **14 Found in API results**, **15 Discovered by following API leads**, and **1 Discovery method unknown**. The final unresolved method is the Great Lakes cyclone article DOI `10.1029/2024GL109890`: October 28 mission notes call it a linked publication in a DataCite research run, but do not establish an exact original DOI-seed relationship. Keep it unclassified unless first-path evidence is recovered.
+
+These are **staged review proposals**, not 69 proven new research outputs. In particular, 23 proposals are existing-record metadata corrections. The private Discovery Hub's rendered Impact labels and review decisions are not independently verified by this public-repository update.
+
 ## Verified legacy discovery-method backfill — October 30, 2026
 
 A user-authorized one-time backfill classified the **original method** separately from the **finding's reviewer purpose** in the immutable 40-record legacy cohort, in [legacy-provenance-backfill.json](legacy-provenance-backfill.json). It preserved all 22 published batches, their SHA-256 values, all private review decisions and all 69 staged candidate identities. Every sidecar annotation was checked against the exact manifest batch ID, SHA-256, row ordinal, source-run ID, title and DOI/URL. The automated rollup regenerates on changes to the sidecar or published manifest.
