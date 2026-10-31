@@ -1,0 +1,75 @@
+name: REACH Scout independent metadata lookup
+on:
+  workflow_dispatch:
+    inputs:
+      doi:
+        description: Optional exact DOI
+        required: false
+        type: string
+      github_url:
+        description: Optional GitHub repository or release URL
+        required: false
+        type: string
+  push:
+    branches: [main]
+    paths:
+      - 'scout-operations/research-leads/**'
+      - 'scout-operations/tools/lookup_independent_metadata.py'
+      - 'scout-operations/tools/lookup_independent_dois.py'
+      - 'scout-operations/tools/audit_github_code_metadata.py'
+      - '.github/workflows/scout-independent-metadata-lookup.yml'
+permissions:
+  contents: write
+concurrency:
+  group: scout-independent-metadata-main
+  cancel-in-progress: false
+jobs:
+  lookup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Look up DOI registries and GitHub release metadata
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          REQUESTED_DOI: ${{ inputs.doi || '' }}
+          REQUESTED_GITHUB_URL: ${{ inputs.github_url || '' }}
+        run: |
+          set -euo pipefail
+          ARGS=()
+          if [[ -n "$REQUESTED_DOI" ]]; then ARGS+=(--doi "$REQUESTED_DOI"); fi
+          if [[ -n "$REQUESTED_GITHUB_URL" ]]; then ARGS+=(--github-url "$REQUESTED_GITHUB_URL"); fi
+          python3 scout-operations/tools/lookup_independent_metadata.py "${ARGS[@]}"
+      - name: Validate unified report
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.loads(Path('scout-operations/reports/independent-metadata-lookup/latest.json').read_text())
+          assert x['read_only']
+          assert x['doi_count']==len(x['doi_records'])
+          assert x['github_count']==len(x['github_records'])
+          assert len({r['doi'] for r in x['doi_records']})==x['doi_count']
+          assert len({r['output_url'] for r in x['github_records']})==x['github_count']
+          print('DOIs',x['doi_count'],'GitHub',x['github_count'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: scout-independent-metadata
+          path: scout-operations/reports/independent-metadata-lookup/latest.json
+          retention-days: 90
+      - name: Publish read-only report
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add scout-operations/reports/independent-metadata-lookup/latest.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Refresh Scout independent metadata lookup'
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then exit 0; fi
+            git fetch origin main
+            git rebase origin/main
+            sleep "$((attempt * 2))"
+          done
+          exit 1
