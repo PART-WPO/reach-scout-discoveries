@@ -28,6 +28,8 @@ METHODS = ("Direct API", "API-seeded expansion", "Independent discovery", "Uncla
 PURPOSES = ("new_output_review", "metadata_correction", "possible_duplicate_review",
             "existing_duplicate_review", "needs_investigation", "unclassified_purpose")
 CLASS_LINE = re.compile(r"(?im)^\s*Scout classification:\s*([^\r\n]+)")
+ORIGIN_METHOD_LINE = re.compile(r"(?im)^\s*Scout origin method:\s*([^\r\n]+)")
+FINDING_PURPOSE_LINE = re.compile(r"(?im)^\s*Scout finding purpose:\s*([^\r\n]+)")
 
 
 def _original_purpose(rationale):
@@ -94,6 +96,20 @@ def enrich_from_legacy(manifest, ledger):
                 purpose = _original_purpose(rationale)
                 if route == "Metadata correction":
                     purpose = "metadata_correction"
+                stated_method = ORIGIN_METHOD_LINE.search(rationale)
+                if stated_method:
+                    value = stated_method.group(1).strip()
+                    if value not in METHODS:
+                        raise ValueError(f"Invalid explicit original discovery method: {key}")
+                    if route in METHODS and value != route:
+                        raise ValueError(f"Disagreement between discovery route and original method: {key}")
+                    method = value
+                stated_purpose = FINDING_PURPOSE_LINE.search(rationale)
+                if stated_purpose:
+                    value = stated_purpose.group(1).strip()
+                    if value not in PURPOSES or value != purpose:
+                        raise ValueError(f"Invalid/conflicting explicit finding purpose: {key}")
+                    purpose = value
                 raw_classified += 1
             else:
                 entry = by_key.get(key)
