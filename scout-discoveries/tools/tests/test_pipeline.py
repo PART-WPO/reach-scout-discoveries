@@ -167,5 +167,105 @@ class ScoutBatchTests(unittest.TestCase):
                 promote_inbox.INBOX, promote_inbox.BATCHES = old_inbox, old_batches
 
 
+    def test_legacy_backfill_separates_method_and_purpose(self):
+        """Pre-API SPARK research may suggest a metadata correction, not a new output."""
+        with tempfile.TemporaryDirectory() as d:
+            base = Path(d) / "scout-discoveries"
+            batches = base / "batches"
+            batches.mkdir(parents=True)
+            draft = base.parent / "research.json"
+            draft.write_text(json.dumps({"candidates": [candidate()]}))
+            row_path = batches / "2026-10-27-legacy-001.csv"
+            prepare(draft, row_path)
+            with row_path.open(newline="", encoding="utf-8") as stream:
+                reader = csv.DictReader(stream)
+                fields = reader.fieldnames
+                row = next(reader)
+            row["Scout Discovery Rationale"] = row["Scout Discovery Rationale"].replace(
+                "Scout discovery route: API-seeded expansion\n", "")
+            with row_path.open("w", newline="", encoding="utf-8") as stream:
+                writer = csv.DictWriter(stream, fieldnames=fields, lineterminator="\n")
+                writer.writeheader()
+                writer.writerow(row)
+            digest = hashlib.sha256(row_path.read_bytes()).hexdigest()
+            batch = {
+                "id": row_path.stem, "path": "scout-discoveries/batches/" + row_path.name,
+                "sha256": digest, "record_count": 1,
+                "source_run_ids": ["REACH-SCOUT-TEST-001"]
+            }
+            manifest = {"schema": "reach-scout-discovery-feed-v1",
+                        "batch_count": 1, "candidate_rows": 1, "batches": [batch]}
+            rec = {
+                "record_key": row_path.stem + "#1",
+                "source_batch_id": row_path.stem,
+                "source_batch_path": batch["path"],
+                "source_batch_sha256": digest,
+                "source_data_row": 1,
+                "source_run_id": "REACH-SCOUT-TEST-001",
+                "output_identity": row["DOI"],
+                "output_title": row["Title"],
+                "discovery_method": "Independent discovery",
+                "discovery_method_confidence": "High",
+                "finding_purpose": "metadata_correction",
+                "cohort": "pre_historical_datacite_spark_award_research",
+            }
+            previous = rebuild_discovery_rollup.ROOT
+            rebuild_discovery_rollup.ROOT = base
+            try:
+                summary = rebuild_discovery_rollup.enrich_from_legacy(
+                    manifest, {"schema": "reach-scout-legacy-provenance-backfill-v1",
+                               "entries": [rec]})
+                self.assertEqual(summary["discovery_method_counts"]["Independent discovery"], 1)
+                self.assertEqual(summary["finding_purpose_counts"]["metadata_correction"], 1)
+                self.assertEqual(summary["beyond_direct_api_new_output_review_proposals"], 0)
+                self.assertEqual(summary["legacy_method_backfilled"], 1)
+                bad = dict(rec, source_batch_sha256="0" * 64)
+                with self.assertRaisesRegex(ValueError, "identity/digest mismatch"):
+                    rebuild_discovery_rollup.enrich_from_legacy(
+                        manifest, {"schema": "reach-scout-legacy-provenance-backfill-v1",
+                                   "entries": [bad]})
+                bad_key = dict(rec, record_key=row_path.stem + "#2")
+                with self.assertRaisesRegex(ValueError, "not in manifest"):
+                    rebuild_discovery_rollup.enrich_from_legacy(
+                        manifest, {"schema": "reach-scout-legacy-provenance-backfill-v1",
+                                   "entries": [bad_key]})
+            finally:
+                rebuild_discovery_rollup.ROOT = previous
+
+    def test_explicit_newer_route_cannot_be_overridden_by_legacy(self):
+        with tempfile.TemporaryDirectory() as d:
+            base = Path(d) / "scout-discoveries"
+            batch_dir = base / "batches"
+            batch_dir.mkdir(parents=True)
+            draft = base.parent / "research.json"
+            draft.write_text(json.dumps({"candidates": [candidate()]}))
+            row_path = batch_dir / "2026-10-30-modern-001.csv"
+            prepare(draft, row_path)
+            batch = {"id": row_path.stem,
+                     "path": "scout-discoveries/batches/" + row_path.name,
+                     "sha256": hashlib.sha256(row_path.read_bytes()).hexdigest(),
+                     "record_count": 1, "source_run_ids": ["REACH-SCOUT-TEST-001"]}
+            manifest = {"schema": "reach-scout-discovery-feed-v1",
+                        "batch_count": 1, "candidate_rows": 1, "batches": [batch]}
+            row = candidate()["fields"]
+            record = {"record_key": row_path.stem + "#1",
+                      "source_batch_id": row_path.stem, "source_batch_path": batch["path"],
+                      "source_batch_sha256": batch["sha256"], "source_data_row": 1,
+                      "source_run_id": row["Source Run ID"], "output_identity": row["DOI"],
+                      "output_title": row["Title"], "discovery_method": "Independent discovery",
+                      "discovery_method_confidence": "High",
+                      "finding_purpose": "new_output_review", "cohort": "legacy"}
+            previous = rebuild_discovery_rollup.ROOT
+            rebuild_discovery_rollup.ROOT = base
+            try:
+                with self.assertRaisesRegex(ValueError, "Refusing ledger override"):
+                    rebuild_discovery_rollup.enrich_from_legacy(
+                        manifest, {"schema": "reach-scout-legacy-provenance-backfill-v1",
+                                   "entries": [record]})
+            finally:
+                rebuild_discovery_rollup.ROOT = previous
+
+
+
 if __name__ == "__main__":
     unittest.main()
