@@ -1,0 +1,132 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-30-HOURLY-2129ET",
+  "timestamp_utc": "2026-10-31T01:30:28.705438Z",
+  "selected_mode": "normal_historical_discovery",
+  "phase": "normal_discovery_award_family_followup",
+  "routing": {
+    "monthly": {
+      "received": 0,
+      "completed_before": 0,
+      "completed_after": 0,
+      "remaining_before": 0,
+      "remaining_after": 0
+    },
+    "historical": {
+      "total": 188,
+      "completed_before": 188,
+      "completed_after": 188,
+      "remaining_before": 0,
+      "remaining_after": 0,
+      "already_in_reach": 37,
+      "forwarded_to_hub": 6,
+      "metadata_update_forwarded": 8,
+      "no_action": 109,
+      "human_metadata_needed": 28
+    },
+    "attribution_followups_queued": 0,
+    "metadata_review_source_cases": 42,
+    "metadata_review_units": 36,
+    "private_intake_installed": false
+  },
+  "source_validation": {
+    "monthly_api_batches": 0,
+    "historical_api_batches": 2,
+    "historical_raw_records": 188,
+    "historical_coverage_reconciled": true,
+    "reach_snapshot_sha": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+    "reach_records": 1238,
+    "reach_index_shards_checked": 10,
+    "spark_index_shards_checked": 6,
+    "spark_detail_shards_checked": 1,
+    "prior_scout_batches": 22,
+    "prior_scout_rows": 69,
+    "feed_manifest_generated_at": "2026-10-31T00:50:45Z",
+    "rollup_manifest_generated_at": "2026-10-31T00:50:45Z",
+    "rollup_manifest_rows_verified": true
+  },
+  "normal_awards_examined": [
+    "NA21OAR4590358"
+  ],
+  "original_seeds_independently_disposed_this_run": 0,
+  "original_seed_doi": null,
+  "expansion": {
+    "api_seeded_expansion_leads": 0,
+    "independent_project_family_new_research_leads": 1,
+    "direct_api_new": 0,
+    "metadata_corrections_new": 0,
+    "candidate_researched": 1,
+    "inbox_drafts_staged": 0,
+    "feed_published": 0,
+    "private_hub_imports_verified": 0,
+    "reviewer_approved_verified": 0,
+    "public_reach_additions_verified": 0
+  },
+  "project_family_sweep": {
+    "article_researched": "10.1080/19475705.2024.2364777",
+    "title": "A low-cost IoT-based deep learning method of water gauge measurement for flood monitoring",
+    "classification_if_fully_verified": "NEW CANDIDATE",
+    "direct_award_evidence": true,
+    "published_online": "2024-07-08",
+    "crossref_exact_doi_status": "ACCESS_FAILURE",
+    "datacite_fallback_status": "ACCESS_FAILURE",
+    "publisher_primary_source_verified": true,
+    "no_reach_match": true,
+    "no_scout_batch_match": true,
+    "related_deepflood_already_staged": true,
+    "related_sensor_fusion_already_in_reach": true,
+    "paired_figshare_human_identity_review_not_duplicated": true
+  },
+  "source_evidence_urls": [
+    "https://www.tandfonline.com/doi/abs/10.1080/19475705.2024.2364777",
+    "https://www.tandfonline.com/doi/pdf/10.1080/19475705.2024.2364777",
+    "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/index/part-004.csv",
+    "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+    "https://api.crossref.org/works/10.1080/19475705.2024.2364777",
+    "https://api.datacite.org/dois/10.1080/19475705.2024.2364777",
+    "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+    "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
+    "https://www.nature.com/articles/s41597-025-04554-3",
+    "https://repository.library.noaa.gov/view/noaa/73126"
+  ],
+  "newly_staged_csv_ids": [],
+  "new_csv_path": null,
+  "new_csv_record_count": 0,
+  "feed_integrity_status": "VERIFIED_EXISTING_FEED_UNCHANGED",
+  "manifest_verification_evidence": "Current 22-batch/69-candidate manifest and reconciled origin rollup agree. No new CSV, no manual manifest writes. Existing batch checksum generation remains GitHub Actions owned.",
+  "verified_candidates_by_route": {
+    "Direct API": 5,
+    "API-seeded expansion": 13,
+    "Independent discovery": 5,
+    "Metadata correction": 6,
+    "Unclassified explicit": 0,
+    "Unclassified legacy (route missing)": 40
+  },
+  "github_action_status": "NOT_CHECKED_NO_NEW_INBOX_DRAFT",
+  "private_hub_import": "NOT_VERIFIED",
+  "verified_human_decisions": 0,
+  "public_reach_additions_verified": 0,
+  "no_action_subtypes_changed": 0,
+  "attribution_followups_queue_changes": 0,
+  "metadata_review_handoff_changes": 0,
+  "original_immutable_csvs_modified": false,
+  "manual_manifest_edit": false,
+  "one_time_urrd_repair_repeated": false,
+  "one_time_four_doi_recheck_repeated": false,
+  "blocks": [
+    {
+      "type": "EXACT_CROSSREF_DOI_CHECKPOINT_ACCESS_FAILURE",
+      "identity": "doi:10.1080/19475705.2024.2364777",
+      "not_a_missing_metadata_claim": true,
+      "action": "bounded retry or source-aware publisher fallback before validated inbox staging"
+    }
+  ],
+  "audit_result": "PARTIAL",
+  "next_priority": "Resolve exact Crossref DOI checkpoint for the publisher-verified 2024 IoT water gauge article and stage only a newly validated unique inbox draft if all gates pass; continue other SPARK award research rather than repeat completed DeepFlood/URRD reviews.",
+  "library_artifacts": [
+    "/REACH Scout Library/2026-10-30-2129ET/report.md",
+    "/REACH Scout Library/2026-10-30-2129ET/research-leads.json",
+    "/REACH Scout Library/2026-10-30-2129ET/checkpoint.json",
+    "/REACH Scout Library/2026-10-30-2129ET/hourly-run-audit.json"
+  ]
+}
