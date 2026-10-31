@@ -93,9 +93,9 @@
   "new_csv_columns": 24,
   "new_csv_commit_sha": "60224554c7918631eac485dcf1ed7ec26383525a",
   "new_csv_fetched_content_exact": true,
-  "feed_integrity_status": "PENDING_MANIFEST_VALIDATION",
+  "feed_integrity_status": "BLOCKED_INVALID_UNMANIFESTED_BATCH",
   "new_batch_manifest_verified": false,
-  "github_action_status": "NOT_VERIFIABLE_YET",
+  "github_action_status": "NOT_VERIFIABLE",
   "private_hub_import": "NOT_VERIFIED",
   "verified_human_decisions": 0,
   "public_reach_additions_verified": 0,
@@ -103,11 +103,16 @@
   "manual_manifest_edit": false,
   "one_time_four_doi_recheck_repeated": false,
   "blocks": [
+    "Unmanifested new 20:29 CSV deterministically fails API-seeded expansion Scout seed DOI validation; halt further batch staging pending separately authorized repair.",
     "New CSV awaits automated manifest publication; do not claim Hub-ready",
     "IoT Crossref exact DOI endpoint access failure",
     "Private Hub import and reviewer decisions not observable",
     "DeepFlood Figshare version identity remains separate human intake"
   ],
   "audit_result": "PARTIAL",
-  "next_priority": "Verify automated manifest for this new candidate; exact Crossref IoT checkpoint; first-of-month monthly intake preempts normal discovery."
+  "next_priority": "Resolve feed validator blocker through separately authorized one-time CSV repair and automated manifest regeneration; continue research without staging; exact Crossref IoT checkpoint; November 1 monthly intake preempts.",
+  "deterministic_validation_failure": "build_manifest.py API-seeded expansion route requires standalone Scout seed DOI: 10.25923/t7t6-m677 line; original staged rationale uses Original API seed DOI: which does not satisfy validator.",
+  "feed_blocker_report": "scout-operations/reports/feed-publication-blockers/2026-10-30-2029ET-urrd-dataverse.json",
+  "corrected_draft_library": "/REACH Scout Library/2026-10-30-2029ET/CORRECTED_DRAFT_URRD_DO_NOT_PUBLISH_WITHOUT_AUTHORIZATION.csv",
+  "repair_authorization": "REQUIRED_SEPARATELY"
 }
