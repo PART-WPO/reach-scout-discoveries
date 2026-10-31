@@ -17,6 +17,7 @@ on:
       - 'api-discoveries/manifest.json'
       - 'scout-operations/metadata-review-units.json'
       - 'scout-operations/metadata-blockers.json'
+      - 'scout-operations/research-leads/**'
   schedule:
     # Periodic revisit for newly enriched repository metadata.
     - cron: '38 14 * * 1'
