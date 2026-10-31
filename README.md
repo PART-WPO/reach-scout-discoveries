@@ -7,16 +7,23 @@ This separate public repository is a staging feed for **unreviewed** REACH Scout
 1. ChatGPT Scout performs research on public sources and checks funding attribution against the complete public REACH catalog.
 2. Scout saves the full evidence report, exactly 24-column Discovery Hub import CSV, and investigation/coverage ledger to ChatGPT Library `/REACH Scout`.
 3. Scout checks that the CSV contains **only public evidence and metadata**; `Candidate ID` and `Principal Investigator Email(s)` must remain blank. It excludes private Smartsheet row IDs, credentials, personal details and reviewer decisions.
-4. When **new findings** exist, Scout creates one **new, uniquely named file** directly on this repository's `main` branch at `scout-discoveries/batches/YYYY-MM-DD-unique-run.csv`. Existing batches are immutable. **No branches or pull requests are needed.**
-5. GitHub Actions validates the batches and automatically regenerates `scout-discoveries/manifest.json` with counts and SHA-256 hashes. Scout verifies publication; if the workflow is delayed or fails, the Library CSV is retained and the run reports the error.
-6. Discovery Hub uses **Sync from Scout** to retrieve new batches from the public manifest and add them to its existing *unreviewed* queue. Prior reviewer decisions remain untouched.
-7. A person reviews the research evidence and controls any final addition to Smartsheet/REACH. Publishing here **never** constitutes approval for insertion.
+4. **New procedure (October 30, 2026):** construct the unique 24-column CSV from fixed provenance fields using `scout-discoveries/tools/prepare_batch.py`; independently run `--check` before submission when local execution is available. Do not guess labels such as `Scout seed DOI:`; use the exact canonical template.
+5. Scout commits the new **unpublished draft** to `scout-discoveries/inbox/YYYY-MM-DD-unique-run.csv` on `main`, **not directly into batches**. The inbox is a non-publication staging location inside this public repository. Retain the full report and draft in the REACH Scout Library first.
+6. GitHub Actions validates the draft, including evidence, 24 columns, public-only fields, classification, discovery route and exact seed DOI. **Only on success**, the workflow copies it into the immutable `scout-discoveries/batches/` directory, runs `build_manifest.py` and rebuilds `scout-operations/discovery-origin-rollup.json` from every SHA-verified batch. Invalid drafts cannot poison the published manifest.
+7. The Action commits the new batch, generated manifest and reconciled attribution rollup together. Scout re-reads exact CSV SHA-256, manifest counts, source run ID and origin totals. Inbox commits alone are **NOT** publication. Previously published batches stay immutable; only an explicitly authorized repair permits a documented exception.
+8. Discovery Hub uses **Sync from Scout** to retrieve only batches in the validated manifest and add them to its unreviewed queue. Private Hub import cannot be inferred from a GitHub commit or manifest entry.
+9. A person reviews the research evidence and controls any final addition to Smartsheet/REACH. Publishing here **never** constitutes approval for insertion.
 
 ## Files
 
-- `scout-discoveries/batches/*.csv` — append-only public finding batches with the exact 24-column import schema
+- `scout-discoveries/inbox/*.csv` — new, unpublished candidate drafts; invalid drafts cannot change the feed
+- `scout-discoveries/batches/*.csv` — GitHub Actions-promoted immutable validated finding batches with the exact 24-column import schema
 - `scout-discoveries/manifest.json` — manifest of verified batches, checksums, counts and run IDs
-- `scout-discoveries/tools/build_manifest.py` — strict schema validation, content checks and manifest builder
+- `scout-discoveries/tools/prepare_batch.py` — canonical provenance template and before-submission CSV preflight
+- `scout-discoveries/tools/promote_inbox.py` — validate inbox drafts before promoting any file to published batches
+- `scout-discoveries/tools/build_manifest.py` — strict schema validation, content checks and exclusive manifest generator
+- `scout-discoveries/tools/rebuild_discovery_rollup.py` — verified attribution and discovery-origin metrics from manifest-listed CSV bytes
+- `scout-operations/discovery-origin-rollup.json` — automatically reconciled *staged candidate* counts, not verified human approvals
 - `.github/workflows/build-scout-discovery-manifest.yml` — runs checks and refreshes manifest on `main` pushes
 
 Public manifest URL:
