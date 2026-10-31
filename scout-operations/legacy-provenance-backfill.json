@@ -38,17 +38,17 @@
     ],
     "unclassified_preserved": true,
     "private_hub_review": "NOT_VERIFIED",
-    "staged_candidate_republished": false
+    "staged_candidate_republished": false,
+    "method_vs_seed_distinction": "An original mission report explicitly documenting a linked publication found during API triage can establish API-seeded expansion method even when its exact seed DOI is not recorded; preserve NULL seed and mark exact lineage NOT_VERIFIED. Do not infer original method from cohort alone."
   },
   "summary": {
     "records": 40,
     "method_counts": {
       "Independent discovery": 33,
       "Direct API": 5,
-      "API-seeded expansion": 1,
-      "Unclassified": 1
+      "API-seeded expansion": 2
     },
-    "high_confidence_methods": 39,
+    "high_confidence_methods": 40,
     "pending_original_seed_reconstruction": 1,
     "purpose_counts": {
       "new_output_review": 16,
@@ -56,7 +56,8 @@
       "needs_investigation": 3,
       "existing_duplicate_review": 2,
       "metadata_correction": 17
-    }
+    },
+    "remaining_unclassified_methods": 0
   },
   "entries": [
     {
@@ -950,21 +951,24 @@
       "output_identity": "10.1029/2024GL109890",
       "output_title": "Historical Trends in Cold-Season Mid-Latitude Cyclones in the Great Lakes Region",
       "original_classification": "A NEW CANDIDATE",
-      "discovery_method": "Unclassified",
-      "discovery_method_confidence": "Low",
+      "discovery_method": "API-seeded expansion",
+      "discovery_method_confidence": "High",
       "finding_purpose": "new_output_review",
       "original_finding_purpose": "new_output_review",
       "purpose_evidence_status": "source_rationale_or_later_verified_correction",
       "cohort": "first_historical_datacite_mission_2026_10_28",
       "api_seed_doi": null,
-      "method_evidence_summary": "Historical API-era batch describes linked article but does not give a verifiable first seed/trace. Discovery path must remain unclassified until the original mission trail identifies it.",
+      "method_evidence_summary": "October 28 15:30 ET historical DataCite API TRIAGE report explicitly distinguishes one directly retrieved dataset from TWO linked publications, including this Hutson et al. 2024 Great Lakes cyclone article. This verifies the first-level method 'Discovered by following API leads' but does not identify the particular original API seed DOI for this paper. Do not infer a specific dataset or seed relation, or conflate metadata lookup with discovery.",
       "method_evidence_urls": [
         "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/batches/2026-10-28-afternoon-historical-datacite-verified-001.csv",
-        "https://github.com/PART-WPO/reach-scout-discoveries/commit/947398ba19aeb52891a6604030731e229032cb2b"
+        "https://github.com/PART-WPO/reach-scout-discoveries/commit/947398ba19aeb52891a6604030731e229032cb2b",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical/manifest.json"
       ],
       "review_state": "NOT_VERIFIED",
       "human_decision_changed": false,
-      "caution": "Do not infer an API seed from being published in the historical mission; require direct path evidence before adding route attribution."
+      "caution": "The original API-seeded research METHOD is evidenced by the original 15:30 ET mission report; the exact seed DOI and precise click/search path remain unknown. Do not invent them or record this as a direct API output.",
+      "exact_api_seed_status": "NOT_VERIFIED",
+      "original_mission_report_reference": "REACH Scout Library: report_2026-10-28_1530ET.md (run REACH-SCOUT-2026-10-28-1530ET; describes this as a linked publication)"
     },
     {
       "record_key": "2026-10-28-afternoon-historical-datacite-verified-001#4",
