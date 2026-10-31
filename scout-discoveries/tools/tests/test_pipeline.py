@@ -181,8 +181,12 @@ class ScoutBatchTests(unittest.TestCase):
                 reader = csv.DictReader(stream)
                 fields = reader.fieldnames
                 row = next(reader)
-            row["Scout Discovery Rationale"] = row["Scout Discovery Rationale"].replace(
-                "Scout discovery route: API-seeded expansion\n", "")
+            for already_explicit in (
+                "Scout discovery route: API-seeded expansion\n",
+                "Scout origin method: API-seeded expansion\n",
+                "Scout finding purpose: new_output_review\n",
+            ):
+                row["Scout Discovery Rationale"] = row["Scout Discovery Rationale"].replace(already_explicit, "")
             with row_path.open("w", newline="", encoding="utf-8") as stream:
                 writer = csv.DictWriter(stream, fieldnames=fields, lineterminator="\n")
                 writer.writeheader()
