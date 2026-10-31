@@ -1,0 +1,169 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-10-30-HOURLY-2232ET",
+  "timestamp_utc": "2026-10-31T02:35:47Z",
+  "selected_mode": "normal_historical_discovery",
+  "phase": "independent_award_family_followup_and_api_access_diagnostics",
+  "routing": {
+    "monthly": {
+      "received": 0,
+      "completed_before": 0,
+      "completed_after": 0,
+      "remaining_before": 0,
+      "remaining_after": 0
+    },
+    "historical": {
+      "total": 188,
+      "completed_before": 188,
+      "completed_after": 188,
+      "remaining_before": 0,
+      "remaining_after": 0,
+      "already_in_reach": 37,
+      "forwarded_to_hub": 6,
+      "metadata_update_forwarded": 8,
+      "no_action": 109,
+      "human_metadata_needed": 28
+    },
+    "attribution_followups_queued": 0,
+    "metadata_review_source_cases": 42,
+    "metadata_review_units": 36,
+    "private_intake_installed": false
+  },
+  "source_validation": {
+    "monthly_api_batches": 0,
+    "historical_api_batches": 2,
+    "historical_raw_records": 188,
+    "historical_coverage_reconciled": true,
+    "reach_snapshot_sha": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+    "reach_records": 1238,
+    "reach_index_shards_checked": 10,
+    "prior_scout_batches_checked": 22,
+    "prior_scout_rows_checked": 69,
+    "prior_manifest_generated_at": "2026-10-31T00:50:45Z",
+    "prior_rollup_manifest_rows_verified": true
+  },
+  "normal_awards_examined": [
+    "NA21OAR4590358"
+  ],
+  "original_seeds_independently_disposed_this_run": 0,
+  "original_seed_doi": null,
+  "expansion": {
+    "api_seeded_expansion_leads": 0,
+    "independent_project_family_research_leads": 1,
+    "direct_api_new": 0,
+    "metadata_corrections_new": 0,
+    "candidate_researched": 1,
+    "inbox_drafts_staged": 1,
+    "feed_published": 1,
+    "private_hub_imports_verified": 0,
+    "reviewer_approved_verified": 0,
+    "public_reach_additions_verified": 0
+  },
+  "candidate": {
+    "doi": "10.1080/19475705.2024.2364777",
+    "title": "A low-cost IoT-based deep learning method of water gauge measurement for flood monitoring",
+    "classification": "NEW CANDIDATE",
+    "method": "Independent discovery",
+    "finding_purpose": "new_output_review",
+    "no_exact_public_reach_or_scout_match": true,
+    "award": "NA21OAR4590358",
+    "publication_date": "2024-07-08",
+    "publication_date_source": "publisher published-online; Crossref print-first check pending",
+    "evidence_url": "https://www.tandfonline.com/doi/full/10.1080/19475705.2024.2364777"
+  },
+  "api_diagnostics": [
+    {
+      "provider": "Crossref",
+      "url": "https://api.crossref.org/works/10.1080/19475705.2024.2364777",
+      "environment": "web retrieval",
+      "result": "TOOL_ACCESS_FAILURE",
+      "http_status": null,
+      "attempts": 1,
+      "exception": "Internal Error / not accessible via retrieval tool"
+    },
+    {
+      "provider": "Crossref",
+      "url": "https://api.crossref.org/works/10.1080/19475705.2024.2364777",
+      "environment": "container requests",
+      "result": "DNS_RESOLUTION_FAILURE",
+      "http_status": null,
+      "attempts": 1,
+      "exception": "NameResolutionError: Temporary failure in name resolution for api.crossref.org"
+    },
+    {
+      "provider": "DataCite",
+      "url": "https://api.datacite.org/dois/10.1080/19475705.2024.2364777",
+      "environment": "web retrieval",
+      "result": "TOOL_ACCESS_FAILURE",
+      "http_status": null,
+      "attempts": 1,
+      "exception": "Internal Error / not accessible via retrieval tool"
+    }
+  ],
+  "free_github_actions_exact_doi_fallback": "NOT_RUN: existing checkpoint does not include this DOI; no workflow dispatch action exposed to this execution environment",
+  "newly_staged_csv_ids": [
+    "2026-10-30-hourly-2232ET-iot-water-gauge-001"
+  ],
+  "new_csv_path": "scout-discoveries/inbox/2026-10-30-hourly-2232ET-iot-water-gauge-001.csv",
+  "new_csv_record_count": 1,
+  "inbox_blob_sha1": "5b2d00053c51574211baa3157730423016807100",
+  "inbox_sha256": "a2a4c61c4989f34418eba6dba580d54143dd076a56d8c8bf4d457a654d76e5b0",
+  "prepublication_validation": "PASS by local mirror of repository prepare_batch.py --check; exact repository script blob SHA not reproduced locally; canonical GitHub Action preflight pending",
+  "feed_integrity_status": "VERIFIED_AUTOMATED_INBOX_PROMOTION_23_BATCHES_70_ROWS",
+  "manifest_verification_evidence": "Automated manifest generated 2026-10-31T02:35:17Z includes new batch with 1 row and SHA-256 a2a4c61c4989f34418eba6dba580d54143dd076a56d8c8bf4d457a654d76e5b0; exact published CSV Git blob matches inbox blob 5b2d00053c51574211baa3157730423016807100; rollup source timestamp matches and manifest_rows_verified true.",
+  "github_action_status": "PROMOTION_EFFECT_VERIFIED_VIA_MANIFEST_AND_ROLLUP; individual run logs NOT_CHECKED",
+  "effective_discovery_method_counts_before": {
+    "Direct API": 14,
+    "API-seeded expansion": 16,
+    "Independent discovery": 39,
+    "Unclassified": 0
+  },
+  "effective_finding_purpose_counts_before": {
+    "new_output_review": 39,
+    "metadata_correction": 23,
+    "possible_duplicate_review": 2,
+    "existing_duplicate_review": 2,
+    "needs_investigation": 3,
+    "unclassified_purpose": 0
+  },
+  "private_hub_import": "NOT_VERIFIED",
+  "verified_human_decisions": "NOT_VERIFIED",
+  "public_reach_additions_verified": "NOT_VERIFIED",
+  "no_action_subtypes_changed": 0,
+  "attribution_followups_queue_changes": 0,
+  "metadata_review_handoff_changes": 0,
+  "original_immutable_csvs_modified": false,
+  "manual_manifest_edit": false,
+  "one_time_urrd_repair_repeated": false,
+  "one_time_four_doi_recheck_repeated": false,
+  "blocks": [
+    {
+      "type": "CROSSREF_PRINT_PREFERENCE_CHECK_NOT_VERIFIED",
+      "identity": "doi:10.1080/19475705.2024.2364777",
+      "reason": "Research web tool denied direct API and container DNS failed; HTTP status not observed. Publisher publication date verified; candidate staged rather than indefinitely blocked."
+    }
+  ],
+  "audit_result": "PARTIAL",
+  "next_priority": "Publisher-backed candidate now feed-verified; independently verify exact Crossref print-preferred date when API execution available, without overwriting any human edits. Continue independent SPARK award research.",
+  "library_artifacts": [
+    "/REACH Scout Library/2026-10-30-2232ET/report.json",
+    "/REACH Scout Library/2026-10-30-2232ET/checkpoint.json",
+    "/REACH Scout Library/2026-10-30-2232ET/candidate-source.json",
+    "/REACH Scout Library/2026-10-30-2232ET/2026-10-30-hourly-2232ET-iot-water-gauge-001.csv",
+    "/REACH Scout Library/2026-10-30-2232ET/hourly-run-audit.json"
+  ],
+  "effective_discovery_method_counts_after": {
+    "Direct API": 14,
+    "API-seeded expansion": 16,
+    "Independent discovery": 40,
+    "Unclassified": 0
+  },
+  "effective_finding_purpose_counts_after": {
+    "new_output_review": 40,
+    "metadata_correction": 23,
+    "possible_duplicate_review": 2,
+    "existing_duplicate_review": 2,
+    "needs_investigation": 3,
+    "unclassified_purpose": 0
+  }
+}
