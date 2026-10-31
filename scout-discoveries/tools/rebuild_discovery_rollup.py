@@ -113,6 +113,9 @@ def enrich_from_legacy(manifest, ledger):
                 raw_classified += 1
             else:
                 entry = by_key.get(key)
+                if entry is not None and (ORIGIN_METHOD_LINE.search(rationale) or
+                                          FINDING_PURPOSE_LINE.search(rationale)):
+                    raise ValueError(f"Refusing backfill of already explicit method or purpose: {key}")
                 if entry is None:
                     method = "Unclassified"
                     purpose = _original_purpose(rationale)
