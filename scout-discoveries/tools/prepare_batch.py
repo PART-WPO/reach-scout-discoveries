@@ -151,7 +151,7 @@ def validate_canonical(path):
                 raise ValueError(f"Missing canonical finding purpose: {path.name}:{num}")
             if route[0].strip() != "Metadata correction" and method[0].strip() != route[0].strip():
                 raise ValueError(f"Conflicting origin method/route: {path.name}:{num}")
-            if route[0].strip() == "API-seeded expansion":
+            if method[0].strip() == "API-seeded expansion":
                 if len(re.findall(r"(?im)^\s*Scout seed DOI:\s*10\.\d{4,9}/[^\s]+\s*$", rationale)) != 1:
                     raise ValueError(f"Missing exact Scout seed DOI: {path.name}:{num}")
     return entry
