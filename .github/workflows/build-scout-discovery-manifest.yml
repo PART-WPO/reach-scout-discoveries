@@ -4,8 +4,14 @@ on:
   push:
     branches: [main]
     paths:
+      - 'scout-discoveries/inbox/*.csv'
       - 'scout-discoveries/batches/*.csv'
       - 'scout-discoveries/tools/build_manifest.py'
+      - 'scout-discoveries/tools/prepare_batch.py'
+      - 'scout-discoveries/tools/promote_inbox.py'
+      - 'scout-discoveries/tools/rebuild_discovery_rollup.py'
+      - 'scout-discoveries/tools/tests/**'
+      - '.github/workflows/build-scout-discovery-manifest.yml'
   workflow_dispatch:
 
 permissions:
@@ -23,18 +29,37 @@ jobs:
         uses: actions/checkout@v4
         with:
           persist-credentials: true
+          fetch-depth: 0
 
-      - name: Validate all public CSV batches and generate manifest
+      - name: Test fixed-schema candidate generator and provenance safeguards
+        run: python -m unittest discover -s scout-discoveries/tools/tests -v
+
+      - name: Preflight and promote only validated new inbox drafts
+        env:
+          PUSH_BEFORE: ${{ github.event.before }}
+          PUSH_AFTER: ${{ github.sha }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          if [ "$EVENT_NAME" = "push" ]; then
+            python scout-discoveries/tools/promote_inbox.py --before "$PUSH_BEFORE" --after "$PUSH_AFTER"
+          else
+            python scout-discoveries/tools/promote_inbox.py
+          fi
+
+      - name: Validate all published batch CSVs and generate authorized manifest
         run: python scout-discoveries/tools/build_manifest.py
 
-      - name: Commit validated manifest when changed
+      - name: Reconcile attribution metrics from all exact SHA-verified CSV batches
+        run: python scout-discoveries/tools/rebuild_discovery_rollup.py
+
+      - name: Atomically commit promoted CSVs, manifest and reconciled origin metrics
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- scout-discoveries/manifest.json
+          git add -- scout-discoveries/batches/ scout-discoveries/manifest.json scout-operations/discovery-origin-rollup.json
           if git diff --cached --quiet; then
-            echo 'Scout discovery manifest is up to date.'
+            echo 'Validated Scout feed and attribution metrics are up to date.'
           else
-            git commit -m 'Update verified Scout discovery manifest'
+            git commit -m 'Publish validated Scout discovery feed and reconciled attribution metrics'
             git push
           fi
