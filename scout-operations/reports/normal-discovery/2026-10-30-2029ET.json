@@ -52,7 +52,7 @@
     "csv": "scout-discoveries/batches/2026-10-30-hourly-2029ET-urrd-dataverse-recovery-001.csv",
     "csv_sha256": "5fd74af4781bfef6c6380e35c4ec437435b2a7add3b358c28709167c8b1f4d4a",
     "github_csv_staged": true,
-    "manifest_status": "PENDING_VALIDATION"
+    "manifest_status": "BLOCKED_INVALID_UNMANIFESTED_BATCH"
   },
   "research_followup": {
     "doi": "10.1080/19475705.2024.2364777",
@@ -125,6 +125,10 @@
   "publication": {
     "candidate_csv_staged": true,
     "manifest_verified": false,
+    "feed_integrity_status": "BLOCKED_INVALID_UNMANIFESTED_BATCH",
+    "validation_error": "Missing standalone Scout seed DOI line required by build_manifest.py",
+    "repair_authorization": "REQUIRED_SEPARATELY",
+    "repair_draft_library": "/REACH Scout Library/2026-10-30-2029ET/CORRECTED_DRAFT_URRD_DO_NOT_PUBLISH_WITHOUT_AUTHORIZATION.csv",
     "private_hub_import": "NOT_VERIFIED",
     "public_reach_added": 0
   },
