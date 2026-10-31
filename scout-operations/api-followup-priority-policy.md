@@ -1,5 +1,16 @@
 # API follow-up completion and research-priority policy (2026-10-29)
 
+## SUPERSEDING Scout feed-publishing protocol — October 30, 2026
+
+**This section overrides every older instruction in this document to publish newly discovered CSVs directly to `scout-discoveries/batches/`.** All research routing and human approval rules below remain active.
+
+For every eligible, deduplicated, evidence-backed new output or metadata-review proposal, build a unique 24-column CSV using the fixed structured provenance contract at [candidate draft format](../scout-discoveries/tools/CANDIDATE_DRAFT_FORMAT.md) and [prepare_batch.py](../scout-discoveries/tools/prepare_batch.py). Use exact fields including `Scout classification: NEW CANDIDATE` (or other evidence-supported canonical status), `Scout discovery route: API-seeded expansion`, distinct `Scout seed DOI: 10.xxxx/...`, and `Scout discovery path evidence: https://...` for API-linked output research. For normal independent discovery also include `Scout discovery method: ...`. Where appropriate use literal `Intake origin: Historical DataCite API Backfill` or `Intake origin: Monthly API`, `Scout verification: Completed`, REACH snapshot, checked sources, funding basis and related outputs. Preserve source route even after direct DOI metadata enrichment.
+
+**Save and verify the Library draft first**. Run `python scout-discoveries/tools/prepare_batch.py --check ...` on the exact draft where execution is available; never claim a PASS if not run. Scout must commit a **new unique draft** to `scout-discoveries/inbox/` on main, **not directly to the immutable batches folder**. GitHub Actions now prevalidates all changed inbox drafts, promotes only valid bytes to `scout-discoveries/batches/`, and then publishes SHA-256 manifest and reconciled `scout-operations/discovery-origin-rollup.json` together. An invalid inbox draft cannot become a published batch or prevent previously verified manifest entries from remaining available. If validation fails, report the specific error, preserve the unique draft and prepare a new corrected inbox file without silently overwriting any prior file. The special October 30 URRD repair was one-time user-authorized and is complete.
+
+The attribution rollup counts `Direct API`, `API-seeded expansion`, `Independent discovery`, `Metadata correction`, and `Unclassified` from verified public CSVs. Legacy route-missing cases stay unclassified, not independent. Distinguish a research lead, unpublished inbox draft, verified GitHub staging, private Hub import, human decision and verified public REACH addition. No direct manifest edits, automatic approvals, fabricated metadata, paid GitHub AI worker or changes to public REACH/SPARK/Smartsheet. Private Hub import status must remain NOT VERIFIED without genuine private observation.
+
+
 **Authoritative routing policy.** Supersedes older instructions allowing Scout to return to ordinary historical SPARK award discovery while unresolved monthly or historical DataCite research cases await a future retry date. This is research and review routing only; it does not change human decisions or REACH.
 
 ## Priority at every hourly mission
