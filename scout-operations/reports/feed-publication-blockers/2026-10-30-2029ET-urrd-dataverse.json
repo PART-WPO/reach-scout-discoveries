@@ -1,0 +1,22 @@
+{
+  "schema": "reach-scout-feed-publication-blocker-v1",
+  "run_id": "REACH-SCOUT-2026-10-30-HOURLY-2029ET",
+  "detected_at_utc": "2026-10-31T00:34:00Z",
+  "status": "BLOCKED_INVALID_UNMANIFESTED_BATCH",
+  "batch_id": "2026-10-30-hourly-2029ET-urrd-dataverse-recovery-001",
+  "batch_path": "scout-discoveries/batches/2026-10-30-hourly-2029ET-urrd-dataverse-recovery-001.csv",
+  "github_commit_sha": "60224554c7918631eac485dcf1ed7ec26383525a",
+  "original_sha256": "5fd74af4781bfef6c6380e35c4ec437435b2a7add3b358c28709167c8b1f4d4a",
+  "validator_path": "scout-discoveries/tools/build_manifest.py",
+  "deterministic_validation_error": "API-seeded expansion requires standalone 'Scout seed DOI: 10.25923/t7t6-m677' rationale line; original uses 'Original API seed DOI:' which does not match validator.",
+  "manifest_observed_batches": 21,
+  "manifest_observed_rows": 68,
+  "new_batch_in_manifest": false,
+  "github_action_conclusion": "NOT_VERIFIABLE",
+  "repair_authorization": "REQUIRED_SEPARATELY",
+  "corrected_draft_library": "/REACH Scout Library/2026-10-30-2029ET/CORRECTED_DRAFT_URRD_DO_NOT_PUBLISH_WITHOUT_AUTHORIZATION.csv",
+  "corrected_draft_sha256": "e4de5393e34b7e057dcf731afdaae695395e1ecd2926d87dafa1ff70d135dfa5",
+  "next_step": "Separately authorize a one-time repair of this unmanifested batch, then let GitHub Actions regenerate manifest; do not directly edit manifest, delete immutable CSV or stage additional batches while blocked.",
+  "public_reach_additions": 0,
+  "private_hub_import": "NOT_VERIFIED"
+}
