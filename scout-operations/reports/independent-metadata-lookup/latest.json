@@ -119,5 +119,40 @@
   "github_successful": 2,
   "policy": "Metadata enrichment does not change independent discovery provenance, establish funding/standalone eligibility, approve review or publish REACH outputs. Crossref created and GitHub repository created are not publication dates.",
   "read_only": true,
+  "resume_queue": [
+    {
+      "evidence": "https://api.datacite.org/dois/10.5281/zenodo.6385057",
+      "identity": "doi:10.5281/zenodo.6385057",
+      "kind": "doi",
+      "lead_files": [
+        "scout-operations/research-leads/2026-10-30-2325ET-mesh-channel-routing.json"
+      ],
+      "lookup_status": "ok",
+      "metadata_source": "datacite",
+      "next_action": "resume_research_verification"
+    },
+    {
+      "evidence": [
+        "https://api.github.com/repos/MESH-Team/MESH_CNT",
+        "https://api.github.com/repos/MESH-Team/MESH_CNT/releases/tags/MESH_CNT_v0.1"
+      ],
+      "identity": "github:MESH-Team/MESH_CNT@MESH_CNT_v0.1",
+      "kind": "github",
+      "lookup_status": "ok",
+      "next_action": "resume_research_verification",
+      "output_url": "https://github.com/MESH-Team/MESH_CNT/releases/tag/MESH_CNT_v0.1"
+    },
+    {
+      "evidence": [
+        "https://api.github.com/repos/MESH-Team/MESH_Code_irregular",
+        "https://api.github.com/repos/MESH-Team/MESH_Code_irregular/releases/tags/Mesh_Diffusive_CNS_v0.1"
+      ],
+      "identity": "github:MESH-Team/MESH_Code_irregular@Mesh_Diffusive_CNS_v0.1",
+      "kind": "github",
+      "lookup_status": "ok",
+      "next_action": "resume_research_verification",
+      "output_url": "https://github.com/MESH-Team/MESH_Code_irregular/releases/tag/Mesh_Diffusive_CNS_v0.1"
+    }
+  ],
   "schema": "reach-scout-independent-metadata-lookup-v1"
 }
