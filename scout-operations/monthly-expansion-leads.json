@@ -1,0 +1,55 @@
+{
+  "schema": "reach-scout-monthly-expansion-leads-v1",
+  "policy": "Separate research leads originating from monthly API seed DOIs. Each distinct output requires its own same-project WPO funding, complete REACH/Scout identity and version checking, source metadata, and evidence before a Hub draft. A seed DOI is never automatically held until these leads finish. Do not infer Hub delivery, publication, funding, or human approval.",
+  "entries": [
+    {
+      "identity": "doi:10.1177/10506519261455873",
+      "original_seed_doi": "10.5194/egusphere-2026-5876",
+      "origin_method": "API-seeded expansion",
+      "lead_type": "related_journal_publication",
+      "title": "Bridging the Gap Between Numbers and Experience: Identifying Community Risk Thresholds in Extreme Weather Communication",
+      "discovered_via": "Original monthly EGUsphere 2026-5876 preprint PDF references",
+      "path_evidence_url": "https://egusphere.copernicus.org/preprints/2026/egusphere-2026-5876/egusphere-2026-5876.pdf",
+      "original_source_url": "https://journals.sagepub.com/doi/abs/10.1177/10506519261455873",
+      "status": "awaiting_independent_verification",
+      "project_funding_verified": false,
+      "full_reach_and_scout_dedup_verified": false,
+      "hub_delivery_verified": false,
+      "findings": "Related 2026 publication, not the seed preprint. Exact source-specific WPO award and full REACH/Scout secondary-link identity not yet verified.",
+      "next_action": "Verify direct WPO primary-project attribution, article metadata, preprint/version relation, and full REACH/Scout duplication before considering a separate new output."
+    },
+    {
+      "identity": "doi:10.1145/3794916.3794919",
+      "original_seed_doi": "10.5194/egusphere-2026-5876",
+      "origin_method": "API-seeded expansion",
+      "lead_type": "related_journal_publication",
+      "title": "Visualizing Probabilistic Forecast Information Around Community Risk Thresholds",
+      "discovered_via": "Original monthly EGUsphere 2026-5876 preprint PDF references",
+      "path_evidence_url": "https://egusphere.copernicus.org/preprints/2026/egusphere-2026-5876/egusphere-2026-5876.pdf",
+      "original_source_url": "https://pinakes.wacclearinghouse.org/article/376641",
+      "status": "awaiting_independent_verification",
+      "project_funding_verified": false,
+      "full_reach_and_scout_dedup_verified": false,
+      "hub_delivery_verified": false,
+      "findings": "Related 2026 publication, not the seed preprint. Publisher/source-specific WPO funding, full DOI metadata and REACH/Scout dedup not independently verified.",
+      "next_action": "Resolve full publisher metadata, funding, relationship to the source seed, and full REACH/Scout comparison."
+    },
+    {
+      "identity": "doi:10.25923/k9kh-y971",
+      "original_seed_doi": "10.5194/egusphere-2026-5876",
+      "origin_method": "API-seeded expansion",
+      "lead_type": "related_noaa_technical_memorandum",
+      "title": "Tailoring probabilistic information to community needs: A rhetorical CRIB sheet",
+      "discovered_via": "Original monthly EGUsphere 2026-5876 preprint PDF references",
+      "path_evidence_url": "https://egusphere.copernicus.org/preprints/2026/egusphere-2026-5876/egusphere-2026-5876.pdf",
+      "original_source_url": "https://repository.library.noaa.gov/view/noaa/71353",
+      "status": "already_in_reach",
+      "reach_id": "reach-000821",
+      "project_funding_verified": true,
+      "full_reach_and_scout_dedup_verified": true,
+      "hub_delivery_verified": false,
+      "findings": "Already in public REACH as reach-000821 under primary award NA21OAR4590208; not a new candidate.",
+      "next_action": "No new Hub proposal. Preserve provenance and existing REACH identity."
+    }
+  ]
+}
