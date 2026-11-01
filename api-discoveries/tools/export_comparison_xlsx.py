@@ -274,7 +274,7 @@ def build(pieces,month,output):
 
 def report_filename(month,revision=""):
     """Readable reporting-period name, distinct from the subsequent run date."""
-    if not re.fullmatch(r"20\\d{2}-(0[1-9]|1[0-2])",month):
+    if not re.fullmatch(r"20\d{2}-(0[1-9]|1[0-2])",month):
         raise ValueError("Invalid report month")
     if revision and not re.fullmatch(r"[a-z][a-z0-9-]{0,35}",revision):
         raise ValueError("Invalid revision")
