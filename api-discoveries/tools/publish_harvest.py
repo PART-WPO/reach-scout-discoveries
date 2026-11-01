@@ -105,7 +105,10 @@ def main():
     p.add_argument("--month",default="")
     p.add_argument("--input",default="api-discoveries/tmp")
     p.add_argument("--shards",type=int,default=8)
+    p.add_argument("--correction-id",default="",help="Append a new immutable batch revision, never overwrite an earlier intake")
     args=p.parse_args()
+    if args.correction_id and (args.mode!="monthly" or not re.fullmatch(r"[a-z][a-z0-9-]{0,35}",args.correction_id)):
+        raise ValueError("Correction ID requires monthly mode and a safe lowercase identifier")
     if args.mode=="monthly" and not args.month:
         first=dt.datetime.now(dt.timezone.utc).date().replace(day=1)
         args.month=(first-dt.timedelta(days=1)).strftime("%Y-%m")
@@ -142,6 +145,7 @@ def main():
         run=f"REACH-MONTHLY-API-{args.month}"
         out=ROOT/"api-discoveries/batches"
         base=f"{release.isoformat()}-monthly-api-{args.month}"
+        if args.correction_id:base+="-"+args.correction_id
     else:
         run="REACH-HISTORICAL-DATACITE-"+now.isoformat()
         out=ROOT/"api-discoveries/historical/batches"
@@ -156,7 +160,7 @@ def main():
         "publication_date_requires_research":sum(not bool(x["date"]) for x in merged),
         "type_counts":dict(Counter(x["outtype"] for x in merged)),
         "status":"completed_API_research_input_only_not_Scout_reviewed_not_REACH_published"}
-    run_tag=("monthly-"+args.month) if args.mode=="monthly" else "historical-datacite-"+now.isoformat()
+    run_tag=("monthly-"+args.month+("-"+args.correction_id if args.correction_id else "")) if args.mode=="monthly" else "historical-datacite-"+now.isoformat()
     path=ROOT/"api-discoveries/runs"/(run_tag+".json")
     immutable_file(path,(json.dumps(summary,indent=2,sort_keys=True)+"\n").encode("utf-8"))
     if args.mode=="monthly":
