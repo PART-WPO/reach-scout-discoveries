@@ -912,12 +912,12 @@
       "cohort": "2026-10",
       "status": "needs_more_research",
       "first_seen_at": "2026-11-01T13:52:45Z",
-      "updated_at": "2026-11-01T20:28:00Z",
+      "updated_at": "2026-11-01T21:26:45Z",
       "source_run_id": "REACH-MONTHLY-API-2026-10",
       "award_numbers": [
         "NA21OAR4590208"
       ],
-      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished.\n12:32 EST: Copernicus original EGUsphere page confirms preprint posted 2026-10-22, under review at Geoscience Communication, by Olman, Hatchett, Collins, Heggli, Lambrecht, Tolby and Charles. Research investigates bot-generated responses in survey data about weather-forecast communication. SPARK primary NA21OAR4590208 project spark-000246 is 'Employing Rhetoric to Improve Probabilistic Forecast Communication'; strong theme and public author/affiliation overlap. Direct grant acknowledgment not verified from abstract, so same-project WPO attribution remains provisional. Future Geoscience Communication article may be version of same preprint. REACH index alternate-link URL absent.\n15:28 EST full-text source verification: The original eight-page Copernicus preprint PDF p.6 explicitly credits NOAA WPO Social Sciences Program grant NA21OAR4590208 and states no code/datasets available; pp.1–2 describe NWS partner/public forecast-graphic surveys, community commonplaces and A/B testing, directly matching SPARK spark-000246 full funded project methods. Strong same-project funding corroboration now obtained. Reference-led expansion identified NOAA Technical Memo DOI 10.25923/k9kh-y971 already in public REACH reach-000821 (NOT new); related 2026 articles DOI 10.1177/10506519261455873 and DOI 10.1145/3794916.3794919 are separate publication leads, with full funding/REACH dedup NOT VERIFIED. Other existing same-award REACH outputs reach-000820/822 are not new. Preprint remains under review, final journal version DOI unverified; no Hub staging.",
+      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished.\n12:32 EST: Copernicus original EGUsphere page confirms preprint posted 2026-10-22, under review at Geoscience Communication, by Olman, Hatchett, Collins, Heggli, Lambrecht, Tolby and Charles. Research investigates bot-generated responses in survey data about weather-forecast communication. SPARK primary NA21OAR4590208 project spark-000246 is 'Employing Rhetoric to Improve Probabilistic Forecast Communication'; strong theme and public author/affiliation overlap. Direct grant acknowledgment not verified from abstract, so same-project WPO attribution remains provisional. Future Geoscience Communication article may be version of same preprint. REACH index alternate-link URL absent.\n15:28 EST full-text source verification: The original eight-page Copernicus preprint PDF p.6 explicitly credits NOAA WPO Social Sciences Program grant NA21OAR4590208 and states no code/datasets available; pp.1–2 describe NWS partner/public forecast-graphic surveys, community commonplaces and A/B testing, directly matching SPARK spark-000246 full funded project methods. Strong same-project funding corroboration now obtained. Reference-led expansion identified NOAA Technical Memo DOI 10.25923/k9kh-y971 already in public REACH reach-000821 (NOT new); related 2026 articles DOI 10.1177/10506519261455873 and DOI 10.1145/3794916.3794919 are separate publication leads, with full funding/REACH dedup NOT VERIFIED. Other existing same-award REACH outputs reach-000820/822 are not new. Preprint remains under review, final journal version DOI unverified; no Hub staging.\n16:26 EST: Independently corroborated titles, authors, venues and study descriptions for two previously identified citation-led publications 10.1177/10506519261455873 and 10.1145/3794916.3794919. Both connect to probabilistic weather communication and NWS risk thresholds; neither has independently verified primary WPO grant support or complete REACH/Scout duplicate check. Research leads only; no separate monthly intake rows or Hub submissions.",
       "checked_sources": [
         "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
@@ -1031,6 +1031,29 @@
           "disposition": "needs_more_research",
           "hub_submission_verified": false,
           "public_reach_addition_verified": false
+        },
+        "followup_2026_11_01_1626ET": {
+          "checked_at": "2026-11-01T21:26:45Z",
+          "scope": "Follow original October preprint's two previously identified citation-led research leads; bibliographic corroboration only, not funding/REACH disposition",
+          "lead_bibliography": [
+            {
+              "doi": "10.1177/10506519261455873",
+              "title": "Bridging the Gap Between Numbers and Experience: Identifying Community Risk Thresholds in Extreme Weather Communication",
+              "source": "https://openurl.ebsco.com/results?bquery=AU+Lambrecht%2C+Kathryn&link_origin=&searchDescription=Lambrecht%2C+Kathryn&sid=ebsco%3Aocu%3Arecord",
+              "evidence": "2026 Journal of Business and Technical Communication; authors Lambrecht, Olman, Collins, Heggli, Hatchett, Tolby, Wadhwa; bibliographic identity and same research group verified; direct primary-WPO award acknowledgment NOT VERIFIED"
+            },
+            {
+              "doi": "10.1145/3794916.3794919",
+              "title": "Visualizing Probabilistic Forecast Information Around Community Risk Thresholds: An Action-Research Collaboration Between Environmental Rhetoricians and the National Weather Service",
+              "source": "https://pinakes.wacclearinghouse.org/?journal=Communication+Design+Quarterly&tag=collaborative+writing",
+              "evidence": "March 2026 Communication Design Quarterly; Olman, Lambrecht, Heggli, Collins, Tolby, Hatchett, Dannies; five western NWS offices and risk thresholds; same-project research theme plausible, direct WPO grant and REACH/Scout duplicate NOT VERIFIED"
+            }
+          ],
+          "finding_purpose": "linked-output research leads only; no new output proposal or funding assertion",
+          "related_doi_full_dedup_verified": false,
+          "disposition": "needs_more_research",
+          "hub_submission_verified": false,
+          "public_reach_addition_verified": false
         }
       }
     },
@@ -1040,12 +1063,12 @@
       "cohort": "2026-10",
       "status": "needs_more_research",
       "first_seen_at": "2026-11-01T13:52:45Z",
-      "updated_at": "2026-11-01T17:32:21Z",
+      "updated_at": "2026-11-01T21:26:45Z",
       "source_run_id": "REACH-MONTHLY-API-2026-10",
       "award_numbers": [
         "NA25OARX459C0342-T1-01"
       ],
-      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished.\n12:32 EST: Copernicus full article published 2026-10-15, The Cryosphere 20:5973–5992. Financial Support explicitly names NOAA Weather Program Office grant NA25OARX459C0342-T1-01 plus separate CIROH award NA22NWS4320003. NOAA IR noaa:76974 confirms same DOI and both grants. SPARK spark-000373 primary project examines Southern Great Plains precipitation extremes through remote snow dynamics in US West; article examines California snow/vegetation processes, relevant but not explicit SGP downstream link, so same-project WPO scope still needs validation. Article has separate supplement DOI 10.5194/tc-20-5973-2026-supplement (article component, NOT distinct output) and cites reused NCAR Noah-MP code plus external public data sources; don't auto-stage them. REACH alternate link absent in index; detail/version check pending.",
+      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished.\n12:32 EST: Copernicus full article published 2026-10-15, The Cryosphere 20:5973–5992. Financial Support explicitly names NOAA Weather Program Office grant NA25OARX459C0342-T1-01 plus separate CIROH award NA22NWS4320003. NOAA IR noaa:76974 confirms same DOI and both grants. SPARK spark-000373 primary project examines Southern Great Plains precipitation extremes through remote snow dynamics in US West; article examines California snow/vegetation processes, relevant but not explicit SGP downstream link, so same-project WPO scope still needs validation. Article has separate supplement DOI 10.5194/tc-20-5973-2026-supplement (article component, NOT distinct output) and cites reused NCAR Noah-MP code plus external public data sources; don't auto-stage them. REACH alternate link absent in index; detail/version check pending.\n16:26 EST: Publisher's peer-review record explicitly identifies earlier EGUsphere preprint DOI 10.5194/egusphere-2025-3884 (discussion 21 Aug 2025) as the same work as final The Cryosphere DOI 10.5194/tc-20-5973-2026 (15 Oct 2026). DO NOT count as two publications. GitHub indexed search for preprint DOI in reach-dashboard returned zero results but does not prove absence from REACH detail/secondary links. Publisher code/data statement describes existing external resources, not a newly verified WPO-created code/dataset. Original grant remains direct WPO acknowledgment; project-specific SGP remote-effects deliverable still unverified.",
       "checked_sources": [
         "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
@@ -1068,9 +1091,9 @@
         "research_disposition_verified": false
       },
       "next_research_actions": [
-        "Verify this study is an output of SPARK spark-000373, not merely same WPO grant.",
-        "Check REACH detail/secondary links for NOAA IR and publisher URL, plus preprint/final DOI relation.",
-        "Do not stage separate article supplement or reused code as new outputs."
+        "Treat preprint DOI 10.5194/egusphere-2025-3884 and final DOI 10.5194/tc-20-5973-2026 as one publication; check both across all REACH detail/secondary-link fields and any Scout history before draft.",
+        "Verify with project-specific evidence that the California snow-modeling study is a deliverable of SPARK spark-000373 (SGP precipitation extremes through western snow dynamics), beyond publisher's direct WPO award acknowledgment.",
+        "Do not stage reused Noah-MP code, source datasets, or article supplement as separate newly funded outputs."
       ],
       "substantive_research": {
         "checked_at": "2026-11-01T17:32:21Z",
@@ -1115,7 +1138,35 @@
         },
         "disposition": "needs_more_research",
         "hub_submission_verified": false,
-        "public_reach_addition_verified": false
+        "public_reach_addition_verified": false,
+        "followup_2026_11_01_1626ET": {
+          "checked_at": "2026-11-01T21:26:45Z",
+          "scope": "Original October monthly DOI: publisher peer-review cross-version identity and original article code/data statement, not a fresh all-REACH rescan",
+          "publisher_peer_review_url": "https://tc.copernicus.org/articles/20/5973/2026/tc-20-5973-2026-discussion.html",
+          "exact_prior_preprint_doi": "10.5194/egusphere-2025-3884",
+          "version_relation": "Publisher's peer-review page explicitly links 21 Aug 2025 EGUsphere preprint to final 15 Oct 2026 The Cryosphere article 10.5194/tc-20-5973-2026. Treat as ONE publication work/version family, not two output additions.",
+          "preprint_status": "same-work earlier version, not separately eligible as another new output",
+          "cross_repo_doi_search": {
+            "searched_repository": "PART-WPO/reach-dashboard",
+            "terms": [
+              "10.5194/egusphere-2025-3884",
+              "egusphere-2025-3884"
+            ],
+            "results": 0,
+            "scope": "GitHub indexed code search only; not exhaustive detail/secondary-link search",
+            "full_dedup_verified": false
+          },
+          "funding_rechecked": "Publisher article's Financial support section explicitly names NOAA WPO NA25OARX459C0342-T1-01, plus distinct CIROH NA22NWS4320003; prior source verification retained. Same-project SPARK spark-000373 SGP remote-effects contribution remains NOT VERIFIED.",
+          "source_code_data": "Publisher Code and data availability describes reuse of publicly available Noah-MP v5, NLDAS-2, MODIS, PRISM, AORC/NWM, snow data and WRF-Hydro forcing engine; no distinct newly released study code/dataset DOI verified. Supplement DOI 10.5194/tc-20-5973-2026-supplement is a component, not an independent output.",
+          "evidence_urls": [
+            "https://tc.copernicus.org/articles/20/5973/2026/tc-20-5973-2026-discussion.html",
+            "https://tc.copernicus.org/articles/20/5973/2026/",
+            "https://egusphere.copernicus.org/preprints/2025/egusphere-2025-3884/"
+          ],
+          "disposition": "needs_more_research",
+          "hub_submission_verified": false,
+          "public_reach_addition_verified": false
+        }
       }
     },
     {
