@@ -21,6 +21,7 @@ def approved_batches(folder, entries):
             raise ValueError("Batch replacement missing")
         if by_id[old_id]["sha256"] != rule["original_sha256"]:
             raise ValueError("Source batch digest changed")
+        verify_rows(folder, by_id[old_id], by_id[new_id], rule["excluded_dois"])
     return [e for e in entries if e["id"] not in rules]
 
 def rows_for(folder, entry):
