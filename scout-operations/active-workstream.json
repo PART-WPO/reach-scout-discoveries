@@ -13,19 +13,19 @@
   "mode": "monthly_api_triage",
   "monthly_api": {
     "independent_expansion_leads_pending": 2,
-    "initial_cases": 2,
-    "original_decisions_due": 5,
+    "initial_cases": 0,
+    "original_decisions_due": 3,
     "originals_for_final_checks": 0,
     "pending_metadata_blockers_including_originals": 0,
     "raw_records": 13,
     "recorded_received": 13,
-    "remaining_or_untracked": 5,
-    "research_completed": 8,
+    "remaining_or_untracked": 3,
+    "research_completed": 10,
     "unresolved_followups": 3
   },
   "note": "Future follow-up dates do not clear API research. Make bounded distinct-source checks now; use documented early-retry exceptions as needed. An unavailable or invalid Hub metadata-needed handoff remains outstanding. This selector does NOT conduct research, verify human approval, or launch Scout.",
-  "phase": "initial_research",
-  "reason": "Monthly API records need first-pass, output-specific investigation",
+  "phase": "original_decision_fast_path",
+  "reason": "Complete bounded original-output decisions and stage fully verified candidates without waiting for independent expansion",
   "schema": "reach-scout-workstream-v1",
   "switch_policy": "monthly original fast-path decisions > separate monthly related-output expansion > historical first-pass > historical follow-ups > attribution follow-ups > normal SPARK historical discovery"
 }
