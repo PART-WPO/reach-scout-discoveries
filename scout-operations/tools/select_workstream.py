@@ -45,6 +45,14 @@ def _blocker_counts(blockers):
     return counts
 
 
+def _monthly_expansions_pending(queue):
+    """Keep source-linked monthly outputs in their own research lane."""
+    return sum(1 for entry in (queue or {}).get('entries', [])
+               if entry.get('status') in {'awaiting_independent_verification',
+                                          'investigating', 'needs_more_research',
+                                          'ready_for_draft_review'})
+
+
 def _attribution_pending(queue):
     return sum(
         1 for e in (queue or {}).get("entries", [])
@@ -54,7 +62,7 @@ def _attribution_pending(queue):
 
 def decide(monthly_manifest,monthly_coverage,historical_manifest,historical_coverage,
            historical_manifest_sha="",monthly_triage=None,historical_triage=None,
-           metadata_blockers=None,attribution_followups=None):
+           metadata_blockers=None,attribution_followups=None,monthly_expansion_leads=None):
     monthly_total=int((monthly_manifest or {}).get("candidate_rows",0))
     monthly_checked=int((monthly_coverage or {}).get("checked",0))
     monthly_received=int((monthly_coverage or {}).get("received",0))
@@ -93,6 +101,7 @@ def decide(monthly_manifest,monthly_coverage,historical_manifest,historical_cove
     )
     historical_unreconciled=(bool(historical_manifest) and not hist_matches)
     attribution_pending=_attribution_pending(attribution_followups)
+    monthly_expansions_pending=_monthly_expansions_pending(monthly_expansion_leads)
     # A scheduled future retry does not make an unresolved original DOI cleared.
     # New monthly intake always preempts historical research.
     if monthly_initial:
@@ -101,6 +110,9 @@ def decide(monthly_manifest,monthly_coverage,historical_manifest,historical_cove
     elif monthly_followup or blockers["monthly"]:
         mode,phase="monthly_api_triage","additional_evidence_research"
         reason="Continue monthly API original-record follow-ups and linked-output evidence recovery before older awards"
+    elif monthly_expansions_pending:
+        mode,phase="monthly_api_triage","related_output_expansion_research"
+        reason="Continue distinct API-seeded output leads with their own source and WPO funding validation; original seeds need not wait for expansion"
     elif historical_initial:
         mode,phase="historical_api_triage","initial_research"
         reason="Historical DataCite records await their first individual investigation"
@@ -120,13 +132,14 @@ def decide(monthly_manifest,monthly_coverage,historical_manifest,historical_cove
     return {
         "schema":"reach-scout-workstream-v1",
         "mode":mode,"phase":phase,"reason":reason,
-        "switch_policy":"monthly first-pass > monthly follow-ups > historical first-pass > historical follow-ups > attribution follow-ups > normal SPARK historical discovery",
+        "switch_policy":"monthly original fast-path decisions > separate monthly related-output expansion > historical first-pass > historical follow-ups > attribution follow-ups > normal SPARK historical discovery",
         "monthly_api":{
             "raw_records":monthly_total,"recorded_received":monthly_received,
             "research_completed":monthly_checked,
             "remaining_or_untracked":monthly_unfinished,
             "initial_cases":monthly_initial,
             "unresolved_followups":monthly_followup,
+            "independent_expansion_leads_pending":monthly_expansions_pending,
             "pending_metadata_blockers_including_originals":blockers["monthly"]
         },
         "historical_api":{
@@ -153,7 +166,8 @@ def main():
         monthly_triage=read("scout-operations/monthly-triage.json"),
         historical_triage=read("scout-operations/historical-triage.json"),
         metadata_blockers=read("scout-operations/metadata-blockers.json"),
-        attribution_followups=read("scout-operations/attribution-followups.json"))
+        attribution_followups=read("scout-operations/attribution-followups.json"),
+        monthly_expansion_leads=read("scout-operations/monthly-expansion-leads.json"))
     new=json.dumps(result,indent=2,sort_keys=True)+"\n"
     if not OUT.exists() or OUT.read_text(encoding="utf-8")!=new:
         OUT.write_text(new,encoding="utf-8")
