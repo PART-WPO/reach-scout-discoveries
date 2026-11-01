@@ -1,5 +1,97 @@
 # API follow-up completion and research-priority policy (2026-10-29)
 
+## AUTHORITATIVE monthly Scout operating rule — November 1, 2026
+
+This rule takes precedence over older directions that imply **every related DOI, source,
+dataset or code lead must be completely researched before the original monthly output
+can be submitted to human review**. Original-output verification and API-seeded
+discovery expansion are two separate, independently tracked lanes.
+
+### Lane A — original monthly output fast path (first priority)
+
+Read `api-discoveries/manifest.json`, `scout-operations/monthly-triage.json`,
+`scout-operations/monthly-decision-queue.json`, and the active REACH and Scout catalogs.
+For each original Crossref/DataCite DOI, confirm (a) the exact work, DOI/URL/version,
+required metadata and source-appropriate date; (b) absence of its identity under any
+REACH/Scout DOI, alternate URL, detail/secondary link, preprint/final version or
+concept/version DOI; and (c) **specific WPO primary-funded SPARK project attribution**,
+not merely an award-string or topic overlap. Preserve separate project associations
+when more than one is genuinely evidenced.
+
+**As soon as these original-output checks pass, prepare a candidate for human review
+without waiting for Lane B**. Explicitly document the four independently verified
+`original_output_gate` booleans:
+`same_project_wpo_funding_verified`,
+`all_reach_and_scout_identities_checked`,
+`distinct_output_or_canonical_version_verified`, and
+`required_metadata_verified`, plus two or more truthful `checked_sources` URLs.
+These are **attestations that checks actually happened**, not flags to set based on
+mere API receipt, an absent index DOI or a scheduled mission. The decision-queue
+builder will not label a case ready for a draft without this complete explicit gate.
+
+An eligible case goes through the **existing** `scout-discoveries/tools/prepare_batch.py`
+24-column schema, unique `scout-discoveries/inbox/` draft, automated validation and
+append-only Scout batches/manifest. Never edit the manifest directly or claim the
+private Discovery Hub imported it without observing that import. Never approve or
+publish to REACH automatically. Keep the original's true origin as **Direct API**
+and `Intake origin: Monthly API`; do not mislabel an original as API-seeded expansion.
+
+### Lane B — independent API-seeded related-output discovery
+
+Track each *distinct* publication, dataset, software release or report discovered
+through an original DOI in `scout-operations/monthly-expansion-leads.json`, with
+`original_seed_doi`, exact `identity`, evidence-bearing source-to-lead path,
+and `origin_method: API-seeded expansion`. Follow the evidence; substantively
+investigate independently (same-project bridge, metadata/date, full REACH/Scout
+identity and version comparisons) before any **separate** review proposal. Reused
+code, citations, third-party input datasets, related preprint/final manifestations,
+supplements and existing REACH items are not automatically new outputs. Deduplicate
+cross-cohort research and preserve historical human review units.
+
+Lane B may progress within the same hourly mission as Lane A, and remains a monthly
+workstream after Lane A is cleared, **but it never holds a verified original-output
+draft hostage**. Prefer completing the highest-confidence original final checks early
+in the mission, then use remaining investigation effort to expand and verify links.
+Treat both lanes as separate accounting in hourly reports.
+
+### Enforce a decision after bounded research
+
+One initial research round plus one substantive *distinct-source* follow-up is normally
+enough to warrant a **decision review**, not indefinite `needs_more_research`.
+The deterministic `scout-operations/tools/build_monthly_decision_queue.py` flags
+already-researched open cases as `decision_review_due` and ranks evidence-supported
+originals for final checks; its output is **research prioritization, never proof** of
+funding, eligibility, duplicate status, human approval or Hub delivery.
+
+At that decision point, either:
+1. Complete missing **specific** checks immediately and submit a fully verified
+   new-output candidate through the validated Scout inbox;
+2. Close an evidenced duplicate/ineligible/no-project-bridge original with a
+   source-backed, appropriate terminal disposition;
+3. Escalate a credible project-specific case with exhausted metadata/identity
+   recovery to the existing, compatible human **Needs Investigation** path.
+   If Hub import is unsupported, preserve a truthful pending-Hub-intake record;
+   report **NOT DELIVERED**, never force a fake required field or invalid draft.
+
+Avoid rerunning complete primary-index/title scans or cycling through the same
+unspecified "more verification needed" note. If a check cannot be completed,
+document the exact blocker, attempted distinct sources, reviewer question and
+reason for the final outcome. **Do not** resolve a material funding mismatch by
+calling it a confirmed WPO output. Human decisions and older research provenance
+are preserved. Public GitHub staging, private Hub import, approval and public REACH
+publication are separate reported states.
+
+### Mandatory reporting
+
+Report (i) original DOI cases researched, decision reviews due, explicit fast-path
+gates passed, original drafts validated/published, closed cases and unresolved holds;
+(ii) independently tracked API-seeded expansion leads verified, existing in REACH,
+still under investigation and separately staged; and (iii) private Hub imports as
+NOT VERIFIED unless actually observed. A monthly ledger with every case open after
+multiple substantive missions should trigger a decision-gate review rather than
+more undirected discovery. See `scout-operations/monthly-decision-queue.json`.
+
+
 ## AUTHORITATIVE: original discovery method is separate from finding purpose — October 30, 2026
 
 The original 40 legacy missing-route Scout rows have an approved, source-backed `scout-operations/legacy-provenance-backfill.json` companion ledger. The automated origin rollup validates each entry's **immutable manifest SHA-256, exact CSV row number, original source run ID, original DOI/URL and title** before counting it. The original October 28 15:30 ET DataCite mission report expressly distinguishes one API-returned dataset from two related publications. Thus **all 40 original legacy methods are now classified**: 33 SPARK-driven independent, five directly API-returned outputs, and two discoveries from following API leads. Great Lakes cyclone DOI `10.1029/2024GL109890` is API-led by original mission evidence, **but its exact starting seed DOI remains NOT VERIFIED**; do not invent that DOI or any precise path. DO NOT re-research every legacy record, duplicate Hub entries, edit published CSVs or assume approval.
@@ -24,7 +116,7 @@ The attribution rollup counts `Direct API`, `API-seeded expansion`, `Independent
 ## Priority at every hourly mission
 
 1. **Monthly API intake — new or unresearched original DataCite/Crossref records.** Research the original output independently; expand to related articles, datasets, software and reports.
-2. **Monthly API unresolved follow-ups and linked-output metadata blockers.** Continue the cohort until each original record has an evidence-backed disposition and every credible expansion lead is researched or explicitly resolved/escalated.
+2. **Monthly API original-output decision fast path and unresolved follow-ups.** Prioritize closing evidence-backed originals and submitting verified candidates without waiting for their independent related-output leads; then investigate those leads in their separately tracked monthly expansion queue. Keep unfinished monthly research and Hub handoff blockers visible.
 3. **Historical DataCite intake — any original records awaiting first investigation** (the 2026-10-28 cohort has completed this pass).
 4. **Historical DataCite unresolved follow-ups and linked-output blockers.** Immediately prioritize the October 29 baseline of **38** remaining original DOI cases. Continue across hourly runs until all 38 reach supported terminal research outcomes or a truthful, validated human-investigation handoff. Also address five previously tracked related-output metadata blockers when applicable, without equating them with 38 original cases.
 5. **Other bounded award-attribution follow-ups** from previously investigated API records. Preserve original no-action conclusions; document project-specific evidence and close negative follow-ups rather than retry forever.
