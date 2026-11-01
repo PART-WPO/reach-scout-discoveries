@@ -166,7 +166,7 @@ def build(root, reach_root, spark_root, write_drafts=False):
     staged_monthly_originals = set()
     for r in published:
         rationale = r.get("Scout Discovery Rationale", "")
-        m = re.search(r"(?im)^Monthly intake:\\s*(20\\d{2}-\\d{2})\\s*$", rationale)
+        m = re.search(r"(?im)^Monthly intake:\s*(20\d{2}-\d{2})\s*$", rationale)
         if m and r.get("Source Run ID", "").startswith("REACH-SCOUT-MONTHLY-FAST-"):
             staged_monthly_originals.add((norm_doi(r.get("DOI", "")), m.group(1)))
     existing_dois = {norm_doi(r.get("DOI", "")) for r in prior}
