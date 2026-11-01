@@ -10,6 +10,7 @@ import json
 import re
 from datetime import datetime, timezone
 from pathlib import Path
+from supersessions import approved_batches, get_rules
 
 ROOT = Path(__file__).resolve().parents[1]
 BATCHES = ROOT / "batches"
@@ -129,12 +130,13 @@ def inspect_batch(p):
 
 def main():
     BATCHES.mkdir(parents=True, exist_ok=True)
-    entries = [inspect_batch(p) for p in sorted(BATCHES.glob("*.csv"))]
+    all_entries = [inspect_batch(p) for p in sorted(BATCHES.glob("*.csv"))]
+    entries = approved_batches(ROOT, all_entries)
     if len(entries) > 1500:
         raise ValueError("Manifest batch limit exceeded")
     existing = json.loads(MANIFEST.read_text(encoding="utf-8")) if MANIFEST.exists() else {}
     prior = {x["id"]: x["sha256"] for x in existing.get("batches", [])}
-    for b in entries:
+    for b in all_entries:
         if b["id"] in prior and prior[b["id"]] != b["sha256"]:
             raise ValueError(f"Immutable previously published batch changed: {b['id']}")
     same_entries = entries == existing.get("batches", [])
