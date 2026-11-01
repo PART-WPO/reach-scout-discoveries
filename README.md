@@ -14,6 +14,10 @@ This separate public repository is a staging feed for **unreviewed** REACH Scout
 8. Discovery Hub uses **Sync from Scout** to retrieve only batches in the validated manifest and add them to its unreviewed queue. Private Hub import cannot be inferred from a GitHub commit or manifest entry.
 9. A person reviews the research evidence and controls any final addition to Smartsheet/REACH. Publishing here **never** constitutes approval for insertion.
 
+## Monthly Harvest Reports
+
+The [Monthly Harvest Reports](monthly-harvest-reports/) folder contains DataCite + Crossref comparison workbooks with clear `Month_YYYY.xlsx` filenames. For example, [October_2026.xlsx](monthly-harvest-reports/October_2026.xlsx) is the corrected, **primary-awards-only** October 2026 report; superseded reports are separately archived.
+
 ## Files
 
 - `scout-discoveries/inbox/*.csv` — new, unpublished candidate drafts; invalid drafts cannot change the feed
