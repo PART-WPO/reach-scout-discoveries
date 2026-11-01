@@ -139,7 +139,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: reach-monthly-api-excel-comparison
-          path: api-discoveries/reports/REACH_API_Comparison_*.xlsx
+          path: monthly-harvest-reports/*.xlsx
           if-no-files-found: error
           retention-days: 90
       - name: Commit only immutable raw research inputs and manifests
@@ -147,7 +147,7 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          for path in api-discoveries/batches api-discoveries/historical api-discoveries/runs api-discoveries/reports api-discoveries/manifest.json scout-operations/coverage.json scout-operations/historical-triage.json scout-operations/historical-coverage.json scout-operations/active-workstream.json; do
+          for path in api-discoveries/batches api-discoveries/historical api-discoveries/runs monthly-harvest-reports api-discoveries/manifest.json scout-operations/coverage.json scout-operations/historical-triage.json scout-operations/historical-coverage.json scout-operations/active-workstream.json; do
             if [ -e "$path" ]; then git add -- "$path"; fi
           done
           if ! git diff --cached --quiet; then
