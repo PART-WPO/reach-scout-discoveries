@@ -22,3 +22,19 @@ def approved_batches(folder, entries):
         if by_id[old_id]["sha256"] != rule["original_sha256"]:
             raise ValueError("Source batch digest changed")
     return [e for e in entries if e["id"] not in rules]
+
+def rows_for(folder, entry):
+    import csv
+    with (folder.parent / entry["path"]).open(newline="", encoding="utf-8-sig") as stream:
+        return list(csv.DictReader(stream))
+
+def verify_rows(folder, before, after, excluded):
+    old_rows = rows_for(folder, before)
+    new_rows = rows_for(folder, after)
+    retired = {doi.lower() for doi in excluded}
+    original = {(row.get("DOI") or "").lower() for row in old_rows}
+    if not retired or len(retired) != len(excluded) or not retired.issubset(original):
+        raise ValueError("Invalid source DOI exclusions")
+    expected = [row for row in old_rows if row["DOI"].lower() not in retired]
+    if not expected or new_rows != expected:
+        raise ValueError("Replacement does not retain original unaffected rows")
