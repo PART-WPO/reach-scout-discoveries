@@ -21,6 +21,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Test monthly intake synchronization and correction safety
+        run: python3 -m unittest discover -s scout-operations/tests -p 'test_sync_monthly_intake.py' -v
       - name: Queue new API DOIs without marking them researched
         run: python3 scout-operations/tools/sync_monthly_intake.py
       - name: Check every monthly record against Scout ledger
