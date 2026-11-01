@@ -1,16 +1,12 @@
-# Monthly DataCite / Crossref — Excel comparison reports
+# Historical DataCite and Metadata Audit Reports
 
-Beginning with the first scheduled **November 1, 2026** harvest (October 1–31, 2026 output window), every completed monthly API run also publishes an Excel workbook here:
+This folder contains **historical DataCite comparisons**, **date reconciliations**, and other specialist research/audit workbooks.
 
-`REACH_API_Comparison_YYYY-MM.xlsx` — for example `REACH_API_Comparison_2026-10.xlsx`.
+**Looking for the regular monthly DataCite + Crossref harvest report?** It has moved to the repository's [Monthly Harvest Reports](../../monthly-harvest-reports/) folder. Files are named by the reporting period, such as [October_2026.xlsx](../../monthly-harvest-reports/October_2026.xlsx).
 
-The workbook is a **public, read-only comparison aid**, **not** a second Scout/Discovery Hub ingestion path. No Google Spreadsheet, Drive integration, human review notes, personal emails, Smartsheet identifiers, or credentials are required.
+The initial October 2026 monthly workbook that erroneously searched SPARK related awards is retained only in the [superseded archive](../../monthly-harvest-reports/archive/October_2026_Superseded_Related_Awards.xlsx). The corrected primary-only workbook is the active one.
 
-## Where to download
-
-1. **Permanent GitHub file:** browse this `api-discoveries/reports/` folder once the first completed monthly run publishes its workbook, select the matching `.xlsx`, then **Download raw file**.
-2. **GitHub Actions artifact:** open [REACH API harvest – DataCite and Crossref](https://github.com/PART-WPO/reach-scout-discoveries/actions/workflows/reach-api-harvest.yml), select the successful monthly workflow run, and download the artifact named `reach-monthly-api-excel-comparison` under **Artifacts**. Its retention is configured for 90 days; the committed copy in this folder is retained normally.
-3. **For manual reruns:** choose Actions → Run workflow → `monthly` and optionally specify a `YYYY-MM` period. Identical reruns preserve the existing workbook. If API metadata changed, an immutable-file conflict is raised instead of silently altering the original evidence; publish a separately named correction batch/workbook after review.
+The monthly comparison workbook is public and read-only. It does **not** flow directly into the Discovery Hub, does not imply Scout review, and cannot approve or publish a REACH output.
 
 ## Workbook sheets
 
