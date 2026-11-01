@@ -163,6 +163,12 @@ def build(root, reach_root, spark_root, write_drafts=False):
     for file in (root / "scout-discoveries/inbox").glob("*.csv"):
         inbox.extend(rows_from_csv(file))
     prior = published + inbox
+    staged_monthly_originals = set()
+    for r in published:
+        rationale = r.get("Scout Discovery Rationale", "")
+        m = re.search(r"(?im)^Monthly intake:\\s*(20\\d{2}-\\d{2})\\s*$", rationale)
+        if m and r.get("Source Run ID", "").startswith("REACH-SCOUT-MONTHLY-FAST-"):
+            staged_monthly_originals.add((norm_doi(r.get("DOI", "")), m.group(1)))
     existing_dois = {norm_doi(r.get("DOI", "")) for r in prior}
     existing_titles = {norm_title(r.get("Title", "")) for r in prior}
     ledgers = {(e["source_batch_id"], e["identity"]): e for e in ledger["entries"]}
@@ -189,6 +195,8 @@ def build(root, reach_root, spark_root, write_drafts=False):
             issues = list(funding_issues)
             if found:
                 status = "already_in_reach"
+            elif (doi, entry["cohort"]) in staged_monthly_originals:
+                status = "staged_in_scout_feed"
             elif doi in existing_dois or norm_title(title) in existing_titles:
                 status = "already_in_scout_or_inbox"
             elif detect_version(entry, doi):
@@ -224,7 +232,7 @@ def build(root, reach_root, spark_root, write_drafts=False):
                                             if not raw.get(x, "").strip()]),
                       "exceptions": issues,
                       "source_batch_id": batch["id"],
-                      "review_feed_status": "NOT_STAGED",
+                      "review_feed_status": ("MANIFEST_PUBLISHED" if status == "staged_in_scout_feed" else "NOT_STAGED"),
                       "private_hub_import": "NOT_VERIFIED",
                       "expansion_required_before_intake": False}
             # No fabricated metadata, no automatic human decision. A metadata-gap
