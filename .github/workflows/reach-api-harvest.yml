@@ -20,6 +20,11 @@ on:
         type: string
         required: false
         default: ''
+      correction_id:
+        description: 'Optional immutable correction suffix (e.g. primary-only), only for corrected monthly reruns'
+        type: string
+        required: false
+        default: ''
   push:
     branches: [main]
     paths:
@@ -27,6 +32,7 @@ on:
       # Normal repository changes do not trigger an extra harvest.
       - 'api-discoveries/jobs/historical-pilot-2026-10-28.trigger'
       - 'api-discoveries/jobs/monthly-kickoff-2026-11-01.trigger'
+      - 'api-discoveries/jobs/monthly-primary-only-correction-2026-11-01.trigger'
 permissions:
   contents: write
 concurrency:
@@ -44,6 +50,7 @@ jobs:
     env:
       HARVEST_MODE: ${{ github.event_name == 'push' && contains(toJSON(github.event.commits), 'api-discoveries/jobs/historical-pilot-2026-10-28.trigger') && 'historical' || inputs.mode == 'historical_datacite' && 'historical' || 'monthly' }}
       MONTH_OVERRIDE: ${{ inputs.month || '' }}
+      CORRECTION_ID: ${{ contains(toJSON(github.event.commits), 'monthly-primary-only-correction-2026-11-01.trigger') && 'primary-only' || inputs.correction_id || '' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -83,6 +90,7 @@ jobs:
     env:
       HARVEST_MODE: ${{ github.event_name == 'push' && contains(toJSON(github.event.commits), 'api-discoveries/jobs/historical-pilot-2026-10-28.trigger') && 'historical' || inputs.mode == 'historical_datacite' && 'historical' || 'monthly' }}
       MONTH_OVERRIDE: ${{ inputs.month || '' }}
+      CORRECTION_ID: ${{ contains(toJSON(github.event.commits), 'monthly-primary-only-correction-2026-11-01.trigger') && 'primary-only' || inputs.correction_id || '' }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -102,9 +110,13 @@ jobs:
           if [ -n "$MONTH_OVERRIDE" ] && [ "$HARVEST_MODE" = "monthly" ]; then
             MONTH_ARGS=(--month "$MONTH_OVERRIDE")
           fi
+          CORRECTION_ARGS=()
+          if [ -n "$CORRECTION_ID" ]; then
+            CORRECTION_ARGS=(--correction-id "$CORRECTION_ID")
+          fi
           python api-discoveries/tools/publish_harvest.py \
             --mode "$HARVEST_MODE" --shards 8 \
-            --input api-discoveries/tmp "${MONTH_ARGS[@]}"
+            --input api-discoveries/tmp "${MONTH_ARGS[@]}" "${CORRECTION_ARGS[@]}"
       - name: Reconcile API intake and select Scout priority
         run: |
           set -euo pipefail
