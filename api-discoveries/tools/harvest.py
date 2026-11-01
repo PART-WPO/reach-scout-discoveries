@@ -59,10 +59,31 @@ def clean_award(x):
     if not raw or not re.fullmatch(r"[A-Z0-9][A-Z0-9_.:/-]{1,90}",raw):
         return ""
     return raw
+PRIMARY_MATCH_BASIS={"primary_noaa_award", "primary_unparsed_identifier"}
+RELATED_MATCH_BASIS={"related_noaa_award", "related_unparsed_identifier"}
+
 def parse_awards(text):
     z=list(csv.DictReader(io.StringIO(text)))
-    if not z or "Award Number" not in z[0]:raise ValueError("SPARK award shard schema unexpected")
+    if not z or "Award Number" not in z[0] or "Match Basis" not in z[0]:
+        raise ValueError("SPARK award shard schema missing Award Number or Match Basis")
     return z
+
+def primary_award_rows(rows):
+    """Only SPARK 'Award Number(s)' may initiate API searches.
+
+    The SPARK flattened award lookup also includes 'Related Award Number(s)'.
+    Related identifiers can inform later research, but are NEVER query seeds
+    or a substitute for primary WPO award attribution.
+    """
+    result=[]
+    for x in rows:
+        basis=(x.get("Match Basis") or "").strip()
+        if basis in PRIMARY_MATCH_BASIS:
+            result.append(x)
+        elif basis not in RELATED_MATCH_BASIS:
+            raise ValueError("Unrecognized SPARK award Match Basis: "+repr(basis))
+    return result
+
 def spark_awards():
     manifest=fetch(SPARK+"agent-data/manifest.json")
     if manifest.get("feed")!="spark-agent-feed" or not manifest.get("awards",{}).get("files"):
@@ -77,7 +98,7 @@ def spark_awards():
         if hashlib.sha256(data).hexdigest()!=f["sha256"]:raise ValueError("SPARK award shard checksum "+path)
         rows=parse_awards(data.decode("utf-8-sig"))
         if len(rows)!=f["rows"]:raise ValueError("SPARK award shard count "+path)
-        for x in rows:
+        for x in primary_award_rows(rows):
             a=clean_award(x["Award Number"])
             if not a:continue
             d=by_award.setdefault(a,{"award":a,"programs":set(),"projects":set(),"basis":set()})
