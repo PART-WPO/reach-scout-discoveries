@@ -99,6 +99,30 @@ def batches(rows,root,base,run):
             "record_count":len(chunk),"source_run_ids":[run]})
     return result
 
+def pending_monthly_correction(month, release, root=ROOT):
+    """Recover an explicitly declared immutable replacement for a missed dispatch input.
+
+    The supersession map is versioned and checksum-verified by build_manifest.py.
+    Return the unique revision suffix only when its replacement file is pending.
+    """
+    file=root/"api-discoveries/supersessions.json"
+    if not file.exists():return ""
+    correction=json.loads(file.read_text(encoding="utf-8"))
+    replacements=correction.get("superseded_batches",{})
+    prefix=f"{release.isoformat()}-monthly-api-{month}-"
+    revisions=set()
+    for old_id, directive in replacements.items():
+        new_id=directive.get("replacement_id","")
+        if not new_id.startswith(prefix) or not new_id.endswith("-part001"):
+            continue
+        if not (root/"api-discoveries/batches"/(old_id+".csv")).exists():
+            raise ValueError("Superseded original batch missing: "+old_id)
+        if (root/"api-discoveries/batches"/(new_id+".csv")).exists():
+            continue
+        revisions.add(new_id[len(prefix):-len("-part001")])
+    if len(revisions)>1:raise ValueError("Ambiguous pending monthly correction revisions")
+    return next(iter(revisions),"") 
+
 def main():
     p=argparse.ArgumentParser()
     p.add_argument("--mode",choices=["monthly","historical"],required=True)
@@ -144,6 +168,10 @@ def main():
         release=dt.date(first.year+1,1,1) if first.month==12 else dt.date(first.year,first.month+1,1)
         run=f"REACH-MONTHLY-API-{args.month}"
         out=ROOT/"api-discoveries/batches"
+        # A declared supersession can safely recover a one-time correction
+        # when GitHub's push event does not propagate optional dispatch inputs.
+        if not args.correction_id:
+            args.correction_id=pending_monthly_correction(args.month,release)
         base=f"{release.isoformat()}-monthly-api-{args.month}"
         if args.correction_id:base+="-"+args.correction_id
     else:
