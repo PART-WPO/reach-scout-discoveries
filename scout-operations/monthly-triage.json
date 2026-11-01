@@ -119,14 +119,14 @@
       "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
       "identity": "doi:10.1016/j.pdisas.2026.100696",
       "cohort": "2026-10",
-      "status": "needs_more_research",
+      "status": "staged_for_hub_import",
       "first_seen_at": "2026-11-01T13:52:45Z",
       "updated_at": "2026-11-01T18:31:16Z",
       "source_run_id": "REACH-MONTHLY-API-2026-10",
       "award_numbers": [
         "NA22OAR4590187"
       ],
-      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished.\n11:32 EST second-source research: NOAA Institutional Repository independently confirms exact DOI, eight authors, journal article, open CC-BY PDF, and explicit Funding: Grant no. NA22OAR4590187. NOAA IR tags WPO/OAR; SPARK primary record spark-000134 is A Weather-Ready Nation Para Todos and publication studies Spanish-speaking immigrant workers' extreme-weather risk communication. Same-project connection is substantively corroborated (subject + award + NOAA IR), but full REACH alternate-URL dedup and related-output expansion remain pending. Crossref intake print-month convention 2026-10-01 remains source-appropriate; NOAA IR gives only publication year 2026, not exact day.\n12:32 EST follow-up: DOI-specific alternate publisher/NOAA IR/Zenodo URLs were compared to the Link to Output field across all 10 public REACH index shards (1,238 records), with no URL matches. This is a limited additional link check, NOT complete REACH detail-link/version dedup; earlier research and disposition unchanged.\n13:31 EST targeted full REACH detail follow-up: existing same-primary-award REACH reach-000765 (Kansas focus-group questionnaire), reach-000766 (workshop agenda/flyer), reach-000767 (demographics worksheet of 29 participants), reach-000768 (translated participant quotes) all relate to Spanish-speaking worker weather-safety focus groups in Wichita/Garden City; NOAA IR noaa:77174 journal article describes seven focus groups with 29 participants. These are strong related-study materials ALREADY in REACH, not duplicates of the article or new discovery counts. No exact article DOI in inspected part-092 detail rows; remaining full REACH secondary-link/version screening not complete.",
+      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished.\n11:32 EST second-source research: NOAA Institutional Repository independently confirms exact DOI, eight authors, journal article, open CC-BY PDF, and explicit Funding: Grant no. NA22OAR4590187. NOAA IR tags WPO/OAR; SPARK primary record spark-000134 is A Weather-Ready Nation Para Todos and publication studies Spanish-speaking immigrant workers' extreme-weather risk communication. Same-project connection is substantively corroborated (subject + award + NOAA IR), but full REACH alternate-URL dedup and related-output expansion remain pending. Crossref intake print-month convention 2026-10-01 remains source-appropriate; NOAA IR gives only publication year 2026, not exact day.\n12:32 EST follow-up: DOI-specific alternate publisher/NOAA IR/Zenodo URLs were compared to the Link to Output field across all 10 public REACH index shards (1,238 records), with no URL matches. This is a limited additional link check, NOT complete REACH detail-link/version dedup; earlier research and disposition unchanged.\n13:31 EST targeted full REACH detail follow-up: existing same-primary-award REACH reach-000765 (Kansas focus-group questionnaire), reach-000766 (workshop agenda/flyer), reach-000767 (demographics worksheet of 29 participants), reach-000768 (translated participant quotes) all relate to Spanish-speaking worker weather-safety focus groups in Wichita/Garden City; NOAA IR noaa:77174 journal article describes seven focus groups with 29 participants. These are strong related-study materials ALREADY in REACH, not duplicates of the article or new discovery counts. No exact article DOI in inspected part-092 detail rows; remaining full REACH secondary-link/version screening not complete.\nValidated Scout review feed contains this exact original DOI in scout-discoveries/batches/2026-11-01-monthly-fast-d987856c32ed45.csv. Research stage completed for human review. Private Hub import NOT VERIFIED; no human approval or public REACH update inferred. DOI-seeded related output research continues separately.",
       "checked_sources": [
         "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
@@ -213,13 +213,21 @@
         "disposition": "needs_more_research",
         "hub_submission_verified": false,
         "public_reach_addition_verified": false
-      }
+      },
+      "scout_batch_path": "scout-discoveries/batches/2026-11-01-monthly-fast-d987856c32ed45.csv",
+      "reach_snapshot": "f94ae52cac483b52e9a5cd6e775c6faa01ad6ec33610b249b3d486aed6daa003",
+      "evidence_url": "https://api.crossref.org/works/10.1016/j.pdisas.2026.100696",
+      "classification": "NEEDS INVESTIGATION",
+      "private_hub_import_verified": false,
+      "human_approval_verified": false,
+      "public_reach_addition_verified": false,
+      "review_feed_state": "MANIFEST_PUBLISHED"
     },
     {
       "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
       "identity": "doi:10.1080/01431161.2026.2749622",
       "cohort": "2026-10",
-      "status": "needs_more_research",
+      "status": "staged_for_hub_import",
       "first_seen_at": "2026-11-01T13:52:45Z",
       "updated_at": "2026-11-01T18:31:16Z",
       "source_run_id": "REACH-MONTHLY-API-2026-10",
@@ -228,7 +236,7 @@
         "NA23OAR4590387",
         "NA23OAR4590388"
       ],
-      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished. MULTI-PROJECT: three primary award matches across two SPARK projects; corroborate and preserve each independently.\n11:32 EST second-source research: Taylor & Francis journal index confirms publication online 2026-10-30 and exact title. SPARK primary project records show NA22OAR4590512 belongs to RRFS-CMAQ (spark-000536), whereas NA23OAR4590387/0388 belong to S2S Fire Emissions and Weather Forecasts (spark-000544). The latter aligns with Fire Radiative Power research; former's same-project contribution remains unverified. Located a similarly titled public GitHub workflow repository earth-artificial-intelligence/wildfire_guass_physics; README does not establish DOI, exact paper provenance or WPO award, so code remains unverified independent output lead, NOT staged.\n12:32 EST follow-up: DOI-specific alternate publisher/NOAA IR/Zenodo URLs were compared to the Link to Output field across all 10 public REACH index shards (1,238 records), with no URL matches. This is a limited additional link check, NOT complete REACH detail-link/version dedup; earlier research and disposition unchanged.\n13:31 EST related-output comparison: REACH index part-009 contains earlier primary NA23OAR4590387/0388 S2S fire publications and reach-001095 Firecasting software (GMU-SESS-AQ/firecasting). These are existing funded outputs, not evidence that the new fire-radiative-power paper or a similarly named third-party repository is a duplicate or a new code output. Preserve all three primary awards and two SPARK project associations; RRFS-CMAQ's specific contribution remains NOT VERIFIED.",
+      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished. MULTI-PROJECT: three primary award matches across two SPARK projects; corroborate and preserve each independently.\n11:32 EST second-source research: Taylor & Francis journal index confirms publication online 2026-10-30 and exact title. SPARK primary project records show NA22OAR4590512 belongs to RRFS-CMAQ (spark-000536), whereas NA23OAR4590387/0388 belong to S2S Fire Emissions and Weather Forecasts (spark-000544). The latter aligns with Fire Radiative Power research; former's same-project contribution remains unverified. Located a similarly titled public GitHub workflow repository earth-artificial-intelligence/wildfire_guass_physics; README does not establish DOI, exact paper provenance or WPO award, so code remains unverified independent output lead, NOT staged.\n12:32 EST follow-up: DOI-specific alternate publisher/NOAA IR/Zenodo URLs were compared to the Link to Output field across all 10 public REACH index shards (1,238 records), with no URL matches. This is a limited additional link check, NOT complete REACH detail-link/version dedup; earlier research and disposition unchanged.\n13:31 EST related-output comparison: REACH index part-009 contains earlier primary NA23OAR4590387/0388 S2S fire publications and reach-001095 Firecasting software (GMU-SESS-AQ/firecasting). These are existing funded outputs, not evidence that the new fire-radiative-power paper or a similarly named third-party repository is a duplicate or a new code output. Preserve all three primary awards and two SPARK project associations; RRFS-CMAQ's specific contribution remains NOT VERIFIED.\nValidated Scout review feed contains this exact original DOI in scout-discoveries/batches/2026-11-01-monthly-fast-7140ce113da603.csv. Research stage completed for human review. Private Hub import NOT VERIFIED; no human approval or public REACH update inferred. DOI-seeded related output research continues separately.",
       "checked_sources": [
         "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
@@ -330,7 +338,15 @@
         "disposition": "needs_more_research",
         "hub_submission_verified": false,
         "public_reach_addition_verified": false
-      }
+      },
+      "scout_batch_path": "scout-discoveries/batches/2026-11-01-monthly-fast-7140ce113da603.csv",
+      "reach_snapshot": "f94ae52cac483b52e9a5cd6e775c6faa01ad6ec33610b249b3d486aed6daa003",
+      "evidence_url": "https://api.crossref.org/works/10.1080/01431161.2026.2749622",
+      "classification": "NEEDS INVESTIGATION",
+      "private_hub_import_verified": false,
+      "human_approval_verified": false,
+      "public_reach_addition_verified": false,
+      "review_feed_state": "MANIFEST_PUBLISHED"
     },
     {
       "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
@@ -425,14 +441,14 @@
       "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
       "identity": "doi:10.1175/aies-d-26-0004.1",
       "cohort": "2026-10",
-      "status": "needs_more_research",
+      "status": "staged_for_hub_import",
       "first_seen_at": "2026-11-01T13:52:45Z",
       "updated_at": "2026-11-01T18:31:16Z",
       "source_run_id": "REACH-MONTHLY-API-2026-10",
       "award_numbers": [
         "NA22OAR4590530"
       ],
-      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished.\n12:32 EST: AMS journal confirms 2026-10-21 online, AIES 5(4), exact DOI and title; Ryan Martz, Eric Loken, Thea Sandmael, John Cintineo. SPARK primary project spark-000179 'Bridging Watch-to-Warning Forecast Operations with Refined Probabilistic Guidance' uses NA22OAR4590530, focuses 0–3 h ML severe hazard probabilities; article compares ML target training sets for 0–3 h severe hail/wind/tornado probabilities and has Loken/Sandmael authors aligned with public project. Strong thematic/author connection but exact publisher grant acknowledgment and full REACH detail/alternate DOI screening remain outstanding; no Hub submission.\n13:31 EST targeted full REACH same-award detail check: shards part-063/064 contain prior severe-weather ML papers, testbed reports, software and outreach under NA22OAR4590530; none of the inspected detail fields contains exact monthly AIES DOI. These are existing related project outputs, not newly discovered leads. Direct article funding acknowledgment and all-REACH secondary-link/version comparison remain outstanding.",
+      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished.\n12:32 EST: AMS journal confirms 2026-10-21 online, AIES 5(4), exact DOI and title; Ryan Martz, Eric Loken, Thea Sandmael, John Cintineo. SPARK primary project spark-000179 'Bridging Watch-to-Warning Forecast Operations with Refined Probabilistic Guidance' uses NA22OAR4590530, focuses 0–3 h ML severe hazard probabilities; article compares ML target training sets for 0–3 h severe hail/wind/tornado probabilities and has Loken/Sandmael authors aligned with public project. Strong thematic/author connection but exact publisher grant acknowledgment and full REACH detail/alternate DOI screening remain outstanding; no Hub submission.\n13:31 EST targeted full REACH same-award detail check: shards part-063/064 contain prior severe-weather ML papers, testbed reports, software and outreach under NA22OAR4590530; none of the inspected detail fields contains exact monthly AIES DOI. These are existing related project outputs, not newly discovered leads. Direct article funding acknowledgment and all-REACH secondary-link/version comparison remain outstanding.\nValidated Scout review feed contains this exact original DOI in scout-discoveries/batches/2026-11-01-monthly-fast-17bff79084ce37.csv. Research stage completed for human review. Private Hub import NOT VERIFIED; no human approval or public REACH update inferred. DOI-seeded related output research continues separately.",
       "checked_sources": [
         "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
@@ -510,20 +526,28 @@
         "disposition": "needs_more_research",
         "hub_submission_verified": false,
         "public_reach_addition_verified": false
-      }
+      },
+      "scout_batch_path": "scout-discoveries/batches/2026-11-01-monthly-fast-17bff79084ce37.csv",
+      "reach_snapshot": "f94ae52cac483b52e9a5cd6e775c6faa01ad6ec33610b249b3d486aed6daa003",
+      "evidence_url": "https://api.crossref.org/works/10.1175/aies-d-26-0004.1",
+      "classification": "NEW CANDIDATE",
+      "private_hub_import_verified": false,
+      "human_approval_verified": false,
+      "public_reach_addition_verified": false,
+      "review_feed_state": "MANIFEST_PUBLISHED"
     },
     {
       "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
       "identity": "doi:10.1175/waf-d-25-0044.1",
       "cohort": "2026-10",
-      "status": "needs_more_research",
+      "status": "staged_for_hub_import",
       "first_seen_at": "2026-11-01T13:52:45Z",
       "updated_at": "2026-11-01T18:31:16Z",
       "source_run_id": "REACH-MONTHLY-API-2026-10",
       "award_numbers": [
         "NA19OAR4590138"
       ],
-      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished.\n12:32 EST: AMS October 2026 WAF 41(10) identifies article pp. 2083–2099 by Nicholas Gasperoni, Xuguang Wang, Tsung-Han Li, Yongming Wang; RRFS-like ensemble data-assimilation blending. SPARK primary NA19OAR4590138 project spark-000176 studies cost-effective large background ensemble/regional FV3 hybrid EnVar data assimilation for hazardous weather. Scope is closely related but direct publication funding acknowledgment and exact project contribution not verified. REACH Link to Output alternate URL patterns absent in all 1,238 index rows; details/version checks pending.\n13:31 EST targeted full REACH detail check: same-primary-award records in shards part-038, part-062 and part-063 include earlier Gasperoni/Li valid-time-shifting and RRFS ensemble data-assimilation publications; no inspected detail field has the exact October DOI 10.1175/WAF-D-25-0044.1. These prior works may be a research lineage, not proven duplicate or independently new outputs. Publisher grant acknowledgment and full secondary-link/version checks remain outstanding.",
+      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished.\n12:32 EST: AMS October 2026 WAF 41(10) identifies article pp. 2083–2099 by Nicholas Gasperoni, Xuguang Wang, Tsung-Han Li, Yongming Wang; RRFS-like ensemble data-assimilation blending. SPARK primary NA19OAR4590138 project spark-000176 studies cost-effective large background ensemble/regional FV3 hybrid EnVar data assimilation for hazardous weather. Scope is closely related but direct publication funding acknowledgment and exact project contribution not verified. REACH Link to Output alternate URL patterns absent in all 1,238 index rows; details/version checks pending.\n13:31 EST targeted full REACH detail check: same-primary-award records in shards part-038, part-062 and part-063 include earlier Gasperoni/Li valid-time-shifting and RRFS ensemble data-assimilation publications; no inspected detail field has the exact October DOI 10.1175/WAF-D-25-0044.1. These prior works may be a research lineage, not proven duplicate or independently new outputs. Publisher grant acknowledgment and full secondary-link/version checks remain outstanding.\nValidated Scout review feed contains this exact original DOI in scout-discoveries/batches/2026-11-01-monthly-fast-0c3a5f836cdc62.csv. Research stage completed for human review. Private Hub import NOT VERIFIED; no human approval or public REACH update inferred. DOI-seeded related output research continues separately.",
       "checked_sources": [
         "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
@@ -604,20 +628,28 @@
         "disposition": "needs_more_research",
         "hub_submission_verified": false,
         "public_reach_addition_verified": false
-      }
+      },
+      "scout_batch_path": "scout-discoveries/batches/2026-11-01-monthly-fast-0c3a5f836cdc62.csv",
+      "reach_snapshot": "f94ae52cac483b52e9a5cd6e775c6faa01ad6ec33610b249b3d486aed6daa003",
+      "evidence_url": "https://api.crossref.org/works/10.1175/waf-d-25-0044.1",
+      "classification": "NEW CANDIDATE",
+      "private_hub_import_verified": false,
+      "human_approval_verified": false,
+      "public_reach_addition_verified": false,
+      "review_feed_state": "MANIFEST_PUBLISHED"
     },
     {
       "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
       "identity": "doi:10.1175/waf-d-26-0084.1",
       "cohort": "2026-10",
-      "status": "needs_more_research",
+      "status": "staged_for_hub_import",
       "first_seen_at": "2026-11-01T13:52:45Z",
       "updated_at": "2026-11-01T18:31:16Z",
       "source_run_id": "REACH-MONTHLY-API-2026-10",
       "award_numbers": [
         "NA22OAR4590522"
       ],
-      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished.\n12:32 EST: AMS WAF 41(10) pp.2165–2181 verifies article and authors Andrew Berrington, Nathan Snook, Ming Xue, Bryan Carroll, Keith Brewster, Sarah Trojniak, James Correia. It evaluates FV3-LAM/MPAS during NOAA HMT 2025 FFaIR experiment, strongly matching SPARK spark-000199 project NA22OAR4590522 on FV3-LAM CAM ensembles for HMT FFaIR/Winter Weather; Snook/Xue/Brewster appear in public project descriptions. Direct publisher grant acknowledgement not yet checked. AMS index snippets conflict on exact online day (8 vs 21 October); use only Oct 2026 issue until DOI authoritative metadata resolved. No targeted REACH alternate-link match; details not checked.\n13:31 EST targeted full REACH detail comparison: part-069 reach-000558 is 2024 FFaIR ensemble evaluation DOI 10.1175/WAF-D-25-0256.1; October monthly DOI 10.1175/WAF-D-26-0084.1 studies 2025 FFaIR. Shared project/experimental lineage but different DOI, title and experiment year; do not conflate as duplicate or new related output. No exact monthly DOI in same-award detail shards 068/069; full secondary-link/version screening and direct funding acknowledgment still outstanding.",
+      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished.\n12:32 EST: AMS WAF 41(10) pp.2165–2181 verifies article and authors Andrew Berrington, Nathan Snook, Ming Xue, Bryan Carroll, Keith Brewster, Sarah Trojniak, James Correia. It evaluates FV3-LAM/MPAS during NOAA HMT 2025 FFaIR experiment, strongly matching SPARK spark-000199 project NA22OAR4590522 on FV3-LAM CAM ensembles for HMT FFaIR/Winter Weather; Snook/Xue/Brewster appear in public project descriptions. Direct publisher grant acknowledgement not yet checked. AMS index snippets conflict on exact online day (8 vs 21 October); use only Oct 2026 issue until DOI authoritative metadata resolved. No targeted REACH alternate-link match; details not checked.\n13:31 EST targeted full REACH detail comparison: part-069 reach-000558 is 2024 FFaIR ensemble evaluation DOI 10.1175/WAF-D-25-0256.1; October monthly DOI 10.1175/WAF-D-26-0084.1 studies 2025 FFaIR. Shared project/experimental lineage but different DOI, title and experiment year; do not conflate as duplicate or new related output. No exact monthly DOI in same-award detail shards 068/069; full secondary-link/version screening and direct funding acknowledgment still outstanding.\nValidated Scout review feed contains this exact original DOI in scout-discoveries/batches/2026-11-01-monthly-fast-d4c4a2d852eeca.csv. Research stage completed for human review. Private Hub import NOT VERIFIED; no human approval or public REACH update inferred. DOI-seeded related output research continues separately.",
       "checked_sources": [
         "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
@@ -696,20 +728,28 @@
         "disposition": "needs_more_research",
         "hub_submission_verified": false,
         "public_reach_addition_verified": false
-      }
+      },
+      "scout_batch_path": "scout-discoveries/batches/2026-11-01-monthly-fast-d4c4a2d852eeca.csv",
+      "reach_snapshot": "f94ae52cac483b52e9a5cd6e775c6faa01ad6ec33610b249b3d486aed6daa003",
+      "evidence_url": "https://api.crossref.org/works/10.1175/waf-d-26-0084.1",
+      "classification": "NEW CANDIDATE",
+      "private_hub_import_verified": false,
+      "human_approval_verified": false,
+      "public_reach_addition_verified": false,
+      "review_feed_state": "MANIFEST_PUBLISHED"
     },
     {
       "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
       "identity": "doi:10.3390/rs18193383",
       "cohort": "2026-10",
-      "status": "needs_more_research",
+      "status": "staged_for_hub_import",
       "first_seen_at": "2026-11-01T13:52:45Z",
       "updated_at": "2026-11-01T18:31:16Z",
       "source_run_id": "REACH-MONTHLY-API-2026-10",
       "award_numbers": [
         "NA22OAR4590179"
       ],
-      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished.\n12:32 EST: MDPI full article gives published 2026-10-02 and explicitly acknowledges NOAA/OAR-JTTI NA22OAR4590179 in Funding; NOAA IR noaa:77382 independently confirms DOI, grant and authors. SPARK spark-000130 primary project 'A Wind-Wave-Current Data Assimilation Scheme for the 3D-Real Time Mesoscale Analysis' matches LETKF wind/wave data assimilation scope. Strong same-project evidence. NOAA IR is alternate location of SAME publication, not a second output. Article Data Availability lists Copernicus Marine Service data DOIs 10.48670/moi-00179, -00182, -00036 and reused UMD-LETKF GitHub library; these are external/reused research inputs, NOT verified distinct WPO outputs. REACH index alternate links absent; detail/version check pending.\n13:31 EST targeted full REACH detail check: part-050 same-primary-award reach-000397 and reach-000398 have different titles and NOAA IR links, not this MDPI DOI. Publisher and NOAA IR noaa:77382 corroborate same article and grant NA22OAR4590179; IR is an alternate copy, not second output. No exact DOI in inspected same-award detail rows. Cross-award detail links and publication-version comparison still open; do not stage yet.",
+      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished.\n12:32 EST: MDPI full article gives published 2026-10-02 and explicitly acknowledges NOAA/OAR-JTTI NA22OAR4590179 in Funding; NOAA IR noaa:77382 independently confirms DOI, grant and authors. SPARK spark-000130 primary project 'A Wind-Wave-Current Data Assimilation Scheme for the 3D-Real Time Mesoscale Analysis' matches LETKF wind/wave data assimilation scope. Strong same-project evidence. NOAA IR is alternate location of SAME publication, not a second output. Article Data Availability lists Copernicus Marine Service data DOIs 10.48670/moi-00179, -00182, -00036 and reused UMD-LETKF GitHub library; these are external/reused research inputs, NOT verified distinct WPO outputs. REACH index alternate links absent; detail/version check pending.\n13:31 EST targeted full REACH detail check: part-050 same-primary-award reach-000397 and reach-000398 have different titles and NOAA IR links, not this MDPI DOI. Publisher and NOAA IR noaa:77382 corroborate same article and grant NA22OAR4590179; IR is an alternate copy, not second output. No exact DOI in inspected same-award detail rows. Cross-award detail links and publication-version comparison still open; do not stage yet.\nValidated Scout review feed contains this exact original DOI in scout-discoveries/batches/2026-11-01-monthly-fast-a56abc5841e724.csv. Research stage completed for human review. Private Hub import NOT VERIFIED; no human approval or public REACH update inferred. DOI-seeded related output research continues separately.",
       "checked_sources": [
         "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
@@ -809,7 +849,15 @@
         "disposition": "needs_more_research",
         "hub_submission_verified": false,
         "public_reach_addition_verified": false
-      }
+      },
+      "scout_batch_path": "scout-discoveries/batches/2026-11-01-monthly-fast-a56abc5841e724.csv",
+      "reach_snapshot": "f94ae52cac483b52e9a5cd6e775c6faa01ad6ec33610b249b3d486aed6daa003",
+      "evidence_url": "https://api.crossref.org/works/10.3390/rs18193383",
+      "classification": "NEW CANDIDATE",
+      "private_hub_import_verified": false,
+      "human_approval_verified": false,
+      "public_reach_addition_verified": false,
+      "review_feed_state": "MANIFEST_PUBLISHED"
     },
     {
       "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
@@ -910,14 +958,14 @@
       "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
       "identity": "doi:10.5194/egusphere-2026-5876",
       "cohort": "2026-10",
-      "status": "needs_more_research",
+      "status": "staged_for_hub_import",
       "first_seen_at": "2026-11-01T13:52:45Z",
       "updated_at": "2026-11-01T21:26:45Z",
       "source_run_id": "REACH-MONTHLY-API-2026-10",
       "award_numbers": [
         "NA21OAR4590208"
       ],
-      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished.\n12:32 EST: Copernicus original EGUsphere page confirms preprint posted 2026-10-22, under review at Geoscience Communication, by Olman, Hatchett, Collins, Heggli, Lambrecht, Tolby and Charles. Research investigates bot-generated responses in survey data about weather-forecast communication. SPARK primary NA21OAR4590208 project spark-000246 is 'Employing Rhetoric to Improve Probabilistic Forecast Communication'; strong theme and public author/affiliation overlap. Direct grant acknowledgment not verified from abstract, so same-project WPO attribution remains provisional. Future Geoscience Communication article may be version of same preprint. REACH index alternate-link URL absent.\n15:28 EST full-text source verification: The original eight-page Copernicus preprint PDF p.6 explicitly credits NOAA WPO Social Sciences Program grant NA21OAR4590208 and states no code/datasets available; pp.1–2 describe NWS partner/public forecast-graphic surveys, community commonplaces and A/B testing, directly matching SPARK spark-000246 full funded project methods. Strong same-project funding corroboration now obtained. Reference-led expansion identified NOAA Technical Memo DOI 10.25923/k9kh-y971 already in public REACH reach-000821 (NOT new); related 2026 articles DOI 10.1177/10506519261455873 and DOI 10.1145/3794916.3794919 are separate publication leads, with full funding/REACH dedup NOT VERIFIED. Other existing same-award REACH outputs reach-000820/822 are not new. Preprint remains under review, final journal version DOI unverified; no Hub staging.\n16:26 EST: Independently corroborated titles, authors, venues and study descriptions for two previously identified citation-led publications 10.1177/10506519261455873 and 10.1145/3794916.3794919. Both connect to probabilistic weather communication and NWS risk thresholds; neither has independently verified primary WPO grant support or complete REACH/Scout duplicate check. Research leads only; no separate monthly intake rows or Hub submissions.",
+      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished.\n12:32 EST: Copernicus original EGUsphere page confirms preprint posted 2026-10-22, under review at Geoscience Communication, by Olman, Hatchett, Collins, Heggli, Lambrecht, Tolby and Charles. Research investigates bot-generated responses in survey data about weather-forecast communication. SPARK primary NA21OAR4590208 project spark-000246 is 'Employing Rhetoric to Improve Probabilistic Forecast Communication'; strong theme and public author/affiliation overlap. Direct grant acknowledgment not verified from abstract, so same-project WPO attribution remains provisional. Future Geoscience Communication article may be version of same preprint. REACH index alternate-link URL absent.\n15:28 EST full-text source verification: The original eight-page Copernicus preprint PDF p.6 explicitly credits NOAA WPO Social Sciences Program grant NA21OAR4590208 and states no code/datasets available; pp.1–2 describe NWS partner/public forecast-graphic surveys, community commonplaces and A/B testing, directly matching SPARK spark-000246 full funded project methods. Strong same-project funding corroboration now obtained. Reference-led expansion identified NOAA Technical Memo DOI 10.25923/k9kh-y971 already in public REACH reach-000821 (NOT new); related 2026 articles DOI 10.1177/10506519261455873 and DOI 10.1145/3794916.3794919 are separate publication leads, with full funding/REACH dedup NOT VERIFIED. Other existing same-award REACH outputs reach-000820/822 are not new. Preprint remains under review, final journal version DOI unverified; no Hub staging.\n16:26 EST: Independently corroborated titles, authors, venues and study descriptions for two previously identified citation-led publications 10.1177/10506519261455873 and 10.1145/3794916.3794919. Both connect to probabilistic weather communication and NWS risk thresholds; neither has independently verified primary WPO grant support or complete REACH/Scout duplicate check. Research leads only; no separate monthly intake rows or Hub submissions.\nValidated Scout review feed contains this exact original DOI in scout-discoveries/batches/2026-11-01-monthly-fast-320ded4490d81b.csv. Research stage completed for human review. Private Hub import NOT VERIFIED; no human approval or public REACH update inferred. DOI-seeded related output research continues separately.",
       "checked_sources": [
         "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
@@ -1055,20 +1103,28 @@
           "hub_submission_verified": false,
           "public_reach_addition_verified": false
         }
-      }
+      },
+      "scout_batch_path": "scout-discoveries/batches/2026-11-01-monthly-fast-320ded4490d81b.csv",
+      "reach_snapshot": "f94ae52cac483b52e9a5cd6e775c6faa01ad6ec33610b249b3d486aed6daa003",
+      "evidence_url": "https://api.crossref.org/works/10.5194/egusphere-2026-5876",
+      "classification": "NEW CANDIDATE",
+      "private_hub_import_verified": false,
+      "human_approval_verified": false,
+      "public_reach_addition_verified": false,
+      "review_feed_state": "MANIFEST_PUBLISHED"
     },
     {
       "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
       "identity": "doi:10.5194/tc-20-5973-2026",
       "cohort": "2026-10",
-      "status": "needs_more_research",
+      "status": "staged_for_hub_import",
       "first_seen_at": "2026-11-01T13:52:45Z",
       "updated_at": "2026-11-01T21:26:45Z",
       "source_run_id": "REACH-MONTHLY-API-2026-10",
       "award_numbers": [
         "NA25OARX459C0342-T1-01"
       ],
-      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished.\n12:32 EST: Copernicus full article published 2026-10-15, The Cryosphere 20:5973–5992. Financial Support explicitly names NOAA Weather Program Office grant NA25OARX459C0342-T1-01 plus separate CIROH award NA22NWS4320003. NOAA IR noaa:76974 confirms same DOI and both grants. SPARK spark-000373 primary project examines Southern Great Plains precipitation extremes through remote snow dynamics in US West; article examines California snow/vegetation processes, relevant but not explicit SGP downstream link, so same-project WPO scope still needs validation. Article has separate supplement DOI 10.5194/tc-20-5973-2026-supplement (article component, NOT distinct output) and cites reused NCAR Noah-MP code plus external public data sources; don't auto-stage them. REACH alternate link absent in index; detail/version check pending.\n16:26 EST: Publisher's peer-review record explicitly identifies earlier EGUsphere preprint DOI 10.5194/egusphere-2025-3884 (discussion 21 Aug 2025) as the same work as final The Cryosphere DOI 10.5194/tc-20-5973-2026 (15 Oct 2026). DO NOT count as two publications. GitHub indexed search for preprint DOI in reach-dashboard returned zero results but does not prove absence from REACH detail/secondary links. Publisher code/data statement describes existing external resources, not a newly verified WPO-created code/dataset. Original grant remains direct WPO acknowledgment; project-specific SGP remote-effects deliverable still unverified.",
+      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished.\n12:32 EST: Copernicus full article published 2026-10-15, The Cryosphere 20:5973–5992. Financial Support explicitly names NOAA Weather Program Office grant NA25OARX459C0342-T1-01 plus separate CIROH award NA22NWS4320003. NOAA IR noaa:76974 confirms same DOI and both grants. SPARK spark-000373 primary project examines Southern Great Plains precipitation extremes through remote snow dynamics in US West; article examines California snow/vegetation processes, relevant but not explicit SGP downstream link, so same-project WPO scope still needs validation. Article has separate supplement DOI 10.5194/tc-20-5973-2026-supplement (article component, NOT distinct output) and cites reused NCAR Noah-MP code plus external public data sources; don't auto-stage them. REACH alternate link absent in index; detail/version check pending.\n16:26 EST: Publisher's peer-review record explicitly identifies earlier EGUsphere preprint DOI 10.5194/egusphere-2025-3884 (discussion 21 Aug 2025) as the same work as final The Cryosphere DOI 10.5194/tc-20-5973-2026 (15 Oct 2026). DO NOT count as two publications. GitHub indexed search for preprint DOI in reach-dashboard returned zero results but does not prove absence from REACH detail/secondary links. Publisher code/data statement describes existing external resources, not a newly verified WPO-created code/dataset. Original grant remains direct WPO acknowledgment; project-specific SGP remote-effects deliverable still unverified.\nValidated Scout review feed contains this exact original DOI in scout-discoveries/batches/2026-11-01-monthly-fast-1136c0387b8237.csv. Research stage completed for human review. Private Hub import NOT VERIFIED; no human approval or public REACH update inferred. DOI-seeded related output research continues separately.",
       "checked_sources": [
         "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
@@ -1167,7 +1223,15 @@
           "hub_submission_verified": false,
           "public_reach_addition_verified": false
         }
-      }
+      },
+      "scout_batch_path": "scout-discoveries/batches/2026-11-01-monthly-fast-1136c0387b8237.csv",
+      "reach_snapshot": "f94ae52cac483b52e9a5cd6e775c6faa01ad6ec33610b249b3d486aed6daa003",
+      "evidence_url": "https://api.crossref.org/works/10.5194/tc-20-5973-2026",
+      "classification": "NEW CANDIDATE",
+      "private_hub_import_verified": false,
+      "human_approval_verified": false,
+      "public_reach_addition_verified": false,
+      "review_feed_state": "MANIFEST_PUBLISHED"
     },
     {
       "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
