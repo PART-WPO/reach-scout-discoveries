@@ -1,0 +1,69 @@
+"""Fast monthly DOI intake regression checks. No private Hub is contacted."""
+import hashlib
+import io
+import json
+import sys
+import tempfile
+import unittest
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
+from quick_monthly_intake import clean, match_reach, check_funding, detect_version, gather_feed
+
+class MonthlyQuickIntakeTests(unittest.TestCase):
+    def test_html_title_markup_is_removed_not_invented(self):
+        self.assertEqual(clean("The <scp>Wind</scp> &amp; Waves"), "The Wind & Waves")
+        self.assertIn("Skynet", clean("We &lt;3 Skynet"))
+
+    def test_doi_secondary_field_and_exact_title_checks(self):
+        index=[{"Record ID":"reach-1","Title":"Other article", "Link to Output":"https://example.org/other"}]
+        details=[{"Record ID":"reach-1","Title":"Other article",
+                  "Publications":"https://doi.org/10.1234/paper.1",
+                  "Journal Article Link":""}]
+        self.assertEqual(match_reach("10.1234/paper.1", "New article",
+                                      "https://doi.org/10.1234/paper.1",index,details)[0]["reach_id"],
+                         "reach-1")
+        self.assertEqual(match_reach("10.1234/absent","Not here",
+                                    "https://doi.org/10.1234/absent",index,details), [])
+
+    def test_primary_award_is_needed_and_related_awards_are_ignored(self):
+        row={"NOAA Award Number(s)":"NA22OAR4590179"}
+        spark=[{"Record ID":"spark-1","Award Number(s)":"NA22OAR4590179",
+                "Related Award Number(s)":"NA23OAR4599999"}]
+        c,status,issues=check_funding(row,{},spark)
+        self.assertEqual(status,"primary_award_matched")
+        _,status,_=check_funding({"NOAA Award Number(s)":"NA23OAR4599999"},{},spark)
+        self.assertEqual(status,"unmatched_primary_award")
+
+    def test_explicit_contradiction_is_held_but_missing_grant_proof_is_not(self):
+        spark=[{"Record ID":"spark-1","Award Number(s)":"NA22OAR4590179"}]
+        row={"NOAA Award Number(s)":"NA22OAR4590179"}
+        negative={"substantive_research":{"funding_assessment":{
+            "same_project_verified":False,"reason":"Article objectives differ from project"}}}
+        _,status,_=check_funding(row,negative,spark)
+        self.assertEqual(status,"funding_anomaly")
+        uncertain={"substantive_research":{"funding_assessment":{
+            "same_project_verified":False,"basis":"Article's grant acknowledgment not yet found"}}}
+        _,status,_=check_funding(row,uncertain,spark)
+        self.assertEqual(status,"primary_award_matched")
+
+    def test_prior_cross_cohort_version_review_is_preserved(self):
+        case={"substantive_research":{"identity_and_related_outputs":{
+            "historical_review_unit":"zenodo-mom6","concept_doi":"10.1234/first",
+            "version_doi":"10.1234/second"}}}
+        self.assertEqual(detect_version(case,"10.1234/second"),
+                         "existing_historical_review_family")
+
+    def test_source_sha_mismatch_fails_closed(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            (root/"manifest.json").write_text(json.dumps({
+                "batches":[{"path":"batches/test.csv","sha256":"0"*64,"record_count":1}]}))
+            p=root/"batches/test.csv"
+            p.parent.mkdir()
+            p.write_text("DOI,Title\n10.1234/x,Test\n")
+            with self.assertRaisesRegex(ValueError, "Source SHA mismatch"):
+                gather_feed(root,"","manifest.json",None)
+
+if __name__=="__main__":
+    unittest.main()
