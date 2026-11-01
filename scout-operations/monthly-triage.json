@@ -1354,7 +1354,8 @@
         "historical_hub_import": "NOT_VERIFIED",
         "canonical_identity": "UNDECIDED",
         "native_public_files": "NOT_VERIFIED",
-        "reopen_condition": "Only if historical review evidence changes or reviewer directs a distinct legitimate output; do not restage two versions."
+        "reopen_condition": "Only if historical review evidence changes or reviewer directs a distinct legitimate output; do not restage two versions.",
+        "validation_retry_note": "Initial automated coverage rebuild calculated 10 checked and 3 open, but its push failed due to concurrent active-workstream commit/rebase conflict (GitHub run 41357162521); retrigger from latest main, do not alter historical review or falsely claim coverage published."
       }
     },
     {
