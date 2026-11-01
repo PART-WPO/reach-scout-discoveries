@@ -12,10 +12,14 @@ on:
       - 'scout-operations/tools/build_monthly_decision_queue.py'
       - 'scout-operations/tests/test_monthly_decision_queue.py'
       - 'scout-operations/monthly-expansion-leads.json'
+      - 'scout-operations/tools/quick_monthly_intake.py'
+      - 'scout-operations/tests/test_quick_monthly_intake.py'
+      - 'scout-operations/monthly-fast-intake.json'
       - '.github/workflows/build-monthly-coverage.yml'
   workflow_dispatch:
 permissions:
   contents: write
+  actions: write
 concurrency:
   group: scout-monthly-coverage
   cancel-in-progress: false
@@ -24,12 +28,29 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Check out public REACH duplicate-check snapshot
+        uses: actions/checkout@v4
+        with:
+          repository: PART-WPO/reach-dashboard
+          path: upstream/reach-dashboard
+          persist-credentials: false
+      - name: Check out SPARK primary-award project snapshot
+        uses: actions/checkout@v4
+        with:
+          repository: PART-WPO/SPARK
+          path: upstream/SPARK
+          persist-credentials: false
       - name: Test monthly intake synchronization and correction safety
         run: python3 -m unittest discover -s scout-operations/tests -p 'test_*.py' -v
       - name: Queue new API DOIs without marking them researched
         run: python3 scout-operations/tools/sync_monthly_intake.py
       - name: Check every monthly record against Scout ledger
         run: python3 scout-operations/tools/build_coverage.py
+      - name: Quick monthly DOI review intake and validated draft preparation
+        run: |
+          python3 scout-operations/tools/quick_monthly_intake.py \
+            --reach-root upstream/reach-dashboard --spark-root upstream/SPARK \
+            --write-drafts
       - name: Build independent original/expansion decision queue
         run: python3 scout-operations/tools/build_monthly_decision_queue.py
       - name: Calculate next Scout workstream
@@ -38,7 +59,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add scout-operations/monthly-triage.json scout-operations/coverage.json scout-operations/active-workstream.json scout-operations/monthly-decision-queue.json
+          git add scout-operations/monthly-triage.json scout-operations/coverage.json scout-operations/active-workstream.json scout-operations/monthly-decision-queue.json scout-operations/monthly-fast-intake.json scout-discoveries/inbox/
           if ! git diff --cached --quiet; then
             git commit -m 'Refresh monthly Scout research coverage'
             for attempt in 1 2 3 4 5; do
@@ -49,3 +70,7 @@ jobs:
             done
             exit 1
           fi
+      - name: Run existing Scout reviewed-feed promotion without relying on bot push triggers
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run build-scout-discovery-manifest.yml --ref main
