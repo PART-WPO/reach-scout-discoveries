@@ -129,6 +129,7 @@ jobs:
             python3 scout-operations/tools/build_coverage.py
           fi
           python3 scout-operations/tools/select_workstream.py
+          python3 scout-operations/tools/build_monthly_decision_queue.py
       - name: Create monthly Excel comparison workbook
         if: env.HARVEST_MODE == 'monthly'
         run: |
@@ -152,7 +153,7 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          for path in api-discoveries/batches api-discoveries/historical api-discoveries/runs monthly-harvest-reports api-discoveries/manifest.json scout-operations/monthly-triage.json scout-operations/coverage.json scout-operations/historical-triage.json scout-operations/historical-coverage.json scout-operations/active-workstream.json; do
+          for path in api-discoveries/batches api-discoveries/historical api-discoveries/runs monthly-harvest-reports api-discoveries/manifest.json scout-operations/monthly-triage.json scout-operations/monthly-decision-queue.json scout-operations/coverage.json scout-operations/historical-triage.json scout-operations/historical-coverage.json scout-operations/active-workstream.json; do
             if [ -e "$path" ]; then git add -- "$path"; fi
           done
           if ! git diff --cached --quiet; then
