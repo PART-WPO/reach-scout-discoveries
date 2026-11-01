@@ -122,6 +122,11 @@ jobs:
           set -euo pipefail
           if [ "$HARVEST_MODE" = "historical" ]; then
             python3 scout-operations/tools/reconcile_historical.py
+          else
+            # GITHUB_TOKEN pushes do not reliably trigger downstream Actions:
+            # queue monthly records and refresh coverage in this same harvest.
+            python3 scout-operations/tools/sync_monthly_intake.py
+            python3 scout-operations/tools/build_coverage.py
           fi
           python3 scout-operations/tools/select_workstream.py
       - name: Create monthly Excel comparison workbook
@@ -147,7 +152,7 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          for path in api-discoveries/batches api-discoveries/historical api-discoveries/runs monthly-harvest-reports api-discoveries/manifest.json scout-operations/coverage.json scout-operations/historical-triage.json scout-operations/historical-coverage.json scout-operations/active-workstream.json; do
+          for path in api-discoveries/batches api-discoveries/historical api-discoveries/runs monthly-harvest-reports api-discoveries/manifest.json scout-operations/monthly-triage.json scout-operations/coverage.json scout-operations/historical-triage.json scout-operations/historical-coverage.json scout-operations/active-workstream.json; do
             if [ -e "$path" ]; then git add -- "$path"; fi
           done
           if ! git diff --cached --quiet; then
