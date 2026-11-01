@@ -305,8 +305,12 @@ def main():
             revision=next(iter(choices),"")
     if revision and not re.fullmatch(r"[a-z][a-z0-9-]{0,35}",revision):
         raise ValueError("Unsafe workbook correction ID")
-    suffix=("-"+revision) if revision else ""
-    target=Path(args.output) if args.output else Path("api-discoveries/reports")/(f"REACH_API_Comparison_{args.month}{suffix}.xlsx")
+    # Display the research month, not the date the workflow ran.
+    # October 2026's verified primary-award correction is the canonical report.
+    display=dt.date.fromisoformat(args.month+"-01").strftime("%B_%Y")
+    is_canonical_october=(args.month=="2026-10" and revision=="primary-only")
+    suffix=("_Correction_"+revision.replace("-","_")) if revision and not is_canonical_october else ""
+    target=Path(args.output) if args.output else Path("monthly-harvest-reports")/(display+suffix+".xlsx")
     res=build(data,args.month,target)
     print(json.dumps(res,indent=2))
 if __name__=="__main__":main()
