@@ -912,12 +912,12 @@
       "cohort": "2026-10",
       "status": "needs_more_research",
       "first_seen_at": "2026-11-01T13:52:45Z",
-      "updated_at": "2026-11-01T17:32:21Z",
+      "updated_at": "2026-11-01T20:28:00Z",
       "source_run_id": "REACH-MONTHLY-API-2026-10",
       "award_numbers": [
         "NA21OAR4590208"
       ],
-      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished.\n12:32 EST: Copernicus original EGUsphere page confirms preprint posted 2026-10-22, under review at Geoscience Communication, by Olman, Hatchett, Collins, Heggli, Lambrecht, Tolby and Charles. Research investigates bot-generated responses in survey data about weather-forecast communication. SPARK primary NA21OAR4590208 project spark-000246 is 'Employing Rhetoric to Improve Probabilistic Forecast Communication'; strong theme and public author/affiliation overlap. Direct grant acknowledgment not verified from abstract, so same-project WPO attribution remains provisional. Future Geoscience Communication article may be version of same preprint. REACH index alternate-link URL absent.",
+      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished.\n12:32 EST: Copernicus original EGUsphere page confirms preprint posted 2026-10-22, under review at Geoscience Communication, by Olman, Hatchett, Collins, Heggli, Lambrecht, Tolby and Charles. Research investigates bot-generated responses in survey data about weather-forecast communication. SPARK primary NA21OAR4590208 project spark-000246 is 'Employing Rhetoric to Improve Probabilistic Forecast Communication'; strong theme and public author/affiliation overlap. Direct grant acknowledgment not verified from abstract, so same-project WPO attribution remains provisional. Future Geoscience Communication article may be version of same preprint. REACH index alternate-link URL absent.\n15:28 EST full-text source verification: The original eight-page Copernicus preprint PDF p.6 explicitly credits NOAA WPO Social Sciences Program grant NA21OAR4590208 and states no code/datasets available; pp.1–2 describe NWS partner/public forecast-graphic surveys, community commonplaces and A/B testing, directly matching SPARK spark-000246 full funded project methods. Strong same-project funding corroboration now obtained. Reference-led expansion identified NOAA Technical Memo DOI 10.25923/k9kh-y971 already in public REACH reach-000821 (NOT new); related 2026 articles DOI 10.1177/10506519261455873 and DOI 10.1145/3794916.3794919 are separate publication leads, with full funding/REACH dedup NOT VERIFIED. Other existing same-award REACH outputs reach-000820/822 are not new. Preprint remains under review, final journal version DOI unverified; no Hub staging.",
       "checked_sources": [
         "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
@@ -925,7 +925,14 @@
         "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
         "https://egusphere.copernicus.org/preprints/2026/egusphere-2026-5876/",
         "https://github.com/PART-WPO/SPARK/blob/main/agent-data/index/part-003.csv",
-        "https://github.com/PART-WPO/reach-dashboard/tree/main/agent-data/index"
+        "https://github.com/PART-WPO/reach-dashboard/tree/main/agent-data/index",
+        "https://egusphere.copernicus.org/preprints/2026/egusphere-2026-5876/egusphere-2026-5876.pdf",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-020.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-097.csv",
+        "https://repository.library.noaa.gov/view/noaa/71353",
+        "https://journals.sagepub.com/doi/abs/10.1177/10506519261455873",
+        "https://pinakes.wacclearinghouse.org/article/376641",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-1528ET-monthly-preprint-funding-and-research-lineage.md"
       ],
       "first_pass_screening": {
         "source_report": "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
@@ -939,12 +946,12 @@
         "research_disposition_verified": false
       },
       "next_research_actions": [
-        "Verify grant acknowledgement from full preprint and reconcile exact SPARK primary project contribution.",
-        "Inspect full REACH detail links and any version DOI before drafting.",
-        "If verified, propose one PREPRINT candidate with correct type, not a final journal article."
+        "Complete REACH all-detail secondary-link and preprint-version dedup for this exact EGUsphere DOI, including any eventual Geoscience Communication final DOI; do not assume a final DOI exists.",
+        "Investigate distinct reference-led publications 10.1177/10506519261455873 and 10.1145/3794916.3794919 separately for direct same-project WPO primary funding and complete REACH/Scout duplicates; do not add them to the monthly original DOI ledger or auto-stage.",
+        "Preserve existing REACH reach-000820/821/822 as already published related outputs, and respect the preprint's explicit no-code/no-dataset statements."
       ],
       "substantive_research": {
-        "checked_at": "2026-11-01T17:32:21Z",
+        "checked_at": "2026-11-01T20:28:00Z",
         "source_specific_metadata": {
           "title": "We <3 Skynet: Or, How We Learned to Stop Worrying and Love the Bot Responses in Our Survey Data",
           "type": "Preprint",
@@ -956,8 +963,9 @@
           "primary_award": "NA21OAR4590208",
           "spark_record": "spark-000246",
           "spark_project": "Employing Rhetoric to Improve Probabilistic Forecast Communication",
-          "same_project_verified": false,
-          "basis": "Strong rhetoric/survey/weather communication research alignment and author affiliation overlap; explicit preprint grant support not yet independently checked."
+          "same_project_verified": true,
+          "basis": "Original preprint PDF p.6 explicitly names WPO Social Sciences Program grant NA21OAR4590208; pp.1–2 describe the exact surveys, community commonplaces, five western NWS audiences and forecast visualization A/B testing specified in SPARK spark-000246 full primary-funded project description.",
+          "direct_publisher_acknowledgment": "NOAA Weather Program Office Social Sciences Program Grant NA21OAR4590208 (preprint PDF p.6)"
         },
         "identity_and_related_outputs": {
           "first_pass_exact_reach_and_scout_absent": true,
@@ -969,12 +977,61 @@
             "limitations": "No matches in index Link to Output is NOT complete REACH detail/secondary link, alternate DOI, or version dedup."
           },
           "full_alt_link_version_dedup_verified": false,
-          "related_output_leads": [],
-          "potential_version_relation": "Possible future peer-reviewed GC version; no second DOI verified."
+          "related_output_leads": [
+            {
+              "doi": "10.25923/k9kh-y971",
+              "type": "NOAA technical memorandum",
+              "reach_status": "already_in_public_reach",
+              "reach_id": "reach-000821",
+              "same_project_primary_award_verified": true,
+              "new_candidate": false
+            },
+            {
+              "doi": "10.1177/10506519261455873",
+              "type": "journal article",
+              "reach_status": "not_verified_full_dedup",
+              "same_project_primary_award_verified": false,
+              "new_candidate": false
+            },
+            {
+              "doi": "10.1145/3794916.3794919",
+              "type": "journal article",
+              "reach_status": "not_verified_full_dedup",
+              "same_project_primary_award_verified": false,
+              "new_candidate": false
+            }
+          ],
+          "potential_version_relation": "Possible future peer-reviewed GC version; no second DOI verified.",
+          "other_existing_same_award_reach_ids": [
+            "reach-000820",
+            "reach-000822"
+          ],
+          "preprint_code_availability": "No code is available (PDF p.6)",
+          "preprint_data_availability": "No datasets are available (PDF p.6)",
+          "future_journal_version_doi": "not_verified"
         },
         "disposition": "needs_more_research",
         "hub_submission_verified": false,
-        "public_reach_addition_verified": false
+        "public_reach_addition_verified": false,
+        "followup_2026_11_01_1528ET": {
+          "checked_at": "2026-11-01T20:28:00Z",
+          "report": "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-1528ET-monthly-preprint-funding-and-research-lineage.md",
+          "direct_funding_verified": true,
+          "project_match_verified": true,
+          "existing_reach_related": [
+            "reach-000820",
+            "reach-000821",
+            "reach-000822"
+          ],
+          "additional_research_leads": [
+            "10.1177/10506519261455873",
+            "10.1145/3794916.3794919"
+          ],
+          "full_dedup_verified": false,
+          "disposition": "needs_more_research",
+          "hub_submission_verified": false,
+          "public_reach_addition_verified": false
+        }
       }
     },
     {
