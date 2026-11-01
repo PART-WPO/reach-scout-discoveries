@@ -19,6 +19,31 @@ class HarvestUnitTests(unittest.TestCase):
         self.assertEqual(h.clean_award("WPO20-SSP-E-1(SSP"),"WPO20-SSP-E-1")
         self.assertEqual(h.clean_award("OWAQOBS001(IAA"),"OWAQOBS001")
 
+    def test_only_primary_spark_award_column_is_searchable(self):
+        # A real production failure: SPARK's flattened awards feed includes
+        # related-only identifiers; NA19NES4320002 must not seed any API query.
+        rows=[
+            {"Award Number":"NA23OAR4590379","Match Basis":"primary_noaa_award",
+             "Project Title":"Non-Gaussian Ensemble Data Assimilation"},
+            {"Award Number":"NA19NES4320002","Match Basis":"related_noaa_award",
+             "Project Title":"Non-Gaussian Ensemble Data Assimilation"},
+            {"Award Number":"OWAQ16-JTTI-I-1","Match Basis":"primary_unparsed_identifier"},
+            {"Award Number":"OWAQ15-R2O-I-1","Match Basis":"related_unparsed_identifier"},
+        ]
+        primary=h.primary_award_rows(rows)
+        self.assertEqual([r["Award Number"] for r in primary],
+                         ["NA23OAR4590379","OWAQ16-JTTI-I-1"])
+        # The same identifier in a different project must still be included
+        # when its OWN row is genuinely primary.
+        rows.append({"Award Number":"NA19NES4320002","Match Basis":"primary_noaa_award"})
+        self.assertEqual(h.primary_award_rows(rows)[-1]["Award Number"],"NA19NES4320002")
+
+    def test_unknown_spark_match_basis_fails_closed(self):
+        with self.assertRaisesRegex(ValueError,"Unrecognized SPARK award Match Basis"):
+            h.primary_award_rows([{"Award Number":"NA19NES4320002","Match Basis":""}])
+        with self.assertRaisesRegex(ValueError,"Match Basis"):
+            h.parse_awards("Award Number,Project Title\\nNA23OAR4590379,Project A\\n")
+
     def test_exact_award_not_substring(self):
         self.assertTrue(h.exact_awards(["NA16OAR4590234"],"NA16OAR4590234"))
         self.assertTrue(h.exact_awards(["NA16OAR4590234; NA16OAR4590235"],"NA16OAR4590234"))
