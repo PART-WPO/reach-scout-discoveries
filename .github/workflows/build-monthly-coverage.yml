@@ -30,10 +30,10 @@ jobs:
         run: python3 scout-operations/tools/sync_monthly_intake.py
       - name: Check every monthly record against Scout ledger
         run: python3 scout-operations/tools/build_coverage.py
-      - name: Calculate next Scout workstream
-        run: python3 scout-operations/tools/select_workstream.py
       - name: Build independent original/expansion decision queue
         run: python3 scout-operations/tools/build_monthly_decision_queue.py
+      - name: Calculate next Scout workstream
+        run: python3 scout-operations/tools/select_workstream.py
       - name: Commit changed operational coverage only
         run: |
           git config user.name 'github-actions[bot]'
