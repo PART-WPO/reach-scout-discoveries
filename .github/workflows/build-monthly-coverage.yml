@@ -17,6 +17,11 @@ on:
       - 'scout-operations/monthly-fast-intake.json'
       - '.github/workflows/build-monthly-coverage.yml'
   workflow_dispatch:
+  schedule:
+    # First-of-month catch-up after the overnight API harvest, even on weekends.
+    # Bot-authored harvest commits do not emit downstream push workflow events.
+    - cron: '17 1-6 1 * *'
+      timezone: "America/New_York"
 permissions:
   contents: write
   actions: write
