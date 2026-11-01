@@ -62,7 +62,8 @@ def _attribution_pending(queue):
 
 def decide(monthly_manifest,monthly_coverage,historical_manifest,historical_coverage,
            historical_manifest_sha="",monthly_triage=None,historical_triage=None,
-           metadata_blockers=None,attribution_followups=None,monthly_expansion_leads=None):
+           metadata_blockers=None,attribution_followups=None,monthly_expansion_leads=None,
+           monthly_decision_queue=None):
     monthly_total=int((monthly_manifest or {}).get("candidate_rows",0))
     monthly_checked=int((monthly_coverage or {}).get("checked",0))
     monthly_received=int((monthly_coverage or {}).get("received",0))
@@ -102,14 +103,27 @@ def decide(monthly_manifest,monthly_coverage,historical_manifest,historical_cove
     historical_unreconciled=(bool(historical_manifest) and not hist_matches)
     attribution_pending=_attribution_pending(attribution_followups)
     monthly_expansions_pending=_monthly_expansions_pending(monthly_expansion_leads)
+    original_decisions_due=sum(1 for c in (monthly_decision_queue or {}).get('originals', [])
+                               if c.get('decision_review_due') and c.get('ledger_status') not in {
+                                   'already_in_reach', 'forwarded_to_hub', 'metadata_update_forwarded',
+                                   'no_action', 'human_metadata_needed'})
+    originals_for_final_checks=sum(1 for c in (monthly_decision_queue or {}).get('originals', [])
+                                  if c.get('decision_track') in {
+                                      'prepare_validated_candidate_draft',
+                                      'original_fast_path_final_checks'})
     # A scheduled future retry does not make an unresolved original DOI cleared.
     # New monthly intake always preempts historical research.
     if monthly_initial:
         mode,phase="monthly_api_triage","initial_research"
         reason="Monthly API records need first-pass, output-specific investigation"
     elif monthly_followup or blockers["monthly"]:
-        mode,phase="monthly_api_triage","additional_evidence_research"
-        reason="Continue monthly API original-record follow-ups and linked-output evidence recovery before older awards"
+        mode="monthly_api_triage"
+        if monthly_followup and original_decisions_due:
+            phase="original_decision_fast_path"
+            reason="Complete bounded original-output decisions and stage fully verified candidates without waiting for independent expansion"
+        else:
+            phase="additional_evidence_research"
+            reason="Continue unresolved monthly API specific evidence checks or metadata blockers before older awards"
     elif monthly_expansions_pending:
         mode,phase="monthly_api_triage","related_output_expansion_research"
         reason="Continue distinct API-seeded output leads with their own source and WPO funding validation; original seeds need not wait for expansion"
@@ -139,6 +153,8 @@ def decide(monthly_manifest,monthly_coverage,historical_manifest,historical_cove
             "remaining_or_untracked":monthly_unfinished,
             "initial_cases":monthly_initial,
             "unresolved_followups":monthly_followup,
+            "original_decisions_due":original_decisions_due,
+            "originals_for_final_checks":originals_for_final_checks,
             "independent_expansion_leads_pending":monthly_expansions_pending,
             "pending_metadata_blockers_including_originals":blockers["monthly"]
         },
@@ -167,7 +183,8 @@ def main():
         historical_triage=read("scout-operations/historical-triage.json"),
         metadata_blockers=read("scout-operations/metadata-blockers.json"),
         attribution_followups=read("scout-operations/attribution-followups.json"),
-        monthly_expansion_leads=read("scout-operations/monthly-expansion-leads.json"))
+        monthly_expansion_leads=read("scout-operations/monthly-expansion-leads.json"),
+        monthly_decision_queue=read("scout-operations/monthly-decision-queue.json"))
     new=json.dumps(result,indent=2,sort_keys=True)+"\n"
     if not OUT.exists() or OUT.read_text(encoding="utf-8")!=new:
         OUT.write_text(new,encoding="utf-8")
