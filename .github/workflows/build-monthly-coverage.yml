@@ -9,6 +9,9 @@ on:
       - 'scout-operations/tools/build_coverage.py'
       - 'scout-operations/tools/sync_monthly_intake.py'
       - 'scout-operations/tests/test_sync_monthly_intake.py'
+      - 'scout-operations/tools/build_monthly_decision_queue.py'
+      - 'scout-operations/tests/test_monthly_decision_queue.py'
+      - 'scout-operations/monthly-expansion-leads.json'
       - '.github/workflows/build-monthly-coverage.yml'
   workflow_dispatch:
 permissions:
@@ -22,18 +25,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Test monthly intake synchronization and correction safety
-        run: python3 -m unittest discover -s scout-operations/tests -p 'test_sync_monthly_intake.py' -v
+        run: python3 -m unittest discover -s scout-operations/tests -p 'test_*.py' -v
       - name: Queue new API DOIs without marking them researched
         run: python3 scout-operations/tools/sync_monthly_intake.py
       - name: Check every monthly record against Scout ledger
         run: python3 scout-operations/tools/build_coverage.py
       - name: Calculate next Scout workstream
         run: python3 scout-operations/tools/select_workstream.py
+      - name: Build independent original/expansion decision queue
+        run: python3 scout-operations/tools/build_monthly_decision_queue.py
       - name: Commit changed operational coverage only
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add scout-operations/monthly-triage.json scout-operations/coverage.json scout-operations/active-workstream.json
+          git add scout-operations/monthly-triage.json scout-operations/coverage.json scout-operations/active-workstream.json scout-operations/monthly-decision-queue.json
           if ! git diff --cached --quiet; then
             git commit -m 'Refresh monthly Scout research coverage'
             for attempt in 1 2 3 4 5; do
