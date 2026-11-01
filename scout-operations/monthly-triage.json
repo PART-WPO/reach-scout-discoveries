@@ -244,17 +244,20 @@
       "cohort": "2026-10",
       "status": "needs_more_research",
       "first_seen_at": "2026-11-01T13:52:45Z",
-      "updated_at": "2026-11-01T14:30:48Z",
+      "updated_at": "2026-11-01T17:32:21Z",
       "source_run_id": "REACH-MONTHLY-API-2026-10",
       "award_numbers": [
         "NA24OARX459C0015"
       ],
-      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished. PROJECT SCOPE: NOAA IR award evidence appears consistent, but same-project research scope is not yet verified.",
+      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished. PROJECT SCOPE: NOAA IR award evidence appears consistent, but same-project research scope is not yet verified.\n12:32 EST: NOAA IR noaa:76692 independently verifies journal article, 2026, DOI, author trio and Grant NA24OARX459C0015. SPARK primary project spark-000155 is GLORe ocean reanalysis/sea ice outlook; article analyzes Western North Pacific tropical cyclone seasonal accumulated cyclone energy using experimental SFS reforecasts. Named project and article research objectives differ substantially; same-project WPO attribution NOT VERIFIED despite exact award and NOAA IR funding. NOAA IR is alternate URL for SAME article; none of targeted REACH index Link to Output URLs match; detail/other links remain unchecked. Hold from Hub.",
       "checked_sources": [
         "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
         "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
-        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json"
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://repository.library.noaa.gov/view/noaa/76692",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/index/part-002.csv",
+        "https://github.com/PART-WPO/reach-dashboard/tree/main/agent-data/index"
       ],
       "first_pass_screening": {
         "source_report": "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
@@ -268,10 +271,46 @@
         "research_disposition_verified": false
       },
       "next_research_actions": [
-        "Verify exact-source DOI metadata, publication date, and alternative URL/version identities.",
-        "Corroborate each output's funding against the correct SPARK primary-funded project; resolve any flagged conflict.",
-        "Follow related datasets, publications, and code; record evidence and a supported disposition before any Hub proposal."
-      ]
+        "Obtain publisher full acknowledgments and clarify whether SFS paper was produced under SPARK GLORe project, or only shares an award identifier.",
+        "Complete REACH detail-link and publication-version screening if same-project WPO scope is independently corroborated.",
+        "Do not stage solely on NOAA IR grant number."
+      ],
+      "substantive_research": {
+        "checked_at": "2026-11-01T17:32:21Z",
+        "source_specific_metadata": {
+          "title": "Dynamical prediction of western North Pacific seasonal accumulated cyclone energy with experimental SFS reforecasts",
+          "journal": "Environmental Research Communications",
+          "volume": "8",
+          "article": "101004",
+          "publication_year": "2026",
+          "noaa_ir": "noaa:76692",
+          "type": "Publication"
+        },
+        "funding_assessment": {
+          "primary_award": "NA24OARX459C0015",
+          "spark_record": "spark-000155",
+          "spark_project": "Improving GLobal Ocean Reanalysis (GLORe) to advance CPC ocean monitoring and sea ice outlook",
+          "noaa_ir_funding": "Grant no. NA24OARX459C0015",
+          "same_project_verified": false,
+          "reason": "SFS western North Pacific tropical cyclone ACE study vs GLORe ocean reanalysis/sea ice outlook; direct grant string alone insufficient."
+        },
+        "identity_and_related_outputs": {
+          "first_pass_exact_reach_and_scout_absent": true,
+          "reach_index_alternate_url_screening": {
+            "checked_at": "2026-11-01T17:32:21Z",
+            "source": "https://github.com/PART-WPO/reach-dashboard/tree/main/agent-data/index",
+            "method": "Searched ONLY public REACH index Link to Output URLs across 10 shards/1,238 records for DOI-specific alternative publisher, NOAA IR and Zenodo URLs; did not repeat earlier normalized DOI/title comparisons.",
+            "matched_links": [],
+            "limitations": "No matches in index Link to Output is NOT complete REACH detail/secondary link, alternate DOI, or version dedup."
+          },
+          "full_alt_link_version_dedup_verified": false,
+          "alternative_identity": "NOAA IR noaa:76692 same DOI work, not a new publication",
+          "related_output_leads": []
+        },
+        "disposition": "needs_more_research",
+        "hub_submission_verified": false,
+        "public_reach_addition_verified": false
+      }
     },
     {
       "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
@@ -279,17 +318,20 @@
       "cohort": "2026-10",
       "status": "needs_more_research",
       "first_seen_at": "2026-11-01T13:52:45Z",
-      "updated_at": "2026-11-01T14:30:48Z",
+      "updated_at": "2026-11-01T17:32:21Z",
       "source_run_id": "REACH-MONTHLY-API-2026-10",
       "award_numbers": [
         "NA22OAR4590530"
       ],
-      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished.",
+      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished.\n12:32 EST: AMS journal confirms 2026-10-21 online, AIES 5(4), exact DOI and title; Ryan Martz, Eric Loken, Thea Sandmael, John Cintineo. SPARK primary project spark-000179 'Bridging Watch-to-Warning Forecast Operations with Refined Probabilistic Guidance' uses NA22OAR4590530, focuses 0–3 h ML severe hazard probabilities; article compares ML target training sets for 0–3 h severe hail/wind/tornado probabilities and has Loken/Sandmael authors aligned with public project. Strong thematic/author connection but exact publisher grant acknowledgment and full REACH detail/alternate DOI screening remain outstanding; no Hub submission.",
       "checked_sources": [
         "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
         "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
-        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json"
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://journals.ametsoc.org/collection/aies",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/index/part-002.csv",
+        "https://github.com/PART-WPO/reach-dashboard/tree/main/agent-data/index"
       ],
       "first_pass_screening": {
         "source_report": "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
@@ -303,10 +345,44 @@
         "research_disposition_verified": false
       },
       "next_research_actions": [
-        "Verify exact-source DOI metadata, publication date, and alternative URL/version identities.",
-        "Corroborate each output's funding against the correct SPARK primary-funded project; resolve any flagged conflict.",
-        "Follow related datasets, publications, and code; record evidence and a supported disposition before any Hub proposal."
-      ]
+        "Locate article acknowledgments/author manuscript and confirm NA22OAR4590530 supported this specific work.",
+        "Search project-specific public severe hazard guidance/code only with verified identifiers, not speculative matches.",
+        "Complete REACH details and version/URL checks before draft."
+      ],
+      "substantive_research": {
+        "checked_at": "2026-11-01T17:32:21Z",
+        "source_specific_metadata": {
+          "title": "The Impact of Target Dataset Choice on Machine Learning Prediction of Severe Hail, Wind, and Tornadoes",
+          "journal": "Artificial Intelligence for the Earth Systems",
+          "volume": "5",
+          "issue": "4",
+          "published_online": "2026-10-21",
+          "type": "Publication"
+        },
+        "funding_assessment": {
+          "primary_award": "NA22OAR4590530",
+          "spark_record": "spark-000179",
+          "spark_project": "Bridging Watch-to-Warning Forecast Operations with Refined Probabilistic Guidance",
+          "same_project_verified": false,
+          "basis": "Publication severe-weather ML/0–3 h theme and authors Loken/Sandmael match publicly described project, but direct article grant acknowledgment not inspected."
+        },
+        "identity_and_related_outputs": {
+          "first_pass_exact_reach_and_scout_absent": true,
+          "reach_index_alternate_url_screening": {
+            "checked_at": "2026-11-01T17:32:21Z",
+            "source": "https://github.com/PART-WPO/reach-dashboard/tree/main/agent-data/index",
+            "method": "Searched ONLY public REACH index Link to Output URLs across 10 shards/1,238 records for DOI-specific alternative publisher, NOAA IR and Zenodo URLs; did not repeat earlier normalized DOI/title comparisons.",
+            "matched_links": [],
+            "limitations": "No matches in index Link to Output is NOT complete REACH detail/secondary link, alternate DOI, or version dedup."
+          },
+          "full_alt_link_version_dedup_verified": false,
+          "related_output_leads": [],
+          "notes": "Project description promises real-time guidance and code, but no exact distinct publication-linked output identified."
+        },
+        "disposition": "needs_more_research",
+        "hub_submission_verified": false,
+        "public_reach_addition_verified": false
+      }
     },
     {
       "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
@@ -314,17 +390,20 @@
       "cohort": "2026-10",
       "status": "needs_more_research",
       "first_seen_at": "2026-11-01T13:52:45Z",
-      "updated_at": "2026-11-01T14:30:48Z",
+      "updated_at": "2026-11-01T17:32:21Z",
       "source_run_id": "REACH-MONTHLY-API-2026-10",
       "award_numbers": [
         "NA19OAR4590138"
       ],
-      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished.",
+      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished.\n12:32 EST: AMS October 2026 WAF 41(10) identifies article pp. 2083–2099 by Nicholas Gasperoni, Xuguang Wang, Tsung-Han Li, Yongming Wang; RRFS-like ensemble data-assimilation blending. SPARK primary NA19OAR4590138 project spark-000176 studies cost-effective large background ensemble/regional FV3 hybrid EnVar data assimilation for hazardous weather. Scope is closely related but direct publication funding acknowledgment and exact project contribution not verified. REACH Link to Output alternate URL patterns absent in all 1,238 index rows; details/version checks pending.",
       "checked_sources": [
         "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
         "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
-        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json"
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://journals.ametsoc.org/view/journals/wefo/41/10/wefo.41.issue-10.xml",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/index/part-002.csv",
+        "https://github.com/PART-WPO/reach-dashboard/tree/main/agent-data/index"
       ],
       "first_pass_screening": {
         "source_report": "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
@@ -338,10 +417,44 @@
         "research_disposition_verified": false
       },
       "next_research_actions": [
-        "Verify exact-source DOI metadata, publication date, and alternative URL/version identities.",
-        "Corroborate each output's funding against the correct SPARK primary-funded project; resolve any flagged conflict.",
-        "Follow related datasets, publications, and code; record evidence and a supported disposition before any Hub proposal."
-      ]
+        "Find full article acknowledgments to verify NA19OAR4590138's contribution.",
+        "Check if any prior online-first or author manuscript version is linked in REACH details.",
+        "Investigate project-specific code/data only if article supplies a resolvable link."
+      ],
+      "substantive_research": {
+        "checked_at": "2026-11-01T17:32:21Z",
+        "source_specific_metadata": {
+          "title": "A Blending Method for Multiscale Valid Time Shifting within an RRFS-like Ensemble-Based Data Assimilation System",
+          "journal": "Weather and Forecasting",
+          "volume": "41",
+          "issue": "10",
+          "pages": "2083–2099",
+          "publication_issue": "2026-10",
+          "type": "Publication"
+        },
+        "funding_assessment": {
+          "primary_award": "NA19OAR4590138",
+          "spark_record": "spark-000176",
+          "spark_project": "Improving National Weather Service Convection Allowing Hazardous Weather Prediction by Using a Cost-Effective Large Background Ensemble in a Regional FV3 Hybrid EnVar Data Assimilation System",
+          "same_project_verified": false,
+          "basis": "Strong RRFS/EnVar topical overlap but specific funding/PI link not directly verified in article."
+        },
+        "identity_and_related_outputs": {
+          "first_pass_exact_reach_and_scout_absent": true,
+          "reach_index_alternate_url_screening": {
+            "checked_at": "2026-11-01T17:32:21Z",
+            "source": "https://github.com/PART-WPO/reach-dashboard/tree/main/agent-data/index",
+            "method": "Searched ONLY public REACH index Link to Output URLs across 10 shards/1,238 records for DOI-specific alternative publisher, NOAA IR and Zenodo URLs; did not repeat earlier normalized DOI/title comparisons.",
+            "matched_links": [],
+            "limitations": "No matches in index Link to Output is NOT complete REACH detail/secondary link, alternate DOI, or version dedup."
+          },
+          "full_alt_link_version_dedup_verified": false,
+          "related_output_leads": []
+        },
+        "disposition": "needs_more_research",
+        "hub_submission_verified": false,
+        "public_reach_addition_verified": false
+      }
     },
     {
       "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
@@ -349,17 +462,21 @@
       "cohort": "2026-10",
       "status": "needs_more_research",
       "first_seen_at": "2026-11-01T13:52:45Z",
-      "updated_at": "2026-11-01T14:30:48Z",
+      "updated_at": "2026-11-01T17:32:21Z",
       "source_run_id": "REACH-MONTHLY-API-2026-10",
       "award_numbers": [
         "NA22OAR4590522"
       ],
-      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished.",
+      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished.\n12:32 EST: AMS WAF 41(10) pp.2165–2181 verifies article and authors Andrew Berrington, Nathan Snook, Ming Xue, Bryan Carroll, Keith Brewster, Sarah Trojniak, James Correia. It evaluates FV3-LAM/MPAS during NOAA HMT 2025 FFaIR experiment, strongly matching SPARK spark-000199 project NA22OAR4590522 on FV3-LAM CAM ensembles for HMT FFaIR/Winter Weather; Snook/Xue/Brewster appear in public project descriptions. Direct publisher grant acknowledgement not yet checked. AMS index snippets conflict on exact online day (8 vs 21 October); use only Oct 2026 issue until DOI authoritative metadata resolved. No targeted REACH alternate-link match; details not checked.",
       "checked_sources": [
         "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
         "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
-        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json"
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://journals.ametsoc.org/view/journals/wefo/41/10/wefo.41.issue-10.xml",
+        "https://journals.ametsoc.org/collection/wefo",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/index/part-002.csv",
+        "https://github.com/PART-WPO/reach-dashboard/tree/main/agent-data/index"
       ],
       "first_pass_screening": {
         "source_report": "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
@@ -373,10 +490,46 @@
         "research_disposition_verified": false
       },
       "next_research_actions": [
-        "Verify exact-source DOI metadata, publication date, and alternative URL/version identities.",
-        "Corroborate each output's funding against the correct SPARK primary-funded project; resolve any flagged conflict.",
-        "Follow related datasets, publications, and code; record evidence and a supported disposition before any Hub proposal."
-      ]
+        "Verify exact award acknowledgement and source-authoritative published-print/online date.",
+        "Check article data/code links for unique funded output leads; do not infer a repository from model name.",
+        "Complete REACH details/version dedup."
+      ],
+      "substantive_research": {
+        "checked_at": "2026-11-01T17:32:21Z",
+        "source_specific_metadata": {
+          "title": "Evaluation of a Cumulus Scheme in the FV3-LAM and of Experimental MPAS Forecasts for the Summer 2025 Flash Flood and Intense Rainfall Experiment",
+          "journal": "Weather and Forecasting",
+          "volume": "41",
+          "issue": "10",
+          "pages": "2165–2181",
+          "publication_issue": "2026-10",
+          "online_day": "NOT_VERIFIED_conflicting_index_snippets",
+          "type": "Publication"
+        },
+        "funding_assessment": {
+          "primary_award": "NA22OAR4590522",
+          "spark_record": "spark-000199",
+          "spark_project": "FV3-LAM CAM Ensemble Forecast System and Improving Ensemble Probabilistic and Consensus Forecast Products in Support of HMT Winter Weather and Heavy Precipitation Forecasting",
+          "same_project_verified": false,
+          "basis": "Strong HMT FFaIR/FV3-LAM experiment and author/project alignment; direct publisher grant statement still required."
+        },
+        "identity_and_related_outputs": {
+          "first_pass_exact_reach_and_scout_absent": true,
+          "reach_index_alternate_url_screening": {
+            "checked_at": "2026-11-01T17:32:21Z",
+            "source": "https://github.com/PART-WPO/reach-dashboard/tree/main/agent-data/index",
+            "method": "Searched ONLY public REACH index Link to Output URLs across 10 shards/1,238 records for DOI-specific alternative publisher, NOAA IR and Zenodo URLs; did not repeat earlier normalized DOI/title comparisons.",
+            "matched_links": [],
+            "limitations": "No matches in index Link to Output is NOT complete REACH detail/secondary link, alternate DOI, or version dedup."
+          },
+          "full_alt_link_version_dedup_verified": false,
+          "related_output_leads": [],
+          "notes": "HMT FFaIR model configurations are project activities, not separately verified outputs."
+        },
+        "disposition": "needs_more_research",
+        "hub_submission_verified": false,
+        "public_reach_addition_verified": false
+      }
     },
     {
       "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
@@ -384,17 +537,21 @@
       "cohort": "2026-10",
       "status": "needs_more_research",
       "first_seen_at": "2026-11-01T13:52:45Z",
-      "updated_at": "2026-11-01T14:30:48Z",
+      "updated_at": "2026-11-01T17:32:21Z",
       "source_run_id": "REACH-MONTHLY-API-2026-10",
       "award_numbers": [
         "NA22OAR4590179"
       ],
-      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished.",
+      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished.\n12:32 EST: MDPI full article gives published 2026-10-02 and explicitly acknowledges NOAA/OAR-JTTI NA22OAR4590179 in Funding; NOAA IR noaa:77382 independently confirms DOI, grant and authors. SPARK spark-000130 primary project 'A Wind-Wave-Current Data Assimilation Scheme for the 3D-Real Time Mesoscale Analysis' matches LETKF wind/wave data assimilation scope. Strong same-project evidence. NOAA IR is alternate location of SAME publication, not a second output. Article Data Availability lists Copernicus Marine Service data DOIs 10.48670/moi-00179, -00182, -00036 and reused UMD-LETKF GitHub library; these are external/reused research inputs, NOT verified distinct WPO outputs. REACH index alternate links absent; detail/version check pending.",
       "checked_sources": [
         "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
         "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
-        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json"
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://www.mdpi.com/2072-4292/18/19/3383",
+        "https://repository.library.noaa.gov/view/noaa/77382",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/index/part-002.csv",
+        "https://github.com/PART-WPO/reach-dashboard/tree/main/agent-data/index"
       ],
       "first_pass_screening": {
         "source_report": "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
@@ -408,10 +565,69 @@
         "research_disposition_verified": false
       },
       "next_research_actions": [
-        "Verify exact-source DOI metadata, publication date, and alternative URL/version identities.",
-        "Corroborate each output's funding against the correct SPARK primary-funded project; resolve any flagged conflict.",
-        "Follow related datasets, publications, and code; record evidence and a supported disposition before any Hub proposal."
-      ]
+        "Finish REACH detail/secondary link and version checks for publisher and NOAA IR URL.",
+        "Explore only author-created project-specific code/data if separately linked; don't stage external Copernicus input DOIs or reused library.",
+        "If unique and eligible after full dedup, prepare ONE validated publication candidate for human review."
+      ],
+      "substantive_research": {
+        "checked_at": "2026-11-01T17:32:21Z",
+        "source_specific_metadata": {
+          "title": "Impact of Assimilating Remote Sensing Observations on Wind and Wave Analysis Offshore of the Contiguous United States",
+          "journal": "Remote Sensing",
+          "volume": "18",
+          "issue": "19",
+          "article": "3383",
+          "published_online": "2026-10-02",
+          "noaa_ir": "noaa:77382",
+          "type": "Publication"
+        },
+        "funding_assessment": {
+          "primary_award": "NA22OAR4590179",
+          "spark_record": "spark-000130",
+          "spark_project": "A Wind-Wave-Current Data Assimilation Scheme for the 3D-Real Time Mesoscale Analysis",
+          "publisher_funding": "P.M., M.P., and S.F. acknowledge NOAA/OAR-JTTI award NA22OAR4590179",
+          "noaa_ir_funding": "Grant no. NA22OAR4590179",
+          "same_project_verified": true,
+          "basis": "Explicit publisher funding, independent NOAA IR grant and close project-specific wind/wave data assimilation alignment."
+        },
+        "identity_and_related_outputs": {
+          "first_pass_exact_reach_and_scout_absent": true,
+          "reach_index_alternate_url_screening": {
+            "checked_at": "2026-11-01T17:32:21Z",
+            "source": "https://github.com/PART-WPO/reach-dashboard/tree/main/agent-data/index",
+            "method": "Searched ONLY public REACH index Link to Output URLs across 10 shards/1,238 records for DOI-specific alternative publisher, NOAA IR and Zenodo URLs; did not repeat earlier normalized DOI/title comparisons.",
+            "matched_links": [],
+            "limitations": "No matches in index Link to Output is NOT complete REACH detail/secondary link, alternate DOI, or version dedup."
+          },
+          "full_alt_link_version_dedup_verified": false,
+          "alternative_identity": "NOAA IR noaa:77382 is same DOI work",
+          "related_output_leads": [
+            {
+              "doi": "10.48670/moi-00179",
+              "relationship": "Copernicus input dataset",
+              "same_project_wpo_funding": "not_verified"
+            },
+            {
+              "doi": "10.48670/moi-00182",
+              "relationship": "Copernicus input dataset",
+              "same_project_wpo_funding": "not_verified"
+            },
+            {
+              "doi": "10.48670/moi-00036",
+              "relationship": "Copernicus input dataset",
+              "same_project_wpo_funding": "not_verified"
+            },
+            {
+              "url": "https://github.com/travissluka/UMD-LETKF",
+              "relationship": "pre-existing assimilation library used",
+              "same_project_wpo_funding": "not_verified"
+            }
+          ]
+        },
+        "disposition": "needs_more_research",
+        "hub_submission_verified": false,
+        "public_reach_addition_verified": false
+      }
     },
     {
       "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
@@ -419,17 +635,20 @@
       "cohort": "2026-10",
       "status": "needs_more_research",
       "first_seen_at": "2026-11-01T13:52:45Z",
-      "updated_at": "2026-11-01T14:30:48Z",
+      "updated_at": "2026-11-01T17:32:21Z",
       "source_run_id": "REACH-MONTHLY-API-2026-10",
       "award_numbers": [
         "NA22OAR4590118"
       ],
-      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished. PROJECT SCOPE: verify publication relates to the primary SPARK saildrone/hurricane project, not merely an award-number match.",
+      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished. PROJECT SCOPE: verify publication relates to the primary SPARK saildrone/hurricane project, not merely an award-number match.\n12:32 EST: Copernicus original EGUsphere page confirms preprint, posted/discussion started 2026-10-30, under review for Atmospheric Measurement Techniques; authors Chu, Zhang et al.; study lower-tropospheric stability retrieval at ARM Southern Great Plains land sites using flux/Doppler lidar. SPARK primary award NA22OAR4590118 belongs to saildrone hurricane air-sea interaction project spark-000325 and spark-000340. Preprint topic and observational domain differ markedly; article funding acknowledgments not verified from abstract page. Same-project attribution NOT VERIFIED; hold. Any future AMT journal article could be same-work version, not automatically another output. No REACH index alternate-link match.",
       "checked_sources": [
         "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
         "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
-        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json"
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://egusphere.copernicus.org/preprints/2026/egusphere-2026-4928/",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/index/part-004.csv",
+        "https://github.com/PART-WPO/reach-dashboard/tree/main/agent-data/index"
       ],
       "first_pass_screening": {
         "source_report": "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
@@ -443,10 +662,46 @@
         "research_disposition_verified": false
       },
       "next_research_actions": [
-        "Verify exact-source DOI metadata, publication date, and alternative URL/version identities.",
-        "Corroborate each output's funding against the correct SPARK primary-funded project; resolve any flagged conflict.",
-        "Follow related datasets, publications, and code; record evidence and a supported disposition before any Hub proposal."
-      ]
+        "Inspect full preprint funding section to determine if NA22OAR4590118 actually supports this paper and why.",
+        "Do not attribute to saildrone WPO project on award string alone.",
+        "Check preprint-to-journal version relationship before treating later publication as separate output."
+      ],
+      "substantive_research": {
+        "checked_at": "2026-11-01T17:32:21Z",
+        "source_specific_metadata": {
+          "title": "Regime-aware retrieval of lower-tropospheric stability and a sensitivity-weighted diagnostic of cross-site transferability over heterogeneous land surfaces",
+          "type": "Preprint",
+          "posted": "2026-10-30",
+          "journal_under_review": "Atmospheric Measurement Techniques",
+          "source": "EGUsphere"
+        },
+        "funding_assessment": {
+          "primary_award": "NA22OAR4590118",
+          "spark_records": [
+            "spark-000325",
+            "spark-000340"
+          ],
+          "spark_project": "Autonomous Measurements of Air-Sea Interaction from Saildrones for Improved Hurricane Intensity Prediction",
+          "same_project_verified": false,
+          "reason": "Land-site boundary layer retrieval vs saildrone hurricane air-sea project; preprint acknowledgments/funding not independently confirmed."
+        },
+        "identity_and_related_outputs": {
+          "first_pass_exact_reach_and_scout_absent": true,
+          "reach_index_alternate_url_screening": {
+            "checked_at": "2026-11-01T17:32:21Z",
+            "source": "https://github.com/PART-WPO/reach-dashboard/tree/main/agent-data/index",
+            "method": "Searched ONLY public REACH index Link to Output URLs across 10 shards/1,238 records for DOI-specific alternative publisher, NOAA IR and Zenodo URLs; did not repeat earlier normalized DOI/title comparisons.",
+            "matched_links": [],
+            "limitations": "No matches in index Link to Output is NOT complete REACH detail/secondary link, alternate DOI, or version dedup."
+          },
+          "full_alt_link_version_dedup_verified": false,
+          "related_output_leads": [],
+          "potential_version_relation": "Future AMT article not yet verified; monitor only with direct DOI relation."
+        },
+        "disposition": "needs_more_research",
+        "hub_submission_verified": false,
+        "public_reach_addition_verified": false
+      }
     },
     {
       "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
@@ -454,17 +709,20 @@
       "cohort": "2026-10",
       "status": "needs_more_research",
       "first_seen_at": "2026-11-01T13:52:45Z",
-      "updated_at": "2026-11-01T14:30:48Z",
+      "updated_at": "2026-11-01T17:32:21Z",
       "source_run_id": "REACH-MONTHLY-API-2026-10",
       "award_numbers": [
         "NA21OAR4590208"
       ],
-      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished.",
+      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished.\n12:32 EST: Copernicus original EGUsphere page confirms preprint posted 2026-10-22, under review at Geoscience Communication, by Olman, Hatchett, Collins, Heggli, Lambrecht, Tolby and Charles. Research investigates bot-generated responses in survey data about weather-forecast communication. SPARK primary NA21OAR4590208 project spark-000246 is 'Employing Rhetoric to Improve Probabilistic Forecast Communication'; strong theme and public author/affiliation overlap. Direct grant acknowledgment not verified from abstract, so same-project WPO attribution remains provisional. Future Geoscience Communication article may be version of same preprint. REACH index alternate-link URL absent.",
       "checked_sources": [
         "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
         "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
-        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json"
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://egusphere.copernicus.org/preprints/2026/egusphere-2026-5876/",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/index/part-003.csv",
+        "https://github.com/PART-WPO/reach-dashboard/tree/main/agent-data/index"
       ],
       "first_pass_screening": {
         "source_report": "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
@@ -478,10 +736,43 @@
         "research_disposition_verified": false
       },
       "next_research_actions": [
-        "Verify exact-source DOI metadata, publication date, and alternative URL/version identities.",
-        "Corroborate each output's funding against the correct SPARK primary-funded project; resolve any flagged conflict.",
-        "Follow related datasets, publications, and code; record evidence and a supported disposition before any Hub proposal."
-      ]
+        "Verify grant acknowledgement from full preprint and reconcile exact SPARK primary project contribution.",
+        "Inspect full REACH detail links and any version DOI before drafting.",
+        "If verified, propose one PREPRINT candidate with correct type, not a final journal article."
+      ],
+      "substantive_research": {
+        "checked_at": "2026-11-01T17:32:21Z",
+        "source_specific_metadata": {
+          "title": "We <3 Skynet: Or, How We Learned to Stop Worrying and Love the Bot Responses in Our Survey Data",
+          "type": "Preprint",
+          "posted": "2026-10-22",
+          "journal_under_review": "Geoscience Communication",
+          "source": "EGUsphere"
+        },
+        "funding_assessment": {
+          "primary_award": "NA21OAR4590208",
+          "spark_record": "spark-000246",
+          "spark_project": "Employing Rhetoric to Improve Probabilistic Forecast Communication",
+          "same_project_verified": false,
+          "basis": "Strong rhetoric/survey/weather communication research alignment and author affiliation overlap; explicit preprint grant support not yet independently checked."
+        },
+        "identity_and_related_outputs": {
+          "first_pass_exact_reach_and_scout_absent": true,
+          "reach_index_alternate_url_screening": {
+            "checked_at": "2026-11-01T17:32:21Z",
+            "source": "https://github.com/PART-WPO/reach-dashboard/tree/main/agent-data/index",
+            "method": "Searched ONLY public REACH index Link to Output URLs across 10 shards/1,238 records for DOI-specific alternative publisher, NOAA IR and Zenodo URLs; did not repeat earlier normalized DOI/title comparisons.",
+            "matched_links": [],
+            "limitations": "No matches in index Link to Output is NOT complete REACH detail/secondary link, alternate DOI, or version dedup."
+          },
+          "full_alt_link_version_dedup_verified": false,
+          "related_output_leads": [],
+          "potential_version_relation": "Possible future peer-reviewed GC version; no second DOI verified."
+        },
+        "disposition": "needs_more_research",
+        "hub_submission_verified": false,
+        "public_reach_addition_verified": false
+      }
     },
     {
       "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
@@ -489,17 +780,21 @@
       "cohort": "2026-10",
       "status": "needs_more_research",
       "first_seen_at": "2026-11-01T13:52:45Z",
-      "updated_at": "2026-11-01T14:30:48Z",
+      "updated_at": "2026-11-01T17:32:21Z",
       "source_run_id": "REACH-MONTHLY-API-2026-10",
       "award_numbers": [
         "NA25OARX459C0342-T1-01"
       ],
-      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished.",
+      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished.\n12:32 EST: Copernicus full article published 2026-10-15, The Cryosphere 20:5973–5992. Financial Support explicitly names NOAA Weather Program Office grant NA25OARX459C0342-T1-01 plus separate CIROH award NA22NWS4320003. NOAA IR noaa:76974 confirms same DOI and both grants. SPARK spark-000373 primary project examines Southern Great Plains precipitation extremes through remote snow dynamics in US West; article examines California snow/vegetation processes, relevant but not explicit SGP downstream link, so same-project WPO scope still needs validation. Article has separate supplement DOI 10.5194/tc-20-5973-2026-supplement (article component, NOT distinct output) and cites reused NCAR Noah-MP code plus external public data sources; don't auto-stage them. REACH alternate link absent in index; detail/version check pending.",
       "checked_sources": [
         "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
         "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
-        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json"
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+        "https://tc.copernicus.org/articles/20/5973/2026/",
+        "https://repository.library.noaa.gov/view/noaa/76974",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/index/part-004.csv",
+        "https://github.com/PART-WPO/reach-dashboard/tree/main/agent-data/index"
       ],
       "first_pass_screening": {
         "source_report": "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
@@ -513,10 +808,55 @@
         "research_disposition_verified": false
       },
       "next_research_actions": [
-        "Verify exact-source DOI metadata, publication date, and alternative URL/version identities.",
-        "Corroborate each output's funding against the correct SPARK primary-funded project; resolve any flagged conflict.",
-        "Follow related datasets, publications, and code; record evidence and a supported disposition before any Hub proposal."
-      ]
+        "Verify this study is an output of SPARK spark-000373, not merely same WPO grant.",
+        "Check REACH detail/secondary links for NOAA IR and publisher URL, plus preprint/final DOI relation.",
+        "Do not stage separate article supplement or reused code as new outputs."
+      ],
+      "substantive_research": {
+        "checked_at": "2026-11-01T17:32:21Z",
+        "source_specific_metadata": {
+          "title": "Improving snow simulations through improved representations of vegetation conditions: insights from high resolution simulations over California",
+          "journal": "The Cryosphere",
+          "volume": "20",
+          "pages": "5973–5992",
+          "published_online": "2026-10-15",
+          "noaa_ir": "noaa:76974",
+          "type": "Publication"
+        },
+        "funding_assessment": {
+          "primary_award": "NA25OARX459C0342-T1-01",
+          "spark_record": "spark-000373",
+          "spark_project": "Predictability of the Summer Precipitation Extremes in the Southern Great Plains through the Remote Effects of Snow Dynamics in the US West",
+          "publisher_funding": "Explicit NOAA Weather Program Office grant NA25OARX459C0342-T1-01; CIROH NA22NWS4320003 separately named (not eligible WPO project seed)",
+          "same_project_verified": false,
+          "basis": "Direct WPO grant acknowledged; study of western snow dynamics related but specific project goal about SGP remote effects not established."
+        },
+        "identity_and_related_outputs": {
+          "first_pass_exact_reach_and_scout_absent": true,
+          "reach_index_alternate_url_screening": {
+            "checked_at": "2026-11-01T17:32:21Z",
+            "source": "https://github.com/PART-WPO/reach-dashboard/tree/main/agent-data/index",
+            "method": "Searched ONLY public REACH index Link to Output URLs across 10 shards/1,238 records for DOI-specific alternative publisher, NOAA IR and Zenodo URLs; did not repeat earlier normalized DOI/title comparisons.",
+            "matched_links": [],
+            "limitations": "No matches in index Link to Output is NOT complete REACH detail/secondary link, alternate DOI, or version dedup."
+          },
+          "full_alt_link_version_dedup_verified": false,
+          "alternative_identity": "NOAA IR noaa:76974 is same DOI article",
+          "related_output_leads": [
+            {
+              "doi": "10.5194/tc-20-5973-2026-supplement",
+              "relationship": "article supplement, not independently counted WPO output"
+            },
+            {
+              "url": "https://github.com/NCAR/noahmp",
+              "relationship": "reused open-source model, not author-created distinct output"
+            }
+          ]
+        },
+        "disposition": "needs_more_research",
+        "hub_submission_verified": false,
+        "public_reach_addition_verified": false
+      }
     },
     {
       "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
