@@ -100,6 +100,23 @@ class RouterTests(unittest.TestCase):
         self.assertEqual(r["phase"],"attribution_followups")
         self.assertEqual(r["attribution_followups_pending"],1)
 
+    def test_researched_originals_are_decision_fast_path_not_endless_generic_research(self):
+        mm,mc=m(13,13,0)
+        hh,hc=h(188,188,0)
+        ledger={"entries":[{"status":"needs_more_research"} for _ in range(13)]}
+        decision={"originals":[
+            {"identity":"doi:10.1234/paper","ledger_status":"needs_more_research",
+             "decision_track":"original_fast_path_final_checks","decision_review_due":True},
+            {"identity":"doi:10.1234/other","ledger_status":"needs_more_research",
+             "decision_track":"funding_or_scope_decision_due","decision_review_due":True}
+        ]}
+        r=decide(mm,mc,hh,hc,SHA,monthly_triage=ledger,monthly_decision_queue=decision)
+        self.assertEqual(r["mode"],"monthly_api_triage")
+        self.assertEqual(r["phase"],"original_decision_fast_path")
+        self.assertEqual(r["monthly_api"]["original_decisions_due"],2)
+        self.assertEqual(r["monthly_api"]["originals_for_final_checks"],1)
+        self.assertEqual(r["monthly_api"]["unresolved_followups"],13)
+
     def test_monthly_api_seed_expansion_remains_prioritized_after_originals_closed(self):
         mm,mc=m(13,13,13)
         hh,hc=h(188,188,0)
