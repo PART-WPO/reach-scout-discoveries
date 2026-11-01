@@ -1,0 +1,14 @@
+{
+  "schema": "reach-scout-feed-supersessions-v1",
+  "superseded_batches": {
+    "2026-10-28-hourly-datacite-expansion-award-fixes-001": {
+      "original_sha256": "8e9e9209202e507d6b91cc50714d10b01f19ade6b55e2d1816dd7bca1faffa09",
+      "replacement_id": "2026-11-01-historical-datacite-primary-award-only-001",
+      "excluded_dois": [
+        "10.17603/ds2-xjyf-nc93",
+        "10.1175/bams-d-23-0036.1"
+      ],
+      "reason": "Remove historical DataCite-origin metadata-update proposals that used SPARK Related Award Number(s) as eligible WPO awards. The other two rows are retained unchanged in the replacement. No human decision or public REACH record modified."
+    }
+  }
+}
