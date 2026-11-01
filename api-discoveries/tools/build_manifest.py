@@ -10,6 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 BATCHES = ROOT / "batches"
 MANIFEST = ROOT / "manifest.json"
+SUPERSESSIONS = ROOT / "supersessions.json"
 REPO = "PART-WPO/reach-scout-discoveries"
 SCHEMA = "reach-monthly-api-discovery-feed-v1"
 HEADERS = [
@@ -67,20 +68,42 @@ def inspect_batch(path):
 
 def main():
     BATCHES.mkdir(parents=True, exist_ok=True)
-    entries = [inspect_batch(p) for p in sorted(BATCHES.glob("*.csv"))]
-    if len(entries) > 1500:
+    all_entries = [inspect_batch(p) for p in sorted(BATCHES.glob("*.csv"))]
+    if len(all_entries) > 1500:
         raise ValueError("Exceeded monthly batch manifest limit")
+    by_id = {entry["id"]: entry for entry in all_entries}
     existing = json.loads(MANIFEST.read_text(encoding="utf-8")) if MANIFEST.exists() else {}
     old_hashes = {row["id"]: row["sha256"] for row in existing.get("batches", [])}
-    for entry in entries:
+    for entry in all_entries:
         if entry["id"] in old_hashes and old_hashes[entry["id"]] != entry["sha256"]:
             raise ValueError("Previously published monthly batch modified: " + entry["id"])
-    same = entries == existing.get("batches", [])
+    correction = json.loads(SUPERSESSIONS.read_text(encoding="utf-8")) if SUPERSESSIONS.exists() else {}
+    if correction and correction.get("schema") != "reach-monthly-api-supersessions-v1":
+        raise ValueError("Unexpected monthly supersessions schema")
+    superseded = correction.get("superseded_batches", {})
+    if not isinstance(superseded, dict):
+        raise ValueError("Invalid monthly supersessions")
+    excluded = []
+    for old_id, directive in sorted(superseded.items()):
+        new_id = directive.get("replacement_id")
+        if old_id not in by_id or not isinstance(new_id, str) or not new_id or old_id == new_id:
+            raise ValueError("Invalid monthly supersession: " + old_id)
+        if by_id[old_id]["sha256"] != directive.get("original_sha256"):
+            raise ValueError("Immutable superseded original checksum changed: " + old_id)
+        excluded.append({
+            "original_id": old_id,
+            "replacement_id": new_id,
+            "replacement_published": new_id in by_id,
+            "reason": directive.get("reason", ""),
+        })
+    entries = [entry for entry in all_entries if entry["id"] not in superseded]
+    same = (entries == existing.get("batches", []) and
+            excluded == existing.get("superseded_batches", []))
     stamp = (existing.get("generated_at") if same else None) or datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
     result = {
         "schema": SCHEMA, "repository": REPO, "generated_at": stamp,
         "batch_count": len(entries), "candidate_rows": sum(x["record_count"] for x in entries),
-        "batches": entries,
+        "batches": entries, "superseded_batches": excluded,
         "policy": "PUBLIC MONTHLY API RESEARCH INBOX FOR SCOUT ONLY. NOT HUMAN-REVIEW READY OR A REACH PUBLICATION.",
     }
     MANIFEST.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
