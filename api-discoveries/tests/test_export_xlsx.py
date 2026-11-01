@@ -36,6 +36,18 @@ def shards():
     return data
 
 class ComparisonWorkbookTests(unittest.TestCase):
+    def test_month_year_report_names(self):
+        self.assertEqual(ex.report_filename("2026-10"),"October_2026.xlsx")
+        self.assertEqual(ex.report_filename("2026-10","primary-only"),"October_2026.xlsx")
+        self.assertEqual(ex.report_filename("2026-11"),"November_2026.xlsx")
+        self.assertEqual(ex.report_filename("2027-01"),"January_2027.xlsx")
+        self.assertEqual(ex.report_filename("2027-01","date-fix"),
+                         "January_2027_Correction_date_fix.xlsx")
+        with self.assertRaisesRegex(ValueError,"Invalid report month"):
+            ex.report_filename("2026-13")
+        with self.assertRaisesRegex(ValueError,"Invalid revision"):
+            ex.report_filename("2026-10","Bad/Path")
+
     def test_export_and_inspect_standard_excel_xml(self):
         with tempfile.TemporaryDirectory() as d:
             path=Path(d)/"REACH_API_Comparison_2026-10.xlsx"
