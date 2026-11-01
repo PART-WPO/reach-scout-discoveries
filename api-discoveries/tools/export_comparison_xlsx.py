@@ -272,6 +272,19 @@ def build(pieces,month,output):
     return {"cohort":month,"Crossref_award_doi_rows":len(cr),"DataCite_award_doi_rows":len(dc),
             "distinct_dois":len(bydoi),"awards_checked":len(checked),"sheets":list(sheets),"output":str(output)}
 
+def report_filename(month,revision=""):
+    """Readable reporting-period name, distinct from the subsequent run date."""
+    if not re.fullmatch(r"20\\d{2}-(0[1-9]|1[0-2])",month):
+        raise ValueError("Invalid report month")
+    if revision and not re.fullmatch(r"[a-z][a-z0-9-]{0,35}",revision):
+        raise ValueError("Invalid revision")
+    display=dt.date.fromisoformat(month+"-01").strftime("%B_%Y")
+    # This correction supersedes the flawed original: make it the canonical
+    # October workbook, while the immutable original lives in archive/.
+    if revision and not (month=="2026-10" and revision=="primary-only"):
+        display+="_Correction_"+revision.replace("-","_")
+    return display+".xlsx"
+
 def main():
     p=argparse.ArgumentParser()
     p.add_argument("--month",default="")
@@ -305,12 +318,7 @@ def main():
             revision=next(iter(choices),"")
     if revision and not re.fullmatch(r"[a-z][a-z0-9-]{0,35}",revision):
         raise ValueError("Unsafe workbook correction ID")
-    # Display the research month, not the date the workflow ran.
-    # October 2026's verified primary-award correction is the canonical report.
-    display=dt.date.fromisoformat(args.month+"-01").strftime("%B_%Y")
-    is_canonical_october=(args.month=="2026-10" and revision=="primary-only")
-    suffix=("_Correction_"+revision.replace("-","_")) if revision and not is_canonical_october else ""
-    target=Path(args.output) if args.output else Path("monthly-harvest-reports")/(display+suffix+".xlsx")
+    target=Path(args.output) if args.output else Path("monthly-harvest-reports")/report_filename(args.month,revision)
     res=build(data,args.month,target)
     print(json.dumps(res,indent=2))
 if __name__=="__main__":main()
