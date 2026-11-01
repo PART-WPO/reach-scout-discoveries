@@ -1,9 +1,10 @@
 name: REACH API harvest - DataCite and Crossref
 on:
   schedule:
-    # First day of month, 12:17 UTC. On 2026-11-01 this is 7:17 AM EST.
-    # Month window is previous FULL UTC calendar month, e.g. Oct 01-31.
-    - cron: '17 12 1 * *'
+    # First of each month at 12:01 AM US Eastern, including daylight saving.
+    # Harvest previous FULL UTC calendar month, e.g. October on November 1.
+    - cron: '1 0 1 * *'
+      timezone: "America/New_York"
   workflow_dispatch:
     inputs:
       mode:
@@ -22,8 +23,10 @@ on:
   push:
     branches: [main]
     paths:
-      # Explicit, ONE-TIME test trigger; not activated on normal code pushes
+      # Explicit trigger files only: historical test or requested monthly kickoff.
+      # Normal repository changes do not trigger an extra harvest.
       - 'api-discoveries/jobs/historical-pilot-2026-10-28.trigger'
+      - 'api-discoveries/jobs/monthly-kickoff-2026-11-01.trigger'
 permissions:
   contents: write
 concurrency:
@@ -39,7 +42,7 @@ jobs:
         source: [datacite, crossref]
         shard: [0,1,2,3,4,5,6,7]
     env:
-      HARVEST_MODE: ${{ github.event_name == 'push' && 'historical' || inputs.mode == 'historical_datacite' && 'historical' || 'monthly' }}
+      HARVEST_MODE: ${{ github.event_name == 'push' && contains(toJSON(github.event.commits), 'api-discoveries/jobs/historical-pilot-2026-10-28.trigger') && 'historical' || inputs.mode == 'historical_datacite' && 'historical' || 'monthly' }}
       MONTH_OVERRIDE: ${{ inputs.month || '' }}
     steps:
       - uses: actions/checkout@v4
@@ -78,7 +81,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     env:
-      HARVEST_MODE: ${{ github.event_name == 'push' && 'historical' || inputs.mode == 'historical_datacite' && 'historical' || 'monthly' }}
+      HARVEST_MODE: ${{ github.event_name == 'push' && contains(toJSON(github.event.commits), 'api-discoveries/jobs/historical-pilot-2026-10-28.trigger') && 'historical' || inputs.mode == 'historical_datacite' && 'historical' || 'monthly' }}
       MONTH_OVERRIDE: ${{ inputs.month || '' }}
     steps:
       - uses: actions/checkout@v4
