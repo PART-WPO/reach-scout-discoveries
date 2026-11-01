@@ -1,15 +1,26 @@
 {
   "schema": "reach-monthly-api-discovery-feed-v1",
   "repository": "PART-WPO/reach-scout-discoveries",
-  "generated_at": "2026-11-01T13:43:44Z",
-  "batch_count": 0,
-  "candidate_rows": 0,
-  "batches": [],
+  "generated_at": "2026-11-01T13:52:45Z",
+  "batch_count": 1,
+  "candidate_rows": 13,
+  "batches": [
+    {
+      "id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
+      "path": "api-discoveries/batches/2026-11-01-monthly-api-2026-10-primary-only-part001.csv",
+      "sha256": "047a37df11967adafc4ed6c6ab604ee3cc16f042fa6a0a5d1658328ef4b72844",
+      "record_count": 13,
+      "source_run_ids": [
+        "REACH-MONTHLY-API-2026-10"
+      ],
+      "source": "Monthly API"
+    }
+  ],
   "superseded_batches": [
     {
       "original_id": "2026-11-01-monthly-api-2026-10-part001",
       "replacement_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
-      "replacement_published": false,
+      "replacement_published": true,
       "reason": "October 2026 harvest incorrectly included SPARK Related Award Number(s) as API search seeds; replaced with primary Award Number(s)-only harvest."
     }
   ],
