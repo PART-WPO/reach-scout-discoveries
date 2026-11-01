@@ -594,5 +594,28 @@
         "retained_primary_awards": []
       }
     ]
+  },
+  "staged_scout_feed": {
+    "source": "scout-discoveries/manifest.json",
+    "total_staged_proposals": 70,
+    "scope_flagged": 2,
+    "action": "Require evidence-based same-project primary WPO award reattribution before treating these proposed corrections as WPO; retain immutable batches and human-review decisions.",
+    "records": [
+      {
+        "doi": "10.17603/ds2-xjyf-nc93",
+        "original_award": "NA16OAR4320115",
+        "primary_awards_in_staged_row": [],
+        "source_batch": "scout-discoveries/batches/2026-10-28-hourly-datacite-expansion-award-fixes-001.csv"
+      },
+      {
+        "doi": "10.1175/BAMS-D-23-0036.1",
+        "original_award": "NA16OAR4320115",
+        "primary_awards_in_staged_row": [
+          "NA19OAR4590214",
+          "NA19OAR4590213"
+        ],
+        "source_batch": "scout-discoveries/batches/2026-10-28-hourly-datacite-expansion-award-fixes-001.csv"
+      }
+    ]
   }
 }
