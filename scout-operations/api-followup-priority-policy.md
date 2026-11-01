@@ -1,5 +1,83 @@
 # API follow-up completion and research-priority policy (2026-10-29)
 
+
+## AUTHORITATIVE monthly intake-first operating policy — November 1, 2026
+
+**Overrides the earlier original-output fast-path policy wherever that older policy
+requires independent publisher project proof or completing DOI-seeded research before
+placing ordinary primary-award API matches into the human-review feed.**
+
+### Order of operations
+
+**1. Monthly records to human review FIRST.** On every newly published DataCite +
+Crossref monthly harvest, run `scout-operations/tools/quick_monthly_intake.py`
+against the SHA-verified public REACH complete index **and every detail/secondary
+link**, the validated Scout manifest/batches and unpublished inbox, and SPARK's
+literal **PRIMARY Award Number(s)**. Compare exact normalized DOI, title, output
+URL, secondary links and known concept/version or preprint/final identity. Normalize
+HTML/XML title markup and enrich only verified fields; never assume an article's
+authors are necessarily its project's PIs.
+
+For an ordinary original DOI with a publisher/repository **structured funding
+award number matching a SPARK primary WPO award**, source metadata and no
+concrete contradictory project evidence, that funding evidence is **sufficient to
+propose human review**. No additional deep article/funder investigation is
+required before human review. This is not a determination that the output is
+definitively attributable to a particular WPO-funded project: show the basis
+and let the human reviewer verify the funding connection.
+
+Submit the original to the standard validated 24-column Scout inbox → preflight
+→ append-only public Scout discovery feed **immediately** after duplicate screening.
+Use `Direct API` provenance and source month. Neither project-specific deeper
+research nor expanding references is a prerequisite. The existing human
+Discovery Hub approval and REACH publishing process is unchanged. Public Scout
+manifest staging is explicitly **NOT** proof of actual private Hub import. If the
+private Hub has not been observed importing the candidate, record `NOT VERIFIED`.
+
+**2. Exception path.** Hold actual conflicting funding evidence for an
+investigation; keep distinct award/project associations when multiple primary
+awards match, route uncertain parent attribution to the existing human
+Needs Investigation classification without assigning one arbitrarily. Existing
+REACH or Scout outputs, previously reviewed historical DOIs, and concept/version
+families must not create repeat candidates. Missing abstracts or reviewer-required
+PI attribution must remain visibly missing, never invented; send a compatible
+Needs Investigation draft when permitted by the validated Hub schema, otherwise
+record a pending handoff with exact missing metadata. Normalized Pub Date policies
+remain DataCite 'created', Crossref print-first (partial month→day 1), and
+source-specific online-first fallback. No date guessing.
+
+**3. Subsequent missions follow the original DOI seeds.** Continue API-seeded
+publication, dataset, code and report investigation in
+`scout-operations/monthly-expansion-leads.json`. Maintain the original seed DOI,
+distinct output identity and exact relationship evidence, independent WPO project
+funding and REACH/Scout dedup. A reused input dataset, cited paper, generic
+library, supplement or a version of the original is not automatically another
+new WPO output. Each genuinely new related output can separately enter human review.
+
+### Automated reporting and scheduling
+
+`monthly-fast-intake.json` is the rapid reviewer funnel: original records,
+fast-track, metadata/parent review, funding exceptions, version-family holds
+and validated inbox status. `monthly-triage.json` status
+`staged_for_hub_import` is a **terminal Scout verification stage**, not Hub
+delivery or human approval; `coverage.json` separately counts
+`staged_for_hub_import` versus `forwarded_to_hub`.
+`monthly-decision-queue.json` and `active-workstream.json` are for
+remaining exceptions and related expansion leads.
+
+GitHub Actions first-of-month coverage/intake schedule checks new harvests
+during the early hours of the 1st (including weekends) because GitHub-bot harvest
+commits do not automatically trigger another workflow. No paid external worker,
+manual Hub approval bypass, personal emails, or direct Smartsheet/REACH changes.
+Never overwrite old monthly source batches or historical reviewer decisions.
+
+Report the actual funnel separately: original API rows, validated public Scout
+review candidates, private Hub imports VERIFIED or NOT VERIFIED, human approvals,
+public REACH additions, exception cases, and verified additional DOI-seeded
+discoveries. An unanswered private Hub ingestion step is an integration status,
+not grounds for repeating completed Scout original-output research.
+
+
 ## AUTHORITATIVE monthly Scout operating rule — November 1, 2026
 
 This rule takes precedence over older directions that imply **every related DOI, source,
