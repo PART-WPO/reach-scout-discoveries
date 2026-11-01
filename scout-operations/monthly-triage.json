@@ -1237,14 +1237,14 @@
       "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
       "identity": "doi:10.5281/zenodo.23289230",
       "cohort": "2026-10",
-      "status": "needs_more_research",
+      "status": "no_action",
       "first_seen_at": "2026-11-01T13:52:45Z",
-      "updated_at": "2026-11-01T18:31:16Z",
+      "updated_at": "2026-11-01T22:26:40.934Z",
       "source_run_id": "REACH-MONTHLY-API-2026-10",
       "award_numbers": [
         "NA22OAR0110487"
       ],
-      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished. VERSION FAMILY: compare Zenodo concept DOI and DataCite relatedIdentifiers with 10.5281/zenodo.23289231 before classifying distinct outputs.\n11:32 EST second-source research: Existing verified exact-DOI DataCite metadata checkpoint identifies this as the Zenodo concept DOI (HasVersion) in a single dataset family with 10.5281/zenodo.23289231; same title, creators Xu and Zaron, award NA22OAR0110487, created 2026-10-10, Dataset output type 3, CC-BY-4.0. Both DOIs were ALREADY captured as original 2026-10-28 historical DataCite seeds and belong to historical review unit zenodo-mom6; monthly API rediscovered this known historical family, not two independent newly discovered outputs. SPARK primary project spark-000391 'Enhancing the Realism of MOM6-SIS2 Simulations with Ocean Tides' aligns with dataset subject. GitHub NOAA-GFDL/MOM6 PR #1104 'Baroclinic sea level calculation' is merged and describes intended JPO manuscript, but no exact publication DOI verified. Dataset file accessibility/which DOI to represent and cross-cohort review-unit history require human-safe reconciliation; do not create two Hub candidates.\n12:32 EST follow-up: DOI-specific alternate publisher/NOAA IR/Zenodo URLs were compared to the Link to Output field across all 10 public REACH index shards (1,238 records), with no URL matches. This is a limited additional link check, NOT complete REACH detail-link/version dedup; earlier research and disposition unchanged.\n13:31 EST cross-cohort and full REACH same-award detail follow-up: historical-triage has this original DOI as human_metadata_needed; delivery to private Hub NOT VERIFIED. Metadata-review-units groups both concept/version DOIs as one zenodo-mom6 review unit with canonical identity undecided. Exact DataCite checkpoint confirms HasVersion to .23289231 and created 2026-10-10, but native Zenodo file accessibility still NOT VERIFIED (listed_formats=0, listed_sizes=0). REACH detail part-137 same-award reach-001210–001213 contain older works and an already-recorded c2xu/MOM6 drag code, not this dataset DOI or NOAA-GFDL/MOM6 PR #1104. Do not duplicate the historical review or count two new outputs.",
+      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished. VERSION FAMILY: compare Zenodo concept DOI and DataCite relatedIdentifiers with 10.5281/zenodo.23289231 before classifying distinct outputs.\n11:32 EST second-source research: Existing verified exact-DOI DataCite metadata checkpoint identifies this as the Zenodo concept DOI (HasVersion) in a single dataset family with 10.5281/zenodo.23289231; same title, creators Xu and Zaron, award NA22OAR0110487, created 2026-10-10, Dataset output type 3, CC-BY-4.0. Both DOIs were ALREADY captured as original 2026-10-28 historical DataCite seeds and belong to historical review unit zenodo-mom6; monthly API rediscovered this known historical family, not two independent newly discovered outputs. SPARK primary project spark-000391 'Enhancing the Realism of MOM6-SIS2 Simulations with Ocean Tides' aligns with dataset subject. GitHub NOAA-GFDL/MOM6 PR #1104 'Baroclinic sea level calculation' is merged and describes intended JPO manuscript, but no exact publication DOI verified. Dataset file accessibility/which DOI to represent and cross-cohort review-unit history require human-safe reconciliation; do not create two Hub candidates.\n12:32 EST follow-up: DOI-specific alternate publisher/NOAA IR/Zenodo URLs were compared to the Link to Output field across all 10 public REACH index shards (1,238 records), with no URL matches. This is a limited additional link check, NOT complete REACH detail-link/version dedup; earlier research and disposition unchanged.\n13:31 EST cross-cohort and full REACH same-award detail follow-up: historical-triage has this original DOI as human_metadata_needed; delivery to private Hub NOT VERIFIED. Metadata-review-units groups both concept/version DOIs as one zenodo-mom6 review unit with canonical identity undecided. Exact DataCite checkpoint confirms HasVersion to .23289231 and created 2026-10-10, but native Zenodo file accessibility still NOT VERIFIED (listed_formats=0, listed_sizes=0). REACH detail part-137 same-award reach-001210–001213 contain older works and an already-recorded c2xu/MOM6 drag code, not this dataset DOI or NOAA-GFDL/MOM6 PR #1104. Do not duplicate the historical review or count two new outputs.\nNovember 1 17:25 ET decision reconciliation: monthly DOI is a cross-cohort duplicate of existing historical review unit zenodo-mom6 (both exact DOI identities). Close OCTOBER MONTHLY intake case as no_action to prevent duplicate Scout/Hub proposals. This is NOT a no-action human decision on the historical datasets: historical human_metadata_needed and pending_hub_intake are unchanged; canonical DOI and native file access remain unresolved.",
       "checked_sources": [
         "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
@@ -1273,8 +1273,7 @@
         "research_disposition_verified": false
       },
       "next_research_actions": [
-        "Reconcile with one historical zenodo-mom6 review unit and retain original human_metadata_needed history; do not re-stage both DOI records.",
-        "Seek independently accessible native Zenodo files and human-safe canonical DOI choice before closure; no duplicate Hub claim."
+        "Do not re-stage from October monthly feed. Preserve existing historical zenodo-mom6 human review and ask reviewer to resolve canonical DOI/native file questions through its established intake; private Hub import NOT VERIFIED."
       ],
       "substantive_research": {
         "checked_at": "2026-11-01T18:31:16Z",
@@ -1343,20 +1342,33 @@
         "disposition": "needs_more_research",
         "hub_submission_verified": false,
         "public_reach_addition_verified": false
+      },
+      "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+      "evidence_url": "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/metadata-review-units.json",
+      "monthly_disposition": {
+        "decision": "no_action",
+        "scope": "October monthly original only; not a human decision on historical dataset",
+        "reason": "The exact same DOI belongs to existing historical human_metadata_needed review unit zenodo-mom6 covering concept DOI 10.5281/zenodo.23289230 and version DOI 10.5281/zenodo.23289231. A second October candidate would duplicate an unresolved historical human review. Preserve historical review unit, native-file/canonical-DOI questions, and pending_hub_intake status.",
+        "original_historical_review_unit": "zenodo-mom6",
+        "historical_status": "human_metadata_needed",
+        "historical_hub_import": "NOT_VERIFIED",
+        "canonical_identity": "UNDECIDED",
+        "native_public_files": "NOT_VERIFIED",
+        "reopen_condition": "Only if historical review evidence changes or reviewer directs a distinct legitimate output; do not restage two versions."
       }
     },
     {
       "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
       "identity": "doi:10.5281/zenodo.23289231",
       "cohort": "2026-10",
-      "status": "needs_more_research",
+      "status": "no_action",
       "first_seen_at": "2026-11-01T13:52:45Z",
-      "updated_at": "2026-11-01T18:31:16Z",
+      "updated_at": "2026-11-01T22:26:40.934Z",
       "source_run_id": "REACH-MONTHLY-API-2026-10",
       "award_numbers": [
         "NA22OAR0110487"
       ],
-      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished. VERSION FAMILY: compare Zenodo concept DOI and DataCite relatedIdentifiers with 10.5281/zenodo.23289230 before classifying distinct outputs.\n11:32 EST second-source research: Existing verified exact-DOI DataCite metadata checkpoint identifies this as the specific Zenodo version DOI (IsVersionOf) in a single dataset family with 10.5281/zenodo.23289230; same title, creators Xu and Zaron, award NA22OAR0110487, created 2026-10-10, Dataset output type 3, CC-BY-4.0. Both DOIs were ALREADY captured as original 2026-10-28 historical DataCite seeds and belong to historical review unit zenodo-mom6; monthly API rediscovered this known historical family, not two independent newly discovered outputs. SPARK primary project spark-000391 'Enhancing the Realism of MOM6-SIS2 Simulations with Ocean Tides' aligns with dataset subject. GitHub NOAA-GFDL/MOM6 PR #1104 'Baroclinic sea level calculation' is merged and describes intended JPO manuscript, but no exact publication DOI verified. Dataset file accessibility/which DOI to represent and cross-cohort review-unit history require human-safe reconciliation; do not create two Hub candidates.\n12:32 EST follow-up: DOI-specific alternate publisher/NOAA IR/Zenodo URLs were compared to the Link to Output field across all 10 public REACH index shards (1,238 records), with no URL matches. This is a limited additional link check, NOT complete REACH detail-link/version dedup; earlier research and disposition unchanged.\n13:31 EST cross-cohort and full REACH same-award detail follow-up: historical-triage has this original DOI as human_metadata_needed; private Hub delivery NOT VERIFIED. DataCite checkpoint confirms IsVersionOf .23289230 and created 2026-10-10. Existing REACH same-award part-137 records are other outputs, not this dataset DOI. The concept/version pair is one review family zenodo-mom6, not two independent new outputs; native Zenodo file access and canonical REACH representation remain unverified. Do not reset historical human review.",
+      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished. VERSION FAMILY: compare Zenodo concept DOI and DataCite relatedIdentifiers with 10.5281/zenodo.23289230 before classifying distinct outputs.\n11:32 EST second-source research: Existing verified exact-DOI DataCite metadata checkpoint identifies this as the specific Zenodo version DOI (IsVersionOf) in a single dataset family with 10.5281/zenodo.23289230; same title, creators Xu and Zaron, award NA22OAR0110487, created 2026-10-10, Dataset output type 3, CC-BY-4.0. Both DOIs were ALREADY captured as original 2026-10-28 historical DataCite seeds and belong to historical review unit zenodo-mom6; monthly API rediscovered this known historical family, not two independent newly discovered outputs. SPARK primary project spark-000391 'Enhancing the Realism of MOM6-SIS2 Simulations with Ocean Tides' aligns with dataset subject. GitHub NOAA-GFDL/MOM6 PR #1104 'Baroclinic sea level calculation' is merged and describes intended JPO manuscript, but no exact publication DOI verified. Dataset file accessibility/which DOI to represent and cross-cohort review-unit history require human-safe reconciliation; do not create two Hub candidates.\n12:32 EST follow-up: DOI-specific alternate publisher/NOAA IR/Zenodo URLs were compared to the Link to Output field across all 10 public REACH index shards (1,238 records), with no URL matches. This is a limited additional link check, NOT complete REACH detail-link/version dedup; earlier research and disposition unchanged.\n13:31 EST cross-cohort and full REACH same-award detail follow-up: historical-triage has this original DOI as human_metadata_needed; private Hub delivery NOT VERIFIED. DataCite checkpoint confirms IsVersionOf .23289230 and created 2026-10-10. Existing REACH same-award part-137 records are other outputs, not this dataset DOI. The concept/version pair is one review family zenodo-mom6, not two independent new outputs; native Zenodo file access and canonical REACH representation remain unverified. Do not reset historical human review.\nNovember 1 17:25 ET decision reconciliation: monthly DOI is a cross-cohort duplicate of existing historical review unit zenodo-mom6 (both exact DOI identities). Close OCTOBER MONTHLY intake case as no_action to prevent duplicate Scout/Hub proposals. This is NOT a no-action human decision on the historical datasets: historical human_metadata_needed and pending_hub_intake are unchanged; canonical DOI and native file access remain unresolved.",
       "checked_sources": [
         "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
@@ -1385,8 +1397,7 @@
         "research_disposition_verified": false
       },
       "next_research_actions": [
-        "Use existing historical zenodo-mom6 review unit, not a second Hub candidate for the version DOI.",
-        "Verify native file access and reviewer-safe canonical identity; preserve original historical disposition."
+        "Do not re-stage from October monthly feed. Preserve existing historical zenodo-mom6 human review and ask reviewer to resolve canonical DOI/native file questions through its established intake; private Hub import NOT VERIFIED."
       ],
       "substantive_research": {
         "checked_at": "2026-11-01T18:31:16Z",
@@ -1455,6 +1466,19 @@
         "disposition": "needs_more_research",
         "hub_submission_verified": false,
         "public_reach_addition_verified": false
+      },
+      "reach_snapshot": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+      "evidence_url": "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/metadata-review-units.json",
+      "monthly_disposition": {
+        "decision": "no_action",
+        "scope": "October monthly original only; not a human decision on historical dataset",
+        "reason": "The exact same DOI belongs to existing historical human_metadata_needed review unit zenodo-mom6 covering concept DOI 10.5281/zenodo.23289230 and version DOI 10.5281/zenodo.23289231. A second October candidate would duplicate an unresolved historical human review. Preserve historical review unit, native-file/canonical-DOI questions, and pending_hub_intake status.",
+        "original_historical_review_unit": "zenodo-mom6",
+        "historical_status": "human_metadata_needed",
+        "historical_hub_import": "NOT_VERIFIED",
+        "canonical_identity": "UNDECIDED",
+        "native_public_files": "NOT_VERIFIED",
+        "reopen_condition": "Only if historical review evidence changes or reviewer directs a distinct legitimate output; do not restage two versions."
       }
     }
   ]
