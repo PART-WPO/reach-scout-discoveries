@@ -131,7 +131,8 @@ def check_funding(row, entry, spark):
     reason = (assessment.get("reason", "") + " " + assessment.get("publisher_attribution", "")).lower()
     contradiction_tokens = ("different named funding purpose", "different research activities",
                             "materially different", "objectives differ", "land-site",
-                            "not aqpi", "different stated project", "project-purpose mismatch")
+                            "not aqpi", "different stated project", "project-purpose mismatch",
+                            "vs glore", "vs saildrone", "ocean reanalysis/sea ice")
     if any(token in reason for token in contradiction_tokens) or entry.get("funding_anomaly_verified") is True:
         return candidates, "funding_anomaly", ["Explicit conflicting funded-project attribution requires human investigation"]
     # When one source award points to multiple unrelated parent projects, keep
@@ -152,6 +153,7 @@ def detect_version(entry, doi):
 
 
 def build(root, reach_root, spark_root, write_drafts=False):
+    sys.path.insert(0, str(root / "scout-discoveries/tools"))
     from prepare_batch import prepare
     source = read_json(root / "api-discoveries/manifest.json")
     ledger = read_json(root / "scout-operations/monthly-triage.json")
@@ -273,7 +275,7 @@ def build(root, reach_root, spark_root, write_drafts=False):
                         provenance["notes"].append("Missing abstract: human reviewer must recover before REACH publication.")
                     if status == "parent_attribution_review":
                         provenance["notes"].append("Multiple or ambiguous project connections: human reviewer must confirm appropriate funded project.")
-                    name = "2026-11-01-monthly-fast-" + hashlib.sha256((batch["id"]+doi).encode()).hexdigest()[:14] + ".csv"
+                    name = batch["id"][:10] + "-monthly-fast-" + hashlib.sha256((batch["id"]+doi).encode()).hexdigest()[:14] + ".csv"
                     target = root / "scout-discoveries/inbox" / name
                     if target.exists():
                         output["review_feed_status"] = "ALREADY_IN_INBOX"
