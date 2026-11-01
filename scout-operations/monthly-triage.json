@@ -6,14 +6,14 @@
       "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
       "identity": "doi:10.1002/qj.70325",
       "cohort": "2026-10",
-      "status": "needs_more_research",
+      "status": "no_action",
       "first_seen_at": "2026-11-01T13:52:45Z",
-      "updated_at": "2026-11-01T19:29:18.422Z",
+      "updated_at": "2026-11-01T23:27:08Z",
       "source_run_id": "REACH-MONTHLY-API-2026-10",
       "award_numbers": [
         "NA20OAR4320278"
       ],
-      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished. FUNDING CONFLICT: publisher describes Global Drifter Program, while SPARK links its primary award to West Coast AQPI. Do not assume same-project attribution.\n11:32 EST second-source research: Publisher full acknowledgments explicitly assigns NA20OAR4320278 to Centurioni/15 surface drifters for Global Drifter Program, not to SPARK's primary-funded West-Coast AQPI project. Another coauthor's support is separately credited to CIMEAS AR Recon Project 316792 and DWR/ERDC. This is strong same-project funding mismatch; WPO AQPI attribution is NOT VERIFIED and must not be staged. Publisher gives first published 2026-10-12. Two linked ECMWF Observing System Experiment DOIs 10.21957/befj-es73 and 10.21957/e8rz-wh72 found in Data Availability; these are research leads, NOT confirmed WPO-funded outputs.\n12:32 EST follow-up: DOI-specific alternate publisher/NOAA IR/Zenodo URLs were compared to the Link to Output field across all 10 public REACH index shards (1,238 records), with no URL matches. This is a limited additional link check, NOT complete REACH detail-link/version dedup; earlier research and disposition unchanged.\n14:28 EST independently re-read SPARK spark-000355 full project detail: NA20OAR4320278 primary AQPI work specifically concerns San Francisco Bay Area gap-filling radar network, high-resolution modeling, and decision support for West Coast extreme precipitation. Wiley article explicitly assigns same grant number to Centurioni and 15 drifters for the Global Drifter Program in the Mediterranean M3E campaign. This is a documented project-purpose mismatch, not a valid same-project attribution; remain on hold. Independently inspected ECMWF public research experiments catalog: DOI 10.21957/befj-es73 is experiment j1qm (Mediterranean WITH drifting buoys); DOI 10.21957/e8rz-wh72 is j1ql (Mediterranean WITHOUT drifting buoys). These are an OSE comparison pair cited in the article, not proven separately WPO-funded outputs; no new candidate or duplicate inference.",
+      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished. FUNDING CONFLICT: publisher describes Global Drifter Program, while SPARK links its primary award to West Coast AQPI. Do not assume same-project attribution.\n11:32 EST second-source research: Publisher full acknowledgments explicitly assigns NA20OAR4320278 to Centurioni/15 surface drifters for Global Drifter Program, not to SPARK's primary-funded West-Coast AQPI project. Another coauthor's support is separately credited to CIMEAS AR Recon Project 316792 and DWR/ERDC. This is strong same-project funding mismatch; WPO AQPI attribution is NOT VERIFIED and must not be staged. Publisher gives first published 2026-10-12. Two linked ECMWF Observing System Experiment DOIs 10.21957/befj-es73 and 10.21957/e8rz-wh72 found in Data Availability; these are research leads, NOT confirmed WPO-funded outputs.\n12:32 EST follow-up: DOI-specific alternate publisher/NOAA IR/Zenodo URLs were compared to the Link to Output field across all 10 public REACH index shards (1,238 records), with no URL matches. This is a limited additional link check, NOT complete REACH detail-link/version dedup; earlier research and disposition unchanged.\n14:28 EST independently re-read SPARK spark-000355 full project detail: NA20OAR4320278 primary AQPI work specifically concerns San Francisco Bay Area gap-filling radar network, high-resolution modeling, and decision support for West Coast extreme precipitation. Wiley article explicitly assigns same grant number to Centurioni and 15 drifters for the Global Drifter Program in the Mediterranean M3E campaign. This is a documented project-purpose mismatch, not a valid same-project attribution; remain on hold. Independently inspected ECMWF public research experiments catalog: DOI 10.21957/befj-es73 is experiment j1qm (Mediterranean WITH drifting buoys); DOI 10.21957/e8rz-wh72 is j1ql (Mediterranean WITHOUT drifting buoys). These are an OSE comparison pair cited in the article, not proven separately WPO-funded outputs; no new candidate or duplicate inference.\n18:27 EST bounded decision: independently rechecked the Wiley publisher's detailed funding statement and NOAA IR record. The named NA20OAR4320278 support is specifically for Centurioni/Global Drifter Program Mediterranean buoys, while SPARK's same primary award project is West Coast AQPI radar/modeling. Two independent source rounds and full SPARK scope review provide concrete contradictory project attribution. DECISION: no_action for the WPO AQPI project attribution in this Scout monthly intake, NOT a finding that the article lacks NOAA funding or could never be eligible for another project. Do not stage; reopen only with documentary same-project primary SPARK project evidence or reviewer instruction.",
       "checked_sources": [
         "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
@@ -26,7 +26,8 @@
         "https://doi.org/10.21957/e8rz-wh72",
         "https://github.com/PART-WPO/reach-dashboard/tree/main/agent-data/index",
         "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-028.csv",
-        "https://apps.ecmwf.int/ifs-experiments/"
+        "https://apps.ecmwf.int/ifs-experiments/",
+        "https://repository.library.noaa.gov/view/noaa/77398"
       ],
       "first_pass_screening": {
         "source_report": "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
@@ -40,9 +41,7 @@
         "research_disposition_verified": false
       },
       "next_research_actions": [
-        "Hold WPO AQPI attribution; independently reconcile grant identity and project-specific funding with SPARK details/award office before any Hub draft.",
-        "Check whether linked ECMWF OSE DOIs are publicly eligible and independently funded by same WPO primary project; do not auto-stage.",
-        "Complete REACH alternate-URL/DOI identity check only if WPO attribution becomes credible."
+        "No repeated generic research. Reopen only on positive primary-SPARK same-project funding evidence or explicit reviewer request."
       ],
       "substantive_research": {
         "checked_at": "2026-11-01T16:32:22Z",
@@ -113,7 +112,11 @@
           "hub_submission_verified": false,
           "public_reach_addition_verified": false
         }
-      }
+      },
+      "reach_snapshot": "f94ae52cac483b52e9a5cd6e775c6faa01ad6ec33610b249b3d486aed6daa003",
+      "evidence_url": "https://rmets.onlinelibrary.wiley.com/doi/10.1002/qj.70325",
+      "disposition_reason": "Project-specific scope exclusion: publisher explicitly credits primary award to Global Drifter Program, not SPARK West Coast AQPI project; do not treat as a verified WPO AQPI research output. Reopen on new same-project evidence or human instruction.",
+      "human_approval_verified": false
     },
     {
       "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
@@ -354,12 +357,12 @@
       "cohort": "2026-10",
       "status": "needs_more_research",
       "first_seen_at": "2026-11-01T13:52:45Z",
-      "updated_at": "2026-11-01T19:29:18.422Z",
+      "updated_at": "2026-11-01T23:27:08Z",
       "source_run_id": "REACH-MONTHLY-API-2026-10",
       "award_numbers": [
         "NA24OARX459C0015"
       ],
-      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished. PROJECT SCOPE: NOAA IR award evidence appears consistent, but same-project research scope is not yet verified.\n12:32 EST: NOAA IR noaa:76692 independently verifies journal article, 2026, DOI, author trio and Grant NA24OARX459C0015. SPARK primary project spark-000155 is GLORe ocean reanalysis/sea ice outlook; article analyzes Western North Pacific tropical cyclone seasonal accumulated cyclone energy using experimental SFS reforecasts. Named project and article research objectives differ substantially; same-project WPO attribution NOT VERIFIED despite exact award and NOAA IR funding. NOAA IR is alternate URL for SAME article; none of targeted REACH index Link to Output URLs match; detail/other links remain unchecked. Hold from Hub.\n14:28 EST inspected SPARK spark-000155 full project detail: primary NA24OARX459C0015 funds improvements to Global Ocean Reanalysis (GLORe) for CPC ocean monitoring and sea-ice outlook. NOAA IR independently lists the same grant on an SFS reforecast study of Western North Pacific seasonal tropical cyclone accumulated cyclone energy. The two stated project objectives remain materially different, so same-project WPO deliverable status is NOT VERIFIED; NOAA IR grant metadata alone does not justify Hub staging. No duplicate or terminal decision inferred.",
+      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished. PROJECT SCOPE: NOAA IR award evidence appears consistent, but same-project research scope is not yet verified.\n12:32 EST: NOAA IR noaa:76692 independently verifies journal article, 2026, DOI, author trio and Grant NA24OARX459C0015. SPARK primary project spark-000155 is GLORe ocean reanalysis/sea ice outlook; article analyzes Western North Pacific tropical cyclone seasonal accumulated cyclone energy using experimental SFS reforecasts. Named project and article research objectives differ substantially; same-project WPO attribution NOT VERIFIED despite exact award and NOAA IR funding. NOAA IR is alternate URL for SAME article; none of targeted REACH index Link to Output URLs match; detail/other links remain unchecked. Hold from Hub.\n14:28 EST inspected SPARK spark-000155 full project detail: primary NA24OARX459C0015 funds improvements to Global Ocean Reanalysis (GLORe) for CPC ocean monitoring and sea-ice outlook. NOAA IR independently lists the same grant on an SFS reforecast study of Western North Pacific seasonal tropical cyclone accumulated cyclone energy. The two stated project objectives remain materially different, so same-project WPO deliverable status is NOT VERIFIED; NOAA IR grant metadata alone does not justify Hub staging. No duplicate or terminal decision inferred.\n18:27 EST bounded decision review: NOAA Institutional Repository independently confirms the exact DOI and NA24OARX459C0015, but the article's Western North Pacific seasonal TC SFS reforecast analysis has no demonstrated project deliverable bridge to SPARK GLORe ocean reanalysis/sea-ice scope. Earlier NOAA IR and SPARK full-detail research already provided two source types. No positive same-project bridge emerged in this targeted review. Do not publish a WPO claim or auto-exclude solely on topic; preserve as a specifically blocked human attribution question, NOT delivered to private Hub. Exact question: Was this article produced under the primary GLORe award's funded tasks, or is the grant metadata a broad/unrelated acknowledgment?",
       "checked_sources": [
         "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
@@ -382,9 +385,7 @@
         "research_disposition_verified": false
       },
       "next_research_actions": [
-        "Obtain publisher full acknowledgments and clarify whether SFS paper was produced under SPARK GLORe project, or only shares an award identifier.",
-        "Complete REACH detail-link and publication-version screening if same-project WPO scope is independently corroborated.",
-        "Do not stage solely on NOAA IR grant number."
+        "Seek project PI/deliverable confirmation or a source-accessible funding acknowledgment; if unavailable, request a compatible human attribution review without inventing metadata or claiming Hub delivery."
       ],
       "substantive_research": {
         "checked_at": "2026-11-01T17:32:21Z",
@@ -435,6 +436,14 @@
           "hub_submission_verified": false,
           "public_reach_addition_verified": false
         }
+      },
+      "bounded_decision_review": {
+        "decision": "human_attribution_question_pending_compatible_intake",
+        "private_hub_import": "NOT_VERIFIED",
+        "evidence_sufficient_to_stage": false,
+        "reason": "Material project-scope mismatch despite primary award string; do not assert project funding.",
+        "reviewer_question": "Does NA24OARX459C0015 GLORe explicitly fund the SFS tropical cyclone study as a deliverable?",
+        "next_trigger": "New project-specific documentary evidence or human reviewer direction; avoid repeated generic searches."
       }
     },
     {
@@ -865,12 +874,12 @@
       "cohort": "2026-10",
       "status": "needs_more_research",
       "first_seen_at": "2026-11-01T13:52:45Z",
-      "updated_at": "2026-11-01T19:29:18.422Z",
+      "updated_at": "2026-11-01T23:27:08Z",
       "source_run_id": "REACH-MONTHLY-API-2026-10",
       "award_numbers": [
         "NA22OAR4590118"
       ],
-      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished. PROJECT SCOPE: verify publication relates to the primary SPARK saildrone/hurricane project, not merely an award-number match.\n12:32 EST: Copernicus original EGUsphere page confirms preprint, posted/discussion started 2026-10-30, under review for Atmospheric Measurement Techniques; authors Chu, Zhang et al.; study lower-tropospheric stability retrieval at ARM Southern Great Plains land sites using flux/Doppler lidar. SPARK primary award NA22OAR4590118 belongs to saildrone hurricane air-sea interaction project spark-000325 and spark-000340. Preprint topic and observational domain differ markedly; article funding acknowledgments not verified from abstract page. Same-project attribution NOT VERIFIED; hold. Any future AMT journal article could be same-work version, not automatically another output. No REACH index alternate-link match.\n14:28 EST re-read both SPARK primary project detail records spark-000325 and spark-000340. They specify Atlantic hurricane intensity prediction using saildrone measurements of upper-ocean/near-surface air-sea interaction. Copernicus preprint instead measures lower-tropospheric stability at ARM Southern Great Plains land sites; Copernicus lists coauthor Jun A. Zhang at NOAA AOML/HRD and CIMAS, which is institutional overlap, not proof that the preprint is a deliverable of either saildrone project. Full preprint funding acknowledgments were not accessible in this run; NA22OAR4590118 same-project attribution remains NOT VERIFIED, no staging. Copernicus explicitly lists preprint under review for Atmospheric Measurement Techniques, so any future journal DOI must be version-reconciled rather than counted as an additional work.",
+      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished. PROJECT SCOPE: verify publication relates to the primary SPARK saildrone/hurricane project, not merely an award-number match.\n12:32 EST: Copernicus original EGUsphere page confirms preprint, posted/discussion started 2026-10-30, under review for Atmospheric Measurement Techniques; authors Chu, Zhang et al.; study lower-tropospheric stability retrieval at ARM Southern Great Plains land sites using flux/Doppler lidar. SPARK primary award NA22OAR4590118 belongs to saildrone hurricane air-sea interaction project spark-000325 and spark-000340. Preprint topic and observational domain differ markedly; article funding acknowledgments not verified from abstract page. Same-project attribution NOT VERIFIED; hold. Any future AMT journal article could be same-work version, not automatically another output. No REACH index alternate-link match.\n14:28 EST re-read both SPARK primary project detail records spark-000325 and spark-000340. They specify Atlantic hurricane intensity prediction using saildrone measurements of upper-ocean/near-surface air-sea interaction. Copernicus preprint instead measures lower-tropospheric stability at ARM Southern Great Plains land sites; Copernicus lists coauthor Jun A. Zhang at NOAA AOML/HRD and CIMAS, which is institutional overlap, not proof that the preprint is a deliverable of either saildrone project. Full preprint funding acknowledgments were not accessible in this run; NA22OAR4590118 same-project attribution remains NOT VERIFIED, no staging. Copernicus explicitly lists preprint under review for Atmospheric Measurement Techniques, so any future journal DOI must be version-reconciled rather than counted as an additional work.\n18:27 EST bounded decision review: Copernicus preprint page confirms 2026-10-30 discussion date, land-based ARM Southern Great Plains lower-tropospheric stability work and NOAA AOML/CIMAS coauthor, but provides no directly verified same-project bridge to SPARK's primary NA22OAR4590118 saildrone hurricane intensity projects. Both SPARK project descriptions previously reviewed; author affiliation alone is insufficient. Attempted publisher full PDF and XML; PDF timed out and XML unavailable through the browser, so funding acknowledgment remains SOURCE INACCESSIBLE, not absent. Preserve a specifically blocked human attribution question, NOT delivered to private Hub. Exact question: Does the preprint acknowledge the primary saildrone project for the actual research, or does its funding belong to a separate project?",
       "checked_sources": [
         "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
@@ -894,9 +903,7 @@
         "research_disposition_verified": false
       },
       "next_research_actions": [
-        "Inspect full preprint funding section to determine if NA22OAR4590118 actually supports this paper and why.",
-        "Do not attribute to saildrone WPO project on award string alone.",
-        "Check preprint-to-journal version relationship before treating later publication as separate output."
+        "Seek project PI/deliverable confirmation or a source-accessible funding acknowledgment; if unavailable, request a compatible human attribution review without inventing metadata or claiming Hub delivery."
       ],
       "substantive_research": {
         "checked_at": "2026-11-01T17:32:21Z",
@@ -952,6 +959,14 @@
           "hub_submission_verified": false,
           "public_reach_addition_verified": false
         }
+      },
+      "bounded_decision_review": {
+        "decision": "human_attribution_question_pending_compatible_intake",
+        "private_hub_import": "NOT_VERIFIED",
+        "evidence_sufficient_to_stage": false,
+        "reason": "Material project-scope mismatch despite primary award string; do not assert project funding.",
+        "reviewer_question": "Does NA22OAR4590118 saildrone hurricane project directly support the ARM Southern Great Plains stability preprint?",
+        "next_trigger": "New project-specific documentary evidence or human reviewer direction; avoid repeated generic searches."
       }
     },
     {
