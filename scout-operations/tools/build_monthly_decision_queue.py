@@ -7,7 +7,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-TERMINAL = {"already_in_reach", "forwarded_to_hub", "metadata_update_forwarded",
+TERMINAL = {"already_in_reach", "staged_for_hub_import", "forwarded_to_hub", "metadata_update_forwarded",
             "no_action", "human_metadata_needed"}
 OPEN = {"awaiting_research", "investigating", "needs_more_research"}
 EXPANSION_STATUSES = {"awaiting_independent_verification", "investigating",
