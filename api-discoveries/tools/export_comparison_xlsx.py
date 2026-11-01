@@ -277,6 +277,7 @@ def main():
     p.add_argument("--month",default="")
     p.add_argument("--input",default="api-discoveries/tmp")
     p.add_argument("--output",default="")
+    p.add_argument("--correction-id",default="")
     args=p.parse_args()
     if not args.month:
         today=dt.datetime.now(dt.timezone.utc).date().replace(day=1)
@@ -284,7 +285,28 @@ def main():
     files=sorted(Path(args.input).glob("monthly-*-shard*.json"))
     data=[json.loads(x.read_text()) for x in files]
     if len(data)!=16:raise ValueError("16 monthly DataCite and Crossref shards are required")
-    target=Path(args.output) if args.output else Path("api-discoveries/reports")/(f"REACH_API_Comparison_{args.month}.xlsx")
+    revision=args.correction_id
+    # GitHub's push trigger may not carry workflow_dispatch inputs. Use the
+    # validated active manifest from publish_harvest.py to identify a corrected
+    # immutable batch, and never overwrite the original comparison workbook.
+    if not revision:
+        manifest_file=Path("api-discoveries/manifest.json")
+        if manifest_file.exists():
+            manifest=json.loads(manifest_file.read_text(encoding="utf-8"))
+            year,month=map(int,args.month.split("-"))
+            release=dt.date(year+1,1,1) if month==12 else dt.date(year,month+1,1)
+            prefix=f"{release.isoformat()}-monthly-api-{args.month}-"
+            choices=set()
+            for entry in manifest.get("superseded_batches",[]):
+                replacement=entry.get("replacement_id","")
+                if entry.get("replacement_published") and replacement.startswith(prefix) and replacement.endswith("-part001"):
+                    choices.add(replacement[len(prefix):-len("-part001")])
+            if len(choices)>1:raise ValueError("Ambiguous active workbook correction revisions")
+            revision=next(iter(choices),"")
+    if revision and not re.fullmatch(r"[a-z][a-z0-9-]{0,35}",revision):
+        raise ValueError("Unsafe workbook correction ID")
+    suffix=("-"+revision) if revision else ""
+    target=Path(args.output) if args.output else Path("api-discoveries/reports")/(f"REACH_API_Comparison_{args.month}{suffix}.xlsx")
     res=build(data,args.month,target)
     print(json.dumps(res,indent=2))
 if __name__=="__main__":main()
