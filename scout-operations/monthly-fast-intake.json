@@ -1,0 +1,245 @@
+{
+  "schema": "reach-scout-monthly-fast-intake-v1",
+  "policy": "Monthly originals first; lightweight PRIMARY award provenance check and full snapshot-backed REACH/Scout duplicate screening. API grant metadata is strong review evidence, not human approval or project-level proof.",
+  "reach_snapshot_sha256": "f94ae52cac483b52e9a5cd6e775c6faa01ad6ec33610b249b3d486aed6daa003",
+  "spark_snapshot_sha256": "cf391a48c6810aeda3d9fa2aaa1c9d988d5301aa8fed8acc2d7fff6ab5336136",
+  "source_monthly_records": 13,
+  "counts": {
+    "funding_exception": 3,
+    "metadata_review": 1,
+    "parent_attribution_review": 1,
+    "fast_track": 6,
+    "cross_cohort_version_review": 2
+  },
+  "originals": [
+    {
+      "identity": "doi:10.1002/qj.70325",
+      "cohort": "2026-10",
+      "status": "funding_exception",
+      "api_funding_basis": "funding_anomaly",
+      "funding_awards": "NA20OAR4320278",
+      "reach_matches": [],
+      "metadata_missing": [],
+      "exceptions": [
+        "Explicit conflicting funded-project attribution requires human investigation"
+      ],
+      "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
+      "review_feed_status": "NOT_STAGED",
+      "private_hub_import": "NOT_VERIFIED",
+      "expansion_required_before_intake": false
+    },
+    {
+      "identity": "doi:10.1016/j.pdisas.2026.100696",
+      "cohort": "2026-10",
+      "status": "metadata_review",
+      "api_funding_basis": "primary_award_matched",
+      "funding_awards": "NA22OAR4590187",
+      "reach_matches": [],
+      "metadata_missing": [
+        "Brief Abstract"
+      ],
+      "exceptions": [
+        "Missing intake fields: Brief Abstract",
+        "PI attribution requires human verification; author names are not assumed to be PIs"
+      ],
+      "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
+      "review_feed_status": "INBOX_DRAFT_PREVALIDATED",
+      "private_hub_import": "NOT_VERIFIED",
+      "expansion_required_before_intake": false
+    },
+    {
+      "identity": "doi:10.1080/01431161.2026.2749622",
+      "cohort": "2026-10",
+      "status": "parent_attribution_review",
+      "api_funding_basis": "multiple_project_matches",
+      "funding_awards": "NA22OAR4590512, NA23OAR4590387, NA23OAR4590388",
+      "reach_matches": [],
+      "metadata_missing": [
+        "Brief Abstract"
+      ],
+      "exceptions": [
+        "Check award-specific parent projects; do not assign one arbitrarily",
+        "Missing intake fields: Brief Abstract",
+        "PI attribution requires human verification; author names are not assumed to be PIs"
+      ],
+      "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
+      "review_feed_status": "INBOX_DRAFT_PREVALIDATED",
+      "private_hub_import": "NOT_VERIFIED",
+      "expansion_required_before_intake": false
+    },
+    {
+      "identity": "doi:10.1088/2515-7620/aeaad2",
+      "cohort": "2026-10",
+      "status": "funding_exception",
+      "api_funding_basis": "funding_anomaly",
+      "funding_awards": "NA24OARX459C0015",
+      "reach_matches": [],
+      "metadata_missing": [],
+      "exceptions": [
+        "Explicit conflicting funded-project attribution requires human investigation"
+      ],
+      "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
+      "review_feed_status": "NOT_STAGED",
+      "private_hub_import": "NOT_VERIFIED",
+      "expansion_required_before_intake": false
+    },
+    {
+      "identity": "doi:10.1175/aies-d-26-0004.1",
+      "cohort": "2026-10",
+      "status": "fast_track",
+      "api_funding_basis": "primary_award_matched",
+      "funding_awards": "NA22OAR4590530",
+      "reach_matches": [],
+      "metadata_missing": [],
+      "exceptions": [
+        "PI attribution requires human verification; author names are not assumed to be PIs"
+      ],
+      "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
+      "review_feed_status": "INBOX_DRAFT_PREVALIDATED",
+      "private_hub_import": "NOT_VERIFIED",
+      "expansion_required_before_intake": false
+    },
+    {
+      "identity": "doi:10.1175/waf-d-25-0044.1",
+      "cohort": "2026-10",
+      "status": "fast_track",
+      "api_funding_basis": "primary_award_matched",
+      "funding_awards": "NA19OAR4590138",
+      "reach_matches": [],
+      "metadata_missing": [],
+      "exceptions": [
+        "PI attribution requires human verification; author names are not assumed to be PIs"
+      ],
+      "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
+      "review_feed_status": "INBOX_DRAFT_PREVALIDATED",
+      "private_hub_import": "NOT_VERIFIED",
+      "expansion_required_before_intake": false
+    },
+    {
+      "identity": "doi:10.1175/waf-d-26-0084.1",
+      "cohort": "2026-10",
+      "status": "fast_track",
+      "api_funding_basis": "primary_award_matched",
+      "funding_awards": "NA22OAR4590522",
+      "reach_matches": [],
+      "metadata_missing": [],
+      "exceptions": [
+        "PI attribution requires human verification; author names are not assumed to be PIs"
+      ],
+      "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
+      "review_feed_status": "INBOX_DRAFT_PREVALIDATED",
+      "private_hub_import": "NOT_VERIFIED",
+      "expansion_required_before_intake": false
+    },
+    {
+      "identity": "doi:10.3390/rs18193383",
+      "cohort": "2026-10",
+      "status": "fast_track",
+      "api_funding_basis": "primary_award_matched",
+      "funding_awards": "NA22OAR4590179",
+      "reach_matches": [],
+      "metadata_missing": [],
+      "exceptions": [
+        "PI attribution requires human verification; author names are not assumed to be PIs"
+      ],
+      "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
+      "review_feed_status": "INBOX_DRAFT_PREVALIDATED",
+      "private_hub_import": "NOT_VERIFIED",
+      "expansion_required_before_intake": false
+    },
+    {
+      "identity": "doi:10.5194/egusphere-2026-4928",
+      "cohort": "2026-10",
+      "status": "funding_exception",
+      "api_funding_basis": "funding_anomaly",
+      "funding_awards": "NA22OAR4590118",
+      "reach_matches": [],
+      "metadata_missing": [],
+      "exceptions": [
+        "Explicit conflicting funded-project attribution requires human investigation"
+      ],
+      "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
+      "review_feed_status": "NOT_STAGED",
+      "private_hub_import": "NOT_VERIFIED",
+      "expansion_required_before_intake": false
+    },
+    {
+      "identity": "doi:10.5194/egusphere-2026-5876",
+      "cohort": "2026-10",
+      "status": "fast_track",
+      "api_funding_basis": "primary_award_matched",
+      "funding_awards": "NA21OAR4590208",
+      "reach_matches": [],
+      "metadata_missing": [],
+      "exceptions": [
+        "PI attribution requires human verification; author names are not assumed to be PIs"
+      ],
+      "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
+      "review_feed_status": "INBOX_DRAFT_PREVALIDATED",
+      "private_hub_import": "NOT_VERIFIED",
+      "expansion_required_before_intake": false
+    },
+    {
+      "identity": "doi:10.5194/tc-20-5973-2026",
+      "cohort": "2026-10",
+      "status": "fast_track",
+      "api_funding_basis": "primary_award_matched",
+      "funding_awards": "NA25OARX459C0342-T1-01",
+      "reach_matches": [],
+      "metadata_missing": [],
+      "exceptions": [
+        "PI attribution requires human verification; author names are not assumed to be PIs"
+      ],
+      "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
+      "review_feed_status": "INBOX_DRAFT_PREVALIDATED",
+      "private_hub_import": "NOT_VERIFIED",
+      "expansion_required_before_intake": false
+    },
+    {
+      "identity": "doi:10.5281/zenodo.23289230",
+      "cohort": "2026-10",
+      "status": "cross_cohort_version_review",
+      "api_funding_basis": "primary_award_matched",
+      "funding_awards": "NA22OAR0110487",
+      "reach_matches": [],
+      "metadata_missing": [],
+      "exceptions": [
+        "Existing DOI/version review must not be duplicated"
+      ],
+      "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
+      "review_feed_status": "NOT_STAGED",
+      "private_hub_import": "NOT_VERIFIED",
+      "expansion_required_before_intake": false
+    },
+    {
+      "identity": "doi:10.5281/zenodo.23289231",
+      "cohort": "2026-10",
+      "status": "cross_cohort_version_review",
+      "api_funding_basis": "primary_award_matched",
+      "funding_awards": "NA22OAR0110487",
+      "reach_matches": [],
+      "metadata_missing": [],
+      "exceptions": [
+        "Existing DOI/version review must not be duplicated"
+      ],
+      "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
+      "review_feed_status": "NOT_STAGED",
+      "private_hub_import": "NOT_VERIFIED",
+      "expansion_required_before_intake": false
+    }
+  ],
+  "draft_paths_created": [
+    "scout-discoveries/inbox/2026-11-01-monthly-fast-d987856c32ed45.csv",
+    "scout-discoveries/inbox/2026-11-01-monthly-fast-7140ce113da603.csv",
+    "scout-discoveries/inbox/2026-11-01-monthly-fast-17bff79084ce37.csv",
+    "scout-discoveries/inbox/2026-11-01-monthly-fast-0c3a5f836cdc62.csv",
+    "scout-discoveries/inbox/2026-11-01-monthly-fast-d4c4a2d852eeca.csv",
+    "scout-discoveries/inbox/2026-11-01-monthly-fast-a56abc5841e724.csv",
+    "scout-discoveries/inbox/2026-11-01-monthly-fast-320ded4490d81b.csv",
+    "scout-discoveries/inbox/2026-11-01-monthly-fast-1136c0387b8237.csv"
+  ],
+  "published_scout_feed_unverified_for_new_drafts": true,
+  "private_hub_import": "NOT_VERIFIED",
+  "reviewer_approval": "NOT_VERIFIED",
+  "public_reach_updates": 0
+}
