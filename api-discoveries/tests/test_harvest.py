@@ -2,6 +2,9 @@ import importlib.util
 import pathlib
 import sys
 import unittest
+import json
+import tempfile
+from pathlib import Path
 sys.path.insert(0,str(pathlib.Path(__file__).resolve().parents[1]/"tools"))
 import harvest as h
 import publish_harvest as p
@@ -88,6 +91,24 @@ class HarvestUnitTests(unittest.TestCase):
         self.assertIn("Historical DataCite API Backfill",row["Scout Discovery Rationale"])
         self.assertNotIn("Intake origin: Monthly API",row["Scout Discovery Rationale"])
         self.assertEqual(row["Output Type"],"2")
+
+    def test_pending_immutable_corrective_batch_is_detected(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root=Path(temp)
+            batches=root/"api-discoveries/batches"
+            batches.mkdir(parents=True)
+            (batches/"2026-11-01-monthly-api-2026-10-part001.csv").write_text("original")
+            data={"superseded_batches":{
+                "2026-11-01-monthly-api-2026-10-part001":{
+                    "replacement_id":"2026-11-01-monthly-api-2026-10-primary-only-part001"
+                }
+            }}
+            (root/"api-discoveries/supersessions.json").write_text(json.dumps(data))
+            import datetime as dt
+            release=dt.date(2026,11,1)
+            self.assertEqual(p.pending_monthly_correction("2026-10",release,root),"primary-only")
+            (batches/"2026-11-01-monthly-api-2026-10-primary-only-part001.csv").write_text("corrected")
+            self.assertEqual(p.pending_monthly_correction("2026-10",release,root),"")
 
     def test_combine_award_matches(self):
         v={"doi":"10.1234/z","src":"datacite","award":"NA16OAR4590234",
