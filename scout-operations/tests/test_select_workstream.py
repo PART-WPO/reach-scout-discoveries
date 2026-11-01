@@ -100,6 +100,26 @@ class RouterTests(unittest.TestCase):
         self.assertEqual(r["phase"],"attribution_followups")
         self.assertEqual(r["attribution_followups_pending"],1)
 
+    def test_monthly_api_seed_expansion_remains_prioritized_after_originals_closed(self):
+        mm,mc=m(13,13,13)
+        hh,hc=h(188,188,0)
+        expansions={"entries":[
+            {"identity":"doi:10.1234/new","status":"awaiting_independent_verification"},
+            {"identity":"doi:10.1234/old","status":"already_in_reach"},
+        ]}
+        r=decide(mm,mc,hh,hc,SHA,monthly_expansion_leads=expansions)
+        self.assertEqual(r["mode"],"monthly_api_triage")
+        self.assertEqual(r["phase"],"related_output_expansion_research")
+        self.assertEqual(r["monthly_api"]["independent_expansion_leads_pending"],1)
+
+    def test_unfinished_monthly_originals_take_priority_over_related_expansions(self):
+        mm,mc=m(13,13,0)
+        hh,hc=h(188,188,0)
+        expansions={"entries":[{"status":"awaiting_independent_verification"}]}
+        r=decide(mm,mc,hh,hc,SHA,monthly_expansion_leads=expansions)
+        self.assertEqual(r["mode"],"monthly_api_triage")
+        self.assertEqual(r["phase"],"initial_research")
+
     def test_monthly_blocker_alone_preempts_historical(self):
         mm,mc=m(12,12,12)
         hh,hc=h(188,150,38)
