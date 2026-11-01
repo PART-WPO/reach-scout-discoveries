@@ -8,6 +8,7 @@ on:
       - 'scout-discoveries/batches/*.csv'
       - 'scout-discoveries/tools/build_manifest.py'
       - 'scout-discoveries/tools/prepare_batch.py'
+      - 'scout-operations/tools/reconcile_monthly_staging.py'
       - 'scout-discoveries/tools/promote_inbox.py'
       - 'scout-discoveries/tools/rebuild_discovery_rollup.py'
       - 'scout-operations/legacy-provenance-backfill.json'
@@ -54,11 +55,18 @@ jobs:
       - name: Reconcile attribution metrics from all exact SHA-verified CSV batches
         run: python scout-discoveries/tools/rebuild_discovery_rollup.py
 
+      - name: Record validated monthly Scout proposals without assuming private Hub import
+        run: |
+          python scout-operations/tools/reconcile_monthly_staging.py
+          python scout-operations/tools/build_coverage.py
+          python scout-operations/tools/build_monthly_decision_queue.py
+          python scout-operations/tools/select_workstream.py
+
       - name: Atomically commit promoted CSVs, manifest and reconciled origin metrics
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- scout-discoveries/batches/ scout-discoveries/manifest.json scout-operations/discovery-origin-rollup.json
+          git add -- scout-discoveries/batches/ scout-discoveries/manifest.json scout-operations/discovery-origin-rollup.json scout-operations/monthly-triage.json scout-operations/coverage.json scout-operations/monthly-decision-queue.json scout-operations/active-workstream.json
           if git diff --cached --quiet; then
             echo 'Validated Scout feed and attribution metrics are up to date.'
           else
