@@ -73,6 +73,11 @@ def build(root=ROOT):
     if expansion.get("schema") != "reach-scout-monthly-expansion-leads-v1":
         raise ValueError("Unexpected monthly expansion schema")
 
+    watch_path = root / "scout-operations/preprint-watchlist.json"
+    watch = read(root, "scout-operations/preprint-watchlist.json") if watch_path.exists() else {"entries": []}
+    if watch.get("schema") not in (None, "reach-scout-preprint-watchlist-v1"):
+        raise ValueError("Unrecognized preprint watchlist schema")
+    preprints = {"doi:" + x["preprint_doi"].lower() for x in watch.get("entries", [])}
     cases = []
     original_dois = set()
     originals = set()
@@ -83,7 +88,12 @@ def build(root=ROOT):
             raise ValueError("Duplicate monthly original: " + e["identity"])
         originals.add(key)
         original_dois.add(e["identity"])
-        track, draft_gate_passed, blockers = classify(e)
+        if e["identity"].lower() in preprints or e.get("publication_status") == "preprint":
+            track, draft_gate_passed, blockers = (
+                "preprint_watchlist_hold", False,
+                ["Do not stage the preprint DOI. Preserve its seeded research and monitor for a verified official article DOI."])
+        else:
+            track, draft_gate_passed, blockers = classify(e)
         if e["status"] not in TERMINAL and e.get("substantive_research"):
             # A completed first pass and substantial follow-up demand a decision,
             # NOT an automatic terminal status or invented verification.
@@ -141,7 +151,7 @@ def build(root=ROOT):
                        else "Investigate as independent output; never block verified original monthly seed"),
         })
 
-    order = {"prepare_validated_candidate_draft": 0, "original_fast_path_final_checks": 1,
+    order = {"preprint_watchlist_hold": 6, "prepare_validated_candidate_draft": 0, "original_fast_path_final_checks": 1,
              "funding_or_scope_decision_due": 2, "original_first_pass_or_funding_check": 3,
              "reconcile_existing_review_unit": 4, "research_terminal": 5}
     cases.sort(key=lambda x: (order[x["decision_track"]], x["identity"]))
