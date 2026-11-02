@@ -55,7 +55,8 @@
       "metadata_recovery_state": "resolved",
       "metadata_recovery_checks": 3,
       "exceptions": [
-        "Check award-specific parent projects; do not assign one arbitrarily"
+        "Check award-specific parent projects; do not assign one arbitrarily",
+        "Abstract recovered from matched independent scholarly abstract index with official publisher title/author/date corroboration. Precise NOAA funding-to-SPARK-parent attribution still requires human investigation."
       ],
       "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
       "review_feed_status": "MANIFEST_PUBLISHED",
@@ -233,5 +234,8 @@
   "published_scout_feed_unverified_for_new_drafts": true,
   "private_hub_import": "NOT_VERIFIED",
   "reviewer_approval": "NOT_VERIFIED",
-  "public_reach_updates": 0
+  "public_reach_updates": 0,
+  "metadata_recovery_update_date": "2026-11-02",
+  "metadata_recovery_audit_path": "api-discoveries/reports/monthly-2026-10-metadata-audit.json",
+  "metadata_recovery_note": "All 13 original October DOI records have a Brief Abstract in the active Scout review feed or the original API harvest; any original no-action findings remain ineligible for automatic staging. Private Hub refresh NOT VERIFIED."
 }
