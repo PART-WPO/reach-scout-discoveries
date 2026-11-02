@@ -20,7 +20,8 @@ class IndexTests(unittest.TestCase):
             start=params.get("start",0)
             return {"response":{"numFound":2,"start":start,"docs":docs[start:start+params["rows"]]}}
         with patch("build_noaa_ir_index.fetch_json",side_effect=fake),patch("build_noaa_ir_index.time.sleep"):
-            count,found=collect(page_size=1)
+            count,found,stats=collect(page_size=1)
+        self.assertEqual(stats["invalid_pid_records"],0)
         self.assertEqual(count,2)
         self.assertEqual(found["10.1234/known"],{"https://repository.library.noaa.gov/view/noaa/77174"})
         with tempfile.TemporaryDirectory() as tmp:
@@ -33,6 +34,32 @@ class IndexTests(unittest.TestCase):
                 (__import__("hashlib").sha256(b"10.1234/known").hexdigest()[0]+".json"))
             index_shard.write_text("{}")
             with self.assertRaises(ValueError):trusted_index(root)
+    def test_invalid_pid_is_unknown_not_positive_or_false(self):
+        docs=[
+            {"PID":"noaa:111","mods.doi":"10.1234/valid"},
+            {"PID":"not-a-noaa-pid","mods.doi":"10.1234/valid"},
+            {"PID":"","mods.doi":"10.1234/unresolved"},
+            {"PID":"","dc.identifier":"not a DOI"},
+            {"PID":"noaa:222","mods.doi":"10.1234/independent"}
+        ]
+        def fake(params,tries=5):
+            start=params.get("start",0)
+            return {"response":{"numFound":len(docs),"start":start,
+                                "docs":docs[start:start+params["rows"]]}}
+        with patch("build_noaa_ir_index.fetch_json",side_effect=fake),patch("build_noaa_ir_index.time.sleep"):
+            count,found,stats=collect(page_size=2)
+        self.assertEqual(count,5)
+        self.assertEqual(stats,{"invalid_pid_records":3,"unresolved_dois":2})
+        self.assertNotIn("10.1234/valid",found)
+        self.assertNotIn("10.1234/unresolved",found)
+        self.assertEqual(found["10.1234/independent"],{"https://repository.library.noaa.gov/view/noaa/222"})
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp)
+            write_index(count,found,root/"scout-operations/noaa-ir",**stats)
+            loaded=trusted_index(root)
+            self.assertEqual(loaded["manifest"]["invalid_pid_records"],3)
+            self.assertEqual(loaded["manifest"]["unresolved_doi_identities_held_unknown"],2)
+
     def test_pagination_change_fails_closed(self):
         def fake(params,tries=5):
             if params.get("rows")==1 and params.get("start")==0:
