@@ -10,7 +10,7 @@ import json
 import re
 from pathlib import Path
 
-from build_manifest import INPUT, inspect_batch
+from build_manifest import INPUT, inspect_batch, ROOT
 from noaa_ir_lookup import enrich as enrich_noaa_ir, trusted_index as read_noaa_ir_index
 
 ALLOWED_CLASSIFICATIONS = {
