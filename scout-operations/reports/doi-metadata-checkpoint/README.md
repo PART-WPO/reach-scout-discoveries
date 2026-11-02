@@ -6,9 +6,9 @@ Verified-source research inventory, not human approval or REACH publication.
 
 | Metric | Count |
 |---|---:|
-| Distinct DOI candidates | 247 |
-| Successful direct DOI lookups | 247 |
-| DOI records with newly recoverable metadata | 10 |
+| Distinct DOI candidates | 248 |
+| Successful direct DOI lookups | 248 |
+| DOI records with newly recoverable metadata | 11 |
 | Historical DataCite intake records | 188 |
 | Staged Scout discovery records | 82 |
 | Human metadata review units | 36 |
@@ -17,17 +17,17 @@ Verified-source research inventory, not human approval or REACH publication.
 
 | Field | DOIs |
 |---|---:|
-| abstract | 3 |
-| creators | 3 |
-| pub_date | 10 |
-| title | 3 |
-| type | 3 |
+| abstract | 4 |
+| creators | 4 |
+| pub_date | 11 |
+| title | 4 |
+| type | 4 |
 
 ## Research state
 
 | Classification | DOIs |
 |---|---:|
-| FIELDS_RECOVERABLE | 10 |
+| FIELDS_RECOVERABLE | 11 |
 | HISTORICAL_FIELDS_ALREADY_COVERED | 143 |
 | SCOUT_FIELDS_ALREADY_COVERED | 94 |
 

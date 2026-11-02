@@ -1,24 +1,24 @@
 {
   "counts": {
     "abstract_missing_in_scout_and_crossref": 2,
-    "abstract_missing_in_scout_recoverable": 0,
-    "api_full_pub_date": 27,
-    "crossref_has_abstract": 41,
+    "abstract_missing_in_scout_recoverable": 1,
+    "api_full_pub_date": 28,
+    "crossref_has_abstract": 42,
     "crossref_has_funder_awards": 35,
-    "crossref_publications": 51,
+    "crossref_publications": 52,
     "crossref_vs_scout_date_differs": 17,
     "first_of_month_defaults": 23,
     "no_publication_date": 1,
     "partial_only_pub_date": 23,
     "preferred_date_differs_from_existing_scout": 17,
     "preferred_date_matches_existing_scout": 26,
-    "reach_pub_date_satisfied": 50,
-    "scout_missing_date": 7,
-    "scout_missing_date_recoverable": 7,
-    "scout_missing_date_resolved_by_exact_pub": 1,
+    "reach_pub_date_satisfied": 51,
+    "scout_missing_date": 8,
+    "scout_missing_date_recoverable": 8,
+    "scout_missing_date_resolved_by_exact_pub": 2,
     "scout_missing_date_resolved_by_month_first": 6,
     "scout_missing_date_still_unresolved": 0,
-    "source_field_online": 10,
+    "source_field_online": 11,
     "source_field_print": 37
   },
   "policy": "WPO uses Crossref published-print first, else published-online (posted for preprints), else published/issued. If YYYY-MM only, use YYYY-MM-01 with a flag. Crossref created is DOI registration and not Pub Date. Preserve existing human reviews.",
@@ -132,6 +132,95 @@
       "source": "crossref",
       "title": "The\n                    <scp>Mediterranean</scp>\n                    Extreme Events Experiment and storm\n                    <scp>\n                      <i>Harry</i>\n                    </scp>\n                    in\n                    <scp>January</scp>\n                    2026",
       "volume": "",
+      "work_type": "journal-article"
+    },
+    {
+      "abstract_already_in_scout": false,
+      "abstract_available_from_crossref": true,
+      "accepted_date_precision": "day",
+      "accepted_reach_pub_date": "2024-11-12",
+      "accepted_reach_pub_date_source": "Crossref published-online",
+      "authors": [
+        "Deepak Kumar",
+        "Nick P. Bassill"
+      ],
+      "awards_in_abstract": [],
+      "awards_in_crossref_funder": [],
+      "best_partial_basis": "published-online",
+      "best_partial_date": "2024-11-12",
+      "crossref_publication_date": "2024-11-12",
+      "crossref_publication_date_basis": "published-online",
+      "date_comparison": "no_scout_date",
+      "doi": "10.1007/s43762-024-00142-0",
+      "doi_registered_date": {
+        "full_date": "2024-11-12",
+        "precision": "day",
+        "value": "2024-11-12"
+      },
+      "evidence": "https://api.crossref.org/works/10.1007/s43762-024-00142-0",
+      "first_of_month_default": false,
+      "funder_names": [],
+      "issue": "1",
+      "journal": "Computational Urban Science",
+      "license_urls": [
+        "https://creativecommons.org/licenses/by/4.0",
+        "https://creativecommons.org/licenses/by/4.0"
+      ],
+      "metadata_deposited_date": {
+        "full_date": "2024-11-12",
+        "precision": "day",
+        "value": "2024-11-12"
+      },
+      "pages": "33",
+      "preferred_date_differs_from_existing_scout": false,
+      "preferred_date_matches_existing_scout": false,
+      "pub_date_satisfied": true,
+      "publication_dates": {
+        "issued": {
+          "full_date": "2024-11-12",
+          "precision": "day",
+          "value": "2024-11-12"
+        },
+        "posted": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published": {
+          "full_date": "2024-11-12",
+          "precision": "day",
+          "value": "2024-11-12"
+        },
+        "published-online": {
+          "full_date": "2024-11-12",
+          "precision": "day",
+          "value": "2024-11-12"
+        },
+        "published-print": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        }
+      },
+      "publisher": "Springer Science and Business Media LLC",
+      "reach_output_type": "1",
+      "related_record_evidence": {},
+      "review_keys": [],
+      "reviewable_recovered_fields": [
+        "title",
+        "creators",
+        "type",
+        "abstract",
+        "pub_date"
+      ],
+      "scout_origins": [
+        "independent_research_lead"
+      ],
+      "scout_publication_dates": [],
+      "scout_source_rows": 0,
+      "source": "crossref",
+      "title": "Analysing trends of computational urban science and data science approaches for sustainable development",
+      "volume": "4",
       "work_type": "journal-article"
     },
     {
@@ -4841,8 +4930,8 @@
       "entries": 188
     },
     "independent_research_leads": {
-      "doi_leads": 5,
-      "files": 3
+      "doi_leads": 6,
+      "files": 4
     },
     "metadata_blockers": {
       "entries": 48
