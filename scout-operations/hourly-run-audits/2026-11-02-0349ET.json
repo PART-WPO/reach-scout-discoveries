@@ -36,10 +36,12 @@
   "new_independent_lead": {
     "identity": "doi:10.1007/s43762-024-00142-0",
     "origin_method": "Independent discovery",
-    "status": "AWAITING_TARGETED_CROSSREF_METADATA",
+    "status": "STAGED_FOR_HUMAN_REVIEW",
     "project_scope": "HUMAN_REVIEW_NEEDED",
     "full_reach_scout_text_identity_check": true,
-    "staged": false
+    "staged": true,
+    "classification": "NEEDS INVESTIGATION",
+    "metadata_lookup": "CROSSREF_OK"
   },
   "research_leads_summary": {
     "source_lead_files_enumerated": 3,
@@ -62,24 +64,36 @@
     ]
   },
   "scout_feed": {
-    "batches": 35,
-    "rows": 82,
+    "batches": 36,
+    "rows": 83,
     "active_batch_files_checked": 35,
     "pending_inbox_files_checked": 13,
     "exact_new_doi_title_matches": 0,
-    "new_inbox_drafts": 0,
-    "new_manifest_rows": 0,
-    "manifest_integrity": "PRIOR_AUTOMATED_MANIFEST_VERIFIED; NEW_CANDIDATE_NOT_SUBMITTED"
+    "new_inbox_drafts": 1,
+    "new_manifest_rows": 1,
+    "manifest_integrity": "AUTOMATED_ACTION_SUCCESS; EXACT_INBOX_BATCH_SHA_MATCH; PRIOR_BATCHES_PRESERVED",
+    "new_batch": {
+      "id": "2026-11-02-0349ET-nyc-urban-science-independent-investigate-001",
+      "record_count": 1,
+      "sha256": "726e535c6d5c3fa862abc581ea0d25f46697f6f314d7d8aa7b7788b700891846",
+      "source_run_id": "REACH-SCOUT-2026-11-02-HOURLY-0349ET",
+      "classification": "NEEDS INVESTIGATION",
+      "method": "Independent discovery"
+    }
   },
   "private_discovery_hub_import": "NOT_VERIFIED",
   "human_approvals": "NOT_VERIFIED",
   "public_reach_rows": 1238,
   "verified_public_reach_additions_this_run": 0,
   "new_lead_metadata_checkpoint": {
-    "status": "PENDING",
+    "status": "SUCCESS",
     "crossref_direct_web_attempt": "ACCESS_FAILURE",
     "source_metadata": "PUBLISHER_VERIFIED",
-    "trigger": "research-leads file change should run unified independent metadata Action"
+    "trigger": "research-leads file change should run unified independent metadata Action",
+    "exact_crossref_metadata_verified": true,
+    "pub_date": "2024-11-12",
+    "pub_date_basis": "Crossref published-online",
+    "github_action_run_id": 41415985969
   },
   "research_checks": [
     "SPARK index PRIMARY award and project detail",
@@ -93,10 +107,9 @@
     "read all 3 pre-existing independent research lead files and unified metadata lookup"
   ],
   "limitations": [
-    "Exact Crossref API inaccessible in web; new targeted GitHub metadata lookup not yet verified",
     "Broad article scope does not establish same specific project deliverable despite exact grant acknowledgment",
     "Private Hub and human feedback not observable",
-    "No candidate prepared or published for new lead"
+    "Publisher exact award evidence supports human investigation, but specific NYC dashboard project attribution not independently established; human decision required."
   ],
   "audit_result": "PARTIAL",
   "no_public_reach_or_smartsheet_writes": true,
@@ -105,5 +118,25 @@
     "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
     "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json",
     "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/manifest.json"
-  ]
+  ],
+  "audit_phase": "FINAL_VERIFIED",
+  "verified_at_utc": "2026-11-02T08:53:34.580687+00:00",
+  "github_action_verification": {
+    "independent_metadata_run": {
+      "id": 41415985969,
+      "conclusion": "success"
+    },
+    "scout_manifest_validation_run": {
+      "id": 41416249583,
+      "conclusion": "success",
+      "published_at_utc": "2026-11-02T08:52:59Z"
+    }
+  },
+  "reviewer_visibility": {
+    "private_discovery_hub_import": "NOT_VERIFIED",
+    "reviewer_sync_action": "Use Sync to Scout to import public Scout feed; human review project attribution",
+    "human_approvals": "NOT_VERIFIED",
+    "public_reach_records": 1238,
+    "verified_new_public_reach_additions": 0
+  }
 }
