@@ -23,6 +23,9 @@ def merge_record(records):
         if not x.get("authors"):x["authors"]=r.get("authors",[])
         if not x.get("abstract"):x["abstract"]=r.get("abstract","")
         if x.get("outtype")=="4" and r.get("outtype")!="4":x["outtype"]=r["outtype"]
+    # A posted preprint cannot become an official article just because a
+    # second DOI registry calls the same source "Text" or provides a date.
+    x["is_preprint"]=any(r.get("is_preprint") is True for r in records)
     x["awards"]=sorted(set(r["award"] for r in records))
     x["programs"]=sorted(set(p for r in records for p in r.get("programs",[])))
     x["projects"]=sorted(set(p for r in records for p in r.get("projects",[])))
@@ -39,6 +42,7 @@ def output_row(x,mode,month,run):
             "Intake origin: Monthly API",
             "Monthly intake: "+month,
             "API provenance: "+sources,
+            "API publication status: "+("Preprint" if x.get("is_preprint") else "Not identified as preprint by source"),
             "API date basis: "+", ".join(x["date_bases"]),
             "API funding basis: Exact structured award number(s) in API funding metadata.",
             "Scout verification: Not started",
@@ -48,6 +52,7 @@ def output_row(x,mode,month,run):
         reason="\n".join([
             "Intake origin: Historical DataCite API Backfill",
             "Historical coverage: All SPARK award identifiers",
+            "API publication status: "+("Preprint" if x.get("is_preprint") else "Not identified as preprint by source"),
             "API provenance: "+sources,
             "API funding basis: Exact structured award number(s) in DataCite fundingReferences.",
             "Scout verification: Not started",
