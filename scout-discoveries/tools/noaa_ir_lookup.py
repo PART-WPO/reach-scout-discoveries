@@ -63,14 +63,17 @@ def trusted_index(root=ROOT):
     return {"manifest":m,"dois":result}
 
 def new_output_gate(classification,existing_match,provenance):
-    if classification=="NEW CANDIDATE":
-        return True
-    if classification!="NEEDS INVESTIGATION":
+    if classification not in {"NEW CANDIDATE","NEEDS INVESTIGATION"}:
         return False
-    # Only an unresolved NEW output can benefit; don't enrich existing REACH
-    # records, version/identity overlaps, metadata changes or older decisions.
+    # Requiring an explicit completed *negative* REACH comparison prevents
+    # an accidentally mislabeled NEW CANDIDATE from enriching a duplicate.
+    if provenance.get("existing_reach_uid"):
+        return False
     text=str(existing_match or "").strip().lower()
-    return text.startswith(("no match","no doi/normalized-title/url match")) and not bool(provenance.get("existing_reach_uid"))
+    return text.startswith((
+        "no match", "no doi/normalized-title/url match",
+        "not found in the verified", "not found after complete"
+    ))
 
 def enrich(fields,provenance,index=None):
     """Returns (safe copied fields, explanation). Does not mutate input.
