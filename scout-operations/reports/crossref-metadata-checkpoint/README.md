@@ -24,7 +24,7 @@ For Crossref works the office prefers published-print, falling back to published
 | Scout missing date still unresolved | 0 |
 | Crossref vs scout date differs | 17 |
 | Abstract missing in scout recoverable | 0 |
-| Abstract missing in scout and crossref | 2 |
+| Abstract missing in scout and crossref | 0 |
 | Crossref has funder awards | 35 |
 | Crossref has abstract | 43 |
 
