@@ -28,7 +28,7 @@
       ],
       "research_origin_method": "Independent discovery",
       "finding_purpose": "new_output_review",
-      "status": "AWAITING_EXACT_DOI_METADATA_AND_FULL_DETAIL_DEDUP",
+      "status": "AWAITING_ALTERNATE_DOI_IDENTITY_AND_FULL_DETAIL_DEDUP",
       "source_year": 2024,
       "project_award": "NA21OAR4590374",
       "spark_project_id": "spark-000336",
@@ -50,14 +50,39 @@
         "scout_manifest_exact_doi_matches": 0,
         "private_hub_decisions": "NOT_VERIFIED"
       },
-      "metadata_lookup_status": "pending",
+      "metadata_lookup_status": "unavailable_or_not_found",
       "missing_fields": [
-        "Exact DOI provider metadata (DataCite created office Pub Date if available)",
-        "Full REACH secondary/detail-link identity comparison",
-        "Output-specific same-project funding allocation among NOAA grants",
-        "Whether each yearly dataset is a distinct eligible funded deliverable"
+        "Exact registry lookup for 2024 alternate DOI S9QP4C; native family citation S9QP4CD returned 404 from both registries",
+        "DataCite created Pub Date for a confirmed canonical DOI (do not invent)",
+        "Full REACH secondary/detail-link and Scout inbox dedup",
+        "Year-specific primary WPO project funding allocation and standalone deliverable eligibility"
       ],
-      "next_action": "Unified independent metadata action: query this exact DOI via DataCite then Crossref fallback; if neither resolves, inspect native ERDDAP metadata and publisher date. Complete public REACH details/secondary link dedup, source-specific WPO award allocation and distinct-year eligibility. If eligible, stage ONE unique 24-column independent-discovery candidate per distinct dataset via inbox validator; never assume human approval."
+      "next_action": "Resolve native DOI inconsistency: family page cites S9QP4CD while 2024 ERDDAP metadata embeds S9QP4C. Alias-only lookup lead will trigger targeted registry metadata. Do not treat alias as a second output, change canonical DOI or stage a candidate without evidence.",
+      "last_resumed_at_utc": "2026-11-02T11:26:38Z",
+      "checked_sources": [
+        "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/index/part-004.csv",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-026.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/manifest.json",
+        "https://erddap.ldl.ucsd.edu/erddap/tabledap/LDL_AtlanticHurricane2024.html",
+        "https://api.datacite.org/dois/10.57969/s9qp4cd",
+        "https://api.crossref.org/works/10.57969/s9qp4cd"
+      ],
+      "metadata_enrichment_status": "doi_identity_discrepancy",
+      "verified_metadata": {
+        "provider": "datacite_crossref",
+        "status": "not_found",
+        "checked_doi": "10.57969/s9qp4cd",
+        "http_codes": [
+          404,
+          404
+        ],
+        "native_citation_doi": "10.57969/S9QP4CD",
+        "erddap_embedded_doi": "10.57969/S9QP4C",
+        "candidate_alias_only": "10.57969/S9QP4C",
+        "pub_date": null
+      }
     },
     {
       "identity": "doi:10.57969/s9vc7n",
@@ -73,7 +98,7 @@
       ],
       "research_origin_method": "Independent discovery",
       "finding_purpose": "new_output_review",
-      "status": "AWAITING_EXACT_DOI_METADATA_AND_FULL_DETAIL_DEDUP",
+      "status": "AWAITING_YEAR_SPECIFIC_PRIMARY_PROJECT_ATTRIBUTION_AND_FULL_DETAIL_DEDUP",
       "source_year": 2023,
       "project_award": "NA21OAR4590374",
       "spark_project_id": "spark-000336",
@@ -95,14 +120,38 @@
         "scout_manifest_exact_doi_matches": 0,
         "private_hub_decisions": "NOT_VERIFIED"
       },
-      "metadata_lookup_status": "pending",
+      "metadata_lookup_status": "ok",
       "missing_fields": [
-        "Exact DOI provider metadata (DataCite created office Pub Date if available)",
-        "Full REACH secondary/detail-link identity comparison",
-        "Output-specific same-project funding allocation among NOAA grants",
-        "Whether each yearly dataset is a distinct eligible funded deliverable"
+        "Full REACH secondary/detail-link and all pending Scout inbox identity comparison",
+        "Year-specific same-project allocation of the WPO award amid multiple NOAA funding references",
+        "Whether each annual dataset is an eligible distinct funded deliverable"
       ],
-      "next_action": "Unified independent metadata action: query this exact DOI via DataCite then Crossref fallback; if neither resolves, inspect native ERDDAP metadata and publisher date. Complete public REACH details/secondary link dedup, source-specific WPO award allocation and distinct-year eligibility. If eligible, stage ONE unique 24-column independent-discovery candidate per distinct dataset via inbox validator; never assume human approval."
+      "next_action": "Exact DataCite metadata recovered; do not repeat DOI metadata lookup. Complete full REACH detail/secondary-link and Scout inbox dedup, then bounded year-specific WPO project attribution. If credible but unresolved, use a truthful NEEDS INVESTIGATION human-review candidate only after dedup. Preserve Independent discovery; no autoapproval.",
+      "last_resumed_at_utc": "2026-11-02T11:26:38Z",
+      "checked_sources": [
+        "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/index/part-004.csv",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-026.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/manifest.json",
+        "https://erddap.ldl.ucsd.edu/erddap/tabledap/LDL_AtlanticHurricane2023.html",
+        "https://api.datacite.org/dois/10.57969/s9vc7n"
+      ],
+      "metadata_enrichment_status": "ok",
+      "verified_metadata": {
+        "provider": "datacite",
+        "source": "https://api.datacite.org/dois/10.57969/s9vc7n",
+        "pub_date": "2024-04-13",
+        "pub_date_basis": "DataCite created (office convention)",
+        "resource_type": "Dataset",
+        "title": "Lagrangian Drifter Laboratory at Scripps Institution of Oceanography GTS Atlantic Hurricane 2023 Data",
+        "structured_primary_wpo_award": "NA21OAR4590374",
+        "other_noaa_awards": [
+          "NA20OAR4320278",
+          "NA20OAR4600265"
+        ],
+        "related_identifiers": []
+      }
     },
     {
       "identity": "doi:10.57969/s9rp4p",
@@ -118,7 +167,7 @@
       ],
       "research_origin_method": "Independent discovery",
       "finding_purpose": "new_output_review",
-      "status": "AWAITING_EXACT_DOI_METADATA_AND_FULL_DETAIL_DEDUP",
+      "status": "AWAITING_YEAR_SPECIFIC_PRIMARY_PROJECT_ATTRIBUTION_AND_FULL_DETAIL_DEDUP",
       "source_year": 2022,
       "project_award": "NA21OAR4590374",
       "spark_project_id": "spark-000336",
@@ -140,14 +189,38 @@
         "scout_manifest_exact_doi_matches": 0,
         "private_hub_decisions": "NOT_VERIFIED"
       },
-      "metadata_lookup_status": "pending",
+      "metadata_lookup_status": "ok",
       "missing_fields": [
-        "Exact DOI provider metadata (DataCite created office Pub Date if available)",
-        "Full REACH secondary/detail-link identity comparison",
-        "Output-specific same-project funding allocation among NOAA grants",
-        "Whether each yearly dataset is a distinct eligible funded deliverable"
+        "Full REACH secondary/detail-link and all pending Scout inbox identity comparison",
+        "Year-specific same-project allocation of the WPO award amid multiple NOAA funding references",
+        "Whether each annual dataset is an eligible distinct funded deliverable"
       ],
-      "next_action": "Unified independent metadata action: query this exact DOI via DataCite then Crossref fallback; if neither resolves, inspect native ERDDAP metadata and publisher date. Complete public REACH details/secondary link dedup, source-specific WPO award allocation and distinct-year eligibility. If eligible, stage ONE unique 24-column independent-discovery candidate per distinct dataset via inbox validator; never assume human approval."
+      "next_action": "Exact DataCite metadata recovered; do not repeat DOI metadata lookup. Complete full REACH detail/secondary-link and Scout inbox dedup, then bounded year-specific WPO project attribution. If credible but unresolved, use a truthful NEEDS INVESTIGATION human-review candidate only after dedup. Preserve Independent discovery; no autoapproval.",
+      "last_resumed_at_utc": "2026-11-02T11:26:38Z",
+      "checked_sources": [
+        "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/index/part-004.csv",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-026.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/manifest.json",
+        "https://erddap.ldl.ucsd.edu/erddap/tabledap/LDL_AtlanticHurricane2022.html",
+        "https://api.datacite.org/dois/10.57969/s9rp4p"
+      ],
+      "metadata_enrichment_status": "ok",
+      "verified_metadata": {
+        "provider": "datacite",
+        "source": "https://api.datacite.org/dois/10.57969/s9rp4p",
+        "pub_date": "2024-04-13",
+        "pub_date_basis": "DataCite created (office convention)",
+        "resource_type": "Dataset",
+        "title": "Lagrangian Drifter Laboratory at Scripps Institution of Oceanography GTS Atlantic Hurricane 2022 Data",
+        "structured_primary_wpo_award": "NA21OAR4590374",
+        "other_noaa_awards": [
+          "NA20OAR4320278",
+          "NA20OAR4600265"
+        ],
+        "related_identifiers": []
+      }
     },
     {
       "identity": "doi:10.57969/s9wc7z",
@@ -163,7 +236,7 @@
       ],
       "research_origin_method": "Independent discovery",
       "finding_purpose": "new_output_review",
-      "status": "AWAITING_EXACT_DOI_METADATA_AND_FULL_DETAIL_DEDUP",
+      "status": "AWAITING_YEAR_SPECIFIC_PRIMARY_PROJECT_ATTRIBUTION_AND_FULL_DETAIL_DEDUP",
       "source_year": 2021,
       "project_award": "NA21OAR4590374",
       "spark_project_id": "spark-000336",
@@ -185,18 +258,53 @@
         "scout_manifest_exact_doi_matches": 0,
         "private_hub_decisions": "NOT_VERIFIED"
       },
-      "metadata_lookup_status": "pending",
+      "metadata_lookup_status": "ok",
       "missing_fields": [
-        "Exact DOI provider metadata (DataCite created office Pub Date if available)",
-        "Full REACH secondary/detail-link identity comparison",
-        "Output-specific same-project funding allocation among NOAA grants",
-        "Whether each yearly dataset is a distinct eligible funded deliverable"
+        "Full REACH secondary/detail-link and all pending Scout inbox identity comparison",
+        "Year-specific same-project allocation of the WPO award amid multiple NOAA funding references",
+        "Whether each annual dataset is an eligible distinct funded deliverable"
       ],
-      "next_action": "Unified independent metadata action: query this exact DOI via DataCite then Crossref fallback; if neither resolves, inspect native ERDDAP metadata and publisher date. Complete public REACH details/secondary link dedup, source-specific WPO award allocation and distinct-year eligibility. If eligible, stage ONE unique 24-column independent-discovery candidate per distinct dataset via inbox validator; never assume human approval."
+      "next_action": "Exact DataCite metadata recovered; do not repeat DOI metadata lookup. Complete full REACH detail/secondary-link and Scout inbox dedup, then bounded year-specific WPO project attribution. If credible but unresolved, use a truthful NEEDS INVESTIGATION human-review candidate only after dedup. Preserve Independent discovery; no autoapproval.",
+      "last_resumed_at_utc": "2026-11-02T11:26:38Z",
+      "checked_sources": [
+        "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/index/part-004.csv",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-026.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/manifest.json",
+        "https://erddap.ldl.ucsd.edu/erddap/tabledap/LDL_AtlanticHurricane2021.html",
+        "https://api.datacite.org/dois/10.57969/s9wc7z"
+      ],
+      "metadata_enrichment_status": "ok",
+      "verified_metadata": {
+        "provider": "datacite",
+        "source": "https://api.datacite.org/dois/10.57969/s9wc7z",
+        "pub_date": "2024-04-12",
+        "pub_date_basis": "DataCite created (office convention)",
+        "resource_type": "Dataset",
+        "title": "Lagrangian Drifter Laboratory at Scripps Institution of Oceanography GTS Atlantic Hurricane 2021 Data",
+        "structured_primary_wpo_award": "NA21OAR4590374",
+        "other_noaa_awards": [
+          "NA20OAR4320278",
+          "NA20OAR4600265"
+        ],
+        "related_identifiers": []
+      }
     }
   ],
   "no_candidate_staged_this_run": true,
   "private_hub_import": "NOT_VERIFIED",
   "human_approvals": "NOT_VERIFIED",
-  "policy": "Preserve Independent discovery origin despite later API enrichment. No related-only award seeds, invented dates, duplicate submissions or automatic REACH edits."
+  "policy": "Preserve Independent discovery origin despite later API enrichment. No related-only award seeds, invented dates, duplicate submissions or automatic REACH edits.",
+  "followup_2026_11_02_0625ET": {
+    "research_run_id": "REACH-SCOUT-2026-11-02-HOURLY-0625ET",
+    "source_checkpoint": "scout-operations/reports/independent-metadata-lookup/latest.json",
+    "metadata_ready": 3,
+    "doi_not_found": 1,
+    "year_specific_funding_verified": false,
+    "full_reach_detail_dedup_verified": false,
+    "new_candidates_staged": 0,
+    "reviewer_hub_import": "NOT_VERIFIED",
+    "note": "2024 DOI discrepancy is source-specific; do not infer absence of dataset or create two candidate identities."
+  }
 }
