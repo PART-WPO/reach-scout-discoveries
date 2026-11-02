@@ -1,0 +1,101 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-11-02-HOURLY-0830ET",
+  "run_at_utc": "2026-11-02T13:32:03Z",
+  "primary_mode": "normal_historical_discovery",
+  "routing_reason": "Monthly October originals all research terminal, monthly expansions separately dispositioned, historical 188 complete; bounded independent Atlantic drifter lead follow-up.",
+  "monthly_originals": {
+    "received": 13,
+    "checked": 13,
+    "missing_from_ledger": 0,
+    "staged_for_hub_import": 9,
+    "no_action": 4,
+    "remaining": 0,
+    "private_hub_import": "NOT_VERIFIED",
+    "new_originals_staged_this_run": 0
+  },
+  "monthly_expansions": {
+    "leads": 6,
+    "manifest_staged": 2,
+    "already_in_reach": 3,
+    "pending_human_intake": 1,
+    "new_this_run": 0
+  },
+  "historical": {
+    "total": 188,
+    "fully_investigated": 188,
+    "remaining": 0,
+    "human_metadata_needed": 28,
+    "research_complete": true
+  },
+  "independent_leads": {
+    "source_file": "scout-operations/research-leads/2026-11-02-0525ET-atlantic-drifter-dois.json",
+    "metadata_ready": 4,
+    "resumed": 4,
+    "new_terminal": 0,
+    "new_candidates": 0,
+    "original_method": "Independent discovery",
+    "primary_award": "NA21OAR4590374",
+    "spark_project_id": "spark-000336",
+    "new_evidence": "Live SPARK project Aug 2021–Jul 2024 conflicts with old FY21 PDF ending Jul 2023; annual June–November windows partly outside live project in 2021 and 2024.",
+    "funding": "LDL annual family lists WPO primary award and two other NOAA awards; year-specific allocation not verified.",
+    "access": "All four native annual ERDDAP links timed out; public file scope/license not verified.",
+    "dedup": "Prior full REACH index/detail and active Scout manifest exact DOI/title scan negative; pending unpublished inbox/private Hub not independently checked.",
+    "doi_alias": "Native 2024 citation S9QP4CD is invalid; registered DOI 10.57969/s9qp4c; no fifth output.",
+    "full_lead_directory_enumeration": "NOT_VERIFIED"
+  },
+  "feed": {
+    "batch_count": 37,
+    "candidate_rows": 85,
+    "manifest_generated_at": "2026-11-02T09:37:37Z",
+    "manifest_blob_sha": "1b72bfc844d39d2e14ef6f4beded5156751eb190",
+    "new_inbox_drafts": 0,
+    "new_batches": 0,
+    "feed_integrity_status": "EXISTING_MANIFEST_READ; EXACT SHA256 RECOMPUTATION NOT PERFORMED",
+    "github_action_status_this_run": "NOT_VERIFIED"
+  },
+  "public_reach": {
+    "rows": 1238,
+    "manifest_blob_sha": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+    "new_additions_verified_this_run": 0
+  },
+  "reviewer_visibility": {
+    "monthly_original_public_scout_feed_staged": 9,
+    "api_seeded_expansion_public_scout_feed_staged": 2,
+    "private_hub_import": "NOT_VERIFIED",
+    "human_approvals": "NOT_VERIFIED"
+  },
+  "sources": [
+    "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+    "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-026.csv",
+    "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+    "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/independent-metadata-lookup/latest.json"
+  ],
+  "library_saved": [
+    "/REACH Scout Library/2026-11-02-0830ET-report.md",
+    "/REACH Scout Library/2026-11-02-0830ET-research-leads.json",
+    "/REACH Scout Library/2026-11-02-0830ET-checkpoint.json",
+    "/REACH Scout Library/2026-11-02-0830ET-hourly-provenance-audit.json"
+  ],
+  "github_writes": {
+    "updated_source_lead_commit": "0c4cd51f4dcf3323ba0f537ecd710e80ae4426e8",
+    "report_path": "scout-operations/reports/hourly-research/2026-11-02-0830ET-atlantic-year-scope.md",
+    "audit_path": "scout-operations/hourly-run-audits/2026-11-02-0830ET.json",
+    "no_manifest_or_batch_edits": true
+  },
+  "blockers": [
+    "Year-specific attribution across three NOAA awards and annual date overlap not resolved.",
+    "Unpublished inbox/private Hub feedback not fully observable; no duplicate candidate submitted.",
+    "Native annual ERDDAP data pages timed out; file/license scope not confirmed.",
+    "Live SPARK and older FY21 PDF disagree on end date; current SPARK used."
+  ],
+  "next_priority": [
+    "Reviewer Sync to Scout existing 9 monthly originals and 2 expansion proposals if not already imported.",
+    "Confirm unpublished inbox and annual WPO attribution/public data scope; then consider truthful human NEEDS INVESTIGATION candidate per distinct DOI.",
+    "Preserve original DOI alias correction and no automatic approvals.",
+    "Continue independent leads and separate monthly Zenodo expansion human handoff."
+  ],
+  "audit_result": "PARTIAL",
+  "no_autoapproval": true,
+  "no_public_reach_or_smartsheet_writes": true
+}
