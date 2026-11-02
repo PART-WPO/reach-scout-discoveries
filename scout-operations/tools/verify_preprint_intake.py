@@ -159,5 +159,43 @@ def verify(root=ROOT, fetch_crossref=crossref, fetch_datacite=datacite, now=None
           result["held_batches"], "held; preprints known:", len(known))
     return result
 
+def audit_active_feed(root=ROOT):
+    """Check the complete ACTIVE reviewer manifest, without changing old source files."""
+    watch = watchlist(root)
+    blocked = {norm_doi(x["preprint_doi"]) for x in watch["entries"]}
+    manifest = json.loads((root / "scout-discoveries/manifest.json").read_text(encoding="utf-8"))
+    problems = []
+    count = 0
+    for entry in manifest.get("batches", []):
+        relative = str(entry["path"])
+        if not relative.startswith("scout-discoveries/batches/") or ".." in Path(relative).parts:
+            raise ValueError("Invalid active Scout manifest source path")
+        raw = (root / relative).read_bytes()
+        if hashlib.sha256(raw).hexdigest() != entry["sha256"]:
+            raise ValueError("Active Scout manifest batch checksum mismatch")
+        rows = list(csv.DictReader(io.StringIO(raw.decode("utf-8-sig"), newline="")))
+        if len(rows) != entry["record_count"]:
+            raise ValueError("Active Scout manifest batch row count mismatch")
+        for row in rows:
+            count += 1
+            doi = norm_doi(row.get("DOI") or row.get("Output URL"))
+            rationale = row.get("Scout Discovery Rationale", "")
+            url = str(row.get("Output URL") or "").lower()
+            if (doi in blocked or
+                re.search(r"(?im)^(?:API publication status|Publication status):\s*(?:Preprint|Unpublished|Accepted manuscript)\s*$", rationale) or
+                any(host in url for host in PREPRINT_HOSTS)):
+                problems.append({"doi": doi, "batch": relative})
+    if problems:
+        raise ValueError("Active Scout feed includes held preprints: " +
+                         json.dumps(problems[:12]))
+    print("ACTIVE SCOUT REVIEW FEED AUDIT PASSED:", count,
+          "records; zero known preprint DOI violations")
+    return count
+
+
 if __name__ == "__main__":
-    verify()
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--audit-active", action="store_true")
+    args = parser.parse_args()
+    audit_active_feed() if args.audit_active else verify()
