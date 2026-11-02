@@ -1,0 +1,38 @@
+name: REACH Scout first-of-month preprint watchlist
+on:
+  schedule:
+    - cron: '45 0 1 * *'
+      timezone: "America/New_York"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: scout-preprint-watchlist
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Verify preprint status logic
+        run: python3 -m unittest discover -s scout-operations/tests -p test_preprint_watchlist.py -v
+      - name: Recheck preprint DOIs and linked official journal articles
+        run: python3 scout-operations/tools/preprint_watchlist.py
+      - name: Publish public preprint status and final DOI research leads
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add scout-operations/preprint-watchlist.json scout-operations/preprint-publication-leads.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Refresh monthly Scout preprint Watchlist'
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then exit 0; fi
+            git fetch origin main
+            git rebase origin/main
+            sleep "$((attempt * 2))"
+          done
+          exit 1
