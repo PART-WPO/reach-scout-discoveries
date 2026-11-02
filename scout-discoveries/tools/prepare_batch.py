@@ -187,6 +187,21 @@ def prepare(source, output):
         record = {key: fields.get(key, "") for key in INPUT}
         prov = item["provenance"]
         if prov.get("intake_origin") == "Monthly API":
+            # Monthly proposals must be as useful to a human as historical
+            # reports. Reject generic status-only monthlies even when all
+            # essential metadata happened to be available in the API pull.
+            notes = prov.get("notes") or []
+            required = (
+                "Finding:",
+                "What to check before adding this output:",
+                "Reviewer question:",
+            )
+            if not all(any(isinstance(note, str) and note.startswith(prefix)
+                           and len(note) > len(prefix) + 30
+                           for note in notes) for prefix in required):
+                raise ValueError(
+                    "Monthly Hub drafts require evidence-specific Finding, "
+                    "What to check before adding this output, and Reviewer question")
             critical = ("Title", "DOI", "Output URL", "Output Type",
                         "Authors / PI", "Publication Date", "Brief Abstract",
                         "Evidence URL", "Funding Evidence URL")
