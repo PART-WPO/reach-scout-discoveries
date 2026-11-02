@@ -33,7 +33,7 @@ def reconcile(root=ROOT):
     supersessions = get_rules(root / "scout-discoveries")
     matches = {}
     for b in m["batches"]:
-        if not b["id"].startswith(("2026-", "2027-", "2028-", "2029-")) or not any(x in b["id"] for x in ("-monthly-fast-", "-monthly-enriched-", "-monthly-review-ready-")):
+        if not b["id"].startswith(("2026-", "2027-", "2028-", "2029-")) or not any(x in b["id"] for x in ("-monthly-fast-", "-monthly-enriched-", "-monthly-review-ready-", "-monthly-reviewer-story-")):
             continue
         p = root / b["path"]
         raw = p.read_bytes()
@@ -70,11 +70,17 @@ def reconcile(root=ROOT):
                 current = Path(match["scout_batch_path"]).stem
                 rule = supersessions.get(previous)
                 if (not rule or rule.get("replacement_kind") not in
-                        {"metadata_refresh", "review_reclassification"}
+                        {"metadata_refresh", "review_reclassification", "reviewer_narrative_correction"}
                         or rule.get("replacement_id") != current):
                     raise ValueError("Already staged original changed without an approved same-DOI supersession")
                 # The GitHub manifest validates each exact-sha immutable batch
                 # replacement. Preserve ALL private Hub and human decisions.
+                if rule.get("replacement_kind") == "reviewer_narrative_correction":
+                    if match["classification"] != entry.get("classification"):
+                        raise ValueError("Reviewer narrative correction may not reclassify a prior review")
+                    if (match["reach_snapshot"] != entry.get("reach_snapshot")
+                            or match["evidence_url"] != entry.get("evidence_url")):
+                        raise ValueError("Reviewer narrative correction must preserve original evidence and REACH snapshot")
                 entry["scout_batch_path"] = match["scout_batch_path"]
                 if rule.get("replacement_kind") == "review_reclassification":
                     if (entry.get("metadata_recovery") or {}).get("status") != "resolved":
@@ -82,11 +88,16 @@ def reconcile(root=ROOT):
                     if match["classification"] != "NEW CANDIDATE":
                         raise ValueError("Unexpected Scout review-ready classification")
                     entry["classification"] = match["classification"]
+                note = ("Reviewer narrative sections appended only; original metadata, DOI, "
+                        "classification and prior human decisions are preserved. "
+                        "Private Hub import NOT VERIFIED."
+                        if rule.get("replacement_kind") == "reviewer_narrative_correction"
+                        else "Existing human decisions unchanged; Hub sync requires separate verification.")
                 entry["research_notes"] = (entry.get("research_notes", "") +
                     "\nVerified public Scout review batch change (" +
                     rule["replacement_kind"] + "): " + previous +
                     " superseded by " + current +
-                    " for SAME original DOI. Existing human decisions unchanged; Hub sync is separately verified.")
+                    " for SAME original DOI. " + note)
                 changed += 1
             continue
         if entry["status"] in {"already_in_reach", "forwarded_to_hub", "metadata_update_forwarded",
