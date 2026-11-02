@@ -105,6 +105,14 @@
       "evidence_ledger": "scout-operations/monthly-triage.json",
       "review_notes": "scout-operations/reports/monthly-reviewer-narrative-correction-2026-11-02.json",
       "reason": "Append only missing case-specific reviewer narrative sections; retain original DOI, all metadata, reviewer status, route/classification and immutable source batch."
+    },
+    "2026-11-02-monthly-reviewer-story-parity-001": {
+      "original_sha256": "9d615cfc559ad6737548dd5df9a1611af2ad019d934caf418c8034274e56dbe3",
+      "replacement_id": "2026-11-02-monthly-preprint-hold-001",
+      "excluded_dois": [
+        "10.5194/egusphere-2026-5876"
+      ],
+      "reason": "Publication-status safety correction: hold one confirmed preprint outside future public Scout review feed; preserve the seven other original records, immutable source batch, all past human decisions and independent preprint DOI research."
     }
   }
 }
