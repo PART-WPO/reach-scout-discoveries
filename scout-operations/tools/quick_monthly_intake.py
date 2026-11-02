@@ -207,6 +207,111 @@ def pre_stage_metadata_recovery(entry, source_row):
     return row, missing_remaining, status, verified_checks
 
 
+
+def monthly_review_guidance(entry, row, status, funding_status, missing, recovery_state):
+    """Plain-English, evidence-limited reviewer narrative for every monthly proposal.
+
+    The monthly direct-API check must be as actionable for a person as the
+    historical finding. This only paraphrases evidence recorded in the monthly
+    ledger and computed comparison; it NEVER asserts human approval, private
+    Hub import, REACH publication or complete independent verification.
+    """
+    awards = clean(row.get("NOAA Award Number(s)", "")) or "the listed NOAA awards"
+    kind = {"1": "journal publication", "2": "software output",
+            "3": "dataset or instrument", "4": "research product",
+            "5": "value story"}.get(str(row.get("Output Type", "")), "research output")
+    research = entry.get("substantive_research") or {}
+    funding = research.get("funding_assessment") or {}
+    identity = research.get("identity_and_related_outputs") or {}
+    first = entry.get("first_pass_screening") or {}
+    notes = []
+
+    # Distinguish the structured API grant match from independent confirmation
+    # that THIS output belongs to a particular WPO-funded project.
+    if funding.get("same_project_verified") is True:
+        project = (funding.get("spark_primary_project")
+                   or funding.get("spark_project") or "")
+        project_desc = (" for the named SPARK project " + project) if project else ""
+        funding_summary = (
+            "Source-specific research corroborates an output-level WPO award "
+            + awards + project_desc + "; confirm the live funded parent during review.")
+    elif funding_status == "multiple_project_matches":
+        funding_summary = (
+            "The API lists awards " + awards +
+            " associated with more than one SPARK primary project; which "
+            "project supported this output remains a human attribution question.")
+    else:
+        funding_summary = (
+            "The API supplied NOAA award " + awards +
+            " and Scout matched it to a SPARK PRIMARY award, but this alone "
+            "does not independently establish the article's exact funded project.")
+
+    checked = first.get("normalized_reach_exact_lookup_completed") is True
+    if checked:
+        reach_summary = (
+            "Initial exact DOI/title screening did not locate this output in "
+            "the public REACH index.")
+    else:
+        reach_summary = (
+            "Scout's snapshot-backed comparison did not identify an exact "
+            "public REACH match; independent secondary-link review may still be needed.")
+    finding = (
+        "Finding: The " + entry.get("cohort", "current") +
+        " monthly API intake identified this " + kind + ". " +
+        reach_summary + " " + funding_summary)
+    if missing and recovery_state == "exhausted":
+        finding += (
+            " Targeted metadata recovery was completed, but " +
+            ", ".join(missing) + " remains unavailable and requires human review.")
+    elif recovery_state == "resolved":
+        recovered = sorted((entry.get("metadata_recovery") or {})
+                           .get("resolved_fields", {}).keys())
+        if recovered:
+            finding += (" Scout recovered " + ", ".join(recovered) +
+                        " from checked independent sources.")
+
+    checks = []
+    if missing:
+        checks.append(
+            "Resolve missing " + ", ".join(missing) +
+            " using documented source checks; do not invent required values")
+    if funding_status == "multiple_project_matches":
+        checks.append(
+            "Confirm which of the listed SPARK primary-award projects actually "
+            "funded the output; do not choose a parent from the grant string alone")
+    elif funding.get("same_project_verified") is not True:
+        checks.append(
+            "Verify the output-specific funding acknowledgment and its "
+            "connection to the named SPARK parent project")
+    else:
+        checks.append("Confirm the corroborated NOAA award against the live parent project")
+    if identity.get("full_alt_link_version_dedup_verified") is not True:
+        checks.append(
+            "Check publisher/repository alternative URLs, other DOI versions, "
+            "and REACH secondary links before declaring the output distinct")
+    related = (identity.get("reach_detail_followup") or {}).get("related_existing_reach_ids") or []
+    if related:
+        checks.append(
+            "Compare " + str(len(related)) +
+            " already-cataloged related project products; do not assume "
+            "they are duplicates of the proposed output")
+    if row.get("Publication Date", "").strip():
+        basis = ((research.get("source_specific_metadata") or {})
+                 .get("reach_pub_date_basis") or "")
+        if basis:
+            checks.append(
+                "Verify the proposed publication date follows its recorded "
+                "source convention: " + clean(basis))
+    checks.append("Confirm all required metadata before approving for REACH staging")
+    question = (
+        "Reviewer question: Can this " + kind + " be accepted as a distinct "
+        "WPO-funded output under the correct parent after resolving the "
+        "specific checks above, or should it remain Needs Investigation?")
+    return [finding,
+            "What to check before adding this output: " + " | ".join(checks),
+            question]
+
+
 def build(root, reach_root, spark_root, write_drafts=False):
     sys.path.insert(0, str(root / "scout-discoveries/tools"))
     from prepare_batch import prepare
@@ -346,14 +451,9 @@ def build(root, reach_root, spark_root, write_drafts=False):
                         if missing_after_recovery:
                             provenance["notes"].append(
                                 "Metadata still missing: " + ", ".join(missing_after_recovery))
-                    if status == "metadata_review":
-                        provenance["notes"].append(
-                            "What to check before adding this output: Verify unresolved critical metadata and documented sources; keep as Needs Investigation until resolved")
-                    elif status == "parent_attribution_review":
-                        provenance["notes"].append(
-                            "What to check before adding this output: Confirm each named award belongs to the exact funded WPO project; do not assign a parent arbitrarily")
-                    if status == "parent_attribution_review":
-                        provenance["notes"].append("Multiple or ambiguous project connections: human reviewer must confirm appropriate funded project.")
+                    provenance["notes"].extend(monthly_review_guidance(
+                        entry, normalized, status, funding_status,
+                        missing_after_recovery, recovery_gate))
                     name = batch["id"][:10] + "-monthly-fast-" + hashlib.sha256((batch["id"]+doi).encode()).hexdigest()[:14] + ".csv"
                     target = root / "scout-discoveries/inbox" / name
                     if target.exists():
