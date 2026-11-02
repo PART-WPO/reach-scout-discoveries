@@ -1,10 +1,10 @@
 {
   "fields_recoverable": {
-    "abstract": 3,
-    "creators": 3,
-    "pub_date": 10,
-    "title": 3,
-    "type": 3
+    "abstract": 5,
+    "creators": 5,
+    "pub_date": 12,
+    "title": 5,
+    "type": 5
   },
   "policy": "DataCite uses created (office policy). Crossref uses published-print first, published-online if print absent, and published/issued/posted fallback; month-only dates get YYYY-MM-01. Crossref created never fills Pub Date. Existing reviewer dates preserved.",
   "read_only": true,
@@ -18644,6 +18644,102 @@
       ]
     },
     {
+      "checkpoint_state": "FIELDS_RECOVERABLE",
+      "doi": "10.6084/m9.figshare.26791243",
+      "metadata": {
+        "abstract": "The DeepFlood dataset provides high-resolution georeferenced images from both manned and<br>unmanned aerial platforms, featuring detailed labels that go beyond simple binary distinctions.<br>These labels include inundated vegetation, dry vegetation, open water, and others,<br>making the dataset highly applicable for flood mapping across various landscapes. It uniquely<br>incorporates SAR imagery alongside optical and UAV images, enabling a multi-modal approach<br>to accurately delineate flooded areas",
+        "access_rights": [
+          "Creative Commons Attribution 4.0 International"
+        ],
+        "created": "2024-08-20T17:43:03.000Z",
+        "creators": [
+          "Fawakherji, Mulham"
+        ],
+        "evidence": "https://api.datacite.org/dois/10.6084/m9.figshare.26791243",
+        "funding_in_description": [],
+        "funding_structured": [],
+        "listed_formats": 0,
+        "listed_sizes": 1,
+        "pub_date": "2024-08-20",
+        "publisher": "figshare",
+        "reach_type": "1",
+        "registered": "2024-09-03T13:26:02.000Z",
+        "related": [],
+        "resource_type": "Text",
+        "source": "datacite",
+        "status": "ok",
+        "title": "DEEPFLOOD DATASET",
+        "version": ""
+      },
+      "original_rows": [],
+      "origins": [
+        "independent_research_lead"
+      ],
+      "prior_fields": {
+        "abstract": false,
+        "creators": false,
+        "pub_date": false,
+        "title": false,
+        "type": false
+      },
+      "recoverable_fields": [
+        "title",
+        "creators",
+        "type",
+        "abstract",
+        "pub_date"
+      ],
+      "review_keys": []
+    },
+    {
+      "checkpoint_state": "FIELDS_RECOVERABLE",
+      "doi": "10.6084/m9.figshare.28328339",
+      "metadata": {
+        "abstract": "The DeepFlood dataset provides high-resolution georeferenced images from both manned and<br>unmanned aerial platforms, featuring detailed labels that go beyond simple binary distinctions.<br>These labels include inundated vegetation, dry vegetation, open water, and others,<br>making the dataset highly applicable for flood mapping across various landscapes. It uniquely<br>incorporates SAR imagery alongside optical and UAV images, enabling a multi-modal approach<br>to accurately delineate flooded areas.",
+        "access_rights": [
+          "Creative Commons Attribution 4.0 International"
+        ],
+        "created": "2025-02-01T15:26:40.000Z",
+        "creators": [
+          "Geospatial And Remote Sensing Research Lab"
+        ],
+        "evidence": "https://api.datacite.org/dois/10.6084/m9.figshare.28328339",
+        "funding_in_description": [],
+        "funding_structured": [],
+        "listed_formats": 0,
+        "listed_sizes": 1,
+        "pub_date": "2025-02-01",
+        "publisher": "figshare",
+        "reach_type": "3",
+        "registered": "2025-02-01T15:35:15.000Z",
+        "related": [],
+        "resource_type": "Dataset",
+        "source": "datacite",
+        "status": "ok",
+        "title": "DEEPFLOOD DATASET: High-Resolution Dataset for Accurate Flood Mappingand Segmentation",
+        "version": ""
+      },
+      "original_rows": [],
+      "origins": [
+        "independent_research_lead"
+      ],
+      "prior_fields": {
+        "abstract": false,
+        "creators": false,
+        "pub_date": false,
+        "title": false,
+        "type": false
+      },
+      "recoverable_fields": [
+        "title",
+        "creators",
+        "type",
+        "abstract",
+        "pub_date"
+      ],
+      "review_keys": []
+    },
+    {
       "checkpoint_state": "HISTORICAL_FIELDS_ALREADY_COVERED",
       "doi": "10.7302/y2qt-7f47",
       "metadata": {
@@ -18780,7 +18876,7 @@
       ]
     }
   ],
-  "records_with_new_metadata": 10,
+  "records_with_new_metadata": 12,
   "schema": "reach-scout-doi-enrichment-audit-v1",
   "sources": {
     "historical": {
@@ -18794,7 +18890,7 @@
       "entries": 188
     },
     "independent_research_leads": {
-      "doi_leads": 13,
+      "doi_leads": 15,
       "files": 8
     },
     "metadata_blockers": {
@@ -18814,10 +18910,10 @@
     }
   },
   "state_counts": {
-    "FIELDS_RECOVERABLE": 10,
+    "FIELDS_RECOVERABLE": 12,
     "HISTORICAL_FIELDS_ALREADY_COVERED": 143,
     "SCOUT_FIELDS_ALREADY_COVERED": 97
   },
-  "successful_lookups": 250,
-  "unique_dois": 250
+  "successful_lookups": 252,
+  "unique_dois": 252
 }
