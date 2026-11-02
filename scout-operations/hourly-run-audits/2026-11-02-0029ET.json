@@ -1,0 +1,73 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-11-02-HOURLY-0029ET",
+  "run_local_date": "2026-11-02",
+  "run_local_time": "00:29 EST (scheduled start; source reads and writes completed after start)",
+  "selected_mode": "monthly_api_triage",
+  "phase": "related_output_expansion_research_and_independent_lead_resume",
+  "authoritative_source": "PART-WPO/reach-scout-discoveries main",
+  "source_checks": {
+    "monthly_api_active_source_records": 13,
+    "monthly_ledger_checked": 13,
+    "monthly_ledger_missing": 0,
+    "monthly_originals_staged_for_hub_import_in_public_scout_feed": 9,
+    "monthly_originals_no_action": 4,
+    "monthly_originals_requiring_new_fast_path_stage": 0,
+    "monthly_expansion_leads_total": 6,
+    "monthly_expansion_leads_staged_for_human_review": 1,
+    "monthly_expansion_leads_investigating": 2,
+    "monthly_expansion_leads_already_in_reach": 3,
+    "historical_distinct_dois": 188,
+    "historical_fully_investigated": 188,
+    "historical_remaining": 0,
+    "scout_manifest_batch_count": 33,
+    "scout_manifest_candidate_rows": 78,
+    "scout_manifest_record_count_sum": 78,
+    "scout_manifest_generated_at": "2026-11-02T04:31:48Z",
+    "independent_metadata_doi_successful": 5,
+    "independent_metadata_github_successful": 2
+  },
+  "work_completed": [
+    {
+      "identity": "doi:10.5281/zenodo.22758716",
+      "discovery_method": "API-seeded expansion",
+      "original_seed_doi": "10.1088/2515-7620/aeaad2",
+      "finding": "DataCite exact DOI metadata recovered: Nedza, Douglas; ComputationalNotebook; title 2026 Nedza Huang Zhu - NWP Dynamical Forecasting Manuscript; DataCite created 2026-09-14. DOI explicitly IsVersionOf 10.5281/zenodo.20046428; parent reciprocally HasVersion child. One DOI family; do not submit concept and version as two outputs.",
+      "status": "investigating_funding_and_version_cataloging",
+      "source_urls": ["https://api.datacite.org/dois/10.5281/zenodo.22758716", "https://api.datacite.org/dois/10.5281/zenodo.20046428"],
+      "unresolved": ["Direct artifact-specific same-project WPO funding", "File scope", "Full version/secondary-link REACH and Scout duplicate verification"],
+      "ledger_updated": "scout-operations/monthly-expansion-leads.json"
+    },
+    {
+      "identity": "doi:10.1145/3794916.3794919",
+      "discovery_method": "API-seeded expansion",
+      "original_seed_doi": "10.5194/egusphere-2026-5876",
+      "finding": "Crossref exact DOI metadata recovered with complete title, seven creators, abstract, 2026-03-01 published-print date. No structured Crossref funding reference; NOAA WPO project association from NOAA IR and DRI team webpage is contextual and does not establish article-level award attribution.",
+      "status": "investigating_funding",
+      "source_urls": ["https://api.crossref.org/works/10.1145/3794916.3794919", "https://repository.library.noaa.gov/view/noaa/67218", "https://www.dri.edu/weather-communications/"],
+      "unresolved": ["Specific article-level funding/eligible project link"],
+      "ledger_updated": "scout-operations/monthly-expansion-leads.json"
+    },
+    {
+      "identities": ["doi:10.5281/zenodo.6385057", "github:MESH-Team/MESH_Code_irregular@Mesh_Diffusive_CNS_v0.1", "github:MESH-Team/MESH_CNT@MESH_CNT_v0.1"],
+      "discovery_method": "Independent discovery",
+      "finding": "Verified DataCite title/creator/created publication date and GitHub exact release published_at and MIT repository license; removed resolved missing metadata fields, preserved original provenance and prior funding bridge from parent article.",
+      "status": "research_active_funding_dedup_eligibility",
+      "source_urls": ["https://api.datacite.org/dois/10.5281/zenodo.6385057", "https://api.github.com/repos/MESH-Team/MESH_Code_irregular/releases/tags/Mesh_Diffusive_CNS_v0.1", "https://api.github.com/repos/MESH-Team/MESH_CNT/releases/tags/MESH_CNT_v0.1", "https://onlinelibrary.wiley.com/doi/abs/10.1111/1752-1688.13080"],
+      "unresolved": ["Native file/release source-tree scope", "Fresh full REACH and Scout secondary-link dedup", "Private human reviewer dispositions"],
+      "ledger_updated": "scout-operations/research-leads/2026-10-30-2325ET-mesh-channel-routing.json"
+    }
+  ],
+  "new_inbox_drafts": 0,
+  "new_public_scout_batches": 0,
+  "new_original_seed_dispositions": 0,
+  "new_expansion_hub_candidates": 0,
+  "new_verified_public_reach_outputs": 0,
+  "private_discovery_hub_import": "NOT_VERIFIED",
+  "human_approvals": "NOT_VERIFIED",
+  "public_reach_total_last_independently_observed": 1238,
+  "feed_integrity_status": "PARTIAL: manifest internally consistent (33 batches and 78 summed rows); no new candidate batch, full batch-by-batch SHA-256 not rerun this mission",
+  "github_action_run_status": "NOT_VERIFIED: read published metadata results and source files; no workflow run log inspected",
+  "audit_result": "PARTIAL",
+  "next_priorities": ["Human reviewer may use Discovery Hub Sync to Scout; actual private import unverified", "Resolve the two distinct monthly expansion leads still investigating without duplicating DOI versions", "Finish MESH three independent leads' file-scope and full dedup checks; retain Independent discovery", "Maintain monthly-first priority on future harvests"]
+}
