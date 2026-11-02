@@ -117,11 +117,11 @@
       "full_reach_and_scout_dedup_verified": true,
       "hub_delivery_verified": false,
       "findings": "Related 2026 publication, not the seed preprint. Publisher/source-specific WPO funding, full DOI metadata and REACH/Scout dedup not independently verified. November 1 follow-up: Pinakes identifies March 2026 Communication Design Quarterly article and full two-phase five-office study abstract; independent J-GLOBAL bibliographic entry confirms volume 14 issue 1 pp.22-37. ASU identifies a related NOAA-funded project, not article-specific award proof. Funding and complete REACH/Scout detail/version dedup remain NOT VERIFIED. November 1 18:27 EST distinct-source check: Pinakes full bibliographic entry identifies the article as March 2026, Communication Design Quarterly, with OA PDF via DOI, coauthor list and two-phase five-office study. DOI landing page returned 403 from this environment; full publisher acknowledgments were NOT read. Thus publisher grant attribution and exact publication date remain unverified; no separate draft. November 1 19:27 ET follow-up: Pinakes article-specific record independently supplies the FULL title (including action-research subtitle), seven named authors, abstract and March 2026 bibliographic date. This corrects the previously abbreviated lead title; the date is a SECONDARY INDEX date, not publisher-confirmed. DOI/OA link resolves toward ACM; full publisher PDF and grant acknowledgments were not independently retrieved, so article-specific WPO award remains NOT VERIFIED. This is the same DOI lead, not an additional output.\n2026-11-01 23:24 EST new distinct-source evidence: NOAA Institutional Repository grant record noaa:67218 identifies the exact WPO primary award NA21OAR4590208, names investigators Kathryn Lambrecht and Lynda Olman, and describes community risk thresholds, five-office forecast visualization tests and stakeholder surveys—the same research workstream described by these 2026 papers. This materially strengthens the project-specific bridge, but the grant PROPOSAL does not independently establish each article's own grant acknowledgment, and no article-level funding proof was found. Exact DOI and distinctive title absent from all ten 1,238-record public REACH index shards and all 32 active validated Scout batch files (77 rows), plus ten current inbox drafts; full REACH secondary-detail/version link comparison remains incomplete. No draft, approval or Hub import. Three DOI metadata requests now seeded into existing GitHub checkpoint through a new research-leads file.\n2026-11-01 23:29 EST VERIFIED NEW NATIVE METADATA: GitHub independent Crossref lookup confirms exact DOI, full title, seven creators, abstract and publisher 'Association for Computing Machinery'. Crossref published-print supplies exact date 2026-03-01 (day precision), not merely a secondary-index guess. Crossref funding_references is EMPTY: no explicit article-level WPO award in structured API; this is NOT proof that no funding exists. NOAA IR project-method bridge remains credible, but funding not verified for this article. JATS abstract tags require normalization. Full REACH detail/URL/version dedup remains unfinished.\n2026-11-01 23:36 EST COMPLETE PUBLIC DETAIL SCAN: Independently read all 140 REACH agent-data/details CSV shards covering 1,238 public records, in addition to all ten index shards, all 32 active Scout batches (77 records) and ten pending inbox drafts. No exact DOI numeric suffix or distinctive full title for the two 2026 articles, or exact DOI numeric suffix for Zenodo child and concept parent, was present in these checked public text fields. This is a full public REACH index+detail and active/pending Scout text identity check, NOT private Hub visibility or an assertion about unknown external alternate DOI identities.",
-      "next_action": "Full public duplicate screen and Crossref metadata now complete. Still needs article-specific WPO primary award funding corroboration or documented human attribution question; no automatic candidate or grant inference.",
+      "next_action": "Crossref metadata complete. Source-specific article grant not in structured Crossref funding. Resolve whether same NOAA primary-funded project under NA21OAR4590208 supports this distinct ACM article; do not infer grant from authorship alone. Reconfirm no version/secondary-link duplication and choose supported human review or documented no-action. Preserve API-seeded expansion.",
       "publisher_metadata": {
         "journal": "Communication Design Quarterly",
         "bibliographic_date": "2026-03-01 (secondary index, not publisher-verified)",
-        "source": "https://pinakes.wacclearinghouse.org/article/376641",
+        "source": "https://api.crossref.org/works/10.1145/3794916.3794919",
         "study_description": "Two-phase action research with five western US NWS forecast offices; community risk thresholds",
         "distinct_from_original_seed": true,
         "full_title": "Visualizing Probabilistic Forecast Information Around Community Risk Thresholds: An Action-Research Collaboration Between Environmental Rhetoricians and the National Weather Service",
@@ -150,7 +150,22 @@
           "Zach Tolby",
           "Benjamin Hatchett",
           "Quinn Dannies"
-        ]
+        ],
+        "crossref_direct_lookup_status": "ok",
+        "title": "Visualizing Probabilistic Forecast Information Around Community Risk Thresholds: An Action-Research Collaboration Between Environmental Rhetoricians and the National Weather Service",
+        "authors": [
+          "Lynda C. Olman",
+          "Kathryn Lambrecht",
+          "Anne Heggli",
+          "Meghan Collins",
+          "Zach Tolby",
+          "Benjamin Hatchett",
+          "Quinn Dannies"
+        ],
+        "publication_date": "2026-03-01",
+        "publication_date_source": "Crossref published-print",
+        "abstract_available": true,
+        "structured_funding_references": []
       },
       "project_link_evidence": {
         "project_page": "https://cisa.asu.edu/crux-lab/employing-rhetoric-to-improve-probabilistic-forecast-communication",
@@ -175,7 +190,8 @@
         "https://repository.library.noaa.gov/view/noaa/67218",
         "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/research-leads/2026-11-01-2324ET-monthly-expansion-doi-checkpoint.json",
         "https://api.crossref.org/works/10.1145/3794916.3794919",
-        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/independent-metadata-lookup/latest.json"
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/independent-metadata-lookup/latest.json",
+        "https://www.dri.edu/weather-communications/"
       ],
       "last_substantive_research_date": "2026-11-01",
       "public_index_and_feed_exact_screening": {
@@ -192,7 +208,8 @@
         "reach_full_detail_scan_complete": true,
         "known_exact_doi_title_matches": 0
       },
-      "metadata_checkpoint_input": "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/research-leads/2026-11-01-2324ET-monthly-expansion-doi-checkpoint.json"
+      "metadata_checkpoint_input": "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/research-leads/2026-11-01-2324ET-monthly-expansion-doi-checkpoint.json",
+      "last_metadata_enrichment_date": "2026-11-02"
     },
     {
       "identity": "doi:10.25923/k9kh-y971",
@@ -279,9 +296,11 @@
         "dataset own WPO funding/project attribution",
         "native Zenodo file scope and public access",
         "whether ComputationalNotebook should be Code/Data/Other REACH output",
-        "full REACH and Scout secondary-link identity screening"
+        "full REACH and Scout secondary-link identity screening",
+        "artifact-specific primary WPO funding attribution",
+        "version family cataloging decision and distinct file scope"
       ],
-      "next_action": "No exact child/concept DOI in all REACH index/detail or Scout feed. Concept/7-version family verified; must verify own primary WPO funding and file scope/type before proposing ONE family-level output, never duplicate versions.",
+      "next_action": "Direct DataCite metadata recovered, and child DOI 10.5281/zenodo.22758716 is confirmed IsVersionOf concept DOI 10.5281/zenodo.20046428 (reverse HasVersion confirmed). Treat as one DOI family, not two outputs; do not stage either until same-project primary funding and independent public artifact scope verified, plus complete REACH/Scout version/secondary-link dedup. Publication date for child is 2026-09-14 from DataCite created; not a missing date.",
       "research_evidence_urls": [
         "https://repository.library.noaa.gov/view/noaa/76692/noaa_76692_DS1.pdf",
         "https://repository.library.noaa.gov/view/noaa/76692",
@@ -354,8 +373,21 @@
           ],
           "catalogable_units_maximum_pending_independent_funding": 1
         },
-        "parent_funding_references": []
-      }
+        "parent_funding_references": [],
+        "datacite_direct_lookup_status": "ok",
+        "title": "2026 Nedza Huang Zhu - NWP Dynamical Forecasting Manuscript",
+        "creator": "Nedza, Douglas",
+        "publication_date": "2026-09-14",
+        "publication_date_source": "DataCite created (office convention)",
+        "description": "Data and python code to produce all figures and major results presented in 2026 Nedza, Huang, Zhu Manuscript regarding dynamical tropical forecasting North West Pacific.",
+        "concept_doi": "10.5281/zenodo.20046428",
+        "version_relationship": "IsVersionOf",
+        "concept_parent_has_version_confirmed": true,
+        "concept_parent_pub_date": "2026-05-06",
+        "source": "https://api.datacite.org/dois/10.5281/zenodo.22758716",
+        "concept_source": "https://api.datacite.org/dois/10.5281/zenodo.20046428"
+      },
+      "last_metadata_enrichment_date": "2026-11-02"
     }
   ]
 }
