@@ -69,15 +69,24 @@ def reconcile(root=ROOT):
                 previous = Path(entry.get("scout_batch_path") or "").stem
                 current = Path(match["scout_batch_path"]).stem
                 rule = supersessions.get(previous)
-                if not rule or rule.get("replacement_kind") != "metadata_refresh" or rule.get("replacement_id") != current:
-                    raise ValueError("Already staged original changed without verified metadata supersession")
-                # A reviewed record remains reviewed privately: never infer a
-                # Hub import, reset a human decision or insert a new output.
+                if (not rule or rule.get("replacement_kind") not in
+                        {"metadata_refresh", "review_reclassification"}
+                        or rule.get("replacement_id") != current):
+                    raise ValueError("Already staged original changed without an approved same-DOI supersession")
+                # The GitHub manifest validates each exact-sha immutable batch
+                # replacement. Preserve ALL private Hub and human decisions.
                 entry["scout_batch_path"] = match["scout_batch_path"]
+                if rule.get("replacement_kind") == "review_reclassification":
+                    if (entry.get("metadata_recovery") or {}).get("status") != "resolved":
+                        raise ValueError("Cannot promote monthly case before verified metadata recovery")
+                    if match["classification"] != "NEW CANDIDATE":
+                        raise ValueError("Unexpected Scout review-ready classification")
+                    entry["classification"] = match["classification"]
                 entry["research_notes"] = (entry.get("research_notes", "") +
-                    "\nPublic Scout feed metadata-only correction: original batch " + previous +
-                    " was superseded by " + current +
-                    " for the SAME original DOI. Preserve private human decisions; Hub sync and re-review remain separately verifiable.")
+                    "\nVerified public Scout review batch change (" +
+                    rule["replacement_kind"] + "): " + previous +
+                    " superseded by " + current +
+                    " for SAME original DOI. Existing human decisions unchanged; Hub sync is separately verified.")
                 changed += 1
             continue
         if entry["status"] in {"already_in_reach", "forwarded_to_hub", "metadata_update_forwarded",
