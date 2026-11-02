@@ -12,7 +12,7 @@
       "title": "Lagrangian Drifter Laboratory at Scripps Institution of Oceanography GTS Atlantic Hurricane 2024 Data",
       "research_origin_method": "Independent discovery",
       "finding_purpose": "metadata_identity_check_only",
-      "status": "ALIAS_ONLY_PENDING_REGISTRY_LOOKUP_DO_NOT_STAGE",
+      "status": "RESOLVED_ALIAS_ONLY_NO_SEPARATE_OUTPUT",
       "source_year": 2024,
       "project_award": "NA21OAR4590374",
       "spark_project_id": "spark-000336",
@@ -21,18 +21,40 @@
       "sources_checked": [
         "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
         "https://erddap.ldl.ucsd.edu/erddap/tabledap/LDL_AtlanticHurricane2024.html",
-        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/independent-metadata-lookup/latest.json"
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/independent-metadata-lookup/latest.json",
+        "https://api.datacite.org/dois/10.57969/s9qp4c",
+        "https://api.datacite.org/dois/10.57969/s9qp4cd",
+        "https://api.crossref.org/works/10.57969/s9qp4cd"
       ],
       "missing_fields": [
-        "Registry confirmation of exact canonical DOI",
-        "Source-specific created Pub Date",
-        "Year-specific WPO project funding allocation",
-        "Full public REACH and Scout identity dedup"
+        "Year-specific WPO project attribution and output eligibility pending in canonical source lead",
+        "Pending unpublished Scout inbox/private Hub dedup in canonical source lead"
       ],
-      "next_action": "Use unified DOI lookup for exact alias 10.57969/S9QP4C; reconcile original native S9QP4CD before one canonical dataset identity and any review proposal. No duplicate candidate."
+      "next_action": "Use the canonical 2024 DOI in the original four-dataset lead; retain invalid native S9QP4CD citation as source typo, not second output. Do not stage this alias-only lead.",
+      "canonical_registered_doi": "10.57969/s9qp4c",
+      "original_native_citation_doi": "10.57969/s9qp4cd",
+      "metadata_lookup_status": "ok",
+      "verified_metadata": {
+        "source": "https://api.datacite.org/dois/10.57969/s9qp4c",
+        "provider": "datacite",
+        "title": "Lagrangian Drifter Laboratory at Scripps Institution of Oceanography GTS Atlantic Hurricane 2024 Data",
+        "pub_date": "2024-04-13",
+        "pub_date_basis": "DataCite created (office convention)",
+        "structured_wpo_primary_award": "NA21OAR4590374",
+        "other_noaa_awards": [
+          "NA20OAR4320278",
+          "NA20OAR4600265"
+        ],
+        "abstract_inconsistency": "Text says 2021 season despite 2024 dates; human check."
+      },
+      "resolved_into_source_lead": "scout-operations/research-leads/2026-11-02-0525ET-atlantic-drifter-dois.json",
+      "alias_only_no_new_candidate": true,
+      "resolved_at_utc": "2026-11-02T12:32:21.441Z"
     }
   ],
   "no_candidate_staged_this_run": true,
   "private_hub_import": "NOT_VERIFIED",
-  "human_approvals": "NOT_VERIFIED"
+  "human_approvals": "NOT_VERIFIED",
+  "reconciliation_run_id": "REACH-SCOUT-2026-11-02-HOURLY-0730ET",
+  "alias_resolution_complete": true
 }
