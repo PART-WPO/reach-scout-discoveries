@@ -120,6 +120,15 @@ def compose_rationale(prov):
     notes = prov.get("notes", [])
     if not isinstance(notes, list):
         raise ValueError("notes must be an array of public-safe rationale lines")
+    # Human guidance is universal across intake methods; mission type alone
+    # must never determine whether the reviewer receives an actionable checklist.
+    if not any(str(note).startswith("What to check before adding this output:") for note in notes):
+        if classification == "REACH METADATA UPDATE":
+            notes = list(notes) + ["What to check before adding this output: Confirm exact existing REACH UID, direct same-project award support, and the specific field to correct"]
+        elif classification in {"POSSIBLE DUPLICATE", "KNOWN DUPLICATE"}:
+            notes = list(notes) + ["What to check before adding this output: Compare exact DOI, URLs, title, versions and existing REACH UID before any new insertion"]
+        else:
+            notes = list(notes) + ["What to check before adding this output: Confirm output identity, WPO primary-project attribution, complete required metadata, and absence from REACH before approving"]
     for note in notes:
         note = safe_line(note, "note")
         key = note.split(":", 1)[0]
@@ -176,7 +185,24 @@ def prepare(source, output):
         if fields.get("Candidate ID") or fields.get("Principal Investigator Email(s)"):
             raise ValueError("Never publish Candidate ID or PI email")
         record = {key: fields.get(key, "") for key in INPUT}
-        record["Scout Discovery Rationale"] = compose_rationale(item["provenance"])
+        prov = item["provenance"]
+        if prov.get("intake_origin") == "Monthly API":
+            critical = ("Title", "DOI", "Output URL", "Output Type",
+                        "Authors / PI", "Publication Date", "Brief Abstract",
+                        "Evidence URL", "Funding Evidence URL")
+            missing = [key for key in critical if not str(record.get(key, "")).strip()]
+            if missing:
+                notes = prov.get("notes", [])
+                recovered = any(str(n).startswith("Metadata recovery: Completed") for n in notes)
+                sourced = any(str(n).startswith("Metadata checks: https://") for n in notes)
+                if not recovered or not sourced:
+                    raise ValueError("Metadata recovery must be documented before new monthly staging: " +
+                                     ", ".join(missing))
+                # An incomplete, investigated case remains a human Investigate
+                # proposal, never an automatic new-output approval.
+                if prov.get("classification") != "NEEDS INVESTIGATION":
+                    raise ValueError("Monthly incomplete metadata requires NEEDS INVESTIGATION")
+        record["Scout Discovery Rationale"] = compose_rationale(prov)
         rows.append(record)
     output.parent.mkdir(parents=True, exist_ok=True)
     try:
