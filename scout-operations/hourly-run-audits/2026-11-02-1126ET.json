@@ -1,0 +1,86 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-11-02-HOURLY-1126ET",
+  "run_at_utc": "2026-11-02T16:27:39Z",
+  "primary_mode": "normal_historical_discovery",
+  "research_focus": "Annual Atlantic drifter native metadata/license access and all pending public Scout inbox exact DOI checks",
+  "monthly_originals": {
+    "received": 13,
+    "checked": 13,
+    "staged_for_hub_import": 9,
+    "no_action": 4,
+    "missing_from_ledger": 0
+  },
+  "historical": {
+    "total": 188,
+    "fully_investigated": 188,
+    "remaining": 0,
+    "human_metadata_needed": 28
+  },
+  "monthly_expansion": {
+    "total": 6,
+    "staged_for_review": 2,
+    "already_in_reach": 3,
+    "pending_human_intake": 1
+  },
+  "independent_leads": {
+    "source_json_files_enumerated": 7,
+    "metadata_lookup_dois_ok": 12,
+    "metadata_lookup_github_ok": 2,
+    "atlantic_dois_resumed": 4,
+    "native_metadata_pages_reachable": 4,
+    "raw_data_download_verified": false,
+    "public_inbox_csv_files_read": 15,
+    "public_inbox_exact_doi_matches": 0,
+    "new_candidates": 0,
+    "new_terminal_dispositions": 0
+  },
+  "sources_checked": [
+    "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+    "https://erddap.ldl.ucsd.edu/erddap/tabledap/LDL_AtlanticHurricane2021.graph",
+    "https://erddap.ldl.ucsd.edu/erddap/tabledap/LDL_AtlanticHurricane2022.graph",
+    "https://erddap.ldl.ucsd.edu/erddap/tabledap/LDL_AtlanticHurricane2023.graph",
+    "https://erddap.ldl.ucsd.edu/erddap/tabledap/LDL_AtlanticHurricane2024.graph",
+    "https://api.datacite.org/dois/10.57969/s9qp4c",
+    "https://github.com/PART-WPO/reach-scout-discoveries/tree/main/scout-discoveries/inbox"
+  ],
+  "feed": {
+    "manifest_active_batches": 37,
+    "manifest_candidate_rows": 85,
+    "new_inbox_drafts": 0,
+    "new_batches": 0,
+    "manifest_byte_sha_recomputed_this_run": false,
+    "github_actions_status": "NOT_VERIFIED",
+    "feed_integrity_status": "MANIFEST_COUNTS_OBSERVED; NO_NEW_BATCH; FULL_BYTE_SHA_NOT_RECHECKED"
+  },
+  "public_reach": {
+    "snapshot_rows": 1238,
+    "new_additions_verified": 0
+  },
+  "reviewer_story_parity": {
+    "legacy_monthly_originals": 9,
+    "three_labels_present": 1,
+    "missing_all_three": 7,
+    "missing_reviewer_question_only": 1,
+    "new_monthly_drafts_this_run": 0,
+    "case_specific_companion_report": "scout-operations/reports/hourly-research/2026-11-02-0934ET-monthly-reviewer-story-parity-audit.md"
+  },
+  "private_hub_import": "NOT_VERIFIED",
+  "human_approvals": "NOT_VERIFIED",
+  "new_finding_origin": "Independent discovery",
+  "human_decisions_preserved": true,
+  "no_public_reach_spark_or_smartsheet_edits": true,
+  "library_first_saved": [
+    "/REACH Scout Library/2026-11-02-1126ET-atlantic-source-followup.md",
+    "/REACH Scout Library/2026-11-02-1126ET-checkpoint.json",
+    "/REACH Scout Library/2026-11-02-1126ET-hourly-provenance-audit.json"
+  ],
+  "lead_ledger_commit": "8db927bb7067417c960d96b557a57d0a49e143f3",
+  "blockers": [
+    "Year-specific award allocation among three NOAA awards and project overlap not independently established",
+    "Native metadata pages and license verified but raw observations not downloaded",
+    "Private Hub feedback and approvals not observable",
+    "Legacy monthly in-card reviewer-story parity gaps require controlled supersession"
+  ],
+  "audit_result": "PARTIAL"
+}
