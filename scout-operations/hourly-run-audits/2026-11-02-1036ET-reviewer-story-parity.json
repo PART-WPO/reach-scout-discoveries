@@ -1,0 +1,136 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-11-02-HOURLY-1036ET",
+  "run_at_utc": "2026-11-02T15:36:45Z",
+  "selected_mode": "normal_historical_discovery",
+  "audit_focus": "November 2 monthly reviewer-story parity read-only check",
+  "source_manifest": "scout-discoveries/manifest.json",
+  "manifest_observed": {
+    "generated_at": "2026-11-02T15:09:23Z",
+    "active_batches": 37,
+    "staged_candidates": 85,
+    "byte_sha_rechecked_this_run": false
+  },
+  "coverage": {
+    "monthly_received": 13,
+    "monthly_checked": 13,
+    "monthly_staged_public_feed": 9,
+    "monthly_no_action": 4,
+    "monthly_missing_from_ledger": 0,
+    "historical_completed": 188,
+    "historical_remaining": 0
+  },
+  "monthly_expansion": {
+    "leads": 6,
+    "staged_for_review": 2,
+    "already_in_reach": 3,
+    "pending_human_intake": 1
+  },
+  "independent_metadata_checkpoint": {
+    "doi_successful": 12,
+    "doi_count": 12,
+    "github_successful": 2,
+    "github_count": 2
+  },
+  "reviewer_story_parity": {
+    "monthly_originals_audited": 9,
+    "all_three_labels_present": 1,
+    "missing_all_three": 7,
+    "missing_reviewer_question_only": 1,
+    "exceptions": [
+      {
+        "doi": "10.5194/tc-20-5973-2026",
+        "batch": "2026-11-01-monthly-fast-1136c0387b8237",
+        "missing_labels": [
+          "Finding:",
+          "What to check before adding this output:",
+          "Reviewer question:"
+        ]
+      },
+      {
+        "doi": "10.1088/2515-7620/aeaad2",
+        "batch": "2026-11-01-monthly-fast-936c21c3648bb0",
+        "missing_labels": [
+          "Finding:",
+          "What to check before adding this output:",
+          "Reviewer question:"
+        ]
+      },
+      {
+        "doi": "10.1175/aies-d-26-0004.1",
+        "batch": "2026-11-01-monthly-fast-17bff79084ce37",
+        "missing_labels": [
+          "Finding:",
+          "What to check before adding this output:",
+          "Reviewer question:"
+        ]
+      },
+      {
+        "doi": "10.5194/egusphere-2026-5876",
+        "batch": "2026-11-01-monthly-fast-320ded4490d81b",
+        "missing_labels": [
+          "Finding:",
+          "What to check before adding this output:",
+          "Reviewer question:"
+        ]
+      },
+      {
+        "doi": "10.1175/waf-d-25-0044.1",
+        "batch": "2026-11-01-monthly-fast-0c3a5f836cdc62",
+        "missing_labels": [
+          "Finding:",
+          "What to check before adding this output:",
+          "Reviewer question:"
+        ]
+      },
+      {
+        "doi": "10.3390/rs18193383",
+        "batch": "2026-11-01-monthly-fast-a56abc5841e724",
+        "missing_labels": [
+          "Finding:",
+          "What to check before adding this output:",
+          "Reviewer question:"
+        ]
+      },
+      {
+        "doi": "10.1175/waf-d-26-0084.1",
+        "batch": "2026-11-01-monthly-fast-d4c4a2d852eeca",
+        "missing_labels": [
+          "Finding:",
+          "What to check before adding this output:",
+          "Reviewer question:"
+        ]
+      },
+      {
+        "doi": "10.1016/j.pdisas.2026.100696",
+        "batch": "2026-11-02-monthly-review-ready-pdisas-100696-001",
+        "missing_labels": [
+          "Reviewer question:"
+        ],
+        "preserve_existing_review": true
+      }
+    ],
+    "compliant_doi": "10.1080/01431161.2026.2749622",
+    "note": "These are pre-existing public-feed rows, not newly staged candidates. New structured monthly drafts have a fail-closed prepare_batch guard; do not infer this guard failed."
+  },
+  "candidate_writes": 0,
+  "new_dois_researched": 0,
+  "seed_dispositions_changed": 0,
+  "feed_integrity_status": "MANIFEST_COUNTS_OBSERVED; FULL_BYTE_SHA_NOT_RECHECKED",
+  "private_hub_import": "NOT_VERIFIED",
+  "human_approvals": "NOT_VERIFIED",
+  "public_reach_additions_verified": 0,
+  "actions_required": [
+    "Before Hub sync/review of legacy rows, reconcile missing narrative lines through controlled metadata-only supersession; never re-stage same DOI as new",
+    "Preserve immutable source and old human decisions; do not overwrite private Hub",
+    "Continue independent research and human decisions separately"
+  ],
+  "library_first_saved": [
+    "/REACH Scout Library/2026-11-02-1036ET-reviewer-story-parity-audit.json",
+    "/REACH Scout Library/2026-11-02-1036ET-reviewer-story-parity-report.md"
+  ],
+  "research_lead_directory_inventory": "PARTIAL: 7 checkpoint-referenced files fetched; no recursive directory enumeration",
+  "audit_result": "PARTIAL",
+  "human_decisions_preserved": true,
+  "public_data_edited": false
+}
