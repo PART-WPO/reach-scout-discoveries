@@ -1,0 +1,114 @@
+{
+  "schema": "reach-scout-hourly-crossref-preliminary-audit-v1",
+  "run_local_date": "2026-11-02",
+  "observed_at_utc": "2026-11-02T21:50:36.906840+00:00",
+  "primary_mode": "historical_crossref_triage",
+  "crossref_source": {
+    "manifest": "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+    "harvest_generated_at": "2026-11-02T21:18:29.120941+00:00",
+    "raw_rows": 614,
+    "distinct_source_dois": 614,
+    "batches": 7,
+    "batch_sha256_verified": 7,
+    "spark_primary_awards_checked": 693,
+    "sha_verification": "Independently computed SHA-256 on each fetched raw CSV; all seven match manifest."
+  },
+  "screening": {
+    "reach_public_index_shards_checked": 10,
+    "reach_public_index_rows": 1238,
+    "exact_doi_in_reach_index": 54,
+    "reach_public_detail_shards_text_scanned": 140,
+    "source_doi_occurrences_in_reach_detail_shards": 91,
+    "detail_occurrence_caution": "91 is not confirmed 91 duplicate publications; secondary/citation links can refer to a different original.",
+    "active_scout_batches_scanned": 30,
+    "source_dois_in_active_scout_doi_column": 30,
+    "scout_text_only_hits": "Some additional matches are seed DOI citations in rationale and are not exact proposed-output identity."
+  },
+  "monthly": {
+    "originals": 13,
+    "staged_for_hub_import": 8,
+    "no_action": 4,
+    "preprint_watchlist_hold": 1,
+    "expansion_leads": 6,
+    "expansion_human_intake_pending": 1,
+    "private_hub_import": "NOT_VERIFIED",
+    "human_approvals": "NOT_VERIFIED",
+    "public_reach_additions": "NOT_VERIFIED"
+  },
+  "crossref_ledger_before": {
+    "originals_completed": 0,
+    "seed_expansions_completed": 0,
+    "remaining": 614
+  },
+  "crossref_ledger_after": {
+    "originals_completed": 8,
+    "already_in_reach": 8,
+    "originals_awaiting_first_pass": 606,
+    "seed_expansion_pending_or_investigating": 614,
+    "seed_expansion_investigating": 1,
+    "fully_investigated": 0,
+    "research_complete": false,
+    "remaining": 614
+  },
+  "no_new_review_proposals": true,
+  "next_steps": [
+    "Process 606 untouched original DOI cases with exact index/detail/Scout identity, full primary SPARK award and critical metadata checks.",
+    "Research all 614 source DOI seed expansions even when original already in REACH or Scout.",
+    "Check exact DataCite record and source-specific funding for Zenodo 10.5281/zenodo.4433147; do not treat cited reused datasets as WPO-funded without evidence.",
+    "Verify private Discovery Hub Sync to Scout only when observed; do not autoapprove or modify REACH."
+  ],
+  "limitations": [
+    "No private Discovery Hub or human feedback observed.",
+    "The index/detail DOI string scan alone does not prove every occurrence represents the REACH record's own output.",
+    "No new DOI-specific citation/data/code expansion lead validated in this preliminary audit."
+  ],
+  "confirmed_existing_reach_originals": [
+    {
+      "doi": "10.1002/essoar.10507067.1",
+      "record_id": "reach-000413"
+    },
+    {
+      "doi": "10.1007/s00382-021-05901-x",
+      "record_id": "reach-000450"
+    },
+    {
+      "doi": "10.1007/s00382-021-06124-w",
+      "record_id": "reach-000453"
+    },
+    {
+      "doi": "10.1007/s00382-023-06864-x",
+      "record_id": "reach-000433"
+    },
+    {
+      "doi": "10.1007/s00382-023-06965-7",
+      "record_id": "reach-000435"
+    },
+    {
+      "doi": "10.1007/s00382-026-08137-9",
+      "record_id": "reach-001098"
+    },
+    {
+      "doi": "10.1007/s00477-017-1442-8",
+      "record_id": "reach-000191"
+    },
+    {
+      "doi": "10.1007/s00477-023-02563-5",
+      "record_id": "reach-000189"
+    }
+  ],
+  "seed_expansion": {
+    "source_seed_doi": "10.1002/essoar.10507067.1",
+    "preprint_final_version_doi": "10.1029/2021GL096709",
+    "unverified_distinct_dataset_lead_doi": "10.5281/zenodo.4433147",
+    "evidence": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021GL096709",
+    "status": "not validated for review; funding, metadata, dedup pending"
+  },
+  "github_updates": [
+    "historical-crossref-triage.json original disposition commit 2f3bc88dba5523d73e82dc33062f63f024859f8f",
+    "historical-crossref-coverage.json commit f0ab195a22c36a91d8e1d974c516f3c4c54d6346",
+    "active-workstream.json commit c44fdbc2b770dbed5804070d81683e54470e81f1",
+    "historical-crossref-triage.json seed expansion commit 4c7ce2fd805fd8d87e5ca8027dbc8aed9685c421"
+  ],
+  "audit_result": "PARTIAL: Crossref source SHA verified; 8 exact REACH original matches verified; one source-linked expansion lead identified but not validated; 606 originals and all 614 expansions remain; private Hub unobserved.",
+  "source_crossref_harvest_timing": "Manifest generated 2026-11-02T21:18:29Z; audit same afternoon. No elapsed processing benchmark asserted."
+}
