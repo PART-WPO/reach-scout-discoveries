@@ -192,7 +192,7 @@ def verify_reviewer_narrative_correction(folder, before, after, rule):
         "What to check before adding this output:"))
     question = next(line for line in revised.splitlines() if line.startswith("Reviewer question:"))
     if (("10." not in finding and "NOAA" not in finding)
-            or "REACH" not in finding or "SPARK" not in (finding + checks)
+            or "REACH" not in finding or "SPARK" not in (finding + checks + previous)
             or checks.count(" | ") < 2 or "REACH" not in checks
             or not any(token in checks.lower() for token in ("pub date", "publication date", "date basis", "posted date", "print-month", "crossref", "datacite"))
             or not question.endswith("?")):
