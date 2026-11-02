@@ -42,7 +42,7 @@ class MonthlyCriticalMetadataGateTests(unittest.TestCase):
         row, remaining, state, checks = pre_stage_metadata_recovery(ledger, self.row())
         self.assertEqual(state, "resolved")
         self.assertEqual(remaining, [])
-        self.assertEqual(row["Brief Abstract"], abstract)
+        self.assertEqual(row["Brief Abstract"], abstract.strip())
         self.assertEqual(len(checks), 1)
 
     def test_exhausted_checks_allow_explicit_human_review_not_automatic_approval(self):
