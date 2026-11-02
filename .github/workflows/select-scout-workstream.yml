@@ -15,6 +15,9 @@ on:
       - 'scout-operations/attribution-followups.json'
       - 'api-discoveries/manifest.json'
       - 'api-discoveries/historical/manifest.json'
+      - 'api-discoveries/historical-crossref/manifest.json'
+      - 'scout-operations/historical-crossref-triage.json'
+      - 'scout-operations/historical-crossref-coverage.json'
       - '.github/workflows/select-scout-workstream.yml'
   schedule:
     - cron: '31 12 * * 1-5'
