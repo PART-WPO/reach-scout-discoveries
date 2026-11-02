@@ -16,6 +16,7 @@ on:
       - 'scout-operations/research-leads/**'
       - 'scout-operations/tools/lookup_independent_metadata.py'
       - 'scout-operations/tools/lookup_independent_dois.py'
+      - 'scout-operations/tools/lookup_artifact_scope.py'
       - 'scout-operations/tools/audit_github_code_metadata.py'
       - '.github/workflows/scout-independent-metadata-lookup.yml'
 permissions:
@@ -51,7 +52,9 @@ jobs:
           assert x['github_count']==len(x['github_records'])
           assert len({r['doi'] for r in x['doi_records']})==x['doi_count']
           assert len({r['output_url'] for r in x['github_records']})==x['github_count']
-          print('DOIs',x['doi_count'],'GitHub',x['github_count'])
+          assert all('artifact_scope' in r for r in x['doi_records'])
+          assert all('artifact_scope' in r for r in x['github_records'])
+          print('DOIs',x['doi_count'],'GitHub',x['github_count'],'artifact scope inventoried')
           PY
       - uses: actions/upload-artifact@v4
         with:
