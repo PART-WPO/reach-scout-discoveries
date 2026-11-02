@@ -117,7 +117,7 @@ def exact_awards(raw,award):
     for f in fields:
         # A funding array sometimes includes semicolon/comma-separated awards.
         s=str(f or "").upper()
-        if re.search(r"(?<![A-Z0-9])"+re.escape(key)+r"(?![A-Z0-9])",s):
+        if re.search(r"(?<![A-Z0-9-])"+re.escape(key)+r"(?![A-Z0-9-])",s):
             return True
     return False
 def iso_date(v):
