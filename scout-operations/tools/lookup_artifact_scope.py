@@ -50,8 +50,13 @@ def zenodo(doi):
         files.append({"name": f.get("key") or f.get("filename") or f.get("name"),
                       "size_bytes": f.get("size") or f.get("filesize"),
                       "access_url_present": bool((f.get("links") or {}).get("self") or (f.get("links") or {}).get("content"))})
+    record_doi = str((record.get("metadata") or {}).get("doi") or record.get("doi") or "").lower()
     return {"status": "ok", "source": url, "files_verified": True,
-            "record_id": record.get("id"), "record_doi": (record.get("metadata") or {}).get("doi") or record.get("doi"),
+            "requested_doi": str(doi).lower(), "record_id": record.get("id"),
+            "record_doi": record_doi,
+            "resolved_record_is_exact_doi": record_doi == str(doi).lower(),
+            "identity_relationship": "exact_version" if record_doi == str(doi).lower() else "concept_or_alias_resolves_version",
+            "concept_doi": record.get("conceptdoi") or (record.get("metadata") or {}).get("conceptdoi"),
             "file_count": len(raw_files), "files_sample": files,
             "access": record.get("access") or {}, "file_listing_truncated": len(raw_files) > 100,
             "note": "File names are API-listed; files were not downloaded or independently validated."}
