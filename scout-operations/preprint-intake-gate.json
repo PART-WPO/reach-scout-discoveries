@@ -1,0 +1,228 @@
+{
+  "schema": "reach-scout-preprint-intake-gate-v1",
+  "checked_at": "2026-11-02T21:55:51.489308+00:00",
+  "policy": "All new publication proposals require registry check. A preprint DOI cannot be staged through ANY origin. Uncertain metadata remains on hold. Existing human decisions unchanged.",
+  "checks": [
+    {
+      "path": "scout-discoveries/batches/2026-10-28-hourly-datacite-expansion-award-fixes-001.csv",
+      "sha256": "8e9e9209202e507d6b91cc50714d10b01f19ade6b55e2d1816dd7bca1faffa09",
+      "verdict": "eligible",
+      "rows": [
+        {
+          "doi": "10.1175/wcas-d-23-0046.1",
+          "status": "eligible",
+          "reason": "Crossref identifies an officially issued scholarly publication",
+          "evidence": [
+            "https://api.crossref.org/works/10.1175/wcas-d-23-0046.1",
+            "https://api.datacite.org/dois/10.1175/wcas-d-23-0046.1"
+          ]
+        },
+        {
+          "doi": "10.17603/ds2-rgbs-xd77",
+          "status": "eligible",
+          "reason": "Non-publication DOI is not identified as preprint in available metadata",
+          "evidence": [
+            "https://api.crossref.org/works/10.17603/ds2-rgbs-xd77",
+            "https://api.datacite.org/dois/10.17603/ds2-rgbs-xd77"
+          ]
+        },
+        {
+          "doi": "10.17603/ds2-xjyf-nc93",
+          "status": "eligible",
+          "reason": "Non-publication DOI is not identified as preprint in available metadata",
+          "evidence": [
+            "https://api.crossref.org/works/10.17603/ds2-xjyf-nc93",
+            "https://api.datacite.org/dois/10.17603/ds2-xjyf-nc93"
+          ]
+        },
+        {
+          "doi": "10.1175/bams-d-23-0036.1",
+          "status": "eligible",
+          "reason": "Crossref identifies an officially issued scholarly publication",
+          "evidence": [
+            "https://api.crossref.org/works/10.1175/bams-d-23-0036.1",
+            "https://api.datacite.org/dois/10.1175/bams-d-23-0036.1"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "scout-discoveries/batches/2026-11-01-monthly-fast-0c3a5f836cdc62.csv",
+      "sha256": "947da6414675b7430b318d277d884adfcec660a998654e5e15e3e804cc97cf64",
+      "verdict": "eligible",
+      "rows": [
+        {
+          "doi": "10.1175/waf-d-25-0044.1",
+          "status": "eligible",
+          "reason": "Crossref identifies an officially issued scholarly publication",
+          "evidence": [
+            "https://api.crossref.org/works/10.1175/waf-d-25-0044.1",
+            "https://api.datacite.org/dois/10.1175/waf-d-25-0044.1"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "scout-discoveries/batches/2026-11-01-monthly-fast-1136c0387b8237.csv",
+      "sha256": "f7580554d9d1e017260b0b1d32fac140cab8312f6718b1c7c8ba7266fc5f0e8b",
+      "verdict": "eligible",
+      "rows": [
+        {
+          "doi": "10.5194/tc-20-5973-2026",
+          "status": "eligible",
+          "reason": "Crossref identifies an officially issued scholarly publication",
+          "evidence": [
+            "https://api.crossref.org/works/10.5194/tc-20-5973-2026",
+            "https://api.datacite.org/dois/10.5194/tc-20-5973-2026"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "scout-discoveries/batches/2026-11-01-monthly-fast-17bff79084ce37.csv",
+      "sha256": "575ef33d648668843003a3cd334d26389841521b690cf34f338a43475df56280",
+      "verdict": "eligible",
+      "rows": [
+        {
+          "doi": "10.1175/aies-d-26-0004.1",
+          "status": "eligible",
+          "reason": "Crossref identifies an officially issued scholarly publication",
+          "evidence": [
+            "https://api.crossref.org/works/10.1175/aies-d-26-0004.1",
+            "https://api.datacite.org/dois/10.1175/aies-d-26-0004.1"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "scout-discoveries/batches/2026-11-01-monthly-fast-320ded4490d81b.csv",
+      "sha256": "b6708f99e36f15c212d65d221a37e40058d0b88564e5d11e0a87f4532d8a91d1",
+      "verdict": "hold",
+      "rows": [
+        {
+          "doi": "10.5194/egusphere-2026-5876",
+          "status": "preprint_hold",
+          "reason": "Known preprint identity; original DOI remains held",
+          "evidence": [
+            "https://api.crossref.org/works/10.5194/egusphere-2026-5876",
+            "https://api.datacite.org/dois/10.5194/egusphere-2026-5876"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "scout-discoveries/batches/2026-11-01-monthly-fast-7140ce113da603.csv",
+      "sha256": "fa66759564072015569dcdec40db227103a70acb25214249679c6fe74f76d2c2",
+      "verdict": "eligible",
+      "rows": [
+        {
+          "doi": "10.1080/01431161.2026.2749622",
+          "status": "eligible",
+          "reason": "Crossref identifies an officially issued scholarly publication",
+          "evidence": [
+            "https://api.crossref.org/works/10.1080/01431161.2026.2749622",
+            "https://api.datacite.org/dois/10.1080/01431161.2026.2749622"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "scout-discoveries/batches/2026-11-01-monthly-fast-936c21c3648bb0.csv",
+      "sha256": "1c0fb25e5e92ac64703a8b981efe50f2bf33237201987b887f07fd347159896c",
+      "verdict": "eligible",
+      "rows": [
+        {
+          "doi": "10.1088/2515-7620/aeaad2",
+          "status": "eligible",
+          "reason": "Crossref identifies an officially issued scholarly publication",
+          "evidence": [
+            "https://api.crossref.org/works/10.1088/2515-7620/aeaad2",
+            "https://api.datacite.org/dois/10.1088/2515-7620/aeaad2"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "scout-discoveries/batches/2026-11-01-monthly-fast-a56abc5841e724.csv",
+      "sha256": "e93f04e0cbcadfaa17d99fb332f65223850582cb4da92d6dc09a42a1ca5d5f6b",
+      "verdict": "eligible",
+      "rows": [
+        {
+          "doi": "10.3390/rs18193383",
+          "status": "eligible",
+          "reason": "Crossref identifies an officially issued scholarly publication",
+          "evidence": [
+            "https://api.crossref.org/works/10.3390/rs18193383",
+            "https://api.datacite.org/dois/10.3390/rs18193383"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "scout-discoveries/batches/2026-11-01-monthly-fast-d4c4a2d852eeca.csv",
+      "sha256": "30efe652879f6108a6b57c7ecd01d6ba4692143b4f33b5bbc8e65c85c6773531",
+      "verdict": "eligible",
+      "rows": [
+        {
+          "doi": "10.1175/waf-d-26-0084.1",
+          "status": "eligible",
+          "reason": "Crossref identifies an officially issued scholarly publication",
+          "evidence": [
+            "https://api.crossref.org/works/10.1175/waf-d-26-0084.1",
+            "https://api.datacite.org/dois/10.1175/waf-d-26-0084.1"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "scout-discoveries/batches/2026-11-01-monthly-fast-d987856c32ed45.csv",
+      "sha256": "e14a5eb9ff2ded75ff21dbb437a79c269e62b4acf94b178125adda1b6dbefea4",
+      "verdict": "eligible",
+      "rows": [
+        {
+          "doi": "10.1016/j.pdisas.2026.100696",
+          "status": "eligible",
+          "reason": "Crossref identifies an officially issued scholarly publication",
+          "evidence": [
+            "https://api.crossref.org/works/10.1016/j.pdisas.2026.100696",
+            "https://api.datacite.org/dois/10.1016/j.pdisas.2026.100696"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "scout-discoveries/batches/2026-11-02-monthly-enriched-pdisas-100696-001.csv",
+      "sha256": "390f63b9e714350ebb269ad8bb9c791ee6474184e8641b6e1178881922a88afa",
+      "verdict": "eligible",
+      "rows": [
+        {
+          "doi": "10.1016/j.pdisas.2026.100696",
+          "status": "eligible",
+          "reason": "Crossref identifies an officially issued scholarly publication",
+          "evidence": [
+            "https://api.crossref.org/works/10.1016/j.pdisas.2026.100696",
+            "https://api.datacite.org/dois/10.1016/j.pdisas.2026.100696"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "scout-discoveries/batches/2026-11-02-monthly-review-ready-pdisas-100696-001.csv",
+      "sha256": "f4ca3cce05a598f93cecdb50a8b347bb0c2260c29c262cc6ce703e2897ab98cc",
+      "verdict": "eligible",
+      "rows": [
+        {
+          "doi": "10.1016/j.pdisas.2026.100696",
+          "status": "eligible",
+          "reason": "Crossref identifies an officially issued scholarly publication",
+          "evidence": [
+            "https://api.crossref.org/works/10.1016/j.pdisas.2026.100696",
+            "https://api.datacite.org/dois/10.1016/j.pdisas.2026.100696"
+          ]
+        }
+      ]
+    }
+  ],
+  "eligible_batches": 11,
+  "held_batches": 1
+}
