@@ -6,6 +6,7 @@ manifest publication. No Smartsheet, Library, or REACH catalog interaction.
 """
 import csv
 import hashlib
+import os
 import json
 import re
 from datetime import datetime, timezone
@@ -136,6 +137,19 @@ def main():
         raise ValueError("Manifest batch limit exceeded")
     existing = json.loads(MANIFEST.read_text(encoding="utf-8")) if MANIFEST.exists() else {}
     prior = {x["id"]: x["sha256"] for x in existing.get("batches", [])}
+    if os.getenv("SCOUT_PREPRINT_GATE_REQUIRED") == "1":
+        # The same gate must cover direct batch submissions that bypass inbox.
+        gate_path = ROOT.parent / "scout-operations/preprint-intake-gate.json"
+        gate = json.loads(gate_path.read_text(encoding="utf-8"))
+        if gate.get("schema") != "reach-scout-preprint-intake-gate-v1":
+            raise ValueError("Preprint intake gate unavailable or invalid")
+        checks = {x["path"]: x for x in gate["checks"]}
+        for entry in all_entries:
+            if entry["id"] in prior:
+                continue  # Preserve immutable historical batches and prior human decisions.
+            check = checks.get(entry["path"])
+            if not check or check["sha256"] != entry["sha256"] or check["verdict"] != "eligible":
+                raise ValueError("Unverified/preprint new Scout batch cannot publish: " + entry["path"])
     for b in all_entries:
         if b["id"] in prior and prior[b["id"]] != b["sha256"]:
             raise ValueError(f"Immutable previously published batch changed: {b['id']}")
