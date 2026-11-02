@@ -1,7 +1,50 @@
 {
   "artifact_scope_policy": "Zenodo file listings and exact GitHub tag trees are read-only evidence, not funding or approval. Access failures do not mean files are absent.",
-  "doi_count": 5,
+  "doi_count": 6,
   "doi_records": [
+    {
+      "artifact_scope": {
+        "files_verified": false,
+        "status": "not_zenodo"
+      },
+      "doi": "10.1007/s43762-024-00142-0",
+      "lead_files": [
+        "scout-operations/research-leads/2026-11-02-0349ET-nyc-heat-independent-doi-lead.json"
+      ],
+      "metadata": {
+        "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>Urban computing with a data science approaches can play a pivotal role in understaning and analyzing the potential of these methods for strategic, short-term, and sustainable planning. The recent development in urban areas have progressed towards the data-driven smart sustainable approaches to resolve the complexities around urban areas. The urban system faces severe challenges and these are complicated to capture, predict, resolve and deliver. The current study advances an unconventional decision-support framework to integrate the complexities of science, urban sustainability theories, and data science, with a data-intensive science to incorporate grassroots initiatives for a top-down policies. This work will influence the urban data analytics to optimize the designs and solutions to enhance sustainability, efficiency, resilience, equity, and quality of life. This work emphasizes the significant trends of data-driven and model-driven decision support systems. This will help to address and create an optimal solution for multifaceted challenges of an urban setup within the analytical framework. The analytical investigations includes the research about land use prediction, environmental monitoring, transportation modelling, and social equity analysis. The fusion of urban computing, intelligence, and sustainability science is expected to resolve and contribute in shaping resilient, equitable, and future environmentally sensible eco-cities. It examines the emerging trends in the domain of computational urban science and data science approaches for sustainable development being utilized to address urban challenges including resource management, environmental impact, and social equity. The analysis of recent improvements and case studies highlights the potential of data-driven insights with computational models for promoting resilient sustainable urban environments, towards more effective and informed policy-making. Thus, this work explores the integration of computational urban science and data science methodologies to advance sustainable development.</jats:p>",
+        "attempts": [
+          {
+            "error": {
+              "code": 404,
+              "kind": "http"
+            },
+            "provider": "datacite",
+            "url": "https://api.datacite.org/dois/10.1007/s43762-024-00142-0"
+          },
+          {
+            "error": null,
+            "provider": "crossref",
+            "url": "https://api.crossref.org/works/10.1007/s43762-024-00142-0"
+          }
+        ],
+        "creators": [
+          "Deepak Kumar",
+          "Nick P. Bassill"
+        ],
+        "evidence": "https://api.crossref.org/works/10.1007/s43762-024-00142-0",
+        "funding_references": [],
+        "provider": "crossref",
+        "pub_date": "2024-11-12",
+        "pub_date_basis": "Crossref published-online",
+        "pub_date_precision": "day",
+        "publisher": "Springer Science and Business Media LLC",
+        "related_identifiers": {},
+        "resource_type": "journal-article",
+        "status": "ok",
+        "title": "Analysing trends of computational urban science and data science approaches for sustainable development"
+      }
+    },
     {
       "artifact_scope": {
         "files_verified": false,
@@ -466,7 +509,7 @@
       }
     }
   ],
-  "doi_successful": 5,
+  "doi_successful": 6,
   "github_count": 2,
   "github_records": [
     {
@@ -662,6 +705,17 @@
   "policy": "Metadata enrichment does not change independent discovery provenance, establish funding/standalone eligibility, approve review or publish REACH outputs. Crossref created and GitHub repository created are not publication dates.",
   "read_only": true,
   "resume_queue": [
+    {
+      "evidence": "https://api.crossref.org/works/10.1007/s43762-024-00142-0",
+      "identity": "doi:10.1007/s43762-024-00142-0",
+      "kind": "doi",
+      "lead_files": [
+        "scout-operations/research-leads/2026-11-02-0349ET-nyc-heat-independent-doi-lead.json"
+      ],
+      "lookup_status": "ok",
+      "metadata_source": "crossref",
+      "next_action": "resume_research_verification"
+    },
     {
       "evidence": "https://api.crossref.org/works/10.1145/3794916.3794919",
       "identity": "doi:10.1145/3794916.3794919",
