@@ -1,6 +1,6 @@
 {
   "schema": "reach-scout-preprint-intake-gate-v1",
-  "checked_at": "2026-11-02T21:56:21.575957+00:00",
+  "checked_at": "2026-11-02T21:59:07.805020+00:00",
   "policy": "All new publication proposals require registry check. A preprint DOI cannot be staged through ANY origin. Uncertain metadata remains on hold. Existing human decisions unchanged.",
   "checks": [
     {
@@ -207,76 +207,6 @@
       ]
     },
     {
-      "path": "scout-discoveries/batches/2026-11-02-monthly-preprint-hold-001.csv",
-      "sha256": "b45184c7af517025248ea63eb871f9f7ff32ad69a1e36f25bfea5279085b045c",
-      "verdict": "eligible",
-      "rows": [
-        {
-          "doi": "10.1175/waf-d-25-0044.1",
-          "status": "eligible",
-          "reason": "Crossref identifies an officially issued scholarly publication",
-          "evidence": [
-            "https://api.crossref.org/works/10.1175/waf-d-25-0044.1",
-            "https://api.datacite.org/dois/10.1175/waf-d-25-0044.1"
-          ]
-        },
-        {
-          "doi": "10.5194/tc-20-5973-2026",
-          "status": "eligible",
-          "reason": "Crossref identifies an officially issued scholarly publication",
-          "evidence": [
-            "https://api.crossref.org/works/10.5194/tc-20-5973-2026",
-            "https://api.datacite.org/dois/10.5194/tc-20-5973-2026"
-          ]
-        },
-        {
-          "doi": "10.1175/aies-d-26-0004.1",
-          "status": "eligible",
-          "reason": "Crossref identifies an officially issued scholarly publication",
-          "evidence": [
-            "https://api.crossref.org/works/10.1175/aies-d-26-0004.1",
-            "https://api.datacite.org/dois/10.1175/aies-d-26-0004.1"
-          ]
-        },
-        {
-          "doi": "10.1088/2515-7620/aeaad2",
-          "status": "eligible",
-          "reason": "Crossref identifies an officially issued scholarly publication",
-          "evidence": [
-            "https://api.crossref.org/works/10.1088/2515-7620/aeaad2",
-            "https://api.datacite.org/dois/10.1088/2515-7620/aeaad2"
-          ]
-        },
-        {
-          "doi": "10.3390/rs18193383",
-          "status": "eligible",
-          "reason": "Crossref identifies an officially issued scholarly publication",
-          "evidence": [
-            "https://api.crossref.org/works/10.3390/rs18193383",
-            "https://api.datacite.org/dois/10.3390/rs18193383"
-          ]
-        },
-        {
-          "doi": "10.1175/waf-d-26-0084.1",
-          "status": "eligible",
-          "reason": "Crossref identifies an officially issued scholarly publication",
-          "evidence": [
-            "https://api.crossref.org/works/10.1175/waf-d-26-0084.1",
-            "https://api.datacite.org/dois/10.1175/waf-d-26-0084.1"
-          ]
-        },
-        {
-          "doi": "10.1016/j.pdisas.2026.100696",
-          "status": "eligible",
-          "reason": "Crossref identifies an officially issued scholarly publication",
-          "evidence": [
-            "https://api.crossref.org/works/10.1016/j.pdisas.2026.100696",
-            "https://api.datacite.org/dois/10.1016/j.pdisas.2026.100696"
-          ]
-        }
-      ]
-    },
-    {
       "path": "scout-discoveries/batches/2026-11-02-monthly-review-ready-pdisas-100696-001.csv",
       "sha256": "f4ca3cce05a598f93cecdb50a8b347bb0c2260c29c262cc6ce703e2897ab98cc",
       "verdict": "eligible",
@@ -293,6 +223,6 @@
       ]
     }
   ],
-  "eligible_batches": 12,
+  "eligible_batches": 11,
   "held_batches": 1
 }
