@@ -56,9 +56,20 @@ def clean_award(x):
     # SPARK includes partial parenthetical annotations such as (SSP and (IAA.
     # Preserve the meaningful public project/award identifier before the note.
     raw=raw.split("(")[0]
+    if raw in {"UNK","BAA","PREVIOUSLY"}:
+        return ""
     if not raw or not re.fullmatch(r"[A-Z0-9][A-Z0-9_.:/-]{1,90}",raw):
         return ""
     return raw
+
+def split_primary_identifiers(value):
+    """Split only an explicit whitespace-delimited list of full NOAA task awards."""
+    raw=str(value or "").strip().upper()
+    item=r"NA\\d{2}(?:OAR|NWS)[A-Z0-9-]+"
+    if re.fullmatch(item+r"(?:\\s+"+item+r")+",raw):
+        return raw.split()
+    return [value]
+
 PRIMARY_MATCH_BASIS={"primary_noaa_award", "primary_unparsed_identifier"}
 RELATED_MATCH_BASIS={"related_noaa_award", "related_unparsed_identifier"}
 
@@ -99,12 +110,13 @@ def spark_awards():
         rows=parse_awards(data.decode("utf-8-sig"))
         if len(rows)!=f["rows"]:raise ValueError("SPARK award shard count "+path)
         for x in primary_award_rows(rows):
-            a=clean_award(x["Award Number"])
-            if not a:continue
-            d=by_award.setdefault(a,{"award":a,"programs":set(),"projects":set(),"basis":set()})
-            if x.get("Managing WPO Program"):d["programs"].add(x["Managing WPO Program"].strip())
-            if x.get("Project Title"):d["projects"].add(x["Project Title"].strip())
-            d["basis"].add(x.get("Match Basis",""))
+            for part in split_primary_identifiers(x["Award Number"]):
+                a=clean_award(part)
+                if not a:continue
+                d=by_award.setdefault(a,{"award":a,"programs":set(),"projects":set(),"basis":set()})
+                if x.get("Managing WPO Program"):d["programs"].add(x["Managing WPO Program"].strip())
+                if x.get("Project Title"):d["projects"].add(x["Project Title"].strip())
+                d["basis"].add(x.get("Match Basis",""))
     return [
         {"award":a,"programs":sorted(x["programs"]),"projects":sorted(x["projects"]),"basis":sorted(x["basis"])}
         for a,x in sorted(by_award.items())
