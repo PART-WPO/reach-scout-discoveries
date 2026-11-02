@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - 'scout-operations/tools/preprint_watchlist.py'
+      - 'scout-operations/tools/lookup_independent_dois.py'
       - 'scout-operations/tests/test_preprint_watchlist.py'
       - '.github/workflows/scout-preprint-watchlist.yml'
   schedule:
