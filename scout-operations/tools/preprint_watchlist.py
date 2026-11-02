@@ -87,7 +87,8 @@ def verified_final(article):
 
 def source_preprints(root):
     """Only tagged API preprints from SHA-verified immutable research batches."""
-    for folder in ("api-discoveries", "api-discoveries/historical-crossref"):
+    for folder in ("api-discoveries", "api-discoveries/historical",
+                   "api-discoveries/historical-crossref"):
         manifest_path = root / folder / "manifest.json"
         if not manifest_path.exists():
             continue
@@ -95,6 +96,7 @@ def source_preprints(root):
         for batch in manifest.get("batches", []):
             rel = str(batch.get("path", ""))
             allowed = (rel.startswith("api-discoveries/batches/") or
+                       rel.startswith("api-discoveries/historical/batches/") or
                        rel.startswith("api-discoveries/historical-crossref/batches/"))
             if not allowed or ".." in Path(rel).parts or not rel.endswith(".csv"):
                 raise ValueError("Unsafe API source path")
@@ -115,7 +117,51 @@ def source_preprints(root):
                                "seed_expansion_allowed": True,
                                "evidence_url": row.get("Evidence URL") or "https://doi.org/" + doi}
 
-def refresh(root=ROOT, today=None, fetch_crossref=crossref, fetch_datacite=datacite):
+    # Independent Scout DOIs, their unified metadata checkpoints, and manually
+    # evidenced preprint research leads feed this SAME watchlist. They are not
+    # eligible to become review candidates merely because a DOI has a date.
+    for relative in (
+        "scout-operations/reports/independent-doi-lookup/latest.json",
+        "scout-operations/reports/independent-metadata-lookup/latest.json",
+        "scout-operations/reports/doi-metadata-checkpoint/latest.json",
+    ):
+        path = root / relative
+        if not path.exists():
+            continue
+        doc = json.loads(path.read_text(encoding="utf-8"))
+        for record in doc.get("doi_records", doc.get("records", [])):
+            meta = record.get("metadata") or {}
+            resource = str(meta.get("resource_type") or meta.get("type") or "").lower()
+            specific = str(meta.get("resource_type_detail") or "").lower()
+            if not (meta.get("publication_status") == "preprint" or
+                    resource in ("posted-content", "preprint") or
+                    "preprint" in specific):
+                continue
+            doi = norm_doi(record.get("doi"))
+            if not DOI.fullmatch(doi):
+                continue
+            yield {"preprint_doi": doi, "title": meta.get("title", ""),
+                   "source": relative, "status": "tracking_preprint",
+                   "seed_expansion_allowed": True,
+                   "evidence_url": meta.get("evidence") or "https://doi.org/" + doi}
+
+    for path in sorted((root / "scout-operations/research-leads").glob("*.json")):
+        doc = json.loads(path.read_text(encoding="utf-8"))
+        for lead in doc.get("leads", []):
+            if str(lead.get("publication_status") or lead.get("resource_type") or "").lower() not in (
+                    "preprint", "posted-content", "accepted manuscript"):
+                continue
+            doi = norm_doi(lead.get("identity") or lead.get("doi") or lead.get("output_url"))
+            if not DOI.fullmatch(doi):
+                continue
+            yield {"preprint_doi": doi, "title": lead.get("title", ""),
+                   "source": str(path.relative_to(root)), "status": "tracking_preprint",
+                   "seed_expansion_allowed": True,
+                   "evidence_url": lead.get("evidence_url") or "https://doi.org/" + doi}
+
+
+def refresh(root=ROOT, today=None, fetch_crossref=crossref, fetch_datacite=datacite,
+            check_existing=True):
     today = today or dt.datetime.now(dt.timezone.utc).date().isoformat()
     watch_path = root / "scout-operations/preprint-watchlist.json"
     leads_path = root / "scout-operations/preprint-publication-leads.json"
@@ -138,7 +184,7 @@ def refresh(root=ROOT, today=None, fetch_crossref=crossref, fetch_datacite=datac
                     existing[key] = seed[key]
     output_leads = {}
     for doi, entry in sorted(known.items()):
-        if entry.get("last_checked_on") != today:
+        if check_existing and entry.get("last_checked_on") != today:
             cr = dc = None
             errors = []
             try:
@@ -194,4 +240,9 @@ def refresh(root=ROOT, today=None, fetch_crossref=crossref, fetch_datacite=datac
     return data, result
 
 if __name__ == "__main__":
-    refresh()
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--register-only", action="store_true",
+                        help="Import newly verified preprint research leads without rechecking the existing watchlist")
+    args = parser.parse_args()
+    refresh(check_existing=not args.register_only)
