@@ -15,7 +15,7 @@
       "title": "Bridging the Gap Between Numbers and Experience: Identifying Community Risk Thresholds in Extreme Weather Communication",
       "output_url": "https://doi.org/10.1177/10506519261455873",
       "project_award": "NA21OAR4590208",
-      "status": "RESEARCH_ACTIVE_METADATA_VERIFICATION",
+      "status": "STAGED_FOR_HUMAN_REVIEW",
       "award_evidence": "NOAA IR grant noaa:67218 describes the same five-office community-risk-threshold survey work by named investigators Lambrecht and Olman under WPO primary grant NA21OAR4590208. This is a credible specific project-to-study bridge, NOT a verified article-level acknowledgment or final funding determination.",
       "sources_checked": [
         "https://repository.library.noaa.gov/view/noaa/67218",
@@ -23,15 +23,18 @@
         "https://egusphere.copernicus.org/preprints/2026/egusphere-2026-5876/egusphere-2026-5876.pdf"
       ],
       "missing_fields": [
-        "article-level grant acknowledgment or equivalent independently documented deliverable",
-        "full REACH detail/secondary-link dedup"
+        "private Discovery Hub reviewer decision NOT VERIFIED"
       ],
-      "next_action": "Use native Crossref metadata checkpoint and publisher/NOAA final reports; do not stage without verified duplicate and project attribution.",
+      "next_action": "Reviewer: Sync to Scout import and decide independently; direct Crossref structured WPO primary grant verified, but no private Hub delivery or approval assumed.",
       "research_origin_method": "API-seeded expansion",
       "finding_purpose": "new_output_review",
       "path_evidence_url": "https://egusphere.copernicus.org/preprints/2026/egusphere-2026-5876/egusphere-2026-5876.pdf",
       "hub_delivery_verified": false,
-      "public_reach_addition_verified": false
+      "public_reach_addition_verified": false,
+      "scout_batch_path": "scout-discoveries/batches/2026-11-01-2340ET-sage-risk-thresholds-api-expansion-001.csv",
+      "scout_feed_status": "MANIFEST_PUBLISHED",
+      "metadata_enrichment_status": "ok",
+      "last_resumed_at_date": "2026-11-02"
     },
     {
       "identity": "doi:10.1145/3794916.3794919",
@@ -40,7 +43,7 @@
       "title": "Visualizing Probabilistic Forecast Information Around Community Risk Thresholds: An Action-Research Collaboration Between Environmental Rhetoricians and the National Weather Service",
       "output_url": "https://doi.org/10.1145/3794916.3794919",
       "project_award": "NA21OAR4590208",
-      "status": "RESEARCH_ACTIVE_METADATA_VERIFICATION",
+      "status": "STAGED_FOR_HUMAN_REVIEW",
       "award_evidence": "NOAA IR grant noaa:67218 names Lambrecht/Olman and directly specifies improving forecast visualization using community risk thresholds with NWS office partners. Exact article grant acknowledgment is unverified; plausible project bridge only.",
       "sources_checked": [
         "https://repository.library.noaa.gov/view/noaa/67218",
@@ -48,15 +51,22 @@
         "https://egusphere.copernicus.org/preprints/2026/egusphere-2026-5876/egusphere-2026-5876.pdf"
       ],
       "missing_fields": [
-        "native publisher/Crossref publication date and acknowledgment",
-        "full REACH detail/secondary-link dedup"
+        "ACM article-specific grant acknowledgment or project PI confirmation",
+        "private Discovery Hub reviewer decision NOT VERIFIED"
       ],
-      "next_action": "Run native Crossref DOI checkpoint, verify grant acknowledgments and complete identity/version checks before any separate candidate.",
+      "next_action": "Reviewer: Sync to Scout import, then human Needs Investigation of whether this ACM article is attributable to SPARK primary WPO award NA21OAR4590208; no autoapproval.",
       "research_origin_method": "API-seeded expansion",
       "finding_purpose": "new_output_review",
       "path_evidence_url": "https://egusphere.copernicus.org/preprints/2026/egusphere-2026-5876/egusphere-2026-5876.pdf",
       "hub_delivery_verified": false,
-      "public_reach_addition_verified": false
+      "public_reach_addition_verified": false,
+      "review_classification": "NEEDS INVESTIGATION",
+      "scout_inbox_path": "scout-discoveries/inbox/2026-11-02-0301ET-acm-risk-thresholds-investigate-001.csv",
+      "scout_batch_path": "scout-discoveries/batches/2026-11-02-0301ET-acm-risk-thresholds-investigate-001.csv",
+      "scout_feed_status": "MANIFEST_PUBLISHED",
+      "scout_batch_sha256": "dcba3cced986e29e5575fae09e3a521bff8de851b36c6286ba1838e1b3c08b89",
+      "metadata_enrichment_status": "ok",
+      "last_resumed_at_date": "2026-11-02"
     },
     {
       "identity": "doi:10.5281/zenodo.22758716",
@@ -65,27 +75,25 @@
       "title": "",
       "output_url": "https://doi.org/10.5281/zenodo.22758716",
       "project_award": "NA24OARX459C0015",
-      "status": "RESEARCH_ACTIVE_METADATA_VERIFICATION",
+      "status": "RESEARCH_COMPLETE_PENDING_HUMAN_INTAKE",
       "award_evidence": "Article manuscript explicitly cites the exact Zenodo DOI in its data availability section and acknowledges this primary WPO grant for the ARTICLE only. Dataset's own grant attribution is unverified.",
       "sources_checked": [
         "https://repository.library.noaa.gov/view/noaa/76692/noaa_76692_DS1.pdf",
         "https://doi.org/10.5281/zenodo.22758716"
       ],
       "missing_fields": [
-        "native DataCite/Zenodo metadata",
-        "title",
-        "creators",
-        "created date",
-        "own funding",
-        "concept/version identity",
-        "full REACH detail/secondary-link dedup"
+        "output-specific primary WPO funding attribution not independently verified",
+        "canonical concept/version selection among seven Zenodo versions",
+        "single catalogable notebook/data/code product versus reused external datasets"
       ],
-      "next_action": "Native DataCite DOI checkpoint for title/creators/created/version/funding; if inaccessible preserve source-access blocker, do not invent metadata.",
+      "next_action": "Bounded research complete: request human attribution and concept/version decision for 10.5281/zenodo.20046428 family; no valid Scout candidate or private Hub intake staged. Do not repeat generic searches.",
       "research_origin_method": "API-seeded expansion",
       "finding_purpose": "new_output_review",
       "path_evidence_url": "https://repository.library.noaa.gov/view/noaa/76692/noaa_76692_DS1.pdf",
       "hub_delivery_verified": false,
-      "public_reach_addition_verified": false
+      "public_reach_addition_verified": false,
+      "metadata_enrichment_status": "ok",
+      "last_resumed_at_date": "2026-11-02"
     }
   ],
   "no_hub_proposals_staged": true,
