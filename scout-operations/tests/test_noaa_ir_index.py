@@ -29,8 +29,8 @@ class IndexTests(unittest.TestCase):
             self.assertEqual(loaded["dois"]["10.1234/known"],
                              ["https://repository.library.noaa.gov/view/noaa/77174"])
             self.assertEqual(loaded["manifest"]["distinct_dois"],2)
-            index_shard=root/"scout-operations/noaa-ir/shards/"+(
-                __import__("hashlib").sha256(b"10.1234/known").hexdigest()[0]+".json")
+            index_shard=(root/"scout-operations/noaa-ir/shards"/
+                (__import__("hashlib").sha256(b"10.1234/known").hexdigest()[0]+".json"))
             index_shard.write_text("{}")
             with self.assertRaises(ValueError):trusted_index(root)
     def test_pagination_change_fails_closed(self):
