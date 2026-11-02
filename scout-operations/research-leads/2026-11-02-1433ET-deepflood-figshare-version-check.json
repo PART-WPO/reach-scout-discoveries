@@ -28,15 +28,16 @@
     "related_publication_doi": "10.1038/s41597-025-04554-3",
     "related_publication_scout_batch": "2026-10-30-hourly-1329ET-independent-flood-mapping-001"
   },
-  "status": "PENDING_EXACT_NATIVE_METADATA_AND_VERSION_IDENTITY_HUMAN_REVIEW",
-  "metadata_lookup_status": "access_failed_unverified",
+  "status": "PENDING_NATIVE_FILE_SCOPE_AND_CANONICAL_VERSION_DECISION",
+  "metadata_lookup_status": "ok",
   "source_specific_findings": [
     "Scientific Data paper describes separate labeled DeepFlood optical/SAR dataset, openly hosted on Figshare, and directly acknowledges primary WPO award NA21OAR4590358 for the paper.",
     "The 2025 paper cites Figshare DOI ending 26791243, whereas a 2026 secondary publication cites Figshare DOI ending 28328339. Their relation as revisions, replacement records, or distinct artifacts has not been verified.",
     "All 10 public REACH index shards contain neither exact Figshare DOI; all 30 active Scout batch CSVs contain only a related mention of 26791243 in the already-staged paper, not a standalone dataset proposal; all 16 public inbox drafts contain neither DOI.",
     "The eight existing REACH records under this SPARK award include separate publications; the 2025 Scientific Data article is in Scout review, not REACH. Full 140 REACH detail shards and private Hub feedback were NOT screened for this dataset identity in this run.",
     "Native DataCite exact DOI JSON, Figshare REST API and DOI landing attempts were inaccessible to this runtime. This is access failure, NOT evidence that records or files do not exist.",
-    "A public October 2026 community report alleges incomplete files for the 28328339 record; not independently corroborated, not treated as a verified data-quality defect."
+    "A public October 2026 community report alleges incomplete files for the 28328339 record; not independently corroborated, not treated as a verified data-quality defect.",
+    "2026-11-02 14:40 ET independent GitHub metadata lookup SUCCESS: exact DataCite 26791243 is resource type Text, creator Mulham Fawakherji, created 2024-08-20; exact 28328339 is resource type Dataset, creator Geospatial And Remote Sensing Research Lab, created 2025-02-01. Both describe DeepFlood, both have empty funding_references and related_identifiers; this does NOT establish distinctness or version relation. Date values are complete per office DataCite created convention for their exact DOIs."
   ],
   "checks": [
     {
@@ -73,16 +74,20 @@
       "method": "public_scout_manifest_and_inbox",
       "url": "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/manifest.json",
       "result": "30 active batches/85 rows, plus 16 inbox drafts; no standalone candidate for either DOI"
+    },
+    {
+      "method": "unified_independent_metadata_checkpoint",
+      "url": "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/independent-metadata-lookup/latest.json",
+      "result": "Workflow 41511883959 succeeded; both exact DataCite DOI lookups ok; title, creator, type and created date recovered; native file/version scope remains unverified"
     }
   ],
   "missing_fields": [
-    "Exact native Figshare/DataCite DOI metadata, creator, created timestamp and publication date",
-    "Determine 26791243 versus 28328339 identity/version/replacement relation",
-    "Public file inventory and accessibility",
-    "Confirm dataset-specific WPO funded work rather than assuming paper-level award covers all files",
-    "Full REACH detail/secondary link and private Hub decision comparison"
+    "Native Figshare file inventory and public accessibility",
+    "Canonical record/version relation for two Figshare DOIs",
+    "Dataset-specific same-project primary WPO attribution",
+    "Full public REACH detail and private Hub duplicate/decision checks"
   ],
-  "next_action": "On next successful independent DOI metadata checkpoint, query BOTH exact Figshare DOIs via DataCite with native Figshare fallback; compare relatedIdentifiers/version/file inventories, use exact DataCite created date when valid, complete REACH detail and Hub dedup, then make ONE case-specific human decision on dataset eligibility and award. Do not stage either DOI now.",
+  "next_action": "Use recovered exact DOI metadata without repeating lookup; inspect Figshare native record/files and canonical identity, corroborate dataset-specific WPO award, complete REACH detail/private Hub duplicate comparison. Do not stage two proposals for potentially one dataset.",
   "human_review_question": "Is the DeepFlood Figshare dataset a separate eligible public output of spark-000338, and which DOI/version is canonical? Are the public files accessible?",
   "hub_import": "NOT_VERIFIED",
   "human_approval": "NOT_VERIFIED",
@@ -95,12 +100,34 @@
       "output_url": "https://doi.org/10.6084/m9.figshare.26791243",
       "research_origin_method": "Independent discovery",
       "finding_purpose": "identity_version_reconciliation_only",
-      "status": "PENDING_EXACT_NATIVE_METADATA_AND_VERSION_IDENTITY",
+      "status": "PENDING_NATIVE_FILE_SCOPE_AND_CANONICAL_VERSION_DECISION",
       "provisional_identity_group": "deepflood-figshare-source-identity-26791243-28328339",
       "project_award": "NA21OAR4590358",
       "spark_project_id": "spark-000338",
       "source_path_evidence": "https://www.nature.com/articles/s41597-025-04554-3",
-      "next_action": "Exact DOI DataCite lookup; reconcile against Figshare 28328339 before any candidate"
+      "next_action": "Inspect native Figshare files and record/version history, compare the two DOI identities and dataset-specific WPO funding; one human decision, no candidate yet.",
+      "metadata_lookup_status": "ok",
+      "metadata_enrichment_status": "ok",
+      "verified_metadata": {
+        "provider": "datacite",
+        "source": "https://api.datacite.org/dois/10.6084/m9.figshare.26791243",
+        "title": "DEEPFLOOD DATASET",
+        "creators": [
+          "Fawakherji, Mulham"
+        ],
+        "resource_type": "Text",
+        "pub_date": "2024-08-20",
+        "pub_date_basis": "DataCite created (office convention)",
+        "related_identifiers": [],
+        "funding_references": []
+      },
+      "last_resumed_at_utc": "2026-11-02T19:40:04.491242Z",
+      "missing_fields": [
+        "Native Figshare files/accessibility",
+        "Relation to other Figshare DOI; neither DataCite record declares relatedIdentifiers",
+        "Dataset-specific award attribution; DataCite funding_references empty and paper-level award indirect",
+        "Full REACH detail and private Hub secondary-link/decision dedup"
+      ]
     },
     {
       "identity": "doi:10.6084/m9.figshare.28328339",
@@ -108,12 +135,64 @@
       "output_url": "https://doi.org/10.6084/m9.figshare.28328339",
       "research_origin_method": "Independent discovery",
       "finding_purpose": "identity_version_reconciliation_only",
-      "status": "PENDING_EXACT_NATIVE_METADATA_AND_VERSION_IDENTITY",
+      "status": "PENDING_NATIVE_FILE_SCOPE_AND_CANONICAL_VERSION_DECISION",
       "provisional_identity_group": "deepflood-figshare-source-identity-26791243-28328339",
       "project_award": "NA21OAR4590358",
       "spark_project_id": "spark-000338",
       "source_path_evidence": "https://link.springer.com/article/10.1007/s12145-026-02164-0",
-      "next_action": "Exact DOI DataCite lookup; reconcile against Figshare 26791243 before any candidate"
+      "next_action": "Inspect native Figshare files and record/version history, compare the two DOI identities and dataset-specific WPO funding; one human decision, no candidate yet.",
+      "metadata_lookup_status": "ok",
+      "metadata_enrichment_status": "ok",
+      "verified_metadata": {
+        "provider": "datacite",
+        "source": "https://api.datacite.org/dois/10.6084/m9.figshare.28328339",
+        "title": "DEEPFLOOD DATASET: High-Resolution Dataset for Accurate Flood Mappingand Segmentation",
+        "creators": [
+          "Geospatial And Remote Sensing Research Lab"
+        ],
+        "resource_type": "Dataset",
+        "pub_date": "2025-02-01",
+        "pub_date_basis": "DataCite created (office convention)",
+        "related_identifiers": [],
+        "funding_references": []
+      },
+      "last_resumed_at_utc": "2026-11-02T19:40:04.491242Z",
+      "missing_fields": [
+        "Native Figshare files/accessibility",
+        "Relation to other Figshare DOI; neither DataCite record declares relatedIdentifiers",
+        "Dataset-specific award attribution; DataCite funding_references empty and paper-level award indirect",
+        "Full REACH detail and private Hub secondary-link/decision dedup"
+      ]
     }
-  ]
+  ],
+  "metadata_enrichment_status": "ok",
+  "last_resumed_at_utc": "2026-11-02T19:40:04.491242Z",
+  "verified_metadata_by_doi": {
+    "10.6084/m9.figshare.26791243": {
+      "provider": "datacite",
+      "source": "https://api.datacite.org/dois/10.6084/m9.figshare.26791243",
+      "title": "DEEPFLOOD DATASET",
+      "creators": [
+        "Fawakherji, Mulham"
+      ],
+      "resource_type": "Text",
+      "pub_date": "2024-08-20",
+      "pub_date_basis": "DataCite created (office convention)",
+      "related_identifiers": [],
+      "funding_references": []
+    },
+    "10.6084/m9.figshare.28328339": {
+      "provider": "datacite",
+      "source": "https://api.datacite.org/dois/10.6084/m9.figshare.28328339",
+      "title": "DEEPFLOOD DATASET: High-Resolution Dataset for Accurate Flood Mappingand Segmentation",
+      "creators": [
+        "Geospatial And Remote Sensing Research Lab"
+      ],
+      "resource_type": "Dataset",
+      "pub_date": "2025-02-01",
+      "pub_date_basis": "DataCite created (office convention)",
+      "related_identifiers": [],
+      "funding_references": []
+    }
+  }
 }
