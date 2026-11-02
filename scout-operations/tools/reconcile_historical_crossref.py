@@ -97,6 +97,40 @@ def verified_preprint_hold(e):
     return len(str(e.get("research_notes") or "").strip())>=25
 
 
+def verified_existing_reach_duplicate(e):
+    """Exact public REACH identity closes the original, not project attribution.
+
+    A REACH duplicate is not a new WPO award assertion; do not invent
+    verified_awards for Crossref structured-funder overlap.
+    """
+    if e.get("status")!="already_in_reach":
+        return False
+    match=e.get("reach_match") or e.get("existing_reach_match") or {}
+    if not re.fullmatch(r"reach-\\d+",str(match.get("record_id") or "")):
+        return False
+    if not str(match.get("reach_uid") or "").startswith("reachuid-v1-"):
+        return False
+    checked=e.get("checked_sources") or []
+    if not checked or not all(str(x).startswith("https://") for x in checked):
+        return False
+    if not any("reach-dashboard" in str(x) and "/details/" in str(x) for x in checked):
+        return False
+    if len(str(e.get("research_notes") or "").strip())<25 or not e.get("verified_at"):
+        return False
+    if len(str(e.get("funding_basis") or "").strip())<12:
+        return False
+    if len(str(e.get("related_outputs_checked") or "").strip())<12:
+        return False
+    snapshot=str(e.get("reach_snapshot") or "")
+    if not (re.fullmatch(r"[0-9a-f]{40}|[0-9a-f]{64}",snapshot) or
+            re.search(r"source SHA-256 [0-9a-f]{64}",snapshot)):
+        return False
+    # A source award is not proof of specific project attribution.
+    if not set(e.get("verified_awards") or []).issubset(set(e.get("award_numbers") or [])):
+        return False
+    return True
+
+
 def run():
     manifest,source=cases()
     prior=read("scout-operations/historical-crossref-triage.json")
@@ -150,7 +184,7 @@ def run():
         entry["source_batch_ids"]=sorted(found["source_batch_ids"])
         entry["source_evidence_urls"]=sorted(found["source_evidence_urls"])
         entry["titles"]=sorted(found["titles"])
-        if entry["status"] in DONE and not (verified_preprint_hold(entry) or verified_terminal(entry,reviewed_paths)):
+        if entry["status"] in DONE and not (verified_preprint_hold(entry) or verified_existing_reach_duplicate(entry) or verified_terminal(entry,reviewed_paths)):
             raise ValueError("Unsupported unverified terminal Crossref status "+key)
         orig_ok=entry["status"] in DONE
         seed_ok=verified_seed(entry)
