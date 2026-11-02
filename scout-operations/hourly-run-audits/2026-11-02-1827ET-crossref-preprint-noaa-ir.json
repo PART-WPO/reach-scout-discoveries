@@ -1,0 +1,183 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-11-02-HOURLY-1827ET",
+  "recorded_at_utc": "2026-11-02T23:35:04.226106+00:00",
+  "selected_mode": "historical_crossref_triage",
+  "audit_result": "PARTIAL",
+  "mode_reason": "Monthly 13 originals fully triaged; 6 monthly expansion leads have current statuses. Expedited historical Crossref all-years 614 DOI backlog is next.",
+  "source_checks": {
+    "monthly_manifest": {
+      "source_records": 13,
+      "checked": 13,
+      "staged_for_hub_import": 8,
+      "no_action": 5,
+      "missing_from_ledger": 0
+    },
+    "monthly_expansion": {
+      "total": 6,
+      "staged_for_human_review": 2,
+      "already_in_reach": 3,
+      "pending_human_intake": 1
+    },
+    "historical_crossref": {
+      "manifest_raw_rows": 614,
+      "distinct_dois": 614,
+      "batch_count": 7,
+      "originals_completed": 48,
+      "awaiting_research_after_ledger_screen": 555,
+      "investigating_after_ledger_screen": 11,
+      "seed_expansions_completed": 0,
+      "seed_expansions_pending": 614,
+      "fully_investigated": 0,
+      "coverage_reconciliation": "SUCCESS: GitHub Action 41546442903 verified 614 source DOI identities and 555 awaiting / 11 investigating / 48 original completed; 0 fully investigated."
+    },
+    "historical_datacite": {
+      "distinct_dois": 188,
+      "research_completed": 188,
+      "remaining": 0
+    },
+    "scout_review_feed": {
+      "manifest_batches": 30,
+      "manifest_rows": 83,
+      "new_inbox_drafts": 0,
+      "new_published_batches": 0,
+      "private_hub_import": "NOT_VERIFIED",
+      "human_approvals": "NOT_VERIFIED"
+    },
+    "public_reach": {
+      "rows": 1238,
+      "source": "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json",
+      "new_additions_verified_this_run": 0
+    },
+    "preprint_watchlist": {
+      "tracked": 41,
+      "confirmed_published_version_preprint_records": 32,
+      "still_waiting": 9,
+      "distinct_official_published_doi_leads": 30,
+      "newly_published_during_this_run": 0,
+      "final_article_leads_already_in_reach_after_checks": 17,
+      "final_article_leads_already_in_public_scout_feed": 2,
+      "final_article_leads_pending_full_review": 11
+    },
+    "noaa_ir": {
+      "index_complete": true,
+      "catalog_records_scanned": 72694,
+      "distinct_indexed_dois": 40248,
+      "ambiguous_dois": 157,
+      "invalid_pid_records_held_unknown": 4,
+      "unresolved_dois_from_invalid_pids": 0,
+      "sha_verified_shards": 16,
+      "action_run": "https://github.com/PART-WPO/reach-scout-discoveries/actions/runs/41545976613",
+      "new_output_proposals_checked": 0,
+      "new_output_verified_true_with_url": 0,
+      "new_output_inconclusive_or_unknown": 0,
+      "new_output_no_index": 0,
+      "research_leads_newly_annotated_exact_ir": 7
+    },
+    "independent_metadata": {
+      "doi_records": 14,
+      "doi_lookup_ok": 14,
+      "github_records": 2,
+      "github_lookup_ok": 2,
+      "resumed_to_new_disposition_this_run": 0,
+      "pending_human_or_funding_or_version_checks": "SEE_EXISTING_RESEARCH_LEADS"
+    }
+  },
+  "research_performed": {
+    "preprint_final_dois_verified_as_existing_reach": [
+      "10.5194/acp-21-16531-2021",
+      "10.5194/amt-14-4593-2021",
+      "10.5194/gmd-17-5309-2024",
+      "10.5194/hess-26-3941-2022",
+      "10.5194/acp-25-16631-2025",
+      "10.5194/amt-15-2923-2022",
+      "10.5194/amt-15-6011-2022",
+      "10.5194/gmd-14-1125-2021",
+      "10.5194/gmd-18-9237-2025",
+      "10.5194/gmd-19-8597-2026",
+      "10.5194/hess-24-655-2020",
+      "10.5194/hess-26-6121-2022",
+      "10.5194/tc-17-5175-2023",
+      "10.5194/tc-17-567-2023"
+    ],
+    "new_ir_exact_doi_evidence_on_published_article_research_leads": [
+      {
+        "doi": "10.5194/essd-15-383-2023",
+        "url": "https://repository.library.noaa.gov/view/noaa/58430"
+      },
+      {
+        "doi": "10.5194/essd-15-5301-2023",
+        "url": "https://repository.library.noaa.gov/view/noaa/60615"
+      },
+      {
+        "doi": "10.5194/essd-16-1395-2024",
+        "url": "https://repository.library.noaa.gov/view/noaa/64328"
+      },
+      {
+        "doi": "10.5194/gmd-16-3809-2023",
+        "url": "https://repository.library.noaa.gov/view/noaa/58453"
+      },
+      {
+        "doi": "10.5194/gmd-16-7123-2023",
+        "url": "https://repository.library.noaa.gov/view/noaa/64356"
+      },
+      {
+        "doi": "10.5194/gmd-19-8367-2026",
+        "url": "https://repository.library.noaa.gov/view/noaa/77334"
+      },
+      {
+        "doi": "10.5194/tc-19-1599-2025",
+        "url": "https://repository.library.noaa.gov/view/noaa/71087"
+      }
+    ],
+    "crossref_scope_hold_no_new_hub": [
+      "10.1002/jwmg.732",
+      "10.1007/s00330-020-07133-9",
+      "10.1007/s12035-019-01667-w",
+      "10.1088/1402-4896/ae2296",
+      "10.1177/13623613251341012",
+      "10.1371/journal.pone.0193711",
+      "10.14309/ctg.0000000000000725",
+      "10.3390/c4040066",
+      "10.3390/drones3020038",
+      "10.3390/jcm13195732"
+    ],
+    "crossref_existing_monthly_conflict_hold": [
+      "10.1002/qj.70325"
+    ],
+    "preprint_funding_discrepancy": "Official NOAA IR item 58371 lists NA19OAR4590324; public REACH reach-000065 lists NA19OAR4590323. Identity is duplicate, award difference is separate human review question; no automatic edit.",
+    "new_eligible_original_review_candidates": 0,
+    "new_eligible_api_seeded_expansion_candidates": 0,
+    "seed_expansion_completed": 0,
+    "source_urls": [
+      "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-publication-leads.json",
+      "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/historical-crossref-triage.json",
+      "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/noaa-ir/manifest.json",
+      "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+      "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/manifest.json"
+    ]
+  },
+  "publication_safety": {
+    "preprint_doi_new_output_submissions": 0,
+    "published_doi_leads_auto_promoted": 0,
+    "noaa_ir_membership_claimed_as_compliance": false,
+    "preexisting_human_decisions_modified": false,
+    "new_review_csv_created": false,
+    "new_hub_import_verified": false,
+    "new_reach_publication_verified": false
+  },
+  "feed_integrity_status": "NO_NEW_REVIEW_FEED_PUBLICATION; preexisting 30 batches/83 rows verified by current published rollup; no manual manifest edits",
+  "github_actions_status": {
+    "noaa_ir_index": "SUCCESS",
+    "historical_crossref_reconcile": "SUCCESS",
+    "harvest_tests": "SUCCESS"
+  },
+  "blockers": [
+    "Historical Crossref 614 DOI seed-expansion investigations not complete",
+    "11 final article leads require project award and full REACH/Scout identity checks",
+    "10 Crossref source awards are placeholders UNK/BAA; excluded from new-output attribution pending project-specific evidence",
+    "1 Crossref DOI has prior monthly same-project funding conflict",
+    "Private Discovery Hub import and reviewer decisions not observable"
+  ],
+  "next_priority": "Continue 11 unresolved final-article leads and 555 awaiting historical Crossref originals, retaining 614 seed-expansion tracks and strict human gate."
+}
