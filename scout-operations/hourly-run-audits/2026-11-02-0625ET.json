@@ -1,0 +1,103 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-11-02-HOURLY-0625ET",
+  "run_at_utc": "2026-11-02T11:26:38Z",
+  "primary_mode": "normal_historical_discovery",
+  "monthly_originals": {
+    "active_batch": "2026-11-01-monthly-api-2026-10-primary-only-part001",
+    "received": 13,
+    "checked": 13,
+    "missing_from_ledger": 0,
+    "staged_for_hub_import": 9,
+    "no_action": 4,
+    "open_research": 0,
+    "new_originals_staged_this_run": 0,
+    "private_hub_import": "NOT_VERIFIED",
+    "note": "Older monthly-fast-intake exception labels stale; live monthly-triage and coverage show four evidence-based no-actions."
+  },
+  "monthly_expansions": {
+    "total": 6,
+    "manifest_staged": 2,
+    "already_in_reach": 3,
+    "pending_human_intake": 1,
+    "new_this_run": 0,
+    "pending_identity": "doi:10.5281/zenodo.22758716",
+    "original_seed_doi": "10.1088/2515-7620/aeaad2"
+  },
+  "historical": {
+    "total": 188,
+    "research_complete": true,
+    "remaining": 0,
+    "human_metadata_needed": 28
+  },
+  "independent_leads": {
+    "unified_doi_records_before_alias_lookup": 12,
+    "unified_github_records": 2,
+    "source_lead_files_in_unified_report_before_alias": 6,
+    "resume_queue_entries_before_alias": 14,
+    "atlantic_leads_resumed": 4,
+    "atlantic_metadata_ok": 3,
+    "atlantic_metadata_not_found": 1,
+    "doi_alias_discrepancy": {
+      "native_citation": "10.57969/S9QP4CD",
+      "erddap_metadata": "10.57969/S9QP4C",
+      "registry_status_original": "DataCite 404; Crossref 404",
+      "alternate_lookup_status": "PENDING_GITHUB_ACTION"
+    },
+    "new_review_candidates": 0,
+    "updated_existing_lead_file": "scout-operations/research-leads/2026-11-02-0525ET-atlantic-drifter-dois.json",
+    "alias_lookup_file": "scout-operations/research-leads/2026-11-02-0625ET-atlantic-2024-alias-lookup.json",
+    "preserved_origin_method": "Independent discovery"
+  },
+  "feed": {
+    "batch_count": 37,
+    "candidate_rows": 85,
+    "origin_rollup_rows": 85,
+    "new_inbox_drafts": 0,
+    "new_batches": 0,
+    "manifest_sha256_recomputed_this_run": false,
+    "github_action_status_this_run": "NOT_VERIFIED",
+    "private_hub_import": "NOT_VERIFIED",
+    "human_approvals": "NOT_VERIFIED"
+  },
+  "public_reach": {
+    "rows": 1238,
+    "verified_additions_this_run": 0,
+    "full_detail_rescan_for_atlantic_leads": false
+  },
+  "source_urls": [
+    "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+    "https://erddap.ldl.ucsd.edu/erddap/tabledap/LDL_AtlanticHurricane2024.html",
+    "https://erddap.ldl.ucsd.edu/erddap/tabledap/LDL_AtlanticHurricane2023.html",
+    "https://erddap.ldl.ucsd.edu/erddap/tabledap/LDL_AtlanticHurricane2022.html",
+    "https://erddap.ldl.ucsd.edu/erddap/tabledap/LDL_AtlanticHurricane2021.html",
+    "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/independent-metadata-lookup/latest.json"
+  ],
+  "library_saved": [
+    "/REACH Scout Library/2026-11-02-0625ET-report.md",
+    "/REACH Scout Library/2026-11-02-0625ET-research-leads.json",
+    "/REACH Scout Library/2026-11-02-0625ET-checkpoint.json",
+    "/REACH Scout Library/2026-11-02-0625ET-hourly-provenance-audit.json",
+    "/REACH Scout Library/2026-11-02-0625ET-atlantic-2024-alias-lookup.json"
+  ],
+  "github_writes": {
+    "updated_lead_commit": "c8eb3e4d7c4ed531f33755ac494d00899e3330d1",
+    "alias_lead_commit": "efd08427f3db8edd27b59e09619edd4d47de15b4",
+    "no_manifest_or_batch_edits": true
+  },
+  "blockers": [
+    "Year-specific same-primary-project funding allocation among multiple NOAA awards not independently verified",
+    "2024 native DOI inconsistency and DataCite/Crossref 404 for cited spelling",
+    "Full public REACH detail/secondary link and pending Scout inbox duplicate screening for these leads not completed",
+    "Private Hub import and human approvals unobservable"
+  ],
+  "next_priority": [
+    "Verify exact alternate DOI S9QP4C via unified metadata action, without treating as a second output",
+    "Confirm each annual dataset's primary WPO-funded project attribution",
+    "Complete full public REACH detail and Scout inbox dedup before any 24-column candidate",
+    "Reviewer uses Sync to Scout for existing manifest-listed proposals; never autoapprove"
+  ],
+  "audit_result": "PARTIAL",
+  "no_public_reach_or_smartsheet_writes": true,
+  "no_autoapproval": true
+}
