@@ -63,7 +63,8 @@ def _attribution_pending(queue):
 def decide(monthly_manifest,monthly_coverage,historical_manifest,historical_coverage,
            historical_manifest_sha="",monthly_triage=None,historical_triage=None,
            metadata_blockers=None,attribution_followups=None,monthly_expansion_leads=None,
-           monthly_decision_queue=None,crossref_manifest=None,crossref_coverage=None,\n           crossref_triage=None,crossref_manifest_sha=\"\"):
+           monthly_decision_queue=None,crossref_manifest=None,crossref_coverage=None,
+           crossref_triage=None,crossref_manifest_sha=""):
     monthly_total=int((monthly_manifest or {}).get("candidate_rows",0))
     monthly_checked=int((monthly_coverage or {}).get("checked",0))
     monthly_received=int((monthly_coverage or {}).get("received",0))
