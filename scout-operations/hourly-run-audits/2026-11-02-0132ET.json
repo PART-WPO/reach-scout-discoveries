@@ -1,0 +1,82 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-11-02-HOURLY-0132ET",
+  "run_local_date": "2026-11-02",
+  "run_local_time": "01:32 EST (start; work and source refresh continued after start)",
+  "selected_mode": "monthly_api_triage",
+  "phase": "monthly_expansion_and_independent_artifact_scope_enrichment",
+  "authoritative_source": "PART-WPO/reach-scout-discoveries main",
+  "source_checks": {
+    "monthly_active_source_records": 13,
+    "monthly_ledger_checked": 13,
+    "monthly_missing_from_ledger": 0,
+    "monthly_originals_public_scout_feed_staged": 9,
+    "monthly_originals_no_action": 4,
+    "monthly_originals_newly_staged_this_run": 0,
+    "monthly_expansion_total": 6,
+    "monthly_expansion_staged_for_human_review": 1,
+    "monthly_expansion_investigating": 2,
+    "monthly_expansion_already_in_reach": 3,
+    "historical_originals_total": 188,
+    "historical_remaining": 0,
+    "public_scout_manifest_batches": 33,
+    "public_scout_manifest_candidate_rows": 78,
+    "public_scout_manifest_record_count_sum": 78,
+    "unified_independent_metadata_dois_successful": 5,
+    "unified_independent_metadata_github_successful": 2
+  },
+  "work_completed": [
+    {
+      "type": "metadata_pipeline_improvement",
+      "source": "scout-operations/tools/lookup_artifact_scope.py",
+      "result": "Unified GitHub Actions metadata report now includes Zenodo native file inventory and exact GitHub release-tag tree inventory. Revalidated from live published report after workflow commits.",
+      "verification": "scout-operations/reports/independent-metadata-lookup/latest.json",
+      "commits": ["dfd26f2b9649329750c4444cb050793bd195bf07", "196a2159562582f6d292f609c8e755247f0f0879", "7e9df9b4cf69f683f0d8e341e9fee521fbe2bcd6", "0070a029e8169f1e7075e2961e476d8a769d2fca"]
+    },
+    {
+      "identity": "doi:10.5281/zenodo.22758716",
+      "discovery_method": "API-seeded expansion",
+      "original_seed_doi": "10.1088/2515-7620/aeaad2",
+      "result": "Native Zenodo API lists 15 files including notebook, Python script, NetCDF and figures; concept DOI 10.5281/zenodo.20046428 resolves to the same version DOI. Do not count both as separate outputs.",
+      "sources": ["https://zenodo.org/api/records/22758716", "https://zenodo.org/api/records/20046428"],
+      "status": "investigating_primary_project_funding_and_eligibility",
+      "blockers": ["Artifact-specific primary WPO award bridge", "Actual file download/access not tested", "Final version/alternate URL and private Hub disposition checks"]
+    },
+    {
+      "identity": "doi:10.1145/3794916.3794919",
+      "discovery_method": "API-seeded expansion",
+      "original_seed_doi": "10.5194/egusphere-2026-5876",
+      "result": "Independent 2023 AMS publication explicitly acknowledges NA21OAR4590208 for same forecast-communication project; 2026 ACM article exact DOI has complete Crossref metadata but lacks direct article grant proof in available sources. Bounded distinct-source checks documented; human funding-attribution question saved.",
+      "sources": ["https://journals.ametsoc.org/view/journals/bams/104/9/BAMS-D-22-0220.1.xml", "https://repository.library.noaa.gov/view/noaa/67218", "https://api.crossref.org/works/10.1145/3794916.3794919"],
+      "status": "human_funding_investigation_pending_not_hub_staged",
+      "blockers": ["Confirm article-specific award attribution or PI evidence", "Private reviewer disposition unobserved"]
+    },
+    {
+      "identities": ["doi:10.5281/zenodo.6385057", "github:MESH-Team/MESH_CNT@MESH_CNT_v0.1", "github:MESH-Team/MESH_Code_irregular@Mesh_Diffusive_CNS_v0.1"],
+      "discovery_method": "Independent discovery",
+      "result": "Zenodo concept DOI 6385057 resolves to version DOI 6385058 with one 205537427-byte Model_Results.zip. GitHub exact release tag MESH_CNT_v0.1 has 5687 files including 11 code files; Mesh_Diffusive_CNS_v0.1 has 608 files including 29 code files. All source-tree inventories untruncated. GitHub exact-tag README, MIT license and representative CNT Fortran files verified.",
+      "sources": ["https://zenodo.org/api/records/6385057", "https://api.github.com/repos/MESH-Team/MESH_CNT/git/trees/MESH_CNT_v0.1?recursive=1", "https://api.github.com/repos/MESH-Team/MESH_Code_irregular/git/trees/Mesh_Diffusive_CNS_v0.1?recursive=1"],
+      "status": "research_active_funding_dedup_eligibility",
+      "blockers": ["Direct/indirect artifact-specific primary project funding determination", "Complete REACH/Scout secondary-link/version dedup", "Private human reviewer status unavailable", "Files listed by API, not all downloaded or executed"]
+    }
+  ],
+  "new_inbox_drafts": 0,
+  "new_public_scout_batches": 0,
+  "new_original_seed_dispositions": 0,
+  "new_expansion_hub_candidates": 0,
+  "new_verified_public_reach_outputs": 0,
+  "private_discovery_hub_import": "NOT_VERIFIED",
+  "human_approvals": "NOT_VERIFIED",
+  "public_reach_total_last_independently_observed": 1238,
+  "feed_integrity_status": "PARTIAL: live manifest batch count 33, candidate rows 78, and sum of batch record_count 78; full SHA-256 recomputation not performed; no new candidate batch created",
+  "github_action_run_status": "REPORT_REFRESH_VERIFIED: published unified metadata report includes new artifact_scope for all 5 DOI and 2 GitHub records; direct Actions job page not independently observed",
+  "audit_result": "PARTIAL",
+  "library_first": "This audit and summary are to be uploaded to /REACH Scout Library before GitHub audit commit.",
+  "next_priorities": [
+    "Reviewer may use Discovery Hub Sync to Scout; private Hub import remains NOT VERIFIED",
+    "Confirm ACM article NA21OAR4590208 attribution through full-text acknowledgments or PI decision",
+    "Verify Zenodo notebook/data project-specific award bridge and classify one concept/version family",
+    "Finish MESH three independent leads funding and complete REACH/Scout duplicate checks without changing Independent discovery provenance",
+    "Resume original monthly intake first when new monthly batch arrives"
+  ]
+}
