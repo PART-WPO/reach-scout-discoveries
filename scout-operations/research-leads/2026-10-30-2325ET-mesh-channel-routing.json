@@ -29,7 +29,7 @@
       "output_type": "3",
       "title": "Zenodo data and model outputs supporting Diffusive Wave Models for Operational Forecasting of Channel Routing at Continental Scale",
       "output_url": "https://doi.org/10.5281/zenodo.6385057",
-      "status": "RESEARCH_ACTIVE_METADATA_VERIFICATION",
+      "status": "RESEARCH_ACTIVE_FUNDING_DEDUP_ELIGIBILITY",
       "scout_confidence": "Medium",
       "existing_reach_match": "No exact URL/DOI/title in 10 public REACH index shards or 23 public Scout discovery batches (70 proposals); parent article reach-000241 exists. Related REACH detail shard part-030 checked; private Hub decisions not accessible.",
       "checked_sources": [
@@ -41,11 +41,32 @@
         "https://api.datacite.org/dois/10.5281/zenodo.6385057"
       ],
       "missing_fields": [
-        "exact DataCite created Pub Date",
-        "Zenodo native title/creator/version/public file identity"
+        "Zenodo public-file scope and independently catalogable artifact confirmation",
+        "fresh full REACH/Scout secondary-link and version duplicate check",
+        "private Discovery Hub reviewer disposition (not observable)"
       ],
       "native_source_result": "Publisher links exact DOI; Zenodo and DataCite exact DOI landing/API retrieval returned tool-access errors; cannot conclude metadata absent.",
-      "next_action": "Perform exact DOI DataCite lookup from GitHub Actions/checkpoint and verify created date, title, creators, public files and version identity; then recheck all REACH details and private reviewer decisions before staging."
+      "next_action": "DataCite DOI metadata recovered and accepted publication date set; original parent article explicitly lists this dataset in Data Availability and acknowledges primary NOAA award. Verify native file scope, distinct artifact/version and current REACH/Scout/Human review duplicates, then stage eligible candidate for human review or record specific blocker.",
+      "metadata_enrichment_status": "ok",
+      "metadata_enrichment_checked_at_date": "2026-11-02",
+      "verified_metadata": {
+        "source": "https://api.datacite.org/dois/10.5281/zenodo.6385057",
+        "title": "Modeled data related to the article \"Diffusive Wave Models for Operational Forecasting of Channel Routing at Continental Scale\"",
+        "creators": [
+          "Beg, Nazmul Azim"
+        ],
+        "resource_type": "Dataset",
+        "pub_date": "2022-04-17",
+        "pub_date_basis": "DataCite created (office convention)",
+        "version": "1.0",
+        "related_identifiers": [
+          {
+            "relatedIdentifier": "10.5281/zenodo.6385058",
+            "relatedIdentifierType": "DOI",
+            "relationType": "HasVersion"
+          }
+        ]
+      }
     },
     {
       "project_award": "NA18OAR4590394",
@@ -65,7 +86,7 @@
       "output_type": "2",
       "title": "MESH Code irregular — Crank–Nicolson over Space (CNS) release",
       "output_url": "https://github.com/MESH-Team/MESH_Code_irregular/releases/tag/Mesh_Diffusive_CNS_v0.1",
-      "status": "RESEARCH_ACTIVE_METADATA_VERIFICATION",
+      "status": "RESEARCH_ACTIVE_FUNDING_DEDUP_ELIGIBILITY",
       "scout_confidence": "Medium",
       "existing_reach_match": "No exact URL/DOI/title in 10 public REACH index shards or 23 public Scout discovery batches (70 proposals); parent article reach-000241 exists. Related REACH detail shard part-030 checked; private Hub decisions not accessible.",
       "checked_sources": [
@@ -73,14 +94,31 @@
         "https://repository.library.noaa.gov/view/noaa/52584",
         "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-003.csv",
         "https://github.com/MESH-Team/MESH_Code_irregular/releases/tag/Mesh_Diffusive_CNS_v0.1",
-        "https://github.com/MESH-Team/MESH_Code_irregular"
+        "https://github.com/MESH-Team/MESH_Code_irregular",
+        "https://api.github.com/repos/MESH-Team/MESH_Code_irregular",
+        "https://api.github.com/repos/MESH-Team/MESH_Code_irregular/releases/tags/Mesh_Diffusive_CNS_v0.1"
       ],
       "missing_fields": [
-        "first public release/tag date",
-        "release source-file and license confirmation"
+        "release-tag source tree/file and code artifact scope confirmation",
+        "fresh full REACH/Scout secondary-link and version duplicate check",
+        "private Discovery Hub reviewer disposition (not observable)"
       ],
       "native_source_result": "Publisher links exact artifact. GitHub connector retrieved tagged README successfully.",
-      "next_action": "Retrieve exact GitHub release/tag publication date and inspect release files/license; verify separate catalogable code artifact vs duplicate/version and private reviewer decisions before staging."
+      "next_action": "Exact release published_at and repository MIT license recovered via GitHub API. Empty release assets do not mean no source code; inspect tagged source tree, confirm independently catalogable code artifact and funding bridge from parent article, complete current REACH/Scout/private review dedup, then stage for human review if eligible.",
+      "metadata_enrichment_status": "ok",
+      "metadata_enrichment_checked_at_date": "2026-11-02",
+      "verified_metadata": {
+        "source": [
+          "https://api.github.com/repos/MESH-Team/MESH_Code_irregular",
+          "https://api.github.com/repos/MESH-Team/MESH_Code_irregular/releases/tags/Mesh_Diffusive_CNS_v0.1"
+        ],
+        "repository": "MESH-Team/MESH_Code_irregular",
+        "repository_license": "MIT",
+        "release_tag": "Mesh_Diffusive_CNS_v0.1",
+        "release_name": "MESH_Diffusive_CNS_v.0.1",
+        "release_published_at": "2022-03-27T02:40:41Z",
+        "release_assets_count": 0
+      }
     },
     {
       "project_award": "NA18OAR4590394",
@@ -100,7 +138,7 @@
       "output_type": "2",
       "title": "MESH CNT — Crank–Nicolson over Time (CNT) release",
       "output_url": "https://github.com/MESH-Team/MESH_CNT/releases/tag/MESH_CNT_v0.1",
-      "status": "RESEARCH_ACTIVE_METADATA_VERIFICATION",
+      "status": "RESEARCH_ACTIVE_FUNDING_DEDUP_ELIGIBILITY",
       "scout_confidence": "Medium",
       "existing_reach_match": "No exact URL/DOI/title in 10 public REACH index shards or 23 public Scout discovery batches (70 proposals); parent article reach-000241 exists. Related REACH detail shard part-030 checked; private Hub decisions not accessible.",
       "checked_sources": [
@@ -108,14 +146,31 @@
         "https://repository.library.noaa.gov/view/noaa/52584",
         "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-003.csv",
         "https://github.com/MESH-Team/MESH_CNT/releases/tag/MESH_CNT_v0.1",
-        "https://github.com/MESH-Team/MESH_CNT"
+        "https://github.com/MESH-Team/MESH_CNT",
+        "https://api.github.com/repos/MESH-Team/MESH_CNT",
+        "https://api.github.com/repos/MESH-Team/MESH_CNT/releases/tags/MESH_CNT_v0.1"
       ],
       "missing_fields": [
-        "first public release/tag date",
-        "release source-file and license confirmation"
+        "release-tag source tree/file and code artifact scope confirmation",
+        "fresh full REACH/Scout secondary-link and version duplicate check",
+        "private Discovery Hub reviewer disposition (not observable)"
       ],
       "native_source_result": "Publisher links exact artifact. GitHub connector retrieved tagged README successfully.",
-      "next_action": "Retrieve exact GitHub release/tag publication date and inspect release files/license; verify separate catalogable code artifact vs duplicate/version and private reviewer decisions before staging."
+      "next_action": "Exact release published_at and repository MIT license recovered via GitHub API. Empty release assets do not mean no source code; inspect tagged source tree, confirm independently catalogable code artifact and funding bridge from parent article, complete current REACH/Scout/private review dedup, then stage for human review if eligible.",
+      "metadata_enrichment_status": "ok",
+      "metadata_enrichment_checked_at_date": "2026-11-02",
+      "verified_metadata": {
+        "source": [
+          "https://api.github.com/repos/MESH-Team/MESH_CNT",
+          "https://api.github.com/repos/MESH-Team/MESH_CNT/releases/tags/MESH_CNT_v0.1"
+        ],
+        "repository": "MESH-Team/MESH_CNT",
+        "repository_license": "MIT",
+        "release_tag": "MESH_CNT_v0.1",
+        "release_name": "MESH_Diffusive_CN-Mod_v.0.1",
+        "release_published_at": "2022-03-25T15:52:45Z",
+        "release_assets_count": 0
+      }
     }
   ],
   "read_only": true,
