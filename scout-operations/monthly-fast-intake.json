@@ -5,8 +5,9 @@
   "spark_snapshot_sha256": "cf391a48c6810aeda3d9fa2aaa1c9d988d5301aa8fed8acc2d7fff6ab5336136",
   "source_monthly_records": 13,
   "counts": {
-    "funding_exception": 3,
+    "funding_exception": 2,
     "staged_in_scout_feed": 8,
+    "fast_track": 1,
     "cross_cohort_version_review": 2
   },
   "originals": [
@@ -63,16 +64,16 @@
     {
       "identity": "doi:10.1088/2515-7620/aeaad2",
       "cohort": "2026-10",
-      "status": "funding_exception",
-      "api_funding_basis": "funding_anomaly",
+      "status": "fast_track",
+      "api_funding_basis": "primary_award_matched",
       "funding_awards": "NA24OARX459C0015",
       "reach_matches": [],
       "metadata_missing": [],
       "exceptions": [
-        "Explicit conflicting funded-project attribution requires human investigation"
+        "PI attribution requires human verification; author names are not assumed to be PIs"
       ],
       "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
-      "review_feed_status": "NOT_STAGED",
+      "review_feed_status": "INBOX_DRAFT_PREVALIDATED",
       "private_hub_import": "NOT_VERIFIED",
       "expansion_required_before_intake": false
     },
@@ -209,7 +210,9 @@
       "expansion_required_before_intake": false
     }
   ],
-  "draft_paths_created": [],
+  "draft_paths_created": [
+    "scout-discoveries/inbox/2026-11-01-monthly-fast-936c21c3648bb0.csv"
+  ],
   "published_scout_feed_unverified_for_new_drafts": true,
   "private_hub_import": "NOT_VERIFIED",
   "reviewer_approval": "NOT_VERIFIED",
