@@ -18,7 +18,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 DOI = re.compile(r"10\.\d{4,9}/[^\s\"'<>;,]+", re.I)
-AWARD = re.compile(r"NA\d{2}[A-Z0-9-]+", re.I)
+AWARD = re.compile(r"(?<![A-Z0-9-])NA\d{2}[A-Z0-9]{7,}(?:-[A-Z0-9]+)*(?![A-Z0-9-])", re.I)
 URL = re.compile(r"https?://[^\s\"'<>]+", re.I)
 
 
