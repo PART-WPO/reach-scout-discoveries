@@ -52,19 +52,19 @@
         "public_reach_detail_shards_checked": 140,
         "public_reach_rows_screened": 1238,
         "scout_manifest_rows_screened": 85,
-        "scout_pending_inbox_dedup": "NOT_VERIFIED",
+        "scout_pending_inbox_dedup": "VERIFIED_NO_EXACT_NORMALIZED_DOI_MATCH_IN_ALL_15_PUBLIC_INBOX_CSVS_2026_11_02_1126ET",
         "checked_at_utc": "2026-11-02T12:32:12.190Z",
         "screening_method": "Exact normalized DOI string and distinctive full annual dataset title text across all public index/detail shards and all manifest-listed Scout CSVs; not proof of absent alternate external identities."
       },
       "metadata_lookup_status": "ok",
       "missing_fields": [
-        "Pending unpublished Scout inbox and private reviewer decision duplicate screening",
+        "Private Hub reviewer-decision/secondary-link identity not observable",
         "Year-specific same-SPARK-primary-project funding allocation among multiple NOAA grants",
         "Distinct annual dataset eligibility and any overlapping external version identities",
         "Native citation DOI typo and DataCite abstract 2021-versus-2024 inconsistency"
       ],
-      "next_action": "Human attribution and public-scope decision after confirming pending unpublished Scout inbox/private Hub duplicate state; do not invent grant allocation or submit 2024 DOI typo as fifth output. Preserve Independent discovery origin.",
-      "last_resumed_at_utc": "2026-11-02T12:32:12.190Z",
+      "next_action": "Human reviewer/project PI: decide 2024 specific award-funded observations and standalone WPO output status using exact native ERDDAP metadata; public inbox has no exact DOI, private Hub remains unverified. No new CSV until attribution decision or justified NEEDS INVESTIGATION intake.",
+      "last_resumed_at_utc": "2026-11-02T16:27:39Z",
       "checked_sources": [
         "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
         "https://github.com/PART-WPO/SPARK/blob/main/agent-data/index/part-004.csv",
@@ -75,7 +75,9 @@
         "https://api.datacite.org/dois/10.57969/s9qp4cd",
         "https://api.crossref.org/works/10.57969/s9qp4cd",
         "https://api.datacite.org/dois/10.57969/s9qp4c",
-        "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf"
+        "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+        "https://erddap.ldl.ucsd.edu/erddap/tabledap/LDL_AtlanticHurricane2024.graph",
+        "https://github.com/PART-WPO/reach-scout-discoveries/tree/main/scout-discoveries/inbox"
       ],
       "metadata_enrichment_status": "ok",
       "verified_metadata": {
@@ -136,6 +138,33 @@
         "human_review_question": "Verify that this year's actual dataset contains original NA21OAR4590374-funded barometer/DWSD observations, is a standalone publicly accessible output, and has no duplicate unpublished Scout inbox/private Hub record.",
         "handoff": "RESEARCH_CHECKED_PENDING_HUMAN_ATTRIBUTION_AND_INBOX_VERIFICATION; not delivered to private Hub.",
         "origin_method_preserved": "Independent discovery"
+      },
+      "native_metadata_access_status": "ERDDAP_GRAPH_METADATA_PAGE_AND_DATA_ACCESS_FORM_REACHABLE_LICENSE_VERIFIED_RAW_ROWS_NOT_DOWNLOADED",
+      "followup_2026_11_02_1126ET": {
+        "checked_at_utc": "2026-11-02T16:27:39Z",
+        "method": "Native ERDDAP annual graph metadata and license + complete public inbox exact DOI comparison",
+        "native_erddap_url": "https://erddap.ldl.ucsd.edu/erddap/tabledap/LDL_AtlanticHurricane2024.graph",
+        "native_dataset_id": "LDL_AtlanticHurricane2024",
+        "native_coverage": "2024-06-01 to 2024-11-30; Aug–Nov after live SPARK end 2024-07-31",
+        "native_metadata_page_reachable": true,
+        "variable_definitions_seen": [
+          "slp",
+          "avgwaveperiod",
+          "wvht",
+          "domwaveperiod",
+          "domwavedir"
+        ],
+        "native_license": "ERDDAP global metadata explicitly permits free use and redistribution with no warranty; not a verified data-row download",
+        "raw_data_download_verified": false,
+        "public_inbox_csvs_read": 15,
+        "public_inbox_exact_normalized_doi_matches": 0,
+        "previous_reach_detail_and_scout_manifest_screening_reused": true,
+        "private_hub_feedback": "NOT_VERIFIED",
+        "funding_limit": "Native LDL annual family and DataCite include NA21OAR4590374 primary SPARK award alongside two other NOAA awards, without per-year/per-instrument allocation",
+        "finding": "Distinct 2024 annual DOI dataset, exact native ERDDAP metadata accessible; WPO same-project attribution still needs per-year observation/funding evidence.",
+        "what_to_check_before_adding": "Verify 2024 barometer/DWSD observations actually funded by NA21OAR4590374 | Determine whether year-specific dataset is a standalone WPO deliverable rather than GDP/other NOAA shared data | Compare exact DOI and versions/secondary links with REACH and private Hub | Confirm actual data-row export if needed | Preserve DataCite created 2024-04-13 as office Pub Date | Resolve native S9QP4CD citation typo vs canonical S9QP4C and 2024 abstract's 2021 wording",
+        "reviewer_question": "Is the 2024 annual drifter dataset a distinct product of SPARK spark-000336 under primary award NA21OAR4590374, or should it remain a human attribution investigation?",
+        "human_handoff": "RESEARCH_COMPLETE_WITH_CREDIBLE_PROJECT_LINK; NOT_STAGED_TO_PUBLIC_SCOUT_FEED; PRIVATE_HUB_NOT_VERIFIED"
       }
     },
     {
@@ -176,18 +205,18 @@
         "public_reach_detail_shards_checked": 140,
         "public_reach_rows_screened": 1238,
         "scout_manifest_rows_screened": 85,
-        "scout_pending_inbox_dedup": "NOT_VERIFIED",
+        "scout_pending_inbox_dedup": "VERIFIED_NO_EXACT_NORMALIZED_DOI_MATCH_IN_ALL_15_PUBLIC_INBOX_CSVS_2026_11_02_1126ET",
         "checked_at_utc": "2026-11-02T12:32:12.190Z",
         "screening_method": "Exact normalized DOI string and distinctive full annual dataset title text across all public index/detail shards and all manifest-listed Scout CSVs; not proof of absent alternate external identities."
       },
       "metadata_lookup_status": "ok",
       "missing_fields": [
-        "Pending unpublished Scout inbox and private reviewer decision duplicate screening",
+        "Private Hub reviewer-decision/secondary-link identity not observable",
         "Year-specific same-SPARK-primary-project funding allocation among multiple NOAA grants",
         "Distinct annual dataset eligibility and any overlapping external version identities"
       ],
-      "next_action": "Human attribution and public-scope decision after confirming pending unpublished Scout inbox/private Hub duplicate state; do not invent grant allocation or submit 2024 DOI typo as fifth output. Preserve Independent discovery origin.",
-      "last_resumed_at_utc": "2026-11-02T12:32:12.190Z",
+      "next_action": "Human reviewer/project PI: decide 2023 specific award-funded observations and standalone WPO output status using exact native ERDDAP metadata; public inbox has no exact DOI, private Hub remains unverified. No new CSV until attribution decision or justified NEEDS INVESTIGATION intake.",
+      "last_resumed_at_utc": "2026-11-02T16:27:39Z",
       "checked_sources": [
         "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
         "https://github.com/PART-WPO/SPARK/blob/main/agent-data/index/part-004.csv",
@@ -196,7 +225,9 @@
         "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/manifest.json",
         "https://erddap.ldl.ucsd.edu/erddap/tabledap/LDL_AtlanticHurricane2023.html",
         "https://api.datacite.org/dois/10.57969/s9vc7n",
-        "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf"
+        "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+        "https://erddap.ldl.ucsd.edu/erddap/tabledap/LDL_AtlanticHurricane2023.graph",
+        "https://github.com/PART-WPO/reach-scout-discoveries/tree/main/scout-discoveries/inbox"
       ],
       "metadata_enrichment_status": "ok",
       "verified_metadata": {
@@ -243,6 +274,33 @@
         "human_review_question": "Verify that this year's actual dataset contains original NA21OAR4590374-funded barometer/DWSD observations, is a standalone publicly accessible output, and has no duplicate unpublished Scout inbox/private Hub record.",
         "handoff": "RESEARCH_CHECKED_PENDING_HUMAN_ATTRIBUTION_AND_INBOX_VERIFICATION; not delivered to private Hub.",
         "origin_method_preserved": "Independent discovery"
+      },
+      "native_metadata_access_status": "ERDDAP_GRAPH_METADATA_PAGE_AND_DATA_ACCESS_FORM_REACHABLE_LICENSE_VERIFIED_RAW_ROWS_NOT_DOWNLOADED",
+      "followup_2026_11_02_1126ET": {
+        "checked_at_utc": "2026-11-02T16:27:39Z",
+        "method": "Native ERDDAP annual graph metadata and license + complete public inbox exact DOI comparison",
+        "native_erddap_url": "https://erddap.ldl.ucsd.edu/erddap/tabledap/LDL_AtlanticHurricane2023.graph",
+        "native_dataset_id": "LDL_AtlanticHurricane2023",
+        "native_coverage": "2023-06-01 to 2023-11-30; entirely within live SPARK period",
+        "native_metadata_page_reachable": true,
+        "variable_definitions_seen": [
+          "slp",
+          "avgwaveperiod",
+          "wvht",
+          "domwaveperiod",
+          "domwavedir"
+        ],
+        "native_license": "ERDDAP global metadata explicitly permits free use and redistribution with no warranty; not a verified data-row download",
+        "raw_data_download_verified": false,
+        "public_inbox_csvs_read": 15,
+        "public_inbox_exact_normalized_doi_matches": 0,
+        "previous_reach_detail_and_scout_manifest_screening_reused": true,
+        "private_hub_feedback": "NOT_VERIFIED",
+        "funding_limit": "Native LDL annual family and DataCite include NA21OAR4590374 primary SPARK award alongside two other NOAA awards, without per-year/per-instrument allocation",
+        "finding": "Distinct 2023 annual DOI dataset, exact native ERDDAP metadata accessible; WPO same-project attribution still needs per-year observation/funding evidence.",
+        "what_to_check_before_adding": "Verify 2023 barometer/DWSD observations actually funded by NA21OAR4590374 | Determine whether year-specific dataset is a standalone WPO deliverable rather than GDP/other NOAA shared data | Compare exact DOI and versions/secondary links with REACH and private Hub | Confirm actual data-row export if needed | Preserve DataCite created 2024-04-13 as office Pub Date | Confirm primary SPARK project period and funding allocation",
+        "reviewer_question": "Is the 2023 annual drifter dataset a distinct product of SPARK spark-000336 under primary award NA21OAR4590374, or should it remain a human attribution investigation?",
+        "human_handoff": "RESEARCH_COMPLETE_WITH_CREDIBLE_PROJECT_LINK; NOT_STAGED_TO_PUBLIC_SCOUT_FEED; PRIVATE_HUB_NOT_VERIFIED"
       }
     },
     {
@@ -283,18 +341,18 @@
         "public_reach_detail_shards_checked": 140,
         "public_reach_rows_screened": 1238,
         "scout_manifest_rows_screened": 85,
-        "scout_pending_inbox_dedup": "NOT_VERIFIED",
+        "scout_pending_inbox_dedup": "VERIFIED_NO_EXACT_NORMALIZED_DOI_MATCH_IN_ALL_15_PUBLIC_INBOX_CSVS_2026_11_02_1126ET",
         "checked_at_utc": "2026-11-02T12:32:12.190Z",
         "screening_method": "Exact normalized DOI string and distinctive full annual dataset title text across all public index/detail shards and all manifest-listed Scout CSVs; not proof of absent alternate external identities."
       },
       "metadata_lookup_status": "ok",
       "missing_fields": [
-        "Pending unpublished Scout inbox and private reviewer decision duplicate screening",
+        "Private Hub reviewer-decision/secondary-link identity not observable",
         "Year-specific same-SPARK-primary-project funding allocation among multiple NOAA grants",
         "Distinct annual dataset eligibility and any overlapping external version identities"
       ],
-      "next_action": "Human attribution and public-scope decision after confirming pending unpublished Scout inbox/private Hub duplicate state; do not invent grant allocation or submit 2024 DOI typo as fifth output. Preserve Independent discovery origin.",
-      "last_resumed_at_utc": "2026-11-02T12:32:12.190Z",
+      "next_action": "Human reviewer/project PI: decide 2022 specific award-funded observations and standalone WPO output status using exact native ERDDAP metadata; public inbox has no exact DOI, private Hub remains unverified. No new CSV until attribution decision or justified NEEDS INVESTIGATION intake.",
+      "last_resumed_at_utc": "2026-11-02T16:27:39Z",
       "checked_sources": [
         "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
         "https://github.com/PART-WPO/SPARK/blob/main/agent-data/index/part-004.csv",
@@ -303,7 +361,9 @@
         "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/manifest.json",
         "https://erddap.ldl.ucsd.edu/erddap/tabledap/LDL_AtlanticHurricane2022.html",
         "https://api.datacite.org/dois/10.57969/s9rp4p",
-        "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf"
+        "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+        "https://erddap.ldl.ucsd.edu/erddap/tabledap/LDL_AtlanticHurricane2022.graph",
+        "https://github.com/PART-WPO/reach-scout-discoveries/tree/main/scout-discoveries/inbox"
       ],
       "metadata_enrichment_status": "ok",
       "verified_metadata": {
@@ -350,6 +410,33 @@
         "human_review_question": "Verify that this year's actual dataset contains original NA21OAR4590374-funded barometer/DWSD observations, is a standalone publicly accessible output, and has no duplicate unpublished Scout inbox/private Hub record.",
         "handoff": "RESEARCH_CHECKED_PENDING_HUMAN_ATTRIBUTION_AND_INBOX_VERIFICATION; not delivered to private Hub.",
         "origin_method_preserved": "Independent discovery"
+      },
+      "native_metadata_access_status": "ERDDAP_GRAPH_METADATA_PAGE_AND_DATA_ACCESS_FORM_REACHABLE_LICENSE_VERIFIED_RAW_ROWS_NOT_DOWNLOADED",
+      "followup_2026_11_02_1126ET": {
+        "checked_at_utc": "2026-11-02T16:27:39Z",
+        "method": "Native ERDDAP annual graph metadata and license + complete public inbox exact DOI comparison",
+        "native_erddap_url": "https://erddap.ldl.ucsd.edu/erddap/tabledap/LDL_AtlanticHurricane2022.graph",
+        "native_dataset_id": "LDL_AtlanticHurricane2022",
+        "native_coverage": "2022-06-01 to 2022-11-30; entirely within live SPARK period",
+        "native_metadata_page_reachable": true,
+        "variable_definitions_seen": [
+          "slp",
+          "avgwaveperiod",
+          "wvht",
+          "domwaveperiod",
+          "domwavedir"
+        ],
+        "native_license": "ERDDAP global metadata explicitly permits free use and redistribution with no warranty; not a verified data-row download",
+        "raw_data_download_verified": false,
+        "public_inbox_csvs_read": 15,
+        "public_inbox_exact_normalized_doi_matches": 0,
+        "previous_reach_detail_and_scout_manifest_screening_reused": true,
+        "private_hub_feedback": "NOT_VERIFIED",
+        "funding_limit": "Native LDL annual family and DataCite include NA21OAR4590374 primary SPARK award alongside two other NOAA awards, without per-year/per-instrument allocation",
+        "finding": "Distinct 2022 annual DOI dataset, exact native ERDDAP metadata accessible; WPO same-project attribution still needs per-year observation/funding evidence.",
+        "what_to_check_before_adding": "Verify 2022 barometer/DWSD observations actually funded by NA21OAR4590374 | Determine whether year-specific dataset is a standalone WPO deliverable rather than GDP/other NOAA shared data | Compare exact DOI and versions/secondary links with REACH and private Hub | Confirm actual data-row export if needed | Preserve DataCite created 2024-04-13 as office Pub Date | Confirm primary SPARK project period and funding allocation",
+        "reviewer_question": "Is the 2022 annual drifter dataset a distinct product of SPARK spark-000336 under primary award NA21OAR4590374, or should it remain a human attribution investigation?",
+        "human_handoff": "RESEARCH_COMPLETE_WITH_CREDIBLE_PROJECT_LINK; NOT_STAGED_TO_PUBLIC_SCOUT_FEED; PRIVATE_HUB_NOT_VERIFIED"
       }
     },
     {
@@ -390,18 +477,18 @@
         "public_reach_detail_shards_checked": 140,
         "public_reach_rows_screened": 1238,
         "scout_manifest_rows_screened": 85,
-        "scout_pending_inbox_dedup": "NOT_VERIFIED",
+        "scout_pending_inbox_dedup": "VERIFIED_NO_EXACT_NORMALIZED_DOI_MATCH_IN_ALL_15_PUBLIC_INBOX_CSVS_2026_11_02_1126ET",
         "checked_at_utc": "2026-11-02T12:32:12.190Z",
         "screening_method": "Exact normalized DOI string and distinctive full annual dataset title text across all public index/detail shards and all manifest-listed Scout CSVs; not proof of absent alternate external identities."
       },
       "metadata_lookup_status": "ok",
       "missing_fields": [
-        "Pending unpublished Scout inbox and private reviewer decision duplicate screening",
+        "Private Hub reviewer-decision/secondary-link identity not observable",
         "Year-specific same-SPARK-primary-project funding allocation among multiple NOAA grants",
         "Distinct annual dataset eligibility and any overlapping external version identities"
       ],
-      "next_action": "Human attribution and public-scope decision after confirming pending unpublished Scout inbox/private Hub duplicate state; do not invent grant allocation or submit 2024 DOI typo as fifth output. Preserve Independent discovery origin.",
-      "last_resumed_at_utc": "2026-11-02T12:32:12.190Z",
+      "next_action": "Human reviewer/project PI: decide 2021 specific award-funded observations and standalone WPO output status using exact native ERDDAP metadata; public inbox has no exact DOI, private Hub remains unverified. No new CSV until attribution decision or justified NEEDS INVESTIGATION intake.",
+      "last_resumed_at_utc": "2026-11-02T16:27:39Z",
       "checked_sources": [
         "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
         "https://github.com/PART-WPO/SPARK/blob/main/agent-data/index/part-004.csv",
@@ -410,7 +497,9 @@
         "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/manifest.json",
         "https://erddap.ldl.ucsd.edu/erddap/tabledap/LDL_AtlanticHurricane2021.html",
         "https://api.datacite.org/dois/10.57969/s9wc7z",
-        "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf"
+        "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+        "https://erddap.ldl.ucsd.edu/erddap/tabledap/LDL_AtlanticHurricane2021.graph",
+        "https://github.com/PART-WPO/reach-scout-discoveries/tree/main/scout-discoveries/inbox"
       ],
       "metadata_enrichment_status": "ok",
       "verified_metadata": {
@@ -457,6 +546,33 @@
         "human_review_question": "Verify that this year's actual dataset contains original NA21OAR4590374-funded barometer/DWSD observations, is a standalone publicly accessible output, and has no duplicate unpublished Scout inbox/private Hub record.",
         "handoff": "RESEARCH_CHECKED_PENDING_HUMAN_ATTRIBUTION_AND_INBOX_VERIFICATION; not delivered to private Hub.",
         "origin_method_preserved": "Independent discovery"
+      },
+      "native_metadata_access_status": "ERDDAP_GRAPH_METADATA_PAGE_AND_DATA_ACCESS_FORM_REACHABLE_LICENSE_VERIFIED_RAW_ROWS_NOT_DOWNLOADED",
+      "followup_2026_11_02_1126ET": {
+        "checked_at_utc": "2026-11-02T16:27:39Z",
+        "method": "Native ERDDAP annual graph metadata and license + complete public inbox exact DOI comparison",
+        "native_erddap_url": "https://erddap.ldl.ucsd.edu/erddap/tabledap/LDL_AtlanticHurricane2021.graph",
+        "native_dataset_id": "LDL_AtlanticHurricane2021",
+        "native_coverage": "2021-06-01 to 2021-11-30; June–July before live SPARK start 2021-08-01",
+        "native_metadata_page_reachable": true,
+        "variable_definitions_seen": [
+          "slp",
+          "avgwaveperiod",
+          "wvht",
+          "domwaveperiod",
+          "domwavedir"
+        ],
+        "native_license": "ERDDAP global metadata explicitly permits free use and redistribution with no warranty; not a verified data-row download",
+        "raw_data_download_verified": false,
+        "public_inbox_csvs_read": 15,
+        "public_inbox_exact_normalized_doi_matches": 0,
+        "previous_reach_detail_and_scout_manifest_screening_reused": true,
+        "private_hub_feedback": "NOT_VERIFIED",
+        "funding_limit": "Native LDL annual family and DataCite include NA21OAR4590374 primary SPARK award alongside two other NOAA awards, without per-year/per-instrument allocation",
+        "finding": "Distinct 2021 annual DOI dataset, exact native ERDDAP metadata accessible; WPO same-project attribution still needs per-year observation/funding evidence.",
+        "what_to_check_before_adding": "Verify 2021 barometer/DWSD observations actually funded by NA21OAR4590374 | Determine whether year-specific dataset is a standalone WPO deliverable rather than GDP/other NOAA shared data | Compare exact DOI and versions/secondary links with REACH and private Hub | Confirm actual data-row export if needed | Preserve DataCite created 2024-04-12 as office Pub Date | Confirm primary SPARK project period and funding allocation",
+        "reviewer_question": "Is the 2021 annual drifter dataset a distinct product of SPARK spark-000336 under primary award NA21OAR4590374, or should it remain a human attribution investigation?",
+        "human_handoff": "RESEARCH_COMPLETE_WITH_CREDIBLE_PROJECT_LINK; NOT_STAGED_TO_PUBLIC_SCOUT_FEED; PRIVATE_HUB_NOT_VERIFIED"
       }
     }
   ],
@@ -509,5 +625,8 @@
       "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf"
     ],
     "library_report": "/REACH Scout Library/2026-11-02-0830ET-report.md"
-  }
+  },
+  "last_followup_at_utc": "2026-11-02T16:27:39Z",
+  "last_followup_run_id": "REACH-SCOUT-2026-11-02-HOURLY-1126ET",
+  "last_followup_summary": "Four annual ERDDAP metadata/license pages accessible; all 15 public Scout inbox CSVs no exact DOI; raw data not downloaded; per-year funding and private Hub unresolved. Independent origin preserved."
 }
