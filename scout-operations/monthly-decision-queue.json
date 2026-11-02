@@ -1,5 +1,5 @@
 {
-  "decision_review_due_count": 3,
+  "decision_review_due_count": 2,
   "expansion_lead_count": 3,
   "expansion_leads": [
     {
@@ -38,25 +38,10 @@
   "human_hub_import_status": "NOT_VERIFIED",
   "original_case_count": 13,
   "original_track_counts": {
-    "funding_or_scope_decision_due": 3,
-    "research_terminal": 10
+    "funding_or_scope_decision_due": 2,
+    "research_terminal": 11
   },
   "originals": [
-    {
-      "cohort": "2026-10",
-      "decision_review_due": true,
-      "decision_track": "funding_or_scope_decision_due",
-      "explicit_draft_gate_passed": false,
-      "identity": "doi:10.1002/qj.70325",
-      "ledger_status": "needs_more_research",
-      "next_action": "Complete only the named blocker(s), then create evidence-backed candidate / no-action / human referral; do not repeat general discovery scans.",
-      "original_review_independent_of_expansion": true,
-      "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
-      "source_evidence_count": 12,
-      "unresolved_checks": [
-        "Resolve specific original-output same-project WPO funding with public source evidence, or record a defensible no-action / human-investigation disposition."
-      ]
-    },
     {
       "cohort": "2026-10",
       "decision_review_due": true,
@@ -86,6 +71,19 @@
       "unresolved_checks": [
         "Resolve specific original-output same-project WPO funding with public source evidence, or record a defensible no-action / human-investigation disposition."
       ]
+    },
+    {
+      "cohort": "2026-10",
+      "decision_review_due": false,
+      "decision_track": "research_terminal",
+      "explicit_draft_gate_passed": false,
+      "identity": "doi:10.1002/qj.70325",
+      "ledger_status": "no_action",
+      "next_action": "Complete only the named blocker(s), then create evidence-backed candidate / no-action / human referral; do not repeat general discovery scans.",
+      "original_review_independent_of_expansion": true,
+      "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
+      "source_evidence_count": 13,
+      "unresolved_checks": []
     },
     {
       "cohort": "2026-10",
