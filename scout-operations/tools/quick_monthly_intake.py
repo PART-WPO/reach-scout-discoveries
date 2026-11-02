@@ -164,8 +164,7 @@ def pre_stage_metadata_recovery(entry, source_row):
     row = dict(source_row)
     check_fields = ("Authors / PI", "Publication Date", "Output Type",
                     "Output URL", "Evidence URL", "Funding Evidence URL")
-    if str(row.get("Output Type", "")).strip() == "1":
-        check_fields += ("Brief Abstract",)
+    check_fields += ("Brief Abstract",)  # Required in the REACH reviewer/audit contract for all output types.
     missing_initial = [field for field in check_fields if not str(row.get(field, "")).strip()]
     if not missing_initial:
         return row, [], "not_needed", []
@@ -191,7 +190,7 @@ def pre_stage_metadata_recovery(entry, source_row):
         evidence = record.get("evidence_url", "")
         if not value or evidence not in verified_urls:
             raise ValueError("Recovered metadata requires a checked source URL and nonempty value")
-        if field == "Publication Date" and not re.fullmatch(r"\\d{4}-\\d{2}-\\d{2}", value):
+        if field == "Publication Date" and not re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
             raise ValueError("Publication Date must use the approved full YYYY-MM-DD format")
         if field == "Brief Abstract" and len(value) < 60:
             raise ValueError("Brief Abstract recovery is too short to review")
