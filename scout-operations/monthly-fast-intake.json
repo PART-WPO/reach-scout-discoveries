@@ -6,7 +6,8 @@
   "source_monthly_records": 13,
   "counts": {
     "funding_exception": 2,
-    "staged_in_scout_feed": 9,
+    "staged_in_scout_feed": 8,
+    "preprint_watchlist_hold": 1,
     "cross_cohort_version_review": 2
   },
   "originals": [
@@ -163,16 +164,18 @@
     {
       "identity": "doi:10.5194/egusphere-2026-5876",
       "cohort": "2026-10",
-      "status": "staged_in_scout_feed",
+      "status": "preprint_watchlist_hold",
       "api_funding_basis": "primary_award_matched",
       "funding_awards": "NA21OAR4590208",
       "reach_matches": [],
       "metadata_missing": [],
       "metadata_recovery_state": "not_needed",
       "metadata_recovery_checks": 0,
-      "exceptions": [],
+      "exceptions": [
+        "Preprint DOI stays in the monthly Watchlist, not the Discovery Hub. A separately verified official journal DOI must complete normal REACH/Scout identity, funding, and metadata review."
+      ],
       "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
-      "review_feed_status": "MANIFEST_PUBLISHED",
+      "review_feed_status": "NOT_STAGED",
       "private_hub_import": "NOT_VERIFIED",
       "expansion_required_before_intake": false
     },
