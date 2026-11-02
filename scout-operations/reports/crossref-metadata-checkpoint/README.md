@@ -7,18 +7,18 @@ For Crossref works the office prefers published-print, falling back to published
 
 | Measure | Count |
 |---|---:|
-| Crossref publications | 53 |
-| Api full pub date | 28 |
+| Crossref publications | 52 |
+| Api full pub date | 27 |
 | Partial only pub date | 24 |
 | No publication date | 1 |
 | Scout missing date | 7 |
 | Scout missing date recoverable | 7 |
-| Reach pub date satisfied | 52 |
+| Reach pub date satisfied | 51 |
 | Scout missing date resolved by month first | 6 |
 | Scout missing date resolved by exact pub | 1 |
 | Source field print | 38 |
 | Source field online | 11 |
-| Preferred date matches existing scout | 28 |
+| Preferred date matches existing scout | 27 |
 | Preferred date differs from existing scout | 17 |
 | First of month defaults | 24 |
 | Scout missing date still unresolved | 0 |
@@ -26,7 +26,7 @@ For Crossref works the office prefers published-print, falling back to published
 | Abstract missing in scout recoverable | 0 |
 | Abstract missing in scout and crossref | 0 |
 | Crossref has funder awards | 35 |
-| Crossref has abstract | 43 |
+| Crossref has abstract | 42 |
 
 ## Individual Crossref publications
 
@@ -80,7 +80,6 @@ For Crossref works the office prefers published-print, falling back to published
 | 10.15191/nwajom.2023.1109 | Interpreting Warn-on-Forecast System Guidance, Part I: Review of P | 2023-12-19 | 2023-12-19 | 2023-12-19 (published-online) | matched | — |
 | 10.3390/atmos12101286 | Rapid Update with EnVar Direct Radar Reflectivity Data Assimilatio | 2021-10-02 | 2021-10-02 | 2021-10-02 (published-online) | matched | — |
 | 10.3390/rs18193383 | Impact of Assimilating Remote Sensing Observations on Wind and Wav | 2026-10-02 | 2026-10-02 | 2026-10-02 (published-online) | matched | — |
-| 10.36227/techrxiv.175035136.63535291/v2 | Preparing for disasters triggered by natural hazards with immersiv | 2025-12-09 | 2025-12-09 | 2025-12-09 (posted) | matched | — |
 | 10.5194/egusphere-2026-4928 | Regime-aware retrieval of lower-tropospheric stability and a sensi | 2026-10-30 | 2026-10-30 | 2026-10-30 (posted) | matched | — |
 | 10.5194/egusphere-2026-5876 | We &lt;3 Skynet: Or, How We Learned to Stop Worrying and Love the  | 2026-10-22 | 2026-10-22 | 2026-10-22 (posted) | matched | — |
 | 10.5194/gmd-18-7969-2025 | A Python diagnostics package for evaluation of  Madden–Julian Osci | 2025-10-28 | 2025-10-28 | 2025-10-28 (published-online) | matched | — |
