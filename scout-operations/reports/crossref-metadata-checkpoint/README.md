@@ -11,19 +11,19 @@ For Crossref works the office prefers published-print, falling back to published
 | Api full pub date | 28 |
 | Partial only pub date | 24 |
 | No publication date | 1 |
-| Scout missing date | 8 |
-| Scout missing date recoverable | 8 |
+| Scout missing date | 7 |
+| Scout missing date recoverable | 7 |
 | Reach pub date satisfied | 52 |
-| Scout missing date resolved by month first | 7 |
+| Scout missing date resolved by month first | 6 |
 | Scout missing date resolved by exact pub | 1 |
 | Source field print | 38 |
 | Source field online | 11 |
-| Preferred date matches existing scout | 27 |
+| Preferred date matches existing scout | 28 |
 | Preferred date differs from existing scout | 17 |
 | First of month defaults | 24 |
 | Scout missing date still unresolved | 0 |
 | Crossref vs scout date differs | 17 |
-| Abstract missing in scout recoverable | 1 |
+| Abstract missing in scout recoverable | 0 |
 | Abstract missing in scout and crossref | 2 |
 | Crossref has funder awards | 35 |
 | Crossref has abstract | 43 |
@@ -56,7 +56,7 @@ For Crossref works the office prefers published-print, falling back to published
 | 10.1175/bams-d-19-0245.1 | In the Dark: Public Perceptions of and National Weather Service Fo | (missing) | 2020-10-01 | 2020-10-01 (published-print) | no_scout_date | — |
 | 10.1175/bams-d-20-0186.1 | From Random Forests to Flood Forecasts: A Research to Operations S | 2021-09-01 | 2021-09-01 | 2021-09 (published-print) | matched | — |
 | 10.1175/bams-d-25-0032.1 | Visualizing Weather Risks: Participatory Design Workshops for Hurr | 2026-10-14 | 2026-10-01 | 2026-10 (published-print) | different_date_review_option | — |
-| 10.1175/bams-d-25-0140.1 | Near-Real-Time Inundation Mapping Utilizing Large Uncrewed Aerial  | (missing) | 2026-05-01 | 2026-05 (published-print) | no_scout_date | title, creators, type, abstract |
+| 10.1175/bams-d-25-0140.1 | Near-Real-Time Inundation Mapping Utilizing Large Uncrewed Aerial  | 2026-05-01 | 2026-05-01 | 2026-05 (published-print) | matched | — |
 | 10.1175/jamc-d-18-0094.1 | Estimation of Tropical Cyclone Intensity in the North Atlantic and | (missing) | 2019-02-01 | 2019-02 (published-print) | no_scout_date | — |
 | 10.1175/jas-d-17-0385.1 | Dynamical Insights into Extreme Short-Term Precipitation Associate | 2018-09-01 | 2018-09-01 | 2018-09-01 (published-print) | matched | — |
 | 10.1175/jas-d-20-0117.1 | Dynamics of Simulated High-Shear, Low-CAPE Supercells | (missing) | 2021-05-01 | 2021-05 (published-print) | no_scout_date | — |
