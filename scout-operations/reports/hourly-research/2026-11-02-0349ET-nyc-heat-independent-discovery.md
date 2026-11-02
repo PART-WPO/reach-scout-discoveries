@@ -19,3 +19,11 @@
 - REACH public manifest: https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json
 - Scout public manifest: https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/manifest.json
 - No-funding contrast: https://link.springer.com/article/10.1007/s11084-026-09736-6
+
+## Verified publication and review staging addendum (08:53 UTC)
+
+The unified independent metadata GitHub Action **41415985969 completed successfully**, querying the exact DOI through Crossref after a DataCite 404. Crossref confirms title, Deepak Kumar and Nick P. Bassill, journal article type, JATS abstract and **published-online 2024-11-12**; its structured funder list is empty, while publisher full text explicitly credits primary grant NA21OAR4590360. JATS tags were removed without fabricating abstract text.
+
+A unique 24-column **NEEDS INVESTIGATION** draft was saved to REACH Scout Library and committed to `scout-discoveries/inbox/2026-11-02-0349ET-nyc-urban-science-independent-investigate-001.csv`. GitHub Action **41416249583 succeeded** in schema/provenance preflight, promoted the draft and generated the manifest. The public manifest now has **36 batches / 83 staged proposals**, including this one new Independent discovery proposal; published immutable batch SHA-256 `726e535c6d5c3fa862abc581ea0d25f46697f6f314d7d8aa7b7788b700891846` matches the local draft. Effective method counts: Direct API 22, API-seeded expansion 17, Independent discovery 44, Unclassified 0. Finding-purpose Needs Investigation: 10.
+
+This is **public Scout feed staging only**, not private Hub import, human approval or a REACH addition. Reviewer should use **Sync to Scout**, then investigate whether the broad urban-science review belongs to the specific NYC extreme-temperature dashboard project. Public REACH remains 1,238; no new additions independently verified.
