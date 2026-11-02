@@ -190,8 +190,14 @@ def pre_stage_metadata_recovery(entry, source_row):
         evidence = record.get("evidence_url", "")
         if not value or evidence not in verified_urls:
             raise ValueError("Recovered metadata requires a checked source URL and nonempty value")
-        if field == "Publication Date" and not re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
-            raise ValueError("Publication Date must use the approved full YYYY-MM-DD format")
+        if field == "Publication Date":
+            if not re.fullmatch(r"\\d{4}-\\d{2}-\\d{2}", value):
+                raise ValueError("Publication Date must use the approved full YYYY-MM-DD format")
+            from datetime import date
+            try:
+                date.fromisoformat(value)
+            except ValueError:
+                raise ValueError("Publication Date must be a real YYYY-MM-DD calendar date")
         if field == "Brief Abstract" and len(value) < 60:
             raise ValueError("Brief Abstract recovery is too short to review")
         row[field] = value
