@@ -1,0 +1,109 @@
+{
+  "run_id": "REACH-SCOUT-2026-11-02-HOURLY-0349ET",
+  "run_at_utc": "2026-11-02T08:49:56.164555+00:00",
+  "primary_mode": "normal_historical_discovery",
+  "phase": "new_primary_spark_award_independent_discovery",
+  "monthly_originals": {
+    "received": 13,
+    "research_terminal": 13,
+    "staged_for_hub_import": 9,
+    "no_action": 4,
+    "open_research": 0,
+    "private_hub_import": "NOT_VERIFIED"
+  },
+  "monthly_expansions": {
+    "total": 6,
+    "staged_for_human_review": 2,
+    "already_in_reach": 3,
+    "pending_human_intake": 1,
+    "new_this_run": 0
+  },
+  "historical": {
+    "distinct_dois": 188,
+    "research_complete": true,
+    "remaining": 0,
+    "human_metadata_needed": 28
+  },
+  "normal_awards_examined": [
+    {
+      "spark_id": "spark-000333",
+      "primary_award": "NA21OAR4590360",
+      "new_independent_doi_leads": 1,
+      "existing_reach_outputs_confirmed": 3,
+      "negative_funding_control": 1
+    }
+  ],
+  "new_independent_lead": {
+    "identity": "doi:10.1007/s43762-024-00142-0",
+    "origin_method": "Independent discovery",
+    "status": "AWAITING_TARGETED_CROSSREF_METADATA",
+    "project_scope": "HUMAN_REVIEW_NEEDED",
+    "full_reach_scout_text_identity_check": true,
+    "staged": false
+  },
+  "research_leads_summary": {
+    "source_lead_files_enumerated": 3,
+    "source_lead_entries": 7,
+    "unified_metadata_lookup_ok": 7,
+    "already_staged_review_leads": 5,
+    "pending_human_version_family": 1,
+    "concept_version_check_only": 1,
+    "new_metadata_lookup_seed": 1
+  },
+  "public_reach_dedup": {
+    "index_shards_checked": 10,
+    "detail_shards_checked": 140,
+    "rows": 1238,
+    "exact_new_doi_title_matches": 0,
+    "same_award_existing_reach_ids": [
+      "reach-000141",
+      "reach-000142",
+      "reach-000143"
+    ]
+  },
+  "scout_feed": {
+    "batches": 35,
+    "rows": 82,
+    "active_batch_files_checked": 35,
+    "pending_inbox_files_checked": 13,
+    "exact_new_doi_title_matches": 0,
+    "new_inbox_drafts": 0,
+    "new_manifest_rows": 0,
+    "manifest_integrity": "PRIOR_AUTOMATED_MANIFEST_VERIFIED; NEW_CANDIDATE_NOT_SUBMITTED"
+  },
+  "private_discovery_hub_import": "NOT_VERIFIED",
+  "human_approvals": "NOT_VERIFIED",
+  "public_reach_rows": 1238,
+  "verified_public_reach_additions_this_run": 0,
+  "new_lead_metadata_checkpoint": {
+    "status": "PENDING",
+    "crossref_direct_web_attempt": "ACCESS_FAILURE",
+    "source_metadata": "PUBLISHER_VERIFIED",
+    "trigger": "research-leads file change should run unified independent metadata Action"
+  },
+  "research_checks": [
+    "SPARK index PRIMARY award and project detail",
+    "WPO project page",
+    "publisher article full-text funding and metadata",
+    "all 10 public REACH index shards",
+    "all 140 public REACH detail shards",
+    "all 35 Scout manifest-listed batch CSVs",
+    "all 13 Scout inbox CSVs",
+    "publisher no-funding contrasting DOI",
+    "read all 3 pre-existing independent research lead files and unified metadata lookup"
+  ],
+  "limitations": [
+    "Exact Crossref API inaccessible in web; new targeted GitHub metadata lookup not yet verified",
+    "Broad article scope does not establish same specific project deliverable despite exact grant acknowledgment",
+    "Private Hub and human feedback not observable",
+    "No candidate prepared or published for new lead"
+  ],
+  "audit_result": "PARTIAL",
+  "no_public_reach_or_smartsheet_writes": true,
+  "source_urls": [
+    "https://link.springer.com/article/10.1007/s43762-024-00142-0",
+    "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+    "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json",
+    "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/manifest.json"
+  ]
+}
