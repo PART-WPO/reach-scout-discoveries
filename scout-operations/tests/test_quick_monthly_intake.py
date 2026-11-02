@@ -8,7 +8,7 @@ import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
-from quick_monthly_intake import clean, match_reach, check_funding, detect_version, gather_feed
+from quick_monthly_intake import AWARD, clean, match_reach, check_funding, detect_version, gather_feed
 
 class MonthlyQuickIntakeTests(unittest.TestCase):
     def test_html_title_markup_is_removed_not_invented(self):
