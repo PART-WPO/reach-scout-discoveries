@@ -62,6 +62,8 @@ jobs:
           SCOUT_PREPRINT_GATE_REQUIRED: '1'
         run: python scout-discoveries/tools/build_manifest.py
 
+      - name: Audit the complete active Scout feed for held preprint DOIs
+        run: python3 scout-operations/tools/verify_preprint_intake.py --audit-active
       - name: Reconcile attribution metrics from all exact SHA-verified CSV batches
         run: python scout-discoveries/tools/rebuild_discovery_rollup.py
 
