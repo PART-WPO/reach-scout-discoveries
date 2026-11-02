@@ -1,25 +1,25 @@
 {
   "counts": {
     "abstract_missing_in_scout_and_crossref": 2,
-    "abstract_missing_in_scout_recoverable": 0,
+    "abstract_missing_in_scout_recoverable": 1,
     "api_full_pub_date": 28,
-    "crossref_has_abstract": 42,
+    "crossref_has_abstract": 43,
     "crossref_has_funder_awards": 35,
-    "crossref_publications": 52,
+    "crossref_publications": 53,
     "crossref_vs_scout_date_differs": 17,
-    "first_of_month_defaults": 23,
+    "first_of_month_defaults": 24,
     "no_publication_date": 1,
-    "partial_only_pub_date": 23,
+    "partial_only_pub_date": 24,
     "preferred_date_differs_from_existing_scout": 17,
     "preferred_date_matches_existing_scout": 27,
-    "reach_pub_date_satisfied": 51,
-    "scout_missing_date": 7,
-    "scout_missing_date_recoverable": 7,
+    "reach_pub_date_satisfied": 52,
+    "scout_missing_date": 8,
+    "scout_missing_date_recoverable": 8,
     "scout_missing_date_resolved_by_exact_pub": 1,
-    "scout_missing_date_resolved_by_month_first": 6,
+    "scout_missing_date_resolved_by_month_first": 7,
     "scout_missing_date_still_unresolved": 0,
     "source_field_online": 11,
-    "source_field_print": 37
+    "source_field_print": 38
   },
   "policy": "WPO uses Crossref published-print first, else published-online (posted for preprints), else published/issued. If YYYY-MM only, use YYYY-MM-01 with a flag. Crossref created is DOI registration and not Pub Date. Preserve existing human reviews.",
   "records": [
@@ -2239,6 +2239,97 @@
       "scout_source_rows": 1,
       "source": "crossref",
       "title": "Visualizing Weather Risks: Participatory Design Workshops for Hurricane Threats and Impacts Graphics",
+      "volume": "107",
+      "work_type": "journal-article"
+    },
+    {
+      "abstract_already_in_scout": false,
+      "abstract_available_from_crossref": true,
+      "accepted_date_precision": "month",
+      "accepted_reach_pub_date": "2026-05-01",
+      "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
+      "authors": [
+        "Jamie Dyer",
+        "Robert Moorhead",
+        "Lee Hathcock",
+        "Bryan Farrell",
+        "Peter McKinley"
+      ],
+      "awards_in_abstract": [],
+      "awards_in_crossref_funder": [],
+      "best_partial_basis": "published-print",
+      "best_partial_date": "2026-05",
+      "crossref_publication_date": "",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "no_scout_date",
+      "doi": "10.1175/bams-d-25-0140.1",
+      "doi_registered_date": {
+        "full_date": "2026-04-20",
+        "precision": "day",
+        "value": "2026-04-20"
+      },
+      "evidence": "https://api.crossref.org/works/10.1175/bams-d-25-0140.1",
+      "first_of_month_default": true,
+      "funder_names": [],
+      "issue": "5",
+      "journal": "Bulletin of the American Meteorological Society",
+      "license_urls": [
+        "http://www.ametsoc.org/PUBSReuseLicenses"
+      ],
+      "metadata_deposited_date": {
+        "full_date": "2026-06-01",
+        "precision": "day",
+        "value": "2026-06-01"
+      },
+      "pages": "E1125-E1134",
+      "preferred_date_differs_from_existing_scout": false,
+      "preferred_date_matches_existing_scout": false,
+      "pub_date_satisfied": true,
+      "publication_dates": {
+        "issued": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2026-05"
+        },
+        "posted": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2026-05"
+        },
+        "published-online": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published-print": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2026-05"
+        }
+      },
+      "publisher": "American Meteorological Society",
+      "reach_output_type": "1",
+      "related_record_evidence": {},
+      "review_keys": [],
+      "reviewable_recovered_fields": [
+        "title",
+        "creators",
+        "type",
+        "abstract",
+        "pub_date"
+      ],
+      "scout_origins": [
+        "independent_research_lead"
+      ],
+      "scout_publication_dates": [],
+      "scout_source_rows": 0,
+      "source": "crossref",
+      "title": "Near-Real-Time Inundation Mapping Utilizing Large Uncrewed Aerial System Platforms",
       "volume": "107",
       "work_type": "journal-article"
     },
@@ -4927,8 +5018,8 @@
       "entries": 188
     },
     "independent_research_leads": {
-      "doi_leads": 6,
-      "files": 4
+      "doi_leads": 8,
+      "files": 5
     },
     "metadata_blockers": {
       "entries": 48

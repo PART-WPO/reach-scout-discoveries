@@ -1,10 +1,10 @@
 {
   "fields_recoverable": {
-    "abstract": 3,
-    "creators": 3,
-    "pub_date": 10,
-    "title": 3,
-    "type": 3
+    "abstract": 5,
+    "creators": 5,
+    "pub_date": 12,
+    "title": 5,
+    "type": 5
   },
   "policy": "DataCite uses created (office policy). Crossref uses published-print first, published-online if print absent, and published/issued/posted fallback; month-only dates get YYYY-MM-01. Crossref created never fills Pub Date. Existing reviewer dates preserved.",
   "read_only": true,
@@ -2730,6 +2730,106 @@
         "type": true
       },
       "recoverable_fields": [],
+      "review_keys": []
+    },
+    {
+      "checkpoint_state": "FIELDS_RECOVERABLE",
+      "doi": "10.1175/bams-d-25-0140.1",
+      "metadata": {
+        "abstract": "Abstract Situational awareness during extreme flooding is critical for effective emergency response operations, especially in environments with limited observations and/or rapidly changing conditions. In such situations, knowing the location and extent of inundation can help define areas with the highest risk to human safety, identify flooded road networks that could limit the mobility of emergency services, and estimate out-of-bank water storage. While remote sensing data sources provide invaluable information toward these factors, satellite imagery is often unavailable due to cloud obscuration and/or limited overpasses, while imagery from small uncrewed aerial systems (UASs) is often inconsistent and spatially limited. To bridge the data gap, current efforts focus on the use of Group 3 UAS platforms to provide near-real-time multispectral imagery for determining surface water extent. While crewed aircraft can and do serve in this role, the benefits of longer flight times (8+ h), lower mission cost, and improved flight crew safety make large UAS applications a viable approach for collecting regional imagery. To support operational initiatives, the imagery is made available as it is collected through a web-based portal, allowing it to be viewed on open-source geographic software such as Google Earth. As data needs increase for emergency operations and research applications, it is critical to define the role of large UAS in future mission planning and operational support for environmental hazards; therefore, this work is necessary to define pathways for future applications of Group 3 (and larger) UAS assets in emergency response and management operations during natural disasters.",
+        "access_rights": [
+          "http://www.ametsoc.org/PUBSReuseLicenses"
+        ],
+        "best_partial_basis": "published-print",
+        "best_partial_date": "2026-05",
+        "checkpoint_schema": "crossref-publication-v4-print-online-month-first",
+        "created": "",
+        "creators": [
+          "Jamie Dyer",
+          "Robert Moorhead",
+          "Lee Hathcock",
+          "Bryan Farrell",
+          "Peter McKinley"
+        ],
+        "crossref_created": {
+          "full_date": "2026-04-20",
+          "precision": "day",
+          "value": "2026-04-20"
+        },
+        "crossref_deposited": {
+          "full_date": "2026-06-01",
+          "precision": "day",
+          "value": "2026-06-01"
+        },
+        "evidence": "https://api.crossref.org/works/10.1175/bams-d-25-0140.1",
+        "funders": [],
+        "funding_in_description": [],
+        "funding_structured": [],
+        "issue": "5",
+        "journal": "Bulletin of the American Meteorological Society",
+        "pages": "E1125-E1134",
+        "pub_date": "2026-05-01",
+        "pub_date_basis": "Crossref published-print (month -> day 01)",
+        "pub_date_imputed_first_of_month": true,
+        "publication_dates": {
+          "issued": {
+            "full_date": "",
+            "precision": "month",
+            "value": "2026-05"
+          },
+          "posted": {
+            "full_date": "",
+            "precision": "missing",
+            "value": ""
+          },
+          "published": {
+            "full_date": "",
+            "precision": "month",
+            "value": "2026-05"
+          },
+          "published-online": {
+            "full_date": "",
+            "precision": "missing",
+            "value": ""
+          },
+          "published-print": {
+            "full_date": "",
+            "precision": "month",
+            "value": "2026-05"
+          }
+        },
+        "publisher": "American Meteorological Society",
+        "publisher_url": "https://doi.org/10.1175/bams-d-25-0140.1",
+        "reach_type": "1",
+        "registered": "",
+        "relations": {},
+        "resource_type": "journal-article",
+        "source": "crossref",
+        "source_publication_basis": "published-print",
+        "source_publication_date": "",
+        "source_publication_precision": "month",
+        "status": "ok",
+        "title": "Near-Real-Time Inundation Mapping Utilizing Large Uncrewed Aerial System Platforms",
+        "volume": "107"
+      },
+      "original_rows": [],
+      "origins": [
+        "independent_research_lead"
+      ],
+      "prior_fields": {
+        "abstract": false,
+        "creators": false,
+        "pub_date": false,
+        "title": false,
+        "type": false
+      },
+      "recoverable_fields": [
+        "title",
+        "creators",
+        "type",
+        "abstract",
+        "pub_date"
+      ],
       "review_keys": []
     },
     {
@@ -7139,6 +7239,57 @@
       "review_keys": [
         "case-14"
       ]
+    },
+    {
+      "checkpoint_state": "FIELDS_RECOVERABLE",
+      "doi": "10.17632/43vrcwvdf8.1",
+      "metadata": {
+        "abstract": "These are HOBO data collected within a 2-year long NOAA-funded project. Urban Heat Experiment Around Lubbock, Texas (U-HEAT): The U_HEAT testbed includes 23 sites in Lubbock. The file headers should provided all the information. The site locations are given in the data folder as well. Please go through the site map, site locations and other meta data files before you use these data for research. U-HEAT Testbed features Low-cost, low maintenance, easily accessible, remote data collection (Bluetooth) 2 m above ground level; Grassy surface and robust mounting Community involvement allowing uninterrupted measurements for more than 2 years period Data sets: 1 minute temporal resolution for stationary sites which makes 22 days continuous data collection.",
+        "access_rights": [
+          "info:eu-repo/semantics/openAccess",
+          "Creative Commons Attribution 4.0 International"
+        ],
+        "created": "2025-05-23T21:39:03.000Z",
+        "creators": [
+          "Pal, Sandip"
+        ],
+        "evidence": "https://api.datacite.org/dois/10.17632/43vrcwvdf8.1",
+        "funding_in_description": [],
+        "funding_structured": [],
+        "listed_formats": 0,
+        "listed_sizes": 0,
+        "pub_date": "2025-05-23",
+        "publisher": "Mendeley Data",
+        "reach_type": "3",
+        "registered": "2025-05-23T21:39:03.000Z",
+        "related": [
+          "IsVersionOf: 10.17632/43vrcwvdf8"
+        ],
+        "resource_type": "Dataset",
+        "source": "datacite",
+        "status": "ok",
+        "title": "U-HEAT (Urban Heat Experiment Around Lubbock, Texas) Datasets",
+        "version": ""
+      },
+      "original_rows": [],
+      "origins": [
+        "independent_research_lead"
+      ],
+      "prior_fields": {
+        "abstract": false,
+        "creators": false,
+        "pub_date": false,
+        "title": false,
+        "type": false
+      },
+      "recoverable_fields": [
+        "title",
+        "creators",
+        "type",
+        "abstract",
+        "pub_date"
+      ],
+      "review_keys": []
     },
     {
       "checkpoint_state": "HISTORICAL_FIELDS_ALREADY_COVERED",
@@ -18611,7 +18762,7 @@
       ]
     }
   ],
-  "records_with_new_metadata": 10,
+  "records_with_new_metadata": 12,
   "schema": "reach-scout-doi-enrichment-audit-v1",
   "sources": {
     "historical": {
@@ -18625,8 +18776,8 @@
       "entries": 188
     },
     "independent_research_leads": {
-      "doi_leads": 6,
-      "files": 4
+      "doi_leads": 8,
+      "files": 5
     },
     "metadata_blockers": {
       "entries": 48
@@ -18645,10 +18796,10 @@
     }
   },
   "state_counts": {
-    "FIELDS_RECOVERABLE": 10,
+    "FIELDS_RECOVERABLE": 12,
     "HISTORICAL_FIELDS_ALREADY_COVERED": 143,
     "SCOUT_FIELDS_ALREADY_COVERED": 95
   },
-  "successful_lookups": 248,
-  "unique_dois": 248
+  "successful_lookups": 250,
+  "unique_dois": 250
 }
