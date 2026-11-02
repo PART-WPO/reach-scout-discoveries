@@ -1,10 +1,10 @@
 {
   "fields_recoverable": {
-    "abstract": 5,
-    "creators": 5,
-    "pub_date": 12,
-    "title": 5,
-    "type": 5
+    "abstract": 3,
+    "creators": 3,
+    "pub_date": 10,
+    "title": 3,
+    "type": 3
   },
   "policy": "DataCite uses created (office policy). Crossref uses published-print first, published-online if print absent, and published/issued/posted fallback; month-only dates get YYYY-MM-01. Crossref created never fills Pub Date. Existing reviewer dates preserved.",
   "read_only": true,
@@ -1858,7 +1858,7 @@
       "review_keys": []
     },
     {
-      "checkpoint_state": "FIELDS_RECOVERABLE",
+      "checkpoint_state": "SCOUT_FIELDS_ALREADY_COVERED",
       "doi": "10.1145/3794916.3794919",
       "metadata": {
         "abstract": "We conducted a two-phase study with five National Weather Service (NWS) forecast offices in the Western United States region to improve the visualization of probabilistic forecast information (PFI) for their communities. We advance the concept of community risk thresholds (CRT), based on rhetorical commonplaces (communal beliefs, norms, and values) as a productive focus for forecasting. Our results suggest that CRTs are a promising heuristic for simplifying the visual presentation of PFI and increasing its community utility. We discuss the synergies and challenges of action research projects in weather risk communication and conclude by projecting future work focused on (a) visualizing community risk thresholds and (b) identifying productive pairings between weather hazard type and graphic genre.",
@@ -1937,24 +1937,31 @@
         "title": "Visualizing Probabilistic Forecast Information Around Community Risk Thresholds: An Action-Research Collaboration Between Environmental Rhetoricians and the National Weather Service",
         "volume": "14"
       },
-      "original_rows": [],
+      "original_rows": [
+        {
+          "abstract": "We conducted a two-phase study with five National Weather Service (NWS) forecast offices in the Western United States region to improve the visualization of probabilistic forecast information (PFI) for their communities. We advance the concept of community risk thresholds (CRT), based on rhetorical commonplaces (communal beliefs, norms, and values) as a productive focus for forecasting. Our results suggest that CRTs are a promising heuristic for simplifying the visual presentation of PFI and increasing its community utility. We discuss the synergies and challenges of action research projects in weather risk communication and conclude by projecting future work focused on (a) visualizing community risk thresholds and (b) identifying productive pairings between weather hazard type and graphic genre.",
+          "authors": "Lynda C. Olman; Kathryn Lambrecht; Anne Heggli; Meghan Collins; Zach Tolby; Benjamin Hatchett; Quinn Dannies",
+          "awards": "NA21OAR4590208",
+          "batch": "scout-discoveries/batches/2026-11-02-0301ET-acm-risk-thresholds-investigate-001.csv",
+          "date": "2026-03-01",
+          "origin": "staged",
+          "project": "Employing Rhetoric to Improve Probabilistic Forecast Communication",
+          "title": "Visualizing Probabilistic Forecast Information Around Community Risk Thresholds: An Action-Research Collaboration Between Environmental Rhetoricians and the National Weather Service",
+          "type": "1"
+        }
+      ],
       "origins": [
-        "independent_research_lead"
+        "independent_research_lead",
+        "staged"
       ],
       "prior_fields": {
-        "abstract": false,
-        "creators": false,
-        "pub_date": false,
-        "title": false,
-        "type": false
+        "abstract": true,
+        "creators": true,
+        "pub_date": true,
+        "title": true,
+        "type": true
       },
-      "recoverable_fields": [
-        "title",
-        "creators",
-        "type",
-        "abstract",
-        "pub_date"
-      ],
+      "recoverable_fields": [],
       "review_keys": []
     },
     {
@@ -16795,7 +16802,7 @@
       ]
     },
     {
-      "checkpoint_state": "FIELDS_RECOVERABLE",
+      "checkpoint_state": "SCOUT_FIELDS_ALREADY_COVERED",
       "doi": "10.5281/zenodo.6385057",
       "metadata": {
         "abstract": "The data holder contains modeled data on water level and discharge from some test cases.",
@@ -16825,24 +16832,31 @@
         "title": "Modeled data related to the article \"Diffusive Wave Models for Operational Forecasting of Channel Routing at Continental Scale\"",
         "version": "1.0"
       },
-      "original_rows": [],
+      "original_rows": [
+        {
+          "abstract": "The data holder contains modeled data on water level and discharge from some test cases.",
+          "authors": "Nazmul Azim Beg",
+          "awards": "NA18OAR4590394",
+          "batch": "scout-discoveries/batches/2026-11-02-0301ET-mesh-independent-review-001.csv",
+          "date": "2022-04-17",
+          "origin": "staged",
+          "project": "Implementation of an Accurate, Robust and Computationally Efficient Channel Routing Technique for the National Water Model (NWM)",
+          "title": "Modeled data related to the article \"Diffusive Wave Models for Operational Forecasting of Channel Routing at Continental Scale\"",
+          "type": "3"
+        }
+      ],
       "origins": [
-        "independent_research_lead"
+        "independent_research_lead",
+        "staged"
       ],
       "prior_fields": {
-        "abstract": false,
-        "creators": false,
-        "pub_date": false,
-        "title": false,
-        "type": false
+        "abstract": true,
+        "creators": true,
+        "pub_date": true,
+        "title": true,
+        "type": true
       },
-      "recoverable_fields": [
-        "title",
-        "creators",
-        "type",
-        "abstract",
-        "pub_date"
-      ],
+      "recoverable_fields": [],
       "review_keys": []
     },
     {
@@ -18492,7 +18506,7 @@
       ]
     }
   ],
-  "records_with_new_metadata": 12,
+  "records_with_new_metadata": 10,
   "schema": "reach-scout-doi-enrichment-audit-v1",
   "sources": {
     "historical": {
@@ -18521,14 +18535,14 @@
       "rows": 13
     },
     "staged": {
-      "batches": 33,
-      "rows": 78
+      "batches": 35,
+      "rows": 82
     }
   },
   "state_counts": {
-    "FIELDS_RECOVERABLE": 12,
+    "FIELDS_RECOVERABLE": 10,
     "HISTORICAL_FIELDS_ALREADY_COVERED": 143,
-    "SCOUT_FIELDS_ALREADY_COVERED": 92
+    "SCOUT_FIELDS_ALREADY_COVERED": 94
   },
   "successful_lookups": 247,
   "unique_dois": 247

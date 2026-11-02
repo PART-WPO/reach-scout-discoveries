@@ -11,19 +11,19 @@ For Crossref works the office prefers published-print, falling back to published
 | Api full pub date | 27 |
 | Partial only pub date | 23 |
 | No publication date | 1 |
-| Scout missing date | 8 |
-| Scout missing date recoverable | 8 |
+| Scout missing date | 7 |
+| Scout missing date recoverable | 7 |
 | Reach pub date satisfied | 50 |
 | Scout missing date resolved by month first | 6 |
-| Scout missing date resolved by exact pub | 2 |
+| Scout missing date resolved by exact pub | 1 |
 | Source field print | 37 |
 | Source field online | 10 |
-| Preferred date matches existing scout | 25 |
+| Preferred date matches existing scout | 26 |
 | Preferred date differs from existing scout | 17 |
 | First of month defaults | 23 |
 | Scout missing date still unresolved | 0 |
 | Crossref vs scout date differs | 17 |
-| Abstract missing in scout recoverable | 1 |
+| Abstract missing in scout recoverable | 0 |
 | Abstract missing in scout and crossref | 2 |
 | Crossref has funder awards | 35 |
 | Crossref has abstract | 41 |
@@ -48,7 +48,7 @@ For Crossref works the office prefers published-print, falling back to published
 | 10.1088/2515-7620/aeaad2 | Dynamical prediction of western North Pacific seasonal accumulated | 2026-10-01 | 2026-10-01 | 2026-10-01 (published-print) | matched | — |
 | 10.1109/access.2025.3636732 | Multi-Resolution Data Fusion for Resilient Flood Mapping | 2025-11-25 | (missing) | 2025 (published-print) | no_usable_crossref_publication_date | — |
 | 10.1109/tgrs.2020.2984458 | Ceilometer-Based Rain-Rate Estimation: A Case-Study Comparison Wit | (missing) | 2020-12-01 | 2020-12 (published-print) | no_scout_date | — |
-| 10.1145/3794916.3794919 | Visualizing Probabilistic Forecast Information Around Community Ri | (missing) | 2026-03-01 | 2026-03-01 (published-print) | no_scout_date | title, creators, type, abstract |
+| 10.1145/3794916.3794919 | Visualizing Probabilistic Forecast Information Around Community Ri | 2026-03-01 | 2026-03-01 | 2026-03-01 (published-print) | matched | — |
 | 10.1175/aies-d-23-0064.1 | Airborne Radar Quality Control with Machine Learning | 2024-01-30 | 2024-01-01 | 2024-01 (published-print) | different_date_review_option | — |
 | 10.1175/aies-d-26-0004.1 | The Impact of Target Dataset Choice on Machine Learning Prediction | 2026-10-01 | 2026-10-01 | 2026-10 (published-print) | matched | — |
 | 10.1175/bams-d-15-00283.1 | The HMT Multi-Radar Multi-Sensor Hydro Experiment | 2016-07-19 | 2017-02-01 | 2017-02-01 (published-print) | different_date_review_option | — |
