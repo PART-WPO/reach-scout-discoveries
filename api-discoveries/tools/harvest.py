@@ -287,7 +287,14 @@ def to_candidate(a,src,award,mode,month):
             pub=suggested
             basis=preferred_basis+";intake_window_basis="+basis
     text=re.sub(r"<[^>]+>"," ",str(abstract));text=re.sub(r"\s+"," ",text).strip()
-    return {"doi":doi,"src":src,"award":award,
+    is_preprint = (
+        (src == "crossref" and typ == "posted-content") or
+        (src == "datacite" and (
+            typ == "preprint" or
+            "preprint" in str((a.get("types") or {}).get("resourceType") or "").lower()
+        ))
+    )
+    return {"doi":doi,"src":src,"award":award,"is_preprint":is_preprint,
       "title":title or "Provisional metadata for DOI "+doi,
       "authors":[x for x in authors if x],"abstract":text[:800],
       "date":pub if len(pub)==10 else "","date_basis":basis,
