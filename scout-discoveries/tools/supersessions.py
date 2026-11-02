@@ -25,8 +25,22 @@ def approved_batches(folder, entries):
             verify_review_reclassification(folder, by_id[old_id], by_id[new_id], rule)
         elif rule.get("replacement_kind") == "metadata_refresh":
             verify_metadata_refresh(folder, by_id[old_id], by_id[new_id], rule)
+        elif rule.get("replacement_kind") == "reviewer_narrative_correction":
+            verify_reviewer_narrative_correction(folder, by_id[old_id], by_id[new_id], rule)
         else:
             verify_rows(folder, by_id[old_id], by_id[new_id], rule["excluded_dois"])
+    # One replacement CSV may consolidate several immutable one-row proposals.
+    # Require EXACTLY the referenced identities, no extra candidates.
+    narrative_groups = {}
+    for rule in rules.values():
+        if rule.get("replacement_kind") == "reviewer_narrative_correction":
+            narrative_groups.setdefault(rule["replacement_id"], []).append(rule["exact_doi"].lower())
+    for replacement_id, expected_dois in narrative_groups.items():
+        rows = rows_for(folder, by_id[replacement_id])
+        actual = [(row.get("DOI") or "").lower() for row in rows]
+        if (len(actual) != len(expected_dois) or len(set(actual)) != len(actual)
+                or set(actual) != set(expected_dois)):
+            raise ValueError("Narrative-only replacement contains unexpected, missing or duplicate DOI identities")
     return [e for e in entries if e["id"] not in rules]
 
 def rows_for(folder, entry):
@@ -134,3 +148,54 @@ def verify_review_reclassification(folder, before, after, rule):
         or len(addition) < 85
         or to_text != expected + "\n" + addition):
         raise ValueError("Review reclassification may only change canonical labels and append exact audited reason")
+
+
+def verify_reviewer_narrative_correction(folder, before, after, rule):
+    """Audit an append-only reviewer explanation, with no output metadata changes.
+
+    May consolidate one-row source batches into a single replacement batch.
+    Earlier batches remain immutable and their exact original SHA is checked
+    by approved_batches(); no private human-review state is touched.
+    """
+    original_rows = rows_for(folder, before)
+    candidates = rows_for(folder, after)
+    doi = str(rule.get("exact_doi", "")).lower()
+    if len(original_rows) != 1 or original_rows[0].get("DOI", "").lower() != doi:
+        raise ValueError("Narrative correction must reference one exact original DOI")
+    matched = [row for row in candidates if (row.get("DOI") or "").lower() == doi]
+    if len(matched) != 1:
+        raise ValueError("Narrative replacement must contain the exact original DOI once")
+    old, new = original_rows[0], matched[0]
+    if set(old) != set(new):
+        raise ValueError("Narrative correction changed the required 24-column schema")
+    changed = {key for key in old if old[key] != new[key]}
+    if changed != {"Scout Discovery Rationale"}:
+        raise ValueError("Narrative correction must not change output fields, routing, confidence or decisions")
+
+    previous = old["Scout Discovery Rationale"]
+    revised = new["Scout Discovery Rationale"]
+    if not revised.startswith(previous + "\n"):
+        raise ValueError("Narrative correction must preserve ALL original rationale verbatim")
+    added = revised[len(previous) + 1:].splitlines()
+    labels = ("Finding:", "What to check before adding this output:", "Reviewer question:")
+    expected = [label for label in labels if not any(
+        line.startswith(label) for line in previous.splitlines())]
+    if len(added) != len(expected) or any(
+        not line.startswith(label + " ") for line, label in zip(added, expected)):
+        raise ValueError("Narrative correction may append ONLY missing reviewer-story sections")
+    for label in labels:
+        lines = [line for line in revised.splitlines() if line.startswith(label)]
+        if len(lines) != 1 or len(lines[0]) < (80 if label != "Reviewer question:" else 65):
+            raise ValueError("Narrative correction has absent, duplicated or generic reviewer explanation")
+    finding = next(line for line in revised.splitlines() if line.startswith("Finding:"))
+    checks = next(line for line in revised.splitlines() if line.startswith(
+        "What to check before adding this output:"))
+    question = next(line for line in revised.splitlines() if line.startswith("Reviewer question:"))
+    if (("10." not in finding and "NOAA" not in finding)
+            or "REACH" not in finding or "SPARK" not in (finding + checks)
+            or checks.count(" | ") < 2 or "REACH" not in checks
+            or not any(token in checks.lower() for token in ("pub date", "publication date", "date basis", "posted date", "print-month", "crossref", "datacite"))
+            or not question.endswith("?")):
+        raise ValueError("Reviewer narrative needs DOI/award evidence, REACH comparison, specific checks and a decision question")
+    if "Intake origin: Monthly API" not in revised or "Scout discovery route: Direct API" not in revised:
+        raise ValueError("Narrative-only replacement must retain original Direct API monthly origin")
