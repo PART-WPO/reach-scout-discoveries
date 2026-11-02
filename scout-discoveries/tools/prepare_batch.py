@@ -41,6 +41,22 @@ RESERVED = {
 }
 
 
+def is_tracked_preprint(doi, rationale=""):
+    """Reject a known preprint before generating or promoting a new draft."""
+    if re.search(r"(?im)^API publication status:\s*Preprint\s*$", rationale or ""):
+        return True
+    doi = re.sub(r"^(?:https?://(?:dx\.)?doi\.org/|doi:\s*)", "",
+                 str(doi or "").strip(), flags=re.I).lower()
+    path = ROOT.parent / "scout-operations/preprint-watchlist.json"
+    if not path.exists():
+        return False
+    watch = json.loads(path.read_text(encoding="utf-8"))
+    if watch.get("schema") != "reach-scout-preprint-watchlist-v1":
+        raise ValueError("Invalid preprint watchlist; stop publication")
+    return any(str(x.get("preprint_doi", "")).lower() == doi
+               for x in watch.get("entries", []))
+
+
 def safe_line(value, label):
     if not isinstance(value, str) or not value.strip() or "\n" in value or "\r" in value:
         raise ValueError(f"{label} must be one nonblank line")
@@ -144,6 +160,8 @@ def validate_canonical(path):
     with path.open("r", newline="", encoding="utf-8-sig") as stream:
         for num, row in enumerate(csv.DictReader(stream), 2):
             rationale = row["Scout Discovery Rationale"] or ""
+            if is_tracked_preprint(row.get("DOI"), rationale):
+                raise ValueError(f"Tracked preprint DOI cannot enter Scout reviewed feed: {path.name}:{num}")
             found = re.findall(r"(?im)^\s*Scout classification:\s*([^\r\n]+)", rationale)
             if len(found) != 1 or found[0].strip() not in ALLOWED_CLASSIFICATIONS:
                 raise ValueError(f"Non-canonical Scout classification: {path.name}:{num}")
@@ -209,6 +227,10 @@ def prepare(source, output):
             raise ValueError("Never publish Candidate ID or PI email")
         record = {key: fields.get(key, "") for key in INPUT}
         prov = dict(item["provenance"])
+        if (prov.get("publication_status", "").strip().lower() in
+                {"preprint", "accepted_manuscript", "unpublished"} or
+                is_tracked_preprint(record.get("DOI"), prov.get("api_publication_status", ""))):
+            raise ValueError("Preprint/unpublished manuscript must stay in Scout Watchlist, not the Discovery Hub")
         record, ir_result = enrich_noaa_ir(record, prov, noaa_ir_index)
         if ir_result == "exact_doi_matched_official_noaa_ir_index":
             prov["notes"] = list(prov.get("notes", [])) + [
