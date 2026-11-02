@@ -144,7 +144,7 @@ def main():
         if gate.get("schema") != "reach-scout-preprint-intake-gate-v1":
             raise ValueError("Preprint intake gate unavailable or invalid")
         checks = {x["path"]: x for x in gate["checks"]}
-        for entry in all_entries:
+        for entry in entries:
             if entry["id"] in prior:
                 continue  # Preserve immutable historical batches and prior human decisions.
             check = checks.get(entry["path"])
