@@ -38,15 +38,16 @@
         "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-003.csv",
         "https://doi.org/10.5281/zenodo.6385057",
         "https://zenodo.org/records/6385057",
-        "https://api.datacite.org/dois/10.5281/zenodo.6385057"
+        "https://api.datacite.org/dois/10.5281/zenodo.6385057",
+        "https://zenodo.org/api/records/6385057"
       ],
       "missing_fields": [
-        "Zenodo public-file scope and independently catalogable artifact confirmation",
         "fresh full REACH/Scout secondary-link and version duplicate check",
-        "private Discovery Hub reviewer disposition (not observable)"
+        "private Discovery Hub reviewer disposition (not observable)",
+        "verify file ZIP accessible and distinct from existing REACH output"
       ],
       "native_source_result": "Publisher links exact DOI; Zenodo and DataCite exact DOI landing/API retrieval returned tool-access errors; cannot conclude metadata absent.",
-      "next_action": "DataCite DOI metadata recovered and accepted publication date set; original parent article explicitly lists this dataset in Data Availability and acknowledges primary NOAA award. Verify native file scope, distinct artifact/version and current REACH/Scout/Human review duplicates, then stage eligible candidate for human review or record specific blocker.",
+      "next_action": "Native Zenodo API confirms one 205.5MB ZIP under version DOI 10.5281/zenodo.6385058 (concept DOI 6385057). Verify actual public ZIP access, one version-family catalog entry, funding and current full REACH/Scout duplicate checks before review.",
       "metadata_enrichment_status": "ok",
       "metadata_enrichment_checked_at_date": "2026-11-02",
       "verified_metadata": {
@@ -66,6 +67,22 @@
             "relationType": "HasVersion"
           }
         ]
+      },
+      "native_file_scope_inventory": {
+        "checked_date": "2026-11-02",
+        "source": "https://zenodo.org/api/records/6385057",
+        "files_verified": true,
+        "file_count": 1,
+        "files": [
+          {
+            "name": "Model_Results.zip",
+            "size_bytes": 205537427,
+            "file_access_link_present": true
+          }
+        ],
+        "concept_requested_doi": "10.5281/zenodo.6385057",
+        "api_resolved_version_doi": "10.5281/zenodo.6385058",
+        "finding": "Zenodo concept DOI resolves to version record 6385058; do not count concept and version separately. API lists one 205.5MB ZIP, not proof ZIP was downloaded or inspected."
       }
     },
     {
@@ -98,15 +115,15 @@
         "https://api.github.com/repos/MESH-Team/MESH_Code_irregular",
         "https://api.github.com/repos/MESH-Team/MESH_Code_irregular/releases/tags/Mesh_Diffusive_CNS_v0.1",
         "https://github.com/MESH-Team/MESH_Code_irregular/blob/Mesh_Diffusive_CNS_v0.1/README.md",
-        "https://github.com/MESH-Team/MESH_Code_irregular/blob/Mesh_Diffusive_CNS_v0.1/LICENSE"
+        "https://github.com/MESH-Team/MESH_Code_irregular/blob/Mesh_Diffusive_CNS_v0.1/LICENSE",
+        "https://api.github.com/repos/MESH-Team/MESH_Code_irregular/git/trees/Mesh_Diffusive_CNS_v0.1?recursive=1"
       ],
       "missing_fields": [
-        "release-tag source tree/file and code artifact scope confirmation",
         "fresh full REACH/Scout secondary-link and version duplicate check",
         "private Discovery Hub reviewer disposition (not observable)"
       ],
       "native_source_result": "Publisher links exact artifact. GitHub connector retrieved tagged README successfully.",
-      "next_action": "Exact tag README and MIT license confirmed. Default-branch Fortran src paths do not exist at this tag; await full tagged Git tree inventory before claiming code-file scope. Verify funding, full dedup and human review.",
+      "next_action": "Exact release tag tree verified to contain substantive Fortran code; finish award-to-artifact bridge, current full REACH/Scout duplicate/version check and human disposition before preparing review. Independent discovery unchanged.",
       "metadata_enrichment_status": "ok",
       "metadata_enrichment_checked_at_date": "2026-11-02",
       "verified_metadata": {
@@ -139,6 +156,17 @@
           "https://github.com/MESH-Team/MESH_Code_irregular/blob/Mesh_Diffusive_CNS_v0.1/LICENSE"
         ],
         "finding": "README and license confirmed at exact release tag. Default-branch src/*.f90 paths returned 404 when checked at this tag; this does not prove the release lacks source code. Exact tag tree inventory required."
+      },
+      "native_file_scope_inventory": {
+        "checked_date": "2026-11-02",
+        "source": "https://api.github.com/repos/MESH-Team/MESH_Code_irregular/git/trees/Mesh_Diffusive_CNS_v0.1?recursive=1",
+        "exact_release_tag": "Mesh_Diffusive_CNS_v0.1",
+        "files_verified": true,
+        "file_count": 608,
+        "source_code_file_count": 29,
+        "tree_truncated": false,
+        "representative_source_path": "src_combined_Y_network/mainProgram_multiJunction_network_added_latFlow.f90",
+        "finding": "Exact-tag GitHub tree contains Fortran source code and supporting files; release attachment count zero does not indicate no code. No execution or download of all files."
       }
     },
     {
@@ -172,15 +200,15 @@
         "https://api.github.com/repos/MESH-Team/MESH_CNT/releases/tags/MESH_CNT_v0.1",
         "https://github.com/MESH-Team/MESH_CNT/blob/MESH_CNT_v0.1/arrays_module.f90",
         "https://github.com/MESH-Team/MESH_CNT/blob/MESH_CNT_v0.1/mainLoop_Moussa_test_repeatTimeLoop.f90",
-        "https://github.com/MESH-Team/MESH_CNT/blob/MESH_CNT_v0.1/README.md"
+        "https://github.com/MESH-Team/MESH_CNT/blob/MESH_CNT_v0.1/README.md",
+        "https://api.github.com/repos/MESH-Team/MESH_CNT/git/trees/MESH_CNT_v0.1?recursive=1"
       ],
       "missing_fields": [
         "fresh full REACH/Scout secondary-link and version duplicate check",
-        "private Discovery Hub reviewer disposition (not observable)",
-        "full tagged source tree inventory and separately catalogable scope"
+        "private Discovery Hub reviewer disposition (not observable)"
       ],
       "native_source_result": "Publisher links exact artifact. GitHub connector retrieved tagged README successfully.",
-      "next_action": "Tag-specific source code and MIT license confirmed; await new GitHub Actions full tree inventory, verify award and full REACH/Scout secondary-link duplicates, then prepare human review if distinct. Preserve Independent discovery.",
+      "next_action": "Exact release tag tree verified to contain substantive Fortran code; finish award-to-artifact bridge, current full REACH/Scout duplicate/version check and human disposition before preparing review. Independent discovery unchanged.",
       "metadata_enrichment_status": "ok",
       "metadata_enrichment_checked_at_date": "2026-11-02",
       "verified_metadata": {
@@ -224,6 +252,17 @@
           "https://github.com/MESH-Team/MESH_CNT/blob/MESH_CNT_v0.1/README.md"
         ],
         "finding": "Verified substantive Fortran source code exists at the exact release tag; empty release attachments do not mean missing source code. Full tree inventory and funding/dedup still pending."
+      },
+      "native_file_scope_inventory": {
+        "checked_date": "2026-11-02",
+        "source": "https://api.github.com/repos/MESH-Team/MESH_CNT/git/trees/MESH_CNT_v0.1?recursive=1",
+        "exact_release_tag": "MESH_CNT_v0.1",
+        "files_verified": true,
+        "file_count": 5687,
+        "source_code_file_count": 11,
+        "tree_truncated": false,
+        "representative_source_path": "mainLoop_Moussa_test_repeatTimeLoop.f90",
+        "finding": "Exact-tag GitHub tree contains Fortran source code and supporting files; release attachment count zero does not indicate no code. No execution or download of all files."
       }
     }
   ],
