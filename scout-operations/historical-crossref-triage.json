@@ -4,19 +4,31 @@
   "entries": [
     {
       "identity": "doi:10.1002/2017ms001154",
-      "status": "awaiting_research",
-      "seed_expansion_status": "awaiting_exploration",
+      "status": "already_in_reach",
+      "seed_expansion_status": "investigating",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
-      "reach_snapshot": "",
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited full 10-shard public REACH index comparison found identical title and primary award NA17OAR4590188 at reach-000648 (UID reachuid-v1-5855983c9e2754ea63e01d1c90110342), whose public detail part-079 uses NOAA IR 25292. Exact official NOAA IR DOI page identifies 10.1002/2017ms001154, same title, same award. Wiley full publisher article acknowledges NA17OAR4590188. This is CONFIRMED EXISTING REACH original; do not stage duplicate or overwrite human decision. The DOI remains an API seed for separate reference/data/code investigation. Publisher says study model data archived at OU and available on request; no independent public standalone DOI verified.",
+      "checked_sources": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-006.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-079.csv",
+        "https://repository.library.noaa.gov/view/noaa/25292",
+        "https://agupubs.onlinelibrary.wiley.com/doi/10.1002/2017MS001154",
+        "https://api.crossref.org/works/10.1002/2017ms001154"
+      ],
+      "reach_snapshot": "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json (1,238 records; index 10 parts; details 155+ parts)",
       "funding_basis": "",
       "related_outputs_checked": "",
       "verified_at": "",
-      "verified_awards": [],
-      "seed_checked_sources": [],
-      "seed_research_notes": "",
+      "verified_awards": [
+        "NA17OAR4590188"
+      ],
+      "seed_checked_sources": [
+        "https://agupubs.onlinelibrary.wiley.com/doi/10.1002/2017MS001154",
+        "https://repository.library.noaa.gov/view/noaa/25292"
+      ],
+      "seed_research_notes": "Publisher acknowledgments and data availability reviewed. WRF model output archived at University of Oklahoma, available upon request, not proof of public standalone dataset or software. References, code and project-specific outputs remain to be investigated; original REACH duplicate does not close seed expansion.",
       "source_overlap_hints": [],
       "present_in_published_scout_feed_at_intake": false,
       "award_numbers": [
@@ -30,16 +42,28 @@
       ],
       "titles": [
         "Precipitation Dynamical Downscaling Over the Great Plains"
-      ]
+      ],
+      "reach_match": {
+        "record_id": "reach-000648",
+        "reach_uid": "reachuid-v1-5855983c9e2754ea63e01d1c90110342",
+        "index_path": "agent-data/index/part-006.csv",
+        "detail_path": "agent-data/details/part-079.csv",
+        "link": "https://repository.library.noaa.gov/view/noaa/25292",
+        "match_basis": "Exact title + exact primary NOAA award + exact NOAA IR DOI record"
+      }
     },
     {
       "identity": "doi:10.1002/essoar.10504829.1",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.1002/essoar.10504829.1",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -61,7 +85,14 @@
       ],
       "titles": [
         "The Silent Sounds of Tornadoes and Their Potential Fluid Mechanism"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.1002/essoar.10507067.1",
@@ -69,7 +100,7 @@
       "seed_expansion_status": "investigating",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
       "updated_at": "2026-11-02T21:50:24.740Z",
-      "research_notes": "Original publication ALREADY IN PUBLIC REACH: exact DOI 10.1002/essoar.10507067.1 and matching title correspond to reach-000413 (reachuid-v1-c7edc71b8cea9fa9926ef4f5ead3f846). Both public index and the record's detail row identify the same DOI. No duplicate new-output review proposal. This closes ONLY the original-publication identity lane; the DOI remains an API-seeded reference/data/code/software exploration seed. 30 active Scout batches were independently screened for exact DOI identities; private reviewer status and pending inbox are not inferred. Expansion initial pass on 2026-11-02T21:50:24.740Z: source-linked final article and one derived dataset lead; no new output staged.",
+      "research_notes": "Original publication ALREADY IN PUBLIC REACH: exact DOI 10.1002/essoar.10507067.1 and matching title correspond to reach-000413 (reachuid-v1-c7edc71b8cea9fa9926ef4f5ead3f846). Both public index and the record's detail row identify the same DOI. No duplicate new-output review proposal. This closes ONLY the original-publication identity lane; the DOI remains an API-seeded reference/data/code/software exploration seed. 30 active Scout batches were independently screened for exact DOI identities; private reviewer status and pending inbox are not inferred. Expansion initial pass on 2026-11-02T21:50:24.740Z: source-linked final article and one derived dataset lead; no new output staged.\nNov 2 publishing gate: Crossref posted-content source DOI is a PREPRINT, not a final journal article. Already-in-REACH original identity remains untouched; no duplicate new-output proposal. Tracked for monthly official-version checks; seed expansion remains independent.",
       "checked_sources": [
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-052.csv",
@@ -125,16 +156,22 @@
           "origin_method": "API-seeded expansion",
           "candidate_for_review": false
         }
-      ]
+      ],
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint"
     },
     {
       "identity": "doi:10.1002/essoar.10507281.1",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.1002/essoar.10507281.1",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -155,16 +192,27 @@
       ],
       "titles": [
         "Intersecting Fluvial and Pluvial Inundation Estimates with Sociodemographic Vulnerability to Quantify Household Risk in Urban Areas"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.1002/essoar.10507281.2",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.1002/essoar.10507281.2",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -185,16 +233,27 @@
       ],
       "titles": [
         "Intersecting Near-Real Time Fluvial and Pluvial Inundation Estimates with Sociodemographic Vulnerability to Quantify a Household Flood Impact Index"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.1002/essoar.10507439.1",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.1002/essoar.10507439.1",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -215,16 +274,27 @@
       ],
       "titles": [
         "Using simple, explainable neural networks to predict the Madden-Julian oscillation"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.1002/essoar.10507439.2",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.1002/essoar.10507439.2",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -245,16 +315,27 @@
       ],
       "titles": [
         "Using simple, explainable neural networks to predict the Madden-Julian oscillation"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.1002/essoar.10507439.3",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.1002/essoar.10507439.3",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -275,16 +356,27 @@
       ],
       "titles": [
         "Using simple, explainable neural networks to predict the Madden-Julian oscillation"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.1002/essoar.10508027.1",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.1002/essoar.10508027.1",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -305,7 +397,14 @@
       ],
       "titles": [
         "Modeling the hydrologic influence of subsurface tile drainage using the National Water Model"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.1002/hyp.13998",
@@ -6416,12 +6515,16 @@
     },
     {
       "identity": "doi:10.1101/2025.09.24.678233",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.1101/2025.09.24.678233",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -6442,7 +6545,14 @@
       ],
       "titles": [
         "Growth rate and adaptive capacity, not just thermal tolerance, are critical for long-term coral persistence under climate change"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.1109/access.2025.3636732",
@@ -16993,12 +17103,16 @@
     },
     {
       "identity": "doi:10.5194/acp-2020-1291",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.5194/acp-2020-1291",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -17020,7 +17134,14 @@
       ],
       "titles": [
         "Improving predictability of high ozone episodes through dynamic\nboundary conditions, emission refresh and chemical data\nassimilation during the Long Island Sound Tropospheric Ozone\nStudy (LISTOS) field campaign"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.5194/acp-21-16531-2021",
@@ -17176,12 +17297,16 @@
     },
     {
       "identity": "doi:10.5194/amt-2021-155",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.5194/amt-2021-155",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -17203,16 +17328,27 @@
       ],
       "titles": [
         "Infrasound measurement system for real-time in-situ tornado measurements"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.5194/amt-2021-41",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.5194/amt-2021-41",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -17233,16 +17369,27 @@
       ],
       "titles": [
         "MicroPulse DIAL (MPD) – a Diode-Laser-Based Lidar Architecture\nfor Quantitative Atmospheric Profiling"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.5194/amt-2022-85",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.5194/amt-2022-85",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -17263,16 +17410,27 @@
       ],
       "titles": [
         "Evaluation of the New York State Mesonet Profiler Network Data"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.5194/egusphere-2023-1722",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.5194/egusphere-2023-1722",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -17294,16 +17452,27 @@
       ],
       "titles": [
         "tobac v1.5: Introducing Fast 3D Tracking, Splits and Mergers, and Other Enhancements for Identifying and Analysing Meteorological Phenomena"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.5194/egusphere-2023-2299",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.5194/egusphere-2023-2299",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -17324,16 +17493,27 @@
       ],
       "titles": [
         "Incremental Analysis Update (IAU) in the Model for Prediction Across Scales coupled with the Joint Effort for Data assimilation Integration (MPAS-JEDI 2.0.0)"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.5194/egusphere-2023-340",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.5194/egusphere-2023-340",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -17354,16 +17534,27 @@
       ],
       "titles": [
         "The impact of model resolution on the Southern Hemisphere in CCSM4 idealized climate simulations"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.5194/egusphere-2023-814",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.5194/egusphere-2023-814",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -17384,16 +17575,27 @@
       ],
       "titles": [
         "Spatiotemporal snow water storage uncertainty in the midlatitude American Cordillera"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.5194/egusphere-2024-1850",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.5194/egusphere-2024-1850",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -17414,16 +17616,27 @@
       ],
       "titles": [
         "Glacier damage evolution over ice flow timescales"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.5194/egusphere-2025-1142",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.5194/egusphere-2025-1142",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -17444,16 +17657,27 @@
       ],
       "titles": [
         "A Python diagnostics package for evaluation of MJO-Teleconnections in S2S forecast systems"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.5194/egusphere-2025-1736",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.5194/egusphere-2025-1736",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -17474,16 +17698,27 @@
       ],
       "titles": [
         "The Atmospheric Potential Oxygen forward Model Intercomparison Project (APO-MIP1): Evaluating simulated atmospheric transport of air-sea gas exchange tracers and APO flux products"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.5194/egusphere-2025-2079",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.5194/egusphere-2025-2079",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -17504,16 +17739,27 @@
       ],
       "titles": [
         "All-sky AMSU-A radiance data assimilation using the gain-form of Local Ensemble Transform Kalman filter within MPAS-JEDI-2.1.0: implementation, tuning, and evaluation"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.5194/egusphere-2025-3397",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.5194/egusphere-2025-3397",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -17534,16 +17780,27 @@
       ],
       "titles": [
         "Urban heat forecasting in small cities: Evaluation of a high-resolution operational numerical weather prediction model"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.5194/egusphere-2025-3884",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.5194/egusphere-2025-3884",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -17564,16 +17821,27 @@
       ],
       "titles": [
         "Improving Snow Simulations through Improved Representations of Vegetation Conditions: Insights from High Resolution Simulations over California"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.5194/egusphere-2025-4503",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.5194/egusphere-2025-4503",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -17594,16 +17862,27 @@
       ],
       "titles": [
         "Leveraging JEDI for Atmospheric Composition: A unified framework for evaluating observations and model forecasts"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.5194/egusphere-2025-485",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.5194/egusphere-2025-485",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -17624,16 +17903,27 @@
       ],
       "titles": [
         "Quantifying Forest Canopy Shading and Turbulence Effects on Boundary Layer Ozone over the United States"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.5194/egusphere-2025-5411",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.5194/egusphere-2025-5411",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -17654,16 +17944,27 @@
       ],
       "titles": [
         "Development and Testing of Ensemble-Variational Data Assimilation Capabilities for Radar Data within JEDI coupled with FV3-LAM Model"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.5194/egusphere-2026-1807",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.5194/egusphere-2026-1807",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -17684,16 +17985,27 @@
       ],
       "titles": [
         "Development of the CCPP-Based GEFS-Aerosols Component in the Unified Forecast System for Subseasonal Prediction (UFS-Chem v1.0)"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.5194/egusphere-2026-4875",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.5194/egusphere-2026-4875",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -17714,16 +18026,27 @@
       ],
       "titles": [
         "Noah-MP-ML² v1.0: Development of a multilayer canopy land surface model with improved representation of vadose zone soil water dynamics"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.5194/egusphere-2026-4928",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.5194/egusphere-2026-4928",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -17750,16 +18073,27 @@
       ],
       "titles": [
         "Regime-aware retrieval of lower-tropospheric stability and a sensitivity-weighted diagnostic of cross-site transferability over heterogeneous land surfaces"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.5194/egusphere-2026-5876",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.5194/egusphere-2026-5876",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -17786,7 +18120,14 @@
       ],
       "titles": [
         "We &lt;3 Skynet: Or, How We Learned to Stop Worrying and Love the Bot Responses in Our Survey Data"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.5194/essd-15-383-2023",
@@ -17880,12 +18221,16 @@
     },
     {
       "identity": "doi:10.5194/essd-2022-323",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.5194/essd-2022-323",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -17906,16 +18251,27 @@
       ],
       "titles": [
         "Argo salinity: bias and uncertainty evaluation"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.5194/essd-2023-389",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.5194/essd-2023-389",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -17936,16 +18292,27 @@
       ],
       "titles": [
         "Systematically tracking the hourly progression of large wildfires using GOES satellite observations"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.5194/essd-2023-409",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.5194/essd-2023-409",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -17966,7 +18333,14 @@
       ],
       "titles": [
         "Global Carbon Budget 2023"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.5194/gmd-14-1125-2021",
@@ -18361,12 +18735,16 @@
     },
     {
       "identity": "doi:10.5194/gmd-2020-123",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.5194/gmd-2020-123",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -18387,16 +18765,27 @@
       ],
       "titles": [
         "Global Storm Tide Modeling with ADCIRC v55: Unstructured Mesh Design and Performance"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.5194/gmd-2022-311",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.5194/gmd-2022-311",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -18417,16 +18806,27 @@
       ],
       "titles": [
         "Developing Spring Wheat in the Noah-MP LSM (v4.4) for Growing Season Dynamics and Responses to Temperature Stress"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.5194/gmd-2023-131",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.5194/gmd-2023-131",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -18447,16 +18847,27 @@
       ],
       "titles": [
         "Three-dimensional variational assimilation with a multivariate background error covariance for the Model for Prediction Across Scales–Atmosphere with the Joint Effort for data Assimilation Integration (JEDI-MPAS 2.0.0-beta)"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.5194/gmd-2023-54",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.5194/gmd-2023-54",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -18477,16 +18888,27 @@
       ],
       "titles": [
         "Data assimilation for the Model for Prediction Across Scales – Atmosphere with the Joint Effort for Data assimilation Integration (JEDI-MPAS 2.0.0-beta): ensemble of 3D ensemble-variational (En-3DEnVar) assimilations"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.5194/hess-2019-155",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.5194/hess-2019-155",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -18507,16 +18929,27 @@
       ],
       "titles": [
         "Modeling groundwater responses to climate change in the Prairie Pothole Region"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.5194/hess-2021-552",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.5194/hess-2021-552",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -18537,7 +18970,14 @@
       ],
       "titles": [
         "Evaluation of a New Observationally Based Channel Parameterization for the National Water Model"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     },
     {
       "identity": "doi:10.5194/hess-24-655-2020",
@@ -18727,12 +19167,16 @@
     },
     {
       "identity": "doi:10.5194/tc-2022-159",
-      "status": "awaiting_research",
+      "status": "no_action",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T22:29:00Z",
+      "research_notes": "Nov 2 expedited publishing gate: historical Crossref source harvest marks this DOI with a `posted` publication-date basis. Treat as preprint, NOT an officially published journal article. Original DOI is ineligible for NEW OUTPUT review and retained in the preprint watchlist; do not infer publication from posted/created date. Full REACH/Scout duplicate and final article DOI verification are NOT completed; any explicit isPreprintOf final DOI becomes only a separately verified research lead. Continue independent DOI-seeded expansion; no Hub submission or approval.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.5194/tc-2022-159",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -18753,7 +19197,14 @@
       ],
       "titles": [
         "Landsat, MODIS, and VIIRS snow cover mapping algorithm performance as validated by airborne lidar datasets"
-      ]
+      ],
+      "no_action_subtype": "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+      "publication_status": "preprint",
+      "preprint_watchlist_status": "tracking_preprint",
+      "original_output_gate": {
+        "eligible_for_new_output_review": false,
+        "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
+      }
     }
   ]
 }
