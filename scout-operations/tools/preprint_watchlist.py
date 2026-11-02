@@ -182,7 +182,18 @@ def refresh(root=ROOT, today=None, fetch_crossref=crossref, fetch_datacite=datac
             for key in ("title", "award_numbers"):
                 if not existing.get(key) and seed.get(key):
                     existing[key] = seed[key]
+    previous_leads = {}
+    if leads_path.exists():
+        previous_doc = json.loads(leads_path.read_text(encoding="utf-8"))
+        if previous_doc.get("schema") != "reach-scout-preprint-publication-leads-v1":
+            raise ValueError("Unexpected existing publication-lead schema")
+        for prior in previous_doc.get("entries", []):
+            key = norm_doi(prior.get("published_doi"))
+            if not DOI.fullmatch(key) or key in previous_leads:
+                raise ValueError("Invalid or duplicate existing publication lead DOI")
+            previous_leads[key] = prior
     output_leads = {}
+    source_versions_by_final = {}
     for doi, entry in sorted(known.items()):
         if check_existing and entry.get("last_checked_on") != today:
             cr = dc = None
@@ -215,12 +226,27 @@ def refresh(root=ROOT, today=None, fetch_crossref=crossref, fetch_datacite=datac
             entry["status"] = ("published_version_found" if entry["verified_published_dois"]
                                else "tracking_preprint")
         for published_doi in entry.get("verified_published_dois") or []:
+            source_versions_by_final.setdefault(published_doi, set()).add(doi)
             output_leads[published_doi] = {
                 "published_doi": published_doi, "preprint_doi": doi,
                 "status": "awaiting_full_reach_scout_dedup_and_funding_review",
                 "publication_evidence_url": "https://api.crossref.org/works/" + published_doi,
                 "discovery_path": "Preprint Watchlist - verified isPreprintOf",
                 "source_seed_expansion_allowed": True, "private_hub_import": "NOT_VERIFIED"}
+    for published_doi, fresh in output_leads.items():
+        prior = previous_leads.get(published_doi) or {}
+        # Preserve verified dedup, reviewer notes, research status and prior human
+        # evidence. New monthly metadata cannot reset an existing decision.
+        merged = {**fresh, **prior}
+        sources = source_versions_by_final[published_doi]
+        sources.update(norm_doi(x) for x in prior.get("preprint_dois", []) if DOI.fullmatch(norm_doi(x)))
+        merged["preprint_dois"] = sorted(sources)
+        old_primary = norm_doi(prior.get("preprint_doi"))
+        merged["preprint_doi"] = old_primary if old_primary in sources else sorted(sources)[0]
+        merged["published_doi"] = published_doi
+        merged["publication_evidence_url"] = fresh["publication_evidence_url"]
+        merged["source_seed_expansion_allowed"] = True
+        output_leads[published_doi] = merged
     data["entries"] = [known[k] for k in sorted(known)]
     data["metrics"] = {
         "preprints_tracked": len(known),
