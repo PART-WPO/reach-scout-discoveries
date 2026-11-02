@@ -1,0 +1,119 @@
+{
+  "schema": "reach-scout-hourly-audit-addendum-v1",
+  "parent_run_id": "2026-11-02-1729ET-historical-crossref-preprint-gate-001",
+  "addendum_id": "2026-11-02-1742ET-preprint-final-version-dedup-addendum-001",
+  "date": "2026-11-02",
+  "audit_result": "PARTIAL",
+  "reason": "Live preprint publication watchlist was refreshed after the initial run audit snapshot; update actual current metrics without rewriting immutable prior audit.",
+  "watchlist": {
+    "tracked": 41,
+    "preprints_with_explicit_verified_official_published_versions": 32,
+    "preprints_without_verified_official_version": 9,
+    "unique_verified_official_article_doi_research_leads": 30,
+    "new_hub_candidates_from_preprint": 0,
+    "source_publication_not_necessarily_new_this_month": true,
+    "publication_gate": "Crossref/DataCite explicit isPreprintOf plus Crossref journal-article with real published metadata"
+  },
+  "published_version_research_lead_screen": {
+    "leads_screened_against_complete_reach_index": 30,
+    "reach_index_shards_checked": 10,
+    "reach_index_rows": 1238,
+    "public_reach_title_or_exact_doi_hints": 18,
+    "confirmed_existing_reach_final_doi_leads": 3,
+    "already_in_active_public_scout_review_feed": 2,
+    "still_require_full_reach_scout_version_and_funding_review": 25,
+    "validated_new_candidates": 0,
+    "private_hub_imports_verified": 0,
+    "human_approvals_verified": 0,
+    "public_reach_additions_verified": 0
+  },
+  "confirmed_reach": [
+    {
+      "official_doi": "10.1029/2021ms002774",
+      "preprint_doi": "10.1002/essoar.10507439.3",
+      "reach_ids": [
+        "reach-000437",
+        "reach-001178"
+      ],
+      "evidence": [
+        "https://repository.library.noaa.gov/view/noaa/58250",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-055.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-132.csv"
+      ]
+    },
+    {
+      "official_doi": "10.1029/2021wr031242",
+      "preprint_doi": "10.1002/essoar.10508027.1",
+      "reach_ids": [
+        "reach-000246"
+      ],
+      "evidence": [
+        "https://repository.library.noaa.gov/view/noaa/54925",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-031.csv"
+      ]
+    },
+    {
+      "official_doi": "10.5194/gmd-19-8213-2026",
+      "preprint_doi": "10.5194/egusphere-2025-5411",
+      "reach_ids": [
+        "reach-000337"
+      ],
+      "evidence": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-003.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-043.csv"
+      ]
+    }
+  ],
+  "already_staged_scout_feed": [
+    {
+      "official_doi": "10.5194/gmd-18-7969-2025",
+      "batch": "scout-discoveries/batches/2026-10-28-hourly-2331ET-datacite-original-and-expansion-001.csv",
+      "private_hub": "NOT_VERIFIED"
+    },
+    {
+      "official_doi": "10.5194/tc-20-5973-2026",
+      "batch": "scout-discoveries/batches/2026-11-02-monthly-preprint-hold-001.csv",
+      "private_hub": "NOT_VERIFIED"
+    }
+  ],
+  "historical_crossref": {
+    "raw_and_distinct": 614,
+    "originals_completed": 48,
+    "confirmed_reach_originals": 9,
+    "preprint_original_no_actions": 39,
+    "awaiting_originals": 566,
+    "seed_expansions_pending": 614,
+    "fully_investigated": 0
+  },
+  "monthly_originals": {
+    "received": 13,
+    "public_scout_feed_staged": 8,
+    "preprint_original_held": 1,
+    "coverage_errors": 0
+  },
+  "noaa_ir": {
+    "official_index_manifest": "scout-operations/noaa-ir/manifest.json",
+    "status": "NOT_FOUND_404",
+    "new_candidate_ir_checks": 0,
+    "verified_true": 0,
+    "unknown": 0,
+    "no_index": true
+  },
+  "workflow_integrity": {
+    "reconcile_historical_crossref_workflow": "SUCCESS",
+    "successful_run_id": 41539024092,
+    "tests": "68 tests passed after requests dependency installed and Crossref-specific evidence-only terminal rules applied",
+    "schedule_unchanged": true,
+    "preprint_monthly_recheck_schedule_unchanged": true,
+    "manifest_manual_writes": 0
+  },
+  "feed_integrity": {
+    "active_batches": 30,
+    "active_rows": 83,
+    "new_batch_rows_this_run": 0,
+    "private_hub_import": "NOT_VERIFIED",
+    "human_approval": "NOT_VERIFIED",
+    "public_reach_additions": "NOT_VERIFIED"
+  },
+  "next": "Research 25 unresolved official journal DOI leads and 566 Crossref original identities; keep all 614 original seeds for independent expansion, do not submit preprint DOI or duplicate versions."
+}
