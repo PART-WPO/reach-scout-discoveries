@@ -11,6 +11,7 @@ import re
 from pathlib import Path
 
 from build_manifest import INPUT, inspect_batch
+from noaa_ir_lookup import enrich as enrich_noaa_ir, trusted_index as read_noaa_ir_index
 
 ALLOWED_CLASSIFICATIONS = {
     "NEW CANDIDATE", "POSSIBLE DUPLICATE", "KNOWN DUPLICATE",
@@ -191,6 +192,10 @@ def prepare(source, output):
         raise ValueError("candidates must be a nonempty list")
     if output.exists():
         raise ValueError("Refusing to overwrite an existing batch")
+    # One SHA-verified public NOAA IR snapshot is sufficient for all candidates.
+    # Partial/unavailable snapshots never produce FALSE. Index corruption blocks
+    # unverified enrichment rather than silently asserting repository membership.
+    noaa_ir_index = read_noaa_ir_index()
     rows = []
     for item in candidates:
         fields = item["fields"]
@@ -203,7 +208,21 @@ def prepare(source, output):
         if fields.get("Candidate ID") or fields.get("Principal Investigator Email(s)"):
             raise ValueError("Never publish Candidate ID or PI email")
         record = {key: fields.get(key, "") for key in INPUT}
-        prov = item["provenance"]
+        prov = dict(item["provenance"])
+        record, ir_result = enrich_noaa_ir(record, prov, noaa_ir_index)
+        if ir_result == "exact_doi_matched_official_noaa_ir_index":
+            prov["notes"] = list(prov.get("notes", [])) + [
+                "NOAA IR check: TRUE; official repository catalog exact DOI match; "
+                + record["IR Repository URL"]]
+        elif ir_result == "ambiguous_multiple_noaa_ir_records":
+            prov["notes"] = list(prov.get("notes", [])) + [
+                "NOAA IR check: Multiple exact DOI records; human verification needed; no TRUE asserted"]
+        elif ir_result == "noaa_ir_index_unavailable":
+            prov["notes"] = list(prov.get("notes", [])) + [
+                "NOAA IR check: Public repository index unavailable; manual verification needed"]
+        elif ir_result == "not_found_in_index_not_a_negative_determination":
+            prov["notes"] = list(prov.get("notes", [])) + [
+                "NOAA IR check: No confirmed exact DOI match in current public index; not proof of absence"]
         if prov.get("intake_origin") == "Monthly API":
             # Monthly proposals must be as useful to a human as historical
             # reports. Reject generic status-only monthlies even when all
