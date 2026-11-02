@@ -63,12 +63,15 @@ def verify_metadata_refresh(folder, before, after, rule):
         raise ValueError("Metadata refresh changed the required 24-column schema")
     changed = {key for key in original if original[key] != enriched[key]}
     allowlist = {"Brief Abstract", "Funding Evidence URL", "Scout Discovery Rationale"}
-    if changed != allowlist:
-        raise ValueError("Metadata refresh must change only abstract, evidence and review rationale")
+    required = {"Brief Abstract", "Scout Discovery Rationale"}
+    if not required.issubset(changed) or not changed.issubset(allowlist):
+        raise ValueError("Metadata refresh may only recover the missing abstract and adjust source/review rationale")
     if original["Brief Abstract"].strip() or len(enriched["Brief Abstract"].strip()) < 60:
         raise ValueError("Metadata refresh is not a justified missing-abstract recovery")
-    if enriched["Funding Evidence URL"] != rule.get("authoritative_source_url"):
-        raise ValueError("Authoritative funding source URL does not match rule")
+    # An abstract recovery source need not be the funding source. Retain original
+    # funding citation when the abstract comes from a separate trusted index.
+    if "Funding Evidence URL" in changed and enriched["Funding Evidence URL"] != rule.get("authoritative_source_url"):
+        raise ValueError("Changed funding source URL does not match documented source")
     rationale = enriched["Scout Discovery Rationale"]
     mandatory = (
         "Scout classification: NEEDS INVESTIGATION",
