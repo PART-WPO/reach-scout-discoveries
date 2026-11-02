@@ -11,6 +11,9 @@ import io
 import json
 import re
 from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "scout-discoveries" / "tools"))
+from supersessions import get_rules
 
 ROOT = Path(__file__).resolve().parents[2]
 DOI = re.compile(r"10\.\d{4,9}/[^\s]+", re.I)
@@ -27,9 +30,10 @@ def reconcile(root=ROOT):
     path = root / "scout-operations/monthly-triage.json"
     ledger = json.loads(path.read_text(encoding="utf-8"))
     bykey = {(e["cohort"], e["identity"]): e for e in ledger["entries"]}
+    supersessions = get_rules(root / "scout-discoveries")
     matches = {}
     for b in m["batches"]:
-        if not b["id"].startswith(("2026-", "2027-", "2028-", "2029-")) or "-monthly-fast-" not in b["id"]:
+        if not b["id"].startswith(("2026-", "2027-", "2028-", "2029-")) or not any(x in b["id"] for x in ("-monthly-fast-", "-monthly-enriched-")):
             continue
         p = root / b["path"]
         raw = p.read_bytes()
@@ -62,7 +66,19 @@ def reconcile(root=ROOT):
         entry = bykey[key]
         if entry["status"] == "staged_for_hub_import":
             if entry.get("scout_batch_path") != match["scout_batch_path"]:
-                raise ValueError("Already staged original changed immutable batch")
+                previous = Path(entry.get("scout_batch_path") or "").stem
+                current = Path(match["scout_batch_path"]).stem
+                rule = supersessions.get(previous)
+                if not rule or rule.get("replacement_kind") != "metadata_refresh" or rule.get("replacement_id") != current:
+                    raise ValueError("Already staged original changed without verified metadata supersession")
+                # A reviewed record remains reviewed privately: never infer a
+                # Hub import, reset a human decision or insert a new output.
+                entry["scout_batch_path"] = match["scout_batch_path"]
+                entry["research_notes"] = (entry.get("research_notes", "") +
+                    "\nPublic Scout feed metadata-only correction: original batch " + previous +
+                    " was superseded by " + current +
+                    " for the SAME original DOI. Preserve private human decisions; Hub sync and re-review remain separately verifiable.")
+                changed += 1
             continue
         if entry["status"] in {"already_in_reach", "forwarded_to_hub", "metadata_update_forwarded",
                                "no_action", "human_metadata_needed"}:
