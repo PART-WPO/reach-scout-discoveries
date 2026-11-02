@@ -1,5 +1,11 @@
 name: REACH Scout first-of-month preprint watchlist
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'scout-operations/tools/preprint_watchlist.py'
+      - 'scout-operations/tests/test_preprint_watchlist.py'
+      - '.github/workflows/scout-preprint-watchlist.yml'
   schedule:
     - cron: '45 0 1 * *'
       timezone: "America/New_York"
