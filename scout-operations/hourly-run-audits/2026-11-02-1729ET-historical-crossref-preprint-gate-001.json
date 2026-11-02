@@ -1,0 +1,180 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "2026-11-02-1729ET-historical-crossref-preprint-gate-001",
+  "mission_date": "2026-11-02",
+  "mission_time_local": "17:29 America/New_York",
+  "selected_mode": "historical_crossref_triage",
+  "audit_result": "PARTIAL",
+  "mode_basis": "Monthly original source research terminal, monthly API-seeded expansion queue has no actionable pending independent verification; historical Crossref all-years 614-source-DOI backlog next",
+  "source": {
+    "manifest_path": "api-discoveries/historical-crossref/manifest.json",
+    "source_batch_count": 7,
+    "raw_source_rows": 614,
+    "distinct_source_dois": 614,
+    "primary_spark_awards_searched": 693,
+    "batch_manifest_declares_sha256": true,
+    "independent_sha256_recomputed_for_all_source_batches": false,
+    "source_csv_rows_inspected_for_posted_date_basis": 614
+  },
+  "monthly_originals": {
+    "source_received": 13,
+    "research_checked": 13,
+    "public_scout_feed_staged": 8,
+    "preprint_original_held": 1,
+    "no_action_originals": 5,
+    "private_hub_imports_observed": 0,
+    "private_hub_import_status": "NOT_VERIFIED",
+    "human_approvals_observed": 0,
+    "public_reach_additions_observed": 0,
+    "prior_staged_history_preserved": true,
+    "coverage_ledger_reconciled": true
+  },
+  "historical_crossref_before": {
+    "originals_already_in_reach": 8,
+    "originals_no_action": 0,
+    "originals_awaiting": 606,
+    "fully_investigated_original_plus_seed": 0,
+    "seed_expansions_pending": 614
+  },
+  "historical_crossref_after": {
+    "originals_already_in_reach": 9,
+    "originals_no_action": 39,
+    "originals_awaiting": 566,
+    "originals_completed": 48,
+    "fully_investigated_original_plus_seed": 0,
+    "remaining_full_cases": 614,
+    "seed_expansions_pending": 614,
+    "new_validated_original_candidates": 0,
+    "new_validated_expansion_candidates": 0,
+    "new_unique_expansion_leads_verified": 0
+  },
+  "confirmed_existing_reach_originals_this_run": [
+    {
+      "doi": "10.1002/2017ms001154",
+      "title": "Precipitation Dynamical Downscaling Over the Great Plains",
+      "reach_id": "reach-000648",
+      "reach_uid": "reachuid-v1-5855983c9e2754ea63e01d1c90110342",
+      "award": "NA17OAR4590188",
+      "checked_sources": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-006.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-079.csv",
+        "https://repository.library.noaa.gov/view/noaa/25292",
+        "https://agupubs.onlinelibrary.wiley.com/doi/10.1002/2017MS001154"
+      ],
+      "original_status": "already_in_reach",
+      "seed_expansion_status": "investigating",
+      "new_hub_candidate": false
+    }
+  ],
+  "preprint_watchlist": {
+    "source_crossref_posted_content_dois": 40,
+    "source_originals_already_in_reach": 1,
+    "new_originals_held_no_action": 39,
+    "already_tracked_in_watchlist": 2,
+    "newly_registered": 38,
+    "watchlist_tracked_after": 41,
+    "confirmed_newly_published_versions": 0,
+    "verified_official_article_doi_research_leads": 0,
+    "new_preprint_doi_hub_submissions": 0,
+    "monthly_first_only_recheck_preserved": true,
+    "no_weekly_sweep_added": true,
+    "policy": "scout-operations/preprint-watchlist-policy.md"
+  },
+  "possible_title_version_relationship": {
+    "preprint_version_dois": [
+      "10.1002/essoar.10507439.1",
+      "10.1002/essoar.10507439.2",
+      "10.1002/essoar.10507439.3"
+    ],
+    "published_article_doi": "10.1029/2021MS002774",
+    "official_article_reach_ids": [
+      "reach-000437",
+      "reach-001178"
+    ],
+    "isPreprintOf_verified": false,
+    "classification": "TITLE_MATCH_ONLY_NOT_PROMOTED"
+  },
+  "noaa_ir_new_candidate_enrichment": {
+    "index_manifest_path": "scout-operations/noaa-ir/manifest.json",
+    "index_status": "UNAVAILABLE_404_ONLY_README_EXISTS",
+    "shards_verified": 0,
+    "new_outputs_checked": 0,
+    "ir_true_with_official_url": 0,
+    "inconclusive_unknown": 0,
+    "no_index_available": true,
+    "ir_false_assigned": 0,
+    "source_note": "Exact public NOAA IR page for a REACH duplicate is provenance only, not a new-candidate IR enrichment"
+  },
+  "independent_research_resume": {
+    "lead_files_enumerated": 8,
+    "lead_rows": 17,
+    "unique_identities": 16,
+    "metadata_dois_successful": 14,
+    "metadata_github_releases_successful": 2,
+    "staged_lead_rows_existing": 8,
+    "human_intake_pending": 1,
+    "year_specific_project_attribution_pending": 4,
+    "figshare_canonical_identity_pending": 2,
+    "version_family_check_only": 1,
+    "alias_only_not_new_output": 1,
+    "bounded_metadata_resumption_checks": [
+      "10.5281/zenodo.20046428 vs 10.5281/zenodo.22758716 (concept/version, not separate output)",
+      "10.6084/m9.figshare.26791243 vs 10.6084/m9.figshare.28328339 (type/title different, no authoritative version relationship)"
+    ],
+    "new_dispositions": 0,
+    "remaining_blockers": "Exact year-specific primary WPO project attribution, pending inbox checks, Figshare canonical file/version scope, and reviewer decisions remain unresolved"
+  },
+  "feed_integrity": {
+    "public_scout_manifest": "scout-discoveries/manifest.json",
+    "batch_count": 30,
+    "candidate_rows": 83,
+    "manifest_generated_at": "2026-11-02T22:03:13Z",
+    "recent_active_batch_rows_inspected": 15,
+    "recent_active_primary_preprint_doi_count": 0,
+    "new_inbox_csv_staged": 0,
+    "new_validated_batch_published": 0,
+    "manifest_manual_writes": 0,
+    "all_batch_sha_independently_verified": false,
+    "feed_integrity_status": "PARTIAL_PUBLIC_MANIFEST_PRESENT_AND_RECENT_ROWS_INSPECTED"
+  },
+  "research_routes": {
+    "original_crossref_method": "Direct API",
+    "expansion_method": "API-seeded expansion",
+    "independent_metadata_method_preserved": "Independent discovery"
+  },
+  "new_batch_ids": [],
+  "new_csv_candidate_count": 0,
+  "new_candidate_csv_status": "NOT_APPLICABLE_NO_VERIFIED_NEW_OUTPUT",
+  "no_action_subtypes_this_run": {
+    "PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT": 39
+  },
+  "private_hub_import": "NOT_VERIFIED",
+  "human_approval": "NOT_VERIFIED",
+  "public_reach_additions": "NOT_VERIFIED",
+  "coverage_after": {
+    "monthly_received": 13,
+    "monthly_staged": 8,
+    "crossref_originals_completed": 48,
+    "crossref_awaiting_original": 566,
+    "crossref_full_cases_remaining": 614,
+    "crossref_expansions_pending": 614
+  },
+  "github_writes": [
+    "scout-operations/preprint-watchlist.json",
+    "scout-operations/historical-crossref-triage.json",
+    "scout-operations/monthly-triage.json",
+    "scout-operations/coverage.json",
+    "scout-operations/historical-crossref-coverage.json",
+    "scout-operations/active-workstream.json"
+  ],
+  "library_report": "/REACH Scout Library/2026-11-02-1729ET-historical-crossref-preprint-gate-001-report.md",
+  "library_checkpoint": "/REACH Scout Library/2026-11-02-1729ET-historical-crossref-preprint-gate-001-checkpoint.json",
+  "library_leads": "/REACH Scout Library/2026-11-02-1729ET-historical-crossref-preprint-gate-001-research-leads.json",
+  "blockers": [
+    "NOAA IR authoritative 16-shard manifest not yet published",
+    "Full 614 Crossref DOI seed expansions remain outstanding",
+    "Full source CSV SHA recomputation and complete Scout batch SHA audit not executed in this mission",
+    "Private Hub intake, human decisions, and public REACH updates not observed"
+  ],
+  "next_priority": "Continue historical Crossref 566 remaining original identity/dedup and all 614 seed-expansion lanes; keep preprint DOI held and track official versions only via first-of-month GitHub Action"
+}
