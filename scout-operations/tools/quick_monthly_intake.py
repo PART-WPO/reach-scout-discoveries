@@ -191,7 +191,7 @@ def pre_stage_metadata_recovery(entry, source_row):
         if not value or evidence not in verified_urls:
             raise ValueError("Recovered metadata requires a checked source URL and nonempty value")
         if field == "Publication Date":
-            if not re.fullmatch(r"\\d{4}-\\d{2}-\\d{2}", value):
+            if not re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", value):
                 raise ValueError("Publication Date must use the approved full YYYY-MM-DD format")
             from datetime import date
             try:
