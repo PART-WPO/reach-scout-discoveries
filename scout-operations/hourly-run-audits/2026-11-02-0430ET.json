@@ -48,19 +48,30 @@
     "manifest_blob_sha": "ab844173f761617a2fe1def5cf218b1fc94b3e7d"
   },
   "scout_feed": {
-    "active_batches": 36,
-    "active_rows": 83,
-    "batches_inspected_for_exact_identity": 36,
-    "new_inbox_drafts": 0,
-    "new_manifest_rows": 0,
-    "manifest_integrity": "READ_CURRENT_MANIFEST; FULL_SHA_RECOMPUTATION_NOT_PERFORMED",
-    "pending_inbox_complete_check": "NOT_VERIFIED"
+    "batches_before": 36,
+    "rows_before": 83,
+    "batches_after": 37,
+    "rows_after": 85,
+    "new_inbox_drafts": 1,
+    "new_manifest_rows": 2,
+    "new_batch_id": "2026-11-02-0430ET-urban-heat-flood-independent-001",
+    "new_batch_path": "scout-discoveries/batches/2026-11-02-0430ET-urban-heat-flood-independent-001.csv",
+    "new_batch_sha256": "ec1aa8c564b71ef0df8ab55c5f039cf6b7c6970080fec2734aa45df622a326fb",
+    "manifest_generated_at": "2026-11-02T09:37:37Z",
+    "validation": "AUTOMATED_ACTION_PUBLISHED_MANIFEST; EXACT_INBOX_EQUALS_PROMOTED_BATCH; LOCAL_LIBRARY_SHA_MATCHES_MANIFEST",
+    "github_publication_commit": "858bf76b8c639887cf9707890917f81c5a3450c8",
+    "github_action_run_id": "NOT_VERIFIED"
   },
   "research_leads_summary": {
     "previous_source_lead_files_enumerated": 4,
     "previous_unified_doi_metadata_records": 6,
     "previous_unified_github_metadata_records": 2,
-    "new_doi_lookup_seeds": 2
+    "new_doi_lookup_seeds": 2,
+    "new_doi_metadata_verified": 2,
+    "new_doi_metadata_sources": [
+      "DataCite exact DOI 10.17632/43vrcwvdf8.1",
+      "Crossref exact DOI 10.1175/bams-d-25-0140.1"
+    ]
   },
   "new_lead_file": "scout-operations/research-leads/2026-11-02-0430ET-urban-heat-flood-independent-dois.json",
   "new_lead_commit": "6256797d3c28255615be921f09f370d79241d67d",
@@ -68,18 +79,24 @@
     "report": "/REACH Scout Library/2026-11-02-0430ET-report.md",
     "research_leads": "/REACH Scout Library/2026-11-02-0430ET-research-leads.json",
     "checkpoint": "/REACH Scout Library/2026-11-02-0430ET-checkpoint.json",
-    "audit": "/REACH Scout Library/2026-11-02-0430ET-hourly-provenance-audit.json"
+    "audit": "/REACH Scout Library/2026-11-02-0430ET-hourly-provenance-audit.json",
+    "final_report": "/REACH Scout Library/2026-11-02-0430ET-final-report.md",
+    "final_audit": "/REACH Scout Library/2026-11-02-0430ET-final-hourly-provenance-audit.json"
   },
   "private_discovery_hub_import": "NOT_VERIFIED",
   "human_approvals": "NOT_VERIFIED",
   "public_reach_rows": 1238,
   "verified_public_reach_additions_this_run": 0,
   "blockers": [
-    "New exact DOI metadata checkpoint awaiting Action verification",
-    "Pending Scout inbox exhaustive enumeration not verified",
-    "Private Discovery Hub import and human decisions not observed"
+    "Private Discovery Hub import and human decisions not observed",
+    "Mendeley dataset file inventory not independently opened; explicit NEEDS INVESTIGATION for reviewer"
   ],
   "audit_result": "PARTIAL",
   "no_public_reach_or_smartsheet_writes": true,
-  "next_priority": "Resume two exact DOI leads from independent metadata lookup; complete inbox dedup and stage validated 24-column candidates only if eligible; preserve monthly expansion Zenodo pending case."
+  "next_priority": "Reviewer uses Discovery Hub Sync to Scout for validated public candidates; continue monthly Zenodo human-intake and independent primary-award research.",
+  "new_independent_leads_staged_for_human_review": 2,
+  "new_independent_lead_statuses": {
+    "doi:10.17632/43vrcwvdf8.1": "MANIFEST_STAGED_NEEDS_INVESTIGATION",
+    "doi:10.1175/bams-d-25-0140.1": "MANIFEST_STAGED_NEW_CANDIDATE"
+  }
 }
