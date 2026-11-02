@@ -1,0 +1,109 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-11-02-HOURLY-0730ET",
+  "run_at_utc": "2026-11-02T12:32:45.134Z",
+  "primary_mode": "normal_historical_discovery",
+  "routing_reason": "Monthly primary-only October original DOI ledger research terminal; historical DataCite research complete; bounded independent-lead resumption and DOI identity reconciliation.",
+  "monthly_originals": {
+    "active_batch": "2026-11-01-monthly-api-2026-10-primary-only-part001",
+    "received": 13,
+    "checked": 13,
+    "missing_from_ledger": 0,
+    "staged_for_hub_import": 9,
+    "evidence_backed_no_action": 4,
+    "remaining_actionable": 0,
+    "new_originals_staged_this_run": 0,
+    "private_hub_import": "NOT_VERIFIED"
+  },
+  "monthly_expansions": {
+    "total": 6,
+    "manifest_staged": 2,
+    "already_in_reach": 3,
+    "pending_human_intake_not_hub_delivered": 1,
+    "new_this_run": 0
+  },
+  "historical": {
+    "total": 188,
+    "research_complete": true,
+    "remaining": 0,
+    "human_metadata_needed": 28
+  },
+  "independent_leads": {
+    "source_lead_file": "scout-operations/research-leads/2026-11-02-0525ET-atlantic-drifter-dois.json",
+    "alias_lead_file": "scout-operations/research-leads/2026-11-02-0625ET-atlantic-2024-alias-lookup.json",
+    "resumed": 4,
+    "metadata_ready": 4,
+    "canonical_alias_resolved": 1,
+    "original_invalid_native_doi": "10.57969/s9qp4cd",
+    "canonical_registered_doi": "10.57969/s9qp4c",
+    "alias_is_separate_output": false,
+    "registry_source": "https://api.datacite.org/dois/10.57969/s9qp4c",
+    "publication_date_from_datacite_created": "2024-04-13",
+    "independent_origin_preserved": true,
+    "primary_spark_award": "NA21OAR4590374",
+    "year_specific_same_project_attribution": "HUMAN_REVIEW_NEEDED",
+    "exact_identity_screen": {
+      "reach_index_shards_checked": 10,
+      "reach_detail_shards_checked": 140,
+      "reach_rows_in_manifest": 1238,
+      "published_scout_batches_checked": 37,
+      "scout_rows_in_manifest": 85,
+      "exact_doi_or_distinctive_full_title_matches": 0,
+      "pending_inbox_checked": false,
+      "private_hub_feedback_checked": false,
+      "manifest_sha256_independently_recomputed": false
+    },
+    "new_candidates": 0
+  },
+  "feed": {
+    "batch_count": 37,
+    "candidate_rows": 85,
+    "manifest_generated_at": "2026-11-02T09:37:37Z",
+    "new_inbox_drafts": 0,
+    "new_batches": 0,
+    "feed_integrity_status": "EXISTING_MANIFEST_READ; EXACT SHA256 RECOMPUTATION NOT PERFORMED",
+    "github_action_status_this_run": "NOT_VERIFIED",
+    "private_hub_import": "NOT_VERIFIED",
+    "human_approvals": "NOT_VERIFIED"
+  },
+  "public_reach": {
+    "rows": 1238,
+    "new_additions_verified_this_run": 0
+  },
+  "source_urls": [
+    "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+    "https://erddap.ldl.ucsd.edu/erddap/tabledap/LDL_AtlanticHurricane2024.html",
+    "https://api.datacite.org/dois/10.57969/s9qp4c",
+    "https://api.datacite.org/dois/10.57969/s9qp4cd",
+    "https://api.crossref.org/works/10.57969/s9qp4cd",
+    "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json",
+    "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/manifest.json",
+    "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/independent-metadata-lookup/latest.json"
+  ],
+  "library_saved": [
+    "/REACH Scout Library/2026-11-02-0730ET-report.md",
+    "/REACH Scout Library/2026-11-02-0730ET-research-leads.json",
+    "/REACH Scout Library/2026-11-02-0730ET-checkpoint.json",
+    "/REACH Scout Library/2026-11-02-0730ET-hourly-provenance-audit.json"
+  ],
+  "github_writes": {
+    "updated_original_lead_commit": "73b5e591b4620dce0370388ef3cee93e18b2b301",
+    "updated_alias_lead_commit": "67af33a11c4b9f9a073a0f7819d3db900d9d8e1c",
+    "no_manifest_or_batch_edits": true
+  },
+  "blockers": [
+    "Pending unpublished Scout inbox and private Hub feedback not fully observable; do not stage duplicate candidates.",
+    "Exact year-specific project attribution among multiple NOAA awards requires human judgment.",
+    "Native 2024 citation has extra D and its DataCite abstract inconsistently says 2021 season while specifying 2024 dates.",
+    "Private Discovery Hub import and human approvals unverified."
+  ],
+  "next_priority": [
+    "Reviewer uses Discovery Hub Sync to Scout for existing 9 monthly originals and 2 API-seeded expansion review proposals if not already imported.",
+    "Reconcile pending Scout inbox and year-specific primary WPO project funding before staging annual LDL datasets.",
+    "Preserve the 2024 native DOI typo as provenance; do not submit as separate output.",
+    "Continue monthly expansion and independent leads without repeating terminal original research."
+  ],
+  "audit_result": "PARTIAL",
+  "no_public_reach_or_smartsheet_writes": true,
+  "no_autoapproval": true
+}
