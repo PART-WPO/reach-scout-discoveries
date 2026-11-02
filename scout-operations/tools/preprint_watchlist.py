@@ -176,6 +176,15 @@ def refresh(root=ROOT, today=None, fetch_crossref=crossref, fetch_datacite=datac
                 "discovery_path": "Preprint Watchlist - verified isPreprintOf",
                 "source_seed_expansion_allowed": True, "private_hub_import": "NOT_VERIFIED"}
     data["entries"] = [known[k] for k in sorted(known)]
+    data["metrics"] = {
+        "preprints_tracked": len(known),
+        "preprints_still_waiting_for_official_publication": sum(
+            not x.get("verified_published_dois") for x in known.values()),
+        "preprints_with_verified_published_versions": sum(
+            bool(x.get("verified_published_dois")) for x in known.values()),
+        "verified_official_article_doi_research_leads": len(output_leads),
+        "automatically_forwarded_to_discovery_hub": 0,
+    }
     result = {"schema": "reach-scout-preprint-publication-leads-v1",
               "policy": "Publication-version research leads ONLY; do not auto-stage, approve or insert to REACH.",
               "entries": [output_leads[k] for k in sorted(output_leads)]}
