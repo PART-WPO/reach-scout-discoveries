@@ -63,7 +63,7 @@ def _attribution_pending(queue):
 def decide(monthly_manifest,monthly_coverage,historical_manifest,historical_coverage,
            historical_manifest_sha="",monthly_triage=None,historical_triage=None,
            metadata_blockers=None,attribution_followups=None,monthly_expansion_leads=None,
-           monthly_decision_queue=None):
+           monthly_decision_queue=None,crossref_manifest=None,crossref_coverage=None,\n           crossref_triage=None,crossref_manifest_sha=\"\"):
     monthly_total=int((monthly_manifest or {}).get("candidate_rows",0))
     monthly_checked=int((monthly_coverage or {}).get("checked",0))
     monthly_received=int((monthly_coverage or {}).get("received",0))
@@ -111,6 +111,28 @@ def decide(monthly_manifest,monthly_coverage,historical_manifest,historical_cove
                                   if c.get('decision_track') in {
                                       'prepare_validated_candidate_draft',
                                       'original_fast_path_final_checks'})
+    # Historical Crossref is its own durable research + seed-expansion cohort.
+    # Never treat a publication already in REACH/Scout as an unusable seed.
+    c_total=int((crossref_coverage or {}).get("total_distinct_dois",0))
+    c_done=int((crossref_coverage or {}).get("fully_investigated",0))
+    c_left=int((crossref_coverage or {}).get("remaining",0))
+    c_matched=bool(crossref_manifest_sha and crossref_coverage and
+        crossref_coverage.get("source_manifest_sha256")==crossref_manifest_sha)
+    c_unreconciled=bool(crossref_manifest) and not c_matched
+    c_status=_pending(crossref_triage)
+    c_initial=max(c_status["awaiting_research"]+c_status["investigating"],
+                  int((crossref_coverage or {}).get("awaiting_research",0))+
+                  int((crossref_coverage or {}).get("investigating",0)))
+    c_seed_pending=sum(1 for e in (crossref_triage or {}).get("entries",[])
+                       if e.get("seed_expansion_status") in {
+                           "awaiting_exploration","investigating","needs_more_research"})
+    c_followup=max(c_status["needs_more_research"],
+        int((crossref_coverage or {}).get("needs_more_research",0)),
+        c_left-c_initial,0)
+    c_complete=(not crossref_manifest and not crossref_coverage) or bool(
+        crossref_coverage and c_matched and
+        crossref_coverage.get("research_complete") is True and
+        c_left==0 and c_done==c_total)
     # A scheduled future retry does not make an unresolved original DOI cleared.
     # New monthly intake always preempts historical research.
     if monthly_initial:
@@ -127,6 +149,15 @@ def decide(monthly_manifest,monthly_coverage,historical_manifest,historical_cove
     elif monthly_expansions_pending:
         mode,phase="monthly_api_triage","related_output_expansion_research"
         reason="Continue distinct API-seeded output leads with their own source and WPO funding validation; original seeds need not wait for expansion"
+    elif c_initial:
+        mode,phase="historical_crossref_triage","initial_research"
+        reason="Expedited original Crossref DOI deduplication across full REACH and Scout, preserving every DOI as an expansion seed"
+    elif c_seed_pending or c_followup:
+        mode,phase="historical_crossref_triage","seed_expansion_research"
+        reason="Prioritize related-output research from historical Crossref seeds, including publications already in REACH"
+    elif c_unreconciled or not c_complete:
+        mode,phase="historical_crossref_triage","reconcile_research_coverage"
+        reason="Historical Crossref cohort requires complete validated ledger and seed coverage"
     elif historical_initial:
         mode,phase="historical_api_triage","initial_research"
         reason="Historical DataCite records await their first individual investigation"
@@ -146,7 +177,7 @@ def decide(monthly_manifest,monthly_coverage,historical_manifest,historical_cove
     return {
         "schema":"reach-scout-workstream-v1",
         "mode":mode,"phase":phase,"reason":reason,
-        "switch_policy":"monthly original fast-path decisions > separate monthly related-output expansion > historical first-pass > historical follow-ups > attribution follow-ups > normal SPARK historical discovery",
+        "switch_policy":"monthly original decisions > monthly expansion > historical Crossref original dedup + seed expansion > historical DataCite > attribution follow-ups > normal SPARK discovery",
         "monthly_api":{
             "raw_records":monthly_total,"recorded_received":monthly_received,
             "research_completed":monthly_checked,
@@ -167,6 +198,15 @@ def decide(monthly_manifest,monthly_coverage,historical_manifest,historical_cove
             "unresolved_followups":historical_followup,
             "pending_metadata_blockers_including_originals":blockers["historical"]
         },
+        "historical_crossref_api":{
+            "raw_batch_rows":int((crossref_manifest or {}).get("candidate_rows",0)),
+            "distinct_dois":c_total,"research_completed":c_done,
+            "remaining_or_untracked":max(c_left,1 if c_unreconciled else 0),
+            "coverage_matches_source_manifest":c_matched,
+            "originals_pending_first_pass":c_initial,
+            "seed_expansions_pending":c_seed_pending,
+            "unresolved_followups":c_followup
+        },
         "attribution_followups_pending":attribution_pending,
         "note":"Future follow-up dates do not clear API research. Make bounded distinct-source checks now; use documented early-retry exceptions as needed. An unavailable or invalid Hub metadata-needed handoff remains outstanding. This selector does NOT conduct research, verify human approval, or launch Scout."
     }
@@ -178,13 +218,19 @@ def main():
     h=read("api-discoveries/historical/manifest.json")
     hc=read("scout-operations/historical-coverage.json")
     sha=hashlib.sha256((ROOT/"api-discoveries/historical/manifest.json").read_bytes()).hexdigest() if h else ""
+    c=read("api-discoveries/historical-crossref/manifest.json")
+    cc=read("scout-operations/historical-crossref-coverage.json")
+    csha=hashlib.sha256((ROOT/"api-discoveries/historical-crossref/manifest.json").read_bytes()).hexdigest() if c else ""
     result=decide(m,mc,h,hc,sha,
         monthly_triage=read("scout-operations/monthly-triage.json"),
         historical_triage=read("scout-operations/historical-triage.json"),
         metadata_blockers=read("scout-operations/metadata-blockers.json"),
         attribution_followups=read("scout-operations/attribution-followups.json"),
         monthly_expansion_leads=read("scout-operations/monthly-expansion-leads.json"),
-        monthly_decision_queue=read("scout-operations/monthly-decision-queue.json"))
+        monthly_decision_queue=read("scout-operations/monthly-decision-queue.json"),
+        crossref_manifest=c,crossref_coverage=cc,
+        crossref_triage=read("scout-operations/historical-crossref-triage.json"),
+        crossref_manifest_sha=csha)
     new=json.dumps(result,indent=2,sort_keys=True)+"\n"
     if not OUT.exists() or OUT.read_text(encoding="utf-8")!=new:
         OUT.write_text(new,encoding="utf-8")
