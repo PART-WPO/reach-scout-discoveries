@@ -21,6 +21,16 @@ class HarvestUnitTests(unittest.TestCase):
         self.assertEqual(h.clean_award("OWAQ16-JTTI-I-1"),"OWAQ16-JTTI-I-1")
         self.assertEqual(h.clean_award("WPO20-SSP-E-1(SSP"),"WPO20-SSP-E-1")
         self.assertEqual(h.clean_award("OWAQOBS001(IAA"),"OWAQOBS001")
+        self.assertEqual(h.clean_award("UNK"),"")
+        self.assertEqual(h.clean_award("BAA"),"")
+        self.assertEqual(h.clean_award("PREVIOUSLY"),"")
+        multi="NA25OARX459C0215-T1-01 NA25OARX459C0216-T1-01"
+        self.assertEqual(h.split_primary_identifiers(multi),[
+            "NA25OARX459C0215-T1-01","NA25OARX459C0216-T1-01"])
+        self.assertEqual(h.split_primary_identifiers("NA25OARX459C0342-T1-01"),
+                         ["NA25OARX459C0342-T1-01"])
+        self.assertEqual(h.split_primary_identifiers("OWAQ16-JTTI-I-1"),
+                         ["OWAQ16-JTTI-I-1"])
 
     def test_only_primary_spark_award_column_is_searchable(self):
         # A real production failure: SPARK's flattened awards feed includes
