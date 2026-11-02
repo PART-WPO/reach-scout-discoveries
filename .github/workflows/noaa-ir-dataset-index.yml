@@ -1,0 +1,66 @@
+name: Refresh NOAA Institutional Repository DOI index for Scout
+on:
+  workflow_dispatch:
+  schedule:
+    # Before the weekday 8 AM Scout briefing, after routine early-morning indexing.
+    - cron: '10 7 * * 1-5'
+      timezone: "America/New_York"
+  push:
+    branches: [main]
+    paths:
+      - 'scout-operations/jobs/noaa-ir-index-2026-11-02.trigger'
+permissions:
+  contents: write
+concurrency:
+  group: reach-scout-noaa-ir-index
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check exact DOI matching, unknowns, and prior-review safety
+        run: |
+          set -euo pipefail
+          python3 -m unittest discover -v -s scout-operations/tests -p test_noaa_ir_index.py
+          python3 -m unittest discover -v -s scout-discoveries/tools/tests -p test_noaa_ir_lookup.py
+      - name: Read full official NOAA IR JSON catalog and build complete hash-checked shards
+        run: |
+          set -euo pipefail
+          python3 scout-operations/tools/build_noaa_ir_index.py
+          python3 - <<'PY'
+          import sys
+          sys.path.insert(0,"scout-discoveries/tools")
+          from noaa_ir_lookup import trusted_index
+          result=trusted_index()
+          assert result and result["manifest"]["complete"]
+          print("Verified NOAA IR DOI index:",result["manifest"]["distinct_dois"],"unique DOI entries")
+          PY
+      - name: Publish only minimized DOI mapping (no raw private or full NOAA records)
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- scout-operations/noaa-ir
+          if git diff --cached --quiet; then
+            echo 'NOAA IR index already current'
+            exit 0
+          fi
+          git commit -m 'Refresh complete official NOAA IR DOI lookup for new Scout candidates'
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then
+              echo 'Published validated NOAA IR DOI lookup'
+              exit 0
+            fi
+            git fetch origin main
+            git rebase origin/main
+            sleep "$((attempt * 2))"
+          done
+          echo 'Unable to persist NOAA IR index; old index remains authoritative' >&2
+          exit 1
