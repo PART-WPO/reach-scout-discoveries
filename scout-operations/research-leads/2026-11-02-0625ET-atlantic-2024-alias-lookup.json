@@ -1,0 +1,38 @@
+{
+  "schema": "reach-scout-independent-award-research-leads-v1",
+  "run_id": "REACH-SCOUT-2026-11-02-HOURLY-0625ET",
+  "research_date": "2026-11-02",
+  "selected_mode": "normal_historical_discovery",
+  "purpose": "EXACT_DOI_ALIAS_LOOKUP_ONLY_NOT_NEW_OUTPUT",
+  "original_source_lead_file": "scout-operations/research-leads/2026-11-02-0525ET-atlantic-drifter-dois.json",
+  "leads": [
+    {
+      "identity": "doi:10.57969/s9qp4c",
+      "output_url": "https://doi.org/10.57969/S9QP4C",
+      "title": "Lagrangian Drifter Laboratory at Scripps Institution of Oceanography GTS Atlantic Hurricane 2024 Data",
+      "research_origin_method": "Independent discovery",
+      "finding_purpose": "metadata_identity_check_only",
+      "status": "ALIAS_ONLY_PENDING_REGISTRY_LOOKUP_DO_NOT_STAGE",
+      "source_year": 2024,
+      "project_award": "NA21OAR4590374",
+      "spark_project_id": "spark-000336",
+      "possible_same_output_as": "doi:10.57969/s9qp4cd",
+      "evidence": "2024 LDL family page cites DOI ending S9QP4CD, but the same annual ERDDAP dataset metadata embeds DOI ending S9QP4C; original spelling returned 404 in DataCite and Crossref. Do not treat as two outputs or assign date until DOI-specific registry resolution.",
+      "sources_checked": [
+        "https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/",
+        "https://erddap.ldl.ucsd.edu/erddap/tabledap/LDL_AtlanticHurricane2024.html",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/independent-metadata-lookup/latest.json"
+      ],
+      "missing_fields": [
+        "Registry confirmation of exact canonical DOI",
+        "Source-specific created Pub Date",
+        "Year-specific WPO project funding allocation",
+        "Full public REACH and Scout identity dedup"
+      ],
+      "next_action": "Use unified DOI lookup for exact alias 10.57969/S9QP4C; reconcile original native S9QP4CD before one canonical dataset identity and any review proposal. No duplicate candidate."
+    }
+  ],
+  "no_candidate_staged_this_run": true,
+  "private_hub_import": "NOT_VERIFIED",
+  "human_approvals": "NOT_VERIFIED"
+}
