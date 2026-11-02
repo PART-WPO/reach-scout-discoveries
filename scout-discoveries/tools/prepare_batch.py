@@ -160,6 +160,24 @@ def validate_canonical(path):
                 raise ValueError(f"Missing canonical finding purpose: {path.name}:{num}")
             if route[0].strip() != "Metadata correction" and method[0].strip() != route[0].strip():
                 raise ValueError(f"Conflicting origin method/route: {path.name}:{num}")
+            # New Monthly API drafts need the Historical-style, source-specific
+            # reviewer story before they can be promoted into the public feed.
+            # This applies to new inbox drafts only; immutable historical
+            # published batches are not retroactively rewritten.
+            if re.search(r"(?im)^\\s*Intake origin:\\s*Monthly API\\s*$", rationale):
+                labels = ("Finding:", "What to check before adding this output:",
+                          "Reviewer question:")
+                sections = {}
+                for label in labels:
+                    matches = [line for line in rationale.splitlines()
+                               if line.startswith(label)]
+                    if len(matches) != 1 or len(matches[0]) < 65:
+                        raise ValueError(f"Monthly reviewer narrative missing or generic {label} at {path.name}:{num}")
+                    sections[label] = matches[0]
+                if (sections["What to check before adding this output:"].count(" | ") < 2
+                        or "REACH" not in sections["What to check before adding this output:"]
+                        or not sections["Reviewer question:"].endswith("?")):
+                    raise ValueError(f"Monthly reviewer narrative needs case-specific checks and a decision at {path.name}:{num}")
             if method[0].strip() == "API-seeded expansion":
                 if len(re.findall(r"(?im)^\s*Scout seed DOI:\s*10\.\d{4,9}/[^\s]+\s*$", rationale)) != 1:
                     raise ValueError(f"Missing exact Scout seed DOI: {path.name}:{num}")
