@@ -65,7 +65,7 @@ def output_row(x,mode,month,run):
       "Proposed Project Title":(x["projects"][0] if len(x["projects"])==1 else ""),
       "Suggested Parent Project":(x["projects"][0] if len(x["projects"])==1 else ""),
       "Authors / PI":"; ".join(x["authors"][:12]),"Principal Investigators":"",
-      "Principal Investigator Email(s)":"","Publication Date":x["date"],
+      "Principal Investigator Email(s)":"","Publication Date":("" if x.get("is_preprint") else x["date"]),
       "Brief Abstract":x.get("abstract",""),"IR?":"","IR Status":"",
       "IR Pub Date":"","IR Repository URL":"","Evidence URL":x["evidence_urls"][0],
       "Funding Evidence URL":x["evidence_urls"][0],
