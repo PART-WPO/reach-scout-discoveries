@@ -70,6 +70,33 @@ def verified_seed(e):
         len(str(e.get("seed_research_notes","")).strip())>=25
     )
 
+def verified_preprint_hold(e):
+    """Close ONLY the ineligible original preprint DOI, not its expansion seed.
+
+    Preprint ineligibility is independent of same-project award verification.
+    Never fill verified_awards just to satisfy the ordinary terminal-output gate.
+    """
+    if e.get("status")!="no_action" or e.get("no_action_subtype")!="PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT":
+        return False
+    if e.get("publication_status")!="preprint" or e.get("source_posted_content_verified") is not True:
+        return False
+    if (e.get("original_output_gate") or {}).get("eligible_for_new_output_review") is not False:
+        return False
+    if e.get("preprint_watchlist_status")!="tracking_preprint":
+        return False
+    if e.get("verified_awards"):
+        return False  # No unverified WPO project award attribution.
+    if len(str(e.get("no_action_reason") or "").strip())<25 or not e.get("verified_at"):
+        return False
+    checked=e.get("checked_sources") or []
+    doi=e.get("identity","").removeprefix("doi:")
+    if not checked or not all(isinstance(u,str) and u.startswith("https://") for u in checked):
+        return False
+    if not any(u.lower().startswith("https://api.crossref.org/works/") and u.lower().endswith(doi) for u in checked):
+        return False
+    return len(str(e.get("research_notes") or "").strip())>=25
+
+
 def run():
     manifest,source=cases()
     prior=read("scout-operations/historical-crossref-triage.json")
@@ -123,7 +150,7 @@ def run():
         entry["source_batch_ids"]=sorted(found["source_batch_ids"])
         entry["source_evidence_urls"]=sorted(found["source_evidence_urls"])
         entry["titles"]=sorted(found["titles"])
-        if entry["status"] in DONE and not verified_terminal(entry,reviewed_paths):
+        if entry["status"] in DONE and not (verified_preprint_hold(entry) or verified_terminal(entry,reviewed_paths)):
             raise ValueError("Unsupported unverified terminal Crossref status "+key)
         orig_ok=entry["status"] in DONE
         seed_ok=verified_seed(entry)
