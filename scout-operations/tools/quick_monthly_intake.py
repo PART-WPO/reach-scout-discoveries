@@ -152,6 +152,56 @@ def detect_version(entry, doi):
     return ""
 
 
+def pre_stage_metadata_recovery(entry, source_row):
+    """Mandatory evidence-backed enrichment before a NEW monthly original is staged.
+
+    This function is offline/read-only. Scout must first conduct appropriate
+    DataCite/Crossref exact-DOI, publisher/NOAA IR, native repository and
+    project-identity checks, then persist metadata_recovery in monthly-triage.
+    A missing field never becomes a guessed value, and an access failure never
+    counts as metadata absence. Already staged original DOIs are not re-staged.
+    """
+    row = dict(source_row)
+    check_fields = ("Authors / PI", "Publication Date", "Output Type",
+                    "Output URL", "Evidence URL", "Funding Evidence URL")
+    if str(row.get("Output Type", "")).strip() == "1":
+        check_fields += ("Brief Abstract",)
+    missing_initial = [field for field in check_fields if not str(row.get(field, "")).strip()]
+    if not missing_initial:
+        return row, [], "not_needed", []
+    recovery = entry.get("metadata_recovery") or {}
+    status = recovery.get("status", "")
+    checks = recovery.get("checks", [])
+    if status not in {"resolved", "exhausted"} or not isinstance(checks, list) or not checks:
+        return row, missing_initial, "required", []
+    verified_checks = [check for check in checks if isinstance(check, dict)
+                       and str(check.get("url", "")).startswith("https://")
+                       and str(check.get("result", "")).strip()
+                       and str(check.get("method", "")).strip()]
+    if not verified_checks:
+        return row, missing_initial, "required", []
+    recovered = recovery.get("resolved_fields") or {}
+    if not isinstance(recovered, dict):
+        raise ValueError("metadata_recovery.resolved_fields must be a dict")
+    verified_urls = {check["url"] for check in verified_checks}
+    for field, record in recovered.items():
+        if field not in missing_initial or not isinstance(record, dict):
+            raise ValueError("Metadata recovery may only populate originally missing critical fields")
+        value = str(record.get("value", "")).strip()
+        evidence = record.get("evidence_url", "")
+        if not value or evidence not in verified_urls:
+            raise ValueError("Recovered metadata requires a checked source URL and nonempty value")
+        if field == "Publication Date" and not re.fullmatch(r"\\d{4}-\\d{2}-\\d{2}", value):
+            raise ValueError("Publication Date must use the approved full YYYY-MM-DD format")
+        if field == "Brief Abstract" and len(value) < 60:
+            raise ValueError("Brief Abstract recovery is too short to review")
+        row[field] = value
+    missing_remaining = [field for field in check_fields if not str(row.get(field, "")).strip()]
+    if status == "resolved" and missing_remaining:
+        raise ValueError("Metadata recovery marked resolved but critical fields remain missing")
+    return row, missing_remaining, status, verified_checks
+
+
 def build(root, reach_root, spark_root, write_drafts=False):
     sys.path.insert(0, str(root / "scout-discoveries/tools"))
     from prepare_batch import prepare
@@ -187,6 +237,7 @@ def build(root, reach_root, spark_root, write_drafts=False):
             if key not in ledgers:
                 raise ValueError("Missing ledger identity: " + doi)
             entry = ledgers[key]
+            raw, missing_after_recovery, recovery_gate, recovery_checks = pre_stage_metadata_recovery(entry, raw)
             title = clean(raw.get("Title", ""))
             if not title:
                 raise ValueError("Monthly DOI has no title")
@@ -204,6 +255,9 @@ def build(root, reach_root, spark_root, write_drafts=False):
                 issues.append("Existing DOI/version review must not be duplicated")
             elif funding_status in {"funding_anomaly", "unmatched_primary_award"}:
                 status = "funding_exception"
+            elif recovery_gate == "required":
+                status = "metadata_recovery_required"
+                issues.append("Critical metadata missing in API pull; Scout must document targeted exact-DOI and secondary-source recovery BEFORE preparing a Hub draft: " + ", ".join(missing_after_recovery))
             else:
                 missing = [label for label in ("Authors / PI", "Publication Date", "Output Type",
                                                  "Evidence URL", "Funding Evidence URL")
@@ -228,8 +282,9 @@ def build(root, reach_root, spark_root, write_drafts=False):
                       "status": status, "api_funding_basis": funding_status,
                       "funding_awards": raw.get("NOAA Award Number(s)", ""),
                       "reach_matches": found,
-                      "metadata_missing": ([x for x in ("Brief Abstract",)
-                                            if not raw.get(x, "").strip()]),
+                      "metadata_missing": missing_after_recovery,
+              "metadata_recovery_state": recovery_gate,
+              "metadata_recovery_checks": len(recovery_checks),
                       "exceptions": issues,
                       "source_batch_id": batch["id"],
                       "review_feed_status": ("MANIFEST_PUBLISHED" if status == "staged_in_scout_feed" else "NOT_STAGED"),
@@ -279,8 +334,19 @@ def build(root, reach_root, spark_root, write_drafts=False):
                                   "Funding context: " + funding_status,
                                   "PI attribution from authors not assumed; human review required."]
                     }
+                    if recovery_gate in {"resolved", "exhausted"}:
+                        provenance["notes"].append("Metadata recovery: Completed")
+                        provenance["notes"].append(
+                            "Metadata checks: " + " ; ".join(check["url"] for check in recovery_checks))
+                        if missing_after_recovery:
+                            provenance["notes"].append(
+                                "Metadata still missing: " + ", ".join(missing_after_recovery))
                     if status == "metadata_review":
-                        provenance["notes"].append("Missing abstract: human reviewer must recover before REACH publication.")
+                        provenance["notes"].append(
+                            "What to check before adding this output: Verify unresolved critical metadata and documented sources; keep as Needs Investigation until resolved")
+                    elif status == "parent_attribution_review":
+                        provenance["notes"].append(
+                            "What to check before adding this output: Confirm each named award belongs to the exact funded WPO project; do not assign a parent arbitrarily")
                     if status == "parent_attribution_review":
                         provenance["notes"].append("Multiple or ambiguous project connections: human reviewer must confirm appropriate funded project.")
                     name = batch["id"][:10] + "-monthly-fast-" + hashlib.sha256((batch["id"]+doi).encode()).hexdigest()[:14] + ".csv"
