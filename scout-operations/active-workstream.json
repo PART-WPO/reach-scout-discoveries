@@ -13,12 +13,12 @@
   "historical_crossref_api": {
     "coverage_matches_source_manifest": true,
     "distinct_dois": 614,
-    "originals_pending_first_pass": 606,
+    "originals_pending_first_pass": 566,
     "raw_batch_rows": 614,
     "remaining_or_untracked": 614,
     "research_completed": 0,
     "seed_expansions_pending": 614,
-    "unresolved_followups": 8
+    "unresolved_followups": 48
   },
   "mode": "historical_crossref_triage",
   "monthly_api": {
@@ -35,7 +35,7 @@
   },
   "note": "Future follow-up dates do not clear API research. Make bounded distinct-source checks now; use documented early-retry exceptions as needed. An unavailable or invalid Hub metadata-needed handoff remains outstanding. This selector does NOT conduct research, verify human approval, or launch Scout.",
   "phase": "initial_research",
-  "reason": "Expedited original Crossref DOI deduplication across full REACH and Scout, preserving every DOI as an expansion seed",
+  "reason": "Expedited historical Crossref original DOI screening (566 pending) and 614 independent DOI-seeded expansions; 40 posted-content preprint originals safely held; monthly originals complete",
   "schema": "reach-scout-workstream-v1",
   "switch_policy": "monthly original decisions > monthly expansion > historical Crossref original dedup + seed expansion > historical DataCite > attribution follow-ups > normal SPARK discovery"
 }
