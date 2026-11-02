@@ -357,12 +357,12 @@
       "cohort": "2026-10",
       "status": "needs_more_research",
       "first_seen_at": "2026-11-01T13:52:45Z",
-      "updated_at": "2026-11-01T23:27:08Z",
+      "updated_at": "2026-11-02T00:29:16.651Z",
       "source_run_id": "REACH-MONTHLY-API-2026-10",
       "award_numbers": [
         "NA24OARX459C0015"
       ],
-      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished. PROJECT SCOPE: NOAA IR award evidence appears consistent, but same-project research scope is not yet verified.\n12:32 EST: NOAA IR noaa:76692 independently verifies journal article, 2026, DOI, author trio and Grant NA24OARX459C0015. SPARK primary project spark-000155 is GLORe ocean reanalysis/sea ice outlook; article analyzes Western North Pacific tropical cyclone seasonal accumulated cyclone energy using experimental SFS reforecasts. Named project and article research objectives differ substantially; same-project WPO attribution NOT VERIFIED despite exact award and NOAA IR funding. NOAA IR is alternate URL for SAME article; none of targeted REACH index Link to Output URLs match; detail/other links remain unchecked. Hold from Hub.\n14:28 EST inspected SPARK spark-000155 full project detail: primary NA24OARX459C0015 funds improvements to Global Ocean Reanalysis (GLORe) for CPC ocean monitoring and sea-ice outlook. NOAA IR independently lists the same grant on an SFS reforecast study of Western North Pacific seasonal tropical cyclone accumulated cyclone energy. The two stated project objectives remain materially different, so same-project WPO deliverable status is NOT VERIFIED; NOAA IR grant metadata alone does not justify Hub staging. No duplicate or terminal decision inferred.\n18:27 EST bounded decision review: NOAA Institutional Repository independently confirms the exact DOI and NA24OARX459C0015, but the article's Western North Pacific seasonal TC SFS reforecast analysis has no demonstrated project deliverable bridge to SPARK GLORe ocean reanalysis/sea-ice scope. Earlier NOAA IR and SPARK full-detail research already provided two source types. No positive same-project bridge emerged in this targeted review. Do not publish a WPO claim or auto-exclude solely on topic; preserve as a specifically blocked human attribution question, NOT delivered to private Hub. Exact question: Was this article produced under the primary GLORe award's funded tasks, or is the grant metadata a broad/unrelated acknowledgment?",
+      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished. PROJECT SCOPE: NOAA IR award evidence appears consistent, but same-project research scope is not yet verified.\n12:32 EST: NOAA IR noaa:76692 independently verifies journal article, 2026, DOI, author trio and Grant NA24OARX459C0015. SPARK primary project spark-000155 is GLORe ocean reanalysis/sea ice outlook; article analyzes Western North Pacific tropical cyclone seasonal accumulated cyclone energy using experimental SFS reforecasts. Named project and article research objectives differ substantially; same-project WPO attribution NOT VERIFIED despite exact award and NOAA IR funding. NOAA IR is alternate URL for SAME article; none of targeted REACH index Link to Output URLs match; detail/other links remain unchecked. Hold from Hub.\n14:28 EST inspected SPARK spark-000155 full project detail: primary NA24OARX459C0015 funds improvements to Global Ocean Reanalysis (GLORe) for CPC ocean monitoring and sea-ice outlook. NOAA IR independently lists the same grant on an SFS reforecast study of Western North Pacific seasonal tropical cyclone accumulated cyclone energy. The two stated project objectives remain materially different, so same-project WPO deliverable status is NOT VERIFIED; NOAA IR grant metadata alone does not justify Hub staging. No duplicate or terminal decision inferred.\n18:27 EST bounded decision review: NOAA Institutional Repository independently confirms the exact DOI and NA24OARX459C0015, but the article's Western North Pacific seasonal TC SFS reforecast analysis has no demonstrated project deliverable bridge to SPARK GLORe ocean reanalysis/sea-ice scope. Earlier NOAA IR and SPARK full-detail research already provided two source types. No positive same-project bridge emerged in this targeted review. Do not publish a WPO claim or auto-exclude solely on topic; preserve as a specifically blocked human attribution question, NOT delivered to private Hub. Exact question: Was this article produced under the primary GLORe award's funded tasks, or is the grant metadata a broad/unrelated acknowledgment?\n19:27 EST source-specific independent bibliographic check: FAO AGRIS entry supplied by DOAJ independently confirms the 2026 Environmental Research Communications 8(10) article 101004, DOI 10.1088/2515-7620/aeaad2, and the SFS western North Pacific cyclone ACE study. This is bibliographic corroboration ONLY; AGRIS does not establish the SPARK GLORe project's funded-task relationship. Prior NOAA IR primary-award metadata and SPARK scope conflict remain unresolved. Preserve bounded human-attribution question; no Scout/Hub draft and no public REACH action.",
       "checked_sources": [
         "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
@@ -371,7 +371,8 @@
         "https://repository.library.noaa.gov/view/noaa/76692",
         "https://github.com/PART-WPO/SPARK/blob/main/agent-data/index/part-002.csv",
         "https://github.com/PART-WPO/reach-dashboard/tree/main/agent-data/index",
-        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-013.csv"
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-013.csv",
+        "https://agris.fao.org/search/en/providers/122436/records/6ad61043468b8f4e0d8acb92"
       ],
       "first_pass_screening": {
         "source_report": "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
@@ -443,7 +444,22 @@
         "evidence_sufficient_to_stage": false,
         "reason": "Material project-scope mismatch despite primary award string; do not assert project funding.",
         "reviewer_question": "Does NA24OARX459C0015 GLORe explicitly fund the SFS tropical cyclone study as a deliverable?",
-        "next_trigger": "New project-specific documentary evidence or human reviewer direction; avoid repeated generic searches."
+        "next_trigger": "New project-specific documentary evidence or human reviewer direction; avoid repeated generic searches.",
+        "independent_bibliographic_corroboration": {
+          "source": "https://agris.fao.org/search/en/providers/122436/records/6ad61043468b8f4e0d8acb92",
+          "origin": "FAO AGRIS / DOAJ bibliographic metadata",
+          "confirms": [
+            "DOI",
+            "article identity",
+            "Environmental Research Communications 8(10) 101004",
+            "seasonal cyclone study topic"
+          ],
+          "does_not_confirm": [
+            "same-project GLORe funding",
+            "publisher funding acknowledgment",
+            "private Hub delivery"
+          ]
+        }
       }
     },
     {
