@@ -1,6 +1,6 @@
 {
   "schema": "reach-scout-preprint-intake-gate-v1",
-  "checked_at": "2026-11-02T22:01:10.523098+00:00",
+  "checked_at": "2026-11-02T22:03:02.651478+00:00",
   "policy": "All new publication proposals require registry check. A preprint DOI cannot be staged through ANY origin. Uncertain metadata remains on hold. Existing human decisions unchanged.",
   "checks": [
     {
@@ -191,6 +191,22 @@
       ]
     },
     {
+      "path": "scout-discoveries/batches/2026-11-02-independent-preprint-hold-001.csv",
+      "sha256": "7027266821f6ab66e47d0aa0c990798da4ed33a45a023df9adb48fa1b46917f7",
+      "verdict": "eligible",
+      "rows": [
+        {
+          "doi": "10.1175/bams-d-25-0032.1",
+          "status": "eligible",
+          "reason": "Crossref identifies an officially issued scholarly publication",
+          "evidence": [
+            "https://api.crossref.org/works/10.1175/bams-d-25-0032.1",
+            "https://api.datacite.org/dois/10.1175/bams-d-25-0032.1"
+          ]
+        }
+      ]
+    },
+    {
       "path": "scout-discoveries/batches/2026-11-02-monthly-enriched-pdisas-100696-001.csv",
       "sha256": "390f63b9e714350ebb269ad8bb9c791ee6474184e8641b6e1178881922a88afa",
       "verdict": "eligible",
@@ -302,6 +318,6 @@
       ]
     }
   ],
-  "eligible_batches": 11,
+  "eligible_batches": 12,
   "held_batches": 2
 }
