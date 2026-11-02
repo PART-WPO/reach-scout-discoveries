@@ -21,7 +21,9 @@ def approved_batches(folder, entries):
             raise ValueError("Batch replacement missing")
         if by_id[old_id]["sha256"] != rule["original_sha256"]:
             raise ValueError("Source batch digest changed")
-        if rule.get("replacement_kind") == "metadata_refresh":
+        if rule.get("replacement_kind") == "review_reclassification":
+            verify_review_reclassification(folder, by_id[old_id], by_id[new_id], rule)
+        elif rule.get("replacement_kind") == "metadata_refresh":
             verify_metadata_refresh(folder, by_id[old_id], by_id[new_id], rule)
         else:
             verify_rows(folder, by_id[old_id], by_id[new_id], rule["excluded_dois"])
@@ -88,3 +90,47 @@ def verify_metadata_refresh(folder, before, after, rule):
                 "Publication Date", "Existing REACH Match", "Scout Confidence"):
         if original[key] != enriched[key]:
             raise ValueError("Metadata refresh unexpectedly changed " + key)
+
+
+def verify_review_reclassification(folder, before, after, rule):
+    """Review-ready classification update that is NOT a human approval.
+
+    A completed metadata recovery can close its original NEEDS INVESTIGATION
+    reason, while remaining reviewer checks stay explicit. This never changes
+    a DOI, output metadata, discovered funding, confidence, source, or
+    human decision; source batches remain immutable and the active manifest
+    exposes only the latest checked replacement.
+    """
+    previous = rows_for(folder, before)
+    current = rows_for(folder, after)
+    if len(previous) != 1 or len(current) != 1:
+        raise ValueError("Review reclassification requires one original output")
+    original, updated = previous[0], current[0]
+    doi = str(rule.get("exact_doi", "")).lower()
+    if not doi or original.get("DOI", "").lower() != doi or updated.get("DOI", "").lower() != doi:
+        raise ValueError("Review reclassification must preserve exact DOI identity")
+    if set(original) != set(updated):
+        raise ValueError("Review reclassification changed the canonical 24-column schema")
+    changed = {k for k in original if original[k] != updated[k]}
+    if changed != {"Scout Discovery Rationale"}:
+        raise ValueError("Review reclassification may change only Scout rationale, not output metadata")
+    from_text = original["Scout Discovery Rationale"]
+    to_text = updated["Scout Discovery Rationale"]
+    if ("Scout classification: NEEDS INVESTIGATION" not in from_text
+        or "Scout classification: NEW CANDIDATE" not in to_text
+        or "Scout finding purpose: needs_investigation" not in from_text
+        or "Scout finding purpose: new_output_review" not in to_text
+        or "Metadata recovery: Completed" not in from_text
+        or len(original.get("Brief Abstract", "").strip()) < 60
+        or "What to check before adding this output:" not in to_text):
+        raise ValueError("Review reclassification lacks completed recovery, canonical transition or remaining checks")
+    expected = (from_text
+        .replace("Scout classification: NEEDS INVESTIGATION",
+                 "Scout classification: NEW CANDIDATE", 1)
+        .replace("Scout finding purpose: needs_investigation",
+                 "Scout finding purpose: new_output_review", 1))
+    addition = str(rule.get("review_note", "")).strip()
+    if (not addition.startswith("Review classification update:")
+        or len(addition) < 85
+        or to_text != expected + "\n" + addition):
+        raise ValueError("Review reclassification may only change canonical labels and append exact audited reason")
