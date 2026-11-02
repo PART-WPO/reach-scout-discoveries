@@ -1,0 +1,149 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-11-02-HOURLY-0525ET",
+  "run_at_utc": "2026-11-02T10:28:33.616145Z",
+  "primary_mode": "normal_historical_discovery",
+  "run_character": "final follow-up: two SPARK PRIMARY awards examined, four newly found DOI research leads saved; no new feed candidates",
+  "sources_read": [
+    "scout-operations/monthly-fast-intake.json",
+    "scout-operations/monthly-triage.json",
+    "scout-operations/coverage.json",
+    "scout-operations/monthly-decision-queue.json",
+    "scout-operations/monthly-expansion-leads.json",
+    "scout-discoveries/manifest.json",
+    "api-discoveries/manifest.json",
+    "scout-operations/active-workstream.json",
+    "scout-operations/discovery-origin-rollup.json",
+    "scout-operations/historical-coverage.json",
+    "scout-operations/api-followup-priority-policy.md",
+    "scout-operations/metadata-review-units.json",
+    "scout-operations/attribution-followups.json",
+    "scout-operations/reports/independent-metadata-lookup/latest.json",
+    "scout-operations/hourly-run-audits/2026-11-02-0430ET.json",
+    "PART-WPO/reach-dashboard/agent-data/manifest.json",
+    "PART-WPO/SPARK/agent-data/manifest.json"
+  ],
+  "monthly_originals": {
+    "active_batch": "2026-11-01-monthly-api-2026-10-primary-only-part001",
+    "received": 13,
+    "checked": 13,
+    "missing_from_ledger": 0,
+    "staged_for_hub_import": 9,
+    "no_action": 4,
+    "unresolved_original_research": 0,
+    "private_hub_import": "NOT_VERIFIED",
+    "new_originals_staged_this_run": 0,
+    "no_action_dois": [
+      "10.1002/qj.70325",
+      "10.5194/egusphere-2026-4928",
+      "10.5281/zenodo.23289230",
+      "10.5281/zenodo.23289231"
+    ],
+    "note": "Older monthly-fast-intake.json retains funding_exception=2 and cross_cohort_version_review=2; authoritative live monthly-triage and coverage show all four as evidence-based no_action, not five outstanding exceptions. Do not reopen absent new evidence."
+  },
+  "monthly_expansions": {
+    "total": 6,
+    "manifest_staged_for_human_review": 2,
+    "already_in_reach": 3,
+    "pending_human_intake": 1,
+    "new_this_run": 0,
+    "pending_identity": "doi:10.5281/zenodo.22758716",
+    "original_seed_doi": "10.1088/2515-7620/aeaad2",
+    "blocker": "DataCite metadata and 15 native files recovered; same-project artifact-specific primary WPO funding and canonical concept/version family review remain human decisions. Concept DOI 10.5281/zenodo.20046428 must not be a separate duplicate."
+  },
+  "historical": {
+    "distinct_dois": 188,
+    "research_complete": true,
+    "remaining": 0,
+    "already_in_reach": 37,
+    "forwarded_to_hub_ledger_label": 6,
+    "metadata_update_forwarded_ledger_label": 8,
+    "no_action": 109,
+    "human_metadata_needed": 28,
+    "note": "Historical forwarded_to_hub is ledger terminology, not verified private Hub import."
+  },
+  "independent_metadata": {
+    "unified_doi_records": 8,
+    "unified_doi_ok": 8,
+    "unified_github_records": 2,
+    "unified_github_ok": 2,
+    "resume_queue": 10,
+    "lead_resumption_this_run": 0,
+    "new_candidate_this_run": 0,
+    "reason": "Previously resumed/staged leads and Zenodo human-intake blocker checked; no evidence to restage already manifest-listed records.",
+    "new_doi_lookup_seeds": 4
+  },
+  "feed": {
+    "manifest_generated_at": "2026-11-02T09:37:37Z",
+    "batch_count": 37,
+    "manifest_candidate_rows": 85,
+    "origin_rollup_rows": 85,
+    "rollup_manifest_rows_verified": true,
+    "effective_discovery_methods": {
+      "Direct API": 22,
+      "API-seeded expansion": 17,
+      "Independent discovery": 46,
+      "Unclassified": 0
+    },
+    "monthly_originals_in_manifest": 9,
+    "new_inbox_drafts": 0,
+    "new_batches_this_run": 0,
+    "sampled_csv_schema_columns": 24,
+    "sampled_batch_ids": [
+      "2026-11-01-monthly-fast-d987856c32ed45",
+      "2026-11-02-0430ET-urban-heat-flood-independent-001"
+    ],
+    "sha256_independently_recomputed_this_run": false,
+    "github_action_status_this_run": "NOT_VERIFIED",
+    "integrity_assessment": "Prior automated SHA verification reported; current manifest and origin rollup consistent in totals, sample batch paths accessible. No new full SHA verification performed."
+  },
+  "public_reach": {
+    "manifest_blob_sha": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+    "index_shards": 10,
+    "detail_shards": 140,
+    "index_rows": 1238,
+    "public_reach_additions_this_run": 0,
+    "fresh_index_detail_content_rescan_this_run": false,
+    "basis": "Live REACH manifest shard row sums; last full public identity scan from 2026-11-02 0430ET audit. No new candidate requires fresh full scan."
+  },
+  "spark": {
+    "manifest_blob_sha": "bd57e5d07ddb1ae46e6f0e7c43ab3eb1e2d63e99",
+    "primary_only_scope_enforced": true
+  },
+  "private_hub_import": "NOT_VERIFIED",
+  "human_approvals": "NOT_VERIFIED",
+  "new_reviewer_decisions_this_run": 0,
+  "no_autoapproval": true,
+  "no_public_reach_or_smartsheet_writes": true,
+  "blockers": [
+    "Private Discovery Hub Sync to Scout import and human approvals cannot be observed",
+    "Zenodo 10.5281/zenodo.22758716 requires human funding/version-family decision",
+    "Monthly fast-intake snapshot retains obsolete exception labels despite closed live triage",
+    "No new source-backed candidate suitable for staging in this run",
+    "Four new UCSD LDL annual DOI datasets need direct DOI metadata, full REACH detail/secondary-link dedup and per-year project attribution before human staging"
+  ],
+  "next_priority": "Unified DOI lookup should enrich four newly persisted LDL research leads next mission; complete full detail/secondary-link dedup and per-year WPO attribution, then consider separate human-review drafts. Reviewer Sync to Scout remains needed for existing 85 staged proposals.",
+  "audit_result": "PARTIAL",
+  "audit_reason": "New leads have native evidence and primary SPARK award but exact DOI created dates and full public detail dedup are not yet verified; no new candidate published.",
+  "normal_awards_examined": [
+    {
+      "spark_id": "spark-000335",
+      "primary_award": "NA21OAR4590377",
+      "new_doi_leads": 0
+    },
+    {
+      "spark_id": "spark-000336",
+      "primary_award": "NA21OAR4590374",
+      "new_doi_leads": 4
+    }
+  ],
+  "new_independent_leads": 4,
+  "new_independent_lead_file": "scout-operations/research-leads/2026-11-02-0525ET-atlantic-drifter-dois.json",
+  "new_independent_lead_identities": [
+    "doi:10.57969/s9qp4cd",
+    "doi:10.57969/s9vc7n",
+    "doi:10.57969/s9rp4p",
+    "doi:10.57969/s9wc7z"
+  ],
+  "new_independent_lead_funding_basis": "LDL native family page explicit NA21OAR4590374 WPO plus same-project SPARK primary award; attribution to each annual dataset still requires verification."
+}
