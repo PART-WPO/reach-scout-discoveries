@@ -6,6 +6,9 @@ unvalidated draft leaves existing published batches and manifest untouched.
 Scout writes new draft files into scout-discoveries/inbox/ (never overwrite).
 """
 import argparse
+import hashlib
+import json
+import os
 import subprocess
 from pathlib import Path
 
@@ -31,11 +34,28 @@ def changed_inbox(before, after):
             raise ValueError(f"Missing submitted inbox draft: {path}")
     return sorted(set(paths))
 
+def is_preprint_gate_eligible(path):
+    report_path = REPO / "scout-operations/preprint-intake-gate.json"
+    if not report_path.exists():
+        raise ValueError("Universal preprint intake gate report missing")
+    report = json.loads(report_path.read_text(encoding="utf-8"))
+    if report.get("schema") != "reach-scout-preprint-intake-gate-v1":
+        raise ValueError("Unknown preprint intake gate schema")
+    rel = str(path.relative_to(REPO)).replace("\\", "/")
+    matches = [x for x in report["checks"] if x["path"] == rel]
+    if len(matches) != 1 or matches[0]["sha256"] != hashlib.sha256(path.read_bytes()).hexdigest():
+        raise ValueError("Missing or stale preprint verification for " + rel)
+    return matches[0]["verdict"] == "eligible"
+
+
 def promote(before=None, after=None):
     drafts = changed_inbox(before, after)
     # Validate all drafts before writing even one destination.
     prepared = []
     for source in drafts:
+        if os.getenv("SCOUT_PREPRINT_GATE_REQUIRED") == "1" and not is_preprint_gate_eligible(source):
+            print("HELD outside Discovery Hub (preprint or publication status unverified):", source.name)
+            continue
         result = validate_canonical(source)
         target = BATCHES / source.name
         if target.exists() and target.read_bytes() != source.read_bytes():
