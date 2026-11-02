@@ -52,6 +52,16 @@ class HarvestUnitTests(unittest.TestCase):
         self.assertTrue(h.exact_awards(["NA16OAR4590234; NA16OAR4590235"],"NA16OAR4590234"))
         self.assertFalse(h.exact_awards(["NA16OAR45902345"],"NA16OAR4590234"))
         self.assertTrue(h.exact_awards(["OWAQ16-JTTI-I-1"],"OWAQ16-JTTI-I-1"))
+        # FY25 OARX full task award is distinct from its base FAIN and sibling tasks.
+        full="NA25OARX459C0342-T1-01"
+        base="NA25OARX459C0342"
+        self.assertEqual(h.clean_award(full), full)
+        self.assertTrue(h.exact_awards([full], full))
+        self.assertFalse(h.exact_awards([full], base))
+        self.assertFalse(h.exact_awards([base], full))
+        self.assertFalse(h.exact_awards([full.replace("-T1-01", "-T1-02")], full))
+        self.assertFalse(h.exact_awards(["X"+full], full))
+        self.assertTrue(h.exact_awards([full+"; NA22NWS4320003"],"NA22NWS4320003"))
 
     def test_datacite_published_not_registration(self):
         issued={"dates":[{"dateType":"Issued","date":"2026-10-12"}],"registered":"2026-11-02"}
