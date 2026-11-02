@@ -1,0 +1,17 @@
+# REACH Scout — 11:26 ET annual drifter source and inbox follow-up
+
+Run: REACH-SCOUT-2026-11-02-HOURLY-1126ET. Primary mode: normal historical discovery; bounded resumption of four independently discovered annual drifter DOI leads. No new Hub candidates or public REACH edits.
+
+**Finding:** Native Scripps LDL ERDDAP metadata/graph pages for all four 2021–2024 annual datasets were accessible, unlike earlier timeouts. They identify distinct annual dataset IDs and date windows, a tabledap data-access form, pressure and wave variables, and license text allowing free use and redistribution. This does **not** verify that observation rows were downloaded. DataCite and the native LDL family associate primary SPARK award NA21OAR4590374 with the datasets, but also list two other NOAA awards without allocating each year or drifter to the WPO project. SPARK's live Aug 2021–Jul 2024 period only partly overlaps the 2021 and 2024 datasets.
+
+**New duplicate check:** All 15 public Scout inbox CSV files were read and searched for the four normalized DOI identities, with no exact match. Prior full public REACH index/detail and 37 manifest-listed Scout batch DOI/title screening was reused, not re-executed; private Hub feedback is still NOT VERIFIED. Canonical 2024 DOI is 10.57969/s9qp4c, not native citation typo s9qp4cd. Do not create a fifth output.
+
+**What to check before adding this output:** For each annual DOI, establish which barometer/directional-wave drifter observations are specifically funded by NA21OAR4590374 | Decide if the year is a distinct catalogable WPO deliverable rather than shared Global Drifter Program observations | Check any alternate version or private Hub decision | Verify actual raw-data download if required | Resolve 2024 citation typo and DataCite abstract's 2021 wording | Use the DOI-specific DataCite-created date (2021: 2024-04-12; 2022–2024: 2024-04-13), not the annual title year.
+
+**Reviewer question:** Which, if any, of these four annual datasets should be submitted for WPO human review under SPARK spark-000336? Year-specific award allocation remains a human attribution decision; no new CSV was staged.
+
+Monthly original queue: 13 checked, 9 active public Scout review proposals, 4 no-action, 0 missing from ledger. Historical DataCite: 188/188 research complete. Monthly expansion: 6 leads (2 staged, 3 already in REACH, 1 pending human intake). Scout feed: 37 active batches, 85 rows. Existing 9 monthly review proposals still have legacy narrative parity gaps (7 missing all three labels, 1 missing Reviewer question); new-draft fail-closed validation is separate. Existing case-specific companion guidance is in the 09:34 ET reviewer-story audit. No private Hub import or approval was observed; reviewer should use **Sync to Scout** and confirm imported records before acting.
+
+Evidence: https://ldl.ucsd.edu/ldl/atlantic-hurricane-drifters/ ; https://erddap.ldl.ucsd.edu/erddap/tabledap/LDL_AtlanticHurricane2021.graph ; https://erddap.ldl.ucsd.edu/erddap/tabledap/LDL_AtlanticHurricane2022.graph ; https://erddap.ldl.ucsd.edu/erddap/tabledap/LDL_AtlanticHurricane2023.graph ; https://erddap.ldl.ucsd.edu/erddap/tabledap/LDL_AtlanticHurricane2024.graph ; https://api.datacite.org/dois/10.57969/s9qp4c ; https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-026.csv ; https://github.com/PART-WPO/reach-scout-discoveries/tree/main/scout-discoveries/inbox
+
+Research ledger updated in place, retaining all prior evidence and Independent discovery provenance; no original monthly DOI was re-staged.
