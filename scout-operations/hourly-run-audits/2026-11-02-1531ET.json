@@ -1,0 +1,116 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-11-02-HOURLY-1531ET",
+  "run_at_utc": "2026-11-02T20:33:47.318188+00:00",
+  "selected_mode": "normal_historical_discovery",
+  "policy": "FY25+ full task-qualified primary award exact match; monthly original-first and reviewer story parity preserved",
+  "source_manifests": {
+    "monthly_active_batch": "2026-11-01-monthly-api-2026-10-primary-only-part001",
+    "monthly_source_rows": 13,
+    "monthly_coverage_missing_from_ledger": 0,
+    "historical_total": 188,
+    "historical_remaining": 0,
+    "historical_research_complete": true,
+    "scout_manifest_batches": 30,
+    "scout_manifest_rows": 85,
+    "spark_index_shards_checked": 6,
+    "spark_base_identifier_matching_rows": 1,
+    "reach_full_detail_shards_checked_this_run": 0
+  },
+  "monthly_originals": {
+    "received_before": 13,
+    "received_after": 13,
+    "checked_before": 13,
+    "checked_after": 13,
+    "public_feed_staged_before": 9,
+    "public_feed_staged_after": 9,
+    "no_action_before": 4,
+    "no_action_after": 4,
+    "new_original_dois": 0
+  },
+  "historical": {
+    "fully_investigated_before": 188,
+    "fully_investigated_after": 188,
+    "remaining": 0,
+    "human_metadata_needed": 28
+  },
+  "monthly_expansion": {
+    "total": 6,
+    "public_feed_staged": 2,
+    "already_in_reach": 3,
+    "pending_human_intake": 1,
+    "new_leads": 0
+  },
+  "independent_leads": {
+    "source_json_files_enumerated": 8,
+    "unified_checkpoint_dois_ok": 14,
+    "github_release_records": 2,
+    "new_leads": 0,
+    "resumed_lead_metadata_crosscheck": 2,
+    "new_dispositions": 0,
+    "blockers": [
+      "DeepFlood native Figshare file inventory",
+      "DeepFlood two DOI canonical identity",
+      "DeepFlood dataset-specific WPO funding"
+    ]
+  },
+  "research_findings": [
+    {
+      "identity": "doi:10.5194/tc-20-5973-2026",
+      "existing_monthly_original": true,
+      "source_method": "Direct API",
+      "primary_award": "NA25OARX459C0342-T1-01",
+      "base_only_is_not_task_proof": true,
+      "spark_project_id": "spark-000373",
+      "publisher_full_award_acknowledgment": true,
+      "noaa_ir_full_award_acknowledgment": true,
+      "spark_full_primary_match": true,
+      "same_specific_project_deliverable_verified": false,
+      "preprint_same_work": "10.5194/egusphere-2025-3884",
+      "new_candidate": false,
+      "sources": [
+        "https://tc.copernicus.org/articles/20/5973/2026/",
+        "https://repository.library.noaa.gov/view/noaa/76974",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/index/part-004.csv"
+      ]
+    }
+  ],
+  "reviewer_story_parity": {
+    "monthly_eight_row_batch": "2026-11-02-monthly-reviewer-story-parity-001",
+    "frp_single_row_batch": "2026-11-02-monthly-enriched-frp-2749622-001",
+    "rows_with_all_three_labels": 9,
+    "all_eight_have_pipe_separated_case_specific_checks": true,
+    "factual_review_status": "SOURCE_SAMPLE_VERIFIED_NOT_PRIVATE_HUB"
+  },
+  "new_scout_candidates": 0,
+  "new_inbox_drafts": 0,
+  "new_scout_batch_ids": [],
+  "prepare_batch_python_check_executed": false,
+  "prepare_batch_not_run_reason": "No new eligible review candidate prepared",
+  "feed": {
+    "active_batches": 30,
+    "staged_candidates": 85,
+    "full_sha256_recomputed_this_run": false,
+    "new_publication_attempted": false,
+    "feed_integrity_status": "MANIFEST_AND_ROLLUP_AGREE_NO_NEW_FEED_WRITE",
+    "github_actions_status": "NOT_VERIFIED_THIS_RUN"
+  },
+  "reviewer_visibility": {
+    "monthly_public_feed_staged_originals": 9,
+    "private_hub_import": "NOT_VERIFIED",
+    "human_approvals": "NOT_VERIFIED",
+    "public_reach_additions_verified_this_run": 0
+  },
+  "blockers": [
+    "Full REACH secondary-link dedup for final/preprint pair not completed this run",
+    "Specific spark-000373 funded deliverable linkage needs human judgment",
+    "Private Hub import and human decisions not observed",
+    "DeepFlood native file/version/funding unresolved"
+  ],
+  "report_path": "scout-operations/reports/hourly-research/2026-11-02-1531ET-fy25-award-and-feed-check.md",
+  "audit_result": "PARTIAL",
+  "no_new_csv_reason": "No newly verified distinct eligible output; do not create an empty candidate batch",
+  "library_first_save_intended": true,
+  "human_decisions_preserved": true,
+  "no_reach_spark_smartsheet_edits": true
+}
