@@ -1,6 +1,6 @@
 {
   "artifact_scope_policy": "Zenodo file listings and exact GitHub tag trees are read-only evidence, not funding or approval. Access failures do not mean files are absent.",
-  "doi_count": 6,
+  "doi_count": 8,
   "doi_records": [
     {
       "artifact_scope": {
@@ -98,6 +98,52 @@
         "files_verified": false,
         "status": "not_zenodo"
       },
+      "doi": "10.1175/bams-d-25-0140.1",
+      "lead_files": [
+        "scout-operations/research-leads/2026-11-02-0430ET-urban-heat-flood-independent-dois.json"
+      ],
+      "metadata": {
+        "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>Situational awareness during extreme flooding is critical for effective emergency response operations, especially in environments with limited observations and/or rapidly changing conditions. In such situations, knowing the location and extent of inundation can help define areas with the highest risk to human safety, identify flooded road networks that could limit the mobility of emergency services, and estimate out-of-bank water storage. While remote sensing data sources provide invaluable information toward these factors, satellite imagery is often unavailable due to cloud obscuration and/or limited overpasses, while imagery from small uncrewed aerial systems (UASs) is often inconsistent and spatially limited. To bridge the data gap, current efforts focus on the use of Group 3 UAS platforms to provide near-real-time multispectral imagery for determining surface water extent. While crewed aircraft can and do serve in this role, the benefits of longer flight times (8+ h), lower mission cost, and improved flight crew safety make large UAS applications a viable approach for collecting regional imagery. To support operational initiatives, the imagery is made available as it is collected through a web-based portal, allowing it to be viewed on open-source geographic software such as Google Earth. As data needs increase for emergency operations and research applications, it is critical to define the role of large UAS in future mission planning and operational support for environmental hazards; therefore, this work is necessary to define pathways for future applications of Group 3 (and larger) UAS assets in emergency response and management operations during natural disasters.</jats:p>",
+        "attempts": [
+          {
+            "error": {
+              "code": 404,
+              "kind": "http"
+            },
+            "provider": "datacite",
+            "url": "https://api.datacite.org/dois/10.1175/bams-d-25-0140.1"
+          },
+          {
+            "error": null,
+            "provider": "crossref",
+            "url": "https://api.crossref.org/works/10.1175/bams-d-25-0140.1"
+          }
+        ],
+        "creators": [
+          "Jamie Dyer",
+          "Robert Moorhead",
+          "Lee Hathcock",
+          "Bryan Farrell",
+          "Peter McKinley"
+        ],
+        "evidence": "https://api.crossref.org/works/10.1175/bams-d-25-0140.1",
+        "funding_references": [],
+        "provider": "crossref",
+        "pub_date": "2026-05-01",
+        "pub_date_basis": "Crossref published-print",
+        "pub_date_precision": "month_imputed",
+        "publisher": "American Meteorological Society",
+        "related_identifiers": {},
+        "resource_type": "journal-article",
+        "status": "ok",
+        "title": "Near-Real-Time Inundation Mapping Utilizing Large Uncrewed Aerial System Platforms"
+      }
+    },
+    {
+      "artifact_scope": {
+        "files_verified": false,
+        "status": "not_zenodo"
+      },
       "doi": "10.1177/10506519261455873",
       "lead_files": [
         "scout-operations/research-leads/2026-11-01-2324ET-monthly-expansion-doi-checkpoint.json"
@@ -162,6 +208,54 @@
         "resource_type": "journal-article",
         "status": "ok",
         "title": "Bridging the Gap Between Numbers and Experience: Identifying Community Risk Thresholds in Extreme Weather Communication"
+      }
+    },
+    {
+      "artifact_scope": {
+        "files_verified": false,
+        "status": "not_zenodo"
+      },
+      "doi": "10.17632/43vrcwvdf8.1",
+      "lead_files": [
+        "scout-operations/research-leads/2026-11-02-0430ET-urban-heat-flood-independent-dois.json"
+      ],
+      "metadata": {
+        "abstract": "These are HOBO data collected within a 2-year long NOAA-funded project. Urban Heat Experiment Around Lubbock, Texas (U-HEAT): The U_HEAT testbed includes 23 sites in Lubbock. The file headers should provided all the information. The site locations are given in the data folder as well. \n\nPlease go through the site map, site locations and other meta data files before you use these data for research. \n\nU-HEAT Testbed features\n\nLow-cost, low maintenance, easily accessible, remote data collection (Bluetooth)\n2 m above ground level; Grassy surface and robust mounting\nCommunity involvement allowing uninterrupted measurements for more than 2 years period\nData sets: 1 minute temporal resolution for stationary sites which makes 22 days continuous data collection.",
+        "attempts": [
+          {
+            "error": null,
+            "provider": "datacite",
+            "url": "https://api.datacite.org/dois/10.17632/43vrcwvdf8.1"
+          }
+        ],
+        "creators": [
+          "Pal, Sandip"
+        ],
+        "evidence": "https://api.datacite.org/dois/10.17632/43vrcwvdf8.1",
+        "funding_references": [
+          {
+            "funderIdentifier": "https://ror.org/02z5nhe81",
+            "funderIdentifierType": "ROR",
+            "funderName": "National Oceanic and Atmospheric Administration",
+            "schemeUri": "https://ror.org"
+          }
+        ],
+        "provider": "datacite",
+        "pub_date": "2025-05-23",
+        "pub_date_basis": "DataCite created (office convention)",
+        "publisher": "Mendeley Data",
+        "related_identifiers": [
+          {
+            "relatedIdentifier": "10.17632/43vrcwvdf8",
+            "relatedIdentifierType": "DOI",
+            "relationType": "IsVersionOf",
+            "resourceTypeGeneral": "Dataset"
+          }
+        ],
+        "resource_type": "Dataset",
+        "status": "ok",
+        "title": "U-HEAT (Urban Heat Experiment Around Lubbock, Texas) Datasets",
+        "version": null
       }
     },
     {
@@ -509,7 +603,7 @@
       }
     }
   ],
-  "doi_successful": 6,
+  "doi_successful": 8,
   "github_count": 2,
   "github_records": [
     {
@@ -728,6 +822,17 @@
       "next_action": "resume_research_verification"
     },
     {
+      "evidence": "https://api.crossref.org/works/10.1175/bams-d-25-0140.1",
+      "identity": "doi:10.1175/bams-d-25-0140.1",
+      "kind": "doi",
+      "lead_files": [
+        "scout-operations/research-leads/2026-11-02-0430ET-urban-heat-flood-independent-dois.json"
+      ],
+      "lookup_status": "ok",
+      "metadata_source": "crossref",
+      "next_action": "resume_research_verification"
+    },
+    {
       "evidence": "https://api.crossref.org/works/10.1177/10506519261455873",
       "identity": "doi:10.1177/10506519261455873",
       "kind": "doi",
@@ -736,6 +841,17 @@
       ],
       "lookup_status": "ok",
       "metadata_source": "crossref",
+      "next_action": "resume_research_verification"
+    },
+    {
+      "evidence": "https://api.datacite.org/dois/10.17632/43vrcwvdf8.1",
+      "identity": "doi:10.17632/43vrcwvdf8.1",
+      "kind": "doi",
+      "lead_files": [
+        "scout-operations/research-leads/2026-11-02-0430ET-urban-heat-flood-independent-dois.json"
+      ],
+      "lookup_status": "ok",
+      "metadata_source": "datacite",
       "next_action": "resume_research_verification"
     },
     {
