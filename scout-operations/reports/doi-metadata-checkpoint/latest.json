@@ -17934,6 +17934,28 @@
       ]
     },
     {
+      "checkpoint_state": "LOOKUP_UNAVAILABLE_OR_NOT_FOUND",
+      "doi": "10.57969/s9qp4cd",
+      "metadata": {
+        "evidence": "",
+        "source": "",
+        "status": "not_found"
+      },
+      "original_rows": [],
+      "origins": [
+        "independent_research_lead"
+      ],
+      "prior_fields": {
+        "abstract": false,
+        "creators": false,
+        "pub_date": false,
+        "title": false,
+        "type": false
+      },
+      "recoverable_fields": [],
+      "review_keys": []
+    },
+    {
       "checkpoint_state": "SCOUT_FIELDS_ALREADY_COVERED",
       "doi": "10.57969/s9rp4p",
       "metadata": {
@@ -17980,6 +18002,7 @@
         "historical",
         "historical_date_audit",
         "historical_triage",
+        "independent_research_lead",
         "metadata_blocker",
         "metadata_review"
       ],
@@ -18104,6 +18127,7 @@
         "historical",
         "historical_date_audit",
         "historical_triage",
+        "independent_research_lead",
         "metadata_blocker",
         "metadata_review"
       ],
@@ -18166,6 +18190,7 @@
         "historical",
         "historical_date_audit",
         "historical_triage",
+        "independent_research_lead",
         "metadata_blocker",
         "metadata_review"
       ],
@@ -18790,8 +18815,8 @@
       "entries": 188
     },
     "independent_research_leads": {
-      "doi_leads": 8,
-      "files": 5
+      "doi_leads": 12,
+      "files": 6
     },
     "metadata_blockers": {
       "entries": 48
@@ -18812,8 +18837,9 @@
   "state_counts": {
     "FIELDS_RECOVERABLE": 10,
     "HISTORICAL_FIELDS_ALREADY_COVERED": 143,
+    "LOOKUP_UNAVAILABLE_OR_NOT_FOUND": 1,
     "SCOUT_FIELDS_ALREADY_COVERED": 97
   },
   "successful_lookups": 250,
-  "unique_dois": 250
+  "unique_dois": 251
 }
