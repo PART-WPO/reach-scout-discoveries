@@ -6,37 +6,36 @@ Verified-source research inventory, not human approval or REACH publication.
 
 | Metric | Count |
 |---|---:|
-| Distinct DOI candidates | 229 |
-| Successful direct DOI lookups | 229 |
-| DOI records with newly recoverable metadata | 10 |
+| Distinct DOI candidates | 247 |
+| Successful direct DOI lookups | 247 |
+| DOI records with newly recoverable metadata | 13 |
 | Historical DataCite intake records | 188 |
-| Staged Scout discovery records | 66 |
+| Staged Scout discovery records | 77 |
 | Human metadata review units | 36 |
 
 ## Fields recovered
 
 | Field | DOIs |
 |---|---:|
-| abstract | 3 |
-| creators | 2 |
-| pub_date | 9 |
-| title | 2 |
-| type | 2 |
+| abstract | 6 |
+| creators | 6 |
+| pub_date | 13 |
+| title | 6 |
+| type | 6 |
 
 ## Research state
 
 | Classification | DOIs |
 |---|---:|
-| FIELDS_RECOVERABLE | 10 |
-| HISTORICAL_FIELDS_ALREADY_COVERED | 140 |
-| SCOUT_FIELDS_ALREADY_COVERED | 79 |
+| FIELDS_RECOVERABLE | 13 |
+| HISTORICAL_FIELDS_ALREADY_COVERED | 143 |
+| SCOUT_FIELDS_ALREADY_COVERED | 91 |
 
 ## Related Scout leads and metadata-review cases
 
 | DOI | Source | Title | Pub Date | Recoverable fields | Review key |
 |---|---|---|---|---|---|
 | 10.5281/zenodo.4526127 | datacite | Stream radar data and locations | 2021-02-09 | title, creators, type, abstract, pub_date | case-36-anchor-stream-radar |
-| 10.7910/dvn/jwzewf | datacite | Urban Rain Rate Dashboard - Improving Delivery of Weather Predict | 2025-10-17 | title, creators, type, abstract, pub_date | case-17 |
 | 10.15139/s3/uy6rda | datacite | Data Management and Sharing Plan for: Enhancing probabilistic mac | 2026-01-29 |  |  |
 | 10.17603/ds2-58ft-kp27 | datacite | HTI Interview Protocol with Professional Users; in Evaluation of  | 2025-04-10 |  | case-08 |
 | 10.17603/ds2-6vmm-2g61 | datacite | HTI Interview De-Identification Guide; in Evaluation of hurricane | 2025-04-10 |  | case-09 |
@@ -75,11 +74,12 @@ Verified-source research inventory, not human approval or REACH publication.
 | 10.6084/m9.figshare.23666259.v1 | datacite | Quantifying the covariability between Z<sub>DR</sub>/K<sub>DP</su | 2023-07-12 |  | figshare-poster |
 | 10.6084/m9.figshare.23689194 | datacite | ELDORA Machine Learning Quality Control Dataset | 2023-07-14 |  | figshare-eldora |
 | 10.6084/m9.figshare.23689194.v1 | datacite | ELDORA Machine Learning Quality Control Dataset | 2023-12-09 |  | figshare-eldora |
+| 10.7910/dvn/jwzewf | datacite | Urban Rain Rate Dashboard - Improving Delivery of Weather Predict | 2025-10-17 |  | case-17 |
 
 ## Safety boundaries
 
 An enriched DOI does not prove standalone REACH eligibility, funding, absence of duplicates or file-level access.
 DataCite fundingReferences can be empty despite an explicit NOAA award in the abstract.
-The valid created calendar date satisfies Pub Date by office policy, without separate date-only human review.
+DataCite accepts created as Pub Date; Crossref uses print first, online second, and YYYY-MM-01 when month-only.
 The discovery route remains Scout expansion when the DOI was first found through related output research.
 No original feed, metadata-blocker decision, human-review sheet, Smartsheet row or public REACH record was changed.

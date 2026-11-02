@@ -1,14 +1,272 @@
 {
   "fields_recoverable": {
-    "abstract": 3,
-    "creators": 2,
-    "type": 2,
-    "title": 2,
-    "pub_date": 9
+    "abstract": 6,
+    "creators": 6,
+    "pub_date": 13,
+    "title": 6,
+    "type": 6
   },
-  "policy": "DataCite created accepted for DataCite DOI. Crossref prefers published-print, online fallback; month-only YYYY-MM becomes YYYY-MM-01. Crossref created is NEVER Pub Date. Human reviewer dates remain unchanged.",
+  "policy": "DataCite uses created (office policy). Crossref uses published-print first, published-online if print absent, and published/issued/posted fallback; month-only dates get YYYY-MM-01. Crossref created never fills Pub Date. Existing reviewer dates preserved.",
   "read_only": true,
   "records": [
+    {
+      "checkpoint_state": "HISTORICAL_FIELDS_ALREADY_COVERED",
+      "doi": "10.1002/qj.70325",
+      "metadata": {
+        "abstract": "Abstract The Global Observing System (GOS) includes drifting buoys with barometers whose surface pressure observations are essential for estimating the current state of the atmosphere and ocean for Numerical Weather Prediction. The Global Drifter Program, a scientific project based at the Scripps Institution of Oceanography, provides the majority of these buoys (barometer drifters). However, regions with sparse in situ observation coverage can limit weather forecast skill. We describe the Mediterranean Extreme Events Experiment (M3E) – a project with partners from Europe and the United States – which, via the deployment of barometer drifters into the data‐sparse Ionian Sea and central Mediterranean, aims to (1) improve the weather forecasting of extreme events, (2) understand cyclone development across the Mediterranean, and (3) contribute to the Global Atmospheric River Reconnaissance Program (GARRP). The deployments started in September 2025, and to date M3E has released 20 buoys, some of which were available in January 2026 when storm Harry affected the Mediterranean region. Harry 's synoptic conditions and extreme weather, including three‐day precipitation totals over 400 mm in southern Italy, are discussed. The European Centre for Medium‐Range Weather Forecasts Integrated Forecasting System was skilful in resolving Harry 's large‐scale circulation and the precipitation in southern Italy seven days ahead. There were forecast challenges in capturing the North African precipitation due to mesoscale low‐pressure systems. The benefit of the M3E buoys was shown using the Forecast Sensitivity to Observation Impact analysis, and an Observing System Experiment suggested sensitivity of the mesoscale features in storm Harry to the buoy observations in the Ionian Sea. These extra observations positively affected the extreme event forecasts and provide evidence for supporting future M3E deployments. In turn, this would help to sustain the GOS surface network, leading to socioeconomic benefits via improved weather forecasting of extreme weather systems, and contribute to the goals of GARRP.",
+        "access_rights": [
+          "http://creativecommons.org/licenses/by/4.0/",
+          "http://doi.wiley.com/10.1002/tdm_license_1.1"
+        ],
+        "best_partial_basis": "published-online",
+        "best_partial_date": "2026-10-12",
+        "checkpoint_schema": "crossref-publication-v4-print-online-month-first",
+        "created": "",
+        "creators": [
+          "David A. Lavers",
+          "Pierre‐Marie Poulain",
+          "Emanuela Clementi",
+          "F. Martin Ralph",
+          "Luca Centurioni",
+          "Linus Magnusson",
+          "Mohamed Dahoui",
+          "Viviana Piermattei",
+          "Olivier Desprez de Gésincourt",
+          "Milena Menna",
+          "Sébastien Péré",
+          "Nadia Pinardi",
+          "Paolo Oddo",
+          "Yuri Cotroneo",
+          "Anna M. Wilson",
+          "Katrin Schroeder",
+          "Enrico Scoccimarro",
+          "Mark J. Rodwell",
+          "Matthieu Chevallier",
+          "Giacomo Davide Pagliaro",
+          "Giannetta Fusco",
+          "Giorgio Budillon"
+        ],
+        "crossref_created": {
+          "full_date": "2026-10-12",
+          "precision": "day",
+          "value": "2026-10-12"
+        },
+        "crossref_deposited": {
+          "full_date": "2026-10-28",
+          "precision": "day",
+          "value": "2026-10-28"
+        },
+        "evidence": "https://api.crossref.org/works/10.1002/qj.70325",
+        "funders": [
+          "National Oceanic and Atmospheric Administration",
+          "NextGenerationEU"
+        ],
+        "funding_in_description": [],
+        "funding_structured": [
+          "ITINERIS project (CUP B53C22002150006)",
+          "NA20OAR4320278"
+        ],
+        "issue": "",
+        "journal": "Quarterly Journal of the Royal Meteorological Society",
+        "pages": "e70325",
+        "pub_date": "2026-10-12",
+        "pub_date_basis": "Crossref published-online",
+        "pub_date_imputed_first_of_month": false,
+        "publication_dates": {
+          "issued": {
+            "full_date": "2026-10-12",
+            "precision": "day",
+            "value": "2026-10-12"
+          },
+          "posted": {
+            "full_date": "",
+            "precision": "missing",
+            "value": ""
+          },
+          "published": {
+            "full_date": "2026-10-12",
+            "precision": "day",
+            "value": "2026-10-12"
+          },
+          "published-online": {
+            "full_date": "2026-10-12",
+            "precision": "day",
+            "value": "2026-10-12"
+          },
+          "published-print": {
+            "full_date": "",
+            "precision": "missing",
+            "value": ""
+          }
+        },
+        "publisher": "Wiley",
+        "publisher_url": "https://doi.org/10.1002/qj.70325",
+        "reach_type": "1",
+        "registered": "",
+        "relations": {},
+        "resource_type": "journal-article",
+        "source": "crossref",
+        "source_publication_basis": "published-online",
+        "source_publication_date": "2026-10-12",
+        "source_publication_precision": "day",
+        "status": "ok",
+        "title": "The\n                    <scp>Mediterranean</scp>\n                    Extreme Events Experiment and storm\n                    <scp>\n                      <i>Harry</i>\n                    </scp>\n                    in\n                    <scp>January</scp>\n                    2026",
+        "volume": ""
+      },
+      "original_rows": [
+        {
+          "abstract": "Abstract The Global Observing System (GOS) includes drifting buoys with barometers whose surface pressure observations are essential for estimating the current state of the atmosphere and ocean for Numerical Weather Prediction. The Global Drifter Program, a scientific project based at the Scripps Institution of Oceanography, provides the majority of these buoys (barometer drifters). However, regions with sparse in situ observation coverage can limit weather forecast skill. We describe the Mediterranean Extreme Events Experiment (M3E) – a project with partners from Europe and the United States – which, via the deployment of barometer drifters into the data‐sparse Ionian Sea and central Mediterranean, aims to (1) improve the weather forecasting of extreme events, (2) understand cyclone devel",
+          "authors": "David A. Lavers; Pierre‐Marie Poulain; Emanuela Clementi; F. Martin Ralph; Luca Centurioni; Linus Magnusson; Mohamed Dahoui; Viviana Piermattei; Olivier Desprez de Gésincourt; Milena Menna; Sébastien Péré; Nadia Pinardi",
+          "awards": "NA20OAR4320278",
+          "batch": "api-discoveries/batches/2026-11-01-monthly-api-2026-10-primary-only-part001.csv",
+          "date": "2026-10-12",
+          "origin": "monthly",
+          "project": "Demonstrate and Expand a 21st Century Radar, Modeling, and Decision Support System to Improve Environmental Equity and Resilience to Extreme Precipitation in a Mountainous, West-Coast, Urban Area: Phase 2 of the Advanced Quantitative Precipitation Information (AQPI) System",
+          "title": "The\n                    <scp>Mediterranean</scp>\n                    Extreme Events Experiment and storm\n                    <scp>\n                      <i>Harry</i>\n                    </scp>\n                    in\n                    <scp>January</scp>\n                    2026",
+          "type": "1"
+        }
+      ],
+      "origins": [
+        "monthly"
+      ],
+      "prior_fields": {
+        "abstract": true,
+        "creators": true,
+        "pub_date": true,
+        "title": true,
+        "type": true
+      },
+      "recoverable_fields": [],
+      "review_keys": []
+    },
+    {
+      "checkpoint_state": "SCOUT_FIELDS_ALREADY_COVERED",
+      "doi": "10.1016/j.pdisas.2026.100696",
+      "metadata": {
+        "abstract": "",
+        "access_rights": [
+          "https://www.elsevier.com/tdm/userlicense/1.0/",
+          "https://www.elsevier.com/legal/tdmrep-license",
+          "http://creativecommons.org/licenses/by/4.0/"
+        ],
+        "best_partial_basis": "published-print",
+        "best_partial_date": "2026-10",
+        "checkpoint_schema": "crossref-publication-v4-print-online-month-first",
+        "created": "",
+        "creators": [
+          "Elisabet De Jesús-Otero",
+          "Joseph E. Trujillo-Falcón",
+          "Anthony L. Corrales",
+          "América R. Gaviria Pabón",
+          "Samuel T. Halvorson",
+          "Salvatore Callesano",
+          "Liam E. Llewellyn",
+          "Eduardo Muñoz Suárez"
+        ],
+        "crossref_created": {
+          "full_date": "2026-08-22",
+          "precision": "day",
+          "value": "2026-08-22"
+        },
+        "crossref_deposited": {
+          "full_date": "2026-09-29",
+          "precision": "day",
+          "value": "2026-09-29"
+        },
+        "evidence": "https://api.crossref.org/works/10.1016/j.pdisas.2026.100696",
+        "funders": [
+          "National Oceanic and Atmospheric Administration",
+          "NOAA Weather Program Office"
+        ],
+        "funding_in_description": [],
+        "funding_structured": [
+          "NA22OAR4590187"
+        ],
+        "issue": "",
+        "journal": "Progress in Disaster Science",
+        "pages": "100696",
+        "pub_date": "2026-10-01",
+        "pub_date_basis": "Crossref published-print (month -> day 01)",
+        "pub_date_imputed_first_of_month": true,
+        "publication_dates": {
+          "issued": {
+            "full_date": "",
+            "precision": "month",
+            "value": "2026-10"
+          },
+          "posted": {
+            "full_date": "",
+            "precision": "missing",
+            "value": ""
+          },
+          "published": {
+            "full_date": "",
+            "precision": "month",
+            "value": "2026-10"
+          },
+          "published-online": {
+            "full_date": "",
+            "precision": "missing",
+            "value": ""
+          },
+          "published-print": {
+            "full_date": "",
+            "precision": "month",
+            "value": "2026-10"
+          }
+        },
+        "publisher": "Elsevier BV",
+        "publisher_url": "https://doi.org/10.1016/j.pdisas.2026.100696",
+        "reach_type": "1",
+        "registered": "",
+        "relations": {},
+        "resource_type": "journal-article",
+        "source": "crossref",
+        "source_publication_basis": "published-print",
+        "source_publication_date": "",
+        "source_publication_precision": "month",
+        "status": "ok",
+        "title": "Extreme weather as an occupational hazard: Structural vulnerability among multilingual immigrant workers",
+        "volume": "31"
+      },
+      "original_rows": [
+        {
+          "abstract": "",
+          "authors": "Elisabet De Jesús-Otero; Joseph E. Trujillo-Falcón; Anthony L. Corrales; América R. Gaviria Pabón; Samuel T. Halvorson; Salvatore Callesano; Liam E. Llewellyn; Eduardo Muñoz Suárez",
+          "awards": "NA22OAR4590187",
+          "batch": "scout-discoveries/batches/2026-11-01-monthly-fast-d987856c32ed45.csv",
+          "date": "2026-10-01",
+          "origin": "staged",
+          "project": "A Weather-Ready Nation Para Todos: Evaluating Current Practices in Communicating Hazardous Weather Risks to Spanish Speakers",
+          "title": "Extreme weather as an occupational hazard: Structural vulnerability among multilingual immigrant workers",
+          "type": "1"
+        },
+        {
+          "abstract": "",
+          "authors": "Elisabet De Jesús-Otero; Joseph E. Trujillo-Falcón; Anthony L. Corrales; América R. Gaviria Pabón; Samuel T. Halvorson; Salvatore Callesano; Liam E. Llewellyn; Eduardo Muñoz Suárez",
+          "awards": "NA22OAR4590187",
+          "batch": "api-discoveries/batches/2026-11-01-monthly-api-2026-10-primary-only-part001.csv",
+          "date": "2026-10-01",
+          "origin": "monthly",
+          "project": "A Weather-Ready Nation Para Todos: Evaluating Current Practices in Communicating Hazardous Weather Risks to Spanish Speakers",
+          "title": "Extreme weather as an occupational hazard: Structural vulnerability among multilingual immigrant workers",
+          "type": "1"
+        }
+      ],
+      "origins": [
+        "monthly",
+        "staged"
+      ],
+      "prior_fields": {
+        "abstract": false,
+        "creators": true,
+        "pub_date": true,
+        "title": true,
+        "type": true
+      },
+      "recoverable_fields": [],
+      "review_keys": []
+    },
     {
       "checkpoint_state": "SCOUT_FIELDS_ALREADY_COVERED",
       "doi": "10.1029/2024gl109890",
@@ -17,8 +275,8 @@
         "access_rights": [
           "http://creativecommons.org/licenses/by/4.0/"
         ],
-        "best_partial_basis": "published-online",
-        "best_partial_date": "2024-08-15",
+        "best_partial_basis": "published-print",
+        "best_partial_date": "2024-08-28",
         "checkpoint_schema": "crossref-publication-v4-print-online-month-first",
         "created": "",
         "creators": [
@@ -51,6 +309,7 @@
         "pages": "e2024GL109890",
         "pub_date": "2024-08-28",
         "pub_date_basis": "Crossref published-print",
+        "pub_date_imputed_first_of_month": false,
         "publication_dates": {
           "issued": {
             "full_date": "2024-08-15",
@@ -87,11 +346,10 @@
         "source": "crossref",
         "source_publication_basis": "published-print",
         "source_publication_date": "2024-08-28",
+        "source_publication_precision": "day",
         "status": "ok",
         "title": "Historical Trends in Cold‐Season Mid‐Latitude Cyclones in the Great Lakes Region",
-        "volume": "51",
-        "source_publication_precision": "day",
-        "pub_date_imputed_first_of_month": false
+        "volume": "51"
       },
       "original_rows": [
         {
@@ -127,8 +385,8 @@
         "access_rights": [
           "http://creativecommons.org/licenses/by-nc-nd/4.0/"
         ],
-        "best_partial_basis": "published-online",
-        "best_partial_date": "2024-10-13",
+        "best_partial_basis": "published-print",
+        "best_partial_date": "2024-10",
         "checkpoint_schema": "crossref-publication-v4-print-online-month-first",
         "created": "",
         "creators": [
@@ -158,6 +416,7 @@
         "pages": "e2024MS004319",
         "pub_date": "2024-10-01",
         "pub_date_basis": "Crossref published-print (month -> day 01)",
+        "pub_date_imputed_first_of_month": true,
         "publication_dates": {
           "issued": {
             "full_date": "",
@@ -194,11 +453,10 @@
         "source": "crossref",
         "source_publication_basis": "published-print",
         "source_publication_date": "",
+        "source_publication_precision": "month",
         "status": "ok",
         "title": "Detecting Instantaneous Tidal Signals in Ocean Models Utilizing Streaming Band‐Pass Filters",
-        "volume": "16",
-        "source_publication_precision": "month",
-        "pub_date_imputed_first_of_month": true
+        "volume": "16"
       },
       "original_rows": [
         {
@@ -235,8 +493,8 @@
           "http://creativecommons.org/licenses/by-nc-nd/4.0/",
           "http://creativecommons.org/licenses/by-nc-nd/4.0/"
         ],
-        "best_partial_basis": "published-online",
-        "best_partial_date": "2024-08-29",
+        "best_partial_basis": "published-print",
+        "best_partial_date": "2024-09",
         "checkpoint_schema": "crossref-publication-v4-print-online-month-first",
         "created": "",
         "creators": [
@@ -277,6 +535,7 @@
         "pages": "e2024WR037507",
         "pub_date": "2024-09-01",
         "pub_date_basis": "Crossref published-print (month -> day 01)",
+        "pub_date_imputed_first_of_month": true,
         "publication_dates": {
           "issued": {
             "full_date": "2024-08-29",
@@ -313,11 +572,10 @@
         "source": "crossref",
         "source_publication_basis": "published-print",
         "source_publication_date": "",
+        "source_publication_precision": "month",
         "status": "ok",
         "title": "Assessing the Potential for Medium‐Range Ice Forecasts in the Laurentian Great Lakes",
-        "volume": "60",
-        "source_publication_precision": "month",
-        "pub_date_imputed_first_of_month": true
+        "volume": "60"
       },
       "original_rows": [
         {
@@ -354,8 +612,8 @@
           "http://creativecommons.org/licenses/by-nc-nd/4.0/",
           "http://creativecommons.org/licenses/by-nc-nd/4.0/"
         ],
-        "best_partial_basis": "published-online",
-        "best_partial_date": "2025-11-10",
+        "best_partial_basis": "published-print",
+        "best_partial_date": "2025-11",
         "checkpoint_schema": "crossref-publication-v4-print-online-month-first",
         "created": "",
         "creators": [
@@ -385,6 +643,7 @@
         "pages": "e2025MS005126",
         "pub_date": "2025-11-01",
         "pub_date_basis": "Crossref published-print (month -> day 01)",
+        "pub_date_imputed_first_of_month": true,
         "publication_dates": {
           "issued": {
             "full_date": "",
@@ -421,11 +680,10 @@
         "source": "crossref",
         "source_publication_basis": "published-print",
         "source_publication_date": "",
+        "source_publication_precision": "month",
         "status": "ok",
         "title": "Parameterization of Frequency‐Dependent Internal Wave Drag in Global Ocean Models",
-        "volume": "17",
-        "source_publication_precision": "month",
-        "pub_date_imputed_first_of_month": true
+        "volume": "17"
       },
       "original_rows": [
         {
@@ -437,6 +695,113 @@
           "origin": "staged",
           "project": "Enhancing the Realism of MOM6-SIS2 Simulations with Ocean Tides",
           "title": "Parameterization of Frequency-Dependent Internal Wave Drag in Global Ocean Models",
+          "type": "1"
+        }
+      ],
+      "origins": [
+        "staged"
+      ],
+      "prior_fields": {
+        "abstract": true,
+        "creators": true,
+        "pub_date": true,
+        "title": true,
+        "type": true
+      },
+      "recoverable_fields": [],
+      "review_keys": []
+    },
+    {
+      "checkpoint_state": "SCOUT_FIELDS_ALREADY_COVERED",
+      "doi": "10.1038/s41597-025-04554-3",
+      "metadata": {
+        "abstract": "",
+        "access_rights": [
+          "https://creativecommons.org/licenses/by-nc-nd/4.0",
+          "https://creativecommons.org/licenses/by-nc-nd/4.0"
+        ],
+        "best_partial_basis": "published-online",
+        "best_partial_date": "2025-02-15",
+        "checkpoint_schema": "crossref-publication-v4-print-online-month-first",
+        "created": "",
+        "creators": [
+          "Mulham Fawakherji",
+          "Jeffrey Blay",
+          "Matilda Anokye",
+          "Leila Hashemi-Beni",
+          "Jennifer Dorton"
+        ],
+        "crossref_created": {
+          "full_date": "2025-02-15",
+          "precision": "day",
+          "value": "2025-02-15"
+        },
+        "crossref_deposited": {
+          "full_date": "2025-02-15",
+          "precision": "day",
+          "value": "2025-02-15"
+        },
+        "evidence": "https://api.crossref.org/works/10.1038/s41597-025-04554-3",
+        "funders": [],
+        "funding_in_description": [],
+        "funding_structured": [],
+        "issue": "1",
+        "journal": "Scientific Data",
+        "pages": "271",
+        "pub_date": "2025-02-15",
+        "pub_date_basis": "Crossref published-online",
+        "pub_date_imputed_first_of_month": false,
+        "publication_dates": {
+          "issued": {
+            "full_date": "2025-02-15",
+            "precision": "day",
+            "value": "2025-02-15"
+          },
+          "posted": {
+            "full_date": "",
+            "precision": "missing",
+            "value": ""
+          },
+          "published": {
+            "full_date": "2025-02-15",
+            "precision": "day",
+            "value": "2025-02-15"
+          },
+          "published-online": {
+            "full_date": "2025-02-15",
+            "precision": "day",
+            "value": "2025-02-15"
+          },
+          "published-print": {
+            "full_date": "",
+            "precision": "missing",
+            "value": ""
+          }
+        },
+        "publisher": "Springer Science and Business Media LLC",
+        "publisher_url": "https://doi.org/10.1038/s41597-025-04554-3",
+        "reach_type": "1",
+        "registered": "",
+        "relations": {},
+        "resource_type": "journal-article",
+        "source": "crossref",
+        "source_publication_basis": "published-online",
+        "source_publication_date": "2025-02-15",
+        "source_publication_precision": "day",
+        "status": "ok",
+        "title": "DeepFlood for Inundated Vegetation High-Resolution Dataset for Accurate Flood Mapping and Segmentation",
+        "volume": "12"
+      },
+      "original_rows": [
+        {
+          "abstract": "Introduces DeepFlood, a labeled multimodal optical and SAR dataset for mapping floodwater and inundated vegetation, and evaluates segmentation architectures using the data.",
+          "authors": "Mulham Fawakherji; Jeffrey Blay; Matilda Anokye; Leila Hashemi-Beni; Jennifer Dorton",
+          "awards": "NA21OAR4590358",
+          "batch": "scout-discoveries/batches/2026-10-30-hourly-1329ET-independent-flood-mapping-001.csv",
+          "date": "2025-02-15",
+          "origin": "staged",
+          "project": "Rapid Floodwater Extent and Depth Measurements Using Optical UAV and SAR",
+          "title": "DeepFlood for Inundated Vegetation High-Resolution Dataset for Accurate Flood Mapping and Segmentation",
           "type": "1"
         }
       ],
@@ -489,6 +854,7 @@
         "pages": "300-314",
         "pub_date": "2020-06-02",
         "pub_date_basis": "Crossref published-online",
+        "pub_date_imputed_first_of_month": false,
         "publication_dates": {
           "issued": {
             "full_date": "2020-06-02",
@@ -525,11 +891,10 @@
         "source": "crossref",
         "source_publication_basis": "published-online",
         "source_publication_date": "2020-06-02",
+        "source_publication_precision": "day",
         "status": "ok",
         "title": "The formation, character and changing nature of mesoscale convective systems",
-        "volume": "1",
-        "source_publication_precision": "day",
-        "pub_date_imputed_first_of_month": false
+        "volume": "1"
       },
       "original_rows": [
         {
@@ -592,6 +957,7 @@
         "pages": "04722001",
         "pub_date": "2022-05-01",
         "pub_date_basis": "Crossref published-print (month -> day 01)",
+        "pub_date_imputed_first_of_month": true,
         "publication_dates": {
           "issued": {
             "full_date": "",
@@ -628,11 +994,10 @@
         "source": "crossref",
         "source_publication_basis": "published-print",
         "source_publication_date": "",
+        "source_publication_precision": "month",
         "status": "ok",
         "title": "Experiments in a Large Boundary Layer Wind Tunnel: Propagation of Noise through the Turbulent Boundary Layer",
-        "volume": "148",
-        "source_publication_precision": "month",
-        "pub_date_imputed_first_of_month": true
+        "volume": "148"
       },
       "original_rows": [
         {
@@ -662,12 +1027,153 @@
     },
     {
       "checkpoint_state": "SCOUT_FIELDS_ALREADY_COVERED",
+      "doi": "10.1080/01431161.2026.2749622",
+      "metadata": {
+        "abstract": "",
+        "access_rights": [
+          "https://doi.org/10.1080/policies-text-data-mining"
+        ],
+        "best_partial_basis": "published-online",
+        "best_partial_date": "2026-10-30",
+        "checkpoint_schema": "crossref-publication-v4-print-online-month-first",
+        "created": "",
+        "creators": [
+          "Ziheng Sun",
+          "Yunyao Li",
+          "Li Zhang",
+          "Daniel Tong",
+          "Shan Sun",
+          "Gonzalo Ferrada",
+          "Wei-Ting Hung",
+          "Hui Fang",
+          "Jiaxin Ding"
+        ],
+        "crossref_created": {
+          "full_date": "2026-10-30",
+          "precision": "day",
+          "value": "2026-10-30"
+        },
+        "crossref_deposited": {
+          "full_date": "2026-10-30",
+          "precision": "day",
+          "value": "2026-10-30"
+        },
+        "evidence": "https://api.crossref.org/works/10.1080/01431161.2026.2749622",
+        "funders": [
+          "National Aeronautics and Space Administration",
+          "National Oceanic and Atmospheric Administration",
+          "National Science Foundation",
+          "NASA ACCESS",
+          "NSF RISE",
+          "NOAA",
+          "NOAA",
+          "NSF Cybertraining",
+          "NOAA Weather Program Office",
+          "NOAA Weather Program Office"
+        ],
+        "funding_in_description": [],
+        "funding_structured": [
+          "2117834",
+          "2425687",
+          "80NSSC21M0028",
+          "NA22OAR4320151",
+          "NA22OAR4590512",
+          "NA23OAR4590387",
+          "NA23OAR4590388"
+        ],
+        "issue": "",
+        "journal": "International Journal of Remote Sensing",
+        "pages": "1-34",
+        "pub_date": "2026-10-30",
+        "pub_date_basis": "Crossref published-online",
+        "pub_date_imputed_first_of_month": false,
+        "publication_dates": {
+          "issued": {
+            "full_date": "2026-10-30",
+            "precision": "day",
+            "value": "2026-10-30"
+          },
+          "posted": {
+            "full_date": "",
+            "precision": "missing",
+            "value": ""
+          },
+          "published": {
+            "full_date": "2026-10-30",
+            "precision": "day",
+            "value": "2026-10-30"
+          },
+          "published-online": {
+            "full_date": "2026-10-30",
+            "precision": "day",
+            "value": "2026-10-30"
+          },
+          "published-print": {
+            "full_date": "",
+            "precision": "missing",
+            "value": ""
+          }
+        },
+        "publisher": "Informa UK Limited",
+        "publisher_url": "https://doi.org/10.1080/01431161.2026.2749622",
+        "reach_type": "1",
+        "registered": "",
+        "relations": {},
+        "resource_type": "journal-article",
+        "source": "crossref",
+        "source_publication_basis": "published-online",
+        "source_publication_date": "2026-10-30",
+        "source_publication_precision": "day",
+        "status": "ok",
+        "title": "Improving extreme Fire Radiative Power forecasting with Gaussian loss-based transformer and LSTM models",
+        "volume": ""
+      },
+      "original_rows": [
+        {
+          "abstract": "",
+          "authors": "Ziheng Sun; Yunyao Li; Li Zhang; Daniel Tong; Shan Sun; Gonzalo Ferrada; Wei-Ting Hung; Hui Fang; Jiaxin Ding",
+          "awards": "NA22OAR4590512, NA23OAR4590387, NA23OAR4590388",
+          "batch": "scout-discoveries/batches/2026-11-01-monthly-fast-7140ce113da603.csv",
+          "date": "2026-10-30",
+          "origin": "staged",
+          "project": "",
+          "title": "Improving extreme Fire Radiative Power forecasting with Gaussian loss-based transformer and LSTM models",
+          "type": "1"
+        },
+        {
+          "abstract": "",
+          "authors": "Ziheng Sun; Yunyao Li; Li Zhang; Daniel Tong; Shan Sun; Gonzalo Ferrada; Wei-Ting Hung; Hui Fang; Jiaxin Ding",
+          "awards": "NA22OAR4590512, NA23OAR4590387, NA23OAR4590388",
+          "batch": "api-discoveries/batches/2026-11-01-monthly-api-2026-10-primary-only-part001.csv",
+          "date": "2026-10-30",
+          "origin": "monthly",
+          "project": "",
+          "title": "Improving extreme Fire Radiative Power forecasting with Gaussian loss-based transformer and LSTM models",
+          "type": "1"
+        }
+      ],
+      "origins": [
+        "monthly",
+        "staged"
+      ],
+      "prior_fields": {
+        "abstract": false,
+        "creators": true,
+        "pub_date": true,
+        "title": true,
+        "type": true
+      },
+      "recoverable_fields": [],
+      "review_keys": []
+    },
+    {
+      "checkpoint_state": "SCOUT_FIELDS_ALREADY_COVERED",
       "doi": "10.1080/02626667.2018.1430898",
       "metadata": {
         "abstract": "",
         "access_rights": [],
-        "best_partial_basis": "published-online",
-        "best_partial_date": "2018-02-15",
+        "best_partial_basis": "published-print",
+        "best_partial_date": "2018-02-17",
         "checkpoint_schema": "crossref-publication-v4-print-online-month-first",
         "created": "",
         "creators": [
@@ -708,6 +1214,7 @@
         "pages": "386-407",
         "pub_date": "2018-02-17",
         "pub_date_basis": "Crossref published-print",
+        "pub_date_imputed_first_of_month": false,
         "publication_dates": {
           "issued": {
             "full_date": "2018-02-15",
@@ -744,11 +1251,10 @@
         "source": "crossref",
         "source_publication_basis": "published-print",
         "source_publication_date": "2018-02-17",
+        "source_publication_precision": "day",
         "status": "ok",
         "title": "Real-time assimilation of streamflow observations into a hydrological routing model: effects of model structures and updating methods",
-        "volume": "63",
-        "source_publication_precision": "day",
-        "pub_date_imputed_first_of_month": false
+        "volume": "63"
       },
       "original_rows": [
         {
@@ -778,6 +1284,110 @@
     },
     {
       "checkpoint_state": "SCOUT_FIELDS_ALREADY_COVERED",
+      "doi": "10.1080/19475705.2024.2364777",
+      "metadata": {
+        "abstract": "",
+        "access_rights": [
+          "http://creativecommons.org/licenses/by/4.0/"
+        ],
+        "best_partial_basis": "published-print",
+        "best_partial_date": "2024-12-31",
+        "checkpoint_schema": "crossref-publication-v4-print-online-month-first",
+        "created": "",
+        "creators": [
+          "Leila Hashemi-Beni",
+          "Megha Puthenparampil",
+          "Ali Jamali"
+        ],
+        "crossref_created": {
+          "full_date": "2024-07-08",
+          "precision": "day",
+          "value": "2024-07-08"
+        },
+        "crossref_deposited": {
+          "full_date": "2024-12-12",
+          "precision": "day",
+          "value": "2024-12-12"
+        },
+        "evidence": "https://api.crossref.org/works/10.1080/19475705.2024.2364777",
+        "funders": [],
+        "funding_in_description": [],
+        "funding_structured": [],
+        "issue": "1",
+        "journal": "Geomatics, Natural Hazards and Risk",
+        "pages": "2364777",
+        "pub_date": "2024-12-31",
+        "pub_date_basis": "Crossref published-print",
+        "pub_date_imputed_first_of_month": false,
+        "publication_dates": {
+          "issued": {
+            "full_date": "2024-07-08",
+            "precision": "day",
+            "value": "2024-07-08"
+          },
+          "posted": {
+            "full_date": "",
+            "precision": "missing",
+            "value": ""
+          },
+          "published": {
+            "full_date": "2024-07-08",
+            "precision": "day",
+            "value": "2024-07-08"
+          },
+          "published-online": {
+            "full_date": "2024-07-08",
+            "precision": "day",
+            "value": "2024-07-08"
+          },
+          "published-print": {
+            "full_date": "2024-12-31",
+            "precision": "day",
+            "value": "2024-12-31"
+          }
+        },
+        "publisher": "Informa UK Limited",
+        "publisher_url": "https://doi.org/10.1080/19475705.2024.2364777",
+        "reach_type": "1",
+        "registered": "",
+        "relations": {},
+        "resource_type": "journal-article",
+        "source": "crossref",
+        "source_publication_basis": "published-print",
+        "source_publication_date": "2024-12-31",
+        "source_publication_precision": "day",
+        "status": "ok",
+        "title": "A low-cost IoT-based deep learning method of water gauge measurement for flood monitoring",
+        "volume": "15"
+      },
+      "original_rows": [
+        {
+          "abstract": "Describes a low-cost IoT-connected camera and Mask R-CNN system for automatically reading water gauges in low-light or distorted images, enabling near-real-time flood water-level monitoring.",
+          "authors": "Leila Hashemi-Beni; Megha Puthenparampil; Ali Jamali",
+          "awards": "NA21OAR4590358",
+          "batch": "scout-discoveries/batches/2026-10-30-hourly-2232ET-iot-water-gauge-001.csv",
+          "date": "2024-07-08",
+          "origin": "staged",
+          "project": "Rapid Floodwater Extent and Depth Measurements Using Optical UAV and SAR",
+          "title": "A low-cost IoT-based deep learning method of water gauge measurement for flood monitoring",
+          "type": "1"
+        }
+      ],
+      "origins": [
+        "staged"
+      ],
+      "prior_fields": {
+        "abstract": true,
+        "creators": true,
+        "pub_date": true,
+        "title": true,
+        "type": true
+      },
+      "recoverable_fields": [],
+      "review_keys": []
+    },
+    {
+      "checkpoint_state": "SCOUT_FIELDS_ALREADY_COVERED",
       "doi": "10.1088/1748-9326/ab98b4",
       "metadata": {
         "abstract": "Abstract Extreme precipitation is one of the most devastating forms of atmospheric phenomenon, causing severe damage worldwide, and is likely to intensify in strength and occurrence in a warming climate. This contribution gives an overview of the potential and challenges associated with using weather radar data to investigate extreme precipitation. We illustrate this by presenting radar data sets for Germany, the U.S. and the UK that resolve small-scale heavy rainfall events of just a few km 2 with return periods of 5 years or more. Current challenges such as relatively short radar records and radar-based QPE uncertainty are discussed. An example from a precipitation climatology derived from the German weather radar network with spatial resolution of 1 km reveals the necessity of radars for observing short-term (1–6 h) extreme precipitation. Only 17.3% of hourly heavy precipitation events that occurred in Germany from 2001 to 2018 were captured by the rain gauge station network, while 81.8% of daily events were observed. This is underlined by a similar study using data from the UK radar network for 2014. Only 36.6% (52%) of heavy hourly (daily) rain events detected by the radar network were also captured by precipitation gauging stations. Implications for the monitoring of hydrologic extremes are demonstrated over the U.S. with a continental-scale radar-based reanalysis. Hydrologic extremes are documented over ∼1000 times more locations than stream gauges, including in the majority of ungauged basins. This underlines the importance of high-resolution weather radar observations for resolving small-scale rainfall events, and the necessity of radar-based climatological data sets for understanding the small-scale and high-temporal resolution characteristics of extreme precipitation.",
@@ -785,8 +1395,8 @@
           "http://creativecommons.org/licenses/by/4.0",
           "https://iopscience.iop.org/info/page/text-and-data-mining"
         ],
-        "best_partial_basis": "published-online",
-        "best_partial_date": "2020-08-05",
+        "best_partial_basis": "published-print",
+        "best_partial_date": "2020-08-01",
         "checkpoint_schema": "crossref-publication-v4-print-online-month-first",
         "created": "",
         "creators": [
@@ -817,6 +1427,7 @@
         "pages": "085003",
         "pub_date": "2020-08-01",
         "pub_date_basis": "Crossref published-print",
+        "pub_date_imputed_first_of_month": false,
         "publication_dates": {
           "issued": {
             "full_date": "2020-08-01",
@@ -853,11 +1464,10 @@
         "source": "crossref",
         "source_publication_basis": "published-print",
         "source_publication_date": "2020-08-01",
+        "source_publication_precision": "day",
         "status": "ok",
         "title": "Use of radar data for characterizing extreme precipitation at fine scales and short durations",
-        "volume": "15",
-        "source_publication_precision": "day",
-        "pub_date_imputed_first_of_month": false
+        "volume": "15"
       },
       "original_rows": [
         {
@@ -869,6 +1479,241 @@
           "origin": "staged",
           "project": "Probabilistic precipitation rate estimates from ground-radar for hydrology",
           "title": "Use of radar data for characterizing extreme precipitation at fine scales and short durations",
+          "type": "1"
+        }
+      ],
+      "origins": [
+        "staged"
+      ],
+      "prior_fields": {
+        "abstract": true,
+        "creators": true,
+        "pub_date": true,
+        "title": true,
+        "type": true
+      },
+      "recoverable_fields": [],
+      "review_keys": []
+    },
+    {
+      "checkpoint_state": "SCOUT_FIELDS_ALREADY_COVERED",
+      "doi": "10.1088/2515-7620/aeaad2",
+      "metadata": {
+        "abstract": "Abstract The National Oceanic and Atmospheric Administration experimental seasonal forecast system (SFS) reforecasts, based on two versions of the unified forecast system (UFS), prototypes Prototype 8 and High-Resolution Prototype 3, are evaluated for skill in predicting western North Pacific (WNP) seasonal tropical cyclone (TC) activity over 40 years of April initialized seasonal reforecasts (1982–2021). TC events are identified using the TempestExtremes event tracking algorithm based on sea level pressure and mid-troposphere temperature fields. Dynamical forecasts using the identified TC events are skillful when estimating seasonal variations of accumulated cyclone energy (ACE), but are not skillful when forecasting the number of TC events. We assess the influence of the large-scale environment on observed and simulated TC activity. The relationship between the large-scale environment and ACE is consistent between observations and the SFS reforecasts, emphasizing the influence of El Niño–Southern Oscillation (ENSO) variations. In contrast, the large scale relationship differs for the number of TC events, with TC events in SFS reforecasts having a ‘too positive’ relationship with ENSO resulting in low forecast skill. This is because the SFS reforecasts underestimate the observed reduction (increase) of TC events in the southwest WNP during positive (negative) ENSO years. These results suggest that these UFS prototypes skillfully represent interannual variations in TC intensity, as represented by ACE, but may require improvement in their representation of weaker events and the TC-genesis-ENSO teleconnection to skillfully forecast TC frequency.",
+        "access_rights": [
+          "https://creativecommons.org/licenses/by/4.0/",
+          "https://iopscience.iop.org/info/page/text-and-data-mining"
+        ],
+        "best_partial_basis": "published-print",
+        "best_partial_date": "2026-10-01",
+        "checkpoint_schema": "crossref-publication-v4-print-online-month-first",
+        "created": "",
+        "creators": [
+          "Douglas Nedza",
+          "Bohua Huang",
+          "Jieshun Zhu"
+        ],
+        "crossref_created": {
+          "full_date": "2026-09-21",
+          "precision": "day",
+          "value": "2026-09-21"
+        },
+        "crossref_deposited": {
+          "full_date": "2026-10-07",
+          "precision": "day",
+          "value": "2026-10-07"
+        },
+        "evidence": "https://api.crossref.org/works/10.1088/2515-7620/aeaad2",
+        "funders": [
+          "National Oceanic and Atmospheric Administration"
+        ],
+        "funding_in_description": [],
+        "funding_structured": [
+          "NA24OARX459C0015"
+        ],
+        "issue": "10",
+        "journal": "Environmental Research Communications",
+        "pages": "101004",
+        "pub_date": "2026-10-01",
+        "pub_date_basis": "Crossref published-print",
+        "pub_date_imputed_first_of_month": false,
+        "publication_dates": {
+          "issued": {
+            "full_date": "2026-10-01",
+            "precision": "day",
+            "value": "2026-10-01"
+          },
+          "posted": {
+            "full_date": "",
+            "precision": "missing",
+            "value": ""
+          },
+          "published": {
+            "full_date": "2026-10-01",
+            "precision": "day",
+            "value": "2026-10-01"
+          },
+          "published-online": {
+            "full_date": "2026-10-07",
+            "precision": "day",
+            "value": "2026-10-07"
+          },
+          "published-print": {
+            "full_date": "2026-10-01",
+            "precision": "day",
+            "value": "2026-10-01"
+          }
+        },
+        "publisher": "IOP Publishing",
+        "publisher_url": "https://doi.org/10.1088/2515-7620/aeaad2",
+        "reach_type": "1",
+        "registered": "",
+        "relations": {},
+        "resource_type": "journal-article",
+        "source": "crossref",
+        "source_publication_basis": "published-print",
+        "source_publication_date": "2026-10-01",
+        "source_publication_precision": "day",
+        "status": "ok",
+        "title": "Dynamical prediction of western North Pacific seasonal accumulated cyclone energy with experimental SFS reforecasts",
+        "volume": "8"
+      },
+      "original_rows": [
+        {
+          "abstract": "Abstract The National Oceanic and Atmospheric Administration experimental seasonal forecast system (SFS) reforecasts, based on two versions of the unified forecast system (UFS), prototypes Prototype 8 and High-Resolution Prototype 3, are evaluated for skill in predicting western North Pacific (WNP) seasonal tropical cyclone (TC) activity over 40 years of April initialized seasonal reforecasts (1982–2021). TC events are identified using the TempestExtremes event tracking algorithm based on sea level pressure and mid-troposphere temperature fields. Dynamical forecasts using the identified TC events are skillful when estimating seasonal variations of accumulated cyclone energy (ACE), but are not skillful when forecasting the number of TC events. We assess the influence of the large-scale envi",
+          "authors": "Douglas Nedza; Bohua Huang; Jieshun Zhu",
+          "awards": "NA24OARX459C0015",
+          "batch": "scout-discoveries/batches/2026-11-01-monthly-fast-936c21c3648bb0.csv",
+          "date": "2026-10-01",
+          "origin": "staged",
+          "project": "Improving GLobal Ocean Reanalysis (GLORe) to advance CPC ocean monitoring and sea ice outlook",
+          "title": "Dynamical prediction of western North Pacific seasonal accumulated cyclone energy with experimental SFS reforecasts",
+          "type": "1"
+        },
+        {
+          "abstract": "Abstract The National Oceanic and Atmospheric Administration experimental seasonal forecast system (SFS) reforecasts, based on two versions of the unified forecast system (UFS), prototypes Prototype 8 and High-Resolution Prototype 3, are evaluated for skill in predicting western North Pacific (WNP) seasonal tropical cyclone (TC) activity over 40 years of April initialized seasonal reforecasts (1982–2021). TC events are identified using the TempestExtremes event tracking algorithm based on sea level pressure and mid-troposphere temperature fields. Dynamical forecasts using the identified TC events are skillful when estimating seasonal variations of accumulated cyclone energy (ACE), but are not skillful when forecasting the number of TC events. We assess the influence of the large-scale envi",
+          "authors": "Douglas Nedza; Bohua Huang; Jieshun Zhu",
+          "awards": "NA24OARX459C0015",
+          "batch": "api-discoveries/batches/2026-11-01-monthly-api-2026-10-primary-only-part001.csv",
+          "date": "2026-10-01",
+          "origin": "monthly",
+          "project": "Improving GLobal Ocean Reanalysis (GLORe) to advance CPC ocean monitoring and sea ice outlook",
+          "title": "Dynamical prediction of western North Pacific seasonal accumulated cyclone energy with experimental SFS reforecasts",
+          "type": "1"
+        }
+      ],
+      "origins": [
+        "monthly",
+        "staged"
+      ],
+      "prior_fields": {
+        "abstract": true,
+        "creators": true,
+        "pub_date": true,
+        "title": true,
+        "type": true
+      },
+      "recoverable_fields": [],
+      "review_keys": []
+    },
+    {
+      "checkpoint_state": "SCOUT_FIELDS_ALREADY_COVERED",
+      "doi": "10.1109/access.2025.3636732",
+      "metadata": {
+        "abstract": "",
+        "access_rights": [
+          "https://creativecommons.org/licenses/by/4.0/legalcode",
+          "https://creativecommons.org/licenses/by/4.0/legalcode"
+        ],
+        "best_partial_basis": "published-print",
+        "best_partial_date": "2025",
+        "checkpoint_schema": "crossref-publication-v4-print-online-month-first",
+        "created": "",
+        "creators": [
+          "Mulham Fawakherji",
+          "Matilda Anokye",
+          "Jeffrey Blay",
+          "Leila Hashemi-Beni"
+        ],
+        "crossref_created": {
+          "full_date": "2025-11-25",
+          "precision": "day",
+          "value": "2025-11-25"
+        },
+        "crossref_deposited": {
+          "full_date": "2025-12-05",
+          "precision": "day",
+          "value": "2025-12-05"
+        },
+        "evidence": "https://api.crossref.org/works/10.1109/access.2025.3636732",
+        "funders": [
+          "National Oceanic and Atmospheric Administration",
+          "National Aeronautics and Space Administration",
+          "NSF"
+        ],
+        "funding_in_description": [],
+        "funding_structured": [
+          "2401942",
+          "80NSSC23M0051",
+          "NA21OAR4590358"
+        ],
+        "issue": "",
+        "journal": "IEEE Access",
+        "pages": "202275-202294",
+        "pub_date": "",
+        "pub_date_basis": "",
+        "pub_date_imputed_first_of_month": false,
+        "publication_dates": {
+          "issued": {
+            "full_date": "",
+            "precision": "year",
+            "value": "2025"
+          },
+          "posted": {
+            "full_date": "",
+            "precision": "missing",
+            "value": ""
+          },
+          "published": {
+            "full_date": "",
+            "precision": "year",
+            "value": "2025"
+          },
+          "published-online": {
+            "full_date": "",
+            "precision": "missing",
+            "value": ""
+          },
+          "published-print": {
+            "full_date": "",
+            "precision": "year",
+            "value": "2025"
+          }
+        },
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "publisher_url": "https://doi.org/10.1109/access.2025.3636732",
+        "reach_type": "1",
+        "registered": "",
+        "relations": {},
+        "resource_type": "journal-article",
+        "source": "crossref",
+        "source_publication_basis": "",
+        "source_publication_date": "",
+        "source_publication_precision": "",
+        "status": "ok",
+        "title": "Multi-Resolution Data Fusion for Resilient Flood Mapping",
+        "volume": "13"
+      },
+      "original_rows": [
+        {
+          "abstract": "Evaluates multimodal UAV optical, UAVSAR and Sentinel-1 imagery with a modified U-Net for flood mapping, finding strong performance for 5-m UAVSAR VV plus RGB and documenting cross-event generalization limits.",
+          "authors": "Mulham Fawakherji; Matilda Anokye; Jeffrey Blay; Leila Hashemi-Beni",
+          "awards": "NA21OAR4590358",
+          "batch": "scout-discoveries/batches/2026-10-30-hourly-1329ET-independent-flood-mapping-001.csv",
+          "date": "2025-11-25",
+          "origin": "staged",
+          "project": "Rapid Floodwater Extent and Depth Measurements Using Optical UAV and SAR",
+          "title": "Multi-Resolution Data Fusion for Resilient Flood Mapping",
           "type": "1"
         }
       ],
@@ -942,6 +1787,7 @@
         "pages": "8268-8284",
         "pub_date": "2020-12-01",
         "pub_date_basis": "Crossref published-print (month -> day 01)",
+        "pub_date_imputed_first_of_month": true,
         "publication_dates": {
           "issued": {
             "full_date": "",
@@ -978,11 +1824,10 @@
         "source": "crossref",
         "source_publication_basis": "published-print",
         "source_publication_date": "",
+        "source_publication_precision": "month",
         "status": "ok",
         "title": "Ceilometer-Based Rain-Rate Estimation: A Case-Study Comparison With S-Band Radar and Disdrometer Retrievals in the Context of VORTEX-SE",
-        "volume": "58",
-        "source_publication_precision": "month",
-        "pub_date_imputed_first_of_month": true
+        "volume": "58"
       },
       "original_rows": [
         {
@@ -1008,6 +1853,106 @@
         "type": true
       },
       "recoverable_fields": [
+        "pub_date"
+      ],
+      "review_keys": []
+    },
+    {
+      "checkpoint_state": "FIELDS_RECOVERABLE",
+      "doi": "10.1145/3794916.3794919",
+      "metadata": {
+        "abstract": "We conducted a two-phase study with five National Weather Service (NWS) forecast offices in the Western United States region to improve the visualization of probabilistic forecast information (PFI) for their communities. We advance the concept of community risk thresholds (CRT), based on rhetorical commonplaces (communal beliefs, norms, and values) as a productive focus for forecasting. Our results suggest that CRTs are a promising heuristic for simplifying the visual presentation of PFI and increasing its community utility. We discuss the synergies and challenges of action research projects in weather risk communication and conclude by projecting future work focused on (a) visualizing community risk thresholds and (b) identifying productive pairings between weather hazard type and graphic genre.",
+        "access_rights": [],
+        "best_partial_basis": "published-print",
+        "best_partial_date": "2026-03-01",
+        "checkpoint_schema": "crossref-publication-v4-print-online-month-first",
+        "created": "",
+        "creators": [
+          "Lynda C. Olman",
+          "Kathryn Lambrecht",
+          "Anne Heggli",
+          "Meghan Collins",
+          "Zach Tolby",
+          "Benjamin Hatchett",
+          "Quinn Dannies"
+        ],
+        "crossref_created": {
+          "full_date": "2026-05-05",
+          "precision": "day",
+          "value": "2026-05-05"
+        },
+        "crossref_deposited": {
+          "full_date": "2026-05-05",
+          "precision": "day",
+          "value": "2026-05-05"
+        },
+        "evidence": "https://api.crossref.org/works/10.1145/3794916.3794919",
+        "funders": [],
+        "funding_in_description": [],
+        "funding_structured": [],
+        "issue": "1",
+        "journal": "Communication Design Quarterly",
+        "pages": "22-37",
+        "pub_date": "2026-03-01",
+        "pub_date_basis": "Crossref published-print",
+        "pub_date_imputed_first_of_month": false,
+        "publication_dates": {
+          "issued": {
+            "full_date": "2026-03-01",
+            "precision": "day",
+            "value": "2026-03-01"
+          },
+          "posted": {
+            "full_date": "",
+            "precision": "missing",
+            "value": ""
+          },
+          "published": {
+            "full_date": "2026-03-01",
+            "precision": "day",
+            "value": "2026-03-01"
+          },
+          "published-online": {
+            "full_date": "2026-05-05",
+            "precision": "day",
+            "value": "2026-05-05"
+          },
+          "published-print": {
+            "full_date": "2026-03-01",
+            "precision": "day",
+            "value": "2026-03-01"
+          }
+        },
+        "publisher": "Association for Computing Machinery (ACM)",
+        "publisher_url": "https://doi.org/10.1145/3794916.3794919",
+        "reach_type": "1",
+        "registered": "",
+        "relations": {},
+        "resource_type": "journal-article",
+        "source": "crossref",
+        "source_publication_basis": "published-print",
+        "source_publication_date": "2026-03-01",
+        "source_publication_precision": "day",
+        "status": "ok",
+        "title": "Visualizing Probabilistic Forecast Information Around Community Risk Thresholds: An Action-Research Collaboration Between Environmental Rhetoricians and the National Weather Service",
+        "volume": "14"
+      },
+      "original_rows": [],
+      "origins": [
+        "independent_research_lead"
+      ],
+      "prior_fields": {
+        "abstract": false,
+        "creators": false,
+        "pub_date": false,
+        "title": false,
+        "type": false
+      },
+      "recoverable_fields": [
+        "title",
+        "creators",
+        "type",
+        "abstract",
         "pub_date"
       ],
       "review_keys": []
@@ -1057,6 +2002,7 @@
         "pages": "",
         "pub_date": "2024-01-01",
         "pub_date_basis": "Crossref published-print (month -> day 01)",
+        "pub_date_imputed_first_of_month": true,
         "publication_dates": {
           "issued": {
             "full_date": "",
@@ -1093,11 +2039,10 @@
         "source": "crossref",
         "source_publication_basis": "published-print",
         "source_publication_date": "",
+        "source_publication_precision": "month",
         "status": "ok",
         "title": "Airborne Radar Quality Control with Machine Learning",
-        "volume": "3",
-        "source_publication_precision": "month",
-        "pub_date_imputed_first_of_month": true
+        "volume": "3"
       },
       "original_rows": [
         {
@@ -1127,12 +2072,133 @@
     },
     {
       "checkpoint_state": "SCOUT_FIELDS_ALREADY_COVERED",
+      "doi": "10.1175/aies-d-26-0004.1",
+      "metadata": {
+        "abstract": "Abstract Supervised machine learning (ML) methods implicitly assume that their target dataset is error free. For severe weather prediction, point-based observed Storm Data storm reports that have been expanded in space and time are commonly used targets. However, other target datasets could potentially better represent severe weather occurrence, especially for situations requiring more precision. This study analyzes 1-h probabilistic severe weather hazard forecasts made at lead times from 0 to 3 h from random forests (RFs). All RFs are trained using predictors from the Warn-on-Forecast System, ProbSevere, version 3, and the tornado probability algorithm. However, some RFs use spatiotemporally expanded reports as targets, while others use hazard-specific National Weather Service warnings. Both target datasets are constructed to have the same overall climatological relative frequencies for a given hazard but have different spatial and temporal climatologies. Results show that RFs tend to produce predictions that retain the climatological characteristics of their target dataset. For example, warnings-trained RFs produced higher (lower) probabilities after (before) 0000 UTC compared to report-trained RFs. Qualitatively, forecast probabilities from the warnings-trained RFs tend to be sharper and more spatially focused, especially for severe hail and wind. Additionally, RFs trained and verified using warnings produce forecasts with better objective verification. However, warnings-trained RF forecasts verified on reports have notably worse objective verification than report-trained RF forecasts verified on warnings. Overall, results highlight the importance of target dataset selection during ML model development and evaluation. Significance Statement How a machine learning (ML) model is trained determines the relationships it learns and its performance during testing. This study compares short-term severe weather hazard probability forecasts from two sets of random forest (RF) models: one trained using observed storm reports as targets and the other trained using hazard-specific National Weather Service warnings. All other characteristics of the RFs are the same. RF forecast probabilities are found to be drastically different depending on the target dataset used, underscoring the need for developers and users of ML forecasts to carefully consider the target dataset when building ML models and interpreting ML results.",
+        "access_rights": [
+          "http://www.ametsoc.org/PUBSReuseLicenses"
+        ],
+        "best_partial_basis": "published-print",
+        "best_partial_date": "2026-10",
+        "checkpoint_schema": "crossref-publication-v4-print-online-month-first",
+        "created": "",
+        "creators": [
+          "Ryan Martz",
+          "Eric Loken",
+          "Thea Sandmael",
+          "John Cintineo"
+        ],
+        "crossref_created": {
+          "full_date": "2026-09-28",
+          "precision": "day",
+          "value": "2026-09-28"
+        },
+        "crossref_deposited": {
+          "full_date": "2026-10-27",
+          "precision": "day",
+          "value": "2026-10-27"
+        },
+        "evidence": "https://api.crossref.org/works/10.1175/aies-d-26-0004.1",
+        "funders": [
+          "NOAA Weather Program Office"
+        ],
+        "funding_in_description": [],
+        "funding_structured": [
+          "NA22OAR4590530"
+        ],
+        "issue": "4",
+        "journal": "Artificial Intelligence for the Earth Systems",
+        "pages": "",
+        "pub_date": "2026-10-01",
+        "pub_date_basis": "Crossref published-print (month -> day 01)",
+        "pub_date_imputed_first_of_month": true,
+        "publication_dates": {
+          "issued": {
+            "full_date": "",
+            "precision": "month",
+            "value": "2026-10"
+          },
+          "posted": {
+            "full_date": "",
+            "precision": "missing",
+            "value": ""
+          },
+          "published": {
+            "full_date": "",
+            "precision": "month",
+            "value": "2026-10"
+          },
+          "published-online": {
+            "full_date": "",
+            "precision": "missing",
+            "value": ""
+          },
+          "published-print": {
+            "full_date": "",
+            "precision": "month",
+            "value": "2026-10"
+          }
+        },
+        "publisher": "American Meteorological Society",
+        "publisher_url": "https://doi.org/10.1175/aies-d-26-0004.1",
+        "reach_type": "1",
+        "registered": "",
+        "relations": {},
+        "resource_type": "journal-article",
+        "source": "crossref",
+        "source_publication_basis": "published-print",
+        "source_publication_date": "",
+        "source_publication_precision": "month",
+        "status": "ok",
+        "title": "The Impact of Target Dataset Choice on Machine Learning Prediction of Severe Hail, Wind, and Tornadoes",
+        "volume": "5"
+      },
+      "original_rows": [
+        {
+          "abstract": "Abstract Supervised machine learning (ML) methods implicitly assume that their target dataset is error free. For severe weather prediction, point-based observed Storm Data storm reports that have been expanded in space and time are commonly used targets. However, other target datasets could potentially better represent severe weather occurrence, especially for situations requiring more precision. This study analyzes 1-h probabilistic severe weather hazard forecasts made at lead times from 0 to 3 h from random forests (RFs). All RFs are trained using predictors from the Warn-on-Forecast System, ProbSevere, version 3, and the tornado probability algorithm. However, some RFs use spatiotemporally expanded reports as targets, while others use hazard-specific National Weather Service warnings. B",
+          "authors": "Ryan Martz; Eric Loken; Thea Sandmael; John Cintineo",
+          "awards": "NA22OAR4590530",
+          "batch": "scout-discoveries/batches/2026-11-01-monthly-fast-17bff79084ce37.csv",
+          "date": "2026-10-01",
+          "origin": "staged",
+          "project": "Bridging Watch-to-Warning Forecast Operations with Refined Probabilistic Guidance",
+          "title": "The Impact of Target Dataset Choice on Machine Learning Prediction of Severe Hail, Wind, and Tornadoes",
+          "type": "1"
+        },
+        {
+          "abstract": "Abstract Supervised machine learning (ML) methods implicitly assume that their target dataset is error free. For severe weather prediction, point-based observed Storm Data storm reports that have been expanded in space and time are commonly used targets. However, other target datasets could potentially better represent severe weather occurrence, especially for situations requiring more precision. This study analyzes 1-h probabilistic severe weather hazard forecasts made at lead times from 0 to 3 h from random forests (RFs). All RFs are trained using predictors from the Warn-on-Forecast System, ProbSevere, version 3, and the tornado probability algorithm. However, some RFs use spatiotemporally expanded reports as targets, while others use hazard-specific National Weather Service warnings. B",
+          "authors": "Ryan Martz; Eric Loken; Thea Sandmael; John Cintineo",
+          "awards": "NA22OAR4590530",
+          "batch": "api-discoveries/batches/2026-11-01-monthly-api-2026-10-primary-only-part001.csv",
+          "date": "2026-10-01",
+          "origin": "monthly",
+          "project": "Bridging Watch-to-Warning Forecast Operations with Refined Probabilistic Guidance",
+          "title": "The Impact of Target Dataset Choice on Machine Learning Prediction of Severe Hail, Wind, and Tornadoes",
+          "type": "1"
+        }
+      ],
+      "origins": [
+        "monthly",
+        "staged"
+      ],
+      "prior_fields": {
+        "abstract": true,
+        "creators": true,
+        "pub_date": true,
+        "title": true,
+        "type": true
+      },
+      "recoverable_fields": [],
+      "review_keys": []
+    },
+    {
+      "checkpoint_state": "SCOUT_FIELDS_ALREADY_COVERED",
       "doi": "10.1175/bams-d-15-00283.1",
       "metadata": {
         "abstract": "Abstract There are numerous challenges with the forecasting and detection of flash floods, one of the deadliest weather phenomena in the United States. Statistical metrics of flash flood warnings over recent years depict a generally stagnant warning performance, while regional flash flood guidance utilized in warning operations was shown to have low skill scores. The Hydrometeorological Testbed—Hydrology (HMT-Hydro) experiment was created to allow operational forecasters to assess emerging products and techniques designed to improve the prediction and warning of flash flooding. Scientific goals of the HMT-Hydro experiment included the evaluation of gridded products from the Multi-Radar Multi-Sensor (MRMS) and Flooded Locations and Simulated Hydrographs (FLASH) product suites, including the experimental Coupled Routing and Excess Storage (CREST) model, the application of user-defined probabilistic forecasts in experimental flash flood watches and warnings, and the utility of the Hazard Services software interface with flash flood recommenders in real-time experimental warning operations. The HMT-Hydro experiment ran in collaboration with the Flash Flood and Intense Rainfall (FFaIR) experiment at the Weather Prediction Center to simulate the real-time workflow between a national center and a local forecast office, as well as to facilitate discussions on the challenges of short-term flash flood forecasting. Results from the HMT-Hydro experiment highlighted the utility of MRMS and FLASH products in identifying the spatial coverage and magnitude of flash flooding, while evaluating the perception and reliability of probabilistic forecasts in flash flood watches and warnings. NSSL scientists and NWS forecasters evaluate new tools and techniques through real-time test bed operations for the improvement of flash flood detection and warning operations.",
         "access_rights": [],
-        "best_partial_basis": "published-online",
-        "best_partial_date": "2017-03-07",
+        "best_partial_basis": "published-print",
+        "best_partial_date": "2017-02-01",
         "checkpoint_schema": "crossref-publication-v4-print-online-month-first",
         "created": "",
         "creators": [
@@ -1166,6 +2232,7 @@
         "pages": "347-359",
         "pub_date": "2017-02-01",
         "pub_date_basis": "Crossref published-print",
+        "pub_date_imputed_first_of_month": false,
         "publication_dates": {
           "issued": {
             "full_date": "2017-02-01",
@@ -1202,11 +2269,10 @@
         "source": "crossref",
         "source_publication_basis": "published-print",
         "source_publication_date": "2017-02-01",
+        "source_publication_precision": "day",
         "status": "ok",
         "title": "The HMT Multi-Radar Multi-Sensor Hydro Experiment",
-        "volume": "98",
-        "source_publication_precision": "day",
-        "pub_date_imputed_first_of_month": false
+        "volume": "98"
       },
       "original_rows": [
         {
@@ -1268,6 +2334,7 @@
         "pages": "E1677-E1684",
         "pub_date": "2020-10-01",
         "pub_date_basis": "Crossref published-print",
+        "pub_date_imputed_first_of_month": false,
         "publication_dates": {
           "issued": {
             "full_date": "2020-10-01",
@@ -1304,11 +2371,10 @@
         "source": "crossref",
         "source_publication_basis": "published-print",
         "source_publication_date": "2020-10-01",
+        "source_publication_precision": "day",
         "status": "ok",
         "title": "In the Dark: Public Perceptions of and National Weather Service Forecaster Considerations for Nocturnal Tornadoes in Tennessee",
-        "volume": "101",
-        "source_publication_precision": "day",
-        "pub_date_imputed_first_of_month": false
+        "volume": "101"
       },
       "original_rows": [
         {
@@ -1378,6 +2444,7 @@
         "pages": "E1742-E1755",
         "pub_date": "2021-09-01",
         "pub_date_basis": "Crossref published-print (month -> day 01)",
+        "pub_date_imputed_first_of_month": true,
         "publication_dates": {
           "issued": {
             "full_date": "",
@@ -1414,11 +2481,10 @@
         "source": "crossref",
         "source_publication_basis": "published-print",
         "source_publication_date": "",
+        "source_publication_precision": "month",
         "status": "ok",
         "title": "From Random Forests to Flood Forecasts: A Research to Operations Success Story",
-        "volume": "102",
-        "source_publication_precision": "month",
-        "pub_date_imputed_first_of_month": true
+        "volume": "102"
       },
       "original_rows": [
         {
@@ -1444,113 +2510,6 @@
         "type": true
       },
       "recoverable_fields": [],
-      "review_keys": []
-    },
-    {
-      "checkpoint_state": "FIELDS_RECOVERABLE",
-      "doi": "10.1175/bams-d-23-0036.1",
-      "metadata": {
-        "abstract": "Abstract When a tornado strikes a permanent or mobile/manufactured home, occupants are at risk of injury and death from blunt force trauma caused by debris-loaded winds and failure of the structure. Mechanisms for these failures have been studied for the past few decades and identified common weaknesses in the structural load path. Also under study in recent decades, much has been learned about how people receive and understand warnings and determine how, when, and if they will shelter in advance. Recent research, for example, shows most people do not shelter until close to impact, after seeing, hearing, or feeling the approaching tornado. To advance beyond these innovations, a new, multidisciplinary approach was fielded in nine southeast U.S. tornadoes between 2019 and 2022. For each tornado, 1) wind engineering assessments documented near-surface wind fields, 2) structural engineering assessments documented the primary wind load path for each structure, and 3) social science interviews captured the survivor’s narrative and asked several follow-up questions to assure key items of interest were addressed in each interview. When possible, the team was multidisciplinary during the interview, enabling survivors to ask questions and better understand their experiences. Most survivors became aware of the approaching tornado with at least a few minutes of lead time, and most were able to reach a place of refuge. Most survivors recalled sensory experiences during the tornado, and about half could describe the direction or temporal sequences of damage. A case study of the Cookeville, Tennessee, tornado of 3 March 2020 illustrates the power of the integrated data assessment. Significance Statement Linking an understanding of how tornadic winds interact with residential buildings with how human decisions affect survival has rarely been done due to the inherent complexity and cost of conducting joint social science, forensic engineering, and wind engineering assessments. Such work may reveal ways to reduce the number of injuries and fatalities caused by tornadoes. This study tested a multidisciplinary protocol to holistically evaluate the sheltering and survivability of individual homes for nine southeast U.S. tornadoes. We found many instances where survivors’ stories, photos/videos, and access to structural elements were invaluable for understanding how a tornado interacted with the residence. Future efforts can advance these findings by focusing on severely damaged structures or severe injuries and through the analysis of floor plans.",
-        "access_rights": [
-          "http://www.ametsoc.org/PUBSReuseLicenses"
-        ],
-        "best_partial_basis": "published-print",
-        "best_partial_date": "2024-08",
-        "checkpoint_schema": "crossref-publication-v4-print-online-month-first",
-        "created": "",
-        "creators": [
-          "Daphne S. LaDue",
-          "David Roueche",
-          "Frank Lombardo",
-          "Lara Mayeux"
-        ],
-        "crossref_created": {
-          "full_date": "2024-05-23",
-          "precision": "day",
-          "value": "2024-05-23"
-        },
-        "crossref_deposited": {
-          "full_date": "2026-02-04",
-          "precision": "day",
-          "value": "2026-02-04"
-        },
-        "evidence": "https://api.crossref.org/works/10.1175/bams-d-23-0036.1",
-        "funders": [],
-        "funding_in_description": [],
-        "funding_structured": [],
-        "issue": "8",
-        "journal": "Bulletin of the American Meteorological Society",
-        "pages": "E1521-E1541",
-        "pub_date": "2024-08-01",
-        "pub_date_basis": "Crossref published-print (month -> day 01)",
-        "publication_dates": {
-          "issued": {
-            "full_date": "",
-            "precision": "month",
-            "value": "2024-08"
-          },
-          "posted": {
-            "full_date": "",
-            "precision": "missing",
-            "value": ""
-          },
-          "published": {
-            "full_date": "",
-            "precision": "month",
-            "value": "2024-08"
-          },
-          "published-online": {
-            "full_date": "",
-            "precision": "missing",
-            "value": ""
-          },
-          "published-print": {
-            "full_date": "",
-            "precision": "month",
-            "value": "2024-08"
-          }
-        },
-        "publisher": "American Meteorological Society",
-        "publisher_url": "https://doi.org/10.1175/bams-d-23-0036.1",
-        "reach_type": "1",
-        "registered": "",
-        "relations": {},
-        "resource_type": "journal-article",
-        "source": "crossref",
-        "source_publication_basis": "published-print",
-        "source_publication_date": "",
-        "status": "ok",
-        "title": "Linking Survivor Stories to Forensic Engineering: How an Interscience Approach Reveals Opportunities for Reducing Tornado Vulnerability in Residential Structures",
-        "volume": "105",
-        "source_publication_precision": "month",
-        "pub_date_imputed_first_of_month": true
-      },
-      "original_rows": [
-        {
-          "abstract": "",
-          "authors": "Daphne S. LaDue; David Roueche; Frank Lombardo; Lara Mayeux",
-          "awards": "NA16OAR4320115, NA19OAR4590214, NA19OAR4590213",
-          "batch": "scout-discoveries/batches/2026-10-28-hourly-datacite-expansion-award-fixes-001.csv",
-          "date": "2024-08-19",
-          "origin": "staged",
-          "project": "",
-          "title": "Linking Survivor Stories to Forensic Engineering: How an Interscience Approach Reveals Opportunities for Reducing Tornado Vulnerability in Residential Structures",
-          "type": "1"
-        }
-      ],
-      "origins": [
-        "staged"
-      ],
-      "prior_fields": {
-        "abstract": false,
-        "creators": true,
-        "pub_date": true,
-        "title": true,
-        "type": true
-      },
-      "recoverable_fields": [
-        "abstract"
-      ],
       "review_keys": []
     },
     {
@@ -1593,6 +2552,7 @@
         "pages": "E2450-E2460",
         "pub_date": "2026-10-01",
         "pub_date_basis": "Crossref published-print (month -> day 01)",
+        "pub_date_imputed_first_of_month": true,
         "publication_dates": {
           "issued": {
             "full_date": "",
@@ -1629,11 +2589,10 @@
         "source": "crossref",
         "source_publication_basis": "published-print",
         "source_publication_date": "",
+        "source_publication_precision": "month",
         "status": "ok",
         "title": "Visualizing Weather Risks: Participatory Design Workshops for Hurricane Threats and Impacts Graphics",
-        "volume": "107",
-        "source_publication_precision": "month",
-        "pub_date_imputed_first_of_month": true
+        "volume": "107"
       },
       "original_rows": [
         {
@@ -1705,6 +2664,7 @@
         "pages": "185-197",
         "pub_date": "2019-02-01",
         "pub_date_basis": "Crossref published-print (month -> day 01)",
+        "pub_date_imputed_first_of_month": true,
         "publication_dates": {
           "issued": {
             "full_date": "",
@@ -1741,11 +2701,10 @@
         "source": "crossref",
         "source_publication_basis": "published-print",
         "source_publication_date": "",
+        "source_publication_precision": "month",
         "status": "ok",
         "title": "Estimation of Tropical Cyclone Intensity in the North Atlantic and Northeastern Pacific Basins Using TRMM Satellite Passive Microwave Observations",
-        "volume": "58",
-        "source_publication_precision": "month",
-        "pub_date_imputed_first_of_month": true
+        "volume": "58"
       },
       "original_rows": [
         {
@@ -1783,8 +2742,8 @@
         "access_rights": [
           "http://www.ametsoc.org/PUBSReuseLicenses"
         ],
-        "best_partial_basis": "published-online",
-        "best_partial_date": "2018-08-15",
+        "best_partial_basis": "published-print",
+        "best_partial_date": "2018-09-01",
         "checkpoint_schema": "crossref-publication-v4-print-online-month-first",
         "created": "",
         "creators": [
@@ -1820,6 +2779,7 @@
         "pages": "2983-3009",
         "pub_date": "2018-09-01",
         "pub_date_basis": "Crossref published-print",
+        "pub_date_imputed_first_of_month": false,
         "publication_dates": {
           "issued": {
             "full_date": "2018-08-15",
@@ -1856,11 +2816,10 @@
         "source": "crossref",
         "source_publication_basis": "published-print",
         "source_publication_date": "2018-09-01",
+        "source_publication_precision": "day",
         "status": "ok",
         "title": "Dynamical Insights into Extreme Short-Term Precipitation Associated with Supercells and Mesovortices",
-        "volume": "75",
-        "source_publication_precision": "day",
-        "pub_date_imputed_first_of_month": false
+        "volume": "75"
       },
       "original_rows": [
         {
@@ -1923,6 +2882,7 @@
         "pages": "1389-1410",
         "pub_date": "2021-05-01",
         "pub_date_basis": "Crossref published-print (month -> day 01)",
+        "pub_date_imputed_first_of_month": true,
         "publication_dates": {
           "issued": {
             "full_date": "",
@@ -1959,11 +2919,10 @@
         "source": "crossref",
         "source_publication_basis": "published-print",
         "source_publication_date": "",
+        "source_publication_precision": "month",
         "status": "ok",
         "title": "Dynamics of Simulated High-Shear, Low-CAPE Supercells",
-        "volume": "78",
-        "source_publication_precision": "month",
-        "pub_date_imputed_first_of_month": true
+        "volume": "78"
       },
       "original_rows": [
         {
@@ -1999,8 +2958,8 @@
       "metadata": {
         "abstract": "Abstract Shear-relative distributions of four types of precipitation/convection in tropical cyclones (TCs) are statistically analyzed using 14 years of Tropical Rainfall Measuring Mission (TRMM) Precipitation Radar (PR) data. The dataset of 1139 TRMM PR overpasses of tropical storms through category-2 hurricanes over global TC-prone basins is divided by future 24-h intensity change. It is found that increased and widespread shallow precipitation (defined as where the 20-dBZ radar echo height &lt;6 km) around the storm center is a first sign of rapid intensification (RI) and could be used as a predictor of the onset of RI. The contribution to total volumetric rain and latent heating from shallow and moderate precipitation (20-dBZ echo height between 6 and 10 km) in the inner core is greater in RI storms than in non-RI storms, while the opposite is true for moderately deep (20-dBZ echo height between 10 and 14 km) and very deep precipitation (20-dBZ echo height ≥14 km). The authors argue that RI is more likely triggered by the increase of shallow–moderate precipitation and the appearance of more moderately to very deep convection in the middle of RI is more likely a response or positive feedback to changes in the vortex. For RI storms, a cyclonic rotation of frequency peaks from shallow (downshear right) to moderate (downshear left) to moderately and very deep precipitation (upshear left) is found and may be an indicator of a rapidly strengthening vortex. A ring of almost 90% occurrence of total precipitation is found for storms in the middle of RI, consistent with the previous finding of the cyan and pink ring on the 37-GHz color product.",
         "access_rights": [],
-        "best_partial_basis": "published-online",
-        "best_partial_date": "2015-11-16",
+        "best_partial_basis": "published-print",
+        "best_partial_date": "2015-11-15",
         "checkpoint_schema": "crossref-publication-v4-print-online-month-first",
         "created": "",
         "creators": [
@@ -2026,6 +2985,7 @@
         "pages": "8791-8824",
         "pub_date": "2015-11-15",
         "pub_date_basis": "Crossref published-print",
+        "pub_date_imputed_first_of_month": false,
         "publication_dates": {
           "issued": {
             "full_date": "2015-11-15",
@@ -2062,11 +3022,10 @@
         "source": "crossref",
         "source_publication_basis": "published-print",
         "source_publication_date": "2015-11-15",
+        "source_publication_precision": "day",
         "status": "ok",
         "title": "Distributions of Shallow to Very Deep Precipitation–Convection in Rapidly Intensifying Tropical Cyclones",
-        "volume": "28",
-        "source_publication_precision": "day",
-        "pub_date_imputed_first_of_month": false
+        "volume": "28"
       },
       "original_rows": [
         {
@@ -2127,6 +3086,7 @@
         "pages": "987-1003",
         "pub_date": "2021-02-01",
         "pub_date_basis": "Crossref published-print (month -> day 01)",
+        "pub_date_imputed_first_of_month": true,
         "publication_dates": {
           "issued": {
             "full_date": "",
@@ -2163,11 +3123,10 @@
         "source": "crossref",
         "source_publication_basis": "published-print",
         "source_publication_date": "",
+        "source_publication_precision": "month",
         "status": "ok",
         "title": "Contrasting Behaviors between the Rapidly Intensifying and Slowly Intensifying Tropical Cyclones in the North Atlantic and Eastern Pacific Basins",
-        "volume": "34",
-        "source_publication_precision": "month",
-        "pub_date_imputed_first_of_month": true
+        "volume": "34"
       },
       "original_rows": [
         {
@@ -2238,6 +3197,7 @@
         "pages": "2221-2246",
         "pub_date": "2019-11-01",
         "pub_date_basis": "Crossref published-print (month -> day 01)",
+        "pub_date_imputed_first_of_month": true,
         "publication_dates": {
           "issued": {
             "full_date": "",
@@ -2274,11 +3234,10 @@
         "source": "crossref",
         "source_publication_basis": "published-print",
         "source_publication_date": "",
+        "source_publication_precision": "month",
         "status": "ok",
         "title": "Progress toward Characterization of the Atmospheric Boundary Layer over Northern Alabama Using Observations by a Vertically Pointing, S-Band Profiling Radar during VORTEX-Southeast",
-        "volume": "36",
-        "source_publication_precision": "month",
-        "pub_date_imputed_first_of_month": true
+        "volume": "36"
       },
       "original_rows": [
         {
@@ -2351,6 +3310,7 @@
         "pages": "2189-2216",
         "pub_date": "2019-06-01",
         "pub_date_basis": "Crossref published-print (month -> day 01)",
+        "pub_date_imputed_first_of_month": true,
         "publication_dates": {
           "issued": {
             "full_date": "",
@@ -2387,11 +3347,10 @@
         "source": "crossref",
         "source_publication_basis": "published-print",
         "source_publication_date": "",
+        "source_publication_precision": "month",
         "status": "ok",
         "title": "The Development of Severe Vortices within Simulated High-Shear, Low-CAPE Convection",
-        "volume": "147",
-        "source_publication_precision": "month",
-        "pub_date_imputed_first_of_month": true
+        "volume": "147"
       },
       "original_rows": [
         {
@@ -2429,8 +3388,8 @@
         "access_rights": [
           "http://www.ametsoc.org/PUBSReuseLicenses"
         ],
-        "best_partial_basis": "published-online",
-        "best_partial_date": "2019-12-17",
+        "best_partial_basis": "published-print",
+        "best_partial_date": "2020-01-01",
         "checkpoint_schema": "crossref-publication-v4-print-online-month-first",
         "created": "",
         "creators": [
@@ -2466,6 +3425,7 @@
         "pages": "159-182",
         "pub_date": "2020-01-01",
         "pub_date_basis": "Crossref published-print",
+        "pub_date_imputed_first_of_month": false,
         "publication_dates": {
           "issued": {
             "full_date": "2019-12-17",
@@ -2502,11 +3462,10 @@
         "source": "crossref",
         "source_publication_basis": "published-print",
         "source_publication_date": "2020-01-01",
+        "source_publication_precision": "day",
         "status": "ok",
         "title": "Observations of Extreme Short-Term Precipitation Associated with Supercells and Mesovortices",
-        "volume": "148",
-        "source_publication_precision": "day",
-        "pub_date_imputed_first_of_month": false
+        "volume": "148"
       },
       "original_rows": [
         {
@@ -2573,6 +3532,7 @@
         "pages": "1459-1477",
         "pub_date": "2023-06-01",
         "pub_date_basis": "Crossref published-print (month -> day 01)",
+        "pub_date_imputed_first_of_month": true,
         "publication_dates": {
           "issued": {
             "full_date": "",
@@ -2609,11 +3569,10 @@
         "source": "crossref",
         "source_publication_basis": "published-print",
         "source_publication_date": "",
+        "source_publication_precision": "month",
         "status": "ok",
         "title": "Factors Affecting the Rapid Recovery of CAPE on 31 March 2016 during VORTEX-Southeast",
-        "volume": "151",
-        "source_publication_precision": "month",
-        "pub_date_imputed_first_of_month": true
+        "volume": "151"
       },
       "original_rows": [
         {
@@ -2683,6 +3642,7 @@
         "pages": "1511-1536",
         "pub_date": "2024-07-01",
         "pub_date_basis": "Crossref published-print (month -> day 01)",
+        "pub_date_imputed_first_of_month": true,
         "publication_dates": {
           "issued": {
             "full_date": "",
@@ -2719,11 +3679,10 @@
         "source": "crossref",
         "source_publication_basis": "published-print",
         "source_publication_date": "",
+        "source_publication_precision": "month",
         "status": "ok",
         "title": "Investigating Temporal Characteristics of Polarimetric and Electrical Signatures in Three Severe Storms: Insights from the VORTEX-Southeast Field Campaign",
-        "volume": "152",
-        "source_publication_precision": "month",
-        "pub_date_imputed_first_of_month": true
+        "volume": "152"
       },
       "original_rows": [
         {
@@ -2759,8 +3718,8 @@
         "access_rights": [
           "http://www.ametsoc.org/PUBSReuseLicenses"
         ],
-        "best_partial_basis": "published-online",
-        "best_partial_date": "2018-04-27",
+        "best_partial_basis": "published-print",
+        "best_partial_date": "2018-06-01",
         "checkpoint_schema": "crossref-publication-v4-print-online-month-first",
         "created": "",
         "creators": [
@@ -2795,6 +3754,7 @@
         "pages": "671-691",
         "pub_date": "2018-06-01",
         "pub_date_basis": "Crossref published-print",
+        "pub_date_imputed_first_of_month": false,
         "publication_dates": {
           "issued": {
             "full_date": "2018-04-27",
@@ -2831,11 +3791,10 @@
         "source": "crossref",
         "source_publication_basis": "published-print",
         "source_publication_date": "2018-06-01",
+        "source_publication_precision": "day",
         "status": "ok",
         "title": "Cold-Season Tornadoes: Climatological and Meteorological Insights",
-        "volume": "33",
-        "source_publication_precision": "day",
-        "pub_date_imputed_first_of_month": false
+        "volume": "33"
       },
       "original_rows": [
         {
@@ -2871,8 +3830,8 @@
         "access_rights": [
           "http://www.ametsoc.org/PUBSReuseLicenses"
         ],
-        "best_partial_basis": "published-online",
-        "best_partial_date": "2020-01-23",
+        "best_partial_basis": "published-print",
+        "best_partial_date": "2020-02-01",
         "checkpoint_schema": "crossref-publication-v4-print-online-month-first",
         "created": "",
         "creators": [
@@ -2905,6 +3864,7 @@
         "pages": "149-168",
         "pub_date": "2020-02-01",
         "pub_date_basis": "Crossref published-print",
+        "pub_date_imputed_first_of_month": false,
         "publication_dates": {
           "issued": {
             "full_date": "2020-01-23",
@@ -2941,11 +3901,10 @@
         "source": "crossref",
         "source_publication_basis": "published-print",
         "source_publication_date": "2020-02-01",
+        "source_publication_precision": "day",
         "status": "ok",
         "title": "Calibration of Machine Learning–Based Probabilistic Hail Predictions for Operational Forecasting",
-        "volume": "35",
-        "source_publication_precision": "day",
-        "pub_date_imputed_first_of_month": false
+        "volume": "35"
       },
       "original_rows": [
         {
@@ -3020,6 +3979,7 @@
         "pages": "1459-1481",
         "pub_date": "2020-08-01",
         "pub_date_basis": "Crossref published-print",
+        "pub_date_imputed_first_of_month": false,
         "publication_dates": {
           "issued": {
             "full_date": "2020-08-01",
@@ -3056,11 +4016,10 @@
         "source": "crossref",
         "source_publication_basis": "published-print",
         "source_publication_date": "2020-08-01",
+        "source_publication_precision": "day",
         "status": "ok",
         "title": "A Hazard Multiple: Overlapping Tornado and Flash Flood Warnings in a National Weather Service Forecast Office in the Southeastern United States",
-        "volume": "35",
-        "source_publication_precision": "day",
-        "pub_date_imputed_first_of_month": false
+        "volume": "35"
       },
       "original_rows": [
         {
@@ -3130,6 +4089,7 @@
         "pages": "1405-1411",
         "pub_date": "2023-08-01",
         "pub_date_basis": "Crossref published-print (month -> day 01)",
+        "pub_date_imputed_first_of_month": true,
         "publication_dates": {
           "issued": {
             "full_date": "",
@@ -3166,11 +4126,10 @@
         "source": "crossref",
         "source_publication_basis": "published-print",
         "source_publication_date": "",
+        "source_publication_precision": "month",
         "status": "ok",
         "title": "M-PERC: A New Satellite Microwave-Based Model to Diagnose the Onset of Tropical Cyclone Eyewall Replacement Cycles",
-        "volume": "38",
-        "source_publication_precision": "month",
-        "pub_date_imputed_first_of_month": true
+        "volume": "38"
       },
       "original_rows": [
         {
@@ -3243,6 +4202,7 @@
         "pages": "2273-2292",
         "pub_date": "2025-11-01",
         "pub_date_basis": "Crossref published-print (month -> day 01)",
+        "pub_date_imputed_first_of_month": true,
         "publication_dates": {
           "issued": {
             "full_date": "",
@@ -3279,11 +4239,10 @@
         "source": "crossref",
         "source_publication_basis": "published-print",
         "source_publication_date": "",
+        "source_publication_precision": "month",
         "status": "ok",
         "title": "Evaluating the Performance of Microphysics Schemes against Observations during High-Impact Lake-Effect Snow Events",
-        "volume": "40",
-        "source_publication_precision": "month",
-        "pub_date_imputed_first_of_month": true
+        "volume": "40"
       },
       "original_rows": [
         {
@@ -3299,6 +4258,253 @@
         }
       ],
       "origins": [
+        "staged"
+      ],
+      "prior_fields": {
+        "abstract": true,
+        "creators": true,
+        "pub_date": true,
+        "title": true,
+        "type": true
+      },
+      "recoverable_fields": [],
+      "review_keys": []
+    },
+    {
+      "checkpoint_state": "SCOUT_FIELDS_ALREADY_COVERED",
+      "doi": "10.1175/waf-d-25-0044.1",
+      "metadata": {
+        "abstract": "Abstract A new technique for the valid-time-shifting (VTS) method was developed for a multiscale convection-allowing ensemble data assimilation (DA) and forecast system, assimilating hourly mesoscale in situ and storm-scale radar reflectivity observations. In this study, a blending technique is implemented to construct VTS-expanded covariances that address multiple scales of timing uncertainty within one ensemble. Two time-shifting intervals are chosen—a short shifting appropriate for storm-scale DA (30–60 min) and a longer shifting for mesoscale DA (2–3 h). Output from each time shifting is split into small and large scales and then combined using the small scales from the short time shifting and large scales from the long time shifting. Results show that the blending members increase variance within dynamically active regions, capable of attaining optimal benefits of each scale of DA. The blended VTS improves upon the prediction of a quasi-linear mesoscale convective system (MCS) from 27 to 28 May 2021 over the baseline VTS experiment without blending (BothVTS). Sensitivity results demonstrated the best overall results using a mesoscale (60 km) separation, with 60-min shifting for small scales and 120-min shifting for large scales. However, at later cycles with more mature and decaying MCSs, a shorter time shifting (30 min) led to better prediction of their evolution. This study demonstrates the feasibility of such a blending approach for VTS, which is versatile enough to be utilized within any multiscale ensemble DA system.",
+        "access_rights": [
+          "http://www.ametsoc.org/PUBSReuseLicenses"
+        ],
+        "best_partial_basis": "published-print",
+        "best_partial_date": "2026-10",
+        "checkpoint_schema": "crossref-publication-v4-print-online-month-first",
+        "created": "",
+        "creators": [
+          "Nicholas Gasperoni",
+          "Xuguang Wang",
+          "Tsung-Han Li",
+          "Yongming Wang"
+        ],
+        "crossref_created": {
+          "full_date": "2026-10-07",
+          "precision": "day",
+          "value": "2026-10-07"
+        },
+        "crossref_deposited": {
+          "full_date": "2026-10-29",
+          "precision": "day",
+          "value": "2026-10-29"
+        },
+        "evidence": "https://api.crossref.org/works/10.1175/waf-d-25-0044.1",
+        "funders": [
+          "NOAA Weather Program Office"
+        ],
+        "funding_in_description": [],
+        "funding_structured": [
+          "NA19OAR4590138"
+        ],
+        "issue": "10",
+        "journal": "Weather and Forecasting",
+        "pages": "2083-2099",
+        "pub_date": "2026-10-01",
+        "pub_date_basis": "Crossref published-print (month -> day 01)",
+        "pub_date_imputed_first_of_month": true,
+        "publication_dates": {
+          "issued": {
+            "full_date": "",
+            "precision": "month",
+            "value": "2026-10"
+          },
+          "posted": {
+            "full_date": "",
+            "precision": "missing",
+            "value": ""
+          },
+          "published": {
+            "full_date": "",
+            "precision": "month",
+            "value": "2026-10"
+          },
+          "published-online": {
+            "full_date": "",
+            "precision": "missing",
+            "value": ""
+          },
+          "published-print": {
+            "full_date": "",
+            "precision": "month",
+            "value": "2026-10"
+          }
+        },
+        "publisher": "American Meteorological Society",
+        "publisher_url": "https://doi.org/10.1175/waf-d-25-0044.1",
+        "reach_type": "1",
+        "registered": "",
+        "relations": {},
+        "resource_type": "journal-article",
+        "source": "crossref",
+        "source_publication_basis": "published-print",
+        "source_publication_date": "",
+        "source_publication_precision": "month",
+        "status": "ok",
+        "title": "A Blending Method for Multiscale Valid Time Shifting within an RRFS-like Ensemble-Based Data Assimilation System",
+        "volume": "41"
+      },
+      "original_rows": [
+        {
+          "abstract": "Abstract A new technique for the valid-time-shifting (VTS) method was developed for a multiscale convection-allowing ensemble data assimilation (DA) and forecast system, assimilating hourly mesoscale in situ and storm-scale radar reflectivity observations. In this study, a blending technique is implemented to construct VTS-expanded covariances that address multiple scales of timing uncertainty within one ensemble. Two time-shifting intervals are chosen—a short shifting appropriate for storm-scale DA (30–60 min) and a longer shifting for mesoscale DA (2–3 h). Output from each time shifting is split into small and large scales and then combined using the small scales from the short time shifting and large scales from the long time shifting. Results show that the blending members increase var",
+          "authors": "Nicholas Gasperoni; Xuguang Wang; Tsung-Han Li; Yongming Wang",
+          "awards": "NA19OAR4590138",
+          "batch": "scout-discoveries/batches/2026-11-01-monthly-fast-0c3a5f836cdc62.csv",
+          "date": "2026-10-01",
+          "origin": "staged",
+          "project": "Improving National Weather Service Convection Allowing Hazardous Weather Prediction by Using a Cost-Effective Large Background Ensemble in a Regional FV3 Hybrid EnVar Data Assimilation System",
+          "title": "A Blending Method for Multiscale Valid Time Shifting within an RRFS-like Ensemble-Based Data Assimilation System",
+          "type": "1"
+        },
+        {
+          "abstract": "Abstract A new technique for the valid-time-shifting (VTS) method was developed for a multiscale convection-allowing ensemble data assimilation (DA) and forecast system, assimilating hourly mesoscale in situ and storm-scale radar reflectivity observations. In this study, a blending technique is implemented to construct VTS-expanded covariances that address multiple scales of timing uncertainty within one ensemble. Two time-shifting intervals are chosen—a short shifting appropriate for storm-scale DA (30–60 min) and a longer shifting for mesoscale DA (2–3 h). Output from each time shifting is split into small and large scales and then combined using the small scales from the short time shifting and large scales from the long time shifting. Results show that the blending members increase var",
+          "authors": "Nicholas Gasperoni; Xuguang Wang; Tsung-Han Li; Yongming Wang",
+          "awards": "NA19OAR4590138",
+          "batch": "api-discoveries/batches/2026-11-01-monthly-api-2026-10-primary-only-part001.csv",
+          "date": "2026-10-01",
+          "origin": "monthly",
+          "project": "Improving National Weather Service Convection Allowing Hazardous Weather Prediction by Using a Cost-Effective Large Background Ensemble in a Regional FV3 Hybrid EnVar Data Assimilation System",
+          "title": "A Blending Method for Multiscale Valid Time Shifting within an RRFS-like Ensemble-Based Data Assimilation System",
+          "type": "1"
+        }
+      ],
+      "origins": [
+        "monthly",
+        "staged"
+      ],
+      "prior_fields": {
+        "abstract": true,
+        "creators": true,
+        "pub_date": true,
+        "title": true,
+        "type": true
+      },
+      "recoverable_fields": [],
+      "review_keys": []
+    },
+    {
+      "checkpoint_state": "SCOUT_FIELDS_ALREADY_COVERED",
+      "doi": "10.1175/waf-d-26-0084.1",
+      "metadata": {
+        "abstract": "Abstract A convection-allowing model (CAM) ensemble was run during the NOAA Hydrometeorological Testbed’s 2025 Flash Flood and Intense Rainfall Experiment. One of the goals was to evaluate the role and effects of a cumulus scheme on precipitation forecasting in CAMs, where four members of the ensemble have a scale-aware simplified Arakawa–Schubert (saSAS) cumulus scheme activated, while the other four have it turned off. The ensemble was run once daily for the 24 days of the experiment. The ensemble consisted of eight Finite-Volume Cubed-Sphere Limited Area Model (FV3-LAM) members and three experimental Model for Prediction Across Scales (MPAS) members run on 3-km grids and employed a variety of physics combinations. Contingency table metrics and the fractions skill score indicate that activating the saSAS scheme in the FV3-LAM does not provide benefit toward summer precipitation forecasting at varying thresholds and, in some cases, actually degrades forecast skill. The RUC land surface model interacts more strongly with the cumulus scheme than other physics schemes. Additionally, we find that MPAS members perform comparably to their FV3 counterparts on day 1 but degrade thereafter, suggesting that more evaluation of the MPAS core and optimization of the accompanying physics with MPAS is needed. Significance Statement Short-range prediction of heavy precipitation is crucial to reduce impacts from flash flooding. In this study, we evaluate experimental model members run during summer 2025 to assess the role of a cumulus scheme and a different model dynamic core on precipitation forecasting. We find through some metrics that activating a cumulus scheme generally does not have a positive effect on precipitation verification, and the alternative dynamic core shows decreased skill after day 1. The results from this study can inform future convection-allowing model design and subsequent experiments focusing on precipitation forecasting.",
+        "access_rights": [
+          "http://www.ametsoc.org/PUBSReuseLicenses"
+        ],
+        "best_partial_basis": "published-print",
+        "best_partial_date": "2026-10",
+        "checkpoint_schema": "crossref-publication-v4-print-online-month-first",
+        "created": "",
+        "creators": [
+          "Andrew H. Berrington",
+          "Nathan Snook",
+          "Ming Xue",
+          "Bryan Carroll",
+          "Keith A. Brewster",
+          "Sarah Trojniak",
+          "James Correia"
+        ],
+        "crossref_created": {
+          "full_date": "2026-10-08",
+          "precision": "day",
+          "value": "2026-10-08"
+        },
+        "crossref_deposited": {
+          "full_date": "2026-10-29",
+          "precision": "day",
+          "value": "2026-10-29"
+        },
+        "evidence": "https://api.crossref.org/works/10.1175/waf-d-26-0084.1",
+        "funders": [
+          "NOAA Research",
+          "NOAA Research"
+        ],
+        "funding_in_description": [],
+        "funding_structured": [
+          "NA21OAR4320204",
+          "NA22OAR4590522"
+        ],
+        "issue": "10",
+        "journal": "Weather and Forecasting",
+        "pages": "2165-2181",
+        "pub_date": "2026-10-01",
+        "pub_date_basis": "Crossref published-print (month -> day 01)",
+        "pub_date_imputed_first_of_month": true,
+        "publication_dates": {
+          "issued": {
+            "full_date": "",
+            "precision": "month",
+            "value": "2026-10"
+          },
+          "posted": {
+            "full_date": "",
+            "precision": "missing",
+            "value": ""
+          },
+          "published": {
+            "full_date": "",
+            "precision": "month",
+            "value": "2026-10"
+          },
+          "published-online": {
+            "full_date": "",
+            "precision": "missing",
+            "value": ""
+          },
+          "published-print": {
+            "full_date": "",
+            "precision": "month",
+            "value": "2026-10"
+          }
+        },
+        "publisher": "American Meteorological Society",
+        "publisher_url": "https://doi.org/10.1175/waf-d-26-0084.1",
+        "reach_type": "1",
+        "registered": "",
+        "relations": {},
+        "resource_type": "journal-article",
+        "source": "crossref",
+        "source_publication_basis": "published-print",
+        "source_publication_date": "",
+        "source_publication_precision": "month",
+        "status": "ok",
+        "title": "Evaluation of a Cumulus Scheme in the FV3-LAM and of Experimental MPAS Forecasts for the Summer 2025 Flash Flood and Intense Rainfall Experiment",
+        "volume": "41"
+      },
+      "original_rows": [
+        {
+          "abstract": "Abstract A convection-allowing model (CAM) ensemble was run during the NOAA Hydrometeorological Testbed’s 2025 Flash Flood and Intense Rainfall Experiment. One of the goals was to evaluate the role and effects of a cumulus scheme on precipitation forecasting in CAMs, where four members of the ensemble have a scale-aware simplified Arakawa–Schubert (saSAS) cumulus scheme activated, while the other four have it turned off. The ensemble was run once daily for the 24 days of the experiment. The ensemble consisted of eight Finite-Volume Cubed-Sphere Limited Area Model (FV3-LAM) members and three experimental Model for Prediction Across Scales (MPAS) members run on 3-km grids and employed a variety of physics combinations. Contingency table metrics and the fractions skill score indicate that act",
+          "authors": "Andrew H. Berrington; Nathan Snook; Ming Xue; Bryan Carroll; Keith A. Brewster; Sarah Trojniak; James Correia",
+          "awards": "NA22OAR4590522",
+          "batch": "scout-discoveries/batches/2026-11-01-monthly-fast-d4c4a2d852eeca.csv",
+          "date": "2026-10-01",
+          "origin": "staged",
+          "project": "FV3-LAM CAM Ensemble Forecast System and Improving Ensemble Probabilistic and Consensus Forecast Products in Support of HMT Winter Weather and Heavy Precipitation Forecasting",
+          "title": "Evaluation of a Cumulus Scheme in the FV3-LAM and of Experimental MPAS Forecasts for the Summer 2025 Flash Flood and Intense Rainfall Experiment",
+          "type": "1"
+        },
+        {
+          "abstract": "Abstract A convection-allowing model (CAM) ensemble was run during the NOAA Hydrometeorological Testbed’s 2025 Flash Flood and Intense Rainfall Experiment. One of the goals was to evaluate the role and effects of a cumulus scheme on precipitation forecasting in CAMs, where four members of the ensemble have a scale-aware simplified Arakawa–Schubert (saSAS) cumulus scheme activated, while the other four have it turned off. The ensemble was run once daily for the 24 days of the experiment. The ensemble consisted of eight Finite-Volume Cubed-Sphere Limited Area Model (FV3-LAM) members and three experimental Model for Prediction Across Scales (MPAS) members run on 3-km grids and employed a variety of physics combinations. Contingency table metrics and the fractions skill score indicate that act",
+          "authors": "Andrew H. Berrington; Nathan Snook; Ming Xue; Bryan Carroll; Keith A. Brewster; Sarah Trojniak; James Correia",
+          "awards": "NA22OAR4590522",
+          "batch": "api-discoveries/batches/2026-11-01-monthly-api-2026-10-primary-only-part001.csv",
+          "date": "2026-10-01",
+          "origin": "monthly",
+          "project": "FV3-LAM CAM Ensemble Forecast System and Improving Ensemble Probabilistic and Consensus Forecast Products in Support of HMT Winter Weather and Heavy Precipitation Forecasting",
+          "title": "Evaluation of a Cumulus Scheme in the FV3-LAM and of Experimental MPAS Forecasts for the Summer 2025 Flash Flood and Intense Rainfall Experiment",
+          "type": "1"
+        }
+      ],
+      "origins": [
+        "monthly",
         "staged"
       ],
       "prior_fields": {
@@ -3350,6 +4556,7 @@
         "pages": "1049-1067",
         "pub_date": "2023-10-01",
         "pub_date_basis": "Crossref published-print (month -> day 01)",
+        "pub_date_imputed_first_of_month": true,
         "publication_dates": {
           "issued": {
             "full_date": "",
@@ -3386,18 +4593,17 @@
         "source": "crossref",
         "source_publication_basis": "published-print",
         "source_publication_date": "",
+        "source_publication_precision": "month",
         "status": "ok",
         "title": "Contextualizing Disaster Phases Using Social Media Data: Hurricane Risk Visualizations during the Forecast and Warning Phase of Hurricane Irma",
-        "volume": "15",
-        "source_publication_precision": "month",
-        "pub_date_imputed_first_of_month": true
+        "volume": "15"
       },
       "original_rows": [
         {
           "abstract": "Analysis of risk visualization dissemination and retransmission by professional weather communicators during Hurricane Irma.",
           "authors": "Robert Prestley; Rebecca E. Morss",
           "awards": "NA19OAR0220119",
-          "batch": "scout-discoveries/batches/2026-10-28-hourly-datacite-expansion-award-fixes-001.csv",
+          "batch": "scout-discoveries/batches/2026-11-01-historical-datacite-primary-award-only-001.csv",
           "date": "2023-11-10",
           "origin": "staged",
           "project": "Wait, that forecast changed? Assessing how publics consume and process changing tropical cyclone forecasts over time",
@@ -3416,6 +4622,112 @@
         "type": true
       },
       "recoverable_fields": [],
+      "review_keys": []
+    },
+    {
+      "checkpoint_state": "FIELDS_RECOVERABLE",
+      "doi": "10.1177/10506519261455873",
+      "metadata": {
+        "abstract": "In weather risk communication, there is a disconnect between numerical models and community members’ experiences. To help resolve this issue, the authors propose a topological method to identify community risk thresholds, arguing that they offer a middle ground that enables more robust communication about risk. The authors surveyed 1,429 participants, including decision-makers and public audience members, who responded to probabilistic visualizations from five National Weather Service offices. The results reveal that audiences engage in sophisticated risk assessment by drawing on multiple dimensions that can be communicated as community risk thresholds. Embedding these thresholds in the forecast can better link numerical and experiential risk.",
+        "access_rights": [
+          "https://journals.sagepub.com/page/policies/text-and-data-mining-license"
+        ],
+        "best_partial_basis": "published-print",
+        "best_partial_date": "2026-10",
+        "checkpoint_schema": "crossref-publication-v4-print-online-month-first",
+        "created": "",
+        "creators": [
+          "Kathryn Lambrecht",
+          "Lynda C. Olman",
+          "Meghan Collins",
+          "Anne Heggli",
+          "Benjamin Hatchett",
+          "Zach Tolby",
+          "Inika Wadhwa"
+        ],
+        "crossref_created": {
+          "full_date": "2026-07-06",
+          "precision": "day",
+          "value": "2026-07-06"
+        },
+        "crossref_deposited": {
+          "full_date": "2026-09-09",
+          "precision": "day",
+          "value": "2026-09-09"
+        },
+        "evidence": "https://api.crossref.org/works/10.1177/10506519261455873",
+        "funders": [
+          "NOAA Weather Program Office"
+        ],
+        "funding_in_description": [],
+        "funding_structured": [
+          "#NA21OAR4590208"
+        ],
+        "issue": "4",
+        "journal": "Journal of Business and Technical Communication",
+        "pages": "301-332",
+        "pub_date": "2026-10-01",
+        "pub_date_basis": "Crossref published-print (month -> day 01)",
+        "pub_date_imputed_first_of_month": true,
+        "publication_dates": {
+          "issued": {
+            "full_date": "2026-07-06",
+            "precision": "day",
+            "value": "2026-07-06"
+          },
+          "posted": {
+            "full_date": "",
+            "precision": "missing",
+            "value": ""
+          },
+          "published": {
+            "full_date": "2026-07-06",
+            "precision": "day",
+            "value": "2026-07-06"
+          },
+          "published-online": {
+            "full_date": "2026-07-06",
+            "precision": "day",
+            "value": "2026-07-06"
+          },
+          "published-print": {
+            "full_date": "",
+            "precision": "month",
+            "value": "2026-10"
+          }
+        },
+        "publisher": "SAGE Publications",
+        "publisher_url": "https://doi.org/10.1177/10506519261455873",
+        "reach_type": "1",
+        "registered": "",
+        "relations": {},
+        "resource_type": "journal-article",
+        "source": "crossref",
+        "source_publication_basis": "published-print",
+        "source_publication_date": "",
+        "source_publication_precision": "month",
+        "status": "ok",
+        "title": "Bridging the Gap Between Numbers and Experience: Identifying Community Risk Thresholds in Extreme Weather Communication",
+        "volume": "40"
+      },
+      "original_rows": [],
+      "origins": [
+        "independent_research_lead"
+      ],
+      "prior_fields": {
+        "abstract": false,
+        "creators": false,
+        "pub_date": false,
+        "title": false,
+        "type": false
+      },
+      "recoverable_fields": [
+        "title",
+        "creators",
+        "type",
+        "abstract",
+        "pub_date"
+      ],
       "review_keys": []
     },
     {
@@ -3589,6 +4901,7 @@
         "pages": "82-94",
         "pub_date": "2023-09-07",
         "pub_date_basis": "Crossref published-online",
+        "pub_date_imputed_first_of_month": false,
         "publication_dates": {
           "issued": {
             "full_date": "2023-09-07",
@@ -3625,11 +4938,10 @@
         "source": "crossref",
         "source_publication_basis": "published-online",
         "source_publication_date": "2023-09-07",
+        "source_publication_precision": "day",
         "status": "ok",
         "title": "The NOAA Weather Prediction Center’s Use and Evaluation of Experimental Warn-on-Forecast System Guidance",
-        "volume": "",
-        "source_publication_precision": "day",
-        "pub_date_imputed_first_of_month": false
+        "volume": ""
       },
       "original_rows": [
         {
@@ -3704,6 +5016,7 @@
         "pages": "110-131",
         "pub_date": "2023-12-19",
         "pub_date_basis": "Crossref published-online",
+        "pub_date_imputed_first_of_month": false,
         "publication_dates": {
           "issued": {
             "full_date": "2023-12-19",
@@ -3740,11 +5053,10 @@
         "source": "crossref",
         "source_publication_basis": "published-online",
         "source_publication_date": "2023-12-19",
+        "source_publication_precision": "day",
         "status": "ok",
         "title": "Interpreting Warn-on-Forecast System Guidance, Part I: Review of Probabilistic Guidance Concepts, Product Design, and Best Practices",
-        "volume": "",
-        "source_publication_precision": "day",
-        "pub_date_imputed_first_of_month": false
+        "volume": ""
       },
       "original_rows": [
         {
@@ -5235,7 +6547,7 @@
           "abstract": "",
           "authors": "Schumacher, Andrea; Demuth, Julie; Morss, Rebecca; Wong-Parodi, Gabrielle; Herbert, Natalie; Alland, Joshua; Smith, Dakota; Walpole, Hugh; Boehnert, Jennifer",
           "awards": "NA19OAR0220119",
-          "batch": "scout-discoveries/batches/2026-10-28-hourly-datacite-expansion-award-fixes-001.csv",
+          "batch": "scout-discoveries/batches/2026-11-01-historical-datacite-primary-award-only-001.csv",
           "date": "2025-05-23",
           "origin": "staged",
           "project": "",
@@ -5319,7 +6631,7 @@
       "review_keys": []
     },
     {
-      "checkpoint_state": "SCOUT_FIELDS_ALREADY_COVERED",
+      "checkpoint_state": "HISTORICAL_FIELDS_ALREADY_COVERED",
       "doi": "10.17603/ds2-xjyf-nc93",
       "metadata": {
         "abstract": "Our study created a new, unified approach whereby the strengths of social science and forensic engineering approaches were combined to holistically capture key experiences and risk factors of tornadoes at a scale and depth that has rarely been attempted. Specifically, we solicited survivor stories and, in a collaborative effort with structural and wind engineers, linked survivor’s accounts to detailed forensic engineering assessments of the structures impacted by a tornado. The survivor protocol elicited first-hand accounts of the timing and sequence of the tornado hazard, environmental and broadcast warning cues, and behavioral and structural responses. In many of our interviews, we took the opportunity to explore several high priority pre- and post-event risk factors, including the role of dependents in personal protection behavior and structural mitigation decisions, and the long-term impacts of these decisions on well-being. We developed the interview protocol with seven post-tornado deployments from 2019 to 2022, speaking to nearly 100 tornado survivors. The protocol was designed to capture: 1) information received or sought prior to the storm, 2) the survivor’s experience from just prior to during the storm, 3) influences on any sheltering decision-making, 4) efficacy of best available sheltering, and 5) social support and personal coping strategies. The final interview protocol is a result of analysis on the efficacy of the protocols used in the field. Interviews were as short as 8 minutes long, with a few lasting around 90 minutes. The average was around 20 minutes. Interviews were usually conducted at the damaged or destroyed homesite where the interviewee was during the tornado. As such, many interview situations were chaotic, with interruptions from noise and volunteers or other people doing post-disaster work. The research team was able to change or revise questions from analysis of the questions used to improve the usefulness of the protocol. We first included all questions provided on every original protocol used in the field, then revised the wording according to the Institutional Review or Ethics Board (IRB) proposal. This allowed for a cohesive and complete revised protocol. Furthermore, when developing the revised protocol, the research team used the original protocols on completed interviews to identify areas for improvement and strengths of the protocol. This analysis exercise inspired the addition of the S (statement) and Q (question) notations before each word or phrase on the final, revised protocol shared here. S and Q allow the interviewer to note when the interviewee had made a statement (S) about a topic separate from a direct question (i.e. when telling a story about events or answering a different question), or when the interviewer had asked a direct question about a topic (mark the Q). Although this change was made after fieldwork was complete, we believe it will be very beneficial in the field to help remind the interviewer to ask follow-ups for relevant information or garner additional information. The revised protocol can be used in social-science and engineering field-work study. The protocol is shared in two forms: Page one has the short form protocol, which is ideal for field interviews, while the second page has full sentences and is thus suitable for submission to an IRB overseeing the work. In the short-form protocol, there is enough information given that an interviewer can quickly recall the ques",
@@ -5363,24 +6675,12 @@
           "project": "",
           "title": "A Protocol for Linking Survivor Stories to Forensic Engineering Studies of Tornadoes, in A Protocol for Talking with Survivors of Tornadoes",
           "type": "3"
-        },
-        {
-          "abstract": "",
-          "authors": "LaDue, Daphne; Mayeux, Lara; Roueche, David; Lombardo, Frank",
-          "awards": "NA16OAR4320115",
-          "batch": "scout-discoveries/batches/2026-10-28-hourly-datacite-expansion-award-fixes-001.csv",
-          "date": "2026-02-24",
-          "origin": "staged",
-          "project": "",
-          "title": "A Protocol for Linking Survivor Stories to Forensic Engineering Studies of Tornadoes",
-          "type": "3"
         }
       ],
       "origins": [
         "historical",
         "historical_date_audit",
-        "historical_triage",
-        "staged"
+        "historical_triage"
       ],
       "prior_fields": {
         "abstract": true,
@@ -9435,6 +10735,7 @@
         "pages": "1286",
         "pub_date": "2021-10-02",
         "pub_date_basis": "Crossref published-online",
+        "pub_date_imputed_first_of_month": false,
         "publication_dates": {
           "issued": {
             "full_date": "2021-10-02",
@@ -9471,11 +10772,10 @@
         "source": "crossref",
         "source_publication_basis": "published-online",
         "source_publication_date": "2021-10-02",
+        "source_publication_precision": "day",
         "status": "ok",
         "title": "Rapid Update with EnVar Direct Radar Reflectivity Data Assimilation for the NOAA Regional Convection-Allowing NMMB Model over the CONUS: System Description and Initial Experiment Results",
-        "volume": "12",
-        "source_publication_precision": "day",
-        "pub_date_imputed_first_of_month": false
+        "volume": "12"
       },
       "original_rows": [
         {
@@ -9491,6 +10791,130 @@
         }
       ],
       "origins": [
+        "staged"
+      ],
+      "prior_fields": {
+        "abstract": true,
+        "creators": true,
+        "pub_date": true,
+        "title": true,
+        "type": true
+      },
+      "recoverable_fields": [],
+      "review_keys": []
+    },
+    {
+      "checkpoint_state": "SCOUT_FIELDS_ALREADY_COVERED",
+      "doi": "10.3390/rs18193383",
+      "metadata": {
+        "abstract": "This study assesses the impact of assimilating remote sensing observations of significant wave height (SWH) and 10 m wind speed (WSPD) into the analysis using a weakly coupled data assimilation (WCDA) framework to improve ocean surface monitoring offshore of the Contiguous US (CONUS). We assimilated SWH and WSPD data from 10 altimeters and six scatterometers into the Local Ensemble Transform Kalman Filter (LETKF) data assimilation (DA) scheme over 6 months, from 1 January to 1 July 2024, to update the SWH and WSPD variables of the 30-member Global Ensemble Forecast System wave component (GEFS-wave), which provided the background fields. We validated the SWH and WSPD analyses against assimilated remote sensing observations and found that assimilating these observations corrected the systematic background bias in WSPD values above 15 m/s to near zero, with uncertainty as low as 0.4 m/s. For SWH, the background overestimation averaged 30 cm for observed values between 6.2 and 6.4 m and was reduced to 6 cm in the analysis, with a 30 cm RMSE. These results were consistent with cross-validation experiments that assimilated data from six altimeters for the SWH analysis and three scatterometers for WSPD analysis updates, respectively, and were evaluated against independent remote sensing observations. We show that the diurnal cycle in the spatial coverage and temporal sampling of state-of-the-art altimeter and scatterometer constellations over 6 months in maritime CONUS identified regions where remote sensing data had the greatest impact on the analysis and where they were scarce and had limited impact when assimilated using a reduced 1-h window. A case study showed that assimilating altimeter data during a Pacific storm that developed on 1 February 2024 allowed the LETKF to adjust the SWH analysis spatially.",
+        "access_rights": [
+          "https://creativecommons.org/licenses/by/4.0/"
+        ],
+        "best_partial_basis": "published-online",
+        "best_partial_date": "2026-10-02",
+        "checkpoint_schema": "crossref-publication-v4-print-online-month-first",
+        "created": "",
+        "creators": [
+          "Panagiotis Mitsopoulos",
+          "Malaquias Peña",
+          "Stylianos Flampouris",
+          "Manuel Pondeca"
+        ],
+        "crossref_created": {
+          "full_date": "2026-10-02",
+          "precision": "day",
+          "value": "2026-10-02"
+        },
+        "crossref_deposited": {
+          "full_date": "2026-10-02",
+          "precision": "day",
+          "value": "2026-10-02"
+        },
+        "evidence": "https://api.crossref.org/works/10.3390/rs18193383",
+        "funders": [
+          "NOAA/OAR-JTTI",
+          "DOE",
+          ""
+        ],
+        "funding_in_description": [],
+        "funding_structured": [
+          "5695100",
+          "NA22OAR4590179"
+        ],
+        "issue": "19",
+        "journal": "Remote Sensing",
+        "pages": "3383",
+        "pub_date": "2026-10-02",
+        "pub_date_basis": "Crossref published-online",
+        "pub_date_imputed_first_of_month": false,
+        "publication_dates": {
+          "issued": {
+            "full_date": "2026-10-02",
+            "precision": "day",
+            "value": "2026-10-02"
+          },
+          "posted": {
+            "full_date": "",
+            "precision": "missing",
+            "value": ""
+          },
+          "published": {
+            "full_date": "2026-10-02",
+            "precision": "day",
+            "value": "2026-10-02"
+          },
+          "published-online": {
+            "full_date": "2026-10-02",
+            "precision": "day",
+            "value": "2026-10-02"
+          },
+          "published-print": {
+            "full_date": "",
+            "precision": "missing",
+            "value": ""
+          }
+        },
+        "publisher": "MDPI AG",
+        "publisher_url": "https://doi.org/10.3390/rs18193383",
+        "reach_type": "1",
+        "registered": "",
+        "relations": {},
+        "resource_type": "journal-article",
+        "source": "crossref",
+        "source_publication_basis": "published-online",
+        "source_publication_date": "2026-10-02",
+        "source_publication_precision": "day",
+        "status": "ok",
+        "title": "Impact of Assimilating Remote Sensing Observations on Wind and Wave Analysis Offshore of the Contiguous United States",
+        "volume": "18"
+      },
+      "original_rows": [
+        {
+          "abstract": "This study assesses the impact of assimilating remote sensing observations of significant wave height (SWH) and 10 m wind speed (WSPD) into the analysis using a weakly coupled data assimilation (WCDA) framework to improve ocean surface monitoring offshore of the Contiguous US (CONUS). We assimilated SWH and WSPD data from 10 altimeters and six scatterometers into the Local Ensemble Transform Kalman Filter (LETKF) data assimilation (DA) scheme over 6 months, from 1 January to 1 July 2024, to update the SWH and WSPD variables of the 30-member Global Ensemble Forecast System wave component (GEFS-wave), which provided the background fields. We validated the SWH and WSPD analyses against assimilated remote sensing observations and found that assimilating these observations corrected the systema",
+          "authors": "Panagiotis Mitsopoulos; Malaquias Peña; Stylianos Flampouris; Manuel Pondeca",
+          "awards": "NA22OAR4590179",
+          "batch": "scout-discoveries/batches/2026-11-01-monthly-fast-a56abc5841e724.csv",
+          "date": "2026-10-02",
+          "origin": "staged",
+          "project": "A Wind-Wave-Current Data Assimilation Scheme for the 3D-Real Time Mesoscale Analysis",
+          "title": "Impact of Assimilating Remote Sensing Observations on Wind and Wave Analysis Offshore of the Contiguous United States",
+          "type": "1"
+        },
+        {
+          "abstract": "This study assesses the impact of assimilating remote sensing observations of significant wave height (SWH) and 10 m wind speed (WSPD) into the analysis using a weakly coupled data assimilation (WCDA) framework to improve ocean surface monitoring offshore of the Contiguous US (CONUS). We assimilated SWH and WSPD data from 10 altimeters and six scatterometers into the Local Ensemble Transform Kalman Filter (LETKF) data assimilation (DA) scheme over 6 months, from 1 January to 1 July 2024, to update the SWH and WSPD variables of the 30-member Global Ensemble Forecast System wave component (GEFS-wave), which provided the background fields. We validated the SWH and WSPD analyses against assimilated remote sensing observations and found that assimilating these observations corrected the systema",
+          "authors": "Panagiotis Mitsopoulos; Malaquias Peña; Stylianos Flampouris; Manuel Pondeca",
+          "awards": "NA22OAR4590179",
+          "batch": "api-discoveries/batches/2026-11-01-monthly-api-2026-10-primary-only-part001.csv",
+          "date": "2026-10-02",
+          "origin": "monthly",
+          "project": "A Wind-Wave-Current Data Assimilation Scheme for the 3D-Real Time Mesoscale Analysis",
+          "title": "Impact of Assimilating Remote Sensing Observations on Wind and Wave Analysis Offshore of the Contiguous United States",
+          "type": "1"
+        }
+      ],
+      "origins": [
+        "monthly",
         "staged"
       ],
       "prior_fields": {
@@ -9543,6 +10967,7 @@
         "pages": "",
         "pub_date": "2025-12-09",
         "pub_date_basis": "Crossref posted",
+        "pub_date_imputed_first_of_month": false,
         "publication_dates": {
           "issued": {
             "full_date": "2025-12-09",
@@ -9579,11 +11004,10 @@
         "source": "crossref",
         "source_publication_basis": "posted",
         "source_publication_date": "2025-12-09",
+        "source_publication_precision": "day",
         "status": "ok",
         "title": "Preparing for disasters triggered by natural hazards with immersive technologies: A scoping review",
-        "volume": "",
-        "source_publication_precision": "day",
-        "pub_date_imputed_first_of_month": false
+        "volume": ""
       },
       "original_rows": [
         {
@@ -11867,6 +13291,261 @@
       "review_keys": []
     },
     {
+      "checkpoint_state": "HISTORICAL_FIELDS_ALREADY_COVERED",
+      "doi": "10.5194/egusphere-2026-4928",
+      "metadata": {
+        "abstract": "Abstract. Lower-tropospheric stability (LTS) regulates convective boundary-layer growth, low-cloud evolution, pollutant dispersion, and land–atmosphere coupling, yet continuous observations are scarce because thermodynamic profilers are sparse and expensive, and reanalysis products explain less than one-third of the observed variance in inversion strength even at well-instrumented sites. We retrieve continuous LTS at the Atmospheric Radiation Measurement Southern Great Plains observatory from routine surface-flux measurements and Doppler-lidar-derived mixed-layer height, using a regime-aware, stage-partitioned framework established in earlier work. At the central facility over May 2016–December 2020 the retrieval reproduces observed LTS with a coefficient of determination of 0.78 and a mean absolute error of 2.39 K, and captures the full diurnal evolution of stability. The principal contribution is a diagnostic for judging when such a retrieval can be transferred to another site. Predictor-distribution differences, quantified by the Kullback–Leibler divergence, are weighted by SHapley Additive exPlanations sensitivities to form a single metric, ΔKL×|SHAP|. Applied to two extended facilities, the metric shows that distributional differences degrade transferability only where the retrieval is sensitive to the shifted predictor, and identifies cloud-base height, mixed-layer height, and thermodynamic predictors as the dominant contributors at the poorer-performing site. Gaussian perturbation experiments provide an independent fingerprint: monotonic error growth indicates a transferable relationship limited by random observational uncertainty, whereas a non-monotonic response indicates structural thermodynamic mismatch. Requiring only predictor distributions and model sensitivities, the diagnostic applies to any data-driven atmospheric retrieval.",
+        "access_rights": [
+          "https://creativecommons.org/licenses/by/4.0/"
+        ],
+        "best_partial_basis": "posted",
+        "best_partial_date": "2026-10-30",
+        "checkpoint_schema": "crossref-publication-v4-print-online-month-first",
+        "created": "",
+        "creators": [
+          "Yufei Chu",
+          "Jun A. Zhang",
+          "Guo Lin",
+          "Hanqin Guo",
+          "Lulin Xue",
+          "Weiwei Li",
+          "Hyeyum Hailey Shin",
+          "Min Deng",
+          "Lan Jin",
+          "Flynn McGinnity"
+        ],
+        "crossref_created": {
+          "full_date": "2026-10-30",
+          "precision": "day",
+          "value": "2026-10-30"
+        },
+        "crossref_deposited": {
+          "full_date": "2026-10-30",
+          "precision": "day",
+          "value": "2026-10-30"
+        },
+        "evidence": "https://api.crossref.org/works/10.5194/egusphere-2026-4928",
+        "funders": [
+          "National Science Foundation",
+          "National Science Foundation",
+          "National Science Foundation",
+          "National Science Foundation",
+          "U.S. Department of Energy",
+          "U.S. Department of Energy",
+          "Office of Naval Research",
+          "National Oceanic and Atmospheric Administration",
+          "National Oceanic and Atmospheric Administration"
+        ],
+        "funding_in_description": [],
+        "funding_structured": [
+          "2211308",
+          "2228299",
+          "2532217",
+          "AGS-1917693",
+          "DE-AC05-76RL01830",
+          "N00014-24-1-2554",
+          "NA22OAR4050669D",
+          "NA22OAR4590118",
+          "SC0020171"
+        ],
+        "issue": "",
+        "journal": "",
+        "pages": "",
+        "pub_date": "2026-10-30",
+        "pub_date_basis": "Crossref posted",
+        "pub_date_imputed_first_of_month": false,
+        "publication_dates": {
+          "issued": {
+            "full_date": "2026-10-30",
+            "precision": "day",
+            "value": "2026-10-30"
+          },
+          "posted": {
+            "full_date": "2026-10-30",
+            "precision": "day",
+            "value": "2026-10-30"
+          },
+          "published": {
+            "full_date": "2026-10-30",
+            "precision": "day",
+            "value": "2026-10-30"
+          },
+          "published-online": {
+            "full_date": "",
+            "precision": "missing",
+            "value": ""
+          },
+          "published-print": {
+            "full_date": "",
+            "precision": "missing",
+            "value": ""
+          }
+        },
+        "publisher": "Copernicus GmbH",
+        "publisher_url": "https://doi.org/10.5194/egusphere-2026-4928",
+        "reach_type": "1",
+        "registered": "",
+        "relations": {},
+        "resource_type": "posted-content",
+        "source": "crossref",
+        "source_publication_basis": "posted",
+        "source_publication_date": "2026-10-30",
+        "source_publication_precision": "day",
+        "status": "ok",
+        "title": "Regime-aware retrieval of lower-tropospheric stability and a sensitivity-weighted diagnostic of cross-site transferability over heterogeneous land surfaces",
+        "volume": ""
+      },
+      "original_rows": [
+        {
+          "abstract": "Abstract. Lower-tropospheric stability (LTS) regulates convective boundary-layer growth, low-cloud evolution, pollutant dispersion, and land–atmosphere coupling, yet continuous observations are scarce because thermodynamic profilers are sparse and expensive, and reanalysis products explain less than one-third of the observed variance in inversion strength even at well-instrumented sites. We retrieve continuous LTS at the Atmospheric Radiation Measurement Southern Great Plains observatory from routine surface-flux measurements and Doppler-lidar-derived mixed-layer height, using a regime-aware, stage-partitioned framework established in earlier work. At the central facility over May 2016–December 2020 the retrieval reproduces observed LTS with a coefficient of determination of 0.78 and a mea",
+          "authors": "Yufei Chu; Jun A. Zhang; Guo Lin; Hanqin Guo; Lulin Xue; Weiwei Li; Hyeyum Hailey Shin; Min Deng; Lan Jin; Flynn McGinnity",
+          "awards": "NA22OAR4590118",
+          "batch": "api-discoveries/batches/2026-11-01-monthly-api-2026-10-primary-only-part001.csv",
+          "date": "2026-10-30",
+          "origin": "monthly",
+          "project": "Autonomous Measurements of Air-Sea Interaction from Saildrones for Improved Hurricane Intensity Prediction",
+          "title": "Regime-aware retrieval of lower-tropospheric stability and a sensitivity-weighted diagnostic of cross-site transferability over heterogeneous land surfaces",
+          "type": "1"
+        }
+      ],
+      "origins": [
+        "monthly"
+      ],
+      "prior_fields": {
+        "abstract": true,
+        "creators": true,
+        "pub_date": true,
+        "title": true,
+        "type": true
+      },
+      "recoverable_fields": [],
+      "review_keys": []
+    },
+    {
+      "checkpoint_state": "SCOUT_FIELDS_ALREADY_COVERED",
+      "doi": "10.5194/egusphere-2026-5876",
+      "metadata": {
+        "abstract": "Abstract. A case study in methods reveals a way that false responses to online surveys can be leveraged to add rhetorical value to technical communication research. Serendipitously, we discovered during our study of community commonplaces of weather-forecast discussions that open-ended bot responses contained phrases very close to rhetorical commonplaces generated by humans. Using freely available text-mining tools, technical communication researchers can easily mine false responses for indicators of community beliefs, norms, and values. This LESSONS Report (Limitations, Errors, Surprises, Shortcomings, Opportunities for New Science) exemplifies a surprising situation that could introduce limitations or errors (if unaddressed) but instead is converted to an opportunity to increase the robustness of survey data.",
+        "access_rights": [
+          "https://creativecommons.org/licenses/by/4.0/"
+        ],
+        "best_partial_basis": "posted",
+        "best_partial_date": "2026-10-22",
+        "checkpoint_schema": "crossref-publication-v4-print-online-month-first",
+        "created": "",
+        "creators": [
+          "Lynda Olman",
+          "Benjamin J. Hatchett",
+          "Meghan Collins",
+          "Anne Heggli",
+          "Kathryn Lambrecht",
+          "Zach Tolby",
+          "Dominic Charles"
+        ],
+        "crossref_created": {
+          "full_date": "2026-10-22",
+          "precision": "day",
+          "value": "2026-10-22"
+        },
+        "crossref_deposited": {
+          "full_date": "2026-10-22",
+          "precision": "day",
+          "value": "2026-10-22"
+        },
+        "evidence": "https://api.crossref.org/works/10.5194/egusphere-2026-5876",
+        "funders": [
+          "NOAA Research"
+        ],
+        "funding_in_description": [],
+        "funding_structured": [
+          "NA21OAR4590208"
+        ],
+        "issue": "",
+        "journal": "",
+        "pages": "",
+        "pub_date": "2026-10-22",
+        "pub_date_basis": "Crossref posted",
+        "pub_date_imputed_first_of_month": false,
+        "publication_dates": {
+          "issued": {
+            "full_date": "2026-10-22",
+            "precision": "day",
+            "value": "2026-10-22"
+          },
+          "posted": {
+            "full_date": "2026-10-22",
+            "precision": "day",
+            "value": "2026-10-22"
+          },
+          "published": {
+            "full_date": "2026-10-22",
+            "precision": "day",
+            "value": "2026-10-22"
+          },
+          "published-online": {
+            "full_date": "",
+            "precision": "missing",
+            "value": ""
+          },
+          "published-print": {
+            "full_date": "",
+            "precision": "missing",
+            "value": ""
+          }
+        },
+        "publisher": "Copernicus GmbH",
+        "publisher_url": "https://doi.org/10.5194/egusphere-2026-5876",
+        "reach_type": "1",
+        "registered": "",
+        "relations": {},
+        "resource_type": "posted-content",
+        "source": "crossref",
+        "source_publication_basis": "posted",
+        "source_publication_date": "2026-10-22",
+        "source_publication_precision": "day",
+        "status": "ok",
+        "title": "We &lt;3 Skynet: Or, How We Learned to Stop Worrying and Love the Bot Responses in Our Survey Data",
+        "volume": ""
+      },
+      "original_rows": [
+        {
+          "abstract": "Abstract. A case study in methods reveals a way that false responses to online surveys can be leveraged to add rhetorical value to technical communication research. Serendipitously, we discovered during our study of community commonplaces of weather-forecast discussions that open-ended bot responses contained phrases very close to rhetorical commonplaces generated by humans. Using freely available text-mining tools, technical communication researchers can easily mine false responses for indicators of community beliefs, norms, and values. This LESSONS Report (Limitations, Errors, Surprises, Shortcomings, Opportunities for New Science) exemplifies a surprising situation that could introduce limitations or errors (if unaddressed) but instead is converted to an opportunity to increase the robu",
+          "authors": "Lynda Olman; Benjamin J. Hatchett; Meghan Collins; Anne Heggli; Kathryn Lambrecht; Zach Tolby; Dominic Charles",
+          "awards": "NA21OAR4590208",
+          "batch": "scout-discoveries/batches/2026-11-01-monthly-fast-320ded4490d81b.csv",
+          "date": "2026-10-22",
+          "origin": "staged",
+          "project": "Employing Rhetoric to Improve Probabilistic Forecast Communication",
+          "title": "We <3 Skynet: Or, How We Learned to Stop Worrying and Love the Bot Responses in Our Survey Data",
+          "type": "1"
+        },
+        {
+          "abstract": "Abstract. A case study in methods reveals a way that false responses to online surveys can be leveraged to add rhetorical value to technical communication research. Serendipitously, we discovered during our study of community commonplaces of weather-forecast discussions that open-ended bot responses contained phrases very close to rhetorical commonplaces generated by humans. Using freely available text-mining tools, technical communication researchers can easily mine false responses for indicators of community beliefs, norms, and values. This LESSONS Report (Limitations, Errors, Surprises, Shortcomings, Opportunities for New Science) exemplifies a surprising situation that could introduce limitations or errors (if unaddressed) but instead is converted to an opportunity to increase the robu",
+          "authors": "Lynda Olman; Benjamin J. Hatchett; Meghan Collins; Anne Heggli; Kathryn Lambrecht; Zach Tolby; Dominic Charles",
+          "awards": "NA21OAR4590208",
+          "batch": "api-discoveries/batches/2026-11-01-monthly-api-2026-10-primary-only-part001.csv",
+          "date": "2026-10-22",
+          "origin": "monthly",
+          "project": "Employing Rhetoric to Improve Probabilistic Forecast Communication",
+          "title": "We &lt;3 Skynet: Or, How We Learned to Stop Worrying and Love the Bot Responses in Our Survey Data",
+          "type": "1"
+        }
+      ],
+      "origins": [
+        "monthly",
+        "staged"
+      ],
+      "prior_fields": {
+        "abstract": true,
+        "creators": true,
+        "pub_date": true,
+        "title": true,
+        "type": true
+      },
+      "recoverable_fields": [],
+      "review_keys": []
+    },
+    {
       "checkpoint_state": "SCOUT_FIELDS_ALREADY_COVERED",
       "doi": "10.5194/gmd-18-7969-2025",
       "metadata": {
@@ -11912,6 +13591,7 @@
         "pages": "7969-7985",
         "pub_date": "2025-10-28",
         "pub_date_basis": "Crossref published-online",
+        "pub_date_imputed_first_of_month": false,
         "publication_dates": {
           "issued": {
             "full_date": "2025-10-28",
@@ -12010,11 +13690,10 @@
         "source": "crossref",
         "source_publication_basis": "published-online",
         "source_publication_date": "2025-10-28",
+        "source_publication_precision": "day",
         "status": "ok",
         "title": "A Python diagnostics package for evaluation of  Madden–Julian Oscillation (MJO) teleconnections  in subseasonal-to-seasonal (S2S) forecast systems",
-        "volume": "18",
-        "source_publication_precision": "day",
-        "pub_date_imputed_first_of_month": false
+        "volume": "18"
       },
       "original_rows": [
         {
@@ -12030,6 +13709,163 @@
         }
       ],
       "origins": [
+        "staged"
+      ],
+      "prior_fields": {
+        "abstract": true,
+        "creators": true,
+        "pub_date": true,
+        "title": true,
+        "type": true
+      },
+      "recoverable_fields": [],
+      "review_keys": []
+    },
+    {
+      "checkpoint_state": "SCOUT_FIELDS_ALREADY_COVERED",
+      "doi": "10.5194/tc-20-5973-2026",
+      "metadata": {
+        "abstract": "Most hydrological models underestimate snow water equivalent (SWE) in the mountainous western US. Key limitations may include inadequate representation of spatial variability due to coarse-resolution precipitation input and inadequate representations of snow-vegetation interactions. Vegetation affects snow dynamics through snow interception, throughfall/unloading, and energy transfer through the canopy, yet basin-scale studies on the vegetation effects are limited. To address this issue, we applied Noah-MP version 5.0 with a dynamic vegetation module over the Sacramento and San Joaquin River Basins in California at 1 km resolution. The model was driven by the Analysis of Record for Calibration (AORC) forcing at its native 1 km resolution and by the NLDAS-2 forcing downscaled from ∼ 12 to 1 km using the WRF-Hydro Meteorological Forcing Engine. We carried out eight model experiments driven by the two forcing datasets and two vegetation schemes over the two Basins. Compared to the 4 km PRISM and 1 km AORC, the downscaled 1 km NLDAS-2 forcing data shows higher precipitation and lower temperatures over the mountains, resulting in more snowfall and SWE, which is more consistent with in-situ SWE observations. Using the 1 km NLDAS-2 forcing, the default vegetation scheme that prescribes leaf area index (LAI) and vegetation cover fraction, produces excessive SWE on the ground, mainly because the strong canopy shading (too high LAI) reduces snowmelt, even though more snowfall is intercepted by the canopy. The dynamic vegetation module produces smaller LAI than the prescribed (more consistent with MODIS LAI) and thus leads to more shortwave radiation reaching the snow surface, thereby enhancing episodic melting during the accumulation season. Validation against in-situ snow data suggests that the use of dynamic vegetation model and the downscaled NLDAS-2 data perform the best. These findings highlight the importance of vegetation effects and downscaling of atmospheric forcing to improve the accuracy of snow modeling over the Southwest US.",
+        "access_rights": [
+          "https://creativecommons.org/licenses/by/4.0/"
+        ],
+        "best_partial_basis": "published-online",
+        "best_partial_date": "2026-10-15",
+        "checkpoint_schema": "crossref-publication-v4-print-online-month-first",
+        "created": "",
+        "creators": [
+          "Aniket Gupta",
+          "Ali Behrangi",
+          "Mohammad Farmani",
+          "Patrick Broxton",
+          "Guo-Yue Niu"
+        ],
+        "crossref_created": {
+          "full_date": "2026-10-15",
+          "precision": "day",
+          "value": "2026-10-15"
+        },
+        "crossref_deposited": {
+          "full_date": "2026-10-15",
+          "precision": "day",
+          "value": "2026-10-15"
+        },
+        "evidence": "https://api.crossref.org/works/10.5194/tc-20-5973-2026",
+        "funders": [
+          "NOAA Weather Program Office"
+        ],
+        "funding_in_description": [],
+        "funding_structured": [
+          "NA25OARX459C0342-T1-01"
+        ],
+        "issue": "10",
+        "journal": "The Cryosphere",
+        "pages": "5973-5992",
+        "pub_date": "2026-10-15",
+        "pub_date_basis": "Crossref published-online",
+        "pub_date_imputed_first_of_month": false,
+        "publication_dates": {
+          "issued": {
+            "full_date": "2026-10-15",
+            "precision": "day",
+            "value": "2026-10-15"
+          },
+          "posted": {
+            "full_date": "",
+            "precision": "missing",
+            "value": ""
+          },
+          "published": {
+            "full_date": "2026-10-15",
+            "precision": "day",
+            "value": "2026-10-15"
+          },
+          "published-online": {
+            "full_date": "2026-10-15",
+            "precision": "day",
+            "value": "2026-10-15"
+          },
+          "published-print": {
+            "full_date": "",
+            "precision": "missing",
+            "value": ""
+          }
+        },
+        "publisher": "Copernicus GmbH",
+        "publisher_url": "https://doi.org/10.5194/tc-20-5973-2026",
+        "reach_type": "1",
+        "registered": "",
+        "relations": {
+          "has-preprint": [
+            {
+              "asserted-by": "subject",
+              "id": "10.5194/egusphere-2025-3884",
+              "id-type": "doi"
+            },
+            {
+              "asserted-by": "object",
+              "id": "10.5194/egusphere-2025-3884",
+              "id-type": "doi"
+            }
+          ],
+          "has-review": [
+            {
+              "asserted-by": "subject",
+              "id": "10.5194/egusphere-2025-3884-RC1",
+              "id-type": "doi"
+            },
+            {
+              "asserted-by": "subject",
+              "id": "10.5194/egusphere-2025-3884-AC1",
+              "id-type": "doi"
+            },
+            {
+              "asserted-by": "subject",
+              "id": "10.5194/egusphere-2025-3884-RC2",
+              "id-type": "doi"
+            },
+            {
+              "asserted-by": "subject",
+              "id": "10.5194/egusphere-2025-3884-AC2",
+              "id-type": "doi"
+            }
+          ]
+        },
+        "resource_type": "journal-article",
+        "source": "crossref",
+        "source_publication_basis": "published-online",
+        "source_publication_date": "2026-10-15",
+        "source_publication_precision": "day",
+        "status": "ok",
+        "title": "Improving snow simulations through improved representations of vegetation conditions: insights from high resolution simulations over California",
+        "volume": "20"
+      },
+      "original_rows": [
+        {
+          "abstract": "Most hydrological models underestimate snow water equivalent (SWE) in the mountainous western US. Key limitations may include inadequate representation of spatial variability due to coarse-resolution precipitation input and inadequate representations of snow-vegetation interactions. Vegetation affects snow dynamics through snow interception, throughfall/unloading, and energy transfer through the canopy, yet basin-scale studies on the vegetation effects are limited. To address this issue, we applied Noah-MP version 5.0 with a dynamic vegetation module over the Sacramento and San Joaquin River Basins in California at 1 km resolution. The model was driven by the Analysis of Record for Calibration (AORC) forcing at its native 1 km resolution and by the NLDAS-2 forcing downscaled from ∼ 12 to 1",
+          "authors": "Aniket Gupta; Ali Behrangi; Mohammad Farmani; Patrick Broxton; Guo-Yue Niu",
+          "awards": "NA25OARX459C0342-T1-01",
+          "batch": "scout-discoveries/batches/2026-11-01-monthly-fast-1136c0387b8237.csv",
+          "date": "2026-10-15",
+          "origin": "staged",
+          "project": "Predictability of the Summer Precipitation Extremes in the Southern Great Plains through the Remote Effects of Snow Dynamics in the US West",
+          "title": "Improving snow simulations through improved representations of vegetation conditions: insights from high resolution simulations over California",
+          "type": "1"
+        },
+        {
+          "abstract": "Most hydrological models underestimate snow water equivalent (SWE) in the mountainous western US. Key limitations may include inadequate representation of spatial variability due to coarse-resolution precipitation input and inadequate representations of snow-vegetation interactions. Vegetation affects snow dynamics through snow interception, throughfall/unloading, and energy transfer through the canopy, yet basin-scale studies on the vegetation effects are limited. To address this issue, we applied Noah-MP version 5.0 with a dynamic vegetation module over the Sacramento and San Joaquin River Basins in California at 1 km resolution. The model was driven by the Analysis of Record for Calibration (AORC) forcing at its native 1 km resolution and by the NLDAS-2 forcing downscaled from ∼ 12 to 1",
+          "authors": "Aniket Gupta; Ali Behrangi; Mohammad Farmani; Patrick Broxton; Guo-Yue Niu",
+          "awards": "NA25OARX459C0342-T1-01",
+          "batch": "api-discoveries/batches/2026-11-01-monthly-api-2026-10-primary-only-part001.csv",
+          "date": "2026-10-15",
+          "origin": "monthly",
+          "project": "Predictability of the Summer Precipitation Extremes in the Southern Great Plains through the Remote Effects of Snow Dynamics in the US West",
+          "title": "Improving snow simulations through improved representations of vegetation conditions: insights from high resolution simulations over California",
+          "type": "1"
+        }
+      ],
+      "origins": [
+        "monthly",
         "staged"
       ],
       "prior_fields": {
@@ -14370,6 +16206,62 @@
       "review_keys": []
     },
     {
+      "checkpoint_state": "FIELDS_RECOVERABLE",
+      "doi": "10.5281/zenodo.20046428",
+      "metadata": {
+        "abstract": "Data and python code to produce all figures and major results presented in 2026 Nedza, Huang, Zhu Manuscript regarding dynamical tropical forecasting North West Pacific.",
+        "access_rights": [
+          "Creative Commons Attribution 4.0 International"
+        ],
+        "created": "2026-05-06T04:18:16.000Z",
+        "creators": [
+          "Nedza, Douglas"
+        ],
+        "evidence": "https://api.datacite.org/dois/10.5281/zenodo.20046428",
+        "funding_in_description": [],
+        "funding_structured": [],
+        "listed_formats": 0,
+        "listed_sizes": 0,
+        "pub_date": "2026-05-06",
+        "publisher": "Zenodo",
+        "reach_type": "4",
+        "registered": "2026-05-06T04:18:16.000Z",
+        "related": [
+          "HasVersion: 10.5281/zenodo.20222625",
+          "HasVersion: 10.5281/zenodo.20620899",
+          "HasVersion: 10.5281/zenodo.20311235",
+          "HasVersion: 10.5281/zenodo.20279300",
+          "HasVersion: 10.5281/zenodo.20046429",
+          "HasVersion: 10.5281/zenodo.20621200",
+          "HasVersion: 10.5281/zenodo.22758716"
+        ],
+        "resource_type": "ComputationalNotebook",
+        "source": "datacite",
+        "status": "ok",
+        "title": "2026 Nedza Huang Zhu - NWP Dynamical Forecasting Manuscript",
+        "version": ""
+      },
+      "original_rows": [],
+      "origins": [
+        "independent_research_lead"
+      ],
+      "prior_fields": {
+        "abstract": false,
+        "creators": false,
+        "pub_date": false,
+        "title": false,
+        "type": false
+      },
+      "recoverable_fields": [
+        "title",
+        "creators",
+        "type",
+        "abstract",
+        "pub_date"
+      ],
+      "review_keys": []
+    },
+    {
       "checkpoint_state": "SCOUT_FIELDS_ALREADY_COVERED",
       "doi": "10.5281/zenodo.21048459",
       "metadata": {
@@ -14506,6 +16398,56 @@
       "review_keys": [
         "zenodo-scamp"
       ]
+    },
+    {
+      "checkpoint_state": "FIELDS_RECOVERABLE",
+      "doi": "10.5281/zenodo.22758716",
+      "metadata": {
+        "abstract": "Data and python code to produce all figures and major results presented in 2026 Nedza, Huang, Zhu Manuscript regarding dynamical tropical forecasting North West Pacific.",
+        "access_rights": [
+          "Creative Commons Attribution 4.0 International"
+        ],
+        "created": "2026-09-14T21:44:43.000Z",
+        "creators": [
+          "Nedza, Douglas"
+        ],
+        "evidence": "https://api.datacite.org/dois/10.5281/zenodo.22758716",
+        "funding_in_description": [],
+        "funding_structured": [],
+        "listed_formats": 0,
+        "listed_sizes": 0,
+        "pub_date": "2026-09-14",
+        "publisher": "Zenodo",
+        "reach_type": "4",
+        "registered": "2026-09-14T21:44:43.000Z",
+        "related": [
+          "IsVersionOf: 10.5281/zenodo.20046428"
+        ],
+        "resource_type": "ComputationalNotebook",
+        "source": "datacite",
+        "status": "ok",
+        "title": "2026 Nedza Huang Zhu - NWP Dynamical Forecasting Manuscript",
+        "version": ""
+      },
+      "original_rows": [],
+      "origins": [
+        "independent_research_lead"
+      ],
+      "prior_fields": {
+        "abstract": false,
+        "creators": false,
+        "pub_date": false,
+        "title": false,
+        "type": false
+      },
+      "recoverable_fields": [
+        "title",
+        "creators",
+        "type",
+        "abstract",
+        "pub_date"
+      ],
+      "review_keys": []
     },
     {
       "checkpoint_state": "SCOUT_FIELDS_ALREADY_COVERED",
@@ -14681,6 +16623,17 @@
           "project": "Enhancing the Realism of MOM6-SIS2 Simulations with Ocean Tides",
           "title": "Baroclinic Sea Level in a Global Tidally Forced Simulation",
           "type": "3"
+        },
+        {
+          "abstract": "This dataset consists of the sea surface height and the baroclinic sea level from a global tidally forced simulation, performed using the Modular Ocean Model version 6 (MOM6). The baroclinic sea level is calculated using the numerical algorithm implemented through PR #1104 to the NOAA-GFDL/MOM6 repository. Data files: ocean_surf_hourly_t720.nc: Hourly output of sea surface height and baroclinic sea level from day 30 of the simulation. ocean_geometry.nc: Horizontal grid of the simulation. HA_ssh_1025.nc: Harmonic constants of the sea surface height associated with the M2 and K1 tides. HA_ssh_1025.nc: Harmonic constants of the baroclinic sea level associated with the M2 and K1 tides. Configuration file: MOM_parameter_doc.all",
+          "authors": "Xu, Chengzhu; Zaron, Edward",
+          "awards": "NA22OAR0110487",
+          "batch": "api-discoveries/batches/2026-11-01-monthly-api-2026-10-primary-only-part001.csv",
+          "date": "2026-10-10",
+          "origin": "monthly",
+          "project": "Enhancing the Realism of MOM6-SIS2 Simulations with Ocean Tides",
+          "title": "Baroclinic Sea Level in a Global Tidally Forced Simulation",
+          "type": "3"
         }
       ],
       "origins": [
@@ -14688,7 +16641,8 @@
         "historical_date_audit",
         "historical_triage",
         "metadata_blocker",
-        "metadata_review"
+        "metadata_review",
+        "monthly"
       ],
       "prior_fields": {
         "abstract": true,
@@ -14746,6 +16700,17 @@
           "project": "Enhancing the Realism of MOM6-SIS2 Simulations with Ocean Tides",
           "title": "Baroclinic Sea Level in a Global Tidally Forced Simulation",
           "type": "3"
+        },
+        {
+          "abstract": "This dataset consists of the sea surface height and the baroclinic sea level from a global tidally forced simulation, performed using the Modular Ocean Model version 6 (MOM6). The baroclinic sea level is calculated using the numerical algorithm implemented through PR #1104 to the NOAA-GFDL/MOM6 repository. Data files: ocean_surf_hourly_t720.nc: Hourly output of sea surface height and baroclinic sea level from day 30 of the simulation. ocean_geometry.nc: Horizontal grid of the simulation. HA_ssh_1025.nc: Harmonic constants of the sea surface height associated with the M2 and K1 tides. HA_ssh_1025.nc: Harmonic constants of the baroclinic sea level associated with the M2 and K1 tides. Configuration file: MOM_parameter_doc.all",
+          "authors": "Xu, Chengzhu; Zaron, Edward",
+          "awards": "NA22OAR0110487",
+          "batch": "api-discoveries/batches/2026-11-01-monthly-api-2026-10-primary-only-part001.csv",
+          "date": "2026-10-10",
+          "origin": "monthly",
+          "project": "Enhancing the Realism of MOM6-SIS2 Simulations with Ocean Tides",
+          "title": "Baroclinic Sea Level in a Global Tidally Forced Simulation",
+          "type": "3"
         }
       ],
       "origins": [
@@ -14753,7 +16718,8 @@
         "historical_date_audit",
         "historical_triage",
         "metadata_blocker",
-        "metadata_review"
+        "metadata_review",
+        "monthly"
       ],
       "prior_fields": {
         "abstract": true,
@@ -14820,6 +16786,57 @@
       "review_keys": [
         "case-36-anchor-stream-radar"
       ]
+    },
+    {
+      "checkpoint_state": "FIELDS_RECOVERABLE",
+      "doi": "10.5281/zenodo.6385057",
+      "metadata": {
+        "abstract": "The data holder contains modeled data on water level and discharge from some test cases.",
+        "access_rights": [
+          "Creative Commons Attribution 4.0 International",
+          "Open Access"
+        ],
+        "created": "2022-04-17T18:37:36.000Z",
+        "creators": [
+          "Beg, Nazmul Azim"
+        ],
+        "evidence": "https://api.datacite.org/dois/10.5281/zenodo.6385057",
+        "funding_in_description": [],
+        "funding_structured": [],
+        "listed_formats": 0,
+        "listed_sizes": 0,
+        "pub_date": "2022-04-17",
+        "publisher": "Zenodo",
+        "reach_type": "3",
+        "registered": "2022-04-17T18:37:36.000Z",
+        "related": [
+          "HasVersion: 10.5281/zenodo.6385058"
+        ],
+        "resource_type": "Dataset",
+        "source": "datacite",
+        "status": "ok",
+        "title": "Modeled data related to the article \"Diffusive Wave Models for Operational Forecasting of Channel Routing at Continental Scale\"",
+        "version": "1.0"
+      },
+      "original_rows": [],
+      "origins": [
+        "independent_research_lead"
+      ],
+      "prior_fields": {
+        "abstract": false,
+        "creators": false,
+        "pub_date": false,
+        "title": false,
+        "type": false
+      },
+      "recoverable_fields": [
+        "title",
+        "creators",
+        "type",
+        "abstract",
+        "pub_date"
+      ],
+      "review_keys": []
     },
     {
       "checkpoint_state": "HISTORICAL_FIELDS_ALREADY_COVERED",
@@ -16407,7 +18424,7 @@
       "review_keys": []
     },
     {
-      "checkpoint_state": "FIELDS_RECOVERABLE",
+      "checkpoint_state": "SCOUT_FIELDS_ALREADY_COVERED",
       "doi": "10.7910/dvn/jwzewf",
       "metadata": {
         "abstract": "This data includes focus group protocols including scenarios and discussion questions, survey instruments, and focus group transcripts and survey data related to the “Improving Delivery of Weather Prediction Center Precipitation Products” project. This project was funded by a $1,211,082 grant from the National Oceanic and Atmospheric Administration (NOAA) (NA23OAR4590137) to advance social science research work around the Weather Prediction Center’s precipitation forecast products. The grant supports a four-year (02-01-2023 to 01-31-2027) mixed-methods social science research study. This data comes from the portion of the study that focused on a new Urban Rain Rate Dashboard (URRD) product being developed by WPC. The research team focused on three main research questions: How will professional users incorporate an Urban Rain Rate Dashboard into decision-making?; How do users want to access the dashboard, and in which circumstances?; What design and delivery elements can maximize the utility of the dashboard in decision-making for users? Methods involved working with the WPC and Weather Forecast Offices (WFOs) to create location-specific scenarios for each focus group based on past events and included the URRD prototype and several re-designed mock-ups for testing. Six 2-hour virtual focus groups were held in fall 2024 focused in the metro areas of Houston, TX, Denver, CO, Atlanta, GA, Los Angeles, CA, New Orleans, LA, and New York City. Sessions focused on identifying the information needs, gaps, barriers and opportunities in using and understanding the URRD, with the purpose of informing recommendations to improve the usability of these products by end users. Participants were recruited through email and phone with initial contact lists provided by WFO partners. Participants included city officials, emergency management, water resource and flood professionals. During each focus group, participants completed a pre-session survey (which included acknowledgement of informed consent), participated in a facilitated discussion around the scenario, and completed a post-session survey. Pre-session surveys gathered demographic information and flood experience, and post-session surveys asked about specific product usefulness and feedback. Focus group discussion was elicited with questions including: What decisions are you making and when are you making them when preparing for heavy precipitation? and What forecast or weather information do you look for when concerned about urban flooding? And then focusing on each product: Is this information useful?; How would you use this information?; Would you seek this information out?; Would you share this with others?; What changes could improve this product? Quantitative (survey) and qualitative (focus group transcripts/inductive coding using MaxQDA) analysis informed findings shared with the WPC and subsequent revisions to the products. A follow-up online survey was administered after the research team revised some of the products in response to the findings. The research team, including Rachel Hogan Carr, Dr. Kathryn Semmens, Keri Maxfield, and Patrick Painter (all of Nurture Nature Center) and Dr. Burrell Montz (emeritus from East Carolina University), have compiled and shared recommendations to NOAA/WPC to inform iteration on the prototype design. The data provided here include the focus group protocols (scenarios and questions), the pre and post session survey questions, the follow-up survey questio",
@@ -16437,31 +18454,38 @@
         "title": "Urban Rain Rate Dashboard - Improving Delivery of Weather Prediction Center Precipitation Products",
         "version": "1.0"
       },
-      "original_rows": [],
+      "original_rows": [
+        {
+          "abstract": "Harvard Dataverse V1 dataset containing research instruments, protocols, scenarios, and survey/focus-group materials used to assess professional users of the Weather Prediction Center Urban Rain Rate Dashboard.",
+          "authors": "Kathryn Semmens",
+          "awards": "NA23OAR4590137",
+          "batch": "scout-discoveries/batches/2026-10-30-hourly-2029ET-urrd-dataverse-recovery-001.csv",
+          "date": "2025-10-17",
+          "origin": "staged",
+          "project": "DRSA (PRECIP1): Improving Delivery of Weather Prediction Center Precipitation Products",
+          "title": "Urban Rain Rate Dashboard - Improving Delivery of Weather Prediction Center Precipitation Products",
+          "type": "3"
+        }
+      ],
       "origins": [
         "metadata_blocker",
-        "metadata_review"
+        "metadata_review",
+        "staged"
       ],
       "prior_fields": {
-        "abstract": false,
-        "creators": false,
-        "pub_date": false,
-        "title": false,
-        "type": false
+        "abstract": true,
+        "creators": true,
+        "pub_date": true,
+        "title": true,
+        "type": true
       },
-      "recoverable_fields": [
-        "title",
-        "creators",
-        "type",
-        "abstract",
-        "pub_date"
-      ],
+      "recoverable_fields": [],
       "review_keys": [
         "case-17"
       ]
     }
   ],
-  "records_with_new_metadata": 10,
+  "records_with_new_metadata": 13,
   "schema": "reach-scout-doi-enrichment-audit-v1",
   "sources": {
     "historical": {
@@ -16474,6 +18498,10 @@
     "historical_triage": {
       "entries": 188
     },
+    "independent_research_leads": {
+      "doi_leads": 5,
+      "files": 3
+    },
     "metadata_blockers": {
       "entries": 48
     },
@@ -16482,20 +18510,19 @@
       "units": 36
     },
     "monthly": {
-      "batches": 0,
-      "rows": 0
+      "batches": 1,
+      "rows": 13
     },
     "staged": {
-      "batches": 20,
-      "rows": 66
+      "batches": 32,
+      "rows": 77
     }
   },
   "state_counts": {
-    "FIELDS_RECOVERABLE": 10,
-    "HISTORICAL_FIELDS_ALREADY_COVERED": 140,
-    "SCOUT_FIELDS_ALREADY_COVERED": 79
+    "FIELDS_RECOVERABLE": 13,
+    "HISTORICAL_FIELDS_ALREADY_COVERED": 143,
+    "SCOUT_FIELDS_ALREADY_COVERED": 91
   },
-  "successful_lookups": 229,
-  "unique_dois": 229,
-  "crossref_report_sha_basis": "10fbd79c1f78b54bf968360c7a83dc49229a2601"
+  "successful_lookups": 247,
+  "unique_dois": 247
 }
