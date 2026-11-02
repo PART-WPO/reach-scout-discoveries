@@ -164,7 +164,7 @@ def validate_canonical(path):
             # reviewer story before they can be promoted into the public feed.
             # This applies to new inbox drafts only; immutable historical
             # published batches are not retroactively rewritten.
-            if re.search(r"(?im)^\\s*Intake origin:\\s*Monthly API\\s*$", rationale):
+            if re.search(r"(?im)^\s*Intake origin:\s*Monthly API\s*$", rationale):
                 labels = ("Finding:", "What to check before adding this output:",
                           "Reviewer question:")
                 sections = {}
