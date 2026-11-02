@@ -5,9 +5,9 @@
   "spark_snapshot_sha256": "cf391a48c6810aeda3d9fa2aaa1c9d988d5301aa8fed8acc2d7fff6ab5336136",
   "source_monthly_records": 13,
   "counts": {
-    "funding_exception": 2,
+    "funding_exception": 1,
     "staged_in_scout_feed": 8,
-    "preprint_watchlist_hold": 1,
+    "preprint_watchlist_hold": 2,
     "cross_cohort_version_review": 2
   },
   "originals": [
@@ -146,7 +146,7 @@
     {
       "identity": "doi:10.5194/egusphere-2026-4928",
       "cohort": "2026-10",
-      "status": "funding_exception",
+      "status": "preprint_watchlist_hold",
       "api_funding_basis": "funding_anomaly",
       "funding_awards": "NA22OAR4590118",
       "reach_matches": [],
@@ -154,7 +154,8 @@
       "metadata_recovery_state": "not_needed",
       "metadata_recovery_checks": 0,
       "exceptions": [
-        "Explicit conflicting funded-project attribution requires human investigation"
+        "Explicit conflicting funded-project attribution requires human investigation",
+        "Preprint DOI stays in the monthly Watchlist, not the Discovery Hub. A separately verified official journal DOI must complete normal REACH/Scout identity, funding, and metadata review."
       ],
       "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
       "review_feed_status": "NOT_STAGED",
