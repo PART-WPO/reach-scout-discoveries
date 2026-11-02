@@ -1,6 +1,6 @@
 {
   "decision_review_due_count": 2,
-  "expansion_lead_count": 3,
+  "expansion_lead_count": 5,
   "expansion_leads": [
     {
       "action": "Investigate as independent output; never block verified original monthly seed",
@@ -24,12 +24,32 @@
     },
     {
       "action": "Do not restage existing REACH output",
+      "full_identity_verified": false,
+      "funding_verified": true,
+      "identity": "doi:10.1175/bams-d-22-0220.1",
+      "origin_method": "API-seeded expansion",
+      "original_seed_doi": "10.5194/egusphere-2026-5876",
+      "source_evidence_url": "https://journals.sagepub.com/doi/10.1177/10506519261455873",
+      "status": "already_in_reach"
+    },
+    {
+      "action": "Do not restage existing REACH output",
       "full_identity_verified": true,
       "funding_verified": true,
       "identity": "doi:10.25923/k9kh-y971",
       "origin_method": "API-seeded expansion",
       "original_seed_doi": "10.5194/egusphere-2026-5876",
       "source_evidence_url": "https://egusphere.copernicus.org/preprints/2026/egusphere-2026-5876/egusphere-2026-5876.pdf",
+      "status": "already_in_reach"
+    },
+    {
+      "action": "Do not restage existing REACH output",
+      "full_identity_verified": false,
+      "funding_verified": false,
+      "identity": "url:https://zenodo.org/records/7999820",
+      "origin_method": "API-seeded expansion",
+      "original_seed_doi": "10.5194/egusphere-2026-5876",
+      "source_evidence_url": "https://journals.ametsoc.org/view/journals/bams/104/9/BAMS-D-22-0220.1.xml",
       "status": "already_in_reach"
     }
   ],
