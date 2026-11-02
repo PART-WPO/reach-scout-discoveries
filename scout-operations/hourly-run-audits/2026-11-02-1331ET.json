@@ -1,0 +1,128 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-11-02-HOURLY-1331ET",
+  "run_at_utc": "2026-11-02T18:33:55Z",
+  "selected_mode": "normal_historical_discovery",
+  "source_manifests": {
+    "monthly_active_batch": "2026-11-01-monthly-api-2026-10-primary-only-part001",
+    "monthly_source_rows": 13,
+    "monthly_coverage_missing_from_ledger": 0,
+    "historical_total": 188,
+    "historical_research_complete": true,
+    "historical_remaining": 0,
+    "reach_index_shards_checked": 10,
+    "reach_index_rows": 1238,
+    "spark_primary_award_only": true
+  },
+  "monthly_originals": {
+    "received_before": 13,
+    "received_after": 13,
+    "checked_before": 13,
+    "checked_after": 13,
+    "staged_public_feed_before": 9,
+    "staged_public_feed_after": 9,
+    "no_action_before": 4,
+    "no_action_after": 4,
+    "new_dois": 0,
+    "dispositions_changed": 0
+  },
+  "historical": {
+    "fully_investigated_before": 188,
+    "fully_investigated_after": 188,
+    "remaining_before": 0,
+    "remaining_after": 0,
+    "human_metadata_needed": 28
+  },
+  "monthly_expansion": {
+    "total": 6,
+    "staged_for_review": 2,
+    "already_in_reach": 3,
+    "pending_human_intake": 1,
+    "new_expansion_leads": 0
+  },
+  "independent_leads": {
+    "source_json_files_enumerated": 7,
+    "lookup_doi_ok": 12,
+    "lookup_github_ok": 2,
+    "resumed_existing_leads": 0,
+    "existing_staged_or_named_blockers_not_repeated": true,
+    "new_leads": 0,
+    "finalized_existing_lead_dispositions": 0
+  },
+  "normal_awards_examined": [
+    "NA21OAR4590377",
+    "NA21OAR4590372",
+    "NA21OAR4590359"
+  ],
+  "normal_projects_examined": [
+    "spark-000335",
+    "spark-000337"
+  ],
+  "research_findings": [
+    {
+      "project": "spark-000335",
+      "primary_award": "NA21OAR4590377",
+      "finding": "CIWRO 2025 report documents 6 WPO presentations and 2 ROC meetings; final report mentioned but no public exact artifact URL/DOI",
+      "decision": "PROJECT_OUTPUT_DOCUMENTATION_LEAD_ONLY",
+      "excluded_false_positives": [
+        "10.1175/BAMS-D-14-00173.1",
+        "10.1175/BAMS-D-14-00174.1"
+      ]
+    },
+    {
+      "project": "spark-000337",
+      "primary_awards": [
+        "NA21OAR4590372",
+        "NA21OAR4590359"
+      ],
+      "finding": "BLOWN-UNDER 2019-20 campaign and July 2021 accepted paper funded by NSF, not shown to be funded by Aug 2021 WPO project",
+      "decision": "NO_DEMONSTRATED_WPO_CONNECTION_FOR_BLOWN_UNDER",
+      "excluded_false_positive": "10.1175/BAMS-D-20-0199.1"
+    }
+  ],
+  "new_scout_candidates": 0,
+  "new_inbox_drafts": 0,
+  "new_scout_batch_ids": [],
+  "prepare_batch_python_check_executed": false,
+  "prepare_batch_not_run_reason": "No valid new candidate CSV exists",
+  "feed": {
+    "manifest_generated_at": "2026-11-02T17:18:26Z",
+    "active_batches": 30,
+    "staged_candidates": 85,
+    "full_sha256_recomputed_this_run": false,
+    "new_publication_attempted": false,
+    "feed_integrity_status": "CURRENT_MANIFEST_READ; NO_NEW_FEED_WRITE; PREVIOUS_VERIFICATION_NOT_REASSERTED",
+    "github_actions_status": "NOT_VERIFIED_THIS_RUN"
+  },
+  "reviewer_visibility": {
+    "public_feed_staged_monthly_originals": 9,
+    "private_hub_import": "NOT_VERIFIED",
+    "human_approvals": "NOT_VERIFIED",
+    "public_reach_additions_verified_this_run": 0
+  },
+  "sources_checked": [
+    "https://github.com/PART-WPO/SPARK/blob/main/agent-data/index/part-004.csv",
+    "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-026.csv",
+    "https://wpo.noaa.gov/projects/improving-quality-control-of-multi-radar-multi-sensor-products-from-non-meteorological-radar-data-artifacts/",
+    "https://www.ou.edu/content/dam/ciwro/documents/ciwro-briefing-book-2025.pdf",
+    "https://repository.library.noaa.gov/view/noaa/32168",
+    "https://repository.library.noaa.gov/view/noaa/15285",
+    "https://wpo.noaa.gov/projects/particle-imaging-and-ceilometer-observations-for-snowfall-properties-and-blizzard-parameters/",
+    "https://aero.und.edu/atmos/_files/docs/northern-lights/2021.pdf",
+    "https://journals.ametsoc.org/view/journals/bams/103/1/BAMS-D-20-0199.1.xml",
+    "https://repository.library.noaa.gov/view/noaa/44331/noaa_44331_DS1.pdf",
+    "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+    "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json",
+    "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/manifest.json"
+  ],
+  "blockers": [
+    "No public exact MRMS QC final report/presentation identified",
+    "No independently verified post-award Wood/Kennedy snowfall artifact found",
+    "Private Hub/reviewer decisions inaccessible",
+    "Full REACH detail dedup not attempted because no eligible new output identity"
+  ],
+  "library_first_save_intended": true,
+  "audit_result": "PARTIAL",
+  "report_path": "scout-operations/reports/hourly-research/2026-11-02-1331ET-observations-primary-award-sweep.md",
+  "checkpoint_path": "scout-operations/reports/hourly-research/2026-11-02-1331ET-checkpoint.json"
+}
