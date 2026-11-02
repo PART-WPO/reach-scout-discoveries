@@ -2,15 +2,15 @@
   "schema": "reach-scout-discovery-origin-rollup-v1",
   "snapshot_date": "2026-11-02",
   "source": "Automated SHA-256-verified scout-discoveries/manifest.json and every published batch",
-  "source_manifest_sha256": "15a842a44b4a0c752a6bc79e44019b682c9f789883c3d9ad262b181686c80ca5",
-  "source_manifest_generated_at": "2026-11-02T08:07:10Z",
-  "batch_count": 34,
-  "staged_review_rows": 79,
+  "source_manifest_sha256": "faad7442b5223ecd82675fd5c15c3af8e2325ff42115d08a3835e00c1d1b2619",
+  "source_manifest_generated_at": "2026-11-02T08:09:03Z",
+  "batch_count": 35,
+  "staged_review_rows": 82,
   "manifest_rows_verified": true,
   "route_counts": {
     "Direct API": 14,
     "API-seeded expansion": 15,
-    "Independent discovery": 6,
+    "Independent discovery": 9,
     "Metadata correction": 4,
     "Unclassified explicit": 0,
     "Unclassified legacy (route missing)": 40
@@ -18,7 +18,7 @@
   "raw_route_counts": {
     "Direct API": 14,
     "API-seeded expansion": 15,
-    "Independent discovery": 6,
+    "Independent discovery": 9,
     "Metadata correction": 4,
     "Unclassified explicit": 0,
     "Unclassified legacy (route missing)": 40
@@ -26,7 +26,7 @@
   "effective_discovery_method_counts": {
     "Direct API": 22,
     "API-seeded expansion": 17,
-    "Independent discovery": 40,
+    "Independent discovery": 43,
     "Unclassified": 0
   },
   "discovery_method_display_labels": {
@@ -40,7 +40,7 @@
     "metadata_correction": 21,
     "possible_duplicate_review": 2,
     "existing_duplicate_review": 2,
-    "needs_investigation": 6,
+    "needs_investigation": 9,
     "unclassified_purpose": 0
   },
   "metadata_correction_method_recovery": {
@@ -64,12 +64,12 @@
   "attribution_metrics": {
     "direct_api_staged": 14,
     "api_seeded_expansion_staged": 15,
-    "independent_discovery_staged": 6,
+    "independent_discovery_staged": 9,
     "metadata_correction_staged": 4,
     "unclassified_staged": 40,
     "beyond_direct_api_staged_review_candidates": 35,
-    "previous_raw_routed_beyond_direct_api_staged": 21,
-    "effective_independent_discovery_method_staged": 40,
+    "previous_raw_routed_beyond_direct_api_staged": 24,
+    "effective_independent_discovery_method_staged": 43,
     "effective_api_seeded_expansion_method_staged": 17,
     "effective_direct_api_method_staged": 22,
     "effective_unclassified_method_staged": 0,
@@ -84,13 +84,13 @@
     "source_manifest": "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json",
     "source_manifest_sha": "ab844173f761617a2fe1def5cf218b1fc94b3e7d"
   },
-  "human_review_status": "NOT_VERIFIED; 79 staged proposals are not approvals or public REACH additions.",
+  "human_review_status": "NOT_VERIFIED; 82 staged proposals are not approvals or public REACH additions.",
   "latest_verified_run": {
-    "batch_id": "2026-11-02-0301ET-acm-risk-thresholds-investigate-001",
+    "batch_id": "2026-11-02-0301ET-mesh-independent-review-001",
     "source_run_ids": [
       "REACH-SCOUT-2026-11-02-HOURLY-0301ET"
     ],
-    "record_count": 1,
+    "record_count": 3,
     "manifest_verified": true,
     "human_hub_import": "NOT_VERIFIED"
   },
