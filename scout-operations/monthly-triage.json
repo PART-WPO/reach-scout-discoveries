@@ -270,7 +270,7 @@
         "NA23OAR4590387",
         "NA23OAR4590388"
       ],
-      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished. MULTI-PROJECT: three primary award matches across two SPARK projects; corroborate and preserve each independently.\n11:32 EST second-source research: Taylor & Francis journal index confirms publication online 2026-10-30 and exact title. SPARK primary project records show NA22OAR4590512 belongs to RRFS-CMAQ (spark-000536), whereas NA23OAR4590387/0388 belong to S2S Fire Emissions and Weather Forecasts (spark-000544). The latter aligns with Fire Radiative Power research; former's same-project contribution remains unverified. Located a similarly titled public GitHub workflow repository earth-artificial-intelligence/wildfire_guass_physics; README does not establish DOI, exact paper provenance or WPO award, so code remains unverified independent output lead, NOT staged.\n12:32 EST follow-up: DOI-specific alternate publisher/NOAA IR/Zenodo URLs were compared to the Link to Output field across all 10 public REACH index shards (1,238 records), with no URL matches. This is a limited additional link check, NOT complete REACH detail-link/version dedup; earlier research and disposition unchanged.\n13:31 EST related-output comparison: REACH index part-009 contains earlier primary NA23OAR4590387/0388 S2S fire publications and reach-001095 Firecasting software (GMU-SESS-AQ/firecasting). These are existing funded outputs, not evidence that the new fire-radiative-power paper or a similarly named third-party repository is a duplicate or a new code output. Preserve all three primary awards and two SPARK project associations; RRFS-CMAQ's specific contribution remains NOT VERIFIED.\nValidated Scout review feed contains this exact original DOI in scout-discoveries/batches/2026-11-01-monthly-fast-7140ce113da603.csv. Research stage completed for human review. Private Hub import NOT VERIFIED; no human approval or public REACH update inferred. DOI-seeded related output research continues separately.\nPublic Scout feed metadata-only correction: original batch 2026-11-01-monthly-fast-7140ce113da603 was superseded by 2026-11-02-monthly-enriched-frp-2749622-001 for the SAME original DOI. Preserve private human decisions; Hub sync and re-review remain separately verifiable.",
+      "research_notes": "9:30 EST first-pass audit: no normalized exact DOI/title match in the complete 1,238-row public REACH index or 68 active Scout proposals. Every API-reported award number appears in the primary SPARK award listing. These checks do not establish output novelty or same-project WPO funding. Alternate DOI/URL/version comparison, output-specific evidence, project attribution, and connected-output discovery remain unfinished. MULTI-PROJECT: three primary award matches across two SPARK projects; corroborate and preserve each independently.\n11:32 EST second-source research: Taylor & Francis journal index confirms publication online 2026-10-30 and exact title. SPARK primary project records show NA22OAR4590512 belongs to RRFS-CMAQ (spark-000536), whereas NA23OAR4590387/0388 belong to S2S Fire Emissions and Weather Forecasts (spark-000544). The latter aligns with Fire Radiative Power research; former's same-project contribution remains unverified. Located a similarly titled public GitHub workflow repository earth-artificial-intelligence/wildfire_guass_physics; README does not establish DOI, exact paper provenance or WPO award, so code remains unverified independent output lead, NOT staged.\n12:32 EST follow-up: DOI-specific alternate publisher/NOAA IR/Zenodo URLs were compared to the Link to Output field across all 10 public REACH index shards (1,238 records), with no URL matches. This is a limited additional link check, NOT complete REACH detail-link/version dedup; earlier research and disposition unchanged.\n13:31 EST related-output comparison: REACH index part-009 contains earlier primary NA23OAR4590387/0388 S2S fire publications and reach-001095 Firecasting software (GMU-SESS-AQ/firecasting). These are existing funded outputs, not evidence that the new fire-radiative-power paper or a similarly named third-party repository is a duplicate or a new code output. Preserve all three primary awards and two SPARK project associations; RRFS-CMAQ's specific contribution remains NOT VERIFIED.\nValidated Scout review feed contains this exact original DOI in scout-discoveries/batches/2026-11-01-monthly-fast-7140ce113da603.csv. Research stage completed for human review. Private Hub import NOT VERIFIED; no human approval or public REACH update inferred. DOI-seeded related output research continues separately.\nPublic Scout feed metadata-only correction: original batch 2026-11-01-monthly-fast-7140ce113da603 was superseded by 2026-11-02-monthly-enriched-frp-2749622-001 for the SAME original DOI. Preserve private human decisions; Hub sync and re-review remain separately verifiable.\n2026-11-02 bounded metadata recovery: the 2026-10-30 article title/author/date-matched abstract was found in OneScholar, confirmed against publisher's current journal listing, and summarized in the active immutable-batch replacement. Direct publisher full abstract unavailable; exact output-to-SPARK-project attribution still a HUMAN investigation. Replacing the public Scout batch does NOT confirm a private Hub sync or approval.",
       "checked_sources": [
         "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/hourly-research/2026-11-01-0927ET-monthly-primary-intake-first-pass.md",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
@@ -380,7 +380,47 @@
       "private_hub_import_verified": false,
       "human_approval_verified": false,
       "public_reach_addition_verified": false,
-      "review_feed_state": "MANIFEST_PUBLISHED"
+      "review_feed_state": "MANIFEST_PUBLISHED",
+      "metadata_recovery": {
+        "status": "resolved",
+        "checked_on": "2026-11-02",
+        "original_missing_fields": [
+          "Brief Abstract"
+        ],
+        "checks": [
+          {
+            "method": "crossref_exact_doi_monthly_harvest",
+            "url": "https://api.crossref.org/works/10.1080/01431161.2026.2749622",
+            "result": "Original Crossref record has matching DOI, authors, online publication date and multiple structured NOAA awards but no abstract."
+          },
+          {
+            "method": "official_publisher_journal_catalog",
+            "url": "https://www.tandfonline.com/subjects/geography?ContentItemType=research-article&PrimaryLanguageFacetField=en&SeriesKey=tres20&content=standard&pageSize=10&startPage=0&subjectTitle=&target=default",
+            "result": "Taylor & Francis International Journal of Remote Sensing listing matches exact article title, authors and October 30, 2026 published-online date. Direct publisher full abstract was inaccessible."
+          },
+          {
+            "method": "independent_scholarly_abstract_index",
+            "url": "https://onescholar.app/v/earth-and-environmental-sciences?days=7&page=1&page_size=25",
+            "result": "OneScholar listing matches article title, authors, journal and date; abstract content summarized in original wording for the Brief Abstract field."
+          }
+        ],
+        "resolved_fields": {
+          "Brief Abstract": {
+            "value": "The study evaluates a Gaussian-weighted Huber loss for forecasting extreme fire radiative power from satellite observations and environmental predictors. It compares transformer and long short-term memory models using data from 2017–2020 across California, the Congo Basin, East African savanna, and Mato Grosso, Brazil. Gaussian weighting reduced underprediction and improved some transformer forecasts of intense fires, while LSTM results varied across regions. The adjustment also introduced localized overprediction, highlighting a trade-off between correcting systematic underestimation and maintaining prediction stability.",
+            "evidence_url": "https://onescholar.app/v/earth-and-environmental-sciences?days=7&page=1&page_size=25",
+            "value_type": "Original concise evidence-backed summary of independently indexed scholarly abstract; not verbatim original publisher text"
+          }
+        },
+        "remaining_fields": [],
+        "private_hub_update": "NOT_VERIFIED",
+        "human_review_modified": false,
+        "remaining_reviewer_questions": [
+          "Which exact NOAA grants are explicitly attributable to this publication and which SPARK parent project(s) should be selected?",
+          "Was the full publication/related software duplicate and alternate DOI/URL check completed?",
+          "Can the publisher full text be accessed to double-check the brief summary?"
+        ]
+      },
+      "recovered_metadata_supplement_path": "scout-operations/reports/staged-metadata-enrichments/2026-11-02-frp-2749622.json"
     },
     {
       "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
