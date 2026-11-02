@@ -1,6 +1,6 @@
 {
   "artifact_scope_policy": "Zenodo file listings and exact GitHub tag trees are read-only evidence, not funding or approval. Access failures do not mean files are absent.",
-  "doi_count": 13,
+  "doi_count": 12,
   "doi_records": [
     {
       "artifact_scope": {
@@ -609,6 +609,7 @@
       },
       "doi": "10.57969/s9qp4c",
       "lead_files": [
+        "scout-operations/research-leads/2026-11-02-0525ET-atlantic-drifter-dois.json",
         "scout-operations/research-leads/2026-11-02-0625ET-atlantic-2024-alias-lookup.json"
       ],
       "metadata": {
@@ -649,37 +650,6 @@
         "status": "ok",
         "title": "Lagrangian Drifter Laboratory at Scripps Institution of Oceanography GTS Atlantic Hurricane 2024 Data",
         "version": null
-      }
-    },
-    {
-      "artifact_scope": {
-        "files_verified": false,
-        "status": "not_zenodo"
-      },
-      "doi": "10.57969/s9qp4cd",
-      "lead_files": [
-        "scout-operations/research-leads/2026-11-02-0525ET-atlantic-drifter-dois.json"
-      ],
-      "metadata": {
-        "attempts": [
-          {
-            "error": {
-              "code": 404,
-              "kind": "http"
-            },
-            "provider": "datacite",
-            "url": "https://api.datacite.org/dois/10.57969/s9qp4cd"
-          },
-          {
-            "error": {
-              "code": 404,
-              "kind": "http"
-            },
-            "provider": "crossref",
-            "url": "https://api.crossref.org/works/10.57969/s9qp4cd"
-          }
-        ],
-        "status": "unavailable_or_not_found"
       }
     },
     {
@@ -1119,22 +1089,12 @@
       "identity": "doi:10.57969/s9qp4c",
       "kind": "doi",
       "lead_files": [
+        "scout-operations/research-leads/2026-11-02-0525ET-atlantic-drifter-dois.json",
         "scout-operations/research-leads/2026-11-02-0625ET-atlantic-2024-alias-lookup.json"
       ],
       "lookup_status": "ok",
       "metadata_source": "datacite",
       "next_action": "resume_research_verification"
-    },
-    {
-      "evidence": null,
-      "identity": "doi:10.57969/s9qp4cd",
-      "kind": "doi",
-      "lead_files": [
-        "scout-operations/research-leads/2026-11-02-0525ET-atlantic-drifter-dois.json"
-      ],
-      "lookup_status": "unavailable_or_not_found",
-      "metadata_source": null,
-      "next_action": "retry_or_escalate_metadata"
     },
     {
       "evidence": "https://api.datacite.org/dois/10.57969/s9rp4p",
