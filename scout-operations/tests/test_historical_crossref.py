@@ -3,7 +3,7 @@ import sys
 import unittest
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"tools"))
-from reconcile_historical_crossref import canonical, verified_seed
+from reconcile_historical_crossref import canonical, verified_seed, verified_preprint_hold
 from select_workstream import decide
 
 SHA="e"*64
@@ -34,6 +34,26 @@ class HistoricalCrossrefTests(unittest.TestCase):
         self.assertTrue(verified_seed({"seed_expansion_status":"complete",
              "seed_checked_sources":["https://api.crossref.org/works/10.1234/test"],
              "seed_research_notes":"References, availability and code outputs checked."}))
+
+    def test_preprint_original_hold_requires_posted_source_and_no_false_award_claim(self):
+        case={
+            "identity":"doi:10.5194/egusphere-2025-3884",
+            "status":"no_action",
+            "no_action_subtype":"PREPRINT_NOT_ELIGIBLE_AS_NEW_OUTPUT",
+            "publication_status":"preprint",
+            "source_posted_content_verified":True,
+            "original_output_gate":{"eligible_for_new_output_review":False},
+            "preprint_watchlist_status":"tracking_preprint",
+            "verified_awards":[],
+            "no_action_reason":"Crossref posted-content preprint DOI is not a published journal article.",
+            "verified_at":"2026-11-02T22:29:00Z",
+            "checked_sources":["https://api.crossref.org/works/10.5194/egusphere-2025-3884"],
+            "research_notes":"Original preprint is held from new-output review; DOI seed expansion remains pending."
+        }
+        self.assertTrue(verified_preprint_hold(case))
+        self.assertFalse(verified_preprint_hold({**case,"source_posted_content_verified":False}))
+        self.assertFalse(verified_preprint_hold({**case,"verified_awards":["NA25OARX459C0342-T1-01"]}))
+        self.assertFalse(verified_preprint_hold({**case,"original_output_gate":{"eligible_for_new_output_review":True}}))
 
     def test_crossref_preempts_completed_datacite(self):
         hm,hc=datacite_done()
