@@ -23,6 +23,9 @@ WATCH = ROOT / "scout-operations/preprint-watchlist.json"
 DOI = re.compile(r"^10\.\d{4,9}/\S+$", re.I)
 HOLD_TERMS = ("preprint", "pre-print", "accepted manuscript", "working paper",
               "manuscript submitted", "not peer reviewed", "not peer-reviewed")
+PREPRINT_HOSTS = ("arxiv.org/", "biorxiv.org/", "medrxiv.org/",
+                  "egusphere.copernicus.org/", "eartharxiv.org/",
+                  "preprints.org/", "essopenarchive.org/")
 
 def watchlist(root=ROOT):
     data = json.loads((root / "scout-operations/preprint-watchlist.json").read_text(encoding="utf-8"))
@@ -42,9 +45,11 @@ def preprint_type(cr, dc):
     return False
 
 def publication_decision(doi, output_type, cr=None, dc=None, cr_error=False, dc_error=False,
-                         watched=False, rationale=""):
+                         watched=False, rationale="", output_url=""):
     """Publication dates do not prove journal status. Registry errors hold articles."""
-    if watched or re.search(r"(?im)^API publication status:\s*Preprint\s*$", rationale or ""):
+    if (watched or
+        re.search(r"(?im)^(?:API publication status|Publication status):\s*(?:Preprint|Unpublished|Accepted manuscript)\s*$", rationale or "") or
+        any(host in str(output_url or "").lower() for host in PREPRINT_HOSTS)):
         return "preprint_hold", "Known preprint identity; original DOI remains held"
     if preprint_type(cr, dc):
         return "preprint_hold", "Source registry explicitly classifies this DOI as preprint or posted content"
@@ -80,7 +85,11 @@ def read_batches(root=ROOT):
     old = {b["path"] for b in manifest.get("batches", [])}
     inbox = root / "scout-discoveries/inbox"
     batches = root / "scout-discoveries/batches"
-    paths = sorted(inbox.glob("*.csv")) + sorted(
+    paths = sorted(
+        p for p in inbox.glob("*.csv")
+        if not (batches / p.name).exists() or
+        (batches / p.name).read_bytes() != p.read_bytes())
+    paths += sorted(
         p for p in batches.glob("*.csv")
         if str(p.relative_to(root)).replace("\\", "/") not in old)
     return paths
@@ -116,7 +125,8 @@ def verify(root=ROOT, fetch_crossref=crossref, fetch_datacite=datacite, now=None
             cr, dc, cr_error, dc_error = cache.get(doi, (None, None, False, False))
             status, reason = publication_decision(
                 doi, row.get("Output Type", ""), cr, dc, cr_error, dc_error,
-                doi in known, row.get("Scout Discovery Rationale", ""))
+                doi in known, row.get("Scout Discovery Rationale", ""),
+                row.get("Output URL", ""))
             if status == "preprint_hold" and doi and doi not in known:
                 watch["entries"].append({
                     "preprint_doi": doi, "title": row.get("Title", ""),
