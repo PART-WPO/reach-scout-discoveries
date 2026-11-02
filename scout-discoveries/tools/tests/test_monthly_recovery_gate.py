@@ -70,6 +70,20 @@ class MonthlyCriticalMetadataGateTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "YYYY-MM-DD"):
             pre_stage_metadata_recovery(ledger, row)
 
+    def test_valid_recovered_date_with_source_is_accepted(self):
+        row = self.row()
+        row["Brief Abstract"] = "The original abstract is verified and complete."
+        row["Publication Date"] = ""
+        ledger = {"metadata_recovery": {
+            "status": "resolved", "checks": [self.check()],
+            "resolved_fields": {"Publication Date": {
+                "value": "2026-10-01",
+                "evidence_url": "https://example.org/verified-publication"}}}}
+        enriched, missing, state, _ = pre_stage_metadata_recovery(ledger, row)
+        self.assertEqual(state, "resolved")
+        self.assertEqual(enriched["Publication Date"], "2026-10-01")
+        self.assertEqual(missing, [])
+
     def test_complete_api_record_keeps_fast_path(self):
         row = self.row()
         row["Brief Abstract"] = "Complete source provided an authoritative abstract."
