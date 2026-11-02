@@ -220,7 +220,7 @@
       "scout_batch_path": "scout-discoveries/batches/2026-11-02-monthly-enriched-pdisas-100696-001.csv",
       "reach_snapshot": "f94ae52cac483b52e9a5cd6e775c6faa01ad6ec33610b249b3d486aed6daa003",
       "evidence_url": "https://api.crossref.org/works/10.1016/j.pdisas.2026.100696",
-      "classification": "NEEDS INVESTIGATION",
+      "classification": "NEW CANDIDATE",
       "private_hub_import_verified": false,
       "human_approval_verified": false,
       "public_reach_addition_verified": false,
@@ -255,7 +255,25 @@
         "human_review_modified": false,
         "reviewer_guidance": "What to check before adding this output: Verify recovered abstract against NOAA IR | Complete REACH secondary-link and version duplicate check | Keep four related focus-group records classified as already in REACH | Confirm exact NOAA award NA22OAR4590187 and approved print-month date convention"
       },
-      "recovered_metadata_supplement_path": "scout-operations/reports/staged-metadata-enrichments/2026-11-02-pdisas-100696.json"
+      "recovered_metadata_supplement_path": "scout-operations/reports/staged-metadata-enrichments/2026-11-02-pdisas-100696.json",
+      "classification_reassessment": {
+        "checked_on": "2026-11-02",
+        "type": "metadata_gap_resolved_review_ready",
+        "before": "NEEDS INVESTIGATION",
+        "after": "NEW CANDIDATE",
+        "evidence": [
+          "https://repository.library.noaa.gov/view/noaa/77174",
+          "https://api.crossref.org/works/10.1016/j.pdisas.2026.100696"
+        ],
+        "remaining_reviewer_checks": [
+          "Confirm exact article DOI/version not present in REACH secondary-link fields",
+          "Retain related same-project materials as existing REACH records; they are not this journal article",
+          "Confirm approved 2026-10-01 published-print month date convention"
+        ],
+        "human_approval_verified": false,
+        "public_reach_addition_verified": false,
+        "reason": "Review classification update: The missing abstract has been independently recovered through NOAA IR; the exact publication DOI and award NA22OAR4590187 have direct source corroboration and a uniquely identified SPARK primary project. This finding is now a candidate for HUMAN addition review, not approved or published. The reviewer must still complete the listed secondary-link/version duplicate and publication-date checks."
+      }
     },
     {
       "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
