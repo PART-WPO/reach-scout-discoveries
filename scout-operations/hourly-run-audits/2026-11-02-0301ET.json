@@ -1,0 +1,182 @@
+{
+  "run_id": "REACH-SCOUT-2026-11-02-HOURLY-0301ET",
+  "run_at_utc": "2026-11-02T08:05:50.762096+00:00",
+  "primary_mode": "monthly_api_triage",
+  "phase": "monthly_expansion_research_with_bounded_independent_lead_resumption",
+  "reach_public_index_detail": {
+    "manifest_sha": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+    "index_shards": 10,
+    "detail_shards": 140,
+    "rows": 1238,
+    "mesh_exact_matches": 0,
+    "parent_article": "reach-000241"
+  },
+  "scout_feed_before": {
+    "batch_count": 33,
+    "candidate_rows": 78,
+    "inbox_count": 11,
+    "mesh_exact_matches": 0
+  },
+  "monthly_originals": {
+    "received": 13,
+    "feed_staged": 9,
+    "funding_exceptions": 2,
+    "version_family_exceptions": 2,
+    "ledger_no_action": 4,
+    "ledger_staged_for_hub_import": 9,
+    "hub_import": "NOT_VERIFIED",
+    "unresolved_research_cases": 0,
+    "exceptions": {
+      "funding_scope_no_action": 2,
+      "historical_concept_version_no_action": 2
+    }
+  },
+  "monthly_expansions": {
+    "total": 6,
+    "already_in_reach": 3,
+    "staged_for_human_review": 2,
+    "newly_staged_this_run": 1,
+    "pending_human_intake": 1,
+    "unresolved_actionable_research": 0,
+    "original_seed_research_not_repeated": true,
+    "no_public_reach_additions_verified": true
+  },
+  "independent_research": {
+    "source_leads_checked": 3,
+    "metadata_ok": 3,
+    "resumed": 3,
+    "newly_manifest_staged_review_proposals": 3,
+    "unresolved_research": 0,
+    "human_funding_attribution_questions": 3,
+    "provenance": "Independent discovery",
+    "source_parent_award": "NA18OAR4590394"
+  },
+  "drafts": [
+    {
+      "file": "2026-11-02-0301ET-mesh-independent-review-001.csv",
+      "rows": 3
+    },
+    {
+      "file": "2026-11-02-0301ET-acm-risk-thresholds-investigate-001.csv",
+      "rows": 1
+    }
+  ],
+  "research_checks": [
+    "full public REACH index and detail shards against exact MESH identities",
+    "all 33 active Scout batch files (78 rows) against exact MESH identities",
+    "11 current inbox filenames enumerated and content identities covered by manifest-active copies",
+    "SPARK primary award record spark-000038 and related award field",
+    "funded publisher article DOI 10.1111/1752-1688.13080 and direct data availability links",
+    "unified DataCite and GitHub native metadata report for 3 MESH outputs",
+    "prior full REACH/Scout dedup for ACM and native Crossref metadata",
+    "NOAA IR project record noaa:67218 and BAMS award bridge for ACM"
+  ],
+  "limitations": [
+    "Private Discovery Hub import, reviewer decisions and public REACH additions cannot be observed",
+    "MESH artifact-specific funding not independently asserted; reviewer attribution decision required",
+    "Zenodo ZIP and tagged code were not executed or downloaded; native file inventory verified",
+    "ACM article-specific acknowledgment inaccessible; credible project bridge only",
+    "Zenodo 22758716 has seven versions and own WPO funding unverified; do not stage",
+    "No new monthly original DOI staging; nine already manifest-published"
+  ],
+  "feed_status": "VALIDATED_PUBLIC_SCOUT_FEED_STAGED_NOT_PRIVATE_HUB_IMPORTED",
+  "audit_result": "PARTIAL",
+  "no_public_reach_or_smartsheet_writes": true,
+  "audit_phase": "FINAL_VERIFIED",
+  "verified_at_utc": "2026-11-02T08:10:15.094469+00:00",
+  "scout_feed_after": {
+    "batch_count": 35,
+    "candidate_rows": 82,
+    "manifest_generated_at": "2026-11-02T08:09:03Z",
+    "manifest_rows_verified": true,
+    "new_batches": [
+      {
+        "id": "2026-11-02-0301ET-acm-risk-thresholds-investigate-001",
+        "path": "scout-discoveries/batches/2026-11-02-0301ET-acm-risk-thresholds-investigate-001.csv",
+        "rows": 1,
+        "sha256": "dcba3cced986e29e5575fae09e3a521bff8de851b36c6286ba1838e1b3c08b89",
+        "method": "API-seeded expansion",
+        "classification": "NEEDS INVESTIGATION",
+        "original_seed_doi": "10.5194/egusphere-2026-5876"
+      },
+      {
+        "id": "2026-11-02-0301ET-mesh-independent-review-001",
+        "path": "scout-discoveries/batches/2026-11-02-0301ET-mesh-independent-review-001.csv",
+        "rows": 3,
+        "sha256": "03e4bb12f6262dca08c4f32bd3b4ca98a4fd2f455490f72be83f44d8fcebc91a",
+        "method": "Independent discovery",
+        "classification": "NEEDS INVESTIGATION",
+        "primary_spark_award": "NA18OAR4590394"
+      }
+    ],
+    "inbox_to_batch_blob_identity_verified": true,
+    "previous_33_batches_preserved": true,
+    "effective_methods": {
+      "Direct API": 22,
+      "API-seeded expansion": 17,
+      "Independent discovery": 43,
+      "Unclassified": 0
+    },
+    "needs_investigation_purpose": 9
+  },
+  "research_leads_summary": {
+    "lead_files_enumerated": 3,
+    "total_lead_entries": 7,
+    "metadata_lookup_ok": 7,
+    "active_resumed_this_run": 6,
+    "already_staged_sage": 1,
+    "newly_staged_acm": 1,
+    "newly_staged_mesh": 3,
+    "pending_human_zenodo_family": 1,
+    "concept_version_check_only": 1,
+    "unresolved_source_lookup_errors": 0
+  },
+  "github_action_verification": {
+    "acm_run": {
+      "id": 41410703529,
+      "conclusion": "success"
+    },
+    "mesh_first_run": {
+      "id": 41410708956,
+      "conclusion": "failure",
+      "reason": "Concurrent ACM Action published manifest first, stale-run git rebase conflict in manifest and origin rollup; validation/promotion steps themselves passed."
+    },
+    "monthly_coverage_dispatch": {
+      "id": 41410891046,
+      "conclusion": "success"
+    },
+    "mesh_fresh_dispatch": {
+      "id": 41410920365,
+      "conclusion": "success"
+    },
+    "resolution": "Fresh workflow_dispatch on current main completed automated validator, immutable batch promotion and SHA-verified manifest without manual manifest edit."
+  },
+  "reviewer_visibility": {
+    "private_discovery_hub_import": "NOT_VERIFIED",
+    "reviewer_sync_action": "Use Sync to Scout to import current public Scout feed",
+    "human_approvals": "NOT_VERIFIED",
+    "public_reach_records": 1238,
+    "verified_new_public_reach_additions": 0
+  },
+  "historical": {
+    "distinct_dois": 188,
+    "research_complete": true,
+    "remaining": 0,
+    "human_metadata_needed": 28,
+    "no_restart_or_repeat": true
+  },
+  "audit_reason": "All four new review candidates passed automated validation and manifest SHA verification; private Hub, human decisions and public REACH changes remain unobserved; one separate Zenodo family requires human funding/version attribution.",
+  "sources": [
+    "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/manifest.json",
+    "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/monthly-fast-intake.json",
+    "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/monthly-expansion-leads.json",
+    "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/reports/independent-metadata-lookup/latest.json",
+    "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json",
+    "https://github.com/PART-WPO/SPARK/blob/main/agent-data/details/part-003.csv",
+    "https://onlinelibrary.wiley.com/doi/10.1111/1752-1688.13080",
+    "https://repository.library.noaa.gov/view/noaa/67218",
+    "https://api.crossref.org/works/10.1145/3794916.3794919",
+    "https://api.datacite.org/dois/10.5281/zenodo.6385057",
+    "https://api.datacite.org/dois/10.5281/zenodo.22758716"
+  ]
+}
