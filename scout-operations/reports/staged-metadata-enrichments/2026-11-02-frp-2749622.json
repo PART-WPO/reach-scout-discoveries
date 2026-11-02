@@ -1,0 +1,42 @@
+{
+  "schema": "reach-scout-public-metadata-enrichment-v1",
+  "cohort": "2026-10",
+  "identity": "doi:10.1080/01431161.2026.2749622",
+  "original_batch_path": "scout-discoveries/batches/2026-11-01-monthly-fast-7140ce113da603.csv",
+  "active_replacement_path": "scout-discoveries/batches/2026-11-02-monthly-enriched-frp-2749622-001.csv",
+  "record_status": "RESEARCH_SUPPLEMENT_PUBLISHED_NOT_HUB_IMPORTED",
+  "metadata_changed": {
+    "Brief Abstract": {
+      "value": "The study evaluates a Gaussian-weighted Huber loss for forecasting extreme fire radiative power from satellite observations and environmental predictors. It compares transformer and long short-term memory models using data from 2017–2020 across California, the Congo Basin, East African savanna, and Mato Grosso, Brazil. Gaussian weighting reduced underprediction and improved some transformer forecasts of intense fires, while LSTM results varied across regions. The adjustment also introduced localized overprediction, highlighting a trade-off between correcting systematic underestimation and maintaining prediction stability.",
+      "evidence_url": "https://onescholar.app/v/earth-and-environmental-sciences?days=7&page=1&page_size=25",
+      "value_type": "Original concise evidence-backed summary of independently indexed scholarly abstract; not verbatim original publisher text"
+    }
+  },
+  "checked_sources": [
+    {
+      "method": "crossref_exact_doi_monthly_harvest",
+      "url": "https://api.crossref.org/works/10.1080/01431161.2026.2749622",
+      "result": "Original Crossref record has matching DOI, authors, online publication date and multiple structured NOAA awards but no abstract."
+    },
+    {
+      "method": "official_publisher_journal_catalog",
+      "url": "https://www.tandfonline.com/subjects/geography?ContentItemType=research-article&PrimaryLanguageFacetField=en&SeriesKey=tres20&content=standard&pageSize=10&startPage=0&subjectTitle=&target=default",
+      "result": "Taylor & Francis International Journal of Remote Sensing listing matches exact article title, authors and October 30, 2026 published-online date. Direct publisher full abstract was inaccessible."
+    },
+    {
+      "method": "independent_scholarly_abstract_index",
+      "url": "https://onescholar.app/v/earth-and-environmental-sciences?days=7&page=1&page_size=25",
+      "result": "OneScholar listing matches article title, authors, journal and date; abstract content summarized in original wording for the Brief Abstract field."
+    }
+  ],
+  "remaining_review_questions": [
+    "Which exact NOAA grants are explicitly attributable to this publication and which SPARK parent project(s) should be selected?",
+    "Was the full publication/related software duplicate and alternate DOI/URL check completed?",
+    "Can the publisher full text be accessed to double-check the brief summary?"
+  ],
+  "limitations": "The original publisher full abstract was inaccessible during automated research; summary is independently written from a same-title and same-author scholarly index abstract. No parent project inferred from multiple grant strings.",
+  "human_review_modified": false,
+  "public_reach_addition_verified": false,
+  "private_hub_metadata_refresh_verified": false,
+  "source_snapshot_immutable": true
+}
