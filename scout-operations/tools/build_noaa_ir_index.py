@@ -70,6 +70,8 @@ def collect(page_size=1000,max_pages=400):
     doi_to_urls=defaultdict(set)
     pids=set()
     scanned=0
+    invalid_pids=0
+    unresolved=set()
     for start in range(0,expected,page_size):
         payload=fetch_json({"rows":min(page_size,expected-start),"start":start})
         result=payload["response"]
@@ -82,23 +84,30 @@ def collect(page_size=1000,max_pages=400):
             raise RuntimeError("Incomplete NOAA IR page starting "+str(start))
         for doc in docs:
             if not isinstance(doc,dict):raise RuntimeError("Invalid NOAA IR item")
+            ids=doi_values(doc)
             url=pid_url(doc)
-            if not url:raise RuntimeError("Missing/invalid NOAA IR PID")
+            if not url:
+                invalid_pids+=1
+                unresolved.update(ids)
+                continue
             if url in pids:raise RuntimeError("NOAA IR pagination duplicated a PID")
             pids.add(url)
-            for doi in doi_values(doc):
+            for doi in ids:
                 doi_to_urls[doi].add(url)
         scanned+=len(docs)
         print("NOAA IR catalog records scanned",scanned,"of",expected,flush=True)
         time.sleep(0.15)
-    if scanned!=expected or len(pids)!=expected:
+    if scanned!=expected or len(pids)+invalid_pids!=expected:
         raise RuntimeError("Incomplete NOAA IR DOI index; never commit partial index")
-    return expected,doi_to_urls
+    for doi in unresolved:
+        doi_to_urls.pop(doi,None)
+    print("Invalid PID records:",invalid_pids,"DOI identities held unknown:",len(unresolved),flush=True)
+    return expected,doi_to_urls,{"invalid_pid_records":invalid_pids,"unresolved_dois":len(unresolved)}
 
 def encode_json(obj):
     return (json.dumps(obj,indent=2,ensure_ascii=False,sort_keys=True)+"\n").encode("utf-8")
 
-def write_index(expected,by_doi,dest=DEST):
+def write_index(expected,by_doi,dest=DEST,invalid_pid_records=0,unresolved_dois=0):
     dest.mkdir(parents=True,exist_ok=True)
     shard_dir=dest/"shards";shard_dir.mkdir(parents=True,exist_ok=True)
     shards=[]
@@ -118,6 +127,8 @@ def write_index(expected,by_doi,dest=DEST):
        "source_api":API,
        "generated_at":dt.datetime.now(dt.timezone.utc).isoformat(),
        "complete":True,"records_scanned":expected,
+       "invalid_pid_records":invalid_pid_records,
+       "unresolved_doi_identities_held_unknown":unresolved_dois,
        "distinct_dois":len(by_doi),
        "ambiguous_dois":sum(len(v)>1 for v in by_doi.values()),
        "policy":"Exact DOI matches only; absent DOI is UNKNOWN not FALSE; never infer IR membership from title or award",
@@ -128,5 +139,5 @@ def write_index(expected,by_doi,dest=DEST):
     return m
 
 if __name__=="__main__":
-    total,doi_links=collect()
-    write_index(total,doi_links)
+    total,doi_links,stats=collect()
+    write_index(total,doi_links,invalid_pid_records=stats["invalid_pid_records"],unresolved_dois=stats["unresolved_dois"])
