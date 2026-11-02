@@ -1,0 +1,93 @@
+{
+  "schema": "reach-scout-independent-award-research-leads-v1",
+  "run_id": "REACH-SCOUT-2026-11-01-2324ET",
+  "research_date": "2026-11-01",
+  "selected_mode": "monthly_api_triage",
+  "source_cohort": "2026-10",
+  "read_only": true,
+  "metadata_checkpoint_requested_by_push": true,
+  "policy": "Research-only DOI lookup seeds. Not verified WPO funding, new output, candidate, Hub import, human approval or public REACH publication. Preserve original_seed_doi and source-specific evidence.",
+  "leads": [
+    {
+      "identity": "doi:10.1177/10506519261455873",
+      "original_seed_doi": "10.5194/egusphere-2026-5876",
+      "output_type": "1",
+      "title": "Bridging the Gap Between Numbers and Experience: Identifying Community Risk Thresholds in Extreme Weather Communication",
+      "output_url": "https://doi.org/10.1177/10506519261455873",
+      "project_award": "NA21OAR4590208",
+      "status": "RESEARCH_ACTIVE_METADATA_VERIFICATION",
+      "award_evidence": "NOAA IR grant noaa:67218 describes the same five-office community-risk-threshold survey work by named investigators Lambrecht and Olman under WPO primary grant NA21OAR4590208. This is a credible specific project-to-study bridge, NOT a verified article-level acknowledgment or final funding determination.",
+      "sources_checked": [
+        "https://repository.library.noaa.gov/view/noaa/67218",
+        "https://journals.sagepub.com/doi/abs/10.1177/10506519261455873",
+        "https://egusphere.copernicus.org/preprints/2026/egusphere-2026-5876/egusphere-2026-5876.pdf"
+      ],
+      "missing_fields": [
+        "article-level grant acknowledgment or equivalent independently documented deliverable",
+        "full REACH detail/secondary-link dedup"
+      ],
+      "next_action": "Use native Crossref metadata checkpoint and publisher/NOAA final reports; do not stage without verified duplicate and project attribution.",
+      "research_origin_method": "API-seeded expansion",
+      "finding_purpose": "new_output_review",
+      "path_evidence_url": "https://egusphere.copernicus.org/preprints/2026/egusphere-2026-5876/egusphere-2026-5876.pdf",
+      "hub_delivery_verified": false,
+      "public_reach_addition_verified": false
+    },
+    {
+      "identity": "doi:10.1145/3794916.3794919",
+      "original_seed_doi": "10.5194/egusphere-2026-5876",
+      "output_type": "1",
+      "title": "Visualizing Probabilistic Forecast Information Around Community Risk Thresholds: An Action-Research Collaboration Between Environmental Rhetoricians and the National Weather Service",
+      "output_url": "https://doi.org/10.1145/3794916.3794919",
+      "project_award": "NA21OAR4590208",
+      "status": "RESEARCH_ACTIVE_METADATA_VERIFICATION",
+      "award_evidence": "NOAA IR grant noaa:67218 names Lambrecht/Olman and directly specifies improving forecast visualization using community risk thresholds with NWS office partners. Exact article grant acknowledgment is unverified; plausible project bridge only.",
+      "sources_checked": [
+        "https://repository.library.noaa.gov/view/noaa/67218",
+        "https://pinakes.wacclearinghouse.org/article/376641",
+        "https://egusphere.copernicus.org/preprints/2026/egusphere-2026-5876/egusphere-2026-5876.pdf"
+      ],
+      "missing_fields": [
+        "native publisher/Crossref publication date and acknowledgment",
+        "full REACH detail/secondary-link dedup"
+      ],
+      "next_action": "Run native Crossref DOI checkpoint, verify grant acknowledgments and complete identity/version checks before any separate candidate.",
+      "research_origin_method": "API-seeded expansion",
+      "finding_purpose": "new_output_review",
+      "path_evidence_url": "https://egusphere.copernicus.org/preprints/2026/egusphere-2026-5876/egusphere-2026-5876.pdf",
+      "hub_delivery_verified": false,
+      "public_reach_addition_verified": false
+    },
+    {
+      "identity": "doi:10.5281/zenodo.22758716",
+      "original_seed_doi": "10.1088/2515-7620/aeaad2",
+      "output_type": "3",
+      "title": "",
+      "output_url": "https://doi.org/10.5281/zenodo.22758716",
+      "project_award": "NA24OARX459C0015",
+      "status": "RESEARCH_ACTIVE_METADATA_VERIFICATION",
+      "award_evidence": "Article manuscript explicitly cites the exact Zenodo DOI in its data availability section and acknowledges this primary WPO grant for the ARTICLE only. Dataset's own grant attribution is unverified.",
+      "sources_checked": [
+        "https://repository.library.noaa.gov/view/noaa/76692/noaa_76692_DS1.pdf",
+        "https://doi.org/10.5281/zenodo.22758716"
+      ],
+      "missing_fields": [
+        "native DataCite/Zenodo metadata",
+        "title",
+        "creators",
+        "created date",
+        "own funding",
+        "concept/version identity",
+        "full REACH detail/secondary-link dedup"
+      ],
+      "next_action": "Native DataCite DOI checkpoint for title/creators/created/version/funding; if inaccessible preserve source-access blocker, do not invent metadata.",
+      "research_origin_method": "API-seeded expansion",
+      "finding_purpose": "new_output_review",
+      "path_evidence_url": "https://repository.library.noaa.gov/view/noaa/76692/noaa_76692_DS1.pdf",
+      "hub_delivery_verified": false,
+      "public_reach_addition_verified": false
+    }
+  ],
+  "no_hub_proposals_staged": true,
+  "reviewer_decisions_preserved": true
+}
