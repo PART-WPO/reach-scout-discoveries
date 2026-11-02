@@ -1,0 +1,37 @@
+{
+  "schema": "reach-scout-independent-award-research-leads-v1",
+  "run_id": "REACH-SCOUT-2026-11-01-2330ET-ZENODO-VERSION-CHECK",
+  "research_date": "2026-11-01",
+  "selected_mode": "monthly_api_triage",
+  "read_only": true,
+  "policy": "Metadata-only DOI version-family check. This IsVersionOf parent is NOT a new independent output or new Scout/Hub candidate. Do not count as a fourth monthly expansion discovery.",
+  "leads": [
+    {
+      "identity": "doi:10.5281/zenodo.20046428",
+      "original_seed_doi": "10.1088/2515-7620/aeaad2",
+      "parent_data_doi": "10.5281/zenodo.22758716",
+      "research_origin_method": "API-seeded expansion",
+      "finding_purpose": "possible_duplicate_review",
+      "output_type": "",
+      "title": "",
+      "output_url": "https://doi.org/10.5281/zenodo.20046428",
+      "status": "VERSION_FAMILY_CHECK_ONLY",
+      "project_award": "",
+      "award_evidence": "No separate WPO funding asserted. Exact child DOI 10.5281/zenodo.22758716 DataCite relatedIdentifiers declares IsVersionOf 10.5281/zenodo.20046428.",
+      "sources_checked": [
+        "https://api.datacite.org/dois/10.5281/zenodo.22758716"
+      ],
+      "path_evidence_url": "https://api.datacite.org/dois/10.5281/zenodo.22758716",
+      "missing_fields": [
+        "native parent DOI metadata",
+        "concept/version family identity",
+        "whether child and parent are one catalogable output"
+      ],
+      "next_action": "Read native DataCite parent relation and compare to child. Do not stage parent or child as separate outputs until family and own project funding verified.",
+      "hub_delivery_verified": false,
+      "public_reach_addition_verified": false
+    }
+  ],
+  "no_hub_proposals_staged": true,
+  "reviewer_decisions_preserved": true
+}
