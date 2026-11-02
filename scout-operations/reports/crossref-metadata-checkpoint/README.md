@@ -11,19 +11,19 @@ For Crossref works the office prefers published-print, falling back to published
 | Api full pub date | 28 |
 | Partial only pub date | 23 |
 | No publication date | 1 |
-| Scout missing date | 8 |
-| Scout missing date recoverable | 8 |
+| Scout missing date | 7 |
+| Scout missing date recoverable | 7 |
 | Reach pub date satisfied | 51 |
 | Scout missing date resolved by month first | 6 |
-| Scout missing date resolved by exact pub | 2 |
+| Scout missing date resolved by exact pub | 1 |
 | Source field print | 37 |
 | Source field online | 11 |
-| Preferred date matches existing scout | 26 |
+| Preferred date matches existing scout | 27 |
 | Preferred date differs from existing scout | 17 |
 | First of month defaults | 23 |
 | Scout missing date still unresolved | 0 |
 | Crossref vs scout date differs | 17 |
-| Abstract missing in scout recoverable | 1 |
+| Abstract missing in scout recoverable | 0 |
 | Abstract missing in scout and crossref | 2 |
 | Crossref has funder awards | 35 |
 | Crossref has abstract | 42 |
@@ -33,7 +33,7 @@ For Crossref works the office prefers published-print, falling back to published
 | DOI | Publication title | Scout Pub Date | Accepted REACH Pub Date | Crossref Published | Date comparison | Other recovered fields |
 |---|---|---|---|---|---|---|
 | 10.1002/qj.70325 | The                     <scp>Mediterranean</scp>                   | 2026-10-12 | 2026-10-12 | 2026-10-12 (published-online) | matched | — |
-| 10.1007/s43762-024-00142-0 | Analysing trends of computational urban science and data science a | (missing) | 2024-11-12 | 2024-11-12 (published-online) | no_scout_date | title, creators, type, abstract |
+| 10.1007/s43762-024-00142-0 | Analysing trends of computational urban science and data science a | 2024-11-12 | 2024-11-12 | 2024-11-12 (published-online) | matched | — |
 | 10.1016/j.pdisas.2026.100696 | Extreme weather as an occupational hazard: Structural vulnerabilit | 2026-10-01 | 2026-10-01 | 2026-10 (published-print) | matched | — |
 | 10.1029/2024gl109890 | Historical Trends in Cold‐Season Mid‐Latitude Cyclones in the Grea | 2024-08-15 | 2024-08-28 | 2024-08-28 (published-print) | different_date_review_option | — |
 | 10.1029/2024ms004319 | Detecting Instantaneous Tidal Signals in Ocean Models Utilizing St | 2024-10-13 | 2024-10-01 | 2024-10 (published-print) | different_date_review_option | — |

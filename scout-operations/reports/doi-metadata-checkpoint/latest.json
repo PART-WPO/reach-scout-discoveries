@@ -1,10 +1,10 @@
 {
   "fields_recoverable": {
-    "abstract": 4,
-    "creators": 4,
-    "pub_date": 11,
-    "title": 4,
-    "type": 4
+    "abstract": 3,
+    "creators": 3,
+    "pub_date": 10,
+    "title": 3,
+    "type": 3
   },
   "policy": "DataCite uses created (office policy). Crossref uses published-print first, published-online if print absent, and published/issued/posted fallback; month-only dates get YYYY-MM-01. Crossref created never fills Pub Date. Existing reviewer dates preserved.",
   "read_only": true,
@@ -140,7 +140,7 @@
       "review_keys": []
     },
     {
-      "checkpoint_state": "FIELDS_RECOVERABLE",
+      "checkpoint_state": "SCOUT_FIELDS_ALREADY_COVERED",
       "doi": "10.1007/s43762-024-00142-0",
       "metadata": {
         "abstract": "Abstract Urban computing with a data science approaches can play a pivotal role in understaning and analyzing the potential of these methods for strategic, short-term, and sustainable planning. The recent development in urban areas have progressed towards the data-driven smart sustainable approaches to resolve the complexities around urban areas. The urban system faces severe challenges and these are complicated to capture, predict, resolve and deliver. The current study advances an unconventional decision-support framework to integrate the complexities of science, urban sustainability theories, and data science, with a data-intensive science to incorporate grassroots initiatives for a top-down policies. This work will influence the urban data analytics to optimize the designs and solutions to enhance sustainability, efficiency, resilience, equity, and quality of life. This work emphasizes the significant trends of data-driven and model-driven decision support systems. This will help to address and create an optimal solution for multifaceted challenges of an urban setup within the analytical framework. The analytical investigations includes the research about land use prediction, environmental monitoring, transportation modelling, and social equity analysis. The fusion of urban computing, intelligence, and sustainability science is expected to resolve and contribute in shaping resilient, equitable, and future environmentally sensible eco-cities. It examines the emerging trends in the domain of computational urban science and data science approaches for sustainable development being utilized to address urban challenges including resource management, environmental impact, and social equity. The analysis of recent improvements and case studies highlights the potential of data-driven insights with computational models for promoting resilient sustainable urban environments, towards more effective and informed policy-making. Thus, this work explores the integration of computational urban science and data science methodologies to advance sustainable development.",
@@ -217,24 +217,31 @@
         "title": "Analysing trends of computational urban science and data science approaches for sustainable development",
         "volume": "4"
       },
-      "original_rows": [],
+      "original_rows": [
+        {
+          "abstract": "Urban computing with a data science approaches can play a pivotal role in understaning and analyzing the potential of these methods for strategic, short-term, and sustainable planning. The recent development in urban areas have progressed towards the data-driven smart sustainable approaches to resolve the complexities around urban areas. The urban system faces severe challenges and these are complicated to capture, predict, resolve and deliver. The current study advances an unconventional decision-support framework to integrate the complexities of science, urban sustainability theories, and data science, with a data-intensive science to incorporate grassroots initiatives for a top-down policies. This work will influence the urban data analytics to optimize the designs and solutions to enhance sustainability, efficiency, resilience, equity, and quality of life. This work emphasizes the significant trends of data-driven and model-driven decision support systems. This will help to address and create an optimal solution for multifaceted challenges of an urban setup within the analytical framework. The analytical investigations includes the research about land use prediction, environmental monitoring, transportation modelling, and social equity analysis. The fusion of urban computing, intelligence, and sustainability science is expected to resolve and contribute in shaping resilient, equitable, and future environmentally sensible eco-cities. It examines the emerging trends in the domain of computational urban science and data science approaches for sustainable development being utilized to address urban challenges including resource management, environmental impact, and social equity. The analysis of recent improvements and case studies highlights the potential of data-driven insights with computational models for promoting resilient sustainable urban environments, towards more effective and informed policy-making. Thus, this work explores the integration of computational urban science and data science methodologies to advance sustainable development.",
+          "authors": "Deepak Kumar; Nick P. Bassill",
+          "awards": "NA21OAR4590360",
+          "batch": "scout-discoveries/batches/2026-11-02-0349ET-nyc-urban-science-independent-investigate-001.csv",
+          "date": "2024-11-12",
+          "origin": "staged",
+          "project": "Improving Analysis and Communication of Extreme Temperatures Across the New York City Metropolis Using a Dense Network of In Situ Observations",
+          "title": "Analysing trends of computational urban science and data science approaches for sustainable development",
+          "type": "1"
+        }
+      ],
       "origins": [
-        "independent_research_lead"
+        "independent_research_lead",
+        "staged"
       ],
       "prior_fields": {
-        "abstract": false,
-        "creators": false,
-        "pub_date": false,
-        "title": false,
-        "type": false
+        "abstract": true,
+        "creators": true,
+        "pub_date": true,
+        "title": true,
+        "type": true
       },
-      "recoverable_fields": [
-        "title",
-        "creators",
-        "type",
-        "abstract",
-        "pub_date"
-      ],
+      "recoverable_fields": [],
       "review_keys": []
     },
     {
@@ -18604,7 +18611,7 @@
       ]
     }
   ],
-  "records_with_new_metadata": 11,
+  "records_with_new_metadata": 10,
   "schema": "reach-scout-doi-enrichment-audit-v1",
   "sources": {
     "historical": {
@@ -18633,14 +18640,14 @@
       "rows": 13
     },
     "staged": {
-      "batches": 35,
-      "rows": 82
+      "batches": 36,
+      "rows": 83
     }
   },
   "state_counts": {
-    "FIELDS_RECOVERABLE": 11,
+    "FIELDS_RECOVERABLE": 10,
     "HISTORICAL_FIELDS_ALREADY_COVERED": 143,
-    "SCOUT_FIELDS_ALREADY_COVERED": 94
+    "SCOUT_FIELDS_ALREADY_COVERED": 95
   },
   "successful_lookups": 248,
   "unique_dois": 248

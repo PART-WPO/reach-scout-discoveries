@@ -1,7 +1,7 @@
 {
   "counts": {
     "abstract_missing_in_scout_and_crossref": 2,
-    "abstract_missing_in_scout_recoverable": 1,
+    "abstract_missing_in_scout_recoverable": 0,
     "api_full_pub_date": 28,
     "crossref_has_abstract": 42,
     "crossref_has_funder_awards": 35,
@@ -11,11 +11,11 @@
     "no_publication_date": 1,
     "partial_only_pub_date": 23,
     "preferred_date_differs_from_existing_scout": 17,
-    "preferred_date_matches_existing_scout": 26,
+    "preferred_date_matches_existing_scout": 27,
     "reach_pub_date_satisfied": 51,
-    "scout_missing_date": 8,
-    "scout_missing_date_recoverable": 8,
-    "scout_missing_date_resolved_by_exact_pub": 2,
+    "scout_missing_date": 7,
+    "scout_missing_date_recoverable": 7,
+    "scout_missing_date_resolved_by_exact_pub": 1,
     "scout_missing_date_resolved_by_month_first": 6,
     "scout_missing_date_still_unresolved": 0,
     "source_field_online": 11,
@@ -135,7 +135,7 @@
       "work_type": "journal-article"
     },
     {
-      "abstract_already_in_scout": false,
+      "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
       "accepted_date_precision": "day",
       "accepted_reach_pub_date": "2024-11-12",
@@ -150,7 +150,7 @@
       "best_partial_date": "2024-11-12",
       "crossref_publication_date": "2024-11-12",
       "crossref_publication_date_basis": "published-online",
-      "date_comparison": "no_scout_date",
+      "date_comparison": "matched",
       "doi": "10.1007/s43762-024-00142-0",
       "doi_registered_date": {
         "full_date": "2024-11-12",
@@ -173,7 +173,7 @@
       },
       "pages": "33",
       "preferred_date_differs_from_existing_scout": false,
-      "preferred_date_matches_existing_scout": false,
+      "preferred_date_matches_existing_scout": true,
       "pub_date_satisfied": true,
       "publication_dates": {
         "issued": {
@@ -206,18 +206,15 @@
       "reach_output_type": "1",
       "related_record_evidence": {},
       "review_keys": [],
-      "reviewable_recovered_fields": [
-        "title",
-        "creators",
-        "type",
-        "abstract",
-        "pub_date"
-      ],
+      "reviewable_recovered_fields": [],
       "scout_origins": [
-        "independent_research_lead"
+        "independent_research_lead",
+        "staged"
       ],
-      "scout_publication_dates": [],
-      "scout_source_rows": 0,
+      "scout_publication_dates": [
+        "2024-11-12"
+      ],
+      "scout_source_rows": 1,
       "source": "crossref",
       "title": "Analysing trends of computational urban science and data science approaches for sustainable development",
       "volume": "4",
@@ -4945,8 +4942,8 @@
       "rows": 13
     },
     "staged": {
-      "batches": 35,
-      "rows": 82
+      "batches": 36,
+      "rows": 83
     }
   }
 }
