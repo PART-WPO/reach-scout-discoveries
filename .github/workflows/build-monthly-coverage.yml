@@ -49,6 +49,8 @@ jobs:
         run: python3 -m unittest discover -s scout-operations/tests -p 'test_*.py' -v
       - name: Queue new API DOIs without marking them researched
         run: python3 scout-operations/tools/sync_monthly_intake.py
+      - name: Register harvested preprints and check for official article versions
+        run: python3 scout-operations/tools/preprint_watchlist.py
       - name: Check every monthly record against Scout ledger
         run: python3 scout-operations/tools/build_coverage.py
       - name: Quick monthly DOI review intake and validated draft preparation
@@ -64,7 +66,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add scout-operations/monthly-triage.json scout-operations/coverage.json scout-operations/active-workstream.json scout-operations/monthly-decision-queue.json scout-operations/monthly-fast-intake.json scout-discoveries/inbox/
+          git add scout-operations/preprint-watchlist.json scout-operations/preprint-publication-leads.json scout-operations/monthly-triage.json scout-operations/coverage.json scout-operations/active-workstream.json scout-operations/monthly-decision-queue.json scout-operations/monthly-fast-intake.json scout-discoveries/inbox/
           if ! git diff --cached --quiet; then
             git commit -m 'Refresh monthly Scout research coverage'
             for attempt in 1 2 3 4 5; do
