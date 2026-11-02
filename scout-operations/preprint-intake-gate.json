@@ -1,6 +1,6 @@
 {
   "schema": "reach-scout-preprint-intake-gate-v1",
-  "checked_at": "2026-11-02T22:03:02.651478+00:00",
+  "checked_at": "2026-11-02T22:33:50.869825+00:00",
   "policy": "All new publication proposals require registry check. A preprint DOI cannot be staged through ANY origin. Uncertain metadata remains on hold. Existing human decisions unchanged.",
   "checks": [
     {
@@ -42,6 +42,31 @@
           "evidence": [
             "https://api.crossref.org/works/10.1175/bams-d-23-0036.1",
             "https://api.datacite.org/dois/10.1175/bams-d-23-0036.1"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "scout-discoveries/batches/2026-10-29-hourly-0329ET-social-science-expansion-001.csv",
+      "sha256": "ca437c011baca1dbc8a92159170deb581505743a4781f4fbe517c7e3daaa37b2",
+      "verdict": "hold",
+      "rows": [
+        {
+          "doi": "10.1175/bams-d-25-0032.1",
+          "status": "eligible",
+          "reason": "Crossref identifies an officially issued scholarly publication",
+          "evidence": [
+            "https://api.crossref.org/works/10.1175/bams-d-25-0032.1",
+            "https://api.datacite.org/dois/10.1175/bams-d-25-0032.1"
+          ]
+        },
+        {
+          "doi": "10.36227/techrxiv.175035136.63535291/v2",
+          "status": "preprint_hold",
+          "reason": "Known preprint identity; original DOI remains held",
+          "evidence": [
+            "https://api.crossref.org/works/10.36227/techrxiv.175035136.63535291/v2",
+            "https://api.datacite.org/dois/10.36227/techrxiv.175035136.63535291/v2"
           ]
         }
       ]
@@ -191,22 +216,6 @@
       ]
     },
     {
-      "path": "scout-discoveries/batches/2026-11-02-independent-preprint-hold-001.csv",
-      "sha256": "7027266821f6ab66e47d0aa0c990798da4ed33a45a023df9adb48fa1b46917f7",
-      "verdict": "eligible",
-      "rows": [
-        {
-          "doi": "10.1175/bams-d-25-0032.1",
-          "status": "eligible",
-          "reason": "Crossref identifies an officially issued scholarly publication",
-          "evidence": [
-            "https://api.crossref.org/works/10.1175/bams-d-25-0032.1",
-            "https://api.datacite.org/dois/10.1175/bams-d-25-0032.1"
-          ]
-        }
-      ]
-    },
-    {
       "path": "scout-discoveries/batches/2026-11-02-monthly-enriched-pdisas-100696-001.csv",
       "sha256": "390f63b9e714350ebb269ad8bb9c791ee6474184e8641b6e1178881922a88afa",
       "verdict": "eligible",
@@ -318,6 +327,6 @@
       ]
     }
   ],
-  "eligible_batches": 12,
-  "held_batches": 2
+  "eligible_batches": 11,
+  "held_batches": 3
 }
