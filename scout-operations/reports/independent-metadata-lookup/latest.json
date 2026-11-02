@@ -61,8 +61,8 @@
         "attempts": [
           {
             "error": {
-              "detail": "The read operation timed out",
-              "kind": "access"
+              "code": 404,
+              "kind": "http"
             },
             "provider": "datacite",
             "url": "https://api.datacite.org/dois/10.1145/3794916.3794919"
@@ -111,7 +111,7 @@
         "attempts": [
           {
             "error": {
-              "code": 503,
+              "code": 404,
               "kind": "http"
             },
             "provider": "datacite",
@@ -159,7 +159,7 @@
         "attempts": [
           {
             "error": {
-              "code": 503,
+              "code": 404,
               "kind": "http"
             },
             "provider": "datacite",
