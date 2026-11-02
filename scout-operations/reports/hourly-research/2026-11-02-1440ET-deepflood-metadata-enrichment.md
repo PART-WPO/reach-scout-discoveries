@@ -1,0 +1,13 @@
+# REACH Scout DeepFlood DOI metadata enrichment — 2026-11-02 14:40 ET
+
+The existing `2026-11-02-1433ET-deepflood-figshare-version-check.json` lead was resumed from the independent metadata lookup after the initial native source access failure. The workflow completed successfully: https://github.com/PART-WPO/reach-scout-discoveries/actions/runs/41511883959 . The current checkpoint contains 14 DOI records, 14 successful metadata lookups, including **both DeepFlood Figshare DOIs**.
+
+**Finding:** Exact DataCite `10.6084/m9.figshare.26791243` supplies title *DEEPFLOOD DATASET*, creator Mulham Fawakherji, resource type **Text**, and `created` 2024-08-20. Exact DataCite `10.6084/m9.figshare.28328339` supplies title *DEEPFLOOD DATASET: High-Resolution Dataset for Accurate Flood Mappingand Segmentation*, creator Geospatial And Remote Sensing Research Lab, resource type **Dataset**, and `created` 2025-02-01. Both have `funding_references: []` and `related_identifiers: []` in this lookup. The two office-accepted DataCite-created dates apply to their own exact DOI identities; they are **not interchangeable**. Neither empty relation list proves they are independent outputs nor empty fundingReferences disproves the publisher's direct NOAA grant acknowledgment for the companion article.
+
+**What to check before adding this output:** Confirm native Figshare files and public access for 28328339 | Establish whether 26791243 (Text) is an older description/placeholder or a genuinely separate work | Inspect native Figshare version/replacement links because DataCite relatedIdentifiers is empty | Corroborate dataset-specific WPO-funded work under SPARK primary award NA21OAR4590358 rather than inferring it from the funded paper | Complete public REACH detail/secondary-link and private Hub decision duplicate checks | Select one canonical dataset DOI and retain its own DataCite-created date.
+
+**Reviewer question:** Is the Figshare Dataset record 28328339 a standalone eligible WPO output, and should the earlier Text DOI be treated as a related non-output rather than a second catalog record? This is an open decision, **not** an asserted duplicate.
+
+**Disposition:** One provisional identity group; two exact metadata-enriched DOI leads; zero new Scout candidates, Hub imports, approvals or REACH updates. Existing independent-discovery provenance remains unchanged.
+
+Sources: https://api.datacite.org/dois/10.6084/m9.figshare.26791243 ; https://api.datacite.org/dois/10.6084/m9.figshare.28328339 ; https://www.nature.com/articles/s41597-025-04554-3 ; https://link.springer.com/article/10.1007/s12145-026-02164-0 .
