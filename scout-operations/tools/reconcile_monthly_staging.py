@@ -33,7 +33,7 @@ def reconcile(root=ROOT):
     supersessions = get_rules(root / "scout-discoveries")
     matches = {}
     for b in m["batches"]:
-        if not b["id"].startswith(("2026-", "2027-", "2028-", "2029-")) or not any(x in b["id"] for x in ("-monthly-fast-", "-monthly-enriched-")):
+        if not b["id"].startswith(("2026-", "2027-", "2028-", "2029-")) or not any(x in b["id"] for x in ("-monthly-fast-", "-monthly-enriched-", "-monthly-review-ready-")):
             continue
         p = root / b["path"]
         raw = p.read_bytes()
