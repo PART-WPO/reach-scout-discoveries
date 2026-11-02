@@ -106,7 +106,7 @@ def verified_existing_reach_duplicate(e):
     if e.get("status")!="already_in_reach":
         return False
     match=e.get("reach_match") or e.get("existing_reach_match") or {}
-    if not re.fullmatch(r"reach-\\d+",str(match.get("record_id") or "")):
+    if not re.fullmatch(r"reach-\d+",str(match.get("record_id") or "")):
         return False
     if not str(match.get("reach_uid") or "").startswith("reachuid-v1-"):
         return False
