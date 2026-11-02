@@ -482,12 +482,16 @@
     },
     {
       "identity": "doi:10.1002/jwmg.732",
-      "status": "awaiting_research",
+      "status": "investigating",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T23:33:54.375Z",
+      "research_notes": "Initial historical Crossref source-scope check: UNK is a SPARK primary-field placeholder, not a valid specific NOAA funding award. The API harvest therefore supplies no verified WPO project-award link. This is NOT a verified new output, and no Hub draft is allowed. Full REACH/Scout identity and DOI-seeded related-output exploration remain pending.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.1002/jwmg.732",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -508,7 +512,15 @@
       ],
       "titles": [
         "The Montana deer and Elk hunting population: The importance of cohort group, license price, and population demographics on hunter retention, recruitment, and population change"
-      ]
+      ],
+      "scope_screen": {
+        "status": "HELD_NON_AWARD_PLACEHOLDER",
+        "original_award": "UNK",
+        "eligible_primary_noaa_award": false,
+        "checked_on": "2026-11-02",
+        "finding": "The SPARK primary field contains a generic placeholder, not a project-specific NOAA award. Exact Crossref structured funder matching to that placeholder cannot prove WPO attribution.",
+        "next_action": "Do not stage; seek independent specific project-award bridge or document bounded no-action. Retain this publication DOI as a seed for related outputs."
+      }
     },
     {
       "identity": "doi:10.1002/met.70089",
@@ -572,12 +584,15 @@
     },
     {
       "identity": "doi:10.1002/qj.70325",
-      "status": "awaiting_research",
+      "status": "investigating",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T23:33:54.378Z",
+      "research_notes": "Cross-queue provenance screen found the same DOI in the fully investigated October monthly ledger with no_action due to publisher acknowledgments supporting a different Global Drifter Program rather than SPARK's primary West Coast AQPI project. This historical duplicate intake is not an independently verified new WPO output; no new Hub proposal. Historical full REACH/Scout detail and seed-expansion work still pending.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.1002/qj.70325",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/monthly-triage.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -604,16 +619,27 @@
       ],
       "titles": [
         "The\n                    <scp>Mediterranean</scp>\n                    Extreme Events Experiment and storm\n                    <scp>\n                      <i>Harry</i>\n                    </scp>\n                    in\n                    <scp>January</scp>\n                    2026"
-      ]
+      ],
+      "cross_queue_review": {
+        "status": "HELD_PRIOR_MONTHLY_PROJECT_FUNDING_CONFLICT",
+        "source_ledger": "scout-operations/monthly-triage.json",
+        "monthly_original_status": "no_action",
+        "checked_on": "2026-11-02",
+        "next_action": "Preserve monthly funding conflict; do not restage as a historical original. Continue DOI-seeded related-output exploration separately."
+      }
     },
     {
       "identity": "doi:10.1007/s00330-020-07133-9",
-      "status": "awaiting_research",
+      "status": "investigating",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T23:33:54.378Z",
+      "research_notes": "Initial historical Crossref source-scope check: UNK is a SPARK primary-field placeholder, not a valid specific NOAA funding award. The API harvest therefore supplies no verified WPO project-award link. This is NOT a verified new output, and no Hub draft is allowed. Full REACH/Scout identity and DOI-seeded related-output exploration remain pending.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.1007/s00330-020-07133-9",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -634,7 +660,15 @@
       ],
       "titles": [
         "Quantitative thoracic aorta calcification assessment by 18F-NaF PET/CT and its correlation with atherosclerotic cardiovascular disorders and increasing age"
-      ]
+      ],
+      "scope_screen": {
+        "status": "HELD_NON_AWARD_PLACEHOLDER",
+        "original_award": "UNK",
+        "eligible_primary_noaa_award": false,
+        "checked_on": "2026-11-02",
+        "finding": "The SPARK primary field contains a generic placeholder, not a project-specific NOAA award. Exact Crossref structured funder matching to that placeholder cannot prove WPO attribution.",
+        "next_action": "Do not stage; seek independent specific project-award bridge or document bounded no-action. Retain this publication DOI as a seed for related outputs."
+      }
     },
     {
       "identity": "doi:10.1007/s00382-021-05901-x",
@@ -1377,12 +1411,16 @@
     },
     {
       "identity": "doi:10.1007/s12035-019-01667-w",
-      "status": "awaiting_research",
+      "status": "investigating",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T23:33:54.378Z",
+      "research_notes": "Initial historical Crossref source-scope check: UNK is a SPARK primary-field placeholder, not a valid specific NOAA funding award. The API harvest therefore supplies no verified WPO project-award link. This is NOT a verified new output, and no Hub draft is allowed. Full REACH/Scout identity and DOI-seeded related-output exploration remain pending.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.1007/s12035-019-01667-w",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -1403,7 +1441,15 @@
       ],
       "titles": [
         "Dysregulation in the Brain Protein Profile of Zebrafish Lacking the Parkinson’s Disease-Related Protein DJ-1"
-      ]
+      ],
+      "scope_screen": {
+        "status": "HELD_NON_AWARD_PLACEHOLDER",
+        "original_award": "UNK",
+        "eligible_primary_noaa_award": false,
+        "checked_on": "2026-11-02",
+        "finding": "The SPARK primary field contains a generic placeholder, not a project-specific NOAA award. Exact Crossref structured funder matching to that placeholder cannot prove WPO attribution.",
+        "next_action": "Do not stage; seek independent specific project-award bridge or document bounded no-action. Retain this publication DOI as a seed for related outputs."
+      }
     },
     {
       "identity": "doi:10.1016/j.advwatres.2021.104075",
@@ -6373,12 +6419,16 @@
     },
     {
       "identity": "doi:10.1088/1402-4896/ae2296",
-      "status": "awaiting_research",
+      "status": "investigating",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T23:33:54.378Z",
+      "research_notes": "Initial historical Crossref source-scope check: BAA is a SPARK primary-field placeholder, not a valid specific NOAA funding award. The API harvest therefore supplies no verified WPO project-award link. This is NOT a verified new output, and no Hub draft is allowed. Full REACH/Scout identity and DOI-seeded related-output exploration remain pending.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.1088/1402-4896/ae2296",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -6399,7 +6449,15 @@
       ],
       "titles": [
         "Chaos, Ito-Stratonovich dilemma, and topological supersymmetry"
-      ]
+      ],
+      "scope_screen": {
+        "status": "HELD_NON_AWARD_PLACEHOLDER",
+        "original_award": "BAA",
+        "eligible_primary_noaa_award": false,
+        "checked_on": "2026-11-02",
+        "finding": "The SPARK primary field contains a generic placeholder, not a project-specific NOAA award. Exact Crossref structured funder matching to that placeholder cannot prove WPO attribution.",
+        "next_action": "Do not stage; seek independent specific project-award bridge or document bounded no-action. Retain this publication DOI as a seed for related outputs."
+      }
     },
     {
       "identity": "doi:10.1088/1748-9326/aca622",
@@ -15933,12 +15991,16 @@
     },
     {
       "identity": "doi:10.1177/13623613251341012",
-      "status": "awaiting_research",
+      "status": "investigating",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T23:33:54.379Z",
+      "research_notes": "Initial historical Crossref source-scope check: UNK is a SPARK primary-field placeholder, not a valid specific NOAA funding award. The API harvest therefore supplies no verified WPO project-award link. This is NOT a verified new output, and no Hub draft is allowed. Full REACH/Scout identity and DOI-seeded related-output exploration remain pending.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.1177/13623613251341012",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -15959,7 +16021,15 @@
       ],
       "titles": [
         "Methodological challenges and opportunities when studying the course of autism"
-      ]
+      ],
+      "scope_screen": {
+        "status": "HELD_NON_AWARD_PLACEHOLDER",
+        "original_award": "UNK",
+        "eligible_primary_noaa_award": false,
+        "checked_on": "2026-11-02",
+        "finding": "The SPARK primary field contains a generic placeholder, not a project-specific NOAA award. Exact Crossref structured funder matching to that placeholder cannot prove WPO attribution.",
+        "next_action": "Do not stage; seek independent specific project-award bridge or document bounded no-action. Retain this publication DOI as a seed for related outputs."
+      }
     },
     {
       "identity": "doi:10.1177/13694332221119867",
@@ -15993,12 +16063,16 @@
     },
     {
       "identity": "doi:10.1371/journal.pone.0193711",
-      "status": "awaiting_research",
+      "status": "investigating",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T23:33:54.379Z",
+      "research_notes": "Initial historical Crossref source-scope check: UNK is a SPARK primary-field placeholder, not a valid specific NOAA funding award. The API harvest therefore supplies no verified WPO project-award link. This is NOT a verified new output, and no Hub draft is allowed. Full REACH/Scout identity and DOI-seeded related-output exploration remain pending.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.1371/journal.pone.0193711",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -16019,7 +16093,15 @@
       ],
       "titles": [
         "Large-scale assessment of benthic communities across multiple marine protected areas using an autonomous underwater vehicle"
-      ]
+      ],
+      "scope_screen": {
+        "status": "HELD_NON_AWARD_PLACEHOLDER",
+        "original_award": "UNK",
+        "eligible_primary_noaa_award": false,
+        "checked_on": "2026-11-02",
+        "finding": "The SPARK primary field contains a generic placeholder, not a project-specific NOAA award. Exact Crossref structured funder matching to that placeholder cannot prove WPO attribution.",
+        "next_action": "Do not stage; seek independent specific project-award bridge or document bounded no-action. Retain this publication DOI as a seed for related outputs."
+      }
     },
     {
       "identity": "doi:10.1371/journal.pone.0219897",
@@ -16083,12 +16165,16 @@
     },
     {
       "identity": "doi:10.14309/ctg.0000000000000725",
-      "status": "awaiting_research",
+      "status": "investigating",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T23:33:54.379Z",
+      "research_notes": "Initial historical Crossref source-scope check: UNK is a SPARK primary-field placeholder, not a valid specific NOAA funding award. The API harvest therefore supplies no verified WPO project-award link. This is NOT a verified new output, and no Hub draft is allowed. Full REACH/Scout identity and DOI-seeded related-output exploration remain pending.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.14309/ctg.0000000000000725",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -16109,7 +16195,15 @@
       ],
       "titles": [
         "Redefining Histological Cell Counts Using a Standardized Method: The Leuven Intestinal Counting Protocol"
-      ]
+      ],
+      "scope_screen": {
+        "status": "HELD_NON_AWARD_PLACEHOLDER",
+        "original_award": "UNK",
+        "eligible_primary_noaa_award": false,
+        "checked_on": "2026-11-02",
+        "finding": "The SPARK primary field contains a generic placeholder, not a project-specific NOAA award. Exact Crossref structured funder matching to that placeholder cannot prove WPO attribution.",
+        "next_action": "Do not stage; seek independent specific project-award bridge or document bounded no-action. Retain this publication DOI as a seed for related outputs."
+      }
     },
     {
       "identity": "doi:10.17159/sajs.2023/13733",
@@ -16565,12 +16659,16 @@
     },
     {
       "identity": "doi:10.3390/c4040066",
-      "status": "awaiting_research",
+      "status": "investigating",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T23:33:54.379Z",
+      "research_notes": "Initial historical Crossref source-scope check: UNK is a SPARK primary-field placeholder, not a valid specific NOAA funding award. The API harvest therefore supplies no verified WPO project-award link. This is NOT a verified new output, and no Hub draft is allowed. Full REACH/Scout identity and DOI-seeded related-output exploration remain pending.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.3390/c4040066",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -16591,7 +16689,15 @@
       ],
       "titles": [
         "Physical Activation of Wooden Chips and the Effect of Particle Size, Initial Humidity, and Acetic Acid Extraction on the Properties of Activated Carbons"
-      ]
+      ],
+      "scope_screen": {
+        "status": "HELD_NON_AWARD_PLACEHOLDER",
+        "original_award": "UNK",
+        "eligible_primary_noaa_award": false,
+        "checked_on": "2026-11-02",
+        "finding": "The SPARK primary field contains a generic placeholder, not a project-specific NOAA award. Exact Crossref structured funder matching to that placeholder cannot prove WPO attribution.",
+        "next_action": "Do not stage; seek independent specific project-award bridge or document bounded no-action. Retain this publication DOI as a seed for related outputs."
+      }
     },
     {
       "identity": "doi:10.3390/cli11010002",
@@ -16655,12 +16761,16 @@
     },
     {
       "identity": "doi:10.3390/drones3020038",
-      "status": "awaiting_research",
+      "status": "investigating",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T23:33:54.379Z",
+      "research_notes": "Initial historical Crossref source-scope check: UNK is a SPARK primary-field placeholder, not a valid specific NOAA funding award. The API harvest therefore supplies no verified WPO project-award link. This is NOT a verified new output, and no Hub draft is allowed. Full REACH/Scout identity and DOI-seeded related-output exploration remain pending.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.3390/drones3020038",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -16681,16 +16791,28 @@
       ],
       "titles": [
         "Reef Rover: A Low-Cost Small Autonomous Unmanned Surface Vehicle (USV) for Mapping and Monitoring Coral Reefs"
-      ]
+      ],
+      "scope_screen": {
+        "status": "HELD_NON_AWARD_PLACEHOLDER",
+        "original_award": "UNK",
+        "eligible_primary_noaa_award": false,
+        "checked_on": "2026-11-02",
+        "finding": "The SPARK primary field contains a generic placeholder, not a project-specific NOAA award. Exact Crossref structured funder matching to that placeholder cannot prove WPO attribution.",
+        "next_action": "Do not stage; seek independent specific project-award bridge or document bounded no-action. Retain this publication DOI as a seed for related outputs."
+      }
     },
     {
       "identity": "doi:10.3390/jcm13195732",
-      "status": "awaiting_research",
+      "status": "investigating",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-02T23:33:54.379Z",
+      "research_notes": "Initial historical Crossref source-scope check: UNK is a SPARK primary-field placeholder, not a valid specific NOAA funding award. The API harvest therefore supplies no verified WPO project-award link. This is NOT a verified new output, and no Hub draft is allowed. Full REACH/Scout identity and DOI-seeded related-output exploration remain pending.",
+      "checked_sources": [
+        "https://api.crossref.org/works/10.3390/jcm13195732",
+        "https://github.com/PART-WPO/SPARK/blob/main/agent-data/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json"
+      ],
       "reach_snapshot": "",
       "funding_basis": "",
       "related_outputs_checked": "",
@@ -16711,7 +16833,15 @@
       ],
       "titles": [
         "Catheter-Directed Thrombolysis in the Management of Thrombotic Peripheral Artery Occlusions—Acute and Mid-Term Clinical Outcomes"
-      ]
+      ],
+      "scope_screen": {
+        "status": "HELD_NON_AWARD_PLACEHOLDER",
+        "original_award": "UNK",
+        "eligible_primary_noaa_award": false,
+        "checked_on": "2026-11-02",
+        "finding": "The SPARK primary field contains a generic placeholder, not a project-specific NOAA award. Exact Crossref structured funder matching to that placeholder cannot prove WPO attribution.",
+        "next_action": "Do not stage; seek independent specific project-award bridge or document bounded no-action. Retain this publication DOI as a seed for related outputs."
+      }
     },
     {
       "identity": "doi:10.3390/jmse11112083",
