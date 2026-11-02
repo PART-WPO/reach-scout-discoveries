@@ -99,6 +99,7 @@ def publish(args):
           "Intake origin: Historical Crossref API Backfill",
           "Historical coverage: All SPARK primary award identifiers",
           "API provenance: Crossref structured funder award",
+          "API publication status: "+("Preprint" if item.get("is_preprint") else "Not identified as preprint by source"),
           "API funding basis: Exact award match within Crossref funder.award metadata",
           "Pub date basis: "+", ".join(item["date_bases"]),
           "Scout verification: Not started",
