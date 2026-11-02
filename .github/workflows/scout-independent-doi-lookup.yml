@@ -20,6 +20,8 @@ jobs:
           DOI_ARGS=()
           if [[ -n "$REQUESTED_DOI" ]]; then DOI_ARGS=(--doi "$REQUESTED_DOI"); fi
           python3 scout-operations/tools/lookup_independent_dois.py "${DOI_ARGS[@]}"
+      - name: Register independent preprints without rechecking the monthly Watchlist
+        run: python3 scout-operations/tools/preprint_watchlist.py --register-only
       - name: Verify output and DOI coverage
         run: |
           python3 - <<'PY'
@@ -42,7 +44,7 @@ jobs:
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add scout-operations/reports/independent-doi-lookup/latest.json
+          git add scout-operations/reports/independent-doi-lookup/latest.json scout-operations/preprint-watchlist.json scout-operations/preprint-publication-leads.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m 'Refresh Scout independent DOI lookup'
           for attempt in 1 2 3 4 5; do
