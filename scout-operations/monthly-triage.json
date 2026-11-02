@@ -224,7 +224,38 @@
       "private_hub_import_verified": false,
       "human_approval_verified": false,
       "public_reach_addition_verified": false,
-      "review_feed_state": "MANIFEST_PUBLISHED"
+      "review_feed_state": "MANIFEST_PUBLISHED",
+      "metadata_recovery": {
+        "status": "resolved",
+        "checked_on": "2026-11-02",
+        "original_missing_fields": [
+          "Brief Abstract"
+        ],
+        "checks": [
+          {
+            "method": "crossref_exact_doi_batch",
+            "url": "https://api.crossref.org/works/10.1016/j.pdisas.2026.100696",
+            "result": "Captured monthly Crossref-derived review row has no Brief Abstract; source alone was insufficient."
+          },
+          {
+            "method": "noaa_ir_exact_doi",
+            "url": "https://repository.library.noaa.gov/view/noaa/77174",
+            "result": "NOAA IR exact DOI, complete article description, authors and direct NOAA award  NA22OAR4590187 independently verified."
+          }
+        ],
+        "resolved_fields": {
+          "Brief Abstract": {
+            "value": "Drawing on seven focus groups with 29 Spanish-speaking immigrant workers in Wichita and Garden City, Kansas, this article examines structural barriers to workplace safety during extreme weather. Participants described limited multilingual risk information, inconsistent emergency procedures, fear of workplace retaliation, and commuting or caregiving obligations that constrained protective action. The authors identify organizational preparedness, accessible multilingual warnings, and weather-resilient workplace practices as important ways to reduce vulnerability.",
+            "evidence_url": "https://repository.library.noaa.gov/view/noaa/77174",
+            "value_type": "Original concise summary of authoritative public abstract; not verbatim"
+          }
+        },
+        "remaining_fields": [],
+        "private_hub_update": "NOT_PERFORMED",
+        "human_review_modified": false,
+        "reviewer_guidance": "What to check before adding this output: Verify recovered abstract against NOAA IR | Complete REACH secondary-link and version duplicate check | Keep four related focus-group records classified as already in REACH | Confirm exact NOAA award NA22OAR4590187 and approved print-month date convention"
+      },
+      "recovered_metadata_supplement_path": "scout-operations/reports/staged-metadata-enrichments/2026-11-02-pdisas-100696.json"
     },
     {
       "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
