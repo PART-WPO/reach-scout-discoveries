@@ -29,7 +29,7 @@
       "output_type": "3",
       "title": "Zenodo data and model outputs supporting Diffusive Wave Models for Operational Forecasting of Channel Routing at Continental Scale",
       "output_url": "https://doi.org/10.5281/zenodo.6385057",
-      "status": "RESEARCH_ACTIVE_FUNDING_DEDUP_ELIGIBILITY",
+      "status": "STAGED_FOR_HUMAN_REVIEW",
       "scout_confidence": "Medium",
       "existing_reach_match": "No exact URL/DOI/title in 10 public REACH index shards or 23 public Scout discovery batches (70 proposals); parent article reach-000241 exists. Related REACH detail shard part-030 checked; private Hub decisions not accessible.",
       "checked_sources": [
@@ -39,15 +39,18 @@
         "https://doi.org/10.5281/zenodo.6385057",
         "https://zenodo.org/records/6385057",
         "https://api.datacite.org/dois/10.5281/zenodo.6385057",
-        "https://zenodo.org/api/records/6385057"
+        "https://zenodo.org/api/records/6385057",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/actions/runs/41410920365"
       ],
       "missing_fields": [
-        "fresh full REACH/Scout secondary-link and version duplicate check",
-        "private Discovery Hub reviewer disposition (not observable)",
-        "verify file ZIP accessible and distinct from existing REACH output"
+        "artifact-specific WPO project attribution (funded article link is indirect)",
+        "Zenodo ZIP content not independently opened",
+        "private Discovery Hub reviewer decision NOT VERIFIED"
       ],
       "native_source_result": "Publisher links exact DOI; Zenodo and DataCite exact DOI landing/API retrieval returned tool-access errors; cannot conclude metadata absent.",
-      "next_action": "Native Zenodo API confirms one 205.5MB ZIP under version DOI 10.5281/zenodo.6385058 (concept DOI 6385057). Verify actual public ZIP access, one version-family catalog entry, funding and current full REACH/Scout duplicate checks before review.",
+      "next_action": "Human reviewer: use Discovery Hub Sync to Scout to import 3 validated public feed NEEDS INVESTIGATION candidates; decide standalone output identity and same-project funding, without assuming Hub import or approval.",
       "metadata_enrichment_status": "ok",
       "metadata_enrichment_checked_at_date": "2026-11-02",
       "verified_metadata": {
@@ -83,6 +86,29 @@
         "concept_requested_doi": "10.5281/zenodo.6385057",
         "api_resolved_version_doi": "10.5281/zenodo.6385058",
         "finding": "Zenodo concept DOI resolves to version record 6385058; do not count concept and version separately. API lists one 205.5MB ZIP, not proof ZIP was downloaded or inspected."
+      },
+      "review_classification": "NEEDS INVESTIGATION",
+      "scout_inbox_path": "scout-discoveries/inbox/2026-11-02-0301ET-mesh-independent-review-001.csv",
+      "scout_batch_path": "scout-discoveries/batches/2026-11-02-0301ET-mesh-independent-review-001.csv",
+      "scout_feed_status": "MANIFEST_PUBLISHED",
+      "scout_batch_sha256": "03e4bb12f6262dca08c4f32bd3b4ca98a4fd2f455490f72be83f44d8fcebc91a",
+      "review_run_id": "REACH-SCOUT-2026-11-02-HOURLY-0301ET",
+      "hub_delivery_verified": false,
+      "human_approval_verified": false,
+      "public_reach_addition_verified": false,
+      "full_public_reach_scout_dedup": {
+        "checked_at": "2026-11-02",
+        "reach_manifest_blob_sha": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+        "reach_index_shards": 10,
+        "reach_detail_shards": 140,
+        "reach_rows": 1238,
+        "scout_active_batches_before_new_submission": 33,
+        "scout_active_rows_before_new_submission": 78,
+        "scout_inbox_preexisting": 11,
+        "preexisting_inbox_all_promoted_and_blob_sha_matched": true,
+        "exact_doi_url_or_title_matches": [],
+        "parent_publication_reach_id": "reach-000241",
+        "private_hub_feedback": "NOT_VERIFIED"
       }
     },
     {
@@ -103,7 +129,7 @@
       "output_type": "2",
       "title": "MESH Code irregular — Crank–Nicolson over Space (CNS) release",
       "output_url": "https://github.com/MESH-Team/MESH_Code_irregular/releases/tag/Mesh_Diffusive_CNS_v0.1",
-      "status": "RESEARCH_ACTIVE_FUNDING_DEDUP_ELIGIBILITY",
+      "status": "STAGED_FOR_HUMAN_REVIEW",
       "scout_confidence": "Medium",
       "existing_reach_match": "No exact URL/DOI/title in 10 public REACH index shards or 23 public Scout discovery batches (70 proposals); parent article reach-000241 exists. Related REACH detail shard part-030 checked; private Hub decisions not accessible.",
       "checked_sources": [
@@ -116,14 +142,18 @@
         "https://api.github.com/repos/MESH-Team/MESH_Code_irregular/releases/tags/Mesh_Diffusive_CNS_v0.1",
         "https://github.com/MESH-Team/MESH_Code_irregular/blob/Mesh_Diffusive_CNS_v0.1/README.md",
         "https://github.com/MESH-Team/MESH_Code_irregular/blob/Mesh_Diffusive_CNS_v0.1/LICENSE",
-        "https://api.github.com/repos/MESH-Team/MESH_Code_irregular/git/trees/Mesh_Diffusive_CNS_v0.1?recursive=1"
+        "https://api.github.com/repos/MESH-Team/MESH_Code_irregular/git/trees/Mesh_Diffusive_CNS_v0.1?recursive=1",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/actions/runs/41410920365"
       ],
       "missing_fields": [
-        "fresh full REACH/Scout secondary-link and version duplicate check",
-        "private Discovery Hub reviewer disposition (not observable)"
+        "artifact-specific WPO project attribution (funded article link is indirect)",
+        "individual code authors/PI not independently established",
+        "private Discovery Hub reviewer decision NOT VERIFIED"
       ],
       "native_source_result": "Publisher links exact artifact. GitHub connector retrieved tagged README successfully.",
-      "next_action": "Exact release tag tree verified to contain substantive Fortran code; finish award-to-artifact bridge, current full REACH/Scout duplicate/version check and human disposition before preparing review. Independent discovery unchanged.",
+      "next_action": "Human reviewer: use Discovery Hub Sync to Scout to import 3 validated public feed NEEDS INVESTIGATION candidates; decide standalone output identity and same-project funding, without assuming Hub import or approval.",
       "metadata_enrichment_status": "ok",
       "metadata_enrichment_checked_at_date": "2026-11-02",
       "verified_metadata": {
@@ -167,6 +197,29 @@
         "tree_truncated": false,
         "representative_source_path": "src_combined_Y_network/mainProgram_multiJunction_network_added_latFlow.f90",
         "finding": "Exact-tag GitHub tree contains Fortran source code and supporting files; release attachment count zero does not indicate no code. No execution or download of all files."
+      },
+      "review_classification": "NEEDS INVESTIGATION",
+      "scout_inbox_path": "scout-discoveries/inbox/2026-11-02-0301ET-mesh-independent-review-001.csv",
+      "scout_batch_path": "scout-discoveries/batches/2026-11-02-0301ET-mesh-independent-review-001.csv",
+      "scout_feed_status": "MANIFEST_PUBLISHED",
+      "scout_batch_sha256": "03e4bb12f6262dca08c4f32bd3b4ca98a4fd2f455490f72be83f44d8fcebc91a",
+      "review_run_id": "REACH-SCOUT-2026-11-02-HOURLY-0301ET",
+      "hub_delivery_verified": false,
+      "human_approval_verified": false,
+      "public_reach_addition_verified": false,
+      "full_public_reach_scout_dedup": {
+        "checked_at": "2026-11-02",
+        "reach_manifest_blob_sha": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+        "reach_index_shards": 10,
+        "reach_detail_shards": 140,
+        "reach_rows": 1238,
+        "scout_active_batches_before_new_submission": 33,
+        "scout_active_rows_before_new_submission": 78,
+        "scout_inbox_preexisting": 11,
+        "preexisting_inbox_all_promoted_and_blob_sha_matched": true,
+        "exact_doi_url_or_title_matches": [],
+        "parent_publication_reach_id": "reach-000241",
+        "private_hub_feedback": "NOT_VERIFIED"
       }
     },
     {
@@ -187,7 +240,7 @@
       "output_type": "2",
       "title": "MESH CNT — Crank–Nicolson over Time (CNT) release",
       "output_url": "https://github.com/MESH-Team/MESH_CNT/releases/tag/MESH_CNT_v0.1",
-      "status": "RESEARCH_ACTIVE_FUNDING_DEDUP_ELIGIBILITY",
+      "status": "STAGED_FOR_HUMAN_REVIEW",
       "scout_confidence": "Medium",
       "existing_reach_match": "No exact URL/DOI/title in 10 public REACH index shards or 23 public Scout discovery batches (70 proposals); parent article reach-000241 exists. Related REACH detail shard part-030 checked; private Hub decisions not accessible.",
       "checked_sources": [
@@ -201,14 +254,18 @@
         "https://github.com/MESH-Team/MESH_CNT/blob/MESH_CNT_v0.1/arrays_module.f90",
         "https://github.com/MESH-Team/MESH_CNT/blob/MESH_CNT_v0.1/mainLoop_Moussa_test_repeatTimeLoop.f90",
         "https://github.com/MESH-Team/MESH_CNT/blob/MESH_CNT_v0.1/README.md",
-        "https://api.github.com/repos/MESH-Team/MESH_CNT/git/trees/MESH_CNT_v0.1?recursive=1"
+        "https://api.github.com/repos/MESH-Team/MESH_CNT/git/trees/MESH_CNT_v0.1?recursive=1",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/actions/runs/41410920365"
       ],
       "missing_fields": [
-        "fresh full REACH/Scout secondary-link and version duplicate check",
-        "private Discovery Hub reviewer disposition (not observable)"
+        "artifact-specific WPO project attribution (funded article link is indirect)",
+        "individual code authors/PI not independently established",
+        "private Discovery Hub reviewer decision NOT VERIFIED"
       ],
       "native_source_result": "Publisher links exact artifact. GitHub connector retrieved tagged README successfully.",
-      "next_action": "Exact release tag tree verified to contain substantive Fortran code; finish award-to-artifact bridge, current full REACH/Scout duplicate/version check and human disposition before preparing review. Independent discovery unchanged.",
+      "next_action": "Human reviewer: use Discovery Hub Sync to Scout to import 3 validated public feed NEEDS INVESTIGATION candidates; decide standalone output identity and same-project funding, without assuming Hub import or approval.",
       "metadata_enrichment_status": "ok",
       "metadata_enrichment_checked_at_date": "2026-11-02",
       "verified_metadata": {
@@ -263,6 +320,29 @@
         "tree_truncated": false,
         "representative_source_path": "mainLoop_Moussa_test_repeatTimeLoop.f90",
         "finding": "Exact-tag GitHub tree contains Fortran source code and supporting files; release attachment count zero does not indicate no code. No execution or download of all files."
+      },
+      "review_classification": "NEEDS INVESTIGATION",
+      "scout_inbox_path": "scout-discoveries/inbox/2026-11-02-0301ET-mesh-independent-review-001.csv",
+      "scout_batch_path": "scout-discoveries/batches/2026-11-02-0301ET-mesh-independent-review-001.csv",
+      "scout_feed_status": "MANIFEST_PUBLISHED",
+      "scout_batch_sha256": "03e4bb12f6262dca08c4f32bd3b4ca98a4fd2f455490f72be83f44d8fcebc91a",
+      "review_run_id": "REACH-SCOUT-2026-11-02-HOURLY-0301ET",
+      "hub_delivery_verified": false,
+      "human_approval_verified": false,
+      "public_reach_addition_verified": false,
+      "full_public_reach_scout_dedup": {
+        "checked_at": "2026-11-02",
+        "reach_manifest_blob_sha": "ab844173f761617a2fe1def5cf218b1fc94b3e7d",
+        "reach_index_shards": 10,
+        "reach_detail_shards": 140,
+        "reach_rows": 1238,
+        "scout_active_batches_before_new_submission": 33,
+        "scout_active_rows_before_new_submission": 78,
+        "scout_inbox_preexisting": 11,
+        "preexisting_inbox_all_promoted_and_blob_sha_matched": true,
+        "exact_doi_url_or_title_matches": [],
+        "parent_publication_reach_id": "reach-000241",
+        "private_hub_feedback": "NOT_VERIFIED"
       }
     }
   ],
