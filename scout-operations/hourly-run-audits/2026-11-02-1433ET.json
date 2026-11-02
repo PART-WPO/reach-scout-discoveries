@@ -1,0 +1,109 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-11-02-HOURLY-1433ET",
+  "run_at_utc": "2026-11-02T19:37:08.832520Z",
+  "selected_mode": "normal_historical_discovery",
+  "source_manifests": {
+    "monthly_active_batch": "2026-11-01-monthly-api-2026-10-primary-only-part001",
+    "monthly_source_rows": 13,
+    "monthly_coverage_missing_from_ledger": 0,
+    "historical_total": 188,
+    "historical_remaining": 0,
+    "historical_research_complete": true,
+    "reach_index_shards_checked": 10,
+    "reach_index_rows": 1238,
+    "reach_detail_shards_checked_for_new_figshare_identity": 1,
+    "reach_full_detail_check_complete": false,
+    "spark_primary_award_only": true
+  },
+  "monthly_originals": {
+    "received_before": 13,
+    "received_after": 13,
+    "checked_before": 13,
+    "checked_after": 13,
+    "staged_public_feed_before": 9,
+    "staged_public_feed_after": 9,
+    "no_action_before": 4,
+    "no_action_after": 4,
+    "new_dois": 0,
+    "dispositions_changed": 0
+  },
+  "historical": {
+    "fully_investigated_before": 188,
+    "fully_investigated_after": 188,
+    "remaining_before": 0,
+    "remaining_after": 0,
+    "human_metadata_needed": 28
+  },
+  "monthly_expansion": {
+    "total": 6,
+    "staged_for_review": 2,
+    "already_in_reach": 3,
+    "pending_human_intake": 1,
+    "new_expansion_leads": 0
+  },
+  "independent_leads": {
+    "source_json_files_enumerated": 7,
+    "new_source_file_added": 1,
+    "new_provisional_identity_groups": 1,
+    "new_doi_identities": 2,
+    "lookup_status": "NATIVE_ACCESS_FAILED",
+    "resumed_existing_leads": 0,
+    "finalized_existing_lead_dispositions": 0
+  },
+  "research_findings": [
+    {
+      "project": "spark-000338",
+      "primary_award": "NA21OAR4590358",
+      "finding": "Separate Figshare DeepFlood dataset referenced under two DOIs; DOI identity/version relationship and file scope unresolved",
+      "identity_group": "deepflood-figshare-source-identity-26791243-28328339",
+      "decision": "LEAD_ONLY_PENDING_EXACT_METADATA_AND_VERSION",
+      "original_seed_doi": null,
+      "research_origin_method": "Independent discovery",
+      "source_urls": [
+        "https://www.nature.com/articles/s41597-025-04554-3",
+        "https://link.springer.com/article/10.1007/s12145-026-02164-0",
+        "https://api.datacite.org/dois/10.6084/m9.figshare.26791243",
+        "https://api.datacite.org/dois/10.6084/m9.figshare.28328339"
+      ]
+    }
+  ],
+  "reviewer_story_parity": {
+    "batch_8": "2026-11-02-monthly-reviewer-story-parity-001",
+    "batch_1": "2026-11-02-monthly-enriched-frp-2749622-001",
+    "records_checked": 9,
+    "finding_label_present": 9,
+    "case_specific_check_label_present": 9,
+    "reviewer_question_label_present": 9,
+    "note": "Label presence verified; individual factual source corroboration and private Hub import not independently validated"
+  },
+  "new_scout_candidates": 0,
+  "new_inbox_drafts": 0,
+  "new_scout_batch_ids": [],
+  "prepare_batch_python_check_executed": false,
+  "prepare_batch_not_run_reason": "No new verified eligible output; lead only",
+  "feed": {
+    "active_batches": 30,
+    "staged_candidates": 85,
+    "full_sha256_recomputed_this_run": false,
+    "new_publication_attempted": false,
+    "feed_integrity_status": "CURRENT_MANIFEST_READ_NO_NEW_FEED_WRITE",
+    "github_actions_status": "NOT_VERIFIED_THIS_RUN"
+  },
+  "reviewer_visibility": {
+    "public_feed_staged_monthly_originals": 9,
+    "private_hub_import": "NOT_VERIFIED",
+    "human_approvals": "NOT_VERIFIED",
+    "public_reach_additions_verified_this_run": 0
+  },
+  "blockers": [
+    "Exact Figshare DataCite/native metadata access failure",
+    "Unverified two-DOI identity/version relation",
+    "Unverified full REACH detail and private Hub dedup",
+    "Unverified dataset-specific funded project allocation"
+  ],
+  "audit_result": "PARTIAL",
+  "library_first_save_intended": true,
+  "report_path": "scout-operations/reports/hourly-research/2026-11-02-1433ET-deepflood-figshare-review.md",
+  "checkpoint_path": "scout-operations/reports/hourly-research/2026-11-02-1433ET-checkpoint.json"
+}
