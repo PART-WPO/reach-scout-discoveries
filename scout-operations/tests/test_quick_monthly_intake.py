@@ -35,6 +35,26 @@ class MonthlyQuickIntakeTests(unittest.TestCase):
         _,status,_=check_funding({"NOAA Award Number(s)":"NA23OAR4599999"},{},spark)
         self.assertEqual(status,"unmatched_primary_award")
 
+    def test_fy25_oarx_task_award_preserved_and_not_confused_with_siblings(self):
+        full = "NA25OARX459C0342-T1-01"
+        sibling = "NA25OARX459C0342-T1-02"
+        base = "NA25OARX459C0342"
+        self.assertEqual(AWARD.findall("Grant no. " + full + "; NA22NWS4320003"),
+                         [full, "NA22NWS4320003"])
+        spark = [
+            {"Record ID": "spark-fy25-a", "Award Number(s)": full},
+            {"Record ID": "spark-fy25-b", "Award Number(s)": sibling},
+        ]
+        candidates, status, _ = check_funding(
+            {"NOAA Award Number(s)": full}, {}, spark)
+        self.assertEqual(status, "primary_award_matched")
+        self.assertEqual(len(candidates), 1)
+        self.assertEqual(candidates[0]["Record ID"], "spark-fy25-a")
+        # A base FAIN alone cannot uniquely name a WPO task.
+        _, status, _ = check_funding(
+            {"NOAA Award Number(s)": base}, {}, spark)
+        self.assertEqual(status, "unmatched_primary_award")
+
     def test_explicit_contradiction_is_held_but_missing_grant_proof_is_not(self):
         spark=[{"Record ID":"spark-1","Award Number(s)":"NA22OAR4590179"}]
         row={"NOAA Award Number(s)":"NA22OAR4590179"}
