@@ -35,7 +35,7 @@
       "project_title": "Improving Analysis and Communication of Extreme Temperatures Across the New York City Metropolis Using a Dense Network of In Situ Observations",
       "research_origin_method": "Independent discovery",
       "finding_purpose": "new_output_review",
-      "status": "AWAITING_TARGETED_CROSSREF_METADATA",
+      "status": "STAGED_FOR_HUMAN_REVIEW",
       "source_specific_metadata": {
         "publisher": "Springer Nature",
         "journal": "Computational Urban Science",
@@ -71,15 +71,37 @@
         "limitation": "Text identity screening against full public index/details and Scout CSVs; private Discovery Hub decisions inaccessible; alternate external identity unknown."
       },
       "missing_fields": [
-        "Exact Crossref metadata checkpoint pending after web direct DOI access failure",
-        "Human verification that this broad urban-science review is attributable to the specific NYC extreme-temperature dashboard project",
+        "Human verification that the publisher-funded broad urban-science review is attributable to the same specific NYC extreme-temperature dashboard project",
         "Private Discovery Hub reviewer decision NOT VERIFIED"
       ],
-      "metadata_enrichment_status": "pending",
-      "next_action": "Unified independent DOI metadata Action should query exact Crossref DOI. On next mission resume from this lead and preserve Independent discovery; reconcile Crossref publication-date fields (prefer published-print), normalize abstract and check any related DOI/version. If funding and identity remain credible, consider truthful NEEDS INVESTIGATION human-review draft, explicitly noting the unresolved project scope. Never autoapprove or stage on publisher grant alone without the required metadata/validation checks.",
+      "metadata_enrichment_status": "ok",
+      "next_action": "Reviewer uses Discovery Hub Sync to Scout to import the public manifest-staged NEEDS INVESTIGATION candidate, if not already imported; verify whether broad urban-science review is attributable to the exact SPARK NYC heat project under primary award NA21OAR4590360. Do not autoapprove or publish. No further generic metadata research required.",
       "hub_delivery_verified": false,
       "human_approval_verified": false,
-      "public_reach_addition_verified": false
+      "public_reach_addition_verified": false,
+      "metadata_enrichment_verified_at_utc": "2026-11-02T08:51:00Z",
+      "verified_metadata": {
+        "provider": "crossref",
+        "source": "https://api.crossref.org/works/10.1007/s43762-024-00142-0",
+        "lookup_status": "ok",
+        "title": "Analysing trends of computational urban science and data science approaches for sustainable development",
+        "creators": [
+          "Deepak Kumar",
+          "Nick P. Bassill"
+        ],
+        "pub_date": "2024-11-12",
+        "pub_date_basis": "Crossref published-online",
+        "pub_date_precision": "day",
+        "resource_type": "journal-article",
+        "funding_references": [],
+        "abstract_jats_normalized": true
+      },
+      "scout_inbox_path": "scout-discoveries/inbox/2026-11-02-0349ET-nyc-urban-science-independent-investigate-001.csv",
+      "scout_batch_path": "scout-discoveries/batches/2026-11-02-0349ET-nyc-urban-science-independent-investigate-001.csv",
+      "scout_batch_sha256": "726e535c6d5c3fa862abc581ea0d25f46697f6f314d7d8aa7b7788b700891846",
+      "scout_feed_status": "MANIFEST_PUBLISHED",
+      "review_classification": "NEEDS INVESTIGATION",
+      "github_validation_run_id": 41416249583
     }
   ],
   "related_research_exclusions": [
@@ -89,6 +111,7 @@
       "reason": "Publisher explicitly says No funding was obtained for this study; same authors/topic cannot transfer NA21OAR4590360."
     }
   ],
-  "no_hub_proposals_staged": true,
-  "reviewer_decisions_preserved": true
+  "no_hub_proposals_staged": false,
+  "reviewer_decisions_preserved": true,
+  "final_public_feed_verified_at_utc": "2026-11-02T08:53:00Z"
 }
