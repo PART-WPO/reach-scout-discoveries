@@ -143,6 +143,20 @@ def check_funding(row, entry, spark):
     return candidates, "primary_award_matched", []
 
 
+def is_preprint_on_hold(root, doi, rationale=""):
+    """A tracked preprint DOI is never eligible as an official new output."""
+    if re.search(r"(?im)^API publication status:\s*Preprint\s*$", rationale or ""):
+        return True
+    watch_path = root / "scout-operations/preprint-watchlist.json"
+    if not watch_path.exists():
+        return False
+    data = read_json(watch_path)
+    if data.get("schema") != "reach-scout-preprint-watchlist-v1":
+        raise ValueError("Invalid preprint watchlist schema")
+    return any(norm_doi(x.get("preprint_doi", "")) == doi
+               for x in data.get("entries", []))
+
+
 def detect_version(entry, doi):
     relation = (entry.get("substantive_research") or {}).get("identity_and_related_outputs") or {}
     if relation.get("historical_review_unit") or relation.get("duplicate_cross_cohort_seed"):
@@ -356,6 +370,9 @@ def build(root, reach_root, spark_root, write_drafts=False):
             issues = list(funding_issues)
             if found:
                 status = "already_in_reach"
+            elif is_preprint_on_hold(root, doi, raw.get("Scout Discovery Rationale", "")):
+                status = "preprint_watchlist_hold"
+                issues.append("Preprint DOI stays in the monthly Watchlist, not the Discovery Hub. A separately verified official journal DOI must complete normal REACH/Scout identity, funding, and metadata review.")
             elif (doi, entry["cohort"]) in staged_monthly_originals:
                 status = "staged_in_scout_feed"
             elif doi in existing_dois or norm_title(title) in existing_titles:
