@@ -1,6 +1,6 @@
 {
   "artifact_scope_policy": "Zenodo file listings and exact GitHub tag trees are read-only evidence, not funding or approval. Access failures do not mean files are absent.",
-  "doi_count": 12,
+  "doi_count": 14,
   "doi_records": [
     {
       "artifact_scope": {
@@ -798,9 +798,77 @@
         "title": "Lagrangian Drifter Laboratory at Scripps Institution of Oceanography GTS Atlantic Hurricane 2021 Data",
         "version": null
       }
+    },
+    {
+      "artifact_scope": {
+        "files_verified": false,
+        "status": "not_zenodo"
+      },
+      "doi": "10.6084/m9.figshare.26791243",
+      "lead_files": [
+        "scout-operations/research-leads/2026-11-02-1433ET-deepflood-figshare-version-check.json"
+      ],
+      "metadata": {
+        "abstract": "The DeepFlood dataset provides high-resolution georeferenced images from both manned and<br>unmanned aerial platforms, featuring detailed labels that go beyond simple binary distinctions.<br>These labels include inundated vegetation, dry vegetation, open water, and others,<br>making the dataset highly applicable for flood mapping across various landscapes. It uniquely<br>incorporates SAR imagery alongside optical and UAV images, enabling a multi-modal approach<br>to accurately delineate flooded areas",
+        "attempts": [
+          {
+            "error": null,
+            "provider": "datacite",
+            "url": "https://api.datacite.org/dois/10.6084/m9.figshare.26791243"
+          }
+        ],
+        "creators": [
+          "Fawakherji, Mulham"
+        ],
+        "evidence": "https://api.datacite.org/dois/10.6084/m9.figshare.26791243",
+        "funding_references": [],
+        "provider": "datacite",
+        "pub_date": "2024-08-20",
+        "pub_date_basis": "DataCite created (office convention)",
+        "publisher": "figshare",
+        "related_identifiers": [],
+        "resource_type": "Text",
+        "status": "ok",
+        "title": "DEEPFLOOD DATASET",
+        "version": null
+      }
+    },
+    {
+      "artifact_scope": {
+        "files_verified": false,
+        "status": "not_zenodo"
+      },
+      "doi": "10.6084/m9.figshare.28328339",
+      "lead_files": [
+        "scout-operations/research-leads/2026-11-02-1433ET-deepflood-figshare-version-check.json"
+      ],
+      "metadata": {
+        "abstract": "The DeepFlood dataset provides high-resolution georeferenced images from both manned and<br>unmanned aerial platforms, featuring detailed labels that go beyond simple binary distinctions.<br>These labels include inundated vegetation, dry vegetation, open water, and others,<br>making the dataset highly applicable for flood mapping across various landscapes. It uniquely<br>incorporates SAR imagery alongside optical and UAV images, enabling a multi-modal approach<br>to accurately delineate flooded areas.",
+        "attempts": [
+          {
+            "error": null,
+            "provider": "datacite",
+            "url": "https://api.datacite.org/dois/10.6084/m9.figshare.28328339"
+          }
+        ],
+        "creators": [
+          "Geospatial And Remote Sensing Research Lab"
+        ],
+        "evidence": "https://api.datacite.org/dois/10.6084/m9.figshare.28328339",
+        "funding_references": [],
+        "provider": "datacite",
+        "pub_date": "2025-02-01",
+        "pub_date_basis": "DataCite created (office convention)",
+        "publisher": "figshare",
+        "related_identifiers": [],
+        "resource_type": "Dataset",
+        "status": "ok",
+        "title": "DEEPFLOOD DATASET: High-Resolution Dataset for Accurate Flood Mappingand Segmentation",
+        "version": null
+      }
     }
   ],
-  "doi_successful": 12,
+  "doi_successful": 14,
   "github_count": 2,
   "github_records": [
     {
@@ -1124,6 +1192,28 @@
       "kind": "doi",
       "lead_files": [
         "scout-operations/research-leads/2026-11-02-0525ET-atlantic-drifter-dois.json"
+      ],
+      "lookup_status": "ok",
+      "metadata_source": "datacite",
+      "next_action": "resume_research_verification"
+    },
+    {
+      "evidence": "https://api.datacite.org/dois/10.6084/m9.figshare.26791243",
+      "identity": "doi:10.6084/m9.figshare.26791243",
+      "kind": "doi",
+      "lead_files": [
+        "scout-operations/research-leads/2026-11-02-1433ET-deepflood-figshare-version-check.json"
+      ],
+      "lookup_status": "ok",
+      "metadata_source": "datacite",
+      "next_action": "resume_research_verification"
+    },
+    {
+      "evidence": "https://api.datacite.org/dois/10.6084/m9.figshare.28328339",
+      "identity": "doi:10.6084/m9.figshare.28328339",
+      "kind": "doi",
+      "lead_files": [
+        "scout-operations/research-leads/2026-11-02-1433ET-deepflood-figshare-version-check.json"
       ],
       "lookup_status": "ok",
       "metadata_source": "datacite",
