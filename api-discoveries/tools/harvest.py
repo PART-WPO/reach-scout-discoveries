@@ -65,8 +65,8 @@ def clean_award(x):
 def split_primary_identifiers(value):
     """Split only an explicit whitespace-delimited list of full NOAA task awards."""
     raw=str(value or "").strip().upper()
-    item=r"NA\\d{2}(?:OAR|NWS)[A-Z0-9-]+"
-    if re.fullmatch(item+r"(?:\\s+"+item+r")+",raw):
+    item=r"NA\d{2}(?:OAR|NWS)[A-Z0-9-]+"
+    if re.fullmatch(item+r"(?:\s+"+item+r")+",raw):
         return raw.split()
     return [value]
 
