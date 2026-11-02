@@ -1,7 +1,7 @@
 {
   "counts": {
     "abstract_missing_in_scout_and_crossref": 2,
-    "abstract_missing_in_scout_recoverable": 2,
+    "abstract_missing_in_scout_recoverable": 1,
     "api_full_pub_date": 27,
     "crossref_has_abstract": 41,
     "crossref_has_funder_awards": 35,
@@ -11,12 +11,12 @@
     "no_publication_date": 1,
     "partial_only_pub_date": 23,
     "preferred_date_differs_from_existing_scout": 17,
-    "preferred_date_matches_existing_scout": 24,
+    "preferred_date_matches_existing_scout": 25,
     "reach_pub_date_satisfied": 50,
-    "scout_missing_date": 9,
-    "scout_missing_date_recoverable": 9,
+    "scout_missing_date": 8,
+    "scout_missing_date_recoverable": 8,
     "scout_missing_date_resolved_by_exact_pub": 2,
-    "scout_missing_date_resolved_by_month_first": 7,
+    "scout_missing_date_resolved_by_month_first": 6,
     "scout_missing_date_still_unresolved": 0,
     "source_field_online": 10,
     "source_field_print": 37
@@ -3790,7 +3790,7 @@
       "work_type": "journal-article"
     },
     {
-      "abstract_already_in_scout": false,
+      "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
       "accepted_date_precision": "month",
       "accepted_reach_pub_date": "2026-10-01",
@@ -3812,7 +3812,7 @@
       "best_partial_date": "2026-10",
       "crossref_publication_date": "",
       "crossref_publication_date_basis": "published-print",
-      "date_comparison": "no_scout_date",
+      "date_comparison": "matched",
       "doi": "10.1177/10506519261455873",
       "doi_registered_date": {
         "full_date": "2026-07-06",
@@ -3836,7 +3836,7 @@
       },
       "pages": "301-332",
       "preferred_date_differs_from_existing_scout": false,
-      "preferred_date_matches_existing_scout": false,
+      "preferred_date_matches_existing_scout": true,
       "pub_date_satisfied": true,
       "publication_dates": {
         "issued": {
@@ -3869,18 +3869,15 @@
       "reach_output_type": "1",
       "related_record_evidence": {},
       "review_keys": [],
-      "reviewable_recovered_fields": [
-        "title",
-        "creators",
-        "type",
-        "abstract",
-        "pub_date"
-      ],
+      "reviewable_recovered_fields": [],
       "scout_origins": [
-        "independent_research_lead"
+        "independent_research_lead",
+        "staged"
       ],
-      "scout_publication_dates": [],
-      "scout_source_rows": 0,
+      "scout_publication_dates": [
+        "2026-10-01"
+      ],
+      "scout_source_rows": 1,
       "source": "crossref",
       "title": "Bridging the Gap Between Numbers and Experience: Identifying Community Risk Thresholds in Extreme Weather Communication",
       "volume": "40",
@@ -4862,8 +4859,8 @@
       "rows": 13
     },
     "staged": {
-      "batches": 32,
-      "rows": 77
+      "batches": 33,
+      "rows": 78
     }
   }
 }

@@ -11,19 +11,19 @@ For Crossref works the office prefers published-print, falling back to published
 | Api full pub date | 27 |
 | Partial only pub date | 23 |
 | No publication date | 1 |
-| Scout missing date | 9 |
-| Scout missing date recoverable | 9 |
+| Scout missing date | 8 |
+| Scout missing date recoverable | 8 |
 | Reach pub date satisfied | 50 |
-| Scout missing date resolved by month first | 7 |
+| Scout missing date resolved by month first | 6 |
 | Scout missing date resolved by exact pub | 2 |
 | Source field print | 37 |
 | Source field online | 10 |
-| Preferred date matches existing scout | 24 |
+| Preferred date matches existing scout | 25 |
 | Preferred date differs from existing scout | 17 |
 | First of month defaults | 23 |
 | Scout missing date still unresolved | 0 |
 | Crossref vs scout date differs | 17 |
-| Abstract missing in scout recoverable | 2 |
+| Abstract missing in scout recoverable | 1 |
 | Abstract missing in scout and crossref | 2 |
 | Crossref has funder awards | 35 |
 | Crossref has abstract | 41 |
@@ -73,7 +73,7 @@ For Crossref works the office prefers published-print, falling back to published
 | 10.1175/waf-d-25-0044.1 | A Blending Method for Multiscale Valid Time Shifting within an RRF | 2026-10-01 | 2026-10-01 | 2026-10 (published-print) | matched | — |
 | 10.1175/waf-d-26-0084.1 | Evaluation of a Cumulus Scheme in the FV3-LAM and of Experimental  | 2026-10-01 | 2026-10-01 | 2026-10 (published-print) | matched | — |
 | 10.1175/wcas-d-23-0046.1 | Contextualizing Disaster Phases Using Social Media Data: Hurricane | 2023-11-10 | 2023-10-01 | 2023-10 (published-print) | different_date_review_option | — |
-| 10.1177/10506519261455873 | Bridging the Gap Between Numbers and Experience: Identifying Commu | (missing) | 2026-10-01 | 2026-10 (published-print) | no_scout_date | title, creators, type, abstract |
+| 10.1177/10506519261455873 | Bridging the Gap Between Numbers and Experience: Identifying Commu | 2026-10-01 | 2026-10-01 | 2026-10 (published-print) | matched | — |
 | 10.15191/nwajom.2023.1107 | The NOAA Weather Prediction Center’s Use and Evaluation of Experim | 2023-09-07 | 2023-09-07 | 2023-09-07 (published-online) | matched | — |
 | 10.15191/nwajom.2023.1109 | Interpreting Warn-on-Forecast System Guidance, Part I: Review of P | 2023-12-19 | 2023-12-19 | 2023-12-19 (published-online) | matched | — |
 | 10.3390/atmos12101286 | Rapid Update with EnVar Direct Radar Reflectivity Data Assimilatio | 2021-10-02 | 2021-10-02 | 2021-10-02 (published-online) | matched | — |

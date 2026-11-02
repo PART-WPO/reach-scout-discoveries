@@ -1,10 +1,10 @@
 {
   "fields_recoverable": {
-    "abstract": 6,
-    "creators": 6,
-    "pub_date": 13,
-    "title": 6,
-    "type": 6
+    "abstract": 5,
+    "creators": 5,
+    "pub_date": 12,
+    "title": 5,
+    "type": 5
   },
   "policy": "DataCite uses created (office policy). Crossref uses published-print first, published-online if print absent, and published/issued/posted fallback; month-only dates get YYYY-MM-01. Crossref created never fills Pub Date. Existing reviewer dates preserved.",
   "read_only": true,
@@ -4625,7 +4625,7 @@
       "review_keys": []
     },
     {
-      "checkpoint_state": "FIELDS_RECOVERABLE",
+      "checkpoint_state": "SCOUT_FIELDS_ALREADY_COVERED",
       "doi": "10.1177/10506519261455873",
       "metadata": {
         "abstract": "In weather risk communication, there is a disconnect between numerical models and community members’ experiences. To help resolve this issue, the authors propose a topological method to identify community risk thresholds, arguing that they offer a middle ground that enables more robust communication about risk. The authors surveyed 1,429 participants, including decision-makers and public audience members, who responded to probabilistic visualizations from five National Weather Service offices. The results reveal that audiences engage in sophisticated risk assessment by drawing on multiple dimensions that can be communicated as community risk thresholds. Embedding these thresholds in the forecast can better link numerical and experiential risk.",
@@ -4710,24 +4710,31 @@
         "title": "Bridging the Gap Between Numbers and Experience: Identifying Community Risk Thresholds in Extreme Weather Communication",
         "volume": "40"
       },
-      "original_rows": [],
+      "original_rows": [
+        {
+          "abstract": "In weather risk communication, there is a disconnect between numerical models and community members’ experiences. To help resolve this issue, the authors propose a topological method to identify community risk thresholds, arguing that they offer a middle ground that enables more robust communication about risk. The authors surveyed 1,429 participants, including decision-makers and public audience members, who responded to probabilistic visualizations from five National Weather Service offices. The results reveal that audiences engage in sophisticated risk assessment by drawing on multiple dimensions that can be communicated as community risk thresholds. Embedding these thresholds in the forecast can better link numerical and experiential risk.",
+          "authors": "Kathryn Lambrecht; Lynda C. Olman; Meghan Collins; Anne Heggli; Benjamin Hatchett; Zach Tolby; Inika Wadhwa",
+          "awards": "NA21OAR4590208",
+          "batch": "scout-discoveries/batches/2026-11-01-2340ET-sage-risk-thresholds-api-expansion-001.csv",
+          "date": "2026-10-01",
+          "origin": "staged",
+          "project": "Employing Rhetoric to Improve Probabilistic Forecast Communication",
+          "title": "Bridging the Gap Between Numbers and Experience: Identifying Community Risk Thresholds in Extreme Weather Communication",
+          "type": "1"
+        }
+      ],
       "origins": [
-        "independent_research_lead"
+        "independent_research_lead",
+        "staged"
       ],
       "prior_fields": {
-        "abstract": false,
-        "creators": false,
-        "pub_date": false,
-        "title": false,
-        "type": false
+        "abstract": true,
+        "creators": true,
+        "pub_date": true,
+        "title": true,
+        "type": true
       },
-      "recoverable_fields": [
-        "title",
-        "creators",
-        "type",
-        "abstract",
-        "pub_date"
-      ],
+      "recoverable_fields": [],
       "review_keys": []
     },
     {
@@ -18485,7 +18492,7 @@
       ]
     }
   ],
-  "records_with_new_metadata": 13,
+  "records_with_new_metadata": 12,
   "schema": "reach-scout-doi-enrichment-audit-v1",
   "sources": {
     "historical": {
@@ -18514,14 +18521,14 @@
       "rows": 13
     },
     "staged": {
-      "batches": 32,
-      "rows": 77
+      "batches": 33,
+      "rows": 78
     }
   },
   "state_counts": {
-    "FIELDS_RECOVERABLE": 13,
+    "FIELDS_RECOVERABLE": 12,
     "HISTORICAL_FIELDS_ALREADY_COVERED": 143,
-    "SCOUT_FIELDS_ALREADY_COVERED": 91
+    "SCOUT_FIELDS_ALREADY_COVERED": 92
   },
   "successful_lookups": 247,
   "unique_dois": 247
