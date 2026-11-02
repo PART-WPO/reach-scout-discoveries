@@ -140,13 +140,14 @@
       "project_funding_verified": true,
       "full_reach_and_scout_dedup_verified": false,
       "hub_delivery_verified": false,
-      "findings": "2026-11-01 evening: 2023 BAMS paper's data availability points to Zenodo record 7600486 for visualization templates. Public REACH already catalogs a corresponding visualization template at Zenodo record 7999820 as reach-000822, same NA21OAR4590208 award, verified in index part-007 and detail part-097. The relationship between the two Zenodo record numbers has NOT been verified; do not assert they are the same version or DOI family. Existing REACH template is not a new output. Further identity comparison would be required before treating the separate 7600486 URL as a new research output. Direct Zenodo record confirms DOI 10.5281/zenodo.7999820, version v3, publication/created date 2023-06-02, and explicitly credits NOAA WPO Social Sciences Program grant NA21OAR4590208; it lists PDF/PPTX/XLSX files as components of this existing template record, not three independent outputs. Zenodo record 7600486 mentioned in BAMS remains unverified as to relation.",
-      "next_action": "No new candidate: exact DOI and funding verified, already public REACH reach-000822. Do not separately stage component files. Treat Zenodo record 7600486 as an unverified possible related/version identity pending source metadata.",
+      "findings": "2026-11-01 evening: 2023 BAMS paper's data availability points to Zenodo record 7600486 for visualization templates. Public REACH already catalogs a corresponding visualization template at Zenodo record 7999820 as reach-000822, same NA21OAR4590208 award, verified in index part-007 and detail part-097. The relationship between the two Zenodo record numbers has NOT been verified; do not assert they are the same version or DOI family. Existing REACH template is not a new output. Further identity comparison would be required before treating the separate 7600486 URL as a new research output. Direct Zenodo record confirms DOI 10.5281/zenodo.7999820, version v3, publication/created date 2023-06-02, and explicitly credits NOAA WPO Social Sciences Program grant NA21OAR4590208; it lists PDF/PPTX/XLSX files as components of this existing template record, not three independent outputs. Zenodo record 7600486 mentioned in BAMS remains unverified as to relation. Independent OpenAIRE aggregate record groups DOIs 10.5281/zenodo.7600486, .7600487, .7999180, and .7999820 under the same product title, providing evidence of a shared publication/version family; exact DataCite relatedIdentifiers and which DOI is concept versus version remain NOT VERIFIED. Do not count these as four independent outputs.",
+      "next_action": "No new candidate: the verified REACH record is reach-000822. Treat 7600486/7600487/7999180 as same-title possible version family per OpenAIRE, not independently countable until native DataCite relations are confirmed.",
       "research_evidence_urls": [
         "https://journals.ametsoc.org/view/journals/bams/104/9/BAMS-D-22-0220.1.xml",
         "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-007.csv",
         "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-097.csv",
-        "https://zenodo.org/records/7999820"
+        "https://zenodo.org/records/7999820",
+        "https://explore.openaire.eu/search/result?pid=10.5281%2Fzenodo.7999820"
       ],
       "last_substantive_research_date": "2026-11-01"
     }
