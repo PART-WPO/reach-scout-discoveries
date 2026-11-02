@@ -30,7 +30,7 @@
       "project_title": "Employing a combined observation and simulation- based framework to investigate spatiotemporal variability in urban heat and associated heat advection",
       "research_origin_method": "Independent discovery",
       "finding_purpose": "new_output_review",
-      "status": "PENDING_EXACT_DATACITE_METADATA_AND_INBOX_DEDUP",
+      "status": "STAGED_FOR_HUMAN_REVIEW",
       "award_evidence": "Native Mendeley dataset page directly names NOAA grant NA21OAR4590361, the same literal primary SPARK award for the urban heat observations project.",
       "native_source_result": "Mendeley Data lists Sandip Pal, Version 1, published May 23 2025; exact DataCite created date and DOI concept/version relations NOT VERIFIED. Do not substitute native published date for office DataCite created Pub Date.",
       "sources_checked": [
@@ -42,12 +42,32 @@
       ],
       "related_outputs_checked": "REACH reach-000118 and reach-000119 are distinct articles using U-HEAT data; do not confuse them with this dataset.",
       "missing_fields": [
-        "Exact DataCite created Pub Date and version relations",
-        "Dataset file inventory/access not independently verified",
-        "Complete pending Scout inbox dedup",
-        "Private Hub reviewer decisions NOT VERIFIED"
+        "Individual dataset files not independently opened; human public-scope review",
+        "Private Hub decisions NOT VERIFIED"
       ],
-      "next_action": "Unified GitHub independent metadata Action should query this exact DOI, then complete native version/file and inbox dedup before any 24-column human-review staging."
+      "next_action": "Reviewer uses Discovery Hub Sync to Scout to import this manifest-listed public proposal if not already imported; make human eligibility/approval decision; no automatic REACH edits.",
+      "metadata_enrichment_status": "ok",
+      "metadata_enrichment_checked_at_date": "2026-11-02",
+      "verified_metadata": {
+        "provider": "datacite",
+        "source": "https://api.datacite.org/dois/10.17632/43vrcwvdf8.1",
+        "pub_date": "2025-05-23",
+        "pub_date_basis": "DataCite created (office convention)",
+        "related_identifiers": [
+          {
+            "relationType": "IsVersionOf",
+            "relatedIdentifier": "10.17632/43vrcwvdf8"
+          }
+        ]
+      },
+      "scout_inbox_path": "scout-discoveries/inbox/2026-11-02-0430ET-urban-heat-flood-independent-001.csv",
+      "scout_batch_path": "scout-discoveries/batches/2026-11-02-0430ET-urban-heat-flood-independent-001.csv",
+      "scout_batch_sha256": "ec1aa8c564b71ef0df8ab55c5f039cf6b7c6970080fec2734aa45df622a326fb",
+      "scout_feed_status": "MANIFEST_PUBLISHED",
+      "review_classification": "NEEDS INVESTIGATION",
+      "hub_delivery_verified": false,
+      "human_approval_verified": false,
+      "public_reach_addition_verified": false
     },
     {
       "identity": "doi:10.1175/bams-d-25-0140.1",
@@ -59,7 +79,7 @@
       "project_title": "Improving Flood Inundation Mapping Using UAS-Based Optical Imagery",
       "research_origin_method": "Independent discovery",
       "finding_purpose": "new_output_review",
-      "status": "PENDING_EXACT_CROSSREF_METADATA_AND_INBOX_DEDUP",
+      "status": "STAGED_FOR_HUMAN_REVIEW",
       "award_evidence": "AMS publisher acknowledgments explicitly name WPO primary award NA21OAR4590366 and exact funded SPARK project title. This is source-specific same-project evidence.",
       "native_source_result": "Publisher confirms authors Jamie Dyer; Robert Moorhead; Lee Hathcock; Bryan Farrell; Peter McKinley, print 2026-05-01 and online 2026-05-20. WPO print-preferred date 2026-05-01 pending exact Crossref DOI checkpoint; do not use Crossref created.",
       "sources_checked": [
@@ -71,14 +91,32 @@
       ],
       "related_outputs_checked": "Publisher imagery available from corresponding author is not a separately verified public dataset DOI; do not stage as another output.",
       "missing_fields": [
-        "Exact Crossref DOI checkpoint not yet observed",
-        "Complete pending Scout inbox dedup",
-        "Private Hub reviewer decisions NOT VERIFIED"
+        "Private Hub decisions NOT VERIFIED"
       ],
-      "next_action": "Unified GitHub independent metadata Action should query exact Crossref DOI, then finish inbox dedup and stage one verified independent human-review proposal only if unique."
+      "next_action": "Reviewer uses Discovery Hub Sync to Scout to import this manifest-listed public proposal if not already imported; make human eligibility/approval decision; no automatic REACH edits.",
+      "metadata_enrichment_status": "ok",
+      "metadata_enrichment_checked_at_date": "2026-11-02",
+      "verified_metadata": {
+        "provider": "crossref",
+        "source": "https://api.crossref.org/works/10.1175/bams-d-25-0140.1",
+        "pub_date": "2026-05-01",
+        "pub_date_basis": "Crossref published-print 2026-05, month-imputed office convention"
+      },
+      "scout_inbox_path": "scout-discoveries/inbox/2026-11-02-0430ET-urban-heat-flood-independent-001.csv",
+      "scout_batch_path": "scout-discoveries/batches/2026-11-02-0430ET-urban-heat-flood-independent-001.csv",
+      "scout_batch_sha256": "ec1aa8c564b71ef0df8ab55c5f039cf6b7c6970080fec2734aa45df622a326fb",
+      "scout_feed_status": "MANIFEST_PUBLISHED",
+      "review_classification": "NEW CANDIDATE",
+      "hub_delivery_verified": false,
+      "human_approval_verified": false,
+      "public_reach_addition_verified": false
     }
   ],
-  "no_candidate_staged_this_run": true,
+  "no_candidate_staged_this_run": false,
   "library_report": "/REACH Scout Library/2026-11-02-0430ET-report.md",
-  "human_decisions_preserved": true
+  "human_decisions_preserved": true,
+  "public_scout_feed_verified": true,
+  "public_scout_feed_batch_count_after": 37,
+  "public_scout_feed_rows_after": 85,
+  "private_hub_import": "NOT_VERIFIED"
 }
