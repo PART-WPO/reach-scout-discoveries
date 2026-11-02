@@ -1,0 +1,84 @@
+{
+  "schema": "reach-scout-independent-award-research-leads-v1",
+  "run_id": "REACH-SCOUT-2026-11-02-HOURLY-0430ET",
+  "research_date": "2026-11-02",
+  "selected_mode": "normal_historical_discovery",
+  "award_numbers_examined": [
+    "NA21OAR4590361",
+    "NA21OAR4590366"
+  ],
+  "policy": "Only literal SPARK PRIMARY Award Number(s) may support WPO attribution. Both leads originated from independent SPARK award research; later API enrichment does not change origin. No Hub submission or approval until exact metadata and pending inbox dedup are complete.",
+  "public_reach_dedup": {
+    "index_shards_checked": 10,
+    "detail_shards_checked": 140,
+    "public_reach_rows": 1238,
+    "exact_candidate_matches": 0,
+    "scout_manifest_batches_checked": 36,
+    "scout_manifest_rows": 83,
+    "scout_exact_matches": 0,
+    "pending_inbox_complete_check": "NOT_VERIFIED",
+    "private_hub_feedback": "NOT_VERIFIED"
+  },
+  "leads": [
+    {
+      "identity": "doi:10.17632/43vrcwvdf8.1",
+      "output_url": "https://doi.org/10.17632/43vrcwvdf8.1",
+      "title": "U-HEAT (Urban Heat Experiment Around Lubbock, Texas) Datasets",
+      "output_type": "3",
+      "project_award": "NA21OAR4590361",
+      "spark_project_id": "spark-000328",
+      "project_title": "Employing a combined observation and simulation- based framework to investigate spatiotemporal variability in urban heat and associated heat advection",
+      "research_origin_method": "Independent discovery",
+      "finding_purpose": "new_output_review",
+      "status": "PENDING_EXACT_DATACITE_METADATA_AND_INBOX_DEDUP",
+      "award_evidence": "Native Mendeley dataset page directly names NOAA grant NA21OAR4590361, the same literal primary SPARK award for the urban heat observations project.",
+      "native_source_result": "Mendeley Data lists Sandip Pal, Version 1, published May 23 2025; exact DataCite created date and DOI concept/version relations NOT VERIFIED. Do not substitute native published date for office DataCite created Pub Date.",
+      "sources_checked": [
+        "https://data.mendeley.com/datasets/43vrcwvdf8/1",
+        "https://gmd.copernicus.org/articles/18/9237/2025/",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/index/part-004.csv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+        "https://api.datacite.org/dois/10.17632/43vrcwvdf8.1"
+      ],
+      "related_outputs_checked": "REACH reach-000118 and reach-000119 are distinct articles using U-HEAT data; do not confuse them with this dataset.",
+      "missing_fields": [
+        "Exact DataCite created Pub Date and version relations",
+        "Dataset file inventory/access not independently verified",
+        "Complete pending Scout inbox dedup",
+        "Private Hub reviewer decisions NOT VERIFIED"
+      ],
+      "next_action": "Unified GitHub independent metadata Action should query this exact DOI, then complete native version/file and inbox dedup before any 24-column human-review staging."
+    },
+    {
+      "identity": "doi:10.1175/bams-d-25-0140.1",
+      "output_url": "https://doi.org/10.1175/BAMS-D-25-0140.1",
+      "title": "Near-Real-Time Inundation Mapping Utilizing Large Uncrewed Aerial System Platforms",
+      "output_type": "1",
+      "project_award": "NA21OAR4590366",
+      "spark_project_id": "spark-000334",
+      "project_title": "Improving Flood Inundation Mapping Using UAS-Based Optical Imagery",
+      "research_origin_method": "Independent discovery",
+      "finding_purpose": "new_output_review",
+      "status": "PENDING_EXACT_CROSSREF_METADATA_AND_INBOX_DEDUP",
+      "award_evidence": "AMS publisher acknowledgments explicitly name WPO primary award NA21OAR4590366 and exact funded SPARK project title. This is source-specific same-project evidence.",
+      "native_source_result": "Publisher confirms authors Jamie Dyer; Robert Moorhead; Lee Hathcock; Bryan Farrell; Peter McKinley, print 2026-05-01 and online 2026-05-20. WPO print-preferred date 2026-05-01 pending exact Crossref DOI checkpoint; do not use Crossref created.",
+      "sources_checked": [
+        "https://journals.ametsoc.org/view/journals/bams/aop/BAMS-D-25-0140.1/BAMS-D-25-0140.1.xml",
+        "https://journals.ametsoc.org/view/journals/bams/107/5/BAMS-D-25-0140.1.xml",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/index/part-004.csv",
+        "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-026.csv",
+        "https://api.crossref.org/works/10.1175/BAMS-D-25-0140.1"
+      ],
+      "related_outputs_checked": "Publisher imagery available from corresponding author is not a separately verified public dataset DOI; do not stage as another output.",
+      "missing_fields": [
+        "Exact Crossref DOI checkpoint not yet observed",
+        "Complete pending Scout inbox dedup",
+        "Private Hub reviewer decisions NOT VERIFIED"
+      ],
+      "next_action": "Unified GitHub independent metadata Action should query exact Crossref DOI, then finish inbox dedup and stage one verified independent human-review proposal only if unique."
+    }
+  ],
+  "no_candidate_staged_this_run": true,
+  "library_report": "/REACH Scout Library/2026-11-02-0430ET-report.md",
+  "human_decisions_preserved": true
+}
