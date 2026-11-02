@@ -164,7 +164,7 @@
       "project_funding_verified": false,
       "full_reach_and_scout_dedup_verified": false,
       "hub_delivery_verified": false,
-      "findings": "2026-11-01 21:27 ET: The original journal article PDF page 11 explicitly states that data supporting its findings are openly available under DOI 10.5281/zenodo.22758716 (Nedza 2026). This is a publisher-identified DATA lead, not a verified independently created WPO output. The article itself acknowledges NA24OARX459C0015, but this does NOT independently establish the dataset's own funding, creators, type, exact title, creation date, concept/version family, or whether the dataset is already in REACH/Scout. GitHub code-search index for exact numeric DOI returned no matches in REACH/Scout repositories, but this is NOT a complete index/detail/secondary-link dedup. Direct DataCite and Zenodo metadata retrieval did not succeed in this mission. Do not stage or count as a new WPO output yet.",
+      "findings": "2026-11-01 21:27 ET: The original journal article PDF page 11 explicitly states that data supporting its findings are openly available under DOI 10.5281/zenodo.22758716 (Nedza 2026). This is a publisher-identified DATA lead, not a verified independently created WPO output. The article itself acknowledges NA24OARX459C0015, but this does NOT independently establish the dataset's own funding, creators, type, exact title, creation date, concept/version family, or whether the dataset is already in REACH/Scout. GitHub code-search index for exact numeric DOI returned no matches in REACH/Scout repositories, but this is NOT a complete index/detail/secondary-link dedup. Direct DataCite and Zenodo metadata retrieval did not succeed in this mission. Do not stage or count as a new WPO output yet. November 1 22:29 EST bounded native-metadata attempt: exact DataCite DOI endpoint and Zenodo record/API endpoints could not be retrieved from the available browsing/network interfaces (access errors); this is an access limitation, NOT negative metadata or proof of nonexistence. Existing publisher Data Availability DOI remains the only confirmed source. Dataset title, creators, own funding, created date and concept/version relationships remain unverified. Do not stage or count new output.",
       "metadata_missing": [
         "native DataCite or Zenodo record",
         "title",
@@ -174,13 +174,25 @@
         "concept/version relation",
         "full REACH and Scout identity screening"
       ],
-      "next_action": "Run the existing independent DOI metadata checkpoint against DataCite/Zenodo for this exact DOI; verify native record, project-specific WPO funding, any concept/version relation, and full REACH/Scout index+detail+secondary-link dedup. Distinguish supporting research data from reused input or article supplement before any human-review proposal.",
+      "next_action": "Retry native DataCite/Zenodo exact DOI metadata through the existing independent DOI checkpoint when network access permits; do not confuse a source-access error with absent dataset. Independently verify title, creators, created date, own WPO project funding, concept/version identity, and complete REACH/Scout duplicate links before human review.",
       "research_evidence_urls": [
         "https://repository.library.noaa.gov/view/noaa/76692/noaa_76692_DS1.pdf",
         "https://repository.library.noaa.gov/view/noaa/76692",
         "https://doi.org/10.5281/zenodo.22758716"
       ],
-      "last_substantive_research_date": "2026-11-01"
+      "last_substantive_research_date": "2026-11-01",
+      "metadata_retrieval_attempt_2026_11_01_2229ET": {
+        "attempted_urls": [
+          "https://api.datacite.org/dois/10.5281/zenodo.22758716",
+          "https://zenodo.org/records/22758716",
+          "https://zenodo.org/api/records/22758716"
+        ],
+        "outcome": "SOURCE_INACCESSIBLE",
+        "source_record_absence_proven": false,
+        "metadata_verified": false,
+        "hub_candidate_created": false,
+        "original_seed_doi": "10.1088/2515-7620/aeaad2"
+      }
     }
   ]
 }
