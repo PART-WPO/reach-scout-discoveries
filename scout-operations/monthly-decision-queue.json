@@ -68,7 +68,8 @@
   "human_hub_import_status": "NOT_VERIFIED",
   "original_case_count": 13,
   "original_track_counts": {
-    "research_terminal": 13
+    "preprint_watchlist_hold": 1,
+    "research_terminal": 12
   },
   "originals": [
     {
@@ -193,19 +194,6 @@
       "decision_review_due": false,
       "decision_track": "research_terminal",
       "explicit_draft_gate_passed": false,
-      "identity": "doi:10.5194/egusphere-2026-5876",
-      "ledger_status": "staged_for_hub_import",
-      "next_action": "Complete only the named blocker(s), then create evidence-backed candidate / no-action / human referral; do not repeat general discovery scans.",
-      "original_review_independent_of_expansion": true,
-      "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
-      "source_evidence_count": 14,
-      "unresolved_checks": []
-    },
-    {
-      "cohort": "2026-10",
-      "decision_review_due": false,
-      "decision_track": "research_terminal",
-      "explicit_draft_gate_passed": false,
       "identity": "doi:10.5194/tc-20-5973-2026",
       "ledger_status": "staged_for_hub_import",
       "next_action": "Complete only the named blocker(s), then create evidence-backed candidate / no-action / human referral; do not repeat general discovery scans.",
@@ -239,6 +227,21 @@
       "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
       "source_evidence_count": 14,
       "unresolved_checks": []
+    },
+    {
+      "cohort": "2026-10",
+      "decision_review_due": false,
+      "decision_track": "preprint_watchlist_hold",
+      "explicit_draft_gate_passed": false,
+      "identity": "doi:10.5194/egusphere-2026-5876",
+      "ledger_status": "staged_for_hub_import",
+      "next_action": "Complete only the named blocker(s), then create evidence-backed candidate / no-action / human referral; do not repeat general discovery scans.",
+      "original_review_independent_of_expansion": true,
+      "source_batch_id": "2026-11-01-monthly-api-2026-10-primary-only-part001",
+      "source_evidence_count": 14,
+      "unresolved_checks": [
+        "Do not stage the preprint DOI. Preserve its seeded research and monitor for a verified official article DOI."
+      ]
     }
   ],
   "policy": "Research routing only. Complete original-output identity/funding/metadata checks promptly, make evidence-backed decision after bounded follow-up; separately investigate linked outputs. No approvals, Hub imports, drafts, or public REACH changes are implied.",
