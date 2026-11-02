@@ -96,7 +96,9 @@
         "https://github.com/MESH-Team/MESH_Code_irregular/releases/tag/Mesh_Diffusive_CNS_v0.1",
         "https://github.com/MESH-Team/MESH_Code_irregular",
         "https://api.github.com/repos/MESH-Team/MESH_Code_irregular",
-        "https://api.github.com/repos/MESH-Team/MESH_Code_irregular/releases/tags/Mesh_Diffusive_CNS_v0.1"
+        "https://api.github.com/repos/MESH-Team/MESH_Code_irregular/releases/tags/Mesh_Diffusive_CNS_v0.1",
+        "https://github.com/MESH-Team/MESH_Code_irregular/blob/Mesh_Diffusive_CNS_v0.1/README.md",
+        "https://github.com/MESH-Team/MESH_Code_irregular/blob/Mesh_Diffusive_CNS_v0.1/LICENSE"
       ],
       "missing_fields": [
         "release-tag source tree/file and code artifact scope confirmation",
@@ -104,7 +106,7 @@
         "private Discovery Hub reviewer disposition (not observable)"
       ],
       "native_source_result": "Publisher links exact artifact. GitHub connector retrieved tagged README successfully.",
-      "next_action": "Exact release published_at and repository MIT license recovered via GitHub API. Empty release assets do not mean no source code; inspect tagged source tree, confirm independently catalogable code artifact and funding bridge from parent article, complete current REACH/Scout/private review dedup, then stage for human review if eligible.",
+      "next_action": "Exact tag README and MIT license confirmed. Default-branch Fortran src paths do not exist at this tag; await full tagged Git tree inventory before claiming code-file scope. Verify funding, full dedup and human review.",
       "metadata_enrichment_status": "ok",
       "metadata_enrichment_checked_at_date": "2026-11-02",
       "verified_metadata": {
@@ -118,6 +120,25 @@
         "release_name": "MESH_Diffusive_CNS_v.0.1",
         "release_published_at": "2022-03-27T02:40:41Z",
         "release_assets_count": 0
+      },
+      "tagged_source_tree_spot_check": {
+        "checked_date": "2026-11-02",
+        "tag": "Mesh_Diffusive_CNS_v0.1",
+        "files": [
+          {
+            "path": "README.md",
+            "description": "README describes Fortran90 MESH code adapted for irregular cross section"
+          },
+          {
+            "path": "LICENSE",
+            "description": "MIT license at exact release tag"
+          }
+        ],
+        "source_urls": [
+          "https://github.com/MESH-Team/MESH_Code_irregular/blob/Mesh_Diffusive_CNS_v0.1/README.md",
+          "https://github.com/MESH-Team/MESH_Code_irregular/blob/Mesh_Diffusive_CNS_v0.1/LICENSE"
+        ],
+        "finding": "README and license confirmed at exact release tag. Default-branch src/*.f90 paths returned 404 when checked at this tag; this does not prove the release lacks source code. Exact tag tree inventory required."
       }
     },
     {
@@ -148,15 +169,18 @@
         "https://github.com/MESH-Team/MESH_CNT/releases/tag/MESH_CNT_v0.1",
         "https://github.com/MESH-Team/MESH_CNT",
         "https://api.github.com/repos/MESH-Team/MESH_CNT",
-        "https://api.github.com/repos/MESH-Team/MESH_CNT/releases/tags/MESH_CNT_v0.1"
+        "https://api.github.com/repos/MESH-Team/MESH_CNT/releases/tags/MESH_CNT_v0.1",
+        "https://github.com/MESH-Team/MESH_CNT/blob/MESH_CNT_v0.1/arrays_module.f90",
+        "https://github.com/MESH-Team/MESH_CNT/blob/MESH_CNT_v0.1/mainLoop_Moussa_test_repeatTimeLoop.f90",
+        "https://github.com/MESH-Team/MESH_CNT/blob/MESH_CNT_v0.1/README.md"
       ],
       "missing_fields": [
-        "release-tag source tree/file and code artifact scope confirmation",
         "fresh full REACH/Scout secondary-link and version duplicate check",
-        "private Discovery Hub reviewer disposition (not observable)"
+        "private Discovery Hub reviewer disposition (not observable)",
+        "full tagged source tree inventory and separately catalogable scope"
       ],
       "native_source_result": "Publisher links exact artifact. GitHub connector retrieved tagged README successfully.",
-      "next_action": "Exact release published_at and repository MIT license recovered via GitHub API. Empty release assets do not mean no source code; inspect tagged source tree, confirm independently catalogable code artifact and funding bridge from parent article, complete current REACH/Scout/private review dedup, then stage for human review if eligible.",
+      "next_action": "Tag-specific source code and MIT license confirmed; await new GitHub Actions full tree inventory, verify award and full REACH/Scout secondary-link duplicates, then prepare human review if distinct. Preserve Independent discovery.",
       "metadata_enrichment_status": "ok",
       "metadata_enrichment_checked_at_date": "2026-11-02",
       "verified_metadata": {
@@ -170,6 +194,36 @@
         "release_name": "MESH_Diffusive_CN-Mod_v.0.1",
         "release_published_at": "2022-03-25T15:52:45Z",
         "release_assets_count": 0
+      },
+      "tagged_source_tree_spot_check": {
+        "checked_date": "2026-11-02",
+        "tag": "MESH_CNT_v0.1",
+        "files": [
+          {
+            "path": "arrays_module.f90",
+            "sha": "36285a3735f54f69bd73cccdc9d0a62b62605466",
+            "description": "Fortran90 array module, verified at exact release tag"
+          },
+          {
+            "path": "mainLoop_Moussa_test_repeatTimeLoop.f90",
+            "sha": "76a746f4d27e5efaffb9f99460f9aefa4b0d9459",
+            "description": "Fortran90 program mesh, verified at exact release tag"
+          },
+          {
+            "path": "README.md",
+            "description": "README states this release implements CNT diffusive wave equation with variable timestep and lateral flow handling"
+          },
+          {
+            "path": "LICENSE",
+            "description": "MIT license at exact release tag"
+          }
+        ],
+        "source_urls": [
+          "https://github.com/MESH-Team/MESH_CNT/blob/MESH_CNT_v0.1/arrays_module.f90",
+          "https://github.com/MESH-Team/MESH_CNT/blob/MESH_CNT_v0.1/mainLoop_Moussa_test_repeatTimeLoop.f90",
+          "https://github.com/MESH-Team/MESH_CNT/blob/MESH_CNT_v0.1/README.md"
+        ],
+        "finding": "Verified substantive Fortran source code exists at the exact release tag; empty release attachments do not mean missing source code. Full tree inventory and funding/dedup still pending."
       }
     }
   ],
