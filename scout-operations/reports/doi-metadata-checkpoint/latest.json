@@ -1,10 +1,10 @@
 {
   "fields_recoverable": {
-    "abstract": 5,
-    "creators": 5,
-    "pub_date": 12,
-    "title": 5,
-    "type": 5
+    "abstract": 7,
+    "creators": 7,
+    "pub_date": 14,
+    "title": 7,
+    "type": 7
   },
   "policy": "DataCite uses created (office policy). Crossref uses published-print first, published-online if print absent, and published/issued/posted fallback; month-only dates get YYYY-MM-01. Crossref created never fills Pub Date. Existing reviewer dates preserved.",
   "read_only": true,
@@ -16899,6 +16899,57 @@
     },
     {
       "checkpoint_state": "FIELDS_RECOVERABLE",
+      "doi": "10.5281/zenodo.4433147",
+      "metadata": {
+        "abstract": "The data include Southeast US rainfall index based on GPCC monthly precipitation and 30 CMIP5 model historical simulations (first realization). Each rainfall dataset, observed or model simulated, has been linearly detrended and applied with a 5-year low-pass filter. The Southeast US rainfall index is calculated as the area averaged values of 5-year low-pass filtered rainfall over land regions bounded by 25°-38°N and 266°-284°E. The unit here is mm/day.",
+        "access_rights": [
+          "Creative Commons Attribution 4.0 International",
+          "Open Access"
+        ],
+        "created": "2021-01-12T01:20:01.000Z",
+        "creators": [
+          "Zhang, Wei"
+        ],
+        "evidence": "https://api.datacite.org/dois/10.5281/zenodo.4433147",
+        "funding_in_description": [],
+        "funding_structured": [],
+        "listed_formats": 0,
+        "listed_sizes": 0,
+        "pub_date": "2021-01-12",
+        "publisher": "Zenodo",
+        "reach_type": "3",
+        "registered": "2021-01-12T01:20:02.000Z",
+        "related": [
+          "IsVersionOf: 10.5281/zenodo.4433146"
+        ],
+        "resource_type": "Dataset",
+        "source": "datacite",
+        "status": "ok",
+        "title": "Southeast US rainfall index for GRL paper \"The Influence of a Resolved Gulf Stream on the Decadal Variability of Southeast US Rainfall\"",
+        "version": ""
+      },
+      "original_rows": [],
+      "origins": [
+        "independent_research_lead"
+      ],
+      "prior_fields": {
+        "abstract": false,
+        "creators": false,
+        "pub_date": false,
+        "title": false,
+        "type": false
+      },
+      "recoverable_fields": [
+        "title",
+        "creators",
+        "type",
+        "abstract",
+        "pub_date"
+      ],
+      "review_keys": []
+    },
+    {
+      "checkpoint_state": "FIELDS_RECOVERABLE",
       "doi": "10.5281/zenodo.4526127",
       "metadata": {
         "abstract": "This is a supplement to the journal article titled Uncertainty in Remote Sensing of Streams using Noncontact Radars by Khan et al., submitted to the Journal of Hydrology. Dataset includes time series of variables collected by 8 stream radars. A kmz file is included for the stream radar locations.",
@@ -16950,6 +17001,57 @@
       "review_keys": [
         "case-36-anchor-stream-radar"
       ]
+    },
+    {
+      "checkpoint_state": "FIELDS_RECOVERABLE",
+      "doi": "10.5281/zenodo.5057616",
+      "metadata": {
+        "abstract": "This archive contains model simulations of precipitation used in the GRL paper \"The Influence of a Resolved Gulf Stream on the Decadal Variability of Southeast US Rainfall\" (Zhang et al., 2021). These model simulations are standard control simulations based on the Community Climate System Model Version 4.0 (CCSM4) using eddying (HR) and eddy-parameterizing (LR) ocean component models. <em><strong>In order to properly acknowledge those who have worked hard to create those data sets we do require that if this data is used in a publication that coauthorship be offered to those involved in the data creation. Please contact the author Dr. Wei Zhang (email: wz19@princeton.edu) for any further questions or potential collaboration. </strong></em>",
+        "access_rights": [
+          "Creative Commons Attribution 3.0 United States",
+          "Open Access"
+        ],
+        "created": "2021-07-02T00:34:38.000Z",
+        "creators": [
+          "Zhang, Wei"
+        ],
+        "evidence": "https://api.datacite.org/dois/10.5281/zenodo.5057616",
+        "funding_in_description": [],
+        "funding_structured": [],
+        "listed_formats": 0,
+        "listed_sizes": 0,
+        "pub_date": "2021-07-02",
+        "publisher": "Zenodo",
+        "reach_type": "3",
+        "registered": "2021-07-02T00:34:39.000Z",
+        "related": [
+          "IsVersionOf: 10.5281/zenodo.5057615"
+        ],
+        "resource_type": "Dataset",
+        "source": "datacite",
+        "status": "ok",
+        "title": "CCSM4 LR and HR Model Simulations for GRL paper \"The Influence of a Resolved Gulf Stream on the Decadal Variability of Southeast US Rainfall\"",
+        "version": ""
+      },
+      "original_rows": [],
+      "origins": [
+        "independent_research_lead"
+      ],
+      "prior_fields": {
+        "abstract": false,
+        "creators": false,
+        "pub_date": false,
+        "title": false,
+        "type": false
+      },
+      "recoverable_fields": [
+        "title",
+        "creators",
+        "type",
+        "abstract",
+        "pub_date"
+      ],
+      "review_keys": []
     },
     {
       "checkpoint_state": "SCOUT_FIELDS_ALREADY_COVERED",
@@ -18756,7 +18858,7 @@
       ]
     }
   ],
-  "records_with_new_metadata": 12,
+  "records_with_new_metadata": 14,
   "schema": "reach-scout-doi-enrichment-audit-v1",
   "sources": {
     "historical": {
@@ -18770,8 +18872,8 @@
       "entries": 188
     },
     "independent_research_leads": {
-      "doi_leads": 15,
-      "files": 8
+      "doi_leads": 17,
+      "files": 9
     },
     "metadata_blockers": {
       "entries": 48
@@ -18790,10 +18892,10 @@
     }
   },
   "state_counts": {
-    "FIELDS_RECOVERABLE": 12,
+    "FIELDS_RECOVERABLE": 14,
     "HISTORICAL_FIELDS_ALREADY_COVERED": 144,
     "SCOUT_FIELDS_ALREADY_COVERED": 95
   },
-  "successful_lookups": 251,
-  "unique_dois": 251
+  "successful_lookups": 253,
+  "unique_dois": 253
 }
