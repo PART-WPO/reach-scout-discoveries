@@ -485,19 +485,26 @@
     },
     {
       "identity": "doi:10.1002/hyp.13998",
-      "status": "awaiting_research",
-      "seed_expansion_status": "awaiting_exploration",
+      "status": "investigating",
+      "seed_expansion_status": "investigating",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:18:29.120941+00:00",
-      "research_notes": "",
-      "checked_sources": [],
+      "updated_at": "2026-11-03T17:00:00Z",
+      "research_notes": "Nov 3 source-specific substantive check: official NOAA IR identifies original journal article and DOI; Wiley publisher confirms grant NA17OAR4590185, author list, journal publication history (version of record online 2020-12-19, issue online 2021-01-25) and direct reference to independently identified soil moisture dataset DOI 10.6075/J0SN07G9. Original REACH/Scout full-shard DOI/title/version/secondary URL dedup and exact primary SPARK project match NOT yet completed; no original disposition or candidate approval implied.",
+      "checked_sources": [
+        "https://repository.library.noaa.gov/view/noaa/57177",
+        "https://onlinelibrary.wiley.com/doi/abs/10.1002/hyp.13998",
+        "https://onlinelibrary.wiley.com/doi/10.1002/hyp.13998"
+      ],
       "reach_snapshot": "",
-      "funding_basis": "",
-      "related_outputs_checked": "",
+      "funding_basis": "Wiley article Funding information explicitly lists Climate Program Office award NA17OAR4590185; same-project SPARK PRIMARY award still requires verification before eligible staging.",
+      "related_outputs_checked": "Wiley article references Sumargo et al. (2020) dataset 'Data from: A soil moisture monitoring network to assess controls on runoff generation during Atmospheric River events', DOI 10.6075/J0SN07G9; distinct identity, DataCite/native metadata, primary award, full REACH/Scout dedup, version and scope remain unverified.",
       "verified_at": "",
       "verified_awards": [],
-      "seed_checked_sources": [],
-      "seed_research_notes": "",
+      "seed_checked_sources": [
+        "https://onlinelibrary.wiley.com/doi/10.1002/hyp.13998",
+        "https://doi.org/10.6075/J0SN07G9"
+      ],
+      "seed_research_notes": "New concrete API-seeded expansion lead: dataset DOI 10.6075/J0SN07G9 explicitly cited in source article bibliography and data-availability statement; research lead ONLY, not validated candidate. Resume exact DOI metadata and funding/dedup checks; original seed and expansion both remain open.",
       "source_overlap_hints": [],
       "present_in_published_scout_feed_at_intake": false,
       "award_numbers": [
