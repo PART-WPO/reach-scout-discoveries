@@ -1,0 +1,112 @@
+{
+  "schema": "reach-scout-hourly-audit-v1",
+  "run_id": "2026-11-03-1332ET-crossref-placeholder-scope-gates-001",
+  "run_local_time": "2026-11-03T13:32:55-05:00",
+  "selected_mode": "historical_crossref_triage",
+  "result": "PARTIAL",
+  "work_performed": "Persisted structured non-staging primary-award scope gates for 10 already source-screened historical Crossref DOI records with invalid UNK/BAA tokens; preserved investigating original status and independent pending seed expansion. No new full REACH/Scout dedup, primary-award attribution, or related-output exploration completed this run.",
+  "selected_dois": [
+    {
+      "doi": "10.1002/jwmg.732",
+      "scope": "invalid primary-award placeholder",
+      "original_status": "investigating",
+      "seed_expansion_status": "pending",
+      "candidate_staging_eligible": false,
+      "source_url": "https://api.crossref.org/works/10.1002/jwmg.732"
+    },
+    {
+      "doi": "10.1007/s00330-020-07133-9",
+      "scope": "invalid primary-award placeholder",
+      "original_status": "investigating",
+      "seed_expansion_status": "pending",
+      "candidate_staging_eligible": false,
+      "source_url": "https://api.crossref.org/works/10.1007/s00330-020-07133-9"
+    },
+    {
+      "doi": "10.1007/s12035-019-01667-w",
+      "scope": "invalid primary-award placeholder",
+      "original_status": "investigating",
+      "seed_expansion_status": "pending",
+      "candidate_staging_eligible": false,
+      "source_url": "https://api.crossref.org/works/10.1007/s12035-019-01667-w"
+    },
+    {
+      "doi": "10.1088/1402-4896/ae2296",
+      "scope": "invalid primary-award placeholder",
+      "original_status": "investigating",
+      "seed_expansion_status": "pending",
+      "candidate_staging_eligible": false,
+      "source_url": "https://api.crossref.org/works/10.1088/1402-4896/ae2296"
+    },
+    {
+      "doi": "10.1177/13623613251341012",
+      "scope": "invalid primary-award placeholder",
+      "original_status": "investigating",
+      "seed_expansion_status": "pending",
+      "candidate_staging_eligible": false,
+      "source_url": "https://api.crossref.org/works/10.1177/13623613251341012"
+    },
+    {
+      "doi": "10.1371/journal.pone.0193711",
+      "scope": "invalid primary-award placeholder",
+      "original_status": "investigating",
+      "seed_expansion_status": "pending",
+      "candidate_staging_eligible": false,
+      "source_url": "https://api.crossref.org/works/10.1371/journal.pone.0193711"
+    },
+    {
+      "doi": "10.14309/ctg.0000000000000725",
+      "scope": "invalid primary-award placeholder",
+      "original_status": "investigating",
+      "seed_expansion_status": "pending",
+      "candidate_staging_eligible": false,
+      "source_url": "https://api.crossref.org/works/10.14309/ctg.0000000000000725"
+    },
+    {
+      "doi": "10.3390/c4040066",
+      "scope": "invalid primary-award placeholder",
+      "original_status": "investigating",
+      "seed_expansion_status": "pending",
+      "candidate_staging_eligible": false,
+      "source_url": "https://api.crossref.org/works/10.3390/c4040066"
+    },
+    {
+      "doi": "10.3390/drones3020038",
+      "scope": "invalid primary-award placeholder",
+      "original_status": "investigating",
+      "seed_expansion_status": "pending",
+      "candidate_staging_eligible": false,
+      "source_url": "https://api.crossref.org/works/10.3390/drones3020038"
+    },
+    {
+      "doi": "10.3390/jcm13195732",
+      "scope": "invalid primary-award placeholder",
+      "original_status": "investigating",
+      "seed_expansion_status": "pending",
+      "candidate_staging_eligible": false,
+      "source_url": "https://api.crossref.org/works/10.3390/jcm13195732"
+    }
+  ],
+  "before": {
+    "originals_completed": 48,
+    "investigating": 13,
+    "awaiting_research": 553,
+    "seed_expansions_completed": 0,
+    "seed_expansion_pending": 614
+  },
+  "after": {
+    "originals_completed": 48,
+    "investigating": 13,
+    "awaiting_research": 553,
+    "seed_expansions_completed": 0,
+    "seed_expansion_pending": 614
+  },
+  "candidate_inbox_staged": 0,
+  "hub_import": "NOT_VERIFIED",
+  "commit_sha": "7644a76fe29905e242628778319387f7931bed0c",
+  "ledger_file": "scout-operations/historical-crossref-triage.json",
+  "coverage_file": "scout-operations/historical-crossref-coverage.json",
+  "coverage_regeneration": "NOT_EXECUTED; counts unchanged, repository scripts not executable through available connector; live coverage read verified unchanged",
+  "reason_for_zero_delta": "Funding-scope gate is a nonterminal safety classification; full original duplicate and expansion research not completed. GitHub connector supports file commits but no local repo script execution.",
+  "next_action": "Select valid-award actionable originals, perform full REACH/Scout identity and same-project primary SPARK checks, persist evidenced original disposition and separate seed expansion; run established coverage builder."
+}
