@@ -1,0 +1,48 @@
+{
+  "schema": "reach-scout-hourly-audit-v1",
+  "run_id": "2026-11-03-0325ET-crossref-readonly-check",
+  "observed_at": "2026-11-03T08:25:09Z",
+  "selected_mode": "historical_crossref_triage",
+  "audit_result": "PARTIAL",
+  "work_performed": "Read current public monthly and historical Crossref routing, coverage, original triage, historical source manifest, Scout manifest and lightweight preprint/NOAA IR policies; identified eleven investigating Crossref originals including unrelated-domain structured award false-positive risks. No independent source-level DOI research or full-shard dedup performed in this checkpoint; no dispositions advanced.",
+  "monthly": {
+    "received": 13,
+    "checked": 13,
+    "staged_public_feed": 8,
+    "private_hub_import": "NOT_VERIFIED"
+  },
+  "historical_crossref": {
+    "raw_rows": 614,
+    "distinct_dois": 614,
+    "originals_completed": 48,
+    "fully_investigated": 0,
+    "remaining": 614,
+    "already_in_reach": 9,
+    "no_action": 39,
+    "seed_expansion_pending": 614,
+    "source_manifest_batches": 7,
+    "source_batch_sha_verification": "NOT_PERFORMED"
+  },
+  "historical_datacite": {
+    "completed": 188,
+    "remaining": 0
+  },
+  "scout_feed": {
+    "candidate_rows": 83,
+    "batches": 30,
+    "manifest_read": true,
+    "full_sha_verification": "NOT_PERFORMED"
+  },
+  "new_candidates": 0,
+  "new_preprint_holds": 0,
+  "new_published_leads": 0,
+  "new_ir_lookups": 0,
+  "new_ir_matches": 0,
+  "public_reach_additions": "NOT_VERIFIED",
+  "human_approvals": "NOT_VERIFIED",
+  "blockers": [
+    "No substantive DOI research or full REACH/Scout dedup completed during this checkpoint",
+    "No full SHA verification of source batches or Scout feed"
+  ],
+  "next_priority": "Continue expedited Crossref original identity and exact primary-project award checks, then independently preserve DOI-seeded expansions; avoid repeated preprint and IR inventory sweeps."
+}
