@@ -1,0 +1,42 @@
+{
+  "schema": "reach-scout-hourly-research-audit-v1",
+  "run_local": "2026-11-03 12:25 ET",
+  "mode": "historical_crossref_triage",
+  "status": "PARTIAL",
+  "selected_dois": [
+    "10.1002/met.70089"
+  ],
+  "research_summary": "Publisher article and NOAA IR verified; split NOAA funding by study component; preserved original and expansion lanes pending full REACH/Scout dedup and exact primary SPARK award.",
+  "source_urls": [
+    "https://rmets.onlinelibrary.wiley.com/doi/abs/10.1002/met.70089",
+    "https://repository.library.noaa.gov/view/noaa/71980"
+  ],
+  "before": {
+    "originals_completed": 48,
+    "investigating": 12,
+    "awaiting_research": 554,
+    "seed_expansions_completed": 0,
+    "seed_expansion_pending": 614
+  },
+  "expected_after": {
+    "originals_completed": 48,
+    "investigating": 13,
+    "awaiting_research": 553,
+    "seed_expansions_completed": 0,
+    "seed_expansion_pending": 614
+  },
+  "verified_ledger_commit": "415d45f799bb1e1a7504509f2662bd1316a17eb5",
+  "original_dispositions_completed_this_run": 0,
+  "seed_expansions_completed_this_run": 0,
+  "candidates_staged": 0,
+  "hub_import": "NOT_VERIFIED",
+  "coverage_regeneration": "PENDING_VERIFICATION",
+  "blockers": [
+    "Full REACH index/detail and Scout published/pending duplicate checks not yet completed",
+    "Exact SPARK same-project primary award check outstanding",
+    "No verified distinct DOI for related LDP product",
+    "Coverage generation and workflow status not yet confirmed"
+  ],
+  "feed_integrity_status": "NOT_CHECKED_NO_NEW_BATCH",
+  "audit_result": "PARTIAL"
+}
