@@ -1,0 +1,62 @@
+{
+  "schema": "reach-scout-hourly-run-audit-v1",
+  "run_id": "2026-11-02-2026ET-crossref-readonly-checkpoint",
+  "observed_at_local": "2026-11-02T20:26:46-05:00",
+  "mode": "historical_crossref_triage",
+  "audit_result": "PARTIAL",
+  "read_only_checkpoint": true,
+  "source_repo": "PART-WPO/reach-scout-discoveries",
+  "source_paths": [
+    "api-discoveries/historical-crossref/manifest.json",
+    "scout-operations/historical-crossref-triage.json",
+    "scout-operations/historical-crossref-coverage.json",
+    "scout-operations/monthly-triage.json",
+    "scout-operations/coverage.json",
+    "scout-operations/preprint-watchlist.json",
+    "scout-operations/preprint-publication-leads.json",
+    "scout-operations/noaa-ir/manifest.json",
+    "scout-discoveries/manifest.json"
+  ],
+  "monthly": {
+    "received": 13,
+    "originals_staged_public_feed": 8,
+    "private_hub_import": "NOT_VERIFIED"
+  },
+  "crossref": {
+    "distinct": 614,
+    "originals_completed": 48,
+    "remaining_full_investigation": 614,
+    "existing_reach": 9,
+    "no_action": 39,
+    "seed_expansion_pending": 614,
+    "seed_expansion_completed": 0,
+    "source_sha_batches": "NOT_INDEPENDENTLY_VERIFIED_THIS_RUN"
+  },
+  "preprints": {
+    "tracked": 41,
+    "with_published_version": 32,
+    "official_article_leads": 30,
+    "already_in_reach": 17,
+    "already_in_scout_feed": 2,
+    "awaiting_full_review": 11,
+    "preprint_dois_submitted_as_new_outputs": 0
+  },
+  "noaa_ir": {
+    "index_complete_declared": true,
+    "declared_shards": 16,
+    "shard_sha_verified_this_run": false,
+    "new_outputs_checked_this_run": 0,
+    "verified_true_this_run": 0,
+    "inconclusive_this_run": 0,
+    "no_index_this_run": 0
+  },
+  "new_research_checks": 0,
+  "new_candidates_staged": 0,
+  "new_hub_imports_verified": 0,
+  "new_public_reach_additions_verified": 0,
+  "limitations": [
+    "This checkpoint read published ledgers but did not complete substantive DOI research or independent source-batch SHA checks.",
+    "No new candidate or research disposition was generated; do not count as mission research completion.",
+    "Private Hub import, approvals and public REACH changes not independently verified."
+  ]
+}
