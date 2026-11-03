@@ -1,0 +1,64 @@
+{
+  "schema": "reach-scout-hourly-audit-v1",
+  "run_id": "2026-11-03-1532ET-crossref-soil-moisture-source-001",
+  "timestamp": "2026-11-03T20:32:53Z",
+  "selected_mode": "historical_crossref_triage",
+  "result": "PARTIAL",
+  "selected_dois": [
+    "10.1002/hyp.13998"
+  ],
+  "original_status_before": "investigating",
+  "original_status_after": "investigating",
+  "seed_expansion_status_before": "investigating",
+  "seed_expansion_status_after": "investigating",
+  "source_checks": [
+    {
+      "url": "https://repository.library.noaa.gov/view/noaa/57177",
+      "result": "Exact DOI, title, authors and grant NA17OAR4590185 verified"
+    },
+    {
+      "url": "https://onlinelibrary.wiley.com/doi/10.1002/hyp.13998",
+      "result": "Publisher Climate Program Office award NA17OAR4590185 and explicit separate UCSD dataset DOI 10.6075/J0SN07G9 confirmed"
+    },
+    {
+      "url": "https://repository.library.noaa.gov/view/noaa/57177/noaa_57177_DS1.pdf",
+      "result": "Official accepted manuscript cites exact distinct dataset DOI"
+    },
+    {
+      "url": "https://doi.org/10.6075/J0SN07G9",
+      "result": "DOI resolver inaccessible; native dataset metadata NOT VERIFIED"
+    }
+  ],
+  "source_scope": "Exact award appears in publisher and NOAA IR; SPARK same-project primary award row not yet independently verified.",
+  "full_reach_and_scout_dedup": "NOT_COMPLETED",
+  "original_dispositions_completed_this_run": 0,
+  "seed_expansions_completed_this_run": 0,
+  "new_distinct_expansion_leads": 0,
+  "existing_expansion_lead_strengthened": [
+    "10.6075/J0SN07G9"
+  ],
+  "candidate_inbox_staged": 0,
+  "feed_verified_candidates": 0,
+  "private_hub_import": "NOT_VERIFIED",
+  "reviewer_approvals": "NOT_VERIFIED",
+  "public_reach_additions": 0,
+  "coverage_before": {
+    "originals_completed": 48,
+    "investigating": 13,
+    "awaiting_research": 553,
+    "seed_expansions_completed": 0,
+    "seed_expansion_pending": 614
+  },
+  "coverage_after": {
+    "originals_completed": 48,
+    "investigating": 13,
+    "awaiting_research": 553,
+    "seed_expansions_completed": 0,
+    "seed_expansion_pending": 614
+  },
+  "ledger_path": "scout-operations/historical-crossref-triage.json",
+  "ledger_commit_sha": "bfaf256d2bf05da9956e1977a66a871f82f4f90c",
+  "coverage_rebuild": "NOT_RUN: repository build scripts cannot be executed through GitHub connector; no status transition means existing coverage counts remain unchanged, independently reread after ledger commit",
+  "zero_delta_reason": "Substantive source evidence added to existing investigating original and seed lead, but full REACH/Scout identity checks and exact SPARK project row are incomplete; neither lane may be closed.",
+  "next_action": "Full index/detail and Scout queue dedup on original and dataset, exact primary SPARK project award verification, exact dataset metadata and eligibility."
+}
