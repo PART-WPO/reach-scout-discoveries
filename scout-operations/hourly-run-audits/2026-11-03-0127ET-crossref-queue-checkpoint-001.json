@@ -1,0 +1,78 @@
+{
+  "schema": "reach-scout-hourly-audit-v1",
+  "run_id": "2026-11-03-0127ET-crossref-queue-checkpoint-001",
+  "timestamp_local": "2026-11-03T01:27:33-05:00",
+  "selected_mode": "historical_crossref_triage",
+  "audit_result": "PARTIAL",
+  "work_performed": [
+    "Read live preprint and NOAA IR lightweight policies; reused metadata-only gates without watchlist or IR inventory sweep.",
+    "Reconciled monthly source manifest, monthly coverage, active workstream, Crossref harvest manifest, historical Crossref coverage/triage, published Scout manifest, and independent metadata checkpoint.",
+    "Identified next original DOI research cases from the Crossref ledger; no full REACH detail/Scout duplicate screen or new DOI source investigation completed this checkpoint."
+  ],
+  "monthly": {
+    "source_dois": 13,
+    "ledger_checked": 13,
+    "staged_public_scout_feed": 8,
+    "private_hub_import": "NOT_VERIFIED"
+  },
+  "historical_crossref": {
+    "raw_rows": 614,
+    "distinct_dois": 614,
+    "originals_completed": 48,
+    "already_in_reach": 9,
+    "preprint_no_action": 39,
+    "awaiting_research": 555,
+    "investigating": 11,
+    "seed_expansion_completed": 0,
+    "fully_investigated": 0,
+    "remaining_full_cases": 614,
+    "next_originals": [
+      "10.1002/hyp.13998",
+      "10.1002/hyp.14960",
+      "10.1002/met.70089"
+    ],
+    "new_original_dispositions_this_run": 0,
+    "new_expansion_leads_this_run": 0
+  },
+  "feed": {
+    "published_batches": 30,
+    "published_rows": 83,
+    "new_inbox_drafts": 0,
+    "new_manifest_verified_candidates": 0,
+    "private_hub_import": "NOT_VERIFIED",
+    "human_approvals": "NOT_VERIFIED",
+    "public_reach_additions": "NOT_VERIFIED",
+    "feed_integrity_status": "MANIFEST_READ_ONLY_NOT_BYTE_SHA_REVALIDATED",
+    "github_action_status": "NOT_VERIFIED"
+  },
+  "independent_metadata": {
+    "doi_records": 16,
+    "github_records": 2,
+    "resume_queue": 18,
+    "leads_resumed_this_run": 0
+  },
+  "preprint": {
+    "new_holds": 0,
+    "new_published_leads": 0,
+    "scheduled_recheck": "FIRST_OF_MONTH_ACTION_ONLY"
+  },
+  "noaa_ir": {
+    "eligible_new_candidates_looked_up": 0,
+    "exact_matches": 0,
+    "unknown": 0,
+    "index_unavailable_cases": 0
+  },
+  "blockers": [
+    "No substantive full-detail original/expansion Crossref research performed in this checkpoint; do not advance completion ledger.",
+    "Private Discovery Hub sync and reviewer outcomes not observable from public repository.",
+    "Full published manifest batch-byte checksum verification not performed."
+  ],
+  "sources": [
+    "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/historical-crossref-coverage.json",
+    "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/active-workstream.json",
+    "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist-policy.md",
+    "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/noaa-ir/README.md"
+  ],
+  "human_decisions_modified": false,
+  "schedules_modified": false
+}
