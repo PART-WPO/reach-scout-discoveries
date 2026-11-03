@@ -101,24 +101,27 @@
       "status": "already_in_reach",
       "seed_expansion_status": "investigating",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T21:50:24.740Z",
+      "updated_at": "2026-11-03T00:27:07Z",
       "research_notes": "Original publication ALREADY IN PUBLIC REACH: exact DOI 10.1002/essoar.10507067.1 and matching title correspond to reach-000413 (reachuid-v1-c7edc71b8cea9fa9926ef4f5ead3f846). Both public index and the record's detail row identify the same DOI. No duplicate new-output review proposal. This closes ONLY the original-publication identity lane; the DOI remains an API-seeded reference/data/code/software exploration seed. 30 active Scout batches were independently screened for exact DOI identities; private reviewer status and pending inbox are not inferred. Expansion initial pass on 2026-11-02T21:50:24.740Z: source-linked final article and one derived dataset lead; no new output staged.\nNov 2 publishing gate: Crossref posted-content source DOI is a PREPRINT, not a final journal article. Already-in-REACH original identity remains untouched; no duplicate new-output proposal. Tracked for monthly official-version checks; seed expansion remains independent.",
       "checked_sources": [
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
         "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-052.csv",
         "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-discoveries/manifest.json",
-        "https://api.crossref.org/works/10.1002/essoar.10507067.1"
+        "https://api.crossref.org/works/10.1002/essoar.10507067.1",
+        "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021GL096709",
+        "https://repository.library.noaa.gov/view/noaa/43170/noaa_43170_DS1.pdf"
       ],
       "reach_snapshot": "Public REACH 1,238-row agent-data manifest; source SHA-256 054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e; checked all 10 index shards and 140 detail shards (DOI occurrence scan), and individually verified this record's own detail row.",
       "funding_basis": "Source Crossref funder.award was admitted by SPARK primary-only harvest; this duplicate disposition relies on exact REACH output identity, not a new assertion of task-level project attribution. Do not collapse FY25+ task suffixes.",
-      "related_outputs_checked": "Initial substantive expansion: NOAA IR confirms 10.1029/2021GL096709 as later journal article of original preprint, so avoid separate duplicate proposal. Wiley journal article Data Availability Statement explicitly links derived SEUS rainfall index dataset DOI 10.5281/zenodo.4433147. Dataset is a research lead ONLY; exact DataCite metadata, created date, independent WPO primary-award project bridge, output identity and full REACH/Scout duplicate check remain unverified. Other referenced GPCP/GPCC/CMIP5 sources are external reused data, not automatically WPO outputs.",
+      "related_outputs_checked": "Initial substantive expansion: NOAA IR confirms 10.1029/2021GL096709 as later journal article of original preprint, so avoid separate duplicate proposal. Wiley journal article Data Availability Statement explicitly links derived SEUS rainfall index dataset DOI 10.5281/zenodo.4433147. Dataset is a research lead ONLY; exact DataCite metadata, created date, independent WPO primary-award project bridge, output identity and full REACH/Scout duplicate check remain unverified. Other referenced GPCP/GPCC/CMIP5 sources are external reused data, not automatically WPO outputs.\nNov 2 19:27 ET bounded publisher/NOAA IR source pass: final published journal article 10.1029/2021GL096709 lists TWO distinct Zenodo DOI research leads in its Data Availability Statement: derived SEUS rainfall index 10.5281/zenodo.4433147 and archived CCSM4 HRC/LRC simulations 10.5281/zenodo.5057616. The article acknowledges NOAA NA18OAR4310293 for coauthors, but artifact-specific funded-project eligibility, exact DataCite metadata, full current REACH/Scout secondary URL/version screening and official IR membership remain unverified. Both DOIs registered as API-seeded research leads, not Hub candidates; original posted-content DOI remains already in REACH and ineligible as a new preprint output. Reused GPCP/GPCC/CMIP5 data and generic CCSM4 source are not assumed new outputs.",
       "verified_at": "2026-11-02T21:49:15.144Z",
       "verified_awards": [],
       "seed_checked_sources": [
         "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021GL096709",
-        "https://repository.library.noaa.gov/view/noaa/43170"
+        "https://repository.library.noaa.gov/view/noaa/43170",
+        "https://repository.library.noaa.gov/view/noaa/43170/noaa_43170_DS1.pdf"
       ],
-      "seed_research_notes": "",
+      "seed_research_notes": "Nov 2 19:27 ET bounded publisher/NOAA IR source pass: final published journal article 10.1029/2021GL096709 lists TWO distinct Zenodo DOI research leads in its Data Availability Statement: derived SEUS rainfall index 10.5281/zenodo.4433147 and archived CCSM4 HRC/LRC simulations 10.5281/zenodo.5057616. The article acknowledges NOAA NA18OAR4310293 for coauthors, but artifact-specific funded-project eligibility, exact DataCite metadata, full current REACH/Scout secondary URL/version screening and official IR membership remain unverified. Both DOIs registered as API-seeded research leads, not Hub candidates; original posted-content DOI remains already in REACH and ineligible as a new preprint output. Reused GPCP/GPCC/CMIP5 data and generic CCSM4 source are not assumed new outputs.",
       "source_overlap_hints": [],
       "present_in_published_scout_feed_at_intake": false,
       "award_numbers": [
@@ -157,6 +160,16 @@
           "status": "research_lead_pending_exact_datacite_metadata_primary_project_funding_and_reach_scout_dedup",
           "origin_method": "API-seeded expansion",
           "candidate_for_review": false
+        },
+        {
+          "doi": "10.5281/zenodo.5057616",
+          "relationship": "CCSM4 HRC and LRC model simulations archived at Zenodo; publisher Data Availability Statement names exact distinct DOI",
+          "source_url": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021GL096709",
+          "secondary_evidence_url": "https://repository.library.noaa.gov/view/noaa/43170/noaa_43170_DS1.pdf",
+          "status": "research_lead_pending_exact_datacite_metadata_primary_project_funding_and_reach_scout_dedup",
+          "origin_method": "API-seeded expansion",
+          "candidate_for_review": false,
+          "lead_file": "scout-operations/research-leads/2026-11-02-1927ET-gulf-stream-zenodo-expansion.json"
         }
       ],
       "publication_status": "preprint",
