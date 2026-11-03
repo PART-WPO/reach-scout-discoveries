@@ -1,0 +1,162 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "REACH-SCOUT-2026-11-02-HOURLY-1927ET",
+  "run_timestamp_utc": "2026-11-03T00:27:07Z",
+  "selected_mode": "historical_crossref_triage",
+  "audit_result": "PARTIAL",
+  "research_summary": "Inspected all seven public historical Crossref CSV batches (614 rows) for invalid primary award placeholders, and resumed a preprint DOI seed through its publisher-verified final article to identify two distinct Zenodo DOI research leads. These are not yet validated new outputs.",
+  "monthly": {
+    "received": 13,
+    "research_completed": 13,
+    "staged_for_hub_import_public_ledger": 8,
+    "no_action_or_held": 5,
+    "hub_import_verified": 0,
+    "human_approvals_verified": 0,
+    "public_reach_additions_verified": 0,
+    "monthly_expansion_leads": 6
+  },
+  "historical_crossref": {
+    "source_manifest_present": true,
+    "batch_count": 7,
+    "raw_rows": 614,
+    "distinct_dois": 614,
+    "originals_completed_before": 48,
+    "originals_completed_after": 48,
+    "seed_expansions_completed_before": 0,
+    "seed_expansions_completed_after": 0,
+    "fully_researched_before": 0,
+    "fully_researched_after": 0,
+    "remaining": 614,
+    "already_in_reach": 9,
+    "no_action": 39,
+    "investigating": 11,
+    "awaiting_research": 555,
+    "validated_new_original_candidates_this_run": 0,
+    "new_unique_expansion_research_leads_this_run": 2,
+    "new_validated_expansion_candidates_this_run": 0,
+    "source_sha_verification_this_run": "NOT_INDEPENDENTLY_RECOMPUTED",
+    "non_award_placeholder_rows": 10,
+    "placeholder_dois": [
+      {
+        "doi": "10.1002/jwmg.732",
+        "award": "UNK",
+        "disposition": "HELD_NOT_ELIGIBLE_AS_WPO_AWARD_EVIDENCE; original dedup and seed exploration pending"
+      },
+      {
+        "doi": "10.1007/s00330-020-07133-9",
+        "award": "UNK",
+        "disposition": "HELD_NOT_ELIGIBLE_AS_WPO_AWARD_EVIDENCE; original dedup and seed exploration pending"
+      },
+      {
+        "doi": "10.1007/s12035-019-01667-w",
+        "award": "UNK",
+        "disposition": "HELD_NOT_ELIGIBLE_AS_WPO_AWARD_EVIDENCE; original dedup and seed exploration pending"
+      },
+      {
+        "doi": "10.1088/1402-4896/ae2296",
+        "award": "BAA",
+        "disposition": "HELD_NOT_ELIGIBLE_AS_WPO_AWARD_EVIDENCE; original dedup and seed exploration pending"
+      },
+      {
+        "doi": "10.1177/13623613251341012",
+        "award": "UNK",
+        "disposition": "HELD_NOT_ELIGIBLE_AS_WPO_AWARD_EVIDENCE; original dedup and seed exploration pending"
+      },
+      {
+        "doi": "10.1371/journal.pone.0193711",
+        "award": "UNK",
+        "disposition": "HELD_NOT_ELIGIBLE_AS_WPO_AWARD_EVIDENCE; original dedup and seed exploration pending"
+      },
+      {
+        "doi": "10.14309/ctg.0000000000000725",
+        "award": "UNK",
+        "disposition": "HELD_NOT_ELIGIBLE_AS_WPO_AWARD_EVIDENCE; original dedup and seed exploration pending"
+      },
+      {
+        "doi": "10.3390/c4040066",
+        "award": "UNK",
+        "disposition": "HELD_NOT_ELIGIBLE_AS_WPO_AWARD_EVIDENCE; original dedup and seed exploration pending"
+      },
+      {
+        "doi": "10.3390/drones3020038",
+        "award": "UNK",
+        "disposition": "HELD_NOT_ELIGIBLE_AS_WPO_AWARD_EVIDENCE; original dedup and seed exploration pending"
+      },
+      {
+        "doi": "10.3390/jcm13195732",
+        "award": "UNK",
+        "disposition": "HELD_NOT_ELIGIBLE_AS_WPO_AWARD_EVIDENCE; original dedup and seed exploration pending"
+      }
+    ]
+  },
+  "historical_datacite": {
+    "originals_completed": 188,
+    "originals_remaining": 0,
+    "priority": "after historical Crossref"
+  },
+  "preprints": {
+    "tracked": 41,
+    "published_version_found_preprint_entries": 32,
+    "unique_verified_published_article_doi_research_leads": 30,
+    "article_leads_already_in_reach": 17,
+    "article_leads_already_in_public_scout_feed": 2,
+    "article_leads_pending_full_review": 11,
+    "preprint_doi_new_output_staged_this_run": 0,
+    "official_published_doi_new_output_staged_this_run": 0,
+    "monthly_publication_recheck_this_run": false
+  },
+  "noaa_ir": {
+    "index_manifest_present": true,
+    "index_complete_flag": true,
+    "declared_shards": 16,
+    "distinct_dois": 40248,
+    "ambiguous_dois": 157,
+    "new_outputs_eligible_for_index_lookup_this_run": 0,
+    "exact_ir_true_with_url_this_run": 0,
+    "inconclusive_or_unknown_this_run": 0,
+    "no_index_this_run": 0,
+    "index_shard_sha_independently_verified_this_run": false,
+    "note": "No new validated reviewer drafts; neither DOI seed qualifies for new-output IR enrichment yet."
+  },
+  "independent_metadata": {
+    "previous_doi_records": 14,
+    "previous_github_records": 2,
+    "new_doi_leads_added": 2,
+    "new_doi_metadata_lookup": "PENDING_ACTION_NOT_CLAIMED",
+    "resumed_seed_original": "10.1002/essoar.10507067.1",
+    "source_final_article": "10.1029/2021GL096709"
+  },
+  "feed": {
+    "published_scout_manifest_batches": 30,
+    "published_scout_manifest_rows": 83,
+    "new_inbox_csvs": 0,
+    "new_manifest_rows": 0,
+    "feed_integrity_status": "PUBLIC_MANIFEST_PRESENT; INDEPENDENT_EXACT_SHA_CHECK_NOT_PERFORMED",
+    "private_hub_import": "NOT_VERIFIED",
+    "reviewer_approval": "NOT_VERIFIED",
+    "public_reach_rows_prior_rollup": 1238,
+    "public_reach_new_additions_this_run": "NOT_VERIFIED"
+  },
+  "research_lead_file": "scout-operations/research-leads/2026-11-02-1927ET-gulf-stream-zenodo-expansion.json",
+  "source_urls": [
+    "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021GL096709",
+    "https://repository.library.noaa.gov/view/noaa/43170/noaa_43170_DS1.pdf",
+    "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+    "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/historical-crossref-coverage.json",
+    "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist.json"
+  ],
+  "blockers": [
+    "Two newly identified Zenodo DOIs require exact DataCite lookup and full REACH/Scout duplicate/version screening before any human-review candidate.",
+    "The Crossref backlog has 10 placeholder-award hits (UNK/BAA); these are not valid WPO award matches and remain held; no original closure or expansion completion is inferred.",
+    "Private Discovery Hub imports and reviewer actions are not accessible from public GitHub.",
+    "Public source SHA and full REACH detail were not independently rechecked in this run."
+  ],
+  "next_actions": [
+    "Verify unified independent-metadata Action publishes DOI records for both Zenodo DOIs; resume and record actual metadata.",
+    "Complete full REACH/Scout and same-project funding checks for the two research leads and document seed-expansion disposition separately.",
+    "Continue expedited historical Crossref original and DOI-seeded expansion screening, with invalid placeholder awards excluded from attribution."
+  ],
+  "schedule_changed": false,
+  "paid_worker_used": false,
+  "public_reach_spark_smartsheet_modified": false
+}
