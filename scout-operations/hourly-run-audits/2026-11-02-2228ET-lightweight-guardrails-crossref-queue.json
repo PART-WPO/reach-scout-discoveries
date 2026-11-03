@@ -1,0 +1,62 @@
+{
+  "schema": "reach-scout-hourly-run-audit-v1",
+  "run_id": "2026-11-02-2228ET-lightweight-guardrails-crossref-queue",
+  "run_local_time": "2026-11-02T22:28:33-05:00",
+  "selected_mode": "historical_crossref_triage",
+  "audit_result": "PARTIAL",
+  "source_urls": [
+    "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/historical-crossref-coverage.json",
+    "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/coverage.json",
+    "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/manifest.json",
+    "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json",
+    "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/active-workstream.json"
+  ],
+  "policy_urls": [
+    "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/preprint-watchlist-policy.md",
+    "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/noaa-ir/README.md"
+  ],
+  "work_performed": "Read live authoritative lightweight preprint/NOAA IR policies, monthly and Crossref coverage, manifests, triage and independent metadata checkpoint. Reconciled active priority and identified next uninvestigated Crossref original DOI cases. No new independent REACH full-detail or publisher evidence verification was achieved this run; no DOI disposition changed.",
+  "monthly": {
+    "received": 13,
+    "checked": 13,
+    "staged_for_hub_import": 8,
+    "missing_from_ledger": 0,
+    "private_hub_import": "NOT_VERIFIED"
+  },
+  "historical_crossref": {
+    "source_distinct_dois": 614,
+    "originals_completed": 48,
+    "seed_expansions_completed": 0,
+    "fully_investigated": 0,
+    "remaining": 614,
+    "already_in_reach": 9,
+    "preprint_held_originals": 39,
+    "queued_overlap_hints": 12,
+    "validated_new_candidates": 0
+  },
+  "scout_feed": {
+    "candidate_rows": 83,
+    "batches": 30,
+    "integrity_status": "MANIFEST_READ_ONLY; SHA_NOT_INDEPENDENTLY_VERIFIED_THIS_RUN",
+    "new_inbox_drafts": 0,
+    "new_published_batches": 0
+  },
+  "guardrail_exceptions": {
+    "new_preprints_held": 0,
+    "new_published_article_leads_verified": 0,
+    "new_eligible_outputs_ir_checked": 0,
+    "verified_ir_matches": 0,
+    "ir_unknown": 0,
+    "ir_index_unavailable": "NOT_TESTED_NO_ELIGIBLE_NEW_CANDIDATE"
+  },
+  "next_priority": [
+    "Continue exact public REACH index/detail and published/pending Scout dedup for 10.1002/hyp.13998, 10.1002/hyp.14960 and 10.1002/met.70089 with source-specific evidence.",
+    "Keep each original DOI and seed-expansion status separate; retain preprint metadata holds without hourly watchlist sweep.",
+    "Run local NOAA IR lookup only after confirmed genuinely new output, before validated draft."
+  ],
+  "blockers": [
+    "Live external DOI publisher/Crossref and full public REACH detail evidence not independently retrieved during this run; no defensible new dispositions.",
+    "REACH Scout Library persistence not verified; audit published to public GitHub only.",
+    "Private Discovery Hub import, human decisions and public REACH additions not observable."
+  ]
+}
