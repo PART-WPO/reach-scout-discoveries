@@ -1,0 +1,55 @@
+{
+  "schema": "reach-scout-hourly-run-audit-v1",
+  "run_id": "2026-11-03-0224ET-crossref-scope-audit-001",
+  "observed_at": "2026-11-03T02:24:14-05:00",
+  "selected_mode": "historical_crossref_triage",
+  "audit_result": "PARTIAL",
+  "source_urls": [
+    "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/historical-crossref-triage.json",
+    "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/historical-crossref-coverage.json",
+    "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/coverage.json",
+    "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/manifest.json"
+  ],
+  "coverage_observed": {
+    "monthly_received": 13,
+    "monthly_staged_for_hub_import": 8,
+    "historical_crossref_distinct": 614,
+    "originals_completed": 48,
+    "seed_expansions_completed": 0,
+    "fully_investigated": 0,
+    "remaining": 614,
+    "original_status_counts": {
+      "already_in_reach": 9,
+      "no_action": 39,
+      "investigating": 11,
+      "awaiting_research": 555
+    }
+  },
+  "new_scope_anomaly": {
+    "finding": "Ten investigating historical Crossref rows have non-award primary-field tokens UNK or BAA; these are not valid NOAA primary award identifiers and cannot support same-project WPO funding attribution.",
+    "affected_dois": [
+      "10.1002/jwmg.732",
+      "10.1007/s00330-020-07133-9",
+      "10.1007/s12035-019-01667-w",
+      "10.1088/1402-4896/ae2296",
+      "10.1177/13623613251341012",
+      "10.1371/journal.pone.0193711",
+      "10.14309/ctg.0000000000000725",
+      "10.3390/c4040066",
+      "10.3390/drones3020038",
+      "10.3390/jcm13195732"
+    ],
+    "disposition": "Scope anomaly for human-safe triage; do not count as verified WPO-funded originals or stage Hub candidates; preserve DOI seeds and existing ledgers pending evidence-based handling.",
+    "other_investigating": "10.1002/qj.70325 is already a monthly no_action project mismatch; avoid redoing concluded original attribution, retain research seed."
+  },
+  "new_candidates_staged": 0,
+  "new_preprint_holds": 0,
+  "new_published_version_leads": 0,
+  "new_eligible_ir_lookups": 0,
+  "private_hub_import": "NOT_VERIFIED",
+  "human_approvals": "NOT_VERIFIED",
+  "public_reach_additions": "NOT_VERIFIED",
+  "integrity_note": "Public manifest reports 83 rows across 30 batches; individual batch SHA hashes were not recomputed in this audit.",
+  "limitations": "Read-only scope/coverage triage; no new DOI source research, ledger dispositions, batch validation, private Hub access, or Library save was performed. Audit not PASS.",
+  "next_action": "Prioritize source-scope exclusions/verification for placeholder award rows, then substantive Crossref DOI original and expansion checks; keep monthly original and expansion priority and human gates."
+}
