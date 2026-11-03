@@ -1,0 +1,70 @@
+{
+  "schema": "reach-scout-hourly-run-audit-v1",
+  "run_id": "2026-11-03-1429ET-crossref-placeholder-scope-001",
+  "run_at": "2026-11-03T19:29:34Z",
+  "primary_mode": "historical_crossref_triage",
+  "result": "PARTIAL",
+  "selected_dois": [
+    "10.1002/jwmg.732",
+    "10.1007/s00330-020-07133-9",
+    "10.1007/s12035-019-01667-w",
+    "10.1088/1402-4896/ae2296",
+    "10.1177/13623613251341012",
+    "10.1371/journal.pone.0193711",
+    "10.14309/ctg.0000000000000725",
+    "10.3390/c4040066",
+    "10.3390/drones3020038",
+    "10.3390/jcm13195732"
+  ],
+  "source_checks": [
+    "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/historical-crossref-triage.json",
+    "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/historical-crossref-coverage.json",
+    "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/.github/workflows/reconcile-historical-crossref.yml",
+    "https://api.crossref.org/works/10.1002/jwmg.732",
+    "https://api.crossref.org/works/10.1007/s00330-020-07133-9",
+    "https://api.crossref.org/works/10.1007/s12035-019-01667-w",
+    "https://api.crossref.org/works/10.1088/1402-4896/ae2296",
+    "https://api.crossref.org/works/10.1177/13623613251341012",
+    "https://api.crossref.org/works/10.1371/journal.pone.0193711",
+    "https://api.crossref.org/works/10.14309/ctg.0000000000000725",
+    "https://api.crossref.org/works/10.3390/c4040066",
+    "https://api.crossref.org/works/10.3390/drones3020038",
+    "https://api.crossref.org/works/10.3390/jcm13195732"
+  ],
+  "finding": "Ten already source-screened originals had only UNK/BAA placeholder award tokens. Prior documented SPARK/harvest/Crossref scope checks do not establish exact WPO primary award. Bounded scope exclusions recorded, without asserting complete REACH duplicate screening. No new output staged.",
+  "before": {
+    "originals_completed": 48,
+    "investigating": 13,
+    "awaiting_research": 553,
+    "seed_expansions_completed": 0,
+    "seed_expansion_pending": 614,
+    "no_action": 39
+  },
+  "expected_after_reconciliation": {
+    "originals_completed": 58,
+    "investigating": 3,
+    "awaiting_research": 553,
+    "seed_expansions_completed": 0,
+    "seed_expansion_pending": 614,
+    "no_action": 49
+  },
+  "after_live_verification": "PENDING_GITHUB_ACTION",
+  "ledger_commit_sha": "c55d846992f861d9136ffc1dbbb0bfbb2bc492cb",
+  "ledger_path": "scout-operations/historical-crossref-triage.json",
+  "coverage_path": "scout-operations/historical-crossref-coverage.json",
+  "reconciliation_workflow_run_id": 41703854892,
+  "seed_expansion": {
+    "completed_new": 0,
+    "still_pending_for_selected": 10,
+    "next_action": "Independent related-output research for retained DOI seeds; no expansion completion claimed."
+  },
+  "candidates_staged": 0,
+  "hub_import": "NOT_VERIFIED",
+  "human_approvals": "NOT_VERIFIED",
+  "public_reach_additions": "NOT_VERIFIED",
+  "blockers": [
+    "Reconciliation action was queued at audit time; expected coverage counts are not yet independently verified.",
+    "Full REACH/Scout duplicate screening not performed for these scope-excluded originals; no duplicate finding asserted."
+  ],
+  "next_action": "Verify reconciliation success and live counts; research remaining valid-award Crossref originals and distinct DOI expansions."
+}
