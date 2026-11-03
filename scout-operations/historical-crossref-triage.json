@@ -127,9 +127,11 @@
         "https://api.datacite.org/dois/10.5281/zenodo.4433147",
         "https://zenodo.org/api/records/4433147",
         "https://api.datacite.org/dois/10.5281/zenodo.5057616",
-        "https://zenodo.org/api/records/5057616"
+        "https://zenodo.org/api/records/5057616",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-discoveries/manifest.json"
       ],
-      "seed_research_notes": "Nov 2 19:27 ET bounded publisher/NOAA IR source pass: final published journal article 10.1029/2021GL096709 lists TWO distinct Zenodo DOI research leads in its Data Availability Statement: derived SEUS rainfall index 10.5281/zenodo.4433147 and archived CCSM4 HRC/LRC simulations 10.5281/zenodo.5057616. The article acknowledges NOAA NA18OAR4310293 for coauthors, but artifact-specific funded-project eligibility, exact DataCite metadata, full current REACH/Scout secondary URL/version screening and official IR membership remain unverified. Both DOIs registered as API-seeded research leads, not Hub candidates; original posted-content DOI remains already in REACH and ineligible as a new preprint output. Reused GPCP/GPCC/CMIP5 data and generic CCSM4 source are not assumed new outputs.\nUnified independent metadata Action 41553351228 completed successfully; DataCite exact DOI and native Zenodo record confirm 10.5281/zenodo.4433147 (created 2021-01-12; 31 API-listed files; concept DOI 10.5281/zenodo.4433146) and 10.5281/zenodo.5057616 (created 2021-07-02; 4 API-listed files; concept DOI 10.5281/zenodo.5057615). File listings are not downloads; specific WPO-funded-project attribution and full REACH/Scout duplicate/version check remain outstanding. No 24-column proposal created.",
+      "seed_research_notes": "Nov 2 19:27 ET bounded publisher/NOAA IR source pass: final published journal article 10.1029/2021GL096709 lists TWO distinct Zenodo DOI research leads in its Data Availability Statement: derived SEUS rainfall index 10.5281/zenodo.4433147 and archived CCSM4 HRC/LRC simulations 10.5281/zenodo.5057616. The article acknowledges NOAA NA18OAR4310293 for coauthors, but artifact-specific funded-project eligibility, exact DataCite metadata, full current REACH/Scout secondary URL/version screening and official IR membership remain unverified. Both DOIs registered as API-seeded research leads, not Hub candidates; original posted-content DOI remains already in REACH and ineligible as a new preprint output. Reused GPCP/GPCC/CMIP5 data and generic CCSM4 source are not assumed new outputs.\nUnified independent metadata Action 41553351228 completed successfully; DataCite exact DOI and native Zenodo record confirm 10.5281/zenodo.4433147 (created 2021-01-12; 31 API-listed files; concept DOI 10.5281/zenodo.4433146) and 10.5281/zenodo.5057616 (created 2021-07-02; 4 API-listed files; concept DOI 10.5281/zenodo.5057615). File listings are not downloads; specific WPO-funded-project attribution and full REACH/Scout duplicate/version check remain outstanding. No 24-column proposal created.\n2026-11-02 19:27 ET partial duplicate screen: all 10 public REACH index shards (1,238 records), all 30 active published Scout batch CSVs (83 rows), and all 16 pending Scout inbox CSVs searched for both exact DOI identities and distinctive dataset titles; no matches observed. This is NOT full duplicate clearance because all 140 REACH detail shards/secondary URLs and private reviewer feedback were not independently screened in this pass.",
       "source_overlap_hints": [],
       "present_in_published_scout_feed_at_intake": false,
       "award_numbers": [
@@ -176,7 +178,18 @@
           "concept_doi": "10.5281/zenodo.4433146",
           "api_listed_files": 31,
           "files_downloaded": false,
-          "artifact_specific_funding_verified": false
+          "artifact_specific_funding_verified": false,
+          "partial_duplicate_screen": {
+            "reach_index_shards": 10,
+            "reach_index_rows": 1238,
+            "active_scout_batches": 30,
+            "active_scout_rows": 83,
+            "pending_inbox_files": 16,
+            "exact_doi_and_distinctive_title_matches": 0,
+            "reach_detail_secondary_link_screen": "NOT_COMPLETE",
+            "private_human_feedback": "NOT_VERIFIED",
+            "conclusion": "POTENTIAL_NEW_RESEARCH_LEAD_NOT_VALIDATED_CANDIDATE"
+          }
         },
         {
           "doi": "10.5281/zenodo.5057616",
@@ -195,7 +208,18 @@
           "concept_doi": "10.5281/zenodo.5057615",
           "api_listed_files": 4,
           "files_downloaded": false,
-          "artifact_specific_funding_verified": false
+          "artifact_specific_funding_verified": false,
+          "partial_duplicate_screen": {
+            "reach_index_shards": 10,
+            "reach_index_rows": 1238,
+            "active_scout_batches": 30,
+            "active_scout_rows": 83,
+            "pending_inbox_files": 16,
+            "exact_doi_and_distinctive_title_matches": 0,
+            "reach_detail_secondary_link_screen": "NOT_COMPLETE",
+            "private_human_feedback": "NOT_VERIFIED",
+            "conclusion": "POTENTIAL_NEW_RESEARCH_LEAD_NOT_VALIDATED_CANDIDATE"
+          }
         }
       ],
       "publication_status": "preprint",
