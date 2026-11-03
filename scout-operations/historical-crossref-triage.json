@@ -555,7 +555,7 @@
       "status": "investigating",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T23:33:54.375Z",
+      "updated_at": "2026-11-03T18:32:55Z",
       "research_notes": "Initial historical Crossref source-scope check: UNK is a SPARK primary-field placeholder, not a valid specific NOAA funding award. The API harvest therefore supplies no verified WPO project-award link. This is NOT a verified new output, and no Hub draft is allowed. Full REACH/Scout identity and DOI-seeded related-output exploration remain pending.",
       "checked_sources": [
         "https://api.crossref.org/works/10.1002/jwmg.732",
@@ -590,6 +590,24 @@
         "checked_on": "2026-11-02",
         "finding": "The SPARK primary field contains a generic placeholder, not a project-specific NOAA award. Exact Crossref structured funder matching to that placeholder cannot prove WPO attribution.",
         "next_action": "Do not stage; seek independent specific project-award bridge or document bounded no-action. Retain this publication DOI as a seed for related outputs."
+      },
+      "scope_gate": {
+        "decision": "UNVERIFIED_PRIMARY_AWARD_PLACEHOLDER",
+        "candidate_staging_eligible": false,
+        "primary_award_verified": false,
+        "source_award_tokens": [
+          "UNK"
+        ],
+        "original_disposition_complete": false,
+        "seed_retained": true,
+        "seed_expansion_complete": false,
+        "checked_evidence": [
+          "https://api.crossref.org/works/10.1002/jwmg.732",
+          "https://github.com/PART-WPO/SPARK/blob/main/agent-data/manifest.json",
+          "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json"
+        ],
+        "blocker": "Only UNK/BAA placeholder token in harvested award field; no exact SPARK primary NOAA award established.",
+        "next_action": "Do not stage as WPO output. Preserve original DOI and seed. Resume original DOI REACH/Scout identity and same-project award research only on new positive funding evidence; independently evaluate seed expansion for distinct verified WPO-related outputs."
       }
     },
     {
@@ -709,7 +727,7 @@
       "status": "investigating",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T23:33:54.378Z",
+      "updated_at": "2026-11-03T18:32:55Z",
       "research_notes": "Initial historical Crossref source-scope check: UNK is a SPARK primary-field placeholder, not a valid specific NOAA funding award. The API harvest therefore supplies no verified WPO project-award link. This is NOT a verified new output, and no Hub draft is allowed. Full REACH/Scout identity and DOI-seeded related-output exploration remain pending.",
       "checked_sources": [
         "https://api.crossref.org/works/10.1007/s00330-020-07133-9",
@@ -744,6 +762,24 @@
         "checked_on": "2026-11-02",
         "finding": "The SPARK primary field contains a generic placeholder, not a project-specific NOAA award. Exact Crossref structured funder matching to that placeholder cannot prove WPO attribution.",
         "next_action": "Do not stage; seek independent specific project-award bridge or document bounded no-action. Retain this publication DOI as a seed for related outputs."
+      },
+      "scope_gate": {
+        "decision": "UNVERIFIED_PRIMARY_AWARD_PLACEHOLDER",
+        "candidate_staging_eligible": false,
+        "primary_award_verified": false,
+        "source_award_tokens": [
+          "UNK"
+        ],
+        "original_disposition_complete": false,
+        "seed_retained": true,
+        "seed_expansion_complete": false,
+        "checked_evidence": [
+          "https://api.crossref.org/works/10.1007/s00330-020-07133-9",
+          "https://github.com/PART-WPO/SPARK/blob/main/agent-data/manifest.json",
+          "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json"
+        ],
+        "blocker": "Only UNK/BAA placeholder token in harvested award field; no exact SPARK primary NOAA award established.",
+        "next_action": "Do not stage as WPO output. Preserve original DOI and seed. Resume original DOI REACH/Scout identity and same-project award research only on new positive funding evidence; independently evaluate seed expansion for distinct verified WPO-related outputs."
       }
     },
     {
@@ -1490,7 +1526,7 @@
       "status": "investigating",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T23:33:54.378Z",
+      "updated_at": "2026-11-03T18:32:55Z",
       "research_notes": "Initial historical Crossref source-scope check: UNK is a SPARK primary-field placeholder, not a valid specific NOAA funding award. The API harvest therefore supplies no verified WPO project-award link. This is NOT a verified new output, and no Hub draft is allowed. Full REACH/Scout identity and DOI-seeded related-output exploration remain pending.",
       "checked_sources": [
         "https://api.crossref.org/works/10.1007/s12035-019-01667-w",
@@ -1525,6 +1561,24 @@
         "checked_on": "2026-11-02",
         "finding": "The SPARK primary field contains a generic placeholder, not a project-specific NOAA award. Exact Crossref structured funder matching to that placeholder cannot prove WPO attribution.",
         "next_action": "Do not stage; seek independent specific project-award bridge or document bounded no-action. Retain this publication DOI as a seed for related outputs."
+      },
+      "scope_gate": {
+        "decision": "UNVERIFIED_PRIMARY_AWARD_PLACEHOLDER",
+        "candidate_staging_eligible": false,
+        "primary_award_verified": false,
+        "source_award_tokens": [
+          "UNK"
+        ],
+        "original_disposition_complete": false,
+        "seed_retained": true,
+        "seed_expansion_complete": false,
+        "checked_evidence": [
+          "https://api.crossref.org/works/10.1007/s12035-019-01667-w",
+          "https://github.com/PART-WPO/SPARK/blob/main/agent-data/manifest.json",
+          "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json"
+        ],
+        "blocker": "Only UNK/BAA placeholder token in harvested award field; no exact SPARK primary NOAA award established.",
+        "next_action": "Do not stage as WPO output. Preserve original DOI and seed. Resume original DOI REACH/Scout identity and same-project award research only on new positive funding evidence; independently evaluate seed expansion for distinct verified WPO-related outputs."
       }
     },
     {
@@ -6498,7 +6552,7 @@
       "status": "investigating",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T23:33:54.378Z",
+      "updated_at": "2026-11-03T18:32:55Z",
       "research_notes": "Initial historical Crossref source-scope check: BAA is a SPARK primary-field placeholder, not a valid specific NOAA funding award. The API harvest therefore supplies no verified WPO project-award link. This is NOT a verified new output, and no Hub draft is allowed. Full REACH/Scout identity and DOI-seeded related-output exploration remain pending.",
       "checked_sources": [
         "https://api.crossref.org/works/10.1088/1402-4896/ae2296",
@@ -6533,6 +6587,24 @@
         "checked_on": "2026-11-02",
         "finding": "The SPARK primary field contains a generic placeholder, not a project-specific NOAA award. Exact Crossref structured funder matching to that placeholder cannot prove WPO attribution.",
         "next_action": "Do not stage; seek independent specific project-award bridge or document bounded no-action. Retain this publication DOI as a seed for related outputs."
+      },
+      "scope_gate": {
+        "decision": "UNVERIFIED_PRIMARY_AWARD_PLACEHOLDER",
+        "candidate_staging_eligible": false,
+        "primary_award_verified": false,
+        "source_award_tokens": [
+          "BAA"
+        ],
+        "original_disposition_complete": false,
+        "seed_retained": true,
+        "seed_expansion_complete": false,
+        "checked_evidence": [
+          "https://api.crossref.org/works/10.1088/1402-4896/ae2296",
+          "https://github.com/PART-WPO/SPARK/blob/main/agent-data/manifest.json",
+          "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json"
+        ],
+        "blocker": "Only UNK/BAA placeholder token in harvested award field; no exact SPARK primary NOAA award established.",
+        "next_action": "Do not stage as WPO output. Preserve original DOI and seed. Resume original DOI REACH/Scout identity and same-project award research only on new positive funding evidence; independently evaluate seed expansion for distinct verified WPO-related outputs."
       }
     },
     {
@@ -16070,7 +16142,7 @@
       "status": "investigating",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T23:33:54.379Z",
+      "updated_at": "2026-11-03T18:32:55Z",
       "research_notes": "Initial historical Crossref source-scope check: UNK is a SPARK primary-field placeholder, not a valid specific NOAA funding award. The API harvest therefore supplies no verified WPO project-award link. This is NOT a verified new output, and no Hub draft is allowed. Full REACH/Scout identity and DOI-seeded related-output exploration remain pending.",
       "checked_sources": [
         "https://api.crossref.org/works/10.1177/13623613251341012",
@@ -16105,6 +16177,24 @@
         "checked_on": "2026-11-02",
         "finding": "The SPARK primary field contains a generic placeholder, not a project-specific NOAA award. Exact Crossref structured funder matching to that placeholder cannot prove WPO attribution.",
         "next_action": "Do not stage; seek independent specific project-award bridge or document bounded no-action. Retain this publication DOI as a seed for related outputs."
+      },
+      "scope_gate": {
+        "decision": "UNVERIFIED_PRIMARY_AWARD_PLACEHOLDER",
+        "candidate_staging_eligible": false,
+        "primary_award_verified": false,
+        "source_award_tokens": [
+          "UNK"
+        ],
+        "original_disposition_complete": false,
+        "seed_retained": true,
+        "seed_expansion_complete": false,
+        "checked_evidence": [
+          "https://api.crossref.org/works/10.1177/13623613251341012",
+          "https://github.com/PART-WPO/SPARK/blob/main/agent-data/manifest.json",
+          "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json"
+        ],
+        "blocker": "Only UNK/BAA placeholder token in harvested award field; no exact SPARK primary NOAA award established.",
+        "next_action": "Do not stage as WPO output. Preserve original DOI and seed. Resume original DOI REACH/Scout identity and same-project award research only on new positive funding evidence; independently evaluate seed expansion for distinct verified WPO-related outputs."
       }
     },
     {
@@ -16142,7 +16232,7 @@
       "status": "investigating",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T23:33:54.379Z",
+      "updated_at": "2026-11-03T18:32:55Z",
       "research_notes": "Initial historical Crossref source-scope check: UNK is a SPARK primary-field placeholder, not a valid specific NOAA funding award. The API harvest therefore supplies no verified WPO project-award link. This is NOT a verified new output, and no Hub draft is allowed. Full REACH/Scout identity and DOI-seeded related-output exploration remain pending.",
       "checked_sources": [
         "https://api.crossref.org/works/10.1371/journal.pone.0193711",
@@ -16177,6 +16267,24 @@
         "checked_on": "2026-11-02",
         "finding": "The SPARK primary field contains a generic placeholder, not a project-specific NOAA award. Exact Crossref structured funder matching to that placeholder cannot prove WPO attribution.",
         "next_action": "Do not stage; seek independent specific project-award bridge or document bounded no-action. Retain this publication DOI as a seed for related outputs."
+      },
+      "scope_gate": {
+        "decision": "UNVERIFIED_PRIMARY_AWARD_PLACEHOLDER",
+        "candidate_staging_eligible": false,
+        "primary_award_verified": false,
+        "source_award_tokens": [
+          "UNK"
+        ],
+        "original_disposition_complete": false,
+        "seed_retained": true,
+        "seed_expansion_complete": false,
+        "checked_evidence": [
+          "https://api.crossref.org/works/10.1371/journal.pone.0193711",
+          "https://github.com/PART-WPO/SPARK/blob/main/agent-data/manifest.json",
+          "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json"
+        ],
+        "blocker": "Only UNK/BAA placeholder token in harvested award field; no exact SPARK primary NOAA award established.",
+        "next_action": "Do not stage as WPO output. Preserve original DOI and seed. Resume original DOI REACH/Scout identity and same-project award research only on new positive funding evidence; independently evaluate seed expansion for distinct verified WPO-related outputs."
       }
     },
     {
@@ -16244,7 +16352,7 @@
       "status": "investigating",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T23:33:54.379Z",
+      "updated_at": "2026-11-03T18:32:55Z",
       "research_notes": "Initial historical Crossref source-scope check: UNK is a SPARK primary-field placeholder, not a valid specific NOAA funding award. The API harvest therefore supplies no verified WPO project-award link. This is NOT a verified new output, and no Hub draft is allowed. Full REACH/Scout identity and DOI-seeded related-output exploration remain pending.",
       "checked_sources": [
         "https://api.crossref.org/works/10.14309/ctg.0000000000000725",
@@ -16279,6 +16387,24 @@
         "checked_on": "2026-11-02",
         "finding": "The SPARK primary field contains a generic placeholder, not a project-specific NOAA award. Exact Crossref structured funder matching to that placeholder cannot prove WPO attribution.",
         "next_action": "Do not stage; seek independent specific project-award bridge or document bounded no-action. Retain this publication DOI as a seed for related outputs."
+      },
+      "scope_gate": {
+        "decision": "UNVERIFIED_PRIMARY_AWARD_PLACEHOLDER",
+        "candidate_staging_eligible": false,
+        "primary_award_verified": false,
+        "source_award_tokens": [
+          "UNK"
+        ],
+        "original_disposition_complete": false,
+        "seed_retained": true,
+        "seed_expansion_complete": false,
+        "checked_evidence": [
+          "https://api.crossref.org/works/10.14309/ctg.0000000000000725",
+          "https://github.com/PART-WPO/SPARK/blob/main/agent-data/manifest.json",
+          "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json"
+        ],
+        "blocker": "Only UNK/BAA placeholder token in harvested award field; no exact SPARK primary NOAA award established.",
+        "next_action": "Do not stage as WPO output. Preserve original DOI and seed. Resume original DOI REACH/Scout identity and same-project award research only on new positive funding evidence; independently evaluate seed expansion for distinct verified WPO-related outputs."
       }
     },
     {
@@ -16738,7 +16864,7 @@
       "status": "investigating",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T23:33:54.379Z",
+      "updated_at": "2026-11-03T18:32:55Z",
       "research_notes": "Initial historical Crossref source-scope check: UNK is a SPARK primary-field placeholder, not a valid specific NOAA funding award. The API harvest therefore supplies no verified WPO project-award link. This is NOT a verified new output, and no Hub draft is allowed. Full REACH/Scout identity and DOI-seeded related-output exploration remain pending.",
       "checked_sources": [
         "https://api.crossref.org/works/10.3390/c4040066",
@@ -16773,6 +16899,24 @@
         "checked_on": "2026-11-02",
         "finding": "The SPARK primary field contains a generic placeholder, not a project-specific NOAA award. Exact Crossref structured funder matching to that placeholder cannot prove WPO attribution.",
         "next_action": "Do not stage; seek independent specific project-award bridge or document bounded no-action. Retain this publication DOI as a seed for related outputs."
+      },
+      "scope_gate": {
+        "decision": "UNVERIFIED_PRIMARY_AWARD_PLACEHOLDER",
+        "candidate_staging_eligible": false,
+        "primary_award_verified": false,
+        "source_award_tokens": [
+          "UNK"
+        ],
+        "original_disposition_complete": false,
+        "seed_retained": true,
+        "seed_expansion_complete": false,
+        "checked_evidence": [
+          "https://api.crossref.org/works/10.3390/c4040066",
+          "https://github.com/PART-WPO/SPARK/blob/main/agent-data/manifest.json",
+          "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json"
+        ],
+        "blocker": "Only UNK/BAA placeholder token in harvested award field; no exact SPARK primary NOAA award established.",
+        "next_action": "Do not stage as WPO output. Preserve original DOI and seed. Resume original DOI REACH/Scout identity and same-project award research only on new positive funding evidence; independently evaluate seed expansion for distinct verified WPO-related outputs."
       }
     },
     {
@@ -16840,7 +16984,7 @@
       "status": "investigating",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T23:33:54.379Z",
+      "updated_at": "2026-11-03T18:32:55Z",
       "research_notes": "Initial historical Crossref source-scope check: UNK is a SPARK primary-field placeholder, not a valid specific NOAA funding award. The API harvest therefore supplies no verified WPO project-award link. This is NOT a verified new output, and no Hub draft is allowed. Full REACH/Scout identity and DOI-seeded related-output exploration remain pending.",
       "checked_sources": [
         "https://api.crossref.org/works/10.3390/drones3020038",
@@ -16875,6 +17019,24 @@
         "checked_on": "2026-11-02",
         "finding": "The SPARK primary field contains a generic placeholder, not a project-specific NOAA award. Exact Crossref structured funder matching to that placeholder cannot prove WPO attribution.",
         "next_action": "Do not stage; seek independent specific project-award bridge or document bounded no-action. Retain this publication DOI as a seed for related outputs."
+      },
+      "scope_gate": {
+        "decision": "UNVERIFIED_PRIMARY_AWARD_PLACEHOLDER",
+        "candidate_staging_eligible": false,
+        "primary_award_verified": false,
+        "source_award_tokens": [
+          "UNK"
+        ],
+        "original_disposition_complete": false,
+        "seed_retained": true,
+        "seed_expansion_complete": false,
+        "checked_evidence": [
+          "https://api.crossref.org/works/10.3390/drones3020038",
+          "https://github.com/PART-WPO/SPARK/blob/main/agent-data/manifest.json",
+          "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json"
+        ],
+        "blocker": "Only UNK/BAA placeholder token in harvested award field; no exact SPARK primary NOAA award established.",
+        "next_action": "Do not stage as WPO output. Preserve original DOI and seed. Resume original DOI REACH/Scout identity and same-project award research only on new positive funding evidence; independently evaluate seed expansion for distinct verified WPO-related outputs."
       }
     },
     {
@@ -16882,7 +17044,7 @@
       "status": "investigating",
       "seed_expansion_status": "awaiting_exploration",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-02T23:33:54.379Z",
+      "updated_at": "2026-11-03T18:32:55Z",
       "research_notes": "Initial historical Crossref source-scope check: UNK is a SPARK primary-field placeholder, not a valid specific NOAA funding award. The API harvest therefore supplies no verified WPO project-award link. This is NOT a verified new output, and no Hub draft is allowed. Full REACH/Scout identity and DOI-seeded related-output exploration remain pending.",
       "checked_sources": [
         "https://api.crossref.org/works/10.3390/jcm13195732",
@@ -16917,6 +17079,24 @@
         "checked_on": "2026-11-02",
         "finding": "The SPARK primary field contains a generic placeholder, not a project-specific NOAA award. Exact Crossref structured funder matching to that placeholder cannot prove WPO attribution.",
         "next_action": "Do not stage; seek independent specific project-award bridge or document bounded no-action. Retain this publication DOI as a seed for related outputs."
+      },
+      "scope_gate": {
+        "decision": "UNVERIFIED_PRIMARY_AWARD_PLACEHOLDER",
+        "candidate_staging_eligible": false,
+        "primary_award_verified": false,
+        "source_award_tokens": [
+          "UNK"
+        ],
+        "original_disposition_complete": false,
+        "seed_retained": true,
+        "seed_expansion_complete": false,
+        "checked_evidence": [
+          "https://api.crossref.org/works/10.3390/jcm13195732",
+          "https://github.com/PART-WPO/SPARK/blob/main/agent-data/manifest.json",
+          "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/manifest.json"
+        ],
+        "blocker": "Only UNK/BAA placeholder token in harvested award field; no exact SPARK primary NOAA award established.",
+        "next_action": "Do not stage as WPO output. Preserve original DOI and seed. Resume original DOI REACH/Scout identity and same-project award research only on new positive funding evidence; independently evaluate seed expansion for distinct verified WPO-related outputs."
       }
     },
     {
