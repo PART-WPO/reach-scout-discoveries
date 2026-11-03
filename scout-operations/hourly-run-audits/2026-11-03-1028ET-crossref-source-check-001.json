@@ -1,0 +1,51 @@
+{
+  "schema": "reach-scout-hourly-audit-v1",
+  "run_id": "2026-11-03-1028ET-crossref-source-check-001",
+  "timestamp": "2026-11-03T10:28:23-05:00",
+  "selected_mode": "historical_crossref_triage",
+  "audit_result": "PARTIAL",
+  "source_manifest": "api-discoveries/historical-crossref/manifest.json",
+  "source_distinct_dois": 614,
+  "coverage_before": {
+    "fully_investigated": 0,
+    "remaining": 614,
+    "originals_completed": 48,
+    "seed_expansions_completed": 0,
+    "already_in_reach": 9,
+    "awaiting_research": 555,
+    "investigating": 11
+  },
+  "coverage_after": "UNCHANGED",
+  "monthly": {
+    "received": 13,
+    "checked": 13,
+    "staged_public_feed": 8,
+    "hub_import": "NOT_VERIFIED"
+  },
+  "research_checks": [
+    {
+      "doi": "10.1002/hyp.13998",
+      "status": "source_evidence_recovered_not_fully_deduplicated",
+      "award": "NA17OAR4590185",
+      "source": "https://repository.library.noaa.gov/view/noaa/57177",
+      "finding": "Official NOAA IR journal article lists exact DOI, funding grant NA17OAR4590185, author list, year 2020, and a distinct publicly available soil-moisture dataset described within the article. No full REACH detail/Scout identity screening or dataset DOI verified in this run; original and potential dataset expansion remain open.",
+      "original_seed_disposition": "awaiting_research",
+      "seed_expansion_status": "awaiting_research",
+      "new_candidate": false
+    }
+  ],
+  "new_candidate_count": 0,
+  "new_preprint_holds": 0,
+  "new_published_leads_verified": 0,
+  "new_output_ir_lookups": 0,
+  "feed_staged_new": 0,
+  "hub_import": "NOT_VERIFIED",
+  "human_approvals": "NOT_VERIFIED",
+  "public_reach_additions": "NOT_VERIFIED",
+  "limitations": [
+    "Historical Crossref ledger and coverage not mutated; source check alone insufficient to change terminal status.",
+    "Complete public REACH and Scout detail/version dedup still required before any draft.",
+    "No private Hub access or human decisions verified."
+  ],
+  "next_priority": "Continue historical Crossref original DOI identity screening and DOI-seed expansions; do not rerun watchlist or NOAA IR inventory."
+}
