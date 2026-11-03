@@ -488,12 +488,13 @@
       "status": "investigating",
       "seed_expansion_status": "investigating",
       "first_seen_at": "2026-11-02T21:18:29.120941+00:00",
-      "updated_at": "2026-11-03T17:00:00Z",
-      "research_notes": "Nov 3 source-specific substantive check: official NOAA IR identifies original journal article and DOI; Wiley publisher confirms grant NA17OAR4590185, author list, journal publication history (version of record online 2020-12-19, issue online 2021-01-25) and direct reference to independently identified soil moisture dataset DOI 10.6075/J0SN07G9. Original REACH/Scout full-shard DOI/title/version/secondary URL dedup and exact primary SPARK project match NOT yet completed; no original disposition or candidate approval implied.",
+      "updated_at": "2026-11-03T20:32:53Z",
+      "research_notes": "Nov 3 source-specific substantive check: official NOAA IR identifies original journal article and DOI; Wiley publisher confirms grant NA17OAR4590185, author list, journal publication history (version of record online 2020-12-19, issue online 2021-01-25) and direct reference to independently identified soil moisture dataset DOI 10.6075/J0SN07G9. Original REACH/Scout full-shard DOI/title/version/secondary URL dedup and exact primary SPARK project match NOT yet completed; no original disposition or candidate approval implied.\nNov 3 15:32 ET bounded source verification: official NOAA IR noaa:57177 explicitly lists exact article DOI, authors, Hydrological Processes journal identity, and Grant NA17OAR4590185. Wiley's publisher article independently lists Climate Program Office grant NA17OAR4590185 and a separate dataset cited as Sumargo et al. (2020), DOI 10.6075/J0SN07G9; publisher data availability links processed measurements to that repository. These are verified source-level funding and distinct dataset-lead evidence, NOT a completed full REACH/Scout duplicate check or a verified primary SPARK project row. Original remains investigating; do not stage.",
       "checked_sources": [
         "https://repository.library.noaa.gov/view/noaa/57177",
         "https://onlinelibrary.wiley.com/doi/abs/10.1002/hyp.13998",
-        "https://onlinelibrary.wiley.com/doi/10.1002/hyp.13998"
+        "https://onlinelibrary.wiley.com/doi/10.1002/hyp.13998",
+        "https://repository.library.noaa.gov/view/noaa/57177/noaa_57177_DS1.pdf"
       ],
       "reach_snapshot": "",
       "funding_basis": "Wiley article Funding information explicitly lists Climate Program Office award NA17OAR4590185; same-project SPARK PRIMARY award still requires verification before eligible staging.",
@@ -502,9 +503,11 @@
       "verified_awards": [],
       "seed_checked_sources": [
         "https://onlinelibrary.wiley.com/doi/10.1002/hyp.13998",
-        "https://doi.org/10.6075/J0SN07G9"
+        "https://doi.org/10.6075/J0SN07G9",
+        "https://repository.library.noaa.gov/view/noaa/57177",
+        "https://repository.library.noaa.gov/view/noaa/57177/noaa_57177_DS1.pdf"
       ],
-      "seed_research_notes": "New concrete API-seeded expansion lead: dataset DOI 10.6075/J0SN07G9 explicitly cited in source article bibliography and data-availability statement; research lead ONLY, not validated candidate. Resume exact DOI metadata and funding/dedup checks; original seed and expansion both remain open.",
+      "seed_research_notes": "New concrete API-seeded expansion lead: dataset DOI 10.6075/J0SN07G9 explicitly cited in source article bibliography and data-availability statement; research lead ONLY, not validated candidate. Resume exact DOI metadata and funding/dedup checks; original seed and expansion both remain open.\nNov 3 bounded expansion check: publisher article and NOAA IR manuscript independently cite distinct UC San Diego Library Digital Collections dataset DOI 10.6075/J0SN07G9, 'Data from: A Soil Moisture Monitoring Network to Assess Controls on Runoff Generation During Atmospheric River Events'. DOI resolver was inaccessible in this mission; exact native/DataCite metadata, public-file/version eligibility, same-project primary award, and complete REACH/Scout identity screening remain required. No expansion completed.",
       "source_overlap_hints": [],
       "present_in_published_scout_feed_at_intake": false,
       "award_numbers": [
@@ -518,7 +521,8 @@
       ],
       "titles": [
         "A soil moisture monitoring network to assess controls on runoff generation during atmospheric river events"
-      ]
+      ],
+      "next_action": "Retrieve exact 10.6075/J0SN07G9 repository/DataCite metadata and source files, verify its own award and full REACH/Scout identity/version/secondary URLs; independently complete all public REACH index+detail and active/pending Scout comparisons for original 10.1002/hyp.13998 and confirm same-project SPARK primary award NA17OAR4590185. Keep both lanes investigating until checked."
     },
     {
       "identity": "doi:10.1002/hyp.14960",
