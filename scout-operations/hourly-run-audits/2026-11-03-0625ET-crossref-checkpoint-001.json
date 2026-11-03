@@ -1,0 +1,76 @@
+{
+  "schema": "reach-scout-hourly-provenance-audit-v1",
+  "run_id": "2026-11-03-0625ET-crossref-checkpoint-001",
+  "observed_at_local": "2026-11-03T06:25:51-05:00",
+  "selected_mode": "historical_crossref_triage",
+  "audit_result": "PARTIAL",
+  "scope": "Read-only checkpoint and routing verification; no new DOI substantive screening performed in this checkpoint",
+  "source": {
+    "historical_crossref_manifest": "api-discoveries/historical-crossref/manifest.json",
+    "raw_rows": 614,
+    "distinct_dois": 614,
+    "source_batches": 7,
+    "manifest_generated_at": "2026-11-02T21:18:29.120941+00:00",
+    "batch_sha256_verification": "NOT_VERIFIED_IN_THIS_RUN"
+  },
+  "coverage_before": {
+    "originals_completed": 48,
+    "originals_awaiting_research": 555,
+    "originals_investigating": 11,
+    "already_in_reach": 9,
+    "no_action": 39,
+    "seed_expansions_completed": 0,
+    "seed_expansion_pending": 614,
+    "fully_investigated": 0,
+    "remaining": 614
+  },
+  "coverage_after": "unchanged",
+  "monthly": {
+    "source_rows": 13,
+    "ledger_missing": 0,
+    "originals_staged_for_hub_import": 8,
+    "originals_research_completed": 13,
+    "monthly_expansion_leads": 6,
+    "private_hub_import": "NOT_VERIFIED"
+  },
+  "scout_feed": {
+    "manifest_candidate_rows": 83,
+    "manifest_batches": 30,
+    "manifest_generated_at": "2026-11-02T22:03:13Z",
+    "new_batches": [],
+    "new_candidates": 0,
+    "manifest_batch_sha_recheck": "NOT_PERFORMED"
+  },
+  "preprint": {
+    "policy": "intake classification only; monthly GitHub Action is sole scheduled recheck",
+    "new_holds": 0,
+    "new_published_leads": 0,
+    "watchlist_sweep_performed": false
+  },
+  "noaa_ir": {
+    "policy": "one local exact DOI lookup only after new-output dedup",
+    "new_output_lookups": 0,
+    "verified_true": 0,
+    "unknown": 0,
+    "index_unavailable": 0,
+    "standalone_audit_performed": false
+  },
+  "research": {
+    "new_original_dispositions": [],
+    "new_seed_expansion_leads": [],
+    "new_checked_sources": [],
+    "independent_leads_resumed": 0,
+    "reason": "This checkpoint verified authoritative routing and existing ledger status only; no evidence-backed per-DOI research was completed."
+  },
+  "human_gate": {
+    "private_hub_import": "NOT_VERIFIED",
+    "human_approvals": "NOT_VERIFIED",
+    "public_reach_additions": "NOT_VERIFIED"
+  },
+  "next_priority": "Resume original Crossref first-pass full REACH and Scout DOI/version/URL checks, then independently research each seed's related outputs; monthly original work preempts if new arrivals.",
+  "limitations": [
+    "Current Crossref source batch CSV SHA values were not independently recalculated.",
+    "No substantive DOI case updated; remaining count unchanged.",
+    "No Library artifact save verified."
+  ]
+}
