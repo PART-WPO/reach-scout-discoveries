@@ -8,6 +8,7 @@ on:
       - 'scout-operations/tests/test_decision_pipeline.py'
       - 'scout-operations/tests/published-crossref-decision-cases.json'
       - 'scout-operations/tests/flash-drought-positive-control-case.json'
+      - 'scout-operations/tests/reach-canonical-url-closure-case-2026-11-04.json'
       - 'scout-operations/decision-contract-v1.md'
       - 'scout-discoveries/manifest.json'
       - 'scout-discoveries/inbox/**'
@@ -61,6 +62,7 @@ jobs:
             python scout-operations/tools/decision_pipeline.py build-index
             python scout-operations/tools/decision_pipeline.py evaluate --cases scout-operations/tests/published-crossref-decision-cases.json
             python scout-operations/tools/decision_pipeline.py evaluate --cases scout-operations/tests/flash-drought-positive-control-case.json
+            python scout-operations/tools/decision_pipeline.py evaluate --cases scout-operations/tests/reach-canonical-url-closure-case-2026-11-04.json
             python - <<'PY'
           import glob, json
           from pathlib import Path
@@ -70,16 +72,22 @@ jobs:
           assert len(idx["records"])>=1238
           negatives=json.loads(Path("scout-operations/tests/published-crossref-decision-cases.json").read_text())["cases"]
           positives=json.loads(Path("scout-operations/tests/flash-drought-positive-control-case.json").read_text())["cases"]
-          ids={v["doi"] for v in negatives+positives}
+          duplicates=json.loads(Path("scout-operations/tests/reach-canonical-url-closure-case-2026-11-04.json").read_text())["cases"]
+          ids={v["doi"] for v in negatives+positives+duplicates}
           records=[]
           for path in glob.glob("scout-operations/case-checkpoints/doi-*/rev-*.json"):
               x=json.loads(Path(path).read_text())
               if x["case_input"]["doi"] in ids and x["index_fingerprint"]==idx["source_fingerprint"]:
                   records.append(x)
-          assert len(records)==4, "Expected three hold controls plus one positive-control checkpoint"
+          assert len(records)==5, "Expected three holds, one positive-control and one existing-REACH checkpoint"
           held=[x for x in records if x["evaluation"]["doi"] in {v["doi"] for v in negatives}]
           ready=[x for x in records if x["evaluation"]["doi"] in {v["doi"] for v in positives}]
-          assert len(held)==3 and len(ready)==1
+          existing=[x for x in records if x["evaluation"]["doi"] in {v["doi"] for v in duplicates}]
+          assert len(held)==3 and len(ready)==1 and len(existing)==1
+          assert existing[0]["evaluation"]["decision"]=="EXISTING_IN_REACH"
+          assert existing[0]["evaluation"]["identity_check"]["status"]=="CONFIRMED_PUBLIC_REACH_IDENTITY"
+          assert any(m["source"]=="REACH" and m["identity"]=="reachuid-v1-784189d5f32028e72e4b294e805e99b7" and "exact_url" in m["match_bases"] for m in existing[0]["evaluation"]["identity_check"]["matches"])
+          assert existing[0]["case_input"]["seed_expansion_status"]=="awaiting_exploration"
           assert not any(x["evaluation"]["decision"]=="READY_FOR_VALIDATED_DRAFT_PREFLIGHT" for x in held)
           assert ready[0]["evaluation"]["decision"]=="READY_FOR_VALIDATED_DRAFT_PREFLIGHT"
           assert ready[0]["evaluation"]["identity_check"]["status"]=="NO_PUBLIC_IDENTITY_MATCH"
@@ -91,12 +99,13 @@ jobs:
           outcome_counts=Counter(x["evaluation"]["decision"] for x in records)
           summary={
               "schema":"reach-scout-decision-pipeline-metrics-v1",
-              "scope":"Three negative controls plus one historical Crossref positive-control candidate; readiness means preflight, not staging",
+              "scope":"Three holds, one draft-preflight positive control, one index-negative historical original resolved by exact canonical REACH URL; no auto-staging or expansion closure",
               "source_fingerprint":idx["source_fingerprint"],
               "reach_public_records":counts["REACH"],
               "scout_published_candidate_rows":counts["SCOUT_PUBLISHED"],
               "scout_inbox_candidate_rows":counts["SCOUT_INBOX"],
               "test_cases_evaluated":len(records),
+              "existing_reach_url_fallback_control":len(existing),
               "test_decisions":dict(sorted(outcome_counts.items())),
               "automatically_staged":sum(x["evaluation"]["automatically_staged"] for x in records),
               "private_hub_import":"NOT_VERIFIED",
@@ -105,7 +114,7 @@ jobs:
           }
           destination=Path("scout-operations/identity-cache/decision-validation-summary.json")
           destination.write_text(json.dumps(summary,indent=2,sort_keys=True)+"\n")
-          print("Validated three research holds and one positive-control draft-preflight recommendation; no auto-stage",summary)
+          print("Validated three research holds, one draft-preflight recommendation, and one original existing-REACH URL identity; seed expansion remains open",summary)
           PY
             git add scout-operations/identity-cache/public-identity-index.json scout-operations/identity-cache/decision-validation-summary.json scout-operations/case-checkpoints
             if git diff --cached --quiet; then
