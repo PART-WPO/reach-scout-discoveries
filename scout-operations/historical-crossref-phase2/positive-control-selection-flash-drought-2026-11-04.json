@@ -44,7 +44,13 @@
         "doi": "10.1016/j.ejrh.2026.103245",
         "reach_uid": "reachuid-v1-268a266ad832e06837fcc788f0d587bb"
       },
-      "assessment": "No exact DOI or normalized-title match found in the public REACH comparison snapshot or current shared Scout queue lookup; exact DOI not shown as existing. Must still check all secondary URLs, concept/final versions and prior review decisions before staging."
+      "assessment": "No exact DOI or normalized-title match found in the public REACH comparison snapshot or current shared Scout queue lookup; exact DOI not shown as existing. Must still check all secondary URLs, concept/final versions and prior review decisions before staging.",
+      "historical_crossref_triage_status": "awaiting_research",
+      "historical_crossref_expansion_status": "awaiting_exploration",
+      "preexisting_historical_research_notes": "EMPTY",
+      "preexisting_historical_checked_sources": 0,
+      "prior_public_historical_exclusion_found": false,
+      "prior_private_review_status": "NOT_VERIFIED"
     },
     "intake_metadata": {
       "crossref_source_batch": "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part003.csv",
@@ -53,13 +59,14 @@
       "abstract_present": true,
       "publication_date_present": true,
       "principal_investigators": "UNVERIFIED_IN_SOURCE",
-      "noaa_ir": "NOT_VERIFIED",
+      "noaa_ir": "NOT_VERIFIED_BY_PUBLIC_WEB_SEARCH",
       "private_reviewer_decisions": "NOT_VERIFIED",
-      "existing_reach_match_field": "Unchecked"
+      "existing_reach_match_field": "Unchecked",
+      "crossref_first_pass_screening": "INDEX_NO_MATCH_PENDING_DETAILS"
     },
     "recommended_next_state": "PROMISING_POSITIVE_CONTROL_AWAITING_FULL_PREFLIGHT",
     "remaining_checks": [
-      "Read authoritative prior historical Crossref ledger and any private human reviewer decision, when accessible; preserve intentionally excluded case outcome",
+      "Public historical-crossref-triage was checked: awaiting_research, no existing source-backed exclusion or human decision in this public ledger. Check separate private human reviewer decisions if accessible before any draft.",
       "Compare secondary output URLs and exact publication title/version against all REACH details and possible NOAA IR link before certifying absence",
       "Recover appropriate Principal Investigators from the specific project if required by validated 24-column schema; do not equate paper author with project PI",
       "Run controlled 24-column prepare_batch.py preflight; only then create unique inbox draft, monitor promotion and confirm actual private Discovery Hub import separately"
