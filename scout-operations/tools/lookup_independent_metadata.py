@@ -65,7 +65,7 @@ def main():
    result["noaa_ir_identity"]="AMBIGUOUS" if hits else "NOT_FOUND_IN_VERIFIED_IR_INDEX"
    return result
   url=hits[0]
-  if not re.fullmatch(r"https://repository\\.library\\.noaa\\.gov/view/noaa/\\d+",url):
+  if not re.fullmatch(r"https://repository[.]library[.]noaa[.]gov/view/noaa/[0-9]+",url):
    raise ValueError("Invalid official NOAA IR landing URL")
   second=identity.lookup(idx,doi=d,title=title,url=url)
   result.update(public_identity=second,official_ir_url=url,
