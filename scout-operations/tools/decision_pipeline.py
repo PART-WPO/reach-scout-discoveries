@@ -159,6 +159,12 @@ def check_index_fresh(root, index):
     for entry in sources["inbox_files"]:
         demand(sha_file(root / entry["path"]) == entry["sha256"],
                "Scout inbox changed; rebuild identity index: " + entry["path"])
+    manifest = read_json(root / "scout-discoveries/manifest.json")
+    demand(len(manifest.get("batches", [])) == sources["scout_batches"],
+           "Scout manifest batch count changed")
+    for batch in manifest["batches"]:
+        demand(sha_file(root / batch["path"]) == batch["sha256"],
+               "Published Scout batch changed without valid source checksum: " + batch["path"])
     expected = sha_bytes(json.dumps(sources, sort_keys=True).encode())
     demand(expected == index.get("source_fingerprint"), "Index source fingerprint mismatch")
 
@@ -234,6 +240,8 @@ def evaluate(case, index):
         note.append("Contradictory project-purpose evidence; do not stage on shared grant number")
     elif award is not True:
         decision = "PRIMARY_AWARD_UNVERIFIED"
+    elif cohort == "monthly_api" and case.get("structured_funding_evidence_verified") is not True:
+        decision = "STRUCTURED_FUNDING_EVIDENCE_REQUIRED"
     elif cohort != "monthly_api" and not supported:
         decision = ("ATTRIBUTION_HOLD_AFTER_BOUNDED_RESEARCH"
                     if case.get("research_rounds", 0) >= 2 else "RESEARCH_PROJECT_BRIDGE")
