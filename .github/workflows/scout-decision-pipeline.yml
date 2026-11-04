@@ -8,6 +8,9 @@ on:
       - 'scout-operations/tests/test_decision_pipeline.py'
       - 'scout-operations/tests/published-crossref-decision-cases.json'
       - 'scout-operations/decision-contract-v1.md'
+      - 'scout-discoveries/manifest.json'
+      - 'scout-discoveries/inbox/**'
+      - 'scout-operations/reach-comparison-cache/comparison-index.json'
 permissions:
   contents: write
 concurrency:
