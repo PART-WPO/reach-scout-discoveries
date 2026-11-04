@@ -1,0 +1,75 @@
+{
+  "schema": "reach-scout-crossref-bounded-exact-doi-identity-check-v1",
+  "date": "2026-11-04",
+  "mode": "historical_crossref_original_identity",
+  "source_manifest_sha256": "799744c7e83f218d22cc19afacb7cfcf2762feb490659efde9f58bf19473b1fa",
+  "screening_manifest_sha256": "470e89f3ef51557b5d8e817a6d860cd6592522a692a83a714c252abe0ea84a50",
+  "reach_cache_sha256": "6660562e325a6a141198f59acce84f2e30d9a2d14e6cf5acd29769c8a4b68e1e",
+  "reach_manifest_sha256": "f94ae52cac483b52e9a5cd6e775c6faa01ad6ec33610b249b3d486aed6daa003",
+  "scout_manifest_sha256": "755885a5c5607f5036bf1a9b7cf28248c2be9442d68edfbdc167e58ebd1fab54",
+  "identity_index_fingerprint": "8d87193fbc1d74768453b765d7d4d29a85fa07cb3d98046851b687f14490043e",
+  "identity_index_blob_sha": "b2319c5988dd73ef2b14feaf6a8238ccd3e9e8b6",
+  "routing_baseline": {
+    "CONFIRMED_IN_REACH": 1,
+    "NOT_FOUND_IN_REACH_INDEX": 142,
+    "LIKELY_IN_REACH": 471
+  },
+  "source_integrity": "RECORDED_SNAPSHOT_ONLY_LIVE_MANIFEST_SHA_NOT_RECOMPUTED",
+  "checks": [
+    {
+      "doi": "10.1007/s00382-023-06864-x",
+      "original_route": "LIKELY_IN_REACH",
+      "identity_evidence": "EXACT_DOI_REACH_SAVED_PUBLIC_INDEX",
+      "reach_uid": "reachuid-v1-7979f90d31fb5e954b0c2ea7357250ea",
+      "reach_detail_shard": "agent-data/details/part-054.csv",
+      "reach_title": "Using simplified linear and nonlinear models to assess ENSO-modulated MJO teleconnections",
+      "canonical_url": "https://doi.org/10.1007/s00382-023-06864-x",
+      "public_index_source_fingerprint": "8d87193fbc1d74768453b765d7d4d29a85fa07cb3d98046851b687f14490043e",
+      "private_hub_decisions": "NOT_VERIFIED",
+      "original_disposition": "UNCHANGED_PENDING_CURRENT_SOURCE_SHA_VALIDATION",
+      "new_output_proposal": "HOLD_DUPLICATE_IN_SAVED_PUBLIC_SNAPSHOT",
+      "seed_expansion": "OPEN_INDEPENDENT_RESEARCH_REQUIRED",
+      "next_action": "Verify live source manifest fingerprints before terminal original disposition; retain independently required seed expansion."
+    },
+    {
+      "doi": "10.1007/s00382-023-06965-7",
+      "original_route": "LIKELY_IN_REACH",
+      "identity_evidence": "EXACT_DOI_REACH_SAVED_PUBLIC_INDEX",
+      "reach_uid": "reachuid-v1-804eb3d3e069053708218c486b26d4ea",
+      "reach_detail_shard": "agent-data/details/part-054.csv",
+      "reach_title": "Sensitivity of the blocking-North Atlantic Oscillation relationship to index",
+      "canonical_url": "https://doi.org/10.1007/s00382-023-06965-7",
+      "public_index_source_fingerprint": "8d87193fbc1d74768453b765d7d4d29a85fa07cb3d98046851b687f14490043e",
+      "private_hub_decisions": "NOT_VERIFIED",
+      "original_disposition": "UNCHANGED_PENDING_CURRENT_SOURCE_SHA_VALIDATION",
+      "new_output_proposal": "HOLD_DUPLICATE_IN_SAVED_PUBLIC_SNAPSHOT",
+      "seed_expansion": "OPEN_INDEPENDENT_RESEARCH_REQUIRED",
+      "next_action": "Verify live source manifest fingerprints before terminal original disposition; retain independently required seed expansion."
+    },
+    {
+      "doi": "10.1007/s00382-026-08137-9",
+      "original_route": "LIKELY_IN_REACH",
+      "identity_evidence": "EXACT_DOI_REACH_SAVED_PUBLIC_INDEX",
+      "reach_uid": "reachuid-v1-29a6f07b4e11e52bf26208cae3e53930",
+      "reach_detail_shard": "agent-data/details/part-126.csv",
+      "reach_title": "Do our models capture the range of ENSO events?",
+      "canonical_url": "https://doi.org/10.1007/s00382-026-08137-9",
+      "public_index_source_fingerprint": "8d87193fbc1d74768453b765d7d4d29a85fa07cb3d98046851b687f14490043e",
+      "private_hub_decisions": "NOT_VERIFIED",
+      "original_disposition": "UNCHANGED_PENDING_CURRENT_SOURCE_SHA_VALIDATION",
+      "new_output_proposal": "HOLD_DUPLICATE_IN_SAVED_PUBLIC_SNAPSHOT",
+      "seed_expansion": "OPEN_INDEPENDENT_RESEARCH_REQUIRED",
+      "next_action": "Verify live source manifest fingerprints before terminal original disposition; retain independently required seed expansion."
+    }
+  ],
+  "metrics": {
+    "newly_resolved_likely_matches_in_saved_snapshot": 3,
+    "not_found_originals_advanced": 0,
+    "originals_terminally_closed": 0,
+    "seed_expansions_investigated": 0,
+    "seed_expansions_completed": 0,
+    "scout_overlaps_resolved": 0,
+    "validated_candidates_added": 0
+  },
+  "preservation": "No immutable sources, checkpoints, prior human decisions, original dispositions or seed-expansion states modified."
+}
