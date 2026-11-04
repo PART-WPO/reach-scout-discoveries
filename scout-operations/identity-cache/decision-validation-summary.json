@@ -1,18 +1,20 @@
 {
   "automatically_staged": 0,
+  "existing_reach_url_fallback_control": 1,
   "private_hub_import": "NOT_VERIFIED",
   "reach_public_records": 1238,
   "reviewer_outcomes": "NOT_VERIFIED",
   "schema": "reach-scout-decision-pipeline-metrics-v1",
-  "scope": "Three negative controls plus one historical Crossref positive-control candidate; readiness means preflight, not staging",
-  "scout_inbox_candidate_rows": 26,
+  "scope": "Three holds, one draft-preflight positive control, one index-negative historical original resolved by exact canonical REACH URL; no auto-staging or expansion closure",
+  "scout_inbox_candidate_rows": 27,
   "scout_published_candidate_rows": 83,
-  "source_fingerprint": "8d87193fbc1d74768453b765d7d4d29a85fa07cb3d98046851b687f14490043e",
-  "test_cases_evaluated": 4,
+  "source_fingerprint": "929564941feb9dd5c69742c87988b98bbc92befa99b648f2aea5d4de695ff122",
+  "test_cases_evaluated": 5,
   "test_decisions": {
     "ATTRIBUTION_HOLD_AFTER_BOUNDED_RESEARCH": 2,
-    "NO_DEMONSTRATED_SAME_WPO_PROJECT": 1,
-    "READY_FOR_VALIDATED_DRAFT_PREFLIGHT": 1
+    "EXISTING_IN_REACH": 1,
+    "EXISTING_SCOUT_CANDIDATE": 1,
+    "NO_DEMONSTRATED_SAME_WPO_PROJECT": 1
   },
   "time_to_first_decision": "NOT_MEASURED"
 }
