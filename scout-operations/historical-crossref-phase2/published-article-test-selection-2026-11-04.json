@@ -1,0 +1,45 @@
+{
+  "schema": "reach-scout-published-article-test-selection-v1",
+  "routing_commit": "924aef33dcabb183095a1f2d02df27041bc08700",
+  "routing_outcome": "NOT_FOUND_IN_REACH_INDEX",
+  "candidates": [
+    {
+      "doi": "10.1002/qj.5049",
+      "publication_status": "PUBLISHED_JOURNAL_ARTICLE_VERIFIED",
+      "journal": "Quarterly Journal of the Royal Meteorological Society",
+      "first_published": "2025-07-02",
+      "publisher_url": "https://rmets.onlinelibrary.wiley.com/doi/10.1002/qj.5049",
+      "publisher_funding": "NA20OAR4320278; publisher describes Global Drifter Program support",
+      "scout_overlap_flag": false,
+      "next_gate": "Check complete Scout queue and prior decisions, then exact same-project SPARK primary award and required metadata; do not infer from shared award root"
+    },
+    {
+      "doi": "10.1016/j.rse.2025.115156",
+      "publication_status": "PUBLISHED_JOURNAL_ARTICLE_VERIFIED",
+      "journal": "Remote Sensing of Environment",
+      "volume_date": "2026-03-01",
+      "publisher_url": "https://www.sciencedirect.com/science/article/pii/S0034425725005607",
+      "noaa_ir_url": "https://repository.library.noaa.gov/view/noaa/75220",
+      "noaa_ir_funding": "NA21OAR4310383",
+      "scout_overlap_flag": false,
+      "next_gate": "Check Scout queue and exact same-project primary award before optional new-output IR enrichment"
+    },
+    {
+      "doi": "10.1007/s00382-022-06655-w",
+      "publication_status": "PUBLISHED_JOURNAL_ARTICLE_VERIFIED",
+      "journal": "Climate Dynamics",
+      "publication_year": 2023,
+      "noaa_ir_url": "https://repository.library.noaa.gov/view/noaa/66066",
+      "gfdl_url": "https://www.gfdl.noaa.gov/climate-dynamics-and-prediction-publications/",
+      "noaa_ir_funding": "NA21OAR4310383",
+      "scout_overlap_flag": false,
+      "next_gate": "Check Scout queue and exact same-project primary award; do not infer eligibility from NOAA IR membership"
+    }
+  ],
+  "verification_scope": "Published journal identity confirmed using publisher or official NOAA records; REACH index-negative only, not global absence. No complete Scout feed dedup, human-decision check, or exact SPARK primary award verification performed.",
+  "safeguards": {
+    "original_dispositions_changed": false,
+    "expansion_seeds_closed": 0,
+    "candidates_staged": 0
+  }
+}
