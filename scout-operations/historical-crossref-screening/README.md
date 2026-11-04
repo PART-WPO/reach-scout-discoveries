@@ -35,3 +35,27 @@ REACH duplicates or authorization to stage. Preserve the previous routing
 outcomes, original research ledger, human decisions, and every seed-expansion
 lane. Use the versioned `scout-operations/decision-contract-v1.md` and
 immutable DOI-level case checkpoints for subsequent evidence-based decisions.
+
+
+## November 4 verified Crossref title-normalization correction
+
+The regression-tested router now strips publisher XML/HTML title tags with the
+shared `decision_pipeline.norm_title` normalizer before comparing original
+Crossref titles to the complete verified REACH index. This moved **four
+previously missed exact-title matches** from NOT_FOUND_IN_REACH_INDEX to
+LIKELY_IN_REACH (pending bounded detail/DOI identity confirmation), retaining
+all 614 original DOI identities and every independent expansion seed.
+
+Validated revised counts: 1 CONFIRMED_IN_REACH; 471 LIKELY_IN_REACH; 142
+NOT_FOUND_IN_REACH_INDEX; 0 SCREENING_INCOMPLETE. The separate public Scout
+queue overlap remains 31 original DOIs, including one title-only ambiguity.
+The regression covers DOI 10.1002/hyp.14960, 10.1111/jfr3.12795,
+10.1111/jfr3.70241, and 10.5194/gmd-17-5309-2024 with expected REACH UIDs.
+No prior human decision or immutable screening checkpoint was modified.
+
+Real positive-control candidate 10.1175/jamc-d-25-0108.1 remains absent
+from the verified public REACH/Scout catalog, with exact primary WPO
+award/project attribution. Its preflight testing and private reviewer
+history are separately tracked under
+`scout-operations/historical-crossref-phase2/`. A validated 24-column
+preflight is not human approval or proof of private Hub delivery.
