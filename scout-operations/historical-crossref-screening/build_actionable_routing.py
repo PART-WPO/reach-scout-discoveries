@@ -13,11 +13,14 @@ import json
 import re
 from collections import Counter
 from pathlib import Path
+import sys
 
 ROOT = Path(__file__).resolve().parents[2]
 HERE = ROOT / "scout-operations/historical-crossref-screening"
 CACHE = ROOT / "scout-operations/reach-comparison-cache/comparison-index.json"
 SOURCE = ROOT / "api-discoveries/historical-crossref/manifest.json"
+sys.path.insert(0, str(ROOT / "scout-operations/tools"))
+from decision_pipeline import build_index, lookup
 
 def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -38,6 +41,9 @@ def build():
     source = json.loads(SOURCE.read_text())
     screening = json.loads((HERE / "manifest.json").read_text())
     cache = json.loads(CACHE.read_text())
+    shared_identity = build_index(ROOT)  # one verified REACH+published Scout+inbox snapshot for all source DOIs
+    require(shared_identity["sources"]["reach_cache_sha256"] == sha(CACHE),
+            "Shared identity and Crossref routing REACH caches disagree")
     require(screening["source_manifest_sha256"] == sha(SOURCE), "Source snapshot changed")
     require(screening["counts"]["unscreened"] == 0, "Screening checkpoint incomplete")
     require(cache["schema"] == "reach-scout-comparison-cache-v1", "Wrong cache schema")
@@ -114,8 +120,16 @@ def build():
         else:
             outcome = "NOT_FOUND_IN_REACH_INDEX"
             route = "ADVANCE_TO_FUNDING_AND_METADATA_RESEARCH"
+        shared_result = lookup(shared_identity, d, t)
+        scout_queue_matches = [
+            {"source": hit["source"], "identity": hit["identity"],
+             "location": hit["location"], "basis": hit["match_bases"]}
+            for hit in shared_result["matches"] if hit["source"].startswith("SCOUT_")
+        ]
         results.append({
             "doi": d, "title": t, "outcome": outcome, "route": route,
+            "scout_public_queue_matches": scout_queue_matches,
+            "scout_public_queue_match_count": len(scout_queue_matches),
             "scout_overlap": bool(prior.get("scout_overlap")),
             "matches": [
                 {"reach_uid": uid, "record_id": r["record_id"],
@@ -131,6 +145,8 @@ def build():
             "screening_manifest_sha256": sha(HERE / "manifest.json"),
             "reach_cache_sha256": cache_sha,
             "reach_source_manifest_sha256": cache["source_manifest_sha256"],
+            "shared_identity_index_fingerprint": shared_identity["source_fingerprint"],
+            "public_scout_queue_overlap_dois": sum(bool(r["scout_public_queue_matches"]) for r in results),
             "reach_source_records": cache["source_records"],
             "total": len(results), "counts": counts,
             "scout_overlap_flagged": sum(r["scout_overlap"] for r in results),
