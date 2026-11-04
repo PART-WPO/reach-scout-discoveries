@@ -1,0 +1,48 @@
+{
+  "schema": "reach-scout-historical-crossref-phase2-smoke-test-v1",
+  "purpose": "Verify actionable routing selects index-negative originals for substantive next-gate research without treating old POSSIBLE_MATCH as ambiguity or overwriting prior decisions",
+  "routing_commit": "924aef33dcabb183095a1f2d02df27041bc08700",
+  "routing_cache_sha256": "6660562e325a6a141198f59acce84f2e30d9a2d14e6cf5acd29769c8a4b68e1e",
+  "routing_source_manifest_sha256": "799744c7e83f218d22cc19afacb7cfcf2762feb490659efde9f58bf19473b1fa",
+  "routing_counts": {
+    "total": 614,
+    "confirmed": 1,
+    "likely": 467,
+    "not_found_index": 146,
+    "incomplete": 0,
+    "scout_overlap_flagged": 30
+  },
+  "records": [
+    {
+      "doi": "10.1002/essoar.10504829.1",
+      "route": "NOT_FOUND_IN_REACH_INDEX",
+      "source_title": "The Silent Sounds of Tornadoes and Their Potential Fluid Mechanism",
+      "source_evidence": "https://d197for5662m48.cloudfront.net/documents/publicationstatus/103965/preprint_pdf/cf2d1864d8dda72f5a5efec9afc58950.pdf",
+      "observed": "Publisher-hosted PDF explicitly labels this DOI as a preprint, not peer reviewed; posted 2022-11-23",
+      "original_action": "HOLD_PREPRINT_NOT_CANDIDATE",
+      "next_action": "Preserve monthly watchlist; seek explicit verified final-article relation during scheduled monthly check; retain separate expansion seed",
+      "scout_overlap_flag": false,
+      "official_final_publication_verified": false
+    },
+    {
+      "doi": "10.1002/essoar.10507281.1",
+      "route": "NOT_FOUND_IN_REACH_INDEX",
+      "source_title": "Intersecting Fluvial and Pluvial Inundation Estimates with Sociodemographic Vulnerability to Quantify Household Risk in Urban Areas",
+      "source_evidence": "https://publications.rwth-aachen.de/record/833772/files/833772.pdf",
+      "observed": "Archived ESSOAr manuscript identifies DOI, first posted 2021-06-15, states content not peer reviewed and manuscript submitted to Water Resources Research",
+      "original_action": "HOLD_PREPRINT_NOT_CANDIDATE",
+      "next_action": "Preserve monthly watchlist; verify published version DOI if explicit registry relationship exists; retain separate expansion seed",
+      "scout_overlap_flag": false,
+      "official_final_publication_verified": false
+    }
+  ],
+  "safeguards": {
+    "original_dispositions_modified": false,
+    "seed_expansions_closed": 0,
+    "hub_candidates_staged": 0,
+    "scout_overlap_resolved": 0,
+    "full_scout_queue_dedup_performed": false,
+    "primary_spark_award_verified": false
+  },
+  "notes": "This is a bounded research smoke test, not a complete original-disposition closure or proof of publication absence. Source PDFs establish preprint status for these DOI versions; final journal publication status remains unverified."
+}
