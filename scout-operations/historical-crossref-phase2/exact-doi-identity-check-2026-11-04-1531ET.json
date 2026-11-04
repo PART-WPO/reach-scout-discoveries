@@ -1,0 +1,87 @@
+{
+  "schema": "reach-scout-crossref-bounded-exact-doi-identity-check-v1",
+  "date": "2026-11-04",
+  "mode": "historical_crossref_original_identity",
+  "source_manifest_sha256": "799744c7e83f218d22cc19afacb7cfcf2762feb490659efde9f58bf19473b1fa",
+  "screening_manifest_sha256": "470e89f3ef51557b5d8e817a6d860cd6592522a692a83a714c252abe0ea84a50",
+  "reach_cache_sha256": "6660562e325a6a141198f59acce84f2e30d9a2d14e6cf5acd29769c8a4b68e1e",
+  "reach_manifest_sha256": "f94ae52cac483b52e9a5cd6e775c6faa01ad6ec33610b249b3d486aed6daa003",
+  "scout_manifest_sha256": "755885a5c5607f5036bf1a9b7cf28248c2be9442d68edfbdc167e58ebd1fab54",
+  "identity_index_fingerprint": "8d87193fbc1d74768453b765d7d4d29a85fa07cb3d98046851b687f14490043e",
+  "routing_baseline": {
+    "CONFIRMED_IN_REACH": 1,
+    "NOT_FOUND_IN_REACH_INDEX": 142,
+    "LIKELY_IN_REACH": 471
+  },
+  "checks": [
+    {
+      "doi": "10.1002/essoar.10507067.1",
+      "original_route": "LIKELY_IN_REACH",
+      "snapshot_identity": "EXACT_DOI_IN_REACH_PUBLIC_INDEX",
+      "reach_uid": "reachuid-v1-c7edc71b8cea9fa9926ef4f5ead3f846",
+      "reach_detail_shard": "agent-data/details/part-052.csv",
+      "reach_title": "The Influence of a Resolved Gulf Stream on the Decadal Variability of Southeast US Rainfall",
+      "exact_doi_url": "https://doi.org/10.1002/essoar.10507067.1",
+      "evidence": [
+        "scout-operations/historical-crossref-screening/actionable-routing.json",
+        "scout-operations/identity-cache/public-identity-index.json"
+      ],
+      "original_research_decision": "HOLD_NEW_OUTPUT_PROPOSAL_EXISTING_PUBLIC_REACH_DOI",
+      "terminal_original_disposition": "UNCHANGED_PENDING_LIVE_SOURCE_SHA_VERIFICATION",
+      "private_hub_decisions": "NOT_VERIFIED",
+      "seed_expansion": "OPEN_NOT_INVESTIGATED",
+      "next_action": "Verify live REACH and Scout source manifest hashes; if unchanged, record exact-DOI existing-original disposition without closing independent expansion seed."
+    },
+    {
+      "doi": "10.1007/s00382-021-05901-x",
+      "original_route": "LIKELY_IN_REACH",
+      "snapshot_identity": "EXACT_DOI_IN_REACH_PUBLIC_INDEX",
+      "reach_uid": "reachuid-v1-8cbda347c97cea9a059daa5c9ca28cfb",
+      "reach_detail_shard": "agent-data/details/part-056.csv",
+      "reach_title": "Bulk connectivity of global SST and land precipitation variations",
+      "exact_doi_url": "https://doi.org/10.1007/s00382-021-05901-x",
+      "evidence": [
+        "scout-operations/historical-crossref-screening/actionable-routing.json",
+        "scout-operations/identity-cache/public-identity-index.json"
+      ],
+      "original_research_decision": "HOLD_NEW_OUTPUT_PROPOSAL_EXISTING_PUBLIC_REACH_DOI",
+      "terminal_original_disposition": "UNCHANGED_PENDING_LIVE_SOURCE_SHA_VERIFICATION",
+      "private_hub_decisions": "NOT_VERIFIED",
+      "seed_expansion": "OPEN_NOT_INVESTIGATED",
+      "next_action": "Verify live REACH and Scout source manifest hashes; if unchanged, record exact-DOI existing-original disposition without closing independent expansion seed."
+    },
+    {
+      "doi": "10.1007/s00382-021-06124-w",
+      "original_route": "LIKELY_IN_REACH",
+      "snapshot_identity": "EXACT_DOI_IN_REACH_PUBLIC_INDEX",
+      "reach_uid": "reachuid-v1-03e63015f9d130bfe78e59abdc72ef04",
+      "reach_detail_shard": "agent-data/details/part-057.csv",
+      "reach_title": "Oceanic meridional transports and their roles in warm water volume variability and ENSO in the tropical Pacific",
+      "exact_doi_url": "https://doi.org/10.1007/s00382-021-06124-w",
+      "evidence": [
+        "scout-operations/historical-crossref-screening/actionable-routing.json",
+        "scout-operations/identity-cache/public-identity-index.json"
+      ],
+      "original_research_decision": "HOLD_NEW_OUTPUT_PROPOSAL_EXISTING_PUBLIC_REACH_DOI",
+      "terminal_original_disposition": "UNCHANGED_PENDING_LIVE_SOURCE_SHA_VERIFICATION",
+      "private_hub_decisions": "NOT_VERIFIED",
+      "seed_expansion": "OPEN_NOT_INVESTIGATED",
+      "next_action": "Verify live REACH and Scout source manifest hashes; if unchanged, record exact-DOI existing-original disposition without closing independent expansion seed."
+    }
+  ],
+  "metrics": {
+    "likely_originals_with_exact_public_snapshot_doi_match": 3,
+    "live_source_sha_verified": 0,
+    "originals_closed": 0,
+    "not_found_advanced": 0,
+    "expansion_investigated": 0,
+    "expansion_completed": 0,
+    "scout_overlaps_resolved": 0,
+    "candidates_staged": 0
+  },
+  "limitations": [
+    "Compared three DOI-level identities against the existing published index, not a freshly recomputed live-source SHA.",
+    "No private reviewer history accessed.",
+    "No router or coverage scripts executed; immutable source, triage and expansion lanes unchanged."
+  ]
+}
