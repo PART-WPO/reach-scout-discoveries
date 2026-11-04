@@ -17,18 +17,37 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: main
+          fetch-depth: 0
           persist-credentials: true
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Validate source and screening batches; build counts
-        run: python scout-operations/historical-crossref-screening/build_coverage.py
-      - name: Commit generated manifest and coverage only
+      - name: Validate and publish latest consolidated checkpoint coverage
+        shell: bash
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add scout-operations/historical-crossref-screening/manifest.json scout-operations/historical-crossref-screening/coverage.json
-          if ! git diff --cached --quiet; then
+          # Every retry begins with a clean latest-main checkout, not the
+          # original event commit or a stale previously generated report.
+          for attempt in 1 2 3 4 5; do
+            echo "Coverage attempt ${attempt}/5"
+            git fetch origin main
+            git checkout -B main origin/main
+            python scout-operations/historical-crossref-screening/build_coverage.py
+            git add scout-operations/historical-crossref-screening/manifest.json scout-operations/historical-crossref-screening/coverage.json
+            if git diff --cached --quiet; then
+              echo "Coverage already current at $(git rev-parse --short HEAD)"
+              exit 0
+            fi
             git commit -m "Regenerate validated Crossref screening checkpoint coverage"
-            git push
-          fi
+            if git push origin HEAD:main; then
+              echo "Published coverage at $(git rev-parse --short HEAD)"
+              exit 0
+            fi
+            echo "Concurrent main update; regenerating against latest source and checkpoints"
+            sleep $((attempt * 2))
+          done
+          echo "::error::Unable to publish reconciled coverage after five attempts"
+          exit 1
