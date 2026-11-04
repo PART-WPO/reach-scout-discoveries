@@ -68,6 +68,9 @@ jobs:
             --input-json scout-operations/historical-crossref-phase2/flash-drought-positive-control-candidate.json \
             --output "$DRAFT"
           python scout-discoveries/tools/prepare_batch.py --check "$DRAFT"
+          # Preserve the exact validated bytes outside the active inbox until the
+          # separate, user-approved public staging step. Never publish here.
+          cp "$DRAFT" scout-operations/historical-crossref-phase2/flash-drought-validated-24-column-draft.csv
           python - <<'PY'
           import csv,hashlib,json
           from pathlib import Path
@@ -94,6 +97,7 @@ jobs:
               "status":"PREFLIGHT_PASSED_NOT_STAGED",
               "source_candidate_sha256":hashlib.sha256(source.read_bytes()).hexdigest(),
               "temporary_24_column_csv_sha256":psha,
+              "validated_non_inbox_draft":"scout-operations/historical-crossref-phase2/flash-drought-validated-24-column-draft.csv",
               "column_count":len(row),
               "noaa_ir_exact_doi":row["IR Repository URL"],
               "award":row["NOAA Award Number(s)"],
@@ -112,7 +116,7 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add scout-operations/historical-crossref-phase2/flash-drought-preflight-result.json
+          git add scout-operations/historical-crossref-phase2/flash-drought-preflight-result.json scout-operations/historical-crossref-phase2/flash-drought-validated-24-column-draft.csv
           if git diff --cached --quiet; then
             echo "Preflight audit unchanged"
             exit 0
