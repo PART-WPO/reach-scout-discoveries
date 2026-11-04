@@ -1,0 +1,39 @@
+name: Validate actionable Crossref dedup routing
+on:
+  pull_request:
+    paths:
+      - 'scout-operations/historical-crossref-screening/build_actionable_routing.py'
+      - '.github/workflows/validate-crossref-actionable-routing.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile and build routing report from verified checkpoints
+        run: |
+          python -m py_compile scout-operations/historical-crossref-screening/build_actionable_routing.py
+          python scout-operations/historical-crossref-screening/build_actionable_routing.py
+      - name: Assert complete actionable coverage and preserved seed routing
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("scout-operations/historical-crossref-screening/actionable-routing.json")
+          d=json.loads(p.read_text())
+          assert d["total"] == 614, d["total"]
+          assert sum(d["counts"].values()) == 614
+          assert all(e["route"] for e in d["entries"])
+          assert all(e["route"] == "SKIP_ORIGINAL_RESEARCH_KEEP_EXPANSION_SEED" for e in d["entries"] if e["outcome"] == "CONFIRMED_IN_REACH")
+          assert d["counts"].get("NOT_FOUND_IN_REACH_INDEX", 0) > 0, "Zero-hit comparisons still blocked"
+          print(d["counts"])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: crossref-actionable-routing-preview
+          path: scout-operations/historical-crossref-screening/actionable-routing.json
