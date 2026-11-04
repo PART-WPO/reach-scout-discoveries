@@ -38,6 +38,7 @@ jobs:
           set -euo pipefail
           python -m unittest discover -s scout-operations/tests -p 'test_decision_pipeline.py' -v
           python -m unittest discover -s scout-operations/tests -p 'test_ir_reach_identity.py' -v
+          python -m py_compile scout-operations/tools/lookup_independent_dois.py scout-operations/tools/lookup_independent_metadata.py scout-operations/tools/ir_reach_identity.py scout-operations/historical-crossref-screening/build_actionable_routing.py
           python -m unittest discover -s scout-operations/tests -p 'test_quick_monthly_intake.py' -v
       - name: Verify live REACH snapshot and publish derived, immutable checkpoints
         shell: bash
