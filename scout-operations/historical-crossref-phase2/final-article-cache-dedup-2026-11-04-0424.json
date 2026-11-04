@@ -7,28 +7,31 @@
   "reach_records_checked": 1238,
   "reach_source_csv_sha256": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
   "assessment": "NO_LITERAL_DOI_IN_COMPLETE_VERIFIED_REACH_CACHE_NOT_YET_FINAL_ABSENCE",
-  "method": "Scanned every cached REACH record's title, award, links, extracted DOIs and source paths for each exact final DOI string. Source manifest source CSV checksum, record count and shard counts still agree with cache metadata; raw manifest SHA not independently recomputed in this mission. No source-detail download repeated per DOI. Prior publisher-confirmed preprint/final relations reused; no redundant watchlist or NOAA IR sweeps.",
+  "method": "Scanned every cached REACH record's title, award, links, extracted DOIs and source paths for each exact final DOI string. Source manifest source CSV checksum, record count and shard counts still agree with cache metadata; raw manifest SHA not independently recomputed in this mission. No source-detail download repeated per DOI. Prior publisher-confirmed preprint/final relations reused; no redundant watchlist or NOAA IR sweeps. Exact normalized title equality was also checked against all 1,238 cache records.",
   "results": [
     {
       "preprint_doi": "10.5194/essd-2022-323",
       "final_doi": "10.5194/essd-15-383-2023",
       "exact_final_doi_cache_hits": 0,
       "classification": "DOI_NOT_IN_CACHE_POSSIBLE_ALTERNATE_URL_OR_TITLE",
-      "next_action": "Narrow normalized title and publisher/alternate URL comparison against cached REACH; then Scout queue duplicate and exact primary WPO project check before any candidate."
+      "next_action": "Narrow publisher/alternate URL and non-exact title similarity comparison against cached REACH; then Scout queue duplicate and exact primary WPO project check before any candidate.",
+      "exact_normalized_title_cache_hits": 0
     },
     {
       "preprint_doi": "10.5194/essd-2023-389",
       "final_doi": "10.5194/essd-16-1395-2024",
       "exact_final_doi_cache_hits": 0,
       "classification": "DOI_NOT_IN_CACHE_POSSIBLE_ALTERNATE_URL_OR_TITLE",
-      "next_action": "Narrow normalized title and publisher/alternate URL comparison against cached REACH; then Scout queue duplicate and exact primary WPO project check before any candidate."
+      "next_action": "Narrow publisher/alternate URL and non-exact title similarity comparison against cached REACH; then Scout queue duplicate and exact primary WPO project check before any candidate.",
+      "exact_normalized_title_cache_hits": 0
     },
     {
       "preprint_doi": "10.5194/essd-2023-409",
       "final_doi": "10.5194/essd-15-5301-2023",
       "exact_final_doi_cache_hits": 0,
       "classification": "DOI_NOT_IN_CACHE_POSSIBLE_ALTERNATE_URL_OR_TITLE",
-      "next_action": "Narrow normalized title and publisher/alternate URL comparison against cached REACH; then Scout queue duplicate and exact primary WPO project check before any candidate."
+      "next_action": "Narrow publisher/alternate URL and non-exact title similarity comparison against cached REACH; then Scout queue duplicate and exact primary WPO project check before any candidate.",
+      "exact_normalized_title_cache_hits": 0
     }
   ],
   "screening_coverage_unchanged": {
