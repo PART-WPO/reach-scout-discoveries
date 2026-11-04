@@ -1,0 +1,1924 @@
+{
+  "schema": "reach-scout-crossref-screening-batch-v1",
+  "source_manifest_sha256": "799744c7e83f218d22cc19afacb7cfcf2762feb490659efde9f58bf19473b1fa",
+  "reach_snapshot": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+  "reach_snapshot_checksum_verified": false,
+  "legacy_source": "scout-operations/historical-crossref-triage.json",
+  "migration_note": "Conservative migration: index-only possible matches and no-index-match pending detail verification remain POSSIBLE_MATCH until independently checked.",
+  "records": [
+    {
+      "doi": "10.1002/essoar.10504829.1",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "INDEX_NO_MATCH_PENDING_DETAILS",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-04T00:24:00Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": []
+    },
+    {
+      "doi": "10.1002/essoar.10507067.1",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://doi.org/10.1002/essoar.10507067.1",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-004.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-052.csv",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-052.csv"
+      ],
+      "next_action": "Verify matching detail and secondary links, then determine original identity.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-04T00:24:00Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000413",
+          "reach_uid": "reachuid-v1-c7edc71b8cea9fa9926ef4f5ead3f846",
+          "index_path": "agent-data/index/part-004.csv",
+          "detail_path": "agent-data/details/part-052.csv",
+          "link": "https://doi.org/10.1002/essoar.10507067.1",
+          "match_basis": "exact_doi_in_index_link"
+        }
+      ]
+    },
+    {
+      "doi": "10.1002/essoar.10507281.1",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "INDEX_NO_MATCH_PENDING_DETAILS",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-04T00:24:00Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": []
+    },
+    {
+      "doi": "10.1002/essoar.10507281.2",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/65598",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-003.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-036.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000283",
+          "reach_uid": "reachuid-v1-2d1a20235640e890b8556e59c44cdc16",
+          "index_path": "agent-data/index/part-003.csv",
+          "detail_path": "agent-data/details/part-036.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/65598",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1002/essoar.10507439.1",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/58250",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-004.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-055.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-010.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-132.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000437",
+          "reach_uid": "reachuid-v1-6d7befd4038719fa793a03283f9db66e",
+          "index_path": "agent-data/index/part-004.csv",
+          "detail_path": "agent-data/details/part-055.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/58250",
+          "match_basis": "exact_normalized_title"
+        },
+        {
+          "reach_id": "reach-001178",
+          "reach_uid": "reachuid-v1-a3455483a2fec153c3ddeef1665ad559",
+          "index_path": "agent-data/index/part-010.csv",
+          "detail_path": "agent-data/details/part-132.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/58250",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1002/essoar.10507439.2",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/58250",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-004.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-055.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-010.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-132.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000437",
+          "reach_uid": "reachuid-v1-6d7befd4038719fa793a03283f9db66e",
+          "index_path": "agent-data/index/part-004.csv",
+          "detail_path": "agent-data/details/part-055.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/58250",
+          "match_basis": "exact_normalized_title"
+        },
+        {
+          "reach_id": "reach-001178",
+          "reach_uid": "reachuid-v1-a3455483a2fec153c3ddeef1665ad559",
+          "index_path": "agent-data/index/part-010.csv",
+          "detail_path": "agent-data/details/part-132.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/58250",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1002/essoar.10507439.3",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/58250",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-004.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-055.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-010.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-132.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000437",
+          "reach_uid": "reachuid-v1-6d7befd4038719fa793a03283f9db66e",
+          "index_path": "agent-data/index/part-004.csv",
+          "detail_path": "agent-data/details/part-055.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/58250",
+          "match_basis": "exact_normalized_title"
+        },
+        {
+          "reach_id": "reach-001178",
+          "reach_uid": "reachuid-v1-a3455483a2fec153c3ddeef1665ad559",
+          "index_path": "agent-data/index/part-010.csv",
+          "detail_path": "agent-data/details/part-132.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/58250",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1002/essoar.10508027.1",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/54925",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-002.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-031.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000246",
+          "reach_uid": "reachuid-v1-2b9d1a920d68afeba6a2996e1cb6b769",
+          "index_path": "agent-data/index/part-002.csv",
+          "detail_path": "agent-data/details/part-031.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/54925",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1002/hyp.13998",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/57177",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-005.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-066.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000534",
+          "reach_uid": "reachuid-v1-d8b6136d20989613f5ea67922e18d0a4",
+          "index_path": "agent-data/index/part-005.csv",
+          "detail_path": "agent-data/details/part-066.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/57177",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1002/hyp.14960",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/63787",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-001.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-009.csv"
+      ],
+      "next_action": "Verify matching detail and secondary links, then determine original identity.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-04T00:24:00Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000069",
+          "reach_uid": "reachuid-v1-f72e7a1bbe84c9357563896ed8e7a6fb",
+          "index_path": "agent-data/index/part-001.csv",
+          "detail_path": "agent-data/details/part-009.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/63787",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1002/jwmg.732",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "INDEX_NO_MATCH_PENDING_DETAILS",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-04T00:24:00Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": []
+    },
+    {
+      "doi": "10.1002/met.70089",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/71980",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-007.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-091.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000761",
+          "reach_uid": "reachuid-v1-1a09e46596bb116b7369ca01e527af99",
+          "index_path": "agent-data/index/part-007.csv",
+          "detail_path": "agent-data/details/part-091.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/71980",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1002/qj.5049",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "INDEX_NO_MATCH_PENDING_DETAILS",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-04T00:24:00Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": []
+    },
+    {
+      "doi": "10.1002/qj.70325",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "INDEX_NO_MATCH_PENDING_DETAILS",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-04T00:24:00Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": []
+    },
+    {
+      "doi": "10.1007/s00330-020-07133-9",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "INDEX_NO_MATCH_PENDING_DETAILS",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-04T00:24:00Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": []
+    },
+    {
+      "doi": "10.1007/s00382-021-05901-x",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://doi.org/10.1007/s00382-021-05901-x",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-004.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-056.csv",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-056.csv"
+      ],
+      "next_action": "Verify matching detail and secondary links, then determine original identity.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-04T00:24:00Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000450",
+          "reach_uid": "reachuid-v1-8cbda347c97cea9a059daa5c9ca28cfb",
+          "index_path": "agent-data/index/part-004.csv",
+          "detail_path": "agent-data/details/part-056.csv",
+          "link": "https://doi.org/10.1007/s00382-021-05901-x",
+          "match_basis": "exact_doi_in_index_link"
+        }
+      ]
+    },
+    {
+      "doi": "10.1007/s00382-021-06120-0",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/46526",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-003.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-035.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000276",
+          "reach_uid": "reachuid-v1-780e96411ccdb366285073e9a3c5ffa3",
+          "index_path": "agent-data/index/part-003.csv",
+          "detail_path": "agent-data/details/part-035.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/46526",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1007/s00382-021-06124-w",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://doi.org/10.1007/s00382-021-06124-w",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-004.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-057.csv",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-057.csv"
+      ],
+      "next_action": "Verify matching detail and secondary links, then determine original identity.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-04T00:24:00Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000453",
+          "reach_uid": "reachuid-v1-03e63015f9d130bfe78e59abdc72ef04",
+          "index_path": "agent-data/index/part-004.csv",
+          "detail_path": "agent-data/details/part-057.csv",
+          "link": "https://doi.org/10.1007/s00382-021-06124-w",
+          "match_basis": "exact_doi_in_index_link"
+        }
+      ]
+    },
+    {
+      "doi": "10.1007/s00382-022-06655-w",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "INDEX_NO_MATCH_PENDING_DETAILS",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-04T00:24:00Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": []
+    },
+    {
+      "doi": "10.1007/s00382-023-06864-x",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://doi.org/10.1007/s00382-023-06864-x",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-004.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-054.csv",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-054.csv"
+      ],
+      "next_action": "Verify matching detail and secondary links, then determine original identity.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-04T00:24:00Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000433",
+          "reach_uid": "reachuid-v1-7979f90d31fb5e954b0c2ea7357250ea",
+          "index_path": "agent-data/index/part-004.csv",
+          "detail_path": "agent-data/details/part-054.csv",
+          "link": "https://doi.org/10.1007/s00382-023-06864-x",
+          "match_basis": "exact_doi_in_index_link"
+        }
+      ]
+    },
+    {
+      "doi": "10.1007/s00382-023-06965-7",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://doi.org/10.1007/s00382-023-06965-7",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-004.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-054.csv",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-054.csv"
+      ],
+      "next_action": "Verify matching detail and secondary links, then determine original identity.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-04T00:24:00Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000435",
+          "reach_uid": "reachuid-v1-804eb3d3e069053708218c486b26d4ea",
+          "index_path": "agent-data/index/part-004.csv",
+          "detail_path": "agent-data/details/part-054.csv",
+          "link": "https://doi.org/10.1007/s00382-023-06965-7",
+          "match_basis": "exact_doi_in_index_link"
+        }
+      ]
+    },
+    {
+      "doi": "10.1007/s00382-024-07377-x",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/71229",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-004.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-046.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000370",
+          "reach_uid": "reachuid-v1-521178d3134a68339d5ebeeb95c3e34b",
+          "index_path": "agent-data/index/part-004.csv",
+          "detail_path": "agent-data/details/part-046.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/71229",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1007/s00382-024-07512-8",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/71973",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-004.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-057.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000459",
+          "reach_uid": "reachuid-v1-b5a50512545bcf6966bfe1c09b25ec67",
+          "index_path": "agent-data/index/part-004.csv",
+          "detail_path": "agent-data/details/part-057.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/71973",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1007/s00382-025-07740-6",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/71108",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-009.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-126.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-001096",
+          "reach_uid": "reachuid-v1-f59899815878891873b8b912b40bc962",
+          "index_path": "agent-data/index/part-009.csv",
+          "detail_path": "agent-data/details/part-126.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/71108",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1007/s00382-025-07783-9",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/71971",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-004.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-057.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000458",
+          "reach_uid": "reachuid-v1-49a9b2d54c100fd83f2056ef054ad597",
+          "index_path": "agent-data/index/part-004.csv",
+          "detail_path": "agent-data/details/part-057.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/71971",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1007/s00382-026-08137-9",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://doi.org/10.1007/s00382-026-08137-9",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-009.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-126.csv",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-126.csv"
+      ],
+      "next_action": "Verify matching detail and secondary links, then determine original identity.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-04T00:24:00Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-001098",
+          "reach_uid": "reachuid-v1-29a6f07b4e11e52bf26208cae3e53930",
+          "index_path": "agent-data/index/part-009.csv",
+          "detail_path": "agent-data/details/part-126.csv",
+          "link": "https://doi.org/10.1007/s00382-026-08137-9",
+          "match_basis": "exact_doi_in_index_link"
+        }
+      ]
+    },
+    {
+      "doi": "10.1007/s00382-026-08236-7",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/75529",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-004.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-058.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000468",
+          "reach_uid": "reachuid-v1-df0e5cafa875eb1ad0cd7f668695cc0b",
+          "index_path": "agent-data/index/part-004.csv",
+          "detail_path": "agent-data/details/part-058.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/75529",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1007/s00477-017-1442-8",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://doi.org/10.1007/s00477-017-1442-8",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-002.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-024.csv",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-024.csv"
+      ],
+      "next_action": "Verify matching detail and secondary links, then determine original identity.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-04T00:24:00Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000191",
+          "reach_uid": "reachuid-v1-c21bd1fb168a2a7b2917397eb15a6262",
+          "index_path": "agent-data/index/part-002.csv",
+          "detail_path": "agent-data/details/part-024.csv",
+          "link": "https://doi.org/10.1007/s00477-017-1442-8",
+          "match_basis": "exact_doi_in_index_link"
+        }
+      ]
+    },
+    {
+      "doi": "10.1007/s00477-023-02563-5",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "http://doi.org/10.1007/s00477-023-02563-5",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-002.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-023.csv",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-023.csv"
+      ],
+      "next_action": "Verify matching detail and secondary links, then determine original identity.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-04T00:24:00Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000189",
+          "reach_uid": "reachuid-v1-c17b4633fb4ea5fd1b0acb071dd42a33",
+          "index_path": "agent-data/index/part-002.csv",
+          "detail_path": "agent-data/details/part-023.csv",
+          "link": "http://doi.org/10.1007/s00477-023-02563-5",
+          "match_basis": "exact_doi_in_index_link"
+        }
+      ]
+    },
+    {
+      "doi": "10.1007/s00484-018-1547-x",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/55432",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-008.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-103.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000899",
+          "reach_uid": "reachuid-v1-f0d385d2f14a0a7bff00cfbcbc7571e8",
+          "index_path": "agent-data/index/part-008.csv",
+          "detail_path": "agent-data/details/part-103.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/55432",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1007/s10596-024-10317-7",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "INDEX_NO_MATCH_PENDING_DETAILS",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-04T00:24:00Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": []
+    },
+    {
+      "doi": "10.1007/s10606-020-09380-2",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "INDEX_NO_MATCH_PENDING_DETAILS",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-04T00:24:00Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": []
+    },
+    {
+      "doi": "10.1007/s10661-024-12342-6",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://doi.org/10.1007/s10661-024-12342-6",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-002.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-019.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000150",
+          "reach_uid": "reachuid-v1-2d45f050f7e08e41518c9ffec1ae8673",
+          "index_path": "agent-data/index/part-002.csv",
+          "detail_path": "agent-data/details/part-019.csv",
+          "link": "https://doi.org/10.1007/s10661-024-12342-6",
+          "match_basis": "exact_doi_in_index_url"
+        }
+      ]
+    },
+    {
+      "doi": "10.1007/s10661-025-14166-4",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/71100",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-001.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-010.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000080",
+          "reach_uid": "reachuid-v1-630c09c90bc447e69b6bffe10e3a9761",
+          "index_path": "agent-data/index/part-001.csv",
+          "detail_path": "agent-data/details/part-010.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/71100",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1007/s11069-025-07344-7",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/70851",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-009.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-125.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-001090",
+          "reach_uid": "reachuid-v1-36e49682e0ed176bb2542fa96a1f2547",
+          "index_path": "agent-data/index/part-009.csv",
+          "detail_path": "agent-data/details/part-125.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/70851",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1007/s11590-021-01800-6",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/37593",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-003.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-039.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000313",
+          "reach_uid": "reachuid-v1-9e946acdd8076bb62fccd3aef89831e1",
+          "index_path": "agent-data/index/part-003.csv",
+          "detail_path": "agent-data/details/part-039.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/37593",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1007/s12035-019-01667-w",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "INDEX_NO_MATCH_PENDING_DETAILS",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-04T00:24:00Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": []
+    },
+    {
+      "doi": "10.1016/j.advwatres.2021.104075",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/59096",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-003.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-033.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000261",
+          "reach_uid": "reachuid-v1-f8bd3b5ccba4ea8a57f9e293382aa4ca",
+          "index_path": "agent-data/index/part-003.csv",
+          "detail_path": "agent-data/details/part-033.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/59096",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.agrformet.2023.109810",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "INDEX_NO_MATCH_PENDING_DETAILS",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-04T00:24:00Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": []
+    },
+    {
+      "doi": "10.1016/j.apacoust.2023.109256",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/67828",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-001.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-004.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000029",
+          "reach_uid": "reachuid-v1-2e0917648fb6d6d093787561c29f7af0",
+          "index_path": "agent-data/index/part-001.csv",
+          "detail_path": "agent-data/details/part-004.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/67828",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.atmosenv.2021.118713",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/48570",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-009.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-118.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-001029",
+          "reach_uid": "reachuid-v1-e05f994b19e4e547866f893949d58245",
+          "index_path": "agent-data/index/part-009.csv",
+          "detail_path": "agent-data/details/part-118.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/48570",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.atmosenv.2021.118760",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "INDEX_NO_MATCH_PENDING_DETAILS",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-04T00:24:00Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": []
+    },
+    {
+      "doi": "10.1016/j.atmosenv.2023.120165",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/60777",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-009.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-117.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-001023",
+          "reach_uid": "reachuid-v1-0cf2b27c80adf7af834ec9ad0a553ba4",
+          "index_path": "agent-data/index/part-009.csv",
+          "detail_path": "agent-data/details/part-117.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/60777",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.atmosenv.2024.120833",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://doi.org/10.1016/j.atmosenv.2024.120833",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-003.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-044.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000354",
+          "reach_uid": "reachuid-v1-0fcef9b356f9de8b0b9615d59c50e83c",
+          "index_path": "agent-data/index/part-003.csv",
+          "detail_path": "agent-data/details/part-044.csv",
+          "link": "https://doi.org/10.1016/j.atmosenv.2024.120833",
+          "match_basis": "exact_doi_in_index_url"
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.atmosenv.2026.122011",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://doi.org/10.1016/j.atmosenv.2026.122011",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-003.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-045.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000355",
+          "reach_uid": "reachuid-v1-8e2d12894e914ad23515eafa8857ce1f",
+          "index_path": "agent-data/index/part-003.csv",
+          "detail_path": "agent-data/details/part-045.csv",
+          "link": "https://doi.org/10.1016/j.atmosenv.2026.122011",
+          "match_basis": "exact_doi_in_index_url"
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.atmosres.2018.09.004",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/59088",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-006.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-078.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000644",
+          "reach_uid": "reachuid-v1-32003a024b883673ab2288095f7c7e5b",
+          "index_path": "agent-data/index/part-006.csv",
+          "detail_path": "agent-data/details/part-078.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/59088",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.atmosres.2019.06.019",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://doi.org/10.1016/j.atmosres.2019.06.019",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-006.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-079.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000645",
+          "reach_uid": "reachuid-v1-f32c3027bc1f8869b44386260c339590",
+          "index_path": "agent-data/index/part-006.csv",
+          "detail_path": "agent-data/details/part-079.csv",
+          "link": "https://doi.org/10.1016/j.atmosres.2019.06.019",
+          "match_basis": "exact_doi_in_index_url"
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.atmosres.2023.106994",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://doi.org/10.1016/j.atmosres.2023.106994",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-004.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-050.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000394",
+          "reach_uid": "reachuid-v1-dd5627870d05f06a9ceb6489cf2b5ab0",
+          "index_path": "agent-data/index/part-004.csv",
+          "detail_path": "agent-data/details/part-050.csv",
+          "link": "https://doi.org/10.1016/j.atmosres.2023.106994",
+          "match_basis": "exact_doi_in_index_url"
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.atmosres.2026.108841",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/73071",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-001.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-016.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000120",
+          "reach_uid": "reachuid-v1-d0bfcc3e2c905137c0bcf7da328e0071",
+          "index_path": "agent-data/index/part-001.csv",
+          "detail_path": "agent-data/details/part-016.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/73071",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.cageo.2022.105193",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "INDEX_NO_MATCH_PENDING_DETAILS",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-04T00:24:00Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": []
+    },
+    {
+      "doi": "10.1016/j.crsus.2025.100628",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/73138",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-007.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-095.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000791",
+          "reach_uid": "reachuid-v1-598ab50bb5366f3f93c4e744c40a68e0",
+          "index_path": "agent-data/index/part-007.csv",
+          "detail_path": "agent-data/details/part-095.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/73138",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.ejrh.2026.103245",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://doi.org/10.1016/j.ejrh.2026.103245",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-002.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-020.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000160",
+          "reach_uid": "reachuid-v1-268a266ad832e06837fcc788f0d587bb",
+          "index_path": "agent-data/index/part-002.csv",
+          "detail_path": "agent-data/details/part-020.csv",
+          "link": "https://doi.org/10.1016/j.ejrh.2026.103245",
+          "match_basis": "exact_doi_in_index_url"
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.envres.2025.122508",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "Verify REACH detail and secondary URL identities before final disposition.",
+      "scout_overlap": false,
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": []
+    },
+    {
+      "doi": "10.1016/j.ijdrr.2018.12.007",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/49521",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-008.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-103.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000897",
+          "reach_uid": "reachuid-v1-b3b58ab3c3563baa9036b7b46e70c691",
+          "index_path": "agent-data/index/part-008.csv",
+          "detail_path": "agent-data/details/part-103.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/49521",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.jag.2024.103662",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/63872",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-002.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-019.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000148",
+          "reach_uid": "reachuid-v1-8a39ba653439fca7d2a4f3a40afd027e",
+          "index_path": "agent-data/index/part-002.csv",
+          "detail_path": "agent-data/details/part-019.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/63872",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.jenvp.2025.102781",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://doi.org/10.1016/j.jenvp.2025.102781",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-007.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-094.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000790",
+          "reach_uid": "reachuid-v1-3a0d73ed534b2e1f2be7074ff662a022",
+          "index_path": "agent-data/index/part-007.csv",
+          "detail_path": "agent-data/details/part-094.csv",
+          "link": "https://doi.org/10.1016/j.jenvp.2025.102781",
+          "match_basis": "exact_doi_in_index_url"
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.jhydrol.2018.10.037",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/49430",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-002.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-027.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000221",
+          "reach_uid": "reachuid-v1-691fb2fc481b3dd8f3cd8d3280a11ed8",
+          "index_path": "agent-data/index/part-002.csv",
+          "detail_path": "agent-data/details/part-027.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/49430",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.jhydrol.2021.126203",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/57911",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-002.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-027.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000218",
+          "reach_uid": "reachuid-v1-47c5b22b9dd0d79c6dd6a08b218314cf",
+          "index_path": "agent-data/index/part-002.csv",
+          "detail_path": "agent-data/details/part-027.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/57911",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.jhydrol.2021.126884",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/57913",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-001.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-001.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000005",
+          "reach_uid": "reachuid-v1-237ecd0f35212a7f04266f8a4bcb5fc6",
+          "index_path": "agent-data/index/part-001.csv",
+          "detail_path": "agent-data/details/part-001.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/57913",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.jhydrol.2021.127247",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/63876",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-002.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-023.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000188",
+          "reach_uid": "reachuid-v1-62dc769550858f6e8f515084dad76913",
+          "index_path": "agent-data/index/part-002.csv",
+          "detail_path": "agent-data/details/part-023.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/63876",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.jhydrol.2023.129124",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/67896",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-003.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-040.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000316",
+          "reach_uid": "reachuid-v1-784189d5f32028e72e4b294e805e99b7",
+          "index_path": "agent-data/index/part-003.csv",
+          "detail_path": "agent-data/details/part-040.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/67896",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.jhydrol.2023.129514",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/67864",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-001.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-009.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000070",
+          "reach_uid": "reachuid-v1-863e1a5cfef4968381dab3649403a9ec",
+          "index_path": "agent-data/index/part-001.csv",
+          "detail_path": "agent-data/details/part-009.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/67864",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.jhydrol.2023.130212",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/67897",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-003.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-040.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000315",
+          "reach_uid": "reachuid-v1-3c630c5f5fc738ffa67aa116506b528b",
+          "index_path": "agent-data/index/part-003.csv",
+          "detail_path": "agent-data/details/part-040.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/67897",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.jhydrol.2024.131134",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/70841",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-003.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-040.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000314",
+          "reach_uid": "reachuid-v1-0940e0e6322f5c2a20eed3031edad0fb",
+          "index_path": "agent-data/index/part-003.csv",
+          "detail_path": "agent-data/details/part-040.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/70841",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.jweia.2018.07.017",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/49470",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-008.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-105.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000913",
+          "reach_uid": "reachuid-v1-745435102a3cb3e878903ebdd24ca672",
+          "index_path": "agent-data/index/part-008.csv",
+          "detail_path": "agent-data/details/part-105.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/49470",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.marpolbul.2024.116463",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "INDEX_NO_MATCH_PENDING_DETAILS",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-04T00:24:00Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": []
+    },
+    {
+      "doi": "10.1016/j.ocemod.2019.101509",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/57495",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-002.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-029.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000229",
+          "reach_uid": "reachuid-v1-12eb18cdfe3cdc0a668427352dad073f",
+          "index_path": "agent-data/index/part-002.csv",
+          "detail_path": "agent-data/details/part-029.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/57495",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.ocemod.2023.102200",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/59518",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-010.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-136.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-001209",
+          "reach_uid": "reachuid-v1-ab293b881802cf2e1ecaac04c2dc1447",
+          "index_path": "agent-data/index/part-010.csv",
+          "detail_path": "agent-data/details/part-136.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/59518",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.oneear.2022.08.006",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "INDEX_NO_MATCH_PENDING_DETAILS",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-04T00:24:00Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": []
+    },
+    {
+      "doi": "10.1016/j.pdisas.2026.100696",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "INDEX_NO_MATCH_PENDING_DETAILS",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": true,
+      "legacy_checked_at": "2026-11-04T00:24:00Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": []
+    },
+    {
+      "doi": "10.1016/j.pocean.2025.103473",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "INDEX_NO_MATCH_PENDING_DETAILS",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-04T00:24:00Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": []
+    },
+    {
+      "doi": "10.1016/j.pubrev.2019.101831",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/55430",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-008.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-104.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000908",
+          "reach_uid": "reachuid-v1-140ab4ef8c7a1c22ebb556b8ec5b44d6",
+          "index_path": "agent-data/index/part-008.csv",
+          "detail_path": "agent-data/details/part-104.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/55430",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.renene.2024.120581",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/70843",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-004.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-050.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000397",
+          "reach_uid": "reachuid-v1-33e8f5a757e114f1a07808a7aa902bf4",
+          "index_path": "agent-data/index/part-004.csv",
+          "detail_path": "agent-data/details/part-050.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/70843",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.rse.2020.112280",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/29177",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-001.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-003.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000021",
+          "reach_uid": "reachuid-v1-6a359655d9eea37c2467bb70f0d4dad7",
+          "index_path": "agent-data/index/part-001.csv",
+          "detail_path": "agent-data/details/part-003.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/29177",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.rse.2025.115156",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "INDEX_NO_MATCH_PENDING_DETAILS",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-04T00:24:00Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": []
+    },
+    {
+      "doi": "10.1016/j.scitotenv.2022.156567",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/45097",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-001.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-003.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000020",
+          "reach_uid": "reachuid-v1-7c4d92abc3d86c1e2d6a4f616c6091c7",
+          "index_path": "agent-data/index/part-001.csv",
+          "detail_path": "agent-data/details/part-003.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/45097",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.softx.2024.101771",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/71913",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-001.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-010.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000075",
+          "reach_uid": "reachuid-v1-ffe0abaa6974e860d1a2ce12ad1a195c",
+          "index_path": "agent-data/index/part-001.csv",
+          "detail_path": "agent-data/details/part-010.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/71913",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.softx.2024.101863",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "INDEX_NO_MATCH_PENDING_DETAILS",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-04T00:24:00Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": []
+    },
+    {
+      "doi": "10.1016/j.tcrr.2026.02.001",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/73095",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-004.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-050.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000396",
+          "reach_uid": "reachuid-v1-e6cc15d7dd08225e1cafea14e4589576",
+          "index_path": "agent-data/index/part-004.csv",
+          "detail_path": "agent-data/details/part-050.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/73095",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.uclim.2025.102375",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "INDEX_NO_MATCH_PENDING_DETAILS",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-04T00:24:00Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": []
+    },
+    {
+      "doi": "10.1016/j.uclim.2025.102511",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "Verify REACH detail and secondary URL identities before final disposition.",
+      "scout_overlap": false,
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": []
+    },
+    {
+      "doi": "10.1016/j.uclim.2025.102714",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/72341",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-001.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-016.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-000119",
+          "reach_uid": "reachuid-v1-f257dbffcc6d9f433458d4b66344c7b1",
+          "index_path": "agent-data/index/part-001.csv",
+          "detail_path": "agent-data/details/part-016.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/72341",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.uclim.2026.102777",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/73108",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-009.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-120.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-001038",
+          "reach_uid": "reachuid-v1-b537867ea2cc443fcc49ac8a2475b6a2",
+          "index_path": "agent-data/index/part-009.csv",
+          "detail_path": "agent-data/details/part-120.csv",
+          "link": "https://repository.library.noaa.gov/view/noaa/73108",
+          "match_basis": "exact_normalized_title"
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.uclim.2026.102959",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://doi.org/10.1016/j.uclim.2026.102959",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-009.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-120.csv"
+      ],
+      "next_action": "Verify exact REACH detail record, secondary URLs and full snapshot integrity before final REACH duplicate decision.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-03T23:27:32Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": [
+        {
+          "reach_id": "reach-001041",
+          "reach_uid": "reachuid-v1-e6ba6c485a175d860c77c4c7c2ab5a2d",
+          "index_path": "agent-data/index/part-009.csv",
+          "detail_path": "agent-data/details/part-120.csv",
+          "link": "https://doi.org/10.1016/j.uclim.2026.102959",
+          "match_basis": "exact_doi_in_index_url"
+        }
+      ]
+    },
+    {
+      "doi": "10.1021/acs.est.3c01256",
+      "screening_status": "POSSIBLE_MATCH",
+      "legacy_screening_status": "INDEX_NO_MATCH_PENDING_DETAILS",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "legacy_checked_at": "2026-11-04T00:24:00Z",
+      "legacy_index_sha256_independently_verified": false,
+      "legacy_matches": []
+    }
+  ]
+}
