@@ -76,9 +76,28 @@ jobs:
           assert not any(x["evaluation"]["automatically_staged"] for x in records)
           assert not any(x["evaluation"]["decision"]=="READY_FOR_VALIDATED_DRAFT_PREFLIGHT" for x in records)
           assert all(x["evaluation"]["seed_expansion_preserved"] for x in records)
-          print("Validated three held original test cases; no candidate staging")
+          from collections import Counter
+          counts=Counter(x["source"] for x in idx["records"])
+          outcome_counts=Counter(x["evaluation"]["decision"] for x in records)
+          summary={
+              "schema":"reach-scout-decision-pipeline-metrics-v1",
+              "scope":"Three published Crossref negative-control cases only; source catalog totals are not research decision counts",
+              "source_fingerprint":idx["source_fingerprint"],
+              "reach_public_records":counts["REACH"],
+              "scout_published_candidate_rows":counts["SCOUT_PUBLISHED"],
+              "scout_inbox_candidate_rows":counts["SCOUT_INBOX"],
+              "test_cases_evaluated":len(records),
+              "test_decisions":dict(sorted(outcome_counts.items())),
+              "automatically_staged":sum(x["evaluation"]["automatically_staged"] for x in records),
+              "private_hub_import":"NOT_VERIFIED",
+              "reviewer_outcomes":"NOT_VERIFIED",
+              "time_to_first_decision":"NOT_MEASURED"
+          }
+          destination=Path("scout-operations/identity-cache/decision-validation-summary.json")
+          destination.write_text(json.dumps(summary,indent=2,sort_keys=True)+"\\n")
+          print("Validated source-backed Scout pipeline metrics",summary)
           PY
-            git add scout-operations/identity-cache/public-identity-index.json scout-operations/case-checkpoints
+            git add scout-operations/identity-cache/public-identity-index.json scout-operations/identity-cache/decision-validation-summary.json scout-operations/case-checkpoints
             if git diff --cached --quiet; then
               echo "Decision index and checkpoints already current"
               exit 0
