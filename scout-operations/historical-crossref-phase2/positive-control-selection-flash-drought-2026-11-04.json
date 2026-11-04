@@ -1,0 +1,84 @@
+{
+  "schema": "reach-scout-historical-crossref-positive-control-research-v1",
+  "research_date": "2026-11-04",
+  "purpose": "Select a real, originally indexed-negative, published WPO output to test positive candidate path; do not stage until prior decisions, secondary identity, metadata and 24-column preflight are verified.",
+  "selected": {
+    "doi": "10.1175/jamc-d-25-0108.1",
+    "title": "Flash Drought Risk and Agricultural Exposure in the Southeast United States",
+    "publication": {
+      "type": "journal article",
+      "journal": "Journal of Applied Meteorology and Climatology",
+      "published_online": "2026-05-25",
+      "published_print": "2026-06-01",
+      "reach_pub_date": "2026-06-01",
+      "authors": [
+        "W. Lee Ellenburg",
+        "Shaelyn Deal"
+      ],
+      "official_article": "https://journals.ametsoc.org/view/journals/apme/65/6/JAMC-D-25-0108.1.xml"
+    },
+    "funding": {
+      "award": "NA23OAR4590590",
+      "source": "The published journal article acknowledgments identify NOAA Climate Program Office National Integrated Drought Information System (NIDIS) support under NA23OAR4590590 through NOAA OAR Weather Program Office.",
+      "funding_evidence": "https://journals.ametsoc.org/view/journals/apme/65/6/JAMC-D-25-0108.1.xml",
+      "crossref_structured_funding": "https://api.crossref.org/works/10.1175/jamc-d-25-0108.1"
+    },
+    "spark": {
+      "project_id": "spark-000356",
+      "title": "A Southeastern US Regional Flash Drought Review and Agriculture Impact Assessment",
+      "award_match_type": "primary_noaa_award",
+      "wpo_program": "Observations",
+      "funding_year": 2023,
+      "organization": "University of Alabama in Huntsville",
+      "project_goal": "Review spatial/temporal rapid-onset drought metrics across the Southeast and correlate results to crop calendars to assess agricultural flash drought risk.",
+      "verified_awards_shard": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/awards/part-004.csv",
+      "verified_details_shard": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-028.csv",
+      "same_project_assessment": "Strong: publisher explicitly credits the exact primary award through NOAA WPO; matching SPARK project has same region, measurements, objectives, institutional partner and crop-calendar exposure analysis."
+    },
+    "public_identity": {
+      "historical_crossref_router": "NOT_FOUND_IN_REACH_INDEX",
+      "scout_queue_matches": 0,
+      "match_in_public_reach_comparison_cache": false,
+      "other_distinct_reach_same_award": {
+        "title": "Evaporative Stress Index as a flash drought tool in the southeastern U.S.",
+        "doi": "10.1016/j.ejrh.2026.103245",
+        "reach_uid": "reachuid-v1-268a266ad832e06837fcc788f0d587bb"
+      },
+      "assessment": "No exact DOI or normalized-title match found in the public REACH comparison snapshot or current shared Scout queue lookup; exact DOI not shown as existing. Must still check all secondary URLs, concept/final versions and prior review decisions before staging."
+    },
+    "intake_metadata": {
+      "crossref_source_batch": "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part003.csv",
+      "output_type": "1",
+      "authors_present": true,
+      "abstract_present": true,
+      "publication_date_present": true,
+      "principal_investigators": "UNVERIFIED_IN_SOURCE",
+      "noaa_ir": "NOT_VERIFIED",
+      "private_reviewer_decisions": "NOT_VERIFIED",
+      "existing_reach_match_field": "Unchecked"
+    },
+    "recommended_next_state": "PROMISING_POSITIVE_CONTROL_AWAITING_FULL_PREFLIGHT",
+    "remaining_checks": [
+      "Read authoritative prior historical Crossref ledger and any private human reviewer decision, when accessible; preserve intentionally excluded case outcome",
+      "Compare secondary output URLs and exact publication title/version against all REACH details and possible NOAA IR link before certifying absence",
+      "Recover appropriate Principal Investigators from the specific project if required by validated 24-column schema; do not equate paper author with project PI",
+      "Run controlled 24-column prepare_batch.py preflight; only then create unique inbox draft, monitor promotion and confirm actual private Discovery Hub import separately"
+    ],
+    "safeguards": {
+      "automatic_stage": false,
+      "hub_import_claimed": false,
+      "human_decision_overwritten": false,
+      "original_disposition_changed": false,
+      "expansion_seed_closed": false
+    }
+  },
+  "negative_control_reminder": {
+    "doi": "10.1111/jfr3.70241",
+    "title": "Making Flood Inundation Mapping (FIM) Work for Multiple Users: Improving the Design of FIM for Decision Support",
+    "existing_reach_uid": "reachuid-v1-0b4005a95b19d0b6682bc9fe8c89c564",
+    "existing_reach_url": "https://repository.library.noaa.gov/view/noaa/73700",
+    "finding": "Historical router wrongly returned NOT_FOUND_IN_REACH_INDEX when original Crossref title contained inline <scp> tags; do not stage.",
+    "spark_project": "spark-000256",
+    "verified_primary_award": "NA23OAR4590359"
+  }
+}
