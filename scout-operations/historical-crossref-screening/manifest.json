@@ -4,16 +4,41 @@
       "path": "scout-operations/historical-crossref-screening/batch-001.json",
       "record_count": 1,
       "sha256": "420fdb88af7c9658ae1feaf3fbef0f10b01f6961b98eeb3a3b329ffa2a60491b"
+    },
+    {
+      "path": "scout-operations/historical-crossref-screening/batch-002.json",
+      "record_count": 85,
+      "sha256": "185de6b03904a8e77045dba93af0301b06b10076d0e857481663d37e29592214"
+    },
+    {
+      "path": "scout-operations/historical-crossref-screening/batch-003.json",
+      "record_count": 85,
+      "sha256": "13478869a7fb9c7f1a77449a337e5bfc7d177441b6d5e21f92bce7c2c4324629"
+    },
+    {
+      "path": "scout-operations/historical-crossref-screening/batch-004.json",
+      "record_count": 85,
+      "sha256": "08385ead88eb8469e881b46e2004b751e1b4aa343f1238d2d39ae809eb9396bf"
+    },
+    {
+      "path": "scout-operations/historical-crossref-screening/batch-005.json",
+      "record_count": 85,
+      "sha256": "a69514f38cd98f1b9bfe6ac52bb9cb2c9079a8ea1c50d572d1bfb81b980a252f"
+    },
+    {
+      "path": "scout-operations/historical-crossref-screening/batch-006.json",
+      "record_count": 73,
+      "sha256": "9623b2a35f0c72125c2a56a7ca463fc0369066b8665c35ebed25981b5a4955bc"
     }
   ],
   "counts": {
     "CONFIRMED_IN_REACH": 1,
     "NOT_FOUND_IN_REACH": 0,
-    "POSSIBLE_MATCH": 0,
-    "scout_overlap_flagged": 0,
-    "screened": 1,
+    "POSSIBLE_MATCH": 413,
+    "scout_overlap_flagged": 21,
+    "screened": 414,
     "total": 614,
-    "unscreened": 613
+    "unscreened": 200
   },
   "schema": "reach-scout-crossref-screening-manifest-v1",
   "source_manifest": "api-discoveries/historical-crossref/manifest.json",
