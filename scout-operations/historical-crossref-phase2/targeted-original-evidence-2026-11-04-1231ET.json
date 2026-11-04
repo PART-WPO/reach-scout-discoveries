@@ -1,0 +1,94 @@
+{
+  "schema": "reach-scout-historical-crossref-targeted-evidence-v1",
+  "date": "2026-11-04",
+  "mode": "historical_crossref_triage",
+  "source_manifest_sha256": "799744c7e83f218d22cc19afacb7cfcf2762feb490659efde9f58bf19473b1fa",
+  "routing_cache_sha256": "6660562e325a6a141198f59acce84f2e30d9a2d14e6cf5acd29769c8a4b68e1e",
+  "routing_counts": {
+    "confirmed": 1,
+    "likely": 467,
+    "not_found": 146,
+    "incomplete": 0
+  },
+  "source_batch": "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part001.csv",
+  "source_batch_manifest_sha256": "df420ff561050c5f019ccddd19eb93124ab642eba8aa6f87dc0636b6d5ee2de3",
+  "cases": [
+    {
+      "doi": "10.1002/hyp.14960",
+      "route": "NOT_FOUND_IN_REACH_INDEX",
+      "source_award": "NA19OAR4590411",
+      "source_spark_project": "Developing New Capabilities and Research Applications for the National Water Model Over the Southeastern US",
+      "new_evidence": "Official NOAA IR 63787 confirms published Hydrological Processes journal article, DOI, named authors, substantive abstract and grant NA19OAR4590411; article subject is NWM v2.1 streamflow peaks in southeastern United States, consistent with source SPARK project title.",
+      "evidence_urls": [
+        "https://repository.library.noaa.gov/view/noaa/63787",
+        "https://api.crossref.org/works/10.1002/hyp.14960"
+      ],
+      "original_next_gate": "Promising eligible published original: verify exact SPARK primary award in live project detail, full Scout queue and private reviewer decisions where accessible, and full REACH secondary/title/version identity before validated 24-column proposal. Do not assume NOAA IR proves unique WPO project output.",
+      "status": "ADVANCED_SOURCE_FUNDING_METADATA_CHECKS_NOT_STAGED",
+      "ir_found": true,
+      "ir_url": "https://repository.library.noaa.gov/view/noaa/63787"
+    },
+    {
+      "doi": "10.1002/essoar.10504829.1",
+      "route": "NOT_FOUND_IN_REACH_INDEX",
+      "source_awards": [
+        "NA18OAR4590307",
+        "NA19OAR4590340"
+      ],
+      "new_evidence": "Source is an ESSOAr preprint, explicitly labeled not peer reviewed in the archived manuscript. Separate 2019 published article DOI 10.1121/1.5124486 shares authors/topic but has a different title and scope; not verified final version of this ESSOAr work.",
+      "evidence_urls": [
+        "https://doi.org/10.1002/essoar.10504829.1",
+        "https://d197for5662m48.cloudfront.net/documents/publicationstatus/103965/preprint_pdf/cf2d1864d8dda72f5a5efec9afc58950.pdf",
+        "https://repository.library.noaa.gov/view/noaa/27461"
+      ],
+      "status": "PREPRINT_HOLD_RESEARCH_FINDING",
+      "original_next_gate": "Confirm existing watchlist identity before adding via authorized watchlist workflow; do not stage; only first-of-month publication recheck. Related 2019 DOI is a distinct research lead, not automatically a final version."
+    },
+    {
+      "doi": "10.1002/jwmg.732",
+      "route": "NOT_FOUND_IN_REACH_INDEX",
+      "source_award": "UNK",
+      "source_spark_project": "Application and Evaluation of the Finite-Volume Cubed Sphere Model (FV3) at Convection-Allowing Scales for Severe Weather Forecasting",
+      "new_evidence": "Immutable Crossref batch contains literal NOAA Award Number(s)=UNK despite being in a SPARK-primary-award-selected harvest; wildlife hunter retention paper unrelated to cited FV3 severe-weather project. This is a source/award attribution anomaly, not verified NOAA funding.",
+      "evidence_urls": [
+        "https://doi.org/10.1002/jwmg.732",
+        "https://api.crossref.org/works/10.1002/jwmg.732"
+      ],
+      "status": "AWARD_SOURCE_ANOMALY_HOLD",
+      "original_next_gate": "Audit historical Crossref harvest mapping and structured funder.award before any funding association; do not stage on project title alone."
+    },
+    {
+      "doi": "10.1007/s00330-020-07133-9",
+      "route": "NOT_FOUND_IN_REACH_INDEX",
+      "source_award": "UNK",
+      "source_spark_project": "Application and Evaluation of the Finite-Volume Cubed Sphere Model (FV3) at Convection-Allowing Scales for Severe Weather Forecasting",
+      "new_evidence": "Immutable Crossref batch contains literal NOAA Award Number(s)=UNK and an unrelated FV3 weather project, while bibliographic source identifies a European Radiology clinical aortic calcification study. Source association must not be trusted as NOAA award evidence.",
+      "evidence_urls": [
+        "https://doi.org/10.1007/s00330-020-07133-9",
+        "https://openalex.org/W3082637224"
+      ],
+      "status": "AWARD_SOURCE_ANOMALY_HOLD",
+      "original_next_gate": "Audit source harvest mapping and exact structured funding; do not stage without primary-award evidence."
+    }
+  ],
+  "metrics": {
+    "new_not_found_originals_source_researched": 4,
+    "likely_matches_resolved": 0,
+    "existing_originals_closed": 0,
+    "seed_expansions_completed": 0,
+    "scout_overlaps_resolved": 0,
+    "validated_candidate_additions": 0
+  },
+  "safeguards": {
+    "immutable_source_mutated": false,
+    "screening_checkpoint_mutated": false,
+    "original_triage_dispositions_mutated": false,
+    "seed_expansion_status_mutated": false,
+    "private_hub_claimed": false
+  },
+  "limitations": [
+    "No execution of router script or coverage regeneration in this mission; read existing published actionable routing.",
+    "No verified access to private Hub reviewer decisions.",
+    "Source-level anomaly requires harvest script audit before terminal original disposition."
+  ]
+}
