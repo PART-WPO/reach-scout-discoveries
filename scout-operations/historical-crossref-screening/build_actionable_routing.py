@@ -21,6 +21,7 @@ CACHE = ROOT / "scout-operations/reach-comparison-cache/comparison-index.json"
 SOURCE = ROOT / "api-discoveries/historical-crossref/manifest.json"
 sys.path.insert(0, str(ROOT / "scout-operations/tools"))
 from decision_pipeline import build_index, lookup, norm_title
+from ir_reach_identity import identity_check, trusted_index
 
 def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -43,6 +44,8 @@ def build():
     screening = json.loads((HERE / "manifest.json").read_text())
     cache = json.loads(CACHE.read_text())
     shared_identity = build_index(ROOT)  # one verified REACH+published Scout+inbox snapshot for all source DOIs
+    ir_index = trusted_index(ROOT)  # verify all 16 shards ONCE, not per DOI
+    require(ir_index is not None, "NOAA IR DOI index unavailable; cannot route negative REACH identities safely")
     require(shared_identity["sources"]["reach_cache_sha256"] == sha(CACHE),
             "Shared identity and Crossref routing REACH caches disagree")
     require(screening["source_manifest_sha256"] == sha(SOURCE), "Source snapshot changed")
@@ -58,6 +61,7 @@ def build():
     # not falsely claim to have re-fetched all 150 remote shards.
     cache_sha = sha(CACHE)
     reach_by_doi, reach_by_title = {}, {}
+    cache_by_uid = {r["reach_uid"]: r for r in cache["records"]}
     for r in cache["records"]:
         for d in r.get("dois", []):
             reach_by_doi.setdefault(doi(d), []).append(r)
@@ -106,6 +110,17 @@ def build():
             uid = r["reach_uid"]
             previous = matches.get(uid)
             matches[uid] = (r, bool(previous and previous[1]), True)
+        # Check official DOI->NOAA IR URL->REACH exact URL, including when a
+        # legacy REACH record contains only the IR URL and punctuated title.
+        # This is bounded screening evidence, NOT automatic original closure.
+        shared_result = identity_check(shared_identity, ir_index, d, t)
+        ir_evidence = shared_result["noaa_ir_reach_check"]
+        ir_uid = ir_evidence.get("match_uid") if ir_evidence["status"] == "VERIFIED_OFFICIAL_IR_DOI_TO_EXISTING_REACH_URL" else None
+        if ir_uid is not None:
+            require(ir_uid in cache_by_uid, "IR crosswalk produced unknown REACH UID: " + ir_uid)
+            r = cache_by_uid[ir_uid]
+            existing = matches.get(ir_uid)
+            matches[ir_uid] = (r, bool(existing and existing[1]), bool(existing and existing[2]))
         if prior["screening_status"] == "CONFIRMED_IN_REACH":
             outcome = "CONFIRMED_IN_REACH"
             route = "SKIP_ORIGINAL_RESEARCH_KEEP_EXPANSION_SEED"
@@ -115,13 +130,15 @@ def build():
         elif any(hit_doi for _, hit_doi, _ in matches.values()):
             outcome = "LIKELY_IN_REACH"
             route = "VERIFY_MATCHED_DETAIL_ONCE"
+        elif ir_uid:
+            outcome = "LIKELY_IN_REACH"
+            route = "VERIFY_OFFICIAL_IR_DOI_URL_AND_VERSION_ONCE"
         elif matches:
             outcome = "LIKELY_IN_REACH"
             route = "VERIFY_TITLE_VERSION_ONCE"
         else:
             outcome = "NOT_FOUND_IN_REACH_INDEX"
             route = "ADVANCE_TO_FUNDING_AND_METADATA_RESEARCH"
-        shared_result = lookup(shared_identity, d, t)
         scout_queue_matches = [
             {"source": hit["source"], "identity": hit["identity"],
              "location": hit["location"], "basis": hit["match_bases"]}
@@ -132,9 +149,10 @@ def build():
             "scout_public_queue_matches": scout_queue_matches,
             "scout_public_queue_match_count": len(scout_queue_matches),
             "scout_overlap": bool(prior.get("scout_overlap")),
+            "noaa_ir_reach_check": ir_evidence,
             "matches": [
                 {"reach_uid": uid, "record_id": r["record_id"],
-                 "doi_hit": hd, "title_hit": ht, "detail_path": r["detail_path"]}
+                 "doi_hit": hd, "title_hit": ht, "official_ir_url_hit": uid == ir_uid, "detail_path": r["detail_path"]}
                 for uid, (r, hd, ht) in sorted(matches.items())
             ],
             "previous_screening_status": prior["screening_status"],
@@ -146,12 +164,14 @@ def build():
             "screening_manifest_sha256": sha(HERE / "manifest.json"),
             "reach_cache_sha256": cache_sha,
             "reach_source_manifest_sha256": cache["source_manifest_sha256"],
+            "noaa_ir_manifest_sha256": sha(ROOT / "scout-operations/noaa-ir/manifest.json"),
+            "noaa_ir_existing_reach_url_matches": sum(r["noaa_ir_reach_check"]["status"] == "VERIFIED_OFFICIAL_IR_DOI_TO_EXISTING_REACH_URL" for r in results),
             "shared_identity_index_fingerprint": shared_identity["source_fingerprint"],
             "public_scout_queue_overlap_dois": sum(bool(r["scout_public_queue_matches"]) for r in results),
             "reach_source_records": cache["source_records"],
             "total": len(results), "counts": counts,
             "scout_overlap_flagged": sum(r["scout_overlap"] for r in results),
-            "note": "Negative index comparison advances investigation, not proof of global absence. Existing records remain valid expansion seeds. Likely matches need one bounded detail/version check.",
+            "note": "Verified NOAA IR DOI-to-URL fallback changes routing without touching source/checkpoint batches. Exact official URL is bounded original identity evidence; likely routes require a documented decision. Negative index result is not proof of global absence; every DOI remains an independent expansion seed.",
             "entries": results}
 
 def main():
