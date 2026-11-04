@@ -1,0 +1,71 @@
+{
+  "schema": "reach-scout-historical-crossref-bounded-followup-v1",
+  "date": "2026-11-04",
+  "source_snapshot": {
+    "historical_source_manifest_sha256": "799744c7e83f218d22cc19afacb7cfcf2762feb490659efde9f58bf19473b1fa",
+    "screening_manifest_sha256": "470e89f3ef51557b5d8e817a6d860cd6592522a692a83a714c252abe0ea84a50",
+    "reach_comparison_cache_sha256": "6660562e325a6a141198f59acce84f2e30d9a2d14e6cf5acd29769c8a4b68e1e",
+    "reach_manifest_sha256_in_index": "f94ae52cac483b52e9a5cd6e775c6faa01ad6ec33610b249b3d486aed6daa003",
+    "identity_index_fingerprint": "8d87193fbc1d74768453b765d7d4d29a85fa07cb3d98046851b687f14490043e",
+    "live_reach_manifest_sha256_independently_verified": false
+  },
+  "routing": {
+    "total": 614,
+    "confirmed": 1,
+    "likely": 471,
+    "not_found": 142,
+    "incomplete": 0,
+    "legacy_scout_overlap_hints": 30,
+    "current_public_scout_queue_matches": 31
+  },
+  "cases": [
+    {
+      "doi": "10.1002/hyp.14960",
+      "original_lane": "BOUNDED_SECOND_SOURCE_FOLLOWUP_IDENTITY_UNRESOLVED",
+      "previous_evidence_path": "scout-operations/historical-crossref-phase2/targeted-original-evidence-2026-11-04-1231ET.json",
+      "current_route": "LIKELY_IN_REACH",
+      "route_correction": "Prior 12:31 evidence used obsolete 146-index-negative routing. Current normalized routing is LIKELY_IN_REACH; no new-output draft permitted until matched REACH detail/secondary/version identity checked.",
+      "new_distinct_source": "https://onlinelibrary.wiley.com/doi/abs/10.1002/hyp.14960",
+      "publisher_first_published": "2023-08-16",
+      "journal": "Hydrological Processes",
+      "volume": "37",
+      "issue": "8",
+      "article_number": "e14960",
+      "authors_not_pis": [
+        "K. Raczyński",
+        "J. Dyer"
+      ],
+      "official_repository": "https://repository.library.noaa.gov/view/noaa/63787",
+      "repository_award": "NA19OAR4590411",
+      "funding_basis": "Official NOAA IR metadata explicitly names grant NA19OAR4590411; same-project attribution and live SPARK primary award still require final verification.",
+      "reach_exact_uid": null,
+      "reach_detail_shard": null,
+      "private_reviewer_history": "NOT_VERIFIED",
+      "public_identity_index_freshness": "NOT_VERIFIED_AGAINST_LIVE_MANIFEST",
+      "next_action": "Check latest live REACH manifest source fingerprint, then bounded matched REACH detail/version and Scout identity; if confirmed existing, close only original lane, retain independent expansion seed. Otherwise verify project attribution and human decisions before 24-column review.",
+      "candidate_added": false,
+      "seed_expansion_status": "PENDING_INDEPENDENT_EXPLORATION"
+    }
+  ],
+  "metrics": {
+    "new_distinct_source_followups": 1,
+    "likely_matches_resolved": 0,
+    "not_found_originals_advanced": 0,
+    "existing_originals_closed": 0,
+    "seed_expansions_investigated": 0,
+    "seed_expansions_completed": 0,
+    "scout_overlaps_resolved": 0,
+    "validated_candidate_additions": 0
+  },
+  "limitations": [
+    "No verified execution of actionable router or decision_pipeline.py; no coverage regeneration claimed.",
+    "Public REACH manifest was fetched but its live SHA-256 was not recomputed and compared to index fingerprint.",
+    "Private reviewer history unavailable; no private import, approval or public REACH publication claimed."
+  ],
+  "safeguards": {
+    "immutable_source_mutated": false,
+    "prior_human_decisions_mutated": false,
+    "original_triage_mutated": false,
+    "seed_expansion_mutated": false
+  }
+}
