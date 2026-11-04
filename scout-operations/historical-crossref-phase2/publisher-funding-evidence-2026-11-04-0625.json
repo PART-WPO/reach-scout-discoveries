@@ -1,0 +1,59 @@
+{
+  "schema": "reach-scout-crossref-phase2-publisher-funding-v1",
+  "checked_at": "2026-11-04",
+  "purpose": "Targeted authoritative publisher financial-support verification for three final journal articles after completed 614/614 first-pass screening; not eligibility or REACH absence decision.",
+  "source_checkpoint": "scout-operations/historical-crossref-phase2/final-article-fuzzy-identity-2026-11-04-0531.json",
+  "results": [
+    {
+      "doi": "10.5194/essd-15-383-2023",
+      "publisher_url": "https://essd.copernicus.org/articles/15/383/2023/essd-15-383-2023.html",
+      "section": "Financial support",
+      "publisher_evidence": "Annie P. S. Wong supported by NOAA Global Ocean Monitoring and Observing Program via CICOES at UW for Argo Program; John Gilson supported by US Argo through NOAA grant NA20OAR4320278 (CIMEAS/SIO Argo).",
+      "award_numbers_explicit": [
+        "NA20OAR4320278"
+      ],
+      "wpo_primary_award_verified": false,
+      "assessment": "Publisher supports NOAA Argo association but does not establish exact WPO primary SPARK project; do not assume broad NOAA cooperative agreement is WPO.",
+      "next_action": "Check exact SPARK primary award matching and source original award provenance before considering eligibility."
+    },
+    {
+      "doi": "10.5194/essd-16-1395-2024",
+      "publisher_url": "https://essd.copernicus.org/articles/16/1395/2024/essd-16-1395-2024.html",
+      "section": "Financial support",
+      "publisher_evidence": "Research supported by University Corporation for Atmospheric Research grant NA21OAR4310383, NASA, DOE and NSF grants.",
+      "award_numbers_explicit": [
+        "NA21OAR4310383"
+      ],
+      "wpo_primary_award_verified": false,
+      "assessment": "Direct publisher grant evidence NA21OAR4310383; exact SPARK primary WPO match remains unverified.",
+      "next_action": "Check literal SPARK primary award NA21OAR4310383 (including project-specific scope), then Scout overlap before staging."
+    },
+    {
+      "doi": "10.5194/essd-15-5301-2023",
+      "publisher_url": "https://essd.copernicus.org/articles/15/5301/2023/essd-15-5301-2023.html",
+      "section": "Financial support",
+      "publisher_evidence": "Publisher lists extensive international consortium funding; full award-by-award matching not performed in this bounded mission.",
+      "award_numbers_explicit": [],
+      "wpo_primary_award_verified": false,
+      "assessment": "Cannot infer WPO award from broad international collaboration or NOAA affiliation.",
+      "next_action": "Extract relevant exact funding identifiers from publisher financial support and compare to SPARK primary award; avoid repeated broad search."
+    }
+  ],
+  "screening_coverage_unchanged": {
+    "screened": 614,
+    "confirmed_in_reach": 1,
+    "possible_match": 613,
+    "not_found": 0,
+    "scout_overlap": 30,
+    "unscreened": 0
+  },
+  "original_ledger_unchanged": {
+    "completed": 48,
+    "investigating": 13,
+    "awaiting": 553
+  },
+  "expansion_seeds_pending": 614,
+  "original_dispositions_modified": false,
+  "human_decisions_modified": false,
+  "hub_import_claimed": false
+}
