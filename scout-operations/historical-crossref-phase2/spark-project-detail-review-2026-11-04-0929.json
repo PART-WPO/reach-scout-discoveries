@@ -1,0 +1,55 @@
+{
+  "schema": "reach-scout-crossref-phase2-evidence-v1",
+  "checked_at": "2026-11-04T09:29:32-05:00",
+  "scope": "Targeted SPARK primary project detail and temporal attribution check; no disposition changes",
+  "source": "PART-WPO/SPARK agent-data manifest and index/detail CSV",
+  "cases": [
+    {
+      "doi": "10.5194/essd-15-383-2023",
+      "award": "NA20OAR4320278",
+      "spark_records": [
+        {
+          "id": "spark-000355",
+          "detail": "agent-data/details/part-028.csv",
+          "period": "2023-07 to 2025-06",
+          "scope": "San Francisco Bay Area AQPI gap-filling radar, extreme precipitation and decision support"
+        },
+        {
+          "id": "spark-000364",
+          "detail": "agent-data/details/part-029.csv",
+          "award": "NA20OAR4320278-T3-01S063",
+          "period": "2024-07 to 2025-06",
+          "scope": "AQPI gap-filling radars; distinct task-qualified award"
+        }
+      ],
+      "finding": "Final Argo salinity publication dated 2023-01-20 precedes both SPARK AQPI project periods; SPARK scopes describe radar/precipitation rather than Argo salinity. Award-root overlap is not a project bridge. Temporal mismatch adds negative attribution evidence but does not rule out prior separately funded work.",
+      "next_action": "Do not stage on these SPARK records; seek independent output-to-WPO project bridge only if new evidence arises."
+    },
+    {
+      "doi": "10.5194/essd-16-1395-2024",
+      "award": "NA21OAR4310383",
+      "spark_records": [
+        {
+          "id": "spark-000285",
+          "detail": "agent-data/details/part-023.csv",
+          "period": "2025-07 to 2026-09",
+          "scope": "UFS Senior Advisor coordinates UFS requirements and communities; UCAR/CPAESS"
+        }
+      ],
+      "finding": "Final wildfire GOES article dated 2024-03-15 predates SPARK UFS Senior Advisor project start July 2025 by over one year. Project scope is UFS coordination rather than GOES wildfire progression. Exact award overlap alone cannot establish attribution; may represent a broader award with distinct activities.",
+      "next_action": "Do not stage under UFS Senior Advisor absent independent project-specific evidence."
+    }
+  ],
+  "source_urls": [
+    "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+    "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-023.csv",
+    "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-028.csv",
+    "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-029.csv"
+  ],
+  "safeguards": {
+    "original_dispositions_unchanged": true,
+    "expansion_seeds_preserved": 614,
+    "human_decisions_unchanged": true,
+    "hub_import_claimed": false
+  }
+}
