@@ -1,0 +1,35 @@
+{
+  "schema": "reach-scout-historical-crossref-identity-followup-v1",
+  "date": "2026-11-04",
+  "doi": "10.1002/hyp.14960",
+  "original_lane": "PUBLIC_SNAPSHOT_EXACT_REPOSITORY_URL_MATCH_PENDING_LIVE_FINGERPRINT_VERIFICATION",
+  "route_before": "LIKELY_IN_REACH",
+  "source_manifest_sha256": "799744c7e83f218d22cc19afacb7cfcf2762feb490659efde9f58bf19473b1fa",
+  "screening_manifest_sha256": "470e89f3ef51557b5d8e817a6d860cd6592522a692a83a714c252abe0ea84a50",
+  "reach_cache_sha256": "6660562e325a6a141198f59acce84f2e30d9a2d14e6cf5acd29769c8a4b68e1e",
+  "reach_source_manifest_sha256": "f94ae52cac483b52e9a5cd6e775c6faa01ad6ec33610b249b3d486aed6daa003",
+  "shared_identity_index_fingerprint": "8d87193fbc1d74768453b765d7d4d29a85fa07cb3d98046851b687f14490043e",
+  "evidence": [
+    {
+      "source": "public-identity-index.json",
+      "identity": "reachuid-v1-f72e7a1bbe84c9357563896ed8e7a6fb",
+      "shard": "agent-data/details/part-009.csv",
+      "exact_secondary_url": "https://repository.library.noaa.gov/view/noaa/63787",
+      "title": "Quantifying patterns of streamflow peaks over the southeastern United States using a long-term retrospective data set",
+      "doi_in_reach_index": false
+    },
+    {
+      "source": "scout-operations/historical-crossref-phase2/targeted-followup-2026-11-04-1325ET.json",
+      "official_repository_url": "https://repository.library.noaa.gov/view/noaa/63787",
+      "doi": "10.1002/hyp.14960",
+      "publisher": "https://onlinelibrary.wiley.com/doi/abs/10.1002/hyp.14960"
+    }
+  ],
+  "decision": "NO_NEW_OUTPUT_PROPOSAL_PUBLIC_REACH_IDENTITY_PRESENT_IN_SAVED_SNAPSHOT",
+  "limitations": [
+    "Current live public REACH manifest checksum not independently recomputed in this run; cannot attest fresh snapshot identity.",
+    "No private Hub decisions checked.",
+    "Original terminal disposition not mutated; independently required DOI-seeded expansion remains open."
+  ],
+  "next_action": "Validate live REACH manifest SHA against indexed SHA; if unchanged, mark original confirmed in REACH using exact NOAA IR canonical URL and UID, preserving expansion seed. If changed, rebuild index before final determination."
+}
