@@ -1,0 +1,92 @@
+name: Scout decision pipeline validation
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/scout-decision-pipeline.yml'
+      - 'scout-operations/tools/decision_pipeline.py'
+      - 'scout-operations/tests/test_decision_pipeline.py'
+      - 'scout-operations/tests/published-crossref-decision-cases.json'
+      - 'scout-operations/decision-contract-v1.md'
+permissions:
+  contents: write
+concurrency:
+  group: scout-decision-pipeline
+  cancel-in-progress: false
+jobs:
+  regression-and-checkpoints:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run deterministic regressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s scout-operations/tests -p 'test_decision_pipeline.py' -v
+          python -m unittest discover -s scout-operations/tests -p 'test_quick_monthly_intake.py' -v
+      - name: Verify live REACH snapshot and publish derived, immutable checkpoints
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3 4 5; do
+            echo "Verified decision run attempt ${attempt}/5"
+            git fetch origin main
+            git checkout -B main origin/main
+            python - <<'PY'
+          import hashlib, json, urllib.request
+          from pathlib import Path
+          p = Path("scout-operations/reach-comparison-cache/comparison-index.json")
+          cache = json.loads(p.read_text())
+          url = "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json"
+          with urllib.request.urlopen(url, timeout=45) as response:
+              live = response.read()
+          digest = hashlib.sha256(live).hexdigest()
+          if digest != cache["source_manifest_sha256"]:
+              raise SystemExit("STALE REACH SNAPSHOT: Refresh verified comparison cache first")
+          print("Verified live REACH source manifest", digest)
+          PY
+            python scout-operations/tools/decision_pipeline.py build-index
+            python scout-operations/tools/decision_pipeline.py evaluate --cases scout-operations/tests/published-crossref-decision-cases.json
+            python - <<'PY'
+          import glob, json
+          from pathlib import Path
+          idx=json.loads(Path("scout-operations/identity-cache/public-identity-index.json").read_text())
+          assert idx["schema"]=="reach-scout-identity-index-v1"
+          assert idx["sources"]["scout_batches"]>=30
+          assert len(idx["records"])>=1238
+          cases=json.loads(Path("scout-operations/tests/published-crossref-decision-cases.json").read_text())["cases"]
+          records=[]
+          for path in glob.glob("scout-operations/case-checkpoints/doi-*/rev-*.json"):
+              x=json.loads(Path(path).read_text())
+              if x["case_input"]["doi"] in {v["doi"] for v in cases} and x["index_fingerprint"]==idx["source_fingerprint"]:
+                  records.append(x)
+          assert len(records)==3, "Expected three independent checkpoint records for current snapshot"
+          assert not any(x["evaluation"]["automatically_staged"] for x in records)
+          assert not any(x["evaluation"]["decision"]=="READY_FOR_VALIDATED_DRAFT_PREFLIGHT" for x in records)
+          assert all(x["evaluation"]["seed_expansion_preserved"] for x in records)
+          print("Validated three held original test cases; no candidate staging")
+          PY
+            git add scout-operations/identity-cache/public-identity-index.json scout-operations/case-checkpoints
+            if git diff --cached --quiet; then
+              echo "Decision index and checkpoints already current"
+              exit 0
+            fi
+            git commit -m "Refresh verified Scout identity index and DOI decision checkpoints"
+            if git push origin HEAD:main; then
+              echo "Published validated decision checkpoint revision"
+              exit 0
+            fi
+            echo "Concurrent main update; regenerate from fresh source"
+            sleep $((attempt * 2))
+          done
+          echo "::error::Unable to publish verified checkpoints after five attempts"
+          exit 1
