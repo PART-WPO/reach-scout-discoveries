@@ -1,0 +1,54 @@
+{
+  "schema": "reach-scout-crossref-phase2-fuzzy-identity-v1",
+  "checked_at": "2026-11-04",
+  "source_checkpoint": "scout-operations/historical-crossref-phase2/final-article-cache-dedup-2026-11-04-0424.json",
+  "cache_path": "scout-operations/reach-comparison-cache/comparison-index.json",
+  "cache_source_manifest_sha256": "f94ae52cac483b52e9a5cd6e775c6faa01ad6ec33610b249b3d486aed6daa003",
+  "cache_records_scanned": 1238,
+  "method": "Independently compared normalized meaningful title-token overlap against all 1238 cached REACH records, threshold intersection/max(unique token counts)>=0.35; this is a targeted approximate-title check, not publisher identity or complete external alternate-URL verification. Earlier exact DOI and exact title negative checks are reused, not repeated source shard downloads.",
+  "results": [
+    {
+      "doi": "10.5194/essd-15-383-2023",
+      "title": "Argo salinity: bias and uncertainty evaluation",
+      "approximate_title_candidates_at_threshold": 0,
+      "classification": "NO_STRONG_CACHED_TITLE_CANDIDATE_NOT_FINAL_ABSENCE",
+      "next_action": "Check publisher alternate URL and non-indexed secondary identifier evidence, then Scout queue overlap and exact primary WPO award; do not stage until eligible."
+    },
+    {
+      "doi": "10.5194/essd-16-1395-2024",
+      "title": "Systematically tracking the hourly progression of large wildfires using GOES satellite observations",
+      "approximate_title_candidates_at_threshold": 0,
+      "classification": "NO_STRONG_CACHED_TITLE_CANDIDATE_NOT_FINAL_ABSENCE",
+      "next_action": "Check publisher alternate URL and non-indexed secondary identifier evidence, then Scout queue overlap and exact primary WPO award; do not stage until eligible."
+    },
+    {
+      "doi": "10.5194/essd-15-5301-2023",
+      "title": "Global Carbon Budget 2023",
+      "approximate_title_candidates_at_threshold": 0,
+      "classification": "NO_STRONG_CACHED_TITLE_CANDIDATE_NOT_FINAL_ABSENCE",
+      "next_action": "Check publisher alternate URL and non-indexed secondary identifier evidence, then Scout queue overlap and exact primary WPO award; do not stage until eligible."
+    }
+  ],
+  "limitations": [
+    "Token similarity may miss renamed articles, short titles or alternate identifiers.",
+    "Source manifest checksum reused from verified cache, not freshly recomputed.",
+    "No direct verification of primary WPO award, Scout queue or private reviewer decisions in this checkpoint."
+  ],
+  "screening_coverage_unchanged": {
+    "screened": 614,
+    "confirmed_in_reach": 1,
+    "possible_match": 613,
+    "not_found": 0,
+    "scout_overlap": 30,
+    "unscreened": 0
+  },
+  "original_ledger_unchanged": {
+    "completed": 48,
+    "investigating": 13,
+    "awaiting": 553
+  },
+  "expansion_seeds_pending": 614,
+  "original_dispositions_modified": false,
+  "human_decisions_modified": false,
+  "hub_import_claimed": false
+}
