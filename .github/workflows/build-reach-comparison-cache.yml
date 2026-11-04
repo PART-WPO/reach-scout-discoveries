@@ -1,0 +1,41 @@
+name: Build verified REACH comparison cache
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 11 * * 1-5'
+permissions:
+  contents: write
+concurrency:
+  group: reach-comparison-cache
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build and publish verified cache
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git checkout -B main origin/main
+            python scout-operations/reach-comparison-cache/build_cache.py
+            git add scout-operations/reach-comparison-cache/comparison-index.json
+            if git diff --cached --quiet; then
+              echo "REACH comparison cache unchanged"
+              exit 0
+            fi
+            git commit -m "Refresh verified REACH comparison cache"
+            if git push origin HEAD:main; then exit 0; fi
+            sleep $((attempt * 2))
+          done
+          exit 1
