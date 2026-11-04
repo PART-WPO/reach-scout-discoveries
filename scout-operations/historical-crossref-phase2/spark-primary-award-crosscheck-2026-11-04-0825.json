@@ -1,0 +1,62 @@
+{
+  "schema": "reach-scout-crossref-phase2-evidence-v1",
+  "checked_at": "2026-11-04T08:25:00-05:00",
+  "scope": "Targeted exact SPARK primary award check for three previously researched final articles; no disposition changes",
+  "spark_manifest": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+  "spark_awards_shard": "agent-data/awards/part-004.csv",
+  "spark_related_shard": "agent-data/awards/part-006.csv",
+  "cases": [
+    {
+      "doi": "10.5194/essd-15-383-2023",
+      "publisher_award": "NA20OAR4320278",
+      "primary_matches": [
+        {
+          "record_id": "spark-000355",
+          "project": "AQPI System Phase 2",
+          "award": "NA20OAR4320278"
+        },
+        {
+          "record_id": "spark-000364",
+          "project": "AQPI System Phase 2",
+          "award": "NA20OAR4320278-T3-01S063"
+        }
+      ],
+      "related_matches": [
+        {
+          "record_id": "spark-000571",
+          "project": "Enhanced understanding of air-sea interactions and atmospheric river predictions"
+        }
+      ],
+      "finding": "Exact primary award root appears, but project titles are unrelated to Argo salinity; cannot infer same funded project. FY25+ suffix cannot be collapsed into root.",
+      "next_action": "Inspect exact project details and publication acknowledgements for independently supported same-project bridge; absent evidence, do not stage."
+    },
+    {
+      "doi": "10.5194/essd-16-1395-2024",
+      "publisher_award": "NA21OAR4310383",
+      "primary_matches": [
+        {
+          "record_id": "spark-000285",
+          "project": "UFS Senior Advisor (UFS Science Coordinator)",
+          "award": "NA21OAR4310383"
+        }
+      ],
+      "finding": "Exact primary award exists in EPIC project, but wildfire satellite publication has no demonstrated connection to UFS Senior Advisor project. Award equality alone insufficient.",
+      "next_action": "Check SPARK project detail and article award context for same-project attribution; do not stage without bridge."
+    },
+    {
+      "doi": "10.5194/essd-15-5301-2023",
+      "finding": "No specific WPO primary award established in prior publisher research; no award-based SPARK check warranted.",
+      "next_action": "Await independently evidenced primary award; do not infer from NOAA coauthorship."
+    }
+  ],
+  "safeguards": {
+    "original_dispositions_unchanged": true,
+    "expansion_seeds_preserved": 614,
+    "human_decisions_unchanged": true,
+    "hub_import_claimed": false
+  },
+  "evidence_urls": [
+    "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/awards/part-004.csv",
+    "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/awards/part-006.csv"
+  ]
+}
