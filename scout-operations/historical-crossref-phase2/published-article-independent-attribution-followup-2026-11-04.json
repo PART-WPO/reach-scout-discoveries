@@ -1,0 +1,49 @@
+{
+  "schema": "reach-scout-phase2-independent-attribution-v1",
+  "scope": "Bounded independent source follow-up on three published index-negative originals; no staging or immutable disposition mutation",
+  "cases": [
+    {
+      "doi": "10.1002/qj.5049",
+      "official_source": "https://rmets.onlinelibrary.wiley.com/doi/10.1002/qj.5049",
+      "published": "2025-07-02",
+      "award": "NA20OAR4320278",
+      "publisher_identified_activity": "The Global Drifter Program; Luca Centurioni and drifting buoy platforms",
+      "spark_primary_record": "spark-000355",
+      "spark_project": "AQPI System Phase 2",
+      "finding": "Publisher expressly attributes award to a different funded activity from SPARK AQPI project. Shared award number does not support same-project attribution.",
+      "research_recommendation": "HOLD_UNSUPPORTED_WPO_PROJECT_ASSOCIATION",
+      "next_action": "Do not stage as AQPI; only reopen on independently verified same-project bridge or human determination."
+    },
+    {
+      "doi": "10.1016/j.rse.2025.115156",
+      "official_source": "https://repository.library.noaa.gov/view/noaa/75220",
+      "award": "NA21OAR4310383",
+      "spark_primary_record": "spark-000285",
+      "spark_project": "UFS Senior Advisor (UFS Science Coordinator)",
+      "finding": "NOAA IR documents journal article and funding but not an output-specific link to the UFS Senior Advisor project.",
+      "research_recommendation": "NEEDS_INVESTIGATION_PROJECT_ATTRIBUTION",
+      "next_action": "Obtain distinct source identifying same WPO project; do not stage under UFS based solely on award."
+    },
+    {
+      "doi": "10.1007/s00382-022-06655-w",
+      "official_source": "https://repository.library.noaa.gov/view/noaa/66066",
+      "award": "NA21OAR4310383",
+      "spark_primary_record": "spark-000285",
+      "spark_project": "UFS Senior Advisor (UFS Science Coordinator)",
+      "finding": "NOAA IR documents journal article and funding but not an output-specific link to the UFS Senior Advisor project.",
+      "research_recommendation": "NEEDS_INVESTIGATION_PROJECT_ATTRIBUTION",
+      "next_action": "Obtain distinct source identifying same WPO project; do not stage under UFS based solely on award."
+    }
+  ],
+  "prior_dedup_checkpoint": "scout-operations/historical-crossref-phase2/published-article-scout-exact-doi-dedup-2026-11-04.json",
+  "limits": [
+    "No private reviewer decision access",
+    "Full title/secondary DOI/version-family dedup not completed",
+    "Research recommendation does not close original or expansion investigation"
+  ],
+  "safeguards": {
+    "immutable_original_dispositions_changed": false,
+    "seed_expansion_statuses_changed": false,
+    "staged_candidates": 0
+  }
+}
