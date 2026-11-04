@@ -5,6 +5,8 @@ on:
     paths:
       - '.github/workflows/historical-crossref-actionable-routing.yml'
       - 'scout-operations/historical-crossref-screening/build_actionable_routing.py'
+      - 'scout-operations/tests/test_historical_crossref_title_normalization.py'
+      - 'scout-operations/tools/decision_pipeline.py'
       - 'scout-operations/historical-crossref-screening/manifest.json'
       - 'scout-operations/reach-comparison-cache/comparison-index.json'
 permissions:
@@ -47,6 +49,7 @@ jobs:
               raise SystemExit("STALE REACH CACHE: public source manifest differs; refresh cache workflow before routing")
           print("Verified live REACH manifest SHA-256:",digest)
           PY
+            python -m unittest discover -s scout-operations/tests -p 'test_historical_crossref_title_normalization.py' -v
             python scout-operations/historical-crossref-screening/build_actionable_routing.py
             python - <<'PY'
           import json
@@ -57,6 +60,20 @@ jobs:
           assert sum(j["counts"].values())==j["total"]
           assert len(j["entries"])==j["total"]
           assert len({r["doi"] for r in j["entries"]})==j["total"]
+          # These were missed solely because Crossref titles contained XML tags.
+          expected = {
+              "10.1002/hyp.14960": "reachuid-v1-f72e7a1bbe84c9357563896ed8e7a6fb",
+              "10.1111/jfr3.12795": "reachuid-v1-7d17c0204a013a38d0680366b003c0ed",
+              "10.1111/jfr3.70241": "reachuid-v1-0b4005a95b19d0b6682bc9fe8c89c564",
+              "10.5194/gmd-17-5309-2024": "reachuid-v1-95976a19f5118fe6c9a1c968bb941460"
+          }
+          index={e["doi"]:e for e in j["entries"]}
+          for doi,uid in expected.items():
+              row=index[doi]
+              assert row["outcome"]=="LIKELY_IN_REACH",(doi,row["outcome"])
+              assert any(m["reach_uid"]==uid and m["title_hit"]
+                         for m in row["matches"]),(doi,row["matches"])
+          print("Verified four corrected title-only REACH matches; none automatically confirmed")
           print("Validated routing:",j["counts"],"Scout overlaps:",j["scout_overlap_flagged"])
           PY
             git add scout-operations/historical-crossref-screening/actionable-routing.json
