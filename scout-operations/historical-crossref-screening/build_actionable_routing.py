@@ -6,6 +6,8 @@ This produces a derived routing report; original research and seed-expansion
 statuses, human decisions, and public Scout feed are never modified.
 """
 import argparse
+import csv
+import io
 import hashlib
 import json
 import re
@@ -59,6 +61,16 @@ def build():
         t = title(r.get("title_normalized") or r.get("title"))
         if t:
             reach_by_title.setdefault(t, []).append(r)
+    source_titles = {}
+    for batch in source["batches"]:
+        p = ROOT / batch["path"]
+        require(sha(p) == batch["sha256"], "Crossref source batch SHA mismatch")
+        rows = list(csv.DictReader(io.StringIO(p.read_text(encoding="utf-8-sig"))))
+        require(len(rows) == batch["record_count"], "Crossref source batch row count mismatch")
+        for row in rows:
+            d = doi(row.get("DOI"))
+            if d:
+                source_titles.setdefault(d, set()).add(title(row.get("Title")))
     original = {}
     for b in screening["batches"]:
         p = ROOT / b["path"]
@@ -74,20 +86,23 @@ def build():
     require(len(original) == screening["counts"]["total"], "Missing Crossref source records")
     results = []
     for d, prior in sorted(original.items()):
-        t = title((prior.get("cache_screening") or {}).get("title"))
-        # Older checkpoints lack cache_screening; recover title from source
-        # records in a separate pass below, never assume missing title=no match.
+        titles = set(source_titles.get(d, set()))
+        cached_title = title((prior.get("cache_screening") or {}).get("title"))
+        if cached_title:
+            titles.add(cached_title)
+        titles.discard("")
+        t = sorted(titles, key=len, reverse=True)[0] if titles else ""
         matches = {}
         for r in reach_by_doi.get(d, []):
             matches[r["reach_uid"]] = (r, True, False)
-        for r in reach_by_title.get(t, []) if t else []:
+        for r in [hit for candidate in titles for hit in reach_by_title.get(candidate, [])]:
             uid = r["reach_uid"]
             previous = matches.get(uid)
             matches[uid] = (r, bool(previous and previous[1]), True)
         if prior["screening_status"] == "CONFIRMED_IN_REACH":
             outcome = "CONFIRMED_IN_REACH"
             route = "SKIP_ORIGINAL_RESEARCH_KEEP_EXPANSION_SEED"
-        elif not t:
+        elif not titles:
             outcome = "SCREENING_INCOMPLETE"
             route = "RECOVER_SOURCE_TITLE_THEN_RESCREEN"
         elif any(hit_doi for _, hit_doi, _ in matches.values()):
