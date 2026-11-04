@@ -89,9 +89,15 @@ jobs:
           assert any(m["source"]=="REACH" and m["identity"]=="reachuid-v1-784189d5f32028e72e4b294e805e99b7" and "exact_url" in m["match_bases"] for m in existing[0]["evaluation"]["identity_check"]["matches"])
           assert existing[0]["case_input"]["seed_expansion_status"]=="awaiting_exploration"
           assert not any(x["evaluation"]["decision"]=="READY_FOR_VALIDATED_DRAFT_PREFLIGHT" for x in held)
-          assert ready[0]["evaluation"]["decision"]=="READY_FOR_VALIDATED_DRAFT_PREFLIGHT"
-          assert ready[0]["evaluation"]["identity_check"]["status"]=="NO_PUBLIC_IDENTITY_MATCH"
-          assert ready[0]["evaluation"]["review_action"]=="HUMAN_REVIEW_PROPOSAL"
+          pos=ready[0]["evaluation"]
+          assert pos["decision"] in {"READY_FOR_VALIDATED_DRAFT_PREFLIGHT","EXISTING_SCOUT_CANDIDATE"}
+          if pos["decision"]=="READY_FOR_VALIDATED_DRAFT_PREFLIGHT":
+              assert pos["identity_check"]["status"]=="NO_PUBLIC_IDENTITY_MATCH"
+              assert pos["review_action"]=="HUMAN_REVIEW_PROPOSAL"
+          else:
+              assert pos["identity_check"]["status"]=="IN_PUBLIC_SCOUT_QUEUE"
+              assert any(x["source"] in {"SCOUT_INBOX","SCOUT_PUBLISHED"} and "exact_doi" in x["match_bases"] for x in pos["identity_check"]["matches"])
+              assert pos["review_action"]=="NONE"
           assert all(not x["evaluation"]["automatically_staged"] for x in records)
           assert all(x["evaluation"]["seed_expansion_preserved"] for x in records)
           from collections import Counter
