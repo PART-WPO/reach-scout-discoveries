@@ -111,12 +111,18 @@ class DecisionPipelineTests(unittest.TestCase):
 
     def test_monthly_fast_path_is_human_review_not_approval(self):
         case = self.case(cohort="monthly_api", project_attribution="UNRESOLVED",
+                         structured_funding_evidence_verified=True,
                          checked_sources=["https://example.org/publisher"])
         result = evaluate(case, self.index)
         self.assertEqual(result["decision"], "READY_FOR_VALIDATED_DRAFT_PREFLIGHT")
         self.assertEqual(result["review_action"], "HUMAN_REVIEW_PROPOSAL")
         self.assertTrue(result["unverified_private_hub_import"])
         self.assertFalse(result["automatically_staged"])
+
+    def test_monthly_requires_verified_structured_funding_field(self):
+        case = self.case(cohort="monthly_api", project_attribution="UNRESOLVED")
+        self.assertEqual(evaluate(case, self.index)["decision"],
+                         "STRUCTURED_FUNDING_EVIDENCE_REQUIRED")
 
     def test_historical_requires_positive_same_project_evidence(self):
         case = self.case(project_attribution="UNRESOLVED", research_rounds=2)
