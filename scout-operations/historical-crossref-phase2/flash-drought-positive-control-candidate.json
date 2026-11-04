@@ -47,5 +47,14 @@
         ]
       }
     }
-  ]
+  ],
+  "verified_noaa_ir_doi_index": {
+    "manifest": "scout-operations/noaa-ir/manifest.json",
+    "manifest_complete": true,
+    "shard": "scout-operations/noaa-ir/shards/a.json",
+    "exact_doi": "10.1175/jamc-d-25-0108.1",
+    "official_item": "https://repository.library.noaa.gov/view/noaa/77039",
+    "ir_enrichment": "prepare_batch.py will verify all index shards and populate IR? TRUE; source is repository membership, not REACH duplication"
+  },
+  "preflight_request": "2026-11-04 controlled 24-column dry-run; do not automatically stage if private Hub history is not verified."
 }
