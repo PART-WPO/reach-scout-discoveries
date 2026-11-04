@@ -12,3 +12,26 @@ This directory stores small, independently verifiable first-pass REACH screening
 - The GitHub Action `historical-crossref-screening-coverage.yml` validates checkpoint batches, uniqueness, source membership, and creates `manifest.json` and `coverage.json`. Invalid input fails rather than silently overwriting conflicts.
 
 The coverage counts are only authoritative for checkpointed, validated records. Existing legacy screening records must be migrated only after their identities and evidence are verified; do not assume prior claimed counts are correct. The generated manifest contains SHA-256 hashes of batch files. The REACH snapshot checksum must be recorded in each batch; the generator does not fabricate or certify that external checksum.
+
+
+## Shared REACH + Scout identity lookup (2026-11-04)
+
+The derived `actionable-routing.json` now includes
+`shared_identity_index_fingerprint` and each original DOI's
+`scout_public_queue_matches` (source, identity, exact/normalized-title
+basis, path/row). The single shared read-only index is produced by
+`scout-operations/tools/decision_pipeline.py` from the checksum-verified
+REACH comparison cache and every public Scout manifest batch/inbox file.
+
+The verified initial snapshot found 31 original DOIs with public Scout
+candidate matches: 30 with exact DOI matches and one title-only:
+`10.5194/egusphere-2025-3884` (also represented in Scout preprint-hold
+material). The title-only case remains **ambiguous**; confirm official
+preprint/final DOI and reviewer family before any disposition. Counts are
+snapshot-specific and must be regenerated on source changes.
+
+These additions are **derived routing clues**, not human decisions, confirmed
+REACH duplicates or authorization to stage. Preserve the previous routing
+outcomes, original research ledger, human decisions, and every seed-expansion
+lane. Use the versioned `scout-operations/decision-contract-v1.md` and
+immutable DOI-level case checkpoints for subsequent evidence-based decisions.
