@@ -1,0 +1,49 @@
+{
+  "schema": "reach-scout-published-article-exact-doi-dedup-v1",
+  "test_dois": [
+    "10.1002/qj.5049",
+    "10.1016/j.rse.2025.115156",
+    "10.1007/s00382-022-06655-w"
+  ],
+  "checks": [
+    {
+      "scope": "scout-discoveries/manifest.json listed public discovery batches",
+      "files_checked": 30,
+      "exact_doi_hits": 0
+    },
+    {
+      "scope": "scout-discoveries/inbox directory CSVs",
+      "files_checked": 16,
+      "exact_doi_hits": 0
+    }
+  ],
+  "results": [
+    {
+      "doi": "10.1002/qj.5049",
+      "exact_doi_in_checked_scout_files": false,
+      "project_attribution": "UNRESOLVED"
+    },
+    {
+      "doi": "10.1016/j.rse.2025.115156",
+      "exact_doi_in_checked_scout_files": false,
+      "project_attribution": "UNRESOLVED"
+    },
+    {
+      "doi": "10.1007/s00382-022-06655-w",
+      "exact_doi_in_checked_scout_files": false,
+      "project_attribution": "UNRESOLVED"
+    }
+  ],
+  "limitations": [
+    "Exact DOI string checks only; no verified title, URL, secondary DOI or version-family dedup",
+    "No access to private human reviewer decisions",
+    "No assertion of full REACH details/secondary link uniqueness",
+    "Exact SPARK primary award matches do not establish same funded project"
+  ],
+  "next_action": "Bounded independent same-project attribution evidence review; then full canonical identity and human-decision checks before staging",
+  "safeguards": {
+    "original_dispositions_changed": false,
+    "expansion_seeds_closed": 0,
+    "candidates_staged": 0
+  }
+}
