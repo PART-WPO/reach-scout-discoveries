@@ -1,0 +1,34 @@
+name: Historical Crossref screening coverage
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scout-operations/historical-crossref-screening/batch-*.json'
+      - 'scout-operations/historical-crossref-screening/build_coverage.py'
+      - 'api-discoveries/historical-crossref/manifest.json'
+permissions:
+  contents: write
+concurrency:
+  group: historical-crossref-screening-coverage
+  cancel-in-progress: false
+jobs:
+  validate-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate source and screening batches; build counts
+        run: python scout-operations/historical-crossref-screening/build_coverage.py
+      - name: Commit generated manifest and coverage only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scout-operations/historical-crossref-screening/manifest.json scout-operations/historical-crossref-screening/coverage.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Regenerate validated Crossref screening checkpoint coverage"
+            git push
+          fi
