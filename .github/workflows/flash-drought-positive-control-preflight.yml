@@ -1,0 +1,110 @@
+name: Flash drought Crossref positive-control preflight
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/flash-drought-positive-control-preflight.yml'
+      - 'scout-operations/historical-crossref-phase2/flash-drought-positive-control-candidate.json'
+      - 'scout-discoveries/tools/prepare_batch.py'
+      - 'scout-discoveries/tools/noaa_ir_lookup.py'
+permissions:
+  contents: write
+concurrency:
+  group: flash-drought-positive-control-preflight
+  cancel-in-progress: false
+jobs:
+  verified-preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify source identity, authoritative ledger and current REACH snapshot
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,sys,urllib.request
+          from pathlib import Path
+          sys.path.insert(0,"scout-operations/tools")
+          from decision_pipeline import build_index,lookup
+          root=Path(".")
+          cache=json.loads((root/"scout-operations/reach-comparison-cache/comparison-index.json").read_text())
+          with urllib.request.urlopen("https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json", timeout=45) as resp:
+              live=resp.read()
+          assert hashlib.sha256(live).hexdigest()==cache["source_manifest_sha256"], "Stale REACH comparison cache"
+          index=build_index(root)
+          doi="10.1175/jamc-d-25-0108.1"
+          title="Flash Drought Risk and Agricultural Exposure in the Southeast United States"
+          matched=lookup(index,doi,title,"https://repository.library.noaa.gov/view/noaa/77039")
+          assert matched["status"]=="NO_PUBLIC_IDENTITY_MATCH",matched
+          ledger=json.loads((root/"scout-operations/historical-crossref-triage.json").read_text())
+          originals=[x for x in ledger["entries"] if x["identity"]=="doi:"+doi]
+          assert len(originals)==1,"Original DOI not unique in authoritative triage"
+          assert originals[0]["status"]=="awaiting_research", "Original already decided, preserve prior decision"
+          assert originals[0]["seed_expansion_status"] in {"awaiting_exploration","investigating","needs_more_research"}, "Expansion seed unexpectedly closed"
+          print("Verified complete public REACH/Scout no-match and untouched original case; private reviewer decisions remain NOT VERIFIED")
+          PY
+      - name: Run official 24-column candidate preflight without staging
+        run: |
+          set -euo pipefail
+          DRAFT=/tmp/2026-11-04-crossref-flash-drought-positive-control.csv
+          python scout-discoveries/tools/prepare_batch.py \
+            --input-json scout-operations/historical-crossref-phase2/flash-drought-positive-control-candidate.json \
+            --output "$DRAFT"
+          python scout-discoveries/tools/prepare_batch.py --check "$DRAFT"
+          python - <<'PY'
+          import csv,hashlib,json
+          from pathlib import Path
+          p=Path("/tmp/2026-11-04-crossref-flash-drought-positive-control.csv")
+          with p.open(newline="",encoding="utf-8") as f:
+              rows=list(csv.DictReader(f))
+          assert len(rows)==1
+          row=rows[0]
+          assert len(row)==24, "Hub contract not 24 columns"
+          assert row["DOI"]=="10.1175/jamc-d-25-0108.1"
+          assert row["NOAA Award Number(s)"]=="NA23OAR4590590"
+          assert row["Publication Date"]=="2026-06-01"
+          assert row["IR?"]=="TRUE", "NOAA IR exact DOI enrichment did not succeed"
+          assert row["IR Repository URL"]=="https://repository.library.noaa.gov/view/noaa/77039"
+          assert not row["Principal Investigator Email(s)"] and not row["Principal Investigators"], "Do not guess PI"
+          assert "Scout classification: NEW CANDIDATE" in row["Scout Discovery Rationale"]
+          assert "Scout origin method: Direct API" in row["Scout Discovery Rationale"]
+          assert "prior private" in row["Scout Discovery Rationale"].lower()
+          psha=hashlib.sha256(p.read_bytes()).hexdigest()
+          source=Path("scout-operations/historical-crossref-phase2/flash-drought-positive-control-candidate.json")
+          report={
+              "schema":"reach-scout-positive-control-preflight-v1",
+              "doi":row["DOI"],
+              "status":"PREFLIGHT_PASSED_NOT_STAGED",
+              "source_candidate_sha256":hashlib.sha256(source.read_bytes()).hexdigest(),
+              "temporary_24_column_csv_sha256":psha,
+              "column_count":len(row),
+              "noaa_ir_exact_doi":row["IR Repository URL"],
+              "award":row["NOAA Award Number(s)"],
+              "required_human_checks":["Private reviewer/Hub decision history NOT VERIFIED","Live parent and PI selection in Smartsheet staging","Independent final REACH identity check immediately before insertion"],
+              "published_public_scout_candidate":False,
+              "private_hub_import":"NOT VERIFIED",
+              "prior_dispositions_changed":False,
+              "seed_expansion_closed":False
+          }
+          dest=Path("scout-operations/historical-crossref-phase2/flash-drought-preflight-result.json")
+          dest.write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8")
+          print("Validated dry-run-only result:",json.dumps(report))
+          PY
+      - name: Commit preflight audit only
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scout-operations/historical-crossref-phase2/flash-drought-preflight-result.json
+          if git diff --cached --quiet; then
+            echo "Preflight audit unchanged"
+            exit 0
+          fi
+          git commit -m "Record verified 24-column flash-drought positive-control dry-run"
+          git push origin HEAD:main
