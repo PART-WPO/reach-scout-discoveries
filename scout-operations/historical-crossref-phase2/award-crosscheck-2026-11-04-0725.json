@@ -1,0 +1,45 @@
+{
+  "schema": "reach-scout-crossref-phase2-award-crosscheck-v1",
+  "checked_at": "2026-11-04T07:25:00-05:00",
+  "source_checkpoint": "scout-operations/historical-crossref-phase2/publisher-funding-evidence-2026-11-04-0625.json",
+  "method": "Exact award token GitHub code search across PART-WPO public repositories; REACH output index hits are corroborating context, NOT SPARK primary award proof.",
+  "results": [
+    {
+      "doi": "10.5194/essd-15-383-2023",
+      "award": "NA20OAR4320278",
+      "finding": "Exact award appears in REACH index part-002.csv on reach-000158 (Argovis: Building a FAIR Ocean Data Service) and reach-000159 (Impact of Radar Data Assimilation on Regional Precipitation Forecasts of Two Landfalling Atmospheric Rivers). This establishes public REACH usage of the award, not that Argo salinity is a WPO output or that the award is SPARK primary.",
+      "evidence_url": "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-002.csv",
+      "wpo_primary_award_verified": false,
+      "next_action": "Retrieve authoritative SPARK primary award catalog and match exact project and original Crossref source award; do not infer from REACH award occurrence."
+    },
+    {
+      "doi": "10.5194/essd-16-1395-2024",
+      "award": "NA21OAR4310383",
+      "finding": "Exact award appears in REACH index part-010.csv for reach-001156 through reach-001159, under Earth Prediction Innovation Center (EPIC), including CCPP, ESM Standard Names, MPAS UFS fork, and MET. These outputs are distinct from the GOES wildfire article; same award token does not prove the article belongs to that specific WPO project.",
+      "evidence_url": "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-010.csv",
+      "wpo_primary_award_verified": false,
+      "next_action": "Check exact SPARK primary award project scope and source Crossref funding provenance; then Scout queue/version dedup."
+    }
+  ],
+  "screening_coverage_observed": {
+    "screened": 614,
+    "confirmed_in_reach": 1,
+    "possible_match": 613,
+    "not_found": 0,
+    "scout_overlap": 30,
+    "unscreened": 0,
+    "coverage_path": "scout-operations/historical-crossref-screening/coverage.json"
+  },
+  "original_ledger_last_reported": {
+    "completed": 48,
+    "investigating": 13,
+    "awaiting": 553
+  },
+  "expansion_seeds_pending_last_reported": 614,
+  "limitations": [
+    "Public REACH award occurrence is not SPARK primary award verification.",
+    "Full SPARK primary shard catalog was not retrieved in this bounded check.",
+    "No original dispositions or human decisions changed."
+  ],
+  "candidate_staged": false
+}
