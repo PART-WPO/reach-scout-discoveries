@@ -1,5 +1,9 @@
 name: Build verified REACH comparison cache
 on:
+  push:
+    paths:
+      - 'scout-operations/reach-comparison-cache/build_cache.py'
+      - '.github/workflows/build-reach-comparison-cache.yml'
   workflow_dispatch:
   schedule:
     - cron: '15 11 * * 1-5'
