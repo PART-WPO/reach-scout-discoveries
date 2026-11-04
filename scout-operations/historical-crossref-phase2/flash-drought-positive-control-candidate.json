@@ -1,0 +1,51 @@
+{
+  "schema": "reach-scout-positive-control-draft-v1",
+  "control": "Published eligible historical Crossref article; intended as a prospective HUMAN-REVIEW proposal, not approval/public REACH insertion.",
+  "candidates": [
+    {
+      "fields": {
+        "Title": "Flash Drought Risk and Agricultural Exposure in the Southeast United States",
+        "DOI": "10.1175/jamc-d-25-0108.1",
+        "Output URL": "https://doi.org/10.1175/JAMC-D-25-0108.1",
+        "Output Type": "1",
+        "NOAA Award Number(s)": "NA23OAR4590590",
+        "WPO Program": "Observations",
+        "Proposed Project Title": "A Southeastern US Regional Flash Drought Review and Agriculture Impact Assessment",
+        "Suggested Parent Project": "A Southeastern US Regional Flash Drought Review and Agriculture Impact Assessment",
+        "Authors / PI": "W. Lee Ellenburg; Shaelyn Deal",
+        "Publication Date": "2026-06-01",
+        "Brief Abstract": "This study assesses flash-drought climatology and agricultural exposure across the southeastern United States using four indicators: the U.S. Drought Monitor, evaporative stress index, soil moisture volatility index, and lawn and garden index. By relating drought occurrence and timing to regional crop calendars and critical growing periods, the authors identify seasonal and geographic patterns of vulnerability that can inform agricultural drought monitoring and decision support.",
+        "Evidence URL": "https://journals.ametsoc.org/view/journals/apme/65/6/JAMC-D-25-0108.1.xml",
+        "Funding Evidence URL": "https://journals.ametsoc.org/view/journals/apme/65/6/JAMC-D-25-0108.1.xml",
+        "Existing REACH Match": "No DOI/normalized-title/output-URL/NOAA-IR-URL match in the current complete verified public REACH and Scout index; private reviewer history NOT VERIFIED",
+        "Scout Confidence": "High",
+        "Source Run ID": "REACH-SCOUT-2026-11-04-CROSSREF-POSITIVE-CONTROL"
+      },
+      "provenance": {
+        "classification": "NEW CANDIDATE",
+        "route": "Direct API",
+        "origin_method": "Direct API",
+        "path_evidence": "https://api.crossref.org/works/10.1175/jamc-d-25-0108.1",
+        "publication_status": "published",
+        "reach_snapshot": "f94ae52cac483b52e9a5cd6e775c6faa01ad6ec33610b249b3d486aed6daa003",
+        "sources_checked": [
+          "https://journals.ametsoc.org/view/journals/apme/65/6/JAMC-D-25-0108.1.xml",
+          "https://api.crossref.org/works/10.1175/jamc-d-25-0108.1",
+          "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/awards/part-004.csv",
+          "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-028.csv",
+          "https://aaes.auburn.edu/wrc/wp-content/uploads/sites/3/2024/08/2024FINALAbstractsForWeb.pdf"
+        ],
+        "funding_basis": "Publisher acknowledgment identifies NOAA WPO-supported NA23OAR4590590; the exact SPARK PRIMARY award belongs to project spark-000356, matching the article's Southeast flash drought and crop-calendar objectives, with earlier independent project-specific presentations.",
+        "related_outputs_checked": "The REACH same-award article Evaporative Stress Index as a flash drought tool in the southeastern U.S. (DOI 10.1016/j.ejrh.2026.103245) is a distinct paper with different title and author list; no DOI, canonical-title, publisher URL or official NOAA IR item URL match exists in the verified public REACH or Scout snapshot.",
+        "notes": [
+          "Historical Crossref original: Direct API (not DOI-seeded expansion); 2026-11-02 Crossref primary-award backfill, source DOI retained as separate future expansion seed.",
+          "Finding: Officially published 2026-06-01 in Journal of Applied Meteorology and Climatology; publisher credits NOAA OAR Weather Program Office award NA23OAR4590590, and the specific SPARK project concerns southeastern flash drought impacts on agriculture.",
+          "What to check before adding this output: Verify live SPARK/Smartsheet parent project spark-000356 for primary award NA23OAR4590590; check prior private Discovery Hub reviewer decisions, which were NOT VERIFIED; confirm project PI against live tracker before insertion; validate canonical DOI and REACH uniqueness one final time.",
+          "Reviewer question: Is this distinct published article eligible to be added under the matching WPO flash-drought project after confirming the parent and prior private reviewer decisions?",
+          "NOAA IR exact DOI: 10.1175/jamc-d-25-0108.1 maps to https://repository.library.noaa.gov/view/noaa/77039 in the verified public NOAA IR DOI index; let prepare_batch.py validate and populate IR? TRUE automatically.",
+          "No PI name or email is invented. Journal authors are W. Lee Ellenburg and Shaelyn Deal; verify exact project PI from the selected live Smartsheet parent during human staging."
+        ]
+      }
+    }
+  ]
+}
