@@ -1,0 +1,48 @@
+{
+  "schema": "reach-scout-decision-cases-v1",
+  "scope": "One historical Crossref original routed index-negative whose exact official NOAA IR landing URL already identifies a published REACH record. Live REACH, Scout and cache manifest SHAs were independently checked; retain seed expansion, never stage duplicate or alter immutable original triage.",
+  "cases": [
+    {
+      "doi": "10.1016/j.jhydrol.2023.129124",
+      "title": "Hydrologic evaluation of the global precipitation measurement mission over the U.S.: Flood peak discharge and duration",
+      "url": "https://repository.library.noaa.gov/view/noaa/67896",
+      "cohort": "historical_crossref",
+      "publication_status": "PUBLISHED",
+      "primary_award_match": true,
+      "project_attribution": "NOT_CHECKED",
+      "research_rounds": 1,
+      "checked_sources": [
+        "https://api.crossref.org/works/10.1016/j.jhydrol.2023.129124",
+        "https://repository.library.noaa.gov/view/noaa/67896",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-040.csv"
+      ],
+      "secondary_identity_checked": true,
+      "required_metadata_verified": false,
+      "private_review_status": "NOT_VERIFIED",
+      "original_historical_route": "NOT_FOUND_IN_REACH_INDEX",
+      "prior_immutable_triage_status": "awaiting_research",
+      "reach_identity_evidence": {
+        "match_basis": "EXACT_CANONICAL_NOAA_IR_URL_CONFIRMED_IN_REACH_INDEX_AND_OFFICIAL_DOI_RECORD",
+        "reach_uid": "reachuid-v1-784189d5f32028e72e4b294e805e99b7",
+        "reach_record_id": "reach-000316",
+        "reach_detail_path": "agent-data/details/part-040.csv",
+        "exact_ir_url": "https://repository.library.noaa.gov/view/noaa/67896",
+        "official_ir_doi": "10.1016/j.jhydrol.2023.129124",
+        "primary_award": "NA20OAR4590354",
+        "reach_award": "NA20OAR4590354",
+        "title_normalization_issue": "The original uses U.S.; existing REACH title uses US, and the REACH record has an IR URL but no DOI in indexed DOI fields.",
+        "source_snapshot": {
+          "reach_manifest_sha256": "f94ae52cac483b52e9a5cd6e775c6faa01ad6ec33610b249b3d486aed6daa003",
+          "scout_manifest_sha256": "755885a5c5607f5036bf1a9b7cf28248c2be9442d68edfbdc167e58ebd1fab54",
+          "reach_cache_sha256": "6660562e325a6a141198f59acce84f2e30d9a2d14e6cf5acd29769c8a4b68e1e",
+          "index_fingerprint": "8d87193fbc1d74768453b765d7d4d29a85fa07cb3d98046851b687f14490043e"
+        }
+      },
+      "original_doi_seed_expansion": "PRESERVE",
+      "seed_expansion_status": "awaiting_exploration",
+      "no_new_output_draft": true,
+      "private_hub_import": "NOT_VERIFIED",
+      "human_approval": "NOT_VERIFIED"
+    }
+  ]
+}
