@@ -1,0 +1,52 @@
+{
+  "schema": "reach-scout-crossref-phase2-targeted-dedup-v1",
+  "checked_at": "2026-11-04",
+  "source": "scout-operations/historical-crossref-phase2/version-family-review-2026-11-04.json",
+  "reach_cache": "scout-operations/reach-comparison-cache/comparison-index.json",
+  "reach_cache_manifest_sha256": "f94ae52cac483b52e9a5cd6e775c6faa01ad6ec33610b249b3d486aed6daa003",
+  "reach_records_checked": 1238,
+  "reach_source_csv_sha256": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+  "assessment": "NO_LITERAL_DOI_IN_COMPLETE_VERIFIED_REACH_CACHE_NOT_YET_FINAL_ABSENCE",
+  "method": "Scanned every cached REACH record's title, award, links, extracted DOIs and source paths for each exact final DOI string. Source manifest source CSV checksum, record count and shard counts still agree with cache metadata; raw manifest SHA not independently recomputed in this mission. No source-detail download repeated per DOI. Prior publisher-confirmed preprint/final relations reused; no redundant watchlist or NOAA IR sweeps.",
+  "results": [
+    {
+      "preprint_doi": "10.5194/essd-2022-323",
+      "final_doi": "10.5194/essd-15-383-2023",
+      "exact_final_doi_cache_hits": 0,
+      "classification": "DOI_NOT_IN_CACHE_POSSIBLE_ALTERNATE_URL_OR_TITLE",
+      "next_action": "Narrow normalized title and publisher/alternate URL comparison against cached REACH; then Scout queue duplicate and exact primary WPO project check before any candidate."
+    },
+    {
+      "preprint_doi": "10.5194/essd-2023-389",
+      "final_doi": "10.5194/essd-16-1395-2024",
+      "exact_final_doi_cache_hits": 0,
+      "classification": "DOI_NOT_IN_CACHE_POSSIBLE_ALTERNATE_URL_OR_TITLE",
+      "next_action": "Narrow normalized title and publisher/alternate URL comparison against cached REACH; then Scout queue duplicate and exact primary WPO project check before any candidate."
+    },
+    {
+      "preprint_doi": "10.5194/essd-2023-409",
+      "final_doi": "10.5194/essd-15-5301-2023",
+      "exact_final_doi_cache_hits": 0,
+      "classification": "DOI_NOT_IN_CACHE_POSSIBLE_ALTERNATE_URL_OR_TITLE",
+      "next_action": "Narrow normalized title and publisher/alternate URL comparison against cached REACH; then Scout queue duplicate and exact primary WPO project check before any candidate."
+    }
+  ],
+  "screening_coverage_unchanged": {
+    "screened": 614,
+    "confirmed_in_reach": 1,
+    "possible_match": 613,
+    "not_found": 0,
+    "scout_overlap": 30,
+    "unscreened": 0
+  },
+  "original_ledger_unchanged": {
+    "completed": 48,
+    "investigating": 13,
+    "awaiting": 553
+  },
+  "seed_expansions_pending": 614,
+  "original_dispositions_modified": false,
+  "seed_expansion_status_modified": false,
+  "human_decisions_modified": false,
+  "hub_import_claimed": false
+}
