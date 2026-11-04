@@ -48,3 +48,34 @@ Routing rules:
 - `SCREENING_INCOMPLETE`: repair missing source title or stale/incomplete cache, then rerun. Never classify a failed cache lookup as not found.
 
 The routing report is a screening worklist, not a replacement for `historical-crossref-triage.json`, its verified terminal statuses, or the expansion seed queue. Prioritize the 146 currently not-found originals after existing monthly intake and dedup against Scout feed; process likely matches with bounded detail checks. Keep preprint hold, NOAA IR only for genuinely new eligible outputs, primary-award-only inclusion, 24-column staging validation and no automatic private Hub/REACH writes. Every mission should report: routing snapshot hash, confirmed, likely, not-found, incomplete, number of bounded checks resolved, originals advanced, originals closed, seed expansions explored, and public Scout feed additions. Do not claim a screening route is completed original research. If router validation fails, stop routing changes and report the failure.
+
+
+## November 4 shared decision/identity gate — operational integration
+
+The versioned decision contract is `scout-operations/decision-contract-v1.md`;
+the tested shared read-only CLI is `scout-operations/tools/decision_pipeline.py`.
+Use the validated `scout-operations/identity-cache/public-identity-index.json`
+as an indexed REACH **and** Scout published/inbox lookup for hourly DOI work,
+only when its source fingerprint is current. The new GitHub Action
+`.github/workflows/scout-decision-pipeline.yml` validates the public REACH
+manifest against the verified comparison cache, rebuilds the index when source
+snapshots or inbox change, runs regressions, and persists immutable test DOI
+decision checkpoints. It does **not** insert candidates or certify any private
+Discovery Hub state. GitHub Actions token-originated commits may not themselves
+trigger a second workflow; verify refresh results rather than assuming a run.
+
+For each actual newly investigated DOI, use the cached lookup in one batch
+rather than reload all REACH shards; record exact DOI/URL, normalized-title
+ambiguities, Scout published/inbox overlaps, source snapshot fingerprint and
+any private-review decision availability. After initial and one distinct-source
+follow-up, derive an evidence-backed checkpoint using the same CLI `evaluate`
+command with source URLs and explicit checked fields. Reuse an unchanged
+revision; new evidence produces an append-only revision. Do not mark a gate
+passed from absence in the public index alone.
+
+**Important exception:** monthly Direct API originals retain the authorized
+structured-funding primary-award human-review fast path *unless conflicting
+project evidence exists*. Historical/independently found items need a
+specific same-project WPO bridge before a draft recommendation. Neither track
+bypasses the existing validated 24-column intake or human approval. Keep
+each original's independent expansion seed open until separately assessed.
