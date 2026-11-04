@@ -1,0 +1,65 @@
+{
+  "schema": "reach-scout-phase2-primary-award-gate-v1",
+  "test_set": [
+    "10.1002/qj.5049",
+    "10.1016/j.rse.2025.115156",
+    "10.1007/s00382-022-06655-w"
+  ],
+  "routing_outcome": "NOT_FOUND_IN_REACH_INDEX",
+  "primary_award_source": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/awards/part-004.csv",
+  "checked_awards": [
+    "NA20OAR4320278",
+    "NA21OAR4310383"
+  ],
+  "verified_primary_matches": [
+    {
+      "award": "NA20OAR4320278",
+      "spark_record": "spark-000355",
+      "project": "AQPI System Phase 2",
+      "detail": "agent-data/details/part-028.csv"
+    },
+    {
+      "award": "NA20OAR4320278-T3-01S063",
+      "spark_record": "spark-000364",
+      "project": "AQPI System Phase 2 task-qualified",
+      "detail": "agent-data/details/part-029.csv",
+      "note": "distinct full award, not equivalent to base award"
+    },
+    {
+      "award": "NA21OAR4310383",
+      "spark_record": "spark-000285",
+      "project": "UFS Senior Advisor (UFS Science Coordinator)",
+      "detail": "agent-data/details/part-023.csv"
+    }
+  ],
+  "cases": [
+    {
+      "doi": "10.1002/qj.5049",
+      "award_under_test": "NA20OAR4320278",
+      "assessment": "Exact primary award matches AQPI base project, but article concerns atmospheric-river drifter deployments; same-project bridge not demonstrated",
+      "next_action": "Check article funding statement and project scope for independent AQPI bridge; if absent, human-needed attribution review; no staging"
+    },
+    {
+      "doi": "10.1016/j.rse.2025.115156",
+      "award_under_test": "NA21OAR4310383",
+      "assessment": "Primary award matches UFS Senior Advisor; VIIRS wildfire tracking is not demonstrated to be an output of that project",
+      "next_action": "Seek independently evidenced UFS project bridge; otherwise human-needed attribution review; no staging"
+    },
+    {
+      "doi": "10.1007/s00382-022-06655-w",
+      "award_under_test": "NA21OAR4310383",
+      "assessment": "Primary award matches UFS Senior Advisor; GFDL SPEAR seasonal prediction is not demonstrated to be an output of that project",
+      "next_action": "Seek independently evidenced UFS project bridge; otherwise human-needed attribution review; no staging"
+    }
+  ],
+  "limitations": [
+    "Complete SHA-verified Scout feed/inbox dedup not completed; no claim of global uniqueness",
+    "Publication-level funder metadata requires project-specific interpretation",
+    "No prior human decisions altered"
+  ],
+  "safeguards": {
+    "original_statuses_changed": false,
+    "seed_expansion_statuses_changed": false,
+    "staged_candidates": 0
+  }
+}
