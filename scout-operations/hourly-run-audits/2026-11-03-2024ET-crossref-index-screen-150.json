@@ -1,0 +1,48 @@
+{
+  "run_local": "2026-11-03 20:24 America/New_York",
+  "operation": "REACH-first historical Crossref index screening",
+  "source": "PART-WPO/reach-dashboard/agent-data/manifest.json",
+  "source_manifest_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+  "index_shards_read": 10,
+  "index_rows_read": 1238,
+  "source_sha256_independently_verified": false,
+  "selected_count": 150,
+  "selected_first": "10.1029/2025jd045668",
+  "selected_last": "10.1175/mwr-d-18-0276.1",
+  "selected_dois_in": "scout-operations/historical-crossref-triage.json entries with reach_first_pass_screening.checked_at=2026-11-04T01:24:00Z",
+  "new_possible_matches": 112,
+  "new_index_no_matches_pending_details": 38,
+  "screened_before": 160,
+  "screened_after": 310,
+  "screening_totals": {
+    "possible_match": 224,
+    "index_no_match_pending_details": 86,
+    "unscreened": 304,
+    "confirmed_reach": 0,
+    "confirmed_not_in_reach": 0
+  },
+  "original_status": {
+    "already_in_reach": 9,
+    "no_action": 49,
+    "investigating": 3,
+    "awaiting_research": 553
+  },
+  "expansion_status": {
+    "investigating": 4,
+    "awaiting_exploration": 610,
+    "completed": 0
+  },
+  "scout_overlap": "No new independent Scout queue screening; existing source overlap flags preserved",
+  "new_candidates_staged": 0,
+  "ledger_commit": "fcc4587b2f6b290b50d3e50488f4411e74abb53d",
+  "ledger_reread_verified": true,
+  "coverage_regenerated": false,
+  "workstream_regenerated": false,
+  "limitations": [
+    "Index-only provisional matches; no detail/secondary URL validation",
+    "Index file SHA-256 not independently calculated",
+    "Coverage/workstream generation scripts not executed",
+    "No independent Scout pending queue verification this run"
+  ],
+  "next_action": "Screen remaining 304 DOI originals, then verify detail and secondary URLs for all 310 provisional outcomes before closing identity decisions."
+}
