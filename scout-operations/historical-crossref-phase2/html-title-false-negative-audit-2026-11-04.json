@@ -1,0 +1,59 @@
+{
+  "schema": "reach-scout-historical-crossref-markup-normalization-audit-v1",
+  "date": "2026-11-04",
+  "scope": "Recheck 132 historical original DOIs previously routed NOT_FOUND_IN_REACH_INDEX and not flagged in public Scout queues, comparing source original Crossref title with REACH verified cache titles after stripping embedded XML/HTML tags and normalizing whitespace/punctuation",
+  "identity_cache": {
+    "reach_source_manifest_sha256": "f94ae52cac483b52e9a5cd6e775c6faa01ad6ec33610b249b3d486aed6daa003",
+    "crossref_source_manifest_sha256": "799744c7e83f218d22cc19afacb7cfcf2762feb490659efde9f58bf19473b1fa"
+  },
+  "results": [
+    {
+      "doi": "10.1002/hyp.14960",
+      "title": "Quantifying patterns of streamflow peaks over the southeastern United States using a long-term retrospective data set",
+      "crossref_markup": "<scp>long-term</scp>",
+      "reach_uid": "reachuid-v1-f72e7a1bbe84c9357563896ed8e7a6fb",
+      "reach_url": "https://repository.library.noaa.gov/view/noaa/63787",
+      "assessment": "STRONG_TITLE_MATCH_VERIFY_SAME_WORK"
+    },
+    {
+      "doi": "10.1111/jfr3.12795",
+      "title": "Identification of flood-prone areas with GeoFlood: Lessons learned from the Tiber River case study",
+      "crossref_markup": "<scp>GeoFlood</scp>",
+      "reach_uid": "reachuid-v1-7d17c0204a013a38d0680366b003c0ed",
+      "reach_url": "https://repository.library.noaa.gov/view/noaa/59195",
+      "assessment": "STRONG_TITLE_MATCH_VERIFY_SAME_WORK"
+    },
+    {
+      "doi": "10.1111/jfr3.70241",
+      "title": "Making Flood Inundation Mapping (FIM) Work for Multiple Users: Improving the Design of FIM for Decision Support",
+      "crossref_markup": "<scp>FIM</scp>",
+      "reach_uid": "reachuid-v1-0b4005a95b19d0b6682bc9fe8c89c564",
+      "reach_url": "https://repository.library.noaa.gov/view/noaa/73700",
+      "article_doi": "https://doi.org/10.1111/jfr3.70241",
+      "assessment": "SAME_PUBLISHED_JOURNAL_ARTICLE_VERIFIED_BY_OFFICIAL_NOAA_IR",
+      "official_noaa_ir_source": "https://repository.library.noaa.gov/view/noaa/73700"
+    },
+    {
+      "doi": "10.5194/gmd-17-5309-2024",
+      "title": "tobac v1.5: introducing fast 3D tracking, splits and mergers, and other enhancements for identifying and analysing meteorological phenomena",
+      "crossref_markup": "<i>tobac</i>",
+      "reach_uid": "reachuid-v1-95976a19f5118fe6c9a1c968bb941460",
+      "reach_url": "https://repository.library.noaa.gov/view/noaa/70847",
+      "assessment": "STRONG_TITLE_MATCH_VERIFY_SAME_WORK"
+    }
+  ],
+  "finding": "Four among 132 public-Scout-index-negative originals have exact normalized-title REACH matches after proper removal of Crossref XML/HTML formatting; earlier router had falsely classified them as not found. Three must remain identity review until DOI/NOAA IR relation verified, while the FIM article is independently confirmed as same output.",
+  "root_cause": "Historical Crossref build_actionable_routing.py title normalization converts XML/HTML formatting tag names (scp, i) into literal title tokens instead of stripping markup before tokenization.",
+  "recommendations": [
+    "Normalize original Crossref HTML/XML title markup before routing and compare verified REACH title and secondary links",
+    "Add regression assertions for all four source DOI and REACH UID relationships, and preserve title-only as possible rather than automatic confirmed",
+    "Recalculate historical routes and queue priorities after corrected deterministic title normalization; do not rewrite existing source/checkpoint ledger or human decisions",
+    "Investigate remaining DOI/URL version-family and private human decision identities before staging any positive-control candidate"
+  ],
+  "safeguards": {
+    "original_crossref_source_changed": false,
+    "prior_human_decisions_changed": false,
+    "candidates_staged": 0,
+    "expansion_seeds_closed": 0
+  }
+}
