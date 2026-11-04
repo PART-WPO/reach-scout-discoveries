@@ -94,7 +94,7 @@ jobs:
               "time_to_first_decision":"NOT_MEASURED"
           }
           destination=Path("scout-operations/identity-cache/decision-validation-summary.json")
-          destination.write_text(json.dumps(summary,indent=2,sort_keys=True)+"\\n")
+          destination.write_text(json.dumps(summary,indent=2,sort_keys=True)+"\n")
           print("Validated source-backed Scout pipeline metrics",summary)
           PY
             git add scout-operations/identity-cache/public-identity-index.json scout-operations/identity-cache/decision-validation-summary.json scout-operations/case-checkpoints
