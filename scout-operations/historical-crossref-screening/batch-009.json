@@ -1,0 +1,828 @@
+{
+  "schema": "reach-scout-crossref-screening-batch-v1",
+  "source_manifest_sha256": "799744c7e83f218d22cc19afacb7cfcf2762feb490659efde9f58bf19473b1fa",
+  "reach_snapshot": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+  "cache_source_manifest_sha256": "f94ae52cac483b52e9a5cd6e775c6faa01ad6ec33610b249b3d486aed6daa003",
+  "records": [
+    {
+      "doi": "10.5194/egusphere-2025-3884",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "No exact DOI/title cache hit; verify secondary detail URLs and version identities before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "Improving Snow Simulations through Improved Representations of Vegetation Conditions: Insights from High Resolution Simulations over California",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 0,
+        "matches": []
+      }
+    },
+    {
+      "doi": "10.5194/egusphere-2025-4503",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "No exact DOI/title cache hit; verify secondary detail URLs and version identities before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "Leveraging JEDI for Atmospheric Composition: A unified framework for evaluating observations and model forecasts",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 0,
+        "matches": []
+      }
+    },
+    {
+      "doi": "10.5194/egusphere-2025-485",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-009.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-121.csv"
+      ],
+      "next_action": "Verify canonical publisher/NOAA IR DOI and alternate link/version identity against REACH detail; do not confirm based on title or cache DOI hint alone.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "Quantifying Forest Canopy Shading and Turbulence Effects on Boundary Layer Ozone over the United States",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 1,
+        "matches": [
+          {
+            "reach_uid": "reachuid-v1-f8abc32be81fffbca9e7b0ba39dd2b88",
+            "record_id": "reach-001049",
+            "index_path": "agent-data/index/part-009.csv",
+            "detail_path": "agent-data/details/part-121.csv",
+            "doi_or_url_hit": false,
+            "title_hit": true
+          }
+        ]
+      }
+    },
+    {
+      "doi": "10.5194/egusphere-2025-5411",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-003.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-042.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-003.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-043.csv"
+      ],
+      "next_action": "Verify canonical publisher/NOAA IR DOI and alternate link/version identity against REACH detail; do not confirm based on title or cache DOI hint alone.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "Development and Testing of Ensemble-Variational Data Assimilation Capabilities for Radar Data within JEDI coupled with FV3-LAM Model",
+        "exact_doi_or_url_hits": 1,
+        "exact_title_hits": 2,
+        "matches": [
+          {
+            "reach_uid": "reachuid-v1-e55c864f50d33a5507fdda6b7f2a87a1",
+            "record_id": "reach-000335",
+            "index_path": "agent-data/index/part-003.csv",
+            "detail_path": "agent-data/details/part-042.csv",
+            "doi_or_url_hit": true,
+            "title_hit": true
+          },
+          {
+            "reach_uid": "reachuid-v1-e732d42d012d26405d3b0036632a793e",
+            "record_id": "reach-000337",
+            "index_path": "agent-data/index/part-003.csv",
+            "detail_path": "agent-data/details/part-043.csv",
+            "doi_or_url_hit": false,
+            "title_hit": true
+          }
+        ]
+      }
+    },
+    {
+      "doi": "10.5194/egusphere-2026-1807",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-009.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-125.csv"
+      ],
+      "next_action": "Verify canonical publisher/NOAA IR DOI and alternate link/version identity against REACH detail; do not confirm based on title or cache DOI hint alone.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "Development of the CCPP-Based GEFS-Aerosols Component in the Unified Forecast System for Subseasonal Prediction (UFS-Chem v1.0)",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 1,
+        "matches": [
+          {
+            "reach_uid": "reachuid-v1-31b6c94edf483fa954acd576a6e070d6",
+            "record_id": "reach-001093",
+            "index_path": "agent-data/index/part-009.csv",
+            "detail_path": "agent-data/details/part-125.csv",
+            "doi_or_url_hit": false,
+            "title_hit": true
+          }
+        ]
+      }
+    },
+    {
+      "doi": "10.5194/egusphere-2026-4875",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "No exact DOI/title cache hit; verify secondary detail URLs and version identities before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "Noah-MP-ML² v1.0: Development of a multilayer canopy land surface model with improved representation of vadose zone soil water dynamics",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 0,
+        "matches": []
+      }
+    },
+    {
+      "doi": "10.5194/egusphere-2026-4928",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "No exact DOI/title cache hit; verify secondary detail URLs and version identities before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "Regime-aware retrieval of lower-tropospheric stability and a sensitivity-weighted diagnostic of cross-site transferability over heterogeneous land surfaces",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 0,
+        "matches": []
+      }
+    },
+    {
+      "doi": "10.5194/egusphere-2026-5876",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "No exact DOI/title cache hit; verify secondary detail URLs and version identities before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": true,
+      "cache_screening": {
+        "title": "We &lt;3 Skynet: Or, How We Learned to Stop Worrying and Love the Bot Responses in Our Survey Data",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 0,
+        "matches": []
+      }
+    },
+    {
+      "doi": "10.5194/essd-15-383-2023",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "No exact DOI/title cache hit; verify secondary detail URLs and version identities before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "Argo salinity: bias and uncertainty evaluation",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 0,
+        "matches": []
+      }
+    },
+    {
+      "doi": "10.5194/essd-15-5301-2023",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "No exact DOI/title cache hit; verify secondary detail URLs and version identities before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "Global Carbon Budget 2023",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 0,
+        "matches": []
+      }
+    },
+    {
+      "doi": "10.5194/essd-16-1395-2024",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "No exact DOI/title cache hit; verify secondary detail URLs and version identities before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "Systematically tracking the hourly progression of large wildfires using GOES satellite observations",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 0,
+        "matches": []
+      }
+    },
+    {
+      "doi": "10.5194/essd-2022-323",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "No exact DOI/title cache hit; verify secondary detail URLs and version identities before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "Argo salinity: bias and uncertainty evaluation",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 0,
+        "matches": []
+      }
+    },
+    {
+      "doi": "10.5194/essd-2023-389",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "No exact DOI/title cache hit; verify secondary detail URLs and version identities before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "Systematically tracking the hourly progression of large wildfires using GOES satellite observations",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 0,
+        "matches": []
+      }
+    },
+    {
+      "doi": "10.5194/essd-2023-409",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "No exact DOI/title cache hit; verify secondary detail URLs and version identities before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "Global Carbon Budget 2023",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 0,
+        "matches": []
+      }
+    },
+    {
+      "doi": "10.5194/gmd-14-1125-2021",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-002.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-028.csv"
+      ],
+      "next_action": "Verify canonical publisher/NOAA IR DOI and alternate link/version identity against REACH detail; do not confirm based on title or cache DOI hint alone.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "Global storm tide modeling with ADCIRC v55: unstructured mesh design and performance",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 1,
+        "matches": [
+          {
+            "reach_uid": "reachuid-v1-e2819ef2126e72e18a513327db029d64",
+            "record_id": "reach-000228",
+            "index_path": "agent-data/index/part-002.csv",
+            "detail_path": "agent-data/details/part-028.csv",
+            "doi_or_url_hit": false,
+            "title_hit": true
+          }
+        ]
+      }
+    },
+    {
+      "doi": "10.5194/gmd-16-3809-2023",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-003.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-031.csv"
+      ],
+      "next_action": "Verify canonical publisher/NOAA IR DOI and alternate link/version identity against REACH detail; do not confirm based on title or cache DOI hint alone.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "Developing spring wheat in the Noah-MP land surface model (v4.4) for growing season dynamics and responses to temperature stress",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 1,
+        "matches": [
+          {
+            "reach_uid": "reachuid-v1-04d227bc0979ce0e23a055c1a3eba317",
+            "record_id": "reach-000251",
+            "index_path": "agent-data/index/part-003.csv",
+            "detail_path": "agent-data/details/part-031.csv",
+            "doi_or_url_hit": false,
+            "title_hit": true
+          }
+        ]
+      }
+    },
+    {
+      "doi": "10.5194/gmd-16-7123-2023",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "No exact DOI/title cache hit; verify secondary detail URLs and version identities before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "Data assimilation for the Model for Prediction Across Scales – Atmosphere with the Joint Effort for Data assimilation Integration (JEDI-MPAS 2.0.0-beta): ensemble of 3D ensemble-variational (En-3DEnVar) assimilations",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 0,
+        "matches": []
+      }
+    },
+    {
+      "doi": "10.5194/gmd-17-3879-2024",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "No exact DOI/title cache hit; verify secondary detail URLs and version identities before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "Three-dimensional variational assimilation with a multivariate background error covariance for the Model for Prediction Across Scales – Atmosphere with the Joint Effort for Data assimilation Integration (JEDI-MPAS 2.0.0-beta)",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 0,
+        "matches": []
+      }
+    },
+    {
+      "doi": "10.5194/gmd-17-4199-2024",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "No exact DOI/title cache hit; verify secondary detail URLs and version identities before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "Incremental analysis update (IAU) in the Model for Prediction Across Scales coupled with the Joint Effort for Data assimilation Integration (MPAS–JEDI 2.0.0)",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 0,
+        "matches": []
+      }
+    },
+    {
+      "doi": "10.5194/gmd-17-5309-2024",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "No exact DOI/title cache hit; verify secondary detail URLs and version identities before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "<i>tobac</i>\n                    v1.5: introducing fast 3D tracking, splits and mergers, and other enhancements for identifying and analysing meteorological phenomena",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 0,
+        "matches": []
+      }
+    },
+    {
+      "doi": "10.5194/gmd-18-5937-2025",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "No exact DOI/title cache hit; verify secondary detail URLs and version identities before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "The Atmospheric Potential Oxygen forward Model Intercomparison Project (APO-MIP1): evaluating simulated atmospheric transport of air-sea gas exchange tracers and APO flux products",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 0,
+        "matches": []
+      }
+    },
+    {
+      "doi": "10.5194/gmd-18-7969-2025",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "No exact DOI/title cache hit; verify secondary detail URLs and version identities before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": true,
+      "cache_screening": {
+        "title": "A Python diagnostics package for evaluation of  Madden–Julian Oscillation (MJO) teleconnections  in subseasonal-to-seasonal (S2S) forecast systems",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 0,
+        "matches": []
+      }
+    },
+    {
+      "doi": "10.5194/gmd-18-8569-2025",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "No exact DOI/title cache hit; verify secondary detail URLs and version identities before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "All-sky AMSU-A radiance data assimilation using the gain-form of Local Ensemble Transform Kalman filter within MPAS-JEDI-2.1.0: implementation, tuning, and evaluation",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 0,
+        "matches": []
+      }
+    },
+    {
+      "doi": "10.5194/gmd-18-9237-2025",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-001.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-015.csv"
+      ],
+      "next_action": "Verify canonical publisher/NOAA IR DOI and alternate link/version identity against REACH detail; do not confirm based on title or cache DOI hint alone.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "Urban heat forecasting in small cities: evaluation of a high-resolution operational numerical weather prediction model",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 1,
+        "matches": [
+          {
+            "reach_uid": "reachuid-v1-9f1dbda775facc857dceaf9994f0b9b2",
+            "record_id": "reach-000118",
+            "index_path": "agent-data/index/part-001.csv",
+            "detail_path": "agent-data/details/part-015.csv",
+            "doi_or_url_hit": false,
+            "title_hit": true
+          }
+        ]
+      }
+    },
+    {
+      "doi": "10.5194/gmd-19-8213-2026",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-003.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-043.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-003.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-042.csv"
+      ],
+      "next_action": "Verify canonical publisher/NOAA IR DOI and alternate link/version identity against REACH detail; do not confirm based on title or cache DOI hint alone.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "Development and testing of ensemble-variational data assimilation capabilities for radar data within JEDI coupled with FV3-LAM model",
+        "exact_doi_or_url_hits": 1,
+        "exact_title_hits": 2,
+        "matches": [
+          {
+            "reach_uid": "reachuid-v1-e732d42d012d26405d3b0036632a793e",
+            "record_id": "reach-000337",
+            "index_path": "agent-data/index/part-003.csv",
+            "detail_path": "agent-data/details/part-043.csv",
+            "doi_or_url_hit": true,
+            "title_hit": true
+          },
+          {
+            "reach_uid": "reachuid-v1-e55c864f50d33a5507fdda6b7f2a87a1",
+            "record_id": "reach-000335",
+            "index_path": "agent-data/index/part-003.csv",
+            "detail_path": "agent-data/details/part-042.csv",
+            "doi_or_url_hit": false,
+            "title_hit": true
+          }
+        ]
+      }
+    },
+    {
+      "doi": "10.5194/gmd-19-8367-2026",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "No exact DOI/title cache hit; verify secondary detail URLs and version identities before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "Leveraging JEDI for atmospheric composition: a unified framework for evaluating observations and model forecasts",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 0,
+        "matches": []
+      }
+    },
+    {
+      "doi": "10.5194/gmd-19-8597-2026",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-009.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-125.csv"
+      ],
+      "next_action": "Verify canonical publisher/NOAA IR DOI and alternate link/version identity against REACH detail; do not confirm based on title or cache DOI hint alone.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "Development of the CCPP-based GEFS-aerosols component  in the Unified Forecast System for subseasonal prediction (UFS-Chem v1.0)",
+        "exact_doi_or_url_hits": 1,
+        "exact_title_hits": 1,
+        "matches": [
+          {
+            "reach_uid": "reachuid-v1-31b6c94edf483fa954acd576a6e070d6",
+            "record_id": "reach-001093",
+            "index_path": "agent-data/index/part-009.csv",
+            "detail_path": "agent-data/details/part-125.csv",
+            "doi_or_url_hit": true,
+            "title_hit": true
+          }
+        ]
+      }
+    },
+    {
+      "doi": "10.5194/gmd-2020-123",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-002.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-028.csv"
+      ],
+      "next_action": "Verify canonical publisher/NOAA IR DOI and alternate link/version identity against REACH detail; do not confirm based on title or cache DOI hint alone.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "Global Storm Tide Modeling with ADCIRC v55: Unstructured Mesh Design and Performance",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 1,
+        "matches": [
+          {
+            "reach_uid": "reachuid-v1-e2819ef2126e72e18a513327db029d64",
+            "record_id": "reach-000228",
+            "index_path": "agent-data/index/part-002.csv",
+            "detail_path": "agent-data/details/part-028.csv",
+            "doi_or_url_hit": false,
+            "title_hit": true
+          }
+        ]
+      }
+    },
+    {
+      "doi": "10.5194/gmd-2022-311",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "No exact DOI/title cache hit; verify secondary detail URLs and version identities before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "Developing Spring Wheat in the Noah-MP LSM (v4.4) for Growing Season Dynamics and Responses to Temperature Stress",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 0,
+        "matches": []
+      }
+    },
+    {
+      "doi": "10.5194/gmd-2023-131",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "No exact DOI/title cache hit; verify secondary detail URLs and version identities before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "Three-dimensional variational assimilation with a multivariate background error covariance for the Model for Prediction Across Scales–Atmosphere with the Joint Effort for data Assimilation Integration (JEDI-MPAS 2.0.0-beta)",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 0,
+        "matches": []
+      }
+    },
+    {
+      "doi": "10.5194/gmd-2023-54",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "No exact DOI/title cache hit; verify secondary detail URLs and version identities before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "Data assimilation for the Model for Prediction Across Scales – Atmosphere with the Joint Effort for Data assimilation Integration (JEDI-MPAS 2.0.0-beta): ensemble of 3D ensemble-variational (En-3DEnVar) assimilations",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 0,
+        "matches": []
+      }
+    },
+    {
+      "doi": "10.5194/hess-2019-155",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-003.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-031.csv"
+      ],
+      "next_action": "Verify canonical publisher/NOAA IR DOI and alternate link/version identity against REACH detail; do not confirm based on title or cache DOI hint alone.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "Modeling groundwater responses to climate change in the Prairie Pothole Region",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 1,
+        "matches": [
+          {
+            "reach_uid": "reachuid-v1-02198201e4957aa6c706e8637fabef98",
+            "record_id": "reach-000250",
+            "index_path": "agent-data/index/part-003.csv",
+            "detail_path": "agent-data/details/part-031.csv",
+            "doi_or_url_hit": false,
+            "title_hit": true
+          }
+        ]
+      }
+    },
+    {
+      "doi": "10.5194/hess-2021-552",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-003.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-034.csv"
+      ],
+      "next_action": "Verify canonical publisher/NOAA IR DOI and alternate link/version identity against REACH detail; do not confirm based on title or cache DOI hint alone.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "Evaluation of a New Observationally Based Channel Parameterization for the National Water Model",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 1,
+        "matches": [
+          {
+            "reach_uid": "reachuid-v1-7ebb895e9f5800fab281013d155446c8",
+            "record_id": "reach-000268",
+            "index_path": "agent-data/index/part-003.csv",
+            "detail_path": "agent-data/details/part-034.csv",
+            "doi_or_url_hit": false,
+            "title_hit": true
+          }
+        ]
+      }
+    },
+    {
+      "doi": "10.5194/hess-24-655-2020",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-003.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-031.csv"
+      ],
+      "next_action": "Verify canonical publisher/NOAA IR DOI and alternate link/version identity against REACH detail; do not confirm based on title or cache DOI hint alone.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "Modeling groundwater responses to climate  change in the Prairie Pothole Region",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 1,
+        "matches": [
+          {
+            "reach_uid": "reachuid-v1-02198201e4957aa6c706e8637fabef98",
+            "record_id": "reach-000250",
+            "index_path": "agent-data/index/part-003.csv",
+            "detail_path": "agent-data/details/part-031.csv",
+            "doi_or_url_hit": false,
+            "title_hit": true
+          }
+        ]
+      }
+    },
+    {
+      "doi": "10.5194/hess-26-6121-2022",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-003.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-034.csv"
+      ],
+      "next_action": "Verify canonical publisher/NOAA IR DOI and alternate link/version identity against REACH detail; do not confirm based on title or cache DOI hint alone.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "Evaluation of a new observationally based channel parameterization for the National Water Model",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 1,
+        "matches": [
+          {
+            "reach_uid": "reachuid-v1-7ebb895e9f5800fab281013d155446c8",
+            "record_id": "reach-000268",
+            "index_path": "agent-data/index/part-003.csv",
+            "detail_path": "agent-data/details/part-034.csv",
+            "doi_or_url_hit": false,
+            "title_hit": true
+          }
+        ]
+      }
+    },
+    {
+      "doi": "10.5194/tc-17-5175-2023",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-001.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-003.csv"
+      ],
+      "next_action": "Verify canonical publisher/NOAA IR DOI and alternate link/version identity against REACH detail; do not confirm based on title or cache DOI hint alone.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "Spatiotemporal snow water storage uncertainty in the midlatitude American Cordillera",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 1,
+        "matches": [
+          {
+            "reach_uid": "reachuid-v1-5de1a49f295c39d5cbb22266a6ba9c1c",
+            "record_id": "reach-000017",
+            "index_path": "agent-data/index/part-001.csv",
+            "detail_path": "agent-data/details/part-003.csv",
+            "doi_or_url_hit": false,
+            "title_hit": true
+          }
+        ]
+      }
+    },
+    {
+      "doi": "10.5194/tc-17-567-2023",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-003.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-032.csv"
+      ],
+      "next_action": "Verify canonical publisher/NOAA IR DOI and alternate link/version identity against REACH detail; do not confirm based on title or cache DOI hint alone.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "Landsat, MODIS, and VIIRS snow cover mapping algorithm performance as validated by airborne lidar datasets",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 1,
+        "matches": [
+          {
+            "reach_uid": "reachuid-v1-6e4bb5dc947c4f974a9f9e7da1fc9547",
+            "record_id": "reach-000259",
+            "index_path": "agent-data/index/part-003.csv",
+            "detail_path": "agent-data/details/part-032.csv",
+            "doi_or_url_hit": false,
+            "title_hit": true
+          }
+        ]
+      }
+    },
+    {
+      "doi": "10.5194/tc-19-1599-2025",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "No exact DOI/title cache hit; verify secondary detail URLs and version identities before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "Glacier damage evolution over ice flow timescales",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 0,
+        "matches": []
+      }
+    },
+    {
+      "doi": "10.5194/tc-20-5973-2026",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json"
+      ],
+      "next_action": "No exact DOI/title cache hit; verify secondary detail URLs and version identities before concluding NOT_FOUND_IN_REACH.",
+      "scout_overlap": true,
+      "cache_screening": {
+        "title": "Improving snow simulations through improved representations of vegetation conditions: insights from high resolution simulations over California",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 0,
+        "matches": []
+      }
+    },
+    {
+      "doi": "10.5194/tc-2022-159",
+      "screening_status": "POSSIBLE_MATCH",
+      "reach_uid": null,
+      "evidence_urls": [
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-003.csv",
+        "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-032.csv"
+      ],
+      "next_action": "Verify canonical publisher/NOAA IR DOI and alternate link/version identity against REACH detail; do not confirm based on title or cache DOI hint alone.",
+      "scout_overlap": false,
+      "cache_screening": {
+        "title": "Landsat, MODIS, and VIIRS snow cover mapping algorithm performance as validated by airborne lidar datasets",
+        "exact_doi_or_url_hits": 0,
+        "exact_title_hits": 1,
+        "matches": [
+          {
+            "reach_uid": "reachuid-v1-6e4bb5dc947c4f974a9f9e7da1fc9547",
+            "record_id": "reach-000259",
+            "index_path": "agent-data/index/part-003.csv",
+            "detail_path": "agent-data/details/part-032.csv",
+            "doi_or_url_hit": false,
+            "title_hit": true
+          }
+        ]
+      }
+    }
+  ]
+}
