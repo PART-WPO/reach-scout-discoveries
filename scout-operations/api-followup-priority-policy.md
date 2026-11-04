@@ -271,3 +271,34 @@ After recovery: fully populated eligible output -> fast-track to human new-candi
 **Every candidate from every mission type** (Monthly API, Historical DataCite, API-seeded expansion, independent Scout) must carry a useful `What to check before adding this output:` rationale line. The 24-column CSV schema is unchanged. `prepare_batch.py` supplies a safety fallback if the mission omitted a case-specific line, but Scout should write **case-specific evidence, unanswered questions, source links and precise reviewer actions** rather than a generic slogan.
 
 **Existing October DOI abstract example:** `10.1016/j.pdisas.2026.100696` NOAA IR source `https://repository.library.noaa.gov/view/noaa/77174` provides exact DOI, summary and direct WPO award. Original immutable monthly batch is retained; the active Scout feed now uses the audited, single-record supersession `2026-11-02-monthly-enriched-pdisas-100696-001`, preserving identity, original discovery method and NEEDS INVESTIGATION decision. This correction is **not** a new output, human approval, private Hub import, or public REACH publication. Reviewer must Sync to Scout and check the new rationale; if a saved Hub importer still treats monthly FAST findings as provenance-only, apply the attached additive Hub fix before expecting metadata refresh. All existing human decisions and publication gates remain in place.
+
+
+## November 4 shared decision/identity gate — operational integration
+
+The versioned decision contract is `scout-operations/decision-contract-v1.md`;
+the tested shared read-only CLI is `scout-operations/tools/decision_pipeline.py`.
+Use the validated `scout-operations/identity-cache/public-identity-index.json`
+as an indexed REACH **and** Scout published/inbox lookup for hourly DOI work,
+only when its source fingerprint is current. The new GitHub Action
+`.github/workflows/scout-decision-pipeline.yml` validates the public REACH
+manifest against the verified comparison cache, rebuilds the index when source
+snapshots or inbox change, runs regressions, and persists immutable test DOI
+decision checkpoints. It does **not** insert candidates or certify any private
+Discovery Hub state. GitHub Actions token-originated commits may not themselves
+trigger a second workflow; verify refresh results rather than assuming a run.
+
+For each actual newly investigated DOI, use the cached lookup in one batch
+rather than reload all REACH shards; record exact DOI/URL, normalized-title
+ambiguities, Scout published/inbox overlaps, source snapshot fingerprint and
+any private-review decision availability. After initial and one distinct-source
+follow-up, derive an evidence-backed checkpoint using the same CLI `evaluate`
+command with source URLs and explicit checked fields. Reuse an unchanged
+revision; new evidence produces an append-only revision. Do not mark a gate
+passed from absence in the public index alone.
+
+**Important exception:** monthly Direct API originals retain the authorized
+structured-funding primary-award human-review fast path *unless conflicting
+project evidence exists*. Historical/independently found items need a
+specific same-project WPO bridge before a draft recommendation. Neither track
+bypasses the existing validated 24-column intake or human approval. Keep
+each original's independent expansion seed open until separately assessed.
