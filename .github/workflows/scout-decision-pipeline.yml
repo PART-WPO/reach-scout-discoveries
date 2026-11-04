@@ -7,6 +7,7 @@ on:
       - 'scout-operations/tools/decision_pipeline.py'
       - 'scout-operations/tests/test_decision_pipeline.py'
       - 'scout-operations/tests/published-crossref-decision-cases.json'
+      - 'scout-operations/tests/flash-drought-positive-control-case.json'
       - 'scout-operations/decision-contract-v1.md'
       - 'scout-discoveries/manifest.json'
       - 'scout-discoveries/inbox/**'
@@ -59,6 +60,7 @@ jobs:
           PY
             python scout-operations/tools/decision_pipeline.py build-index
             python scout-operations/tools/decision_pipeline.py evaluate --cases scout-operations/tests/published-crossref-decision-cases.json
+            python scout-operations/tools/decision_pipeline.py evaluate --cases scout-operations/tests/flash-drought-positive-control-case.json
             python - <<'PY'
           import glob, json
           from pathlib import Path
@@ -66,22 +68,30 @@ jobs:
           assert idx["schema"]=="reach-scout-identity-index-v1"
           assert idx["sources"]["scout_batches"]>=30
           assert len(idx["records"])>=1238
-          cases=json.loads(Path("scout-operations/tests/published-crossref-decision-cases.json").read_text())["cases"]
+          negatives=json.loads(Path("scout-operations/tests/published-crossref-decision-cases.json").read_text())["cases"]
+          positives=json.loads(Path("scout-operations/tests/flash-drought-positive-control-case.json").read_text())["cases"]
+          ids={v["doi"] for v in negatives+positives}
           records=[]
           for path in glob.glob("scout-operations/case-checkpoints/doi-*/rev-*.json"):
               x=json.loads(Path(path).read_text())
-              if x["case_input"]["doi"] in {v["doi"] for v in cases} and x["index_fingerprint"]==idx["source_fingerprint"]:
+              if x["case_input"]["doi"] in ids and x["index_fingerprint"]==idx["source_fingerprint"]:
                   records.append(x)
-          assert len(records)==3, "Expected three independent checkpoint records for current snapshot"
-          assert not any(x["evaluation"]["automatically_staged"] for x in records)
-          assert not any(x["evaluation"]["decision"]=="READY_FOR_VALIDATED_DRAFT_PREFLIGHT" for x in records)
+          assert len(records)==4, "Expected three hold controls plus one positive-control checkpoint"
+          held=[x for x in records if x["evaluation"]["doi"] in {v["doi"] for v in negatives}]
+          ready=[x for x in records if x["evaluation"]["doi"] in {v["doi"] for v in positives}]
+          assert len(held)==3 and len(ready)==1
+          assert not any(x["evaluation"]["decision"]=="READY_FOR_VALIDATED_DRAFT_PREFLIGHT" for x in held)
+          assert ready[0]["evaluation"]["decision"]=="READY_FOR_VALIDATED_DRAFT_PREFLIGHT"
+          assert ready[0]["evaluation"]["identity_check"]["status"]=="NO_PUBLIC_IDENTITY_MATCH"
+          assert ready[0]["evaluation"]["review_action"]=="HUMAN_REVIEW_PROPOSAL"
+          assert all(not x["evaluation"]["automatically_staged"] for x in records)
           assert all(x["evaluation"]["seed_expansion_preserved"] for x in records)
           from collections import Counter
           counts=Counter(x["source"] for x in idx["records"])
           outcome_counts=Counter(x["evaluation"]["decision"] for x in records)
           summary={
               "schema":"reach-scout-decision-pipeline-metrics-v1",
-              "scope":"Three published Crossref negative-control cases only; source catalog totals are not research decision counts",
+              "scope":"Three negative controls plus one historical Crossref positive-control candidate; readiness means preflight, not staging",
               "source_fingerprint":idx["source_fingerprint"],
               "reach_public_records":counts["REACH"],
               "scout_published_candidate_rows":counts["SCOUT_PUBLISHED"],
@@ -95,7 +105,7 @@ jobs:
           }
           destination=Path("scout-operations/identity-cache/decision-validation-summary.json")
           destination.write_text(json.dumps(summary,indent=2,sort_keys=True)+"\n")
-          print("Validated source-backed Scout pipeline metrics",summary)
+          print("Validated three research holds and one positive-control draft-preflight recommendation; no auto-stage",summary)
           PY
             git add scout-operations/identity-cache/public-identity-index.json scout-operations/identity-cache/decision-validation-summary.json scout-operations/case-checkpoints
             if git diff --cached --quiet; then
