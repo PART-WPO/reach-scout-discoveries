@@ -20,7 +20,7 @@ HERE = ROOT / "scout-operations/historical-crossref-screening"
 CACHE = ROOT / "scout-operations/reach-comparison-cache/comparison-index.json"
 SOURCE = ROOT / "api-discoveries/historical-crossref/manifest.json"
 sys.path.insert(0, str(ROOT / "scout-operations/tools"))
-from decision_pipeline import build_index, lookup
+from decision_pipeline import build_index, lookup, norm_title
 
 def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -31,7 +31,8 @@ def doi(value):
     return re.sub(r"^doi:", "", value)
 
 def title(value):
-    return re.sub(r"[^a-z0-9]+", " ", str(value or "").casefold()).strip()
+    """Use the shared HTML/XML-aware title normalizer; never index <scp> tokens."""
+    return norm_title(value)
 
 def require(condition, message):
     if not condition:
