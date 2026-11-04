@@ -53,6 +53,17 @@ jobs:
         run: |
           set -euo pipefail
           DRAFT=/tmp/2026-11-04-crossref-flash-drought-positive-control.csv
+          python -m unittest discover -s scout-discoveries/tools/tests -p 'test_noaa_ir_lookup.py' -v
+          python - <<'PY'
+          import json,sys
+          sys.path.insert(0,"scout-discoveries/tools")
+          from noaa_ir_lookup import new_output_gate
+          source=json.load(open("scout-operations/historical-crossref-phase2/flash-drought-positive-control-candidate.json"))
+          candidate=source["candidates"][0]
+          assert new_output_gate(candidate["provenance"]["classification"],
+                                 candidate["fields"]["Existing REACH Match"],
+                                 candidate["provenance"]), "Canonical negative REACH phrase required for NOAA IR enrichment"
+          PY
           python scout-discoveries/tools/prepare_batch.py \
             --input-json scout-operations/historical-crossref-phase2/flash-drought-positive-control-candidate.json \
             --output "$DRAFT"
