@@ -50,6 +50,25 @@
         "detail_path": "agent-data/details/part-079.csv",
         "link": "https://repository.library.noaa.gov/view/noaa/25292",
         "match_basis": "Exact title + exact primary NOAA award + exact NOAA IR DOI record"
+      },
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000648",
+            "reach_uid": "reachuid-v1-5855983c9e2754ea63e01d1c90110342",
+            "index_path": "agent-data/index/part-006.csv",
+            "detail_path": "agent-data/details/part-079.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/25292",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
       }
     },
     {
@@ -94,7 +113,17 @@
         "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
       },
       "no_action_reason": "Crossref source record has posted-content/preprint status; this original preprint DOI is not an officially published journal article and cannot enter NEW OUTPUT review. Keep the DOI as an independent research seed and monthly watchlist item.",
-      "source_posted_content_verified": true
+      "source_posted_content_verified": true,
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1002/essoar.10507067.1",
@@ -223,7 +252,26 @@
         }
       ],
       "publication_status": "preprint",
-      "preprint_watchlist_status": "tracking_preprint"
+      "preprint_watchlist_status": "tracking_preprint",
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000413",
+            "reach_uid": "reachuid-v1-c7edc71b8cea9fa9926ef4f5ead3f846",
+            "index_path": "agent-data/index/part-004.csv",
+            "detail_path": "agent-data/details/part-052.csv",
+            "link": "https://doi.org/10.1002/essoar.10507067.1",
+            "match_basis": "exact_doi_in_index_link"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1002/essoar.10507281.1",
@@ -266,7 +314,17 @@
         "reason": "Crossref source record uses posted-content publication date; preprint DOI held from new-output reviewer feed; no final journal DOI verified"
       },
       "no_action_reason": "Crossref source record has posted-content/preprint status; this original preprint DOI is not an officially published journal article and cannot enter NEW OUTPUT review. Keep the DOI as an independent research seed and monthly watchlist item.",
-      "source_posted_content_verified": true
+      "source_posted_content_verified": true,
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1002/essoar.10507281.2",
@@ -690,7 +748,26 @@
       ],
       "titles": [
         "Quantifying patterns of streamflow peaks over the southeastern United States using a <scp>long‐term</scp> retrospective data set"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000069",
+            "reach_uid": "reachuid-v1-f72e7a1bbe84c9357563896ed8e7a6fb",
+            "index_path": "agent-data/index/part-001.csv",
+            "detail_path": "agent-data/details/part-009.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/63787",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1002/jwmg.732",
@@ -752,7 +829,17 @@
         "next_action": "Original scope closed absent new positive exact primary-award evidence; preserve DOI and separately research related outputs as expansion seed, verifying each output independently."
       },
       "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "no_action_reason": "Source scope exclusion: UNK is a placeholder rather than an exact same-project primary NOAA award. Existing SPARK/harvest/Crossref scope evidence provides no verified WPO award attribution; original is not eligible for WPO reviewer staging without new positive project-specific evidence. This does not establish a REACH duplicate or negate the publication's existence."
+      "no_action_reason": "Source scope exclusion: UNK is a placeholder rather than an exact same-project primary NOAA award. Existing SPARK/harvest/Crossref scope evidence provides no verified WPO award attribution; original is not eligible for WPO reviewer staging without new positive project-specific evidence. This does not establish a REACH duplicate or negate the publication's existence.",
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1002/met.70089",
@@ -837,7 +924,17 @@
       ],
       "titles": [
         "An overview of drifting‐buoy deployments in atmospheric river reconnaissance from 2019 to 2024"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1002/qj.70325",
@@ -883,6 +980,16 @@
         "monthly_original_status": "no_action",
         "checked_on": "2026-11-02",
         "next_action": "Preserve monthly funding conflict; do not restage as a historical original. Continue DOI-seeded related-output exploration separately."
+      },
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
       }
     },
     {
@@ -945,7 +1052,17 @@
         "next_action": "Original scope closed absent new positive exact primary-award evidence; preserve DOI and separately research related outputs as expansion seed, verifying each output independently."
       },
       "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "no_action_reason": "Source scope exclusion: UNK is a placeholder rather than an exact same-project primary NOAA award. Existing SPARK/harvest/Crossref scope evidence provides no verified WPO award attribution; original is not eligible for WPO reviewer staging without new positive project-specific evidence. This does not establish a REACH duplicate or negate the publication's existence."
+      "no_action_reason": "Source scope exclusion: UNK is a placeholder rather than an exact same-project primary NOAA award. Existing SPARK/harvest/Crossref scope evidence provides no verified WPO award attribution; original is not eligible for WPO reviewer staging without new positive project-specific evidence. This does not establish a REACH duplicate or negate the publication's existence.",
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1007/s00382-021-05901-x",
@@ -990,6 +1107,25 @@
         "link": "https://doi.org/10.1007/s00382-021-05901-x",
         "detail_shard": "agent-data/details/part-056.csv",
         "match_basis": "Exact normalized DOI in REACH index Link to Output AND matching REACH detail record's Link to Output/Journal Article Link and title"
+      },
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000450",
+            "reach_uid": "reachuid-v1-8cbda347c97cea9a059daa5c9ca28cfb",
+            "index_path": "agent-data/index/part-004.csv",
+            "detail_path": "agent-data/details/part-056.csv",
+            "link": "https://doi.org/10.1007/s00382-021-05901-x",
+            "match_basis": "exact_doi_in_index_link"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
       }
     },
     {
@@ -1084,6 +1220,25 @@
         "link": "https://doi.org/10.1007/s00382-021-06124-w",
         "detail_shard": "agent-data/details/part-057.csv",
         "match_basis": "Exact normalized DOI in REACH index Link to Output AND matching REACH detail record's Link to Output/Journal Article Link and title"
+      },
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000453",
+            "reach_uid": "reachuid-v1-03e63015f9d130bfe78e59abdc72ef04",
+            "index_path": "agent-data/index/part-004.csv",
+            "detail_path": "agent-data/details/part-057.csv",
+            "link": "https://doi.org/10.1007/s00382-021-06124-w",
+            "match_basis": "exact_doi_in_index_link"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
       }
     },
     {
@@ -1114,7 +1269,17 @@
       ],
       "titles": [
         "Seasonal prediction of North American wintertime cold extremes in the GFDL SPEAR forecast system"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1007/s00382-023-06864-x",
@@ -1159,6 +1324,25 @@
         "link": "https://doi.org/10.1007/s00382-023-06864-x",
         "detail_shard": "agent-data/details/part-054.csv",
         "match_basis": "Exact normalized DOI in REACH index Link to Output AND matching REACH detail record's Link to Output/Journal Article Link and title"
+      },
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000433",
+            "reach_uid": "reachuid-v1-7979f90d31fb5e954b0c2ea7357250ea",
+            "index_path": "agent-data/index/part-004.csv",
+            "detail_path": "agent-data/details/part-054.csv",
+            "link": "https://doi.org/10.1007/s00382-023-06864-x",
+            "match_basis": "exact_doi_in_index_link"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
       }
     },
     {
@@ -1204,6 +1388,25 @@
         "link": "https://doi.org/10.1007/s00382-023-06965-7",
         "detail_shard": "agent-data/details/part-054.csv",
         "match_basis": "Exact normalized DOI in REACH index Link to Output AND matching REACH detail record's Link to Output/Journal Article Link and title"
+      },
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000435",
+            "reach_uid": "reachuid-v1-804eb3d3e069053708218c486b26d4ea",
+            "index_path": "agent-data/index/part-004.csv",
+            "detail_path": "agent-data/details/part-054.csv",
+            "link": "https://doi.org/10.1007/s00382-023-06965-7",
+            "match_basis": "exact_doi_in_index_link"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
       }
     },
     {
@@ -1447,6 +1650,25 @@
         "link": "https://doi.org/10.1007/s00382-026-08137-9",
         "detail_shard": "agent-data/details/part-126.csv",
         "match_basis": "Exact normalized DOI in REACH index Link to Output AND matching REACH detail record's Link to Output/Journal Article Link and title"
+      },
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-001098",
+            "reach_uid": "reachuid-v1-29a6f07b4e11e52bf26208cae3e53930",
+            "index_path": "agent-data/index/part-009.csv",
+            "detail_path": "agent-data/details/part-126.csv",
+            "link": "https://doi.org/10.1007/s00382-026-08137-9",
+            "match_basis": "exact_doi_in_index_link"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
       }
     },
     {
@@ -1541,6 +1763,25 @@
         "link": "https://doi.org/10.1007/s00477-017-1442-8",
         "detail_shard": "agent-data/details/part-024.csv",
         "match_basis": "Exact normalized DOI in REACH index Link to Output AND matching REACH detail record's Link to Output/Journal Article Link and title"
+      },
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000191",
+            "reach_uid": "reachuid-v1-c21bd1fb168a2a7b2917397eb15a6262",
+            "index_path": "agent-data/index/part-002.csv",
+            "detail_path": "agent-data/details/part-024.csv",
+            "link": "https://doi.org/10.1007/s00477-017-1442-8",
+            "match_basis": "exact_doi_in_index_link"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
       }
     },
     {
@@ -1586,6 +1827,25 @@
         "link": "https://doi.org/10.1007/s00477-023-02563-5",
         "detail_shard": "agent-data/details/part-023.csv",
         "match_basis": "Exact normalized DOI in REACH index Link to Output AND matching REACH detail record's Link to Output/Journal Article Link and title"
+      },
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000189",
+            "reach_uid": "reachuid-v1-c17b4633fb4ea5fd1b0acb071dd42a33",
+            "index_path": "agent-data/index/part-002.csv",
+            "detail_path": "agent-data/details/part-023.csv",
+            "link": "http://doi.org/10.1007/s00477-023-02563-5",
+            "match_basis": "exact_doi_in_index_link"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
       }
     },
     {
@@ -1665,7 +1925,17 @@
       ],
       "titles": [
         "Towards practical artificial intelligence in Earth sciences"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1007/s10606-020-09380-2",
@@ -1695,7 +1965,17 @@
       ],
       "titles": [
         "Achieving Accuracy through Ambiguity: the Interactivity of Risk Communication in Severe Weather Events"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1007/s10661-024-12342-6",
@@ -1955,7 +2235,17 @@
         "next_action": "Original scope closed absent new positive exact primary-award evidence; preserve DOI and separately research related outputs as expansion seed, verifying each output independently."
       },
       "no_action_subtype": "NO_DEMONSTRATED_WPO_CONNECTION",
-      "no_action_reason": "Source scope exclusion: UNK is a placeholder rather than an exact same-project primary NOAA award. Existing SPARK/harvest/Crossref scope evidence provides no verified WPO award attribution; original is not eligible for WPO reviewer staging without new positive project-specific evidence. This does not establish a REACH duplicate or negate the publication's existence."
+      "no_action_reason": "Source scope exclusion: UNK is a placeholder rather than an exact same-project primary NOAA award. Existing SPARK/harvest/Crossref scope evidence provides no verified WPO award attribution; original is not eligible for WPO reviewer staging without new positive project-specific evidence. This does not establish a REACH duplicate or negate the publication's existence.",
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1016/j.advwatres.2021.104075",
@@ -2034,7 +2324,17 @@
       ],
       "titles": [
         "Predicting spring phenology in deciduous broadleaf forests: NEON phenology forecasting community challenge"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1016/j.apacoust.2023.109256",
@@ -2162,7 +2462,17 @@
       ],
       "titles": [
         "Update of land use/land cover and soil texture for Brazil: Impact on WRF modeling results over São Paulo"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1016/j.atmosenv.2023.120165",
@@ -2536,7 +2846,17 @@
       ],
       "titles": [
         "Adaptive conditional bias-penalized Kalman filter with minimization of degrees of freedom for noise for superior state estimation and prediction of extremes"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1016/j.crsus.2025.100628",
@@ -3296,7 +3616,17 @@
       ],
       "titles": [
         "Waste barrel contamination and macrobenthic communities in the San Pedro Basin DDT dumpsite"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1016/j.ocemod.2019.101509",
@@ -3424,7 +3754,17 @@
       ],
       "titles": [
         "Clustering of disaggregated fisheries data reveals functional longline fleets across the Pacific"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1016/j.pdisas.2026.100696",
@@ -3460,7 +3800,17 @@
       ],
       "titles": [
         "Extreme weather as an occupational hazard: Structural vulnerability among multilingual immigrant workers"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1016/j.pocean.2025.103473",
@@ -3490,7 +3840,17 @@
       ],
       "titles": [
         "Seasonal dissolved oxygen gas exchange in the California Current Upwelling System"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1016/j.pubrev.2019.101831",
@@ -3667,7 +4027,17 @@
       ],
       "titles": [
         "Leveraging additional VIIRS information to improve wildfire tracking in the western US"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1016/j.scitotenv.2022.156567",
@@ -3795,7 +4165,17 @@
       ],
       "titles": [
         "PyGeoweaver: Tangible workflow tool for enhancing scientific research productivity and FAIRness"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1016/j.tcrr.2026.02.001",
@@ -3876,7 +4256,17 @@
       ],
       "titles": [
         "Assessment of convection-permitting hydroclimate modeling in urban areas across the contiguous United States"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1016/j.uclim.2025.102511",
@@ -4094,7 +4484,17 @@
       ],
       "titles": [
         "Wide-Area Debris Field and Seabed Characterization of a Deep Ocean Dump Site Surveyed by Autonomous Underwater Vehicles"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1021/acs.est.5c01914",
@@ -4124,7 +4524,17 @@
       ],
       "titles": [
         "Managing Smoke Risk from Wildland Fires: Northern California as a Case Study"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1029/2018gl081702",
@@ -4498,7 +4908,26 @@
       ],
       "titles": [
         "Canopy Adjustment and Improved Cloud Detection for Remotely Sensed Snow Cover Mapping"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000258",
+            "reach_uid": "reachuid-v1-79e26cc2301bfd5c0be4594f449038ec",
+            "index_path": "agent-data/index/part-003.csv",
+            "detail_path": "agent-data/details/part-032.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/54492",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2020gl088242",
@@ -4528,7 +4957,26 @@
       ],
       "titles": [
         "Differentiating Between Tornadic and Nontornadic Supercells Using Polarimetric Radar Signatures of Hydrometeor Size Sorting"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000681",
+            "reach_uid": "reachuid-v1-13101641da6997065791d6a774b4f3d8",
+            "index_path": "agent-data/index/part-006.csv",
+            "detail_path": "agent-data/details/part-083.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/53905",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2020gl090179",
@@ -4558,7 +5006,26 @@
       ],
       "titles": [
         "Direct Assimilation of Radar Data With Ensemble Kalman Filter and Hybrid Ensemble‐Variational Method in the National Weather Service Operational Data Assimilation System GSI for the Stand‐Alone Regional FV3 Model at a Convection‐Allowing Resolution"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000233",
+            "reach_uid": "reachuid-v1-3aca630876adf75686a49e13ea471798",
+            "index_path": "agent-data/index/part-002.csv",
+            "detail_path": "agent-data/details/part-029.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/31655",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2020jc016217",
@@ -4588,7 +5055,17 @@
       ],
       "titles": [
         "Decadal Strengthening of Interior Flow of North Atlantic Deep Water Observed by GRACE Satellites"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1029/2020jd032674",
@@ -4618,7 +5095,26 @@
       ],
       "titles": [
         "Assessment of Uncertainty Sources in Snow Cover Simulation in the Tibetan Plateau"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000008",
+            "reach_uid": "reachuid-v1-758051753dde8b72f6b1710bfa37626b",
+            "index_path": "agent-data/index/part-001.csv",
+            "detail_path": "agent-data/details/part-001.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/53556",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2020jd033870",
@@ -4648,7 +5144,26 @@
       ],
       "titles": [
         "Idealized Model Simulations to Determine Impacts of Storm‐Relative Winds on Differential Reflectivity and Specific Differential Phase Fields"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000683",
+            "reach_uid": "reachuid-v1-ff4da656a51a28e2d0b849d3cdfb0304",
+            "index_path": "agent-data/index/part-006.csv",
+            "detail_path": "agent-data/details/part-083.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/59744",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2020ms002062",
@@ -4678,7 +5193,26 @@
       ],
       "titles": [
         "Enhancing the Noah‐MP Ecosystem Response to Droughts With an Explicit Representation of Plant Water Storage Supplied by Dynamic Root Water Uptake"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000003",
+            "reach_uid": "reachuid-v1-cfbc5b30c1c10f1bc3876cd999fec7c6",
+            "index_path": "agent-data/index/part-001.csv",
+            "detail_path": "agent-data/details/part-001.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/58289",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2020ms002394",
@@ -4709,7 +5243,26 @@
       ],
       "titles": [
         "Improve the Performance of the Noah‐MP‐Crop Model by Jointly Assimilating Soil Moisture and Vegetation Phenology Data"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000009",
+            "reach_uid": "reachuid-v1-0923f87ec27ca92c0ab19793b58b7712",
+            "index_path": "agent-data/index/part-001.csv",
+            "detail_path": "agent-data/details/part-002.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/49813",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2020wr027102",
@@ -4739,7 +5292,26 @@
       ],
       "titles": [
         "Why Is the Terrestrial Water Storage in Dryland Regions Declining? A Perspective Based on Gravity Recovery and Climate Experiment Satellite Observations and Noah Land Surface Model With Multiparameterization Schemes Model Simulations"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000002",
+            "reach_uid": "reachuid-v1-0f81275288b0221276d2ae5ce230c141",
+            "index_path": "agent-data/index/part-001.csv",
+            "detail_path": "agent-data/details/part-001.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/59638",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2021gl094691",
@@ -4769,7 +5341,26 @@
       ],
       "titles": [
         "Global Survey of the MJO and Extreme Precipitation"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000408",
+            "reach_uid": "reachuid-v1-eee9e4b884c910cb40d767caccc7bab6",
+            "index_path": "agent-data/index/part-004.csv",
+            "detail_path": "agent-data/details/part-051.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/34045",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2021gl096410",
@@ -4799,7 +5390,26 @@
       ],
       "titles": [
         "Ensemble‐Based Assimilation of Satellite All‐Sky Microwave Radiances Improves Intensity and Rainfall Predictions for Hurricane Harvey (2017)"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000262",
+            "reach_uid": "reachuid-v1-53c79680a5da60fbcadb3a6c9571abed",
+            "index_path": "agent-data/index/part-003.csv",
+            "detail_path": "agent-data/details/part-033.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/49885",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2021gl096709",
@@ -4829,7 +5439,26 @@
       ],
       "titles": [
         "Decadal Variability of Southeast US Rainfall in an Eddying Global Coupled Model"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000422",
+            "reach_uid": "reachuid-v1-9f37f0bdd61a8de1ab659aedc7579580",
+            "index_path": "agent-data/index/part-004.csv",
+            "detail_path": "agent-data/details/part-053.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/43170",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2021jc018340",
@@ -4859,7 +5488,26 @@
       ],
       "titles": [
         "Role of Ocean and Atmosphere Variability in Scale‐Dependent Thermodynamic Air‐Sea Interactions"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000424",
+            "reach_uid": "reachuid-v1-c948afdbb0e51845d3d944d22c3c4bae",
+            "index_path": "agent-data/index/part-004.csv",
+            "detail_path": "agent-data/details/part-053.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/53777",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2021jd035284",
@@ -4889,7 +5537,26 @@
       ],
       "titles": [
         "What Causes the Unobserved Early‐Spring Snowpack Ablation in Convection‐Permitting WRF Modeling Over Utah Mountains?"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000247",
+            "reach_uid": "reachuid-v1-6cfbe81cd7e266d93bb42d98db8d3e70",
+            "index_path": "agent-data/index/part-002.csv",
+            "detail_path": "agent-data/details/part-031.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/53394",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2021jd035892",
@@ -4919,7 +5586,17 @@
       ],
       "titles": [
         "Impact of Changing Winds on the Mauna Loa CO\n                    <sub>2</sub>\n                    Seasonal Cycle in Relation to the Pacific Decadal Oscillation"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1029/2021ms002665",
@@ -4949,7 +5626,26 @@
       ],
       "titles": [
         "Implementation and Evaluation of a Unified Turbulence Parameterization Throughout the Canopy and Roughness Sublayer in Noah‐MP Snow Simulations"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000252",
+            "reach_uid": "reachuid-v1-6c61f896f6390618df006b8015945f59",
+            "index_path": "agent-data/index/part-003.csv",
+            "detail_path": "agent-data/details/part-031.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/52432",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2021ms002774",
@@ -4979,7 +5675,34 @@
       ],
       "titles": [
         "Using Simple, Explainable Neural Networks to Predict the Madden‐Julian Oscillation"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000437",
+            "reach_uid": "reachuid-v1-6d7befd4038719fa793a03283f9db66e",
+            "index_path": "agent-data/index/part-004.csv",
+            "detail_path": "agent-data/details/part-055.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/58250",
+            "match_basis": "exact_normalized_title"
+          },
+          {
+            "reach_id": "reach-001178",
+            "reach_uid": "reachuid-v1-a3455483a2fec153c3ddeef1665ad559",
+            "index_path": "agent-data/index/part-010.csv",
+            "detail_path": "agent-data/details/part-132.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/58250",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2021rg000763",
@@ -5009,7 +5732,26 @@
       ],
       "titles": [
         "Health and Safety Effects of Airborne Soil Dust in the Americas and Beyond"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-001027",
+            "reach_uid": "reachuid-v1-942346106639a600ffcf07bb63a24f14",
+            "index_path": "agent-data/index/part-009.csv",
+            "detail_path": "agent-data/details/part-118.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/54890",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2021wr031033",
@@ -5039,7 +5781,26 @@
       ],
       "titles": [
         "Exploring the Potential of Long Short‐Term Memory Networks for Improving Understanding of Continental‐ and Regional‐Scale Snowpack Dynamics"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000007",
+            "reach_uid": "reachuid-v1-e89f392fb4925163783827afdf5324a3",
+            "index_path": "agent-data/index/part-001.csv",
+            "detail_path": "agent-data/details/part-001.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/49816",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2021wr031242",
@@ -5069,7 +5830,26 @@
       ],
       "titles": [
         "Modeling the Hydrologic Influence of Subsurface Tile Drainage Using the National Water Model"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000246",
+            "reach_uid": "reachuid-v1-2b9d1a920d68afeba6a2996e1cb6b769",
+            "index_path": "agent-data/index/part-002.csv",
+            "detail_path": "agent-data/details/part-031.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/54925",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2022gl097900",
@@ -5099,7 +5879,17 @@
       ],
       "titles": [
         "Serendipitous Internal Wave Signals in Deep Argo Data"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1029/2022gl098586",
@@ -5129,7 +5919,26 @@
       ],
       "titles": [
         "High‐Resolution Soil Moisture Data Reveal Complex Multi‐Scale Spatial Variability Across the United States"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000037",
+            "reach_uid": "reachuid-v1-28eece95cf7281894749848a430feb0e",
+            "index_path": "agent-data/index/part-001.csv",
+            "detail_path": "agent-data/details/part-005.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/54946",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2022gl100011",
@@ -5159,7 +5968,17 @@
       ],
       "titles": [
         "Systematic Climate Model Biases in the Large‐Scale Patterns of Recent Sea‐Surface Temperature and Sea‐Level Pressure Change"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1029/2022gl101078",
@@ -5189,7 +6008,17 @@
       ],
       "titles": [
         "Remarkable Changes in the Dominant Modes of North Pacific Sea Surface Temperature"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1029/2022jc019015",
@@ -5220,7 +6049,26 @@
       ],
       "titles": [
         "The Effects of Ocean Surface Waves on Tropical Cyclone Intensity: Numerical Simulations Using a Regional Atmosphere‐Ocean‐Wave Coupled Model"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000130",
+            "reach_uid": "reachuid-v1-b116edea4646ea0bade8dbd0764eff1a",
+            "index_path": "agent-data/index/part-002.csv",
+            "detail_path": "agent-data/details/part-017.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/47799",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2022jd037030",
@@ -5250,7 +6098,17 @@
       ],
       "titles": [
         "Characterizing Continental US Hurricane Risk: Which Intensity Metric Is Best?"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1029/2022jd037768",
@@ -5282,7 +6140,26 @@
       ],
       "titles": [
         "Observational Estimates of Turbulence Parameters in the Atmospheric Surface Layer of Landfalling Tropical Cyclones"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000125",
+            "reach_uid": "reachuid-v1-3d509f2f1c08ad55e2d026992ae7571e",
+            "index_path": "agent-data/index/part-001.csv",
+            "detail_path": "agent-data/details/part-016.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/55770",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2022ms003230",
@@ -5313,7 +6190,26 @@
       ],
       "titles": [
         "The Effect of Advection on the Three Dimensional Distribution of Turbulent Kinetic Energy and Its Generation in Idealized Tropical Cyclone Simulations"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000124",
+            "reach_uid": "reachuid-v1-0dc1af60d3dd963f267fd388fe6d2a25",
+            "index_path": "agent-data/index/part-001.csv",
+            "detail_path": "agent-data/details/part-016.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/61143",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2022ms003232",
@@ -5343,7 +6239,26 @@
       ],
       "titles": [
         "JEDI‐Based Three‐Dimensional Ensemble‐Variational Data Assimilation System for Global Aerosol Forecasting at NCEP"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-001026",
+            "reach_uid": "reachuid-v1-799753c942fbedc7d566afb29a3d19c9",
+            "index_path": "agent-data/index/part-009.csv",
+            "detail_path": "agent-data/details/part-118.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/49750",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2022pa004498",
@@ -5373,7 +6288,17 @@
       ],
       "titles": [
         "The Zonal Patterns in Late Quaternary Tropical South American Precipitation"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1029/2023gl105548",
@@ -5404,7 +6329,26 @@
       ],
       "titles": [
         "Airborne Doppler Radar Observations of Tropical Cyclone Boundary Layer Kinematic Structure and Evolution During Landfall"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000126",
+            "reach_uid": "reachuid-v1-8eda0367738fbee344d52b4b4f97e735",
+            "index_path": "agent-data/index/part-001.csv",
+            "detail_path": "agent-data/details/part-016.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/56153",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2023gl105730",
@@ -5434,7 +6378,17 @@
       ],
       "titles": [
         "In Situ Observations at the Air‐Sea Interface by Expendable Air‐Deployed Drifters Under Hurricane Michael (2018)"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1029/2023gl106354",
@@ -5464,7 +6418,17 @@
       ],
       "titles": [
         "Quantifying the Contribution of Ocean Advection and Surface Flux to the Upper‐Ocean Salinity Variability Resolved by Climate Model Simulations"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1029/2023gl106501",
@@ -5494,7 +6458,17 @@
       ],
       "titles": [
         "Delayed Recovery of the Irminger Interior From Cooling in 2015 Due To Widespread Buoyancy Loss and Suppressed Restratification"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1029/2023gl106872",
@@ -5524,7 +6498,17 @@
       ],
       "titles": [
         "Impact of MJO Propagation Speed on Active Atlantic Tropical Cyclone Activity Periods"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1029/2023gl107844",
@@ -5554,7 +6538,17 @@
       ],
       "titles": [
         "Understanding Full‐Depth Steric Sea Level Change in the Southwest Pacific Basin Using Deep Argo"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1029/2023ms003692",
@@ -5584,7 +6578,26 @@
       ],
       "titles": [
         "Local Volume Solvers for Earth System Data Assimilation: Implementation in the Framework for Joint Effort for Data Assimilation Integration"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-001025",
+            "reach_uid": "reachuid-v1-f4d3bd2381d1a9742bf4af194b587e2c",
+            "index_path": "agent-data/index/part-009.csv",
+            "detail_path": "agent-data/details/part-118.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/61145",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2023wr035303",
@@ -5614,7 +6627,26 @@
       ],
       "titles": [
         "The Role of Forcing and Parameterization in Improving Snow Simulation in the Upper Colorado River Basin Using the National Water Model"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000022",
+            "reach_uid": "reachuid-v1-30a5270f711185bde3afff3493bfa7f6",
+            "index_path": "agent-data/index/part-001.csv",
+            "detail_path": "agent-data/details/part-003.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/66543",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2023wr035572",
@@ -5644,7 +6676,26 @@
       ],
       "titles": [
         "Impacts of Topography‐Driven Water Redistribution on Terrestrial Water Storage Change in California Through Ecosystem Responses"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000011",
+            "reach_uid": "reachuid-v1-c8ecf640b71b0862c24ec03c6ab58487",
+            "index_path": "agent-data/index/part-001.csv",
+            "detail_path": "agent-data/details/part-002.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/64009",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2024ea003844",
@@ -5674,7 +6725,17 @@
       ],
       "titles": [
         "Four Generations of ECMWF Reanalyses: An Overview of the Successes in Modeling Precipitation and Remaining Challenges for Freshwater Budget of Ocean Models"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1029/2024gl108849",
@@ -5704,7 +6765,26 @@
       ],
       "titles": [
         "Decrease in MJO Predictability Following Indo–Pacific Warm Pool Expansion"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000371",
+            "reach_uid": "reachuid-v1-a93076877af8f807e2b8c6591a11dc2e",
+            "index_path": "agent-data/index/part-004.csv",
+            "detail_path": "agent-data/details/part-046.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/70842",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2024gl109663",
@@ -5734,7 +6814,17 @@
       ],
       "titles": [
         "Are Forecasts of the Tropical Cyclone Radius of Maximum Wind Skillful?"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1029/2024gl109890",
@@ -5764,7 +6854,26 @@
       ],
       "titles": [
         "Historical Trends in Cold‐Season Mid‐Latitude Cyclones in the Great Lakes Region"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000133",
+            "reach_uid": "reachuid-v1-6b9a8c47dd70ae2150e46d6138cdec38",
+            "index_path": "agent-data/index/part-002.csv",
+            "detail_path": "agent-data/details/part-017.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/67940",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2024gl110925",
@@ -5794,7 +6903,26 @@
       ],
       "titles": [
         "Improving Statistical Prediction of Subseasonal CONUS Precipitation Based on ENSO and the MJO by Training With Large Ensemble Climate Simulations"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000369",
+            "reach_uid": "reachuid-v1-231c07772be4fbf696c62f4bae85d13f",
+            "index_path": "agent-data/index/part-004.csv",
+            "detail_path": "agent-data/details/part-046.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/70220",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2024gl111229",
@@ -5824,7 +6952,17 @@
       ],
       "titles": [
         "Refined Estimates of Global Ocean Deep and Abyssal Decadal Warming Trends"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1029/2024gl111291",
@@ -5854,7 +6992,26 @@
       ],
       "titles": [
         "Process Evaluation of Subseasonal North Atlantic Oscillation Prediction in the ECMWF Ensemble Forecast System"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000366",
+            "reach_uid": "reachuid-v1-80bd76c805a4bceaa47afc377e3203f6",
+            "index_path": "agent-data/index/part-004.csv",
+            "detail_path": "agent-data/details/part-046.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/70217",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2024gl114158",
@@ -5884,7 +7041,17 @@
       ],
       "titles": [
         "Deep Ocean Steric Sea Level Change in the Subtropical Northwest Atlantic Ocean"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1029/2024jc021098",
@@ -5914,7 +7081,17 @@
       ],
       "titles": [
         "The Deep Western Boundary Current of the Southwest Pacific Basin: Insights From Deep Argo"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1029/2024jd040885",
@@ -5944,7 +7121,17 @@
       ],
       "titles": [
         "Evaluation of 10‐m Wind Speed From ISD Meteorological Stations and the MERRA‐2 Reanalysis: Impacts on Dust Emission in the Arabian Peninsula"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1029/2024jd041494",
@@ -5974,7 +7161,26 @@
       ],
       "titles": [
         "Impacts of On‐Road Vehicular Emissions on U.S. Air Quality: A Comparison of Two Mobile Emission Models (MOVES and FIVE)"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-001036",
+            "reach_uid": "reachuid-v1-cd61375598bf083c510ffb38b95ffb07",
+            "index_path": "agent-data/index/part-009.csv",
+            "detail_path": "agent-data/details/part-119.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/67871",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2024jd041794",
@@ -6005,7 +7211,26 @@
       ],
       "titles": [
         "Depth Matters: Lake Bathymetry Selection in Numerical Weather Prediction Systems"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000349",
+            "reach_uid": "reachuid-v1-006271419ab01beb72f63d9ee0298f2d",
+            "index_path": "agent-data/index/part-003.csv",
+            "detail_path": "agent-data/details/part-044.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/70215",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2024jd042123",
@@ -6035,7 +7260,26 @@
       ],
       "titles": [
         "Future MJO Change and Its Impact on Extreme Precipitation and Temperature Over the Western US in CMIP6"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000367",
+            "reach_uid": "reachuid-v1-063f58a72e640078a9875f3f343d73d0",
+            "index_path": "agent-data/index/part-004.csv",
+            "detail_path": "agent-data/details/part-046.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/70218",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2024ms004231",
@@ -6065,7 +7309,26 @@
       ],
       "titles": [
         "The Water Balance Representation in Urban‐PLUMBER Land Surface Models"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000112",
+            "reach_uid": "reachuid-v1-aa57fe488ee1ecb97b7c1834ecda8714",
+            "index_path": "agent-data/index/part-001.csv",
+            "detail_path": "agent-data/details/part-014.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/70196",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2024ms004319",
@@ -6095,7 +7358,26 @@
       ],
       "titles": [
         "Detecting Instantaneous Tidal Signals in Ocean Models Utilizing Streaming Band‐Pass Filters"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-001210",
+            "reach_uid": "reachuid-v1-881600ba03df4262fa81ef0fb1a07804",
+            "index_path": "agent-data/index/part-010.csv",
+            "detail_path": "agent-data/details/part-137.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/66967",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2024ms004601",
@@ -6126,7 +7408,26 @@
       ],
       "titles": [
         "Quantifying UAS Observation Error Variance Used in Data Assimilation Systems and Its Impact on Predictive Skill"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000173",
+            "reach_uid": "reachuid-v1-1a28b9d8af17e37168f94ba09fc6bbeb",
+            "index_path": "agent-data/index/part-002.csv",
+            "detail_path": "agent-data/details/part-022.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/71917",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2024ms004704",
@@ -6156,7 +7457,26 @@
       ],
       "titles": [
         "Improved Cross‐Scale Snow Cover Simulations by Developing a Scale‐Aware Ground Snow Cover Fraction Parameterization in the Noah‐MP Land Surface Model"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-001202",
+            "reach_uid": "reachuid-v1-eb7a93058e7eabef28a639d1ec536530",
+            "index_path": "agent-data/index/part-010.csv",
+            "detail_path": "agent-data/details/part-136.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/71110",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2024wr037507",
@@ -6186,7 +7506,17 @@
       ],
       "titles": [
         "Assessing the Potential for Medium‐Range Ice Forecasts in the Laurentian Great Lakes"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1029/2025gl114816",
@@ -6216,7 +7546,26 @@
       ],
       "titles": [
         "Large‐Eddy Simulation of Internal Boundary Layers and Near‐Surface Wind Estimation During Hurricane Landfalls"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-001082",
+            "reach_uid": "reachuid-v1-4c382be7c9c2fa3694073b99ac4e2311",
+            "index_path": "agent-data/index/part-009.csv",
+            "detail_path": "agent-data/details/part-124.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/71109",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2025gl115470",
@@ -6246,7 +7595,17 @@
       ],
       "titles": [
         "High‐Frequency Correlations Between Winds and\n                    <i>p</i>\n                    CO\n                    <sub>2</sub>\n                    Change the California Coastal Upwelling System From a CO\n                    <sub>2</sub>\n                    Sink to a Source"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1029/2025gl117487",
@@ -6276,7 +7635,26 @@
       ],
       "titles": [
         "Boundary Layer Observations and Near‐Surface Wind Estimation During the Landfalls of Hurricanes Ida (2021) and Zeta (2020)"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-001085",
+            "reach_uid": "reachuid-v1-fa8b1a27e7861a765e13361ac0184c5d",
+            "index_path": "agent-data/index/part-009.csv",
+            "detail_path": "agent-data/details/part-124.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/71908",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2025gl117691",
@@ -6306,7 +7684,17 @@
       ],
       "titles": [
         "Evolution of Ice Tensile Strength With Grain Size: Implications for Future Mass Loss From Pine Island Glacier"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1029/2025gl119720",
@@ -6336,7 +7724,17 @@
       ],
       "titles": [
         "Large Uncertainty in Arctic Warming Driven by the Atlantic Meridional Overturning Circulation"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1029/2025gl121181",
@@ -6366,7 +7764,17 @@
       ],
       "titles": [
         "A Sea Ice Entrapment Event in the Southern Chukchi Sea: Analysis and Prediction"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1029/2025jc022405",
@@ -6396,7 +7804,17 @@
       ],
       "titles": [
         "Indo‐Pacific Deep Water Pathways and Transports in the South Australian Basin"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1029/2025jc022899",
@@ -6426,7 +7844,17 @@
       ],
       "titles": [
         "ENSO Influences Subsurface Marine Heatwave Occurrence in the Kuroshio Extension"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1029/2025jc023651",
@@ -6456,7 +7884,17 @@
       ],
       "titles": [
         "The Mean Across‐Shore Coastal Upwelling Cell in the Southern California Current System"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "INDEX_NO_MATCH_PENDING_DETAILS",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [],
+        "next_action": "Check complete REACH details and secondary URLs before concluding NOT_FOUND_IN_REACH."
+      }
     },
     {
       "identity": "doi:10.1029/2025jd044142",
@@ -6487,7 +7925,26 @@
       ],
       "titles": [
         "Environmental and Boundary Layer Characteristics Associated With Intensity Change of Tropical Cyclones Under High Fullness"
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-000387",
+            "reach_uid": "reachuid-v1-90317574c16064909ba5744176147377",
+            "index_path": "agent-data/index/part-004.csv",
+            "detail_path": "agent-data/details/part-049.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/72334",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2025jd044191",
@@ -6517,7 +7974,26 @@
       ],
       "titles": [
         "Snow Cover Plays a Non‐Dominant Role in WRF/Noah‐MP Simulated Surface Air Temperature Cold Biases Over the Western U.S."
-      ]
+      ],
+      "reach_first_pass_screening": {
+        "status": "POSSIBLE_MATCH",
+        "checked_at": "2026-11-04T00:24:00Z",
+        "snapshot_source_sha256_declared": "054d139eacf0c687ef4efe54be525198db20ffb47febe80683888beaa547103e",
+        "index_shards_read": 10,
+        "index_sha256_independently_verified": false,
+        "detail_verification": "PENDING",
+        "matches": [
+          {
+            "reach_id": "reach-001203",
+            "reach_uid": "reachuid-v1-ec7b567fac21db9bdb6a04ea7d2c7662",
+            "index_path": "agent-data/index/part-010.csv",
+            "detail_path": "agent-data/details/part-136.csv",
+            "link": "https://repository.library.noaa.gov/view/noaa/73115",
+            "match_basis": "exact_normalized_title"
+          }
+        ],
+        "next_action": "Verify matching detail and secondary links, then determine original identity."
+      }
     },
     {
       "identity": "doi:10.1029/2025jd045668",
