@@ -1,0 +1,38 @@
+{
+  "schema": "reach-scout-crossref-phase2-identity-resolution-v1",
+  "checked_at": "2026-11-04",
+  "source_screening_batch": "scout-operations/historical-crossref-screening/batch-009.json",
+  "source_doi": "10.5194/egusphere-2025-485",
+  "result": "CONFIRMED_VERSION_FAMILY_ALREADY_IN_REACH",
+  "source_kind": "publisher_preprint",
+  "published_doi": "10.5194/acp-25-16631-2025",
+  "published_date": "2025-11-24",
+  "reach_record_id": "reach-001049",
+  "reach_uid": "reachuid-v1-f8abc32be81fffbca9e7b0ba39dd2b88",
+  "reach_index_path": "agent-data/index/part-009.csv",
+  "reach_detail_path": "agent-data/details/part-121.csv",
+  "reach_url": "https://repository.library.noaa.gov/view/noaa/72211",
+  "primary_award_as_recorded_in_reach": "NA22OAR4590516",
+  "evidence": [
+    {
+      "url": "https://egusphere.copernicus.org/preprints/2025/egusphere-2025-485/",
+      "finding": "Publisher identifies DOI as preprint and explicitly points to corresponding peer-reviewed final revised paper."
+    },
+    {
+      "url": "https://doi.org/10.5194/acp-25-16631-2025",
+      "finding": "Final publisher article title, authors and 24 Nov 2025 publication date match preprint family."
+    },
+    {
+      "url": "https://repository.library.noaa.gov/view/noaa/72211",
+      "finding": "Official NOAA IR entry for same title and final article DOI 10.5194/acp-25-16631-2025."
+    },
+    {
+      "url": "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-121.csv",
+      "finding": "REACH detail record reach-001049 same title, journal publication date and NOAA IR landing URL."
+    }
+  ],
+  "recommendation": "Close original preprint DOI as already represented by final published REACH article, without staging preprint or duplicating published article. Preserve original DOI and independent expansion seed. This checkpoint is evidence for a future ledger update, not an automatic mutation of existing human dispositions.",
+  "original_ledger_changed": false,
+  "seed_expansion_status_changed": false,
+  "human_decision_changed": false
+}
