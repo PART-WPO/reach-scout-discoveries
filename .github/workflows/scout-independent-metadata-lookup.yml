@@ -16,6 +16,8 @@ on:
       - 'scout-operations/research-leads/**'
       - 'scout-operations/tools/lookup_independent_metadata.py'
       - 'scout-operations/tools/lookup_independent_dois.py'
+      - 'scout-operations/tools/ir_reach_identity.py'
+      - 'scout-operations/noaa-ir/manifest.json'
       - 'scout-operations/tools/preprint_watchlist.py'
       - 'scout-operations/tools/lookup_artifact_scope.py'
       - 'scout-operations/tools/audit_github_code_metadata.py'
@@ -31,6 +33,18 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+      - name: Verify current public REACH manifest before identity screening
+        run: |
+          python3 - <<'PY'
+          import hashlib,json,urllib.request
+          from pathlib import Path
+          cache=json.loads(Path("scout-operations/reach-comparison-cache/comparison-index.json").read_text())
+          with urllib.request.urlopen("https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",timeout=45) as response:
+              live=hashlib.sha256(response.read()).hexdigest()
+          if live!=cache["source_manifest_sha256"]:
+              raise SystemExit("STALE PUBLIC REACH CACHE: refresh before independent identity screening")
+          print("Verified live REACH source SHA",live)
+          PY
       - name: Look up DOI registries and GitHub release metadata
         env:
           GITHUB_TOKEN: ${{ github.token }}

@@ -5,6 +5,8 @@ on:
     paths:
       - '.github/workflows/scout-decision-pipeline.yml'
       - 'scout-operations/tools/decision_pipeline.py'
+      - 'scout-operations/tools/ir_reach_identity.py'
+      - 'scout-operations/tests/test_ir_reach_identity.py'
       - 'scout-operations/tests/test_decision_pipeline.py'
       - 'scout-operations/tests/published-crossref-decision-cases.json'
       - 'scout-operations/tests/flash-drought-positive-control-case.json'
@@ -35,6 +37,7 @@ jobs:
         run: |
           set -euo pipefail
           python -m unittest discover -s scout-operations/tests -p 'test_decision_pipeline.py' -v
+          python -m unittest discover -s scout-operations/tests -p 'test_ir_reach_identity.py' -v
           python -m unittest discover -s scout-operations/tests -p 'test_quick_monthly_intake.py' -v
       - name: Verify live REACH snapshot and publish derived, immutable checkpoints
         shell: bash

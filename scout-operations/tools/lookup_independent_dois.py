@@ -2,6 +2,7 @@
 """Fast independent DOI metadata lookups; no historical-feed dependencies."""
 import argparse,json,re,os,urllib.request,urllib.error,datetime
 from pathlib import Path
+from ir_reach_identity import verified_snapshot,identity_check,research_route
 from urllib.parse import quote
 ROOT=Path(__file__).resolve().parents[2]
 OUT=ROOT/"scout-operations/reports/independent-doi-lookup/latest.json"
@@ -63,10 +64,15 @@ def main():
    if d:
     entry=targets.setdefault(d,{"doi":d,"lead_files":[]})
     entry["lead_files"].append(str(path.relative_to(ROOT)))
+ public,ir_index=verified_snapshot(ROOT)
  records=[]
  for d,entry in sorted(targets.items()):
-  records.append({**entry,"metadata":metadata(d)})
- result={"schema":"reach-scout-independent-doi-lookup-v1","read_only":True,"record_count":len(records),"successful":sum(r["metadata"]["status"]=="ok" for r in records),"records":records,"policy":"DataCite created is office Pub Date; Crossref print then online then published/issued; month-only becomes first day, year-only never invented. Human decisions unchanged."}
+  md=metadata(d)
+  check=identity_check(public,ir_index,d,md.get("title",""),"https://doi.org/"+d)
+  records.append({**entry,"metadata":md,"identity_gate":check,
+                  "identity_next_action":research_route(check),
+                  "seed_expansion_preserved":True})
+ result={"schema":"reach-scout-independent-doi-lookup-v1","read_only":True,"record_count":len(records),"successful":sum(r["metadata"]["status"]=="ok" for r in records),"records":records,"public_identity_source_fingerprint":public["source_fingerprint"],"noaa_ir_index_verified":ir_index is not None,"policy":"DataCite created is office Pub Date; Crossref print then online then published/issued; month-only becomes first day, year-only never invented. Human decisions unchanged."}
  OUT.parent.mkdir(parents=True,exist_ok=True)
  OUT.write_text(json.dumps(result,indent=2,sort_keys=True,ensure_ascii=False)+"\n",encoding="utf8")
  print("Independent DOI lookups:",result["record_count"],"successful:",result["successful"])

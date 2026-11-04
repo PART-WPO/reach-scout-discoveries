@@ -12,6 +12,18 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+      - name: Verify current public REACH manifest before identity screening
+        run: |
+          python3 - <<'PY'
+          import hashlib,json,urllib.request
+          from pathlib import Path
+          cache=json.loads(Path("scout-operations/reach-comparison-cache/comparison-index.json").read_text())
+          with urllib.request.urlopen("https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",timeout=45) as response:
+              live=hashlib.sha256(response.read()).hexdigest()
+          if live!=cache["source_manifest_sha256"]:
+              raise SystemExit("STALE PUBLIC REACH CACHE: refresh before independent identity screening")
+          print("Verified live REACH source SHA",live)
+          PY
       - name: Look up independent Scout DOIs via DataCite or Crossref
         env:
           REQUESTED_DOI: ${{ inputs.doi || '' }}
