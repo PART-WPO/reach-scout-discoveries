@@ -115,6 +115,8 @@ def run(root=ROOT,key=None,index=None):
     if any("event_id" not in x for x in prior["signals"]):
         raise ValueError("Legacy reviewer signal missing stable identity; do not silently discard")
     previous={x["event_id"]:x for x in prior["signals"]}
+    if previous and not bundles:
+        raise ValueError("Previously authenticated reviewer feedback has lost all signed source bundles")
     for current in events:
         k=current["event_id"]
         if k in previous and previous[k]!=current:
