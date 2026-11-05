@@ -84,7 +84,8 @@ jobs:
           assert hashlib.sha256(source.read_bytes()).hexdigest()==pointer['latest_sha256']
           data=json.loads(source.read_text())
           assert data['complete_selected_awards']
-          assert data['spark_primary_awards_queried']==(5 if pointer['pilot'] else data['spark_primary_awards_in_catalog'])
+          assert data['spark_primary_awards_queried']==(min(5,data['valid_noaa_primary_awards_in_catalog']) if pointer['pilot'] else data['valid_noaa_primary_awards_in_catalog'])
+          assert data['spark_primary_awards_in_catalog']==data['valid_noaa_primary_awards_in_catalog']+data['non_normalized_primary_identifiers_skipped']
           assert data['new_public_scout_candidates']==0
           assert data['new_private_discovery_hub_imports']==0
           assert data['new_reach_additions']==0

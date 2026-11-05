@@ -24,6 +24,10 @@ ROOT=Path(__file__).resolve().parents[2]
 OUT=ROOT/"scout-operations/index-and-project-discovery-leads.json"
 SELECT="DOI,title,URL,type,created,updated,indexed,published-print,published-online,funder,relation"
 CROSSREF="https://api.crossref.org/works"
+NOAA_PRIMARY=re.compile(r"^NA\d{2}(?:OAR|NWS)[A-Z0-9-]{7,}$",re.I)
+
+def valid_noaa_primary(award):
+    return bool(NOAA_PRIMARY.fullmatch(str(award or "").strip()))
 STOP=set("and the of for in to on with by from a an at as based using through toward improving advance research development forecasting forecast weather climate observations modeling system systems project methods new applications".split())
 
 def prev_month(today=None):
@@ -136,8 +140,10 @@ def generate(month,*,pilot=False,awards=None,index=None,preprints=None,
     if preprints is None:
         watch=json.loads((ROOT/"scout-operations/preprint-watchlist.json").read_text())
         preprints={norm_doi(e.get("preprint_doi")) for e in watch["entries"]}
-    selected=awards[:5] if pilot else awards
-    if not selected:raise ValueError("Empty verified SPARK primary-award catalogue")
+    valid_awards=[a for a in awards if valid_noaa_primary(a.get("award"))]
+    skipped_awards=[a["award"] for a in awards if not valid_noaa_primary(a.get("award"))]
+    selected=valid_awards[:5] if pilot else valid_awards
+    if not selected:raise ValueError("No valid, full NOAA primary award identifiers in SPARK catalogue")
     provenance={}
     by_key={}
     pages_complete=0
@@ -155,7 +161,7 @@ def generate(month,*,pilot=False,awards=None,index=None,preprints=None,
                 ids=by_key[key]["source_context"]["matching_primary_spark_award_numbers"]
                 if award not in ids:ids.append(award)
         pages_complete+=1
-    projects=project_search_plan(awards,max_projects)
+    projects=project_search_plan(valid_awards,max_projects)
     for project in projects:
         for work,overlap in query_project_titles(project):
             d=norm_doi(work.get("DOI"))
@@ -180,6 +186,9 @@ def generate(month,*,pilot=False,awards=None,index=None,preprints=None,
         "run_mode":"PILOT" if pilot else "MONTHLY_COMPLETE_AWARD_COVERAGE",
         "month":month,"index_date_start":start,"index_date_end":end,
         "spark_primary_awards_in_catalog":len(awards),
+        "valid_noaa_primary_awards_in_catalog":len(valid_awards),
+        "non_normalized_primary_identifiers_skipped":len(skipped_awards),
+        "non_normalized_primary_identifier_examples":skipped_awards[:12],
         "spark_primary_awards_queried":len(selected),
         "spark_source_sha256":source_sha,
         "project_context_queries":len(projects),
