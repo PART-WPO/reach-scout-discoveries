@@ -1,0 +1,61 @@
+{
+  "schema": "reach-scout-append-only-research-evidence-v1",
+  "observed_at": "2026-11-05T13:28:34-05:00",
+  "lane": "historical_original_reconciliation_provenance",
+  "purpose": "Targeted evidence-gate audit of two previously declared no_action Crossref originals, preserving terminal statuses; this is NOT a new original disposition or independent expansion investigation.",
+  "cases": [
+    {
+      "doi": "10.1007/s12035-019-01667-w",
+      "prior_evidence": "scout-operations/historical-crossref-phase2/2026-11-05-1125ET-biomedical-immutable-source-attribution-audit.json",
+      "source_batch": "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part001.csv",
+      "source_award_field": "UNK",
+      "proposed_project": "Application and Evaluation of the Finite-Volume Cubed Sphere Model (FV3) at Convection-Allowing Scales for Severe Weather Forecasting",
+      "distinct_provenance_finding": "Original harvest's proposed project title does not establish a literal SPARK primary award: source award field UNK. Earlier biomedical publisher/institutional evidence also fails to establish a WPO project bridge.",
+      "declared_status": "no_action",
+      "required_evidence_still_missing": [
+        "funding_basis_12_chars",
+        "reach_snapshot_sha",
+        "related_outputs_checked_12_chars",
+        "verified_award_alignment"
+      ],
+      "decision_preview": "BOUNDED_HOLD_UNVERIFIED_PRIMARY_AWARD_AND_PROJECT_ATTRIBUTION",
+      "next_action": "Human assessment of upstream harvest award assignment; do not invent funding or re-run generic biomedical title searches."
+    },
+    {
+      "doi": "10.1007/s00330-020-07133-9",
+      "prior_evidence": "scout-operations/historical-crossref-phase2/2026-11-05-1125ET-biomedical-immutable-source-attribution-audit.json",
+      "source_batch": "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part001.csv",
+      "source_award_field": "UNK",
+      "proposed_project": "Application and Evaluation of the Finite-Volume Cubed Sphere Model (FV3) at Convection-Allowing Scales for Severe Weather Forecasting",
+      "distinct_provenance_finding": "Original harvest has no verifiable primary award despite assigning the FV3 project; cardiovascular imaging evidence does not corroborate project identity.",
+      "declared_status": "no_action",
+      "required_evidence_still_missing": [
+        "funding_basis_12_chars",
+        "reach_snapshot_sha",
+        "related_outputs_checked_12_chars",
+        "verified_award_alignment"
+      ],
+      "decision_preview": "BOUNDED_HOLD_UNVERIFIED_PRIMARY_AWARD_AND_PROJECT_ATTRIBUTION",
+      "next_action": "Human assessment of harvest provenance only if concrete new source evidence; do not automatically close."
+    }
+  ],
+  "snapshot": {
+    "routing_source_sha256": "799744c7e83f218d22cc19afacb7cfcf2762feb490659efde9f58bf19473b1fa",
+    "reach_cache_sha256": "6660562e325a6a141198f59acce84f2e30d9a2d14e6cf5acd29769c8a4b68e1e",
+    "bulk_counts": {
+      "confirmed": 433,
+      "identity_review": 47,
+      "index_negative": 134
+    },
+    "live_manifest_hash_recalculated": false
+  },
+  "source_documents": [
+    "scout-operations/historical-crossref-reconciliation-exceptions.json",
+    "scout-operations/research-evidence-coverage.json",
+    "scout-operations/decision-contract-v1.md"
+  ],
+  "private_hub_history": "NOT_VERIFIED",
+  "original_terminal_statuses_modified": false,
+  "expansion_seeds": "OPEN_UNCHANGED",
+  "candidate_staged": false
+}
