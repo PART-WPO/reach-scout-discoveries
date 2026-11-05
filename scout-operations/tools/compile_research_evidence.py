@@ -40,6 +40,8 @@ def evidence_urls(obj):
                 visit(v)
         elif isinstance(item, dict):
             for k, v in item.items():
+                if k == "source" and isinstance(v, str) and v.startswith("https://"):
+                    visit(v)
                 if k in ("url", "checked_sources", "verified_sources", "evidence",
                          "sources", "new_evidence", "additional_primary_source",
                          "distinct_source", "link", "source_url", "checked_url",
@@ -73,15 +75,30 @@ def build(root=ROOT):
     grouped = defaultdict(list)
     unlinked = []
     for path in files:
-        doc = read(path)
-        raw = doc.get("original_doi")
-        doi = norm_doi(raw)
-        if not doi:
+        parent = read(path)
+        if isinstance(parent.get("cases"), list):
+            # Multi-DOI audit notes are independent original cases. Never
+            # attach one case's funding or source evidence to another DOI.
+            docs = [entry for entry in parent["cases"] if isinstance(entry, dict)]
+            if len(docs) != len(parent["cases"]):
+                raise ValueError("Malformed nested evidence case: "+str(path))
+            records = [(entry.get("doi"),entry) for entry in docs]
+        else:
+            raw = parent.get("original_doi")
+            if not raw and parent.get("lane") == "historical_crossref_original":
+                raw = parent.get("doi")
+            records = [(raw,parent)]
+        linked=0
+        for raw, doc in records:
+            doi = norm_doi(raw)
+            if not doi:
+                continue
+            if str(raw).lower().removeprefix("doi:").strip() != doi:
+                raise ValueError("Ambiguous original DOI in "+str(path))
+            grouped[doi].append((path,doc))
+            linked += 1
+        if not linked:
             unlinked.append(path.relative_to(root).as_posix())
-            continue
-        if str(raw).lower().removeprefix("doi:").strip() != doi:
-            raise ValueError("Ambiguous original DOI in "+str(path))
-        grouped[doi].append((path, doc))
 
     # Use SHA-verified source manifest parsing rather than copying titles from
     # non-authoritative research narratives. Cases MUST be source-originals.
