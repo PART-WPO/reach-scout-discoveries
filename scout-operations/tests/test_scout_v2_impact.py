@@ -13,12 +13,16 @@ class ReportingTests(unittest.TestCase):
     def test_stage_separation_and_source_consistency(self):
         x=build()
         p=x["pipeline"]
-        self.assertEqual(p["historical_crossref_screened"],614)
-        self.assertEqual(p["verified_existing_reach_public_identities"],433)
-        self.assertEqual(p["ambiguous_reach_identification"],47)
-        self.assertEqual(p["index_negative_originals_pending_funding"],134)
-        self.assertEqual(p["distinct_crossref_expansions_verified_complete"],0)
-        self.assertEqual(p["terminal_dispositions_under_evidence_repair"],12)
+        source=json.loads((Path(__file__).resolve().parents[1]/
+            "scout-operational-scorecard.json").read_text())
+        repair=json.loads((Path(__file__).resolve().parents[1]/
+            "reconciliation-repair-worklist.json").read_text())
+        self.assertEqual(p["historical_crossref_screened"],source["reach_screening"]["historical_crossref_source_dois"])
+        self.assertEqual(p["verified_existing_reach_public_identities"],source["reach_screening"]["confirmed_reach"])
+        self.assertEqual(p["ambiguous_reach_identification"],source["reach_screening"]["likely_reach_needs_bounded_check"])
+        self.assertEqual(p["index_negative_originals_pending_funding"],source["reach_screening"]["not_found_in_index_needs_research"])
+        self.assertEqual(p["distinct_crossref_expansions_verified_complete"],source["separate_doi_expansion"]["historical_crossref_completed_verified"])
+        self.assertEqual(p["terminal_dispositions_under_evidence_repair"],repair["unverified_terminal_cases"])
         self.assertEqual(p["private_hub_imports"],"NOT_VERIFIED")
         self.assertEqual(p["verified_new_public_reach_additions_from_scout"],"NOT_VERIFIED")
         self.assertEqual(x["reviewer_quality"]["target_human_decisions_per_week"],20)
