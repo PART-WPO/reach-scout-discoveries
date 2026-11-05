@@ -1,0 +1,124 @@
+name: Scout evidence-to-decision closeout
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scout-operations/historical-crossref-phase2/*.json'
+      - 'scout-operations/tools/compile_research_evidence.py'
+      - 'scout-operations/tools/summarize_research_decisions.py'
+      - 'scout-operations/tools/build_operational_scorecard.py'
+      - 'scout-operations/tools/reconcile_historical.py'
+      - 'scout-operations/tools/reconcile_historical_crossref.py'
+      - '.github/workflows/scout-research-decision-closeout.yml'
+permissions:
+  contents: write
+concurrency:
+  group: scout-evidence-decision-closeout
+  cancel-in-progress: false
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify shared Scout decision and reconciliation code
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check requests
+          python -m unittest discover -v -s scout-operations/tests
+      - name: Reconcile evidence and publish immutable decision checkpoints
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3 4 5; do
+            echo "Fresh-checkout closeout attempt ${attempt}/5"
+            git fetch origin main
+            git checkout -B main origin/main
+            python - <<'PY'
+          import hashlib, json, urllib.request
+          from pathlib import Path
+          cache=json.loads(Path("scout-operations/reach-comparison-cache/comparison-index.json").read_text())
+          url="https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json"
+          with urllib.request.urlopen(url,timeout=45) as response:
+              live=response.read()
+          digest=hashlib.sha256(live).hexdigest()
+          if digest!=cache["source_manifest_sha256"]:
+              raise SystemExit("STALE REACH SNAPSHOT: refresh verified REACH cache before closeout")
+          print("REACH source manifest SHA verified", digest)
+          PY
+            python scout-operations/tools/reconcile_historical.py
+            python scout-operations/tools/reconcile_historical_crossref.py
+            python scout-operations/tools/decision_pipeline.py build-index
+            python scout-operations/tools/compile_research_evidence.py
+            python scout-operations/tools/decision_pipeline.py evaluate --cases scout-operations/research-decision-cases.json
+            python scout-operations/tools/summarize_research_decisions.py
+            python scout-operations/tools/select_workstream.py
+            python scout-operations/tools/build_operational_scorecard.py
+            python - <<'PY'
+          import json,subprocess
+          from pathlib import Path
+          def val(p):return json.loads(Path(p).read_text())
+          for stem in ("historical","historical-crossref"):
+              p="scout-operations/"+stem+"-triage.json"
+              original=json.loads(subprocess.check_output(["git","show","HEAD:"+p]))
+              current=val(p)
+              before={x["identity"]:x for x in original["entries"]}
+              after={x["identity"]:x for x in current["entries"]}
+              if before.keys()!=after.keys():
+                  raise SystemExit("STOP: original source identities changed unexpectedly in "+stem)
+              for key in before:
+                  for field in ("status","seed_expansion_status","human_decision","scout_batch_path"):
+                      if before[key].get(field)!=after[key].get(field):
+                          raise SystemExit("STOP: protected original/human status changed: "+key+" "+field)
+          route=val("scout-operations/historical-crossref-screening/actionable-routing.json")
+          summary=val("scout-operations/scout-operational-scorecard.json")
+          assert route["total"]==summary["reach_screening"]["historical_crossref_source_dois"]
+          assert summary["review_pipeline"]["private_discovery_hub_imports"]=="NOT_VERIFIED"
+          assert summary["original_research"]["historical_crossref_unverified_declared_completed"]>=0
+          print("Closed validated research checkpoint pass without changing original or human statuses")
+          PY
+            git add scout-operations/historical-coverage.json \
+              scout-operations/historical-crossref-coverage.json \
+              scout-operations/historical-reconciliation-exceptions.json \
+              scout-operations/historical-crossref-reconciliation-exceptions.json \
+              scout-operations/identity-cache/public-identity-index.json \
+              scout-operations/research-decision-cases.json \
+              scout-operations/research-evidence-coverage.json \
+              scout-operations/research-decision-rollup.json \
+              scout-operations/scout-operational-scorecard.json \
+              scout-operations/active-workstream.json \
+              scout-operations/case-checkpoints
+            if git diff --cached --quiet; then
+              echo "No new evidence-to-decision changes"
+              exit 0
+            fi
+            git commit -m "Reconcile Scout research evidence to verified DOI decision checkpoints"
+            if git push origin HEAD:main; then
+              echo "Published validated decision checkpoints at $(git rev-parse HEAD)"
+              exit 0
+            fi
+            echo "Concurrent source update; recheck source SHA and rerun decision pipeline"
+            sleep $((attempt * 2))
+          done
+          echo "::error::Unable to publish evidence-to-decision closeout after retries"
+          exit 1
+      - name: Export concise research review dashboard
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scout-research-decision-closeout
+          path: |
+            scout-operations/historical*-reconciliation-exceptions.json
+            scout-operations/research-decision-rollup.json
+            scout-operations/scout-operational-scorecard.json
+          if-no-files-found: warn
