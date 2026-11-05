@@ -11,6 +11,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 from decision_pipeline import build_index, check_index_fresh, checked_csv, evaluate, norm_doi, norm_title
+from reviewer_feedback_guard import known_feedback_by_doi, reviewer_hold_for_proposal
 
 ROOT = Path(__file__).resolve().parents[2]
 DEST = ROOT/"scout-operations/unified-source-preflight.json"
@@ -121,6 +122,8 @@ def preflight(root=ROOT):
     index=build_index(root)
     check_index_fresh(root,index)
     watch,watch_sha=load(root,"scout-operations/preprint-watchlist.json")
+    reviewer_feedback,feedback_sha=load(root,"scout-operations/research-feedback.json")
+    feedback=known_feedback_by_doi(root)
     preprints={norm_doi(e.get("preprint_doi")) for e in watch["entries"]}
     monthly_triage, mt_sha=load(root,"scout-operations/monthly-triage.json")
     historical_triage, ht_sha=load(root,"scout-operations/historical-triage.json")
@@ -137,7 +140,7 @@ def preflight(root=ROOT):
     recorded_historical=link_map(historical_triage["entries"])
     recorded_crossref=link_map(research["cases"])
     records=[]
-    sha_sources={"preprint_watchlist":watch_sha,"monthly_triage":mt_sha,
+    sha_sources={"preprint_watchlist":watch_sha,"reviewer_feedback":feedback_sha,"monthly_triage":mt_sha,
         "historical_datacite_triage":ht_sha,"crossref_research_cases":research_sha,
         "monthly_related_leads":related_sha,"independent_leads":independent_sha,
         "crossref_routing":routing_sha,"historical_crossref_manifest":cross_sha}
@@ -188,6 +191,7 @@ def preflight(root=ROOT):
             evaluated,bulk,bulk_uid,case["doi"])
         counts[(lane,decision)]+=1
         by_doi[case["doi"]].add(lane)
+        existing_review=reviewer_hold_for_proposal(case["doi"],feedback)
         rows.append({"doi":case["doi"],"discovery_lane":lane,
             "source_batch":source_batch,"raw_source_identity":raw_identity,
             "recorded_status_unchanged":recorded_status,
@@ -197,7 +201,10 @@ def preflight(root=ROOT):
             "source_awards_are_unverified_hints":raw_awards,
             "publication_status":case["publication_status"],
             "identity_match_status":evaluated["identity_check"]["status"],
-            "private_review_status":"NOT_VERIFIED",
+            "private_review_status":("SIGNED_PRIVATE_REVIEW_EVENT_PRESENT"
+                                     if existing_review else "NOT_VERIFIED"),
+            "authenticated_prior_review_event_id":existing_review["review_event_id"] if existing_review else None,
+            "authenticated_prior_review_code":existing_review["last_private_review_code"] if existing_review else None,
             "review_state_modified":False,"automatically_staged":False,
             "original_disposition_changed":False,"seed_expansion_closed":False,
             "evidence_input_sha256":hashlib.sha256(json.dumps(case,sort_keys=True).encode()).hexdigest()})
@@ -214,6 +221,7 @@ def preflight(root=ROOT):
         "crossref_bulk_confirms_after_version_guard":sum(
             r["effective_identity_or_preflight"]=="EXISTING_IN_REACH_VERIFIED_BULK"
             for r in rows if r["discovery_lane"]=="historical_crossref"),
+        "authenticated_private_review_event_dois":len(feedback),
         "changes_to_human_dispositions":0,"new_public_review_proposals":0,"new_reach_additions":0,
         "note":"Single shared SHA-verified public identity and decision engine across source modes, with an independent trusted official NOAA IR REACH URL gate. Input-only source award and date hints never establish funding or official publication, and already published reviewer rows remain unchanged.",
         "cases":rows}
