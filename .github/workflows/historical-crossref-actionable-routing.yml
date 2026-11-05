@@ -9,6 +9,10 @@ on:
       - 'scout-operations/tests/test_historical_crossref_title_normalization.py'
       - 'scout-operations/tests/test_bulk_reach_dedup.py'
       - 'scout-operations/tools/bulk_reach_dedup.py'
+      - 'scout-operations/tools/build_expansion_relevance.py'
+      - 'scout-operations/expansion-scope-reconsiderations.json'
+      - 'scout-operations/monthly-expansion-leads.json'
+      - 'scout-operations/independent-discovery-leads.json'
       - 'scout-operations/tools/decision_pipeline.py'
       - 'scout-operations/historical-crossref-screening/manifest.json'
       - 'scout-operations/reach-comparison-cache/comparison-index.json'
@@ -55,7 +59,9 @@ jobs:
             python -m unittest discover -s scout-operations/tests -p 'test_historical_crossref_title_normalization.py' -v
             python -m unittest discover -s scout-operations/tests -p 'test_bulk_reach_dedup.py' -v
             python -m unittest discover -s scout-operations/tests -p 'test_select_workstream.py' -v
+            python -m unittest discover -s scout-operations/tests -p 'test_expansion_relevance.py' -v
             python scout-operations/historical-crossref-screening/build_actionable_routing.py
+            python scout-operations/tools/build_expansion_relevance.py
             python scout-operations/tools/build_operational_scorecard.py
             python scout-operations/tools/select_workstream.py
             python - <<'PY'
@@ -99,9 +105,16 @@ jobs:
           assert workstream["historical_crossref_api"]["originals_pending_first_pass"]==0
           assert workstream["historical_crossref_api"]["identity_verified_existing_reach"]==j["counts"]["CONFIRMED_IN_REACH"]
           assert workstream["historical_crossref_api"]["identity_needs_bounded_review"]==j["counts"]["LIKELY_IN_REACH"]
-          print("Validated routing:",j["counts"],"Scout overlaps:",j["scout_overlap_flagged"])
+          relevance=json.loads(Path("scout-operations/expansion-relevance-priority.json").read_text())
+          rc=relevance["historical_crossref"]["counts"]
+          assert sum(rc.values())==j["total"]
+          assert rc["PRIORITIZE_VERIFIED_WPO_SEED"]==j["counts"]["CONFIRMED_IN_REACH"]
+          assert workstream["historical_crossref_api"]["seed_relevance_priority_counts"]==rc
+          assert score["separate_doi_expansion"]["relevance_priority_counts"]==rc
+          assert relevance["seed_expansion_closures"]==0
+          print("Validated routing:",j["counts"],"scope priorities:",rc)
           PY
-            git add scout-operations/historical-crossref-screening/actionable-routing.json scout-operations/scout-operational-scorecard.json scout-operations/active-workstream.json
+            git add scout-operations/historical-crossref-screening/actionable-routing.json scout-operations/expansion-relevance-priority.json scout-operations/scout-operational-scorecard.json scout-operations/active-workstream.json
             if git diff --cached --quiet; then
               echo "Routing already current"
               exit 0
