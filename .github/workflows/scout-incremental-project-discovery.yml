@@ -1,0 +1,113 @@
+name: Scout Crossref indexed-updates and SPARK project leads
+on:
+  pull_request:
+    paths:
+      - 'api-discoveries/tools/incremental_crossref.py'
+      - 'scout-operations/tests/test_incremental_crossref_discovery.py'
+      - '.github/workflows/scout-incremental-project-discovery.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'api-discoveries/tools/incremental_crossref.py'
+      - '.github/workflows/scout-incremental-project-discovery.yml'
+  schedule:
+    # Independent, research-only metadata-changes pass on the 1st of every
+    # month (including weekends). Existing 00:01 UTC monthly intake unchanged.
+    - cron: '30 7 1 * *'
+  workflow_dispatch:
+    inputs:
+      run_mode:
+        description: "Research-only pilot or full SPARK primary-award catalog"
+        required: true
+        default: pilot
+        type: choice
+        options: [pilot, full]
+permissions:
+  contents: write
+concurrency:
+  group: scout-crossref-index-update-research
+  cancel-in-progress: false
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install existing Crossref REST dependency
+        run: python -m pip install --disable-pip-version-check requests
+      - name: Validate zero-staging indexed update and award-free project research rules
+        run: |
+          python -m py_compile api-discoveries/tools/incremental_crossref.py
+          python -m unittest discover -v -s scout-operations/tests -p 'test_incremental_crossref_discovery.py'
+          python -m unittest discover -v -s scout-operations/tests -p 'test_unified_source_preflight.py'
+      - name: Perform bounded public research and persist immutable DOI leads
+        if: github.event_name != 'pull_request'
+        shell: bash
+        env:
+          EVENT_KIND: ${{ github.event_name }}
+          USER_MODE: ${{ inputs.run_mode }}
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          MODE=pilot
+          if [ "$EVENT_KIND" = schedule ] || [ "$USER_MODE" = full ]; then
+            MODE=full
+          fi
+          MONTH=$(python - <<'PY'
+          import datetime as dt
+          today=dt.datetime.now(dt.timezone.utc).date().replace(day=1)
+          print((today-dt.timedelta(days=1)).strftime('%Y-%m'))
+          PY
+          )
+          echo "Research-only incremental Crossref window $MONTH mode $MODE"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git checkout -B main origin/main
+            if [ "$MODE" = pilot ]; then
+              python api-discoveries/tools/incremental_crossref.py --month "$MONTH" --pilot
+            else
+              python api-discoveries/tools/incremental_crossref.py --month "$MONTH" --max-pages 10
+            fi
+            python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          pointer=json.loads(Path('scout-operations/index-and-project-discovery-leads.json').read_text())
+          source=Path(pointer['latest_path'])
+          assert source.is_file()
+          assert hashlib.sha256(source.read_bytes()).hexdigest()==pointer['latest_sha256']
+          data=json.loads(source.read_text())
+          assert data['complete_selected_awards']
+          assert data['spark_primary_awards_queried']==(5 if pointer['pilot'] else data['spark_primary_awards_in_catalog'])
+          assert data['new_public_scout_candidates']==0
+          assert data['new_private_discovery_hub_imports']==0
+          assert data['new_reach_additions']==0
+          assert all(not x['candidate_staged'] and x['private_hub_import']=='NOT_VERIFIED' for x in data['leads'])
+          print('Verified complete non-staging Crossref research lead file:',pointer)
+          PY
+            git add scout-operations/index-and-project-discovery-leads.json api-discoveries/index-update-runs
+            if git diff --cached --quiet; then
+              echo "Identical immutable research output already published"
+              exit 0
+            fi
+            git commit -m "Seed public Scout research from changed Crossref metadata and SPARK project context"
+            if git push origin HEAD:main; then exit 0; fi
+            echo "::warning::Concurrent source update; refresh sources before retry"
+            sleep $((attempt * 3))
+          done
+          echo "::error::Unable to save verified research leads after bounded retries"
+          exit 1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: scout-index-update-project-leads
+          path: |
+            scout-operations/index-and-project-discovery-leads.json
+            api-discoveries/index-update-runs/*.json
+          if-no-files-found: warn
