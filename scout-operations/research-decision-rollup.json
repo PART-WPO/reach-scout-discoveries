@@ -1,0 +1,76 @@
+{
+  "schema": "reach-scout-research-decision-rollup-v1",
+  "source_cases_sha256": "ceb017a0a6b70de0abe3d9a17b283d8d2d864b839159eb0af4db7c319145c711",
+  "identity_index_fingerprint": "929564941feb9dd5c69742c87988b98bbc92befa99b648f2aea5d4de695ff122",
+  "cases_evaluated": 5,
+  "decision_counts": {
+    "EXISTING_IN_REACH": 1,
+    "PREPRINT_HOLD": 2,
+    "PUBLICATION_STATUS_UNVERIFIED": 2
+  },
+  "next_action_counts": {
+    "BOUNDED_RESEARCH_COMPLETE_NEEDS_HUMAN_ASSESSMENT": 1,
+    "MONTHLY_PREPRINT_WATCHLIST": 2,
+    "TARGETED_RESEARCH_OR_IDENTITY_VERIFICATION": 1,
+    "VERIFY_EXISTING_ORIGINAL_IN_LEDGER_KEEP_EXPANSION_OPEN": 1
+  },
+  "private_hub_import": "NOT_VERIFIED",
+  "human_approvals": "NOT_VERIFIED",
+  "public_reach_additions": "NOT_VERIFIED",
+  "automatically_staged": 0,
+  "original_terminal_statuses_modified": 0,
+  "expansion_seed_closures": 0,
+  "note": "Conservative research evidence processing only. Formal triage terminal closure requires independent proofs; no automatic human handoff is implied.",
+  "cases": [
+    {
+      "doi": "10.1002/essoar.10504829.1",
+      "decision": "PREPRINT_HOLD",
+      "research_rounds": 1,
+      "next_action": "MONTHLY_PREPRINT_WATCHLIST",
+      "checkpoint_path": "scout-operations/case-checkpoints/doi-795c087948114480/rev-d4beec26bc2e1fab8084.json",
+      "expansion_status": "UNCHANGED_RESEARCH_SEED",
+      "public_scout_candidate_created": false,
+      "private_hub_decision": "NOT_VERIFIED"
+    },
+    {
+      "doi": "10.1002/essoar.10507067.1",
+      "decision": "EXISTING_IN_REACH",
+      "research_rounds": 2,
+      "next_action": "VERIFY_EXISTING_ORIGINAL_IN_LEDGER_KEEP_EXPANSION_OPEN",
+      "checkpoint_path": "scout-operations/case-checkpoints/doi-b9a45d41df4214e0/rev-87da7900951a04c5bdde.json",
+      "expansion_status": "UNCHANGED_RESEARCH_SEED",
+      "public_scout_candidate_created": false,
+      "private_hub_decision": "NOT_VERIFIED"
+    },
+    {
+      "doi": "10.1002/essoar.10507281.1",
+      "decision": "PREPRINT_HOLD",
+      "research_rounds": 2,
+      "next_action": "MONTHLY_PREPRINT_WATCHLIST",
+      "checkpoint_path": "scout-operations/case-checkpoints/doi-4d2e438d49207029/rev-2c97236ccc4e5546c421.json",
+      "expansion_status": "UNCHANGED_RESEARCH_SEED",
+      "public_scout_candidate_created": false,
+      "private_hub_decision": "NOT_VERIFIED"
+    },
+    {
+      "doi": "10.1007/s00382-022-06655-w",
+      "decision": "PUBLICATION_STATUS_UNVERIFIED",
+      "research_rounds": 1,
+      "next_action": "TARGETED_RESEARCH_OR_IDENTITY_VERIFICATION",
+      "checkpoint_path": "scout-operations/case-checkpoints/doi-0bcfa0305be128e4/rev-84ff3b6ccff6315c6be6.json",
+      "expansion_status": "UNCHANGED_RESEARCH_SEED",
+      "public_scout_candidate_created": false,
+      "private_hub_decision": "NOT_VERIFIED"
+    },
+    {
+      "doi": "10.1007/s10606-020-09380-2",
+      "decision": "PUBLICATION_STATUS_UNVERIFIED",
+      "research_rounds": 2,
+      "next_action": "BOUNDED_RESEARCH_COMPLETE_NEEDS_HUMAN_ASSESSMENT",
+      "checkpoint_path": "scout-operations/case-checkpoints/doi-2b530fa8e45c7d4e/rev-628f5c65c694da8bbbb9.json",
+      "expansion_status": "UNCHANGED_RESEARCH_SEED",
+      "public_scout_candidate_created": false,
+      "private_hub_decision": "NOT_VERIFIED"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "schema": "reach-scout-operational-scorecard-v1",
+  "source_sha256": {
+    "actionable_routing": "e76c0fb48abd9da86a038f37d2b1c6630763ff6b28286c483f8ea7f12440ed8a",
+    "crossref_research_coverage": "92d36650e2077bbfc4a8f27d2f166be40b6c3831b7dd33ffdbd5fafef7057860",
+    "datacite_research_coverage": "f0d440a18f983a07bef10c16047d9dfae2d67039178a22f56294d935403cfb59",
+    "crossref_reconciliation_exceptions": "c25fe9a5a115f6c28939ed0346362f36c1b5ab65f667e9d8a5653f634ac28713",
+    "datacite_reconciliation_exceptions": "10bbe8c7b6cfdb0a8de31fb9d9f4e223942ab23010d6b5c802e57f902940dcab",
+    "research_decision_rollup": "47d7b628167e5234affb852a478c853f159e50c82b7099e70c8573b8c1154fe3",
+    "scout_published_manifest": "755885a5c5607f5036bf1a9b7cf28248c2be9442d68edfbdc167e58ebd1fab54",
+    "shared_identity_index": "e757799ea79756810c80a8512626363eb877dd8836217ad0ca9c0b3dcd0a15f2",
+    "preprint_watchlist": "0117c1b769869d743cdc84a2f0aa3d9725e5b4c8d54cad56a60cb70789a70e1d"
+  },
+  "reach_screening": {
+    "historical_crossref_source_dois": 614,
+    "confirmed_reach": 1,
+    "likely_reach_needs_bounded_check": 479,
+    "not_found_in_index_needs_research": 134,
+    "screening_incomplete": 0,
+    "scout_overlap_hints": 30
+  },
+  "original_research": {
+    "historical_crossref_completed_verified": 48,
+    "historical_crossref_unverified_declared_completed": 10,
+    "historical_datacite_completed_verified": 186,
+    "historical_datacite_unverified_declared_completed": 2,
+    "research_evidence_dois_evaluated": 5,
+    "research_evidence_decisions": {
+      "EXISTING_IN_REACH": 1,
+      "PREPRINT_HOLD": 2,
+      "PUBLICATION_STATUS_UNVERIFIED": 2
+    },
+    "research_evidence_next_actions": {
+      "BOUNDED_RESEARCH_COMPLETE_NEEDS_HUMAN_ASSESSMENT": 1,
+      "MONTHLY_PREPRINT_WATCHLIST": 2,
+      "TARGETED_RESEARCH_OR_IDENTITY_VERIFICATION": 1,
+      "VERIFY_EXISTING_ORIGINAL_IN_LEDGER_KEEP_EXPANSION_OPEN": 1
+    }
+  },
+  "separate_doi_expansion": {
+    "historical_crossref_completed_verified": 0,
+    "historical_crossref_pending": 614,
+    "research_evidence_note": "Evidence rounds and related DOI leads are not completed expansions."
+  },
+  "review_pipeline": {
+    "public_scout_staged_proposals": 83,
+    "public_scout_batches": 30,
+    "scout_inbox_draft_rows": 27,
+    "private_discovery_hub_imports": "NOT_VERIFIED",
+    "human_reviewer_decisions": "NOT_VERIFIED",
+    "public_reach_additions_from_scout": "NOT_VERIFIED",
+    "public_reach_total_records": 1238
+  },
+  "preprint_watchlist": {
+    "tracked": 41,
+    "on_hold": 9,
+    "verified_published_versions": 32
+  },
+  "reconciliation": {
+    "crossref_requires_evidence_repair": 10,
+    "datacite_requires_evidence_repair": 2,
+    "terminal_claims_automatically_overwritten": 0
+  },
+  "note": "Progress metrics are stage-specific and SHA-pinned. Private Hub status and public REACH additions are not inferred from the public Scout feed."
+}
