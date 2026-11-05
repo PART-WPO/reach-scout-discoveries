@@ -50,7 +50,7 @@ jobs:
       - name: Verify signed private exports and publish source-fresh signals
         if: github.event_name != 'pull_request'
         env:
-          SCOUT_FEEDBACK_HMAC_KEY: \${{ secrets.SCOUT_FEEDBACK_HMAC_KEY }}
+          SCOUT_FEEDBACK_HMAC_KEY: ${{ secrets.SCOUT_FEEDBACK_HMAC_KEY }}
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
