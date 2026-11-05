@@ -1,0 +1,36 @@
+name: Validate monthly shared identity preflight
+on:
+  pull_request:
+    paths:
+      - 'scout-operations/tools/quick_monthly_intake.py'
+      - 'scout-operations/tests/test_quick_monthly_intake.py'
+      - '.github/workflows/validate-monthly-shared-identity.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile and run full Scout behavioral regression suite
+        run: |
+          python -m pip install --disable-pip-version-check requests
+          python -m py_compile scout-operations/tools/quick_monthly_intake.py
+          python -m unittest discover -v -s scout-operations/tests
+      - name: Verify common source preflight remains unchanged
+        run: |
+          python scout-operations/tools/unified_source_preflight.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('scout-operations/unified-source-preflight.json').read_text())
+          assert d['original_and_related_cases_preflighted']==827
+          assert d['crossref_bulk_confirms_after_version_guard']==433
+          assert d['new_public_review_proposals']==d['changes_to_human_dispositions']==0
+          print('Validated no automatic staging and full cohort coverage')
+          PY

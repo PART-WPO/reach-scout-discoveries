@@ -16,6 +16,8 @@ import sys
 from html.parser import HTMLParser
 from pathlib import Path
 
+from decision_pipeline import build_index as shared_build_index, lookup as shared_lookup
+
 ROOT = Path(__file__).resolve().parents[2]
 DOI = re.compile(r"10\.\d{4,9}/[^\s\"'<>;,]+", re.I)
 AWARD = re.compile(r"(?<![A-Z0-9-])NA\d{2}[A-Z0-9]{7,}(?:-[A-Z0-9]+)*(?![A-Z0-9-])", re.I)
@@ -113,6 +115,31 @@ def match_reach(doi, title, url, index, details):
                             "match_basis": "exact_doi" if doi_hit else
                             ("normalized_title" if title_hit else "exact_url")})
     return list({x["reach_id"]: x for x in matches}.values())
+
+
+def shared_identity_route(public_result, shared_result, title):
+    """Resolve monthly public identities using the same Scout decision index.
+
+    The legacy full index+detail comparison is still an independent
+    precaution. Title-only, multiple REACH identities or differing versions
+    require a targeted identity review, not a final duplicate claim.
+    """
+    matched=public_result or []
+    shared=shared_result or {"status":"UNAVAILABLE","matches":[]}
+    reach=[m for m in shared.get("matches",[]) if m["source"]=="REACH"]
+    strong=[m for m in reach if {"exact_doi","exact_url"}.intersection(m["match_bases"])
+            and norm_title(m["title"])==norm_title(title)]
+    if (len(reach)==1 and len(strong)==1
+        and shared["status"]=="CONFIRMED_PUBLIC_REACH_IDENTITY"
+        and len({m["reach_id"] for m in matched})<=1):
+        return "already_in_reach"
+    if matched or reach:
+        return "reach_identity_review"
+    if shared["status"]=="IN_PUBLIC_SCOUT_QUEUE":
+        return "already_in_scout_or_inbox"
+    if any(m["source"].startswith("SCOUT_") for m in shared.get("matches",[])):
+        return "scout_identity_review"
+    return "no_public_identity_match"
 
 
 def check_funding(row, entry, spark):
@@ -332,6 +359,13 @@ def build(root, reach_root, spark_root, write_drafts=False):
     source = read_json(root / "api-discoveries/manifest.json")
     ledger = read_json(root / "scout-operations/monthly-triage.json")
     reach_index, reach_details, spark, reach_hash, spark_hash = load_external(reach_root, spark_root)
+    # Read-only shared DOI/URL/title index for all five discovery lanes.
+    # A stale REACH source must not certify a newly screened candidate.
+    shared_index=shared_build_index(root)
+    if shared_index["sources"]["reach_manifest_sha256"] != reach_hash:
+        if write_drafts:
+            raise ValueError("Monthly intake blocked: public REACH source SHA differs from shared verified identity cache")
+        shared_index=None
     published, _ = gather_feed(root, "", "scout-discoveries/manifest.json", None)
     inbox = []
     for file in (root / "scout-discoveries/inbox").glob("*.csv"):
@@ -366,17 +400,26 @@ def build(root, reach_root, spark_root, write_drafts=False):
             if not title:
                 raise ValueError("Monthly DOI has no title")
             found = match_reach(doi, title, raw.get("Output URL"), reach_index, reach_details)
+            shared = (shared_lookup(shared_index, doi, title, raw.get("Output URL"))
+                      if shared_index is not None else None)
+            identity_route = shared_identity_route(found, shared, title)
             funding_matches, funding_status, funding_issues = check_funding(raw, entry, spark)
             issues = list(funding_issues)
-            if found:
+            if identity_route == "already_in_reach":
                 status = "already_in_reach"
+            elif identity_route == "reach_identity_review":
+                status = "reach_identity_review"
+                issues.append("Possible REACH title, DOI or version identity overlap requires targeted comparison before a new-output proposal")
             elif is_preprint_on_hold(root, doi, raw.get("Scout Discovery Rationale", "")):
                 status = "preprint_watchlist_hold"
                 issues.append("Preprint DOI stays in the monthly Watchlist, not the Discovery Hub. A separately verified official journal DOI must complete normal REACH/Scout identity, funding, and metadata review.")
             elif (doi, entry["cohort"]) in staged_monthly_originals:
                 status = "staged_in_scout_feed"
-            elif doi in existing_dois or norm_title(title) in existing_titles:
+            elif doi in existing_dois or norm_title(title) in existing_titles or identity_route=="already_in_scout_or_inbox":
                 status = "already_in_scout_or_inbox"
+            elif identity_route == "scout_identity_review":
+                status = "scout_identity_review"
+                issues.append("A possible Scout queue title/version match needs focused review, not another public proposal")
             elif detect_version(entry, doi):
                 status = "cross_cohort_version_review"
                 issues.append("Existing DOI/version review must not be duplicated")
@@ -409,6 +452,9 @@ def build(root, reach_root, spark_root, write_drafts=False):
                       "status": status, "api_funding_basis": funding_status,
                       "funding_awards": raw.get("NOAA Award Number(s)", ""),
                       "reach_matches": found,
+                      "shared_public_identity_result":shared["status"] if shared else "SOURCE_SHA_NOT_RECONCILED",
+                      "shared_identity_route":identity_route,
+                      "shared_identity_index_fingerprint":shared_index["source_fingerprint"] if shared_index else None,
                       "metadata_missing": missing_after_recovery,
               "metadata_recovery_state": recovery_gate,
               "metadata_recovery_checks": len(recovery_checks),
