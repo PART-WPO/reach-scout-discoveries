@@ -293,6 +293,16 @@ def main():
         if (not route_path.exists() or
             relevance.get("source_routing_sha256")!=hashlib.sha256(route_path.read_bytes()).hexdigest()):
             relevance=None
+        else:
+            sources=(relevance.get("other_source_sha256") or {})
+            for field,relative in (
+                ("monthly_expansion_leads","scout-operations/monthly-expansion-leads.json"),
+                ("independent_discovery_leads","scout-operations/independent-discovery-leads.json"),
+                ("scope_reconsiderations","scout-operations/expansion-scope-reconsiderations.json")):
+                p=ROOT/relative
+                if not p.exists() or hashlib.sha256(p.read_bytes()).hexdigest()!=sources.get(field):
+                    relevance=None
+                    break
     result=decide(m,mc,h,hc,sha,
         monthly_triage=read("scout-operations/monthly-triage.json"),
         historical_triage=read("scout-operations/historical-triage.json"),
