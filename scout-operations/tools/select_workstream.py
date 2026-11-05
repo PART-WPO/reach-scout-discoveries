@@ -64,7 +64,7 @@ def decide(monthly_manifest,monthly_coverage,historical_manifest,historical_cove
            historical_manifest_sha="",monthly_triage=None,historical_triage=None,
            metadata_blockers=None,attribution_followups=None,monthly_expansion_leads=None,
            monthly_decision_queue=None,crossref_manifest=None,crossref_coverage=None,
-           crossref_triage=None,crossref_manifest_sha=""):
+           crossref_triage=None,crossref_manifest_sha="",crossref_routing=None):
     monthly_total=int((monthly_manifest or {}).get("candidate_rows",0))
     monthly_checked=int((monthly_coverage or {}).get("checked",0))
     monthly_received=int((monthly_coverage or {}).get("received",0))
@@ -134,6 +134,19 @@ def decide(monthly_manifest,monthly_coverage,historical_manifest,historical_cove
         crossref_coverage and c_matched and
         crossref_coverage.get("research_complete") is True and
         c_left==0 and c_done==c_total)
+    # Bulk screening is NOT original research completion. Use this verified
+    # identity snapshot to avoid unnecessary original publication re-research.
+    # The caller rechecks current cache and IR source hashes before supplying it.
+    r_counts=(crossref_routing or {}).get("counts") or {}
+    c_identity_ready=bool(c_matched and crossref_routing and
+        crossref_routing.get("source_manifest_sha256")==crossref_manifest_sha and
+        crossref_routing.get("total")==c_total and
+        sum(r_counts.values())==c_total and
+        all(isinstance(v,int) and v>=0 for v in r_counts.values()) and
+        set(r_counts)<={
+            "CONFIRMED_IN_REACH","LIKELY_IN_REACH",
+            "NOT_FOUND_IN_REACH_INDEX","SCREENING_INCOMPLETE"})
+    c_screened=c_total if c_identity_ready else 0
     # A scheduled future retry does not make an unresolved original DOI cleared.
     # New monthly intake always preempts historical research.
     if monthly_initial:
@@ -150,9 +163,19 @@ def decide(monthly_manifest,monthly_coverage,historical_manifest,historical_cove
     elif monthly_expansions_pending:
         mode,phase="monthly_api_triage","related_output_expansion_research"
         reason="Continue distinct API-seeded output leads with their own source and WPO funding validation; original seeds need not wait for expansion"
+    elif c_initial and c_identity_ready:
+        mode,phase="historical_crossref_triage","post_bulk_identity_triage"
+        reason=("The historical Crossref DOI identity screen is complete: "
+                +str(r_counts.get("CONFIRMED_IN_REACH",0))
+                +" verified public REACH identities can skip repeated original funding searches; "
+                +str(r_counts.get("LIKELY_IN_REACH",0))
+                +" require narrow version/identity checks; "
+                +str(r_counts.get("NOT_FOUND_IN_REACH_INDEX",0))
+                +" index-negative originals need Scout queue and WPO-funding investigation. "
+                "Formal original case completion and separate DOI-seeded expansions remain independent.")
     elif c_initial:
         mode,phase="historical_crossref_triage","initial_research"
-        reason="Expedited original Crossref DOI deduplication across full REACH and Scout, preserving every DOI as an expansion seed"
+        reason="Crossref research pending; first confirm fresh SHA-verified public identity routing before deeper case work"
     elif c_seed_pending or c_followup:
         mode,phase="historical_crossref_triage","seed_expansion_research"
         reason="Prioritize related-output research from historical Crossref seeds, including publications already in REACH"
@@ -204,7 +227,13 @@ def decide(monthly_manifest,monthly_coverage,historical_manifest,historical_cove
             "distinct_dois":c_total,"research_completed":c_done,
             "remaining_or_untracked":max(c_left,1 if c_unreconciled else 0),
             "coverage_matches_source_manifest":c_matched,
-            "originals_pending_first_pass":c_initial,
+            "originals_pending_first_pass":c_total-c_screened if c_identity_ready else c_initial,
+            "originals_pending_formal_research":c_initial,
+            "identity_screening_complete":c_identity_ready,
+            "identity_screened":c_screened,
+            "identity_verified_existing_reach":r_counts.get("CONFIRMED_IN_REACH",0) if c_identity_ready else 0,
+            "identity_needs_bounded_review":r_counts.get("LIKELY_IN_REACH",0) if c_identity_ready else 0,
+            "identity_index_negative_to_research":r_counts.get("NOT_FOUND_IN_REACH_INDEX",0) if c_identity_ready else 0,
             "seed_expansions_pending":c_seed_pending,
             "unresolved_followups":c_followup
         },
@@ -222,6 +251,18 @@ def main():
     c=read("api-discoveries/historical-crossref/manifest.json")
     cc=read("scout-operations/historical-crossref-coverage.json")
     csha=hashlib.sha256((ROOT/"api-discoveries/historical-crossref/manifest.json").read_bytes()).hexdigest() if c else ""
+    routing=read("scout-operations/historical-crossref-screening/actionable-routing.json")
+    # Routing is usable only against the exact current source, REACH cache
+    # and official NOAA IR DOI index; otherwise fall back to verification.
+    if routing:
+        sources=[
+            ("scout-operations/reach-comparison-cache/comparison-index.json","reach_cache_sha256"),
+            ("scout-operations/noaa-ir/manifest.json","noaa_ir_manifest_sha256")]
+        for relative,field in sources:
+            path=ROOT/relative
+            if not path.exists() or hashlib.sha256(path.read_bytes()).hexdigest()!=routing.get(field):
+                routing=None
+                break
     result=decide(m,mc,h,hc,sha,
         monthly_triage=read("scout-operations/monthly-triage.json"),
         historical_triage=read("scout-operations/historical-triage.json"),
@@ -231,7 +272,7 @@ def main():
         monthly_decision_queue=read("scout-operations/monthly-decision-queue.json"),
         crossref_manifest=c,crossref_coverage=cc,
         crossref_triage=read("scout-operations/historical-crossref-triage.json"),
-        crossref_manifest_sha=csha)
+        crossref_manifest_sha=csha,crossref_routing=routing)
     new=json.dumps(result,indent=2,sort_keys=True)+"\n"
     if not OUT.exists() or OUT.read_text(encoding="utf-8")!=new:
         OUT.write_text(new,encoding="utf-8")
