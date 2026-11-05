@@ -54,6 +54,7 @@ jobs:
           PY
             python -m unittest discover -s scout-operations/tests -p 'test_historical_crossref_title_normalization.py' -v
             python -m unittest discover -s scout-operations/tests -p 'test_bulk_reach_dedup.py' -v
+            python -m unittest discover -s scout-operations/tests -p 'test_select_workstream.py' -v
             python scout-operations/historical-crossref-screening/build_actionable_routing.py
             python scout-operations/tools/build_operational_scorecard.py
             python scout-operations/tools/select_workstream.py
