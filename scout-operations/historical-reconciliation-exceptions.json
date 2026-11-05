@@ -1,0 +1,28 @@
+{
+  "schema": "reach-scout-reconciliation-exceptions-v1",
+  "cohort": "historical_datacite",
+  "source_manifest_sha256": "b21e3b81cf47c3187eb851d1d2b5ec0200d8ed54970c01f871bbd8b96475921e",
+  "declared_unverified_terminal_count": 2,
+  "status": "REVIEW_REQUIRED",
+  "exceptions": [
+    {
+      "identity": "doi:10.17603/ds2-rgbs-xd77",
+      "declared_status": "metadata_update_forwarded",
+      "issue": "Terminal status lacks required independently verified proof",
+      "missing_evidence_requirements": [
+        "active_scout_feed_batch"
+      ],
+      "resolution": "Review missing evidence and human history; do not automatically clear"
+    },
+    {
+      "identity": "doi:10.17603/ds2-xjyf-nc93",
+      "declared_status": "metadata_update_forwarded",
+      "issue": "Terminal status lacks required independently verified proof",
+      "missing_evidence_requirements": [
+        "active_scout_feed_batch"
+      ],
+      "resolution": "Review missing evidence and human history; do not automatically clear"
+    }
+  ],
+  "note": "No terminal state or human decision is automatically changed. Unsupported terminal claims are excluded from validated completion."
+}
