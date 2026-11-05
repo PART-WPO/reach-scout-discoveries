@@ -123,6 +123,17 @@ def summarize(entries):
                 raise ValueError("Verified match not uniquely supported: " + doi)
             if not entry["matches"][0].get("title_hit"):
                 raise ValueError("Verified match lacks normalized title agreement: " + doi)
+            basis=gate.get("basis")
+            match=entry["matches"][0]
+            if basis=="EXACT_REACH_DOI_AND_TITLE":
+                if not match.get("doi_hit"):
+                    raise ValueError("Bulk DOI confirmation missing exact DOI hit: " + doi)
+            elif basis=="VERIFIED_NOAA_IR_DOI_TO_REACH_URL_AND_TITLE":
+                ir=(entry.get("noaa_ir_reach_check") or {})
+                if not match.get("official_ir_url_hit") or ir.get("status")!=IR_VERIFIED or ir.get("match_uid")!=match["reach_uid"]:
+                    raise ValueError("Bulk IR confirmation missing trusted canonical URL: " + doi)
+            else:
+                raise ValueError("Unsupported bulk evidence basis for confirmed DOI: " + doi)
             if gate["requires_human_identity_review"]:
                 raise ValueError("Verified identity unexpectedly marked for identity review: " + doi)
         elif gate.get("verified_reach_uid") is not None:
