@@ -8,7 +8,7 @@ import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
-from quick_monthly_intake import AWARD, clean, match_reach, check_funding, detect_version, gather_feed
+from quick_monthly_intake import AWARD, clean, match_reach, check_funding, detect_version, gather_feed, shared_identity_route
 
 class MonthlyQuickIntakeTests(unittest.TestCase):
     def test_html_title_markup_is_removed_not_invented(self):
@@ -25,6 +25,26 @@ class MonthlyQuickIntakeTests(unittest.TestCase):
                          "reach-1")
         self.assertEqual(match_reach("10.1234/absent","Not here",
                                     "https://doi.org/10.1234/absent",index,details), [])
+
+    def test_shared_identity_gate_accepts_only_unique_doi_or_url_with_matching_title(self):
+        base={"source":"REACH","title":"Complete WPO article","match_bases":["exact_doi","normalized_title"]}
+        shared={"status":"CONFIRMED_PUBLIC_REACH_IDENTITY","matches":[base]}
+        found=[{"reach_id":"reach-1","match_basis":"exact_doi"}]
+        self.assertEqual(shared_identity_route(found,shared,"Complete WPO article"),"already_in_reach")
+        conflict={"status":"CONFIRMED_PUBLIC_REACH_IDENTITY",
+                  "matches":[dict(base,title="Different article")]}
+        self.assertEqual(shared_identity_route(found,conflict,"Complete WPO article"),"reach_identity_review")
+        duplicates={"status":"CONFIRMED_PUBLIC_REACH_IDENTITY",
+                    "matches":[base,dict(base,title="Complete WPO article")]}
+        self.assertEqual(shared_identity_route(found,duplicates,"Complete WPO article"),"reach_identity_review")
+    def test_title_only_and_scout_queue_matches_are_not_new_proposals(self):
+        shared={"status":"POSSIBLE_PUBLIC_REACH_MATCH",
+                "matches":[{"source":"REACH","title":"Shared title","match_bases":["normalized_title"]}]}
+        self.assertEqual(shared_identity_route([],shared,"Shared title"),"reach_identity_review")
+        queued={"status":"IN_PUBLIC_SCOUT_QUEUE",
+                "matches":[{"source":"SCOUT_PUBLISHED","title":"Other","match_bases":["exact_doi"]}]}
+        self.assertEqual(shared_identity_route([],queued,"A title"),"already_in_scout_or_inbox")
+        self.assertEqual(shared_identity_route([],None,"A title"),"no_public_identity_match")
 
     def test_primary_award_is_needed_and_related_awards_are_ignored(self):
         row={"NOAA Award Number(s)":"NA22OAR4590179"}
