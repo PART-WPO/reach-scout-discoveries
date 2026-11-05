@@ -9,7 +9,8 @@
     "research_decision_rollup": "f5aa5bafa76116f6a2c2fbcef8248bb1bde8cec683d4e71828a5714a3d59e56c",
     "scout_published_manifest": "755885a5c5607f5036bf1a9b7cf28248c2be9442d68edfbdc167e58ebd1fab54",
     "shared_identity_index": "e757799ea79756810c80a8512626363eb877dd8836217ad0ca9c0b3dcd0a15f2",
-    "preprint_watchlist": "0117c1b769869d743cdc84a2f0aa3d9725e5b4c8d54cad56a60cb70789a70e1d"
+    "preprint_watchlist": "0117c1b769869d743cdc84a2f0aa3d9725e5b4c8d54cad56a60cb70789a70e1d",
+    "expansion_relevance": "d90e29c7bbb395f6574d5bb34b2ee51145dcbb8eb4d8a3f14cf58f82c8531e16"
   },
   "reach_screening": {
     "historical_crossref_source_dois": 614,
@@ -40,7 +41,21 @@
   "separate_doi_expansion": {
     "historical_crossref_completed_verified": 0,
     "historical_crossref_pending": 614,
-    "research_evidence_note": "Evidence rounds and related DOI leads are not completed expansions."
+    "relevance_priority_counts": {
+      "DEFER_UNTIL_NEW_PROJECT_EVIDENCE": 2,
+      "PRIORITIZE_VERIFIED_WPO_SEED": 433,
+      "VERIFY_WPO_PROJECT_SCOPE_FIRST": 179
+    },
+    "monthly_discovered_lead_priority_counts": {
+      "EXISTING_REACH_LEAD_RECORDED": 3,
+      "PRESERVE_CURRENT_HUMAN_HANDOFF": 3
+    },
+    "independent_discovered_lead_priority_counts": {
+      "DEFER_UNTIL_NEW_PROJECT_EVIDENCE": 3,
+      "PRESERVE_CURRENT_HUMAN_HANDOFF": 3
+    },
+    "relevance_soft_deferred_not_closed": 2,
+    "research_evidence_note": "Relevance is only an exploration priority. Every DOI and prior terminal/expansion status stays recorded; soft deferral is reversible and is not completed or excluded research."
   },
   "review_pipeline": {
     "public_scout_staged_proposals": 83,
