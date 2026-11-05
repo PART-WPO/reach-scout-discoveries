@@ -17,6 +17,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 from decision_pipeline import build_index as shared_build_index, lookup as shared_lookup
+from reviewer_feedback_guard import known_feedback_by_doi, reviewer_hold_for_proposal
 
 ROOT = Path(__file__).resolve().parents[2]
 DOI = re.compile(r"10\.\d{4,9}/[^\s\"'<>;,]+", re.I)
@@ -366,6 +367,7 @@ def build(root, reach_root, spark_root, write_drafts=False):
         if write_drafts:
             raise ValueError("Monthly intake blocked: public REACH source SHA differs from shared verified identity cache")
         shared_index=None
+    reviewer_feedback=known_feedback_by_doi(root)
     published, _ = gather_feed(root, "", "scout-discoveries/manifest.json", None)
     inbox = []
     for file in (root / "scout-discoveries/inbox").glob("*.csv"):
@@ -403,6 +405,7 @@ def build(root, reach_root, spark_root, write_drafts=False):
             shared = (shared_lookup(shared_index, doi, title, raw.get("Output URL"))
                       if shared_index is not None else None)
             identity_route = shared_identity_route(found, shared, title)
+            prior_human_review=reviewer_hold_for_proposal(doi, reviewer_feedback)
             funding_matches, funding_status, funding_issues = check_funding(raw, entry, spark)
             issues = list(funding_issues)
             if identity_route == "already_in_reach":
@@ -420,6 +423,10 @@ def build(root, reach_root, spark_root, write_drafts=False):
             elif identity_route == "scout_identity_review":
                 status = "scout_identity_review"
                 issues.append("A possible Scout queue title/version match needs focused review, not another public proposal")
+            elif prior_human_review is not None:
+                status = "prior_human_review_requires_reconciliation"
+                issues.append("Authenticated prior Discovery Hub decision must be checked before another candidate proposal: "
+                              + prior_human_review["last_private_review_code"])
             elif detect_version(entry, doi):
                 status = "cross_cohort_version_review"
                 issues.append("Existing DOI/version review must not be duplicated")
@@ -455,6 +462,7 @@ def build(root, reach_root, spark_root, write_drafts=False):
                       "shared_public_identity_result":shared["status"] if shared else "SOURCE_SHA_NOT_RECONCILED",
                       "shared_identity_route":identity_route,
                       "shared_identity_index_fingerprint":shared_index["source_fingerprint"] if shared_index else None,
+                      "prior_authenticated_human_review":prior_human_review,
                       "metadata_missing": missing_after_recovery,
               "metadata_recovery_state": recovery_gate,
               "metadata_recovery_checks": len(recovery_checks),
