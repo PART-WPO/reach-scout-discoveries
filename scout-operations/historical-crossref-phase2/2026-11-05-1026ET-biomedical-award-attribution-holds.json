@@ -1,0 +1,52 @@
+{
+  "schema": "reach-scout-append-only-research-evidence-v1",
+  "observed_at": "2026-11-05T10:26:51-05:00",
+  "lane": "historical_original_funding_attribution",
+  "cases": [
+    {
+      "doi": "10.1007/s12035-019-01667-w",
+      "title": "Dysregulation in the Brain Protein Profile of Zebrafish Lacking the Parkinson's Disease-Related Protein DJ-1",
+      "sources": [
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31218647/",
+          "finding": "PubMed confirms exact DOI, Molecular Neurobiology journal, University of Bergen and Italian pharmacy affiliations, Parkinson's/zebrafish research."
+        },
+        {
+          "url": "https://openalex.org/W2952542498",
+          "finding": "OpenAlex lists European Cooperation in Science and Technology and University of Bergen as funders, with no WPO funding evidenced in this source."
+        },
+        {
+          "url": "https://www4.uib.no/en/find-employees/kari-espolin.fladmark",
+          "finding": "University of Bergen faculty profile independently lists exact paper and describes cell-stress/zebrafish research."
+        }
+      ],
+      "decision": "BOUNDED_HOLD_UNRELATED_PROJECT_EVIDENCE",
+      "uncertainty": "Original Crossref source award string and its primary SPARK association not revalidated; do not declare false-positive conclusively."
+    },
+    {
+      "doi": "10.1007/s00330-020-07133-9",
+      "title": "Quantitative thoracic aorta calcification assessment by 18F-NaF PET/CT and its correlation with atherosclerotic cardiovascular disorders and increasing age",
+      "sources": [
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32870396/",
+          "finding": "PubMed exact DOI, European Radiology, cardiovascular imaging, affiliations at University of Pennsylvania and Oslo University Hospital."
+        },
+        {
+          "url": "https://openalex.org/W3082637224",
+          "finding": "OpenAlex corroborates DOI, journal, authors and institutions."
+        }
+      ],
+      "decision": "BOUNDED_HOLD_PROJECT_ATTRIBUTION_NOT_ESTABLISHED",
+      "uncertainty": "No verified same-project WPO connection or exact source-award provenance; absence of evidence is not proof of ineligibility."
+    }
+  ],
+  "source_routing": "scout-operations/historical-crossref-screening/actionable-routing.json",
+  "routing_source_sha256": "799744c7e83f218d22cc19afacb7cfcf2762feb490659efde9f58bf19473b1fa",
+  "routing_cache_sha256": "6660562e325a6a141198f59acce84f2e30d9a2d14e6cf5acd29769c8a4b68e1e",
+  "identity_snapshot_current_sha_verified": false,
+  "private_reviewer_history": "NOT_VERIFIED",
+  "original_case_checkpoints_advanced": false,
+  "seed_expansion_lane": "OPEN_INDEPENDENT",
+  "next_action": "Check exact Crossref structured award provenance and primary SPARK same-project attribution only if a distinct authoritative source becomes available; otherwise preserve bounded hold and move to next actionable original. Verify live identity source SHA before formal disposition.",
+  "no_hub_or_reach_mutation": true
+}
