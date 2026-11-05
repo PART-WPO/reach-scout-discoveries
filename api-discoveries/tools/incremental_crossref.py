@@ -22,7 +22,9 @@ from decision_pipeline import build_index, lookup, norm_doi, norm_title
 
 ROOT=Path(__file__).resolve().parents[2]
 OUT=ROOT/"scout-operations/index-and-project-discovery-leads.json"
-SELECT="DOI,title,URL,type,created,updated,indexed,published-print,published-online,funder,relation"
+# Request full Crossref works metadata. Restrictive 'select' values can be
+# rejected by Crossref even when the same fields exist in a full response.
+# Keep source evidence complete for title/funding/version checks.
 CROSSREF="https://api.crossref.org/works"
 NOAA_PRIMARY=re.compile(r"^NA\d{2}(?:OAR|NWS)[A-Z0-9-]{7,}$",re.I)
 
@@ -76,7 +78,7 @@ def crossref_index_updates(award,start,end,max_pages=10,page_size=100):
     items=[]
     for page_num in range(max_pages):
         params={"filter":f"award.number:{award},from-index-date:{start},until-index-date:{end}",
-                "rows":page_size,"cursor":cursor,"select":SELECT}
+                "rows":page_size,"cursor":cursor}
         response=fetch(CROSSREF,params=params)["message"]
         batch=response.get("items",[])
         items.extend(x for x in batch if match_crossref(x,award))
@@ -90,7 +92,7 @@ def crossref_index_updates(award,start,end,max_pages=10,page_size=100):
 
 def query_project_titles(project,rows=5):
     # An award-free targeted bibliographic query is a LEAD, not proof of WPO.
-    params={"query.bibliographic":project["project_title"],"rows":rows,"select":SELECT}
+    params={"query.bibliographic":project["project_title"],"rows":rows}
     response=fetch(CROSSREF,params=params)["message"]
     wanted=set(project["keywords"])
     result=[]
