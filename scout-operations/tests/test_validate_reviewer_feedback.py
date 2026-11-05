@@ -40,6 +40,17 @@ class FeedbackTests(unittest.TestCase):
         self.assertFalse(valid[0]["smartsheet_write_verified"])
         self.assertFalse(valid[0]["public_reach_addition_verified"])
         self.assertNotIn("Reviewer Email",json.dumps(valid))
+    def test_repeated_private_history_exports_are_idempotent(self):
+        e=signed_event("APPROVED_FOR_STAGING")
+        bundle={"schema":"reach-scout-signed-review-feedback-v1",
+                "source":"DiscoveryHubPrivateExport","events":[e]}
+        valid,manual=extract_valid_events([
+            ("first.json",bundle,"a"*64),("later.json",bundle,"b"*64)],
+            self.fake_index(),KEY)
+        self.assertEqual(len(valid),1)
+        self.assertEqual(valid[0]["bundle_path"],"first.json")
+        self.assertEqual(manual,[])
+
     def test_wrong_signing_key_and_extra_personal_data_fail_closed(self):
         e=signed_event()
         with self.assertRaisesRegex(ValueError,"signature mismatch"):
