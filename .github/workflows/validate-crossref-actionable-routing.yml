@@ -14,6 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -42,6 +44,23 @@ jobs:
           assert score["separate_doi_expansion"]["historical_crossref_completed_verified"]==0
           assert all(e["original_triage_modified"] is False and e["expansion_seed_preserved"] is True for e in d["entries"])
           assert d["counts"].get("NOT_FOUND_IN_REACH_INDEX", 0) > 0, "Zero-hit comparisons still blocked"
+          # Compare against unchanged public source baseline on main.
+          # Fast-path only upgrades strongly supported potential matches;
+          # previously index-negative items must never become false duplicates.
+          import subprocess
+          baseline=json.loads(subprocess.check_output([
+              "git","show","origin/main:scout-operations/historical-crossref-screening/actionable-routing.json"
+          ]))
+          assert baseline["source_manifest_sha256"]==d["source_manifest_sha256"]
+          assert baseline["reach_cache_sha256"]==d["reach_cache_sha256"]
+          old={e["doi"]:e for e in baseline["entries"]}
+          new={e["doi"]:e for e in d["entries"]}
+          assert old.keys()==new.keys()
+          for doi,b in old.items():
+              if b["outcome"]=="CONFIRMED_IN_REACH":
+                  assert new[doi]["outcome"]=="CONFIRMED_IN_REACH",doi
+              if b["outcome"]=="NOT_FOUND_IN_REACH_INDEX":
+                  assert new[doi]["outcome"]=="NOT_FOUND_IN_REACH_INDEX",doi
           # Reconcile known duplicate dispositions and existing Scout overlaps.
           ledger=json.loads(Path("scout-operations/historical-crossref-triage.json").read_text())
           by_doi={e["doi"]:e for e in d["entries"]}
