@@ -79,3 +79,20 @@ project evidence exists*. Historical/independently found items need a
 specific same-project WPO bridge before a draft recommendation. Neither track
 bypasses the existing validated 24-column intake or human approval. Keep
 each original's independent expansion seed open until separately assessed.
+
+
+## November 5, 2026 — Scout 2.0 improvement 1: bulk verified identity fast path (authoritative)
+
+This section supersedes older instructions that route EVERY exact DOI/official NOAA IR URL match to repeated AI original-publication research, or rely on the old one-confirmed/479-likely/134-index-negative screening baseline. Read the CURRENT generated `scout-operations/historical-crossref-screening/actionable-routing.json` and its matching SHA-pinned operational scorecard; never hardcode those numbers.
+
+A single source-SHA-verified GitHub Action compares all source DOIs against the full REACH index/detail cache, the complete public Scout queue/inbox, and the official checksum-verified NOAA IR DOI index. The shared deterministic helper `scout-operations/tools/bulk_reach_dedup.py` may mark the SCREENING outcome `CONFIRMED_IN_REACH` only if there is exactly one REACH UID with a stable detail/record path, normalized exact title agreement, and either:
+1. A direct exact DOI match to the REACH record; or
+2. An official uniquely mapped NOAA IR DOI -> canonical repository URL -> exact REACH URL identity with no conflicting DOI/version mapping.
+
+Other matches remain `LIKELY_IN_REACH` for a **single bounded identity/version check**; title-only evidence, multiple REACH UIDs, contradictory normalized title, and ambiguous repository crosswalks must not auto-confirm. A current public index negative is only permission to proceed with Scout queue/human decision/funding/metadata research, NOT proof of a novel publication.
+
+For strong verified public existing-REACH identity, do NOT repeat original-candidate WPO funding or metadata searches or create another new-output Hub proposal. Preserve source DOI, supporting evidence, the original immutable audit, and a separate linked-output exploration opportunity. Verified public identity in this routing report is **not** an automatically verified historical research terminal status, reviewer approval, private Hub import, or completed DOI-seeded expansion. Formal original-ledger closure still requires the protected evidence/reconciliation process. Subsequent candidate metadata correction requires its own case and human review.
+
+At first dry-run test, 433/614 have a unique verified strong match (85 direct DOI, 348 official IR URL), 47 need narrow identity review (24 title-only, 12 multiple REACH records, 11 strong identity but title/version disagreement), and 134 have no match in the complete public REACH index. These are initial test figures only; update from each live source snapshot.
+
+No new APIs, hourly workers, third-party services, automatic Smartsheet/REACH writes or changes to prior human decisions are authorized by this screening improvement. Reviewer-capacity planning target is **20 or more substantive review decisions per week**, to be addressed in a separate later improvement rather than artificially capped or filled with duplicative proposals.
