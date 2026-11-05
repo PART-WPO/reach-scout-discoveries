@@ -38,6 +38,7 @@ jobs:
           python scout-operations/tools/compile_research_evidence.py
           python scout-operations/tools/decision_pipeline.py evaluate --cases scout-operations/research-decision-cases.json
           python scout-operations/tools/summarize_research_decisions.py
+          python scout-operations/tools/build_operational_scorecard.py
       - name: Assert fail-closed metrics, traceability and no human decision writes
         run: |
           python - <<'PY'
@@ -62,6 +63,11 @@ jobs:
                   assert old[ident]['status']==new[ident]['status']==e['declared_status']
                   for field in ('scout_batch_path','human_decision','seed_expansion_status'):
                       assert old[ident].get(field)==new[ident].get(field)
+          scorecard=get('scout-operational-scorecard.json')
+          assert scorecard['original_research']['historical_crossref_unverified_declared_completed']==get('historical-crossref-reconciliation-exceptions.json')['declared_unverified_terminal_count']
+          assert scorecard['original_research']['historical_datacite_unverified_declared_completed']==get('historical-reconciliation-exceptions.json')['declared_unverified_terminal_count']
+          assert scorecard['review_pipeline']['private_discovery_hub_imports']=='NOT_VERIFIED'
+          assert scorecard['review_pipeline']['public_scout_staged_proposals']>=0
           rollup=get('research-decision-rollup.json')
           cases=get('research-decision-cases.json')
           assert rollup['cases_evaluated']==len(cases['cases'])>0
@@ -81,4 +87,5 @@ jobs:
             scout-operations/research-decision-cases.json
             scout-operations/research-decision-rollup.json
             scout-operations/research-evidence-coverage.json
+            scout-operations/scout-operational-scorecard.json
           if-no-files-found: error
