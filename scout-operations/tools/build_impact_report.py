@@ -58,8 +58,12 @@ def build(root=ROOT):
         score["reconciliation"]["crossref_requires_evidence_repair"]+
         score["reconciliation"]["datacite_requires_evidence_repair"]):
         raise ValueError("Missing repair case or stale historical summary")
-    if workstream["historical_crossref_api"]["seed_relevance_priority_counts"]!=relevance["historical_crossref"]["counts"]:
-        raise ValueError("Workstream source and relevance are inconsistent")
+    # The hourly workstream is a derived routing suggestion, not the
+    # authoritative source of identity/relevance evidence. Report a stale
+    # selector as a health warning without hiding reliable source counts.
+    workstream_aligned=(workstream["historical_crossref_api"].get("seed_relevance_priority_counts")==
+                        relevance["historical_crossref"]["counts"] and
+                        workstream["historical_crossref_api"].get("seed_relevance_priority_ready") is True)
     if common["original_and_related_cases_preflighted"]!=sum(
         sum(m.values()) for m in common["lane_decision_counts"].values()):
         raise ValueError("Missing or duplicate preflight case counts")
@@ -109,7 +113,8 @@ def build(root=ROOT):
         "source_sha256":dict(sorted(shas.items()))|{"supplemental_index_lead_archive":archive_sha},
         "priority_and_scope":{
             "related_output_relevance_priority_counts":relevance["historical_crossref"]["counts"],
-            "phase":workstream.get("phase"),
+            "phase":workstream.get("phase") if workstream_aligned else "SOURCE_RECONCILIATION_REQUIRED",
+            "workstream_relevance_fresh":workstream_aligned,
             "monthly_originals_preempt_historical":True,
             "original_source_and_expansion_stages_separate":True,
         },
@@ -144,6 +149,7 @@ def build(root=ROOT):
             "public_reach_catalog_rows":score["review_pipeline"]["public_reach_total_records"],
             "noaa_ir_manifest_sha256":shas["noaa_ir"],
             "sha_verified_report_inputs":True,
+            "workstream_selector_status":"CURRENT" if workstream_aligned else "STALE_REBUILD_REQUIRED",
         },
         "notes":"Public Scout candidate rows, inbox drafts, signed reviewer feedback, private import, human approval and actual REACH publications are different events. No inferred human outcome or funded-product recovery. Counts describe currently verified public snapshots, not future performance."
     }
