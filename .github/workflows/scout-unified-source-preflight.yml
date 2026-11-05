@@ -53,6 +53,8 @@ jobs:
           o=json.loads(Path('scout-operations/unified-source-preflight.json').read_text())
           assert o['changes_to_human_dispositions']==o['new_public_review_proposals']==o['new_reach_additions']==0
           assert o['original_and_related_cases_preflighted']==827
+          assert o['crossref_bulk_confirms_after_version_guard']==433
+          assert o['lane_decision_counts']['historical_crossref']['IDENTITY_REVIEW_REQUIRED_FROM_BULK']==47
           assert sum(sum(n.values()) for n in o['lane_decision_counts'].values())==827
           assert set(subprocess.check_output(['git','diff','--name-only'],text=True).splitlines())<={
              'scout-operations/unified-source-preflight.json'}
