@@ -1,0 +1,32 @@
+{
+  "schema": "reach-scout-research-evidence-v1",
+  "recorded_at": "2026-11-05T09:30:00-05:00",
+  "original_doi": "10.1002/essoar.10507067.1",
+  "lane": "original_identity",
+  "finding": "Exact DOI in live public REACH detail shard; previous LIKELY_IN_REACH route has strong direct corroboration. Do not change immutable router or checkpoint without verified manifest SHA and decision pipeline.",
+  "reach_record_id": "reach-000413",
+  "reach_uid": "reachuid-v1-c7edc71b8cea9fa9926ef4f5ead3f846",
+  "reach_detail_shard": "agent-data/details/part-052.csv",
+  "reach_output_url": "https://doi.org/10.1002/essoar.10507067.1",
+  "reach_primary_award": "NA18OAR4310293",
+  "reach_title": "The Influence of a Resolved Gulf Stream on the Decadal Variability of Southeast US Rainfall",
+  "sources": [
+    "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-052.csv",
+    "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+    "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-operations/historical-crossref-screening/actionable-routing.json",
+    "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-operations/historical-crossref-phase2/2026-11-05-0828ET-gulf-stream-essoar-final-lead.json"
+  ],
+  "source_manifest_current_sha_recomputed": false,
+  "prior_routing_source_sha256": "799744c7e83f218d22cc19afacb7cfcf2762feb490659efde9f58bf19473b1fa",
+  "prior_routing_cache_sha256": "6660562e325a6a141198f59acce84f2e30d9a2d14e6cf5acd29769c8a4b68e1e",
+  "original_decision": "EXACT_PUBLIC_REACH_DOI_OBSERVED_PENDING_SHA_VERIFIED_CHECKPOINT",
+  "expansion_lane": {
+    "status": "OPEN",
+    "related_doi": "10.1029/2021GL096709",
+    "same_project_and_version_relation": "NOT_VERIFIED",
+    "no_closure": true
+  },
+  "private_human_decisions": "NOT_VERIFIED",
+  "next_action": "Verify manifest SHA and shared identity snapshot; use decision pipeline to append a new case revision for original. Independently investigate published related DOI and NOAA IR crosswalk without assuming version relationship.",
+  "no_publication_or_hub_mutation": true
+}
