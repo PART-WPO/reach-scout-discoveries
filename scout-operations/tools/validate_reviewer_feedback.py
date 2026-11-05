@@ -68,8 +68,12 @@ def extract_valid_events(bundles,index,key):
         for e in data.get("events",[]):
             identity=verify_event(e,key)
             previous=seen.get(identity)
-            if previous and previous!=e:
-                raise ValueError("Two different signed events share one identity")
+            if previous:
+                if previous!=e:
+                    raise ValueError("Two different signed events share one identity")
+                # New private exports repeat earlier decisions. Their original
+                # immutable provenance remains attached to the first bundle.
+                continue
             seen[identity]=e
             result={"event_id":identity,"candidate_id":e["candidate_id"],
                     "doi":e["doi"],"decision_code":e["decision"],
@@ -108,7 +112,9 @@ def run(root=ROOT,key=None,index=None):
         raise ValueError("Unknown research-feedback schema")
     # Append-only public operational signals; never replace a preexisting
     # human decision or lower an approved candidate's effective history.
-    previous={x["event_id"]:x for x in prior["signals"] if "event_id" in x}
+    if any("event_id" not in x for x in prior["signals"]):
+        raise ValueError("Legacy reviewer signal missing stable identity; do not silently discard")
+    previous={x["event_id"]:x for x in prior["signals"]}
     for current in events:
         k=current["event_id"]
         if k in previous and previous[k]!=current:
