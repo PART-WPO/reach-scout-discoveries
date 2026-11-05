@@ -97,6 +97,26 @@ def derive_record(lane, raw, recorded, preprint_dois, *,source_batch=""):
         "_original_source_identity":str(raw.get("identity") or raw.get("DOI") or raw.get("doi") or ""),
     }
 
+def authoritative_effective_decision(engine_result, bulk, bulk_uid, doi):
+    """Never let a permissive generic DOI hit override version-safe Crossref routing."""
+    common=engine_result["decision"]
+    if bulk is None:
+        return common
+    if bulk=="CONFIRMED_IN_REACH":
+        if not bulk_uid:
+            raise ValueError("Missing verified REACH UID for confirmed DOI: "+doi)
+        return "EXISTING_IN_REACH_VERIFIED_BULK"
+    if bulk=="LIKELY_IN_REACH":
+        return "IDENTITY_REVIEW_REQUIRED_FROM_BULK"
+    if bulk=="SCREENING_INCOMPLETE":
+        return "SCREENING_INCOMPLETE"
+    if bulk=="NOT_FOUND_IN_REACH_INDEX":
+        if common=="EXISTING_IN_REACH":
+            raise ValueError("Public REACH identity disagreement with negative Crossref routing: "+doi)
+        return common
+    raise ValueError("Unknown Crossref bulk identity route for "+doi)
+
+
 def preflight(root=ROOT):
     index=build_index(root)
     check_index_fresh(root,index)
@@ -164,16 +184,8 @@ def preflight(root=ROOT):
         # Verified canonical NOAA IR -> public REACH URL is an independent
         # source-backed original identity gate; do not rely on the generic
         # lookup engine to infer that URL from DOI alone.
-        bulk_verified=bool(bulk=="CONFIRMED_IN_REACH" and bulk_uid)
-        if bulk=="CONFIRMED_IN_REACH" and not bulk_verified:
-            raise ValueError("Invalid verified bulk routing identity: "+case["doi"])
-        if bulk_verified and evaluated["decision"]=="IDENTITY_REVIEW_REQUIRED":
-            # A verified canonical REACH identity can coexist with title-only
-            # matches on multiple records. Existing bulk checks remain authority.
-            pass
-        decision=("EXISTING_IN_REACH_VERIFIED_CANONICAL_URL"
-                  if bulk_verified and evaluated["decision"]!="EXISTING_IN_REACH"
-                  else evaluated["decision"])
+        decision=authoritative_effective_decision(
+            evaluated,bulk,bulk_uid,case["doi"])
         counts[(lane,decision)]+=1
         by_doi[case["doi"]].add(lane)
         rows.append({"doi":case["doi"],"discovery_lane":lane,
@@ -199,6 +211,9 @@ def preflight(root=ROOT):
         "original_and_related_cases_preflighted":len(rows),
         "lane_decision_counts":lane_counts,
         "cross_cohort_duplicate_doi_identities":sum(len(v)>1 for v in by_doi.values()),
+        "crossref_bulk_confirms_after_version_guard":sum(
+            r["effective_identity_or_preflight"]=="EXISTING_IN_REACH_VERIFIED_BULK"
+            for r in rows if r["discovery_lane"]=="historical_crossref"),
         "changes_to_human_dispositions":0,"new_public_review_proposals":0,"new_reach_additions":0,
         "note":"Single shared SHA-verified public identity and decision engine across source modes, with an independent trusted official NOAA IR REACH URL gate. Input-only source award and date hints never establish funding or official publication, and already published reviewer rows remain unchanged.",
         "cases":rows}
