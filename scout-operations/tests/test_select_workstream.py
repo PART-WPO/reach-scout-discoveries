@@ -12,6 +12,54 @@ def h(rows,completed,remaining,matched=True):
         "remaining":remaining,"research_complete":remaining==0,
         "source_manifest_sha256":SHA if matched else "a"*64})
 class RouterTests(unittest.TestCase):
+    def test_bulk_screening_routes_crossref_to_post_screening_without_falsely_closing_research(self):
+        mm,mc=m(0,0,0)
+        hh,hc=h(188,188,0)
+        ch,cc=h(4,0,4)
+        cc.update(awaiting_research=4)
+        route={"source_manifest_sha256":SHA,"total":4,
+               "counts":{"CONFIRMED_IN_REACH":2,"LIKELY_IN_REACH":1,
+                         "NOT_FOUND_IN_REACH_INDEX":1}}
+        result=decide(mm,mc,hh,hc,SHA,
+                      crossref_manifest=ch,crossref_coverage=cc,
+                      crossref_manifest_sha=SHA,
+                      crossref_routing=route)
+        self.assertEqual(result["mode"],"historical_crossref_triage")
+        self.assertEqual(result["phase"],"post_bulk_identity_triage")
+        self.assertEqual(result["historical_crossref_api"]["originals_pending_first_pass"],0)
+        self.assertEqual(result["historical_crossref_api"]["originals_pending_formal_research"],4)
+        self.assertEqual(result["historical_crossref_api"]["identity_verified_existing_reach"],2)
+        self.assertEqual(result["historical_crossref_api"]["identity_needs_bounded_review"],1)
+        self.assertEqual(result["historical_crossref_api"]["identity_index_negative_to_research"],1)
+        self.assertEqual(result["historical_crossref_api"]["research_completed"],0)
+
+    def test_stale_bulk_screening_does_not_override_unverified_source(self):
+        mm,mc=m(0,0,0)
+        hh,hc=h(188,188,0)
+        ch,cc=h(4,0,4)
+        cc.update(awaiting_research=4)
+        stale={"source_manifest_sha256":"a"*64,"total":4,
+               "counts":{"CONFIRMED_IN_REACH":4}}
+        result=decide(mm,mc,hh,hc,SHA,
+                      crossref_manifest=ch,crossref_coverage=cc,
+                      crossref_manifest_sha=SHA,crossref_routing=stale)
+        self.assertEqual(result["phase"],"initial_research")
+        self.assertFalse(result["historical_crossref_api"]["identity_screening_complete"])
+
+    def test_monthly_cases_still_preempt_bulk_crossref_research(self):
+        mm,mc=m(13,13,0)
+        hh,hc=h(188,188,0)
+        ch,cc=h(4,0,4)
+        cc.update(awaiting_research=4)
+        route={"source_manifest_sha256":SHA,"total":4,
+               "counts":{"CONFIRMED_IN_REACH":2,"LIKELY_IN_REACH":1,
+                         "NOT_FOUND_IN_REACH_INDEX":1}}
+        result=decide(mm,mc,hh,hc,SHA,
+                      crossref_manifest=ch,crossref_coverage=cc,
+                      crossref_manifest_sha=SHA,crossref_routing=route)
+        self.assertEqual(result["mode"],"monthly_api_triage")
+        self.assertTrue(result["historical_crossref_api"]["identity_screening_complete"])
+
     def test_historical_api_test_preempts_open_ended_historical(self):
         mm,mc=m(0,0,0)
         hh,hc=h(188,0,188)
