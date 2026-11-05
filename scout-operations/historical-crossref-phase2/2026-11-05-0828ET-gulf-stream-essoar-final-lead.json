@@ -1,0 +1,41 @@
+{
+  "schema": "reach-scout-research-evidence-v1",
+  "recorded_at": "2026-11-05T08:28:39-05:00",
+  "original_doi": "10.1002/essoar.10507067.1",
+  "original_lane": "LIKELY_IN_REACH_UNRESOLVED",
+  "expansion_lane": "INDEPENDENT_FINAL_PUBLICATION_LEAD_OPEN",
+  "related_doi": "10.1029/2021GL096709",
+  "related_title": "Decadal Variability of Southeast US Rainfall in an Eddying Global Coupled Model",
+  "related_publication_date": "2022-01-16",
+  "evidence": [
+    {
+      "url": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021GL096709",
+      "finding": "Publisher confirms published journal article and distinct DOI; six authors overlap with ESSOAr record, related Gulf Stream/rainfall research. Exact preprint-to-final relationship NOT verified."
+    },
+    {
+      "url": "https://impacts.ucar.edu/en/publications/decadal-variability-of-southeast-us-rainfall-in-an-eddying-global/",
+      "finding": "UCAR institutional bibliography independently confirms journal DOI, title, authors and 2022 publication."
+    },
+    {
+      "url": "https://repository.library.noaa.gov/view/noaa/43170",
+      "finding": "Official NOAA IR confirms final DOI and lists grants NA18OAR4320123, NA18OAR4310293, NA15OAR4320064. These are NOT established same-project WPO primary awards."
+    }
+  ],
+  "identity_snapshot": {
+    "routing_counts": {
+      "confirmed": 1,
+      "likely": 479,
+      "not_found": 134,
+      "incomplete": 0
+    },
+    "source_sha256": "799744c7e83f218d22cc19afacb7cfcf2762feb490659efde9f58bf19473b1fa",
+    "cache_sha256": "6660562e325a6a141198f59acce84f2e30d9a2d14e6cf5acd29769c8a4b68e1e",
+    "live_source_sha_verified": false,
+    "public_identity_result": "NOT_VERIFIED",
+    "official_ir_crosswalk": "NOT_VERIFIED",
+    "private_human_decisions": "NOT_VERIFIED"
+  },
+  "decision": "HOLD_FOR_VERSION_RELATIONSHIP_AND_CURRENT_SHA_VERIFIED_IDENTITY",
+  "next_action": "Use verified shared index and NOAA IR crosswalk for both DOIs, inspect matched REACH UID/shard for original likely route, verify explicit preprint/final relation and primary SPARK project. Do not stage or close seed.",
+  "mutations": "Append-only research evidence only; no Hub, REACH, Smartsheet or prior decisions modified."
+}
