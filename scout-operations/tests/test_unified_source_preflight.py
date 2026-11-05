@@ -3,7 +3,7 @@ import sys
 import unittest
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"tools"))
-from unified_source_preflight import derive_record, preflight
+from unified_source_preflight import derive_record, preflight, authoritative_effective_decision
 
 class UnifiedPreflightTests(unittest.TestCase):
     def test_all_original_and_related_discovery_modes_covered(self):
@@ -23,6 +23,24 @@ class UnifiedPreflightTests(unittest.TestCase):
                         for x in cases))
         self.assertEqual(report["changes_to_human_dispositions"],0)
         self.assertEqual(report["new_public_review_proposals"],0)
+    def test_strict_bulk_crossref_identity_override(self):
+        engine={"decision":"EXISTING_IN_REACH"}
+        self.assertEqual(authoritative_effective_decision(engine,"LIKELY_IN_REACH",None,
+            "10.1000/conflict"),"IDENTITY_REVIEW_REQUIRED_FROM_BULK")
+        self.assertEqual(authoritative_effective_decision(engine,"CONFIRMED_IN_REACH",
+            "reachuid-v1-123","10.1000/same"),"EXISTING_IN_REACH_VERIFIED_BULK")
+        with self.assertRaisesRegex(ValueError,"disagreement"):
+            authoritative_effective_decision(engine,"NOT_FOUND_IN_REACH_INDEX",
+                                             None,"10.1000/negative")
+    def test_only_strict_bulk_verified_crossref_records_count_confirmed(self):
+        report=preflight()
+        cr=[r for r in report["cases"] if r["discovery_lane"]=="historical_crossref"]
+        confirmed=[r for r in cr if r["effective_identity_or_preflight"]=="EXISTING_IN_REACH_VERIFIED_BULK"]
+        self.assertEqual(len(confirmed),433)
+        self.assertEqual(report["crossref_bulk_confirms_after_version_guard"],433)
+        self.assertEqual(sum(x["effective_identity_or_preflight"]=="IDENTITY_REVIEW_REQUIRED_FROM_BULK"
+                        for x in cr),47)
+
     def test_source_award_numbers_not_trusted_as_verified_primary_award(self):
         r=derive_record("monthly_api",{"DOI":"10.1000/month","Title":"Some study",
             "NOAA Award Number(s)":"NA22OAR4590010"},{"status":"staged_for_hub_import"},set())
