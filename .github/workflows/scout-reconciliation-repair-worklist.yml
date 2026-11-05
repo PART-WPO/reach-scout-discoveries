@@ -1,0 +1,70 @@
+name: Scout evidence-repair worklist
+on:
+  pull_request:
+    paths:
+      - 'scout-operations/tools/build_reconciliation_repair_worklist.py'
+      - 'scout-operations/tests/test_reconciliation_repair_worklist.py'
+      - '.github/workflows/scout-reconciliation-repair-worklist.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'scout-operations/historical-reconciliation-exceptions.json'
+      - 'scout-operations/historical-crossref-reconciliation-exceptions.json'
+      - 'scout-discoveries/supersessions.json'
+      - 'scout-operations/tools/build_reconciliation_repair_worklist.py'
+      - '.github/workflows/scout-reconciliation-repair-worklist.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: scout-reconciliation-repair-worklist
+  cancel-in-progress: false
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run terminal evidence repair tests
+        run: |
+          python -m unittest discover -v -s scout-operations/tests -p 'test_reconciliation_repair_worklist.py'
+          python scout-operations/tools/build_reconciliation_repair_worklist.py
+      - name: Verify only derived repair worklist modified
+        run: |
+          python - <<'PY'
+          import json,subprocess
+          from pathlib import Path
+          f=Path('scout-operations/reconciliation-repair-worklist.json')
+          j=json.loads(f.read_text())
+          assert len(j['cases'])==j['unverified_terminal_cases']
+          assert all(not x['ready_to_auto_close'] for x in j['cases'])
+          assert set(subprocess.check_output(['git','diff','--name-only'],text=True).splitlines()) <= {str(f)}
+          print('Repair worklist validated with all terminal statuses unchanged')
+          PY
+      - name: Publish source-fresh repair report (main only)
+        if: github.event_name != 'pull_request'
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git checkout -B main origin/main
+            python scout-operations/tools/build_reconciliation_repair_worklist.py
+            git add scout-operations/reconciliation-repair-worklist.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m 'Update source-verified historical research repair worklist'
+            if git push origin HEAD:main; then exit 0; fi
+            sleep $((attempt * 2))
+          done
+          exit 1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: scout-evidence-repair-worklist
+          path: scout-operations/reconciliation-repair-worklist.json
+          if-no-files-found: error

@@ -10,6 +10,9 @@ on:
       - 'scout-operations/tools/summarize_research_decisions.py'
       - '.github/workflows/*research*'
       - '.github/workflows/reconcile-historical*.yml'
+      - 'scout-operations/tools/build_reconciliation_repair_worklist.py'
+      - 'scout-operations/tests/test_reconciliation_repair_worklist.py'
+      - '.github/workflows/validate-research-decision-reconciliation.yml'
   workflow_dispatch:
 permissions:
   contents: read
@@ -32,12 +35,16 @@ jobs:
         run: |
           python scout-operations/tools/reconcile_historical.py
           python scout-operations/tools/reconcile_historical_crossref.py
+          python scout-operations/tools/build_reconciliation_repair_worklist.py
       - name: Compile overnight research and evaluate using shared public identity gate
         run: |
           python scout-operations/tools/decision_pipeline.py build-index
           python scout-operations/tools/compile_research_evidence.py
           python scout-operations/tools/decision_pipeline.py evaluate --cases scout-operations/research-decision-cases.json
           python scout-operations/tools/summarize_research_decisions.py
+          # A refreshed official NOAA IR index invalidates old derived
+          # REACH routing; rebuild the entire derived chain in SHA order.
+          python scout-operations/historical-crossref-screening/build_actionable_routing.py
           python scout-operations/tools/build_expansion_relevance.py
           python scout-operations/tools/build_operational_scorecard.py
       - name: Assert fail-closed metrics, traceability and no human decision writes
@@ -67,6 +74,12 @@ jobs:
           scorecard=get('scout-operational-scorecard.json')
           assert scorecard['original_research']['historical_crossref_unverified_declared_completed']==get('historical-crossref-reconciliation-exceptions.json')['declared_unverified_terminal_count']
           assert scorecard['original_research']['historical_datacite_unverified_declared_completed']==get('historical-reconciliation-exceptions.json')['declared_unverified_terminal_count']
+          repair=get('reconciliation-repair-worklist.json')
+          assert repair['unverified_terminal_cases']==sum(
+              get(k+'-reconciliation-exceptions.json')['declared_unverified_terminal_count']
+              for k in ('historical','historical-crossref'))
+          assert all(not item['ready_to_auto_close'] and not item['human_decision_changed']
+              for item in repair['cases'])
           assert scorecard['review_pipeline']['private_discovery_hub_imports']=='NOT_VERIFIED'
           assert scorecard['review_pipeline']['public_scout_staged_proposals']>=0
           rollup=get('research-decision-rollup.json')
@@ -89,5 +102,6 @@ jobs:
             scout-operations/research-decision-rollup.json
             scout-operations/research-evidence-coverage.json
             scout-operations/scout-operational-scorecard.json
+            scout-operations/reconciliation-repair-worklist.json
             scout-operations/expansion-relevance-priority.json
           if-no-files-found: error
