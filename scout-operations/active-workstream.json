@@ -13,7 +13,13 @@
   "historical_crossref_api": {
     "coverage_matches_source_manifest": true,
     "distinct_dois": 614,
-    "originals_pending_first_pass": 556,
+    "identity_index_negative_to_research": 134,
+    "identity_needs_bounded_review": 47,
+    "identity_screened": 614,
+    "identity_screening_complete": true,
+    "identity_verified_existing_reach": 433,
+    "originals_pending_first_pass": 0,
+    "originals_pending_formal_research": 556,
     "raw_batch_rows": 614,
     "remaining_or_untracked": 614,
     "research_completed": 0,
@@ -34,8 +40,8 @@
     "unresolved_followups": 0
   },
   "note": "Future follow-up dates do not clear API research. Make bounded distinct-source checks now; use documented early-retry exceptions as needed. An unavailable or invalid Hub metadata-needed handoff remains outstanding. This selector does NOT conduct research, verify human approval, or launch Scout.",
-  "phase": "initial_research",
-  "reason": "Expedited original Crossref DOI deduplication across full REACH and Scout, preserving every DOI as an expansion seed",
+  "phase": "post_bulk_identity_triage",
+  "reason": "The historical Crossref DOI identity screen is complete: 433 verified public REACH identities can skip repeated original funding searches; 47 require narrow version/identity checks; 134 index-negative originals need Scout queue and WPO-funding investigation. Formal original case completion and separate DOI-seeded expansions remain independent.",
   "schema": "reach-scout-workstream-v1",
   "switch_policy": "monthly original decisions > monthly expansion > historical Crossref original dedup + seed expansion > historical DataCite > attribution follow-ups > normal SPARK discovery"
 }
