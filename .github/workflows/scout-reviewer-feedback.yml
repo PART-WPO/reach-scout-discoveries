@@ -4,6 +4,10 @@ on:
     paths:
       - 'scout-operations/tools/validate_reviewer_feedback.py'
       - 'scout-operations/tests/test_validate_reviewer_feedback.py'
+      - 'scout-operations/tools/reviewer_feedback_guard.py'
+      - 'scout-operations/tools/quick_monthly_intake.py'
+      - 'scout-operations/tools/unified_source_preflight.py'
+      - 'integrations/DiscoveryHubFeedbackInstall.md'
       - 'integrations/DiscoveryHubScoutFeedback.gs'
       - '.github/workflows/scout-reviewer-feedback.yml'
   push:
@@ -35,6 +39,8 @@ jobs:
           node --check /tmp/ScoutFeedbackExporter.js
           python -m unittest discover -v -s scout-operations/tests -p 'test_validate_reviewer_feedback.py'
           python -m py_compile scout-operations/tools/validate_reviewer_feedback.py
+          python -m unittest discover -v -s scout-operations/tests -p 'test_quick_monthly_intake.py'
+          python -m unittest discover -v -s scout-operations/tests -p 'test_unified_source_preflight.py'
       - name: Check current public feedback without inventing Hub outcomes
         if: github.event_name == 'pull_request'
         run: |
