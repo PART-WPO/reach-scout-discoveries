@@ -1,0 +1,85 @@
+name: Validate Scout 2.0 expansion relevance
+on:
+  pull_request:
+    paths:
+      - 'scout-operations/tools/build_expansion_relevance.py'
+      - 'scout-operations/tests/test_expansion_relevance.py'
+      - 'scout-operations/expansion-scope-reconsiderations.json'
+      - 'scout-operations/tools/select_workstream.py'
+      - 'scout-operations/tools/build_operational_scorecard.py'
+      - '.github/workflows/validate-expansion-relevance.yml'
+      - '.github/workflows/historical-crossref-actionable-routing.yml'
+      - '.github/workflows/scout-research-decision-closeout.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate pure priority gate and existing workstream tests
+        run: |
+          python -m py_compile scout-operations/tools/build_expansion_relevance.py
+          python -m unittest discover -v -s scout-operations/tests -p 'test_expansion_relevance.py'
+          python -m unittest discover -v -s scout-operations/tests -p 'test_select_workstream.py'
+      - name: Generate complete relevance priorities against real public records
+        run: |
+          python scout-operations/tools/build_expansion_relevance.py
+          python scout-operations/tools/select_workstream.py
+          python scout-operations/tools/build_operational_scorecard.py
+      - name: Assert 614 separate seeds preserved and zero human-review mutations
+        run: |
+          python - <<'PY'
+          import hashlib,json,subprocess
+          from pathlib import Path
+          root=Path('.')
+          read=lambda p:json.loads((root/p).read_text())
+          data=read('scout-operations/expansion-relevance-priority.json')
+          routing=read('scout-operations/historical-crossref-screening/actionable-routing.json')
+          section=data['historical_crossref']
+          counts=section['counts']
+          assert data['source_routing_sha256']==hashlib.sha256(
+              (root/'scout-operations/historical-crossref-screening/actionable-routing.json').read_bytes()).hexdigest()
+          assert section['total_preserved_seeds']==routing['total']==614
+          assert sum(counts.values())==614
+          assert len(section['entries'])==614
+          assert len({e['doi'] for e in section['entries']})==614
+          assert counts.get('PRIORITIZE_VERIFIED_WPO_SEED',0)==routing['counts']['CONFIRMED_IN_REACH']
+          assert counts.get('DEFER_UNTIL_NEW_PROJECT_EVIDENCE',0)==2
+          for doi in ('10.1007/s12035-019-01667-w','10.1007/s00330-020-07133-9'):
+              match=next(e for e in section['entries'] if e['doi']==doi)
+              assert match['priority']=='DEFER_UNTIL_NEW_PROJECT_EVIDENCE'
+              assert len(match['audit_sources'])==2
+              assert match['reopen_trigger']
+          assert all(e['source_seed_expansion_status']=='UNMODIFIED' for e in section['entries'])
+          assert all(e['source_original_status']=='UNMODIFIED' for e in section['entries'])
+          assert all(e['private_reviewer_decision']=='NOT_VERIFIED' for e in section['entries'])
+          assert data['publication_or_review_changes']==0
+          assert data['seed_expansion_closures']==0
+          score=read('scout-operations/scout-operational-scorecard.json')
+          assert score['separate_doi_expansion']['historical_crossref_pending']==614
+          assert score['separate_doi_expansion']['relevance_priority_counts']==counts
+          stream=read('scout-operations/active-workstream.json')
+          assert stream['historical_crossref_api']['seed_relevance_priority_counts']==counts
+          assert stream['mode']=='historical_crossref_triage'
+          for file in ('scout-operations/historical-crossref-triage.json',
+              'scout-operations/historical-crossref-coverage.json',
+              'scout-operations/monthly-expansion-leads.json',
+              'scout-operations/independent-discovery-leads.json',
+              'scout-discoveries/manifest.json'):
+              pristine=subprocess.check_output(['git','show','HEAD:'+file])
+              assert (root/file).read_bytes()==pristine, file
+          print('Scope gate checked',counts, 'monthly',data['other_discovery_sources']['monthly_expansion']['priority_counts'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: scout-scope-priorities-preview
+          path: |
+            scout-operations/expansion-relevance-priority.json
+            scout-operations/scout-operational-scorecard.json
+            scout-operations/active-workstream.json

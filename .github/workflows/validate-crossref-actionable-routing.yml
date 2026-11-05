@@ -25,6 +25,7 @@ jobs:
           python -m unittest discover -s scout-operations/tests -p 'test_bulk_reach_dedup.py' -v
           python -m unittest discover -s scout-operations/tests -p 'test_select_workstream.py' -v
           python scout-operations/historical-crossref-screening/build_actionable_routing.py
+          python scout-operations/tools/build_expansion_relevance.py
           python scout-operations/tools/build_operational_scorecard.py
           python scout-operations/tools/select_workstream.py
       - name: Assert complete actionable coverage and preserved seed routing
@@ -44,6 +45,9 @@ jobs:
           assert score["reach_screening"]["confirmed_reach"]==d["counts"]["CONFIRMED_IN_REACH"]
           assert score["reach_screening"]["likely_reach_needs_bounded_check"]==d["counts"]["LIKELY_IN_REACH"]
           assert score["separate_doi_expansion"]["historical_crossref_completed_verified"]==0
+          relevance=json.loads(Path("scout-operations/expansion-relevance-priority.json").read_text())
+          assert relevance["source_routing_sha256"]==__import__("hashlib").sha256(Path("scout-operations/historical-crossref-screening/actionable-routing.json").read_bytes()).hexdigest()
+          assert score["separate_doi_expansion"]["relevance_priority_counts"]==relevance["historical_crossref"]["counts"]
           stream=json.loads(Path("scout-operations/active-workstream.json").read_text())
           assert stream["historical_crossref_api"]["identity_screening_complete"]
           assert stream["historical_crossref_api"]["originals_pending_first_pass"]==0

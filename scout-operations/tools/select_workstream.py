@@ -64,7 +64,8 @@ def decide(monthly_manifest,monthly_coverage,historical_manifest,historical_cove
            historical_manifest_sha="",monthly_triage=None,historical_triage=None,
            metadata_blockers=None,attribution_followups=None,monthly_expansion_leads=None,
            monthly_decision_queue=None,crossref_manifest=None,crossref_coverage=None,
-           crossref_triage=None,crossref_manifest_sha="",crossref_routing=None):
+           crossref_triage=None,crossref_manifest_sha="",crossref_routing=None,
+           expansion_scope=None):
     monthly_total=int((monthly_manifest or {}).get("candidate_rows",0))
     monthly_checked=int((monthly_coverage or {}).get("checked",0))
     monthly_received=int((monthly_coverage or {}).get("received",0))
@@ -147,6 +148,16 @@ def decide(monthly_manifest,monthly_coverage,historical_manifest,historical_cove
             "CONFIRMED_IN_REACH","LIKELY_IN_REACH",
             "NOT_FOUND_IN_REACH_INDEX","SCREENING_INCOMPLETE"})
     c_screened=c_total if c_identity_ready else 0
+    scope_counts=((expansion_scope or {}).get("historical_crossref") or {}).get("counts") or {}
+    scope_ready=bool(c_identity_ready and expansion_scope and
+        expansion_scope.get("source_crossref_manifest_sha256")==crossref_manifest_sha and
+        expansion_scope["historical_crossref"].get("total_preserved_seeds")==c_total and
+        sum(scope_counts.values())==c_total and
+        set(scope_counts)<={"PRIORITIZE_VERIFIED_WPO_SEED",
+                            "VERIFY_WPO_PROJECT_SCOPE_FIRST",
+                            "DEFER_UNTIL_NEW_PROJECT_EVIDENCE"} and
+        scope_counts.get("PRIORITIZE_VERIFIED_WPO_SEED",0)==
+            r_counts.get("CONFIRMED_IN_REACH",0))
     # A scheduled future retry does not make an unresolved original DOI cleared.
     # New monthly intake always preempts historical research.
     if monthly_initial:
@@ -198,6 +209,15 @@ def decide(monthly_manifest,monthly_coverage,historical_manifest,historical_cove
     else:
         mode,phase="normal_historical_discovery","normal_discovery"
         reason="Monthly and historical API research and handoffs are clear"
+    if mode=="historical_crossref_triage" and scope_ready:
+        reason += (" Related-output exploration is now relevance-ranked: "
+                   +str(scope_counts.get("PRIORITIZE_VERIFIED_WPO_SEED",0))
+                   +" known WPO catalog seeds may receive targeted expansion; "
+                   +str(scope_counts.get("VERIFY_WPO_PROJECT_SCOPE_FIRST",0))
+                   +" require WPO project-scope checks first; "
+                   +str(scope_counts.get("DEFER_UNTIL_NEW_PROJECT_EVIDENCE",0))
+                   +" are reversibly deferred pending new attribution evidence. "
+                   "All original/expansion histories remain open and unchanged.")
     return {
         "schema":"reach-scout-workstream-v1",
         "mode":mode,"phase":phase,"reason":reason,
@@ -235,6 +255,10 @@ def decide(monthly_manifest,monthly_coverage,historical_manifest,historical_cove
             "identity_needs_bounded_review":r_counts.get("LIKELY_IN_REACH",0) if c_identity_ready else 0,
             "identity_index_negative_to_research":r_counts.get("NOT_FOUND_IN_REACH_INDEX",0) if c_identity_ready else 0,
             "seed_expansions_pending":c_seed_pending,
+            "seed_relevance_priority_ready":scope_ready,
+            "seed_relevance_priority_counts":dict(sorted(scope_counts.items())) if scope_ready else {},
+            "seed_expansion_soft_deferred_not_completed":
+                scope_counts.get("DEFER_UNTIL_NEW_PROJECT_EVIDENCE",0) if scope_ready else 0,
             "unresolved_followups":c_followup
         },
         "attribution_followups_pending":attribution_pending,
@@ -263,6 +287,22 @@ def main():
             if not path.exists() or hashlib.sha256(path.read_bytes()).hexdigest()!=routing.get(field):
                 routing=None
                 break
+    relevance=read("scout-operations/expansion-relevance-priority.json")
+    if relevance:
+        route_path=ROOT/"scout-operations/historical-crossref-screening/actionable-routing.json"
+        if (not route_path.exists() or
+            relevance.get("source_routing_sha256")!=hashlib.sha256(route_path.read_bytes()).hexdigest()):
+            relevance=None
+        else:
+            sources=(relevance.get("other_source_sha256") or {})
+            for field,relative in (
+                ("monthly_expansion_leads","scout-operations/monthly-expansion-leads.json"),
+                ("independent_discovery_leads","scout-operations/independent-discovery-leads.json"),
+                ("scope_reconsiderations","scout-operations/expansion-scope-reconsiderations.json")):
+                p=ROOT/relative
+                if not p.exists() or hashlib.sha256(p.read_bytes()).hexdigest()!=sources.get(field):
+                    relevance=None
+                    break
     result=decide(m,mc,h,hc,sha,
         monthly_triage=read("scout-operations/monthly-triage.json"),
         historical_triage=read("scout-operations/historical-triage.json"),
@@ -272,7 +312,8 @@ def main():
         monthly_decision_queue=read("scout-operations/monthly-decision-queue.json"),
         crossref_manifest=c,crossref_coverage=cc,
         crossref_triage=read("scout-operations/historical-crossref-triage.json"),
-        crossref_manifest_sha=csha,crossref_routing=routing)
+        crossref_manifest_sha=csha,crossref_routing=routing,
+        expansion_scope=relevance)
     new=json.dumps(result,indent=2,sort_keys=True)+"\n"
     if not OUT.exists() or OUT.read_text(encoding="utf-8")!=new:
         OUT.write_text(new,encoding="utf-8")

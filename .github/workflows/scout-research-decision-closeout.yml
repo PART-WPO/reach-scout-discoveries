@@ -8,6 +8,8 @@ on:
       - 'scout-operations/tools/compile_research_evidence.py'
       - 'scout-operations/tools/summarize_research_decisions.py'
       - 'scout-operations/tools/build_operational_scorecard.py'
+      - 'scout-operations/tools/build_expansion_relevance.py'
+      - 'scout-operations/expansion-scope-reconsiderations.json'
       - 'scout-operations/tools/reconcile_historical.py'
       - 'scout-operations/tools/reconcile_historical_crossref.py'
       - '.github/workflows/scout-research-decision-closeout.yml'
@@ -62,6 +64,7 @@ jobs:
             python scout-operations/tools/compile_research_evidence.py
             python scout-operations/tools/decision_pipeline.py evaluate --cases scout-operations/research-decision-cases.json
             python scout-operations/tools/summarize_research_decisions.py
+            python scout-operations/tools/build_expansion_relevance.py
             python scout-operations/tools/select_workstream.py
             python scout-operations/tools/build_operational_scorecard.py
             python - <<'PY'
@@ -85,6 +88,11 @@ jobs:
           assert route["total"]==summary["reach_screening"]["historical_crossref_source_dois"]
           assert summary["review_pipeline"]["private_discovery_hub_imports"]=="NOT_VERIFIED"
           assert summary["original_research"]["historical_crossref_unverified_declared_completed"]>=0
+          scope=val("scout-operations/expansion-relevance-priority.json")
+          assert scope["source_routing_sha256"]==__import__("hashlib").sha256(open("scout-operations/historical-crossref-screening/actionable-routing.json","rb").read()).hexdigest()
+          assert sum(scope["historical_crossref"]["counts"].values())==route["total"]
+          assert scope["seed_expansion_closures"]==0
+          assert summary["separate_doi_expansion"]["relevance_priority_counts"]==scope["historical_crossref"]["counts"]
           print("Closed validated research checkpoint pass without changing original or human statuses")
           PY
             git add scout-operations/historical-coverage.json \
@@ -95,6 +103,7 @@ jobs:
               scout-operations/research-decision-cases.json \
               scout-operations/research-evidence-coverage.json \
               scout-operations/research-decision-rollup.json \
+              scout-operations/expansion-relevance-priority.json \
               scout-operations/scout-operational-scorecard.json \
               scout-operations/active-workstream.json \
               scout-operations/case-checkpoints
