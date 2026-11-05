@@ -1,0 +1,73 @@
+name: Validate redacted Discovery Hub reviewer feedback
+on:
+  pull_request:
+    paths:
+      - 'scout-operations/tools/validate_reviewer_feedback.py'
+      - 'scout-operations/tests/test_validate_reviewer_feedback.py'
+      - 'integrations/DiscoveryHubScoutFeedback.gs'
+      - '.github/workflows/scout-reviewer-feedback.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'scout-operations/reviewer-feedback-inbox/*.json'
+      - 'scout-operations/tools/validate_reviewer_feedback.py'
+      - '.github/workflows/scout-reviewer-feedback.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: scout-reviewer-feedback
+  cancel-in-progress: false
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate private exporter syntax and signed feedback protocol
+        run: |
+          cp integrations/DiscoveryHubScoutFeedback.gs /tmp/ScoutFeedbackExporter.js
+          node --check /tmp/ScoutFeedbackExporter.js
+          python -m unittest discover -v -s scout-operations/tests -p 'test_validate_reviewer_feedback.py'
+          python -m py_compile scout-operations/tools/validate_reviewer_feedback.py
+      - name: Check current public feedback without inventing Hub outcomes
+        if: github.event_name == 'pull_request'
+        run: |
+          python scout-operations/tools/validate_reviewer_feedback.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('scout-operations/research-feedback.json').read_text())
+          assert not r['signals'] or all(x['private_hub_action_verified'] for x in r['signals'])
+          assert all(not x['smartsheet_write_verified'] and not x['public_reach_addition_verified'] for x in r['signals'])
+          print('Review feedback preflight:',r['private_hub_connection_status'])
+          PY
+      - name: Verify signed private exports and publish source-fresh signals
+        if: github.event_name != 'pull_request'
+        env:
+          SCOUT_FEEDBACK_HMAC_KEY: \${{ secrets.SCOUT_FEEDBACK_HMAC_KEY }}
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git checkout -B main origin/main
+            python scout-operations/tools/validate_reviewer_feedback.py
+            git add scout-operations/research-feedback.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m 'Update authenticated, redacted Scout reviewer feedback'
+            if git push origin HEAD:main; then exit 0; fi
+            sleep $((attempt * 2))
+          done
+          exit 1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: scout-privacy-safe-review-feedback
+          path: scout-operations/research-feedback.json
+          if-no-files-found: error
