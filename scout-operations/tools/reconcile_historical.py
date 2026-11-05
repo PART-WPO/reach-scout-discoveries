@@ -13,6 +13,7 @@ import json
 import re
 from collections import Counter
 from pathlib import Path
+from reconciliation_diagnostics import missing_evidence
 
 ROOT=Path(__file__).resolve().parents[2]
 SOURCE=ROOT/"api-discoveries/historical/manifest.json"
@@ -151,6 +152,7 @@ def reconcile():
                 # Unsupported terminal claims do not count as completed research.
                 problems.append({"identity":entry["identity"],"declared_status":status,
                     "issue":"Terminal status lacks required independently verified proof",
+                    "missing_evidence_requirements":missing_evidence(entry,reviewed_paths),
                     "resolution":"Review missing evidence and human history; do not automatically clear"})
                 counts["unverified_terminal"]+=1
         else:
