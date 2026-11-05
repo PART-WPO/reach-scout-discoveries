@@ -18,6 +18,7 @@ BIOMEDICAL_AUDIT = "scout-operations/historical-crossref-phase2/2026-11-05-1125E
 BIOMEDICAL_SOURCES = "scout-operations/historical-crossref-phase2/2026-11-05-1026ET-biomedical-award-attribution-holds.json"
 MONTHLY = "scout-operations/monthly-expansion-leads.json"
 INDEPENDENT = "scout-operations/independent-discovery-leads.json"
+RECONSIDERATIONS = "scout-operations/expansion-scope-reconsiderations.json"
 
 ACTIVE = "PRIORITIZE_VERIFIED_WPO_SEED"
 SCOPE_CHECK = "VERIFY_WPO_PROJECT_SCOPE_FIRST"
@@ -84,7 +85,42 @@ def audited_soft_holds(root):
     return result, {BIOMEDICAL_AUDIT: audit_sha, BIOMEDICAL_SOURCES: sources_sha}
 
 
-def classify_seed(entry, holds):
+def validated_reconsiderations(root, source_dois):
+    """New independent DOI/project evidence reopens a HOLD to scope review only.
+
+    Never elevate directly to WPO-verified priority without stronger catalog
+    proof; a new research lead is not itself project verification.
+    """
+    report, report_sha = load(root, RECONSIDERATIONS)
+    if report.get("schema") != "reach-scout-expansion-scope-reconsiderations-v1":
+        raise ValueError("Unexpected reconsideration input schema")
+    result = {}
+    for entry in report.get("entries", []):
+        d = norm_doi(entry["doi"])
+        if d in result or d not in source_dois:
+            raise ValueError("Reconsideration DOI duplicate or missing from source: " + d)
+        urls = entry.get("evidence_urls", [])
+        files = entry.get("supporting_files", [])
+        if (entry.get("decision") != "REOPEN_PROJECT_SCOPE_CHECK"
+            or len(str(entry.get("specific_new_evidence") or "").strip()) < 50
+            or len(set(urls)) < 2
+            or not all(isinstance(u, str) and u.startswith("https://") for u in urls)
+            or not files):
+            raise ValueError("Insufficient independent material scope evidence: " + d)
+        for file in files:
+            rel = file.get("path", "")
+            if (not rel.startswith("scout-operations/historical-crossref-phase2/")
+                or ".." in Path(rel).parts
+                or not rel.endswith(".json")
+                or file.get("sha256") != hashlib.sha256((root / rel).read_bytes()).hexdigest()):
+                raise ValueError("Reconsideration evidence SHA mismatch: " + d)
+        result[d] = {"reason": entry["specific_new_evidence"],
+                     "evidence_urls": sorted(set(urls)),
+                     "supporting_files": files}
+    return result, report_sha
+
+
+def classify_seed(entry, holds, reconsiderations=None):
     d = norm_doi(entry["doi"])
     gate = entry.get("bulk_identity_gate") or {}
     if gate.get("status") == "VERIFIED_EXISTING_REACH":
@@ -97,6 +133,17 @@ def classify_seed(entry, holds):
             "evidence_reach_uid": gate["verified_reach_uid"],
             "required_next_action": "Explore relevant project-specific datasets, code and publications if not already documented; check each distinct related output independently",
             "audit": [],
+        }
+    if d in (reconsiderations or {}):
+        new = reconsiderations[d]
+        return {
+            "priority": SCOPE_CHECK,
+            "reason": "New source-backed project evidence justifies reopening a previous reversible hold; still requires scope verification",
+            "evidence_reach_uid": None,
+            "required_next_action": "Verify exact primary SPARK Award Number(s) and same-project WPO evidence before related-output expansion",
+            "audit": new["supporting_files"],
+            "evidence_urls": new["evidence_urls"],
+            "reopen_trigger": new["reason"],
         }
     if d in holds:
         return {
@@ -160,9 +207,10 @@ def build(root=ROOT):
     source_dois = {norm_doi(e["doi"]) for e in routing["entries"]}
     if not set(holds).issubset(source_dois):
         raise ValueError("Audited scope evidence is not part of Crossref source cohort")
+    reconsiderations, reconsiderations_sha = validated_reconsiderations(root, source_dois)
     rows = []
     for e in routing["entries"]:
-        decision = classify_seed(e, holds)
+        decision = classify_seed(e, holds, reconsiderations)
         rows.append({
             "doi": norm_doi(e["doi"]), "original_screening_outcome": e["outcome"],
             "priority": decision["priority"], "reason": decision["reason"],
@@ -189,6 +237,7 @@ def build(root=ROOT):
         "source_ir_manifest_sha256": ir_sha,
         "other_source_sha256": {"monthly_expansion_leads": monthly_sha,
                                 "independent_discovery_leads": independent_sha,
+                                "scope_reconsiderations": reconsiderations_sha,
                                 "audited_scope_files": audit_shas},
         "historical_crossref": {
             "total_preserved_seeds": routing["total"],
