@@ -24,7 +24,7 @@ ROOT=Path(__file__).resolve().parents[2]
 OUT=ROOT/"scout-operations/index-and-project-discovery-leads.json"
 SELECT="DOI,title,URL,type,created,updated,indexed,published-print,published-online,funder,relation"
 CROSSREF="https://api.crossref.org/works"
-NOAA_PRIMARY=re.compile(r"^NA\\d{2}(?:OAR|NWS)[A-Z0-9-]{7,}$",re.I)
+NOAA_PRIMARY=re.compile(r"^NA\d{2}(?:OAR|NWS)[A-Z0-9-]{7,}$",re.I)
 
 def valid_noaa_primary(award):
     return bool(NOAA_PRIMARY.fullmatch(str(award or "").strip()))
