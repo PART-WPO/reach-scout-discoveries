@@ -1,6 +1,10 @@
 name: Historical Crossref actionable routing
 on:
   workflow_dispatch:
+  schedule:
+    # Refresh SHA-derived REACH/NOAA IR/project relevance and workstream
+    # before the 11:45 UTC verified-impact run and weekday 8 AM ET briefing.
+    - cron: '20 11 * * 1-5'
   push:
     branches: [main]
     paths:
