@@ -96,13 +96,17 @@ def build(root=ROOT):
         titles = source_cases[key].get("titles", set())
         raw_title = sorted(titles, key=lambda x: (len(norm_title(x)), x), reverse=True)[0] if titles else ""
         urls = set()
+        distinct_source_rounds = 0
         preprint = False
         published = False
         award = False
         attribution = "NOT_CHECKED"
         provenance = []
         for path, doc in documents:
-            urls.update(evidence_urls(doc))
+            new_urls = set(evidence_urls(doc)) - urls
+            if new_urls:
+                distinct_source_rounds += 1
+            urls.update(new_urls)
             preprint = preprint or declared_original_preprint(doc)
             published = published or confirmed_original_published(doc)
             funding = doc.get("funding", {})
@@ -114,7 +118,9 @@ def build(root=ROOT):
                 elif attribution != "VERIFIED" and funding.get("same_project_wpo_attribution"):
                     attribution = "UNRESOLVED"
             provenance.append({"path":path.relative_to(root).as_posix(), "sha256":sha(path)})
-        rounds = min(2, len(documents)) if len(urls) >= 2 else min(1, len(documents))
+        # Multiple evidence notes repeating the same sources do not consume
+        # distinct-source follow-up budget. One new-source note = one round.
+        rounds = min(2, distinct_source_rounds)
         if preprint:
             publication = "PREPRINT"
         elif published:
