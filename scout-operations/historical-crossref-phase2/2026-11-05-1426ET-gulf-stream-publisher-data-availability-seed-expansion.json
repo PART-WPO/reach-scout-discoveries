@@ -1,0 +1,41 @@
+{
+  "schema": "reach-scout-research-evidence-v1",
+  "recorded_at": "2026-11-05T14:26:28-05:00",
+  "lane": "doi_seeded_expansion",
+  "original_doi": "10.1002/essoar.10507067.1",
+  "verified_original_reach_uid": "reachuid-v1-c7edc71b8cea9fa9926ef4f5ead3f846",
+  "published_related_doi": "10.1029/2021GL096709",
+  "finding": "Publisher's Data Availability Statement explicitly identifies TWO separate Zenodo dataset DOI leads: derived Southeast US rainfall index and archived CCSM4 HRC/LRC model simulations. This is project-specific primary-source evidence, not generic citation chasing. Publication acknowledgement distinguishes awards by author: Wei Zhang NA18OAR4320123; Kirtman/Siqueira NA18OAR4310293 and NA15OAR4320064. Attribution to exact WPO SPARK project for EACH dataset remains unverified.",
+  "related_dataset_leads": [
+    {
+      "doi": "10.5281/zenodo.4433147",
+      "publisher_description": "Southeast US rainfall index (5-year low-pass filtered) derived from observations and models",
+      "identity_status": "NOT_VERIFIED_IN_CURRENT_SHA_CHECKED_PUBLIC_REACH_SCOUT_AND_IR_INDEX",
+      "primary_award_status": "NOT_VERIFIED",
+      "next_action": "Check Zenodo/DataCite metadata and creator/funding, current verified REACH+Scout and NOAA IR canonical identity, primary SPARK award and same-project provenance; do not stage yet."
+    },
+    {
+      "doi": "10.5281/zenodo.5057616",
+      "publisher_description": "CCSM4 HRC and LRC model simulations used in the published study",
+      "identity_status": "NOT_VERIFIED_IN_CURRENT_SHA_CHECKED_PUBLIC_REACH_SCOUT_AND_IR_INDEX",
+      "primary_award_status": "NOT_VERIFIED",
+      "next_action": "Check Zenodo/DataCite metadata and creator/funding, current verified REACH+Scout and NOAA IR canonical identity, primary SPARK award and same-project provenance; do not stage yet."
+    }
+  ],
+  "evidence_urls": [
+    "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021GL096709",
+    "https://repository.library.noaa.gov/view/noaa/43170/noaa_43170_DS1.pdf"
+  ],
+  "source_fingerprints": {
+    "crossref_manifest_sha256": "799744c7e83f218d22cc19afacb7cfcf2762feb490659efde9f58bf19473b1fa",
+    "reach_cache_sha256": "6660562e325a6a141198f59acce84f2e30d9a2d14e6cf5acd29769c8a4b68e1e",
+    "ir_manifest_sha256": "47585b2686f6c7295235fd6d6e4e1174f429d9738052223a6d90cfd8e347247e",
+    "fresh_sha_revalidation_performed": false
+  },
+  "decision": "TWO_PUBLISHER_IDENTIFIED_DATASET_LEADS_REQUIRE_INDEPENDENT_IDENTITY_AND_PROJECT_CHECKS",
+  "original_lane": "UNCHANGED_EXISTING_REACH",
+  "expansion_lane": "OPEN_NOT_COMPLETED",
+  "private_human_decisions": "NOT_VERIFIED",
+  "public_scout_candidates_created": 0,
+  "automatic_hub_smartsheet_reach_mutations": false
+}
