@@ -56,6 +56,7 @@ class IncrementalTests(unittest.TestCase):
         self.assertIn("from-index-date:2026-10-01",recorded[0]["filter"])
         self.assertIn("until-index-date:2026-10-31",recorded[0]["filter"])
         self.assertNotIn("pub-date",recorded[0]["filter"])
+        self.assertNotIn("select",recorded[0], "Crossref rejected optional field selectors in live pilot")
         self.assertIn("award.number:NA22OAR4590199",recorded[0]["filter"])
     def test_partial_cursor_ceiling_fails_not_false_empty(self):
         with patch("incremental_crossref.fetch",return_value={
