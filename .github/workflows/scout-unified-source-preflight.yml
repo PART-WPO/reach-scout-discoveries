@@ -1,0 +1,82 @@
+name: Scout unified discovery preflight
+on:
+  pull_request:
+    paths:
+      - 'scout-operations/tools/unified_source_preflight.py'
+      - 'scout-operations/tests/test_unified_source_preflight.py'
+      - '.github/workflows/scout-unified-source-preflight.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'scout-operations/tools/unified_source_preflight.py'
+      - 'api-discoveries/manifest.json'
+      - 'api-discoveries/historical/manifest.json'
+      - 'api-discoveries/historical-crossref/manifest.json'
+      - 'scout-operations/monthly-triage.json'
+      - 'scout-operations/historical-triage.json'
+      - 'scout-operations/research-decision-cases.json'
+      - 'scout-operations/monthly-expansion-leads.json'
+      - 'scout-operations/independent-discovery-leads.json'
+      - 'scout-operations/preprint-watchlist.json'
+      - 'scout-operations/historical-crossref-screening/actionable-routing.json'
+      - 'scout-discoveries/manifest.json'
+      - 'scout-operations/identity-cache/public-identity-index.json'
+      - '.github/workflows/scout-unified-source-preflight.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: scout-unified-source-preflight
+  cancel-in-progress: false
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test universal public identity and publication gates
+        run: |
+          python -m py_compile scout-operations/tools/unified_source_preflight.py
+          python -m unittest discover -v -s scout-operations/tests -p 'test_unified_source_preflight.py'
+          python -m unittest discover -v -s scout-operations/tests -p 'test_decision_pipeline.py'
+      - name: Evaluate current source snapshots without creating Hub candidates
+        run: |
+          python scout-operations/tools/unified_source_preflight.py
+          python - <<'PY'
+          import json,subprocess
+          from pathlib import Path
+          o=json.loads(Path('scout-operations/unified-source-preflight.json').read_text())
+          assert o['changes_to_human_dispositions']==o['new_public_review_proposals']==o['new_reach_additions']==0
+          assert o['original_and_related_cases_preflighted']==827
+          assert sum(sum(n.values()) for n in o['lane_decision_counts'].values())==827
+          assert set(subprocess.check_output(['git','diff','--name-only'],text=True).splitlines())<={
+             'scout-operations/unified-source-preflight.json'}
+          print('Unified preflight verified',o['lane_decision_counts'])
+          PY
+      - name: Refresh latest source and publish (main only)
+        if: github.event_name != 'pull_request'
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git checkout -B main origin/main
+            python scout-operations/tools/unified_source_preflight.py
+            git add scout-operations/unified-source-preflight.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m 'Refresh unified, read-only research-source preflight'
+            if git push origin HEAD:main; then exit 0; fi
+            sleep $((attempt * 2))
+          done
+          exit 1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: scout-unified-preflight
+          path: scout-operations/unified-source-preflight.json
+          if-no-files-found: error
