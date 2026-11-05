@@ -1,0 +1,261 @@
+{
+  "schema": "reach-scout-reconciliation-repair-worklist-v1",
+  "sources_sha256": {
+    "historical_datacite_exceptions": "10bbe8c7b6cfdb0a8de31fb9d9f4e223942ab23010d6b5c802e57f902940dcab",
+    "historical_crossref_exceptions": "c25fe9a5a115f6c28939ed0346362f36c1b5ab65f667e9d8a5653f634ac28713",
+    "historical_datacite_manifest": "b21e3b81cf47c3187eb851d1d2b5ec0200d8ed54970c01f871bbd8b96475921e",
+    "historical_crossref_manifest": "799744c7e83f218d22cc19afacb7cfcf2762feb490659efde9f58bf19473b1fa",
+    "scout_supersessions": "0708c86b37000dffe6333277cc2d242e0e780a73bc6758fa98b6448ceda6464f",
+    "scout_active_manifest": "755885a5c5607f5036bf1a9b7cf28248c2be9442d68edfbdc167e58ebd1fab54",
+    "crossref_routing": "976385c776e53721e8f3cf9e72dccf62ce0440596b173bd7f62e03b8f844bbe9"
+  },
+  "unverified_terminal_cases": 12,
+  "repair_priority_counts": {
+    "FUNDING_OR_SCOPE_AND_SNAPSHOT_REPAIR": 10,
+    "MISSING_ACTIVE_PUBLIC_FEED_VERIFY_HISTORICAL_DECISION": 1,
+    "RETIRED_PUBLIC_PROPOSAL_VERIFY_PRIVATE_REVIEW_HISTORY": 1
+  },
+  "cases": [
+    {
+      "identity": "doi:10.17603/ds2-rgbs-xd77",
+      "cohort": "historical_datacite",
+      "original_declared_status": "metadata_update_forwarded",
+      "priority": "MISSING_ACTIVE_PUBLIC_FEED_VERIFY_HISTORICAL_DECISION",
+      "missing_requirements": [
+        "active_scout_feed_batch"
+      ],
+      "repair_instruction": "Find the exact source batch and immutable reviewer history; determine whether the proposal was superseded or never staged. Do not create a duplicate or invent a private Hub import.",
+      "public_batch_exclusion_history": [],
+      "related_source_routing": null,
+      "private_hub_outcome": "NOT_VERIFIED",
+      "human_decision_changed": false,
+      "original_terminal_status_changed": false,
+      "evidence_verified_and_terminal_reconciled": false,
+      "ready_to_auto_close": false
+    },
+    {
+      "identity": "doi:10.17603/ds2-xjyf-nc93",
+      "cohort": "historical_datacite",
+      "original_declared_status": "metadata_update_forwarded",
+      "priority": "RETIRED_PUBLIC_PROPOSAL_VERIFY_PRIVATE_REVIEW_HISTORY",
+      "missing_requirements": [
+        "active_scout_feed_batch"
+      ],
+      "repair_instruction": "The public batch was superseded and the proposal excluded. Do NOT reinstate it or count an active handoff. A human checks whether an old private Hub card exists and retires it if appropriate; reopen funding only with independently verified primary SPARK WPO award evidence.",
+      "public_batch_exclusion_history": [
+        {
+          "original_batch": "2026-10-28-hourly-datacite-expansion-award-fixes-001",
+          "replacement_batch": "2026-11-01-historical-datacite-primary-award-only-001",
+          "reason": "Remove historical DataCite-origin metadata-update proposals that used SPARK Related Award Number(s) as eligible WPO awards. The other two rows are retained unchanged in the replacement. No human decision or public REACH record modified."
+        }
+      ],
+      "related_source_routing": null,
+      "private_hub_outcome": "NOT_VERIFIED",
+      "human_decision_changed": false,
+      "original_terminal_status_changed": false,
+      "evidence_verified_and_terminal_reconciled": false,
+      "ready_to_auto_close": false
+    },
+    {
+      "identity": "doi:10.1002/jwmg.732",
+      "cohort": "historical_crossref",
+      "original_declared_status": "no_action",
+      "priority": "FUNDING_OR_SCOPE_AND_SNAPSHOT_REPAIR",
+      "missing_requirements": [
+        "funding_basis_12_chars",
+        "reach_snapshot_sha",
+        "related_outputs_checked_12_chars",
+        "verified_award_alignment"
+      ],
+      "repair_instruction": "Recheck exact primary project award, DOI-specific public research evidence, the current verified REACH comparison SHA and any related-output disposition. Record new sourced evidence; do not fill audit fields with placeholders, auto-approve an existing no-action decision or mark expansion complete.",
+      "public_batch_exclusion_history": [],
+      "related_source_routing": "NOT_FOUND_IN_REACH_INDEX",
+      "private_hub_outcome": "NOT_VERIFIED",
+      "human_decision_changed": false,
+      "original_terminal_status_changed": false,
+      "evidence_verified_and_terminal_reconciled": false,
+      "ready_to_auto_close": false
+    },
+    {
+      "identity": "doi:10.1007/s00330-020-07133-9",
+      "cohort": "historical_crossref",
+      "original_declared_status": "no_action",
+      "priority": "FUNDING_OR_SCOPE_AND_SNAPSHOT_REPAIR",
+      "missing_requirements": [
+        "funding_basis_12_chars",
+        "reach_snapshot_sha",
+        "related_outputs_checked_12_chars",
+        "verified_award_alignment"
+      ],
+      "repair_instruction": "Recheck exact primary project award, DOI-specific public research evidence, the current verified REACH comparison SHA and any related-output disposition. Record new sourced evidence; do not fill audit fields with placeholders, auto-approve an existing no-action decision or mark expansion complete.",
+      "public_batch_exclusion_history": [],
+      "related_source_routing": "NOT_FOUND_IN_REACH_INDEX",
+      "private_hub_outcome": "NOT_VERIFIED",
+      "human_decision_changed": false,
+      "original_terminal_status_changed": false,
+      "evidence_verified_and_terminal_reconciled": false,
+      "ready_to_auto_close": false
+    },
+    {
+      "identity": "doi:10.1007/s12035-019-01667-w",
+      "cohort": "historical_crossref",
+      "original_declared_status": "no_action",
+      "priority": "FUNDING_OR_SCOPE_AND_SNAPSHOT_REPAIR",
+      "missing_requirements": [
+        "funding_basis_12_chars",
+        "reach_snapshot_sha",
+        "related_outputs_checked_12_chars",
+        "verified_award_alignment"
+      ],
+      "repair_instruction": "Recheck exact primary project award, DOI-specific public research evidence, the current verified REACH comparison SHA and any related-output disposition. Record new sourced evidence; do not fill audit fields with placeholders, auto-approve an existing no-action decision or mark expansion complete.",
+      "public_batch_exclusion_history": [],
+      "related_source_routing": "NOT_FOUND_IN_REACH_INDEX",
+      "private_hub_outcome": "NOT_VERIFIED",
+      "human_decision_changed": false,
+      "original_terminal_status_changed": false,
+      "evidence_verified_and_terminal_reconciled": false,
+      "ready_to_auto_close": false
+    },
+    {
+      "identity": "doi:10.1088/1402-4896/ae2296",
+      "cohort": "historical_crossref",
+      "original_declared_status": "no_action",
+      "priority": "FUNDING_OR_SCOPE_AND_SNAPSHOT_REPAIR",
+      "missing_requirements": [
+        "funding_basis_12_chars",
+        "reach_snapshot_sha",
+        "related_outputs_checked_12_chars",
+        "verified_award_alignment"
+      ],
+      "repair_instruction": "Recheck exact primary project award, DOI-specific public research evidence, the current verified REACH comparison SHA and any related-output disposition. Record new sourced evidence; do not fill audit fields with placeholders, auto-approve an existing no-action decision or mark expansion complete.",
+      "public_batch_exclusion_history": [],
+      "related_source_routing": "NOT_FOUND_IN_REACH_INDEX",
+      "private_hub_outcome": "NOT_VERIFIED",
+      "human_decision_changed": false,
+      "original_terminal_status_changed": false,
+      "evidence_verified_and_terminal_reconciled": false,
+      "ready_to_auto_close": false
+    },
+    {
+      "identity": "doi:10.1177/13623613251341012",
+      "cohort": "historical_crossref",
+      "original_declared_status": "no_action",
+      "priority": "FUNDING_OR_SCOPE_AND_SNAPSHOT_REPAIR",
+      "missing_requirements": [
+        "funding_basis_12_chars",
+        "reach_snapshot_sha",
+        "related_outputs_checked_12_chars",
+        "verified_award_alignment"
+      ],
+      "repair_instruction": "Recheck exact primary project award, DOI-specific public research evidence, the current verified REACH comparison SHA and any related-output disposition. Record new sourced evidence; do not fill audit fields with placeholders, auto-approve an existing no-action decision or mark expansion complete.",
+      "public_batch_exclusion_history": [],
+      "related_source_routing": "NOT_FOUND_IN_REACH_INDEX",
+      "private_hub_outcome": "NOT_VERIFIED",
+      "human_decision_changed": false,
+      "original_terminal_status_changed": false,
+      "evidence_verified_and_terminal_reconciled": false,
+      "ready_to_auto_close": false
+    },
+    {
+      "identity": "doi:10.1371/journal.pone.0193711",
+      "cohort": "historical_crossref",
+      "original_declared_status": "no_action",
+      "priority": "FUNDING_OR_SCOPE_AND_SNAPSHOT_REPAIR",
+      "missing_requirements": [
+        "funding_basis_12_chars",
+        "reach_snapshot_sha",
+        "related_outputs_checked_12_chars",
+        "verified_award_alignment"
+      ],
+      "repair_instruction": "Recheck exact primary project award, DOI-specific public research evidence, the current verified REACH comparison SHA and any related-output disposition. Record new sourced evidence; do not fill audit fields with placeholders, auto-approve an existing no-action decision or mark expansion complete.",
+      "public_batch_exclusion_history": [],
+      "related_source_routing": "NOT_FOUND_IN_REACH_INDEX",
+      "private_hub_outcome": "NOT_VERIFIED",
+      "human_decision_changed": false,
+      "original_terminal_status_changed": false,
+      "evidence_verified_and_terminal_reconciled": false,
+      "ready_to_auto_close": false
+    },
+    {
+      "identity": "doi:10.14309/ctg.0000000000000725",
+      "cohort": "historical_crossref",
+      "original_declared_status": "no_action",
+      "priority": "FUNDING_OR_SCOPE_AND_SNAPSHOT_REPAIR",
+      "missing_requirements": [
+        "funding_basis_12_chars",
+        "reach_snapshot_sha",
+        "related_outputs_checked_12_chars",
+        "verified_award_alignment"
+      ],
+      "repair_instruction": "Recheck exact primary project award, DOI-specific public research evidence, the current verified REACH comparison SHA and any related-output disposition. Record new sourced evidence; do not fill audit fields with placeholders, auto-approve an existing no-action decision or mark expansion complete.",
+      "public_batch_exclusion_history": [],
+      "related_source_routing": "NOT_FOUND_IN_REACH_INDEX",
+      "private_hub_outcome": "NOT_VERIFIED",
+      "human_decision_changed": false,
+      "original_terminal_status_changed": false,
+      "evidence_verified_and_terminal_reconciled": false,
+      "ready_to_auto_close": false
+    },
+    {
+      "identity": "doi:10.3390/c4040066",
+      "cohort": "historical_crossref",
+      "original_declared_status": "no_action",
+      "priority": "FUNDING_OR_SCOPE_AND_SNAPSHOT_REPAIR",
+      "missing_requirements": [
+        "funding_basis_12_chars",
+        "reach_snapshot_sha",
+        "related_outputs_checked_12_chars",
+        "verified_award_alignment"
+      ],
+      "repair_instruction": "Recheck exact primary project award, DOI-specific public research evidence, the current verified REACH comparison SHA and any related-output disposition. Record new sourced evidence; do not fill audit fields with placeholders, auto-approve an existing no-action decision or mark expansion complete.",
+      "public_batch_exclusion_history": [],
+      "related_source_routing": "NOT_FOUND_IN_REACH_INDEX",
+      "private_hub_outcome": "NOT_VERIFIED",
+      "human_decision_changed": false,
+      "original_terminal_status_changed": false,
+      "evidence_verified_and_terminal_reconciled": false,
+      "ready_to_auto_close": false
+    },
+    {
+      "identity": "doi:10.3390/drones3020038",
+      "cohort": "historical_crossref",
+      "original_declared_status": "no_action",
+      "priority": "FUNDING_OR_SCOPE_AND_SNAPSHOT_REPAIR",
+      "missing_requirements": [
+        "funding_basis_12_chars",
+        "reach_snapshot_sha",
+        "related_outputs_checked_12_chars",
+        "verified_award_alignment"
+      ],
+      "repair_instruction": "Recheck exact primary project award, DOI-specific public research evidence, the current verified REACH comparison SHA and any related-output disposition. Record new sourced evidence; do not fill audit fields with placeholders, auto-approve an existing no-action decision or mark expansion complete.",
+      "public_batch_exclusion_history": [],
+      "related_source_routing": "NOT_FOUND_IN_REACH_INDEX",
+      "private_hub_outcome": "NOT_VERIFIED",
+      "human_decision_changed": false,
+      "original_terminal_status_changed": false,
+      "evidence_verified_and_terminal_reconciled": false,
+      "ready_to_auto_close": false
+    },
+    {
+      "identity": "doi:10.3390/jcm13195732",
+      "cohort": "historical_crossref",
+      "original_declared_status": "no_action",
+      "priority": "FUNDING_OR_SCOPE_AND_SNAPSHOT_REPAIR",
+      "missing_requirements": [
+        "funding_basis_12_chars",
+        "reach_snapshot_sha",
+        "related_outputs_checked_12_chars",
+        "verified_award_alignment"
+      ],
+      "repair_instruction": "Recheck exact primary project award, DOI-specific public research evidence, the current verified REACH comparison SHA and any related-output disposition. Record new sourced evidence; do not fill audit fields with placeholders, auto-approve an existing no-action decision or mark expansion complete.",
+      "public_batch_exclusion_history": [],
+      "related_source_routing": "NOT_FOUND_IN_REACH_INDEX",
+      "private_hub_outcome": "NOT_VERIFIED",
+      "human_decision_changed": false,
+      "original_terminal_status_changed": false,
+      "evidence_verified_and_terminal_reconciled": false,
+      "ready_to_auto_close": false
+    }
+  ],
+  "safety": "No declared status, historical source, human decision or seed-expansion disposition changed. Only independently verified new evidence and the original completion validator may resolve a claim."
+}
