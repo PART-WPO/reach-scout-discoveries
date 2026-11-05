@@ -60,6 +60,47 @@ class RouterTests(unittest.TestCase):
         self.assertEqual(result["mode"],"monthly_api_triage")
         self.assertTrue(result["historical_crossref_api"]["identity_screening_complete"])
 
+    def test_relevance_ranking_only_prioritizes_expansion_not_original_ledger(self):
+        mm,mc=m(0,0,0)
+        hh,hc=h(188,188,0)
+        ch,cc=h(4,0,4)
+        cc.update(awaiting_research=4)
+        route={"source_manifest_sha256":SHA,"total":4,
+               "counts":{"CONFIRMED_IN_REACH":2,
+                         "LIKELY_IN_REACH":1,"NOT_FOUND_IN_REACH_INDEX":1}}
+        scope={"source_crossref_manifest_sha256":SHA,
+               "historical_crossref":{"total_preserved_seeds":4,"counts":{
+                   "PRIORITIZE_VERIFIED_WPO_SEED":2,
+                   "VERIFY_WPO_PROJECT_SCOPE_FIRST":1,
+                   "DEFER_UNTIL_NEW_PROJECT_EVIDENCE":1}}}
+        r=decide(mm,mc,hh,hc,SHA,crossref_manifest=ch,
+                 crossref_coverage=cc,crossref_manifest_sha=SHA,
+                 crossref_routing=route,expansion_scope=scope)
+        x=r["historical_crossref_api"]
+        self.assertTrue(x["seed_relevance_priority_ready"])
+        self.assertEqual(x["seed_expansion_soft_deferred_not_completed"],1)
+        self.assertEqual(x["seed_expansions_pending"],0)
+        self.assertEqual(x["originals_pending_formal_research"],4)
+        self.assertEqual(x["research_completed"],0)
+        self.assertIn("reversibly deferred",r["reason"])
+
+    def test_stale_relevance_cannot_override_live_scope_priority(self):
+        mm,mc=m(0,0,0)
+        hh,hc=h(188,188,0)
+        ch,cc=h(4,0,4)
+        cc.update(awaiting_research=4)
+        route={"source_manifest_sha256":SHA,"total":4,
+               "counts":{"CONFIRMED_IN_REACH":2,
+                         "LIKELY_IN_REACH":1,"NOT_FOUND_IN_REACH_INDEX":1}}
+        stale={"source_crossref_manifest_sha256":"a"*64,
+               "historical_crossref":{"total_preserved_seeds":4,"counts":{
+                   "PRIORITIZE_VERIFIED_WPO_SEED":4}}}
+        r=decide(mm,mc,hh,hc,SHA,crossref_manifest=ch,
+                 crossref_coverage=cc,crossref_manifest_sha=SHA,
+                 crossref_routing=route,expansion_scope=stale)
+        self.assertFalse(r["historical_crossref_api"]["seed_relevance_priority_ready"])
+        self.assertEqual(r["historical_crossref_api"]["seed_relevance_priority_counts"],{})
+
     def test_historical_api_test_preempts_open_ended_historical(self):
         mm,mc=m(0,0,0)
         hh,hc=h(188,0,188)
