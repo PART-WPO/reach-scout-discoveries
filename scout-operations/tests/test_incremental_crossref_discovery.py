@@ -8,7 +8,7 @@ from unittest.mock import patch
 sys.path.insert(0,str(Path(__file__).resolve().parents[2]/"api-discoveries/tools"))
 from incremental_crossref import (
     window,prev_month,crossref_index_updates,project_search_plan,
-    query_project_titles,generate,
+    query_project_titles,generate,valid_noaa_primary,
 )
 
 class IncrementalTests(unittest.TestCase):
@@ -26,6 +26,24 @@ class IncrementalTests(unittest.TestCase):
         self.assertEqual(prev_month(date(2026,1,3)),"2025-12")
         self.assertEqual(window("2028-02"),("2028-02-01","2028-02-29"))
         with self.assertRaises(ValueError): window("2026-13")
+    def test_nonstandard_primary_labels_are_recorded_not_queried(self):
+        self.assertFalse(valid_noaa_primary("BOP"))
+        self.assertFalse(valid_noaa_primary("UNK"))
+        self.assertFalse(valid_noaa_primary("NA19NES4320002"))
+        self.assertTrue(valid_noaa_primary("NA25OARX459C0342-T1-01"))
+        awards=[{"award":"BOP","programs":["ESRM"],"projects":["General budget research program"]}]+self.fixture()
+        calls=[]
+        def fake(url,params):
+            calls.append(params)
+            return {"message":{"items":[]}}
+        with patch("incremental_crossref.fetch",side_effect=fake):
+            data=generate("2026-10",pilot=True,awards=awards,
+                          index=self.index(),preprints=set())
+        self.assertEqual(data["non_normalized_primary_identifiers_skipped"],1)
+        self.assertEqual(data["spark_primary_awards_queried"],1)
+        self.assertNotIn("BOP",str(calls))
+        self.assertEqual(data["new_public_scout_candidates"],0)
+
     def test_index_filter_is_not_publication_date(self):
         recorded=[]
         def fake(url,params):
