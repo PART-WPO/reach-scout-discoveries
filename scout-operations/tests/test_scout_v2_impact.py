@@ -43,7 +43,11 @@ class ReportingTests(unittest.TestCase):
     def test_aggregate_metrics_never_expose_case_level_gold_data(self):
         b=create()
         g=[{"case_id":e["case_id"],
-            "gold_label":"EXISTING_IN_REACH" if e["stratum"]=="known_reach_identity"
+            # Synthetic gold agrees with predicted duplicates ONLY for the
+            # privacy/aggregate-metric unit test; no actual truth is asserted.
+            "gold_label":"EXISTING_IN_REACH" if e["shared_engine_preflight"] in {
+                "EXISTING_IN_REACH_VERIFIED_BULK","EXISTING_IN_REACH",
+                "EXISTING_IN_REACH_VERIFIED_CANONICAL_URL"}
                       else "NOT_WPO_ASSOCIATED",
             "reviewer_minutes":"3"} for e in b["cases"]]
         aggregate=score(b,g)
