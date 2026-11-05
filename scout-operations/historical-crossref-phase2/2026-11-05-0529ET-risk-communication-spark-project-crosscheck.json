@@ -1,0 +1,51 @@
+{
+  "schema": "reach-scout-bounded-research-evidence-v1",
+  "recorded_at": "2026-11-05T05:29:00-05:00",
+  "original_doi": "10.1007/s10606-020-09380-2",
+  "lane": "historical_crossref_original",
+  "seed_expansion_lane": "OPEN_UNCHANGED",
+  "prior_evidence": "scout-operations/historical-crossref-phase2/2026-11-05-0430ET-risk-communication-publisher-ir-evidence.json",
+  "source_routing": {
+    "classification": "NOT_FOUND_IN_REACH_INDEX",
+    "source_manifest_sha256": "799744c7e83f218d22cc19afacb7cfcf2762feb490659efde9f58bf19473b1fa",
+    "reach_cache_sha256": "6660562e325a6a141198f59acce84f2e30d9a2d14e6cf5acd29769c8a4b68e1e",
+    "live_source_sha_reverified": false
+  },
+  "new_evidence": [
+    {
+      "source": "official_wpo_spark_public_project_directory",
+      "url": "https://wpo.noaa.gov/spark/",
+      "finding": "Primary Award Number(s) field for project 'Wait, that forecast changed? Assessing how publics consume and process changing tropical cyclone forecasts over time' lists NA19OAR0220095, NA19OAR0220103, NA19OAR0220119. Project describes analysis of hurricane social-media risk information, uncertainty and forecast consumption; Leysia Palen is among project PIs. This establishes an actual WPO primary-award project match, but not conclusive output-to-project attribution.",
+      "status": "VERIFIED_PUBLIC_WEB"
+    },
+    {
+      "source": "official_wpo_historical_project_list",
+      "url": "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf",
+      "finding": "Independent official WPO project list identifies the same FY19 project and the three awards, corroborating primary-award identity.",
+      "status": "VERIFIED_PUBLIC_WEB"
+    },
+    {
+      "source": "official_noaa_ir",
+      "url": "https://repository.library.noaa.gov/view/noaa/58643",
+      "finding": "Official article record explicitly lists NA19OAR0220103 and exact DOI; article addresses hurricane spaghetti-plot risk communication and includes project-associated researcher Leysia Palen.",
+      "status": "VERIFIED_PUBLIC_WEB"
+    }
+  ],
+  "funding": {
+    "primary_spark_award_match": "VERIFIED",
+    "award": "NA19OAR0220103",
+    "project_title": "Wait, that forecast changed? Assessing how publics consume and process changing tropical cyclone forecasts over time",
+    "same_project_wpo_attribution": "CORROBORATED_BUT_NOT_CONCLUSIVE",
+    "basis": "Official WPO project primary award, overlapping named researcher, related project-specific hurricane forecast social-media risk-communication topic, official output-level NOAA award acknowledgement.",
+    "uncertainty": "The article uses 2017 hurricane social-media interactions and the funded project began in 2019; cannot establish that this particular article was produced under the project rather than related earlier research. No explicit article-to-project output listing verified."
+  },
+  "decision": "HOLD_CURRENT_PUBLIC_IDENTITY_AND_PROJECT_OUTPUT_CONFIRMATION",
+  "private_hub_decisions": "NOT_VERIFIED",
+  "new_candidate_created": false,
+  "remaining": [
+    "Revalidate shared SHA-verified REACH/Scout and NOAA IR snapshots before candidate decision",
+    "Find explicit project output association or obtain human parent confirmation; no inferred PI from authors",
+    "Preserve separate DOI expansion investigation"
+  ],
+  "immutable_sources_unchanged": true
+}
