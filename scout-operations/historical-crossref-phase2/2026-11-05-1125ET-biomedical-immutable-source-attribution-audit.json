@@ -1,0 +1,40 @@
+{
+  "schema": "reach-scout-append-only-research-evidence-v1",
+  "observed_at": "2026-11-05T11:25:57-05:00",
+  "lane": "historical_original_source_provenance_audit",
+  "source_batch": "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part001.csv",
+  "source_manifest": "api-discoveries/historical-crossref/manifest.json",
+  "source_batch_manifest_sha256": "df420ff561050c5f019ccddd19eb93124ab642eba8aa6f87dc0636b6d5ee2de3",
+  "cases": [
+    {
+      "doi": "10.1007/s12035-019-01667-w",
+      "original_award_column": "UNK",
+      "original_proposed_project": "Application and Evaluation of the Finite-Volume Cubed Sphere Model (FV3) at Convection-Allowing Scales for Severe Weather Forecasting",
+      "finding": "Immutable source row has no literal primary award in NOAA Award Number(s), yet proposes a severe-weather FV3 project for a zebrafish Parkinson's biomedical paper. Prior PubMed/OpenAlex institutional evidence did not establish WPO attribution.",
+      "disposition": "BOUNDED_HOLD_SOURCE_AWARD_UNVERIFIED",
+      "next_action": "Do not stage; investigate upstream Crossref award matching provenance only if distinct source evidence appears."
+    },
+    {
+      "doi": "10.1007/s00330-020-07133-9",
+      "original_award_column": "UNK",
+      "original_proposed_project": "Application and Evaluation of the Finite-Volume Cubed Sphere Model (FV3) at Convection-Allowing Scales for Severe Weather Forecasting",
+      "finding": "Immutable source row has no literal primary award in NOAA Award Number(s), yet proposes the same severe-weather FV3 project for a cardiovascular PET/CT imaging paper. Prior PubMed/OpenAlex evidence did not establish WPO attribution.",
+      "disposition": "BOUNDED_HOLD_SOURCE_AWARD_UNVERIFIED",
+      "next_action": "Do not stage; investigate upstream Crossref award matching provenance only if distinct source evidence appears."
+    }
+  ],
+  "interpretation": "The two rows reveal a concrete source attribution/harvest-quality anomaly, not proof of absent Crossref funding. Do not infer specific award from project title; preserve immutable original records and existing human decisions.",
+  "identity_snapshot_live_source_sha_verified": false,
+  "private_reviewer_history": "NOT_VERIFIED",
+  "formal_checkpoint_advanced": false,
+  "seed_expansion_lane": "OPEN_INDEPENDENT",
+  "routing_counts_last_committed": {
+    "confirmed": 1,
+    "likely": 479,
+    "not_found": 134,
+    "incomplete": 0
+  },
+  "routing_source_sha256": "799744c7e83f218d22cc19afacb7cfcf2762feb490659efde9f58bf19473b1fa",
+  "routing_cache_sha256": "6660562e325a6a141198f59acce84f2e30d9a2d14e6cf5acd29769c8a4b68e1e",
+  "no_public_or_private_hub_mutation": true
+}
