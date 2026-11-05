@@ -1,0 +1,36 @@
+{
+  "schema": "reach-scout-append-only-research-evidence-v1",
+  "observed_at": "2026-11-05T07:32:31-05:00",
+  "original_doi": "10.1002/essoar.10504829.1",
+  "research_lane": "original_preprint_hold_and_independent_expansion",
+  "prior_evidence_file": "scout-operations/historical-crossref-phase2/2026-11-05-0628ET-essoar-10504829-preprint-status-evidence.json",
+  "new_distinct_source": {
+    "url": "https://www.flowphysicslab.org/wp-content/uploads/2024/03/Elbing_CV.pdf",
+    "type": "author_curriculum_vitae",
+    "finding": "Brian R. Elbing's March 2024 CV lists 'The silent sounds of tornadoes and their potential fluid mechanism' as 2020 AGU Fall Meeting A134-05 and explicitly associates DOI 10.1002/essoar.10504829.1 with that conference entry, rather than documenting a peer-reviewed journal version.",
+    "evidence_scope": "Corroborates conference/preprint identity, not proof that no final journal article exists."
+  },
+  "additional_primary_source": {
+    "url": "https://studio.m-anage.com/agu/fm20/webprogram/Paper738390.html",
+    "finding": "AGU 2020 session A134-05 lists Brian R Elbing and Christopher E Petrin; conference abstract identity consistent with CV."
+  },
+  "identity_snapshot": {
+    "repository_index_blob_sha": "a8d7e72a7411b3db22a1b553c3cf38a866b0ddfa",
+    "source_fingerprint_recorded": "929564941feb9dd5c69742c87988b98bbc92befa99b648f2aea5d4de695ff122",
+    "doi_exact_string_matches_in_saved_index": 0,
+    "live_manifest_sha_revalidated": false,
+    "interpretation": "Cached index-negative only, NOT VERIFIED current or globally new."
+  },
+  "decision": "PREPRINT_HOLD_BOUNDED_FOLLOWUP",
+  "funding_same_project": "NOT_VERIFIED",
+  "official_final_doi": "NOT_VERIFIED",
+  "private_hub_history": "NOT_VERIFIED",
+  "seed_expansion_status": "OPEN_NOT_COMPLETED",
+  "next_action": "Retain first-of-month preprint watchlist and separate expansion lane; no further repetitive title searches. Reopen only on authoritative final-publication relationship or distinct eligible output/project evidence.",
+  "limitations": [
+    "Official Zenodo/DataCite landing/API for separate monthly expansion DOI 10.5281/zenodo.22758716 inaccessible in web retrieval this run; no negative identity decision.",
+    "No verified live source SHA; decision pipeline not executed; no formal checkpoint or watchlist modification.",
+    "Requested noaa-ir/README.md returned GitHub 404."
+  ],
+  "no_automatic_staging": true
+}
