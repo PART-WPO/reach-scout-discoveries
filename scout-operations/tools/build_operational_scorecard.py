@@ -33,6 +33,15 @@ def main():
     feed,feed_sha=load("scout-discoveries/manifest.json")
     index,index_sha=load("scout-operations/identity-cache/public-identity-index.json")
     preprints,preprint_sha=load("scout-operations/preprint-watchlist.json")
+    expansion_relevance,relevance_sha=load("scout-operations/expansion-relevance-priority.json")
+    if expansion_relevance["source_routing_sha256"]!=route_sha:
+        raise ValueError("Expansion relevance priorities are stale relative to live REACH routing")
+    expansion_counts=expansion_relevance["historical_crossref"]["counts"]
+    if (expansion_relevance["historical_crossref"]["total_preserved_seeds"]!=route["total"]
+        or sum(expansion_counts.values())!=route["total"]
+        or expansion_relevance["source_crossref_manifest_sha256"]!=route["source_manifest_sha256"]
+        or expansion_relevance["source_reach_cache_sha256"]!=route["reach_cache_sha256"]):
+        raise ValueError("Invalid expansion priority source cohort or verified cache")
     if route["total"]!=cross["total_distinct_dois"]:
         raise ValueError("Historical Crossref source cohort mismatch")
     if route["source_manifest_sha256"]!=cross["source_manifest_sha256"]:
@@ -66,7 +75,8 @@ def main():
         "research_decision_rollup":research_sha,
         "scout_published_manifest":feed_sha,
         "shared_identity_index":index_sha,
-        "preprint_watchlist":preprint_sha}
+        "preprint_watchlist":preprint_sha,
+        "expansion_relevance":relevance_sha}
     result={
         "schema":"reach-scout-operational-scorecard-v1",
         "source_sha256":artifacts,
@@ -85,7 +95,11 @@ def main():
             "research_evidence_next_actions":research["next_action_counts"]},
         "separate_doi_expansion":{"historical_crossref_completed_verified":cross["seed_expansions_completed"],
             "historical_crossref_pending":cross["seed_expansion_pending"],
-            "research_evidence_note":"Evidence rounds and related DOI leads are not completed expansions."},
+            "relevance_priority_counts":expansion_counts,
+            "monthly_discovered_lead_priority_counts":expansion_relevance["other_discovery_sources"]["monthly_expansion"]["priority_counts"],
+            "independent_discovered_lead_priority_counts":expansion_relevance["other_discovery_sources"]["independent_research"]["priority_counts"],
+            "relevance_soft_deferred_not_closed":expansion_counts.get("DEFER_UNTIL_NEW_PROJECT_EVIDENCE",0),
+            "research_evidence_note":"Relevance is only an exploration priority. Every DOI and prior terminal/expansion status stays recorded; soft deferral is reversible and is not completed or excluded research."},
         "review_pipeline":{"public_scout_staged_proposals":queue_records,
             "public_scout_batches":feed["batch_count"],
             "scout_inbox_draft_rows":inbox_records,
