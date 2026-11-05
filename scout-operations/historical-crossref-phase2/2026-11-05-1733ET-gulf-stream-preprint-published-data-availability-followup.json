@@ -1,0 +1,41 @@
+{
+  "schema": "reach-scout-research-evidence-v1",
+  "recorded_at": "2026-11-05T17:33:32-05:00",
+  "lane": "doi_seeded_expansion",
+  "original_doi": "10.1002/essoar.10507067.1",
+  "original_public_reach_uid": "reachuid-v1-c7edc71b8cea9fa9926ef4f5ead3f846",
+  "published_related_doi": "10.1029/2021GL096709",
+  "research_type": "distinct_source_preprint_to_published_data_availability_comparison",
+  "findings": [
+    {
+      "doi": "10.5281/zenodo.4433147",
+      "observation": "Both preprint manuscript and published journal article explicitly cite the same derived Southeast US rainfall index DOI. Product identity as a cited dataset is source-backed, but its own repository metadata, specific award attribution, and REACH/Scout uniqueness remain unverified.",
+      "decision": "HOLD_INDIVIDUAL_DATASET_IDENTITY_AND_PROJECT_FUNDING"
+    },
+    {
+      "doi": "10.5281/zenodo.5057616",
+      "observation": "Published journal article explicitly cites a Zenodo archive for CCSM4 HRC/LRC simulations; the available preprint PDF instead says CCSM4 model codes, experiments and data outputs were available from University of Miami authors on request. This is a material documentation/version difference, not proof of dataset novelty or same-project WPO funding.",
+      "decision": "HOLD_INDIVIDUAL_DATASET_IDENTITY_AND_PROJECT_FUNDING"
+    }
+  ],
+  "evidence_urls": [
+    "https://d197for5662m48.cloudfront.net/documents/publicationstatus/106421/preprint_pdf/5e98e62837db71d99a7bdadbc45fc1a6.pdf",
+    "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021GL096709",
+    "https://repository.library.noaa.gov/view/noaa/43170/noaa_43170_DS1.pdf"
+  ],
+  "prior_evidence_path": "scout-operations/historical-crossref-phase2/2026-11-05-1426ET-gulf-stream-publisher-data-availability-seed-expansion.json",
+  "initial_and_followup": "Prior publisher data-availability discovery plus one distinct preprint-manuscript version comparison; no further generic searches warranted.",
+  "source_validation": {
+    "public_identity_index_blob_sha": "a8d7e72a7411b3db22a1b553c3cf38a866b0ddfa",
+    "reach_cache_sha256_recorded": "6660562e325a6a141198f59acce84f2e30d9a2d14e6cf5acd29769c8a4b68e1e",
+    "fresh_upstream_sha_recalculated": false,
+    "datacite_exact_doi_api": "ACCESS_FAILURE_FOR_BOTH_DOIS_NOT_MISSING_METADATA",
+    "private_feedback": "NOT_VERIFIED"
+  },
+  "next_action": "Use verified GitHub Action DataCite exact DOI metadata pull and shared current identity+official IR snapshot; independently verify each dataset's project-specific funding and DOI/version before any 24-column human proposal. If retrieval remains inaccessible, retain technical hold rather than cycling.",
+  "original_lane": "UNCHANGED_EXISTING_PUBLIC_REACH_IDENTITY",
+  "expansion_lane": "RESEARCH_FOLLOWUP_DOCUMENTED_NOT_COMPLETED",
+  "new_public_proposals": 0,
+  "private_human_decisions": "NOT_VERIFIED",
+  "automatic_hub_smartsheet_reach_mutations": false
+}
