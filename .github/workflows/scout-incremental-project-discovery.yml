@@ -47,6 +47,7 @@ jobs:
           python -m unittest discover -v -s scout-operations/tests -p 'test_incremental_crossref_discovery.py'
           python -m unittest discover -v -s scout-operations/tests -p 'test_unified_source_preflight.py'
       - name: Perform bounded public research and persist immutable DOI leads
+        if: github.event_name != 'pull_request'
         shell: bash
         env:
           EVENT_KIND: ${{ github.event_name }}
