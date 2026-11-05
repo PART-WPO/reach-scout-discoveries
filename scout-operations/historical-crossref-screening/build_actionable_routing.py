@@ -22,6 +22,7 @@ SOURCE = ROOT / "api-discoveries/historical-crossref/manifest.json"
 sys.path.insert(0, str(ROOT / "scout-operations/tools"))
 from decision_pipeline import build_index, lookup, norm_title
 from ir_reach_identity import identity_check, trusted_index
+from bulk_reach_dedup import decide as bulk_decide, summarize as bulk_summarize
 
 def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -121,24 +122,28 @@ def build():
             r = cache_by_uid[ir_uid]
             existing = matches.get(ir_uid)
             matches[ir_uid] = (r, bool(existing and existing[1]), bool(existing and existing[2]))
-        if prior["screening_status"] == "CONFIRMED_IN_REACH":
-            outcome = "CONFIRMED_IN_REACH"
-            route = "SKIP_ORIGINAL_RESEARCH_KEEP_EXPANSION_SEED"
-        elif not titles:
-            outcome = "SCREENING_INCOMPLETE"
-            route = "RECOVER_SOURCE_TITLE_THEN_RESCREEN"
-        elif any(hit_doi for _, hit_doi, _ in matches.values()):
-            outcome = "LIKELY_IN_REACH"
-            route = "VERIFY_MATCHED_DETAIL_ONCE"
-        elif ir_uid:
-            outcome = "LIKELY_IN_REACH"
-            route = "VERIFY_OFFICIAL_IR_DOI_URL_AND_VERSION_ONCE"
-        elif matches:
-            outcome = "LIKELY_IN_REACH"
-            route = "VERIFY_TITLE_VERSION_ONCE"
-        else:
-            outcome = "NOT_FOUND_IN_REACH_INDEX"
-            route = "ADVANCE_TO_FUNDING_AND_METADATA_RESEARCH"
+        match_rows = [
+            {"reach_uid": uid, "record_id": r["record_id"],
+             "doi_hit": hd, "title_hit": ht,
+             "official_ir_url_hit": uid == ir_uid,
+             "detail_path": r["detail_path"]}
+            for uid, (r, hd, ht) in sorted(matches.items())
+        ]
+        # The shared deterministic gate can clear strong, unique identity
+        # comparisons in a single verified batch, never closing triage states.
+        gate = bulk_decide(
+            match_rows, ir_evidence, title_available=bool(titles),
+            previous_screening_status=prior["screening_status"])
+        outcome = {
+            "VERIFIED_EXISTING_REACH": "CONFIRMED_IN_REACH",
+            "NEEDS_IDENTITY_REVIEW": "LIKELY_IN_REACH",
+            "NO_PUBLIC_REACH_MATCH": "NOT_FOUND_IN_REACH_INDEX",
+            "SCREENING_INCOMPLETE": "SCREENING_INCOMPLETE",
+        }[gate["status"]]
+        route = gate["route"]
+        require(prior["screening_status"] != "CONFIRMED_IN_REACH"
+                or outcome == "CONFIRMED_IN_REACH",
+                "Prior verified duplicate lost its confirmed REACH identity: " + d)
         scout_queue_matches = [
             {"source": hit["source"], "identity": hit["identity"],
              "location": hit["location"], "basis": hit["match_bases"]}
@@ -150,15 +155,17 @@ def build():
             "scout_public_queue_match_count": len(scout_queue_matches),
             "scout_overlap": bool(prior.get("scout_overlap")),
             "noaa_ir_reach_check": ir_evidence,
-            "matches": [
-                {"reach_uid": uid, "record_id": r["record_id"],
-                 "doi_hit": hd, "title_hit": ht, "official_ir_url_hit": uid == ir_uid, "detail_path": r["detail_path"]}
-                for uid, (r, hd, ht) in sorted(matches.items())
-            ],
+            "bulk_identity_gate": gate,
+            "matches": match_rows,
+            "original_triage_modified": False,
+            "expansion_seed_preserved": True,
+            "private_hub_review_verified": False,
             "previous_screening_status": prior["screening_status"],
         })
     counts = dict(Counter(r["outcome"] for r in results))
     require(sum(counts.values()) == len(original), "Routing totals mismatch")
+    gate_totals = bulk_summarize(results)
+    require(gate_totals["source_dois"] == len(original), "Bulk dedup input incomplete")
     return {"schema": "reach-scout-crossref-actionable-routing-v1",
             "source_manifest_sha256": sha(SOURCE),
             "screening_manifest_sha256": sha(HERE / "manifest.json"),
@@ -170,8 +177,9 @@ def build():
             "public_scout_queue_overlap_dois": sum(bool(r["scout_public_queue_matches"]) for r in results),
             "reach_source_records": cache["source_records"],
             "total": len(results), "counts": counts,
+            "bulk_identity_screening": gate_totals,
             "scout_overlap_flagged": sum(r["scout_overlap"] for r in results),
-            "note": "Verified NOAA IR DOI-to-URL fallback changes routing without touching source/checkpoint batches. Exact official URL is bounded original identity evidence; likely routes require a documented decision. Negative index result is not proof of global absence; every DOI remains an independent expansion seed.",
+            "note": "Bulk identity gate confirms only unique verified REACH exact DOI or official NOAA IR URL identities with normalized title agreement. Conflicting identity/version evidence remains held. Screening confirms identity only; original research/expansion completion, private human review and REACH additions are unchanged. Negative public index results are not global newness.",
             "entries": results}
 
 def main():
