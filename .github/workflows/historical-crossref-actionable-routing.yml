@@ -6,6 +6,8 @@ on:
       - '.github/workflows/historical-crossref-actionable-routing.yml'
       - 'scout-operations/historical-crossref-screening/build_actionable_routing.py'
       - 'scout-operations/tests/test_historical_crossref_title_normalization.py'
+      - 'scout-operations/tests/test_bulk_reach_dedup.py'
+      - 'scout-operations/tools/bulk_reach_dedup.py'
       - 'scout-operations/tools/decision_pipeline.py'
       - 'scout-operations/historical-crossref-screening/manifest.json'
       - 'scout-operations/reach-comparison-cache/comparison-index.json'
@@ -50,6 +52,7 @@ jobs:
           print("Verified live REACH manifest SHA-256:",digest)
           PY
             python -m unittest discover -s scout-operations/tests -p 'test_historical_crossref_title_normalization.py' -v
+            python -m unittest discover -s scout-operations/tests -p 'test_bulk_reach_dedup.py' -v
             python scout-operations/historical-crossref-screening/build_actionable_routing.py
             python - <<'PY'
           import json
@@ -70,10 +73,18 @@ jobs:
           index={e["doi"]:e for e in j["entries"]}
           for doi,uid in expected.items():
               row=index[doi]
-              assert row["outcome"]=="LIKELY_IN_REACH",(doi,row["outcome"])
-              assert any(m["reach_uid"]==uid and m["title_hit"]
+              # Each has official IR DOI -> unique canonical URL -> REACH UID
+              # plus independently consistent normalized title evidence.
+              assert row["outcome"]=="CONFIRMED_IN_REACH",(doi,row["outcome"])
+              assert row["bulk_identity_gate"]["status"]=="VERIFIED_EXISTING_REACH"
+              assert row["bulk_identity_gate"]["verified_reach_uid"]==uid
+              assert row["bulk_identity_gate"]["basis"]=="VERIFIED_NOAA_IR_DOI_TO_REACH_URL_AND_TITLE"
+              assert any(m["reach_uid"]==uid and m["title_hit"] and m["official_ir_url_hit"]
                          for m in row["matches"]),(doi,row["matches"])
-          print("Verified four corrected title-only REACH matches; none automatically confirmed")
+          assert j["bulk_identity_screening"]["counts"]["VERIFIED_EXISTING_REACH"]>=300
+          assert all(r["original_triage_modified"] is False and r["expansion_seed_preserved"] is True
+                     and r["private_hub_review_verified"] is False for r in j["entries"])
+          print("Verified four source-backed URL duplicates; original ledgers and expansion seeds untouched")
           print("Validated routing:",j["counts"],"Scout overlaps:",j["scout_overlap_flagged"])
           PY
             git add scout-operations/historical-crossref-screening/actionable-routing.json
