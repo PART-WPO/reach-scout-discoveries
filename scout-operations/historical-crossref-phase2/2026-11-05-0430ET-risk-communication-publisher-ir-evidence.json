@@ -1,0 +1,46 @@
+{
+  "schema": "reach-scout-bounded-research-evidence-v1",
+  "recorded_at": "2026-11-05T04:30:00-05:00",
+  "original_doi": "10.1007/s10606-020-09380-2",
+  "lane": "historical_crossref_original",
+  "seed_expansion_lane": "OPEN_UNCHANGED",
+  "source_routing": {
+    "classification": "NOT_FOUND_IN_REACH_INDEX",
+    "reach_cache_sha256": "6660562e325a6a141198f59acce84f2e30d9a2d14e6cf5acd29769c8a4b68e1e",
+    "source_manifest_sha256": "799744c7e83f218d22cc19afacb7cfcf2762feb490659efde9f58bf19473b1fa",
+    "snapshot_live_sha_reverified": false,
+    "scout_queue_overlap_count": 0,
+    "official_ir_url": "https://repository.library.noaa.gov/view/noaa/58643",
+    "ir_crosswalk_status": "VERIFIED_IR_URL_NOT_IN_PUBLIC_REACH_at_prior_snapshot"
+  },
+  "new_evidence": [
+    {
+      "source": "official_publisher",
+      "url": "https://link.springer.com/article/10.1007/s10606-020-09380-2",
+      "finding": "Journal version of record published 2020-10-01, Computer Supported Cooperative Work 29:587-623; authors Melissa Bica, Joy Weinberg, Leysia Palen; social-media hurricane forecast spaghetti-plot risk communication research.",
+      "status": "VERIFIED_PUBLIC_WEB"
+    },
+    {
+      "source": "official_noaa_institutional_repository",
+      "url": "https://repository.library.noaa.gov/view/noaa/58643",
+      "finding": "Exact DOI, official IR record noaa:58643, OAR collection, document type Journal Article; funding field Grant no. NA19OAR0220103.",
+      "status": "VERIFIED_PUBLIC_WEB"
+    }
+  ],
+  "funding": {
+    "acknowledged_award": "NA19OAR0220103",
+    "primary_spark_award_match": "NOT_VERIFIED",
+    "same_project_wpo_attribution": "NOT_VERIFIED",
+    "note": "NOAA IR award acknowledgement alone does not prove literal SPARK primary award or same WPO project."
+  },
+  "decision": "HOLD_PROJECT_ATTRIBUTION_AND_CURRENT_IDENTITY",
+  "private_hub_decisions": "NOT_VERIFIED",
+  "new_candidate_created": false,
+  "remaining": [
+    "Revalidate current shared public REACH+Scout identity and official NOAA IR index fingerprints before a fresh duplicate/newness decision",
+    "Verify primary SPARK Award Number(s) and same-project funding; exclude Related Award Numbers",
+    "Inspect prior case-checkpoint revisions before formal evaluate/write",
+    "Independently investigate DOI-seeded related output expansion"
+  ],
+  "immutable_sources_unchanged": true
+}
