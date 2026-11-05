@@ -1,0 +1,84 @@
+name: Validate Scout research closeout and reconciliation
+on:
+  push:
+    branches:
+      - fix/scout-research-decision-reconciliation-v2
+  pull_request:
+    paths:
+      - 'scout-operations/tools/reconcile_historical*.py'
+      - 'scout-operations/tools/compile_research_evidence.py'
+      - 'scout-operations/tools/summarize_research_decisions.py'
+      - '.github/workflows/*research*'
+      - '.github/workflows/reconcile-historical*.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install existing Scout test dependency
+        run: python -m pip install --disable-pip-version-check requests
+      - name: Compile and run existing unit tests
+        run: |
+          python -m py_compile scout-operations/tools/reconcile_historical.py scout-operations/tools/reconcile_historical_crossref.py scout-operations/tools/compile_research_evidence.py scout-operations/tools/summarize_research_decisions.py
+          python -m unittest discover -v -s scout-operations/tests
+      - name: Reconcile both historical cohorts without changing human decisions
+        run: |
+          python scout-operations/tools/reconcile_historical.py
+          python scout-operations/tools/reconcile_historical_crossref.py
+      - name: Compile overnight research and evaluate using shared public identity gate
+        run: |
+          python scout-operations/tools/decision_pipeline.py build-index
+          python scout-operations/tools/compile_research_evidence.py
+          python scout-operations/tools/decision_pipeline.py evaluate --cases scout-operations/research-decision-cases.json
+          python scout-operations/tools/summarize_research_decisions.py
+      - name: Assert fail-closed metrics, traceability and no human decision writes
+        run: |
+          python - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          base=Path('scout-operations')
+          def get(p): return json.loads((base/p).read_text())
+          for stem in ('historical','historical-crossref'):
+              coverage=get(stem+'-coverage.json')
+              exceptions=get(stem+'-reconciliation-exceptions.json')
+              assert exceptions['declared_unverified_terminal_count']==coverage['unverified_terminal_statuses']
+              assert coverage['fully_investigated']+coverage['remaining']==coverage['total_distinct_dois']
+              assert not (coverage['research_complete'] and coverage['unverified_terminal_statuses'])
+              assert exceptions['source_manifest_sha256']==coverage['source_manifest_sha256']
+              before=json.loads(subprocess.check_output(['git','show','HEAD:scout-operations/'+stem+'-triage.json']))
+              after=get(stem+'-triage.json')
+              old={r['identity']:r for r in before['entries']}
+              new={r['identity']:r for r in after['entries']}
+              assert old.keys()==new.keys()
+              for e in exceptions['exceptions']:
+                  ident=e['identity']
+                  assert old[ident]['status']==new[ident]['status']==e['declared_status']
+                  for field in ('scout_batch_path','human_decision','seed_expansion_status'):
+                      assert old[ident].get(field)==new[ident].get(field)
+          rollup=get('research-decision-rollup.json')
+          cases=get('research-decision-cases.json')
+          assert rollup['cases_evaluated']==len(cases['cases'])>0
+          assert rollup['automatically_staged']==0
+          assert rollup['original_terminal_statuses_modified']==0
+          assert rollup['expansion_seed_closures']==0
+          assert all(Path(r['checkpoint_path']).exists() for r in rollup['cases'])
+          assert get('historical-crossref-coverage.json')['total_distinct_dois']==614
+          print('Validated all',rollup['cases_evaluated'],'research decision checkpoints')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: scout-research-closeout-validation
+          path: |
+            scout-operations/*reconciliation-exceptions.json
+            scout-operations/*coverage.json
+            scout-operations/research-decision-cases.json
+            scout-operations/research-decision-rollup.json
+            scout-operations/research-evidence-coverage.json
+          if-no-files-found: error
