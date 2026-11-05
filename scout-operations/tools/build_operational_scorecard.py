@@ -42,6 +42,17 @@ def main():
         or expansion_relevance["source_crossref_manifest_sha256"]!=route["source_manifest_sha256"]
         or expansion_relevance["source_reach_cache_sha256"]!=route["reach_cache_sha256"]):
         raise ValueError("Invalid expansion priority source cohort or verified cache")
+    if expansion_counts.get("PRIORITIZE_VERIFIED_WPO_SEED",0)!=route["counts"].get("CONFIRMED_IN_REACH",0):
+        raise ValueError("Verified WPO exploration count differs from proven REACH identities")
+    for evidence_name,relative in (("monthly_expansion_leads","scout-operations/monthly-expansion-leads.json"),
+                                   ("independent_discovery_leads","scout-operations/independent-discovery-leads.json"),
+                                   ("scope_reconsiderations","scout-operations/expansion-scope-reconsiderations.json")):
+        source_sha=(expansion_relevance.get("other_source_sha256") or {}).get(evidence_name)
+        if source_sha!=hashlib.sha256((ROOT/relative).read_bytes()).hexdigest():
+            raise ValueError("Stale expansion relevance source: "+relative)
+    for relative,expected_sha in (expansion_relevance.get("other_source_sha256") or {}).get("audited_scope_files",{}).items():
+        if not relative.startswith("scout-operations/historical-crossref-phase2/") or hashlib.sha256((ROOT/relative).read_bytes()).hexdigest()!=expected_sha:
+            raise ValueError("Expansion scope audit checksum mismatch: "+relative)
     if route["total"]!=cross["total_distinct_dois"]:
         raise ValueError("Historical Crossref source cohort mismatch")
     if route["source_manifest_sha256"]!=cross["source_manifest_sha256"]:
