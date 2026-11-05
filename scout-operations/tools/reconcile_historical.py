@@ -13,11 +13,13 @@ import json
 import re
 from collections import Counter
 from pathlib import Path
+from reconciliation_diagnostics import missing_evidence
 
 ROOT=Path(__file__).resolve().parents[2]
 SOURCE=ROOT/"api-discoveries/historical/manifest.json"
 LEDGER=ROOT/"scout-operations/historical-triage.json"
 REPORT=ROOT/"scout-operations/historical-coverage.json"
+EXCEPTIONS=ROOT/"scout-operations/historical-reconciliation-exceptions.json"
 DOI_RE=re.compile(r"10\.[0-9]{4,9}/[^\s]+",re.I)
 BATCH_RE=re.compile(r"api-discoveries/historical/batches/[A-Za-z0-9_.-]+\.csv")
 STATUS_PENDING={"awaiting_research","investigating","needs_more_research"}
@@ -146,11 +148,15 @@ def reconcile():
             if verified_terminal(entry,reviewed_paths):
                 valid.append(entry);counts["completed"]+=1;counts[status]+=1
             else:
-                problems.append(entry["identity"]+" declared "+status+" without required research proof")
+                # Keep the declared human/research status as historical evidence.
+                # Unsupported terminal claims do not count as completed research.
+                problems.append({"identity":entry["identity"],"declared_status":status,
+                    "issue":"Terminal status lacks required independently verified proof",
+                    "missing_evidence_requirements":missing_evidence(entry,reviewed_paths),
+                    "resolution":"Review missing evidence and human history; do not automatically clear"})
+                counts["unverified_terminal"]+=1
         else:
             counts[status]+=1
-    if problems:
-        raise ValueError("Unsupported completed statuses; ledger not updated: "+"; ".join(problems[:6]))
     total=len(entries)
     progress={
         "schema":"reach-scout-historical-coverage-v1",
@@ -167,7 +173,9 @@ def reconcile():
         "metadata_update_forwarded":counts["metadata_update_forwarded"],
         "no_action":counts["no_action"],
         "human_metadata_needed":counts["human_metadata_needed"],
-        "research_complete":bool(total and counts["completed"]==total),
+        "unverified_terminal_statuses":counts["unverified_terminal"],
+        "reconciliation_exceptions_path":"scout-operations/historical-reconciliation-exceptions.json",
+        "research_complete":bool(total and counts["completed"]==total and not problems),
         "note":"A completed status requires individual Scout evidence and REACH comparison; DataCite date enrichment alone does not close an item."
     }
     proposed={"schema":"reach-scout-historical-triage-v1",
@@ -178,6 +186,20 @@ def reconcile():
     if LEDGER.read_text(encoding="utf-8")!=new_ledger:LEDGER.write_text(new_ledger,encoding="utf-8")
     if not REPORT.exists() or REPORT.read_text(encoding="utf-8")!=new_report:
         REPORT.write_text(new_report,encoding="utf-8")
+    exception_report={"schema":"reach-scout-reconciliation-exceptions-v1",
+        "cohort":"historical_datacite",
+        "source_manifest_sha256":progress["source_manifest_sha256"],
+        "declared_unverified_terminal_count":len(problems),
+        "status":"REVIEW_REQUIRED" if problems else "CLEAR",
+        "exceptions":problems,
+        "note":"No terminal state or human decision is automatically changed. Unsupported terminal claims are excluded from validated completion."}
+    rendered=json.dumps(exception_report,indent=2,ensure_ascii=False)+"\n"
+    if not EXCEPTIONS.exists() or EXCEPTIONS.read_text(encoding="utf-8")!=rendered:
+        EXCEPTIONS.write_text(rendered,encoding="utf-8")
+    if problems:
+        print("::warning::Historical DataCite: "+str(len(problems))+
+              " unverified terminal dispositions excluded from completion; see "+
+              EXCEPTIONS.relative_to(ROOT).as_posix())
     print(json.dumps(progress,indent=2))
     return progress
 

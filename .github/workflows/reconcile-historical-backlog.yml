@@ -46,7 +46,7 @@ jobs:
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add scout-operations/historical-triage.json scout-operations/historical-coverage.json scout-operations/active-workstream.json
+          git add scout-operations/historical-triage.json scout-operations/historical-coverage.json scout-operations/historical-reconciliation-exceptions.json scout-operations/active-workstream.json
           if git diff --cached --quiet; then
             echo 'Historical queue already reconciled'
             exit 0

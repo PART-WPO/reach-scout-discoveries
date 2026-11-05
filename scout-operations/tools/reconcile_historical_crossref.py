@@ -8,11 +8,13 @@ import csv,hashlib,io,json,re
 from collections import Counter,defaultdict
 from pathlib import Path
 from reconcile_historical import verified_terminal
+from reconciliation_diagnostics import missing_evidence
 
 ROOT=Path(__file__).resolve().parents[2]
 SOURCE=ROOT/"api-discoveries/historical-crossref/manifest.json"
 LEDGER=ROOT/"scout-operations/historical-crossref-triage.json"
 COVERAGE=ROOT/"scout-operations/historical-crossref-coverage.json"
+EXCEPTIONS=ROOT/"scout-operations/historical-crossref-reconciliation-exceptions.json"
 REVIEW=ROOT/"scout-discoveries/manifest.json"
 OPEN={"awaiting_research","investigating","needs_more_research"}
 DONE={"already_in_reach","forwarded_to_hub","metadata_update_forwarded","no_action","human_metadata_needed"}
@@ -160,7 +162,7 @@ def run():
                 key=canonical(row.get("DOI"))
                 if key:reviewed.add(key)
     reviewed_paths={x["path"] for x in read("scout-discoveries/manifest.json").get("batches",[])}
-    entries=[];stats=Counter()
+    entries=[];stats=Counter();problems=[]
     for key,found in sorted(source.items()):
         entry=existing.get(key)
         if entry is None:
@@ -184,14 +186,23 @@ def run():
         entry["source_batch_ids"]=sorted(found["source_batch_ids"])
         entry["source_evidence_urls"]=sorted(found["source_evidence_urls"])
         entry["titles"]=sorted(found["titles"])
-        if entry["status"] in DONE and not (verified_preprint_hold(entry) or verified_existing_reach_duplicate(entry) or verified_terminal(entry,reviewed_paths)):
-            raise ValueError("Unsupported unverified terminal Crossref status "+key)
-        orig_ok=entry["status"] in DONE
+        declared_terminal=entry["status"] in DONE
+        orig_ok=declared_terminal and (verified_preprint_hold(entry) or
+                  verified_existing_reach_duplicate(entry) or verified_terminal(entry,reviewed_paths))
+        if declared_terminal and not orig_ok:
+            # Never treat unverified historic/possibly human statuses as
+            # completed, but do not erase or rewrite their actual declarations.
+            problems.append({"identity":key,"declared_status":entry["status"],
+                "issue":"Terminal Crossref disposition lacks required verified evidence",
+                "missing_evidence_requirements":missing_evidence(entry,reviewed_paths,crossref=True),
+                "resolution":"Repair identity/award/metadata provenance or request human review; do not auto-close"})
+            stats["unverified_terminal"]+=1
         seed_ok=verified_seed(entry)
         stats["originals_completed"]+=int(orig_ok)
         stats["seed_expansions_completed"]+=int(seed_ok)
         stats["fully_researched"]+=int(orig_ok and seed_ok)
-        stats[entry["status"]]+=1
+        if not declared_terminal or orig_ok:
+            stats[entry["status"]]+=1
         stats["seed_"+entry["seed_expansion_status"]]+=1
         stats["found_in_other_scout_queue"]+=int(bool(entry.get("source_overlap_hints")))
         stats["found_in_published_scout_feed_at_intake"]+=int(bool(entry.get("present_in_published_scout_feed_at_intake")))
@@ -216,12 +227,26 @@ def run():
             "no_action":stats["no_action"],
             "human_metadata_needed":stats["human_metadata_needed"],
             "seed_expansion_pending":count-stats["seed_expansions_completed"],
+            "unverified_terminal_statuses":stats["unverified_terminal"],
+            "reconciliation_exceptions_path":"scout-operations/historical-crossref-reconciliation-exceptions.json",
             "found_in_other_scout_queue_at_intake":stats["found_in_other_scout_queue"],
             "found_in_published_scout_feed_at_intake":stats["found_in_published_scout_feed_at_intake"],
             "research_complete":count>0 and stats["fully_researched"]==count,
             "note":"Cross-queue flags are hints only. REACH dedup and related-output expansion both require independent evidence. Even a confirmed existing publication remains a valid expansion seed."}
-    for path,obj in ((LEDGER,ledger),(COVERAGE,report)):
-        path.write_text(json.dumps(obj,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
+    exception_report={"schema":"reach-scout-reconciliation-exceptions-v1",
+        "cohort":"historical_crossref",
+        "source_manifest_sha256":report["source_manifest_sha256"],
+        "declared_unverified_terminal_count":len(problems),
+        "status":"REVIEW_REQUIRED" if problems else "CLEAR",
+        "exceptions":problems,
+        "note":"Original status/human decisions remain unchanged; unverified terminals do not count toward completion. All DOI seed-expansion lanes remain independent."}
+    for path,obj in ((LEDGER,ledger),(COVERAGE,report),(EXCEPTIONS,exception_report)):
+        rendered=json.dumps(obj,indent=2,ensure_ascii=False)+"\n"
+        if not path.exists() or path.read_text(encoding="utf-8")!=rendered:
+            path.write_text(rendered,encoding="utf-8")
+    if problems:
+        print("::warning::Historical Crossref: "+str(len(problems))+
+              " unverified terminal statuses excluded; see "+EXCEPTIONS.relative_to(ROOT).as_posix())
     print(json.dumps(report,indent=2))
 
 if __name__=="__main__":run()

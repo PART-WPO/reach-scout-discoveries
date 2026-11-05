@@ -44,7 +44,7 @@ jobs:
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add scout-operations/historical-crossref-coverage.json scout-operations/active-workstream.json 2>/dev/null || true
+          git add scout-operations/historical-crossref-coverage.json scout-operations/historical-crossref-reconciliation-exceptions.json scout-operations/active-workstream.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m 'Refresh Crossref original and DOI-seeded research coverage'
           for attempt in 1 2 3 4 5; do
