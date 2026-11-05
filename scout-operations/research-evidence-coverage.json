@@ -2,13 +2,9 @@
   "schema": "reach-scout-research-evidence-coverage-v1",
   "cohort": "historical_crossref",
   "files_scanned": 14,
-  "doi_case_count": 5,
-  "source_unlinked_files": [
-    "scout-operations/historical-crossref-phase2/2026-11-05-0233ET-gfdl-spear-cold-extremes-evidence.json",
-    "scout-operations/historical-crossref-phase2/2026-11-05-1026ET-biomedical-award-attribution-holds.json",
-    "scout-operations/historical-crossref-phase2/2026-11-05-1125ET-biomedical-immutable-source-attribution-audit.json"
-  ],
-  "bounded_cases": 3,
+  "doi_case_count": 7,
+  "source_unlinked_files": [],
+  "bounded_cases": 4,
   "note": "Research evidence catalog, not completion or review staging. Original triage and expansion seeds unchanged.",
   "cases": [
     {
@@ -77,17 +73,40 @@
       "original_and_expansion_status_unchanged": true
     },
     {
-      "doi": "10.1007/s00382-022-06655-w",
-      "research_notes": 1,
+      "doi": "10.1007/s00330-020-07133-9",
+      "research_notes": 2,
       "research_rounds": 1,
       "publication_status": "NOT_CHECKED",
       "source_evidence": [
+        {
+          "path": "scout-operations/historical-crossref-phase2/2026-11-05-1026ET-biomedical-award-attribution-holds.json",
+          "sha256": "7f83ecada2ad8cb6bb98e20112747ef8cb1be9df163dd1b19ca86720a6bfe9e9"
+        },
+        {
+          "path": "scout-operations/historical-crossref-phase2/2026-11-05-1125ET-biomedical-immutable-source-attribution-audit.json",
+          "sha256": "def68b12e4580097accce8ece54fb780df79170b77a65e76fa393e3927290b85"
+        }
+      ],
+      "budget_exhausted": false,
+      "requires_formal_decision": true,
+      "original_and_expansion_status_unchanged": true
+    },
+    {
+      "doi": "10.1007/s00382-022-06655-w",
+      "research_notes": 2,
+      "research_rounds": 2,
+      "publication_status": "NOT_CHECKED",
+      "source_evidence": [
+        {
+          "path": "scout-operations/historical-crossref-phase2/2026-11-05-0233ET-gfdl-spear-cold-extremes-evidence.json",
+          "sha256": "e4322f5b8c7ce1d70653f4388a8afd1ad30488e8f0af7416c22a77116a6f4e13"
+        },
         {
           "path": "scout-operations/historical-crossref-phase2/2026-11-05-0324ET-gfdl-spear-award-scope-followup.json",
           "sha256": "d38bcd57645123aadeb95ff9eb7e050ce1154ff122971bff6f7630548b6e688e"
         }
       ],
-      "budget_exhausted": false,
+      "budget_exhausted": true,
       "requires_formal_decision": true,
       "original_and_expansion_status_unchanged": true
     },
@@ -107,6 +126,25 @@
         }
       ],
       "budget_exhausted": true,
+      "requires_formal_decision": true,
+      "original_and_expansion_status_unchanged": true
+    },
+    {
+      "doi": "10.1007/s12035-019-01667-w",
+      "research_notes": 2,
+      "research_rounds": 1,
+      "publication_status": "NOT_CHECKED",
+      "source_evidence": [
+        {
+          "path": "scout-operations/historical-crossref-phase2/2026-11-05-1026ET-biomedical-award-attribution-holds.json",
+          "sha256": "7f83ecada2ad8cb6bb98e20112747ef8cb1be9df163dd1b19ca86720a6bfe9e9"
+        },
+        {
+          "path": "scout-operations/historical-crossref-phase2/2026-11-05-1125ET-biomedical-immutable-source-attribution-audit.json",
+          "sha256": "def68b12e4580097accce8ece54fb780df79170b77a65e76fa393e3927290b85"
+        }
+      ],
+      "budget_exhausted": false,
       "requires_formal_decision": true,
       "original_and_expansion_status_unchanged": true
     }
