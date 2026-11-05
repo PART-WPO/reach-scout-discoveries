@@ -1,0 +1,39 @@
+{
+  "schema": "reach-scout-bounded-research-evidence-v1",
+  "recorded_at": "2026-11-04T21:29:58-05:00",
+  "original_doi": "10.1002/essoar.10507281.1",
+  "cohort": "historical_crossref",
+  "lane": "original",
+  "routing_snapshot": {
+    "outcome": "NOT_FOUND_IN_REACH_INDEX",
+    "routing_blob_sha": "8cb97864fcb4fef5ef5729bb3459d8d9ccb2942a",
+    "identity_index_fingerprint": "929564941feb9dd5c69742c87988b98bbc92befa99b648f2aea5d4de695ff122",
+    "live_source_sha_revalidated_this_run": false,
+    "public_scout_queue_matches_in_saved_router": 0,
+    "private_hub_decisions": "NOT_VERIFIED"
+  },
+  "new_research": [
+    {
+      "source": "https://egusphere.copernicus.org/preprints/2022/egusphere-2022-52/",
+      "finding": "Official publisher preprint page lists a peer-reviewed final article, published 2022-08-01, DOI 10.5194/hess-26-3941-2022, with matching title and authors. This is a publication/version-family research lead, not a confirmed exact DOI relationship to the historical ESSOAR .1 DOI.",
+      "evidence_class": "publisher version-family lead"
+    },
+    {
+      "source": "https://ouci.dntb.gov.ua/en/works/l1BJPQB9/",
+      "finding": "Secondary bibliographic listing associates similar manuscript title with ESSOAR DOI suffix .2; historical original has suffix .1. Do not merge or replace source DOI without authoritative version relationship.",
+      "evidence_class": "secondary version ambiguity"
+    }
+  ],
+  "publication_status": "HOLD_PREPRINT_OR_VERSION_RELATIONSHIP_UNVERIFIED",
+  "funding_status": "SAME_PROJECT_WPO_NOT_VERIFIED",
+  "next_action": "Check original ESSOAR DOI registry relationship to final HESS DOI; verify final DOI against fresh SHA-verified shared REACH/Scout+official IR identity snapshots and project-specific SPARK primary award; retain original on preprint watchlist, no new-output staging.",
+  "original_seed_expansion": {
+    "status": "OPEN",
+    "final_article_lead_doi": "10.5194/hess-26-3941-2022",
+    "lead_only": true,
+    "independent_expansion_completed": false
+  },
+  "decision": "RESEARCH_EVIDENCE_ONLY_HOLD",
+  "candidate_staged": false,
+  "prior_human_decisions_modified": false
+}
