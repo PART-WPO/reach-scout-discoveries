@@ -1,0 +1,43 @@
+{
+  "schema": "reach-scout-append-only-research-evidence-v1",
+  "observed_at": "2026-11-05T06:28:00-05:00",
+  "original_doi": "10.1002/essoar.10504829.1",
+  "original_lane": {
+    "prior_routing": "NOT_FOUND_IN_REACH_INDEX",
+    "new_evidence": "The ESSOAr manuscript PDF explicitly labels the DOI as a preprint, not peer reviewed, posted November 23 2022. The same title and authors occur as an AGU Fall Meeting 2020 abstract; conference appearance is not journal publication.",
+    "publication_status": "PREPRINT_HOLD",
+    "public_identity_status": "NOT_REVALIDATED_CURRENT_SOURCE_SHA",
+    "private_reviewer_history": "NOT_VERIFIED",
+    "funding_same_project": "NOT_VERIFIED",
+    "next_action": "Preserve on first-of-month preprint watchlist; check official final DOI only when authoritative relationship evidence exists. No new-output staging."
+  },
+  "seed_expansion_lane": {
+    "status": "OPEN_NOT_COMPLETED",
+    "leads": [
+      {
+        "type": "conference_abstract",
+        "title": "The Silent Sounds of Tornadoes and Their Potential Fluid Mechanism",
+        "source": "https://studio.m-anage.com/agu/fm20/webprogram/Paper738390.html",
+        "note": "Same title/authors; not a verified distinct journal final DOI."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "url": "https://d197for5662m48.cloudfront.net/documents/publicationstatus/103965/preprint_pdf/cf2d1864d8dda72f5a5efec9afc58950.pdf",
+      "finding": "PDF footer states preprint, not peer reviewed, DOI 10.1002/essoar.10504829.1, posted 23 Nov 2022."
+    },
+    {
+      "url": "https://studio.m-anage.com/agu/fm20/webprogram/Paper738390.html",
+      "finding": "AGU 2020 conference abstract of identical title by Brian R Elbing and Christopher E Petrin."
+    }
+  ],
+  "limitations": [
+    "Public REACH/Scout index source fingerprints not independently revalidated this run.",
+    "No formal decision_pipeline evaluate executed; existing immutable checkpoint revisions not located by targeted code search.",
+    "No verified primary SPARK award or final journal DOI relationship.",
+    "No preprint-watchlist mutation; status evidence must be reconciled by scheduled watchlist pipeline."
+  ],
+  "immutable_original_preserved": true,
+  "no_automatic_staging": true
+}
