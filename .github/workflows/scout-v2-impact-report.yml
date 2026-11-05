@@ -1,0 +1,96 @@
+name: Scout 2.0 verified impact and independent evaluation
+on:
+  pull_request:
+    paths:
+      - 'scout-operations/tools/build_impact_report.py'
+      - 'scout-operations/tools/build_scout_v2_benchmark.py'
+      - 'scout-operations/tools/score_private_benchmark.py'
+      - 'scout-operations/tests/test_scout_v2_impact.py'
+      - 'scout-operations/SCOUT_OPERATING_POLICY_V2.md'
+      - 'scout-operations/SCOUT_V2_EVALUATION.md'
+      - '.github/workflows/scout-v2-impact-report.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'scout-operations/scout-operational-scorecard.json'
+      - 'scout-operations/unified-source-preflight.json'
+      - 'scout-operations/reconciliation-repair-worklist.json'
+      - 'scout-operations/expansion-relevance-priority.json'
+      - 'scout-operations/research-decision-rollup.json'
+      - 'scout-operations/research-feedback.json'
+      - 'scout-operations/index-and-project-discovery-leads.json'
+      - 'scout-operations/tools/build_impact_report.py'
+      - 'scout-operations/tools/build_scout_v2_benchmark.py'
+      - '.github/workflows/scout-v2-impact-report.yml'
+  schedule:
+    # Before the weekday 8 AM ET briefing, including DST transitions.
+    - cron: '45 11 * * 1-5'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: scout-v2-impact-report
+  cancel-in-progress: false
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate all current Scout reporting and decision source guards
+        run: |
+          python -m pip install --disable-pip-version-check requests
+          python -m py_compile scout-operations/tools/build_impact_report.py scout-operations/tools/build_scout_v2_benchmark.py scout-operations/tools/score_private_benchmark.py
+          python -m unittest discover -v -s scout-operations/tests -p 'test_scout_v2_impact.py'
+          python -m unittest discover -v -s scout-operations/tests -p 'test_expansion_relevance.py'
+          python -m unittest discover -v -s scout-operations/tests -p 'test_unified_source_preflight.py'
+      - name: Verify stage-specific metrics and create frozen 100-case evaluation sample
+        run: |
+          python scout-operations/tools/build_impact_report.py
+          python scout-operations/tools/build_scout_v2_benchmark.py
+          python - <<'PY'
+          import json,subprocess
+          from pathlib import Path
+          impact=json.loads(Path('scout-operations/scout-v2-impact-report.json').read_text())
+          bench=json.loads(Path('scout-operations/scout-v2-benchmark-100.json').read_text())
+          assert impact['pipeline']['private_hub_imports']=='NOT_VERIFIED'
+          assert impact['pipeline']['verified_new_public_reach_additions_from_scout']=='NOT_VERIFIED'
+          assert impact['reviewer_quality']['reviewer_precision']=='NOT_MEASURED_NO_INDEPENDENT_GOLD_STANDARD'
+          assert bench['sample_size']==len(bench['cases'])==100
+          assert bench['human_truth_labels_collected']==0
+          assert set(subprocess.check_output(['git','diff','--name-only'],text=True).splitlines()) <= {
+             'scout-operations/scout-v2-impact-report.json',
+             'scout-operations/scout-v2-benchmark-100.json'}
+          print('Impact and blinded evaluation passed with no fabricated private outcomes')
+          PY
+      - name: Publish source-fresh scorecard and freeze benchmark (main only)
+        if: github.event_name != 'pull_request'
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git checkout -B main origin/main
+            python scout-operations/tools/build_impact_report.py
+            python scout-operations/tools/build_scout_v2_benchmark.py
+            git add scout-operations/scout-v2-impact-report.json scout-operations/scout-v2-benchmark-100.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m 'Refresh stage-separated Scout impact and frozen 100-case quality benchmark'
+            if git push origin HEAD:main; then exit 0; fi
+            sleep $((attempt*2))
+          done
+          echo "::error::Could not publish after source refresh retries"
+          exit 1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: scout-v2-impact-and-benchmark
+          path: |
+            scout-operations/scout-v2-impact-report.json
+            scout-operations/scout-v2-benchmark-100.json
+          if-no-files-found: error
