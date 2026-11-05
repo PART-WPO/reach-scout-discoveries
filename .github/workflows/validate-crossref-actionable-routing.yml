@@ -22,6 +22,7 @@ jobs:
           python -m py_compile scout-operations/historical-crossref-screening/build_actionable_routing.py scout-operations/tools/bulk_reach_dedup.py
           python -m unittest discover -s scout-operations/tests -p 'test_bulk_reach_dedup.py' -v
           python scout-operations/historical-crossref-screening/build_actionable_routing.py
+          python scout-operations/tools/build_operational_scorecard.py
       - name: Assert complete actionable coverage and preserved seed routing
         run: |
           python - <<'PY'
@@ -35,6 +36,10 @@ jobs:
           assert all(e["route"] == "SKIP_ORIGINAL_NEW_OUTPUT_RESEARCH_KEEP_EXPANSION_SEED" for e in d["entries"] if e["outcome"] == "CONFIRMED_IN_REACH")
           assert d["bulk_identity_screening"]["counts"]["VERIFIED_EXISTING_REACH"]==d["counts"]["CONFIRMED_IN_REACH"]
           assert d["counts"]["CONFIRMED_IN_REACH"]>1, "Bulk dedup must improve beyond original one confirmed"
+          score=json.loads(Path("scout-operations/scout-operational-scorecard.json").read_text())
+          assert score["reach_screening"]["confirmed_reach"]==d["counts"]["CONFIRMED_IN_REACH"]
+          assert score["reach_screening"]["likely_reach_needs_bounded_check"]==d["counts"]["LIKELY_IN_REACH"]
+          assert score["separate_doi_expansion"]["historical_crossref_completed_verified"]==0
           assert all(e["original_triage_modified"] is False and e["expansion_seed_preserved"] is True for e in d["entries"])
           assert d["counts"].get("NOT_FOUND_IN_REACH_INDEX", 0) > 0, "Zero-hit comparisons still blocked"
           # Reconcile known duplicate dispositions and existing Scout overlaps.
