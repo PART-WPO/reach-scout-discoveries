@@ -91,9 +91,15 @@ def create(root=ROOT):
             "cases":rows}
 
 def main():
-    report=create()
-    text=json.dumps(report,indent=2,ensure_ascii=False)+"\n"
-    if not OUT.exists() or OUT.read_text(encoding="utf-8")!=text:
+    # Freeze initial sample for independent human scoring; changing source
+    # feeds must not silently rotate the 100 reviewed evaluation identities.
+    if OUT.exists():
+        report=json.loads(OUT.read_text(encoding="utf-8"))
+        if report.get("schema")!=SCHEMA or report.get("sample_size")!=100 or len(report.get("cases",[]))!=100:
+            raise ValueError("Unexpected or incomplete frozen benchmark")
+    else:
+        report=create()
+        text=json.dumps(report,indent=2,ensure_ascii=False)+"\n"
         OUT.write_text(text,encoding="utf-8")
     print(json.dumps({"selected":len(report["cases"]),
                       "groups":report["strata_counts"],
