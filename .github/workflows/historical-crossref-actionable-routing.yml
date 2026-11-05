@@ -56,6 +56,7 @@ jobs:
             python -m unittest discover -s scout-operations/tests -p 'test_bulk_reach_dedup.py' -v
             python scout-operations/historical-crossref-screening/build_actionable_routing.py
             python scout-operations/tools/build_operational_scorecard.py
+            python scout-operations/tools/select_workstream.py
             python - <<'PY'
           import json
           from pathlib import Path
@@ -92,9 +93,14 @@ jobs:
           assert score["reach_screening"]["likely_reach_needs_bounded_check"]==j["counts"]["LIKELY_IN_REACH"]
           assert score["reach_screening"]["not_found_in_index_needs_research"]==j["counts"]["NOT_FOUND_IN_REACH_INDEX"]
           assert score["separate_doi_expansion"]["historical_crossref_completed_verified"]==0
+          workstream=json.loads(Path("scout-operations/active-workstream.json").read_text())
+          assert workstream["historical_crossref_api"]["identity_screening_complete"] is True
+          assert workstream["historical_crossref_api"]["originals_pending_first_pass"]==0
+          assert workstream["historical_crossref_api"]["identity_verified_existing_reach"]==j["counts"]["CONFIRMED_IN_REACH"]
+          assert workstream["historical_crossref_api"]["identity_needs_bounded_review"]==j["counts"]["LIKELY_IN_REACH"]
           print("Validated routing:",j["counts"],"Scout overlaps:",j["scout_overlap_flagged"])
           PY
-            git add scout-operations/historical-crossref-screening/actionable-routing.json scout-operations/scout-operational-scorecard.json
+            git add scout-operations/historical-crossref-screening/actionable-routing.json scout-operations/scout-operational-scorecard.json scout-operations/active-workstream.json
             if git diff --cached --quiet; then
               echo "Routing already current"
               exit 0
