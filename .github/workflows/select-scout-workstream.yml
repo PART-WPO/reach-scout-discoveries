@@ -1,5 +1,8 @@
 name: Verify Scout API-to-historical workstream switching
 on:
+  pull_request:
+    paths:
+      - '.github/workflows/select-scout-workstream.yml'
   push:
     branches: [main]
     paths:
@@ -32,23 +35,40 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
       - name: Test monthly and historical first-pass, follow-up and human-handoff priority
         run: |
           python3 -m unittest discover -v -s scout-operations/tests
-      - name: Calculate current workstream from real inbox coverage
+      - name: Check selector on current checkout (no write)
         run: python3 scout-operations/tools/select_workstream.py
-      - name: Save priority selector output when changed
+      - name: Publish fresh, source-reconciled selector (main only)
+        if: github.event_name != 'pull_request'
+        shell: bash
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add scout-operations/active-workstream.json
-          if git diff --cached --quiet; then exit 0; fi
-          git commit -m 'Select Scout workstream from API backlog coverage'
           for attempt in 1 2 3 4 5; do
-            if git push origin HEAD:main; then exit 0; fi
+            echo "Fresh workstream selection attempt ${attempt}/5"
+            # Rebuild from latest remote state on EVERY attempt. Do not rebase
+            # stale generated JSON into a newer routing or relevance snapshot.
             git fetch origin main
-            git rebase origin/main
+            git checkout -B main origin/main
+            python3 scout-operations/tools/select_workstream.py
+            git add scout-operations/active-workstream.json
+            if git diff --cached --quiet; then
+              echo "Live workstream is already current"
+              exit 0
+            fi
+            git commit -m 'Select Scout workstream from current API and relevance sources'
+            if git push origin HEAD:main; then
+              echo "Published verified workstream at $(git rev-parse HEAD)"
+              exit 0
+            fi
+            echo "::warning::Concurrent data update; rerunning against latest source SHA"
             sleep "$((attempt * 2))"
           done
+          echo "::error::Failed to publish a fresh workstream after bounded retries"
           exit 1
