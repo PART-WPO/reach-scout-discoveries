@@ -23,8 +23,10 @@ jobs:
         run: |
           python -m py_compile scout-operations/historical-crossref-screening/build_actionable_routing.py scout-operations/tools/bulk_reach_dedup.py
           python -m unittest discover -s scout-operations/tests -p 'test_bulk_reach_dedup.py' -v
+          python -m unittest discover -s scout-operations/tests -p 'test_select_workstream.py' -v
           python scout-operations/historical-crossref-screening/build_actionable_routing.py
           python scout-operations/tools/build_operational_scorecard.py
+          python scout-operations/tools/select_workstream.py
       - name: Assert complete actionable coverage and preserved seed routing
         run: |
           python - <<'PY'
@@ -42,6 +44,10 @@ jobs:
           assert score["reach_screening"]["confirmed_reach"]==d["counts"]["CONFIRMED_IN_REACH"]
           assert score["reach_screening"]["likely_reach_needs_bounded_check"]==d["counts"]["LIKELY_IN_REACH"]
           assert score["separate_doi_expansion"]["historical_crossref_completed_verified"]==0
+          stream=json.loads(Path("scout-operations/active-workstream.json").read_text())
+          assert stream["historical_crossref_api"]["identity_screening_complete"]
+          assert stream["historical_crossref_api"]["originals_pending_first_pass"]==0
+          assert stream["historical_crossref_api"]["identity_verified_existing_reach"]==d["counts"]["CONFIRMED_IN_REACH"]
           assert all(e["original_triage_modified"] is False and e["expansion_seed_preserved"] is True for e in d["entries"])
           assert d["counts"].get("NOT_FOUND_IN_REACH_INDEX", 0) > 0, "Zero-hit comparisons still blocked"
           # Compare against unchanged public source baseline on main.
