@@ -8,6 +8,7 @@ import csv,hashlib,io,json,re
 from collections import Counter,defaultdict
 from pathlib import Path
 from reconcile_historical import verified_terminal
+from reconciliation_diagnostics import missing_evidence
 
 ROOT=Path(__file__).resolve().parents[2]
 SOURCE=ROOT/"api-discoveries/historical-crossref/manifest.json"
@@ -193,6 +194,7 @@ def run():
             # completed, but do not erase or rewrite their actual declarations.
             problems.append({"identity":key,"declared_status":entry["status"],
                 "issue":"Terminal Crossref disposition lacks required verified evidence",
+                "missing_evidence_requirements":missing_evidence(entry,reviewed_paths,crossref=True),
                 "resolution":"Repair identity/award/metadata provenance or request human review; do not auto-close"})
             stats["unverified_terminal"]+=1
         seed_ok=verified_seed(entry)
