@@ -1,0 +1,89 @@
+{
+  "schema": "reach-scout-v2-impact-report-v1",
+  "source_sha256": {
+    "feedback": "1d20822b4433c84d32018400120277bd5ace15ac6ec922fa2497c63f38b0127d",
+    "noaa_ir": "19f69502e62e8d6142cd6cd6ba1163fcfc50bab1651abb002e3fe27355cb5a9d",
+    "pilot_pointer": "1033f97a4129443487edfe2592b87de5c75abc9eea88cc33dc8bab63c9ff28b5",
+    "preprint_leads": "abd4b08448817462df5e5e85ee920d720f1f488e0ae8f9c48438f7639d7b44aa",
+    "preprints": "a95f27ed9d34d18a0a644caa62c32f2c8e31ba62296ec97b4dde7a85cbbbfed4",
+    "relevance": "d90e29c7bbb395f6574d5bb34b2ee51145dcbb8eb4d8a3f14cf58f82c8531e16",
+    "repair": "8861736b9e08133cbd309c687df9e6d38a85ca3ae7a5cefe7a81d00d5d69d762",
+    "research": "2e1b012fd79fa8467207adc57c3e0518a504099b5873c9392f71d30558fe1833",
+    "scorecard": "538d52c3f079e4e808e9a2b67ed5a4c2ec4651572d0ab7510d55993c2793fbbb",
+    "unified": "edc03a9e68ac52417cac57b5f0c3976addb88f9f021817d39542363b8b081d2f",
+    "workstream": "7d8cf6a6243b20697b3d7f4c2933c7debd9095aa1cbc3f5816792f92b8c5d26e",
+    "supplemental_index_lead_archive": "f9d3e47518f39ba81ef8062bae0a071dee14e2cfcfd5aa577829674f30715061"
+  },
+  "priority_and_scope": {
+    "related_output_relevance_priority_counts": {
+      "DEFER_UNTIL_NEW_PROJECT_EVIDENCE": 2,
+      "PRIORITIZE_VERIFIED_WPO_SEED": 433,
+      "VERIFY_WPO_PROJECT_SCOPE_FIRST": 179
+    },
+    "phase": "SOURCE_RECONCILIATION_REQUIRED",
+    "workstream_relevance_fresh": false,
+    "monthly_originals_preempt_historical": true,
+    "original_source_and_expansion_stages_separate": true
+  },
+  "pipeline": {
+    "historical_crossref_screened": 614,
+    "verified_existing_reach_public_identities": 433,
+    "ambiguous_reach_identification": 47,
+    "index_negative_originals_pending_funding": 134,
+    "originals_verified_complete_crossref": 48,
+    "originals_verified_complete_datacite": 186,
+    "distinct_crossref_expansions_verified_complete": 0,
+    "source_evidence_decisions_evaluated": 8,
+    "original_or_related_public_preflight_cases": 827,
+    "cross_cohort_doi_overlaps": 15,
+    "terminal_dispositions_under_evidence_repair": 12,
+    "public_scout_staged_proposal_rows": 83,
+    "public_scout_inbox_draft_rows": 27,
+    "verified_signed_private_review_events": 0,
+    "private_hub_connection": "NOT_CONNECTED_OR_NOT_EXPORTED",
+    "private_hub_imports": "NOT_VERIFIED",
+    "human_approvals": "NOT_VERIFIED",
+    "verified_new_public_reach_additions_from_scout": "NOT_VERIFIED"
+  },
+  "supplemental_discovery_pilot": {
+    "month": "2026-10",
+    "run_mode": "PILOT",
+    "validated_award_queries": 5,
+    "valid_noaa_primary_awards_in_catalog": 577,
+    "nonstandard_awards_skipped": 114,
+    "project_context_queries": 5,
+    "research_leads_found": 21,
+    "lead_category_counts": {
+      "PROJECT_TITLE_SEARCH:NO_PUBLIC_IDENTITY_MATCH": 21
+    },
+    "genuinely_wpo_eligible_outputs_verified_from_pilot": "NOT_VERIFIED",
+    "monthly_full_catalog_run_verified": false
+  },
+  "preprints": {
+    "metrics": {
+      "preprints_tracked": 41,
+      "preprints_still_waiting_for_official_publication": 9,
+      "preprints_with_verified_published_versions": 32,
+      "verified_official_article_doi_research_leads": 30,
+      "automatically_forwarded_to_discovery_hub": 0
+    },
+    "publication_leads_tracked": 30,
+    "monthly_first_day_watchlist_only": true,
+    "preprint_doi_new_staging_authorized": false
+  },
+  "reviewer_quality": {
+    "target_human_decisions_per_week": 20,
+    "verified_last_7_day_human_decisions": "NOT_VERIFIED",
+    "known_verified_feedback_signals": 0,
+    "reviewer_precision": "NOT_MEASURED_NO_INDEPENDENT_GOLD_STANDARD",
+    "eligible_output_recall": "NOT_MEASURED_NO_INDEPENDENT_GOLD_STANDARD",
+    "reviewer_minutes_per_accepted_output": "NOT_MEASURED"
+  },
+  "source_health": {
+    "public_reach_catalog_rows": 1238,
+    "noaa_ir_manifest_sha256": "19f69502e62e8d6142cd6cd6ba1163fcfc50bab1651abb002e3fe27355cb5a9d",
+    "sha_verified_report_inputs": true,
+    "workstream_selector_status": "STALE_REBUILD_REQUIRED"
+  },
+  "notes": "Public Scout candidate rows, inbox drafts, signed reviewer feedback, private import, human approval and actual REACH publications are different events. No inferred human outcome or funded-product recovery. Counts describe currently verified public snapshots, not future performance."
+}
