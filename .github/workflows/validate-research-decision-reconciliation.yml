@@ -42,6 +42,9 @@ jobs:
           python scout-operations/tools/compile_research_evidence.py
           python scout-operations/tools/decision_pipeline.py evaluate --cases scout-operations/research-decision-cases.json
           python scout-operations/tools/summarize_research_decisions.py
+          # A refreshed official NOAA IR index invalidates old derived
+          # REACH routing; rebuild the entire derived chain in SHA order.
+          python scout-operations/historical-crossref-screening/build_actionable_routing.py
           python scout-operations/tools/build_expansion_relevance.py
           python scout-operations/tools/build_operational_scorecard.py
       - name: Assert fail-closed metrics, traceability and no human decision writes
