@@ -38,6 +38,7 @@ jobs:
           python scout-operations/tools/compile_research_evidence.py
           python scout-operations/tools/decision_pipeline.py evaluate --cases scout-operations/research-decision-cases.json
           python scout-operations/tools/summarize_research_decisions.py
+          python scout-operations/tools/build_expansion_relevance.py
           python scout-operations/tools/build_operational_scorecard.py
       - name: Assert fail-closed metrics, traceability and no human decision writes
         run: |
@@ -88,4 +89,5 @@ jobs:
             scout-operations/research-decision-rollup.json
             scout-operations/research-evidence-coverage.json
             scout-operations/scout-operational-scorecard.json
+            scout-operations/expansion-relevance-priority.json
           if-no-files-found: error
