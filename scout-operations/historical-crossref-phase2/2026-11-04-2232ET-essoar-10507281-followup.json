@@ -1,0 +1,61 @@
+{
+  "schema": "reach-scout-bounded-research-evidence-v1",
+  "recorded_at": "2026-11-04T22:32:51-05:00",
+  "original_doi": "10.1002/essoar.10507281.1",
+  "cohort": "historical_crossref",
+  "lane": "original_followup_and_expansion_leads",
+  "previous_evidence": "scout-operations/historical-crossref-phase2/2026-11-04-2129ET-essoar-10507281-research-evidence.json",
+  "routing_snapshot": {
+    "outcome": "NOT_FOUND_IN_REACH_INDEX",
+    "source_manifest_sha256": "799744c7e83f218d22cc19afacb7cfcf2762feb490659efde9f58bf19473b1fa",
+    "reach_cache_sha256": "6660562e325a6a141198f59acce84f2e30d9a2d14e6cf5acd29769c8a4b68e1e",
+    "shared_identity_index_fingerprint": "929564941feb9dd5c69742c87988b98bbc92befa99b648f2aea5d4de695ff122",
+    "live_source_sha_revalidated_this_run": false,
+    "private_hub_decisions": "NOT_VERIFIED"
+  },
+  "new_research": [
+    {
+      "source": "https://hess.copernicus.org/articles/26/3941/2022/hess-26-3941-2022.pdf",
+      "finding": "Publisher final article published 2022-08-01; financial support explicitly lists NOAA-JTTI NA19OAR4590229 alongside NSF DGE-1610403 and Planet Texas 2050. Direct published article-level award evidence, but same-project SPARK primary award association has not been independently confirmed.",
+      "evidence_class": "primary publisher full-text funding acknowledgement"
+    },
+    {
+      "source": "https://hess.copernicus.org/articles/26/3941/2022/hess-26-3941-2022.pdf",
+      "finding": "Publisher code/data availability identifies associated dataset and code archived at DOI 10.5281/zenodo.6584401. This is a separately identifiable DOI-seeded expansion lead, not an automatically eligible WPO output.",
+      "evidence_class": "primary publisher data availability"
+    },
+    {
+      "source": "https://egusphere.copernicus.org/preprints/2022/egusphere-2022-52/",
+      "finding": "Publisher preprint DOI 10.5194/egusphere-2022-52, published discussion 2022-04-05, linked on publisher site to final article 10.5194/hess-26-3941-2022. Does not independently prove ESSOAR .1 is same version family.",
+      "evidence_class": "publisher version relationship"
+    }
+  ],
+  "original_decision": "HOLD_ORIGINAL_ESSOAR_VERSION_AND_PREPRINT_STATUS",
+  "original_completed": false,
+  "seed_expansion": {
+    "status": "OPEN",
+    "leads": [
+      {
+        "doi": "10.5194/hess-26-3941-2022",
+        "type": "published journal article",
+        "published_date": "2022-08-01",
+        "award_acknowledgement": "NA19OAR4590229",
+        "identity_and_project_status": "REQUIRES_CURRENT_SHA_VERIFIED_REACH_SCOUT_IR_AND_SPARK_SAME_PROJECT_CHECK"
+      },
+      {
+        "doi": "10.5281/zenodo.6584401",
+        "type": "data and code archive",
+        "identity_and_project_status": "REQUIRES_DATACITE_VERSION_RELEASE_AND_REACH_SCOUT_IR_AND_PROJECT_CHECK"
+      },
+      {
+        "doi": "10.5194/egusphere-2022-52",
+        "type": "publisher preprint",
+        "status": "PREPRINT_HOLD_DO_NOT_STAGE"
+      }
+    ],
+    "independent_expansion_completed": false
+  },
+  "next_action": "Using one fresh SHA-verified public identity and official NOAA IR snapshot, check exact final and Zenodo DOI identities; verify NA19OAR4590229 is the same-project primary SPARK award and inspect Zenodo created date, concept/version, public files. Maintain original ESSOAR .1 version hold and monthly preprint watchlist; no candidate stage.",
+  "candidate_staged": false,
+  "prior_human_decisions_modified": false
+}
