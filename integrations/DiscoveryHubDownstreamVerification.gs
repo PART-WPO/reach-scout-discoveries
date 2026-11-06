@@ -149,6 +149,9 @@ function scoutVerifyDownstream(doiInput, publishedBatchId) {
     liveSmartsheetRowApiVerified: false, actualProductionSyncVerified: false,
     fullEndToEndProven: false,
     note: 'Private insertion flags are not a Smartsheet API read. Public REACH is checked against every index shard; exact URL identity is positive evidence, while no exact match is not proof of absence. Human actions never happen in this function.'};
-  Logger.log(JSON.stringify(result));
+  // Operational logs must not contain private reviewer decisions, queue
+  // states, insertion details, DOI-linked private outcomes or native IDs.
+  // The full result is returned only to the authorized caller in the Hub.
+  Logger.log('SCOUT_DOWNSTREAM_READ_ONLY_CHECK_COMPLETED');
   return result;
 }
