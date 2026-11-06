@@ -1,0 +1,79 @@
+name: Scout recover DOI metadata after research access failures
+on:
+  pull_request:
+    paths:
+      - 'scout-operations/tools/recover_queued_doi_metadata.py'
+      - 'scout-operations/tests/test_recover_queued_doi_metadata.py'
+      - '.github/workflows/scout-queued-doi-recovery.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'scout-operations/tools/recover_queued_doi_metadata.py'
+      - '.github/workflows/scout-queued-doi-recovery.yml'
+  workflow_run:
+    workflows:
+      - 'Scout all-lane research outcome registry'
+    types: [completed]
+    branches: [main]
+  schedule:
+    - cron: '25 12 * * 1-5'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: scout-queued-doi-metadata-recovery
+  cancel-in-progress: false
+jobs:
+  recover:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify source evidence, retry policy and public identity code
+        run: |
+          python -m unittest discover -s scout-operations/tests -p 'test_recover_queued_doi_metadata.py' -v
+          python scout-operations/tools/recover_queued_doi_metadata.py --check-only
+          python -m unittest discover -s scout-operations/tests -p 'test_decision_pipeline.py' -v
+      - name: Run bounded metadata retry on current main (not on unmerged PR)
+        if: github.event_name != 'pull_request'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git checkout -B main origin/main
+            python scout-operations/tools/recover_queued_doi_metadata.py --max-new 10
+            python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('scout-operations/reports/queued-doi-metadata/latest.json')
+          r=json.loads(p.read_text())
+          assert r['doi_queue_size']==len(r['records'])
+          assert not r['new_public_scout_proposals'] and not r['new_reach_additions']
+          assert all(not x['public_candidate_staged'] and not x['scout_original_disposition_changed']
+                     and not x['related_expansion_completed'] for x in r['records'])
+          assert all(x['metadata']['status']!='ok' or x['metadata']['evidence'].startswith('https://')
+                     for x in r['records'])
+          print('Validated exact DOI fallback with source-backed evidence and zero auto-staging')
+          PY
+            git add scout-operations/reports/queued-doi-metadata/latest.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m 'Recover exact DOI metadata after Scout access failures'
+            if git push origin HEAD:main; then exit 0; fi
+            sleep "$((attempt * 2))"
+          done
+          echo "::error::DOI metadata lookup report push could not be reconciled"
+          exit 1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: scout-queued-doi-recovery
+          path: scout-operations/reports/queued-doi-metadata/latest.json
+          if-no-files-found: warn
