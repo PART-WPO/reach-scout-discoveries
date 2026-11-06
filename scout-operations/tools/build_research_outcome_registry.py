@@ -50,7 +50,9 @@ def extract_sources(node):
                 if k in {"url","source","evidence_url","publisher_url","official_ir_url",
                          "canonical_url","source_url","initial_source","distinct_source_followup",
                          "source_evidence","sources","evidence_urls","initial_research_sources",
-                         "distinct_followup_sources","new_source_findings","research","followup_findings"}:
+                         "distinct_followup_sources","new_source_findings","research","followup_findings",
+                         "verified_sources","independent_program_source","publisher_source",
+                         "official_source","initial_source","official_ir","source_urls"}:
                     rec(v)
     rec(node)
     return sorted(found)
@@ -104,7 +106,8 @@ def build(root=ROOT):
                 identity=("doi:"+doi) if doi else "url:"+code_url
                 decision=source_decision(doc,node)
                 explicit=stable_decision(decision)
-                action=str(node.get("next_action") or doc.get("next_action") or "")
+                action=str(node.get("next_action") or doc.get("next_action")
+                           or node.get("original_action") or doc.get("original_action") or "")
                 if not action:
                     action="Source-specific research evidence needs the next bounded identity or project check"
                 timestamp=str(doc.get("recorded_at") or doc.get("observed_at")

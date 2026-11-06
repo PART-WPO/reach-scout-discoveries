@@ -22,6 +22,14 @@ on:
       - 'scout-operations/method-recovery-followups.json'
       - 'scout-discoveries/tools/tests/**'
       - '.github/workflows/build-scout-discovery-manifest.yml'
+  # GitHub Actions bot commits of validated NEEDS INVESTIGATION drafts do
+  # not generate ordinary push workflow events; audit/promote only after
+  # the dedicated source-verification workflow completed successfully.
+  workflow_run:
+    workflows:
+      - 'Scout bounded human project referrals'
+    types: [completed]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -33,6 +41,7 @@ concurrency:
 
 jobs:
   validate-and-refresh-manifest:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
       - name: Check out Scout staging repository
