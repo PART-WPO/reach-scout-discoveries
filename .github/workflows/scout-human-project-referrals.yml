@@ -1,0 +1,87 @@
+name: Scout bounded human project referrals
+on:
+  pull_request:
+    paths:
+      - 'scout-operations/tools/build_human_project_referrals.py'
+      - 'scout-operations/tools/build_research_outcome_registry.py'
+      - 'scout-operations/tests/test_human_project_referrals.py'
+      - '.github/workflows/scout-human-project-referrals.yml'
+      - '.github/workflows/build-scout-discovery-manifest.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'scout-operations/tools/build_human_project_referrals.py'
+      - 'scout-operations/tools/build_research_outcome_registry.py'
+      - '.github/workflows/scout-human-project-referrals.yml'
+  workflow_run:
+    workflows:
+      - 'Scout all-lane research outcome registry'
+    types: [completed]
+    branches: [main]
+  schedule:
+    - cron: '50 11 * * 1-5'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: scout-human-project-referrals
+  cancel-in-progress: false
+jobs:
+  prepare:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test human decision protections and fixed 24-column staging rules
+        run: |
+          python -m unittest discover -v -s scout-operations/tests -p 'test_human_project_referrals.py'
+          python -m unittest discover -v -s scout-operations/tests -p 'test_research_outcome_registry.py'
+          python -m unittest discover -v -s scout-discoveries/tools/tests
+      - name: Source-fresh publisher, award-context, REACH/IR and prior-review preflight
+        if: github.event_name != 'pull_request'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git checkout -B main origin/main
+            python scout-operations/tools/build_research_outcome_registry.py
+            python scout-operations/tools/build_human_project_referrals.py --stage
+            python - <<'PY'
+          import json
+          from pathlib import Path
+          j=json.loads(Path('scout-operations/human-project-referrals.json').read_text())
+          assert j['human_reviewer_decisions']=='NOT_VERIFIED'
+          assert j['private_hub_imports']=='NOT_VERIFIED'
+          assert j['new_approved_reach_outputs']==0
+          assert j['human_referral_drafts_prevalidated'] <= 3
+          for r in j['referrals']:
+            assert r['eligible_for_new_reach_addition']=='NOT_VERIFIED'
+            if r['scout_inbox_status']=='VALIDATED_INBOX_DRAFT_NOT_PRIVATE_HUB':
+              assert r['disposition']=='READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL'
+          assert all(Path(path).is_file() for path in j['draft_paths'])
+          print('Bounded human-project questions are source-verified; no human approval asserted')
+          PY
+            git add scout-operations/research-outcome-registry.json scout-operations/human-project-referrals.json scout-discoveries/inbox/
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m 'Prepare source-verified Needs Investigation funding-review referrals'
+            if git push origin HEAD:main; then exit 0; fi
+            sleep "$((attempt * 2))"
+          done
+          echo "::error::Unable to reconcile research referral source snapshots"
+          exit 1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: scout-bounded-project-human-referrals
+          path: |
+            scout-operations/human-project-referrals.json
+            scout-operations/research-outcome-registry.json
+          if-no-files-found: warn
