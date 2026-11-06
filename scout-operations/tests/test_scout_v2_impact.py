@@ -23,6 +23,17 @@ class ReportingTests(unittest.TestCase):
         self.assertEqual(p["index_negative_originals_pending_funding"],source["reach_screening"]["not_found_in_index_needs_research"])
         self.assertEqual(p["distinct_crossref_expansions_verified_complete"],source["separate_doi_expansion"]["historical_crossref_completed_verified"])
         self.assertEqual(p["terminal_dispositions_under_evidence_repair"],repair["unverified_terminal_cases"])
+        self.assertEqual(p["source_research_events_reconciled"],
+            sum(p["research_next_action_disposition_counts"].values()))
+        self.assertGreaterEqual(p["source_research_notes_scanned"],p["source_evidence_decisions_evaluated"])
+        self.assertEqual(p["doi_access_failures_queued_for_metadata_recovery"],
+                         p["doi_metadata_recovered_in_github_action"]+p["doi_metadata_still_pending"])
+        self.assertLessEqual(p["human_project_question_inbox_drafts_prevalidated"],
+                             p["bounded_project_questions_identified"])
+        self.assertEqual(p["private_human_project_imports"],"NOT_VERIFIED")
+        self.assertTrue(x["source_health"]["new_research_dispositions_are_not_formal_terminal_completions"])
+        self.assertIn(x["source_health"]["post_research_handoff_status"],
+                      {"CURRENT","SOURCE_REFRESH_NEEDED"})
         self.assertEqual(p["private_hub_imports"],"NOT_VERIFIED")
         self.assertEqual(p["verified_new_public_reach_additions_from_scout"],"NOT_VERIFIED")
         self.assertEqual(x["reviewer_quality"]["target_human_decisions_per_week"],20)
