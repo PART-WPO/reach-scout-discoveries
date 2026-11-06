@@ -135,7 +135,7 @@ def run(root=ROOT,key=None,index=None):
     signal_rows=sorted(previous.values(),key=lambda x:(x["reviewed_at"],x["event_id"]))
     return {"schema":"reach-scout-research-feedback-v1",
             "repository":"PART-WPO/reach-scout-discoveries",
-            "note":"Public minimized, authenticated reviewer disposition signals ONLY; do not treat Approved for Staging as Smartsheet insertion or public REACH publication. Never infer a private decision from missing feedback.",
+            "note":"PRIVACY HOLD: DOI-linked reviewer decision export to public GitHub is disabled. Private Hub review status is not inferred from missing public signals.",
             "signals":signal_rows,
             "signed_bundle_files_checked":len(bundles),
             "verified_signed_events_count":len(events),
