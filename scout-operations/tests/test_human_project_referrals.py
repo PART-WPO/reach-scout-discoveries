@@ -6,7 +6,7 @@ from pathlib import Path
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"tools"))
 from build_human_project_referrals import (
-    build,referral_state,publication_meta_valid,proposal,main
+    build,referral_state,publication_meta_valid,proposal,main,existing_verified_self_draft
 )
 
 class HumanProjectReferrals(unittest.TestCase):
@@ -48,6 +48,33 @@ class HumanProjectReferrals(unittest.TestCase):
                  patch("sys.argv",["build_human_project_referrals.py"]):
                 main()
             self.assertEqual(__import__("json").loads(target.read_text()),report)
+
+    def test_repeat_source_verified_inbox_is_self_not_duplicate(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d); folder=root/"scout-discoveries/inbox"
+            folder.mkdir(parents=True)
+            path=folder/"2026-11-06-human-project-safe.csv"
+            import csv
+            with path.open("w",newline="") as f:
+                w=csv.DictWriter(f,fieldnames=["DOI","Scout Discovery Rationale"])
+                w.writeheader()
+                w.writerow({"DOI":"10.1109/testsafe",
+                    "Scout Discovery Rationale":"Scout classification: NEEDS INVESTIGATION"})
+            event={"event_id":"a"*24,"source_sha256":"b"*64}
+            rel=path.relative_to(root).as_posix()
+            previous={"draft_paths":[rel],"referrals":[{
+                "doi":"10.1109/testsafe",
+                "source_event_id":event["event_id"],
+                "source_sha256":event["source_sha256"],
+                "scout_inbox_status":"VALIDATED_INBOX_DRAFT_NOT_PRIVATE_HUB"}]}
+            checked={"status":"IN_PUBLIC_SCOUT_QUEUE",
+                     "matches":[{"source":"SCOUT_INBOX","location":rel+":2"}]}
+            self.assertEqual(existing_verified_self_draft(root,"10.1109/testsafe",event,checked,previous),path)
+            checked["matches"].append({"source":"REACH","location":"details/shard.csv"})
+            self.assertIsNone(existing_verified_self_draft(root,"10.1109/testsafe",event,checked,previous))
+            checked["matches"].pop()
+            event["source_sha256"]="c"*64
+            self.assertIsNone(existing_verified_self_draft(root,"10.1109/testsafe",event,checked,previous))
 
     def test_exact_official_publication_date_and_newness_required(self):
         meta=self.published()
