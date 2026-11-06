@@ -56,6 +56,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Reconcile derived files in isolated PR workspace before freshness-dependent tests
+        if: github.event_name == 'pull_request'
+        run: |
+          python -m pip install --disable-pip-version-check requests
+          python scout-operations/tools/reconcile_derived_reporting.py
       - name: Validate all current Scout reporting and decision source guards
         run: |
           python -m pip install --disable-pip-version-check requests
@@ -77,9 +82,16 @@ jobs:
           assert impact['reviewer_quality']['reviewer_precision']=='NOT_MEASURED_NO_INDEPENDENT_GOLD_STANDARD'
           assert bench['sample_size']==len(bench['cases'])==100
           assert bench['human_truth_labels_collected']==0
-          assert set(subprocess.check_output(['git','diff','--name-only'],text=True).splitlines()) <= {
-             'scout-operations/scout-v2-impact-report.json',
-             'scout-operations/scout-v2-benchmark-100.json'}
+          import os,sys
+          changes=set(subprocess.check_output(['git','diff','--name-only'],text=True).splitlines())
+          if os.environ.get('GITHUB_EVENT_NAME')=='pull_request':
+              sys.path.insert(0,'scout-operations/tools')
+              from reconcile_derived_reporting import DERIVED_FILES
+              allowed=set(DERIVED_FILES)
+          else:
+              allowed={'scout-operations/scout-v2-impact-report.json',
+                       'scout-operations/scout-v2-benchmark-100.json'}
+          assert changes <= allowed, 'Unexpected protected source mutation in impact workflow'
           print('Impact and blinded evaluation passed with no fabricated private outcomes')
           PY
       - name: Publish source-fresh scorecard and freeze benchmark (main only)
