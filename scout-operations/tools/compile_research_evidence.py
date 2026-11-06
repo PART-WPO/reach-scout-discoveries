@@ -116,6 +116,15 @@ def build(root=ROOT):
             for path, doc in documents:
                 parent = read(path)
                 lane = str(doc.get("research_lane") or parent.get("research_lane") or "")
+                # Legacy append-only related evidence used track, not research_lane.
+                # Require a manifest-backed historical seed and retain a separate hold.
+                if not lane and parent.get("track") == "historical_crossref_api_seeded_related_discovery":
+                    origin = str(parent.get("origin") or "")
+                    match = DOI_RE.search(origin)
+                    parent_doi = norm_doi(match.group(0).rstrip(".,;")) if match else ""
+                    if not parent_doi or "doi:" + parent_doi not in source_cases:
+                        raise ValueError("Related DOI missing verified source seed: "+doi+" in "+str(path))
+                    lane = "doi_seeded_expansion"
                 if lane not in allowed:
                     raise ValueError("Unknown DOI without supplemental provenance: "+doi+" in "+str(path))
                 if lane == "supplemental_project_title_pilot":
