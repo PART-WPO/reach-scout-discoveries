@@ -12,7 +12,7 @@
 const REACH_PUBLIC_EXPORT_PRIVACY_V1 = Object.freeze({
   forbiddenField: /^(?:candidate id|principal investigator e-?mail\(s\)?|pi e-?mail|reviewer(?: email| name| identity| decision| notes?)|review notes|reviewed at|created (?:row|sheet) id|smartsheet(?:gov)? (?:row|sheet) id|decision fingerprint|finding fingerprint|authorization token)$/i,
   email: /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b/i,
-  privateLabel: /\b(?:reviewer\s+(?:e-?mail|name|identity|notes?|decision|user(?:name)?|id)|reviewed\s+(?:by|at)|(?:decision|finding)\s+fingerprint|(?:created|smartsheet|smartsheetgov|private|source)\s+(?:sheet|row)\s+id|private\s+(?:review|decision)\s+(?:note|record|history|log))\s*[:=]/i,
+  privateLabel: /\b(?:(?:reviewer\s+(?:e-?mail|name|identity|notes?|decision|user(?:name)?|id)|review\s+notes?)|reviewed\s+(?:by|at)|(?:decision|finding)\s+fingerprint|(?:created|smartsheet|smartsheetgov|private|source)\s+(?:sheet|row)\s+id|private\s+(?:review|decision)\s+(?:note|record|history|log))\s*[:=]/i,
   secret: /(?:\bgithub_pat_[A-Za-z0-9_]{20,}|\bgh[pousr]_[A-Za-z0-9]{20,}|\bxox[baprs]-[A-Za-z0-9-]{15,}|\bAIza[0-9A-Za-z_-]{25,}|\bsk-(?:proj-)?[0-9A-Za-z_-]{20,}|\bBearer\s+[0-9A-Za-z._~-]{12,}|[?&](?:api_?key|access_?token|refresh_?token|auth|token|client_secret|signature|sig)=)/i,
   trackerUrl: /https?:\/\/[^\s/]*(?:smartsheet\.com|smartsheetgov\.com)(?:\/|\b)/i
 });
