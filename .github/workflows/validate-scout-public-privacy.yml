@@ -1,0 +1,25 @@
+name: Verify Scout public metadata privacy gate
+on:
+  pull_request:
+    paths:
+      - 'scout-discoveries/tools/public_privacy.py'
+      - 'scout-discoveries/tools/build_manifest.py'
+      - 'scout-discoveries/tools/tests/test_public_privacy.py'
+      - 'scout-discoveries/tools/prepare_batch.py'
+      - '.github/workflows/validate-scout-public-privacy.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  public-metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Targeted public metadata privacy tests
+        run: python -m unittest discover -v -s scout-discoveries/tools/tests -p 'test_public_privacy.py'
+      - name: Audit all existing immutable published Scout batches
+        run: python scout-discoveries/tools/build_manifest.py
