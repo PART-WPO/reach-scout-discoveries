@@ -6,6 +6,8 @@ on:
       - 'integrations/test_downstream_verification.js'
       - 'integrations/test_privacy_boundaries.js'
       - 'integrations/DiscoveryHubScoutFeedback.gs'
+      - 'integrations/REACH_PublicExportPrivacyGuard.gs'
+      - 'integrations/test_public_export_privacy.js'
       - 'integrations/DiscoveryHubDownstreamVerificationInstall.md'
       - '.github/workflows/validate-scout-downstream.yml'
   workflow_dispatch:
@@ -23,7 +25,11 @@ jobs:
         run: |
           cp integrations/DiscoveryHubDownstreamVerification.gs /tmp/DiscoveryHubDownstreamVerification.js
           node --check /tmp/DiscoveryHubDownstreamVerification.js
+          cp integrations/REACH_PublicExportPrivacyGuard.gs /tmp/REACH_PublicExportPrivacyGuard.js
+          node --check /tmp/REACH_PublicExportPrivacyGuard.js
       - name: Synthetic read-only downstream boundary tests
         run: node integrations/test_downstream_verification.js
       - name: Private review export and diagnostic log privacy tests
         run: node integrations/test_privacy_boundaries.js
+      - name: Final public REACH export privacy tests
+        run: node integrations/test_public_export_privacy.js
