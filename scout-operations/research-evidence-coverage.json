@@ -1,9 +1,48 @@
 {
   "schema": "reach-scout-research-evidence-coverage-v1",
   "cohort": "historical_crossref",
-  "files_scanned": 19,
+  "files_scanned": 22,
   "doi_case_count": 8,
-  "source_unlinked_files": [],
+  "source_unlinked_files": [
+    "scout-operations/historical-crossref-phase2/2026-11-05-2131ET-wofs-project-title-pilot-identity-funding-hold.json"
+  ],
+  "supplemental_cohort_holds": [
+    {
+      "doi": "10.1109/past49659.2022.9975045",
+      "research_lanes": [
+        "supplemental_project_title_pilot"
+      ],
+      "decision": "HOLD_SEPARATE_COHORT_REQUIRES_OWN_VALIDATION",
+      "source_evidence": [
+        {
+          "path": "scout-operations/historical-crossref-phase2/2026-11-05-2033ET-apar-project-title-pilot-scope-check.json",
+          "sha256": "d212c7177ae54ba69135ef1d07deffb8d7619f63f33d94c0f704d849c7d53dfd"
+        }
+      ],
+      "private_review_status": "NOT_VERIFIED",
+      "original_and_expansion_status_unchanged": true
+    },
+    {
+      "doi": "10.1109/radarconf2248738.2022.9764246",
+      "research_lanes": [
+        "supplemental_project_title_pilot"
+      ],
+      "decision": "HOLD_SEPARATE_COHORT_REQUIRES_OWN_VALIDATION",
+      "source_evidence": [
+        {
+          "path": "scout-operations/historical-crossref-phase2/2026-11-05-2033ET-apar-project-title-pilot-scope-check.json",
+          "sha256": "d212c7177ae54ba69135ef1d07deffb8d7619f63f33d94c0f704d849c7d53dfd"
+        },
+        {
+          "path": "scout-operations/historical-crossref-phase2/2026-11-05-2231ET-apar-radarconf-official-program-followup.json",
+          "sha256": "8341596626813521be8754d933aae5085333f66f2ee2dd89783409864b227904"
+        }
+      ],
+      "private_review_status": "NOT_VERIFIED",
+      "original_and_expansion_status_unchanged": true
+    }
+  ],
+  "supplemental_cohort_hold_count": 2,
   "bounded_cases": 4,
   "note": "Research evidence catalog, not completion or review staging. Original triage and expansion seeds unchanged.",
   "cases": [
