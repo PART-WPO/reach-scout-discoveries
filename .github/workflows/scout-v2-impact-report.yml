@@ -25,7 +25,6 @@ on:
       - 'scout-operations/human-project-referrals.json'
       - 'scout-operations/tools/build_impact_report.py'
       - 'scout-operations/tools/build_scout_v2_benchmark.py'
-      - '.github/workflows/scout-v2-impact-report.yml'
   schedule:
     # Before the weekday 8 AM ET briefing, including DST transitions.
     - cron: '45 11 * * 1-5'
