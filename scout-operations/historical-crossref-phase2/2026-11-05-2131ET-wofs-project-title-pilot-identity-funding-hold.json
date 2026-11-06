@@ -1,0 +1,45 @@
+{
+  "schema": "scout-v2-append-only-research-evidence",
+  "mission_local": "2026-11-05-2131ET",
+  "case_type": "supplemental_project_title_lead",
+  "doi": "10.1175/waf-d-22-0056.1",
+  "title": "Machine Learning–Derived Severe Weather Probabilities from a Warn-on-Forecast System",
+  "source_origin": "PROJECT_TITLE_SEARCH (pilot), not Direct API",
+  "project_context": {
+    "spark_title": "0-3 hour tornado prediction using the Warn on Forecast System and machine learning",
+    "primary_award_context": "NA20OAR4590356",
+    "same_project_award_verified": false
+  },
+  "new_source_findings": [
+    {
+      "url": "https://journals.ametsoc.org/view/journals/wefo/37/10/WAF-D-22-0056.1.xml",
+      "finding": "Publisher identifies journal article by Adam J. Clark and Eric D. Loken; published online 2022-09-23, print 2022-10-01; paper concerns 0–3-hour severe-weather probabilities from WoFS."
+    },
+    {
+      "url": "https://repository.library.noaa.gov/view/noaa/45383",
+      "finding": "Official NOAA Institutional Repository entry identifies exact DOI, title, authors and journal; canonical IR URL is noaa/45383."
+    }
+  ],
+  "research_pass": "initial distinct publisher and NOAA IR source verification",
+  "public_identity": {
+    "pilot_snapshot_status": "NO_PUBLIC_IDENTITY_MATCH",
+    "pilot_index_fingerprint": "929564941feb9dd5c69742c87988b98bbc92befa99b648f2aea5d4de695ff122",
+    "current_live_cache_sha_recomputed": false,
+    "official_ir_url_against_reach_cache_checked": false,
+    "private_hub_feedback": "NOT_VERIFIED"
+  },
+  "decision": "TECHNICAL_AND_FUNDING_HOLD",
+  "reason": "Official IR identity and published version verified; exact primary award-to-output WPO project link and fresh full REACH/Scout canonical IR URL dedup are NOT verified. No new-output proposal authorized.",
+  "next_action": "Use SHA-verified shared public identity index to test canonical NOAA IR URL against REACH; seek publisher acknowledgments or project deliverables explicitly linking NA20OAR4590356. Stop after one distinct-source funding follow-up if unresolved.",
+  "expansion_lane": "NOT_STARTED",
+  "original_historical_ledger": "UNMODIFIED",
+  "candidate_staged": false,
+  "workflow_blocker": {
+    "run_id": 42144615294,
+    "conclusion": "failure",
+    "failed_step": "Reconcile evidence and publish immutable decision checkpoints",
+    "source_commit": "edbe004cb3ad5baa8bfe6638a49dddd41c9b617f",
+    "detail": "Failure step verified; exact stderr not available from accessible job summary."
+  },
+  "human_decision": "NOT_VERIFIED"
+}
