@@ -179,10 +179,10 @@ def main():
     a.add_argument("--stage",action="store_true")
     args=a.parse_args()
     r=build(stage=args.stage)
-    OUT.parent.mkdir(parents=True,exist_ok=True)
+    OUTPUT.parent.mkdir(parents=True,exist_ok=True)
     text=json.dumps(r,indent=2,ensure_ascii=False)+"\n"
-    if not OUT.exists() or OUT.read_text(encoding="utf-8")!=text:
-        OUT.write_text(text,encoding="utf-8")
+    if not OUTPUT.exists() or OUTPUT.read_text(encoding="utf-8")!=text:
+        OUTPUT.write_text(text,encoding="utf-8")
     print(json.dumps({"review_questions":r["unique_bounded_project_questions"],
                       "validated_inbox_drafts":r["human_referral_drafts_prevalidated"],
                       "statuses":{x["doi"]:x["disposition"] for x in r["referrals"]}},indent=2))
