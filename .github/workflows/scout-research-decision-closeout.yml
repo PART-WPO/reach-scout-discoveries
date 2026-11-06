@@ -1,6 +1,11 @@
 name: Scout evidence-to-decision closeout
 on:
   workflow_dispatch:
+  pull_request:
+    paths:
+      - '.github/workflows/scout-research-decision-closeout.yml'
+      - 'scout-operations/tools/reconcile_derived_reporting.py'
+      - 'scout-operations/tests/test_reconcile_derived_reporting.py'
   push:
     branches: [main]
     paths:
@@ -12,7 +17,22 @@ on:
       - 'scout-operations/expansion-scope-reconsiderations.json'
       - 'scout-operations/tools/reconcile_historical.py'
       - 'scout-operations/tools/reconcile_historical_crossref.py'
+      - 'scout-operations/tools/reconcile_derived_reporting.py'
+      - 'scout-discoveries/manifest.json'
       - '.github/workflows/scout-research-decision-closeout.yml'
+  # GitHub Actions bot commits don't reliably create downstream push events.
+  # workflow_run is the post-publication reconciliation boundary.
+  workflow_run:
+    workflows:
+      - 'Validate and Publish Scout Discovery Feed'
+      - 'Build verified REACH comparison cache'
+      - 'Historical Crossref actionable routing'
+      - 'Scout all-lane research outcome registry'
+      - 'Scout recover DOI metadata after research access failures'
+      - 'Scout Crossref indexed-updates and SPARK project leads'
+      - 'Scout bounded human project referrals'
+    types: [completed]
+    branches: [main]
 permissions:
   contents: write
 concurrency:
@@ -20,30 +40,51 @@ concurrency:
   cancel-in-progress: false
 jobs:
   evaluate:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: main
           fetch-depth: 0
           persist-credentials: true
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Verify shared Scout decision and reconciliation code
+      - name: Validate safe reconciliation behavior without requiring an already-current cache
         run: |
           set -euo pipefail
           python -m pip install --disable-pip-version-check requests
+          python -m py_compile scout-operations/tools/reconcile_derived_reporting.py
+          python -m unittest discover -v -s scout-operations/tests -p 'test_reconcile_derived_reporting.py'
+          python -m unittest discover -v -s scout-operations/tests -p 'test_decision_pipeline.py'
+      - name: Rebuild and verify all reports in a PR workspace (no publish)
+        if: github.event_name == 'pull_request'
+        run: |
+          set -euo pipefail
+          python scout-operations/tools/reconcile_derived_reporting.py
           python -m unittest discover -v -s scout-operations/tests
-      - name: Reconcile evidence and publish immutable decision checkpoints
+          python scout-operations/tools/reconcile_derived_reporting.py
+          python - <<'PY'
+          import subprocess,sys
+          sys.path.insert(0,'scout-operations/tools')
+          from reconcile_derived_reporting import DERIVED_FILES
+          changed=subprocess.check_output(['git','diff','--name-only'],text=True).splitlines()
+          allowed=set(DERIVED_FILES)
+          unexpected=[p for p in changed if p not in allowed]
+          if unexpected:
+              raise SystemExit('PR reconciliation unexpectedly modified source: '+', '.join(unexpected))
+          print('PR source mutation guard verified:',len(changed),'authorized derived file(s)')
+          PY
+      - name: Reconcile from a fresh main snapshot and commit only verified derived files
+        if: github.event_name != 'pull_request'
         shell: bash
         run: |
           set -euo pipefail
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           for attempt in 1 2 3 4 5; do
-            echo "Fresh-checkout closeout attempt ${attempt}/5"
+            echo "Reconcile exact live main source snapshot; attempt $attempt/5"
             git fetch origin main
             git checkout -B main origin/main
             python - <<'PY'
@@ -53,49 +94,27 @@ jobs:
           url="https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json"
           with urllib.request.urlopen(url,timeout=45) as response:
               live=response.read()
-          digest=hashlib.sha256(live).hexdigest()
-          if digest!=cache["source_manifest_sha256"]:
-              raise SystemExit("STALE REACH SNAPSHOT: refresh verified REACH cache before closeout")
-          print("REACH source manifest SHA verified", digest)
+          if hashlib.sha256(live).hexdigest()!=cache["source_manifest_sha256"]:
+              raise SystemExit("STOP: Live REACH manifest changed; refresh the verified comparison cache first")
           PY
-            python scout-operations/tools/reconcile_historical.py
-            python scout-operations/tools/reconcile_historical_crossref.py
-            python scout-operations/tools/decision_pipeline.py build-index
-            python scout-operations/tools/compile_research_evidence.py
-            python scout-operations/tools/decision_pipeline.py evaluate --cases scout-operations/research-decision-cases.json
-            python scout-operations/tools/summarize_research_decisions.py
-            python scout-operations/tools/build_expansion_relevance.py
-            python scout-operations/tools/select_workstream.py
-            python scout-operations/tools/build_operational_scorecard.py
+            python scout-operations/tools/reconcile_derived_reporting.py
+            python -m unittest discover -v -s scout-operations/tests
             python - <<'PY'
-          import json,subprocess
-          from pathlib import Path
-          def val(p):return json.loads(Path(p).read_text())
-          for stem in ("historical","historical-crossref"):
-              p="scout-operations/"+stem+"-triage.json"
-              original=json.loads(subprocess.check_output(["git","show","HEAD:"+p]))
-              current=val(p)
-              before={x["identity"]:x for x in original["entries"]}
-              after={x["identity"]:x for x in current["entries"]}
-              if before.keys()!=after.keys():
-                  raise SystemExit("STOP: original source identities changed unexpectedly in "+stem)
-              for key in before:
-                  for field in ("status","seed_expansion_status","human_decision","scout_batch_path"):
-                      if before[key].get(field)!=after[key].get(field):
-                          raise SystemExit("STOP: protected original/human status changed: "+key+" "+field)
-          route=val("scout-operations/historical-crossref-screening/actionable-routing.json")
-          summary=val("scout-operations/scout-operational-scorecard.json")
-          assert route["total"]==summary["reach_screening"]["historical_crossref_source_dois"]
-          assert summary["review_pipeline"]["private_discovery_hub_imports"]=="NOT_VERIFIED"
-          assert summary["original_research"]["historical_crossref_unverified_declared_completed"]>=0
-          scope=val("scout-operations/expansion-relevance-priority.json")
-          assert scope["source_routing_sha256"]==__import__("hashlib").sha256(open("scout-operations/historical-crossref-screening/actionable-routing.json","rb").read()).hexdigest()
-          assert sum(scope["historical_crossref"]["counts"].values())==route["total"]
-          assert scope["seed_expansion_closures"]==0
-          assert summary["separate_doi_expansion"]["relevance_priority_counts"]==scope["historical_crossref"]["counts"]
-          print("Closed validated research checkpoint pass without changing original or human statuses")
+          import subprocess,sys
+          sys.path.insert(0,"scout-operations/tools")
+          from reconcile_derived_reporting import DERIVED_FILES
+          allowed=set(DERIVED_FILES)
+          changed=subprocess.check_output(["git","diff","--name-only"],text=True).splitlines()
+          unexpected=[p for p in changed if p not in allowed]
+          untracked=subprocess.check_output(["git","ls-files","--others","--exclude-standard"],text=True).splitlines()
+          unexpected.extend(p for p in untracked
+                            if not ((p.startswith("scout-operations/case-checkpoints/") and p.endswith(".json"))
+                                    or ("/__pycache__/" in p and p.endswith(".pyc"))))
+          if unexpected:
+              raise SystemExit("STOP: Unexpected source or protected file modification: "+", ".join(unexpected))
+          print("Changed files confined to authorized derived reports and immutable checkpoints")
           PY
-            git add scout-operations/historical-coverage.json \
+            git add -- scout-operations/historical-coverage.json \
               scout-operations/historical-crossref-coverage.json \
               scout-operations/historical-reconciliation-exceptions.json \
               scout-operations/historical-crossref-reconciliation-exceptions.json \
@@ -104,30 +123,34 @@ jobs:
               scout-operations/research-evidence-coverage.json \
               scout-operations/research-decision-rollup.json \
               scout-operations/expansion-relevance-priority.json \
-              scout-operations/scout-operational-scorecard.json \
               scout-operations/active-workstream.json \
+              scout-operations/unified-source-preflight.json \
+              scout-operations/research-feedback.json \
+              scout-operations/scout-operational-scorecard.json \
+              scout-operations/scout-v2-impact-report.json \
+              scout-operations/scout-v2-benchmark-100.json \
               scout-operations/case-checkpoints
             if git diff --cached --quiet; then
-              echo "No new evidence-to-decision changes"
+              echo "Source-pinned derived reports are already synchronized"
               exit 0
             fi
-            git commit -m "Reconcile Scout research evidence to verified DOI decision checkpoints"
+            git commit -m 'Reconcile SHA-pinned Scout decision index and stage reports (#35)'
             if git push origin HEAD:main; then
-              echo "Published validated decision checkpoints at $(git rev-parse HEAD)"
+              echo "Published validated source-consistent Scout reports"
               exit 0
             fi
-            echo "Concurrent source update; recheck source SHA and rerun decision pipeline"
-            sleep $((attempt * 2))
+            echo "Concurrent main update; restart from fresh source and rebuild, never copy stale output"
+            sleep "$((attempt * 2))"
           done
-          echo "::error::Unable to publish evidence-to-decision closeout after retries"
+          echo "::error::Unable to publish after five clean source rebuild attempts"
           exit 1
-      - name: Export concise research review dashboard
+      - name: Attach derived data diagnostics
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: scout-research-decision-closeout
+          name: scout-ordered-derived-reconciliation
           path: |
-            scout-operations/historical*-reconciliation-exceptions.json
             scout-operations/research-decision-rollup.json
             scout-operations/scout-operational-scorecard.json
+            scout-operations/scout-v2-impact-report.json
           if-no-files-found: warn

@@ -27,6 +27,9 @@ jobs:
           python -m py_compile scout-operations/tools/build_expansion_relevance.py
           python -m unittest discover -v -s scout-operations/tests -p 'test_expansion_relevance.py'
           python -m unittest discover -v -s scout-operations/tests -p 'test_select_workstream.py'
+      - name: Repair in-memory PR reporting snapshot before source-dependent scorecard checks
+        if: github.event_name == 'pull_request'
+        run: python scout-operations/tools/reconcile_derived_reporting.py
       - name: Generate complete relevance priorities against real public records
         run: |
           python scout-operations/tools/build_expansion_relevance.py
@@ -67,9 +70,19 @@ jobs:
           stream=read('scout-operations/active-workstream.json')
           assert stream['historical_crossref_api']['seed_relevance_priority_counts']==counts
           assert stream['mode']=='historical_crossref_triage'
-          for file in ('scout-operations/historical-crossref-triage.json',
-              'scout-operations/historical-crossref-coverage.json',
-              'scout-operations/monthly-expansion-leads.json',
+          # PR reporting reindex can refresh derived source hints/coverage.
+          # Historical formal dispositions, reviewer decisions and expansion
+          # seeds must remain unchanged; do not demand byte-identical coverage.
+          file='scout-operations/historical-crossref-triage.json'
+          before=json.loads(subprocess.check_output(['git','show','HEAD:'+file]))
+          after=read(file)
+          old={x['identity']:x for x in before['entries']}
+          new={x['identity']:x for x in after['entries']}
+          assert old.keys()==new.keys()
+          for identity in old:
+              for protected in ('status','seed_expansion_status','human_decision','scout_batch_path'):
+                  assert old[identity].get(protected)==new[identity].get(protected)
+          for file in ('scout-operations/monthly-expansion-leads.json',
               'scout-operations/independent-discovery-leads.json',
               'scout-discoveries/manifest.json'):
               pristine=subprocess.check_output(['git','show','HEAD:'+file])

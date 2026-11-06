@@ -27,9 +27,14 @@ jobs:
           python-version: '3.11'
       - name: Install existing Scout test dependency
         run: python -m pip install --disable-pip-version-check requests
-      - name: Compile and run existing unit tests
+      - name: Verify pure research logic before any derived source refresh
         run: |
           python -m py_compile scout-operations/tools/reconcile_historical.py scout-operations/tools/reconcile_historical_crossref.py scout-operations/tools/compile_research_evidence.py scout-operations/tools/summarize_research_decisions.py
+          python -m unittest discover -v -s scout-operations/tests -p test_decision_pipeline.py
+          python -m unittest discover -v -s scout-operations/tests -p test_reconcile_derived_reporting.py
+      - name: Rebuild derived reports before full regression tests
+        run: |
+          python scout-operations/tools/reconcile_derived_reporting.py
           python -m unittest discover -v -s scout-operations/tests
       - name: Reconcile both historical cohorts without changing human decisions
         run: |
