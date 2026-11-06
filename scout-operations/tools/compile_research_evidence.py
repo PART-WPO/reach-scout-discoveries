@@ -106,10 +106,52 @@ def build(root=ROOT):
     _, source_cases = crossref_source_cases()
     decision_cases = []
     coverage = []
+    supplemental_holds = []
     for doi, documents in sorted(grouped.items()):
         key = "doi:" + doi
         if key not in source_cases:
-            raise ValueError("Research evidence not in source Crossref manifest: "+doi)
+            allowed = {"supplemental_project_title_pilot", "independent_research",
+                       "doi_seeded_expansion", "monthly_related_lead"}
+            lanes = set()
+            for path, doc in documents:
+                parent = read(path)
+                lane = str(doc.get("research_lane") or parent.get("research_lane") or "")
+                if lane not in allowed:
+                    raise ValueError("Unknown DOI without supplemental provenance: "+doi+" in "+str(path))
+                if lane == "supplemental_project_title_pilot":
+                    if doc.get("source_origin") != "PROJECT_TITLE_SEARCH_NOT_DIRECT_API":
+                        raise ValueError("Pilot DOI missing explicit source origin: "+doi)
+                    provenance_doc = parent
+                    if not parent.get("source_pointer") and parent.get("parent_evidence"):
+                        parent_path = (root / str(parent["parent_evidence"])).resolve()
+                        if not parent_path.is_relative_to(root.resolve()) or not parent_path.is_file():
+                            raise ValueError("Invalid parent evidence path for pilot DOI: "+doi)
+                        provenance_doc = read(parent_path)
+                        if not any(norm_doi(c.get("doi")) == doi for c in provenance_doc.get("cases", [])):
+                            raise ValueError("Parent evidence does not contain pilot DOI: "+doi)
+                    pointer = provenance_doc.get("source_pointer")
+                    expected = provenance_doc.get("source_pointer_sha256")
+                    if not pointer or not expected:
+                        raise ValueError("Pilot DOI missing SHA-backed source pointer: "+doi)
+                    pointer_path = (root / str(pointer)).resolve()
+                    if not pointer_path.is_relative_to(root.resolve()) or not pointer_path.is_file():
+                        raise ValueError("Invalid pilot source pointer: "+doi)
+                    if sha(pointer_path) != expected:
+                        raise ValueError("Pilot source pointer SHA mismatch: "+doi)
+                    if not any(norm_doi(lead.get("doi")) == doi for lead in read(pointer_path).get("leads", [])):
+                        raise ValueError("Pilot DOI absent from SHA-backed source pointer: "+doi)
+                lanes.add(lane)
+            supplemental_holds.append({
+                "doi": doi, "research_lanes": sorted(lanes),
+                "decision": "HOLD_SEPARATE_COHORT_REQUIRES_OWN_VALIDATION",
+                "source_evidence": [
+                    {"path": path.relative_to(root).as_posix(), "sha256": sha(path)}
+                    for path, _ in documents
+                ],
+                "private_review_status": "NOT_VERIFIED",
+                "original_and_expansion_status_unchanged": True,
+            })
+            continue
         titles = source_cases[key].get("titles", set())
         raw_title = sorted(titles, key=lambda x: (len(norm_title(x)), x), reverse=True)[0] if titles else ""
         urls = set()
@@ -169,6 +211,8 @@ def build(root=ROOT):
               "files_scanned":len(files),
               "doi_case_count":len(decision_cases),
               "source_unlinked_files":unlinked,
+              "supplemental_cohort_holds":supplemental_holds,
+              "supplemental_cohort_hold_count":len(supplemental_holds),
               "bounded_cases":sum(x["budget_exhausted"] for x in coverage),
               "note":"Research evidence catalog, not completion or review staging. Original triage and expansion seeds unchanged.",
               "cases":coverage}
