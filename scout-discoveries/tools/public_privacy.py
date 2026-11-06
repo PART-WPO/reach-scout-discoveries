@@ -11,7 +11,7 @@ import re
 EMAIL = re.compile(r"(?i)\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b")
 PRIVATE_LABEL = re.compile(
     r"(?i)\b(?:"
-    r"reviewer\s+(?:e-?mail|name|identity|notes?|decision|user(?:name)?|id)"
+    r"(?:reviewer\s+(?:e-?mail|name|identity|notes?|decision|user(?:name)?|id)|review\s+notes?)"
     r"|reviewed\s+(?:at|by)"
     r"|(?:decision|finding)\s+fingerprint"
     r"|(?:created|smartsheet|smartsheetgov|private|source)\s+(?:sheet|row)\s+id"
