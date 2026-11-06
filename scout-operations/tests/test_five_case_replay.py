@@ -22,7 +22,7 @@ class FiveRealCaseReplay(unittest.TestCase):
         self.assertEqual(r["formal_historical_statuses_mutated"],0)
     def test_real_result_by_doi(self):
         expected={
-          "published_with_uncertain_project":"VALIDATED_EXISTING_NEEDS_INVESTIGATION_DRAFT",
+          "published_with_uncertain_project":"EXISTING_SINGLE_PUBLIC_NEEDS_INVESTIGATION_BATCH",
           "publication_with_missing_award_bridge":"HOLD_UNVERIFIED_PROJECT_CONTEXT",
           "dataset_with_recovered_registry_metadata":"METADATA_VERIFIED_PROJECT_UNRESOLVED",
           "preprint_guard":"PREPRINT_HOLD",
