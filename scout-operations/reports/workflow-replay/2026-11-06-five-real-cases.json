@@ -1,0 +1,106 @@
+{
+  "schema": "reach-scout-five-case-source-fresh-workflow-replay-v1",
+  "replay_mode": "READ_ONLY_CURRENT_SOURCE_FULL_ENGINE_WITH_OPTIONAL_LIVE_DOI",
+  "live_official_metadata_probes": {
+    "10.1109/radarconf2248738.2022.9764246": {
+      "provider": "crossref",
+      "status": "ok",
+      "evidence": "https://api.crossref.org/works/10.1109/radarconf2248738.2022.9764246",
+      "title": "Airborne Phased Array Radar (APAR) Program Status &amp; Critical Requirements Analyses",
+      "pub_date": "2022-03-21",
+      "funding_proven_from_metadata": false
+    },
+    "10.21957/befj-es73": {
+      "provider": "datacite",
+      "status": "ok",
+      "evidence": "https://api.datacite.org/dois/10.21957/befj-es73",
+      "title": "Observing System Experiment - Mediterranean with drifting buoys",
+      "pub_date": "2026-07-07",
+      "funding_proven_from_metadata": false
+    }
+  },
+  "case_count": 5,
+  "passed": 5,
+  "failed": 0,
+  "registry_source_sha256": "3d6aa47ffb48cc4d41d39f1a05e434752cd1a6aaeb3888657e821efc4dd33258",
+  "source_evidence_files": 28,
+  "source_note_events": 33,
+  "doi_recovery_cached_success": 4,
+  "new_public_candidates_created": 0,
+  "private_hub_imports": "NOT_VERIFIED",
+  "human_approvals": "NOT_VERIFIED",
+  "formal_historical_statuses_mutated": 0,
+  "expansion_seed_closures": 0,
+  "reviewer_csv_writes": 0,
+  "cases": [
+    {
+      "case": "published_with_uncertain_project",
+      "doi": "10.1109/radarconf2248738.2022.9764246",
+      "expected": "EXISTING_SINGLE_PUBLIC_NEEDS_INVESTIGATION_BATCH",
+      "observed": "EXISTING_SINGLE_PUBLIC_NEEDS_INVESTIGATION_BATCH",
+      "verified": true,
+      "source_sha256": {
+        "scout-operations/human-project-referrals.json": "a667ed1c4276537070c3f91029d03da55da6405a6ee91b48764ca8e2f3460459",
+        "scout-discoveries/manifest.json": "b4ce92af18594ee047a577bd484366cb1828d7385e479017ffea75935307db00",
+        "scout-discoveries/batches/2026-11-06-human-project-b616c2488c1fe907f3.csv": "4a53b6d29397aa2f6633aaee8236816fd7b5ccf4a9a128dbfc54721d0cadf608",
+        "scout-operations/historical-crossref-phase2/2026-11-05-2231ET-apar-radarconf-official-program-followup.json": "8341596626813521be8754d933aae5085333f66f2ee2dd89783409864b227904"
+      },
+      "why": "One SHA-verified published Scout review record; new attempts are held as an existing public queue item. A prior inbox report is stale after promotion, and the funding award field remains blank.",
+      "public_identity": "IN_PUBLIC_SCOUT_QUEUE",
+      "private_hub": "NOT_VERIFIED",
+      "recorded_referral_lifecycle": "STALE_INBOX_STATUS_AFTER_PUBLIC_FEED_PROMOTION",
+      "published_feed_batch": "scout-discoveries/batches/2026-11-06-human-project-b616c2488c1fe907f3.csv"
+    },
+    {
+      "case": "publication_with_missing_award_bridge",
+      "doi": "10.1007/s00382-022-06655-w",
+      "expected": "HOLD_UNVERIFIED_PROJECT_CONTEXT",
+      "observed": "HOLD_UNVERIFIED_PROJECT_CONTEXT",
+      "verified": true,
+      "source_sha256": {
+        "scout-operations/human-project-referrals.json": "a667ed1c4276537070c3f91029d03da55da6405a6ee91b48764ca8e2f3460459",
+        "scout-operations/historical-crossref-phase2/2026-11-05-0324ET-gfdl-spear-award-scope-followup.json": "d38bcd57645123aadeb95ff9eb7e050ce1154ff122971bff6f7630548b6e688e"
+      },
+      "why": "Project-level WPO evidence is insufficient; no reviewer overload or invented funding proof."
+    },
+    {
+      "case": "dataset_with_recovered_registry_metadata",
+      "doi": "10.21957/befj-es73",
+      "expected": "METADATA_VERIFIED_PROJECT_UNRESOLVED",
+      "observed": "METADATA_VERIFIED_PROJECT_UNRESOLVED",
+      "verified": true,
+      "source_sha256": {
+        "scout-operations/reports/queued-doi-metadata/latest.json": "4c746a4e045c9d67b924486bcc1a9bef9ac7654281549409ad7cd78ae86dd7e0",
+        "scout-operations/monthly-research/2026-11-06-0630ET-storm-harry-ecmwf-two-doi-access-holds.json": "38d2065e50f5691c4452ea054a54409a88392e3d76f60969a311a78d96b3bf7c"
+      },
+      "why": "DataCite metadata is recovered and reused; related dataset remains unverified as WPO-funded.",
+      "recovered_from": "datacite",
+      "new_api_calls_for_cached_metadata": 0
+    },
+    {
+      "case": "preprint_guard",
+      "doi": "10.1002/essoar.10504829.1",
+      "expected": "PREPRINT_HOLD",
+      "observed": "PREPRINT_HOLD",
+      "verified": true,
+      "source_sha256": {
+        "scout-operations/research-decision-cases.json": "c18e435da7b99baafd9152f3648f874a3bdef593d597b64e1cf822ff9d39bb13",
+        "scout-operations/preprint-watchlist.json": "a95f27ed9d34d18a0a644caa62c32f2c8e31ba62296ec97b4dde7a85cbbbfed4"
+      },
+      "why": "Tracked ESSOAr posted DOI is not staged; wait for official published-version research."
+    },
+    {
+      "case": "already_cataloged_published_version",
+      "doi": "10.1002/essoar.10507067.1",
+      "expected": "EXISTING_IN_REACH",
+      "observed": "EXISTING_IN_REACH",
+      "verified": true,
+      "source_sha256": {
+        "scout-operations/research-decision-cases.json": "c18e435da7b99baafd9152f3648f874a3bdef593d597b64e1cf822ff9d39bb13",
+        "scout-operations/reach-comparison-cache/comparison-index.json": "6660562e325a6a141198f59acce84f2e30d9a2d14e6cf5acd29769c8a4b68e1e"
+      },
+      "why": "Crossref original has a verified REACH identity; no duplicate Scout proposal."
+    }
+  ],
+  "notes": "Replay executes live Scout source, metadata-cache, DOI identity, preprint, historical decision, and private-safe reviewer functions; checks existing published inbox artifact without writing it. Actual current private Hub sync is not simulated or claimed."
+}
