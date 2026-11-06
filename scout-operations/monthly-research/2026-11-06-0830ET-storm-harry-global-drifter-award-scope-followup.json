@@ -1,0 +1,57 @@
+{
+  "schema": "scout-research-evidence-v2-supplemental",
+  "observed_at": "2026-11-06T08:30:22-05:00",
+  "origin": "Direct API",
+  "research_type": "monthly_original_project_award_scope_followup",
+  "doi": "10.1002/qj.70325",
+  "title": "The Mediterranean Extreme Events Experiment and storm Harry in January 2026",
+  "source_batch": "2026-11-01-monthly-api-2026-10-primary-only-part001",
+  "source_batch_manifest": "api-discoveries/manifest.json",
+  "sources": [
+    {
+      "url": "https://rmets.onlinelibrary.wiley.com/doi/10.1002/qj.70325",
+      "role": "Official Wiley publisher acknowledgments identify NA20OAR4320278 as The Global Drifter Program, funding 15 SVP drifters and telemetry; other authors supported by distinct programs."
+    },
+    {
+      "url": "https://repository.library.noaa.gov/view/noaa/77398",
+      "role": "Official NOAA IR independently confirms DOI and lists NA20OAR4320278 as funding, without establishing WPO-specific funding."
+    },
+    {
+      "url": "https://wpo.noaa.gov/spark/",
+      "role": "Public WPO SPARK primary award directory; attempted direct award verification but access/search completeness not independently verified."
+    }
+  ],
+  "finding": "The publisher expressly attributes NA20OAR4320278 to The Global Drifter Program and specifically to 15 drifting buoys, not to a named WPO-funded project. The NOAA IR funding field independently confirms the award number but not WPO eligibility. A monthly primary-award API hit alone cannot establish that this publication or ECMWF experiments are outputs of an eligible WPO project.",
+  "award": "NA20OAR4320278",
+  "award_program_as_publisher": "The Global Drifter Program",
+  "spark_primary_award_verified": false,
+  "reach_scout_identity": "CURRENT_PREFLIGHT_ONLY_NO_PUBLIC_IDENTITY_MATCH; PRIVATE_REVIEW_NOT_VERIFIED",
+  "reach_snapshot_sha256": "6660562e325a6a141198f59acce84f2e30d9a2d14e6cf5acd29769c8a4b68e1e",
+  "scout_manifest_sha256": "755885a5c5607f5036bf1a9b7cf28248c2be9442d68edfbdc167e58ebd1fab54",
+  "decision": "SOFT_DEFER_UNTIL_MATERIAL_WPO_PROJECT_EVIDENCE",
+  "next_action": "Check exact SPARK Award Number(s) primary column against NA20OAR4320278 with a verified full catalog export. Reopen only with matching project-specific WPO evidence; do not stage or assert exclusion. Keep two ECMWF DOI expansion leads separately open.",
+  "research_passes": {
+    "initial": "2026-11-06-0528ET monthly DOI publisher/NOAA IR check",
+    "distinct_source_followup": "2026-11-06-0830ET publisher's precise grant-purpose acknowledgment and NOAA IR independent funding comparison",
+    "initial_count": 1,
+    "distinct_followup_count": 1
+  },
+  "related_expansion": [
+    {
+      "doi": "10.21957/befj-es73",
+      "status": "SEPARATE_OPEN_SOFT_HOLD",
+      "original_or_expansion": "API-seeded related"
+    },
+    {
+      "doi": "10.21957/e8rz-wh72",
+      "status": "SEPARATE_OPEN_SOFT_HOLD",
+      "original_or_expansion": "API-seeded related"
+    }
+  ],
+  "original_formally_closed": 0,
+  "expansion_completed": 0,
+  "new_validated_public_review_proposals": 0,
+  "private_outcomes": "NOT_VERIFIED",
+  "source_freshness": "Current operational reports read; full raw source SHA-256 recomputation not performed",
+  "protected_decisions_modified": false
+}
