@@ -1,8 +1,24 @@
 {
   "schema": "reach-scout-preprint-intake-gate-v1",
-  "checked_at": "2026-11-02T22:33:50.869825+00:00",
+  "checked_at": "2026-11-06T13:15:51.763868+00:00",
   "policy": "All new publication proposals require registry check. A preprint DOI cannot be staged through ANY origin. Uncertain metadata remains on hold. Existing human decisions unchanged.",
   "checks": [
+    {
+      "path": "scout-discoveries/inbox/2026-11-04-crossref-flash-drought-positive-control.csv",
+      "sha256": "776e7a9a5caef303bb406179f2be94bbd6e86946dff88751eba0d0ac9bdd703b",
+      "verdict": "eligible",
+      "rows": [
+        {
+          "doi": "10.1175/jamc-d-25-0108.1",
+          "status": "eligible",
+          "reason": "Crossref identifies an officially issued scholarly publication",
+          "evidence": [
+            "https://api.crossref.org/works/10.1175/jamc-d-25-0108.1",
+            "https://api.datacite.org/dois/10.1175/jamc-d-25-0108.1"
+          ]
+        }
+      ]
+    },
     {
       "path": "scout-discoveries/batches/2026-10-28-hourly-datacite-expansion-award-fixes-001.csv",
       "sha256": "8e9e9209202e507d6b91cc50714d10b01f19ade6b55e2d1816dd7bca1faffa09",
@@ -327,6 +343,6 @@
       ]
     }
   ],
-  "eligible_batches": 11,
+  "eligible_batches": 12,
   "held_batches": 3
 }
