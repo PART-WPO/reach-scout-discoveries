@@ -65,6 +65,17 @@ jobs:
           python scout-operations/tools/reconcile_derived_reporting.py
           python -m unittest discover -v -s scout-operations/tests
           python scout-operations/tools/reconcile_derived_reporting.py
+          python - <<'PY'
+          import subprocess,sys
+          sys.path.insert(0,'scout-operations/tools')
+          from reconcile_derived_reporting import DERIVED_FILES
+          changed=subprocess.check_output(['git','diff','--name-only'],text=True).splitlines()
+          allowed=set(DERIVED_FILES)
+          unexpected=[p for p in changed if p not in allowed]
+          if unexpected:
+              raise SystemExit('PR reconciliation unexpectedly modified source: '+', '.join(unexpected))
+          print('PR source mutation guard verified:',len(changed),'authorized derived file(s)')
+          PY
       - name: Reconcile from a fresh main snapshot and commit only verified derived files
         if: github.event_name != 'pull_request'
         shell: bash
