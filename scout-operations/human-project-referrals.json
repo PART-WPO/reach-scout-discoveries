@@ -85,8 +85,20 @@
         ]
       },
       "public_identity": {
-        "status": "NO_PUBLIC_IDENTITY_MATCH",
-        "matches": [],
+        "status": "IN_PUBLIC_SCOUT_QUEUE",
+        "matches": [
+          {
+            "source": "SCOUT_INBOX",
+            "identity": "2026-11-06-human-project-b616c2488c1fe907f3.csv:2",
+            "title": "Airborne Phased Array Radar (APAR) Program Status &amp; Critical Requirements Analyses",
+            "location": "scout-discoveries/inbox/2026-11-06-human-project-b616c2488c1fe907f3.csv:2",
+            "match_bases": [
+              "exact_doi",
+              "exact_url",
+              "normalized_title"
+            ]
+          }
+        ],
         "caveat": "Public snapshot only; private Hub decisions are not asserted.",
         "noaa_ir_reach_check": {
           "status": "DOI_NOT_IN_VERIFIED_IR_INDEX_UNKNOWN",
@@ -101,7 +113,7 @@
       },
       "disposition": "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL",
       "review_question": "Reviewer question: Is this independently published output a deliverable of SPARK primary award NA18OAR4590431 (rather than merely topically related), and if so which project parent should it use?",
-      "scout_inbox_status": "VALIDATED_INBOX_DRAFT_NOT_PRIVATE_HUB",
+      "scout_inbox_status": "EXISTING_VERIFIED_INBOX_DRAFT",
       "eligible_for_new_reach_addition": "NOT_VERIFIED",
       "private_hub_import": "NOT_VERIFIED",
       "human_approval": "NOT_VERIFIED"
