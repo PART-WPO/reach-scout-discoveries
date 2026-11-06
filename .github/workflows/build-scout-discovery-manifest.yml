@@ -9,6 +9,10 @@ on:
       - 'scout-discoveries/supersessions.json'
       - 'scout-discoveries/tools/build_manifest.py'
       - 'scout-discoveries/tools/prepare_batch.py'
+      # Any change in the verified hold/eligibility evidence must re-audit
+      # already staged public batches, not just additions to CSV files.
+      - 'scout-operations/preprint-intake-gate.json'
+      - 'scout-operations/preprint-watchlist.json'
       - 'scout-operations/tools/verify_preprint_intake.py'
       - 'scout-operations/tests/test_universal_preprint_gate.py'
       - 'scout-operations/tools/reconcile_monthly_staging.py'
@@ -57,6 +61,9 @@ jobs:
             python scout-discoveries/tools/promote_inbox.py
           fi
 
+      # A test or positive-control batch not proven eligible must NEVER
+      # be promoted merely to unblock the feed. Keep original metadata and
+      # reviewer history untouched; fail closed until proper evidence exists.
       - name: Validate all published batch CSVs and generate authorized manifest
         env:
           SCOUT_PREPRINT_GATE_REQUIRED: '1'
