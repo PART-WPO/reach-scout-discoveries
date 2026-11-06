@@ -138,6 +138,33 @@ def write_index(expected,by_doi,dest=DEST,invalid_pid_records=0,unresolved_dois=
                       "ambiguous_dois":m["ambiguous_dois"],"complete":True},indent=2))
     return m
 
+def collect_with_stability_retries(attempts=3, pause_seconds=15):
+    """Restart a complete harvest if the live catalog changes during pagination.
+
+    Never combine pages from separate attempts or publish a partial harvest.
+    All other validation failures remain fatal.
+    """
+    if attempts < 1:
+        raise ValueError("At least one complete harvest attempt is required")
+    for attempt in range(attempts):
+        try:
+            return collect()
+        except RuntimeError as exc:
+            if str(exc) != "NOAA IR changed during pagination; retry after stabilization":
+                raise
+            if attempt == attempts - 1:
+                raise RuntimeError(
+                    f"NOAA IR catalog changed during all {attempts} full-harvest attempts; "
+                    "previous validated index preserved"
+                ) from exc
+            print(
+                f"NOAA IR catalog changed during harvest {attempt + 1}/{attempts}; "
+                "discarding this attempt and restarting from page zero",
+                flush=True,
+            )
+            time.sleep(pause_seconds)
+
+
 if __name__=="__main__":
-    total,doi_links,stats=collect()
+    total,doi_links,stats=collect_with_stability_retries()
     write_index(total,doi_links,invalid_pid_records=stats["invalid_pid_records"],unresolved_dois=stats["unresolved_dois"])
