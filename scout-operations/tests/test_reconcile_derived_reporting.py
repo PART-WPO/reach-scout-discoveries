@@ -70,6 +70,9 @@ class DerivedReportingTests(unittest.TestCase):
             verify(self.root)
     def test_scorecard_stale_counts_are_rejected(self):
         self.mutate(SCORECARD,lambda x:x["review_pipeline"].update(public_scout_batches=30))
+        # Keep the derived impact checksum aligned so this specifically
+        # tests the substantive 30-vs-31 count mismatch.
+        self.mutate(IMPACT,lambda x:x["source_sha256"].update(scorecard=self.sha(SCORECARD)))
         with self.assertRaisesRegex(ValueError,"stale Scout counts"):
             verify(self.root)
     def test_public_feedback_cannot_expose_review_outcome(self):
