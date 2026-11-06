@@ -97,6 +97,12 @@ def extract_valid_events(bundles,index,key):
 def run(root=ROOT,key=None,index=None):
     secret=os.environ.get("SCOUT_FEEDBACK_HMAC_KEY","") if key is None else key
     files=sorted((root/"scout-operations/reviewer-feedback-inbox").glob("*.json"))
+    # Privacy policy: no DOI-linked human reviewer outcomes can be transmitted
+    # through this public repository, even if a valid signature exists.
+    # Authentication is not confidentiality. A separate private transport
+    # needs authorization and a distinct future implementation.
+    if files:
+        raise ValueError("PRIVACY_HOLD: private reviewer-feedback bundles are prohibited in public GitHub")
     bundles=[]
     for path in files:
         b=path.read_bytes()
@@ -110,6 +116,8 @@ def run(root=ROOT,key=None,index=None):
     prior=json.loads(dest.read_text(encoding="utf-8")) if dest.exists() else {"signals":[]}
     if prior.get("schema")!="reach-scout-research-feedback-v1":
         raise ValueError("Unknown research-feedback schema")
+    if prior.get("signals") or prior.get("events_held_for_manual_identity_reconciliation"):
+        raise ValueError("PRIVACY_HOLD: public reviewer signals require security review and removal")
     # Append-only public operational signals; never replace a preexisting
     # human decision or lower an approved candidate's effective history.
     if any("event_id" not in x for x in prior["signals"]):
