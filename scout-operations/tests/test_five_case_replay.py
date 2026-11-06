@@ -1,4 +1,4 @@
-"""Exercise real Scout decisions for five known research pathways, with zero writes."""
+# Shadow mission rehearsal (Nov 6, 2026): no production writes or case mutations.\n"""Exercise real Scout decisions for five known research pathways, with zero writes."""
 import sys
 import unittest
 from pathlib import Path
