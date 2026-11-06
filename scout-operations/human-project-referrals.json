@@ -1,0 +1,110 @@
+{
+  "schema": "reach-scout-bounded-project-human-referral-v1",
+  "source_outcome_event_count": 33,
+  "source_outcome_sha256": "56aec4c4310261668a9bcece81d3ce6bbf9b87cfdbe41fd4a55001f6c6ea03e9",
+  "unique_bounded_project_questions": 2,
+  "human_referral_drafts_prevalidated": 1,
+  "draft_paths": [
+    "scout-discoveries/inbox/2026-11-06-human-project-b616c2488c1fe907f3.csv"
+  ],
+  "human_reviewer_decisions": "NOT_VERIFIED",
+  "private_hub_imports": "NOT_VERIFIED",
+  "new_approved_reach_outputs": 0,
+  "policy": "Bounded investigation can refer an independently published DOI for a human WPO-project funding question. No project award or REACH eligibility is asserted. Preprint, duplicate, no-source or prior-human-review cases stay held.",
+  "referrals": [
+    {
+      "doi": "10.1007/s00382-022-06655-w",
+      "source_event_id": "cedc14ffa6da658087675f4c",
+      "source_file": "scout-operations/historical-crossref-phase2/2026-11-05-0324ET-gfdl-spear-award-scope-followup.json",
+      "source_sha256": "d38bcd57645123aadeb95ff9eb7e050ce1154ff122971bff6f7630548b6e688e",
+      "official_metadata": {
+        "status": "NOT_ATTEMPTED_UNVERIFIED_PROJECT_CONTEXT"
+      },
+      "public_identity": {
+        "status": "NOT_CHECKED"
+      },
+      "project_search_context_only": {},
+      "disposition": "HOLD_UNVERIFIED_PROJECT_CONTEXT",
+      "review_question": "HOLD_FOR_PROJECT_ATTRIBUTION_HUMAN_INTAKE_NOT_PUBLIC_SCOUT_CANDIDATE",
+      "scout_inbox_status": "NOT_STAGED",
+      "eligible_for_new_reach_addition": "NOT_VERIFIED",
+      "private_hub_import": "NOT_VERIFIED",
+      "human_approval": "NOT_VERIFIED"
+    },
+    {
+      "doi": "10.1109/radarconf2248738.2022.9764246",
+      "source_event_id": "445a9cede9b3f94148591719",
+      "source_file": "scout-operations/historical-crossref-phase2/2026-11-05-2231ET-apar-radarconf-official-program-followup.json",
+      "source_sha256": "8341596626813521be8754d933aae5085333f66f2ee2dd89783409864b227904",
+      "official_metadata": {
+        "status": "ok",
+        "provider": "crossref",
+        "evidence": "https://api.crossref.org/works/10.1109/radarconf2248738.2022.9764246",
+        "title": "Airborne Phased Array Radar (APAR) Program Status &amp; Critical Requirements Analyses",
+        "creators": [
+          "Mark Yaklich",
+          "Mark C. Leifer"
+        ],
+        "resource_type": "proceedings-article",
+        "publication_status": "other_or_unverified",
+        "abstract": "",
+        "pub_date": "2022-03-21",
+        "preprint_posted_date": "",
+        "pub_date_basis": "Crossref published-print",
+        "pub_date_precision": "day",
+        "publisher": "IEEE",
+        "funding_references": [
+          {
+            "DOI": "10.13039/100005626",
+            "name": "UCAR",
+            "doi-asserted-by": "publisher",
+            "id": [
+              {
+                "id": "10.13039/100005626",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          }
+        ],
+        "related_identifiers": {},
+        "attempts": [
+          {
+            "provider": "datacite",
+            "url": "https://api.datacite.org/dois/10.1109/radarconf2248738.2022.9764246",
+            "error": {
+              "kind": "http",
+              "code": 404
+            }
+          },
+          {
+            "provider": "crossref",
+            "url": "https://api.crossref.org/works/10.1109/radarconf2248738.2022.9764246",
+            "error": null
+          }
+        ]
+      },
+      "public_identity": {
+        "status": "NO_PUBLIC_IDENTITY_MATCH",
+        "matches": [],
+        "caveat": "Public snapshot only; private Hub decisions are not asserted.",
+        "noaa_ir_reach_check": {
+          "status": "DOI_NOT_IN_VERIFIED_IR_INDEX_UNKNOWN",
+          "official_url": null,
+          "match_uid": null,
+          "match_detail_shard": null
+        }
+      },
+      "project_search_context_only": {
+        "award_context_only": "NA18OAR4590431",
+        "project_context_only": ""
+      },
+      "disposition": "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL",
+      "review_question": "Reviewer question: Is this independently published output a deliverable of SPARK primary award NA18OAR4590431 (rather than merely topically related), and if so which project parent should it use?",
+      "scout_inbox_status": "VALIDATED_INBOX_DRAFT_NOT_PRIVATE_HUB",
+      "eligible_for_new_reach_addition": "NOT_VERIFIED",
+      "private_hub_import": "NOT_VERIFIED",
+      "human_approval": "NOT_VERIFIED"
+    }
+  ]
+}
