@@ -1,0 +1,77 @@
+name: Scout five real-case end-to-end replay
+on:
+  pull_request:
+    paths:
+      - 'scout-operations/tools/replay_five_scout_cases.py'
+      - 'scout-operations/tests/test_five_case_replay.py'
+      - '.github/workflows/scout-five-case-replay.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'scout-operations/tools/replay_five_scout_cases.py'
+      - 'scout-operations/tests/test_five_case_replay.py'
+      - '.github/workflows/scout-five-case-replay.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: scout-five-case-integration-replay
+  cancel-in-progress: false
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Execute five real identity/metadata/decision/reviewer paths with live public source snapshots
+        run: |
+          python -m py_compile scout-operations/tools/replay_five_scout_cases.py
+          python -m unittest discover -v -s scout-operations/tests -p 'test_five_case_replay.py'
+      - name: Recheck two exact DOI official APIs and create read-only case results
+        run: |
+          python scout-operations/tools/replay_five_scout_cases.py --live-metadata
+          python - <<'PY'
+          import json,subprocess
+          from pathlib import Path
+          p=Path('scout-operations/reports/workflow-replay/2026-11-06-five-real-cases.json')
+          r=json.loads(p.read_text())
+          assert r['passed']==r['case_count']==5 and r['failed']==0
+          assert len(r['live_official_metadata_probes'])==2
+          assert r['new_public_candidates_created']==0 and r['reviewer_csv_writes']==0
+          assert r['private_hub_imports']==r['human_approvals']=='NOT_VERIFIED'
+          assert r['formal_historical_statuses_mutated']==r['expansion_seed_closures']==0
+          changed=set(subprocess.check_output(['git','diff','--name-only'],text=True).splitlines())
+          assert changed <= {str(p)}, changed
+          print('Five real read-only workflow cases verified with fresh official API metadata')
+          PY
+      - name: Publish signed-source read-only replay report on main after full success
+        if: github.event_name != 'pull_request'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git checkout -B main origin/main
+            python scout-operations/tools/replay_five_scout_cases.py --live-metadata
+            git add scout-operations/reports/workflow-replay/2026-11-06-five-real-cases.json
+            if git diff --cached --quiet; then
+              echo "Identical verified five-case replay already recorded"; exit 0
+            fi
+            git commit -m 'Record verified five-case Scout end-to-end read-only workflow replay'
+            if git push origin HEAD:main; then exit 0; fi
+            sleep "$((attempt*3))"
+          done
+          exit 1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: scout-five-case-replay
+          path: scout-operations/reports/workflow-replay/2026-11-06-five-real-cases.json
+          if-no-files-found: warn
