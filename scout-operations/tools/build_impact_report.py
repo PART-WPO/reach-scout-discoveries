@@ -24,6 +24,9 @@ SOURCE={
     "preprints":"scout-operations/preprint-watchlist.json",
     "preprint_leads":"scout-operations/preprint-publication-leads.json",
     "noaa_ir":"scout-operations/noaa-ir/manifest.json",
+    "outcome_registry":"scout-operations/research-outcome-registry.json",
+    "doi_recovery":"scout-operations/reports/queued-doi-metadata/latest.json",
+    "project_referrals":"scout-operations/human-project-referrals.json",
 }
 
 def source(root, rel):
@@ -45,6 +48,41 @@ def build(root=ROOT):
     preprints=records["preprints"]
     preprint_leads=records["preprint_leads"]
     pointer=records["pilot_pointer"]
+    registry=records["outcome_registry"]
+    recovery=records["doi_recovery"]
+    referrals=records["project_referrals"]
+    if registry.get("schema")!="reach-scout-all-lane-research-outcomes-v1":
+        raise ValueError("Unexpected all-lane research outcome registry schema")
+    if recovery.get("schema")!="reach-scout-doi-fallback-queue-v1":
+        raise ValueError("Unexpected DOI metadata retry report schema")
+    if referrals.get("schema")!="reach-scout-bounded-project-human-referral-v1":
+        raise ValueError("Unexpected source-bounded human referral schema")
+    if (registry["research_note_events"]!=len(registry["events"]) or
+        registry["evidence_files_scanned"]!=len(registry["source_sha256"]) or
+        sum(registry["operational_disposition_counts"].values())!=registry["research_note_events"]):
+        raise ValueError("Missing or duplicated research outcome event")
+    if registry.get("original_status_changes") or registry.get("expansion_status_changes"):
+        raise ValueError("Research outcome register modified protected historical statuses")
+    if recovery["doi_queue_size"]!=len(recovery["records"]):
+        raise ValueError("DOI metadata-recovery queue and result count mismatch")
+    if (recovery["metadata_recovered"]!=sum(x["metadata"].get("status")=="ok"
+                                              for x in recovery["records"]) or
+        recovery.get("new_public_scout_proposals") or recovery.get("new_reach_additions")):
+        raise ValueError("DOI fallback report incorrectly reconciles recovery or review state")
+    if (referrals["unique_bounded_project_questions"]!=len(referrals["referrals"]) or
+        referrals["human_referral_drafts_prevalidated"]!=len(referrals["draft_paths"]) or
+        referrals.get("new_approved_reach_outputs")):
+        raise ValueError("Human funding referrals were counted as approved or incomplete")
+    # After Actions bot commits, downstream reports may temporarily reflect
+    # the prior immutable registry snapshot. Flag the freshness precisely.
+    recovery_fresh=(recovery["source_registry_sha256"]==shas["outcome_registry"])
+    referrals_fresh=(referrals["source_outcome_event_count"]==registry["research_note_events"] and
+        referrals["source_outcome_sha256"]==
+        hashlib.sha256(json.dumps(registry,sort_keys=True).encode()).hexdigest())
+    if any(x.get("private_hub_import")!="NOT_VERIFIED" or
+           x.get("human_approval")!="NOT_VERIFIED" for x in referrals["referrals"]):
+        raise ValueError("Unverified private reviewer outcome in public referral list")
+
     if (score.get("schema")!="reach-scout-operational-scorecard-v1"
         or common.get("schema")!="reach-scout-unified-source-preflight-v1"
         or repair.get("schema")!="reach-scout-reconciliation-repair-worklist-v1"
@@ -97,6 +135,16 @@ def build(root=ROOT):
         "originals_verified_complete_datacite":score["original_research"]["historical_datacite_completed_verified"],
         "distinct_crossref_expansions_verified_complete":score["separate_doi_expansion"]["historical_crossref_completed_verified"],
         "source_evidence_decisions_evaluated":research["cases_evaluated"],
+        "source_research_notes_scanned":registry["evidence_files_scanned"],
+        "source_research_events_reconciled":registry["research_note_events"],
+        "distinct_research_identities_with_operational_history":registry["distinct_research_identities"],
+        "research_next_action_disposition_counts":registry["operational_disposition_counts"],
+        "doi_access_failures_queued_for_metadata_recovery":recovery["doi_queue_size"],
+        "doi_metadata_recovered_in_github_action":recovery["metadata_recovered"],
+        "doi_metadata_still_pending":recovery["api_retry_or_pending"],
+        "bounded_project_questions_identified":referrals["unique_bounded_project_questions"],
+        "human_project_question_inbox_drafts_prevalidated":referrals["human_referral_drafts_prevalidated"],
+        "private_human_project_imports":"NOT_VERIFIED",
         "original_or_related_public_preflight_cases":common["original_and_related_cases_preflighted"],
         "cross_cohort_doi_overlaps":common["cross_cohort_duplicate_doi_identities"],
         "terminal_dispositions_under_evidence_repair":repair["unverified_terminal_cases"],
@@ -150,6 +198,11 @@ def build(root=ROOT):
             "noaa_ir_manifest_sha256":shas["noaa_ir"],
             "sha_verified_report_inputs":True,
             "workstream_selector_status":"CURRENT" if workstream_aligned else "STALE_REBUILD_REQUIRED",
+            "doi_metadata_recovery_current_registry_sha":recovery_fresh,
+            "project_referrals_current_registry_sha":referrals_fresh,
+            "post_research_handoff_status":"CURRENT" if recovery_fresh and referrals_fresh
+                                             else "SOURCE_REFRESH_NEEDED",
+            "new_research_dispositions_are_not_formal_terminal_completions":True,
         },
         "notes":"Public Scout candidate rows, inbox drafts, signed reviewer feedback, private import, human approval and actual REACH publications are different events. No inferred human outcome or funded-product recovery. Counts describe currently verified public snapshots, not future performance."
     }
