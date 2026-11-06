@@ -8,6 +8,7 @@ on:
       - 'scout-discoveries/batches/*.csv'
       - 'scout-discoveries/supersessions.json'
       - 'scout-discoveries/tools/build_manifest.py'
+      - 'scout-discoveries/tools/public_privacy.py'
       - 'scout-discoveries/tools/prepare_batch.py'
       # Any change in the verified hold/eligibility evidence must re-audit
       # already staged public batches, not just additions to CSV files.
