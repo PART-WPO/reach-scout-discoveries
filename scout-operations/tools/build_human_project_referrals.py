@@ -103,6 +103,39 @@ def proposal(doi,meta,event,project):
             context]}
     return {"fields":fields,"provenance":prov}
 
+def existing_verified_self_draft(root,doi,event,check,previous):
+    """Only recognize an exact prior self-created inbox DOI, never another case."""
+    if not previous or check.get("status")!="IN_PUBLIC_SCOUT_QUEUE":
+        return None
+    old=next((r for r in previous.get("referrals",[]) if
+              r.get("doi")==doi and r.get("source_event_id")==event["event_id"]
+              and r.get("source_sha256")==event["source_sha256"]
+              and r.get("scout_inbox_status") in {
+                "VALIDATED_INBOX_DRAFT_NOT_PRIVATE_HUB",
+                "EXISTING_VERIFIED_INBOX_DRAFT"}),None)
+    if not old:return None
+    import csv
+    for rel in previous.get("draft_paths",[]):
+        path=(root/rel).resolve()
+        allowed=root/"scout-discoveries/inbox"
+        if path.parent!=allowed.resolve() or not path.is_file():
+            continue
+        # Never count an already published batch as a new human handoff.
+        if (root/"scout-discoveries/batches"/path.name).exists():
+            continue
+        with path.open(encoding="utf-8-sig",newline="") as f:
+            rows=list(csv.DictReader(f))
+        if (len(rows)!=1 or str(rows[0].get("DOI","")).lower()!=doi or
+            "Scout classification: NEEDS INVESTIGATION" not in
+                str(rows[0].get("Scout Discovery Rationale",""))):
+            continue
+        matches=check.get("matches",[])
+        if (matches and all(m.get("source")=="SCOUT_INBOX" and
+            str(m.get("location","")).startswith(rel+":") for m in matches)):
+            return path
+    return None
+
+
 def build(root=ROOT,metadata=None,public_identity=None,stage=False):
     import sys
     sys.path.insert(0,str(root/"scout-discoveries/tools"))
@@ -118,6 +151,10 @@ def build(root=ROOT,metadata=None,public_identity=None,stage=False):
     else:fingerprint="TEST_PUBLIC_IDENTITY_FIXTURE"
     registry=source_registry(root)
     previous=known_feedback_by_doi(root)
+    prior_path=root/OUTPUT.relative_to(ROOT)
+    prior_report=json.loads(prior_path.read_text(encoding="utf-8")) if prior_path.is_file() else None
+    if prior_report and prior_report.get("schema")!=SCHEMA:
+        raise ValueError("Unexpected previous human referral contract; do not overwrite")
     potential={}
     for event in registry["events"]:
         if (event["bounded_human_question_to_verify"] and event["doi"] and
@@ -131,9 +168,17 @@ def build(root=ROOT,metadata=None,public_identity=None,stage=False):
         project=eligible_record(source,doc)
         # Only DOI-verified, independently sourced publication research with a
         # concrete project-title/primary-award search context may consume API.
-        meta=metadata(doi) if project else {"status":"NOT_ATTEMPTED_UNVERIFIED_PROJECT_CONTEXT"}
+        cached=next((r for r in (prior_report or {}).get("referrals",[])
+            if r.get("doi")==doi and r.get("source_event_id")==source["event_id"]
+            and r.get("source_sha256")==source["source_sha256"]
+            and r.get("official_metadata",{}).get("status")=="ok"),None)
+        meta=(cached["official_metadata"] if project and cached else
+              metadata(doi) if project else
+              {"status":"NOT_ATTEMPTED_UNVERIFIED_PROJECT_CONTEXT"})
         check=public_identity(doi,meta.get("title","")) if project else {"status":"NOT_CHECKED"}
-        state=referral_state(source,meta,check,previous.get(doi),
+        own_draft=existing_verified_self_draft(root,doi,source,check,prior_report)
+        effective_check=({**check,"status":"NO_PUBLIC_IDENTITY_MATCH"} if own_draft else check)
+        state=referral_state(source,meta,effective_check,previous.get(doi),
               is_tracked_preprint(doi),project)
         candidate=proposal(doi,meta,source,project) if state=="READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL" else None
         status="NOT_STAGED"
@@ -141,10 +186,12 @@ def build(root=ROOT,metadata=None,public_identity=None,stage=False):
             status="READY_DEFERRED_REVIEWER_CAP"
         elif candidate and stage:
             name=date.today().isoformat()+"-human-project-"+hashlib.sha256(doi.encode()).hexdigest()[:18]+".csv"
-            path=root/"scout-discoveries/inbox"/name
+            path=own_draft or root/"scout-discoveries/inbox"/name
             if path.exists():
                 validate_canonical(path)
                 status="EXISTING_VERIFIED_INBOX_DRAFT"
+                if not (root/"scout-discoveries/batches"/path.name).exists():
+                    submitted.append(path.relative_to(root).as_posix())
             else:
                 inp=root/"scout-operations"/(".human-referral-"+hashlib.sha256(doi.encode()).hexdigest()[:14]+".json")
                 inp.write_text(json.dumps({"candidates":[candidate]},ensure_ascii=False))
