@@ -4,6 +4,8 @@ on:
     paths:
       - 'integrations/DiscoveryHubDownstreamVerification.gs'
       - 'integrations/test_downstream_verification.js'
+      - 'integrations/test_privacy_boundaries.js'
+      - 'integrations/DiscoveryHubScoutFeedback.gs'
       - 'integrations/DiscoveryHubDownstreamVerificationInstall.md'
       - '.github/workflows/validate-scout-downstream.yml'
   workflow_dispatch:
@@ -23,3 +25,5 @@ jobs:
           node --check /tmp/DiscoveryHubDownstreamVerification.js
       - name: Synthetic read-only downstream boundary tests
         run: node integrations/test_downstream_verification.js
+      - name: Private review export and diagnostic log privacy tests
+        run: node integrations/test_privacy_boundaries.js
