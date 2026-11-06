@@ -38,6 +38,36 @@ class HumanProjectReferrals(unittest.TestCase):
         # not be sent to the reviewer merely for appearing in public research.
         self.assertEqual(cases["10.1007/s00382-022-06655-w"]["disposition"],
                          "HOLD_UNVERIFIED_PROJECT_CONTEXT")
+    def test_verified_published_public_referral_is_not_counted_as_private_hub_or_inbox_draft(self):
+        # Replay the actual APAR public-feed transition with SHA-verified
+        # REACH, Scout inbox/batches and official NOAA IR snapshots.
+        from ir_reach_identity import verified_snapshot,identity_check
+        root=Path(__file__).resolve().parents[2]
+        public,ir=verified_snapshot(root)
+        def current_identity(doi,title):
+            return identity_check(public,ir,doi,title,"https://doi.org/"+doi)
+        result=build(root=root,metadata=lambda doi:
+                     (_ for _ in ()).throw(ValueError("Unexpected repeated DOI lookup: "+doi)),
+                     public_identity=current_identity,stage=False)
+        rows={x["doi"]:x for x in result["referrals"]}
+        apar="10.1109/radarconf2248738.2022.9764246"
+        self.assertEqual(rows[apar]["disposition"],"HOLD_ALREADY_IN_PUBLIC_REACH_OR_SCOUT")
+        self.assertEqual(rows[apar]["scout_inbox_status"],
+                         "PUBLISHED_PUBLIC_SCOUT_FEED_NOT_PRIVATE_HUB")
+        self.assertEqual(result["verified_public_scout_referral_batches"],1)
+        self.assertEqual(len(result["published_batch_paths"]),1)
+        self.assertEqual(result["human_referral_drafts_prevalidated"],0)
+        self.assertEqual(result["draft_paths"],[])
+        self.assertTrue(rows[apar]["published_scout_batch_path"].startswith(
+            "scout-discoveries/batches/"))
+        self.assertEqual(rows[apar]["private_hub_import"],"NOT_VERIFIED")
+        self.assertEqual(rows[apar]["human_approval"],"NOT_VERIFIED")
+        self.assertEqual(rows[apar]["eligible_for_new_reach_addition"],"NOT_VERIFIED")
+        self.assertEqual(rows["10.1007/s00382-022-06655-w"]["disposition"],
+                         "HOLD_UNVERIFIED_PROJECT_CONTEXT")
+        self.assertEqual(result["new_approved_reach_outputs"],0)
+        self.assertIn("Reviewer question:",rows[apar]["review_question"])
+
     def test_command_line_main_writes_valid_referral_report_without_name_error(self):
         report={"unique_bounded_project_questions":0,
                 "human_referral_drafts_prevalidated":0,"referrals":[]}
