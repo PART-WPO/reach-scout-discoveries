@@ -1,0 +1,54 @@
+{
+  "schema": "scout-research-evidence-v2-supplemental",
+  "observed_at": "2026-11-06T07:30:47-05:00",
+  "origin": "Discovered by following API leads",
+  "parent_original_doi": "10.1002/qj.70325",
+  "research_type": "monthly_api_seeded_related_output_followup",
+  "sources": [
+    {
+      "url": "https://apps.ecmwf.int/ifs-experiments/",
+      "role": "ECMWF official public experiment catalog; independently names both exact DOIs, experiment IDs and descriptions"
+    },
+    {
+      "url": "https://rmets.onlinelibrary.wiley.com/doi/10.1002/qj.70325",
+      "role": "publisher article data availability statement names both experiment DOIs"
+    }
+  ],
+  "cases": [
+    {
+      "doi": "10.21957/e8rz-wh72",
+      "title": "Observing System Experiment - Mediterranean without drifting buoys",
+      "experiment_id": "j1ql",
+      "description": "OSE without drifting buoys in Mediterranean Sea to evaluate impact of drifting-buoy surface pressure observations from M3E",
+      "identity": "VERIFIED_OFFICIAL_ECMWF_CATALOG",
+      "wpo_project_award": "NA20OAR4320278",
+      "wpo_funding": "NOT_VERIFIED",
+      "reach_scout_identity": "NOT_RECHECKED_CURRENT_SNAPSHOT",
+      "datacite_exact_metadata": "ACCESS_FAILED_NOT_MISSING",
+      "decision": "HOLD_PROJECT_ATTRIBUTION_AND_IDENTITY",
+      "next_action": "Check exact primary SPARK award project scope and ECMWF experiment provenance, then compare DOI with current SHA-verified REACH and Scout; do not stage."
+    },
+    {
+      "doi": "10.21957/befj-es73",
+      "title": "Observing System Experiment - Mediterranean with drifting buoys",
+      "experiment_id": "j1qm",
+      "description": "OSE with drifting buoys in Mediterranean Sea to evaluate impact of drifting-buoy surface pressure observations from M3E",
+      "identity": "VERIFIED_OFFICIAL_ECMWF_CATALOG",
+      "wpo_project_award": "NA20OAR4320278",
+      "wpo_funding": "NOT_VERIFIED",
+      "reach_scout_identity": "NOT_RECHECKED_CURRENT_SNAPSHOT",
+      "datacite_exact_metadata": "ACCESS_FAILED_NOT_MISSING",
+      "decision": "HOLD_PROJECT_ATTRIBUTION_AND_IDENTITY",
+      "next_action": "Check exact primary SPARK award project scope and ECMWF experiment provenance, then compare DOI with current SHA-verified REACH and Scout; do not stage."
+    }
+  ],
+  "research_passes": {
+    "previous_initial": "2026-11-06-0630ET exact DOI/DataCite attempted; access failure",
+    "this_distinct_followup": "Official ECMWF catalog plus publisher statement independently identify both experiments",
+    "distinct_source_followups": 1
+  },
+  "expansion_completed": 0,
+  "public_proposals": 0,
+  "private_outcomes": "NOT_VERIFIED",
+  "note": "Both DOIs are distinct experiment records (with vs without buoys), not yet demonstrated WPO-funded products. Catalog confirmation resolves identity portion of earlier access holds but not DataCite metadata, funding, or duplication. No original disposition changed."
+}
