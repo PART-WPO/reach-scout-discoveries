@@ -20,6 +20,9 @@ on:
       - 'scout-operations/research-decision-rollup.json'
       - 'scout-operations/research-feedback.json'
       - 'scout-operations/index-and-project-discovery-leads.json'
+      - 'scout-operations/research-outcome-registry.json'
+      - 'scout-operations/reports/queued-doi-metadata/latest.json'
+      - 'scout-operations/human-project-referrals.json'
       - 'scout-operations/tools/build_impact_report.py'
       - 'scout-operations/tools/build_scout_v2_benchmark.py'
       - '.github/workflows/scout-v2-impact-report.yml'
@@ -35,6 +38,9 @@ on:
       - 'Validate and Publish Scout Discovery Feed'
       - 'Scout Crossref indexed-updates and SPARK project leads'
       - 'Validate redacted Discovery Hub reviewer feedback'
+      - 'Scout all-lane research outcome registry'
+      - 'Scout recover DOI metadata after research access failures'
+      - 'Scout bounded human project referrals'
     types: [completed]
     branches: [main]
   workflow_dispatch:
