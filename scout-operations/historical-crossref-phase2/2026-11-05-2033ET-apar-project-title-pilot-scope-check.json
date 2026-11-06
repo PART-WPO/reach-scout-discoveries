@@ -1,0 +1,50 @@
+{
+  "schema": "reach-scout-v2-bounded-research-evidence-v1",
+  "mission_local_time": "2026-11-05T20:33:00-05:00",
+  "research_lane": "supplemental_project_title_pilot",
+  "source_pointer": "api-discoveries/index-update-runs/2026-10-23061d78c1a8b85067ab.json",
+  "source_pointer_sha256": "f9d3e47518f39ba81ef8062bae0a071dee14e2cfcfd5aa577829674f30715061",
+  "identity_index_fingerprint_recorded": "929564941feb9dd5c69742c87988b98bbc92befa99b648f2aea5d4de695ff122",
+  "source_snapshot_freshness": "RECORDED_FINGERPRINT_ONLY_NOT_INDEPENDENTLY_REHASHED",
+  "cases": [
+    {
+      "doi": "10.1109/past49659.2022.9975045",
+      "title": "Two-Way Pattern Synthesis for the Airborne Phased Array Radar (APAR)",
+      "source_origin": "PROJECT_TITLE_SEARCH_NOT_DIRECT_API",
+      "spark_primary_award_context": "NA18OAR4590431",
+      "spark_project_title": "2019 - 2020 Airborne Phased Array Radar (APAR)",
+      "initial_source": "https://api.crossref.org/works/10.1109/past49659.2022.9975045",
+      "distinct_source_followup": "https://impacts.ucar.edu/en/publications/two-way-pattern-synthesis-for-the-airborne-phased-array-radar-apa/",
+      "followup_findings": "NCAR/UCAR institutional publication record confirms 2022 IEEE conference publication, authors Eric Loew and Randy L. Haupt, APAR radar technical scope and exact DOI. It does not state NA18OAR4590431 or attribute this output to the specific WPO-funded SPARK project.",
+      "initial_checks": 1,
+      "distinct_source_followups": 1,
+      "public_identity": "NO_PUBLIC_IDENTITY_MATCH_IN_RECORDED_PILOT_SNAPSHOT_NOT_REVALIDATED",
+      "same_project_wpo_funding": "NOT_VERIFIED",
+      "decision": "BOUNDED_HOLD_PROJECT_SCOPE_UNVERIFIED",
+      "next_action": "Do not stage. Human/project-specific grant deliverable or publisher funding evidence required to reopen; refresh shared public identity index before any handoff.",
+      "private_hub_history": "NOT_VERIFIED",
+      "candidate_staged": false
+    },
+    {
+      "doi": "10.1109/radarconf2248738.2022.9764246",
+      "title": "Airborne Phased Array Radar (APAR) Program Status & Critical Requirements Analyses",
+      "source_origin": "PROJECT_TITLE_SEARCH_NOT_DIRECT_API",
+      "spark_primary_award_context": "NA18OAR4590431",
+      "initial_source": "https://api.crossref.org/works/10.1109/radarconf2248738.2022.9764246",
+      "distinct_source_followup": "https://wpo.noaa.gov/spark/",
+      "followup_findings": "Public SPARK confirms WPO projects exist but no exact publication-to-primary-award relationship was verified in this mission.",
+      "initial_checks": 1,
+      "distinct_source_followups": 0,
+      "public_identity": "NO_PUBLIC_IDENTITY_MATCH_IN_RECORDED_PILOT_SNAPSHOT_NOT_REVALIDATED",
+      "same_project_wpo_funding": "NOT_VERIFIED",
+      "decision": "HOLD_NEEDS_EXACT_PROJECT_EVIDENCE",
+      "next_action": "Target publisher acknowledgment or project deliverables; do not stage.",
+      "private_hub_history": "NOT_VERIFIED",
+      "candidate_staged": false
+    }
+  ],
+  "original_doi_research_completed": 0,
+  "seed_expansions_completed": 0,
+  "new_public_review_proposals": 0,
+  "immutable_statuses_modified": false
+}
