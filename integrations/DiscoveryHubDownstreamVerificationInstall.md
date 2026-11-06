@@ -36,3 +36,10 @@
 `node test_downstream_verification.js` — eight synthetic boundary tests passed: missing import, fresh approval/staging separation, changed-source hold, recorded-but-unverified Smartsheet row, inconsistent row fields, review log mismatch, exact URL identity, and manifest checksum rejection.
 
 For fuller automated coverage, add an authenticated *private-only* Smartsheet row lookup after the existing insertion module has been inspected. Do not use public GitHub to store private Smartsheet IDs, PI emails, reviewer audit data or private tracker content.
+## Privacy restrictions added November 6, 2026
+
+- The private verifier now logs **only** `SCOUT_DOWNSTREAM_READ_ONLY_CHECK_COMPLETED` to the Apps Script execution log. Its detailed output is returned to the authenticated script caller, not included in persistent logs or GitHub.
+- The optional signed exporter and public GitHub decision-feedback consumer are now held/disabled. Do not configure or use either public decision export entry point.
+- A separate `integrations/REACH_PublicExportPrivacyGuard.gs` is available as an **installation-ready**, source-independent final export check. After converting private source data to the authorized PUBLIC REACH CSV rows—but BEFORE publishing the CSV—call `reachScoutVerifyPublicReachExport_(publicRows)`. It fails closed if a final row includes email addresses, internal reviewer or Smartsheet identifiers, credentials or private tracker URLs. Do not call it on the private Smartsheet source rows.
+- The private REACH publishing script has **not** been accessible for editing or installation through this repository. An authorized owner must inspect the actual script and connect this guard to its final public-CSV handoff. Keep production writes disabled during initial test.
+- Never paste a detailed private verifier return object into GitHub issues, workflow logs, or a public spreadsheet; even without names, it can expose DOI-linked private review state.
