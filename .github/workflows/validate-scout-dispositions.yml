@@ -1,0 +1,47 @@
+name: Validate Scout source-to-disposition handoffs
+on:
+  pull_request:
+    paths:
+      - 'scout-operations/tools/reconcile_research_dispositions.py'
+      - 'scout-operations/tests/test_explicit_dispositions.py'
+      - '.github/workflows/validate-scout-dispositions.yml'
+      - '.github/workflows/scout-research-decision-closeout.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  evidence-worklist:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate original research identities and private decision protections
+        run: |
+          python -m unittest discover -v -s scout-operations/tests -p 'test_explicit_dispositions.py'
+          python -m py_compile scout-operations/tools/reconcile_research_dispositions.py
+          python scout-operations/tools/reconcile_research_dispositions.py
+      - name: Verify all evidence references and no stage or human status mutation
+        run: |
+          python - <<'PY'
+          import hashlib,json,subprocess
+          from pathlib import Path
+          p=Path('scout-operations/research-case-dispositions.json')
+          r=json.loads(p.read_text())
+          assert r['source_files_scanned']==len(r['source_file_sha256'])
+          assert sum(r['operational_counts'].values())==r['identities_with_case_dispositions']
+          assert len(r['records'])==r['identities_with_case_dispositions']
+          for e in r['source_file_sha256']:
+              assert hashlib.sha256(Path(e['path']).read_bytes()).hexdigest()==e['sha256']
+          assert all(x['human_approval']=='NOT_VERIFIED' and not x['scout_proposal_staged']
+                     and not x['expansion_closed'] for x in r['records'])
+          changed=set(subprocess.check_output(['git','diff','--name-only'],text=True).splitlines())
+          assert changed <= {'scout-operations/research-case-dispositions.json'}, changed
+          print('Source-backed dispositions:',r['operational_counts'],'unlinked',r['unlinked_source_count'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: scout-case-disposition-preview
+          path: scout-operations/research-case-dispositions.json
