@@ -1,0 +1,43 @@
+{
+  "schema": "scout-research-evidence-supplemental-v1",
+  "observed_at": "2026-11-06T04:29:45-05:00",
+  "origin": "API_SEEDED_RELATED_DISCOVERY",
+  "source_parent_evidence": "scout-operations/historical-crossref-phase2/2026-11-06-0333ET-wofs-forecast-skill-project-award-contradiction.json",
+  "identity": {
+    "type": "URL_ONLY_CODE",
+    "canonical_url": "https://github.com/coreypotvin/wofs_fcst_skill",
+    "doi": null,
+    "repository": "coreypotvin/wofs_fcst_skill",
+    "created_at": "2023-02-15T16:45:38Z",
+    "last_push_at": "2024-02-26T18:14:57Z",
+    "language": "Python",
+    "license": "NOT_DECLARED_IN_GITHUB_METADATA"
+  },
+  "research": {
+    "initial": {
+      "url": "https://api.github.com/repos/coreypotvin/wofs_fcst_skill",
+      "finding": "Public Python repository exists; no repository description or license reported by GitHub metadata."
+    },
+    "distinct_source_followup": {
+      "url": "https://raw.githubusercontent.com/coreypotvin/wofs_fcst_skill/main/README.md",
+      "finding": "README identifies Corey Potvin (NSSL), 2023, and software for predicting NSSL Warn-on-Forecast System forecast skill. It does not acknowledge WPO award NA20OAR4590356."
+    },
+    "publisher_context": {
+      "url": "https://journals.ametsoc.org/view/journals/aies/3/3/AIES-D-23-0106.1.xml",
+      "finding": "Linked publication cites this code as supporting software but acknowledges cooperative agreement NA21OAR4320204; project-title pilot suggests a different award NA20OAR4590356."
+    }
+  },
+  "proposed_primary_award": "NA20OAR4590356",
+  "funding": "NOT_CORROBORATED_AND_PARENT_PUBLICATION_HAS_CONTRADICTORY_AWARD",
+  "public_identity": "NOT_REVALIDATED_AGAINST_CURRENT_COMPLETE_REACH_AND_SCOUT",
+  "private_review": "NOT_VERIFIED",
+  "decision": "SOFT_DEFER_UNTIL_MATERIAL_SAME_PROJECT_AWARD_EVIDENCE",
+  "next_action": "Retain URL seed; do not stage. Reopen only with independently verified deliverable or primary SPARK project evidence linking this exact code repository to NA20OAR4590356. Before any future proposal perform full current REACH/Scout canonical URL and version check.",
+  "separate_expansion": {
+    "status": "RESEARCHED_BUT_NOT_COMPLETED",
+    "original_publication_doi": "10.1175/aies-d-23-0106.1"
+  },
+  "originals_completed": 0,
+  "expansions_completed": 0,
+  "public_proposals": 0
+}
