@@ -45,7 +45,7 @@
     "PROJECT_EVIDENCE_HOLD": 15,
     "TECHNICAL_METADATA_RECOVERY": 1
   },
-  "bounded_human_question_identities": 0,
+  "bounded_human_question_identities": 2,
   "original_status_changes": 0,
   "expansion_status_changes": 0,
   "new_public_review_proposals": 0,
@@ -176,10 +176,14 @@
       "source_time": "2026-11-05T03:24:29-05:00",
       "raw_decision": "RESEARCH_COMPLETE_HUMAN_INTAKE_HOLD",
       "operational_disposition": "BOUNDED_PROJECT_QUESTION_FOR_HUMAN",
-      "next_action": "Source-specific research evidence needs the next bounded identity or project check",
-      "checked_evidence_urls": [],
-      "source_count": 0,
-      "bounded_human_question_to_verify": false,
+      "next_action": "HOLD_FOR_PROJECT_ATTRIBUTION_HUMAN_INTAKE_NOT_PUBLIC_SCOUT_CANDIDATE",
+      "checked_evidence_urls": [
+        "https://essd.copernicus.org/preprints/essd-2023-389/essd-2023-389.pdf",
+        "https://pubmed.ncbi.nlm.nih.gov/40247814/",
+        "https://repository.library.noaa.gov/view/noaa/66066/noaa_66066_DS1.pdf"
+      ],
+      "source_count": 3,
+      "bounded_human_question_to_verify": true,
       "formal_original_closed": false,
       "separate_expansion_closed": false,
       "new_public_proposal": false,
@@ -434,8 +438,10 @@
       "raw_decision": "NOT_DECLARED",
       "operational_disposition": "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
       "next_action": "Preserve declared no_action without counting as validated completion; human assessment of source attribution and original award evidence. Do not automatically stage; independently investigate DOI-seeded expansion in separate lane.",
-      "checked_evidence_urls": [],
-      "source_count": 0,
+      "checked_evidence_urls": [
+        "https://www.mdpi.com/2311-5629/4/4/66"
+      ],
+      "source_count": 1,
       "bounded_human_question_to_verify": false,
       "formal_original_closed": false,
       "separate_expansion_closed": false,
@@ -653,10 +659,11 @@
       "operational_disposition": "BOUNDED_PROJECT_QUESTION_FOR_HUMAN",
       "next_action": "Require exact project deliverable documentation or explicit publisher award acknowledgement linking this DOI to NA18OAR4590431; no further generic searches. Revalidate current public REACH/Scout DOI, title, canonical URL and version identity before any candidate handoff.",
       "checked_evidence_urls": [
-        "https://ieeexplore.ieee.org/document/9764246/"
+        "https://ieeexplore.ieee.org/document/9764246/",
+        "https://storage.googleapis.com/wzukusers/user-34871099/documents/971a1bf9225f4299b15aabac1a4633aa/RadarConf_2022_Program_web_V4.pdf"
       ],
-      "source_count": 1,
-      "bounded_human_question_to_verify": false,
+      "source_count": 2,
+      "bounded_human_question_to_verify": true,
       "formal_original_closed": false,
       "separate_expansion_closed": false,
       "new_public_proposal": false,
@@ -677,9 +684,10 @@
       "operational_disposition": "PROJECT_EVIDENCE_HOLD",
       "next_action": "Do not stage. Reopen only with project deliverable explicitly linking this DOI to NA20OAR4590356; check canonical IR URL and DOI against current complete REACH/Scout identity before any future proposal.",
       "checked_evidence_urls": [
-        "https://journals.ametsoc.org/view/journals/aies/3/3/AIES-D-23-0106.1.xml"
+        "https://journals.ametsoc.org/view/journals/aies/3/3/AIES-D-23-0106.1.xml",
+        "https://repository.library.noaa.gov/view/noaa/67920"
       ],
-      "source_count": 1,
+      "source_count": 2,
       "bounded_human_question_to_verify": false,
       "formal_original_closed": false,
       "separate_expansion_closed": false,
@@ -948,7 +956,7 @@
         "4084d342a9666f4fb7af23a5",
         "cedc14ffa6da658087675f4c"
       ],
-      "project_judgment_referral_possible": false,
+      "project_judgment_referral_possible": true,
       "human_review_staged": false,
       "private_hub_import": "NOT_VERIFIED"
     },
@@ -1018,7 +1026,7 @@
         "a0e60121b5554c4e0acac9df",
         "445a9cede9b3f94148591719"
       ],
-      "project_judgment_referral_possible": false,
+      "project_judgment_referral_possible": true,
       "human_review_staged": false,
       "private_hub_import": "NOT_VERIFIED"
     },
