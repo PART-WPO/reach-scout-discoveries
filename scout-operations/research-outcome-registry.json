@@ -29,20 +29,21 @@
     "scout-operations/historical-crossref-phase2/2026-11-05-2231ET-apar-radarconf-official-program-followup.json": "8341596626813521be8754d933aae5085333f66f2ee2dd89783409864b227904",
     "scout-operations/historical-crossref-phase2/2026-11-06-0333ET-wofs-forecast-skill-project-award-contradiction.json": "64721d2daf81b50b102530823c7fd53c33f70b9ecb9b9b8d68aeb7992e218b99",
     "scout-operations/historical-crossref-phase2/2026-11-06-0429ET-wofs-forecast-skill-code-project-scope-hold.json": "9975c1d7605b641c862c82bb267f3343b5a18830c9d77e3555e955ffa26f7a2a",
+    "scout-operations/historical-crossref-phase2/2026-11-06-1624ET-urban-hydroclimate-institutional-attribution-hold.json": "ab0d97a1cc2202adbeee9d0b8e106f18c5f4e4d8657852d7057913892990be5c",
     "scout-operations/monthly-research/2026-11-06-0528ET-storm-harry-qj70325-project-scope-hold.json": "9bf7c3c778f1cbf1622db3e994b7facc446367f5cc3ed6094517ab5884722911",
     "scout-operations/monthly-research/2026-11-06-0630ET-storm-harry-ecmwf-two-doi-access-holds.json": "38d2065e50f5691c4452ea054a54409a88392e3d76f60969a311a78d96b3bf7c",
     "scout-operations/monthly-research/2026-11-06-0730ET-storm-harry-ecmwf-official-catalog-followup.json": "7a63adfadb964734abec498d27cc54bc6e431d0cb8f51c11bdc8f4e6131491c3",
     "scout-operations/monthly-research/2026-11-06-0830ET-storm-harry-global-drifter-award-scope-followup.json": "684a66155c7ad188613f0217e371ba692f300a27bb1ab16a1b7d40f09c1198bc"
   },
-  "evidence_files_scanned": 28,
+  "evidence_files_scanned": 29,
   "source_files_without_explicit_output_id": [],
-  "research_note_events": 33,
-  "distinct_research_identities": 16,
+  "research_note_events": 34,
+  "distinct_research_identities": 17,
   "operational_disposition_counts": {
     "BOUNDED_PROJECT_QUESTION_FOR_HUMAN": 2,
     "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY": 14,
     "PREPRINT_MONTHLY_WATCH": 1,
-    "PROJECT_EVIDENCE_HOLD": 15,
+    "PROJECT_EVIDENCE_HOLD": 16,
     "TECHNICAL_METADATA_RECOVERY": 1
   },
   "bounded_human_question_identities": 2,
@@ -720,6 +721,31 @@
       "reviewer_approval": "NOT_VERIFIED"
     },
     {
+      "event_id": "b87940b970383764ab7fae25",
+      "identity": "doi:10.1016/j.uclim.2025.102375",
+      "doi": "10.1016/j.uclim.2025.102375",
+      "url_only": null,
+      "role_in_note": "original",
+      "research_lane": "Direct API historical Crossref original",
+      "source_path": "scout-operations/historical-crossref-phase2/2026-11-06-1624ET-urban-hydroclimate-institutional-attribution-hold.json",
+      "source_sha256": "ab0d97a1cc2202adbeee9d0b8e106f18c5f4e4d8657852d7057913892990be5c",
+      "source_time": "2026-11-06T16:24:21-05:00",
+      "raw_decision": "PROJECT_EVIDENCE_HOLD",
+      "operational_disposition": "PROJECT_EVIDENCE_HOLD",
+      "next_action": "Request one exact primary SPARK Award Number(s) project record or authoritative project deliverables record explicitly connecting DOI 10.1016/j.uclim.2025.102375 to WPO; otherwise preserve reversible hold without repeated generic searches.",
+      "checked_evidence_urls": [
+        "https://impacts.ucar.edu/en/publications/assessment-of-convection-permitting-hydroclimate-modeling-in-urba/",
+        "https://www.mmm.ucar.edu/opensky-publications/articles%3A43294/assessment-of-convection-permitting-hydroclimate-modeling-in-urban-areas-across-the-contiguous-united-states"
+      ],
+      "source_count": 2,
+      "bounded_human_question_to_verify": false,
+      "formal_original_closed": false,
+      "separate_expansion_closed": false,
+      "new_public_proposal": false,
+      "private_hub_import": "NOT_VERIFIED",
+      "reviewer_approval": "NOT_VERIFIED"
+    },
+    {
       "event_id": "d1c7f1c43f43721992142729",
       "identity": "doi:10.1002/qj.70325",
       "doi": "10.1002/qj.70325",
@@ -991,6 +1017,22 @@
         "1cb9ac70bea9e6fa3d4a2ec1",
         "3f7be639763a8a1cd028b03e",
         "16b6e7e0c06125084cfb8c5c"
+      ],
+      "project_judgment_referral_possible": false,
+      "human_review_staged": false,
+      "private_hub_import": "NOT_VERIFIED"
+    },
+    {
+      "identity": "doi:10.1016/j.uclim.2025.102375",
+      "latest_event_id": "b87940b970383764ab7fae25",
+      "latest_evidence_path": "scout-operations/historical-crossref-phase2/2026-11-06-1624ET-urban-hydroclimate-institutional-attribution-hold.json",
+      "latest_operational_disposition": "PROJECT_EVIDENCE_HOLD",
+      "observed_dispositions": [
+        "PROJECT_EVIDENCE_HOLD"
+      ],
+      "source_file_count": 1,
+      "event_ids": [
+        "b87940b970383764ab7fae25"
       ],
       "project_judgment_referral_possible": false,
       "human_review_staged": false,
