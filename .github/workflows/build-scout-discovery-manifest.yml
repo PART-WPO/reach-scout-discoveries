@@ -64,7 +64,11 @@ jobs:
           EVENT_NAME: ${{ github.event_name }}
           SCOUT_PREPRINT_GATE_REQUIRED: '1'
         run: |
-          if [ "$EVENT_NAME" = "push" ]; then
+          if [ "$EVENT_NAME" = "workflow_run" ]; then
+            # Bot-authored handoff trigger: only the signed/source-verified
+            # specific DOI referral, never older unrelated inbox drafts.
+            python scout-discoveries/tools/promote_inbox.py --verified-referrals-only
+          elif [ "$EVENT_NAME" = "push" ]; then
             python scout-discoveries/tools/promote_inbox.py --before "$PUSH_BEFORE" --after "$PUSH_AFTER"
           else
             python scout-discoveries/tools/promote_inbox.py

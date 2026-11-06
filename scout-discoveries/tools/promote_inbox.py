@@ -19,7 +19,37 @@ INBOX = ROOT / "inbox"
 BATCHES = ROOT / "batches"
 REPO = ROOT.parent
 
-def changed_inbox(before, after):
+def changed_inbox(before, after, verified_referrals_only=False):
+    if verified_referrals_only:
+        # Only the exact newly authorized source-backed human referrals,
+        # never old test drafts or unrelated stale inbox records.
+        report_path=REPO/"scout-operations/human-project-referrals.json"
+        report=json.loads(report_path.read_text(encoding="utf-8"))
+        if report.get("schema")!="reach-scout-bounded-project-human-referral-v1":
+            raise ValueError("Missing verified human referral report")
+        if report.get("private_hub_imports")!="NOT_VERIFIED" or report.get("new_approved_reach_outputs")!=0:
+            raise ValueError("Invalid private/human state on referral report")
+        accepted={x["doi"] for x in report.get("referrals",[])
+                  if x.get("disposition")=="READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL"
+                  and x.get("scout_inbox_status") in {
+                    "VALIDATED_INBOX_DRAFT_NOT_PRIVATE_HUB",
+                    "EXISTING_VERIFIED_INBOX_DRAFT"}}
+        paths=[]
+        for rel in report.get("draft_paths",[]):
+            candidate=REPO/rel
+            if candidate.parent.resolve()!=INBOX.resolve() or not candidate.is_file():
+                raise ValueError("Human referral is not an actual immutable Scout inbox file")
+            # Every draft must bear a DOI that passed the prior source/identity
+            # analysis, not just be present in the inbox.
+            with candidate.open(encoding="utf-8-sig",newline="") as stream:
+                import csv
+                rows=list(csv.DictReader(stream))
+            if len(rows)!=1 or rows[0].get("DOI","").strip().lower() not in accepted:
+                raise ValueError("Unrecognized DOI or candidate count in human referral")
+            paths.append(candidate)
+        if len(paths)!=report.get("human_referral_drafts_prevalidated"):
+            raise ValueError("Reported human draft count does not reconcile")
+        return sorted(set(paths))
     if before and after and before != ("0" * 40):
         output = subprocess.check_output(
             ["git", "diff", "--name-only", "--diff-filter=AM", before, after, "--", "scout-discoveries/inbox/"],
@@ -48,8 +78,8 @@ def is_preprint_gate_eligible(path):
     return matches[0]["verdict"] == "eligible"
 
 
-def promote(before=None, after=None):
-    drafts = changed_inbox(before, after)
+def promote(before=None, after=None, verified_referrals_only=False):
+    drafts = changed_inbox(before, after, verified_referrals_only)
     # Validate all drafts before writing even one destination.
     prepared = []
     for source in drafts:
@@ -75,8 +105,10 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--before", default="", help="Previous push commit; omit for workflow_dispatch")
     ap.add_argument("--after", default="", help="Current push commit")
+    ap.add_argument("--verified-referrals-only",action="store_true",
+                    help="Promote only source-verified human referral report paths")
     args = ap.parse_args()
-    promote(args.before, args.after)
+    promote(args.before, args.after, args.verified_referrals_only)
 
 if __name__ == "__main__":
     main()
