@@ -5,6 +5,9 @@ on:
     branches: [main]
     paths:
       - 'scout-operations/historical-crossref-phase2/*.json'
+      - 'scout-operations/monthly-research/*.json'
+      - 'scout-operations/tools/reconcile_research_dispositions.py'
+      - 'scout-operations/tests/test_explicit_dispositions.py'
       - 'scout-operations/tools/compile_research_evidence.py'
       - 'scout-operations/tools/summarize_research_decisions.py'
       - 'scout-operations/tools/build_operational_scorecard.py'
@@ -62,6 +65,7 @@ jobs:
             python scout-operations/tools/reconcile_historical_crossref.py
             python scout-operations/tools/decision_pipeline.py build-index
             python scout-operations/tools/compile_research_evidence.py
+            python scout-operations/tools/reconcile_research_dispositions.py
             python scout-operations/tools/decision_pipeline.py evaluate --cases scout-operations/research-decision-cases.json
             python scout-operations/tools/summarize_research_decisions.py
             python scout-operations/tools/build_expansion_relevance.py
@@ -93,7 +97,12 @@ jobs:
           assert sum(scope["historical_crossref"]["counts"].values())==route["total"]
           assert scope["seed_expansion_closures"]==0
           assert summary["separate_doi_expansion"]["relevance_priority_counts"]==scope["historical_crossref"]["counts"]
-          print("Closed validated research checkpoint pass without changing original or human statuses")
+          dispositions=val("scout-operations/research-case-dispositions.json")
+          assert dispositions["source_files_scanned"] >= len(dispositions["unlinked_source_evidence"])
+          assert sum(dispositions["operational_counts"].values())==dispositions["identities_with_case_dispositions"]
+          assert dispositions["automatic_status_changes"]==0
+          assert all(not x["scout_proposal_staged"] and not x["expansion_closed"] for x in dispositions["records"])
+          print("Reconciled evidence and next actions without changing original or human statuses", dispositions["operational_counts"])
           PY
             git add scout-operations/historical-coverage.json \
               scout-operations/historical-crossref-coverage.json \
@@ -102,7 +111,9 @@ jobs:
               scout-operations/identity-cache/public-identity-index.json \
               scout-operations/research-decision-cases.json \
               scout-operations/research-evidence-coverage.json \
-              scout-operations/research-decision-rollup.json \
+              scout-operations/research-case-dispositions.json \
+              scout-operations/research-decision-rollup.json
+            scout-operations/research-case-dispositions.json \
               scout-operations/expansion-relevance-priority.json \
               scout-operations/scout-operational-scorecard.json \
               scout-operations/active-workstream.json \
