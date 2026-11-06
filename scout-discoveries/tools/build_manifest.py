@@ -12,6 +12,7 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 from supersessions import approved_batches, get_rules
+from public_privacy import check_public_metadata
 
 ROOT = Path(__file__).resolve().parents[1]
 BATCHES = ROOT / "batches"
@@ -57,6 +58,9 @@ def inspect_batch(p):
             raise ValueError(f"Do not publicly publish PI emails in {p.name}:{line}")
         if (row.get("Candidate ID") or "").strip():
             raise ValueError(f"Candidate ID must be blank so Hub computes stable identity: {p.name}:{line}")
+        # Every public field, including free-text rationale and links, must
+        # pass the confidentiality screen. Never echo sensitive matches.
+        check_public_metadata(row, p.name, line)
         for k in ("Evidence URL", "Funding Evidence URL", "Output URL", "IR Repository URL"):
             u = (row.get(k) or "").strip()
             if u and not u.startswith(("https://", "http://")):
