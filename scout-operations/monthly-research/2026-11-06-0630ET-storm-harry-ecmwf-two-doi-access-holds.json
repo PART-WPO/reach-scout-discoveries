@@ -1,0 +1,58 @@
+{
+  "schema": "reach-scout-v2-bounded-research-evidence-v1",
+  "observed_on": "2026-11-06",
+  "lane": "monthly_api_seeded_related_expansion",
+  "source_parent_evidence": "scout-operations/monthly-research/2026-11-06-0528ET-storm-harry-qj70325-project-scope-hold.json",
+  "source_parent_original_doi": "10.1002/qj.70325",
+  "source_parent_award_hint": "NA20OAR4320278",
+  "source_parent_project_attribution": "UNVERIFIED",
+  "related_outputs": [
+    {
+      "doi": "10.21957/befj-es73",
+      "identity": "DOI_SEED_ONLY_NOT_METADATA_VERIFIED",
+      "source": "https://onlinelibrary.wiley.com/doi/10.1002/qj.70325",
+      "metadata_attempt": "https://api.datacite.org/dois/10.21957/befj-es73",
+      "metadata_result": "ACCESS_FAILED_IN_THIS_MISSION_NOT_MISSING_METADATA",
+      "project_funding": "UNVERIFIED",
+      "reach_scout_identity": "NOT_RECHECKED_AGAINST_CURRENT_SHA_VERIFIED_FULL_SNAPSHOTS",
+      "decision": "TECHNICAL_HOLD_NO_PROPOSAL"
+    },
+    {
+      "doi": "10.21957/e8rz-wh72",
+      "identity": "DOI_SEED_ONLY_NOT_METADATA_VERIFIED",
+      "source": "https://onlinelibrary.wiley.com/doi/10.1002/qj.70325",
+      "metadata_attempt": "https://api.datacite.org/dois/10.21957/e8rz-wh72",
+      "metadata_result": "ACCESS_FAILED_IN_THIS_MISSION_NOT_MISSING_METADATA",
+      "project_funding": "UNVERIFIED",
+      "reach_scout_identity": "NOT_RECHECKED_AGAINST_CURRENT_SHA_VERIFIED_FULL_SNAPSHOTS",
+      "decision": "TECHNICAL_HOLD_NO_PROPOSAL"
+    }
+  ],
+  "research_attempts": {
+    "initial": "Exact DOI resolution and DataCite endpoint requests attempted for each DOI; web tool returned inaccessible, container DNS resolution failed.",
+    "distinct_followup": "ECMWF general datasets documentation checked; no DOI-specific metadata or WPO attribution established.",
+    "verified_generic_source": "https://www.ecmwf.int/en/forecasts/datasets"
+  },
+  "next_action": "When exact DOI API connectivity is restored, obtain per-DOI DataCite/ECMWF metadata, identify version/creator/date, then verify exact WPO primary SPARK award and full REACH/Scout SHA-pinned identity. Keep both as separate expansion leads and do not stage.",
+  "source_snapshot": {
+    "operating_policy_git_blob": "e69c6341ebea60ebaa10a8fee4bf6c3d936a6043",
+    "scorecard_git_blob": "2e9e1d7f4019fb46687ca5c584bb1c1b75819fe7",
+    "unified_preflight_git_blob": "b508d4a72d1f874ea97c98a54040ba24e90cbe65",
+    "reported_reach_cache_sha256": "6660562e325a6a141198f59acce84f2e30d9a2d14e6cf5acd29769c8a4b68e1e",
+    "freshness": "REPORT_SHA_REFERENCES_READ_NOT_RECALCULATED_FROM_RAW_SOURCE"
+  },
+  "counts": {
+    "originals_examined": 0,
+    "originals_closed": 0,
+    "expansion_leads_attempted": 2,
+    "expansions_completed": 0,
+    "new_public_proposals": 0,
+    "verified_private_outcomes": 0
+  },
+  "safeguards": {
+    "original_status_unchanged": true,
+    "expansion_status_open": true,
+    "no_human_decision_inferred": true,
+    "no_private_import": true
+  }
+}
