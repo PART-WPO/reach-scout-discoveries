@@ -71,6 +71,7 @@ def build(root=ROOT):
         raise ValueError("DOI fallback report incorrectly reconciles recovery or review state")
     if (referrals["unique_bounded_project_questions"]!=len(referrals["referrals"]) or
         referrals["human_referral_drafts_prevalidated"]!=len(referrals["draft_paths"]) or
+        referrals.get("verified_public_scout_referral_batches",0)!=len(referrals.get("published_batch_paths",[])) or
         referrals.get("new_approved_reach_outputs")):
         raise ValueError("Human funding referrals were counted as approved or incomplete")
     # After Actions bot commits, downstream reports may temporarily reflect
@@ -144,6 +145,8 @@ def build(root=ROOT):
         "doi_metadata_still_pending":recovery["api_retry_or_pending"],
         "bounded_project_questions_identified":referrals["unique_bounded_project_questions"],
         "human_project_question_inbox_drafts_prevalidated":referrals["human_referral_drafts_prevalidated"],
+        "human_project_question_published_public_scout_feed":
+            referrals.get("verified_public_scout_referral_batches",0),
         "private_human_project_imports":"NOT_VERIFIED",
         "original_or_related_public_preflight_cases":common["original_and_related_cases_preflighted"],
         "cross_cohort_doi_overlaps":common["cross_cohort_duplicate_doi_identities"],

@@ -136,6 +136,73 @@ def existing_verified_self_draft(root,doi,event,check,previous):
     return None
 
 
+
+def existing_verified_published_self_referral(root,doi,event,check,previous):
+    """Verify one previously owned, now published *public* Scout review unit.
+
+    Publishing a public review feed row is NOT a private Hub import, approval,
+    Smartsheet insertion, or REACH addition. Only SHA-verified exact matching
+    immutable batch contents may upgrade the public-feed lifecycle stage.
+    """
+    if not previous or check.get("status")!="IN_PUBLIC_SCOUT_QUEUE":
+        return None
+    old=next((r for r in previous.get("referrals",[]) if
+              r.get("doi")==doi and r.get("source_event_id")==event["event_id"]
+              and r.get("source_sha256")==event["source_sha256"]
+              and r.get("scout_inbox_status") in {
+                  "VALIDATED_INBOX_DRAFT_NOT_PRIVATE_HUB",
+                  "EXISTING_VERIFIED_INBOX_DRAFT",
+                  "PUBLISHED_PUBLIC_SCOUT_FEED_NOT_PRIVATE_HUB"}),None)
+    if not old:return None
+    names={Path(rel).name for rel in (
+        previous.get("draft_paths",[])+previous.get("published_batch_paths",[]))
+        if str(rel).startswith(("scout-discoveries/inbox/",
+                                "scout-discoveries/batches/"))}
+    if not names:return None
+    manifest_path=root/"scout-discoveries/manifest.json"
+    if not manifest_path.is_file():raise ValueError("Missing authoritative published feed manifest")
+    manifest=json.loads(manifest_path.read_text(encoding="utf-8"))
+    if manifest.get("schema")!="reach-scout-discovery-feed-v1":
+        raise ValueError("Unrecognized public discovery manifest schema")
+    if manifest.get("batch_count")!=len(manifest.get("batches",[])):
+        raise ValueError("Published feed batch manifest incomplete")
+    import csv
+    found=[]
+    for b in manifest["batches"]:
+        rel=str(b.get("path") or "")
+        if (not rel.startswith("scout-discoveries/batches/")
+            or Path(rel).name not in names):continue
+        path=(root/rel).resolve()
+        if (not path.is_relative_to((root/"scout-discoveries/batches").resolve())
+            or not path.is_file()):raise ValueError("Invalid published referral batch file: "+rel)
+        if hashlib.sha256(path.read_bytes()).hexdigest()!=b["sha256"]:
+            raise ValueError("Published human referral batch SHA mismatch: "+rel)
+        with path.open(encoding="utf-8-sig",newline="") as f:
+            rows=list(csv.DictReader(f))
+        if len(rows)!=b["record_count"]:
+            raise ValueError("Published referral batch source row count mismatch")
+        target=[x for x in rows if str(x.get("DOI","")).lower()==doi]
+        if not target:continue
+        if len(target)!=1 or len(rows)!=1:
+            raise ValueError("Published human referral must be a single unambiguous DOI record")
+        row=target[0]
+        expected="REACH-SCOUT-HUMAN-SCOPE-"+hashlib.sha256(
+            (doi+"|"+event["event_id"]).encode()).hexdigest()[:18]
+        if (row.get("Source Run ID")!=expected or row.get("NOAA Award Number(s)")
+            or "Scout classification: NEEDS INVESTIGATION" not in
+               str(row.get("Scout Discovery Rationale",""))):
+            raise ValueError("Published referral identity, funding or category contradiction")
+        matches=check.get("matches",[])
+        if (not any(m.get("source")=="SCOUT_PUBLISHED"
+                    and m.get("location")==rel+":2" for m in matches)
+            or any(m.get("source")=="REACH" for m in matches)):
+            raise ValueError("Published referral DOI conflicts with current REACH/Scout identity")
+        found.append(path)
+    if len(found)>1:raise ValueError("Multiple published self-referrals for the same DOI")
+    return found[0] if found else None
+
+
+
 def build(root=ROOT,metadata=None,public_identity=None,stage=False):
     import sys
     sys.path.insert(0,str(root/"scout-discoveries/tools"))
@@ -162,6 +229,7 @@ def build(root=ROOT,metadata=None,public_identity=None,stage=False):
             potential.setdefault(event["doi"],[]).append(event)
     responses=[]
     submitted=[]
+    already_published=[]
     for doi,events in sorted(potential.items()):
         source=sorted(events,key=lambda e:e["source_path"])[-1]
         doc=json.loads((root/source["source_path"]).read_text(encoding="utf-8"))
@@ -177,12 +245,19 @@ def build(root=ROOT,metadata=None,public_identity=None,stage=False):
               {"status":"NOT_ATTEMPTED_UNVERIFIED_PROJECT_CONTEXT"})
         check=public_identity(doi,meta.get("title","")) if project else {"status":"NOT_CHECKED"}
         own_draft=existing_verified_self_draft(root,doi,source,check,prior_report)
+        own_published=existing_verified_published_self_referral(
+            root,doi,source,check,prior_report)
         effective_check=({**check,"status":"NO_PUBLIC_IDENTITY_MATCH"} if own_draft else check)
         state=referral_state(source,meta,effective_check,previous.get(doi),
               is_tracked_preprint(doi),project)
         candidate=proposal(doi,meta,source,project) if state=="READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL" else None
         status="NOT_STAGED"
-        if candidate and stage and len(submitted)>=PROMOTE_LIMIT:
+        if own_published:
+            # A public proposal is an existing unit of review work, never
+            # a new inbox draft or proof that the private Hub imported it.
+            status="PUBLISHED_PUBLIC_SCOUT_FEED_NOT_PRIVATE_HUB"
+            already_published.append(own_published.relative_to(root).as_posix())
+        elif candidate and stage and len(submitted)>=PROMOTE_LIMIT:
             status="READY_DEFERRED_REVIEWER_CAP"
         elif candidate and stage:
             name=date.today().isoformat()+"-human-project-"+hashlib.sha256(doi.encode()).hexdigest()[:18]+".csv"
@@ -204,8 +279,13 @@ def build(root=ROOT,metadata=None,public_identity=None,stage=False):
             "source_file":source["source_path"],"source_sha256":source["source_sha256"],
             "official_metadata":meta,"public_identity":check,
             "project_search_context_only":{k:v for k,v in (project or {}).items() if k!="source_case"},
-            "disposition":state,"review_question":candidate["provenance"]["notes"][2] if candidate else source["next_action"],
+            "disposition":state,
+            "review_question":(candidate["provenance"]["notes"][2] if candidate else
+                               cached.get("review_question",source["next_action"]) if cached else
+                               source["next_action"]),
             "scout_inbox_status":status,
+            "published_scout_batch_path":(own_published.relative_to(root).as_posix()
+                                         if own_published else None),
             "eligible_for_new_reach_addition":"NOT_VERIFIED",
             "private_hub_import":"NOT_VERIFIED",
             "human_approval":"NOT_VERIFIED"})
@@ -215,6 +295,8 @@ def build(root=ROOT,metadata=None,public_identity=None,stage=False):
         "unique_bounded_project_questions":len(potential),
         "human_referral_drafts_prevalidated":len(submitted),
         "draft_paths":submitted,
+        "published_batch_paths":already_published,
+        "verified_public_scout_referral_batches":len(already_published),
         "human_reviewer_decisions":"NOT_VERIFIED",
         "private_hub_imports":"NOT_VERIFIED",
         "new_approved_reach_outputs":0,
