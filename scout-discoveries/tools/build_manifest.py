@@ -129,6 +129,28 @@ def inspect_batch(p):
     }
 
 
+def new_batch_has_verified_publication_proof(entry, checks, root=ROOT):
+    """Require SHA-identical official publication gate from batch OR inbox.
+
+    The intake gate runs BEFORE promotion and records the original inbox
+    pathname. A copied batch is eligible only when the exact source bytes
+    and DOI publication verdict match that original official check.
+    This never accepts an old unverified batch or a different file's proof.
+    """
+    direct=checks.get(entry["path"])
+    if direct and direct.get("sha256")==entry["sha256"] and direct.get("verdict")=="eligible":
+        return True
+    basename=Path(entry["path"]).name
+    inbox_rel="scout-discoveries/inbox/"+basename
+    inbox_gate=checks.get(inbox_rel)
+    source=root.parent/inbox_rel
+    if (inbox_gate and inbox_gate.get("sha256")==entry["sha256"]
+        and inbox_gate.get("verdict")=="eligible"
+        and source.is_file() and hashlib.sha256(source.read_bytes()).hexdigest()==entry["sha256"]):
+        return True
+    return False
+
+
 def main():
     BATCHES.mkdir(parents=True, exist_ok=True)
     all_entries = [inspect_batch(p) for p in sorted(BATCHES.glob("*.csv"))]
@@ -147,8 +169,7 @@ def main():
         for entry in entries:
             if entry["id"] in prior:
                 continue  # Preserve immutable historical batches and prior human decisions.
-            check = checks.get(entry["path"])
-            if not check or check["sha256"] != entry["sha256"] or check["verdict"] != "eligible":
+            if not new_batch_has_verified_publication_proof(entry, checks, ROOT):
                 raise ValueError("Unverified/preprint new Scout batch cannot publish: " + entry["path"])
     for b in all_entries:
         if b["id"] in prior and prior[b["id"]] != b["sha256"]:
