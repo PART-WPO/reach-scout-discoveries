@@ -58,7 +58,9 @@ def referral_state(event,meta,identity,prior=None,watched=False,project=None):
     if s!="NO_PUBLIC_IDENTITY_MATCH":
         return "HOLD_IDENTITY_OR_VERSION_AMBIGUOUS"
     ir=(identity.get("noaa_ir_reach_check") or {}).get("status","NOT_VERIFIED")
-    if ir in {"IR_INDEX_UNAVAILABLE_HOLD","AMBIGUOUS_REACH_RECORDS"}:
+    if ir in {"IR_INDEX_UNAVAILABLE_HOLD","AMBIGUOUS_IR_DOI_HOLD",
+               "MULTIPLE_REACH_RECORDS_HOLD","REACH_DOI_CONFLICT_VERSION_REVIEW",
+               "IR_URL_MATCH_REQUIRES_REVIEW"}:
         return "HOLD_IR_OR_REACH_SOURCE_INCOMPLETE"
     if not event.get("bounded_human_question_to_verify"):
         return "HOLD_RESEARCH_PROOF_INCOMPLETE"
@@ -135,7 +137,9 @@ def build(root=ROOT,metadata=None,public_identity=None,stage=False):
               is_tracked_preprint(doi),project)
         candidate=proposal(doi,meta,source,project) if state=="READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL" else None
         status="NOT_STAGED"
-        if candidate and stage:
+        if candidate and stage and len(submitted)>=PROMOTE_LIMIT:
+            status="READY_DEFERRED_REVIEWER_CAP"
+        elif candidate and stage:
             name=date.today().isoformat()+"-human-project-"+hashlib.sha256(doi.encode()).hexdigest()[:18]+".csv"
             path=root/"scout-discoveries/inbox"/name
             if path.exists():
