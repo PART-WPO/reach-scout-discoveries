@@ -26,6 +26,17 @@ on:
   schedule:
     # Before the weekday 8 AM ET briefing, including DST transitions.
     - cron: '45 11 * * 1-5'
+  # GitHub Actions bot commits do not reliably fire downstream push workflows.
+  # Refresh impact when the authoritative source-building Actions complete,
+  # even when they perform idempotent updates without a new Git push.
+  workflow_run:
+    workflows:
+      - 'Historical Crossref actionable routing'
+      - 'Validate and Publish Scout Discovery Feed'
+      - 'Scout Crossref indexed-updates and SPARK project leads'
+      - 'Validate redacted Discovery Hub reviewer feedback'
+    types: [completed]
+    branches: [main]
   workflow_dispatch:
 permissions:
   contents: write
@@ -34,6 +45,9 @@ concurrency:
   cancel-in-progress: false
 jobs:
   check:
+    # A failed upstream source validation is never treated as successful
+    # refreshed evidence. Scheduled/manual runs still independently test.
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
