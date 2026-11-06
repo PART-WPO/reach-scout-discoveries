@@ -28,8 +28,10 @@ class ReportingTests(unittest.TestCase):
         self.assertGreaterEqual(p["source_research_notes_scanned"],p["source_evidence_decisions_evaluated"])
         self.assertEqual(p["doi_access_failures_queued_for_metadata_recovery"],
                          p["doi_metadata_recovered_in_github_action"]+p["doi_metadata_still_pending"])
-        self.assertLessEqual(p["human_project_question_inbox_drafts_prevalidated"],
+        self.assertLessEqual(p["human_project_question_inbox_drafts_prevalidated"]+
+                             p["human_project_question_published_public_scout_feed"],
                              p["bounded_project_questions_identified"])
+        self.assertGreaterEqual(p["human_project_question_published_public_scout_feed"],0)
         self.assertEqual(p["private_human_project_imports"],"NOT_VERIFIED")
         self.assertTrue(x["source_health"]["new_research_dispositions_are_not_formal_terminal_completions"])
         self.assertIn(x["source_health"]["post_research_handoff_status"],
