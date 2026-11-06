@@ -1,10 +1,12 @@
 import sys
 import unittest
+import tempfile
+from unittest.mock import patch
 from pathlib import Path
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"tools"))
 from build_human_project_referrals import (
-    build,referral_state,publication_meta_valid,proposal
+    build,referral_state,publication_meta_valid,proposal,main
 )
 
 class HumanProjectReferrals(unittest.TestCase):
@@ -36,6 +38,17 @@ class HumanProjectReferrals(unittest.TestCase):
         # not be sent to the reviewer merely for appearing in public research.
         self.assertEqual(cases["10.1007/s00382-022-06655-w"]["disposition"],
                          "HOLD_UNVERIFIED_PROJECT_CONTEXT")
+    def test_command_line_main_writes_valid_referral_report_without_name_error(self):
+        report={"unique_bounded_project_questions":0,
+                "human_referral_drafts_prevalidated":0,"referrals":[]}
+        with tempfile.TemporaryDirectory() as d:
+            target=Path(d)/"referrals.json"
+            with patch("build_human_project_referrals.build",return_value=report), \
+                 patch("build_human_project_referrals.OUTPUT",target), \
+                 patch("sys.argv",["build_human_project_referrals.py"]):
+                main()
+            self.assertEqual(__import__("json").loads(target.read_text()),report)
+
     def test_exact_official_publication_date_and_newness_required(self):
         meta=self.published()
         self.assertTrue(publication_meta_valid(meta))
