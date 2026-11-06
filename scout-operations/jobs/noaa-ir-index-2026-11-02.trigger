@@ -5,3 +5,5 @@
 # Trigger created 2026-11-02.
 
 # 2026-11-02 18:27 ET: rerun after safe handling of catalog records lacking valid PIDs.
+
+# 2026-11-06: validate bounded full-harvest restart after source pagination count changes.
