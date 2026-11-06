@@ -1,6 +1,6 @@
 {
   "schema": "reach-scout-preprint-intake-gate-v1",
-  "checked_at": "2026-11-06T14:14:17.543007+00:00",
+  "checked_at": "2026-11-06T15:01:48.064858+00:00",
   "policy": "All new publication proposals require registry check. A preprint DOI cannot be staged through ANY origin. Uncertain metadata remains on hold. Existing human decisions unchanged.",
   "checks": [
     {
@@ -15,22 +15,6 @@
           "evidence": [
             "https://api.crossref.org/works/10.1175/jamc-d-25-0108.1",
             "https://api.datacite.org/dois/10.1175/jamc-d-25-0108.1"
-          ]
-        }
-      ]
-    },
-    {
-      "path": "scout-discoveries/inbox/2026-11-06-human-project-b616c2488c1fe907f3.csv",
-      "sha256": "4a53b6d29397aa2f6633aaee8236816fd7b5ccf4a9a128dbfc54721d0cadf608",
-      "verdict": "eligible",
-      "rows": [
-        {
-          "doi": "10.1109/radarconf2248738.2022.9764246",
-          "status": "eligible",
-          "reason": "Crossref identifies an officially issued scholarly publication",
-          "evidence": [
-            "https://api.crossref.org/works/10.1109/radarconf2248738.2022.9764246",
-            "https://api.datacite.org/dois/10.1109/radarconf2248738.2022.9764246"
           ]
         }
       ]
@@ -359,6 +343,6 @@
       ]
     }
   ],
-  "eligible_batches": 13,
+  "eligible_batches": 12,
   "held_batches": 3
 }
