@@ -1,0 +1,70 @@
+name: Scout all-lane research outcome registry
+on:
+  pull_request:
+    paths:
+      - 'scout-operations/tools/build_research_outcome_registry.py'
+      - 'scout-operations/tests/test_research_outcome_registry.py'
+      - '.github/workflows/scout-research-outcomes.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'scout-operations/historical-crossref-phase2/*.json'
+      - 'scout-operations/monthly-research/*.json'
+      - 'scout-operations/tools/build_research_outcome_registry.py'
+      - '.github/workflows/scout-research-outcomes.yml'
+  schedule:
+    - cron: '10 11 * * 1-5'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: scout-research-outcomes
+  cancel-in-progress: false
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate all-source research evidence and safety
+        run: |
+          python -m unittest discover -s scout-operations/tests -p 'test_research_outcome_registry.py' -v
+          python scout-operations/tools/build_research_outcome_registry.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('scout-operations/research-outcome-registry.json').read_text())
+          assert r['research_note_events']==len(r['events'])
+          assert len(r['source_sha256'])==r['evidence_files_scanned']
+          assert r['original_status_changes']==r['expansion_status_changes']==0
+          assert r['new_public_review_proposals']==0
+          assert all(not e['formal_original_closed'] and not e['new_public_proposal'] for e in r['events'])
+          print('Every explicit note identity recorded with original/expansion/human protections')
+          PY
+      - name: Publish SHA-pinned operational outcomes (main only)
+        if: github.event_name != 'pull_request'
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git checkout -B main origin/main
+            python scout-operations/tools/build_research_outcome_registry.py
+            git add scout-operations/research-outcome-registry.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m 'Refresh SHA-verified per-output operational research dispositions'
+            if git push origin HEAD:main; then exit 0; fi
+            sleep "$((attempt * 2))"
+          done
+          exit 1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: scout-research-outcomes
+          path: scout-operations/research-outcome-registry.json
+          if-no-files-found: error
