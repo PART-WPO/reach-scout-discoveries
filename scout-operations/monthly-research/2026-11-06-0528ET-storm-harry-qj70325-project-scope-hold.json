@@ -1,0 +1,51 @@
+{
+  "schema": "reach-scout-v2-bounded-research-evidence-v1",
+  "observed_on": "2026-11-06",
+  "lane": "monthly_api",
+  "source_batch": "2026-11-01-monthly-api-2026-10-primary-only-part001",
+  "original": {
+    "doi": "10.1002/qj.70325",
+    "title": "The Mediterranean Extreme Events Experiment and storm Harry in January 2026",
+    "source_award_hint": "NA20OAR4320278",
+    "source_award_status": "NOT_INDEPENDENTLY_VERIFIED_AS_PRIMARY_SPARK_WPO_PROJECT",
+    "publication_status": "OFFICIAL_JOURNAL_ARTICLE_VERIFIED",
+    "publisher": "Wiley / Quarterly Journal of the Royal Meteorological Society",
+    "publisher_url": "https://rmets.onlinelibrary.wiley.com/doi/10.1002/qj.70325",
+    "official_noaa_ir_url": "https://repository.library.noaa.gov/view/noaa/77398",
+    "noaa_ir_verified": true,
+    "noaa_ir_funding": "NA20OAR4320278",
+    "source_identity_preflight": "NO_PUBLIC_IDENTITY_MATCH_IN_EXISTING_PREFLIGHT_SNAPSHOT_ONLY",
+    "identity_global_private_review": "NOT_VERIFIED",
+    "decision": "HOLD_WPO_PROJECT_PRIMARY_AWARD_AND_CURRENT_PUBLIC_IDENTITY_VERIFICATION",
+    "next_action": "Verify exact NA20OAR4320278 against SPARK primary Award Number(s) and same-project scope; verify current SHA-pinned REACH/Scout DOI and canonical NOAA IR URL; if confirmed, run 24-column staging gate. Do not infer WPO from NOAA IR funding alone."
+  },
+  "initial_research_sources": [
+    "https://rmets.onlinelibrary.wiley.com/doi/10.1002/qj.70325",
+    "https://repository.library.noaa.gov/view/noaa/77398"
+  ],
+  "distinct_followup_sources": [
+    "https://cw3e.ucsd.edu/cw3e-publication-notice-the-mediterranean-extreme-events-experiment-and-storm-harry-in-january-2026/"
+  ],
+  "related_expansion": {
+    "status": "SEPARATE_LEADS_NOT_CLOSED",
+    "source": "https://onlinelibrary.wiley.com/doi/10.1002/qj.70325",
+    "observing_system_experiment_dois": [
+      "10.21957/befj-es73",
+      "10.21957/e8rz-wh72"
+    ],
+    "next_action": "Check each ECMWF OSE DOI independently for version, source identity, same WPO project and current REACH/Scout status before any proposal; do not presume they are WPO-funded."
+  },
+  "safeguards": {
+    "no_private_hub_import": true,
+    "no_human_decision_inferred": true,
+    "no_original_status_change": true,
+    "no_expansion_closure": true
+  },
+  "research_counts": {
+    "originals_examined": 1,
+    "originals_closed": 0,
+    "expansion_leads_identified": 2,
+    "expansions_completed": 0,
+    "new_public_proposals": 0
+  }
+}
