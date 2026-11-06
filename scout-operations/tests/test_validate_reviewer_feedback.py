@@ -105,7 +105,20 @@ class FeedbackTests(unittest.TestCase):
             (folder/"signed.json").write_text(json.dumps({
                 "schema":"reach-scout-signed-review-feedback-v1",
                 "source":"DiscoveryHubPrivateExport","events":[signed_event()]}))
-            with self.assertRaisesRegex(ValueError,"HMAC_KEY absent"):
+            with self.assertRaisesRegex(ValueError,"PRIVACY_HOLD"):
+                run(root,key="",index=self.fake_index())
+            with self.assertRaisesRegex(ValueError,"PRIVACY_HOLD"):
+                run(root,key=KEY,index=self.fake_index())
+
+    def test_preexisting_public_review_signal_is_blocked(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            folder=root/"scout-operations/reviewer-feedback-inbox"
+            folder.mkdir(parents=True)
+            (root/"scout-operations/research-feedback.json").write_text(
+                json.dumps({"schema":"reach-scout-research-feedback-v1",
+                            "signals":[{"event_id":"sensitive-decision"}]}))
+            with self.assertRaisesRegex(ValueError,"PRIVACY_HOLD"):
                 run(root,key="",index=self.fake_index())
 
 if __name__=="__main__":unittest.main()
