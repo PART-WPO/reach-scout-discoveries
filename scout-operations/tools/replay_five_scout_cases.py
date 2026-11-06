@@ -99,15 +99,32 @@ def build(*,live_metadata=False):
             "APAR lacks exact Crossref metadata provenance")
     public_apar=shared_identity(apar,apar_meta["title"])
     require(public_apar["status"]=="IN_PUBLIC_SCOUT_QUEUE",
-            "Previously drafted APAR case must already be in public Scout inbox")
+            "APAR is no longer identifiable in verified Scout public feed")
+    # The public feed workflow has independently promoted its earlier inbox
+    # draft to a published batch; this is NOT a private Hub import.
+    manifest=load("scout-discoveries/manifest.json")
+    matched=[]
+    for batch in manifest["batches"]:
+        candidate=ROOT/batch["path"]
+        with candidate.open(encoding="utf-8-sig",newline="") as f:
+            rows_in_batch=list(csv.DictReader(f))
+        if any(str(row.get("DOI","")).lower()==apar for row in rows_in_batch):
+            require(sha(batch["path"])==batch["sha256"],
+                    "Published APAR batch SHA does not match authoritative manifest")
+            matched.append((batch,rows_in_batch))
+    require(len(matched)==1,"APAR must exist exactly once in published public Scout feed")
+    apar_batch,rows=matched[0]
+    batch_path=ROOT/apar_batch["path"]
+    require(len(rows)==1 and rows[0]["DOI"].lower()==apar,
+            "Published APAR funding question is not exactly one unique DOI")
+    require(any(m["source"]=="SCOUT_PUBLISHED" and
+                m["location"]==apar_batch["path"]+":2" for m in public_apar["matches"]),
+            "Current REACH/Scout index did not reconcile published APAR identity")
+    validate_canonical(batch_path)
     own_draft=existing_verified_self_draft(
         ROOT,apar,source_ref,public_apar,stored_referrals)
-    require(own_draft is not None,"Previously staged APAR case not verified as its own safe draft")
-    validate_canonical(own_draft)
-    with own_draft.open(encoding="utf-8-sig",newline="") as f:
-        rows=list(csv.DictReader(f))
-    require(len(rows)==1 and rows[0]["DOI"].lower()==apar,
-            "APAR reviewer draft is not a unique exact DOI record")
+    require(own_draft is None,
+            "An already published APAR batch was incorrectly treated as an unpublished inbox draft")
     require(not rows[0]["NOAA Award Number(s)"],
             "APAR draft incorrectly claims an unverified WPO award")
     require("Scout classification: NEEDS INVESTIGATION" in rows[0]["Scout Discovery Rationale"],
@@ -128,8 +145,8 @@ def build(*,live_metadata=False):
     referral_preview=build_referrals(
         root=ROOT,metadata=known_official,public_identity=shared_identity,stage=False)
     rechecked={x["doi"]:x for x in referral_preview["referrals"]}
-    require(rechecked[apar]["disposition"]=="READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL",
-            "APAR fails re-entrant verified human question route")
+    require(rechecked[apar]["disposition"]=="HOLD_ALREADY_IN_PUBLIC_REACH_OR_SCOUT",
+            "An already published APAR question would be proposed a second time")
     require(rechecked[gfdl]["disposition"]=="HOLD_UNVERIFIED_PROJECT_CONTEXT",
             "GFDL was incorrectly promoted from missing award context")
     require(not referral_preview["draft_paths"],"Read-only replay wrote unexpected reviewer draft")
@@ -171,12 +188,16 @@ def build(*,live_metadata=False):
                      "pub_date":result.get("pub_date"),
                      "funding_proven_from_metadata":False}
     reports=[
-        bundle("published_with_uncertain_project",apar,"VALIDATED_EXISTING_NEEDS_INVESTIGATION_DRAFT",
-               "VALIDATED_EXISTING_NEEDS_INVESTIGATION_DRAFT",
+        bundle("published_with_uncertain_project",apar,"EXISTING_SINGLE_PUBLIC_NEEDS_INVESTIGATION_BATCH",
+               "EXISTING_SINGLE_PUBLIC_NEEDS_INVESTIGATION_BATCH" if
+                  rechecked[apar]["disposition"]=="HOLD_ALREADY_IN_PUBLIC_REACH_OR_SCOUT"
+                  else "RISK_OF_DUPLICATE_REFERRAL",
                ["scout-operations/human-project-referrals.json",
-                own_draft.relative_to(ROOT).as_posix(),source_ref["source_path"]],
-               "Exact published DOI, bounded evidence, distinct WPO primary search context and no prior REACH match. Existing one-row inbox draft is reused; primary award field remains empty.",
-               {"public_identity":public_apar["status"],"private_hub":"NOT_VERIFIED"}),
+                "scout-discoveries/manifest.json",apar_batch["path"],source_ref["source_path"]],
+               "One SHA-verified published Scout review record; new attempts are held as an existing public queue item. A prior inbox report is stale after promotion, and the funding award field remains blank.",
+               {"public_identity":public_apar["status"],"private_hub":"NOT_VERIFIED",
+                "recorded_referral_lifecycle":"STALE_INBOX_STATUS_AFTER_PUBLIC_FEED_PROMOTION",
+                "published_feed_batch":apar_batch["path"]}),
         bundle("publication_with_missing_award_bridge",gfdl,"HOLD_UNVERIFIED_PROJECT_CONTEXT",
                rechecked[gfdl]["disposition"],
                ["scout-operations/human-project-referrals.json",
