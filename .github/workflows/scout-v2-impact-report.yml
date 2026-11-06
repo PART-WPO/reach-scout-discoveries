@@ -29,18 +29,11 @@ on:
   schedule:
     # Before the weekday 8 AM ET briefing, including DST transitions.
     - cron: '45 11 * * 1-5'
-  # GitHub Actions bot commits do not reliably fire downstream push workflows.
-  # Refresh impact when the authoritative source-building Actions complete,
-  # even when they perform idempotent updates without a new Git push.
+  # Wait for the ordered, SHA-pinned closeout to finish rebuilding the
+  # persisted identity cache and decision rollups before auditing impact.
   workflow_run:
     workflows:
-      - 'Historical Crossref actionable routing'
-      - 'Validate and Publish Scout Discovery Feed'
-      - 'Scout Crossref indexed-updates and SPARK project leads'
-      - 'Validate redacted Discovery Hub reviewer feedback'
-      - 'Scout all-lane research outcome registry'
-      - 'Scout recover DOI metadata after research access failures'
-      - 'Scout bounded human project referrals'
+      - 'Scout evidence-to-decision closeout'
     types: [completed]
     branches: [main]
   workflow_dispatch:
