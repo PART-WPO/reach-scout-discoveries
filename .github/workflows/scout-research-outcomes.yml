@@ -53,6 +53,9 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           for attempt in 1 2 3 4 5; do
+            # Validation generated this file before publishing; discard that local
+            # output before checking out the latest remote main, then rebuild.
+            git reset --hard HEAD
             git fetch origin main
             git checkout -B main origin/main
             python scout-operations/tools/build_research_outcome_registry.py
