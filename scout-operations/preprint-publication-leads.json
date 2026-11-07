@@ -431,7 +431,7 @@
     {
       "published_doi": "10.5194/gmd-16-3809-2023",
       "preprint_doi": "10.5194/gmd-2022-311",
-      "status": "awaiting_full_reach_scout_dedup_and_funding_review",
+      "status": "already_in_reach",
       "publication_evidence_url": "https://api.crossref.org/works/10.5194/gmd-16-3809-2023",
       "discovery_path": "Preprint Watchlist - verified isPreprintOf",
       "source_seed_expansion_allowed": true,
@@ -446,6 +446,17 @@
         "checked_on": "2026-11-02",
         "interpretation": "Official repository DOI identity only. NOT proof of WPO project funding, REACH absence across secondary URLs, IR compliance, Hub import or approval.",
         "next_checks": "Exact primary SPARK task/project attribution; full REACH index and all detail/secondary URLs; all active/pending Scout identities and human decisions; critical metadata and article version before any 24-column draft."
+      },
+      "confirmed_reach_duplicate": {
+        "reach_ids": [
+          "reachuid-v1-04d227bc0979ce0e23a055c1a3eba317"
+        ],
+        "source": "https://repository.library.noaa.gov/view/noaa/58453",
+        "basis": "Verified SHA-checked public REACH detail and exact official NOAA IR final DOI to existing REACH URL; identity match UID reachuid-v1-04d227bc0979ce0e23a055c1a3eba317",
+        "published_doi": "10.5194/gmd-16-3809-2023",
+        "preprint_doi": "10.5194/gmd-2022-311",
+        "verification_report": "scout-operations/preprint-13-identity-reconciliation.json",
+        "reviewer_action": "Retire original preprint family from active watchlist; preserve evidence"
       }
     },
     {
