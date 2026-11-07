@@ -1,0 +1,56 @@
+{
+  "schema": "reach-scout-bounded-crossref-project-first-screen-v1",
+  "recorded_at": "2026-11-06T23:29:00-05:00",
+  "lane": "historical_crossref_project_first",
+  "source_queue": "scout-operations/crossref-candidate-queue.json",
+  "queue_freshness": "VERIFIED_TRUE_IN_CURRENT_THROUGHPUT_SCORECARD",
+  "screened_count": 3,
+  "deep_investigations_completed": 0,
+  "distinct_source_followups_completed": 0,
+  "formal_originals_closed": 0,
+  "seed_expansions_completed": 0,
+  "public_proposals": 0,
+  "private_hub_imports": "NOT_VERIFIED",
+  "cases": [
+    {
+      "doi": "10.1007/s10596-024-10317-7",
+      "decision": "PROJECT_EVIDENCE_HOLD",
+      "next_action": "Obtain specific primary SPARK project scope evidence tying this article to NA22OAR4590512; award segment alone does not establish output-to-project relevance.",
+      "source_urls": [
+        "https://doi.org/10.1007/s10596-024-10317-7"
+      ],
+      "queue_lane": "NOVEL_IDENTITY_RESEARCH",
+      "structured_award": "NA22OAR4590512",
+      "preprint_status": "NOT_FLAGGED_IN_QUEUE",
+      "public_reach_identity": "NO_PUBLIC_REACH_MATCH_IN_VERIFIED_ROUTING",
+      "primary_spark_project_evidence": "HISTORICAL_API_PRIMARY_AWARD_MATCH_ONLY_OUTPUT_SCOPE_UNVERIFIED"
+    },
+    {
+      "doi": "10.1016/j.atmosenv.2021.118760",
+      "decision": "PROJECT_EVIDENCE_HOLD",
+      "next_action": "Find project-specific primary SPARK award scope for NA19OAR4590081 and independent evidence this Brazil WRF land-use article was a project deliverable.",
+      "source_urls": [
+        "https://doi.org/10.1016/j.atmosenv.2021.118760"
+      ],
+      "queue_lane": "NOVEL_IDENTITY_RESEARCH",
+      "structured_award": "NA19OAR4590081",
+      "preprint_status": "NOT_FLAGGED_IN_QUEUE",
+      "public_reach_identity": "NO_PUBLIC_REACH_MATCH_IN_VERIFIED_ROUTING",
+      "primary_spark_project_evidence": "HISTORICAL_API_PRIMARY_AWARD_MATCH_ONLY_OUTPUT_SCOPE_UNVERIFIED"
+    },
+    {
+      "doi": "10.1016/j.softx.2024.101863",
+      "decision": "PROJECT_EVIDENCE_HOLD",
+      "next_action": "Find primary SPARK project deliverable evidence connecting PyGeoWeaver to NA22OAR4590512, and independently verify journal metadata before considering any public proposal.",
+      "source_urls": [
+        "https://doi.org/10.1016/j.softx.2024.101863"
+      ],
+      "queue_lane": "NOVEL_IDENTITY_RESEARCH",
+      "structured_award": "NA22OAR4590512",
+      "preprint_status": "NOT_FLAGGED_IN_QUEUE",
+      "public_reach_identity": "NO_PUBLIC_REACH_MATCH_IN_VERIFIED_ROUTING",
+      "primary_spark_project_evidence": "HISTORICAL_API_PRIMARY_AWARD_MATCH_ONLY_OUTPUT_SCOPE_UNVERIFIED"
+    }
+  ],
+  "interpretation": "Three screening-only bounded project-evidence holds, not completed deep research or formal original closure. Search engine results did not independently establish primary project scope. No private writes."
+}
