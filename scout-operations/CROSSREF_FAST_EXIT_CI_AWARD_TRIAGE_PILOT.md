@@ -19,3 +19,7 @@ The user reports Cooperative Institute NOAA awards commonly containing `432`, ve
 5. Count existing identities excluded from new-output research, CI umbrella holds, verified primary-WPO candidates, ambiguous matches, and eligible reviewer proposals separately. Never count an existing-REACH fast exit as an expansion closure or new review candidate.
 
 No changes to private Hub, human decisions, REACH or SPARK are authorized by this addendum.
+
+## Concrete FY26 award format example
+
+User-confirmed example: `NA26OARX459C0001`. The WPO triage signal is the **459 award-program segment** in a structured NOAA award identifier, not an arbitrary substring. The optional `X` following `OAR` and `C` before the serial number are valid for this newer format; preserve the exact identifier including letters, leading zeros and any authorized suffix. Older WPO examples include `NA22OAR4590527`. Compare the complete normalized award to SPARK primary `Award Number(s)` for attribution; a matching 459 segment alone is a relevance signal only. Do not restrict screening to `NA..OAR459....` and accidentally reject `NA..OARX459C....`.
