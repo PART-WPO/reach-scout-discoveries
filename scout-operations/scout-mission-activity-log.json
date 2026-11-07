@@ -1,0 +1,27 @@
+{
+  "schema": "reach-scout-mission-activity-log-v1",
+  "events": [
+    {
+      "event_id": "14a1fdbffe75a520b7079b30",
+      "observed_at_utc": "2026-11-07T04:26:49.204995+00:00",
+      "event_type": "VERIFIED_PUBLIC_ARTIFACT_SNAPSHOT",
+      "evidence_fingerprint": "14a1fdbffe75a520b7079b305686e03b5ea9e68fadbdd1693dcde3fa25c67004",
+      "scorecard_sha256": "049d75dec7429d0820332b90ca5f389ebd3abd7d986d9db031fc06d4dd7a6274",
+      "research_registry_sha256": "155b79dbc6c1340660e9d6e97cc9e01f34241102f8d980ed80c0a1602c6e0828",
+      "metrics": {
+        "crossref_verified_completed": 48,
+        "datacite_verified_completed": 186,
+        "crossref_expansion_verified_completed": 0,
+        "public_scout_feed_rows": 84,
+        "research_evidence_events": 37,
+        "research_evidence_identities": 20,
+        "archived_preprint_versions": 20
+      },
+      "delta_since_previous_observation": null,
+      "baseline_only": true,
+      "interpretation": "Public artifact deltas, not proof of causal mission output. Research-note event growth is not verified formal research completion; public feed rows are not Hub approvals."
+    }
+  ],
+  "observation_count": 1,
+  "last_event_id": "14a1fdbffe75a520b7079b30"
+}
