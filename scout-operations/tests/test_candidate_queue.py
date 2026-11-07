@@ -25,6 +25,16 @@ class QueueTests(unittest.TestCase):
   self.assertEqual(q["items"][0]["priority"],80)
   self.assertEqual(q["items"][1]["funding_signal"],"CI_432_NEEDS_PROJECT_PROOF")
   self.assertEqual(q["items"][1]["priority"],25)
+ def test_preprint_overrides_wpo_award_and_published_version_is_separate(self):
+  r={"total":2,"bulk_identity_screening":{"source_dois":2},"entries":[{"doi":"10.1/a","bulk_identity_gate":{"status":"NO_PUBLIC_REACH_MATCH"}},{"doi":"10.1/b","bulk_identity_gate":{"status":"NEEDS_IDENTITY_REVIEW"}}]}
+  awards={"10.1/a":{"awards":{"NA26OARX459C0001"}}}
+  watch={"10.1/a":{"status":"tracking_preprint","verified_published_dois":[]},"10.1/b":{"status":"published_version_found","verified_published_dois":["10.2/official"]}}
+  q=m.build(r,{"cases":[]},awards,watch)
+  lanes={x["doi"]:x for x in q["items"]}
+  self.assertEqual(lanes["10.1/a"]["lane"],"PREPRINT_WATCHLIST_HOLD")
+  self.assertEqual(lanes["10.1/a"]["priority"],5)
+  self.assertEqual(lanes["10.1/b"]["lane"],"PREPRINT_PUBLISHED_VERSION_LEAD")
+  self.assertEqual(lanes["10.1/b"]["verified_published_dois"],["10.2/official"])
  def test_hold_does_not_research_again(self):
   r={"total":1,"bulk_identity_screening":{"source_dois":1},"entries":[{"doi":"10.1/c","bulk_identity_gate":{"status":"NO_PUBLIC_REACH_MATCH"}}]}
   q=m.build(r,{"cases":[{"identity":"doi:10.1/c","latest_operational_disposition":"PROJECT_EVIDENCE_HOLD"}]})
