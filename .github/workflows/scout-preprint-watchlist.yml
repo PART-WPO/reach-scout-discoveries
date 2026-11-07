@@ -4,6 +4,8 @@ on:
     branches: [main]
     paths:
       - 'scout-operations/tools/preprint_watchlist.py'
+      - 'scout-operations/tools/reconcile_preprint_retirements.py'
+      - 'scout-operations/tests/test_preprint_retirements.py'
       - 'scout-operations/tools/lookup_independent_dois.py'
       - 'scout-operations/tests/test_preprint_watchlist.py'
       - '.github/workflows/scout-preprint-watchlist.yml'
@@ -26,6 +28,8 @@ jobs:
           persist-credentials: true
       - name: Verify preprint status logic
         run: python3 -m unittest discover -s scout-operations/tests -p test_preprint_watchlist.py -v
+      - name: Verify preprint retirement safeguards
+        run: python3 -m unittest discover -s scout-operations/tests -p test_preprint_retirements.py -v
       - name: Recheck preprint DOIs and linked official journal articles
         run: python3 scout-operations/tools/preprint_watchlist.py
       - name: Publish public preprint status and final DOI research leads
@@ -33,7 +37,7 @@ jobs:
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add scout-operations/preprint-watchlist.json scout-operations/preprint-publication-leads.json
+          git add scout-operations/preprint-watchlist.json scout-operations/preprint-publication-leads.json scout-operations/preprint-retirement-archive.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m 'Refresh monthly Scout preprint Watchlist'
           for attempt in 1 2 3 4 5; do
