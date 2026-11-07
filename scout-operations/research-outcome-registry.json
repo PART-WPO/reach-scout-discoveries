@@ -31,20 +31,21 @@
     "scout-operations/historical-crossref-phase2/2026-11-06-0429ET-wofs-forecast-skill-code-project-scope-hold.json": "9975c1d7605b641c862c82bb267f3343b5a18830c9d77e3555e955ffa26f7a2a",
     "scout-operations/historical-crossref-phase2/2026-11-06-1624ET-urban-hydroclimate-institutional-attribution-hold.json": "ab0d97a1cc2202adbeee9d0b8e106f18c5f4e4d8657852d7057913892990be5c",
     "scout-operations/historical-crossref-phase2/2026-11-06-1726ET-gfdl-spear-heat-extremes-related-project-hold.json": "b0a497437a4d15cb11b85c292a6f25b0d0bca03d0283c559608a0f4f77597882",
+    "scout-operations/historical-crossref-phase2/2026-11-06-2032ET-montana-wildlife-primary-award-evidence-hold.json": "ceef48c1524009d0d809b6fe76b6c1e92ecf2041b4654bfaaad80beaf00668fd",
     "scout-operations/monthly-research/2026-11-06-0528ET-storm-harry-qj70325-project-scope-hold.json": "9bf7c3c778f1cbf1622db3e994b7facc446367f5cc3ed6094517ab5884722911",
     "scout-operations/monthly-research/2026-11-06-0630ET-storm-harry-ecmwf-two-doi-access-holds.json": "38d2065e50f5691c4452ea054a54409a88392e3d76f60969a311a78d96b3bf7c",
     "scout-operations/monthly-research/2026-11-06-0730ET-storm-harry-ecmwf-official-catalog-followup.json": "7a63adfadb964734abec498d27cc54bc6e431d0cb8f51c11bdc8f4e6131491c3",
     "scout-operations/monthly-research/2026-11-06-0830ET-storm-harry-global-drifter-award-scope-followup.json": "684a66155c7ad188613f0217e371ba692f300a27bb1ab16a1b7d40f09c1198bc"
   },
-  "evidence_files_scanned": 30,
+  "evidence_files_scanned": 31,
   "source_files_without_explicit_output_id": [],
-  "research_note_events": 35,
-  "distinct_research_identities": 18,
+  "research_note_events": 36,
+  "distinct_research_identities": 19,
   "operational_disposition_counts": {
     "BOUNDED_PROJECT_QUESTION_FOR_HUMAN": 2,
     "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY": 14,
     "PREPRINT_MONTHLY_WATCH": 1,
-    "PROJECT_EVIDENCE_HOLD": 17,
+    "PROJECT_EVIDENCE_HOLD": 18,
     "TECHNICAL_METADATA_RECOVERY": 1
   },
   "bounded_human_question_identities": 2,
@@ -772,6 +773,31 @@
       "reviewer_approval": "NOT_VERIFIED"
     },
     {
+      "event_id": "2f3d6a1aba42c6c873dbbe7b",
+      "identity": "doi:10.1002/jwmg.732",
+      "doi": "10.1002/jwmg.732",
+      "url_only": null,
+      "role_in_note": "original",
+      "research_lane": "Direct API historical Crossref original; reconciliation repair worklist",
+      "source_path": "scout-operations/historical-crossref-phase2/2026-11-06-2032ET-montana-wildlife-primary-award-evidence-hold.json",
+      "source_sha256": "ceef48c1524009d0d809b6fe76b6c1e92ecf2041b4654bfaaad80beaf00668fd",
+      "source_time": "2026-11-06T20:32:43-05:00",
+      "raw_decision": "PROJECT_EVIDENCE_HOLD",
+      "operational_disposition": "PROJECT_EVIDENCE_HOLD",
+      "next_action": "Require one authoritative primary SPARK Award Number(s) project/deliverables record explicitly linking DOI 10.1002/jwmg.732 to WPO before reopening funding attribution; otherwise retain bounded hold.",
+      "checked_evidence_urls": [
+        "https://umimpact.umt.edu/en/publications/the-montana-deer-and-elk-hunting-population-the-importance-of-coh/",
+        "https://wildlife.onlinelibrary.wiley.com/doi/10.1002/jwmg.732"
+      ],
+      "source_count": 2,
+      "bounded_human_question_to_verify": false,
+      "formal_original_closed": false,
+      "separate_expansion_closed": false,
+      "new_public_proposal": false,
+      "private_hub_import": "NOT_VERIFIED",
+      "reviewer_approval": "NOT_VERIFIED"
+    },
+    {
       "event_id": "d1c7f1c43f43721992142729",
       "identity": "doi:10.1002/qj.70325",
       "doi": "10.1002/qj.70325",
@@ -951,6 +977,22 @@
         "f54d0a1f94b2df4a4adc0ea0",
         "179f5ccad96a1b43c26bf204",
         "e7f41df6004ceb1c7b228141"
+      ],
+      "project_judgment_referral_possible": false,
+      "human_review_staged": false,
+      "private_hub_import": "NOT_VERIFIED"
+    },
+    {
+      "identity": "doi:10.1002/jwmg.732",
+      "latest_event_id": "2f3d6a1aba42c6c873dbbe7b",
+      "latest_evidence_path": "scout-operations/historical-crossref-phase2/2026-11-06-2032ET-montana-wildlife-primary-award-evidence-hold.json",
+      "latest_operational_disposition": "PROJECT_EVIDENCE_HOLD",
+      "observed_dispositions": [
+        "PROJECT_EVIDENCE_HOLD"
+      ],
+      "source_file_count": 1,
+      "event_ids": [
+        "2f3d6a1aba42c6c873dbbe7b"
       ],
       "project_judgment_referral_possible": false,
       "human_review_staged": false,
