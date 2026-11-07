@@ -4,6 +4,8 @@ on:
     branches: [main]
     paths:
       - 'scout-operations/tools/build_throughput_scorecard.py'
+      - 'scout-operations/tools/build_mission_activity_log.py'
+      - 'scout-operations/tests/test_mission_activity_log.py'
       - 'scout-operations/crossref-candidate-queue.json'
       - 'scout-operations/preprint-publication-leads.json'
       - 'scout-operations/historical-crossref-coverage.json'
@@ -39,9 +41,11 @@ jobs:
           for attempt in 1 2 3 4 5; do
             git fetch origin main
             git checkout -B main origin/main
+            python3 -m unittest discover -s scout-operations/tests -p test_mission_activity_log.py -v
             python3 scout-operations/tools/build_throughput_scorecard.py
+            python3 scout-operations/tools/build_mission_activity_log.py
             python3 scout-operations/tools/build_throughput_scorecard.py --check
-            git add scout-operations/scout-throughput-scorecard.json
+            git add scout-operations/scout-throughput-scorecard.json scout-operations/scout-mission-activity-log.json
             if git diff --cached --quiet; then exit 0; fi
             git commit -m 'Refresh evidence-based Scout throughput scorecard'
             if git push origin HEAD:main; then exit 0; fi
