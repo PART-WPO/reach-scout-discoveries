@@ -30,6 +30,7 @@ STEPS = (
     "compile_research_evidence.py",
     "decision_pipeline.py evaluate --cases scout-operations/research-decision-cases.json",
     "summarize_research_decisions.py",
+    "../historical-crossref-screening/build_actionable_routing.py",
     "build_expansion_relevance.py",
     "select_workstream.py",
     "unified_source_preflight.py",
@@ -53,7 +54,8 @@ DERIVED_FILES = (
     RESEARCH + "historical-crossref-reconciliation-exceptions.json",
     INDEX, RESEARCH + "research-decision-cases.json",
     RESEARCH + "research-evidence-coverage.json",
-    ROLLUP, RESEARCH + "expansion-relevance-priority.json",
+    ROLLUP, RESEARCH + "historical-crossref-screening/actionable-routing.json",
+    RESEARCH + "expansion-relevance-priority.json",
     RESEARCH + "active-workstream.json", UNIFIED, FEEDBACK,
     SCORECARD, IMPACT, RESEARCH + "scout-v2-benchmark-100.json",
 )
