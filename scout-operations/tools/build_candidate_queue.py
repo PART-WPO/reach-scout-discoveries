@@ -7,6 +7,7 @@ ROUTING="scout-operations/historical-crossref-screening/actionable-routing.json"
 REGISTRY="scout-operations/research-outcome-registry.json"
 OUTPUT="scout-operations/crossref-candidate-queue.json"
 MANIFEST="api-discoveries/historical-crossref/manifest.json"
+WATCHLIST="scout-operations/preprint-watchlist.json"
 def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
 def load(root,p): return json.loads((root/p).read_text())
 def norm(s):
@@ -38,7 +39,8 @@ def load_award_evidence(root):
    old=evidence.setdefault(d,{"awards":set(),"source_batches":set()})
    old["awards"].update(awards);old["source_batches"].add(p)
  return evidence,source
-def build(routing,registry,award_evidence=None):
+def build(routing,registry,award_evidence=None,preprints=None):
+ preprints=preprints or {}
  award_evidence=award_evidence or {}
  assert routing["total"]==len(routing["entries"])
  assert routing["bulk_identity_screening"]["source_dois"]==len(routing["entries"])
@@ -64,20 +66,34 @@ def build(routing,registry,award_evidence=None):
   ev=award_evidence.get(d,{})
   awards=sorted(ev.get("awards",[]))
   signal=funding_signal(awards)
+  preprint=preprints.get(d)
+  published=sorted(set(norm(x) for x in (preprint or {}).get("verified_published_dois",[]) if x))
   if lane=="NOVEL_IDENTITY_RESEARCH" and signal=="MIXED_432_459":
    rank,action=65,"Verify exact primary WPO project and distinguish CI umbrella"
   if lane=="NOVEL_IDENTITY_RESEARCH" and signal=="CI_432_NEEDS_PROJECT_PROOF":
    rank,action=25,"Bounded primary SPARK check; no umbrella grant attribution"
   elif lane=="NOVEL_IDENTITY_RESEARCH" and signal=="POSSIBLE_WPO_459": rank=80
-  items.append({"doi":d,"title":e.get("title"),"lane":lane,"priority":rank,"next_action":action,"funding_signal":signal,"crossref_structured_award_numbers":awards,"award_evidence_source_batches":sorted(ev.get("source_batches",[])),"award_match_basis":"Historical Crossref feed structured award, matched to SPARK primary award at intake; output-to-project relevance still unverified","prior_disposition":disposition,"scout_overlap":bool(e.get("scout_overlap")),"verified_reach_uid":e["bulk_identity_gate"].get("verified_reach_uid"),"private_hub_review":"NOT_VERIFIED"})
+  if preprint and lane!="EXISTING_REACH_FAST_EXIT":
+   lane="PREPRINT_PUBLISHED_VERSION_LEAD" if published else "PREPRINT_WATCHLIST_HOLD"
+   rank=15 if published else 5
+   action=("Investigate official published DOI(s) as separate identities; never stage preprint DOI" if published else "Await scheduled publication recheck; no hourly deep research")
+  items.append({"preprint_status":(preprint or {}).get("status"),"verified_published_dois":published,"doi":d,"title":e.get("title"),"lane":lane,"priority":rank,"next_action":action,"funding_signal":signal,"crossref_structured_award_numbers":awards,"award_evidence_source_batches":sorted(ev.get("source_batches",[])),"award_match_basis":"Historical Crossref feed structured award, matched to SPARK primary award at intake; output-to-project relevance still unverified","prior_disposition":disposition,"scout_overlap":bool(e.get("scout_overlap")),"verified_reach_uid":e["bulk_identity_gate"].get("verified_reach_uid"),"private_hub_review":"NOT_VERIFIED"})
  items.sort(key=lambda x:(-x["priority"],x["doi"]))
- return {"schema":"reach-scout-crossref-candidate-queue-v1","purpose":"Read-only selection; not completed research or approval","total":len(items),"lane_counts":dict(sorted(Counter(x["lane"] for x in items).items())),"items":items,"original_dispositions_changed":0,"new_review_proposals":0}
+ return {"schema":"reach-scout-crossref-candidate-queue-v2","purpose":"Read-only selection; not completed research or approval","total":len(items),"lane_counts":dict(sorted(Counter(x["lane"] for x in items).items())),"items":items,"original_dispositions_changed":0,"new_review_proposals":0}
+def load_preprints(root):
+ w=load(root,WATCHLIST); result={}
+ for e in w["entries"]:
+  d=norm(e["preprint_doi"])
+  if d in result: raise ValueError("Duplicate preprint watchlist DOI: "+d)
+  result[d]=e
+ return result
 def main():
  p=argparse.ArgumentParser();p.add_argument("--root",type=Path,default=Path(__file__).resolve().parents[2]);p.add_argument("--check",action="store_true");a=p.parse_args()
  awards,award_sources=load_award_evidence(a.root)
- q=build(load(a.root,ROUTING),load(a.root,REGISTRY),awards)
+ q=build(load(a.root,ROUTING),load(a.root,REGISTRY),awards,load_preprints(a.root))
  q["source_sha256"]={f:sha(a.root/f) for f in (ROUTING,REGISTRY)}
  q["source_sha256"].update(award_sources)
+ q["source_sha256"][WATCHLIST]=sha(a.root/WATCHLIST)
  q["funding_signal_counts"]=dict(sorted(Counter(x["funding_signal"] for x in q["items"]).items()))
  dest=a.root/OUTPUT;raw=json.dumps(q,indent=2,ensure_ascii=False)+"\n"
  if a.check: assert dest.is_file() and dest.read_text()==raw,"Queue stale"
