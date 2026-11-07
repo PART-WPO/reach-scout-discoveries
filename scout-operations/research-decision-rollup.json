@@ -1,17 +1,17 @@
 {
   "schema": "reach-scout-research-decision-rollup-v1",
-  "source_cases_sha256": "b352c47cd83ea246029316a3276268b842b9fc1f41111a4945a85d846227495a",
+  "source_cases_sha256": "e406ee7bf714525a7551077b01cfd9436dacd249fd0902e21750c65915318355",
   "identity_index_fingerprint": "64593e9870d8ba945ffb28d1a5a610bf23e5e112d1c908a9151e6ebb34bac034",
-  "cases_evaluated": 16,
+  "cases_evaluated": 18,
   "decision_counts": {
     "EXISTING_IN_REACH": 1,
     "PREPRINT_HOLD": 2,
-    "PUBLICATION_STATUS_UNVERIFIED": 13
+    "PUBLICATION_STATUS_UNVERIFIED": 15
   },
   "next_action_counts": {
     "BOUNDED_RESEARCH_COMPLETE_NEEDS_HUMAN_ASSESSMENT": 2,
     "MONTHLY_PREPRINT_WATCHLIST": 2,
-    "TARGETED_RESEARCH_OR_IDENTITY_VERIFICATION": 11,
+    "TARGETED_RESEARCH_OR_IDENTITY_VERIFICATION": 13,
     "VERIFY_EXISTING_ORIGINAL_IN_LEDGER_KEEP_EXPANSION_OPEN": 1
   },
   "private_hub_import": "NOT_VERIFIED",
@@ -133,6 +133,16 @@
       "private_hub_decision": "NOT_VERIFIED"
     },
     {
+      "doi": "10.1016/j.cageo.2022.105193",
+      "decision": "PUBLICATION_STATUS_UNVERIFIED",
+      "research_rounds": 1,
+      "next_action": "TARGETED_RESEARCH_OR_IDENTITY_VERIFICATION",
+      "checkpoint_path": "scout-operations/case-checkpoints/doi-b8d519c3e1a123e8/rev-b41a4231848dee4fe0be.json",
+      "expansion_status": "UNCHANGED_RESEARCH_SEED",
+      "public_scout_candidate_created": false,
+      "private_hub_decision": "NOT_VERIFIED"
+    },
+    {
       "doi": "10.1016/j.softx.2024.101863",
       "decision": "PUBLICATION_STATUS_UNVERIFIED",
       "research_rounds": 0,
@@ -168,6 +178,16 @@
       "research_rounds": 0,
       "next_action": "TARGETED_RESEARCH_OR_IDENTITY_VERIFICATION",
       "checkpoint_path": "scout-operations/case-checkpoints/doi-4687afbf63fe06fe/rev-ba4ab99f30849167b56a.json",
+      "expansion_status": "UNCHANGED_RESEARCH_SEED",
+      "public_scout_candidate_created": false,
+      "private_hub_decision": "NOT_VERIFIED"
+    },
+    {
+      "doi": "10.1038/s41597-024-03916-7",
+      "decision": "PUBLICATION_STATUS_UNVERIFIED",
+      "research_rounds": 1,
+      "next_action": "TARGETED_RESEARCH_OR_IDENTITY_VERIFICATION",
+      "checkpoint_path": "scout-operations/case-checkpoints/doi-0d9ca4d64361951c/rev-986e6a43f6532695a4b9.json",
       "expansion_status": "UNCHANGED_RESEARCH_SEED",
       "public_scout_candidate_created": false,
       "private_hub_decision": "NOT_VERIFIED"
