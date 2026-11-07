@@ -32,20 +32,21 @@
     "scout-operations/historical-crossref-phase2/2026-11-06-1624ET-urban-hydroclimate-institutional-attribution-hold.json": "ab0d97a1cc2202adbeee9d0b8e106f18c5f4e4d8657852d7057913892990be5c",
     "scout-operations/historical-crossref-phase2/2026-11-06-1726ET-gfdl-spear-heat-extremes-related-project-hold.json": "b0a497437a4d15cb11b85c292a6f25b0d0bca03d0283c559608a0f4f77597882",
     "scout-operations/historical-crossref-phase2/2026-11-06-2032ET-montana-wildlife-primary-award-evidence-hold.json": "ceef48c1524009d0d809b6fe76b6c1e92ecf2041b4654bfaaad80beaf00668fd",
+    "scout-operations/historical-crossref-phase2/2026-11-06-2125ET-ar-recon-drifter-publisher-funding-scope-hold.json": "3b099258bd87f8f5c5f7fa5456a2c207632aff37e5e7694076464fac433f39fb",
     "scout-operations/monthly-research/2026-11-06-0528ET-storm-harry-qj70325-project-scope-hold.json": "9bf7c3c778f1cbf1622db3e994b7facc446367f5cc3ed6094517ab5884722911",
     "scout-operations/monthly-research/2026-11-06-0630ET-storm-harry-ecmwf-two-doi-access-holds.json": "38d2065e50f5691c4452ea054a54409a88392e3d76f60969a311a78d96b3bf7c",
     "scout-operations/monthly-research/2026-11-06-0730ET-storm-harry-ecmwf-official-catalog-followup.json": "7a63adfadb964734abec498d27cc54bc6e431d0cb8f51c11bdc8f4e6131491c3",
     "scout-operations/monthly-research/2026-11-06-0830ET-storm-harry-global-drifter-award-scope-followup.json": "684a66155c7ad188613f0217e371ba692f300a27bb1ab16a1b7d40f09c1198bc"
   },
-  "evidence_files_scanned": 31,
+  "evidence_files_scanned": 32,
   "source_files_without_explicit_output_id": [],
-  "research_note_events": 36,
-  "distinct_research_identities": 19,
+  "research_note_events": 37,
+  "distinct_research_identities": 20,
   "operational_disposition_counts": {
     "BOUNDED_PROJECT_QUESTION_FOR_HUMAN": 2,
     "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY": 14,
     "PREPRINT_MONTHLY_WATCH": 1,
-    "PROJECT_EVIDENCE_HOLD": 18,
+    "PROJECT_EVIDENCE_HOLD": 19,
     "TECHNICAL_METADATA_RECOVERY": 1
   },
   "bounded_human_question_identities": 2,
@@ -798,6 +799,30 @@
       "reviewer_approval": "NOT_VERIFIED"
     },
     {
+      "event_id": "600c05ae9a8b7f8a7444d8c7",
+      "identity": "doi:10.1002/qj.5049",
+      "doi": "10.1002/qj.5049",
+      "url_only": null,
+      "role_in_note": "case",
+      "research_lane": "historical_original_funding_attribution",
+      "source_path": "scout-operations/historical-crossref-phase2/2026-11-06-2125ET-ar-recon-drifter-publisher-funding-scope-hold.json",
+      "source_sha256": "3b099258bd87f8f5c5f7fa5456a2c207632aff37e5e7694076464fac433f39fb",
+      "source_time": "2026-11-06T21:25:24-05:00",
+      "raw_decision": "PROJECT_EVIDENCE_HOLD",
+      "operational_disposition": "PROJECT_EVIDENCE_HOLD",
+      "next_action": "Obtain authoritative SPARK primary Award Number(s) project record explicitly connecting this DOI to WPO-funded deliverables; otherwise retain project-evidence hold. Do not stage.",
+      "checked_evidence_urls": [
+        "https://rmets.onlinelibrary.wiley.com/doi/10.1002/qj.5049"
+      ],
+      "source_count": 1,
+      "bounded_human_question_to_verify": false,
+      "formal_original_closed": false,
+      "separate_expansion_closed": false,
+      "new_public_proposal": false,
+      "private_hub_import": "NOT_VERIFIED",
+      "reviewer_approval": "NOT_VERIFIED"
+    },
+    {
       "event_id": "d1c7f1c43f43721992142729",
       "identity": "doi:10.1002/qj.70325",
       "doi": "10.1002/qj.70325",
@@ -993,6 +1018,22 @@
       "source_file_count": 1,
       "event_ids": [
         "2f3d6a1aba42c6c873dbbe7b"
+      ],
+      "project_judgment_referral_possible": false,
+      "human_review_staged": false,
+      "private_hub_import": "NOT_VERIFIED"
+    },
+    {
+      "identity": "doi:10.1002/qj.5049",
+      "latest_event_id": "600c05ae9a8b7f8a7444d8c7",
+      "latest_evidence_path": "scout-operations/historical-crossref-phase2/2026-11-06-2125ET-ar-recon-drifter-publisher-funding-scope-hold.json",
+      "latest_operational_disposition": "PROJECT_EVIDENCE_HOLD",
+      "observed_dispositions": [
+        "PROJECT_EVIDENCE_HOLD"
+      ],
+      "source_file_count": 1,
+      "event_ids": [
+        "600c05ae9a8b7f8a7444d8c7"
       ],
       "project_judgment_referral_possible": false,
       "human_review_staged": false,
