@@ -7,6 +7,8 @@ on:
       - 'scout-operations/tests/test_candidate_queue.py'
       - 'scout-operations/historical-crossref-screening/actionable-routing.json'
       - 'scout-operations/research-outcome-registry.json'
+      - 'api-discoveries/historical-crossref/manifest.json'
+      - 'api-discoveries/historical-crossref/batches/**'
       - '.github/workflows/scout-crossref-candidate-queue.yml'
   schedule:
     - cron: '17 * * * *'
