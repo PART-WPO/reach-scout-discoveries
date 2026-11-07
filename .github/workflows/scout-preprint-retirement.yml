@@ -1,0 +1,42 @@
+name: Scout retire REACH-confirmed preprint families
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scout-operations/tools/reconcile_preprint_retirements.py'
+      - 'scout-operations/tests/test_preprint_retirements.py'
+      - 'scout-operations/preprint-publication-leads.json'
+      - '.github/workflows/scout-preprint-retirement.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: scout-preprint-retirement
+  cancel-in-progress: false
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Test family-wide retirement and conservative proof
+        run: python3 -m unittest discover -s scout-operations/tests -p test_preprint_retirements.py -v
+      - name: Reconcile and publish without network calls
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git checkout -B main origin/main
+            python3 scout-operations/tools/reconcile_preprint_retirements.py
+            git add scout-operations/preprint-watchlist.json scout-operations/preprint-retirement-archive.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m 'Archive confirmed REACH published preprint families'
+            if git push origin HEAD:main; then exit 0; fi
+            sleep "$((attempt * 2))"
+          done
+          exit 1
