@@ -1,0 +1,38 @@
+name: Scout targeted published preprint identity reconciliation
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scout-operations/tools/reconcile_published_preprint_identities.py'
+      - '.github/workflows/scout-preprint-identity-reconciliation.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: scout-preprint-identity-reconciliation
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Reconcile 13 published preprints against full public REACH and NOAA IR evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git checkout -B main origin/main
+            python3 scout-operations/tools/reconcile_published_preprint_identities.py
+            git add scout-operations/preprint-13-identity-reconciliation.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m 'Record verified public REACH and IR identity reconciliation for published preprints'
+            if git push origin HEAD:main; then exit 0; fi
+            sleep "$((attempt * 2))"
+          done
+          exit 1
