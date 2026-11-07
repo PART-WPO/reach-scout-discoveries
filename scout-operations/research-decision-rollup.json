@@ -1,17 +1,17 @@
 {
   "schema": "reach-scout-research-decision-rollup-v1",
-  "source_cases_sha256": "9b4c8b84f41f9b6cffbf5def0dc1898bad4fd1eb119e6fd58d439f2634eff904",
+  "source_cases_sha256": "bcc656b94e00b0fea5dd00b9ab62d00a2bb62dc83d32f3e0f5422d037f259db1",
   "identity_index_fingerprint": "64593e9870d8ba945ffb28d1a5a610bf23e5e112d1c908a9151e6ebb34bac034",
-  "cases_evaluated": 11,
+  "cases_evaluated": 14,
   "decision_counts": {
     "EXISTING_IN_REACH": 1,
     "PREPRINT_HOLD": 2,
-    "PUBLICATION_STATUS_UNVERIFIED": 8
+    "PUBLICATION_STATUS_UNVERIFIED": 11
   },
   "next_action_counts": {
     "BOUNDED_RESEARCH_COMPLETE_NEEDS_HUMAN_ASSESSMENT": 2,
     "MONTHLY_PREPRINT_WATCHLIST": 2,
-    "TARGETED_RESEARCH_OR_IDENTITY_VERIFICATION": 6,
+    "TARGETED_RESEARCH_OR_IDENTITY_VERIFICATION": 9,
     "VERIFY_EXISTING_ORIGINAL_IN_LEDGER_KEEP_EXPANSION_OPEN": 1
   },
   "private_hub_import": "NOT_VERIFIED",
@@ -93,6 +93,16 @@
       "private_hub_decision": "NOT_VERIFIED"
     },
     {
+      "doi": "10.1007/s10596-024-10317-7",
+      "decision": "PUBLICATION_STATUS_UNVERIFIED",
+      "research_rounds": 0,
+      "next_action": "TARGETED_RESEARCH_OR_IDENTITY_VERIFICATION",
+      "checkpoint_path": "scout-operations/case-checkpoints/doi-b332d53770e8cbc1/rev-7cb364b9030d7e9b2521.json",
+      "expansion_status": "UNCHANGED_RESEARCH_SEED",
+      "public_scout_candidate_created": false,
+      "private_hub_decision": "NOT_VERIFIED"
+    },
+    {
       "doi": "10.1007/s10606-020-09380-2",
       "decision": "PUBLICATION_STATUS_UNVERIFIED",
       "research_rounds": 2,
@@ -108,6 +118,26 @@
       "research_rounds": 1,
       "next_action": "TARGETED_RESEARCH_OR_IDENTITY_VERIFICATION",
       "checkpoint_path": "scout-operations/case-checkpoints/doi-5756f73487f1796b/rev-ea0d55ac862c2f2d2b60.json",
+      "expansion_status": "UNCHANGED_RESEARCH_SEED",
+      "public_scout_candidate_created": false,
+      "private_hub_decision": "NOT_VERIFIED"
+    },
+    {
+      "doi": "10.1016/j.atmosenv.2021.118760",
+      "decision": "PUBLICATION_STATUS_UNVERIFIED",
+      "research_rounds": 0,
+      "next_action": "TARGETED_RESEARCH_OR_IDENTITY_VERIFICATION",
+      "checkpoint_path": "scout-operations/case-checkpoints/doi-866c8052a22849b2/rev-b21b4b116604314f6e96.json",
+      "expansion_status": "UNCHANGED_RESEARCH_SEED",
+      "public_scout_candidate_created": false,
+      "private_hub_decision": "NOT_VERIFIED"
+    },
+    {
+      "doi": "10.1016/j.softx.2024.101863",
+      "decision": "PUBLICATION_STATUS_UNVERIFIED",
+      "research_rounds": 0,
+      "next_action": "TARGETED_RESEARCH_OR_IDENTITY_VERIFICATION",
+      "checkpoint_path": "scout-operations/case-checkpoints/doi-398fe73f0c7f3ffa/rev-53b97694c785a88b6a53.json",
       "expansion_status": "UNCHANGED_RESEARCH_SEED",
       "public_scout_candidate_created": false,
       "private_hub_decision": "NOT_VERIFIED"
