@@ -1,7 +1,7 @@
 {
   "schema": "reach-scout-throughput-scorecard-v1",
   "source_sha256": {
-    "scout-operations/crossref-candidate-queue.json": "e646939663454bd14c6daf00b29e03227fac9ac23e2aa7cad60abee2f89095ec",
+    "scout-operations/crossref-candidate-queue.json": "21fe06f106692863d9717ed53e114bc9f789f6422dfd8d1fe9801bf3628a557c",
     "scout-operations/historical-crossref-coverage.json": "92d36650e2077bbfc4a8f27d2f166be40b6c3831b7dd33ffdbd5fafef7057860",
     "scout-operations/historical-coverage.json": "f0d440a18f983a07bef10c16047d9dfae2d67039178a22f56294d935403cfb59",
     "scout-discoveries/manifest.json": "b4ce92af18594ee047a577bd484366cb1828d7385e479017ffea75935307db00",
@@ -63,21 +63,21 @@
         "fresh": true
       },
       "scout-operations/preprint-watchlist.json": {
-        "recorded_sha256": "a95f27ed9d34d18a0a644caa62c32f2c8e31ba62296ec97b4dde7a85cbbbfed4",
+        "recorded_sha256": "5773bb93fe627c87b79942cfe2f15ef9f06e0f6cca9f26c09cf19b935ab92c04",
         "current_sha256": "5773bb93fe627c87b79942cfe2f15ef9f06e0f6cca9f26c09cf19b935ab92c04",
-        "fresh": false
+        "fresh": true
       }
     },
-    "crossref_queue_fresh": false,
+    "crossref_queue_fresh": true,
     "targeted_reconciliation_scope_is_snapshot": true
   },
   "screening_not_research": {
     "historical_crossref_dois": 614,
     "identity_fast_exits": 433,
-    "bounded_identity_reviews": 28,
-    "novel_research_candidates": 110,
+    "bounded_identity_reviews": 47,
+    "novel_research_candidates": 111,
     "preprint_holds": 7,
-    "published_version_leads": 31,
+    "published_version_leads": 11,
     "other_evidence_holds": 5
   },
   "verified_original_research": {
