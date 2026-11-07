@@ -267,6 +267,8 @@ def refresh(root=ROOT, today=None, fetch_crossref=crossref, fetch_datacite=datac
     result = {"schema": "reach-scout-preprint-publication-leads-v1",
               "policy": "Publication-version research leads ONLY; do not auto-stage, approve or insert to REACH.",
               "entries": [output_leads[k] for k in sorted(output_leads)]}
+    reconcile(data, result, archive)
+    save(root, ARCHIVE, archive)
     watch_path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     leads_path.write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print("Preprints tracked", len(known), "official article DOI research leads", len(output_leads))
