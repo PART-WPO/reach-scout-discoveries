@@ -174,7 +174,14 @@ def refresh(root=ROOT, today=None, fetch_crossref=crossref, fetch_datacite=datac
         if not DOI.fullmatch(doi) or doi in known:
             raise ValueError("Invalid or duplicate tracked preprint DOI")
         known[doi] = entry
+    from reconcile_preprint_retirements import ARCHIVE, norm as retirement_norm, reconcile, save
+    archive_path = root / ARCHIVE
+    archive = json.loads(archive_path.read_text(encoding="utf-8")) if archive_path.exists() else {"schema":"reach-scout-preprint-retirement-archive-v1","policy":"Public evidence only; no re-seeding retired identities","entries":[]}
+    retired_dois = {retirement_norm(x["preprint_doi"]) for x in archive["entries"]}
+    known = {d:e for d,e in known.items() if d not in retired_dois}
     for seed in source_preprints(root):
+        if seed["preprint_doi"] in retired_dois:
+            continue
         existing = known.get(seed["preprint_doi"])
         if existing is None:
             known[seed["preprint_doi"]] = seed
