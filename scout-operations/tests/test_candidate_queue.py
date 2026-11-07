@@ -17,6 +17,14 @@ class QueueTests(unittest.TestCase):
   self.assertEqual(q["lane_counts"],{"BOUNDED_IDENTITY_REVIEW":1,"EXISTING_REACH_FAST_EXIT":1,"NOVEL_IDENTITY_RESEARCH":1})
   self.assertEqual(q["original_dispositions_changed"],0)
   self.assertEqual(q["new_review_proposals"],0)
+ def test_structured_awards_affect_priority(self):
+  r={"total":2,"bulk_identity_screening":{"source_dois":2},"entries":[{"doi":"10.1/a","bulk_identity_gate":{"status":"NO_PUBLIC_REACH_MATCH"}},{"doi":"10.1/b","bulk_identity_gate":{"status":"NO_PUBLIC_REACH_MATCH"}}]}
+  awards={"10.1/a":{"awards":{"NA26OARX459C0001"},"source_batches":{"batch1.csv"}},"10.1/b":{"awards":{"NA20OAR4320278"},"source_batches":{"batch2.csv"}}}
+  q=m.build(r,{"cases":[]},awards)
+  self.assertEqual(q["items"][0]["funding_signal"],"POSSIBLE_WPO_459")
+  self.assertEqual(q["items"][0]["priority"],80)
+  self.assertEqual(q["items"][1]["funding_signal"],"CI_432_NEEDS_PROJECT_PROOF")
+  self.assertEqual(q["items"][1]["priority"],25)
  def test_hold_does_not_research_again(self):
   r={"total":1,"bulk_identity_screening":{"source_dois":1},"entries":[{"doi":"10.1/c","bulk_identity_gate":{"status":"NO_PUBLIC_REACH_MATCH"}}]}
   q=m.build(r,{"cases":[{"identity":"doi:10.1/c","latest_operational_disposition":"PROJECT_EVIDENCE_HOLD"}]})
