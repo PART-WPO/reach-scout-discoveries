@@ -5,10 +5,10 @@
   "lane_counts": {
     "BOUNDED_IDENTITY_REVIEW": 47,
     "EXISTING_REACH_FAST_EXIT": 433,
-    "NOVEL_IDENTITY_RESEARCH": 108,
+    "NOVEL_IDENTITY_RESEARCH": 106,
     "PREPRINT_PUBLISHED_VERSION_LEAD": 11,
     "PREPRINT_WATCHLIST_HOLD": 7,
-    "WAIT_FOR_NEW_EVIDENCE": 8
+    "WAIT_FOR_NEW_EVIDENCE": 10
   },
   "items": [
     {
@@ -50,48 +50,6 @@
       "award_match_basis": "Historical Crossref feed structured award, matched to SPARK primary award at intake; output-to-project relevance still unverified",
       "prior_disposition": null,
       "scout_overlap": true,
-      "verified_reach_uid": null,
-      "private_hub_review": "NOT_VERIFIED"
-    },
-    {
-      "preprint_status": null,
-      "verified_published_dois": [],
-      "doi": "10.1029/2023gl106354",
-      "title": "quantifying the contribution of ocean advection and surface flux to the upper ocean salinity variability resolved by climate model simulations",
-      "lane": "NOVEL_IDENTITY_RESEARCH",
-      "priority": 80,
-      "next_action": "Verify eligibility, primary SPARK project and funding",
-      "funding_signal": "POSSIBLE_WPO_459",
-      "crossref_structured_award_numbers": [
-        "NA23OAR4590383"
-      ],
-      "award_evidence_source_batches": [
-        "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part002.csv"
-      ],
-      "award_match_basis": "Historical Crossref feed structured award, matched to SPARK primary award at intake; output-to-project relevance still unverified",
-      "prior_disposition": null,
-      "scout_overlap": false,
-      "verified_reach_uid": null,
-      "private_hub_review": "NOT_VERIFIED"
-    },
-    {
-      "preprint_status": null,
-      "verified_published_dois": [],
-      "doi": "10.1029/2023gl106872",
-      "title": "impact of mjo propagation speed on active atlantic tropical cyclone activity periods",
-      "lane": "NOVEL_IDENTITY_RESEARCH",
-      "priority": 80,
-      "next_action": "Verify eligibility, primary SPARK project and funding",
-      "funding_signal": "POSSIBLE_WPO_459",
-      "crossref_structured_award_numbers": [
-        "NA23OAR4590383"
-      ],
-      "award_evidence_source_batches": [
-        "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part002.csv"
-      ],
-      "award_match_basis": "Historical Crossref feed structured award, matched to SPARK primary award at intake; output-to-project relevance still unverified",
-      "prior_disposition": null,
-      "scout_overlap": false,
       "verified_reach_uid": null,
       "private_hub_review": "NOT_VERIFIED"
     },
@@ -3691,6 +3649,48 @@
       ],
       "award_evidence_source_batches": [
         "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part001.csv"
+      ],
+      "award_match_basis": "Historical Crossref feed structured award, matched to SPARK primary award at intake; output-to-project relevance still unverified",
+      "prior_disposition": "PROJECT_EVIDENCE_HOLD",
+      "scout_overlap": false,
+      "verified_reach_uid": null,
+      "private_hub_review": "NOT_VERIFIED"
+    },
+    {
+      "preprint_status": null,
+      "verified_published_dois": [],
+      "doi": "10.1029/2023gl106354",
+      "title": "quantifying the contribution of ocean advection and surface flux to the upper ocean salinity variability resolved by climate model simulations",
+      "lane": "WAIT_FOR_NEW_EVIDENCE",
+      "priority": 10,
+      "next_action": "Reopen only on new evidence or official publication",
+      "funding_signal": "POSSIBLE_WPO_459",
+      "crossref_structured_award_numbers": [
+        "NA23OAR4590383"
+      ],
+      "award_evidence_source_batches": [
+        "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part002.csv"
+      ],
+      "award_match_basis": "Historical Crossref feed structured award, matched to SPARK primary award at intake; output-to-project relevance still unverified",
+      "prior_disposition": "PROJECT_EVIDENCE_HOLD",
+      "scout_overlap": false,
+      "verified_reach_uid": null,
+      "private_hub_review": "NOT_VERIFIED"
+    },
+    {
+      "preprint_status": null,
+      "verified_published_dois": [],
+      "doi": "10.1029/2023gl106872",
+      "title": "impact of mjo propagation speed on active atlantic tropical cyclone activity periods",
+      "lane": "WAIT_FOR_NEW_EVIDENCE",
+      "priority": 10,
+      "next_action": "Reopen only on new evidence or official publication",
+      "funding_signal": "POSSIBLE_WPO_459",
+      "crossref_structured_award_numbers": [
+        "NA23OAR4590383"
+      ],
+      "award_evidence_source_batches": [
+        "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part002.csv"
       ],
       "award_match_basis": "Historical Crossref feed structured award, matched to SPARK primary award at intake; output-to-project relevance still unverified",
       "prior_disposition": "PROJECT_EVIDENCE_HOLD",
@@ -13056,7 +13056,7 @@
   "new_review_proposals": 0,
   "source_sha256": {
     "scout-operations/historical-crossref-screening/actionable-routing.json": "6e6561e92ff43a5ddc4f50d82a0dea7868f5689ff4e2728d7142e29fb9ab1f6a",
-    "scout-operations/research-outcome-registry.json": "3559c5352cb267c4b35baeae7399b90cc1e27b9a5ca06e85b859e0513a8dcad0",
+    "scout-operations/research-outcome-registry.json": "2e924ff1f36fbcd33ee3785857cd58c529821d0a77db752f5c14f8f39e4dfd02",
     "api-discoveries/historical-crossref/manifest.json": "799744c7e83f218d22cc19afacb7cfcf2762feb490659efde9f58bf19473b1fa",
     "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part001.csv": "df420ff561050c5f019ccddd19eb93124ab642eba8aa6f87dc0636b6d5ee2de3",
     "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part002.csv": "1cc9e5f3c493c6fa7cde93e0060718224686f695c7ba6d648208ecf9a09d69d7",
