@@ -1,0 +1,49 @@
+name: Scout evidence-based throughput scorecard
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scout-operations/tools/build_throughput_scorecard.py'
+      - 'scout-operations/crossref-candidate-queue.json'
+      - 'scout-operations/historical-crossref-coverage.json'
+      - 'scout-operations/historical-coverage.json'
+      - 'scout-operations/preprint-watchlist.json'
+      - 'scout-operations/preprint-retirement-archive.json'
+      - 'scout-operations/preprint-13-identity-reconciliation.json'
+      - 'scout-operations/research-outcome-registry.json'
+      - 'scout-discoveries/manifest.json'
+      - '.github/workflows/scout-throughput-scorecard.yml'
+  schedule:
+    - cron: '23 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: scout-throughput-scorecard
+  cancel-in-progress: false
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Build verified scorecard and publish safely
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git checkout -B main origin/main
+            python3 scout-operations/tools/build_throughput_scorecard.py
+            python3 scout-operations/tools/build_throughput_scorecard.py --check
+            git add scout-operations/scout-throughput-scorecard.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m 'Refresh evidence-based Scout throughput scorecard'
+            if git push origin HEAD:main; then exit 0; fi
+            sleep "$((attempt * 2))"
+          done
+          exit 1
