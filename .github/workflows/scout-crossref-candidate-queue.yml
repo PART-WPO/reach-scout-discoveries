@@ -1,0 +1,55 @@
+name: Scout Crossref candidate queue refresh
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scout-operations/tools/build_candidate_queue.py'
+      - 'scout-operations/tests/test_candidate_queue.py'
+      - 'scout-operations/historical-crossref-screening/actionable-routing.json'
+      - 'scout-operations/research-outcome-registry.json'
+      - '.github/workflows/scout-crossref-candidate-queue.yml'
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: scout-crossref-candidate-queue
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test deterministic queue and funding signals
+        run: |
+          python -m py_compile scout-operations/tools/build_candidate_queue.py
+          python -m unittest discover -v -s scout-operations/tests -p 'test_candidate_queue.py'
+      - name: Refresh queue against latest main with conflict retries
+        if: github.event_name != 'pull_request'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3 4; do
+            git fetch origin main
+            git checkout -B main origin/main
+            python scout-operations/tools/build_candidate_queue.py
+            python scout-operations/tools/build_candidate_queue.py --check
+            git add scout-operations/crossref-candidate-queue.json
+            if git diff --cached --quiet; then
+              echo "Queue already current"
+              exit 0
+            fi
+            git commit -m 'Refresh SHA-pinned Crossref candidate queue'
+            if git push origin HEAD:main; then exit 0; fi
+            sleep "$((attempt * 2))"
+          done
+          exit 1
