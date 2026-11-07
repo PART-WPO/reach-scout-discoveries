@@ -5,33 +5,12 @@
   "lane_counts": {
     "BOUNDED_IDENTITY_REVIEW": 47,
     "EXISTING_REACH_FAST_EXIT": 433,
-    "NOVEL_IDENTITY_RESEARCH": 106,
+    "NOVEL_IDENTITY_RESEARCH": 104,
     "PREPRINT_PUBLISHED_VERSION_LEAD": 11,
     "PREPRINT_WATCHLIST_HOLD": 7,
-    "WAIT_FOR_NEW_EVIDENCE": 10
+    "WAIT_FOR_NEW_EVIDENCE": 12
   },
   "items": [
-    {
-      "preprint_status": null,
-      "verified_published_dois": [],
-      "doi": "10.1016/j.cageo.2022.105193",
-      "title": "adaptive conditional bias penalized kalman filter with minimization of degrees of freedom for noise for superior state estimation and prediction of extremes",
-      "lane": "NOVEL_IDENTITY_RESEARCH",
-      "priority": 80,
-      "next_action": "Verify eligibility, primary SPARK project and funding",
-      "funding_signal": "POSSIBLE_WPO_459",
-      "crossref_structured_award_numbers": [
-        "NA16OAR4590232"
-      ],
-      "award_evidence_source_batches": [
-        "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part001.csv"
-      ],
-      "award_match_basis": "Historical Crossref feed structured award, matched to SPARK primary award at intake; output-to-project relevance still unverified",
-      "prior_disposition": null,
-      "scout_overlap": false,
-      "verified_reach_uid": null,
-      "private_hub_review": "NOT_VERIFIED"
-    },
     {
       "preprint_status": null,
       "verified_published_dois": [],
@@ -85,27 +64,6 @@
       "funding_signal": "POSSIBLE_WPO_459",
       "crossref_structured_award_numbers": [
         "NA21OAR4590367"
-      ],
-      "award_evidence_source_batches": [
-        "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part002.csv"
-      ],
-      "award_match_basis": "Historical Crossref feed structured award, matched to SPARK primary award at intake; output-to-project relevance still unverified",
-      "prior_disposition": null,
-      "scout_overlap": false,
-      "verified_reach_uid": null,
-      "private_hub_review": "NOT_VERIFIED"
-    },
-    {
-      "preprint_status": null,
-      "verified_published_dois": [],
-      "doi": "10.1038/s41597-024-03916-7",
-      "title": "hyg a hydraulic geometry dataset derived from historical stream gage measurements across the conterminous us",
-      "lane": "NOVEL_IDENTITY_RESEARCH",
-      "priority": 80,
-      "next_action": "Verify eligibility, primary SPARK project and funding",
-      "funding_signal": "POSSIBLE_WPO_459",
-      "crossref_structured_award_numbers": [
-        "NA18OAR4590391"
       ],
       "award_evidence_source_batches": [
         "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part002.csv"
@@ -3617,6 +3575,27 @@
     {
       "preprint_status": null,
       "verified_published_dois": [],
+      "doi": "10.1016/j.cageo.2022.105193",
+      "title": "adaptive conditional bias penalized kalman filter with minimization of degrees of freedom for noise for superior state estimation and prediction of extremes",
+      "lane": "WAIT_FOR_NEW_EVIDENCE",
+      "priority": 10,
+      "next_action": "Reopen only on new evidence or official publication",
+      "funding_signal": "POSSIBLE_WPO_459",
+      "crossref_structured_award_numbers": [
+        "NA16OAR4590232"
+      ],
+      "award_evidence_source_batches": [
+        "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part001.csv"
+      ],
+      "award_match_basis": "Historical Crossref feed structured award, matched to SPARK primary award at intake; output-to-project relevance still unverified",
+      "prior_disposition": "PROJECT_EVIDENCE_HOLD",
+      "scout_overlap": false,
+      "verified_reach_uid": null,
+      "private_hub_review": "NOT_VERIFIED"
+    },
+    {
+      "preprint_status": null,
+      "verified_published_dois": [],
       "doi": "10.1016/j.softx.2024.101863",
       "title": "pygeoweaver tangible workflow tool for enhancing scientific research productivity and fairness",
       "lane": "WAIT_FOR_NEW_EVIDENCE",
@@ -3688,6 +3667,27 @@
       "funding_signal": "POSSIBLE_WPO_459",
       "crossref_structured_award_numbers": [
         "NA23OAR4590383"
+      ],
+      "award_evidence_source_batches": [
+        "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part002.csv"
+      ],
+      "award_match_basis": "Historical Crossref feed structured award, matched to SPARK primary award at intake; output-to-project relevance still unverified",
+      "prior_disposition": "PROJECT_EVIDENCE_HOLD",
+      "scout_overlap": false,
+      "verified_reach_uid": null,
+      "private_hub_review": "NOT_VERIFIED"
+    },
+    {
+      "preprint_status": null,
+      "verified_published_dois": [],
+      "doi": "10.1038/s41597-024-03916-7",
+      "title": "hyg a hydraulic geometry dataset derived from historical stream gage measurements across the conterminous us",
+      "lane": "WAIT_FOR_NEW_EVIDENCE",
+      "priority": 10,
+      "next_action": "Reopen only on new evidence or official publication",
+      "funding_signal": "POSSIBLE_WPO_459",
+      "crossref_structured_award_numbers": [
+        "NA18OAR4590391"
       ],
       "award_evidence_source_batches": [
         "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part002.csv"
@@ -13056,7 +13056,7 @@
   "new_review_proposals": 0,
   "source_sha256": {
     "scout-operations/historical-crossref-screening/actionable-routing.json": "6e6561e92ff43a5ddc4f50d82a0dea7868f5689ff4e2728d7142e29fb9ab1f6a",
-    "scout-operations/research-outcome-registry.json": "2e924ff1f36fbcd33ee3785857cd58c529821d0a77db752f5c14f8f39e4dfd02",
+    "scout-operations/research-outcome-registry.json": "45bbdd005d06032fb50e578e9f47c0261c4c63a02ce811c53ac25d79bcae356d",
     "api-discoveries/historical-crossref/manifest.json": "799744c7e83f218d22cc19afacb7cfcf2762feb490659efde9f58bf19473b1fa",
     "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part001.csv": "df420ff561050c5f019ccddd19eb93124ab642eba8aa6f87dc0636b6d5ee2de3",
     "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part002.csv": "1cc9e5f3c493c6fa7cde93e0060718224686f695c7ba6d648208ecf9a09d69d7",
