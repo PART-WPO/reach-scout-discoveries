@@ -5,10 +5,10 @@
   "lane_counts": {
     "BOUNDED_IDENTITY_REVIEW": 47,
     "EXISTING_REACH_FAST_EXIT": 433,
-    "NOVEL_IDENTITY_RESEARCH": 104,
+    "NOVEL_IDENTITY_RESEARCH": 103,
     "PREPRINT_PUBLISHED_VERSION_LEAD": 11,
     "PREPRINT_WATCHLIST_HOLD": 7,
-    "WAIT_FOR_NEW_EVIDENCE": 12
+    "WAIT_FOR_NEW_EVIDENCE": 13
   },
   "items": [
     {
@@ -447,27 +447,6 @@
       "funding_signal": "POSSIBLE_WPO_459",
       "crossref_structured_award_numbers": [
         "NA18OAR4590309"
-      ],
-      "award_evidence_source_batches": [
-        "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part006.csv"
-      ],
-      "award_match_basis": "Historical Crossref feed structured award, matched to SPARK primary award at intake; output-to-project relevance still unverified",
-      "prior_disposition": null,
-      "scout_overlap": false,
-      "verified_reach_uid": null,
-      "private_hub_review": "NOT_VERIFIED"
-    },
-    {
-      "preprint_status": null,
-      "verified_published_dois": [],
-      "doi": "10.1175/wcas-d-25-0104.1",
-      "title": "multilingual community visualizations mcv a gis dashboard for linguistic research and nws operations",
-      "lane": "NOVEL_IDENTITY_RESEARCH",
-      "priority": 80,
-      "next_action": "Verify eligibility, primary SPARK project and funding",
-      "funding_signal": "POSSIBLE_WPO_459",
-      "crossref_structured_award_numbers": [
-        "NA22OAR4590187"
       ],
       "award_evidence_source_batches": [
         "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part006.csv"
@@ -3691,6 +3670,27 @@
       ],
       "award_evidence_source_batches": [
         "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part002.csv"
+      ],
+      "award_match_basis": "Historical Crossref feed structured award, matched to SPARK primary award at intake; output-to-project relevance still unverified",
+      "prior_disposition": "PROJECT_EVIDENCE_HOLD",
+      "scout_overlap": false,
+      "verified_reach_uid": null,
+      "private_hub_review": "NOT_VERIFIED"
+    },
+    {
+      "preprint_status": null,
+      "verified_published_dois": [],
+      "doi": "10.1175/wcas-d-25-0104.1",
+      "title": "multilingual community visualizations mcv a gis dashboard for linguistic research and nws operations",
+      "lane": "WAIT_FOR_NEW_EVIDENCE",
+      "priority": 10,
+      "next_action": "Reopen only on new evidence or official publication",
+      "funding_signal": "POSSIBLE_WPO_459",
+      "crossref_structured_award_numbers": [
+        "NA22OAR4590187"
+      ],
+      "award_evidence_source_batches": [
+        "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part006.csv"
       ],
       "award_match_basis": "Historical Crossref feed structured award, matched to SPARK primary award at intake; output-to-project relevance still unverified",
       "prior_disposition": "PROJECT_EVIDENCE_HOLD",
@@ -13056,7 +13056,7 @@
   "new_review_proposals": 0,
   "source_sha256": {
     "scout-operations/historical-crossref-screening/actionable-routing.json": "6e6561e92ff43a5ddc4f50d82a0dea7868f5689ff4e2728d7142e29fb9ab1f6a",
-    "scout-operations/research-outcome-registry.json": "abfb04129d05e561cee1e3e23445beef03945a22cc327c981107fda59f7cfc7f",
+    "scout-operations/research-outcome-registry.json": "bfbe11eb10384296449a1c59cace09215943dc3ca59117c01e0aed6b1250a8ec",
     "api-discoveries/historical-crossref/manifest.json": "799744c7e83f218d22cc19afacb7cfcf2762feb490659efde9f58bf19473b1fa",
     "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part001.csv": "df420ff561050c5f019ccddd19eb93124ab642eba8aa6f87dc0636b6d5ee2de3",
     "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part002.csv": "1cc9e5f3c493c6fa7cde93e0060718224686f695c7ba6d648208ecf9a09d69d7",
