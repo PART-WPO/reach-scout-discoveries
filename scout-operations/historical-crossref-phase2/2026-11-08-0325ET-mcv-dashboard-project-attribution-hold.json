@@ -1,0 +1,53 @@
+{
+  "schema": "reach-scout-bounded-research-evidence-v1",
+  "recorded_at": "2026-11-08T03:25:36-05:00",
+  "original_doi": "10.1175/WCAS-D-25-0104.1",
+  "cohort": "historical_crossref",
+  "lane": "original",
+  "routing_snapshot": {
+    "queue_lane": "NOVEL_IDENTITY_RESEARCH",
+    "queue_source_sha256_verified": "11/11 matched on 2026-11-08",
+    "reach_index_result": "NO_VERIFIED_EXISTING_REACH_UID_IN_QUEUE",
+    "public_scout_queue_matches_in_saved_router": 0,
+    "private_hub_decisions": "NOT_VERIFIED",
+    "source_registry_sha256": "abfb04129d05e561cee1e3e23445beef03945a22cc327c981107fda59f7cfc7f"
+  },
+  "new_research": [
+    {
+      "source": "https://journals.ametsoc.org/view/journals/wcas/18/2/wcas.18.issue-2.xml",
+      "finding": "Publisher journal issue identifies official article Multilingual Community Visualizations (MCV): A GIS Dashboard for Linguistic Research and NWS Operations, DOI 10.1175/WCAS-D-25-0104.1, volume 18 issue 2 pages 595-601.",
+      "evidence_class": "official publisher publication identity"
+    },
+    {
+      "source": "https://wpo.noaa.gov/spark/",
+      "finding": "Indexed primary SPARK project row for NA22OAR4590187: A Weather-Ready Nation Para Todos: Evaluating Current Practices in Communicating Hazardous Weather Risks to Spanish Speakers; PI Joseph Ripberger and collaborators include Joseph Trujillo-Falcon; scope includes WxDash, Spanish-speaking communities, NWS operations. This is primary Award Number(s), not Related Award Numbers.",
+      "evidence_class": "primary SPARK project context"
+    },
+    {
+      "source": "https://www.researchgate.net/publication/394008306_Multilingual_Community_Visualizations_MCV_A_GIS_Dashboard_for_Linguistic_Research_and_NWS_Operations",
+      "finding": "Manuscript acknowledgment text cites WPO JTTI NA22OAR4590187 along with CI discretionary funding; source is manuscript copy, not an independently verified publisher funding statement. MCV versus SPARK WxDash deliverable attribution remains unresolved.",
+      "evidence_class": "secondary manuscript award acknowledgment"
+    },
+    {
+      "source": "https://openalex.org/W7130656283",
+      "finding": "Bibliographic listing identifies 2026-02-20 publication, publisher AMS and article metadata; do not use this date in REACH until Crossref published-print/online priority verified.",
+      "evidence_class": "secondary bibliographic metadata"
+    }
+  ],
+  "publication_status": "OFFICIAL_PUBLISHED_ARTICLE_VERIFIED",
+  "funding_status": "PRIMARY_SPARK_AWARD_MATCH_WITH_DELIVERABLE_SCOPE_UNVERIFIED",
+  "identity_status": "REACH_AND_SCOUT_FULL_CACHE_PLUS_NOAA_IR_RECHECK_REQUIRED_BEFORE_PROPOSAL",
+  "preprint_status": "NOT_IDENTIFIED_AS_PREPRINT_IN_VERIFIED_QUEUE",
+  "next_action": "Obtain one source-specific confirmation that MCV dashboard article is a deliverable of primary SPARK project NA22OAR4590187 (rather than merely coauthor award support); then verify full REACH+Scout+NOAA IR identity, publisher/Crossref publication date and private feedback before any public review proposal. Do not repeat generic NOAA funding searches.",
+  "original_seed_expansion": {
+    "status": "OPEN",
+    "independent_expansion_completed": false
+  },
+  "decision": "PROJECT_EVIDENCE_HOLD",
+  "operational_disposition": "PROJECT_EVIDENCE_HOLD",
+  "candidate_staged": false,
+  "prior_human_decisions_modified": false,
+  "formal_original_closed": false,
+  "private_hub_import": "NOT_VERIFIED",
+  "reviewer_approval": "NOT_VERIFIED"
+}
