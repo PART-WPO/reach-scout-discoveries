@@ -76,7 +76,7 @@ class HumanProjectReferrals(unittest.TestCase):
         candidate=proposal(event["doi"],meta,event,project,self.identity("",""))
         with tempfile.TemporaryDirectory() as d:
             source=Path(d)/"proposals.json"
-            output=Path(d)/"candidate.csv"
+            output=Path(d)/"2026-11-09-verified-oar459-test.csv"
             source.write_text(json.dumps({"candidates":[candidate]}),encoding="utf-8")
             report=prepare(source,output)
             self.assertEqual(report["record_count"],1)
