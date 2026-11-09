@@ -18,6 +18,7 @@ from build_research_outcome_registry import build as research_registry
 
 ROOT = Path(__file__).resolve().parents[2]
 DEST = "scout-operations/research-memory/crosslane-relationship-graph.json"
+MISSION_DEST = "scout-operations/research-memory/mission-index.json"
 SCHEMA = "reach-scout-crosslane-research-memory-v1"
 RELATED = "scout-operations/monthly-expansion-leads.json"
 INDEPENDENT = "scout-operations/independent-discovery-leads.json"
@@ -385,6 +386,113 @@ def build(root=ROOT):
     }
 
 
+
+def mission_index(graph, *, max_per_lane=12):
+    """Compact, bounded research prompts for an hourly agent; not decisions.
+
+    The full relationship graph is intentionally larger. The hourly task
+    should inspect this source-fingerprinted index first, then fetch precise
+    public source evidence for the chosen DOI, not load 1.9MB of graph per run.
+    Existing active-workstream policy still sets lane order.
+    """
+    if graph.get("schema") != SCHEMA or not (1 <= max_per_lane <= 50):
+        raise ValueError("Invalid graph or mission index bound")
+    nodes = {x["doi"]: x for x in graph["nodes"]}
+    groups = {
+        "monthly_original": [],
+        "monthly_related": [],
+        "historical_crossref_original": [],
+        "verified_reach_expansion": [],
+        "historical_datacite_original": [],
+        "additional_related_output": [],
+        "preprint_watchlist_only": [],
+        "code_or_url_research": [],
+    }
+    for item in graph["work_items"]:
+        track = item["track"]
+        d = item.get("doi")
+        if track == "CODE_OR_URL_EVIDENCE":
+            groups["code_or_url_research"].append({
+                "non_doi_identity_key": item["non_doi_identity_key"],
+                "source_path": item["source_path"],
+                "next_action": item["next_action"],
+                "note_only": True, "automatic_staging": False
+            })
+            continue
+        if d not in nodes:
+            raise ValueError("Work item without verified graph DOI node")
+        node = nodes[d]
+        note_count = node["original_research"]["recorded_note_count"]
+        child_count = node["expansion_research"]["explicit_related_doi_count"]
+        candidate = {
+            "doi": d, "track": track, "next_action": item["next_action"],
+            "original_prior_note_count": note_count,
+            "explicit_related_links": child_count,
+            "input_fingerprint": item.get("input_fingerprint"),
+            "recheck_current_identity_and_award": True,
+            "automatically_completed_or_staged": False,
+        }
+        if track == "RELATED_OUTPUT":
+            category = ("monthly_related" if "monthly_related_outputs" in node["lanes"]
+                        else "additional_related_output")
+            groups[category].append(candidate)
+        elif track == "ORIGINAL" and item["lane"] == "MONTHLY":
+            if node["preprint_or_version_hold"]:
+                groups["preprint_watchlist_only"].append(candidate)
+            else:
+                groups["monthly_original"].append(candidate)
+        elif track == "ORIGINAL" and item["lane"] == "HISTORICAL_CROSSREF":
+            if item["next_action"] not in (
+                "REUSE_VERIFIED_REACH_IDENTITY_NO_DUPLICATE_ORIGINAL",
+                "PREPRINT_WATCHLIST_NOT_ELIGIBLE_AS_ORIGINAL"):
+                groups["historical_crossref_original"].append(candidate)
+        elif track == "ORIGINAL" and item["lane"] == "HISTORICAL_DATACITE":
+            if node["preprint_or_version_hold"]:
+                groups["preprint_watchlist_only"].append(candidate)
+            else:
+                groups["historical_datacite_original"].append(candidate)
+        elif track == "EXPANSION" and item["next_action"] == "EXPAND_VERIFIED_WPO_REACH_SEED":
+            groups["verified_reach_expansion"].append(candidate)
+
+    # Prefer research without prior notes, except explicit related outputs
+    # whose identity and funding require separate follow-up. Previously
+    # examined notes still remain addressable; nothing is marked complete.
+    for name, candidates in groups.items():
+        if name in ("monthly_related", "additional_related_output"):
+            candidates.sort(key=lambda x: (x["original_prior_note_count"], x.get("doi", "")))
+        elif name == "verified_reach_expansion":
+            candidates.sort(key=lambda x: (x["original_prior_note_count"],
+                                           -x["explicit_related_links"], x["doi"]))
+        else:
+            candidates.sort(key=lambda x: (x.get("original_prior_note_count", 0),
+                                           x.get("doi", x.get("non_doi_identity_key", ""))))
+    counts = {name: len(candidates) for name, candidates in groups.items()}
+    return {
+        "schema": "reach-scout-compact-crosslane-mission-index-v1",
+        "graph_schema": SCHEMA,
+        "source_fingerprint": graph["source_fingerprint"],
+        "group_counts_before_preview_bound": counts,
+        "max_preview_per_group": max_per_lane,
+        "recommended_preview": {
+            name: values[:max_per_lane] for name, values in groups.items()
+        },
+        "verified_reach_expansion_total_preserved": graph[
+            "verified_reach_originals_preserved_as_expansion_seeds"],
+        "graph_original_track_items": graph["work_track_counts"].get("ORIGINAL", 0),
+        "graph_expansion_track_items": graph["work_track_counts"].get("EXPANSION", 0),
+        "historical_metadata_pointers_currently_revalidated": False,
+        "reviewer_approval_or_publication_inferred": False,
+        "private_hub_state": "NOT_VERIFIED",
+        "spark_author_or_personnel_data_used": False,
+        "priority_policy": ("Consult active-workstream.json for month-first scheduling. "
+                            "Use this bounded preview for choosing individual source-backed "
+                            "work, check graph source fingerprint, and investigate one "
+                            "fresh distinct source rather than repeat unchanged notes. "
+                            "Do not confuse a verified REACH original with completed "
+                            "expansion. Recheck identity, preprint and exact WPO project "
+                            "funding independently. No private reviewer inference."),
+    }
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--check", action="store_true")
@@ -393,13 +501,19 @@ def main():
     output = build(ROOT)
     dest = ROOT / DEST
     raw = json.dumps(output, sort_keys=True, indent=2, ensure_ascii=False) + "\n"
+    preview = mission_index(output)
+    mini_path = ROOT / MISSION_DEST
+    mini_raw = json.dumps(preview, sort_keys=True, indent=2, ensure_ascii=False) + "\n"
     if a.check:
         if not dest.exists() or dest.read_text(encoding="utf-8") != raw:
             raise ValueError("Persistent cross-lane research memory is stale; rebuild")
+        if not mini_path.exists() or mini_path.read_text(encoding="utf-8") != mini_raw:
+            raise ValueError("Compact hourly Scout research missions index is stale")
     else:
         dest.parent.mkdir(parents=True, exist_ok=True)
-        if not dest.exists() or dest.read_text(encoding="utf-8") != raw:
-            dest.write_text(raw, encoding="utf-8")
+        for path, body in ((dest, raw), (mini_path, mini_raw)):
+            if not path.exists() or path.read_text(encoding="utf-8") != body:
+                path.write_text(body, encoding="utf-8")
     summary = {k: v for k, v in output.items()
                if k in ("source_fingerprint", "preflighted_lane_doi_records",
                         "distinct_public_doi_nodes", "explicit_related_output_links",
@@ -407,6 +521,7 @@ def main():
                         "verified_reach_originals_preserved_as_expansion_seeds",
                         "historical_metadata_pointers_not_treated_as_current",
                         "work_track_counts", "work_action_counts")}
+    summary["compact_mission_preview_counts"] = preview["group_counts_before_preview_bound"]
     print(json.dumps(summary, indent=2, sort_keys=True))
 
 
