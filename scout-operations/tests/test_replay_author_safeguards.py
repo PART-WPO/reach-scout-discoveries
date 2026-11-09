@@ -130,7 +130,9 @@ class AuthorEvidenceSafeguardsTests(unittest.TestCase):
         for row in rows:
             funder = [{"name": "NOAA", "award": [AWARD]}] if row["doi"] == "10.1234/lead1" else []
             documents[row["doi"]] = candidate(
-                row["doi"], row["title"], funder=funder)
+                row["doi"], row["title"], funder=funder,
+                authors=[author()] if row["doi"] not in
+                    {"10.1234/lead0", "10.1234/lead1"} else None)
         def meta(doi): return documents[doi]
         result = evaluate_leads(output, cache(), index(), watchlist(), {"dois": {}},
                                 get_metadata=meta)
