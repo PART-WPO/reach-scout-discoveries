@@ -9,8 +9,8 @@ import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
-from decision_pipeline import (build_index, check_index_fresh, evaluate, lookup,
-                               norm_doi, norm_title)
+from decision_pipeline import (VERSION, build_index, check_index_fresh, current_checkpoints,
+                               evaluate, lookup, norm_doi, norm_title)
 
 
 class DecisionPipelineTests(unittest.TestCase):
@@ -134,6 +134,26 @@ class DecisionPipelineTests(unittest.TestCase):
                         title="Already Published Report")
         self.assertEqual(result["status"], "POSSIBLE_PUBLIC_REACH_MATCH")
         self.assertNotEqual(result["status"], "CONFIRMED_PUBLIC_REACH_IDENTITY")
+
+    def test_current_checkpoint_ignores_old_immutable_revisions(self):
+        case = self.case(doi="10.1234/new")
+        fingerprint = hashlib.sha256(json.dumps({
+            "case": case, "index": self.index["source_fingerprint"],
+            "version": VERSION}, sort_keys=True).encode()).hexdigest()
+        hash_id = hashlib.sha256(case["doi"].encode()).hexdigest()[:16]
+        folder = "scout-operations/case-checkpoints/doi-" + hash_id
+        self.write_json(folder + "/rev-" + fingerprint[:20] + ".json", {
+            "case_input": case, "input_fingerprint": fingerprint,
+            "index_fingerprint": self.index["source_fingerprint"],
+            "evaluation": {"doi": case["doi"], "decision": "READY_FOR_VALIDATED_DRAFT_PREFLIGHT"}})
+        self.write_json(folder + "/rev-obsolete.json", {
+            "case_input": case, "input_fingerprint": "outdated",
+            "index_fingerprint": self.index["source_fingerprint"]})
+        rows = current_checkpoints(self.index, [case], self.root)
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0]["input_fingerprint"], fingerprint)
+        with self.assertRaisesRegex(ValueError, "checkpoint missing"):
+            current_checkpoints(self.index, [self.case(doi="10.1234/another")], self.root)
 
     def test_source_fingerprint_fails_closed_when_inbox_changes(self):
         check_index_fresh(self.root, self.index)
