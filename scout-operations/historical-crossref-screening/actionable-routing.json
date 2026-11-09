@@ -5,7 +5,7 @@
   "reach_cache_sha256": "6660562e325a6a141198f59acce84f2e30d9a2d14e6cf5acd29769c8a4b68e1e",
   "reach_source_manifest_sha256": "f94ae52cac483b52e9a5cd6e775c6faa01ad6ec33610b249b3d486aed6daa003",
   "noaa_ir_manifest_sha256": "2866655e200a896a39b3bda4d22c218009f28915463e95358c025ea8f4461b3e",
-  "noaa_ir_existing_reach_url_matches": 358,
+  "noaa_ir_existing_reach_url_matches": 351,
   "shared_identity_index_fingerprint": "64593e9870d8ba945ffb28d1a5a610bf23e5e112d1c908a9151e6ebb34bac034",
   "public_scout_queue_overlap_dois": 32,
   "reach_source_records": 1238,
@@ -23,11 +23,11 @@
     },
     "evidence_basis_counts": {
       "EXACT_REACH_DOI_AND_TITLE": 79,
-      "MULTIPLE_REACH_IDENTITIES": 6,
+      "MULTIPLE_REACH_IDENTITIES": 5,
       "NORMALIZED_TITLE_ONLY": 19,
       "NO_PUBLIC_REACH_IDENTITY_MATCH": 134,
-      "OFFICIAL_IR_IDENTITY_AMBIGUOUS_OR_CONFLICTING": 11,
-      "STRONG_IDENTITY_BUT_TITLE_OR_VERSION_DISAGREES": 18,
+      "OFFICIAL_IR_IDENTITY_AMBIGUOUS_OR_CONFLICTING": 18,
+      "STRONG_IDENTITY_BUT_TITLE_OR_VERSION_DISAGREES": 12,
       "VERIFIED_NOAA_IR_DOI_TO_REACH_URL_AND_TITLE": 347
     },
     "source_dois": 614
@@ -5450,7 +5450,7 @@
       "doi": "10.1029/2024wr037507",
       "title": "assessing the potential for medium range ice forecasts in the laurentian great lakes",
       "outcome": "LIKELY_IN_REACH",
-      "route": "VERIFY_TITLE_VERSION_ONCE",
+      "route": "VERIFY_OFFICIAL_IR_AND_VERSION_CONFLICT_ONCE",
       "scout_public_queue_matches": [
         {
           "source": "SCOUT_PUBLISHED",
@@ -5465,30 +5465,21 @@
       "scout_public_queue_match_count": 1,
       "scout_overlap": true,
       "noaa_ir_reach_check": {
-        "status": "VERIFIED_OFFICIAL_IR_DOI_TO_EXISTING_REACH_URL",
+        "status": "IR_URL_MATCH_REQUIRES_REVIEW",
         "official_url": "https://repository.library.noaa.gov/view/noaa/67984",
         "match_uid": "reachuid-v1-bfcbeda65b4a152cab5ccb9f40f2aacc",
         "match_detail_shard": "agent-data/details/part-051.csv"
       },
       "bulk_identity_gate": {
         "status": "NEEDS_IDENTITY_REVIEW",
-        "route": "VERIFY_TITLE_VERSION_ONCE",
-        "basis": "STRONG_IDENTITY_BUT_TITLE_OR_VERSION_DISAGREES",
+        "route": "VERIFY_OFFICIAL_IR_AND_VERSION_CONFLICT_ONCE",
+        "basis": "OFFICIAL_IR_IDENTITY_AMBIGUOUS_OR_CONFLICTING",
         "verified_reach_uid": null,
         "verified_record_id": null,
         "verified_detail_path": null,
         "requires_human_identity_review": true
       },
-      "matches": [
-        {
-          "reach_uid": "reachuid-v1-bfcbeda65b4a152cab5ccb9f40f2aacc",
-          "record_id": "reach-000404",
-          "doi_hit": false,
-          "title_hit": false,
-          "official_ir_url_hit": true,
-          "detail_path": "agent-data/details/part-051.csv"
-        }
-      ],
+      "matches": [],
       "original_triage_modified": false,
       "expansion_seed_preserved": true,
       "private_hub_review_verified": false,
@@ -6005,7 +5996,7 @@
       "doi": "10.1029/2025ms005126",
       "title": "parameterization of frequency dependent internal wave drag in global ocean models",
       "outcome": "LIKELY_IN_REACH",
-      "route": "VERIFY_TITLE_VERSION_ONCE",
+      "route": "VERIFY_OFFICIAL_IR_AND_VERSION_CONFLICT_ONCE",
       "scout_public_queue_matches": [
         {
           "source": "SCOUT_PUBLISHED",
@@ -6020,15 +6011,15 @@
       "scout_public_queue_match_count": 1,
       "scout_overlap": true,
       "noaa_ir_reach_check": {
-        "status": "VERIFIED_OFFICIAL_IR_DOI_TO_EXISTING_REACH_URL",
+        "status": "IR_URL_MATCH_REQUIRES_REVIEW",
         "official_url": "https://repository.library.noaa.gov/view/noaa/73117",
         "match_uid": "reachuid-v1-ee71149ef66437c2f5ec5811d469b937",
         "match_detail_shard": "agent-data/details/part-137.csv"
       },
       "bulk_identity_gate": {
         "status": "NEEDS_IDENTITY_REVIEW",
-        "route": "VERIFY_TITLE_VERSION_ONCE",
-        "basis": "STRONG_IDENTITY_BUT_TITLE_OR_VERSION_DISAGREES",
+        "route": "VERIFY_OFFICIAL_IR_AND_VERSION_CONFLICT_ONCE",
+        "basis": "OFFICIAL_IR_IDENTITY_AMBIGUOUS_OR_CONFLICTING",
         "verified_reach_uid": null,
         "verified_record_id": null,
         "verified_detail_path": null,
@@ -6040,7 +6031,7 @@
           "record_id": "reach-001211",
           "doi_hit": true,
           "title_hit": false,
-          "official_ir_url_hit": true,
+          "official_ir_url_hit": false,
           "detail_path": "agent-data/details/part-137.csv"
         }
       ],
@@ -6321,35 +6312,26 @@
       "doi": "10.1038/s41467-025-56692-2",
       "title": "volcanically forced madden julian oscillation triggers the immediate onset of el ni o",
       "outcome": "LIKELY_IN_REACH",
-      "route": "VERIFY_TITLE_VERSION_ONCE",
+      "route": "VERIFY_OFFICIAL_IR_AND_VERSION_CONFLICT_ONCE",
       "scout_public_queue_matches": [],
       "scout_public_queue_match_count": 0,
       "scout_overlap": false,
       "noaa_ir_reach_check": {
-        "status": "VERIFIED_OFFICIAL_IR_DOI_TO_EXISTING_REACH_URL",
+        "status": "IR_URL_MATCH_REQUIRES_REVIEW",
         "official_url": "https://repository.library.noaa.gov/view/noaa/70219",
         "match_uid": "reachuid-v1-331b3acdb3442d26db688af05c31bb45",
         "match_detail_shard": "agent-data/details/part-046.csv"
       },
       "bulk_identity_gate": {
         "status": "NEEDS_IDENTITY_REVIEW",
-        "route": "VERIFY_TITLE_VERSION_ONCE",
-        "basis": "STRONG_IDENTITY_BUT_TITLE_OR_VERSION_DISAGREES",
+        "route": "VERIFY_OFFICIAL_IR_AND_VERSION_CONFLICT_ONCE",
+        "basis": "OFFICIAL_IR_IDENTITY_AMBIGUOUS_OR_CONFLICTING",
         "verified_reach_uid": null,
         "verified_record_id": null,
         "verified_detail_path": null,
         "requires_human_identity_review": true
       },
-      "matches": [
-        {
-          "reach_uid": "reachuid-v1-331b3acdb3442d26db688af05c31bb45",
-          "record_id": "reach-000368",
-          "doi_hit": false,
-          "title_hit": false,
-          "official_ir_url_hit": true,
-          "detail_path": "agent-data/details/part-046.csv"
-        }
-      ],
+      "matches": [],
       "original_triage_modified": false,
       "expansion_seed_preserved": true,
       "private_hub_review_verified": false,
@@ -10496,35 +10478,26 @@
       "doi": "10.1175/jhm-d-23-0211.1",
       "title": "evaluation of noah mp snow simulation across site conditions in the western united states",
       "outcome": "LIKELY_IN_REACH",
-      "route": "VERIFY_TITLE_VERSION_ONCE",
+      "route": "VERIFY_OFFICIAL_IR_AND_VERSION_CONFLICT_ONCE",
       "scout_public_queue_matches": [],
       "scout_public_queue_match_count": 0,
       "scout_overlap": false,
       "noaa_ir_reach_check": {
-        "status": "VERIFIED_OFFICIAL_IR_DOI_TO_EXISTING_REACH_URL",
+        "status": "IR_URL_MATCH_REQUIRES_REVIEW",
         "official_url": "https://repository.library.noaa.gov/view/noaa/70623",
         "match_uid": "reachuid-v1-0089a090b3f6f694846121b4075a65d3",
         "match_detail_shard": "agent-data/details/part-003.csv"
       },
       "bulk_identity_gate": {
         "status": "NEEDS_IDENTITY_REVIEW",
-        "route": "VERIFY_TITLE_VERSION_ONCE",
-        "basis": "STRONG_IDENTITY_BUT_TITLE_OR_VERSION_DISAGREES",
+        "route": "VERIFY_OFFICIAL_IR_AND_VERSION_CONFLICT_ONCE",
+        "basis": "OFFICIAL_IR_IDENTITY_AMBIGUOUS_OR_CONFLICTING",
         "verified_reach_uid": null,
         "verified_record_id": null,
         "verified_detail_path": null,
         "requires_human_identity_review": true
       },
-      "matches": [
-        {
-          "reach_uid": "reachuid-v1-0089a090b3f6f694846121b4075a65d3",
-          "record_id": "reach-000018",
-          "doi_hit": false,
-          "title_hit": false,
-          "official_ir_url_hit": true,
-          "detail_path": "agent-data/details/part-003.csv"
-        }
-      ],
+      "matches": [],
       "original_triage_modified": false,
       "expansion_seed_preserved": true,
       "private_hub_review_verified": false,
@@ -15563,20 +15536,20 @@
       "doi": "10.1175/waf-d-22-0143.1",
       "title": "a new paradigm for medium range severe weather forecasts probabilistic random forest based predictions",
       "outcome": "LIKELY_IN_REACH",
-      "route": "VERIFY_MULTIPLE_REACH_IDENTITIES_ONCE",
+      "route": "VERIFY_OFFICIAL_IR_AND_VERSION_CONFLICT_ONCE",
       "scout_public_queue_matches": [],
       "scout_public_queue_match_count": 0,
       "scout_overlap": false,
       "noaa_ir_reach_check": {
-        "status": "VERIFIED_OFFICIAL_IR_DOI_TO_EXISTING_REACH_URL",
+        "status": "IR_URL_MATCH_REQUIRES_REVIEW",
         "official_url": "https://repository.library.noaa.gov/view/noaa/53429",
         "match_uid": "reachuid-v1-0d14b5f4e418b702b2e2b71d40123ba0",
         "match_detail_shard": "agent-data/details/part-039.csv"
       },
       "bulk_identity_gate": {
         "status": "NEEDS_IDENTITY_REVIEW",
-        "route": "VERIFY_MULTIPLE_REACH_IDENTITIES_ONCE",
-        "basis": "MULTIPLE_REACH_IDENTITIES",
+        "route": "VERIFY_OFFICIAL_IR_AND_VERSION_CONFLICT_ONCE",
+        "basis": "OFFICIAL_IR_IDENTITY_AMBIGUOUS_OR_CONFLICTING",
         "verified_reach_uid": null,
         "verified_record_id": null,
         "verified_detail_path": null,
@@ -15588,7 +15561,7 @@
           "record_id": "reach-000308",
           "doi_hit": false,
           "title_hit": true,
-          "official_ir_url_hit": true,
+          "official_ir_url_hit": false,
           "detail_path": "agent-data/details/part-039.csv"
         },
         {
@@ -18620,35 +18593,26 @@
       "doi": "10.1175/wcas-d-23-0013.1",
       "title": "understanding broadcast meteorologists current and future use of severe weather watches warnings and probabilistic hazard information",
       "outcome": "LIKELY_IN_REACH",
-      "route": "VERIFY_TITLE_VERSION_ONCE",
+      "route": "VERIFY_OFFICIAL_IR_AND_VERSION_CONFLICT_ONCE",
       "scout_public_queue_matches": [],
       "scout_public_queue_match_count": 0,
       "scout_overlap": false,
       "noaa_ir_reach_check": {
-        "status": "VERIFIED_OFFICIAL_IR_DOI_TO_EXISTING_REACH_URL",
+        "status": "IR_URL_MATCH_REQUIRES_REVIEW",
         "official_url": "https://repository.library.noaa.gov/view/noaa/55784",
         "match_uid": "reachuid-v1-ef5de89ca0392144e39570a8a93f0cdc",
         "match_detail_shard": "agent-data/details/part-090.csv"
       },
       "bulk_identity_gate": {
         "status": "NEEDS_IDENTITY_REVIEW",
-        "route": "VERIFY_TITLE_VERSION_ONCE",
-        "basis": "STRONG_IDENTITY_BUT_TITLE_OR_VERSION_DISAGREES",
+        "route": "VERIFY_OFFICIAL_IR_AND_VERSION_CONFLICT_ONCE",
+        "basis": "OFFICIAL_IR_IDENTITY_AMBIGUOUS_OR_CONFLICTING",
         "verified_reach_uid": null,
         "verified_record_id": null,
         "verified_detail_path": null,
         "requires_human_identity_review": true
       },
-      "matches": [
-        {
-          "reach_uid": "reachuid-v1-ef5de89ca0392144e39570a8a93f0cdc",
-          "record_id": "reach-000743",
-          "doi_hit": false,
-          "title_hit": false,
-          "official_ir_url_hit": true,
-          "detail_path": "agent-data/details/part-090.csv"
-        }
-      ],
+      "matches": [],
       "original_triage_modified": false,
       "expansion_seed_preserved": true,
       "private_hub_review_verified": false,
@@ -18734,7 +18698,7 @@
       "doi": "10.1175/wcas-d-23-0046.1",
       "title": "contextualizing disaster phases using social media data hurricane risk visualizations during the forecast and warning phase of hurricane irma",
       "outcome": "LIKELY_IN_REACH",
-      "route": "VERIFY_TITLE_VERSION_ONCE",
+      "route": "VERIFY_OFFICIAL_IR_AND_VERSION_CONFLICT_ONCE",
       "scout_public_queue_matches": [
         {
           "source": "SCOUT_PUBLISHED",
@@ -18749,30 +18713,21 @@
       "scout_public_queue_match_count": 1,
       "scout_overlap": true,
       "noaa_ir_reach_check": {
-        "status": "VERIFIED_OFFICIAL_IR_DOI_TO_EXISTING_REACH_URL",
+        "status": "IR_URL_MATCH_REQUIRES_REVIEW",
         "official_url": "https://repository.library.noaa.gov/view/noaa/60113",
         "match_uid": "reachuid-v1-e0cb19c082488760d0bd8ce46fb31fe0",
         "match_detail_shard": "agent-data/details/part-095.csv"
       },
       "bulk_identity_gate": {
         "status": "NEEDS_IDENTITY_REVIEW",
-        "route": "VERIFY_TITLE_VERSION_ONCE",
-        "basis": "STRONG_IDENTITY_BUT_TITLE_OR_VERSION_DISAGREES",
+        "route": "VERIFY_OFFICIAL_IR_AND_VERSION_CONFLICT_ONCE",
+        "basis": "OFFICIAL_IR_IDENTITY_AMBIGUOUS_OR_CONFLICTING",
         "verified_reach_uid": null,
         "verified_record_id": null,
         "verified_detail_path": null,
         "requires_human_identity_review": true
       },
-      "matches": [
-        {
-          "reach_uid": "reachuid-v1-e0cb19c082488760d0bd8ce46fb31fe0",
-          "record_id": "reach-000799",
-          "doi_hit": false,
-          "title_hit": false,
-          "official_ir_url_hit": true,
-          "detail_path": "agent-data/details/part-095.csv"
-        }
-      ],
+      "matches": [],
       "original_triage_modified": false,
       "expansion_seed_preserved": true,
       "private_hub_review_verified": false,
