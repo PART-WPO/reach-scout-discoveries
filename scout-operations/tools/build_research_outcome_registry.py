@@ -10,6 +10,7 @@ import json
 import re
 from collections import Counter,defaultdict
 from pathlib import Path
+from urllib.parse import urlsplit
 
 from decision_pipeline import norm_doi,norm_url
 
@@ -73,9 +74,59 @@ def node_ids(doc):
         if doc.get(k):
             yield doc[k],doc,"original" if k in ("original_doi","doi") else "seed"
             return
+    subject=doc.get("research_subject")
+    if isinstance(subject,dict) and "child_dois" in subject:
+        # Explicit multi-output research evidence: never attribute a child's
+        # expansion investigation to the parent's original research identity.
+        parent=norm_doi(subject.get("parent_publication_doi"))
+        children=subject["child_dois"]
+        if not parent or not isinstance(children,list) or not children:
+            raise ValueError("Related-output note needs a parent DOI and child DOI list")
+        seen=set()
+        for raw_child in children:
+            child=norm_doi(raw_child)
+            if not child or child==parent or child in seen:
+                raise ValueError("Invalid, repeated or self-related child DOI")
+            seen.add(child)
+            yield child,doc,"related_output"
+        return
     identity=doc.get("identity")
     if isinstance(identity,dict) and identity.get("canonical_url"):
         yield identity["canonical_url"],doc,"code"
+
+
+def verified_relation_sources(doc, child):
+    """Require explicit child DOI plus two independent official source notes.
+
+    These source references are provenance for a research relationship, not
+    funding, metadata, duplicate status, human review or output eligibility.
+    DOI identities come ONLY from structured child_dois, never prose searches.
+    """
+    sources={}
+    explicit_confirmations=set()
+    subject=doc.get("research_subject") or {}
+    listed_children=[norm_doi(x) for x in subject.get("child_dois", [])]
+    for entry in doc.get("source_evidence", []):
+        if not isinstance(entry,dict):
+            continue
+        url=str(entry.get("url") or "")
+        kind=str(entry.get("type") or "").lower()
+        finding=str(entry.get("finding") or "").lower()
+        explicit=child in finding or child in {
+            norm_doi(x) for x in entry.get("confirmed_child_dois", [])
+        }
+        # Legacy two-child evidence specifically states that the independent
+        # official repository confirms *both* explicitly enumerated child links.
+        paired_confirmation=(len(listed_children)==2 and child in listed_children
+                             and "both child doi links" in finding)
+        if (url.startswith("https://") and kind.startswith("official_")
+                and (explicit or paired_confirmation)):
+            sources[url]=kind
+            if explicit:
+                explicit_confirmations.add(url)
+    domains={urlsplit(url).netloc.lower() for url in sources}
+    return (sorted(sources) if len(domains)>=2 and len(set(sources.values()))>=2
+            and explicit_confirmations else [])
 
 def source_decision(parent,node):
     # Specific nested case decision always outranks aggregate report text.
@@ -104,7 +155,10 @@ def build(root=ROOT):
                 if not doi and not code_url:
                     raise ValueError("Invalid research case identifier in "+relative)
                 identity=("doi:"+doi) if doi else "url:"+code_url
-                decision=source_decision(doc,node)
+                # This evidence schema records a direct operational disposition
+                # rather than a legacy nested decision. Do not dilute a hold.
+                decision=(str(doc.get("operational_disposition") or "")
+                          if role=="related_output" else source_decision(doc,node))
                 explicit=stable_decision(decision)
                 action=str(node.get("next_action") or doc.get("next_action")
                            or node.get("original_action") or doc.get("original_action") or "")
@@ -121,7 +175,8 @@ def build(root=ROOT):
                             |set(extract_sources(doc.get("distinct_followup_sources",[]))))
                 # Only an explicit human question with bounded sources can be
                 # recommended for later human handoff; no auto feed publication.
-                human_ready=explicit==HUMAN and len(urls)>=2 and bool(action.strip())
+                human_ready=(explicit==HUMAN and role!="related_output"
+                             and len(urls)>=2 and bool(action.strip()))
                 event={"event_id":sha((relative+"\n"+identity+"\n"+sha(raw)).encode())[:24],
                     "identity":identity,"doi":doi or None,"url_only":code_url or None,
                     "role_in_note":role,"research_lane":route,
@@ -134,6 +189,14 @@ def build(root=ROOT):
                     "formal_original_closed":False,"separate_expansion_closed":False,
                     "new_public_proposal":False,"private_hub_import":"NOT_VERIFIED",
                     "reviewer_approval":"NOT_VERIFIED"}
+                if role=="related_output":
+                    parent=norm_doi(doc["research_subject"]["parent_publication_doi"])
+                    relation_urls=verified_relation_sources(doc,doi)
+                    event.update({
+                        "related_parent_doi":parent,
+                        "related_link_source_urls":relation_urls,
+                        "relationship_verified_from_two_official_sources":len(relation_urls)>=2,
+                    })
                 events.append(event)
     # Group note history per public research identity without discarding
     # any source record or losing project-title vs historical provenance.

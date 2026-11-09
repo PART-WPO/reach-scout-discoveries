@@ -49,6 +49,47 @@ class OutcomeRegistryTests(unittest.TestCase):
             self.assertTrue(match["bounded_human_question_to_verify"])
             self.assertFalse(match["new_public_proposal"])
             self.assertEqual(next(x for x in r["events"] if x["doi"]=="10.1000/unavailable")["operational_disposition"],ACCESS)
+    def test_explicit_multi_child_expansion_has_independent_bounded_hold_events(self):
+        registry=build()
+        suffix="2026-11-09-1129ET-seus-rainfall-zenodo-related-ci-award-hold.json"
+        matches=[e for e in registry["events"] if e["source_path"].endswith(suffix)]
+        self.assertEqual({e["doi"] for e in matches},{
+            "10.5281/zenodo.4433147","10.5281/zenodo.5057616"})
+        self.assertTrue(all(e["role_in_note"]=="related_output" for e in matches))
+        self.assertTrue(all(e["operational_disposition"]==HOLD for e in matches))
+        self.assertTrue(all(e["related_parent_doi"]=="10.1029/2021gl096709"
+                            for e in matches))
+        self.assertTrue(all(e["relationship_verified_from_two_official_sources"]
+                            and len(e["related_link_source_urls"])==2
+                            for e in matches))
+        self.assertTrue(all(not e["formal_original_closed"] and
+                            not e["separate_expansion_closed"] and
+                            not e["bounded_human_question_to_verify"] and
+                            not e["new_public_proposal"] for e in matches))
+
+    def test_unverified_parent_child_link_is_research_only_not_relationship_proof(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root=Path(temp)
+            a=root/"scout-operations/historical-crossref-phase2"
+            b=root/"scout-operations/monthly-research"
+            a.mkdir(parents=True);b.mkdir(parents=True)
+            (a/"2026-11-09-unverified-related.json").write_text(json.dumps({
+              "research_subject":{"parent_publication_doi":"10.1000/parent",
+                                  "child_dois":["10.1000/child"]},
+              "operational_disposition":"PROJECT_EVIDENCE_HOLD",
+              "source_evidence":[{"url":"https://publisher.example.org/article",
+                "type":"official_publisher_article",
+                "finding":"Links 10.1000/child to the article"}]}))
+            registry=build(root)
+            self.assertEqual(len(registry["events"]),1)
+            e=registry["events"][0]
+            self.assertEqual(e["role_in_note"],"related_output")
+            self.assertEqual(e["operational_disposition"],HOLD)
+            self.assertFalse(e["relationship_verified_from_two_official_sources"])
+            self.assertFalse(e["related_link_source_urls"])
+            self.assertFalse(e["bounded_human_question_to_verify"])
+            self.assertFalse(e["new_public_proposal"])
+
     def test_no_inference_from_missing_or_preprint_status(self):
         self.assertEqual(stable_decision("PREPRINT_HOLD"),PREPRINT)
         self.assertEqual(stable_decision("SOFT_DEFER_UNTIL_MATERIAL_WPO_PROJECT_EVIDENCE"),HOLD)

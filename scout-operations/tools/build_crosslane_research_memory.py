@@ -148,6 +148,25 @@ def build(root=ROOT):
         require_sha(root, rel, checksum)
 
     edges, edge_sources = source_links(root)
+    # Relate separately documented child DOI identities only when the
+    # append-only note explicitly names parent/children AND two independent
+    # official sources support each relationship. Unverified notes still
+    # enter per-child research memory but cannot manufacture graph links.
+    for event in journal["events"]:
+        if (event.get("role_in_note") != "related_output"
+                or not event.get("relationship_verified_from_two_official_sources")):
+            continue
+        parent = doi(event.get("related_parent_doi"))
+        child = doi(event.get("doi"))
+        if not parent or not child or parent == child:
+            raise ValueError("Invalid source-backed child DOI relationship")
+        rel = event["source_path"]
+        checksum = event["source_sha256"]
+        if rel in edge_sources and edge_sources[rel] != checksum:
+            raise ValueError("Conflicting public relationship source SHA: " + rel)
+        edge_sources[rel] = checksum
+        edges.setdefault((parent, child), set()).add(
+            (rel, "official_sources_verified_related_research_note"))
     historic_metadata, historic_sha = metadata_pointers(root)
     node_rows = defaultdict(list)
     note_rows = defaultdict(list)
@@ -216,6 +235,8 @@ def build(root=ROOT):
     for d in sorted(all_dois):
         cases = sorted(node_rows[d], key=lambda c: c["discovery_lane"])
         events = sorted(note_rows[d], key=lambda v: (v["source_path"], v["event_id"]))
+        original_events = [e for e in events if e.get("role_in_note") != "related_output"]
+        related_events = [e for e in events if e.get("role_in_note") == "related_output"]
         lanes = sorted({x["discovery_lane"] for x in cases})
         verified_reach = any(
             x["discovery_lane"] == "historical_crossref"
@@ -234,12 +255,15 @@ def build(root=ROOT):
              "effective_identity": row["effective_identity_or_preflight"]}
             for row in cases
         ]
-        note_ids = sorted({e["event_id"] for e in events})
-        prior_dispositions = sorted({e["operational_disposition"] for e in events})
+        note_ids = sorted({e["event_id"] for e in original_events})
+        related_note_ids = sorted({e["event_id"] for e in related_events})
+        prior_dispositions = sorted({e["operational_disposition"] for e in original_events})
+        related_dispositions = sorted({e["operational_disposition"] for e in related_events})
         original_fingerprint = sha(canonical({"case_signatures": signatures,
                                                "prior_note_ids": note_ids}))
         expansion_fingerprint = sha(canonical({
             "original_fingerprint": original_fingerprint,
+            "prior_related_note_ids": related_note_ids,
             "related_doi_ids": sorted(children[d]),
             "reference_source_shas": sorted({edge_sources[rel]
                 for (src, _), refs in edges.items() if src == d
@@ -260,19 +284,27 @@ def build(root=ROOT):
             "preprint_or_version_hold": bool(preprint),
             "original_research": {
                 "input_fingerprint": original_fingerprint,
-                "recorded_note_count": len(events),
+                "recorded_note_count": len(original_events),
                 "recorded_note_event_ids": note_ids,
                 "source_evidence_file_sha256": [
                     {"path": e["source_path"], "sha256": e["source_sha256"]}
-                    for e in events
+                    for e in original_events
                 ],
                 "nonterminal_dispositions": prior_dispositions,
-                "reuse_prior_notes_before_new_queries": bool(events),
+                "reuse_prior_notes_before_new_queries": bool(original_events),
                 "identity_screened_current_snapshot": bool(cases),
                 "formal_original_closed_by_memory": False,
             },
             "expansion_research": {
                 "input_fingerprint": expansion_fingerprint,
+                "recorded_related_note_count": len(related_events),
+                "recorded_related_note_event_ids": related_note_ids,
+                "related_source_evidence_file_sha256": [
+                    {"path": e["source_path"], "sha256": e["source_sha256"]}
+                    for e in related_events
+                ],
+                "nonterminal_related_dispositions": related_dispositions,
+                "reuse_prior_related_notes_before_new_queries": bool(related_events),
                 "explicit_related_doi_count": len(children[d]),
                 "explicit_related_dois": sorted(children[d]),
                 "explicit_parent_dois": sorted(parents[d]),
@@ -303,14 +335,14 @@ def build(root=ROOT):
                 original = "REUSE_VERIFIED_REACH_IDENTITY_NO_DUPLICATE_ORIGINAL"
             elif monthly_previous_public:
                 original = "REUSE_RECORDED_MONTHLY_PUBLIC_TRIAGE_NO_AUTOMATIC_REPROPOSAL"
-            elif events:
+            elif original_events:
                 original = "REUSE_SOURCE_VERIFIED_PRIOR_RESEARCH_NOT_CLOSURE"
             else:
                 original = "ORIGINAL_SOURCE_SPECIFIC_RESEARCH_NEEDED"
             work.append({"doi": d, "track": "ORIGINAL", "lane": primary_role,
-                         "next_action": original, "note_events_reused": len(events),
+                         "next_action": original, "note_events_reused": len(original_events),
                          "input_fingerprint": original_fingerprint,
-                         "can_skip_retrieving_unchanged_prior_note": bool(events),
+                         "can_skip_retrieving_unchanged_prior_note": bool(original_events),
                          "not_a_human_decision": True, "complete": False})
         if cases or children[d]:
             if verified_reach:
@@ -325,13 +357,21 @@ def build(root=ROOT):
                          "next_action": expand_action,
                          "existing_distinct_related_doi_links": len(children[d]),
                          "input_fingerprint": expansion_fingerprint,
-                         "note_events_reused": len(events),
-                         "can_skip_retrieving_unchanged_prior_note": bool(events),
+                         "note_events_reused": len(original_events),
+                         "can_skip_retrieving_unchanged_prior_note": bool(original_events),
                          "not_a_human_decision": True, "complete": False})
-        if parents[d]:
+        if parents[d] or related_events:
+            related_action = "RECHECK_DISTINCT_OUTPUT_IDENTITY_AND_AWARD_PROOF"
+            if "PROJECT_EVIDENCE_HOLD" in related_dispositions:
+                related_action = "REUSE_RECORDED_PROJECT_HOLD_REOPEN_ON_DISTINCT_EVIDENCE"
+            elif related_events:
+                related_action = "REUSE_SOURCE_VERIFIED_RELATED_RESEARCH_NOT_CLOSURE"
             work.append({"doi": d, "track": "RELATED_OUTPUT", "lane": primary_role,
-                         "next_action": "RECHECK_DISTINCT_OUTPUT_IDENTITY_AND_AWARD_PROOF",
+                         "next_action": related_action,
                          "parent_seed_count": len(parents[d]),
+                         "input_fingerprint": expansion_fingerprint,
+                         "related_note_events_reused": len(related_events),
+                         "can_skip_retrieving_unchanged_prior_related_note": bool(related_events),
                          "not_a_human_decision": True, "complete": False})
 
     if len(cohort_pairs) != checked["original_and_related_cases_preflighted"]:
@@ -442,10 +482,14 @@ def mission_index(graph, *, max_per_lane=12):
             raise ValueError("Work item without verified graph DOI node")
         node = nodes[d]
         note_count = node["original_research"]["recorded_note_count"]
+        related_note_count = node["expansion_research"]["recorded_related_note_count"]
         child_count = node["expansion_research"]["explicit_related_doi_count"]
         candidate = {
             "doi": d, "track": track, "next_action": item["next_action"],
             "original_prior_note_count": note_count,
+            "related_prior_note_count": related_note_count,
+            "related_prior_dispositions": node["expansion_research"]["nonterminal_related_dispositions"],
+            "related_evidence_fingerprint": node["expansion_research"]["input_fingerprint"],
             "explicit_related_links": child_count,
             "public_recorded_statuses_by_lane": node["public_recorded_statuses_by_lane"],
             "input_fingerprint": item.get("input_fingerprint"),
@@ -505,7 +549,11 @@ def mission_index(graph, *, max_per_lane=12):
     # examined notes still remain addressable; nothing is marked complete.
     for name, candidates in groups.items():
         if name in ("monthly_related", "additional_related_output"):
-            candidates.sort(key=lambda x: (x["original_prior_note_count"], x.get("doi", "")))
+            # Unexamined children come first; unchanged bounded holds remain
+            # visible but do not crowd out genuinely new research identities.
+            candidates.sort(key=lambda x: (
+                bool(x["related_prior_note_count"]), x["related_prior_note_count"],
+                x.get("doi", "")))
         elif name == "verified_reach_expansion":
             candidates.sort(key=lambda x: (x["original_prior_note_count"],
                                            -x["explicit_related_links"], x["doi"]))
