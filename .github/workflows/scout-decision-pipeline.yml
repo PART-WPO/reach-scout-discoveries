@@ -73,7 +73,9 @@ jobs:
           import hashlib, json
           from pathlib import Path
           from collections import Counter
-          from scout_decision_helper import current_checkpoints
+          import sys
+          sys.path.insert(0, "scout-operations/tools")
+          from decision_pipeline import current_checkpoints
           idx=json.loads(Path("scout-operations/identity-cache/public-identity-index.json").read_text())
           assert idx["schema"]=="reach-scout-identity-index-v1"
           assert idx["sources"]["scout_batches"]>=30
