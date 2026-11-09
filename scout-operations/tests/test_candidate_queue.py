@@ -22,7 +22,7 @@ class QueueTests(unittest.TestCase):
   awards={"10.1/a":{"awards":{"NA26OARX459C0001"},"source_batches":{"batch1.csv"}},"10.1/b":{"awards":{"NA20OAR4320278"},"source_batches":{"batch2.csv"}}}
   q=m.build(r,{"cases":[]},awards)
   self.assertEqual(q["items"][0]["funding_signal"],"POSSIBLE_WPO_459")
-  self.assertEqual(q["items"][0]["priority"],80)
+  self.assertEqual(q["items"][0]["priority"],90)
   self.assertEqual(q["items"][1]["funding_signal"],"CI_432_NEEDS_PROJECT_PROOF")
   self.assertEqual(q["items"][1]["priority"],25)
  def test_preprint_overrides_wpo_award_and_published_version_is_separate(self):
@@ -88,6 +88,18 @@ class QueueTests(unittest.TestCase):
   self.assertEqual(got["10.1234/ci"]["priority"],25)
   self.assertEqual(got["10.1234/other"]["funding_signal"],"INCONCLUSIVE")
   self.assertNotIn("Strong WPO",got["10.1234/other"]["next_action"])
+
+ def test_mission_preview_only_includes_cases_requiring_a_real_decision(self):
+  r={"total":2,"bulk_identity_screening":{"source_dois":2},
+     "entries":[{"doi":"10.1234/existing","bulk_identity_gate":{"status":"NO_PUBLIC_REACH_MATCH"},
+                 "scout_public_queue_matches":[{"source":"SCOUT_PUBLISHED","basis":["exact_doi","normalized_title"],
+                 "location":"scout-discoveries/batches/a.csv:2"}]},
+                {"doi":"10.1234/new","bulk_identity_gate":{"status":"NO_PUBLIC_REACH_MATCH"}}]}
+  q=m.build(r,{"cases":[]},{"10.1234/new":{"awards":{"NA22OAR4590530"}}})
+  self.assertEqual(q["one_mission_actionable_original_count"],1)
+  self.assertEqual(len(q["next_one_mission_original_preview"]),1)
+  self.assertEqual(q["next_one_mission_original_preview"][0]["doi"],"10.1234/new")
+  self.assertEqual(q["items"][-1]["lane"],"ALREADY_IN_SCOUT_REVIEW_FAST_EXIT")
 
  def test_hold_does_not_research_again(self):
   r={"total":1,"bulk_identity_screening":{"source_dois":1},"entries":[{"doi":"10.1/c","bulk_identity_gate":{"status":"NO_PUBLIC_REACH_MATCH"}}]}
