@@ -8,7 +8,7 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
 from build_crosslane_research_memory import (
-    build, source_links, metadata_pointers, ROOT, SCHEMA,
+    build, source_links, metadata_pointers, mission_index, ROOT, SCHEMA,
 )
 from decision_pipeline import norm_doi
 
@@ -167,6 +167,28 @@ class CrosslaneMemoryTests(unittest.TestCase):
             fake.return_value["source_sha256"] = shas
             with self.assertRaisesRegex(ValueError, "source changed"):
                 build(root)
+
+    def test_compact_hourly_index_is_bounded_and_maintains_expansion(self):
+        m = mission_index(self.graph)
+        self.assertEqual(m["source_fingerprint"], self.graph["source_fingerprint"])
+        self.assertEqual(m["graph_schema"], SCHEMA)
+        self.assertEqual(m["verified_reach_expansion_total_preserved"],
+                         self.graph["verified_reach_originals_preserved_as_expansion_seeds"])
+        self.assertEqual(m["group_counts_before_preview_bound"]["verified_reach_expansion"],
+                         self.graph["verified_reach_originals_preserved_as_expansion_seeds"])
+        self.assertGreaterEqual(m["group_counts_before_preview_bound"]["historical_datacite_original"], 100)
+        self.assertGreaterEqual(m["group_counts_before_preview_bound"]["historical_crossref_original"], 50)
+        self.assertGreaterEqual(m["group_counts_before_preview_bound"]["monthly_related"], 1)
+        self.assertGreaterEqual(m["group_counts_before_preview_bound"]["code_or_url_research"], 1)
+        self.assertTrue(all(len(v) <= 12 for v in m["recommended_preview"].values()))
+        self.assertTrue(all(not item["automatically_completed_or_staged"]
+                            for rows in m["recommended_preview"].values()
+                            for item in rows if "automatically_completed_or_staged" in item))
+        self.assertFalse(m["reviewer_approval_or_publication_inferred"])
+        self.assertFalse(m["spark_author_or_personnel_data_used"])
+        self.assertIn("active-workstream.json", m["priority_policy"])
+        self.assertLess(len(json.dumps(m)), 65000)
+        self.assertEqual(m, mission_index(self.graph))
 
     def test_deterministic_replay_ignores_wall_clock(self):
         self.assertEqual(build()["source_fingerprint"], self.graph["source_fingerprint"])

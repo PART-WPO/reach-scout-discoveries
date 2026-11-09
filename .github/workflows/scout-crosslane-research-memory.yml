@@ -75,6 +75,14 @@ jobs:
           assert m['hub_records_automatically_staged']==0
           assert not m['public_author_names_or_spark_personnel_indexed']
           assert all(not x['complete'] for x in m['work_items'])
+          p2=Path('scout-operations/research-memory/mission-index.json')
+          small=json.loads(p2.read_text())
+          assert small['source_fingerprint']==m['source_fingerprint']
+          assert small['verified_reach_expansion_total_preserved']==m['verified_reach_originals_preserved_as_expansion_seeds']
+          assert small['group_counts_before_preview_bound']['verified_reach_expansion']==m['verified_reach_originals_preserved_as_expansion_seeds']
+          assert all(len(group)<=small['max_preview_per_group'] for group in small['recommended_preview'].values())
+          assert p2.stat().st_size<100000
+          assert not small['reviewer_approval_or_publication_inferred']
           print(json.dumps({
               'source_verified_cases':m['preflighted_lane_doi_records'],
               'expansion_seeds_preserved':m['verified_reach_originals_preserved_as_expansion_seeds'],
@@ -95,7 +103,7 @@ jobs:
             git checkout -B main origin/main
             python scout-operations/tools/build_crosslane_research_memory.py
             python scout-operations/tools/build_crosslane_research_memory.py --check
-            git add scout-operations/research-memory/crosslane-relationship-graph.json
+            git add scout-operations/research-memory/crosslane-relationship-graph.json scout-operations/research-memory/mission-index.json
             if git diff --cached --quiet; then
               echo 'Research relationship graph already current'
               exit 0
@@ -109,6 +117,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: scout-crosslane-research-graph
-          path: scout-operations/research-memory/crosslane-relationship-graph.json
+          path: |
+            scout-operations/research-memory/crosslane-relationship-graph.json
+            scout-operations/research-memory/mission-index.json
           retention-days: 14
           if-no-files-found: error
