@@ -23,14 +23,10 @@
     "raw_batch_rows": 614,
     "remaining_or_untracked": 614,
     "research_completed": 0,
-    "seed_expansion_soft_deferred_not_completed": 2,
+    "seed_expansion_soft_deferred_not_completed": 0,
     "seed_expansions_pending": 614,
-    "seed_relevance_priority_counts": {
-      "DEFER_UNTIL_NEW_PROJECT_EVIDENCE": 2,
-      "PRIORITIZE_VERIFIED_WPO_SEED": 426,
-      "VERIFY_WPO_PROJECT_SCOPE_FIRST": 186
-    },
-    "seed_relevance_priority_ready": true,
+    "seed_relevance_priority_counts": {},
+    "seed_relevance_priority_ready": false,
     "unresolved_followups": 58
   },
   "mode": "historical_crossref_triage",
@@ -48,7 +44,7 @@
   },
   "note": "Future follow-up dates do not clear API research. Make bounded distinct-source checks now; use documented early-retry exceptions as needed. An unavailable or invalid Hub metadata-needed handoff remains outstanding. This selector does NOT conduct research, verify human approval, or launch Scout.",
   "phase": "post_bulk_identity_triage",
-  "reason": "The historical Crossref DOI identity screen is complete: 426 verified public REACH identities can skip repeated original funding searches; 54 require narrow version/identity checks; 134 index-negative originals need Scout queue and WPO-funding investigation. Formal original case completion and separate DOI-seeded expansions remain independent. Related-output exploration is now relevance-ranked: 426 known WPO catalog seeds may receive targeted expansion; 186 require WPO project-scope checks first; 2 are reversibly deferred pending new attribution evidence. All original/expansion histories remain open and unchanged.",
+  "reason": "The historical Crossref DOI identity screen is complete: 426 verified public REACH identities can skip repeated original funding searches; 54 require narrow version/identity checks; 134 index-negative originals need Scout queue and WPO-funding investigation. Formal original case completion and separate DOI-seeded expansions remain independent.",
   "schema": "reach-scout-workstream-v1",
   "switch_policy": "monthly original decisions > monthly expansion > historical Crossref original dedup + seed expansion > historical DataCite > attribution follow-ups > normal SPARK discovery"
 }
