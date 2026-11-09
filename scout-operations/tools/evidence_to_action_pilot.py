@@ -270,6 +270,15 @@ def main():
                           "after": report["after_extraction_disposition_counts"],
                           "changed": report["cases_with_changed_recommendation"],
                           "new_external_requests": report["new_external_research_requests"]}))
+        for item in report["cases"]:
+            if item["decision_changed"]:
+                print(json.dumps({
+                    "identity": item["identity"],
+                    "before": item["previous_suggested_disposition"],
+                    "after": item["suggested_disposition"],
+                    "next_owner": item["next_owner"],
+                    "unmet_gate_count": len(item["unmet_gates"]),
+                }))
 
 if __name__ == "__main__":
     main()
