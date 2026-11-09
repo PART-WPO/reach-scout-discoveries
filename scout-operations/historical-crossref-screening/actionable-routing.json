@@ -4,10 +4,10 @@
   "screening_manifest_sha256": "470e89f3ef51557b5d8e817a6d860cd6592522a692a83a714c252abe0ea84a50",
   "reach_cache_sha256": "6660562e325a6a141198f59acce84f2e30d9a2d14e6cf5acd29769c8a4b68e1e",
   "reach_source_manifest_sha256": "f94ae52cac483b52e9a5cd6e775c6faa01ad6ec33610b249b3d486aed6daa003",
-  "noaa_ir_manifest_sha256": "2866655e200a896a39b3bda4d22c218009f28915463e95358c025ea8f4461b3e",
+  "noaa_ir_manifest_sha256": "c6436290ce97489a6427c3a19cf44a41efa24b268b84014d727bfdd33d6a819b",
   "noaa_ir_existing_reach_url_matches": 351,
-  "shared_identity_index_fingerprint": "b6e04f6f61d891672c8f421a63041bb42e934ac1be6af0b7a0553f3533f451d9",
-  "public_scout_queue_overlap_dois": 38,
+  "shared_identity_index_fingerprint": "ee9002aa6649dcc68e60a28f7d67330aaedef4054f1434740ff4b01cccefb6c2",
+  "public_scout_queue_overlap_dois": 39,
   "reach_source_records": 1238,
   "total": 614,
   "counts": {
@@ -6246,8 +6246,27 @@
       "title": "the synoptic microphysical and radar characteristics of upper great lakes snow events",
       "outcome": "NOT_FOUND_IN_REACH_INDEX",
       "route": "ADVANCE_TO_FUNDING_AND_METADATA_RESEARCH",
-      "scout_public_queue_matches": [],
-      "scout_public_queue_match_count": 0,
+      "scout_public_queue_matches": [
+        {
+          "source": "SCOUT_PUBLISHED",
+          "identity": "2026-11-09-human-project-f706c52fc493a7d6a2:2",
+          "location": "scout-discoveries/batches/2026-11-09-human-project-f706c52fc493a7d6a2.csv:2",
+          "basis": [
+            "exact_doi",
+            "normalized_title"
+          ]
+        },
+        {
+          "source": "SCOUT_INBOX",
+          "identity": "2026-11-09-human-project-f706c52fc493a7d6a2.csv:2",
+          "location": "scout-discoveries/inbox/2026-11-09-human-project-f706c52fc493a7d6a2.csv:2",
+          "basis": [
+            "exact_doi",
+            "normalized_title"
+          ]
+        }
+      ],
+      "scout_public_queue_match_count": 2,
       "scout_overlap": false,
       "noaa_ir_reach_check": {
         "status": "VERIFIED_IR_URL_NOT_IN_PUBLIC_REACH",

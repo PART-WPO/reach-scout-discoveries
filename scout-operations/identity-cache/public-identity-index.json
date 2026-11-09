@@ -3,8 +3,8 @@
   "sources": {
     "reach_cache_sha256": "6660562e325a6a141198f59acce84f2e30d9a2d14e6cf5acd29769c8a4b68e1e",
     "reach_manifest_sha256": "f94ae52cac483b52e9a5cd6e775c6faa01ad6ec33610b249b3d486aed6daa003",
-    "scout_manifest_sha256": "3de4673c1054f36c8547b4bc8719bd29eab75edcfed1f15fcec94511261df263",
-    "scout_batches": 39,
+    "scout_manifest_sha256": "80c9853bb20dd94d6af62f1c835f328b91469ddcf4a3ec4999410dc0c63dde96",
+    "scout_batches": 40,
     "inbox_files": [
       {
         "path": "scout-discoveries/inbox/2026-10-30-hourly-2232ET-iot-water-gauge-001.csv",
@@ -130,10 +130,15 @@
         "path": "scout-discoveries/inbox/2026-11-09-human-project-ec8541bda93af057fc.csv",
         "sha256": "d3387f36e5bac7993a4cbb153ef2496349080a0d682f447f04c8c2409f8cca8b",
         "rows": 1
+      },
+      {
+        "path": "scout-discoveries/inbox/2026-11-09-human-project-f706c52fc493a7d6a2.csv",
+        "sha256": "7bc7ed710c7f9d4873762ce5a54f86887d767b753c629e7300679b1026ea0d0d",
+        "rows": 1
       }
     ]
   },
-  "source_fingerprint": "b6e04f6f61d891672c8f421a63041bb42e934ac1be6af0b7a0553f3533f451d9",
+  "source_fingerprint": "ee9002aa6649dcc68e60a28f7d67330aaedef4054f1434740ff4b01cccefb6c2",
   "records": [
     {
       "source": "REACH",
@@ -14173,6 +14178,18 @@
       "location": "scout-discoveries/batches/2026-11-09-human-project-ec8541bda93af057fc.csv:2"
     },
     {
+      "source": "SCOUT_PUBLISHED",
+      "identity": "2026-11-09-human-project-f706c52fc493a7d6a2:2",
+      "title": "The Synoptic, Microphysical, and Radar Characteristics of Upper Great Lakes Snow Events",
+      "dois": [
+        "10.1029/2026jd046349"
+      ],
+      "urls": [
+        "https://doi.org/10.1029/2026jd046349"
+      ],
+      "location": "scout-discoveries/batches/2026-11-09-human-project-f706c52fc493a7d6a2.csv:2"
+    },
+    {
       "source": "SCOUT_INBOX",
       "identity": "2026-10-30-hourly-2232ET-iot-water-gauge-001.csv:2",
       "title": "A low-cost IoT-based deep learning method of water gauge measurement for flood monitoring",
@@ -14587,6 +14604,18 @@
         "https://doi.org/10.1109/past49659.2022.9975045"
       ],
       "location": "scout-discoveries/inbox/2026-11-09-human-project-ec8541bda93af057fc.csv:2"
+    },
+    {
+      "source": "SCOUT_INBOX",
+      "identity": "2026-11-09-human-project-f706c52fc493a7d6a2.csv:2",
+      "title": "The Synoptic, Microphysical, and Radar Characteristics of Upper Great Lakes Snow Events",
+      "dois": [
+        "10.1029/2026jd046349"
+      ],
+      "urls": [
+        "https://doi.org/10.1029/2026jd046349"
+      ],
+      "location": "scout-discoveries/inbox/2026-11-09-human-project-f706c52fc493a7d6a2.csv:2"
     }
   ],
   "keys": {
@@ -15506,116 +15535,120 @@
       ],
       "10.1080/19475705.2024.2364777": [
         1301,
-        1330
+        1331
       ],
       "10.1177/10506519261455873": [
         1302,
-        1331
+        1332
       ],
       "10.1175/wcas-d-23-0046.1": [
         1303
       ],
       "10.1145/3794916.3794919": [
         1305,
-        1341
+        1342
       ],
       "10.5281/zenodo.6385057": [
         1306,
-        1342
+        1343
       ],
       "10.1007/s43762-024-00142-0": [
         1309,
-        1345
+        1346
       ],
       "10.17632/43vrcwvdf8.1": [
         1310,
-        1346
+        1347
       ],
       "10.1175/bams-d-25-0140.1": [
         1311,
-        1347
+        1348
       ],
       "10.1175/bams-d-25-0032.1": [
         1312
       ],
       "10.1080/01431161.2026.2749622": [
         1313,
-        1336
+        1337
       ],
       "10.1175/waf-d-25-0044.1": [
         1314,
-        1332,
-        1348
-      ],
-      "10.5194/tc-20-5973-2026": [
-        1315,
         1333,
         1349
       ],
-      "10.1175/aies-d-26-0004.1": [
-        1316,
+      "10.5194/tc-20-5973-2026": [
+        1315,
         1334,
         1350
       ],
+      "10.1175/aies-d-26-0004.1": [
+        1316,
+        1335,
+        1351
+      ],
       "10.1088/2515-7620/aeaad2": [
         1317,
-        1337,
-        1352
-      ],
-      "10.3390/rs18193383": [
-        1318,
         1338,
         1353
       ],
-      "10.1175/waf-d-26-0084.1": [
-        1319,
+      "10.3390/rs18193383": [
+        1318,
         1339,
         1354
       ],
-      "10.1016/j.pdisas.2026.100696": [
-        1320,
+      "10.1175/waf-d-26-0084.1": [
+        1319,
         1340,
         1355
       ],
+      "10.1016/j.pdisas.2026.100696": [
+        1320,
+        1341,
+        1356
+      ],
       "10.1175/jamc-d-25-0108.1": [
         1321,
-        1356
+        1357
       ],
       "10.1109/radarconf2248738.2022.9764246": [
         1322,
-        1357
+        1358
       ],
       "10.1016/j.softx.2024.101863": [
         1323,
-        1358
+        1359
       ],
       "10.1016/j.atmosenv.2021.118760": [
         1324,
-        1359
+        1360
       ],
       "10.1029/2026jd046327": [
         1325,
-        1360
+        1361
       ],
       "10.1175/aies-d-23-0094.1": [
         1326,
-        1361
+        1362
       ],
       "10.1007/s10596-024-10317-7": [
         1327,
-        1362
+        1363
       ],
       "10.1126/sciadv.aee4171": [
         1328,
-        1363
+        1364
       ],
       "10.1109/past49659.2022.9975045": [
         1329,
-        1364
+        1365
+      ],
+      "10.1029/2026jd046349": [
+        1330,
+        1366
       ],
       "10.5194/egusphere-2026-5876": [
-        1335,
-        1351
+        1336,
+        1352
       ]
     },
     "url": {
@@ -19605,124 +19638,128 @@
       ],
       "https://doi.org/10.1080/19475705.2024.2364777": [
         1301,
-        1330
+        1331
       ],
       "https://doi.org/10.1177/10506519261455873": [
         1302,
-        1331
+        1332
       ],
       "https://journals.ametsoc.org/view/journals/wcas/15/4/wcas-d-23-0046.1.xml": [
         1303
       ],
       "https://doi.org/10.1145/3794916.3794919": [
         1305,
-        1341
+        1342
       ],
       "https://doi.org/10.5281/zenodo.6385057": [
         1306,
-        1342
+        1343
       ],
       "https://github.com/mesh-team/mesh_code_irregular/releases/tag/mesh_diffusive_cns_v0.1": [
         1307,
-        1343
+        1344
       ],
       "https://github.com/mesh-team/mesh_cnt/releases/tag/mesh_cnt_v0.1": [
         1308,
-        1344
+        1345
       ],
       "https://doi.org/10.1007/s43762-024-00142-0": [
         1309,
-        1345
+        1346
       ],
       "https://doi.org/10.17632/43vrcwvdf8.1": [
         1310,
-        1346
+        1347
       ],
       "https://doi.org/10.1175/bams-d-25-0140.1": [
         1311,
-        1347
+        1348
       ],
       "https://journals.ametsoc.org/view/journals/bams/107/10/bams-d-25-0032.1.xml": [
         1312
       ],
       "https://doi.org/10.1080/01431161.2026.2749622": [
         1313,
-        1336
+        1337
       ],
       "https://doi.org/10.1175/waf-d-25-0044.1": [
         1314,
-        1332,
-        1348
-      ],
-      "https://doi.org/10.5194/tc-20-5973-2026": [
-        1315,
         1333,
         1349
       ],
-      "https://doi.org/10.1175/aies-d-26-0004.1": [
-        1316,
+      "https://doi.org/10.5194/tc-20-5973-2026": [
+        1315,
         1334,
         1350
       ],
+      "https://doi.org/10.1175/aies-d-26-0004.1": [
+        1316,
+        1335,
+        1351
+      ],
       "https://doi.org/10.1088/2515-7620/aeaad2": [
         1317,
-        1337,
-        1352
-      ],
-      "https://doi.org/10.3390/rs18193383": [
-        1318,
         1338,
         1353
       ],
-      "https://doi.org/10.1175/waf-d-26-0084.1": [
-        1319,
+      "https://doi.org/10.3390/rs18193383": [
+        1318,
         1339,
         1354
       ],
-      "https://doi.org/10.1016/j.pdisas.2026.100696": [
-        1320,
+      "https://doi.org/10.1175/waf-d-26-0084.1": [
+        1319,
         1340,
         1355
       ],
+      "https://doi.org/10.1016/j.pdisas.2026.100696": [
+        1320,
+        1341,
+        1356
+      ],
       "https://doi.org/10.1175/jamc-d-25-0108.1": [
         1321,
-        1356
+        1357
       ],
       "https://doi.org/10.1109/radarconf2248738.2022.9764246": [
         1322,
-        1357
+        1358
       ],
       "https://doi.org/10.1016/j.softx.2024.101863": [
         1323,
-        1358
+        1359
       ],
       "https://doi.org/10.1016/j.atmosenv.2021.118760": [
         1324,
-        1359
+        1360
       ],
       "https://doi.org/10.1029/2026jd046327": [
         1325,
-        1360
+        1361
       ],
       "https://doi.org/10.1175/aies-d-23-0094.1": [
         1326,
-        1361
+        1362
       ],
       "https://doi.org/10.1007/s10596-024-10317-7": [
         1327,
-        1362
+        1363
       ],
       "https://doi.org/10.1126/sciadv.aee4171": [
         1328,
-        1363
+        1364
       ],
       "https://doi.org/10.1109/past49659.2022.9975045": [
         1329,
-        1364
+        1365
+      ],
+      "https://doi.org/10.1029/2026jd046349": [
+        1330,
+        1366
       ],
       "https://doi.org/10.5194/egusphere-2026-5876": [
-        1335,
-        1351
+        1336,
+        1352
       ]
     },
     "title": {
@@ -23560,124 +23597,128 @@
       ],
       "a low cost iot based deep learning method of water gauge measurement for flood monitoring": [
         1301,
-        1330
+        1331
       ],
       "bridging the gap between numbers and experience identifying community risk thresholds in extreme weather communication": [
         1302,
-        1331
+        1332
       ],
       "contextualizing disaster phases using social media data hurricane risk visualizations during the forecast and warning phase of hurricane irma": [
         1303
       ],
       "visualizing probabilistic forecast information around community risk thresholds an action research collaboration between environmental rhetoricians and the national weather service": [
         1305,
-        1341
+        1342
       ],
       "modeled data related to the article diffusive wave models for operational forecasting of channel routing at continental scale": [
         1306,
-        1342
+        1343
       ],
       "mesh code irregular crank nicolson over space cns release": [
         1307,
-        1343
+        1344
       ],
       "mesh cnt crank nicolson over time cnt release": [
         1308,
-        1344
+        1345
       ],
       "analysing trends of computational urban science and data science approaches for sustainable development": [
         1309,
-        1345
+        1346
       ],
       "u heat urban heat experiment around lubbock texas datasets": [
         1310,
-        1346
+        1347
       ],
       "near real time inundation mapping utilizing large uncrewed aerial system platforms": [
         1311,
-        1347
+        1348
       ],
       "visualizing weather risks participatory design workshops for hurricane threats and impacts graphics": [
         1312
       ],
       "improving extreme fire radiative power forecasting with gaussian loss based transformer and lstm models": [
         1313,
-        1336
+        1337
       ],
       "a blending method for multiscale valid time shifting within an rrfs like ensemble based data assimilation system": [
         1314,
-        1332,
-        1348
-      ],
-      "improving snow simulations through improved representations of vegetation conditions insights from high resolution simulations over california": [
-        1315,
         1333,
         1349
       ],
-      "the impact of target dataset choice on machine learning prediction of severe hail wind and tornadoes": [
-        1316,
+      "improving snow simulations through improved representations of vegetation conditions insights from high resolution simulations over california": [
+        1315,
         1334,
         1350
       ],
+      "the impact of target dataset choice on machine learning prediction of severe hail wind and tornadoes": [
+        1316,
+        1335,
+        1351
+      ],
       "dynamical prediction of western north pacific seasonal accumulated cyclone energy with experimental sfs reforecasts": [
         1317,
-        1337,
-        1352
-      ],
-      "impact of assimilating remote sensing observations on wind and wave analysis offshore of the contiguous united states": [
-        1318,
         1338,
         1353
       ],
-      "evaluation of a cumulus scheme in the fv3 lam and of experimental mpas forecasts for the summer 2025 flash flood and intense rainfall experiment": [
-        1319,
+      "impact of assimilating remote sensing observations on wind and wave analysis offshore of the contiguous united states": [
+        1318,
         1339,
         1354
       ],
-      "extreme weather as an occupational hazard structural vulnerability among multilingual immigrant workers": [
-        1320,
+      "evaluation of a cumulus scheme in the fv3 lam and of experimental mpas forecasts for the summer 2025 flash flood and intense rainfall experiment": [
+        1319,
         1340,
         1355
       ],
+      "extreme weather as an occupational hazard structural vulnerability among multilingual immigrant workers": [
+        1320,
+        1341,
+        1356
+      ],
       "flash drought risk and agricultural exposure in the southeast united states": [
         1321,
-        1356
+        1357
       ],
       "airborne phased array radar apar program status critical requirements analyses": [
         1322,
-        1357
+        1358
       ],
       "pygeoweaver tangible workflow tool for enhancing scientific research productivity and fairness": [
         1323,
-        1358
+        1359
       ],
       "update of land use land cover and soil texture for brazil impact on wrf modeling results over s o paulo": [
         1324,
-        1359
+        1360
       ],
       "meteorological and emission drivers of compound heat and ozone pollution episodes in oklahoma city during periods influenced by atlantic tropical cyclones": [
         1325,
-        1360
+        1361
       ],
       "generative ensemble deep learning severe weather prediction from a deterministic convection allowing model": [
         1326,
-        1361
+        1362
       ],
       "towards practical artificial intelligence in earth sciences": [
         1327,
-        1362
+        1363
       ],
       "stratospheric wave predictability enhances surface forecasts over north america": [
         1328,
-        1363
+        1364
       ],
       "two way pattern synthesis for the airborne phased array radar apar": [
         1329,
-        1364
+        1365
+      ],
+      "the synoptic microphysical and radar characteristics of upper great lakes snow events": [
+        1330,
+        1366
       ],
       "we 3 skynet or how we learned to stop worrying and love the bot responses in our survey data": [
-        1335,
-        1351
+        1336,
+        1352
       ]
     }
   }
