@@ -178,8 +178,12 @@ class CrosslaneMemoryTests(unittest.TestCase):
                          self.graph["verified_reach_originals_preserved_as_expansion_seeds"])
         self.assertGreaterEqual(m["group_counts_before_preview_bound"]["historical_datacite_original"], 100)
         self.assertGreaterEqual(m["group_counts_before_preview_bound"]["historical_crossref_original"], 50)
-        self.assertGreaterEqual(m["group_counts_before_preview_bound"]["monthly_related"], 1)
+        self.assertGreaterEqual(
+            m["group_counts_before_preview_bound"]["monthly_related"] +
+            m["group_counts_before_preview_bound"]["existing_public_related_or_staged"],
+            1)
         self.assertGreaterEqual(m["group_counts_before_preview_bound"]["code_or_url_research"], 1)
+        self.assertEqual(m["builder_policy_sha256"], self.graph["builder_policy_sha256"])
         self.assertTrue(all(len(v) <= 12 for v in m["recommended_preview"].values()))
         self.assertTrue(all(not item["automatically_completed_or_staged"]
                             for rows in m["recommended_preview"].values()
@@ -189,6 +193,46 @@ class CrosslaneMemoryTests(unittest.TestCase):
         self.assertIn("active-workstream.json", m["priority_policy"])
         self.assertLess(len(json.dumps(m)), 65000)
         self.assertEqual(m, mission_index(self.graph))
+
+    def test_monthly_originals_survive_cross_lane_overlap_and_preprints_stay_monthly_only(self):
+        g = self.graph
+        m = mission_index(g)
+        originals = {x["doi"] for x in g["work_items"] if x["track"] == "ORIGINAL"}
+        monthly_nodes = [x for x in g["nodes"] if "monthly_api" in x["lanes"]]
+        self.assertGreaterEqual(len(monthly_nodes), 13)
+        self.assertTrue({x["doi"] for x in monthly_nodes}.issubset(originals))
+        eligible = [x for x in monthly_nodes if not x["preprint_or_version_hold"]]
+        self.assertEqual(m["group_counts_before_preview_bound"]["monthly_original"],
+                         len(eligible))
+        holds = {x["doi"] for x in g["nodes"]
+                 if x["preprint_or_version_hold"] and x["doi"] in originals}
+        self.assertEqual(m["group_counts_before_preview_bound"]["preprint_watchlist_only"],
+                         len(holds))
+        self.assertTrue(all(x["hourly_original_research_allowed"] is False for x in
+                            m["recommended_preview"]["preprint_watchlist_only"]))
+        self.assertTrue(all(
+            "monthly_api" in next(n for n in g["nodes"] if n["doi"] == item["doi"])["lanes"]
+            for item in m["recommended_preview"]["monthly_original"]
+        ))
+        self.assertFalse(
+            {x["doi"] for x in m["recommended_preview"]["monthly_original"]} &
+            {x["doi"] for x in m["recommended_preview"]["historical_crossref_original"]}
+        )
+
+    def test_public_staged_related_outputs_not_recommended_for_reapproval(self):
+        g = self.graph
+        m = mission_index(g)
+        staged = m["recommended_preview"]["existing_public_related_or_staged"]
+        self.assertGreaterEqual(m["group_counts_before_preview_bound"]
+                                ["existing_public_related_or_staged"], 1)
+        self.assertTrue(all(
+            x["next_action"] == "PRESERVE_EXISTING_PUBLIC_STATUS_DO_NOT_RESTAGE"
+            for x in staged
+        ))
+        relevant = [x for x in g["nodes"] if "monthly_related_outputs" in x["lanes"]]
+        self.assertGreaterEqual(len(relevant), 6)
+        self.assertTrue(all("public_recorded_statuses_by_lane" in x for x in relevant))
+        self.assertTrue(all(not x["automatically_completed_or_staged"] for x in staged))
 
     def test_deterministic_replay_ignores_wall_clock(self):
         self.assertEqual(build()["source_fingerprint"], self.graph["source_fingerprint"])
