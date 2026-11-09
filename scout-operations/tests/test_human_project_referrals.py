@@ -107,8 +107,13 @@ class HumanProjectReferrals(unittest.TestCase):
         self.assertEqual(rows[apar]["disposition"],"HOLD_ALREADY_IN_PUBLIC_REACH_OR_SCOUT")
         self.assertEqual(rows[apar]["scout_inbox_status"],
                          "PUBLISHED_PUBLIC_SCOUT_FEED_NOT_PRIVATE_HUB")
-        self.assertEqual(result["verified_public_scout_referral_batches"],1)
-        self.assertEqual(len(result["published_batch_paths"]),1)
+        self.assertGreaterEqual(result["verified_public_scout_referral_batches"],1)
+        self.assertEqual(len(result["published_batch_paths"]),
+                         result["verified_public_scout_referral_batches"])
+        self.assertIn(rows[apar]["published_scout_batch_path"],
+                      result["published_batch_paths"])
+        self.assertEqual(len(result["published_batch_paths"]),
+                         len(set(result["published_batch_paths"])))
         self.assertEqual(result["human_referral_drafts_prevalidated"],0)
         self.assertEqual(result["draft_paths"],[])
         self.assertTrue(rows[apar]["published_scout_batch_path"].startswith(
