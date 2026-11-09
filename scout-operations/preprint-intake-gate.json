@@ -1,8 +1,24 @@
 {
   "schema": "reach-scout-preprint-intake-gate-v1",
-  "checked_at": "2026-11-09T22:14:43.805198+00:00",
+  "checked_at": "2026-11-09T22:29:04.785187+00:00",
   "policy": "All new publication proposals require registry check. A preprint DOI cannot be staged through ANY origin. Uncertain metadata remains on hold. Existing human decisions unchanged.",
   "checks": [
+    {
+      "path": "scout-discoveries/inbox/2026-11-09-human-project-f706c52fc493a7d6a2.csv",
+      "sha256": "7bc7ed710c7f9d4873762ce5a54f86887d767b753c629e7300679b1026ea0d0d",
+      "verdict": "eligible",
+      "rows": [
+        {
+          "doi": "10.1029/2026jd046349",
+          "status": "eligible",
+          "reason": "Crossref identifies an officially issued scholarly publication",
+          "evidence": [
+            "https://api.crossref.org/works/10.1029/2026jd046349",
+            "https://api.datacite.org/dois/10.1029/2026jd046349"
+          ]
+        }
+      ]
+    },
     {
       "path": "scout-discoveries/batches/2026-10-28-hourly-datacite-expansion-award-fixes-001.csv",
       "sha256": "8e9e9209202e507d6b91cc50714d10b01f19ade6b55e2d1816dd7bca1faffa09",
@@ -327,6 +343,6 @@
       ]
     }
   ],
-  "eligible_batches": 11,
+  "eligible_batches": 12,
   "held_batches": 3
 }
