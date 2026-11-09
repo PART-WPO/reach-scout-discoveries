@@ -1,0 +1,71 @@
+{
+  "schema": "reach-scout-decision-checkpoint-v1",
+  "decision_contract": "reach-scout-decision-pipeline-v2",
+  "input_fingerprint": "eb3e94561bcec62388426790668661feb8097c12f9ad8b652cb323dd6961c73a",
+  "index_fingerprint": "28b5a3edda88f4b268e3ef429e915518b018f5e4c4501c9f981db9e927d041f3",
+  "case_input": {
+    "doi": "10.1029/2026jd046327",
+    "title": "Meteorological and Emission Drivers of Compound Heat and Ozone Pollution Episodes in Oklahoma City During Periods Influenced by Atlantic Tropical Cyclones",
+    "cohort": "historical_crossref",
+    "publication_status": "NOT_CHECKED",
+    "primary_award_match": null,
+    "project_attribution": "NOT_CHECKED",
+    "checked_sources": [],
+    "research_rounds": 0,
+    "secondary_identity_checked": false,
+    "required_metadata_verified": false,
+    "private_review_status": "NOT_VERIFIED",
+    "source_evidence": [
+      {
+        "path": "scout-operations/historical-crossref-phase2/2026-11-09-1533ET-oklahoma-compound-heat-ozone-wpo-human-fast-screen.json",
+        "sha256": "3226e5f30819b3a63ad32968889a46d8ed80640505a36ed17d0cd966d6028f08"
+      }
+    ],
+    "research_budget_exhausted": false
+  },
+  "evaluation": {
+    "doi": "10.1029/2026jd046327",
+    "cohort": "historical_crossref",
+    "identity_check": {
+      "status": "IN_PUBLIC_SCOUT_QUEUE",
+      "reason": "CONSISTENT_SCOUT_PUBLIC_MIRRORS",
+      "matches": [
+        {
+          "source": "SCOUT_PUBLISHED",
+          "identity": "2026-11-09-human-project-8963668e6a0f98ac1c:2",
+          "title": "Meteorological and Emission Drivers of Compound Heat and Ozone Pollution Episodes in Oklahoma City During Periods Influenced by Atlantic Tropical Cyclones",
+          "location": "scout-discoveries/batches/2026-11-09-human-project-8963668e6a0f98ac1c.csv:2",
+          "match_bases": [
+            "exact_doi",
+            "normalized_title"
+          ]
+        },
+        {
+          "source": "SCOUT_INBOX",
+          "identity": "2026-11-09-human-project-8963668e6a0f98ac1c.csv:2",
+          "title": "Meteorological and Emission Drivers of Compound Heat and Ozone Pollution Episodes in Oklahoma City During Periods Influenced by Atlantic Tropical Cyclones",
+          "location": "scout-discoveries/inbox/2026-11-09-human-project-8963668e6a0f98ac1c.csv:2",
+          "match_bases": [
+            "exact_doi",
+            "normalized_title"
+          ]
+        }
+      ],
+      "caveat": "Public snapshot only; private Hub decisions are not asserted."
+    },
+    "project_attribution": "NOT_CHECKED",
+    "primary_award_match": null,
+    "publication_status": "NOT_CHECKED",
+    "private_review_status": "NOT_VERIFIED",
+    "research_rounds": 0,
+    "decision": "EXISTING_SCOUT_CANDIDATE",
+    "review_action": "NONE",
+    "notes": [],
+    "checked_sources": [],
+    "unverified_private_hub_import": true,
+    "automatically_staged": false,
+    "seed_expansion_preserved": true
+  },
+  "source_case_path": "scout-operations/research-decision-cases.json",
+  "human_decision_modified": false
+}
