@@ -35,6 +35,60 @@ class QueueTests(unittest.TestCase):
   self.assertEqual(lanes["10.1/a"]["priority"],5)
   self.assertEqual(lanes["10.1/b"]["lane"],"PREPRINT_PUBLISHED_VERSION_LEAD")
   self.assertEqual(lanes["10.1/b"]["verified_published_dois"],["10.2/official"])
+ def test_hail_case_already_in_public_scout_exits_even_with_previous_hold(self):
+  doi="10.1175/aies-d-26-0004.1"
+  entry={"doi":doi,"title":"the impact of target dataset choice on machine learning prediction of severe hail wind and tornadoes",
+         "bulk_identity_gate":{"status":"NO_PUBLIC_REACH_MATCH"},
+         "scout_overlap":True,
+         "scout_public_queue_matches":[
+            {"source":"SCOUT_PUBLISHED","location":"scout-discoveries/batches/monthly.csv:4",
+             "basis":["exact_doi","normalized_title"]},
+            {"source":"SCOUT_INBOX","location":"scout-discoveries/inbox/reviewer.csv:2",
+             "basis":["exact_doi","normalized_title"]}]}
+  route={"total":1,"bulk_identity_screening":{"source_dois":1},"entries":[entry]}
+  registry={"cases":[{"identity":"doi:"+doi,"latest_operational_disposition":"PROJECT_EVIDENCE_HOLD"}]}
+  awards={doi:{"awards":{"NA22OAR4590530"}}}
+  item=m.build(route,registry,awards)["items"][0]
+  self.assertEqual(item["lane"],"ALREADY_IN_SCOUT_REVIEW_FAST_EXIT")
+  self.assertEqual(item["priority"],0)
+  self.assertTrue(item["already_in_public_scout_queue"])
+  self.assertEqual(len(item["matched_public_review_locations"]),2)
+  self.assertFalse(item["one_mission_disposition_required"])
+  self.assertIn("keep independent expansion",item["next_action"])
+
+ def test_scout_overlap_hint_alone_never_counts_as_duplicate(self):
+  route={"total":1,"bulk_identity_screening":{"source_dois":1},
+   "entries":[{"doi":"10.1234/new","scout_overlap":True,
+      "scout_public_queue_matches":[{"source":"SCOUT_INBOX",
+       "location":"scout-discoveries/inbox/ambiguous.csv:2","basis":["normalized_title"]}],
+      "bulk_identity_gate":{"status":"NO_PUBLIC_REACH_MATCH"}}]}
+  item=m.build(route,{"cases":[]},{"10.1234/new":{"awards":{"NA26OARX459C0001"}}})["items"][0]
+  self.assertEqual(item["lane"],"NOVEL_IDENTITY_RESEARCH")
+  self.assertEqual(item["priority"],90)
+  self.assertTrue(item["one_mission_disposition_required"])
+  self.assertFalse(item["already_in_public_scout_queue"])
+  self.assertIn("Needs Investigation",item["next_action"])
+
+ def test_project_hold_for_459_is_human_handoff_due_not_research_loop(self):
+  r={"total":1,"bulk_identity_screening":{"source_dois":1},
+    "entries":[{"doi":"10.1234/another","bulk_identity_gate":{"status":"NO_PUBLIC_REACH_MATCH"}}]}
+  prior={"cases":[{"identity":"doi:10.1234/another","latest_operational_disposition":"PROJECT_EVIDENCE_HOLD"}]}
+  item=m.build(r,prior,{"10.1234/another":{"awards":{"NA22OAR4590530"}}})["items"][0]
+  self.assertEqual(item["lane"],"HUMAN_REVIEW_FAST_SCREEN_DUE")
+  self.assertTrue(item["one_mission_disposition_required"])
+
+ def test_432_or_other_awards_require_more_specific_scrutiny(self):
+  r={"total":2,"bulk_identity_screening":{"source_dois":2},
+     "entries":[{"doi":"10.1234/ci","bulk_identity_gate":{"status":"NO_PUBLIC_REACH_MATCH"}},
+                {"doi":"10.1234/other","bulk_identity_gate":{"status":"NO_PUBLIC_REACH_MATCH"}}]}
+  q=m.build(r,{"cases":[]},{"10.1234/ci":{"awards":{"NA22OAR4320515"}},
+                            "10.1234/other":{"awards":{"NA22OAR4190100"}}})
+  got={x["doi"]:x for x in q["items"]}
+  self.assertEqual(got["10.1234/ci"]["funding_signal"],"CI_432_NEEDS_PROJECT_PROOF")
+  self.assertEqual(got["10.1234/ci"]["priority"],25)
+  self.assertEqual(got["10.1234/other"]["funding_signal"],"INCONCLUSIVE")
+  self.assertNotIn("Strong WPO",got["10.1234/other"]["next_action"])
+
  def test_hold_does_not_research_again(self):
   r={"total":1,"bulk_identity_screening":{"source_dois":1},"entries":[{"doi":"10.1/c","bulk_identity_gate":{"status":"NO_PUBLIC_REACH_MATCH"}}]}
   q=m.build(r,{"cases":[{"identity":"doi:10.1/c","latest_operational_disposition":"PROJECT_EVIDENCE_HOLD"}]})
