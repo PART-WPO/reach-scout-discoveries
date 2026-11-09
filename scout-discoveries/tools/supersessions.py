@@ -23,7 +23,7 @@ def approved_batches(folder, entries):
             raise ValueError("Source batch digest changed")
         if rule.get("replacement_kind") == "wpo_award_confirmation":
             verify_wpo_award_confirmation(folder, by_id[old_id], by_id[new_id], rule)
-        if rule.get("replacement_kind") == "review_reclassification":
+        elif rule.get("replacement_kind") == "review_reclassification":
             verify_review_reclassification(folder, by_id[old_id], by_id[new_id], rule)
         elif rule.get("replacement_kind") == "metadata_refresh":
             verify_metadata_refresh(folder, by_id[old_id], by_id[new_id], rule)
