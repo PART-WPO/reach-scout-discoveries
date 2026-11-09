@@ -54,8 +54,12 @@ jobs:
           assert all(not e['project_funding_verified'] and not e['discovery_hub_eligible'] for e in report['independent_doi_leads'])
           assert all('author' not in field.lower() for e in report['independent_doi_leads'] for field in e)
           print(json.dumps({"public_seeds":report["potential_seed_dois"],
+                            "doi_seeds_checked":report["source_dois_checked"],
                             "crossref_verified_journal_seed_count":report["verified_publications"],
                             "transient_author_count":report["transient_authors_used"],
+                            "crossref_author_search_rows":report["crossref_search_rows_examined"],
+                            "bibliographically_matched_rows":report["rows_with_matching_public_author"],
+                            "existing_or_held_rows":report["existing_or_identity_held_rows"],
                             "doi_only_lead_count":len(report["independent_doi_leads"]),
                             "no_private_or_public_mutation":True},sort_keys=True))
           PY
