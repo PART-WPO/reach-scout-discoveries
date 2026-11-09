@@ -152,7 +152,7 @@ def proposal(doi,meta,event,project,identity=None):
         "Authors / PI":authors,"Publication Date":meta.get("pub_date") or "",
         "Brief Abstract":meta.get("abstract") or "",
         "Evidence URL":primary,"Funding Evidence URL":"",
-        "Existing REACH Match":"No public DOI/title/URL match in SHA-verified REACH/Scout + official NOAA IR crosswalk. Private history not verified.",
+        "Existing REACH Match":"No match in SHA-verified public REACH/Scout DOI, title or URL checks and official NOAA IR crosswalk. Private reviewer history not verified.",
         "Scout Confidence":confidence["band"],
         "Source Run ID":"REACH-SCOUT-HUMAN-SCOPE-"+core_id}
     context="Research was bounded; publisher/program evidence supports publication identity but the specific WPO primary project association has NOT been demonstrated."
