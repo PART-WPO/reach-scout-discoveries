@@ -6,10 +6,60 @@ from pathlib import Path
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"tools"))
 from build_human_project_referrals import (
-    build,referral_state,publication_meta_valid,proposal,main,existing_verified_self_draft
+    build,referral_state,publication_meta_valid,proposal,main,existing_verified_self_draft,eligible_record,score_for_human_review,matching_note_case
 )
 
 class HumanProjectReferrals(unittest.TestCase):
+    def test_fast_screen_wpo_cue_goes_to_human_not_auto_eligible(self):
+        event={"doi":"10.1234/test","research_lane":"original",
+               "checked_evidence_urls":["https://publisher.example/article"]}
+        doc={"doi":"10.1234/test","structured_award":"NA26OARX459C0001"}
+        project=eligible_record(event,doc)
+        self.assertEqual(project["award_context_only"],"NA26OARX459C0001")
+        self.assertTrue(project["wpo_award_cue_not_proof"])
+        self.assertEqual(referral_state(event,self.published(),self.identity("",""),
+                                        project=project),
+                         "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL")
+        score=score_for_human_review(self.published(),self.identity("",""),project,
+                                    event["checked_evidence_urls"])
+        self.assertGreater(score["score"],0)
+        self.assertLessEqual(score["score"],70)
+        row=proposal("10.1234/test",self.published(),
+                     {**event,"event_id":"abc"},project,self.identity("",""))
+        self.assertEqual(row["fields"]["NOAA Award Number(s)"],"")
+        self.assertEqual(row["provenance"]["classification"],"NEEDS INVESTIGATION")
+        self.assertIn("Scout screening score:", " ".join(row["provenance"]["notes"]))
+
+    def test_clearly_contradictory_award_never_proposed(self):
+        event={"doi":"10.1234/test","research_lane":"original"}
+        doc={"doi":"10.1234/test","structured_award":"NA26OARX459C0001",
+             "funding":"CONTRADICTORY_TO_PILOT_PROJECT_AWARD"}
+        self.assertIsNone(eligible_record(event,doc))
+
+    def test_parent_award_does_not_transfer_to_child_output(self):
+        event={"doi":"10.5281/zenodo.123","research_lane":"related_output"}
+        doc={"research_subject":{"parent_publication_doi":"10.1234/article",
+              "child_dois":["10.5281/zenodo.123"]},
+              "structured_award":"NA26OARX459C0001"}
+        self.assertIsNone(matching_note_case(event,doc))
+        self.assertIsNone(eligible_record(event,doc))
+
+    def test_umbrella_award_without_project_lead_not_autostaged(self):
+        event={"doi":"10.1234/test","research_lane":"original"}
+        doc={"doi":"10.1234/test","structured_award":"NA22OAR4321234"}
+        self.assertIsNone(eligible_record(event,doc))
+
+    def test_fast_screen_cannot_bypass_duplicate_preprint_or_metadata(self):
+        event={"doi":"10.1234/test"}
+        p={"award_context_only":"NA26OARX459C0001"}
+        m=self.published()
+        self.assertEqual(referral_state(event,m,{"status":"IN_PUBLIC_SCOUT_QUEUE"},project=p),
+                         "HOLD_ALREADY_IN_PUBLIC_REACH_OR_SCOUT")
+        self.assertEqual(referral_state(event,m,self.identity("",""),project=p,watched=True),
+                         "HOLD_PREPRINT_MONTHLY_WATCH")
+        self.assertEqual(referral_state(event,{**m,"pub_date":""},self.identity("",""),project=p),
+                         "HOLD_OFFICIAL_PUBLICATION_OR_METADATA")
+
     def published(self):
         return {"status":"ok","provider":"crossref",
                 "resource_type":"proceedings-article",
