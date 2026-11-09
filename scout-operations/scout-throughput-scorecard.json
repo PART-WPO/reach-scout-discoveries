@@ -1,25 +1,25 @@
 {
   "schema": "reach-scout-throughput-scorecard-v1",
   "source_sha256": {
-    "scout-operations/crossref-candidate-queue.json": "0573a76c0aafb6cc3fc903f6a3f61a0232cda00219ba6ab7c95df4a1126a662a",
+    "scout-operations/crossref-candidate-queue.json": "535b70dd9a1c8e29c8e9830b5e3c7fd8986b78d9ae2815d3a4d0d22993466695",
     "scout-operations/historical-crossref-coverage.json": "92d36650e2077bbfc4a8f27d2f166be40b6c3831b7dd33ffdbd5fafef7057860",
     "scout-operations/historical-coverage.json": "f0d440a18f983a07bef10c16047d9dfae2d67039178a22f56294d935403cfb59",
     "scout-discoveries/manifest.json": "3132cae7c691bc3d5b3f0e45aa1d470fb06c4a64b7a3ad18c5b7a2e5513416b4",
     "scout-operations/preprint-watchlist.json": "9aee820ffa8eafb416d68f80d7cddb534ab33c97f61e1246ec892fb08f33b65e",
     "scout-operations/preprint-retirement-archive.json": "5707f60b259e3bebac9adadfa04b5191971f4f5feed8472d127fb6f0ef82c2b5",
     "scout-operations/preprint-13-identity-reconciliation.json": "1fb1025f8dc2f8ee3fb745bf1f4771b6a7246b21d59d78d4d11a8596f2063844",
-    "scout-operations/research-outcome-registry.json": "8887d1612a7b044cc07c226f82af220efde7dc052bb22194c1050bdcdcf4e414"
+    "scout-operations/research-outcome-registry.json": "c695f87dd909fa7b3ceb67ec17eab2e9cb6a92f4a83f50bb315f911389eb2f6c"
   },
   "source_freshness": {
     "crossref_queue_source_checks": {
       "scout-operations/historical-crossref-screening/actionable-routing.json": {
-        "recorded_sha256": "6e6561e92ff43a5ddc4f50d82a0dea7868f5689ff4e2728d7142e29fb9ab1f6a",
+        "recorded_sha256": "a80c7fa8556a63dbc0f5f991e4e9b65e8fa32544dc5e5c121828aae043a525ca",
         "current_sha256": "a80c7fa8556a63dbc0f5f991e4e9b65e8fa32544dc5e5c121828aae043a525ca",
-        "fresh": false
+        "fresh": true
       },
       "scout-operations/research-outcome-registry.json": {
-        "recorded_sha256": "a15a0826332e97a96ed79ec39c7a0ae5c5d8033141c2e64904fda493a517b993",
-        "current_sha256": "8887d1612a7b044cc07c226f82af220efde7dc052bb22194c1050bdcdcf4e414",
+        "recorded_sha256": "443104f1c99b9f27310bc8a098ee2ea54471c71ec84646c41a7f85adf15be587",
+        "current_sha256": "c695f87dd909fa7b3ceb67ec17eab2e9cb6a92f4a83f50bb315f911389eb2f6c",
         "fresh": false
       },
       "api-discoveries/historical-crossref/manifest.json": {
@@ -63,9 +63,9 @@
         "fresh": true
       },
       "scout-operations/preprint-watchlist.json": {
-        "recorded_sha256": "5773bb93fe627c87b79942cfe2f15ef9f06e0f6cca9f26c09cf19b935ab92c04",
+        "recorded_sha256": "9aee820ffa8eafb416d68f80d7cddb534ab33c97f61e1246ec892fb08f33b65e",
         "current_sha256": "9aee820ffa8eafb416d68f80d7cddb534ab33c97f61e1246ec892fb08f33b65e",
-        "fresh": false
+        "fresh": true
       }
     },
     "crossref_queue_fresh": false,
@@ -73,8 +73,8 @@
   },
   "screening_not_research": {
     "historical_crossref_dois": 614,
-    "identity_fast_exits": 433,
-    "bounded_identity_reviews": 47,
+    "identity_fast_exits": 426,
+    "bounded_identity_reviews": 54,
     "novel_research_candidates": 103,
     "preprint_holds": 7,
     "published_version_leads": 11,
