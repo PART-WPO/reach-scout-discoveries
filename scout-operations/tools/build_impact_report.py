@@ -69,11 +69,30 @@ def build(root=ROOT):
                                               for x in recovery["records"]) or
         recovery.get("new_public_scout_proposals") or recovery.get("new_reach_additions")):
         raise ValueError("DOI fallback report incorrectly reconciles recovery or review state")
-    if (referrals["unique_bounded_project_questions"]!=len(referrals["referrals"]) or
+    # The rapid human-investigation lane intentionally includes plausible WPO
+    # search-context referrals that are NOT formal bounded human questions.
+    # Count them separately; never turn a public review draft into approval.
+    referral_pool=referrals.get("potential_wpo_cases_quick_screened",
+                               referrals["unique_bounded_project_questions"])
+    if (referral_pool!=len(referrals["referrals"]) or
         referrals["human_referral_drafts_prevalidated"]!=len(referrals["draft_paths"]) or
         referrals.get("verified_public_scout_referral_batches",0)!=len(referrals.get("published_batch_paths",[])) or
         referrals.get("new_approved_reach_outputs")):
         raise ValueError("Human funding referrals were counted as approved or incomplete")
+    human_ids={e["event_id"] for e in registry["events"]
+               if e.get("bounded_human_question_to_verify")}
+    old_question_drafts=sum(
+        r.get("source_event_id") in human_ids and
+        r.get("scout_inbox_status") in (
+          "VALIDATED_INBOX_DRAFT_NOT_PRIVATE_HUB",
+          "EXISTING_VERIFIED_INBOX_DRAFT")
+        for r in referrals["referrals"])
+    old_question_published=sum(
+        r.get("source_event_id") in human_ids and
+        r.get("scout_inbox_status")=="PUBLISHED_PUBLIC_SCOUT_FEED_NOT_PRIVATE_HUB"
+        for r in referrals["referrals"])
+    if old_question_drafts + old_question_published > referrals["unique_bounded_project_questions"]:
+        raise ValueError("Verified human question referrals exceed their source questions")
     # After Actions bot commits, downstream reports may temporarily reflect
     # the prior immutable registry snapshot. Flag the freshness precisely.
     recovery_fresh=(recovery["source_registry_sha256"]==shas["outcome_registry"])
@@ -144,9 +163,11 @@ def build(root=ROOT):
         "doi_metadata_recovered_in_github_action":recovery["metadata_recovered"],
         "doi_metadata_still_pending":recovery["api_retry_or_pending"],
         "bounded_project_questions_identified":referrals["unique_bounded_project_questions"],
-        "human_project_question_inbox_drafts_prevalidated":referrals["human_referral_drafts_prevalidated"],
-        "human_project_question_published_public_scout_feed":
-            referrals.get("verified_public_scout_referral_batches",0),
+        "human_project_question_inbox_drafts_prevalidated":old_question_drafts,
+        "rapid_screen_needs_investigation_cases":referral_pool,
+        "rapid_screen_needs_investigation_inbox_drafts":referrals["human_referral_drafts_prevalidated"],
+        "rapid_screen_public_referral_batches":referrals.get("verified_public_scout_referral_batches",0),
+        "human_project_question_published_public_scout_feed":old_question_published,
         "private_human_project_imports":"NOT_VERIFIED",
         "original_or_related_public_preflight_cases":common["original_and_related_cases_preflighted"],
         "cross_cohort_doi_overlaps":common["cross_cohort_duplicate_doi_identities"],
