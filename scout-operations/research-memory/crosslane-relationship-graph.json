@@ -4,7 +4,7 @@
   "expansions_closed_by_memory": 0,
   "explicit_related_output_links": 11,
   "historical_metadata_pointers_not_treated_as_current": 229,
-  "historical_note_events_reused_as_context": 53,
+  "historical_note_events_reused_as_context": 54,
   "hub_records_automatically_staged": 0,
   "human_reviewer_decisions_changed": 0,
   "lane_doi_counts": {
@@ -11361,7 +11361,7 @@
         "explicit_parent_dois": [],
         "explicit_related_doi_count": 0,
         "explicit_related_dois": [],
-        "input_fingerprint": "746375a1a31fb236ec77818896625e1a49847fbad1707c096858c44dca1633ad",
+        "input_fingerprint": "6411b48c57fc452da6594d2ab67e2bc19c67fe60f16bcdabbecaf3f7abca1fb9",
         "nonterminal_related_dispositions": [],
         "recorded_related_note_count": 0,
         "recorded_related_note_event_ids": [],
@@ -11380,12 +11380,21 @@
       "original_research": {
         "formal_original_closed_by_memory": false,
         "identity_screened_current_snapshot": true,
-        "input_fingerprint": "3d4618441f8793cf41969f90ee9ea436a65f67a24299fcb0163efff2cf0caba7",
-        "nonterminal_dispositions": [],
-        "recorded_note_count": 0,
-        "recorded_note_event_ids": [],
-        "reuse_prior_notes_before_new_queries": false,
-        "source_evidence_file_sha256": []
+        "input_fingerprint": "a38122a739c658e00cdceae56eeb6fd4e8ab4a1737b7aa336403e2f6d0d18ab3",
+        "nonterminal_dispositions": [
+          "PROJECT_EVIDENCE_HOLD"
+        ],
+        "recorded_note_count": 1,
+        "recorded_note_event_ids": [
+          "d161d55dbb4e1e633720a4cc"
+        ],
+        "reuse_prior_notes_before_new_queries": true,
+        "source_evidence_file_sha256": [
+          {
+            "path": "scout-operations/historical-crossref-phase2/2026-11-09-1431ET-severe-hail-target-dataset-primary-project-hold.json",
+            "sha256": "09a3e6fa677ee15376755e371e38c346571c913f1497272d1b794f22f5cfe059"
+          }
+        ]
       },
       "preprint_or_version_hold": false,
       "primary_role": "HISTORICAL_CROSSREF",
@@ -36024,8 +36033,8 @@
   "public_author_names_or_spark_personnel_indexed": false,
   "read_only": true,
   "schema": "reach-scout-crosslane-research-memory-v1",
-  "source_documented_doi_nodes": 34,
-  "source_documented_doi_note_events": 52,
+  "source_documented_doi_nodes": 35,
+  "source_documented_doi_note_events": 53,
   "source_documented_nondoi_note_events": 1,
   "source_evidence_sha256": {
     "historical_metadata_checkpoint_sha256": "3e41e0eaa517a4f490d28a95a8b8b1b3341103acdcc110ad744a506fb2683894",
@@ -36084,6 +36093,7 @@
       "scout-operations/historical-crossref-phase2/2026-11-09-0441ET-sfs-western-pacific-cyclone-project-attribution.json": "55a005344ffc9235eb97aa5c796b4581c196a17f89359dca2d07857a1fb3b04e",
       "scout-operations/historical-crossref-phase2/2026-11-09-1129ET-seus-rainfall-zenodo-related-ci-award-hold.json": "0883da54489273c03831e2801fddc9d20c6ba8bfaa48fe10a83b34a0cc4e28e5",
       "scout-operations/historical-crossref-phase2/2026-11-09-1332ET-north-american-heat-s2s-publisher-ir-project-hold.json": "1ca15edd7e9ed9e9cadcc5032273de83d8f891f129e2f167ce17c9d818695127",
+      "scout-operations/historical-crossref-phase2/2026-11-09-1431ET-severe-hail-target-dataset-primary-project-hold.json": "09a3e6fa677ee15376755e371e38c346571c913f1497272d1b794f22f5cfe059",
       "scout-operations/monthly-research/2026-11-06-0528ET-storm-harry-qj70325-project-scope-hold.json": "9bf7c3c778f1cbf1622db3e994b7facc446367f5cc3ed6094517ab5884722911",
       "scout-operations/monthly-research/2026-11-06-0630ET-storm-harry-ecmwf-two-doi-access-holds.json": "38d2065e50f5691c4452ea054a54409a88392e3d76f60969a311a78d96b3bf7c",
       "scout-operations/monthly-research/2026-11-06-0730ET-storm-harry-ecmwf-official-catalog-followup.json": "7a63adfadb964734abec498d27cc54bc6e431d0cb8f51c11bdc8f4e6131491c3",
@@ -36091,7 +36101,7 @@
     },
     "verified_preflight_identity_fingerprint": "b657eadac8a90c53af57536beaef96096b7236d87ac6e31583e5943c599f83cb",
     "verified_preflight_input_manifest_shas": {
-      "crossref_research_cases": "4672c4f82ed696de205ebac8e10abeff0392db2d23a086d583b88ad4c19eddf4",
+      "crossref_research_cases": "b9bb0f541e34126dc31e1a086d55d58b663043642fc8ad5333075b2a691b6aac",
       "crossref_routing": "a80c7fa8556a63dbc0f5f991e4e9b65e8fa32544dc5e5c121828aae043a525ca",
       "historical_crossref_manifest": "799744c7e83f218d22cc19afacb7cfcf2762feb490659efde9f58bf19473b1fa",
       "historical_datacite_manifest": "b21e3b81cf47c3187eb851d1d2b5ec0200d8ed54970c01f871bbd8b96475921e",
@@ -36104,7 +36114,7 @@
       "reviewer_feedback": "a3202402ea621e42eaf660c622f313c1d52a6bed1112d5d31b16947d2adfdb94"
     }
   },
-  "source_fingerprint": "89201c2e7d571b80a4fcff565732cd1cf8bb5e804ba613729cd432f4628451ce",
+  "source_fingerprint": "91407c38f1635871c9567c31656a5b4c9f1e8dc0bcbc10bea8169cccbff63904",
   "verified_reach_originals_preserved_as_expansion_seeds": 426,
   "work_action_counts": {
     "CONTINUE_DISTINCT_RELATED_OUTPUT_VERIFICATION": 2,
@@ -41827,26 +41837,26 @@
       "track": "EXPANSION"
     },
     {
-      "can_skip_retrieving_unchanged_prior_note": false,
+      "can_skip_retrieving_unchanged_prior_note": true,
       "complete": false,
       "doi": "10.1175/aies-d-26-0004.1",
-      "input_fingerprint": "3d4618441f8793cf41969f90ee9ea436a65f67a24299fcb0163efff2cf0caba7",
+      "input_fingerprint": "a38122a739c658e00cdceae56eeb6fd4e8ab4a1737b7aa336403e2f6d0d18ab3",
       "lane": "HISTORICAL_CROSSREF",
       "next_action": "REUSE_RECORDED_MONTHLY_PUBLIC_TRIAGE_NO_AUTOMATIC_REPROPOSAL",
       "not_a_human_decision": true,
-      "note_events_reused": 0,
+      "note_events_reused": 1,
       "track": "ORIGINAL"
     },
     {
-      "can_skip_retrieving_unchanged_prior_note": false,
+      "can_skip_retrieving_unchanged_prior_note": true,
       "complete": false,
       "doi": "10.1175/aies-d-26-0004.1",
       "existing_distinct_related_doi_links": 0,
-      "input_fingerprint": "746375a1a31fb236ec77818896625e1a49847fbad1707c096858c44dca1633ad",
+      "input_fingerprint": "6411b48c57fc452da6594d2ab67e2bc19c67fe60f16bcdabbecaf3f7abca1fb9",
       "lane": "HISTORICAL_CROSSREF",
       "next_action": "VERIFY_PROJECT_SCOPE_THEN_EXPAND",
       "not_a_human_decision": true,
-      "note_events_reused": 0,
+      "note_events_reused": 1,
       "track": "EXPANSION"
     },
     {
