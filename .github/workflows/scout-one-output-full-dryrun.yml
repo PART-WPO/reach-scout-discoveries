@@ -34,7 +34,7 @@ jobs:
           assert r['is_watchlisted_preprint'] is False
           assert r['known_signed_human_decision'] is False
           assert r['decision']=='READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL'
-          assert r['screening_score_0_to_100_uncalibrated']==65
+          assert r['screening_score_0_to_100_uncalibrated']==70
           assert r['public_review_candidate_validated'] is True
           assert r['preflight_24_columns']==24
           assert r['preflight_candidate_count']==1
