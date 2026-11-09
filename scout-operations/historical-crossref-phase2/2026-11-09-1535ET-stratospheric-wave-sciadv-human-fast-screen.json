@@ -1,0 +1,55 @@
+{
+  "schema": "scout-source-backed-research-evidence-v1",
+  "recorded_at": "2026-11-09T15:35:00-05:00",
+  "lane": "historical_crossref_original",
+  "original_doi": "10.1126/sciadv.aee4171",
+  "title": "Stratospheric wave predictability enhances surface forecasts over North America",
+  "publication_status": "OFFICIALLY_PUBLISHED_JOURNAL_ARTICLE",
+  "publisher_published_date": "2026-09-18",
+  "source_evidence": [
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42758849/",
+      "type": "official_nlm_pubmed_publication_record",
+      "finding": "PubMed indexes exact Science Advances DOI 10.1126/sciadv.aee4171, volume 12 issue 38, official publication 18 September 2026. Not a preprint."
+    },
+    {
+      "url": "https://repository.library.noaa.gov/view/noaa/76513",
+      "type": "official_NOAA_IR_record",
+      "finding": "NOAA IR record noaa:76513 verifies exact DOI, article title and publication, and explicitly lists funding NA22OAR4590217, NA21OAR4310383 and NA23OAR4320198. This proves official IR metadata and WPO-pattern funding acknowledgment, not that the article is a deliverable of a specific SPARK primary award."
+    },
+    {
+      "url": "https://www.gfdl.noaa.gov/most-recent-publications/",
+      "type": "official_NOAA_GFDL_publications",
+      "finding": "NOAA GFDL independently lists September 2026 Science Advances published article with exact DOI and title."
+    }
+  ],
+  "structured_award": "NA22OAR4590217",
+  "spark_primary_award_context": "NA22OAR4590217",
+  "funding": "POSSIBLE_WPO_PROJECT_DELIVERABLE_NEEDS_HUMAN_VERIFICATION",
+  "exact_primary_spark_award_verified_for_output": false,
+  "output_to_specific_primary_wpo_project_verified": false,
+  "preprint_original": false,
+  "operational_disposition": "BOUNDED_PROJECT_QUESTION_FOR_HUMAN",
+  "decision": "NEEDS_INVESTIGATION_PUBLIC_REFERRAL_REQUEST",
+  "original_status_changed": false,
+  "expansion_completed": false,
+  "public_proposal_eligible": false,
+  "private_hub_action": "NONE",
+  "next_action": "After source-verified full REACH+Scout+NOAA IR and protected human-feedback check, create a confidence-scored Needs Investigation public reviewer item if absent and within safe capacity. Reviewer question: Is the published Science Advances article 10.1126/sciadv.aee4171 an output of primary SPARK award NA22OAR4590217, or is that funding only background/cooperative support? Keep verified award and parent fields blank until reviewer determines. No private Hub writes.",
+  "selection_provenance": {
+    "queue_schema": "reach-scout-crossref-candidate-queue-v2",
+    "queue_lane": "NOVEL_IDENTITY_RESEARCH",
+    "queue_priority": 90,
+    "queue_successful_refresh_workflow_run_id": 42694239238,
+    "compact_index_schema": "reach-scout-compact-crosslane-mission-index-v1",
+    "full_graph_refetched": false
+  },
+  "research_counts": {
+    "originals_screened": 1,
+    "originals_deeply_examined": 1,
+    "expansion_cases_examined": 0,
+    "new_explicit_child_doi_links": 0,
+    "private_hub_outcomes_verified": 0
+  },
+  "note": "Official NLM publication, NOAA IR and GFDL corroborate the same published DOI. NOAA IR funding list is exact but project deliverable attribution remains a human question. Public identity must be source-verified in existing guarded workflow; this note alone does not count as completed original."
+}
