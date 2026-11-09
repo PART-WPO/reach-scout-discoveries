@@ -7,6 +7,8 @@ TOOLS=ROOT/"scout-operations/tools"
 sys.path.insert(0,str(TOOLS))
 from ir_reach_identity import verified_snapshot,identity_check,research_route
 from identity_disposition import verified_disposition
+from research_memory import read_index, metadata_result, write_index
+from datetime import datetime,timezone
 OUT=ROOT/"scout-operations/reports/independent-metadata-lookup/latest.json"
 def load(name):
  spec=importlib.util.spec_from_file_location(name,TOOLS/(name+".py"))
@@ -49,7 +51,20 @@ def main():
           "identity_next_action":shared["next_action"],
           "seed_expansion_preserved":True}
 
- doi_records=[{**v,"metadata":doi.metadata(d),"artifact_scope":scope.zenodo(d)} for d,v in sorted(targets.items())]
+ memory=read_index(ROOT)
+ hits=0
+ doi_records=[]
+ for d,v in sorted(targets.items()):
+  md,observed,reason=metadata_result(ROOT,memory,d)
+  cached=md is not None
+  if cached:
+   hits+=1
+  else:
+   md=doi.metadata(d)
+   observed=datetime.now(timezone.utc).isoformat()
+  doi_records.append({**v,"metadata":md,"metadata_observed_at":observed,
+                      "metadata_memory_hit":cached,"metadata_memory_reason":reason,
+                      "artifact_scope":scope.zenodo(d)})
  for entry in doi_records:
   entry["identity_gate"]=independent_identity(entry["doi"],entry["metadata"].get("title",""))
  code_records=[]
@@ -64,8 +79,9 @@ def main():
   resume.append({"public_identity_status":entry["identity_gate"]["public_identity"]["status"],"noaa_ir_identity":entry["identity_gate"]["noaa_ir_identity"],"identity":"doi:"+entry["doi"],"kind":"doi","lookup_status":m["status"],"metadata_source":m.get("provider"),"evidence":m.get("evidence"),"lead_files":entry["lead_files"],"next_action":entry["identity_gate"]["identity_next_action"] if m["status"]=="ok" else "retry_or_escalate_metadata"})
  for entry in code_records:
   resume.append({"identity":entry.get("identity"),"output_url":entry.get("output_url"),"kind":"github","lookup_status":entry.get("status"),"evidence":entry.get("evidence",[]),"next_action":"resume_research_verification" if entry.get("status")=="ok" else "retry_or_escalate_metadata"})
- result={"artifact_scope_policy":"Zenodo file listings and exact GitHub tag trees are read-only evidence, not funding or approval. Access failures do not mean files are absent.","resume_queue":resume,"schema":"reach-scout-independent-metadata-lookup-v1","read_only":True,"public_identity_source_fingerprint":public["source_fingerprint"],"noaa_ir_index_verified":ir_index is not None,"doi_records":doi_records,"github_records":code_records,"doi_count":len(doi_records),"github_count":len(code_records),"doi_successful":sum(x["metadata"]["status"]=="ok" for x in doi_records),"github_successful":sum(x["status"]=="ok" for x in code_records),"policy":"Metadata enrichment does not change independent discovery provenance, establish funding/standalone eligibility, approve review or publish REACH outputs. Crossref created and GitHub repository created are not publication dates."}
+ result={"artifact_scope_policy":"Zenodo file listings and exact GitHub tag trees are read-only evidence, not funding or approval. Access failures do not mean files are absent.","resume_queue":resume,"schema":"reach-scout-independent-metadata-lookup-v1","read_only":True,"public_identity_source_fingerprint":public["source_fingerprint"],"noaa_ir_index_verified":ir_index is not None,"doi_records":doi_records,"github_records":code_records,"doi_count":len(doi_records),"github_count":len(code_records),"doi_metadata_memory_hits":hits,"doi_metadata_network_attempts":len(doi_records)-hits,"doi_successful":sum(x["metadata"]["status"]=="ok" for x in doi_records),"github_successful":sum(x["status"]=="ok" for x in code_records),"policy":"Metadata enrichment does not change independent discovery provenance, establish funding/standalone eligibility, approve review or publish REACH outputs. Crossref created and GitHub repository created are not publication dates."}
  OUT.parent.mkdir(parents=True,exist_ok=True)
  OUT.write_text(json.dumps(result,indent=2,sort_keys=True,ensure_ascii=False)+"\n",encoding="utf8")
+ write_index(ROOT)
  print(json.dumps({k:v for k,v in result.items() if k not in ("doi_records","github_records")},indent=2))
 if __name__=="__main__":main()
