@@ -1,0 +1,54 @@
+{
+  "schema": "reach-scout-decision-checkpoint-v1",
+  "decision_contract": "reach-scout-decision-pipeline-v1",
+  "input_fingerprint": "b68693ff5ef6ec1be0d3d54fd089b749bd6cfe3e658c4936a57dbd9b96c0de63",
+  "index_fingerprint": "64593e9870d8ba945ffb28d1a5a610bf23e5e112d1c908a9151e6ebb34bac034",
+  "case_input": {
+    "doi": "10.1002/qj.5049",
+    "title": "An overview of drifting buoy deployments in atmospheric river reconnaissance from 2019 to 2024",
+    "url": "https://doi.org/10.1002/qj.5049",
+    "cohort": "historical_crossref",
+    "publication_status": "PUBLISHED",
+    "primary_award_match": true,
+    "project_attribution": "CONTRADICTED",
+    "research_rounds": 2,
+    "checked_sources": [
+      "https://rmets.onlinelibrary.wiley.com/doi/10.1002/qj.5049",
+      "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-028.csv"
+    ],
+    "secondary_identity_checked": false,
+    "required_metadata_verified": false,
+    "private_review_status": "NOT_VERIFIED",
+    "funding_evidence": "Publisher identifies Global Drifter Program support under NA20OAR4320278, while the matching SPARK primary project is AQPI Phase 2 radar and precipitation decision support",
+    "original_doi_seed_expansion": "PRESERVE"
+  },
+  "evaluation": {
+    "doi": "10.1002/qj.5049",
+    "cohort": "historical_crossref",
+    "identity_check": {
+      "status": "NO_PUBLIC_IDENTITY_MATCH",
+      "reason": "NO_MATCH_IN_VERIFIED_PUBLIC_SNAPSHOT",
+      "matches": [],
+      "caveat": "Public snapshot only; private Hub decisions are not asserted."
+    },
+    "project_attribution": "CONTRADICTED",
+    "primary_award_match": true,
+    "publication_status": "PUBLISHED",
+    "private_review_status": "NOT_VERIFIED",
+    "research_rounds": 2,
+    "decision": "NO_DEMONSTRATED_SAME_WPO_PROJECT",
+    "review_action": "NONE",
+    "notes": [
+      "Contradictory project-purpose evidence; do not stage on shared grant number"
+    ],
+    "checked_sources": [
+      "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/details/part-028.csv",
+      "https://rmets.onlinelibrary.wiley.com/doi/10.1002/qj.5049"
+    ],
+    "unverified_private_hub_import": true,
+    "automatically_staged": false,
+    "seed_expansion_preserved": true
+  },
+  "source_case_path": "scout-operations/tests/published-crossref-decision-cases.json",
+  "human_decision_modified": false
+}
