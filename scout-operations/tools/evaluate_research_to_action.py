@@ -67,8 +67,9 @@ def prior_cases(root):
         for source in entry.get("source_evidence", []):
             rel = source.get("path", "")
             expected = source.get("sha256")
-            if not rel.startswith(("scout-operations/historical-crossref-phase2/",
-                                   "scout-operations/monthly-research/")):
+            if (Path(rel).is_absolute() or ".." in Path(rel).parts or
+                    not rel.startswith(("scout-operations/historical-crossref-phase2/",
+                                        "scout-operations/monthly-research/"))):
                 raise ValueError("Prior case evidence outside approved research files")
             if not expected or digest((root / rel).read_bytes()) != expected:
                 raise ValueError("Prior case source evidence SHA mismatch: " + rel)
@@ -269,6 +270,13 @@ def compile_decision(a):
                                 "Current public source verifies the existing REACH identity")
         action = "Do not propose this original again; separately explore relevant project-linked datasets, code or articles"
         trigger = "New related-output source evidence or a changed public identity"
+    elif a["publicly_staged"] and a["contradictory_project_evidence"]:
+        route, owner, reason = ("PUBLIC_STAGED_PROJECT_CONFLICT_FLAG_NO_RESTAGE",
+                                "PUBLIC_HANDOFF_VERIFICATION",
+                                "An existing public proposal has a recorded project-evidence contradiction")
+        action = ("Flag contradictory funding evidence for authorized human review of the "
+                  "existing public proposal; do not restage, infer import or modify the Hub")
+        trigger = "Authenticated human assessment and corrected output-to-primary-project evidence"
     elif a["publicly_staged"]:
         route, owner, reason = ("PUBLIC_PROPOSAL_ALREADY_STAGED_NO_DUPLICATE", "PUBLIC_HANDOFF_VERIFICATION",
                                 "Public Scout staging exists; private Hub import remains unknown")
@@ -327,6 +335,13 @@ def compile_decision(a):
                                 "Required metadata remains unverified")
         action = "Recover only the named incomplete metadata from official DOI registry before normal reviewer preflight"
         trigger = "Verified complete standard 24-column metadata draft"
+    elif (a["public_identity"] != "PUBLIC_SCREEN_COMPLETED_NOT_NEW_OUTPUT_PROOF"
+          or a["source_url_count"] < 2):
+        route, owner, reason = ("TARGETED_INDEPENDENT_IDENTITY_AND_SOURCE_CHECK",
+                                "SCOUT_BOUNDED_RESEARCH",
+                                "Current complete public identity and two source checks are not established")
+        action = "Verify exact DOI against fresh public REACH/Scout and confirm two distinct primary sources once"
+        trigger = "Verified source-identified original and independent evidence"
     else:
         # Safety: even this strongest path never automatically publishes.
         route, owner, reason = ("REVIEW_PREFLIGHT_CANDIDATE_NO_AUTO_STAGING",
@@ -359,6 +374,8 @@ def independent_critique(a, decision):
         issues.append("HUMAN_QUESTION_NOT_SOURCE_BACKED")
     if route == "REVIEW_PREFLIGHT_CANDIDATE_NO_AUTO_STAGING":
         if (a["gates"]["publication"] != "PUBLISHED_CLAIM_SUPPORTED_IN_PRIOR_SOURCE" or
+                a["public_identity"] != "PUBLIC_SCREEN_COMPLETED_NOT_NEW_OUTPUT_PROOF" or
+                a["source_url_count"] < 2 or
                 not a["primary_project_supported_by_prior_evidence"] or
                 a["contradictory_project_evidence"] or
                 not a["prior_secondary_identity_checked"] or
@@ -448,6 +465,24 @@ def build(root=ROOT):
         raise ValueError("Registry cases do not cover each event's identity")
     counts = Counter(x["compiled_decision"]["recommended_disposition"] for x in output)
     owners = Counter(x["compiled_decision"]["owner"] for x in output)
+    actions_requiring_active_work = {
+        "BOUNDED_HUMAN_PROJECT_QUESTION", "DOI_METADATA_RECOVERY_ONLY",
+        "TARGETED_IDENTITY_VERSION_CHECK", "TARGETED_OFFICIAL_PUBLICATION_CHECK",
+        "TARGETED_PRIMARY_PROJECT_PROOF", "TARGETED_SECONDARY_IDENTITY_CHECK",
+        "TARGETED_MISSING_METADATA_RECOVERY", "TARGETED_INDEPENDENT_IDENTITY_AND_SOURCE_CHECK",
+        "PUBLIC_STAGED_PROJECT_CONFLICT_FLAG_NO_RESTAGE",
+        "REVIEW_PREFLIGHT_CANDIDATE_NO_AUTO_STAGING",
+    }
+    flagged = [x for x in output
+               if x["compiled_decision"]["recommended_disposition"] in actions_requiring_active_work]
+    action_preview = [{
+        "identity": x["identity"],
+        "recommended_disposition": x["compiled_decision"]["recommended_disposition"],
+        "owner": x["compiled_decision"]["owner"],
+        "next_action": x["compiled_decision"]["next_action"],
+        "evidence_note_paths": [s["path"] for s in x["evaluation"]["source_note_sha256"]],
+    } for x in sorted(flagged, key=lambda x: (
+        x["compiled_decision"]["owner"], x["identity"]))]
     note_events = sum(x["evaluation"]["note_event_count"] for x in output)
     if note_events != registry["research_note_events"]:
         raise ValueError("Pilot failed to preserve all research-note evidence")
@@ -471,6 +506,8 @@ def build(root=ROOT):
         "source_case_dispositions_unchanged": True,
         "recommended_disposition_counts": dict(sorted(counts.items())),
         "recommended_owner_counts": dict(sorted(owners.items())),
+        "proposed_active_followups_not_executed": len(action_preview),
+        "active_followup_preview": action_preview,
         "human_questions_identified_not_delivered": counts["BOUNDED_HUMAN_PROJECT_QUESTION"],
         "research_ready_review_proposals_automatically_created": 0,
         "private_hub_imports": "NOT_VERIFIED",
