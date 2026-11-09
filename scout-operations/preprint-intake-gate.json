@@ -1,52 +1,36 @@
 {
   "schema": "reach-scout-preprint-intake-gate-v1",
-  "checked_at": "2026-11-09T19:44:07.127158+00:00",
+  "checked_at": "2026-11-09T20:35:05.311949+00:00",
   "policy": "All new publication proposals require registry check. A preprint DOI cannot be staged through ANY origin. Uncertain metadata remains on hold. Existing human decisions unchanged.",
   "checks": [
     {
-      "path": "scout-discoveries/inbox/2026-11-09-human-project-398fe73f0c7f3ffa37.csv",
-      "sha256": "ff6c13168265415ad31251ae5cd37e4603a746c2b002c89407a6d4e977705c47",
+      "path": "scout-discoveries/inbox/2026-11-09-human-project-8963668e6a0f98ac1c.csv",
+      "sha256": "731f064e145a731d3838ef77adb62405e6932bf9cd10caddc0cc2623bc8994f3",
       "verdict": "eligible",
       "rows": [
         {
-          "doi": "10.1016/j.softx.2024.101863",
+          "doi": "10.1029/2026jd046327",
           "status": "eligible",
           "reason": "Crossref identifies an officially issued scholarly publication",
           "evidence": [
-            "https://api.crossref.org/works/10.1016/j.softx.2024.101863",
-            "https://api.datacite.org/dois/10.1016/j.softx.2024.101863"
+            "https://api.crossref.org/works/10.1029/2026jd046327",
+            "https://api.datacite.org/dois/10.1029/2026jd046327"
           ]
         }
       ]
     },
     {
-      "path": "scout-discoveries/inbox/2026-11-09-human-project-866c8052a22849b2de.csv",
-      "sha256": "af3c9bd5b16a32fa7d1299d8fb0ba7da480a094d667e77105af35ab74ab0fd9f",
+      "path": "scout-discoveries/inbox/2026-11-09-human-project-ec8541bda93af057fc.csv",
+      "sha256": "d3387f36e5bac7993a4cbb153ef2496349080a0d682f447f04c8c2409f8cca8b",
       "verdict": "eligible",
       "rows": [
         {
-          "doi": "10.1016/j.atmosenv.2021.118760",
+          "doi": "10.1109/past49659.2022.9975045",
           "status": "eligible",
           "reason": "Crossref identifies an officially issued scholarly publication",
           "evidence": [
-            "https://api.crossref.org/works/10.1016/j.atmosenv.2021.118760",
-            "https://api.datacite.org/dois/10.1016/j.atmosenv.2021.118760"
-          ]
-        }
-      ]
-    },
-    {
-      "path": "scout-discoveries/inbox/2026-11-09-human-project-b332d53770e8cbc1d4.csv",
-      "sha256": "78a0383516a63efc40aabe7bd0e05dae204b6c7e4cd691cb85c038464cd3885b",
-      "verdict": "eligible",
-      "rows": [
-        {
-          "doi": "10.1007/s10596-024-10317-7",
-          "status": "eligible",
-          "reason": "Crossref identifies an officially issued scholarly publication",
-          "evidence": [
-            "https://api.crossref.org/works/10.1007/s10596-024-10317-7",
-            "https://api.datacite.org/dois/10.1007/s10596-024-10317-7"
+            "https://api.crossref.org/works/10.1109/past49659.2022.9975045",
+            "https://api.datacite.org/dois/10.1109/past49659.2022.9975045"
           ]
         }
       ]
@@ -375,6 +359,6 @@
       ]
     }
   ],
-  "eligible_batches": 14,
+  "eligible_batches": 13,
   "held_batches": 3
 }
