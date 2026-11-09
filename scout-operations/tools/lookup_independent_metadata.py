@@ -7,7 +7,7 @@ TOOLS=ROOT/"scout-operations/tools"
 sys.path.insert(0,str(TOOLS))
 from ir_reach_identity import verified_snapshot,identity_check,research_route
 from identity_disposition import verified_disposition
-from research_memory import read_index, metadata_result, write_index
+from research_memory import read_index, metadata_result, write_index, historical_author_lead
 from datetime import datetime,timezone
 OUT=ROOT/"scout-operations/reports/independent-metadata-lookup/latest.json"
 def load(name):
@@ -62,7 +62,9 @@ def main():
   else:
    md=doi.metadata(d)
    observed=datetime.now(timezone.utc).isoformat()
-  doi_records.append({**v,"metadata":md,"metadata_observed_at":observed,
+  doi_records.append({**v,"metadata":md,
+                      "previous_public_research":historical_author_lead(ROOT,d),
+                      "metadata_observed_at":observed,
                       "metadata_memory_hit":cached,"metadata_memory_reason":reason,
                       "artifact_scope":scope.zenodo(d)})
  for entry in doi_records:
