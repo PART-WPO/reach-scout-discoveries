@@ -25,6 +25,15 @@ at most 12 candidate DOI tasks per lane, with the same input source fingerprint.
 
 Every hourly mission should read this compact index **after** reading the
 existing authoritative `active-workstream.json`, not replace its prioritization.
+A DOI can belong to several source cohorts; **monthly-original work takes
+precedence even when the same DOI is also in historical Crossref/DataCite**.
+Original research from preprints stays in the monthly watchlist, never an
+hourly new-output lookup. A related output with a recorded public
+already-in-REACH or staged-for-human-review status is preserved in a separate
+`existing_public_related_or_staged` research group rather than selected
+for duplicate review. This records public status only, not private Hub import.
+The mission index shares **both** the graph's source fingerprint and its
+builder-policy SHA, to detect code changes as well as evidence changes.
 The preview includes separate monthly originals, monthly related, Crossref
 identity/research, verified-REACH related-output expansion, historical DataCite,
 and DOI-less code research lanes. It downranks previously researched evidence
