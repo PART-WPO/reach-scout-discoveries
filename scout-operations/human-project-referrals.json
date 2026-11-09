@@ -1,11 +1,13 @@
 {
   "schema": "reach-scout-bounded-project-human-referral-v1",
-  "source_outcome_event_count": 57,
-  "source_outcome_sha256": "88d6e99e999c280c756e15cba2ad98fa30f2311ec0beae2ff9af786bb8bd1903",
+  "source_outcome_event_count": 58,
+  "source_outcome_sha256": "b174f12857cc6ee590309768465a94c87bd11e8b118203056019df642df62bd4",
   "unique_bounded_project_questions": 2,
-  "potential_wpo_cases_quick_screened": 11,
-  "human_referral_drafts_prevalidated": 0,
-  "draft_paths": [],
+  "potential_wpo_cases_quick_screened": 12,
+  "human_referral_drafts_prevalidated": 1,
+  "draft_paths": [
+    "scout-discoveries/inbox/2026-11-09-human-project-f706c52fc493a7d6a2.csv"
+  ],
   "published_batch_paths": [
     "scout-discoveries/batches/2026-11-09-human-project-b332d53770e8cbc1d4.csv",
     "scout-discoveries/batches/2026-11-09-human-project-866c8052a22849b2de.csv",
@@ -1146,6 +1148,120 @@
       "review_question": "Reviewer question: Is this independently published output a deliverable of SPARK primary award NA22OAR4590512 (rather than merely topically related), and if so which project parent should it use?",
       "scout_inbox_status": "PUBLISHED_PUBLIC_SCOUT_FEED_NOT_PRIVATE_HUB",
       "published_scout_batch_path": "scout-discoveries/batches/2026-11-09-human-project-8963668e6a0f98ac1c.csv",
+      "eligible_for_new_reach_addition": "NOT_VERIFIED",
+      "private_hub_import": "NOT_VERIFIED",
+      "human_approval": "NOT_VERIFIED"
+    },
+    {
+      "doi": "10.1029/2026jd046349",
+      "source_event_id": "251e562d1ef5511f5ea803fb",
+      "source_file": "scout-operations/historical-crossref-phase2/2026-11-09-1729ET-upper-great-lakes-snow-publisher-459-new-candidate-screen.json",
+      "source_sha256": "8572e730725edf1227baaf8a12d095755fc13a716563e1bda3cca306c49fe955",
+      "official_metadata": {
+        "status": "ok",
+        "provider": "crossref",
+        "evidence": "https://api.crossref.org/works/10.1029/2026jd046349",
+        "title": "The Synoptic, Microphysical, and Radar Characteristics of Upper Great Lakes Snow Events",
+        "creators": [
+          "Timothy J. Wagner",
+          "Jack Richter",
+          "Marian Mateling",
+          "Claire Pettersen",
+          "Mark Kulie"
+        ],
+        "resource_type": "journal-article",
+        "publication_status": "official_journal_article",
+        "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>\n                    The upper Great Lakes region is well‐known for significant snowfall during the winter months. The microphysical characteristics of the snow depend to a great degree on snow particle formation and growth processes that are linked to regime‐dependent environmental conditions. A self‐organizing map (SOM) was generated from over a decade of mean sea level pressure reanalyzes during winter months to classify the environment into lake‐effect, synoptically forced, or ambiguous regimes. These regimes were then evaluated with respect to snow microphysical and bulk accumulation observations at Marquette, Michigan, near the southern shore of Lake Superior, and linked to radar‐derived quantitative precipitation estimation (QPE) variability. Once event categories are defined by the SOM, it is possible to evaluate the microphysical characteristics of the different regime types. Synoptic snow forms over a deeper layer, has higher radar reflectivities, and features different particle size distributions when compared to lake‐effect snow events. The disparate microphysical characteristics mean that the different regimes exhibit distinct radar reflectivity to snow liquid water equivalent rate (\n                    <jats:italic>Z</jats:italic>\n                    ‐to‐\n                    <jats:italic>S</jats:italic>\n                    ) relationships. Existing\n                    <jats:italic>Z</jats:italic>\n                    ‐to‐\n                    <jats:italic>S</jats:italic>\n                    relationships used for operational QPE do not adequately represent both synoptic and lake effect snow, as they tend to overestimate snow from lake effect events and underestimate synoptic snowfall at higher reflectivity values. It is recommended that operational radar users adjust their\n                    <jats:italic>Z</jats:italic>\n                    ‐to‐\n                    <jats:italic>S</jats:italic>\n                    relationship to match the regime‐dependent forcing mechanisms.\n                  </jats:p>",
+        "pub_date": "2026-07-28",
+        "preprint_posted_date": "",
+        "pub_date_basis": "Crossref published-print",
+        "pub_date_precision": "day",
+        "publisher": "American Geophysical Union (AGU)",
+        "funding_references": [
+          {
+            "DOI": "10.13039/100018608",
+            "name": "National Environmental Satellite, Data, and Information Service",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "NA20NES4320003"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "NA20NES4320003"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100018608",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/100018608",
+            "name": "National Environmental Satellite, Data, and Information Service",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "NA21OAR4590367"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "NA21OAR4590367"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100018608",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          }
+        ],
+        "related_identifiers": {},
+        "attempts": [
+          {
+            "provider": "datacite",
+            "url": "https://api.datacite.org/dois/10.1029/2026jd046349",
+            "error": {
+              "kind": "http",
+              "code": 404
+            }
+          },
+          {
+            "provider": "crossref",
+            "url": "https://api.crossref.org/works/10.1029/2026jd046349",
+            "error": null
+          }
+        ]
+      },
+      "public_identity": {
+        "status": "NO_PUBLIC_IDENTITY_MATCH",
+        "reason": "NO_MATCH_IN_VERIFIED_PUBLIC_SNAPSHOT",
+        "matches": [],
+        "caveat": "Public snapshot only; private Hub decisions are not asserted.",
+        "noaa_ir_reach_check": {
+          "status": "VERIFIED_IR_URL_NOT_IN_PUBLIC_REACH",
+          "official_url": "https://repository.library.noaa.gov/view/noaa/76032",
+          "match_uid": null,
+          "match_detail_shard": null
+        }
+      },
+      "project_search_context_only": {
+        "award_context_only": "NA21OAR4590367",
+        "project_context_only": "",
+        "wpo_award_cue_not_proof": true,
+        "reason_for_review": "WPO-pattern award cited but exact funded project deliverable unverified"
+      },
+      "disposition": "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL",
+      "review_question": "Reviewer question: Select and verify the correct SPARK parent for the explicitly funded WPO award NA21OAR4590367; confirm the output belongs with that parent before addition.",
+      "scout_inbox_status": "VALIDATED_INBOX_DRAFT_NOT_PRIVATE_HUB",
+      "published_scout_batch_path": null,
       "eligible_for_new_reach_addition": "NOT_VERIFIED",
       "private_hub_import": "NOT_VERIFIED",
       "human_approval": "NOT_VERIFIED"
