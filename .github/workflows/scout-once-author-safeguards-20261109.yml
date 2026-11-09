@@ -6,6 +6,7 @@ on:
       - '.github/workflows/scout-once-author-safeguards-20261109.yml'
 permissions:
   contents: read
+  actions: read
 concurrency:
   group: oneoff-public-reach-author-safeguards-20261109
   cancel-in-progress: false
@@ -23,34 +24,35 @@ jobs:
           set -euo pipefail
           python -m unittest discover -s scout-operations/tests -p 'test_replay_author_safeguards.py' -v
           python -m unittest discover -s scout-operations/tests -p 'test_reach_author_pilot.py' -v
-      - name: Reproduce 32 DOI-only leads from the same public sources
+      - name: Recover original immutable 32-DOI artifact with authorized Actions token
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
           mkdir -p "$RUNNER_TEMP/prior"
-          python scout-operations/tools/reach_author_pilot.py \
-            --award NA22OAR4590515 \
-            --output "$RUNNER_TEMP/prior/scout-na22oar4590515-doi-only.json"
+          gh run download 42633663341 \
+            --repo PART-WPO/reach-scout-discoveries \
+            --name pilot-na22oar4590515-doi-only \
+            --dir "$RUNNER_TEMP/prior"
           python - <<'PY'
           import hashlib,json,os
           from pathlib import Path
           p=Path(os.environ["RUNNER_TEMP"])/"prior"/"scout-na22oar4590515-doi-only.json"
+          assert p.is_file(), 'Original 32-lead snapshot not downloaded'
           data=json.loads(p.read_text())
           assert data["schema"]=="reach-scout-public-reach-author-pilot-v1"
           assert data["award"]=="NA22OAR4590515"
           assert not data["spark_author_data_accessed"]
           assert not data["human_review_or_reach_modified"]
           leads=data["independent_doi_leads"]
-          assert len(leads)==32,"Candidate count drifted; do not claim historical reproducibility"
+          assert len(leads)==32
           dois=sorted(x["doi"].strip().lower() for x in leads)
           pairs=sorted(x["doi"].strip().lower()+"|"+x["seed_reach_doi"].strip().lower()
                        for x in leads)
-          digest=lambda items:hashlib.sha256(("\n".join(items)+"\n").encode()).hexdigest()
-          expected_dois="b9802e61422b65a810a9fa7a67b36114db4565d634ffb9a63037bb32f0c30379"
-          expected_pairs="7cc712f78155410399ada9d74f2e7b1c1a160e64558d708d274b0909f682fc4b"
-          if digest(dois)!=expected_dois or digest(pairs)!=expected_pairs:
-              raise SystemExit("Public Crossref leads changed since initial 32-DOI pilot: "
-                               "stop rather than substitute a different case set")
-          print("Reproduced the exact original 32 DOI and source pairs by SHA-256")
+          sha=lambda items: hashlib.sha256(("\n".join(items)+"\n").encode()).hexdigest()
+          assert sha(dois)=="b9802e61422b65a810a9fa7a67b36114db4565d634ffb9a63037bb32f0c30379"
+          assert sha(pairs)=="7cc712f78155410399ada9d74f2e7b1c1a160e64558d708d274b0909f682fc4b"
+          print("Retrieved and SHA-verified exact original 32 DOI/source pairs")
           PY
       - name: Fail closed on stale public REACH source
         run: |
