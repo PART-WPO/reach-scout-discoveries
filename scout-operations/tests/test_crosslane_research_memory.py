@@ -22,18 +22,38 @@ class CrosslaneMemoryTests(unittest.TestCase):
     def test_all_historical_and_related_source_lanes_preserved(self):
         g = self.graph
         self.assertEqual(g["schema"], SCHEMA)
-        self.assertEqual(g["preflighted_lane_doi_records"], 827)
-        for lane, minimum in (("historical_crossref", 614),
-                              ("historical_datacite", 188),
-                              ("monthly_api", 13),
-                              ("monthly_related_outputs", 6),
-                              ("independent", 6)):
-            self.assertEqual(g["lane_doi_counts"][lane], minimum)
-        self.assertEqual(sum(g["lane_doi_counts"].values()), 827)
-        self.assertEqual(g["historical_note_events_reused_as_context"], 50)
-        self.assertEqual(g["source_documented_doi_note_events"], 49)
-        self.assertEqual(g["source_documented_nondoi_note_events"], 1)
-        self.assertEqual(len(g["non_doi_code_or_url_research_notes"]), 1)
+        from unified_source_preflight import preflight
+        from build_research_outcome_registry import build as notes_build
+        live = preflight()
+        notes = notes_build()
+        self.assertGreaterEqual(g["preflighted_lane_doi_records"], 827)
+        self.assertEqual(g["preflighted_lane_doi_records"], len(live["cases"]))
+        self.assertEqual(g["lane_doi_counts"]["historical_crossref"],
+                         len([x for x in live["cases"]
+                              if x["discovery_lane"] == "historical_crossref"]))
+        self.assertEqual(g["lane_doi_counts"]["historical_datacite"],
+                         len([x for x in live["cases"]
+                              if x["discovery_lane"] == "historical_datacite"]))
+        self.assertEqual(g["lane_doi_counts"]["monthly_api"],
+                         len([x for x in live["cases"]
+                              if x["discovery_lane"] == "monthly_api"]))
+        self.assertEqual(g["lane_doi_counts"]["monthly_related_outputs"],
+                         len([x for x in live["cases"]
+                              if x["discovery_lane"] == "monthly_related_outputs"]))
+        self.assertEqual(g["lane_doi_counts"]["independent"],
+                         len([x for x in live["cases"]
+                              if x["discovery_lane"] == "independent"]))
+        self.assertEqual(sum(g["lane_doi_counts"].values()),
+                         g["preflighted_lane_doi_records"])
+        self.assertGreaterEqual(g["historical_note_events_reused_as_context"], 50)
+        self.assertEqual(g["historical_note_events_reused_as_context"],
+                         len(notes["events"]))
+        self.assertEqual(g["source_documented_doi_note_events"] +
+                         g["source_documented_nondoi_note_events"],
+                         len(notes["events"]))
+        self.assertGreaterEqual(g["source_documented_nondoi_note_events"], 1)
+        self.assertEqual(len(g["non_doi_code_or_url_research_notes"]),
+                         g["source_documented_nondoi_note_events"])
         self.assertTrue(all(not e["research_complete_inferred"]
                             and not e["human_review_inferred"]
                             for e in g["non_doi_code_or_url_research_notes"]))
@@ -46,11 +66,15 @@ class CrosslaneMemoryTests(unittest.TestCase):
 
     def test_all_426_reach_verified_seeds_keep_expansion_even_when_original_screened(self):
         g = self.graph
-        self.assertEqual(g["verified_reach_originals_preserved_as_expansion_seeds"], 426)
+        routing = json.loads((ROOT/"scout-operations/historical-crossref-screening/actionable-routing.json").read_text())
+        verified_count = routing["counts"]["CONFIRMED_IN_REACH"]
+        self.assertGreaterEqual(verified_count, 426)
+        self.assertEqual(g["verified_reach_originals_preserved_as_expansion_seeds"],
+                         verified_count)
         original = {x["doi"]: x for x in g["work_items"] if x["track"] == "ORIGINAL"}
         expansions = {x["doi"]: x for x in g["work_items"] if x["track"] == "EXPANSION"}
         reach_seeds = [x for x in g["nodes"] if x["public_reach_verified_existing"]]
-        self.assertEqual(len(reach_seeds), 426)
+        self.assertEqual(len(reach_seeds), verified_count)
         for node in reach_seeds:
             d = node["doi"]
             self.assertEqual(original[d]["next_action"],
