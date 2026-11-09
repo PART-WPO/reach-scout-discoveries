@@ -48,18 +48,19 @@
     "scout-operations/historical-crossref-phase2/2026-11-09-1431ET-severe-hail-target-dataset-primary-project-hold.json": "09a3e6fa677ee15376755e371e38c346571c913f1497272d1b794f22f5cfe059",
     "scout-operations/historical-crossref-phase2/2026-11-09-1533ET-oklahoma-compound-heat-ozone-wpo-human-fast-screen.json": "3226e5f30819b3a63ad32968889a46d8ed80640505a36ed17d0cd966d6028f08",
     "scout-operations/historical-crossref-phase2/2026-11-09-1535ET-stratospheric-wave-sciadv-human-fast-screen.json": "9a0569c1210478eb7634bae0a57241c315114babbaa6d854ed23234b24484ebc",
+    "scout-operations/historical-crossref-phase2/2026-11-09-1624ET-generative-ensemble-severe-weather-official-publisher-human-screen.json": "b54cfbd6e5596ebeb72606363e5abff9b2c87a9d5df415ed30addb418b9f1d59",
     "scout-operations/monthly-research/2026-11-06-0528ET-storm-harry-qj70325-project-scope-hold.json": "9bf7c3c778f1cbf1622db3e994b7facc446367f5cc3ed6094517ab5884722911",
     "scout-operations/monthly-research/2026-11-06-0630ET-storm-harry-ecmwf-two-doi-access-holds.json": "38d2065e50f5691c4452ea054a54409a88392e3d76f60969a311a78d96b3bf7c",
     "scout-operations/monthly-research/2026-11-06-0730ET-storm-harry-ecmwf-official-catalog-followup.json": "7a63adfadb964734abec498d27cc54bc6e431d0cb8f51c11bdc8f4e6131491c3",
     "scout-operations/monthly-research/2026-11-06-0830ET-storm-harry-global-drifter-award-scope-followup.json": "684a66155c7ad188613f0217e371ba692f300a27bb1ab16a1b7d40f09c1198bc"
   },
-  "evidence_files_scanned": 47,
+  "evidence_files_scanned": 48,
   "source_files_without_explicit_output_id": [],
-  "research_note_events": 56,
-  "distinct_research_identities": 37,
+  "research_note_events": 57,
+  "distinct_research_identities": 38,
   "operational_disposition_counts": {
     "BOUNDED_PROJECT_QUESTION_FOR_HUMAN": 2,
-    "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY": 21,
+    "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY": 22,
     "PREPRINT_MONTHLY_WATCH": 1,
     "PROJECT_EVIDENCE_HOLD": 31,
     "TECHNICAL_METADATA_RECOVERY": 1
@@ -1312,6 +1313,31 @@
       "reviewer_approval": "NOT_VERIFIED"
     },
     {
+      "event_id": "1d3f18462bd5a1af8fcf034a",
+      "identity": "doi:10.1175/aies-d-23-0094.1",
+      "doi": "10.1175/aies-d-23-0094.1",
+      "url_only": null,
+      "role_in_note": "original",
+      "research_lane": "historical_crossref_original",
+      "source_path": "scout-operations/historical-crossref-phase2/2026-11-09-1624ET-generative-ensemble-severe-weather-official-publisher-human-screen.json",
+      "source_sha256": "b54cfbd6e5596ebeb72606363e5abff9b2c87a9d5df415ed30addb418b9f1d59",
+      "source_time": "2026-11-09T16:24:00-05:00",
+      "raw_decision": "NEEDS_INVESTIGATION_PUBLIC_REFERRAL_REQUEST",
+      "operational_disposition": "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+      "next_action": "Run existing SHA-verified full REACH+Scout+NOAA IR and protected feedback checks. If distinct and unreviewed, publish a validated confidence-scored Needs Investigation public Scout handoff through the existing 24-column guarded workflow. Reviewer question: Is the published article DOI 10.1175/AIES-D-23-0094.1 a deliverable of primary SPARK award NA19OAR4590128? Keep authoritative award and parent blank pending human determination. Do not create a duplicate public card.",
+      "checked_evidence_urls": [
+        "https://doi.org/10.1175/AIES-D-23-0094.1",
+        "https://journals.ametsoc.org/view/journals/aies/3/2/AIES-D-23-0094.1.xml"
+      ],
+      "source_count": 2,
+      "bounded_human_question_to_verify": false,
+      "formal_original_closed": false,
+      "separate_expansion_closed": false,
+      "new_public_proposal": false,
+      "private_hub_import": "NOT_VERIFIED",
+      "reviewer_approval": "NOT_VERIFIED"
+    },
+    {
       "event_id": "d1c7f1c43f43721992142729",
       "identity": "doi:10.1002/qj.70325",
       "doi": "10.1002/qj.70325",
@@ -1875,6 +1901,22 @@
       "source_file_count": 1,
       "event_ids": [
         "b9430b021a3c30bcb5270193"
+      ],
+      "project_judgment_referral_possible": false,
+      "human_review_staged": false,
+      "private_hub_import": "NOT_VERIFIED"
+    },
+    {
+      "identity": "doi:10.1175/aies-d-23-0094.1",
+      "latest_event_id": "1d3f18462bd5a1af8fcf034a",
+      "latest_evidence_path": "scout-operations/historical-crossref-phase2/2026-11-09-1624ET-generative-ensemble-severe-weather-official-publisher-human-screen.json",
+      "latest_operational_disposition": "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+      "observed_dispositions": [
+        "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY"
+      ],
+      "source_file_count": 1,
+      "event_ids": [
+        "1d3f18462bd5a1af8fcf034a"
       ],
       "project_judgment_referral_possible": false,
       "human_review_staged": false,
