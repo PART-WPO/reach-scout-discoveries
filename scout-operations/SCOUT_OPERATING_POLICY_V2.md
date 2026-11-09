@@ -42,6 +42,26 @@ Find authentic, overlooked WPO-funded research outputs (papers, datasets, instru
 - Discovery Hub reviewer feedback is accepted only via signed, privacy-minimized exports verified against the public Scout candidate ID and exact DOI. Current integration file is `integrations/DiscoveryHubScoutFeedback.gs`; it is **NOT installed in the live private Apps Script** unless separately verified. Do not claim a reviewer decision in the absence of an authenticated export; reviewer email, notes and private IDs never belong in public GitHub.
 - No scheduled Scout mission can insert into Smartsheet, change REACH/SPARK, approve a reviewer decision, or infer a private import. Do not put API tokens or secrets in public sources.
 
+## November 9 shared identity and public author-data boundary
+- Reuse the SHA-verified shared public identity and explicit preprint
+  disposition across monthly original intake, historical Crossref/DataCite
+  preflight, API-seeded related output preflight, and independent DOI metadata
+  research. Unique identifier **and title**, or unique official NOAA IR
+  DOI-to-REACH URL **and title**, are required before treating a candidate as
+  an existing public record. Mirrored published Scout batch + inbox entries
+  with the same DOI and title are one public proposal, not human approval.
+- **SPARK personnel are never author-discovery seeds.** The optional,
+  manual-only `reach_author_pilot.py` starts with an existing verified public
+  REACH award-associated publication, corroborates its DOI/title/type through
+  official public Crossref metadata and keeps names transient in memory.
+  No qualifying REACH publication means no author-based search. Author
+  overlap alone never verifies WPO project funding; the resulting DOI leads
+  must use the normal evidence gates before any human-review proposal.
+- The 100-case private reference truth remains **NOT COLLECTED** until an
+  authorized reviewer independently labels the frozen set outside GitHub.
+  Never infer test accuracy from Scout's own prior classifications. See
+  `SCOUT_SHARED_IDENTITY_AND_PRIVACY_PILOT.md` for runbook and controls.
+
 ## Operational cadence and source hierarchy
 - **Hourly missions:** existing *weekday-only* task, monthly-first / newest actionable / historical corroboration / selective related-output research. No ordinary weekend hourly missions.
 - **Weekend month-start exception:** perform first-of-month API intake, preprint status pass and eligible monthly discovery promptly when the 1st occurs on a weekend. Do not turn on all unrelated hourly research.
