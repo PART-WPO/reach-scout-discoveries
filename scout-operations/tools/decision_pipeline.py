@@ -283,6 +283,33 @@ def evaluate(case, index):
             "automatically_staged": False, "seed_expansion_preserved": True}
 
 
+
+def current_checkpoints(index, cases, root=ROOT):
+    """Read ONLY the immutable revision for each exact current case+source.
+
+    Historical revisions for the same DOI are retained but must not inflate
+    current-run assertions or scorecards.
+    """
+    found = []
+    for case in cases:
+        doi = norm_doi(case.get("doi"))
+        demand(doi, "Canonical DOI required to identify checkpoint")
+        signature = sha_bytes(json.dumps({
+            "case": case, "index": index["source_fingerprint"],
+            "version": VERSION}, sort_keys=True).encode())
+        id_hash = sha_bytes(doi.encode())[:16]
+        path = root / "scout-operations/case-checkpoints" / ("doi-" + id_hash) / (
+            "rev-" + signature[:20] + ".json")
+        demand(path.is_file(), "Current case checkpoint missing: " + str(path))
+        record = read_json(path)
+        demand(record.get("case_input") == case and
+               record.get("input_fingerprint") == signature and
+               record.get("index_fingerprint") == index["source_fingerprint"],
+               "Current case checkpoint fingerprint does not agree: " + str(path))
+        found.append(record)
+    return found
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=ROOT)
