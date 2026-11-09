@@ -56,8 +56,10 @@ class SourceAwareMemoryTests(unittest.TestCase):
             "DEFER_OFF_TOPIC_RETAIN_LEAD": 25,
             "DEFER_METADATA_RETRY_OFF_TOPIC": 6,
             "OTHER_AWARD_BRIDGE_RESEARCH_ONLY": 1})
-        self.assertNotIn("author_name", path.read_text())
-        self.assertNotIn("authors", path.read_text())
+        self.assertTrue(all(set(row) == {"key", "seed_key", "tier"}
+                            for row in snapshot["snapshots"]))
+        self.assertTrue(all(len(row["key"]) == len(row["seed_key"]) == 18
+                            for row in snapshot["snapshots"]))
         lead = historical_author_lead(root, "10.1016/j.envpol.2025.126311")
         self.assertEqual(lead["previous_research_tier"],
                          "OTHER_AWARD_BRIDGE_RESEARCH_ONLY")
