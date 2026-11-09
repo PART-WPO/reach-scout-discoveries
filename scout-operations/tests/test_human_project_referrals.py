@@ -179,6 +179,21 @@ class HumanProjectReferrals(unittest.TestCase):
                             project=project,watched=True),"HOLD_PREPRINT_MONTHLY_WATCH")
         self.assertEqual(referral_state(event,meta,{"status":"NO_PUBLIC_IDENTITY_MATCH"},
                             prior={"status":"approved"},project=project),"HOLD_EXISTING_HUMAN_DECISION")
+    def test_negative_public_identity_text_allows_official_ir_enrichment(self):
+        import sys
+        sys.path.insert(0,str(Path(__file__).resolve().parents[2]/"scout-discoveries/tools"))
+        from noaa_ir_lookup import new_output_gate
+        event={"event_id":"e"*24,"checked_evidence_urls":[
+            "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2026JD046327"]}
+        project={"award_context_only":"NA22OAR4590512",
+                 "project_context_only":"","wpo_award_cue_not_proof":True}
+        row=proposal("10.1029/2026jd046327",self.published(),event,project,
+                     {"status":"NO_PUBLIC_IDENTITY_MATCH"})
+        self.assertTrue(new_output_gate(row["provenance"]["classification"],
+                         row["fields"]["Existing REACH Match"],row["provenance"]))
+        self.assertEqual(row["fields"]["NOAA Award Number(s)"],"")
+        self.assertEqual(row["fields"]["Suggested Parent Project"],"")
+
     def test_referral_draft_does_not_claim_an_unverified_primary_award(self):
         event={"event_id":"e"*24,"checked_evidence_urls":[
             "https://ieeexplore.ieee.org/document/9764246/",
