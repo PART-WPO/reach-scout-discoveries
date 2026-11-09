@@ -103,17 +103,30 @@ def verified_relation_sources(doc, child):
     DOI identities come ONLY from structured child_dois, never prose searches.
     """
     sources={}
+    explicit_confirmations=set()
+    subject=doc.get("research_subject") or {}
+    listed_children=[norm_doi(x) for x in subject.get("child_dois", [])]
     for entry in doc.get("source_evidence", []):
         if not isinstance(entry,dict):
             continue
         url=str(entry.get("url") or "")
         kind=str(entry.get("type") or "").lower()
         finding=str(entry.get("finding") or "").lower()
+        explicit=child in finding or child in {
+            norm_doi(x) for x in entry.get("confirmed_child_dois", [])
+        }
+        # Legacy two-child evidence specifically states that the independent
+        # official repository confirms *both* explicitly enumerated child links.
+        paired_confirmation=(len(listed_children)==2 and child in listed_children
+                             and "both child doi links" in finding)
         if (url.startswith("https://") and kind.startswith("official_")
-                and child in finding):
+                and (explicit or paired_confirmation)):
             sources[url]=kind
+            if explicit:
+                explicit_confirmations.add(url)
     domains={urlsplit(url).netloc.lower() for url in sources}
-    return sorted(sources) if len(domains)>=2 and len(set(sources.values()))>=2 else []
+    return (sorted(sources) if len(domains)>=2 and len(set(sources.values()))>=2
+            and explicit_confirmations else [])
 
 def source_decision(parent,node):
     # Specific nested case decision always outranks aggregate report text.
