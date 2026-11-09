@@ -28,7 +28,11 @@ existing authoritative `active-workstream.json`, not replace its prioritization.
 A DOI can belong to several source cohorts; **monthly-original work takes
 precedence even when the same DOI is also in historical Crossref/DataCite**.
 Original research from preprints stays in the monthly watchlist, never an
-hourly new-output lookup. A related output with a recorded public
+hourly new-output lookup. A monthly original already recorded as staged for Hub import, existing
+in REACH, or no action stays in `monthly_existing_public_disposition` and
+does not enter `monthly_original` for redundant research or review.
+A published public-stage disposition does not verify a private Hub import.
+A related output with a recorded public
 already-in-REACH or staged-for-human-review status is preserved in a separate
 `existing_public_related_or_staged` research group rather than selected
 for duplicate review. This records public status only, not private Hub import.

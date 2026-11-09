@@ -290,10 +290,19 @@ def build(root=ROOT):
 
         if any(lane in ("monthly_api", "historical_crossref", "historical_datacite")
                for lane in lanes):
-            if verified_reach:
-                original = "REUSE_VERIFIED_REACH_IDENTITY_NO_DUPLICATE_ORIGINAL"
-            elif preprint:
+            monthly_statuses = {str(c.get("recorded_status_unchanged") or "").strip().lower()
+                                for c in cases if c["discovery_lane"] == "monthly_api"}
+            monthly_previous_public = bool(monthly_statuses & {
+                "staged_for_hub_import", "staged_for_human_review",
+                "pending_human_intake", "already_in_reach", "no_action",
+                "forwarded_to_hub", "metadata_update_forwarded",
+                "human_metadata_needed", "research_complete_human_intake"})
+            if preprint:
                 original = "PREPRINT_WATCHLIST_NOT_ELIGIBLE_AS_ORIGINAL"
+            elif verified_reach:
+                original = "REUSE_VERIFIED_REACH_IDENTITY_NO_DUPLICATE_ORIGINAL"
+            elif monthly_previous_public:
+                original = "REUSE_RECORDED_MONTHLY_PUBLIC_TRIAGE_NO_AUTOMATIC_REPROPOSAL"
             elif events:
                 original = "REUSE_SOURCE_VERIFIED_PRIOR_RESEARCH_NOT_CLOSURE"
             else:
@@ -408,6 +417,7 @@ def mission_index(graph, *, max_per_lane=12):
     nodes = {x["doi"]: x for x in graph["nodes"]}
     groups = {
         "monthly_original": [],
+        "monthly_existing_public_disposition": [],
         "monthly_related": [],
         "historical_crossref_original": [],
         "verified_reach_expansion": [],
@@ -467,7 +477,21 @@ def mission_index(graph, *, max_per_lane=12):
                 candidate["hourly_original_research_allowed"] = False
                 groups["preprint_watchlist_only"].append(candidate)
             elif "monthly_api" in node["lanes"]:
-                groups["monthly_original"].append(candidate)
+                statuses = {str(v).strip().lower() for v in
+                            node["public_recorded_statuses_by_lane"]["monthly_api"]}
+                staged = {"staged_for_hub_import", "staged_for_human_review",
+                          "pending_human_intake", "forwarded_to_hub",
+                          "metadata_update_forwarded", "human_metadata_needed",
+                          "research_complete_human_intake"}
+                recorded_other = {"already_in_reach", "no_action"}
+                if statuses & staged:
+                    candidate["next_action"] = "PUBLIC_STAGING_RECORDED_PRIVATE_IMPORT_NOT_VERIFIED"
+                    groups["monthly_existing_public_disposition"].append(candidate)
+                elif statuses & recorded_other:
+                    candidate["next_action"] = "PUBLIC_NO_ACTION_RECORDED_REOPEN_ONLY_ON_NEW_EVIDENCE"
+                    groups["monthly_existing_public_disposition"].append(candidate)
+                else:
+                    groups["monthly_original"].append(candidate)
             elif "historical_crossref" in node["lanes"]:
                 if item["next_action"] != "REUSE_VERIFIED_REACH_IDENTITY_NO_DUPLICATE_ORIGINAL":
                     groups["historical_crossref_original"].append(candidate)

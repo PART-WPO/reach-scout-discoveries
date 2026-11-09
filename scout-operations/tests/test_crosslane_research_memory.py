@@ -77,8 +77,12 @@ class CrosslaneMemoryTests(unittest.TestCase):
         self.assertEqual(len(reach_seeds), verified_count)
         for node in reach_seeds:
             d = node["doi"]
-            self.assertEqual(original[d]["next_action"],
-                             "REUSE_VERIFIED_REACH_IDENTITY_NO_DUPLICATE_ORIGINAL")
+            if node["preprint_or_version_hold"]:
+                self.assertEqual(original[d]["next_action"],
+                                 "PREPRINT_WATCHLIST_NOT_ELIGIBLE_AS_ORIGINAL")
+            else:
+                self.assertEqual(original[d]["next_action"],
+                                 "REUSE_VERIFIED_REACH_IDENTITY_NO_DUPLICATE_ORIGINAL")
             self.assertEqual(expansions[d]["next_action"], "EXPAND_VERIFIED_WPO_REACH_SEED")
             self.assertFalse(original[d]["complete"])
             self.assertFalse(expansions[d]["complete"])
@@ -201,9 +205,25 @@ class CrosslaneMemoryTests(unittest.TestCase):
         monthly_nodes = [x for x in g["nodes"] if "monthly_api" in x["lanes"]]
         self.assertGreaterEqual(len(monthly_nodes), 13)
         self.assertTrue({x["doi"] for x in monthly_nodes}.issubset(originals))
-        eligible = [x for x in monthly_nodes if not x["preprint_or_version_hold"]]
+        not_preprint = [x for x in monthly_nodes if not x["preprint_or_version_hold"]]
+        staged_or_noaction = {"staged_for_hub_import", "staged_for_human_review",
+                              "pending_human_intake", "already_in_reach",
+                              "no_action", "forwarded_to_hub",
+                              "metadata_update_forwarded", "human_metadata_needed",
+                              "research_complete_human_intake"}
+        prior = [x for x in not_preprint
+                 if {z.lower() for z in x["public_recorded_statuses_by_lane"]
+                     ["monthly_api"]} & staged_or_noaction]
+        eligible = [x for x in not_preprint if x not in prior]
         self.assertEqual(m["group_counts_before_preview_bound"]["monthly_original"],
                          len(eligible))
+        self.assertEqual(
+            m["group_counts_before_preview_bound"]["monthly_existing_public_disposition"],
+            len(prior))
+        self.assertTrue(all(x["next_action"] in {
+            "PUBLIC_STAGING_RECORDED_PRIVATE_IMPORT_NOT_VERIFIED",
+            "PUBLIC_NO_ACTION_RECORDED_REOPEN_ONLY_ON_NEW_EVIDENCE"}
+            for x in m["recommended_preview"]["monthly_existing_public_disposition"]))
         holds = {x["doi"] for x in g["nodes"]
                  if x["preprint_or_version_hold"] and x["doi"] in originals}
         self.assertEqual(m["group_counts_before_preview_bound"]["preprint_watchlist_only"],
@@ -218,6 +238,17 @@ class CrosslaneMemoryTests(unittest.TestCase):
             {x["doi"] for x in m["recommended_preview"]["monthly_original"]} &
             {x["doi"] for x in m["recommended_preview"]["historical_crossref_original"]}
         )
+
+    def test_monthly_existing_public_status_not_misreported_as_private_import(self):
+        graph = self.graph
+        mini = mission_index(graph)
+        remembered = mini["recommended_preview"]["monthly_existing_public_disposition"]
+        self.assertGreaterEqual(len(remembered), 8)
+        self.assertTrue(all(not r["automatically_completed_or_staged"] for r in remembered))
+        self.assertTrue(all("monthly_api" in r["public_recorded_statuses_by_lane"]
+                            for r in remembered))
+        self.assertFalse(mini["reviewer_approval_or_publication_inferred"])
+        self.assertEqual(mini["private_hub_state"], "NOT_VERIFIED")
 
     def test_public_staged_related_outputs_not_recommended_for_reapproval(self):
         g = self.graph
