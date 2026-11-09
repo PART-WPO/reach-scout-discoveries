@@ -2,16 +2,8 @@
   "schema": "reach-scout-crossref-candidate-queue-v2",
   "purpose": "Read-only selection; not completed research or approval",
   "completion_target": "Each hourly mission handles at least one full novel-output screening through a concrete disposition or public human-review handoff. Skipped known records do not count; technical blockers must be reported, not represented as completed.",
-  "one_mission_actionable_original_count": 147,
+  "one_mission_actionable_original_count": 146,
   "next_one_mission_original_preview": [
-    {
-      "doi": "10.1175/aies-d-24-0063.1",
-      "lane": "NOVEL_IDENTITY_RESEARCH",
-      "priority": 90,
-      "funding_signal": "CONFIRMED_WPO_459",
-      "required_outcome": "FINISH_ORIGINAL_SCREENING_DECISION_THIS_RUN",
-      "action": "459 program code confirms WPO funding when deposited for this exact article. Fast-check official publisher award, REACH/Scout/IR duplicate and preprint gates; send verified published output as New Candidate in THIS mission, not Needs Investigation solely for WPO connection. Reviewer selects the SPARK parent."
-    },
     {
       "doi": "10.1175/jcli-d-25-0247.1",
       "lane": "NOVEL_IDENTITY_RESEARCH",
@@ -67,48 +59,29 @@
       "funding_signal": "CONFIRMED_WPO_459",
       "required_outcome": "FINISH_ORIGINAL_SCREENING_DECISION_THIS_RUN",
       "action": "459 program code confirms WPO funding when deposited for this exact article. Fast-check official publisher award, REACH/Scout/IR duplicate and preprint gates; send verified published output as New Candidate in THIS mission, not Needs Investigation solely for WPO connection. Reviewer selects the SPARK parent."
+    },
+    {
+      "doi": "10.3390/atmos16070881",
+      "lane": "NOVEL_IDENTITY_RESEARCH",
+      "priority": 90,
+      "funding_signal": "CONFIRMED_WPO_459",
+      "required_outcome": "FINISH_ORIGINAL_SCREENING_DECISION_THIS_RUN",
+      "action": "459 program code confirms WPO funding when deposited for this exact article. Fast-check official publisher award, REACH/Scout/IR duplicate and preprint gates; send verified published output as New Candidate in THIS mission, not Needs Investigation solely for WPO connection. Reviewer selects the SPARK parent."
     }
   ],
   "total": 614,
   "lane_counts": {
-    "ALREADY_IN_SCOUT_REVIEW_FAST_EXIT": 21,
+    "ALREADY_IN_SCOUT_REVIEW_FAST_EXIT": 22,
     "BOUNDED_IDENTITY_REVIEW": 51,
     "EXISTING_REACH_FAST_EXIT": 426,
     "HUMAN_REVIEW_FAST_SCREEN_DUE": 7,
     "NON_459_PROJECT_EVIDENCE_CHECK": 2,
-    "NOVEL_IDENTITY_RESEARCH": 87,
+    "NOVEL_IDENTITY_RESEARCH": 86,
     "PREPRINT_PUBLISHED_VERSION_LEAD": 11,
     "PREPRINT_WATCHLIST_HOLD": 7,
     "WAIT_FOR_NEW_EVIDENCE": 2
   },
   "items": [
-    {
-      "preprint_status": null,
-      "already_in_public_scout_queue": false,
-      "matched_public_review_locations": [],
-      "one_mission_disposition_required": true,
-      "verified_published_dois": [],
-      "doi": "10.1175/aies-d-24-0063.1",
-      "title": "improving ensemble extreme precipitation forecasts using generative artificial intelligence",
-      "lane": "NOVEL_IDENTITY_RESEARCH",
-      "priority": 90,
-      "next_action": "459 program code confirms WPO funding when deposited for this exact article. Fast-check official publisher award, REACH/Scout/IR duplicate and preprint gates; send verified published output as New Candidate in THIS mission, not Needs Investigation solely for WPO connection. Reviewer selects the SPARK parent.",
-      "funding_signal": "CONFIRMED_WPO_459",
-      "crossref_structured_award_numbers": [
-        "NA19OAR4590128"
-      ],
-      "wpo_459_award_numbers": [
-        "NA19OAR4590128"
-      ],
-      "award_evidence_source_batches": [
-        "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part003.csv"
-      ],
-      "award_match_basis": "Historical Crossref publisher-deposited award for exact DOI; 459 identifies WPO funding. Exact SPARK parent and output identity still require verification before addition",
-      "prior_disposition": "BOUNDED_PROJECT_QUESTION_FOR_HUMAN",
-      "scout_overlap": false,
-      "verified_reach_uid": null,
-      "private_hub_review": "NOT_VERIFIED"
-    },
     {
       "preprint_status": null,
       "already_in_public_scout_queue": false,
@@ -8900,6 +8873,35 @@
     },
     {
       "preprint_status": null,
+      "already_in_public_scout_queue": true,
+      "matched_public_review_locations": [
+        "scout-discoveries/inbox/2026-11-09-human-project-d0211ffa5c6285cecf.csv:2"
+      ],
+      "one_mission_disposition_required": false,
+      "verified_published_dois": [],
+      "doi": "10.1175/aies-d-24-0063.1",
+      "title": "improving ensemble extreme precipitation forecasts using generative artificial intelligence",
+      "lane": "ALREADY_IN_SCOUT_REVIEW_FAST_EXIT",
+      "priority": 0,
+      "next_action": "Already in Scout's public review pipeline: do not repeat original research or create another proposal; keep independent expansion",
+      "funding_signal": "CONFIRMED_WPO_459",
+      "crossref_structured_award_numbers": [
+        "NA19OAR4590128"
+      ],
+      "wpo_459_award_numbers": [
+        "NA19OAR4590128"
+      ],
+      "award_evidence_source_batches": [
+        "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part003.csv"
+      ],
+      "award_match_basis": "Historical Crossref publisher-deposited award for exact DOI; 459 identifies WPO funding. Exact SPARK parent and output identity still require verification before addition",
+      "prior_disposition": "BOUNDED_PROJECT_QUESTION_FOR_HUMAN",
+      "scout_overlap": false,
+      "verified_reach_uid": null,
+      "private_hub_review": "NOT_VERIFIED"
+    },
+    {
+      "preprint_status": null,
       "already_in_public_scout_queue": false,
       "matched_public_review_locations": [],
       "one_mission_disposition_required": false,
@@ -16766,7 +16768,7 @@
   "original_dispositions_changed": 0,
   "new_review_proposals": 0,
   "source_sha256": {
-    "scout-operations/historical-crossref-screening/actionable-routing.json": "e2c669b3f494975fecd35955d96935d10f98f018e350006c36526a5448aacda4",
+    "scout-operations/historical-crossref-screening/actionable-routing.json": "4b2f9250e61f7612201e58f22fc4541539f3ad68789d09df99f975ef210a47df",
     "scout-operations/research-outcome-registry.json": "8d28c964fa92b0c25e6e47cc7069c55ab23cc76338f6100bd34a1bc21dd9e246",
     "api-discoveries/historical-crossref/manifest.json": "799744c7e83f218d22cc19afacb7cfcf2762feb490659efde9f58bf19473b1fa",
     "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part001.csv": "df420ff561050c5f019ccddd19eb93124ab642eba8aa6f87dc0636b6d5ee2de3",
