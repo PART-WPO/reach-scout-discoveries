@@ -161,7 +161,7 @@ def proposal(doi,meta,event,project,identity=None):
         "Authors / PI":authors,"Publication Date":meta.get("pub_date") or "",
         "Brief Abstract":meta.get("abstract") or "",
         "Evidence URL":primary,
-        "Funding Evidence URL":(meta.get("evidence") or "" if wpo_verified else ""),
+        "Funding Evidence URL":((meta.get("evidence") or "") if wpo_verified else ""),
         "Existing REACH Match":"No match in SHA-verified public REACH/Scout DOI, title or URL checks and official NOAA IR crosswalk. Private reviewer history not verified.",
         "Scout Confidence":confidence["band"],
         "Source Run ID":"REACH-SCOUT-HUMAN-SCOPE-"+core_id}
