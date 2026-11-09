@@ -50,20 +50,14 @@
     "scout-operations/monthly-research/2026-11-06-0830ET-storm-harry-global-drifter-award-scope-followup.json": "684a66155c7ad188613f0217e371ba692f300a27bb1ab16a1b7d40f09c1198bc"
   },
   "evidence_files_scanned": 43,
-  "source_files_without_explicit_output_id": [
-    {
-      "path": "scout-operations/historical-crossref-phase2/2026-11-09-1129ET-seus-rainfall-zenodo-related-ci-award-hold.json",
-      "sha256": "0883da54489273c03831e2801fddc9d20c6ba8bfaa48fe10a83b34a0cc4e28e5",
-      "reason": "NO_EXPLICIT_STRUCTURED_CASE_IDENTIFIER"
-    }
-  ],
-  "research_note_events": 50,
-  "distinct_research_identities": 32,
+  "source_files_without_explicit_output_id": [],
+  "research_note_events": 52,
+  "distinct_research_identities": 34,
   "operational_disposition_counts": {
     "BOUNDED_PROJECT_QUESTION_FOR_HUMAN": 2,
     "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY": 19,
     "PREPRINT_MONTHLY_WATCH": 1,
-    "PROJECT_EVIDENCE_HOLD": 27,
+    "PROJECT_EVIDENCE_HOLD": 29,
     "TECHNICAL_METADATA_RECOVERY": 1
   },
   "bounded_human_question_identities": 2,
@@ -1150,6 +1144,68 @@
       "reviewer_approval": "NOT_VERIFIED"
     },
     {
+      "event_id": "34eb5fe4df3fa75c953f4469",
+      "identity": "doi:10.5281/zenodo.4433147",
+      "doi": "10.5281/zenodo.4433147",
+      "url_only": null,
+      "role_in_note": "related_output",
+      "research_lane": "related_output_expansion",
+      "source_path": "scout-operations/historical-crossref-phase2/2026-11-09-1129ET-seus-rainfall-zenodo-related-ci-award-hold.json",
+      "source_sha256": "0883da54489273c03831e2801fddc9d20c6ba8bfaa48fe10a83b34a0cc4e28e5",
+      "source_time": "2026-11-09T11:29:00-05:00",
+      "raw_decision": "PROJECT_EVIDENCE_HOLD",
+      "operational_disposition": "PROJECT_EVIDENCE_HOLD",
+      "next_action": "Only reopen if exact primary SPARK Award Number(s) and output-to-project evidence independently confirm WPO relationship; then separately verify each child DOI metadata, REACH/Scout identity, and funding. Do not stage based on 432/431 acknowledgments.",
+      "checked_evidence_urls": [
+        "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021GL096709",
+        "https://repository.library.noaa.gov/view/noaa/43170/noaa_43170_DS1.pdf"
+      ],
+      "source_count": 2,
+      "bounded_human_question_to_verify": false,
+      "formal_original_closed": false,
+      "separate_expansion_closed": false,
+      "new_public_proposal": false,
+      "private_hub_import": "NOT_VERIFIED",
+      "reviewer_approval": "NOT_VERIFIED",
+      "related_parent_doi": "10.1029/2021gl096709",
+      "related_link_source_urls": [
+        "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021GL096709",
+        "https://repository.library.noaa.gov/view/noaa/43170/noaa_43170_DS1.pdf"
+      ],
+      "relationship_verified_from_two_official_sources": true
+    },
+    {
+      "event_id": "83e6197c20d7cf3f57631f4c",
+      "identity": "doi:10.5281/zenodo.5057616",
+      "doi": "10.5281/zenodo.5057616",
+      "url_only": null,
+      "role_in_note": "related_output",
+      "research_lane": "related_output_expansion",
+      "source_path": "scout-operations/historical-crossref-phase2/2026-11-09-1129ET-seus-rainfall-zenodo-related-ci-award-hold.json",
+      "source_sha256": "0883da54489273c03831e2801fddc9d20c6ba8bfaa48fe10a83b34a0cc4e28e5",
+      "source_time": "2026-11-09T11:29:00-05:00",
+      "raw_decision": "PROJECT_EVIDENCE_HOLD",
+      "operational_disposition": "PROJECT_EVIDENCE_HOLD",
+      "next_action": "Only reopen if exact primary SPARK Award Number(s) and output-to-project evidence independently confirm WPO relationship; then separately verify each child DOI metadata, REACH/Scout identity, and funding. Do not stage based on 432/431 acknowledgments.",
+      "checked_evidence_urls": [
+        "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021GL096709",
+        "https://repository.library.noaa.gov/view/noaa/43170/noaa_43170_DS1.pdf"
+      ],
+      "source_count": 2,
+      "bounded_human_question_to_verify": false,
+      "formal_original_closed": false,
+      "separate_expansion_closed": false,
+      "new_public_proposal": false,
+      "private_hub_import": "NOT_VERIFIED",
+      "reviewer_approval": "NOT_VERIFIED",
+      "related_parent_doi": "10.1029/2021gl096709",
+      "related_link_source_urls": [
+        "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021GL096709",
+        "https://repository.library.noaa.gov/view/noaa/43170/noaa_43170_DS1.pdf"
+      ],
+      "relationship_verified_from_two_official_sources": true
+    },
+    {
       "event_id": "d1c7f1c43f43721992142729",
       "identity": "doi:10.1002/qj.70325",
       "doi": "10.1002/qj.70325",
@@ -1792,6 +1848,38 @@
       "source_file_count": 1,
       "event_ids": [
         "e442f391209be823d3141b72"
+      ],
+      "project_judgment_referral_possible": false,
+      "human_review_staged": false,
+      "private_hub_import": "NOT_VERIFIED"
+    },
+    {
+      "identity": "doi:10.5281/zenodo.4433147",
+      "latest_event_id": "34eb5fe4df3fa75c953f4469",
+      "latest_evidence_path": "scout-operations/historical-crossref-phase2/2026-11-09-1129ET-seus-rainfall-zenodo-related-ci-award-hold.json",
+      "latest_operational_disposition": "PROJECT_EVIDENCE_HOLD",
+      "observed_dispositions": [
+        "PROJECT_EVIDENCE_HOLD"
+      ],
+      "source_file_count": 1,
+      "event_ids": [
+        "34eb5fe4df3fa75c953f4469"
+      ],
+      "project_judgment_referral_possible": false,
+      "human_review_staged": false,
+      "private_hub_import": "NOT_VERIFIED"
+    },
+    {
+      "identity": "doi:10.5281/zenodo.5057616",
+      "latest_event_id": "83e6197c20d7cf3f57631f4c",
+      "latest_evidence_path": "scout-operations/historical-crossref-phase2/2026-11-09-1129ET-seus-rainfall-zenodo-related-ci-award-hold.json",
+      "latest_operational_disposition": "PROJECT_EVIDENCE_HOLD",
+      "observed_dispositions": [
+        "PROJECT_EVIDENCE_HOLD"
+      ],
+      "source_file_count": 1,
+      "event_ids": [
+        "83e6197c20d7cf3f57631f4c"
       ],
       "project_judgment_referral_possible": false,
       "human_review_staged": false,
