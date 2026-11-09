@@ -6,6 +6,7 @@ on:
       - '.github/workflows/scout-research-decision-closeout.yml'
       - 'scout-operations/tools/reconcile_derived_reporting.py'
       - 'scout-operations/tests/test_reconcile_derived_reporting.py'
+      - 'scout-operations/tests/test_structured_evidence_extraction.py'
   push:
     branches: [main]
     paths:
