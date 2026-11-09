@@ -119,6 +119,32 @@ class EvidenceActionPilotTests(unittest.TestCase):
         self.assertIn("REVIEW_PREFLIGHT_WITH_FAILED_MANDATORY_GATE",
                       critique["blocking_safety_issues"])
 
+    def test_existing_staged_candidate_with_new_funding_contradiction_is_flagged(self):
+        source = dict(self.by_identity["doi:10.1016/j.pdisas.2026.100696"]["evaluation"])
+        source["preprint"] = False
+        source["verified_public_reach"] = False
+        source["publicly_staged"] = True
+        source["public_no_action"] = False
+        source["contradictory_project_evidence"] = True
+        d = compile_decision(source)
+        self.assertEqual(d["recommended_disposition"],
+                         "PUBLIC_STAGED_PROJECT_CONFLICT_FLAG_NO_RESTAGE")
+        self.assertEqual(d["owner"], "PUBLIC_HANDOFF_VERIFICATION")
+        self.assertFalse(d["public_proposal_created"])
+        self.assertFalse(d["private_hub_write"])
+
+    def test_pilot_provides_concrete_active_actions_not_just_dispositions(self):
+        r = self.report
+        actions = r["active_followup_preview"]
+        self.assertGreaterEqual(r["proposed_active_followups_not_executed"], 3)
+        self.assertEqual(len(actions), r["proposed_active_followups_not_executed"])
+        self.assertTrue(all(x["next_action"] and x["owner"] and
+                            x["evidence_note_paths"] for x in actions))
+        self.assertFalse(any("BOUNDED_PROJECT_EVIDENCE_HOLD" == x["recommended_disposition"]
+                             for x in actions))
+        self.assertTrue(any(x["recommended_disposition"] == "BOUNDED_HUMAN_PROJECT_QUESTION"
+                            for x in actions))
+
     def test_single_targeted_research_gate_not_generic_loop(self):
         example = {
             "doi": "10.1000/synthetic", "preprint": False,
