@@ -80,9 +80,15 @@ class AuthorEvidenceSafeguardsTests(unittest.TestCase):
             "On the Very Idea of Health Equity")[0], "OUTSIDE_AWARD_TOPIC")
         self.assertEqual(topical_evidence(
             "Quality of Sustainability Reporting and Bank Stability")[0],
-            "BROAD_CONTEXT_NEEDS_REVIEW")
+            "OUTSIDE_AWARD_TOPIC")
+        self.assertEqual(topical_evidence(
+            "Environmental Performance Evaluation of Metallurgical Listed Companies")[0],
+            "NO_AWARD_TOPIC_SIGNAL")
         self.assertEqual(topical_evidence(
             "A Lidar Evaluation of Urban Phenomena")[0],
+            "NO_AWARD_TOPIC_SIGNAL")
+        self.assertEqual(topical_evidence(
+            "Urban heat island temperatures")[0],
             "BROAD_CONTEXT_NEEDS_REVIEW")
 
     def test_exact_award_only_no_na_prefix_or_related_award(self):
@@ -115,6 +121,28 @@ class AuthorEvidenceSafeguardsTests(unittest.TestCase):
             "DIRECT_ATMOSPHERIC_AIR_QUALITY_TOPIC", "SAME_REPORTED_ORCID",
             "EXACT_TARGET_AWARD_REGISTERED", "NO_PUBLIC_IDENTITY_MATCH"),
             "TARGET_AWARD_PROJECT_VALIDATION")
+
+    def test_other_noaa_award_is_research_only_not_hub_promotion(self):
+        self.assertEqual(choose_tier(
+            "DIRECT_ATMOSPHERIC_AIR_QUALITY_TOPIC",
+            "SAME_REPORTED_ORCID", "DIFFERENT_NOAA_AWARD_REGISTERED",
+            "NO_PUBLIC_IDENTITY_MATCH"), "OTHER_AWARD_BRIDGE_RESEARCH_ONLY")
+        self.assertEqual(choose_tier(
+            "NO_AWARD_TOPIC_SIGNAL", "ORCID_CONFLICT",
+            "DIFFERENT_NOAA_AWARD_REGISTERED", "NO_PUBLIC_IDENTITY_MATCH"),
+            "DEFER_OTHER_AWARD_WITHOUT_TOPIC")
+
+    def test_unknown_metadata_off_topic_not_immediate_reviewer_retry(self):
+        leads = [{"doi": f"10.1234/bank{i}", "title":
+                  "Quality of Sustainability Reporting and Bank Stability",
+                  "seed_reach_doi": "10.1234/seed"} for i in range(32)]
+        prior = {"schema": "reach-scout-public-reach-author-pilot-v1",
+                 "award": AWARD, "independent_doi_leads": leads}
+        out = evaluate_leads(prior, cache(), index(), watchlist(), {"dois": {}},
+                             get_metadata=lambda doi: source() if doi == "10.1234/seed" else None)
+        self.assertEqual(out["tiers"]["DEFER_METADATA_RETRY_OFF_TOPIC"], 32)
+        self.assertEqual(len(out["results"]), 32)
+        self.assertTrue(all(r["metadata"] == "UNAVAILABLE_OR_DOI_CONFLICT" for r in out["results"]))
 
     def test_32_case_evaluation_with_one_topical_and_one_award_positive(self):
         rows = [{
