@@ -1,0 +1,53 @@
+{
+  "schema": "scout-source-backed-research-evidence-v1",
+  "recorded_at": "2026-11-09T15:33:42-05:00",
+  "lane": "historical_crossref_original",
+  "original_doi": "10.1029/2026JD046327",
+  "title": "Meteorological and Emission Drivers of Compound Heat and Ozone Pollution Episodes in Oklahoma City During Periods Influenced by Atlantic Tropical Cyclones",
+  "publication_status": "OFFICIALLY_PUBLISHED_JOURNAL_ARTICLE",
+  "publisher_version_of_record_online": "2026-09-03",
+  "source_evidence": [
+    {
+      "url": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2026JD046327",
+      "type": "official_publisher_article",
+      "finding": "Journal of Geophysical Research Atmospheres volume 131 issue 17, DOI 10.1029/2026JD046327, version of record online 3 September 2026. Acknowledgments explicitly say NEMO development was partially supported by NOAA Weather Program Office grant NA22OAR4590512. Article itself reports WRF-Chem compound heat and ozone simulations; whether this whole article is a deliverable of the cited WPO primary project is not established."
+    },
+    {
+      "url": "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/crossref-candidate-queue.json",
+      "type": "sha_pinned_public_crossref_selection",
+      "finding": "Queue v2 identifies DOI and normalized title with structured award NA22OAR4590512, matched at intake to SPARK primary award. Queue is a research hint, not live publication funding proof, current private Hub review or eligibility."
+    }
+  ],
+  "structured_award": "NA22OAR4590512",
+  "spark_primary_award_context": "NA22OAR4590512",
+  "spark_project_title": "NOT_VERIFIED",
+  "funding": "POSSIBLE_WPO_PROJECT_DELIVERABLE_NEEDS_HUMAN_VERIFICATION",
+  "exact_primary_spark_award_verified_for_output": false,
+  "output_to_specific_primary_wpo_project_verified": false,
+  "preprint_original": false,
+  "decision": "NEEDS_INVESTIGATION_PUBLIC_REFERRAL_REQUEST",
+  "operational_disposition": "BOUNDED_PROJECT_QUESTION_FOR_HUMAN",
+  "original_status_changed": false,
+  "expansion_completed": false,
+  "public_proposal_eligible": false,
+  "private_hub_action": "NONE",
+  "next_action": "Use source-verified official DOI metadata and current full REACH+Scout+NOAA IR and signed human feedback to create at most one confidence-scored Needs Investigation public inbox draft. Reviewer question: Is this journal article a deliverable of primary SPARK award NA22OAR4590512, given the publisher says only NEMO development was partially funded by WPO? Keep award/parent fields blank until verified. If existing public Scout match, fast exit without restaging.",
+  "selection_provenance": {
+    "queue_schema": "reach-scout-crossref-candidate-queue-v2",
+    "queue_lane": "NOVEL_IDENTITY_RESEARCH",
+    "queue_priority": 90,
+    "queue_successful_refresh_workflow_run_id": 42692090066,
+    "compact_index_schema": "reach-scout-compact-crosslane-mission-index-v1",
+    "compact_index_builder_policy_sha256": "12b0ec18f0c2c1d7b82edbe746a485c33afe5d493e0c56f72fd0932b305c04a6",
+    "full_graph_refetched": false
+  },
+  "research_counts": {
+    "originals_screened": 1,
+    "originals_deeply_examined": 1,
+    "expansion_cases_examined": 0,
+    "duplicate_source_fetches_concretely_avoided": 0,
+    "new_explicit_child_doi_links": 0,
+    "private_hub_outcomes_verified": 0
+  },
+  "note": "Publisher confirms specific partial WPO support for NEMO, not the entire article as project deliverable. No SPARK personnel or author match used. Current full public identity and reviewer history must be verified by source-guarded workflow before any public feed handoff; research note alone is not mission completion."
+}
