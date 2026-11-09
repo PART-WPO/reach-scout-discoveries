@@ -1,0 +1,27 @@
+name: Validate Scout author-identity and evidence safeguards
+on:
+  pull_request:
+    paths:
+      - 'scout-operations/tools/replay_author_safeguards.py'
+      - 'scout-operations/tests/test_replay_author_safeguards.py'
+      - '.github/workflows/validate-scout-author-safeguards.yml'
+      - '.github/workflows/scout-once-author-safeguards-20261109.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  evidence-only-and-privacy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile and test identity, award and topical boundaries
+        run: |
+          set -euo pipefail
+          python -m py_compile scout-operations/tools/replay_author_safeguards.py
+          python -m unittest discover -s scout-operations/tests -p 'test_replay_author_safeguards.py' -v
+          python -m unittest discover -s scout-operations/tests -p 'test_reach_author_pilot.py' -v
+          python -m unittest discover -s scout-operations/tests -p 'test_identity_disposition.py' -v
