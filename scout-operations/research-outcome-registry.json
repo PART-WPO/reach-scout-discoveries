@@ -50,18 +50,19 @@
     "scout-operations/historical-crossref-phase2/2026-11-09-1535ET-stratospheric-wave-sciadv-human-fast-screen.json": "9a0569c1210478eb7634bae0a57241c315114babbaa6d854ed23234b24484ebc",
     "scout-operations/historical-crossref-phase2/2026-11-09-1624ET-generative-ensemble-severe-weather-official-publisher-human-screen.json": "b54cfbd6e5596ebeb72606363e5abff9b2c87a9d5df415ed30addb418b9f1d59",
     "scout-operations/historical-crossref-phase2/2026-11-09-1729ET-upper-great-lakes-snow-publisher-459-new-candidate-screen.json": "8572e730725edf1227baaf8a12d095755fc13a716563e1bda3cca306c49fe955",
+    "scout-operations/historical-crossref-phase2/2026-11-09-1829ET-generative-ai-extreme-precipitation-official-459-screen.json": "d09c724da23e5bf9bdf253a3f8a0198642c4d5473b2bb4a8f804692604f2b3d1",
     "scout-operations/monthly-research/2026-11-06-0528ET-storm-harry-qj70325-project-scope-hold.json": "9bf7c3c778f1cbf1622db3e994b7facc446367f5cc3ed6094517ab5884722911",
     "scout-operations/monthly-research/2026-11-06-0630ET-storm-harry-ecmwf-two-doi-access-holds.json": "38d2065e50f5691c4452ea054a54409a88392e3d76f60969a311a78d96b3bf7c",
     "scout-operations/monthly-research/2026-11-06-0730ET-storm-harry-ecmwf-official-catalog-followup.json": "7a63adfadb964734abec498d27cc54bc6e431d0cb8f51c11bdc8f4e6131491c3",
     "scout-operations/monthly-research/2026-11-06-0830ET-storm-harry-global-drifter-award-scope-followup.json": "684a66155c7ad188613f0217e371ba692f300a27bb1ab16a1b7d40f09c1198bc"
   },
-  "evidence_files_scanned": 49,
+  "evidence_files_scanned": 50,
   "source_files_without_explicit_output_id": [],
-  "research_note_events": 58,
-  "distinct_research_identities": 38,
+  "research_note_events": 59,
+  "distinct_research_identities": 39,
   "operational_disposition_counts": {
     "BOUNDED_PROJECT_QUESTION_FOR_HUMAN": 2,
-    "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY": 23,
+    "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY": 24,
     "PREPRINT_MONTHLY_WATCH": 1,
     "PROJECT_EVIDENCE_HOLD": 31,
     "TECHNICAL_METADATA_RECOVERY": 1
@@ -1364,6 +1365,31 @@
       "reviewer_approval": "NOT_VERIFIED"
     },
     {
+      "event_id": "e9a3eb855a80038a8a040456",
+      "identity": "doi:10.1175/aies-d-24-0063.1",
+      "doi": "10.1175/aies-d-24-0063.1",
+      "url_only": null,
+      "role_in_note": "original",
+      "research_lane": "historical_crossref_original",
+      "source_path": "scout-operations/historical-crossref-phase2/2026-11-09-1829ET-generative-ai-extreme-precipitation-official-459-screen.json",
+      "source_sha256": "d09c724da23e5bf9bdf253a3f8a0198642c4d5473b2bb4a8f804692604f2b3d1",
+      "source_time": "2026-11-09T18:29:00-05:00",
+      "raw_decision": "NEW_CANDIDATE_PUBLIC_REFERRAL_REQUEST_SUBJECT_TO_GUARDED_CHECKS",
+      "operational_disposition": "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+      "next_action": "Use fresh full REACH/Scout/NOAA IR DOI/title/version and protected signed-review screening, exact publisher-deposited Crossref funding for NA19OAR4590128, and canonical 24-column batch validation. If all gates pass, publish NEW CANDIDATE with verified award and funding URL, leaving SPARK parent blank for reviewer. Do not create duplicate public review or claim private Hub import.",
+      "checked_evidence_urls": [
+        "https://doi.org/10.1175/AIES-D-24-0063.1",
+        "https://journals.ametsoc.org/view/journals/aies/4/2/AIES-D-24-0063.1.xml"
+      ],
+      "source_count": 2,
+      "bounded_human_question_to_verify": false,
+      "formal_original_closed": false,
+      "separate_expansion_closed": false,
+      "new_public_proposal": false,
+      "private_hub_import": "NOT_VERIFIED",
+      "reviewer_approval": "NOT_VERIFIED"
+    },
+    {
       "event_id": "d1c7f1c43f43721992142729",
       "identity": "doi:10.1002/qj.70325",
       "doi": "10.1002/qj.70325",
@@ -1960,6 +1986,22 @@
       "source_file_count": 1,
       "event_ids": [
         "f3cea886bd3393050ce56849"
+      ],
+      "project_judgment_referral_possible": false,
+      "human_review_staged": false,
+      "private_hub_import": "NOT_VERIFIED"
+    },
+    {
+      "identity": "doi:10.1175/aies-d-24-0063.1",
+      "latest_event_id": "e9a3eb855a80038a8a040456",
+      "latest_evidence_path": "scout-operations/historical-crossref-phase2/2026-11-09-1829ET-generative-ai-extreme-precipitation-official-459-screen.json",
+      "latest_operational_disposition": "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+      "observed_dispositions": [
+        "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY"
+      ],
+      "source_file_count": 1,
+      "event_ids": [
+        "e9a3eb855a80038a8a040456"
       ],
       "project_judgment_referral_possible": false,
       "human_review_staged": false,
