@@ -36,9 +36,12 @@ TARGET_TERMS = (
     r"chemical[\s-]+transport", r"\bCMAQ\b", r"\bTROPOMI\b",
     r"ambient[\s-]+air", r"air[\s-]+pollution"
 )
+# General "environment", "sustainability" or "urban" alone are not
+# substantive air-quality links: those overpromoted company/bank research.
 CONTEXT_TERMS = (
-    r"climate", r"environment", r"sustainab", r"meteorolog",
-    r"geospatial", r"remote[\s-]+sens", r"urban", r"weather", r"\bheat\b"
+    r"climate", r"meteorolog", r"geospatial", r"remote[\s-]+sens",
+    r"weather", r"urban[\s-]+heat", r"heat[\s-]+island",
+    r"\btemperature\b", r"atmospheric[\s-]+science"
 )
 CROSS_DOMAIN_TERMS = (
     r"clinical", r"oncolog", r"cancer", r"retinal", r"medicine",
@@ -157,6 +160,12 @@ def choose_tier(topic, author_status, funding, identity):
         return "PUBLIC_IDENTITY_OR_VERSION_REVIEW"
     if funding == "EXACT_TARGET_AWARD_REGISTERED":
         return "TARGET_AWARD_PROJECT_VALIDATION"  # Never self-approve.
+    if funding == "DIFFERENT_NOAA_AWARD_REGISTERED":
+        # Different award in the Crossref record isn't proof the target
+        # award was absent, but it is a real reason NOT to send to the Hub.
+        if topic == "DIRECT_ATMOSPHERIC_AIR_QUALITY_TOPIC":
+            return "OTHER_AWARD_BRIDGE_RESEARCH_ONLY"
+        return "DEFER_OTHER_AWARD_WITHOUT_TOPIC"
     if topic == "DIRECT_ATMOSPHERIC_AIR_QUALITY_TOPIC":
         return "TARGETED_FUNDING_INVESTIGATION"
     if topic == "BROAD_CONTEXT_NEEDS_REVIEW":
@@ -192,10 +201,19 @@ def evaluate_leads(pilot, cache, index, watchlist, ir_index, *, get_metadata):
         seed_doi = norm_doi(item.get("seed_reach_doi"))
         work = get_metadata(doi)
         if not isinstance(work, dict) or norm_doi(work.get("DOI")) != doi:
+            # Keep the metadata problem visible, but do not spend reviewer
+            # cycles on off-topic banking/clinical records until another
+            # independent signal makes them plausibly relevant.
+            topic_hint, _ = topical_evidence(str(item.get("title", "")))
+            retry_tier = ("METADATA_RETRY_REQUIRED" if topic_hint in
+                          ("DIRECT_ATMOSPHERIC_AIR_QUALITY_TOPIC",
+                           "BROAD_CONTEXT_NEEDS_REVIEW")
+                          else "DEFER_METADATA_RETRY_OFF_TOPIC")
             results.append({"doi": doi, "title": item.get("title", ""),
                             "seed_reach_doi": seed_doi,
                             "metadata": "UNAVAILABLE_OR_DOI_CONFLICT",
-                            "tier": "METADATA_RETRY_REQUIRED",
+                            "topic": topic_hint,
+                            "tier": retry_tier,
                             "hub_eligible": False})
             continue
         title = (work.get("title") or [""])[0]
