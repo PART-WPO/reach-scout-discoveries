@@ -16,6 +16,7 @@ on:
       - 'scout-operations/research-leads/**'
       - 'scout-operations/tools/lookup_independent_metadata.py'
       - 'scout-operations/tools/lookup_independent_dois.py'
+      - 'scout-operations/tools/research_memory.py'
       - 'scout-operations/tools/ir_reach_identity.py'
       - 'scout-operations/noaa-ir/manifest.json'
       - 'scout-operations/tools/preprint_watchlist.py'
@@ -71,6 +72,13 @@ jobs:
           assert len({r['output_url'] for r in x['github_records']})==x['github_count']
           assert all('artifact_scope' in r for r in x['doi_records'])
           assert all('artifact_scope' in r for r in x['github_records'])
+          assert x['doi_metadata_memory_hits']+x['doi_metadata_network_attempts']==x['doi_count']
+          assert all(r.get('metadata_observed_at') for r in x['doi_records'])
+          from pathlib import Path
+          memory=json.loads(Path('scout-operations/research-memory/doi-cache-index.json').read_text())
+          assert memory['schema']=='reach-scout-public-doi-research-memory-v1'
+          assert not memory['author_names_in_memory_index']
+          assert memory['private_reviewer_state']=='NOT_VERIFIED'
           print('DOIs',x['doi_count'],'GitHub',x['github_count'],'artifact scope inventoried')
           PY
       - uses: actions/upload-artifact@v4
@@ -83,7 +91,7 @@ jobs:
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add scout-operations/reports/independent-metadata-lookup/latest.json scout-operations/preprint-watchlist.json scout-operations/preprint-publication-leads.json
+          git add scout-operations/reports/independent-metadata-lookup/latest.json scout-operations/research-memory/doi-cache-index.json scout-operations/preprint-watchlist.json scout-operations/preprint-publication-leads.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m 'Refresh Scout independent metadata lookup'
           for attempt in 1 2 3 4 5; do

@@ -1,0 +1,57 @@
+name: Validate Scout persistent metadata and research memory (read only)
+on:
+  pull_request:
+    paths:
+      - 'scout-operations/tools/research_memory.py'
+      - 'scout-operations/tools/lookup_independent_dois.py'
+      - 'scout-operations/tools/lookup_independent_metadata.py'
+      - 'scout-operations/tests/test_research_memory.py'
+      - 'scout-operations/research-memory/**'
+      - '.github/workflows/scout-independent-doi-lookup.yml'
+      - '.github/workflows/scout-independent-metadata-lookup.yml'
+      - '.github/workflows/validate-scout-research-memory.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate-read-only-cache:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile shared scripts and validate isolated memory regression
+        run: |
+          set -euo pipefail
+          python -m py_compile scout-operations/tools/research_memory.py scout-operations/tools/lookup_independent_dois.py scout-operations/tools/lookup_independent_metadata.py scout-operations/tools/recover_queued_doi_metadata.py
+          python -m unittest discover -s scout-operations/tests -p 'test_research_memory.py' -v
+          python -m unittest discover -s scout-operations/tests -p 'test_recover_queued_doi_metadata.py' -v
+          python -m unittest discover -s scout-operations/tests -p 'test_identity_disposition.py' -v
+      - name: Build, recheck and inspect only pointer-based public metadata index
+        run: |
+          set -euo pipefail
+          python scout-operations/tools/research_memory.py --rebuild
+          python scout-operations/tools/research_memory.py --check
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('scout-operations/research-memory/doi-cache-index.json')
+          doc=json.loads(p.read_text())
+          assert doc['schema']=='reach-scout-public-doi-research-memory-v1'
+          assert doc['private_reviewer_state']=='NOT_VERIFIED'
+          assert not doc['automatic_staging']
+          assert doc['author_names_in_memory_index'] is False
+          assert all(len(k)==64 for k in doc['entries'])
+          assert all(k==v['doi_key'] for k,v in doc['entries'].items())
+          assert all('creators' not in v and 'authors' not in v for v in doc['entries'].values())
+          frozen=json.loads(Path('scout-operations/research-memory/public-author-20261109-leads.json').read_text())
+          assert frozen['totals']['lead_count']==32
+          assert len({r['key'] for r in frozen['snapshots']})==32
+          assert frozen['no_auto_staging'] is True
+          print(json.dumps({'memory_doi_keys':doc['total_distinct_doi_keys'],
+                            'frozen_research_cases':32,
+                            'private_hub_modified':False,
+                            'no_author_data_indexed':True}))
+          PY
