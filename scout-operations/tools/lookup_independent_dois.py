@@ -4,7 +4,7 @@ import argparse,json,re,os,urllib.request,urllib.error,datetime
 from pathlib import Path
 from ir_reach_identity import verified_snapshot,identity_check,research_route
 from identity_disposition import verified_disposition
-from research_memory import read_index, metadata_result, write_index
+from research_memory import read_index, metadata_result, write_index, historical_author_lead
 from urllib.parse import quote
 ROOT=Path(__file__).resolve().parents[2]
 OUT=ROOT/"scout-operations/reports/independent-doi-lookup/latest.json"
@@ -82,6 +82,7 @@ def main():
   check=identity_check(public,ir_index,d,md.get("title",""),"https://doi.org/"+d)
   shared=verified_disposition(public,watch,ir_index,doi=d,title=md.get("title",""),url="https://doi.org/"+d)
   records.append({**entry,"metadata":md,
+                  "previous_public_research":historical_author_lead(ROOT,d),
                   "metadata_observed_at":observed,"metadata_memory_hit":hit,
                   "metadata_memory_reason":cache_reason,"identity_gate":check,
                   "shared_public_disposition":shared,
