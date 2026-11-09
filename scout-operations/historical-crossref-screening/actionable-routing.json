@@ -11,24 +11,24 @@
   "reach_source_records": 1238,
   "total": 614,
   "counts": {
-    "CONFIRMED_IN_REACH": 433,
+    "CONFIRMED_IN_REACH": 426,
     "NOT_FOUND_IN_REACH_INDEX": 134,
-    "LIKELY_IN_REACH": 47
+    "LIKELY_IN_REACH": 54
   },
   "bulk_identity_screening": {
     "counts": {
-      "NEEDS_IDENTITY_REVIEW": 47,
+      "NEEDS_IDENTITY_REVIEW": 54,
       "NO_PUBLIC_REACH_MATCH": 134,
-      "VERIFIED_EXISTING_REACH": 433
+      "VERIFIED_EXISTING_REACH": 426
     },
     "evidence_basis_counts": {
-      "EXACT_REACH_DOI_AND_TITLE": 85,
+      "EXACT_REACH_DOI_AND_TITLE": 79,
       "MULTIPLE_REACH_IDENTITIES": 6,
       "NORMALIZED_TITLE_ONLY": 19,
       "NO_PUBLIC_REACH_IDENTITY_MATCH": 134,
       "OFFICIAL_IR_IDENTITY_AMBIGUOUS_OR_CONFLICTING": 11,
-      "STRONG_IDENTITY_BUT_TITLE_OR_VERSION_DISAGREES": 11,
-      "VERIFIED_NOAA_IR_DOI_TO_REACH_URL_AND_TITLE": 348
+      "STRONG_IDENTITY_BUT_TITLE_OR_VERSION_DISAGREES": 18,
+      "VERIFIED_NOAA_IR_DOI_TO_REACH_URL_AND_TITLE": 347
     },
     "source_dois": 614
   },
@@ -1520,9 +1520,9 @@
     },
     {
       "doi": "10.1016/j.atmosenv.2021.118713",
-      "title": "impacts of the covid 19 economic slowdown on ozone pollution in the u s",
-      "outcome": "CONFIRMED_IN_REACH",
-      "route": "SKIP_ORIGINAL_NEW_OUTPUT_RESEARCH_KEEP_EXPANSION_SEED",
+      "title": "impacts of the covid 19 economic slowdown on ozone pollution in the us",
+      "outcome": "LIKELY_IN_REACH",
+      "route": "VERIFY_TITLE_VERSION_ONCE",
       "scout_public_queue_matches": [],
       "scout_public_queue_match_count": 0,
       "scout_overlap": false,
@@ -1533,20 +1533,20 @@
         "match_detail_shard": "agent-data/details/part-118.csv"
       },
       "bulk_identity_gate": {
-        "status": "VERIFIED_EXISTING_REACH",
-        "route": "SKIP_ORIGINAL_NEW_OUTPUT_RESEARCH_KEEP_EXPANSION_SEED",
-        "basis": "VERIFIED_NOAA_IR_DOI_TO_REACH_URL_AND_TITLE",
-        "verified_reach_uid": "reachuid-v1-e05f994b19e4e547866f893949d58245",
-        "verified_record_id": "reach-001029",
-        "verified_detail_path": "agent-data/details/part-118.csv",
-        "requires_human_identity_review": false
+        "status": "NEEDS_IDENTITY_REVIEW",
+        "route": "VERIFY_TITLE_VERSION_ONCE",
+        "basis": "STRONG_IDENTITY_BUT_TITLE_OR_VERSION_DISAGREES",
+        "verified_reach_uid": null,
+        "verified_record_id": null,
+        "verified_detail_path": null,
+        "requires_human_identity_review": true
       },
       "matches": [
         {
           "reach_uid": "reachuid-v1-e05f994b19e4e547866f893949d58245",
           "record_id": "reach-001029",
           "doi_hit": false,
-          "title_hit": true,
+          "title_hit": false,
           "official_ir_url_hit": true,
           "detail_path": "agent-data/details/part-118.csv"
         }
@@ -1920,9 +1920,9 @@
     },
     {
       "doi": "10.1016/j.ejrh.2026.103245",
-      "title": "evaporative stress index as a flash drought tool in the southeastern u s",
-      "outcome": "CONFIRMED_IN_REACH",
-      "route": "SKIP_ORIGINAL_NEW_OUTPUT_RESEARCH_KEEP_EXPANSION_SEED",
+      "title": "evaporative stress index as a flash drought tool in the southeastern us",
+      "outcome": "LIKELY_IN_REACH",
+      "route": "VERIFY_TITLE_VERSION_ONCE",
       "scout_public_queue_matches": [],
       "scout_public_queue_match_count": 0,
       "scout_overlap": false,
@@ -1933,20 +1933,20 @@
         "match_detail_shard": null
       },
       "bulk_identity_gate": {
-        "status": "VERIFIED_EXISTING_REACH",
-        "route": "SKIP_ORIGINAL_NEW_OUTPUT_RESEARCH_KEEP_EXPANSION_SEED",
-        "basis": "EXACT_REACH_DOI_AND_TITLE",
-        "verified_reach_uid": "reachuid-v1-268a266ad832e06837fcc788f0d587bb",
-        "verified_record_id": "reach-000160",
-        "verified_detail_path": "agent-data/details/part-020.csv",
-        "requires_human_identity_review": false
+        "status": "NEEDS_IDENTITY_REVIEW",
+        "route": "VERIFY_TITLE_VERSION_ONCE",
+        "basis": "STRONG_IDENTITY_BUT_TITLE_OR_VERSION_DISAGREES",
+        "verified_reach_uid": null,
+        "verified_record_id": null,
+        "verified_detail_path": null,
+        "requires_human_identity_review": true
       },
       "matches": [
         {
           "reach_uid": "reachuid-v1-268a266ad832e06837fcc788f0d587bb",
           "record_id": "reach-000160",
           "doi_hit": true,
-          "title_hit": true,
+          "title_hit": false,
           "official_ir_url_hit": false,
           "detail_path": "agent-data/details/part-020.csv"
         }
@@ -2262,9 +2262,9 @@
     },
     {
       "doi": "10.1016/j.jhydrol.2023.129124",
-      "title": "hydrologic evaluation of the global precipitation measurement mission over the u s flood peak discharge and duration",
-      "outcome": "LIKELY_IN_REACH",
-      "route": "VERIFY_TITLE_VERSION_ONCE",
+      "title": "hydrologic evaluation of the global precipitation measurement mission over the us flood peak discharge and duration",
+      "outcome": "CONFIRMED_IN_REACH",
+      "route": "SKIP_ORIGINAL_NEW_OUTPUT_RESEARCH_KEEP_EXPANSION_SEED",
       "scout_public_queue_matches": [],
       "scout_public_queue_match_count": 0,
       "scout_overlap": false,
@@ -2275,20 +2275,20 @@
         "match_detail_shard": "agent-data/details/part-040.csv"
       },
       "bulk_identity_gate": {
-        "status": "NEEDS_IDENTITY_REVIEW",
-        "route": "VERIFY_TITLE_VERSION_ONCE",
-        "basis": "STRONG_IDENTITY_BUT_TITLE_OR_VERSION_DISAGREES",
-        "verified_reach_uid": null,
-        "verified_record_id": null,
-        "verified_detail_path": null,
-        "requires_human_identity_review": true
+        "status": "VERIFIED_EXISTING_REACH",
+        "route": "SKIP_ORIGINAL_NEW_OUTPUT_RESEARCH_KEEP_EXPANSION_SEED",
+        "basis": "VERIFIED_NOAA_IR_DOI_TO_REACH_URL_AND_TITLE",
+        "verified_reach_uid": "reachuid-v1-784189d5f32028e72e4b294e805e99b7",
+        "verified_record_id": "reach-000316",
+        "verified_detail_path": "agent-data/details/part-040.csv",
+        "requires_human_identity_review": false
       },
       "matches": [
         {
           "reach_uid": "reachuid-v1-784189d5f32028e72e4b294e805e99b7",
           "record_id": "reach-000316",
           "doi_hit": false,
-          "title_hit": false,
+          "title_hit": true,
           "official_ir_url_hit": true,
           "detail_path": "agent-data/details/part-040.csv"
         }
@@ -2338,9 +2338,9 @@
     },
     {
       "doi": "10.1016/j.jhydrol.2023.130212",
-      "title": "hydrologic evaluation of the global precipitation measurement mission over the u s error budget analysis",
-      "outcome": "LIKELY_IN_REACH",
-      "route": "VERIFY_TITLE_VERSION_ONCE",
+      "title": "hydrologic evaluation of the global precipitation measurement mission over the us error budget analysis",
+      "outcome": "CONFIRMED_IN_REACH",
+      "route": "SKIP_ORIGINAL_NEW_OUTPUT_RESEARCH_KEEP_EXPANSION_SEED",
       "scout_public_queue_matches": [],
       "scout_public_queue_match_count": 0,
       "scout_overlap": false,
@@ -2351,20 +2351,20 @@
         "match_detail_shard": "agent-data/details/part-040.csv"
       },
       "bulk_identity_gate": {
-        "status": "NEEDS_IDENTITY_REVIEW",
-        "route": "VERIFY_TITLE_VERSION_ONCE",
-        "basis": "STRONG_IDENTITY_BUT_TITLE_OR_VERSION_DISAGREES",
-        "verified_reach_uid": null,
-        "verified_record_id": null,
-        "verified_detail_path": null,
-        "requires_human_identity_review": true
+        "status": "VERIFIED_EXISTING_REACH",
+        "route": "SKIP_ORIGINAL_NEW_OUTPUT_RESEARCH_KEEP_EXPANSION_SEED",
+        "basis": "VERIFIED_NOAA_IR_DOI_TO_REACH_URL_AND_TITLE",
+        "verified_reach_uid": "reachuid-v1-3c630c5f5fc738ffa67aa116506b528b",
+        "verified_record_id": "reach-000315",
+        "verified_detail_path": "agent-data/details/part-040.csv",
+        "requires_human_identity_review": false
       },
       "matches": [
         {
           "reach_uid": "reachuid-v1-3c630c5f5fc738ffa67aa116506b528b",
           "record_id": "reach-000315",
           "doi_hit": false,
-          "title_hit": false,
+          "title_hit": true,
           "official_ir_url_hit": true,
           "detail_path": "agent-data/details/part-040.csv"
         }
@@ -2376,9 +2376,9 @@
     },
     {
       "doi": "10.1016/j.jhydrol.2024.131134",
-      "title": "hydrologic evaluation of the global precipitation measurement mission over the u s effect of spatial and temporal scales",
-      "outcome": "LIKELY_IN_REACH",
-      "route": "VERIFY_TITLE_VERSION_ONCE",
+      "title": "hydrologic evaluation of the global precipitation measurement mission over the us effect of spatial and temporal scales",
+      "outcome": "CONFIRMED_IN_REACH",
+      "route": "SKIP_ORIGINAL_NEW_OUTPUT_RESEARCH_KEEP_EXPANSION_SEED",
       "scout_public_queue_matches": [],
       "scout_public_queue_match_count": 0,
       "scout_overlap": false,
@@ -2389,20 +2389,20 @@
         "match_detail_shard": "agent-data/details/part-040.csv"
       },
       "bulk_identity_gate": {
-        "status": "NEEDS_IDENTITY_REVIEW",
-        "route": "VERIFY_TITLE_VERSION_ONCE",
-        "basis": "STRONG_IDENTITY_BUT_TITLE_OR_VERSION_DISAGREES",
-        "verified_reach_uid": null,
-        "verified_record_id": null,
-        "verified_detail_path": null,
-        "requires_human_identity_review": true
+        "status": "VERIFIED_EXISTING_REACH",
+        "route": "SKIP_ORIGINAL_NEW_OUTPUT_RESEARCH_KEEP_EXPANSION_SEED",
+        "basis": "VERIFIED_NOAA_IR_DOI_TO_REACH_URL_AND_TITLE",
+        "verified_reach_uid": "reachuid-v1-0940e0e6322f5c2a20eed3031edad0fb",
+        "verified_record_id": "reach-000314",
+        "verified_detail_path": "agent-data/details/part-040.csv",
+        "requires_human_identity_review": false
       },
       "matches": [
         {
           "reach_uid": "reachuid-v1-0940e0e6322f5c2a20eed3031edad0fb",
           "record_id": "reach-000314",
           "doi_hit": false,
-          "title_hit": false,
+          "title_hit": true,
           "official_ir_url_hit": true,
           "detail_path": "agent-data/details/part-040.csv"
         }
@@ -5181,7 +5181,7 @@
     },
     {
       "doi": "10.1029/2024jd041494",
-      "title": "impacts of on road vehicular emissions on u s air quality a comparison of two mobile emission models moves and five",
+      "title": "impacts of on road vehicular emissions on us air quality a comparison of two mobile emission models moves and five",
       "outcome": "LIKELY_IN_REACH",
       "route": "VERIFY_OFFICIAL_IR_AND_VERSION_CONFLICT_ONCE",
       "scout_public_queue_matches": [],
@@ -5202,16 +5202,7 @@
         "verified_detail_path": null,
         "requires_human_identity_review": true
       },
-      "matches": [
-        {
-          "reach_uid": "reachuid-v1-cd61375598bf083c510ffb38b95ffb07",
-          "record_id": "reach-001036",
-          "doi_hit": false,
-          "title_hit": true,
-          "official_ir_url_hit": false,
-          "detail_path": "agent-data/details/part-119.csv"
-        }
-      ],
+      "matches": [],
       "original_triage_modified": false,
       "expansion_seed_preserved": true,
       "private_hub_review_verified": false,
@@ -5822,9 +5813,9 @@
     },
     {
       "doi": "10.1029/2025jd044191",
-      "title": "snow cover plays a non dominant role in wrf noah mp simulated surface air temperature cold biases over the western u s",
-      "outcome": "CONFIRMED_IN_REACH",
-      "route": "SKIP_ORIGINAL_NEW_OUTPUT_RESEARCH_KEEP_EXPANSION_SEED",
+      "title": "snow cover plays a non dominant role in wrf noah mp simulated surface air temperature cold biases over the western us",
+      "outcome": "LIKELY_IN_REACH",
+      "route": "VERIFY_TITLE_VERSION_ONCE",
       "scout_public_queue_matches": [],
       "scout_public_queue_match_count": 0,
       "scout_overlap": false,
@@ -5835,20 +5826,20 @@
         "match_detail_shard": null
       },
       "bulk_identity_gate": {
-        "status": "VERIFIED_EXISTING_REACH",
-        "route": "SKIP_ORIGINAL_NEW_OUTPUT_RESEARCH_KEEP_EXPANSION_SEED",
-        "basis": "EXACT_REACH_DOI_AND_TITLE",
-        "verified_reach_uid": "reachuid-v1-ec7b567fac21db9bdb6a04ea7d2c7662",
-        "verified_record_id": "reach-001203",
-        "verified_detail_path": "agent-data/details/part-136.csv",
-        "requires_human_identity_review": false
+        "status": "NEEDS_IDENTITY_REVIEW",
+        "route": "VERIFY_TITLE_VERSION_ONCE",
+        "basis": "STRONG_IDENTITY_BUT_TITLE_OR_VERSION_DISAGREES",
+        "verified_reach_uid": null,
+        "verified_record_id": null,
+        "verified_detail_path": null,
+        "requires_human_identity_review": true
       },
       "matches": [
         {
           "reach_uid": "reachuid-v1-ec7b567fac21db9bdb6a04ea7d2c7662",
           "record_id": "reach-001203",
           "doi_hit": true,
-          "title_hit": true,
+          "title_hit": false,
           "official_ir_url_hit": false,
           "detail_path": "agent-data/details/part-136.csv"
         }
@@ -6118,9 +6109,9 @@
     },
     {
       "doi": "10.1029/2026gl123274",
-      "title": "soil organic matter reduces persistent nighttime surface warm bias in convection permitting u s simulations",
-      "outcome": "CONFIRMED_IN_REACH",
-      "route": "SKIP_ORIGINAL_NEW_OUTPUT_RESEARCH_KEEP_EXPANSION_SEED",
+      "title": "soil organic matter reduces persistent nighttime surface warm bias in convection permitting us simulations",
+      "outcome": "LIKELY_IN_REACH",
+      "route": "VERIFY_TITLE_VERSION_ONCE",
       "scout_public_queue_matches": [],
       "scout_public_queue_match_count": 0,
       "scout_overlap": false,
@@ -6131,20 +6122,20 @@
         "match_detail_shard": null
       },
       "bulk_identity_gate": {
-        "status": "VERIFIED_EXISTING_REACH",
-        "route": "SKIP_ORIGINAL_NEW_OUTPUT_RESEARCH_KEEP_EXPANSION_SEED",
-        "basis": "EXACT_REACH_DOI_AND_TITLE",
-        "verified_reach_uid": "reachuid-v1-4b8eb62d68f48829179eaa028eb05bc9",
-        "verified_record_id": "reach-001204",
-        "verified_detail_path": "agent-data/details/part-136.csv",
-        "requires_human_identity_review": false
+        "status": "NEEDS_IDENTITY_REVIEW",
+        "route": "VERIFY_TITLE_VERSION_ONCE",
+        "basis": "STRONG_IDENTITY_BUT_TITLE_OR_VERSION_DISAGREES",
+        "verified_reach_uid": null,
+        "verified_record_id": null,
+        "verified_detail_path": null,
+        "requires_human_identity_review": true
       },
       "matches": [
         {
           "reach_uid": "reachuid-v1-4b8eb62d68f48829179eaa028eb05bc9",
           "record_id": "reach-001204",
           "doi_hit": true,
-          "title_hit": true,
+          "title_hit": false,
           "official_ir_url_hit": false,
           "detail_path": "agent-data/details/part-136.csv"
         }
@@ -7004,9 +6995,9 @@
     },
     {
       "doi": "10.1080/00909882.2021.2019817",
-      "title": "how the u s national weather service communicates to protect communities an extension of microboundary spanning theory",
-      "outcome": "CONFIRMED_IN_REACH",
-      "route": "SKIP_ORIGINAL_NEW_OUTPUT_RESEARCH_KEEP_EXPANSION_SEED",
+      "title": "how the us national weather service communicates to protect communities an extension of microboundary spanning theory",
+      "outcome": "LIKELY_IN_REACH",
+      "route": "VERIFY_TITLE_VERSION_ONCE",
       "scout_public_queue_matches": [],
       "scout_public_queue_match_count": 0,
       "scout_overlap": false,
@@ -7017,20 +7008,20 @@
         "match_detail_shard": null
       },
       "bulk_identity_gate": {
-        "status": "VERIFIED_EXISTING_REACH",
-        "route": "SKIP_ORIGINAL_NEW_OUTPUT_RESEARCH_KEEP_EXPANSION_SEED",
-        "basis": "EXACT_REACH_DOI_AND_TITLE",
-        "verified_reach_uid": "reachuid-v1-758e5bc57706f92d8d91dad4916b285b",
-        "verified_record_id": "reach-000926",
-        "verified_detail_path": "agent-data/details/part-106.csv",
-        "requires_human_identity_review": false
+        "status": "NEEDS_IDENTITY_REVIEW",
+        "route": "VERIFY_TITLE_VERSION_ONCE",
+        "basis": "STRONG_IDENTITY_BUT_TITLE_OR_VERSION_DISAGREES",
+        "verified_reach_uid": null,
+        "verified_record_id": null,
+        "verified_detail_path": null,
+        "requires_human_identity_review": true
       },
       "matches": [
         {
           "reach_uid": "reachuid-v1-758e5bc57706f92d8d91dad4916b285b",
           "record_id": "reach-000926",
           "doi_hit": true,
-          "title_hit": true,
+          "title_hit": false,
           "official_ir_url_hit": false,
           "detail_path": "agent-data/details/part-106.csv"
         }
@@ -8436,9 +8427,9 @@
     },
     {
       "doi": "10.1175/aies-d-22-0011.1",
-      "title": "understanding predictability of daily southeast u s precipitation using explainable machine learning",
-      "outcome": "CONFIRMED_IN_REACH",
-      "route": "SKIP_ORIGINAL_NEW_OUTPUT_RESEARCH_KEEP_EXPANSION_SEED",
+      "title": "understanding predictability of daily southeast us precipitation using explainable machine learning",
+      "outcome": "LIKELY_IN_REACH",
+      "route": "VERIFY_TITLE_VERSION_ONCE",
       "scout_public_queue_matches": [],
       "scout_public_queue_match_count": 0,
       "scout_overlap": false,
@@ -8449,20 +8440,20 @@
         "match_detail_shard": null
       },
       "bulk_identity_gate": {
-        "status": "VERIFIED_EXISTING_REACH",
-        "route": "SKIP_ORIGINAL_NEW_OUTPUT_RESEARCH_KEEP_EXPANSION_SEED",
-        "basis": "EXACT_REACH_DOI_AND_TITLE",
-        "verified_reach_uid": "reachuid-v1-fa8afea94890fc9d6b6976df6d69397b",
-        "verified_record_id": "reach-000425",
-        "verified_detail_path": "agent-data/details/part-053.csv",
-        "requires_human_identity_review": false
+        "status": "NEEDS_IDENTITY_REVIEW",
+        "route": "VERIFY_TITLE_VERSION_ONCE",
+        "basis": "STRONG_IDENTITY_BUT_TITLE_OR_VERSION_DISAGREES",
+        "verified_reach_uid": null,
+        "verified_record_id": null,
+        "verified_detail_path": null,
+        "requires_human_identity_review": true
       },
       "matches": [
         {
           "reach_uid": "reachuid-v1-fa8afea94890fc9d6b6976df6d69397b",
           "record_id": "reach-000425",
           "doi_hit": true,
-          "title_hit": true,
+          "title_hit": false,
           "official_ir_url_hit": false,
           "detail_path": "agent-data/details/part-053.csv"
         }
@@ -14752,7 +14743,7 @@
     },
     {
       "doi": "10.1175/waf-d-19-0232.1",
-      "title": "skillful all season s2s prediction of u s precipitation using the mjo and qbo",
+      "title": "skillful all season s2s prediction of us precipitation using the mjo and qbo",
       "outcome": "LIKELY_IN_REACH",
       "route": "VERIFY_OFFICIAL_IR_AND_VERSION_CONFLICT_ONCE",
       "scout_public_queue_matches": [],
@@ -14773,24 +14764,7 @@
         "verified_detail_path": null,
         "requires_human_identity_review": true
       },
-      "matches": [
-        {
-          "reach_uid": "reachuid-v1-28ad4ad0ed9eeef11d4c33bb371995c7",
-          "record_id": "reach-000439",
-          "doi_hit": false,
-          "title_hit": true,
-          "official_ir_url_hit": false,
-          "detail_path": "agent-data/details/part-055.csv"
-        },
-        {
-          "reach_uid": "reachuid-v1-9feb682e5858796c99a709f7ae5d1677",
-          "record_id": "reach-001169",
-          "doi_hit": false,
-          "title_hit": true,
-          "official_ir_url_hit": false,
-          "detail_path": "agent-data/details/part-131.csv"
-        }
-      ],
+      "matches": [],
       "original_triage_modified": false,
       "expansion_seed_preserved": true,
       "private_hub_review_verified": false,
@@ -15909,9 +15883,9 @@
     },
     {
       "doi": "10.1175/waf-d-23-0002.1",
-      "title": "subseasonal variability of u s coastal sea level from mjo and enso teleconnection interference",
-      "outcome": "CONFIRMED_IN_REACH",
-      "route": "SKIP_ORIGINAL_NEW_OUTPUT_RESEARCH_KEEP_EXPANSION_SEED",
+      "title": "subseasonal variability of us coastal sea level from mjo and enso teleconnection interference",
+      "outcome": "LIKELY_IN_REACH",
+      "route": "VERIFY_TITLE_VERSION_ONCE",
       "scout_public_queue_matches": [],
       "scout_public_queue_match_count": 0,
       "scout_overlap": false,
@@ -15922,20 +15896,20 @@
         "match_detail_shard": "agent-data/details/part-054.csv"
       },
       "bulk_identity_gate": {
-        "status": "VERIFIED_EXISTING_REACH",
-        "route": "SKIP_ORIGINAL_NEW_OUTPUT_RESEARCH_KEEP_EXPANSION_SEED",
-        "basis": "VERIFIED_NOAA_IR_DOI_TO_REACH_URL_AND_TITLE",
-        "verified_reach_uid": "reachuid-v1-824b11fbfeb1ffe665b7fdbdd486c6ec",
-        "verified_record_id": "reach-000430",
-        "verified_detail_path": "agent-data/details/part-054.csv",
-        "requires_human_identity_review": false
+        "status": "NEEDS_IDENTITY_REVIEW",
+        "route": "VERIFY_TITLE_VERSION_ONCE",
+        "basis": "STRONG_IDENTITY_BUT_TITLE_OR_VERSION_DISAGREES",
+        "verified_reach_uid": null,
+        "verified_record_id": null,
+        "verified_detail_path": null,
+        "requires_human_identity_review": true
       },
       "matches": [
         {
           "reach_uid": "reachuid-v1-824b11fbfeb1ffe665b7fdbdd486c6ec",
           "record_id": "reach-000430",
           "doi_hit": false,
-          "title_hit": true,
+          "title_hit": false,
           "official_ir_url_hit": true,
           "detail_path": "agent-data/details/part-054.csv"
         }
@@ -16023,9 +15997,9 @@
     },
     {
       "doi": "10.1175/waf-d-23-0017.1",
-      "title": "comparison of clustering approaches in a multimodel ensemble for u s east coast cold season extratropical cyclones",
-      "outcome": "CONFIRMED_IN_REACH",
-      "route": "SKIP_ORIGINAL_NEW_OUTPUT_RESEARCH_KEEP_EXPANSION_SEED",
+      "title": "comparison of clustering approaches in a multimodel ensemble for us east coast cold season extratropical cyclones",
+      "outcome": "LIKELY_IN_REACH",
+      "route": "VERIFY_TITLE_VERSION_ONCE",
       "scout_public_queue_matches": [],
       "scout_public_queue_match_count": 0,
       "scout_overlap": false,
@@ -16036,20 +16010,20 @@
         "match_detail_shard": "agent-data/details/part-040.csv"
       },
       "bulk_identity_gate": {
-        "status": "VERIFIED_EXISTING_REACH",
-        "route": "SKIP_ORIGINAL_NEW_OUTPUT_RESEARCH_KEEP_EXPANSION_SEED",
-        "basis": "VERIFIED_NOAA_IR_DOI_TO_REACH_URL_AND_TITLE",
-        "verified_reach_uid": "reachuid-v1-a914d6bf0c1bbecba0a223f41123fa01",
-        "verified_record_id": "reach-000321",
-        "verified_detail_path": "agent-data/details/part-040.csv",
-        "requires_human_identity_review": false
+        "status": "NEEDS_IDENTITY_REVIEW",
+        "route": "VERIFY_TITLE_VERSION_ONCE",
+        "basis": "STRONG_IDENTITY_BUT_TITLE_OR_VERSION_DISAGREES",
+        "verified_reach_uid": null,
+        "verified_record_id": null,
+        "verified_detail_path": null,
+        "requires_human_identity_review": true
       },
       "matches": [
         {
           "reach_uid": "reachuid-v1-a914d6bf0c1bbecba0a223f41123fa01",
           "record_id": "reach-000321",
           "doi_hit": false,
-          "title_hit": true,
+          "title_hit": false,
           "official_ir_url_hit": true,
           "detail_path": "agent-data/details/part-040.csv"
         }
@@ -17904,9 +17878,9 @@
     },
     {
       "doi": "10.1175/waf-d-25-0227.1",
-      "title": "application of machine learning to quantify the role of the dryline in the severe thunderstorm climatology of the u s southern great plains",
-      "outcome": "CONFIRMED_IN_REACH",
-      "route": "SKIP_ORIGINAL_NEW_OUTPUT_RESEARCH_KEEP_EXPANSION_SEED",
+      "title": "application of machine learning to quantify the role of the dryline in the severe thunderstorm climatology of the us southern great plains",
+      "outcome": "LIKELY_IN_REACH",
+      "route": "VERIFY_TITLE_VERSION_ONCE",
       "scout_public_queue_matches": [],
       "scout_public_queue_match_count": 0,
       "scout_overlap": false,
@@ -17917,20 +17891,20 @@
         "match_detail_shard": null
       },
       "bulk_identity_gate": {
-        "status": "VERIFIED_EXISTING_REACH",
-        "route": "SKIP_ORIGINAL_NEW_OUTPUT_RESEARCH_KEEP_EXPANSION_SEED",
-        "basis": "EXACT_REACH_DOI_AND_TITLE",
-        "verified_reach_uid": "reachuid-v1-359f194dcb321e3f0c6a32c78ac3264a",
-        "verified_record_id": "reach-000307",
-        "verified_detail_path": "agent-data/details/part-039.csv",
-        "requires_human_identity_review": false
+        "status": "NEEDS_IDENTITY_REVIEW",
+        "route": "VERIFY_TITLE_VERSION_ONCE",
+        "basis": "STRONG_IDENTITY_BUT_TITLE_OR_VERSION_DISAGREES",
+        "verified_reach_uid": null,
+        "verified_record_id": null,
+        "verified_detail_path": null,
+        "requires_human_identity_review": true
       },
       "matches": [
         {
           "reach_uid": "reachuid-v1-359f194dcb321e3f0c6a32c78ac3264a",
           "record_id": "reach-000307",
           "doi_hit": true,
-          "title_hit": true,
+          "title_hit": false,
           "official_ir_url_hit": false,
           "detail_path": "agent-data/details/part-039.csv"
         }
@@ -18530,9 +18504,9 @@
     },
     {
       "doi": "10.1175/wcas-d-22-0020.1",
-      "title": "revisiting u s nocturnal tornado vulnerability and its influence on tornado impacts",
-      "outcome": "CONFIRMED_IN_REACH",
-      "route": "SKIP_ORIGINAL_NEW_OUTPUT_RESEARCH_KEEP_EXPANSION_SEED",
+      "title": "revisiting us nocturnal tornado vulnerability and its influence on tornado impacts",
+      "outcome": "LIKELY_IN_REACH",
+      "route": "VERIFY_TITLE_VERSION_ONCE",
       "scout_public_queue_matches": [],
       "scout_public_queue_match_count": 0,
       "scout_overlap": false,
@@ -18543,20 +18517,20 @@
         "match_detail_shard": "agent-data/details/part-109.csv"
       },
       "bulk_identity_gate": {
-        "status": "VERIFIED_EXISTING_REACH",
-        "route": "SKIP_ORIGINAL_NEW_OUTPUT_RESEARCH_KEEP_EXPANSION_SEED",
-        "basis": "VERIFIED_NOAA_IR_DOI_TO_REACH_URL_AND_TITLE",
-        "verified_reach_uid": "reachuid-v1-61fa7fc6e71b830ec6ef2680001c94cb",
-        "verified_record_id": "reach-000948",
-        "verified_detail_path": "agent-data/details/part-109.csv",
-        "requires_human_identity_review": false
+        "status": "NEEDS_IDENTITY_REVIEW",
+        "route": "VERIFY_TITLE_VERSION_ONCE",
+        "basis": "STRONG_IDENTITY_BUT_TITLE_OR_VERSION_DISAGREES",
+        "verified_reach_uid": null,
+        "verified_record_id": null,
+        "verified_detail_path": null,
+        "requires_human_identity_review": true
       },
       "matches": [
         {
           "reach_uid": "reachuid-v1-61fa7fc6e71b830ec6ef2680001c94cb",
           "record_id": "reach-000948",
           "doi_hit": false,
-          "title_hit": true,
+          "title_hit": false,
           "official_ir_url_hit": true,
           "detail_path": "agent-data/details/part-109.csv"
         }
