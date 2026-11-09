@@ -41,18 +41,19 @@
     "scout-operations/historical-crossref-phase2/2026-11-07-1430ET-publisher-award-scope-oklahoma-ozone.json": "a4ba761892caeef436ff1fed3668ac13c644d1602f387285bdf0d4a966af7b96",
     "scout-operations/historical-crossref-phase2/2026-11-08-0325ET-mcv-dashboard-project-attribution-hold.json": "e702a1cfd2fb7c2e3f0cb3da9fae960f7378d6a77205772500af35e6b5766101",
     "scout-operations/historical-crossref-phase2/2026-11-08-1127ET-occupational-extreme-weather-noaa-ir-identity-hold.json": "c42f82cf4e24218005b54d4a599df2a55f52e8f35b661476d032e1f38a871c91",
+    "scout-operations/historical-crossref-phase2/2026-11-08-2329ET-compound-heat-ozone-publisher-attribution.json": "d3a5391fdcf835a6174fa903a8e7b8bd36cdf526444f129e1cf47cc7c840dd39",
     "scout-operations/monthly-research/2026-11-06-0528ET-storm-harry-qj70325-project-scope-hold.json": "9bf7c3c778f1cbf1622db3e994b7facc446367f5cc3ed6094517ab5884722911",
     "scout-operations/monthly-research/2026-11-06-0630ET-storm-harry-ecmwf-two-doi-access-holds.json": "38d2065e50f5691c4452ea054a54409a88392e3d76f60969a311a78d96b3bf7c",
     "scout-operations/monthly-research/2026-11-06-0730ET-storm-harry-ecmwf-official-catalog-followup.json": "7a63adfadb964734abec498d27cc54bc6e431d0cb8f51c11bdc8f4e6131491c3",
     "scout-operations/monthly-research/2026-11-06-0830ET-storm-harry-global-drifter-award-scope-followup.json": "684a66155c7ad188613f0217e371ba692f300a27bb1ab16a1b7d40f09c1198bc"
   },
-  "evidence_files_scanned": 40,
+  "evidence_files_scanned": 41,
   "source_files_without_explicit_output_id": [],
-  "research_note_events": 48,
+  "research_note_events": 49,
   "distinct_research_identities": 31,
   "operational_disposition_counts": {
     "BOUNDED_PROJECT_QUESTION_FOR_HUMAN": 2,
-    "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY": 17,
+    "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY": 18,
     "PREPRINT_MONTHLY_WATCH": 1,
     "PROJECT_EVIDENCE_HOLD": 27,
     "TECHNICAL_METADATA_RECOVERY": 1
@@ -1092,6 +1093,30 @@
       "reviewer_approval": "NOT_VERIFIED"
     },
     {
+      "event_id": "93117f244321521036114636",
+      "identity": "doi:10.1029/2026jd046327",
+      "doi": "10.1029/2026jd046327",
+      "url_only": null,
+      "role_in_note": "original",
+      "research_lane": "SOURCE_LANE_UNCLASSIFIED",
+      "source_path": "scout-operations/historical-crossref-phase2/2026-11-08-2329ET-compound-heat-ozone-publisher-attribution.json",
+      "source_sha256": "d3a5391fdcf835a6174fa903a8e7b8bd36cdf526444f129e1cf47cc7c840dd39",
+      "source_time": "2026-11-08",
+      "raw_decision": "NOT_DECLARED",
+      "operational_disposition": "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+      "next_action": "Obtain one specific primary SPARK project record for NA22OAR4590512 establishing NEMO development scope and whether this article is its deliverable; then verify complete REACH/Scout/NOAA IR identity before any public review proposal.",
+      "checked_evidence_urls": [
+        "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2026JD046327"
+      ],
+      "source_count": 1,
+      "bounded_human_question_to_verify": false,
+      "formal_original_closed": false,
+      "separate_expansion_closed": false,
+      "new_public_proposal": false,
+      "private_hub_import": "NOT_VERIFIED",
+      "reviewer_approval": "NOT_VERIFIED"
+    },
+    {
       "event_id": "d1c7f1c43f43721992142729",
       "identity": "doi:10.1002/qj.70325",
       "doi": "10.1002/qj.70325",
@@ -1530,15 +1555,16 @@
     },
     {
       "identity": "doi:10.1029/2026jd046327",
-      "latest_event_id": "2b3f15a701dc1d1b7a7e449b",
-      "latest_evidence_path": "scout-operations/historical-crossref-phase2/2026-11-07-1430ET-publisher-award-scope-oklahoma-ozone.json",
+      "latest_event_id": "93117f244321521036114636",
+      "latest_evidence_path": "scout-operations/historical-crossref-phase2/2026-11-08-2329ET-compound-heat-ozone-publisher-attribution.json",
       "latest_operational_disposition": "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
       "observed_dispositions": [
         "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY"
       ],
-      "source_file_count": 1,
+      "source_file_count": 2,
       "event_ids": [
-        "2b3f15a701dc1d1b7a7e449b"
+        "2b3f15a701dc1d1b7a7e449b",
+        "93117f244321521036114636"
       ],
       "project_judgment_referral_possible": false,
       "human_review_staged": false,
