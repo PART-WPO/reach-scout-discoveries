@@ -4,8 +4,8 @@
   "screening_manifest_sha256": "470e89f3ef51557b5d8e817a6d860cd6592522a692a83a714c252abe0ea84a50",
   "reach_cache_sha256": "6660562e325a6a141198f59acce84f2e30d9a2d14e6cf5acd29769c8a4b68e1e",
   "reach_source_manifest_sha256": "f94ae52cac483b52e9a5cd6e775c6faa01ad6ec33610b249b3d486aed6daa003",
-  "noaa_ir_manifest_sha256": "19f69502e62e8d6142cd6cd6ba1163fcfc50bab1651abb002e3fe27355cb5a9d",
-  "noaa_ir_existing_reach_url_matches": 357,
+  "noaa_ir_manifest_sha256": "2866655e200a896a39b3bda4d22c218009f28915463e95358c025ea8f4461b3e",
+  "noaa_ir_existing_reach_url_matches": 358,
   "shared_identity_index_fingerprint": "64593e9870d8ba945ffb28d1a5a610bf23e5e112d1c908a9151e6ebb34bac034",
   "public_scout_queue_overlap_dois": 32,
   "reach_source_records": 1238,
@@ -23,10 +23,10 @@
     },
     "evidence_basis_counts": {
       "EXACT_REACH_DOI_AND_TITLE": 85,
-      "MULTIPLE_REACH_IDENTITIES": 7,
+      "MULTIPLE_REACH_IDENTITIES": 6,
       "NORMALIZED_TITLE_ONLY": 19,
       "NO_PUBLIC_REACH_IDENTITY_MATCH": 134,
-      "OFFICIAL_IR_IDENTITY_AMBIGUOUS_OR_CONFLICTING": 10,
+      "OFFICIAL_IR_IDENTITY_AMBIGUOUS_OR_CONFLICTING": 11,
       "STRONG_IDENTITY_BUT_TITLE_OR_VERSION_DISAGREES": 11,
       "VERIFIED_NOAA_IR_DOI_TO_REACH_URL_AND_TITLE": 348
     },
@@ -6029,10 +6029,10 @@
       "scout_public_queue_match_count": 1,
       "scout_overlap": true,
       "noaa_ir_reach_check": {
-        "status": "NOT_NEEDED_DIRECT_REACH",
-        "official_url": null,
-        "match_uid": null,
-        "match_detail_shard": null
+        "status": "VERIFIED_OFFICIAL_IR_DOI_TO_EXISTING_REACH_URL",
+        "official_url": "https://repository.library.noaa.gov/view/noaa/73117",
+        "match_uid": "reachuid-v1-ee71149ef66437c2f5ec5811d469b937",
+        "match_detail_shard": "agent-data/details/part-137.csv"
       },
       "bulk_identity_gate": {
         "status": "NEEDS_IDENTITY_REVIEW",
@@ -6049,7 +6049,7 @@
           "record_id": "reach-001211",
           "doi_hit": true,
           "title_hit": false,
-          "official_ir_url_hit": false,
+          "official_ir_url_hit": true,
           "detail_path": "agent-data/details/part-137.csv"
         }
       ],
@@ -6221,8 +6221,8 @@
       "scout_public_queue_match_count": 0,
       "scout_overlap": false,
       "noaa_ir_reach_check": {
-        "status": "NOT_NEEDED_DIRECT_REACH",
-        "official_url": null,
+        "status": "VERIFIED_IR_URL_NOT_IN_PUBLIC_REACH",
+        "official_url": "https://repository.library.noaa.gov/view/noaa/77311",
         "match_uid": null,
         "match_detail_shard": null
       },
@@ -17784,20 +17784,20 @@
       "doi": "10.1175/waf-d-25-0181.1",
       "title": "evaluation of severe weather forecasts from real time medium range convection allowing ensembles over the conterminous united states",
       "outcome": "LIKELY_IN_REACH",
-      "route": "VERIFY_MULTIPLE_REACH_IDENTITIES_ONCE",
+      "route": "VERIFY_OFFICIAL_IR_AND_VERSION_CONFLICT_ONCE",
       "scout_public_queue_matches": [],
       "scout_public_queue_match_count": 0,
       "scout_overlap": false,
       "noaa_ir_reach_check": {
-        "status": "NOT_NEEDED_DIRECT_REACH",
-        "official_url": null,
+        "status": "MULTIPLE_REACH_RECORDS_HOLD",
+        "official_url": "https://repository.library.noaa.gov/view/noaa/73079",
         "match_uid": null,
         "match_detail_shard": null
       },
       "bulk_identity_gate": {
         "status": "NEEDS_IDENTITY_REVIEW",
-        "route": "VERIFY_MULTIPLE_REACH_IDENTITIES_ONCE",
-        "basis": "MULTIPLE_REACH_IDENTITIES",
+        "route": "VERIFY_OFFICIAL_IR_AND_VERSION_CONFLICT_ONCE",
+        "basis": "OFFICIAL_IR_IDENTITY_AMBIGUOUS_OR_CONFLICTING",
         "verified_reach_uid": null,
         "verified_record_id": null,
         "verified_detail_path": null,
@@ -20662,7 +20662,7 @@
       "scout_public_queue_match_count": 0,
       "scout_overlap": false,
       "noaa_ir_reach_check": {
-        "status": "NOT_NEEDED_DIRECT_REACH",
+        "status": "DOI_NOT_IN_VERIFIED_IR_INDEX_UNKNOWN",
         "official_url": null,
         "match_uid": null,
         "match_detail_shard": null
@@ -21460,7 +21460,7 @@
       "scout_public_queue_match_count": 0,
       "scout_overlap": false,
       "noaa_ir_reach_check": {
-        "status": "NOT_NEEDED_DIRECT_REACH",
+        "status": "DOI_NOT_IN_VERIFIED_IR_INDEX_UNKNOWN",
         "official_url": null,
         "match_uid": null,
         "match_detail_shard": null
@@ -22160,8 +22160,8 @@
       "scout_public_queue_match_count": 0,
       "scout_overlap": false,
       "noaa_ir_reach_check": {
-        "status": "NOT_NEEDED_DIRECT_REACH",
-        "official_url": null,
+        "status": "VERIFIED_IR_URL_NOT_IN_PUBLIC_REACH",
+        "official_url": "https://repository.library.noaa.gov/view/noaa/76980",
         "match_uid": null,
         "match_detail_shard": null
       },
