@@ -6,7 +6,6 @@ on:
       - '.github/workflows/scout-once-author-safeguards-20261109.yml'
 permissions:
   contents: read
-  actions: read
 concurrency:
   group: oneoff-public-reach-author-safeguards-20261109
   cancel-in-progress: false
