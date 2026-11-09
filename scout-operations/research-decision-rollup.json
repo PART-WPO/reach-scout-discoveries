@@ -1,15 +1,17 @@
 {
   "schema": "reach-scout-research-decision-rollup-v1",
-  "source_cases_sha256": "b9bb0f541e34126dc31e1a086d55d58b663043642fc8ad5333075b2a691b6aac",
+  "source_cases_sha256": "860b45ecbf2b26c4344aabf0b6507295d23af5131be251b0c8f1e15de9303158",
   "identity_index_fingerprint": "b657eadac8a90c53af57536beaef96096b7236d87ac6e31583e5943c599f83cb",
-  "cases_evaluated": 20,
+  "cases_evaluated": 21,
   "decision_counts": {
     "EXISTING_IN_REACH": 1,
+    "EXISTING_SCOUT_CANDIDATE": 1,
     "PREPRINT_HOLD": 2,
     "PUBLICATION_STATUS_UNVERIFIED": 17
   },
   "next_action_counts": {
     "BOUNDED_RESEARCH_COMPLETE_NEEDS_HUMAN_ASSESSMENT": 2,
+    "LINK_EXISTING_PUBLIC_REVIEW_UNIT_NO_DUPLICATE": 1,
     "MONTHLY_PREPRINT_WATCHLIST": 2,
     "TARGETED_RESEARCH_OR_IDENTITY_VERIFICATION": 15,
     "VERIFY_EXISTING_ORIGINAL_IN_LEDGER_KEEP_EXPANSION_OPEN": 1
@@ -198,6 +200,16 @@
       "research_rounds": 0,
       "next_action": "TARGETED_RESEARCH_OR_IDENTITY_VERIFICATION",
       "checkpoint_path": "scout-operations/case-checkpoints/doi-39f06212d9583909/rev-9739a5c0a73cd699318b.json",
+      "expansion_status": "UNCHANGED_RESEARCH_SEED",
+      "public_scout_candidate_created": false,
+      "private_hub_decision": "NOT_VERIFIED"
+    },
+    {
+      "doi": "10.1175/aies-d-26-0004.1",
+      "decision": "EXISTING_SCOUT_CANDIDATE",
+      "research_rounds": 0,
+      "next_action": "LINK_EXISTING_PUBLIC_REVIEW_UNIT_NO_DUPLICATE",
+      "checkpoint_path": "scout-operations/case-checkpoints/doi-519c036c7cc61c2a/rev-9ead682da812f65269e3.json",
       "expansion_status": "UNCHANGED_RESEARCH_SEED",
       "public_scout_candidate_created": false,
       "private_hub_decision": "NOT_VERIFIED"
