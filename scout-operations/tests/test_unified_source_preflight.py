@@ -3,7 +3,7 @@ import sys
 import unittest
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"tools"))
-from unified_source_preflight import derive_record, preflight, authoritative_effective_decision
+from unified_source_preflight import derive_record, preflight, authoritative_effective_decision, load, ROOT, CROSSREF_ROUTING
 
 class UnifiedPreflightTests(unittest.TestCase):
     def test_all_original_and_related_discovery_modes_covered(self):
@@ -36,10 +36,11 @@ class UnifiedPreflightTests(unittest.TestCase):
         report=preflight()
         cr=[r for r in report["cases"] if r["discovery_lane"]=="historical_crossref"]
         confirmed=[r for r in cr if r["effective_identity_or_preflight"]=="EXISTING_IN_REACH_VERIFIED_BULK"]
-        self.assertEqual(len(confirmed),433)
-        self.assertEqual(report["crossref_bulk_confirms_after_version_guard"],433)
+        routing,_=load(ROOT,CROSSREF_ROUTING)
+        self.assertEqual(len(confirmed),routing["counts"]["CONFIRMED_IN_REACH"])
+        self.assertEqual(report["crossref_bulk_confirms_after_version_guard"],len(confirmed))
         self.assertEqual(sum(x["effective_identity_or_preflight"]=="IDENTITY_REVIEW_REQUIRED_FROM_BULK"
-                        for x in cr),47)
+                        for x in cr),routing["counts"]["LIKELY_IN_REACH"])
 
     def test_source_award_numbers_not_trusted_as_verified_primary_award(self):
         r=derive_record("monthly_api",{"DOI":"10.1000/month","Title":"Some study",
