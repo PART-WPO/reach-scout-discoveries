@@ -11,6 +11,7 @@ import hashlib
 import json
 from collections import Counter, defaultdict
 from pathlib import Path
+from urllib.parse import urlsplit
 
 from build_research_outcome_registry import build as build_journal
 from decision_pipeline import norm_doi
@@ -33,8 +34,9 @@ PROJECT_CONFLICT_KEYS = {
     "funding_signal", "project_attribution", "award_evidence_status",
 }
 TRUSTED_PUBLISHED_STRINGS = {
-    "PUBLISHED", "OFFICIAL_JOURNAL_PUBLICATION_VERIFIED",
+    "PUBLISHED", "PUBLISHED_JOURNAL_ARTICLE", "OFFICIAL_JOURNAL_PUBLICATION_VERIFIED",
     "OFFICIAL_JOURNAL_ARTICLE_NOT_PREPRINT",
+    "PUBLISHER_JOURNAL_ARTICLE_NOT_ORIGINAL_PREPRINT", "VERSION OF RECORD",
 }
 
 
@@ -77,6 +79,54 @@ def prior_cases(root):
     return cases, source_sha
 
 
+def identity_specific_note(doc, identity):
+    """Prevent a multi-case research file from cross-contaminating DOI verdicts."""
+    if isinstance(doc.get("cases"), list):
+        selected = [entry for entry in doc["cases"]
+                    if "doi:" + str(norm_doi(entry.get("doi"))) == identity]
+        if len(selected) != 1:
+            raise ValueError("Case note does not have exactly one matching DOI identity")
+        return selected[0]
+    if isinstance(doc.get("original"), dict) and doc["original"].get("doi"):
+        if "doi:" + str(norm_doi(doc["original"]["doi"])) != identity:
+            raise ValueError("Original note DOI identity mismatch")
+        return doc["original"]
+    if isinstance(doc.get("research_subject"), dict):
+        children = {"doi:" + str(norm_doi(v))
+                    for v in doc["research_subject"].get("child_dois", [])}
+        if children and identity not in children:
+            raise ValueError("Related-output note identity not in explicit child DOIs")
+    return doc
+
+
+def source_pointers(doc):
+    """Collect explicit official/source URLs without mining names or source prose."""
+    result = set()
+    allowed = {"url", "evidence_url", "source_url", "official_publisher_url",
+               "publisher_url", "publisher_source", "official_noaa_ir_url",
+               "noaa_ir_url", "independent_institutional_source",
+               "canonical_url", "source_evidence_url", "source"}
+    branches = {"sources", "evidence", "source_evidence", "new_source_findings",
+                "checked_sources", "initial_source", "distinct_source_followup"}
+
+    def walk(obj):
+        if isinstance(obj, list):
+            for part in obj:
+                walk(part)
+        elif isinstance(obj, dict):
+            for k, val in obj.items():
+                if k in allowed and isinstance(val, str):
+                    if val.startswith("https://") and urlsplit(val).netloc:
+                        result.add(val)
+                elif k in branches:
+                    walk(val)
+        elif isinstance(obj, str):
+            if obj.startswith("https://") and urlsplit(obj).netloc:
+                result.add(obj)
+    walk(doc)
+    return sorted(result)
+
+
 def explicit_claims(doc):
     """Structured, known-meaning flags only; never mine author/title prose."""
     observations = {
@@ -88,6 +138,8 @@ def explicit_claims(doc):
         "technical_access_failure_claim": False,
         "missing_project_proof_claim": False,
         "metadata_complete_claim": False,
+        "workflow_failure_claim": False,
+        "metadata_access_failure_claim": False,
     }
 
     def walk(obj):
@@ -104,10 +156,21 @@ def explicit_claims(doc):
                 observations["metadata_complete_claim"] = True
             if obj.get("contradictory_project_evidence_found") is True:
                 observations["project_conflict_claim"] = True
+            if isinstance(obj.get("workflow_blocker"), dict) and (
+                    obj["workflow_blocker"].get("conclusion") == "failure"):
+                observations["workflow_failure_claim"] = True
+            if any(isinstance(obj.get(k), str)
+                   and "ACCESS_FAILURE" in obj[k].upper()
+                   for k in ("source_failure", "metadata_failure", "metadata_access_status")):
+                observations["metadata_access_failure_claim"] = True
+            if isinstance(obj.get("decision_preview"), str) and (
+                    "CONTRADICTED_WPO_ATTRIBUTION" in obj["decision_preview"].upper()):
+                observations["project_conflict_claim"] = True
             if (obj.get("exact_primary_spark_award_verified") is False or
                     obj.get("primary_spark_award_verified") is False):
                 observations["missing_project_proof_claim"] = True
-            for k in ("publication_status", "preprint_status", "status", "preprint_original"):
+            for k in ("publication_status", "preprint_status", "status",
+                      "preprint_original", "preprint_eligibility", "publisher_version"):
                 value = obj.get(k)
                 if k == "preprint_original" and value is True:
                     observations["preprint_claim"] = True
@@ -164,7 +227,8 @@ def public_identity_state(preflight_rows):
 def evidence_assessment(identity, history, preflight_rows, annotated, notes):
     urls = sorted({u for event in history
                    for u in event["checked_evidence_urls"]
-                   if u.startswith("https://")})
+                   if u.startswith("https://")} |
+                  {u for doc in notes for u in source_pointers(doc)})
     # Existing earlier verified research decisions may have source URLs absent
     # from newer note schema. They remain *pointers*, not 2 fresh sources.
     prior_urls = sorted({u for u in (annotated or {}).get("checked_sources", [])
@@ -174,7 +238,8 @@ def evidence_assessment(identity, history, preflight_rows, annotated, notes):
         "preprint_claim", "official_publication_claim", "same_project_claim",
         "primary_spark_claim", "project_conflict_claim",
         "technical_access_failure_claim", "missing_project_proof_claim",
-        "metadata_complete_claim",
+        "metadata_complete_claim", "workflow_failure_claim",
+        "metadata_access_failure_claim",
     )}
     for source in notes:
         found = explicit_claims(source)
@@ -228,7 +293,11 @@ def evidence_assessment(identity, history, preflight_rows, annotated, notes):
                               else "INCOMPLETE_OR_NOT_VERIFIED"),
         "contradictions": ("EXPLICIT_PROJECT_EVIDENCE_CONFLICT" if conflict
                            else "NOT_FOUND_IN_STRUCTURED_RESEARCH_NOT_A_NEGATIVE_PROOF"),
-        "technical": "PREVIOUS_METADATA_RECOVERY_HOLD" if technical else "NO_TECHNICAL_HOLD_RECORDED",
+        "technical": ("PRIOR_WORKFLOW_RECONCILIATION_FAILURE_NOT_METADATA_ACCESS"
+                      if claims["workflow_failure_claim"] else
+                      "PRIOR_EXPLICIT_METADATA_ACCESS_FAILURE" if claims["metadata_access_failure_claim"]
+                      else "UNSPECIFIED_TECHNICAL_NOTE_NOT_API_ABSENCE_PROOF" if technical
+                      else "NO_TECHNICAL_HOLD_RECORDED"),
         "related_output_scope": ("RELATED_OUTPUT_INDEPENDENT_VERIFICATION_REQUIRED"
                                  if any(h["role_in_note"] == "related_output" for h in history)
                                  else "SEED_ORIGINAL_EXPANSION_REMAINS_SEPARATE"),
@@ -240,7 +309,10 @@ def evidence_assessment(identity, history, preflight_rows, annotated, notes):
         "preprint": claim_preprint, "published_claim": claim_official,
         "primary_project_supported_by_prior_evidence": project_verified,
         "contradictory_project_evidence": conflict,
-        "technical_hold": technical, "bounded_human_referral_evidence": human,
+        "technical_hold": technical,
+        "prior_workflow_failure": claims["workflow_failure_claim"],
+        "explicit_metadata_access_failure": claims["metadata_access_failure_claim"],
+        "bounded_human_referral_evidence": human,
         "prior_research_rounds": (annotated or {}).get("research_rounds"),
         "prior_research_budget_exhausted": (annotated or {}).get("research_budget_exhausted") is True,
         "prior_secondary_identity_checked": (annotated or {}).get("secondary_identity_checked") is True,
@@ -298,11 +370,17 @@ def compile_decision(a):
         action = ("Ask whether " + d + " is an output of the exact primary WPO SPARK project; "
                   "present existing source URLs and disagreement, without reviewer justification requirement")
         trigger = "Specific reviewer response or new exact primary award/deliverable evidence"
-    elif a["technical_hold"] and not a["prior_research_budget_exhausted"]:
+    elif (a["technical_hold"] and a["explicit_metadata_access_failure"] and
+          not a["prior_research_budget_exhausted"]):
         route, owner, reason = ("DOI_METADATA_RECOVERY_ONLY", "EXACT_DOI_METADATA_RECOVERY",
-                                "A technical source-access problem must not become negative funding proof")
+                                "An explicit DOI metadata access failure, not a workflow error")
         action = "Retry the specific official DOI registry/publisher endpoint once under recovery backoff; preserve an access hold if unavailable"
         trigger = "Recovery retry becomes due or source API responds"
+    elif a["prior_workflow_failure"] and not a["published_claim"]:
+        route, owner, reason = ("VERIFY_FAILED_WORKFLOW_AND_IDENTITY", "SCOUT_WORKFLOW_DIAGNOSTICS",
+                                "Previous workflow validation failure is not failed DOI metadata access")
+        action = "Check current reconciliation workflow and fresh public DOI/IR identity before interpreting original evidence"
+        trigger = "A successful current validation run and exact source-backed DOI identity result"
     elif ("PROJECT_EVIDENCE_HOLD" in a["prior_dispositions"] or
           a["prior_research_budget_exhausted"]):
         route, owner, reason = ("BOUNDED_PROJECT_EVIDENCE_HOLD", "SCOUT_ON_NEW_EVIDENCE",
@@ -445,7 +523,8 @@ def build(root=ROOT):
             raise ValueError("Registry identity lacks source event")
         d = norm_doi(identity[4:]) if identity.startswith("doi:") else None
         annotated_case = annotated.get(d)
-        prior_docs = [docs_by_path[e["source_path"]] for e in events]
+        prior_docs = [identity_specific_note(docs_by_path[e["source_path"]], identity)
+                      for e in events]
         a = evidence_assessment(identity, events, current_identity.get(identity, []),
                                 annotated_case, prior_docs)
         decision = compile_decision(a)
@@ -470,6 +549,7 @@ def build(root=ROOT):
         "TARGETED_IDENTITY_VERSION_CHECK", "TARGETED_OFFICIAL_PUBLICATION_CHECK",
         "TARGETED_PRIMARY_PROJECT_PROOF", "TARGETED_SECONDARY_IDENTITY_CHECK",
         "TARGETED_MISSING_METADATA_RECOVERY", "TARGETED_INDEPENDENT_IDENTITY_AND_SOURCE_CHECK",
+        "VERIFY_FAILED_WORKFLOW_AND_IDENTITY",
         "PUBLIC_STAGED_PROJECT_CONFLICT_FLAG_NO_RESTAGE",
         "REVIEW_PREFLIGHT_CANDIDATE_NO_AUTO_STAGING",
     }
