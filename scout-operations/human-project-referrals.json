@@ -1,12 +1,12 @@
 {
   "schema": "reach-scout-bounded-project-human-referral-v1",
-  "source_outcome_event_count": 56,
-  "source_outcome_sha256": "4d588f1c07e08c0721b42e0540ffca99f35e072650b24bd4c58fdb4ab5158737",
+  "source_outcome_event_count": 57,
+  "source_outcome_sha256": "88d6e99e999c280c756e15cba2ad98fa30f2311ec0beae2ff9af786bb8bd1903",
   "unique_bounded_project_questions": 2,
-  "potential_wpo_cases_quick_screened": 10,
+  "potential_wpo_cases_quick_screened": 11,
   "human_referral_drafts_prevalidated": 1,
   "draft_paths": [
-    "scout-discoveries/inbox/2026-11-09-human-project-e8ae57179ced9c8d19.csv"
+    "scout-discoveries/inbox/2026-11-09-human-project-9509397cf11df96346.csv"
   ],
   "published_batch_paths": [
     "scout-discoveries/batches/2026-11-09-human-project-b332d53770e8cbc1d4.csv",
@@ -14,9 +14,10 @@
     "scout-discoveries/batches/2026-11-09-human-project-398fe73f0c7f3ffa37.csv",
     "scout-discoveries/batches/2026-11-09-human-project-8963668e6a0f98ac1c.csv",
     "scout-discoveries/batches/2026-11-09-human-project-ec8541bda93af057fc.csv",
-    "scout-discoveries/batches/2026-11-06-human-project-b616c2488c1fe907f3.csv"
+    "scout-discoveries/batches/2026-11-06-human-project-b616c2488c1fe907f3.csv",
+    "scout-discoveries/batches/2026-11-09-human-project-e8ae57179ced9c8d19.csv"
   ],
-  "verified_public_scout_referral_batches": 6,
+  "verified_public_scout_referral_batches": 7,
   "human_reviewer_decisions": "NOT_VERIFIED",
   "private_hub_imports": "NOT_VERIFIED",
   "new_approved_reach_outputs": 0,
@@ -1563,8 +1564,19 @@
       },
       "public_identity": {
         "status": "IN_PUBLIC_SCOUT_QUEUE",
-        "reason": "UNIQUE_STRONG_IDENTIFIER_AND_TITLE",
+        "reason": "CONSISTENT_SCOUT_PUBLIC_MIRRORS",
         "matches": [
+          {
+            "source": "SCOUT_PUBLISHED",
+            "identity": "2026-11-09-human-project-e8ae57179ced9c8d19:2",
+            "title": "Stratospheric wave predictability enhances surface forecasts over North America",
+            "location": "scout-discoveries/batches/2026-11-09-human-project-e8ae57179ced9c8d19.csv:2",
+            "match_bases": [
+              "exact_doi",
+              "exact_url",
+              "normalized_title"
+            ]
+          },
           {
             "source": "SCOUT_INBOX",
             "identity": "2026-11-09-human-project-e8ae57179ced9c8d19.csv:2",
@@ -1591,9 +1603,126 @@
         "wpo_award_cue_not_proof": true,
         "reason_for_review": "WPO-pattern award cited but exact funded project deliverable unverified"
       },
-      "disposition": "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL",
+      "disposition": "HOLD_ALREADY_IN_PUBLIC_REACH_OR_SCOUT",
       "review_question": "Reviewer question: Is this independently published output a deliverable of SPARK primary award NA22OAR4590217 (rather than merely topically related), and if so which project parent should it use?",
-      "scout_inbox_status": "EXISTING_VERIFIED_INBOX_DRAFT",
+      "scout_inbox_status": "PUBLISHED_PUBLIC_SCOUT_FEED_NOT_PRIVATE_HUB",
+      "published_scout_batch_path": "scout-discoveries/batches/2026-11-09-human-project-e8ae57179ced9c8d19.csv",
+      "eligible_for_new_reach_addition": "NOT_VERIFIED",
+      "private_hub_import": "NOT_VERIFIED",
+      "human_approval": "NOT_VERIFIED"
+    },
+    {
+      "doi": "10.1175/aies-d-23-0094.1",
+      "source_event_id": "1d3f18462bd5a1af8fcf034a",
+      "source_file": "scout-operations/historical-crossref-phase2/2026-11-09-1624ET-generative-ensemble-severe-weather-official-publisher-human-screen.json",
+      "source_sha256": "b54cfbd6e5596ebeb72606363e5abff9b2c87a9d5df415ed30addb418b9f1d59",
+      "official_metadata": {
+        "status": "ok",
+        "provider": "crossref",
+        "evidence": "https://api.crossref.org/works/10.1175/aies-d-23-0094.1",
+        "title": "Generative Ensemble Deep Learning Severe Weather Prediction from a Deterministic Convection-Allowing Model",
+        "creators": [
+          "Yingkai Sha",
+          "Ryan A. Sobash",
+          "David John Gagne"
+        ],
+        "resource_type": "journal-article",
+        "publication_status": "official_journal_article",
+        "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>An ensemble postprocessing method is developed for the probabilistic prediction of severe weather (tornadoes, hail, and wind gusts) over the conterminous United States (CONUS). The method combines conditional generative adversarial networks (CGANs), a type of deep generative model, with a convolutional neural network (CNN) to postprocess convection-allowing model (CAM) forecasts. The CGANs are designed to create synthetic ensemble members from deterministic CAM forecasts, and their outputs are processed by the CNN to estimate the probability of severe weather. The method is tested using High-Resolution Rapid Refresh (HRRR) 1–24-h forecasts as inputs and Storm Prediction Center (SPC) severe weather reports as targets. The method produced skillful predictions with up to 20% Brier skill score (BSS) increases compared to other neural-network-based reference methods using a testing dataset of HRRR forecasts in 2021. For the evaluation of uncertainty quantification, the method is overconfident but produces meaningful ensemble spreads that can distinguish good and bad forecasts. The quality of CGAN outputs is also evaluated. Results show that the CGAN outputs behave similarly to a numerical ensemble; they preserved the intervariable correlations and the contribution of influential predictors as in the original HRRR forecasts. This work provides a novel approach to postprocess CAM output using neural networks that can be applied to severe weather prediction.</jats:p>\n                  <jats:sec>\n                    <jats:title>Significance Statement</jats:title>\n                    <jats:p>We use a new machine learning (ML) technique to generate probabilistic forecasts of convective weather hazards, such as tornadoes and hailstorms, with the output from high-resolution numerical weather model forecasts. The new ML system generates an ensemble of synthetic forecast fields from a single forecast, which are then used to train ML models for convective hazard prediction. Using this ML-generated ensemble for training leads to improvements of 10%–20% in severe weather forecast skills compared to using other ML algorithms that use only output from the single forecast. This work is unique in that it explores the use of ML methods for producing synthetic forecasts of convective storm events and using these to train ML systems for high-impact convective weather prediction.</jats:p>\n                  </jats:sec>",
+        "pub_date": "2024-04-01",
+        "preprint_posted_date": "",
+        "pub_date_basis": "Crossref published-print",
+        "pub_date_precision": "month_imputed",
+        "publisher": "American Meteorological Society",
+        "funding_references": [
+          {
+            "name": "National Science Foundation",
+            "award": [
+              "1852977"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "1852977"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "NOAA Office of Oceanic and Atmospheric Research",
+            "award": [
+              "NA19OAR4590128"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "NA19OAR4590128"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "https://ror.org/02kgve346",
+                "id-type": "ROR",
+                "asserted-by": "crossref"
+              }
+            ]
+          },
+          {
+            "name": "NCAR Short-term Explicit Prediction Program"
+          },
+          {
+            "name": "National Science Foundation",
+            "award": [
+              "ICER-2019758"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "ICER-2019758"
+                ]
+              }
+            ]
+          }
+        ],
+        "related_identifiers": {},
+        "attempts": [
+          {
+            "provider": "datacite",
+            "url": "https://api.datacite.org/dois/10.1175/aies-d-23-0094.1",
+            "error": {
+              "kind": "http",
+              "code": 404
+            }
+          },
+          {
+            "provider": "crossref",
+            "url": "https://api.crossref.org/works/10.1175/aies-d-23-0094.1",
+            "error": null
+          }
+        ]
+      },
+      "public_identity": {
+        "status": "NO_PUBLIC_IDENTITY_MATCH",
+        "reason": "NO_MATCH_IN_VERIFIED_PUBLIC_SNAPSHOT",
+        "matches": [],
+        "caveat": "Public snapshot only; private Hub decisions are not asserted.",
+        "noaa_ir_reach_check": {
+          "status": "DOI_NOT_IN_VERIFIED_IR_INDEX_UNKNOWN",
+          "official_url": null,
+          "match_uid": null,
+          "match_detail_shard": null
+        }
+      },
+      "project_search_context_only": {
+        "award_context_only": "NA19OAR4590128",
+        "project_context_only": "",
+        "wpo_award_cue_not_proof": true,
+        "reason_for_review": "WPO-pattern award cited but exact funded project deliverable unverified"
+      },
+      "disposition": "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL",
+      "review_question": "Reviewer question: Is this independently published output a deliverable of SPARK primary award NA19OAR4590128 (rather than merely topically related), and if so which project parent should it use?",
+      "scout_inbox_status": "VALIDATED_INBOX_DRAFT_NOT_PRIVATE_HUB",
       "published_scout_batch_path": null,
       "eligible_for_new_reach_addition": "NOT_VERIFIED",
       "private_hub_import": "NOT_VERIFIED",
