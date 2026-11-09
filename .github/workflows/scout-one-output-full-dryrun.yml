@@ -1,0 +1,58 @@
+name: Scout one-output full-screening dry run
+on:
+  pull_request:
+    paths:
+      - 'scout-operations/tools/replay_full_output_dryrun.py'
+      - '.github/workflows/scout-one-output-full-dryrun.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Existing candidate queue and Needs Investigation safeguards
+        run: |
+          python -m unittest discover -v -s scout-operations/tests -p 'test_candidate_queue.py'
+          python -m unittest discover -v -s scout-operations/tests -p 'test_human_project_referrals.py'
+      - name: Run full original DOI screening + source-fresh REACH Scout IR + canonical draft
+        run: |
+          python scout-operations/tools/replay_full_output_dryrun.py --doi 10.1029/2026jd046327
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          folder=Path('scout-operations/reports/one-mission-dry-run')
+          r=json.loads((folder/'full-output-screening-report.json').read_text())
+          assert r['selected_from_current_one_mission_preview']
+          assert r['queue_sources_sha_verified'] >= 9
+          assert r['source_identity_status']=='NO_PUBLIC_IDENTITY_MATCH'
+          assert r['is_watchlisted_preprint'] is False
+          assert r['known_signed_human_decision'] is False
+          assert r['decision']=='READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL'
+          assert r['screening_score_0_to_100_uncalibrated']==65
+          assert r['public_review_candidate_validated'] is True
+          assert r['preflight_24_columns']==24
+          assert r['preflight_candidate_count']==1
+          assert r['ir_flag_for_new_output']=='TRUE'
+          assert r['ir_url_in_prepared_record']=='https://repository.library.noaa.gov/view/noaa/77328'
+          assert r['unverified_award_field_left_blank'] is True
+          assert r['unverified_parent_field_left_blank'] is True
+          assert r['new_public_scout_batch_published'] is False
+          assert r['private_hub_import']=='NOT_VERIFIED'
+          assert r['human_approval']=='NOT_VERIFIED'
+          print('COMPLETE DRY RUN: one new public-review handoff VALIDATED, no live feed/Hub/REACH changes')
+          PY
+      - name: Export verified source report and candidate preview from isolated runner
+        uses: actions/upload-artifact@v4
+        with:
+          name: scout-one-output-full-dryrun-2026jd046327
+          path: |
+            scout-operations/reports/one-mission-dry-run/full-output-screening-report.json
+            scout-operations/reports/one-mission-dry-run/2026-11-09-mission-dryrun-compound-heat-ozone.csv
+          if-no-files-found: error
+          retention-days: 30
