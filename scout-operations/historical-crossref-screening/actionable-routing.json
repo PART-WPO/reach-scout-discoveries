@@ -6,8 +6,8 @@
   "reach_source_manifest_sha256": "f94ae52cac483b52e9a5cd6e775c6faa01ad6ec33610b249b3d486aed6daa003",
   "noaa_ir_manifest_sha256": "2866655e200a896a39b3bda4d22c218009f28915463e95358c025ea8f4461b3e",
   "noaa_ir_existing_reach_url_matches": 351,
-  "shared_identity_index_fingerprint": "f81911bc06815ccd230b4bc8f13c9146b70279ec91280d9a267c45a33862dfb8",
-  "public_scout_queue_overlap_dois": 37,
+  "shared_identity_index_fingerprint": "b6e04f6f61d891672c8f421a63041bb42e934ac1be6af0b7a0553f3533f451d9",
+  "public_scout_queue_overlap_dois": 38,
   "reach_source_records": 1238,
   "total": 614,
   "counts": {
@@ -8669,8 +8669,27 @@
       "title": "generative ensemble deep learning severe weather prediction from a deterministic convection allowing model",
       "outcome": "NOT_FOUND_IN_REACH_INDEX",
       "route": "ADVANCE_TO_FUNDING_AND_METADATA_RESEARCH",
-      "scout_public_queue_matches": [],
-      "scout_public_queue_match_count": 0,
+      "scout_public_queue_matches": [
+        {
+          "source": "SCOUT_PUBLISHED",
+          "identity": "2026-11-09-human-project-9509397cf11df96346:2",
+          "location": "scout-discoveries/batches/2026-11-09-human-project-9509397cf11df96346.csv:2",
+          "basis": [
+            "exact_doi",
+            "normalized_title"
+          ]
+        },
+        {
+          "source": "SCOUT_INBOX",
+          "identity": "2026-11-09-human-project-9509397cf11df96346.csv:2",
+          "location": "scout-discoveries/inbox/2026-11-09-human-project-9509397cf11df96346.csv:2",
+          "basis": [
+            "exact_doi",
+            "normalized_title"
+          ]
+        }
+      ],
+      "scout_public_queue_match_count": 2,
       "scout_overlap": false,
       "noaa_ir_reach_check": {
         "status": "DOI_NOT_IN_VERIFIED_IR_INDEX_UNKNOWN",
