@@ -266,16 +266,23 @@ def verified_replacement_batch_names(root, doi, names, metadata):
     official=set(official_459_awards(metadata))
     for original_id, rule in rules.get("superseded_batches",{}).items():
         if (rule.get("replacement_kind")!="wpo_award_confirmation"
-            or original_id+".csv" not in names
             or str(rule.get("exact_doi") or "").lower()!=doi):
             continue
+        original_name=original_id+".csv"
+        replacement_name=str(rule.get("replacement_id") or "")+".csv"
+        # The previous referral report may already point at the replacement.
+        # Revalidate the same immutable funding evidence in BOTH states rather
+        # than silently trusting a name that bypasses the original->new rule.
+        if original_name not in names and replacement_name not in names:
+            continue
         award=str(rule.get("confirmed_wpo_award") or "").upper()
-        source=root/"scout-discoveries/batches"/(original_id+".csv")
+        source=root/"scout-discoveries/batches"/original_name
         if (award not in official or not source.is_file()
             or hashlib.sha256(source.read_bytes()).hexdigest()!=rule.get("original_sha256")
-            or rule.get("authoritative_source_url")!="https://api.crossref.org/works/"+doi):
+            or rule.get("authoritative_source_url")!="https://api.crossref.org/works/"+doi
+            or replacement_name==".csv" or replacement_name==original_name):
             raise ValueError("Existing public referral supersession lacks exact verified 459 evidence")
-        result.add(str(rule["replacement_id"])+".csv")
+        result.add(replacement_name)
     return result
 
 
