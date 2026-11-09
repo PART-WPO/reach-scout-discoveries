@@ -1,0 +1,54 @@
+{
+  "schema": "scout-source-backed-research-evidence-v1",
+  "recorded_at": "2026-11-09T11:29:00-05:00",
+  "lane": "related_output_expansion",
+  "research_subject": {
+    "parent_publication_doi": "10.1029/2021GL096709",
+    "title": "Decadal Variability of Southeast US Rainfall in an Eddying Global Coupled Model",
+    "child_dois": [
+      "10.5281/zenodo.4433147",
+      "10.5281/zenodo.5057616"
+    ]
+  },
+  "source_evidence": [
+    {
+      "url": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021GL096709",
+      "type": "official_publisher_article",
+      "finding": "Data Availability explicitly links 10.5281/zenodo.4433147 as Southeast US rainfall index and 10.5281/zenodo.5057616 as CCSM4 HRC/LRC simulations; acknowledgments cite NA18OAR4320123, NA18OAR4310293, NA15OAR4320064."
+    },
+    {
+      "url": "https://repository.library.noaa.gov/view/noaa/43170/noaa_43170_DS1.pdf",
+      "type": "official_NOAA_IR_article_copy",
+      "finding": "Independently repeats both child DOI links and funding acknowledgments."
+    }
+  ],
+  "operational_disposition": "PROJECT_EVIDENCE_HOLD",
+  "funding_signal": "CI_UMBRELLA_REQUIRES_PROJECT_PROOF",
+  "exact_primary_spark_award_verified": false,
+  "wpo_award_number": null,
+  "reach_scout_duplicate_verified": false,
+  "child_doi_metadata_independently_verified": false,
+  "preprint_original": false,
+  "public_proposal_eligible": false,
+  "private_hub_action": "NONE",
+  "original_status_changed": false,
+  "expansion_completed": false,
+  "next_action": "Only reopen if exact primary SPARK Award Number(s) and output-to-project evidence independently confirm WPO relationship; then separately verify each child DOI metadata, REACH/Scout identity, and funding. Do not stage based on 432/431 acknowledgments.",
+  "selection_provenance": {
+    "mission_index_source_fingerprint": "61306f4b5e3ca37bad9be7207a4865e614c07ffb4dd2d98a4f9017359ccd8643",
+    "builder_policy_sha256": "6bebf9f27c17ee6bb5bcac2ec918253706960c14a4203002baa6036444bd5f95",
+    "index_preview_child_dois": [
+      "10.5281/zenodo.4433147",
+      "10.5281/zenodo.5057616"
+    ],
+    "full_graph_not_refetched": true
+  },
+  "research_counts": {
+    "originals_examined": 0,
+    "expansion_cases_examined": 2,
+    "explicit_child_doi_links": 2,
+    "deep_research_cases": 1,
+    "eligible_public_proposals": 0
+  },
+  "note": "Source-specific bounded research. Explicit publisher links verified; not proof of WPO award attribution or REACH absence. Keep child DOI identities independent."
+}
