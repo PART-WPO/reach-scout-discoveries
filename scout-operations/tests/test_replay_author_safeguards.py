@@ -86,6 +86,9 @@ class AuthorEvidenceSafeguardsTests(unittest.TestCase):
             "NO_AWARD_TOPIC_SIGNAL")
         self.assertEqual(topical_evidence(
             "A Lidar Evaluation of Urban Phenomena")[0],
+            "NO_AWARD_TOPIC_SIGNAL")
+        self.assertEqual(topical_evidence(
+            "Urban heat island temperatures")[0],
             "BROAD_CONTEXT_NEEDS_REVIEW")
 
     def test_exact_award_only_no_na_prefix_or_related_award(self):
