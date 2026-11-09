@@ -19,7 +19,7 @@ Each DOI or publicly recorded code URL receives an evidence-gate assessment:
 5. **Contradictions and technical failures**: independently expose contradictory grant/source flags and exact metadata retry needs.
 6. **Related output status**: a related publication, dataset or code URL is evaluated as a separate output and never inherits its parent's verified funding or identity.
 
-The evaluation includes immutable source-note hashes and bounded source URL pointers. It does not copy investigator names, author lists, collaborator details, or private reviewer records.
+The evaluation includes immutable source-note hashes and bounded source URL pointers. It does not copy investigator names, author lists, collaborator details, or private reviewer records. The report includes `active_followup_preview`: specific source-linked next actions for research, exact metadata retry, supported human project questions, or review of contradictions in already-publicly-staged proposals. A hold requiring materially new evidence remains listed in its individual case, not treated as an active follow-up.
 
 ## Decision Compiler
 
@@ -41,6 +41,8 @@ All outputs are reviewed by a separate, deterministic adversarial gate-check tha
 ## Measuring effectiveness
 
 Track proportion of prior research identities receiving a **specific next action** (not a claimed new proposal); explicit reopen triggers; prior repeated-research loops that would be suppressed; legitimately actionable candidate proposals; source-backed human questions; false holds and missed eligible outputs. Any change in reviewer-ready conversion must be compared against independently verified case labels, never inferred from a larger number of disposition categories.
+
+The pilot must **not** count 34 classified identities as 34 new reviewer-actionable outputs. Distinguish triaged/parked cases from separately actionable, newly required human or source checks. Zero new reviewer-ready cases means the source project-funding barrier remains unresolved; use the pilot to prioritize stronger evidence collection rather than relaxing eligibility gates.
 
 A strong result would not necessarily increase the number of public Scout proposals. It could reveal that several cases are reasonably resolved as bounded attribution holds or documented existing outputs, freeing research cycles for independent DOI expansion.
 
