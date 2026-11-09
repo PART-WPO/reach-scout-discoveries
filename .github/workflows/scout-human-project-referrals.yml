@@ -7,6 +7,11 @@ on:
       - 'scout-operations/tests/test_human_project_referrals.py'
       - '.github/workflows/scout-human-project-referrals.yml'
       - '.github/workflows/build-scout-discovery-manifest.yml'
+      - 'scout-discoveries/supersessions.json'
+      - 'scout-discoveries/tools/supersessions.py'
+      - 'scout-discoveries/batches/*.csv'
+      - 'scout-discoveries/tools/tests/**'
+      - 'scout-operations/award-attribution-confirmations/*.json'
   push:
     branches: [main]
     paths:
