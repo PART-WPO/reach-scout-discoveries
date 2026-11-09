@@ -2,18 +2,10 @@
   "schema": "reach-scout-crossref-candidate-queue-v2",
   "purpose": "Read-only selection; not completed research or approval",
   "completion_target": "Each hourly mission handles at least one full novel-output screening through a concrete disposition or public human-review handoff. Skipped known records do not count; technical blockers must be reported, not represented as completed.",
-  "one_mission_actionable_original_count": 149,
+  "one_mission_actionable_original_count": 148,
   "next_one_mission_original_preview": [
     {
       "doi": "10.1029/2026jd046349",
-      "lane": "NOVEL_IDENTITY_RESEARCH",
-      "priority": 90,
-      "funding_signal": "POSSIBLE_WPO_459",
-      "required_outcome": "FINISH_ORIGINAL_SCREENING_DECISION_THIS_RUN",
-      "action": "Strong WPO award signal: fast-check publisher, current REACH/Scout/IR duplicate and preprint gates; send plausible distinct output to Needs Investigation with confidence score in THIS mission. Full project proof belongs to human review"
-    },
-    {
-      "doi": "10.1175/aies-d-23-0094.1",
       "lane": "NOVEL_IDENTITY_RESEARCH",
       "priority": 90,
       "funding_signal": "POSSIBLE_WPO_459",
@@ -67,16 +59,24 @@
       "funding_signal": "POSSIBLE_WPO_459",
       "required_outcome": "FINISH_ORIGINAL_SCREENING_DECISION_THIS_RUN",
       "action": "Strong WPO award signal: fast-check publisher, current REACH/Scout/IR duplicate and preprint gates; send plausible distinct output to Needs Investigation with confidence score in THIS mission. Full project proof belongs to human review"
+    },
+    {
+      "doi": "10.1175/waf-d-25-0244.1",
+      "lane": "NOVEL_IDENTITY_RESEARCH",
+      "priority": 90,
+      "funding_signal": "POSSIBLE_WPO_459",
+      "required_outcome": "FINISH_ORIGINAL_SCREENING_DECISION_THIS_RUN",
+      "action": "Strong WPO award signal: fast-check publisher, current REACH/Scout/IR duplicate and preprint gates; send plausible distinct output to Needs Investigation with confidence score in THIS mission. Full project proof belongs to human review"
     }
   ],
   "total": 614,
   "lane_counts": {
-    "ALREADY_IN_SCOUT_REVIEW_FAST_EXIT": 19,
+    "ALREADY_IN_SCOUT_REVIEW_FAST_EXIT": 20,
     "BOUNDED_IDENTITY_REVIEW": 51,
     "EXISTING_REACH_FAST_EXIT": 426,
     "HUMAN_REVIEW_FAST_SCREEN_DUE": 7,
     "NON_459_PROJECT_EVIDENCE_CHECK": 2,
-    "NOVEL_IDENTITY_RESEARCH": 89,
+    "NOVEL_IDENTITY_RESEARCH": 88,
     "PREPRINT_PUBLISHED_VERSION_LEAD": 11,
     "PREPRINT_WATCHLIST_HOLD": 7,
     "WAIT_FOR_NEW_EVIDENCE": 2
@@ -102,30 +102,6 @@
       ],
       "award_match_basis": "Historical Crossref feed structured award, matched to SPARK primary award at intake; output-to-project relevance still unverified",
       "prior_disposition": "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
-      "scout_overlap": false,
-      "verified_reach_uid": null,
-      "private_hub_review": "NOT_VERIFIED"
-    },
-    {
-      "preprint_status": null,
-      "already_in_public_scout_queue": false,
-      "matched_public_review_locations": [],
-      "one_mission_disposition_required": true,
-      "verified_published_dois": [],
-      "doi": "10.1175/aies-d-23-0094.1",
-      "title": "generative ensemble deep learning severe weather prediction from a deterministic convection allowing model",
-      "lane": "NOVEL_IDENTITY_RESEARCH",
-      "priority": 90,
-      "next_action": "Strong WPO award signal: fast-check publisher, current REACH/Scout/IR duplicate and preprint gates; send plausible distinct output to Needs Investigation with confidence score in THIS mission. Full project proof belongs to human review",
-      "funding_signal": "POSSIBLE_WPO_459",
-      "crossref_structured_award_numbers": [
-        "NA19OAR4590128"
-      ],
-      "award_evidence_source_batches": [
-        "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part003.csv"
-      ],
-      "award_match_basis": "Historical Crossref feed structured award, matched to SPARK primary award at intake; output-to-project relevance still unverified",
-      "prior_disposition": null,
       "scout_overlap": false,
       "verified_reach_uid": null,
       "private_hub_review": "NOT_VERIFIED"
@@ -7997,6 +7973,33 @@
     },
     {
       "preprint_status": null,
+      "already_in_public_scout_queue": true,
+      "matched_public_review_locations": [
+        "scout-discoveries/batches/2026-11-09-human-project-9509397cf11df96346.csv:2",
+        "scout-discoveries/inbox/2026-11-09-human-project-9509397cf11df96346.csv:2"
+      ],
+      "one_mission_disposition_required": false,
+      "verified_published_dois": [],
+      "doi": "10.1175/aies-d-23-0094.1",
+      "title": "generative ensemble deep learning severe weather prediction from a deterministic convection allowing model",
+      "lane": "ALREADY_IN_SCOUT_REVIEW_FAST_EXIT",
+      "priority": 0,
+      "next_action": "Already in Scout's public review pipeline: do not repeat original research or create another proposal; keep independent expansion",
+      "funding_signal": "POSSIBLE_WPO_459",
+      "crossref_structured_award_numbers": [
+        "NA19OAR4590128"
+      ],
+      "award_evidence_source_batches": [
+        "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part003.csv"
+      ],
+      "award_match_basis": "Historical Crossref feed structured award, matched to SPARK primary award at intake; output-to-project relevance still unverified",
+      "prior_disposition": "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+      "scout_overlap": false,
+      "verified_reach_uid": null,
+      "private_hub_review": "NOT_VERIFIED"
+    },
+    {
+      "preprint_status": null,
       "already_in_public_scout_queue": false,
       "matched_public_review_locations": [],
       "one_mission_disposition_required": false,
@@ -15062,8 +15065,8 @@
   "original_dispositions_changed": 0,
   "new_review_proposals": 0,
   "source_sha256": {
-    "scout-operations/historical-crossref-screening/actionable-routing.json": "d16de178eaa36d9f0f9636a52f25c612f6784a5cba535df0d7d1fe0e9e033150",
-    "scout-operations/research-outcome-registry.json": "d6fecadf3986bc0214c4f29cfd1eb1729062c815216ee3254bffb0b4dbfe10e9",
+    "scout-operations/historical-crossref-screening/actionable-routing.json": "b9070e14efdbb1386c182729ba510f8cffea6a4bbea5630ccc2ac95e477a3e1a",
+    "scout-operations/research-outcome-registry.json": "11e6ed8e5bfaa118b2e06f9d51826bef2ef0a661b42e604f6b21e4fdcb867a4d",
     "api-discoveries/historical-crossref/manifest.json": "799744c7e83f218d22cc19afacb7cfcf2762feb490659efde9f58bf19473b1fa",
     "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part001.csv": "df420ff561050c5f019ccddd19eb93124ab642eba8aa6f87dc0636b6d5ee2de3",
     "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part002.csv": "1cc9e5f3c493c6fa7cde93e0060718224686f695c7ba6d648208ecf9a09d69d7",
