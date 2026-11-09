@@ -309,8 +309,8 @@ def build(root=ROOT,metadata=None,public_identity=None,stage=False):
         # Quick official-publication / 459 WPO-cue screen. These are leads,
         # not claims that this award actually funded the specific output.
         project=eligible_record(event,doc)
-        if project and (event.get("checked_evidence_urls") or
-                        event.get("bounded_human_question_to_verify")):
+        if (event.get("bounded_human_question_to_verify") or
+             (project and event.get("checked_evidence_urls"))):
             potential.setdefault(event["doi"],[]).append(event)
     responses=[]
     submitted=[]
@@ -401,7 +401,7 @@ def main():
     if not OUTPUT.exists() or OUTPUT.read_text(encoding="utf-8")!=text:
         OUTPUT.write_text(text,encoding="utf-8")
     print(json.dumps({"review_questions":r["unique_bounded_project_questions"],
-                      "potential_wpo_cases_quick_screened":r["potential_wpo_cases_quick_screened"],
+                      "potential_wpo_cases_quick_screened":r.get("potential_wpo_cases_quick_screened", 0),
                       "validated_inbox_drafts":r["human_referral_drafts_prevalidated"],
                       "statuses":{x["doi"]:x["disposition"] for x in r["referrals"]}},indent=2))
 
