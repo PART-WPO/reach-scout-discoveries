@@ -18,6 +18,13 @@ on:
       - 'api-discoveries/historical-crossref/manifest.json'
       - 'api-discoveries/historical-crossref/batches/**'
       - '.github/workflows/scout-crossref-candidate-queue.yml'
+  # GitHub Actions bot commits do not reliably trigger push workflows.
+  # Refresh from the completed source-ordered reconciliation boundary.
+  workflow_run:
+    workflows:
+      - 'Scout evidence-to-decision closeout'
+    types: [completed]
+    branches: [main]
   schedule:
     - cron: '17 * * * *'
   workflow_dispatch:
@@ -28,6 +35,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   refresh:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -53,6 +61,22 @@ jobs:
             git checkout -B main origin/main
             python scout-operations/tools/build_candidate_queue.py
             python scout-operations/tools/build_candidate_queue.py --check
+            python - <<'PY'
+          import json
+          from pathlib import Path
+          q=json.loads(Path("scout-operations/crossref-candidate-queue.json").read_text())
+          routing=json.loads(Path("scout-operations/historical-crossref-screening/actionable-routing.json").read_text())
+          by_doi={x["doi"]:x for x in q["items"]}
+          for doi in ("10.1175/aies-d-26-0004.1","10.1029/2026jd046327"):
+              route=next(x for x in routing["entries"] if x["doi"]==doi)
+              if any({"exact_doi","normalized_title"}.issubset(set(m["basis"]))
+                     and m["source"].startswith("SCOUT_") for m in route["scout_public_queue_matches"]):
+                  assert by_doi[doi]["lane"]=="ALREADY_IN_SCOUT_REVIEW_FAST_EXIT",doi
+                  assert by_doi[doi]["one_mission_disposition_required"] is False,doi
+          assert "10.1029/2026jd046327" not in [
+              x["doi"] for x in q["next_one_mission_original_preview"]]
+          print("Source-current public Scout handoff fast exits verified; no duplicate original mission")
+          PY
             git add scout-operations/crossref-candidate-queue.json
             if git diff --cached --quiet; then
               echo "Queue already current"
