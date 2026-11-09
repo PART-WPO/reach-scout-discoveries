@@ -164,10 +164,29 @@ def build(root=ROOT):
 
     # Only explicitly identified case notes may be replayed. No original or
     # separate expansion is ever deemed completed on this basis alone.
+    non_doi_events = []
     for event in journal["events"]:
         d = doi(event.get("doi"))
         if d:
             note_rows[d].append(event)
+        else:
+            # Code-repository research notes can have explicit public URLs
+            # instead of DOI identities. Keep their immutable provenance,
+            # without misclassifying them as DOI discovery/expansion closure.
+            identity = str(event.get("identity") or "")
+            if not identity.startswith("url:https://"):
+                raise ValueError("Research note has no recognized public identity")
+            non_doi_events.append({
+                "identity_key": sha(identity.encode("utf-8"))[:24],
+                "source_path": event["source_path"],
+                "source_sha256": event["source_sha256"],
+                "event_id": event["event_id"],
+                "source_type": "EXPLICIT_PUBLIC_CODE_OR_URL_RESEARCH",
+                "human_review_inferred": False,
+                "research_complete_inferred": False,
+            })
+    if len(non_doi_events) + sum(map(len, note_rows.values())) != len(journal["events"]):
+        raise ValueError("Dropped code or DOI research note event")
 
     all_dois = set(node_rows) | set(note_rows)
     for parent, child in edges:
@@ -300,6 +319,16 @@ def build(root=ROOT):
 
     if len(cohort_pairs) != checked["original_and_related_cases_preflighted"]:
         raise ValueError("Cohort coverage inconsistent")
+    for event in non_doi_events:
+        work.append({
+            "doi": None,
+            "non_doi_identity_key": event["identity_key"],
+            "track": "CODE_OR_URL_EVIDENCE",
+            "next_action": "REUSE_PUBLIC_CODE_EVIDENCE_RECHECK_RELEASE_WHEN_NEEDED",
+            "source_path": event["source_path"],
+            "source_sha256": event["source_sha256"],
+            "not_a_human_decision": True, "complete": False,
+        })
     counts = Counter(x["track"] for x in work)
     lane_counts = Counter(lane for n in nodes for lane in n["lanes"])
     work_counts = Counter(x["next_action"] for x in work)
@@ -326,7 +355,9 @@ def build(root=ROOT):
         "preflighted_lane_doi_records": len(cohort_pairs),
         "distinct_public_doi_nodes": len(nodes),
         "explicit_related_output_links": len(links),
-        "historical_note_events_reused_as_context": sum(len(v) for v in note_rows.values()),
+        "historical_note_events_reused_as_context": len(journal["events"]),
+        "source_documented_doi_note_events": sum(len(v) for v in note_rows.values()),
+        "source_documented_nondoi_note_events": len(non_doi_events),
         "source_documented_doi_nodes": sum(bool(v) for v in note_rows.values()),
         "verified_reach_originals_preserved_as_expansion_seeds": active_reach_expansion,
         "historical_metadata_pointers_not_treated_as_current": len(
@@ -348,6 +379,7 @@ def build(root=ROOT):
                    "expansion research remain separate, funding and private "
                    "reviewer decisions are never inferred."),
         "nodes": nodes,
+        "non_doi_code_or_url_research_notes": sorted(non_doi_events, key=lambda v: v["event_id"]),
         "links": links,
         "work_items": work,
     }
