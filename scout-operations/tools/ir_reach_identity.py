@@ -11,7 +11,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scout-discoveries/tools"))
 from noaa_ir_lookup import trusted_index
-from decision_pipeline import build_index, check_index_fresh, lookup, norm_doi, norm_url
+from decision_pipeline import build_index, check_index_fresh, lookup, norm_doi, norm_url, norm_title
 
 
 def verified_snapshot(root=ROOT):
@@ -70,7 +70,17 @@ def identity_check(public, ir_index, doi, title="", url=""):
         result["noaa_ir_reach_check"]["status"] = "REACH_DOI_CONFLICT_VERSION_REVIEW"
         result["status"] = "POSSIBLE_PUBLIC_REACH_MATCH"
         return result
+    # A DOI->IR URL crosswalk is a strong lead, but confirmation still
+    # requires a title-consistent unique REACH publication identity.
+    if not norm_title(title) or norm_title(rec["title"]) != norm_title(title):
+        result["noaa_ir_reach_check"]["status"] = "IR_URL_MATCH_REQUIRES_REVIEW"
+        result["status"] = "POSSIBLE_PUBLIC_REACH_MATCH"
+        return result
     secondary = lookup(public, doi=key, title=title, url=ir_url)
+    if secondary["status"] != "CONFIRMED_PUBLIC_REACH_IDENTITY":
+        result["noaa_ir_reach_check"]["status"] = "IR_URL_MATCH_REQUIRES_REVIEW"
+        result["status"] = "POSSIBLE_PUBLIC_REACH_MATCH"
+        return result
     exact = [m for m in secondary["matches"]
              if m["source"] == "REACH"
              and m["identity"] == rec["identity"]
