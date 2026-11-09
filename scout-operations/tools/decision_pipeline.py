@@ -41,6 +41,10 @@ def norm_doi(value):
 
 def norm_title(value):
     value = html.unescape(TITLE_TAGS.sub(" ", str(value or "")))
+    # Normalize dotted initialisms (U.S., U.S, N.W.S.) before punctuation
+    # splitting, without joining unrelated words or dropping ordinary tokens.
+    value = re.sub(r"(?<![A-Za-z])(?:[A-Za-z]\.)+[A-Za-z](?:\.)?(?![A-Za-z])",
+                   lambda m: m.group(0).replace(".", ""), value)
     return re.sub(r"[^a-z0-9]+", " ", value.casefold()).strip()
 
 
