@@ -4,6 +4,7 @@ import sys
 import unittest
 from pathlib import Path
 from tempfile import TemporaryDirectory
+import hashlib
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
 
 from extract_structured_research_evidence import (
@@ -81,6 +82,35 @@ class ExtractorTests(unittest.TestCase):
                 verified_note(root,{"source_path":rel,"source_sha256":"0"*64})
             with self.assertRaisesRegex(ValueError,"Unsafe or missing"):
                 verified_note(root,{"source_path":"../other.json","source_sha256":"0"*64})
+
+    def test_latest_verified_note_supersedes_older_reopen_only_directive(self):
+        with TemporaryDirectory() as td:
+            root=Path(td)
+            docs=[
+                {"doi":"10.1234/a","decision":"SOFT_DEFER_UNTIL_MATERIAL_WPO_EVIDENCE",
+                 "next_action":"Only reopen if new evidence arrives"},
+                {"doi":"10.1234/a","publication_status":"OFFICIAL_JOURNAL_PUBLICATION_VERIFIED",
+                 "decision":"INVESTIGATE_NEW_PUBLICATION_EVIDENCE",
+                 "next_action":"Verify updated identity and primary project scope"},
+            ]
+            events=[]
+            for i,doc in enumerate(docs):
+                rel=f"scout-operations/monthly-research/note{i}.json"
+                p=root/rel
+                p.parent.mkdir(parents=True,exist_ok=True)
+                raw=json.dumps(doc).encode()
+                p.write_bytes(raw)
+                events.append({"event_id":str(i),"identity":"doi:10.1234/a",
+                    "source_path":rel,"source_sha256":hashlib.sha256(raw).hexdigest(),
+                    "role_in_note":"original"})
+            registry={"events":events,
+                      "distinct_research_identities":1,
+                      "cases":[{"identity":"doi:10.1234/a","event_ids":["0","1"],
+                                "latest_event_id":"1",
+                                "latest_operational_disposition":"EVIDENCE_RECORDED_CONTINUE_OR_VERIFY"}]}
+            value=extract(registry,root)["doi:10.1234/a"]
+            self.assertFalse(value["evidence_reopen_only"])
+            self.assertEqual(value["publication_status"],"PUBLISHED")
 
     def test_no_personnel_or_private_reviewer_data_materialized(self):
         import json
