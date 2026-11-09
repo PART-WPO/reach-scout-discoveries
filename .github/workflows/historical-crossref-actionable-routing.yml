@@ -20,12 +20,6 @@ on:
       - 'scout-operations/tools/decision_pipeline.py'
       - 'scout-operations/historical-crossref-screening/manifest.json'
       - 'scout-operations/reach-comparison-cache/comparison-index.json'
-      # Recheck exact Scout DOI/title matches as soon as reviewer candidates
-      # are created or published, not only on the next daily routing sweep.
-      - 'scout-discoveries/manifest.json'
-      - 'scout-discoveries/inbox/**'
-      - 'scout-discoveries/batches/**'
-      - 'scout-operations/noaa-ir/manifest.json'
 permissions:
   contents: write
 concurrency:

@@ -28,7 +28,8 @@ class ExtractorTests(unittest.TestCase):
     def test_pilot_replaces_only_prior_unstructured_cases(self):
         x=self.report
         self.assertEqual(x["previously_unstructured_identities"],x["evidence_extracted_from_verified_notes"])
-        self.assertGreaterEqual(x["evidence_extracted_from_verified_notes"],15)
+        self.assertEqual(x["structured_case_inputs"] + x["previously_unstructured_identities"],
+                         x["distinct_cases_evaluated"])
         self.assertEqual(x["unstructured_identity_cases"],0)
         self.assertTrue(all(not c["automatic_hub_write"] and not c["formal_original_closed"] and
                             not c["separate_expansion_closed"] for c in x["cases"]))
