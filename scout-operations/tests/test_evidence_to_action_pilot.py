@@ -44,15 +44,25 @@ class PilotTests(unittest.TestCase):
         d=detail(publication_status="PUBLISHED", primary_award_match=True,
                  project_attribution="UNRESOLVED",secondary_identity_checked=True,
                  required_metadata_verified=True)
-        self.assertNotEqual(self.out(d=d)["suggested_disposition"],"PROPOSE_FOR_HUMAN_REVIEW_ONLY")
+        self.assertNotEqual(self.out(d=d)["suggested_disposition"],"READY_FOR_EXISTING_VALIDATED_DRAFT_PREFLIGHT")
 
     def test_all_required_gates_and_sources_for_human_proposal(self):
         d=detail(publication_status="PUBLISHED", primary_award_match=True,
                  project_attribution="VERIFIED_SAME_PROJECT",
                  secondary_identity_checked=True, required_metadata_verified=True)
         o=self.out(d=d)
-        self.assertEqual(o["suggested_disposition"],"PROPOSE_FOR_HUMAN_REVIEW_ONLY")
+        self.assertEqual(o["suggested_disposition"],"READY_FOR_EXISTING_VALIDATED_DRAFT_PREFLIGHT")
         self.assertFalse(o["automatic_hub_write"])
+
+    def test_monthly_direct_primary_award_threshold_and_historical_threshold(self):
+        monthly=detail(cohort="monthly_direct_api",publication_status="PUBLISHED",
+                       primary_award_match=True,project_attribution="UNRESOLVED",
+                       secondary_identity_checked=True,required_metadata_verified=True)
+        self.assertEqual(self.out(d=monthly)["suggested_disposition"],
+                         "READY_FOR_EXISTING_VALIDATED_DRAFT_PREFLIGHT")
+        historical=dict(monthly,cohort="historical_crossref")
+        self.assertNotEqual(self.out(d=historical)["suggested_disposition"],
+                            "READY_FOR_EXISTING_VALIDATED_DRAFT_PREFLIGHT")
 
     def test_no_same_project_and_budget_exhaustion(self):
         d=detail(publication_status="PUBLISHED",primary_award_match=False,
