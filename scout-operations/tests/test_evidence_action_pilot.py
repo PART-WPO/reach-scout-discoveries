@@ -5,7 +5,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
 from evaluate_research_to_action import (
-    build, evidence_assessment, compile_decision, independent_critique, SCHEMA,
+    build, evidence_assessment, compile_decision, independent_critique,
+    identity_specific_note, source_pointers, explicit_claims, SCHEMA,
 )
 
 
@@ -69,6 +70,47 @@ class EvidenceActionPilotTests(unittest.TestCase):
                          "RELATED_OUTPUT_INDEPENDENT_VERIFICATION_REQUIRED")
         self.assertFalse(c["compiled_decision"]["separate_expansion_completed"])
 
+    def test_official_publication_evidence_not_needlessly_researched_again(self):
+        for identity in ("doi:10.1029/2026jd046327",
+                         "doi:10.1029/2026jd046349",
+                         "doi:10.3390/c4040066"):
+            case = self.by_identity[identity]
+            self.assertTrue(case["evaluation"]["published_claim"], identity)
+            self.assertNotEqual(case["compiled_decision"]["recommended_disposition"],
+                                "TARGETED_OFFICIAL_PUBLICATION_CHECK", identity)
+        ozone = self.by_identity["doi:10.1029/2026jd046327"]
+        self.assertEqual(ozone["compiled_decision"]["recommended_disposition"],
+                         "TARGETED_PRIMARY_PROJECT_PROOF")
+        activated = self.by_identity["doi:10.3390/c4040066"]
+        self.assertTrue(activated["evaluation"]["contradictory_project_evidence"])
+        self.assertEqual(activated["compiled_decision"]["recommended_disposition"],
+                         "PROJECT_ATTRIBUTION_CONFLICT_HOLD")
+
+    def test_multi_case_note_cannot_cross_contaminate_funding_or_pub_status(self):
+        synthetic = {"cases":[
+            {"doi":"10.1000/alpha","publication_status":"PUBLISHED_JOURNAL_ARTICLE"},
+            {"doi":"10.1000/beta",
+             "decision_preview":"BOUNDED_HOLD_CONTRADICTED_WPO_ATTRIBUTION_NEEDS_HUMAN_ASSESSMENT"}]}
+        alpha = explicit_claims(identity_specific_note(synthetic,"doi:10.1000/alpha"))
+        beta = explicit_claims(identity_specific_note(synthetic,"doi:10.1000/beta"))
+        self.assertTrue(alpha["official_publication_claim"])
+        self.assertFalse(alpha["project_conflict_claim"])
+        self.assertTrue(beta["project_conflict_claim"])
+        self.assertFalse(beta["official_publication_claim"])
+        with self.assertRaisesRegex(ValueError,"exactly one matching DOI"):
+            identity_specific_note(synthetic,"doi:10.1000/gamma")
+
+    def test_structured_publisher_and_ir_sources_recovered_without_author_details(self):
+        doc = {
+            "official_publisher_url":"https://publisher.example.org/article",
+            "official_noaa_ir_url":"https://repository.library.noaa.gov/view/noaa/123",
+            "authors":["Example Person"],
+            "publisher_version":"version of record",
+        }
+        self.assertEqual(len(source_pointers(doc)),2)
+        self.assertTrue(explicit_claims(doc)["official_publication_claim"])
+        self.assertFalse(any("Example Person" in u for u in source_pointers(doc)))
+
     def test_human_project_question_is_bounded_and_has_sources(self):
         referrals = [x for x in self.report["cases"]
                      if x["compiled_decision"]["recommended_disposition"] ==
@@ -81,13 +123,15 @@ class EvidenceActionPilotTests(unittest.TestCase):
             self.assertIn("primary WPO SPARK project", c["compiled_decision"]["next_action"])
             self.assertFalse(c["compiled_decision"]["human_reviewer_approval"])
 
-    def test_precise_technical_access_recovery_not_negative_evidence(self):
+    def test_workflow_failure_not_mistaken_for_doi_registry_metadata_failure(self):
         key = "doi:10.1175/waf-d-22-0056.1"
         c = self.by_identity[key]
         self.assertTrue(c["evaluation"]["technical_hold"])
-        self.assertEqual(c["compiled_decision"]["recommended_disposition"],
-                         "DOI_METADATA_RECOVERY_ONLY")
-        self.assertEqual(c["compiled_decision"]["owner"], "EXACT_DOI_METADATA_RECOVERY")
+        self.assertTrue(c["evaluation"]["prior_workflow_failure"])
+        self.assertFalse(c["evaluation"]["explicit_metadata_access_failure"])
+        self.assertNotEqual(c["compiled_decision"]["recommended_disposition"],
+                            "DOI_METADATA_RECOVERY_ONLY")
+        self.assertIn("WORKFLOW", c["compiled_decision"]["recommended_disposition"])
         self.assertNotIn("NOT_RELATED", c["compiled_decision"]["recommended_disposition"])
 
     def test_non_doi_code_case_stays_held_if_award_conflicts(self):
