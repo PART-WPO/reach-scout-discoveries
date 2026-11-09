@@ -1,0 +1,87 @@
+name: One-time 32-DOI Scout author safeguards replay
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/scout-once-author-safeguards-20261109.yml'
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: oneoff-public-reach-author-safeguards-20261109
+  cancel-in-progress: false
+jobs:
+  evaluate-existing-dois:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run privacy and evidence unit tests
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s scout-operations/tests -p 'test_replay_author_safeguards.py' -v
+          python -m unittest discover -s scout-operations/tests -p 'test_reach_author_pilot.py' -v
+      - name: Recover exact earlier 32-DOI public research artifact
+        env:
+          GH_TOKEN: \${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/prior"
+          gh run download 42633663341 \
+            --repo PART-WPO/reach-scout-discoveries \
+            --name pilot-na22oar4590515-doi-only \
+            --dir "$RUNNER_TEMP/prior"
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          p=Path(os.environ["RUNNER_TEMP"])/"prior"/"scout-na22oar4590515-doi-only.json"
+          assert p.is_file(), "Prior verified pilot artifact not available"
+          data=json.loads(p.read_text())
+          assert data["schema"]=="reach-scout-public-reach-author-pilot-v1"
+          assert data["award"]=="NA22OAR4590515"
+          assert len(data["independent_doi_leads"])==32
+          assert not data["spark_author_data_accessed"]
+          assert not data["human_review_or_reach_modified"]
+          print("Recovered 32 DOI-only leads from exact successful 2026-11-09 run")
+          PY
+      - name: Fail closed on stale public REACH source
+        run: |
+          python - <<'PY'
+          import hashlib,json,urllib.request
+          from pathlib import Path
+          index=json.loads(Path('scout-operations/reach-comparison-cache/comparison-index.json').read_text())
+          url='https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json'
+          with urllib.request.urlopen(url,timeout=35) as response:
+              current=hashlib.sha256(response.read()).hexdigest()
+          if current!=index['source_manifest_sha256']:
+              raise SystemExit('Public REACH manifest changed; do not use stale author seeds')
+          print('Verified live public REACH manifest SHA-256')
+          PY
+      - name: Evaluate author identity, scientific topic, and exact-award evidence
+        run: |
+          set -euo pipefail
+          python scout-operations/tools/replay_author_safeguards.py \
+            --pilot-json "$RUNNER_TEMP/prior/scout-na22oar4590515-doi-only.json" \
+            --out-json "$RUNNER_TEMP/scout-32-author-safeguards.json"
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          report=json.loads((Path(os.environ["RUNNER_TEMP"])/"scout-32-author-safeguards.json").read_text())
+          assert report["rows_reviewed"]==32
+          assert report["no_promotion_to_discovery_hub"] is True
+          assert report["spark_personnel_accessed"] is False
+          assert report["author_names_saved"] is False
+          assert all(x.get("hub_eligible") is False for x in report["results"])
+          assert not any(any(k in x for k in ("authors","author_name","pi","collaborators")) for x in report["results"])
+          print("DOI-only safeguarding output verified; all outputs unapproved")
+          PY
+      - name: Upload short-retention DOI-only safeguarding results
+        uses: actions/upload-artifact@v4
+        with:
+          name: scout-author-safeguards-32-doi-only
+          path: \${{ runner.temp }}/scout-32-author-safeguards.json
+          retention-days: 2
+          if-no-files-found: error
