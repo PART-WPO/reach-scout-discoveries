@@ -17,6 +17,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 from decision_pipeline import build_index as shared_build_index, lookup as shared_lookup
+from identity_disposition import decide as shared_disposition
 from reviewer_feedback_guard import known_feedback_by_doi, reviewer_hold_for_proposal
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -367,6 +368,9 @@ def build(root, reach_root, spark_root, write_drafts=False):
         if write_drafts:
             raise ValueError("Monthly intake blocked: public REACH source SHA differs from shared verified identity cache")
         shared_index=None
+    preprint_watch=read_json(root / "scout-operations/preprint-watchlist.json")
+    if preprint_watch.get("schema") != "reach-scout-preprint-watchlist-v1":
+        raise ValueError("Unverified monthly preprint watchlist")
     reviewer_feedback=known_feedback_by_doi(root)
     published, _ = gather_feed(root, "", "scout-discoveries/manifest.json", None)
     inbox = []
@@ -405,6 +409,8 @@ def build(root, reach_root, spark_root, write_drafts=False):
             shared = (shared_lookup(shared_index, doi, title, raw.get("Output URL"))
                       if shared_index is not None else None)
             identity_route = shared_identity_route(found, shared, title)
+            public_disposition = (shared_disposition(shared_index, preprint_watch, doi=doi,
+                                 title=title, url=raw.get("Output URL", "")) if shared_index else None)
             prior_human_review=reviewer_hold_for_proposal(doi, reviewer_feedback)
             funding_matches, funding_status, funding_issues = check_funding(raw, entry, spark)
             issues = list(funding_issues)
@@ -460,6 +466,8 @@ def build(root, reach_root, spark_root, write_drafts=False):
                       "funding_awards": raw.get("NOAA Award Number(s)", ""),
                       "reach_matches": found,
                       "shared_public_identity_result":shared["status"] if shared else "SOURCE_SHA_NOT_RECONCILED",
+                      "shared_public_disposition":public_disposition["disposition"] if public_disposition else "SOURCE_SHA_NOT_RECONCILED",
+                      "shared_preprint_family":public_disposition["explicit_version_family"] if public_disposition else None,
                       "shared_identity_route":identity_route,
                       "shared_identity_index_fingerprint":shared_index["source_fingerprint"] if shared_index else None,
                       "prior_authenticated_human_review":prior_human_review,
