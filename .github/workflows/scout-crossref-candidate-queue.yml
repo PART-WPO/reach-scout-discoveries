@@ -1,5 +1,10 @@
 name: Scout Crossref candidate queue refresh
 on:
+  pull_request:
+    paths:
+      - 'scout-operations/tools/build_candidate_queue.py'
+      - 'scout-operations/tests/test_candidate_queue.py'
+      - '.github/workflows/scout-crossref-candidate-queue.yml'
   push:
     branches: [main]
     paths:
