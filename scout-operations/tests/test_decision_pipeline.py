@@ -83,6 +83,15 @@ class DecisionPipelineTests(unittest.TestCase):
         self.assertEqual(lookup(self.index, doi="10.1234/secondary", title="Article without primary DOI")["status"],
                          "CONFIRMED_PUBLIC_REACH_IDENTITY")
 
+    def test_dotted_us_initialism_matches_public_reach_title_via_exact_url(self):
+        self.assertEqual(norm_title("over the U.S.: Flood"), norm_title("over the US: flood"))
+        self.assertEqual(norm_title("the N.W.S. study"), norm_title("the NWS study"))
+        self.index["records"][0]["title"] = "Hydrologic evaluation over the US"
+        result = lookup(self.index, url="https://noaa.gov/paper/one",
+                        title="Hydrologic evaluation over the U.S.")
+        self.assertEqual(result["status"], "CONFIRMED_PUBLIC_REACH_IDENTITY")
+        self.assertEqual(result["reason"], "UNIQUE_STRONG_IDENTIFIER_AND_TITLE")
+
     def test_exact_reach_and_title_only_not_same_disposition(self):
         self.assertEqual(lookup(self.index, doi="10.1234/existing", title="Already Published Report")["status"],
                          "CONFIRMED_PUBLIC_REACH_IDENTITY")
