@@ -96,8 +96,11 @@ class HumanProjectReferrals(unittest.TestCase):
         public,ir=verified_snapshot(root)
         def current_identity(doi,title):
             return identity_check(public,ir,doi,title,"https://doi.org/"+doi)
-        result=build(root=root,metadata=lambda doi:
-                     (_ for _ in ()).throw(ValueError("Unexpected repeated DOI lookup: "+doi)),
+        def metadata_except_published_referral(doi):
+            if doi=="10.1109/radarconf2248738.2022.9764246":
+                raise ValueError("Already reviewed APAR DOI should reuse its metadata")
+            return self.published()
+        result=build(root=root,metadata=metadata_except_published_referral,
                      public_identity=current_identity,stage=False)
         rows={x["doi"]:x for x in result["referrals"]}
         apar="10.1109/radarconf2248738.2022.9764246"
