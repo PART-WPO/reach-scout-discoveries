@@ -199,6 +199,16 @@ def lookup(index, doi="", title="", url=""):
                 and norm_title(group[0]["title"]) == t
                 and bool(strong.intersection(group[0]["match_bases"])))
 
+    def consistent_scout_mirrors(group):
+        # GitHub may retain the same previously promoted CSV in both inbox
+        # and public batches. The exact DOI/URL AND title must agree for ALL
+        # matches before treating this as an existing public proposal.
+        # This says nothing about private Hub import or human approval.
+        return (bool(t) and bool(group)
+                and all(norm_title(x["title"]) == t
+                        and bool(strong.intersection(x["match_bases"]))
+                        for x in group))
+
     if reach:
         status = ("CONFIRMED_PUBLIC_REACH_IDENTITY" if uniquely_verified(reach)
                   else "POSSIBLE_PUBLIC_REACH_MATCH")
@@ -207,12 +217,12 @@ def lookup(index, doi="", title="", url=""):
                   else "SOURCE_TITLE_REQUIRED" if not t
                   else "IDENTIFIER_TITLE_OR_VERSION_REVIEW")
     elif scout:
-        status = ("IN_PUBLIC_SCOUT_QUEUE" if uniquely_verified(scout)
+        status = ("IN_PUBLIC_SCOUT_QUEUE" if consistent_scout_mirrors(scout)
                   else "POSSIBLE_SCOUT_QUEUE_MATCH")
-        reason = ("UNIQUE_STRONG_IDENTIFIER_AND_TITLE" if uniquely_verified(scout)
-                  else "MULTIPLE_SCOUT_CANDIDATES" if len({(x["source"], x["identity"]) for x in scout}) > 1
-                  else "SOURCE_TITLE_REQUIRED" if not t
-                  else "IDENTIFIER_TITLE_OR_VERSION_REVIEW")
+        reason = ("CONSISTENT_SCOUT_PUBLIC_MIRRORS" if consistent_scout_mirrors(scout)
+                  and len(scout) > 1 else "UNIQUE_STRONG_IDENTIFIER_AND_TITLE"
+                  if consistent_scout_mirrors(scout) else "SOURCE_TITLE_REQUIRED"
+                  if not t else "IDENTIFIER_TITLE_OR_VERSION_REVIEW")
     else:
         status, reason = "NO_PUBLIC_IDENTITY_MATCH", "NO_MATCH_IN_VERIFIED_PUBLIC_SNAPSHOT"
     return {"status": status, "reason": reason, "matches": found,
