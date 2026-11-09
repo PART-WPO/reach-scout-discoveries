@@ -17,6 +17,8 @@ on:
       - 'scout-operations/tests/test_quick_monthly_intake.py'
       - 'scout-operations/tests/test_unified_source_preflight.py'
       - '.github/workflows/validate-scout-crossmode.yml'
+      - '.github/workflows/scout-public-reach-author-pilot.yml'
+      - 'scout-operations/SCOUT_SHARED_IDENTITY_AND_PRIVACY_PILOT.md'
   workflow_dispatch:
 permissions:
   contents: read
