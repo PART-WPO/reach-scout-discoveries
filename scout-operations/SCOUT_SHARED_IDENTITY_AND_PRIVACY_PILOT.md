@@ -57,8 +57,11 @@ publications. The pilot:
    seeds**. Scout should use award, title, citation, dataset, code and other
    non-personal discovery rather than reintroduce SPARK personnel.
 
-Manual pilot caps: 5 public DOI seeds, 4 transient authors and 5 result records
-per author. The optional output artifact is retained for 2 days and is
+Manual pilot caps: up to 15 distinct public REACH-linked DOI candidates
+are checked until five independently verified journal publications are found.
+Author searches are sampled across publications (not just the first paper),
+using up to four transient author names and 15 Crossref results per author.
+Reports record aggregate screening diagnostics, never author names. The optional output artifact is retained for 2 days and is
 **NOT** a public Scout candidate feed. It is intentionally not an hourly
 or monthly scheduled action.
 
