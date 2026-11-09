@@ -6,6 +6,7 @@ ROOT=Path(__file__).resolve().parents[2]
 TOOLS=ROOT/"scout-operations/tools"
 sys.path.insert(0,str(TOOLS))
 from ir_reach_identity import verified_snapshot,identity_check,research_route
+from identity_disposition import verified_disposition
 OUT=ROOT/"scout-operations/reports/independent-metadata-lookup/latest.json"
 def load(name):
  spec=importlib.util.spec_from_file_location(name,TOOLS/(name+".py"))
@@ -38,12 +39,14 @@ def main():
  # Reuse one verified REACH+Scout and official NOAA IR DOI snapshot for
  # independent DOI-to-URL duplicates. Private Hub decisions remain unknown.
  public,ir_index=verified_snapshot(ROOT)
+ watch=json.loads((ROOT/"scout-operations/preprint-watchlist.json").read_text(encoding="utf8"))
  def independent_identity(d,title):
   check=identity_check(public,ir_index,d,title,"https://doi.org/"+d)
-  return {"public_identity":check,
+  shared=verified_disposition(public,watch,ir_index,doi=d,title=title,url="https://doi.org/"+d)
+  return {"public_identity":check,"shared_public_disposition":shared,
           "noaa_ir_identity":check["noaa_ir_reach_check"]["status"],
           "official_ir_url":check["noaa_ir_reach_check"]["official_url"],
-          "identity_next_action":research_route(check),
+          "identity_next_action":shared["next_action"],
           "seed_expansion_preserved":True}
 
  doi_records=[{**v,"metadata":doi.metadata(d),"artifact_scope":scope.zenodo(d)} for d,v in sorted(targets.items())]
