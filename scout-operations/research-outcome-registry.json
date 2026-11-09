@@ -51,23 +51,24 @@
     "scout-operations/historical-crossref-phase2/2026-11-09-1624ET-generative-ensemble-severe-weather-official-publisher-human-screen.json": "b54cfbd6e5596ebeb72606363e5abff9b2c87a9d5df415ed30addb418b9f1d59",
     "scout-operations/historical-crossref-phase2/2026-11-09-1729ET-upper-great-lakes-snow-publisher-459-new-candidate-screen.json": "8572e730725edf1227baaf8a12d095755fc13a716563e1bda3cca306c49fe955",
     "scout-operations/historical-crossref-phase2/2026-11-09-1829ET-generative-ai-extreme-precipitation-official-459-screen.json": "d09c724da23e5bf9bdf253a3f8a0198642c4d5473b2bb4a8f804692604f2b3d1",
+    "scout-operations/historical-crossref-phase2/2026-11-09-1830ET-generative-ai-precipitation-459-human-referral-disposition.json": "162437f1a294893384a8070e81472d939a6b06b6b34921c98270086ea37134a8",
     "scout-operations/monthly-research/2026-11-06-0528ET-storm-harry-qj70325-project-scope-hold.json": "9bf7c3c778f1cbf1622db3e994b7facc446367f5cc3ed6094517ab5884722911",
     "scout-operations/monthly-research/2026-11-06-0630ET-storm-harry-ecmwf-two-doi-access-holds.json": "38d2065e50f5691c4452ea054a54409a88392e3d76f60969a311a78d96b3bf7c",
     "scout-operations/monthly-research/2026-11-06-0730ET-storm-harry-ecmwf-official-catalog-followup.json": "7a63adfadb964734abec498d27cc54bc6e431d0cb8f51c11bdc8f4e6131491c3",
     "scout-operations/monthly-research/2026-11-06-0830ET-storm-harry-global-drifter-award-scope-followup.json": "684a66155c7ad188613f0217e371ba692f300a27bb1ab16a1b7d40f09c1198bc"
   },
-  "evidence_files_scanned": 50,
+  "evidence_files_scanned": 51,
   "source_files_without_explicit_output_id": [],
-  "research_note_events": 59,
+  "research_note_events": 60,
   "distinct_research_identities": 39,
   "operational_disposition_counts": {
-    "BOUNDED_PROJECT_QUESTION_FOR_HUMAN": 2,
+    "BOUNDED_PROJECT_QUESTION_FOR_HUMAN": 3,
     "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY": 24,
     "PREPRINT_MONTHLY_WATCH": 1,
     "PROJECT_EVIDENCE_HOLD": 31,
     "TECHNICAL_METADATA_RECOVERY": 1
   },
-  "bounded_human_question_identities": 2,
+  "bounded_human_question_identities": 3,
   "original_status_changes": 0,
   "expansion_status_changes": 0,
   "new_public_review_proposals": 0,
@@ -1390,6 +1391,31 @@
       "reviewer_approval": "NOT_VERIFIED"
     },
     {
+      "event_id": "0963d0103cec344cc7c8827c",
+      "identity": "doi:10.1175/aies-d-24-0063.1",
+      "doi": "10.1175/aies-d-24-0063.1",
+      "url_only": null,
+      "role_in_note": "original",
+      "research_lane": "historical_crossref_original",
+      "source_path": "scout-operations/historical-crossref-phase2/2026-11-09-1830ET-generative-ai-precipitation-459-human-referral-disposition.json",
+      "source_sha256": "162437f1a294893384a8070e81472d939a6b06b6b34921c98270086ea37134a8",
+      "source_time": "2026-11-09T18:30:00-05:00",
+      "raw_decision": "BOUNDED_PROJECT_QUESTION_FOR_HUMAN",
+      "operational_disposition": "BOUNDED_PROJECT_QUESTION_FOR_HUMAN",
+      "next_action": "Guarded NEW CANDIDATE reviewer referral: independently validate exact DOI public REACH+Scout+NOAA IR identity, official publisher-deposited Crossref 459 award, preprint and protected human feedback, then canonical 24-column public feed. Reviewer selects correct SPARK parent; no private Hub or REACH write.",
+      "checked_evidence_urls": [
+        "https://doi.org/10.1175/AIES-D-24-0063.1",
+        "https://journals.ametsoc.org/view/journals/aies/4/2/AIES-D-24-0063.1.xml"
+      ],
+      "source_count": 2,
+      "bounded_human_question_to_verify": true,
+      "formal_original_closed": false,
+      "separate_expansion_closed": false,
+      "new_public_proposal": false,
+      "private_hub_import": "NOT_VERIFIED",
+      "reviewer_approval": "NOT_VERIFIED"
+    },
+    {
       "event_id": "d1c7f1c43f43721992142729",
       "identity": "doi:10.1002/qj.70325",
       "doi": "10.1002/qj.70325",
@@ -1993,17 +2019,19 @@
     },
     {
       "identity": "doi:10.1175/aies-d-24-0063.1",
-      "latest_event_id": "e9a3eb855a80038a8a040456",
-      "latest_evidence_path": "scout-operations/historical-crossref-phase2/2026-11-09-1829ET-generative-ai-extreme-precipitation-official-459-screen.json",
-      "latest_operational_disposition": "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+      "latest_event_id": "0963d0103cec344cc7c8827c",
+      "latest_evidence_path": "scout-operations/historical-crossref-phase2/2026-11-09-1830ET-generative-ai-precipitation-459-human-referral-disposition.json",
+      "latest_operational_disposition": "BOUNDED_PROJECT_QUESTION_FOR_HUMAN",
       "observed_dispositions": [
+        "BOUNDED_PROJECT_QUESTION_FOR_HUMAN",
         "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY"
       ],
-      "source_file_count": 1,
+      "source_file_count": 2,
       "event_ids": [
-        "e9a3eb855a80038a8a040456"
+        "e9a3eb855a80038a8a040456",
+        "0963d0103cec344cc7c8827c"
       ],
-      "project_judgment_referral_possible": false,
+      "project_judgment_referral_possible": true,
       "human_review_staged": false,
       "private_hub_import": "NOT_VERIFIED"
     },
