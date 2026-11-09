@@ -6,7 +6,7 @@ from pathlib import Path
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"tools"))
 from build_human_project_referrals import (
-    build,referral_state,publication_meta_valid,proposal,main,existing_verified_self_draft,eligible_record,score_for_human_review,matching_note_case
+    build,referral_state,publication_meta_valid,proposal,main,existing_verified_self_draft,eligible_record,score_for_human_review,matching_note_case,verified_replacement_batch_names
 )
 
 class HumanProjectReferrals(unittest.TestCase):
@@ -107,6 +107,21 @@ class HumanProjectReferrals(unittest.TestCase):
         candidate=proposal(event["doi"],metadata,event,project,self.identity("",""))
         self.assertEqual(candidate["provenance"]["classification"],"NEEDS INVESTIGATION")
         self.assertEqual(candidate["fields"]["NOAA Award Number(s)"],"")
+
+    def test_audited_459_reclassification_reuses_same_existing_review_unit(self):
+        import json
+        root=Path(__file__).resolve().parents[2]
+        doi="10.1175/aies-d-23-0094.1"
+        report=json.loads((root/"scout-operations/human-project-referrals.json").read_text())
+        source=next(x for x in report["referrals"] if x["doi"]==doi)
+        old_name=Path(source["published_scout_batch_path"]).name
+        names=verified_replacement_batch_names(root,doi,{old_name},source["official_metadata"])
+        self.assertIn(old_name,names)
+        self.assertIn("2026-11-09-aies-d-23-0094-wpo459-reclassification-001.csv",names)
+        self.assertEqual(verified_replacement_batch_names(root,"10.9999/unrelated",{old_name},
+                         source["official_metadata"]),{old_name})
+        with self.assertRaises(ValueError):
+            verified_replacement_batch_names(root,doi,{old_name},self.published())
 
     def test_clearly_contradictory_award_never_proposed(self):
         event={"doi":"10.1234/test","research_lane":"original"}
