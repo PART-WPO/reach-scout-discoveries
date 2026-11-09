@@ -14,7 +14,7 @@ from collections import defaultdict
 from pathlib import Path
 from urllib.parse import urlsplit, urlunsplit
 
-VERSION = "reach-scout-decision-pipeline-v1"
+VERSION = "reach-scout-decision-pipeline-v2"
 DOI_RE = re.compile(r"10\.\d{4,9}/[^\s\"'<>;,]+", re.I)
 TITLE_TAGS = re.compile(r"<[^>]*>")
 ROOT = Path(__file__).resolve().parents[2]
