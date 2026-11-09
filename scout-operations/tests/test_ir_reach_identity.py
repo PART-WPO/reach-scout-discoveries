@@ -17,12 +17,23 @@ class IRReachIdentityTests(unittest.TestCase):
         self.ir={"dois":{self.doi:[self.url]}}
 
     def test_independent_doi_joins_verified_ir_url(self):
-        result=identity_check(self.public,self.ir,self.doi,"Different title")
+        result=identity_check(self.public,self.ir,self.doi,"Different punctuation")
         self.assertEqual(result["status"],"CONFIRMED_PUBLIC_REACH_IDENTITY")
         self.assertEqual(result["noaa_ir_reach_check"]["match_uid"],"reach-test-uid")
         self.assertEqual(result["noaa_ir_reach_check"]["match_detail_shard"],
                          "agent-data/details/part-001.csv")
         self.assertEqual(research_route(result),"existing_reach_original_preserve_doi_seed_expansion")
+
+    def test_official_ir_url_with_wrong_title_cannot_confirm_duplicate(self):
+        result=identity_check(self.public,self.ir,self.doi,"Unrelated data publication")
+        self.assertEqual(result["status"],"POSSIBLE_PUBLIC_REACH_MATCH")
+        self.assertEqual(result["noaa_ir_reach_check"]["status"],
+                         "IR_URL_MATCH_REQUIRES_REVIEW")
+        self.assertEqual(research_route(result),"bounded_identity_or_version_review_no_staging")
+
+    def test_official_ir_url_without_title_cannot_confirm_duplicate(self):
+        result=identity_check(self.public,self.ir,self.doi,"")
+        self.assertNotEqual(result["status"],"CONFIRMED_PUBLIC_REACH_IDENTITY")
 
     def test_missing_index_holds(self):
         result=identity_check(self.public,None,self.doi)

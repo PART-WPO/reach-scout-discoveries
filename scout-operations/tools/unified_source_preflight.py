@@ -11,6 +11,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 from decision_pipeline import build_index, check_index_fresh, checked_csv, evaluate, norm_doi, norm_title
+from identity_disposition import decide as shared_disposition
 from reviewer_feedback_guard import known_feedback_by_doi, reviewer_hold_for_proposal
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -184,6 +185,7 @@ def preflight(root=ROOT):
         bulk=case.pop("_crossref_bulk_outcome",None)
         bulk_uid=case.pop("_bulk_verified_reach_uid",None)
         evaluated=evaluate(case,index)
+        public_gate=shared_disposition(index,watch,doi=case["doi"],title=case["title"],url=case["url"])
         # Verified canonical NOAA IR -> public REACH URL is an independent
         # source-backed original identity gate; do not rely on the generic
         # lookup engine to infer that URL from DOI alone.
@@ -196,6 +198,9 @@ def preflight(root=ROOT):
             "source_batch":source_batch,"raw_source_identity":raw_identity,
             "recorded_status_unchanged":recorded_status,
             "shared_gate_decision":evaluated["decision"],
+            "public_identity_disposition":public_gate["disposition"],
+            "public_identity_next_action":public_gate["next_action"],
+            "explicit_preprint_family":public_gate["explicit_version_family"],
             "effective_identity_or_preflight":decision,
             "trusted_bulk_public_reach_uid":bulk_uid,
             "source_awards_are_unverified_hints":raw_awards,

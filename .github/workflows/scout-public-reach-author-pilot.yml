@@ -1,0 +1,66 @@
+name: Scout public REACH author-seed pilot (manual, read only)
+on:
+  workflow_dispatch:
+    inputs:
+      award:
+        description: Exact primary WPO award number in published REACH records
+        required: true
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: scout-public-reach-author-pilot
+  cancel-in-progress: false
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify source contract and author-data privacy tests
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s scout-operations/tests -p 'test_reach_author_pilot.py' -v
+          python -m unittest discover -s scout-operations/tests -p 'test_identity_disposition.py' -v
+      - name: Confirm live REACH manifest matches checksum-verified source cache
+        run: |
+          python - <<'PY'
+          import hashlib,json,urllib.request
+          from pathlib import Path
+          index=json.loads(Path('scout-operations/reach-comparison-cache/comparison-index.json').read_text())
+          url='https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json'
+          with urllib.request.urlopen(url,timeout=35) as stream:
+              digest=hashlib.sha256(stream.read()).hexdigest()
+          if digest!=index['source_manifest_sha256']:
+              raise SystemExit('STALE VERIFIED REACH CACHE - STOP AUTHOR PILOT')
+          print('Live public REACH manifest verified by hash; no SPARK authors accessed')
+          PY
+      - name: Explore verified public REACH journal-article author leads only
+        env:
+          AWARD_NUMBER: ${{ inputs.award }}
+        run: |
+          set -euo pipefail
+          python scout-operations/tools/reach_author_pilot.py --award "$AWARD_NUMBER" --output "$RUNNER_TEMP/reach_author_doi_only.json"
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          p=Path(os.environ['RUNNER_TEMP'])/'reach_author_doi_only.json'
+          report=json.loads(p.read_text())
+          assert report['spark_author_data_accessed'] is False
+          assert report['human_review_or_reach_modified'] is False
+          assert all(not r['project_funding_verified'] and not r['discovery_hub_eligible'] for r in report['independent_doi_leads'])
+          assert all('author' not in k.lower() for r in report['independent_doi_leads'] for k in r)
+          print('Bounded DOI-only lead artifact verified; no names or stage decisions')
+          PY
+      - name: Retain temporary DOI-only research leads (not a public Scout feed)
+        uses: actions/upload-artifact@v4
+        with:
+          name: scout-public-reach-author-pilot-doi-only
+          path: ${{ runner.temp }}/reach_author_doi_only.json
+          retention-days: 2
+          if-no-files-found: error

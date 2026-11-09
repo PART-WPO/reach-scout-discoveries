@@ -1,0 +1,64 @@
+name: Validate Scout cross-mode disposition and REACH-only author pilot
+on:
+  pull_request:
+    paths:
+      - 'scout-operations/tools/identity_disposition.py'
+      - 'scout-operations/tools/ir_reach_identity.py'
+      - 'scout-operations/tools/lookup_independent_dois.py'
+      - 'scout-operations/tools/lookup_independent_metadata.py'
+      - 'scout-operations/tools/quick_monthly_intake.py'
+      - 'scout-operations/tools/unified_source_preflight.py'
+      - 'scout-operations/tools/reach_author_pilot.py'
+      - 'scout-operations/tools/score_private_benchmark.py'
+      - 'scout-operations/tests/test_identity_disposition.py'
+      - 'scout-operations/tests/test_ir_reach_identity.py'
+      - 'scout-operations/tests/test_reach_author_pilot.py'
+      - 'scout-operations/tests/test_private_benchmark_labels.py'
+      - 'scout-operations/tests/test_quick_monthly_intake.py'
+      - 'scout-operations/tests/test_unified_source_preflight.py'
+      - '.github/workflows/validate-scout-crossmode.yml'
+      - '.github/workflows/scout-public-reach-author-pilot.yml'
+      - 'scout-operations/SCOUT_SHARED_IDENTITY_AND_PRIVACY_PILOT.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cross-mode-and-privacy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile all touched source files
+        run: |
+          set -euo pipefail
+          python -m py_compile scout-operations/tools/{decision_pipeline,identity_disposition,ir_reach_identity,lookup_independent_dois,lookup_independent_metadata,quick_monthly_intake,unified_source_preflight,reach_author_pilot,score_private_benchmark}.py
+      - name: Run isolated source, privacy, author and benchmark regression tests
+        run: |
+          set -euo pipefail
+          for suite in test_decision_pipeline.py test_identity_disposition.py test_ir_reach_identity.py test_quick_monthly_intake.py test_unified_source_preflight.py test_reach_author_pilot.py test_private_benchmark_labels.py; do
+            python -m unittest discover -s scout-operations/tests -p "$suite" -v
+          done
+      - name: Run complete SHA-verified cross-mode public preflight read only
+        run: |
+          set -euo pipefail
+          python scout-operations/tools/unified_source_preflight.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          report=json.loads(Path('scout-operations/unified-source-preflight.json').read_text())
+          assert report['original_and_related_cases_preflighted'] >= 800
+          assert report['changes_to_human_dispositions'] == 0
+          assert report['new_public_review_proposals'] == 0
+          assert report['new_reach_additions'] == 0
+          assert sum(sum(v.values()) for v in report['lane_decision_counts'].values()) == report['original_and_related_cases_preflighted']
+          assert len(report['cases']) == report['original_and_related_cases_preflighted']
+          assert all('public_identity_disposition' in c for c in report['cases'])
+          assert all(c['seed_expansion_closed'] is False for c in report['cases'])
+          print(json.dumps({"preflighted": report['original_and_related_cases_preflighted'],
+                            "no_auto_staging": True,"source_fingerprint": report["identity_index_fingerprint"]}))
+          PY
+      - name: Verify public read-only 100-case identity replay (not accuracy)
+        run: python scout-operations/tools/identity_disposition.py --benchmark

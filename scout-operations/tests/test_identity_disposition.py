@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
-from identity_disposition import decide, public_reach_author_seeds, version_relationships
+from identity_disposition import decide, public_reach_author_seeds, version_relationships, verified_disposition
 
 
 def index():
@@ -117,6 +117,33 @@ class SharedDispositionTests(unittest.TestCase):
         self.assertEqual(public_reach_author_seeds(cache, "NA26OARX459C0001"),
                          ["Public Author"])
         self.assertEqual(public_reach_author_seeds(cache, "NA26OARX459C0003"), [])
+
+    def test_shared_and_official_ir_identify_existing_reach_consistently(self):
+        public=index()
+        url="https://repository.library.noaa.gov/view/noaa/333"
+        public["records"][0]["dois"] = []  # Official IR fallback only when no conflicting REACH DOI\n        public["records"][0]["urls"].append(url)
+        public["keys"]["url"][url]=[0]
+        ir={"dois":{"10.1234/alternate-doi":[url]}}
+        result=verified_disposition(public,watchlist(),ir,doi="10.1234/alternate-doi",
+                                    title="Published Weather Paper")
+        self.assertEqual(result["disposition"],"EXISTING_IN_REACH")
+        self.assertEqual(result["identity_confirmation_basis"],
+                         "VERIFIED_IR_DOI_URL_AND_TITLE")
+        unsafe=verified_disposition(public,watchlist(),ir,doi="10.1234/alternate-doi",
+                                    title="Unrelated Dataset")
+        self.assertEqual(unsafe["disposition"],"IDENTITY_REVIEW_REQUIRED")
+
+    def test_shared_preprint_hold_cannot_be_overridden_by_existing_scout_queue(self):
+        public=index()
+        public["records"].append({
+            "source":"SCOUT_INBOX","identity":"bad-preprint","title":"Working Paper",
+            "location":"inbox.csv","dois":["10.1234/preprint-v1"],"urls":[]})
+        public["keys"]["doi"]["10.1234/preprint-v1"]=[3]
+        public["keys"]["title"]["working paper"]=[3]
+        result=verified_disposition(public,watchlist(),{"dois":{}},
+                                    doi="10.1234/preprint-v1",
+                                    title="Working Paper")
+        self.assertEqual(result["disposition"],"PREPRINT_WATCHLIST_HOLD")
 
     def test_no_reach_publication_means_no_author_route(self):
         cache = {"schema": "reach-scout-comparison-cache-v1",
