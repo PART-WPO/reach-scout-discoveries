@@ -106,7 +106,17 @@ def build(routing,registry,award_evidence=None,preprints=None):
   "NOVEL_IDENTITY_RESEARCH","HUMAN_REVIEW_FAST_SCREEN_DUE","BOUNDED_IDENTITY_REVIEW",
   "NON_459_PROJECT_EVIDENCE_CHECK"),"verified_published_dois":published,"doi":d,"title":e.get("title"),"lane":lane,"priority":rank,"next_action":action,"funding_signal":signal,"crossref_structured_award_numbers":awards,"award_evidence_source_batches":sorted(ev.get("source_batches",[])),"award_match_basis":"Historical Crossref feed structured award, matched to SPARK primary award at intake; output-to-project relevance still unverified","prior_disposition":disposition,"scout_overlap":bool(e.get("scout_overlap")),"verified_reach_uid":e["bulk_identity_gate"].get("verified_reach_uid"),"private_hub_review":"NOT_VERIFIED"})
  items.sort(key=lambda x:(-x["priority"],x["doi"]))
- return {"schema":"reach-scout-crossref-candidate-queue-v2","purpose":"Read-only selection; not completed research or approval","total":len(items),"lane_counts":dict(sorted(Counter(x["lane"] for x in items).items())),"items":items,"original_dispositions_changed":0,"new_review_proposals":0}
+ due=[x for x in items if x["one_mission_disposition_required"]]
+ return {"schema":"reach-scout-crossref-candidate-queue-v2",
+ "purpose":"Read-only selection; not completed research or approval",
+ "completion_target":"Each hourly mission handles at least one full novel-output screening through a concrete disposition or public human-review handoff. Skipped known records do not count; technical blockers must be reported, not represented as completed.",
+ "one_mission_actionable_original_count":len(due),
+ "next_one_mission_original_preview":[{
+   "doi":x["doi"],"lane":x["lane"],"priority":x["priority"],
+   "funding_signal":x["funding_signal"],"required_outcome":"FINISH_ORIGINAL_SCREENING_DECISION_THIS_RUN",
+   "action":x["next_action"]} for x in due[:8]],
+ "total":len(items),"lane_counts":dict(sorted(Counter(x["lane"] for x in items).items())),
+ "items":items,"original_dispositions_changed":0,"new_review_proposals":0}
 def load_preprints(root):
  w=load(root,WATCHLIST); result={}
  for e in w["entries"]:
