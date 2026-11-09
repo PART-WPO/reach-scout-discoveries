@@ -3,8 +3,13 @@
   "source_outcome_event_count": 54,
   "source_outcome_sha256": "a08efbac59f4e5b888518278f4e472c03bf6adc9bd9e1e440c0bff5a0aa1b3bc",
   "unique_bounded_project_questions": 2,
-  "human_referral_drafts_prevalidated": 0,
-  "draft_paths": [],
+  "potential_wpo_cases_quick_screened": 9,
+  "human_referral_drafts_prevalidated": 3,
+  "draft_paths": [
+    "scout-discoveries/inbox/2026-11-09-human-project-b332d53770e8cbc1d4.csv",
+    "scout-discoveries/inbox/2026-11-09-human-project-866c8052a22849b2de.csv",
+    "scout-discoveries/inbox/2026-11-09-human-project-398fe73f0c7f3ffa37.csv"
+  ],
   "published_batch_paths": [
     "scout-discoveries/batches/2026-11-06-human-project-b616c2488c1fe907f3.csv"
   ],
@@ -12,7 +17,7 @@
   "human_reviewer_decisions": "NOT_VERIFIED",
   "private_hub_imports": "NOT_VERIFIED",
   "new_approved_reach_outputs": 0,
-  "policy": "Bounded investigation can refer an independently published DOI for a human WPO-project funding question. No project award or REACH eligibility is asserted. Preprint, duplicate, no-source or prior-human-review cases stay held.",
+  "policy": "Fast-screen plausible 459 WPO award cues and specific project-title leads into confidence-scored Needs Investigation after official DOI metadata, checked public REACH+Scout+IR identity, preprint and past-review gates. Award context stays out of authoritative WPO award field; score is not probability or funding proof. Private Hub import is not verified.",
   "referrals": [
     {
       "doi": "10.1007/s00382-022-06655-w",
@@ -29,6 +34,1210 @@
       "disposition": "HOLD_UNVERIFIED_PROJECT_CONTEXT",
       "review_question": "HOLD_FOR_PROJECT_ATTRIBUTION_HUMAN_INTAKE_NOT_PUBLIC_SCOUT_CANDIDATE",
       "scout_inbox_status": "NOT_STAGED",
+      "published_scout_batch_path": null,
+      "eligible_for_new_reach_addition": "NOT_VERIFIED",
+      "private_hub_import": "NOT_VERIFIED",
+      "human_approval": "NOT_VERIFIED"
+    },
+    {
+      "doi": "10.1007/s10596-024-10317-7",
+      "source_event_id": "f9f3707a419fecce79a25c2c",
+      "source_file": "scout-operations/historical-crossref-phase2/2026-11-06-2329ET-project-first-three-originals-screening.json",
+      "source_sha256": "65780c73eadd127ceb9ef74d11787f2838dcd7357f0dfe75d44b2e9565d5f211",
+      "official_metadata": {
+        "status": "ok",
+        "provider": "crossref",
+        "evidence": "https://api.crossref.org/works/10.1007/s10596-024-10317-7",
+        "title": "Towards practical artificial intelligence in Earth sciences",
+        "creators": [
+          "Ziheng Sun",
+          "Talya ten Brink",
+          "Wendy Carande",
+          "Gerbrand Koren",
+          "Nicoleta Cristea",
+          "Corin Jorgenson",
+          "Bhargavi Janga",
+          "Gokul Prathin Asamani",
+          "Sanjana Achan",
+          "Mike Mahoney",
+          "Qian Huang",
+          "Armin Mehrabian",
+          "Thilanka Munasinghe",
+          "Zhong Liu",
+          "Aaron Margolis",
+          "Peter Webley",
+          "Bing Gong",
+          "Yuhan Rao",
+          "Annie Burgess",
+          "Andrew Huang",
+          "Laura Sandoval",
+          "Brianna R. Pagán",
+          "Sebnem Duzgun"
+        ],
+        "resource_type": "journal-article",
+        "publication_status": "official_journal_article",
+        "abstract": "<jats:title>Abstract</jats:title><jats:p>Although Artificial Intelligence (AI) projects are common and desired by many institutions and research teams, there are still relatively few success stories of AI in practical use for the Earth science community. Many AI practitioners in Earth science are trapped in the prototyping stage and their results have not yet been adopted by users. Many scientists are still hesitating to use AI in their research routine. This paper aims to capture the landscape of AI-powered geospatial data sciences by discussing the current and upcoming needs of the Earth and environmental community, such as what practical AI should look like, how to realize practical AI based on the current technical and data restrictions, and the expected outcome of AI projects and their long-term benefits and problems. This paper also discusses unavoidable changes in the near future concerning AI, such as the fast evolution of AI foundation models and AI laws, and how the Earth and environmental community should adapt to these changes. This paper provides an important reference to the geospatial data science community to adjust their research road maps, find best practices, boost the FAIRness (Findable, Accessible, Interoperable, and Reusable) aspects of AI research, and reasonably allocate human and computational resources to increase the practicality and efficiency of Earth AI research.</jats:p>",
+        "pub_date": "2024-12-01",
+        "preprint_posted_date": "",
+        "pub_date_basis": "Crossref published-print",
+        "pub_date_precision": "month_imputed",
+        "publisher": "Springer Science and Business Media LLC",
+        "funding_references": [
+          {
+            "DOI": "10.13039/100000001",
+            "name": "National Science Foundation",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "1947893"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "1947893"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100000001",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/100000001",
+            "name": "National Science Foundation",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "1947875"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "1947875"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100000001",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/100000001",
+            "name": "National Science Foundation",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "2117834"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "2117834"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100000001",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/100000104",
+            "name": "National Aeronautics and Space Administration",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "80NSSC21M0028"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "80NSSC21M0028"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100000104",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/100000192",
+            "name": "National Oceanic and Atmospheric Administration",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "NA22OAR4590512"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "NA22OAR4590512"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100000192",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          }
+        ],
+        "related_identifiers": {},
+        "attempts": [
+          {
+            "provider": "datacite",
+            "url": "https://api.datacite.org/dois/10.1007/s10596-024-10317-7",
+            "error": {
+              "kind": "http",
+              "code": 404
+            }
+          },
+          {
+            "provider": "crossref",
+            "url": "https://api.crossref.org/works/10.1007/s10596-024-10317-7",
+            "error": null
+          }
+        ]
+      },
+      "public_identity": {
+        "status": "NO_PUBLIC_IDENTITY_MATCH",
+        "reason": "NO_MATCH_IN_VERIFIED_PUBLIC_SNAPSHOT",
+        "matches": [],
+        "caveat": "Public snapshot only; private Hub decisions are not asserted.",
+        "noaa_ir_reach_check": {
+          "status": "VERIFIED_IR_URL_NOT_IN_PUBLIC_REACH",
+          "official_url": "https://repository.library.noaa.gov/view/noaa/66362",
+          "match_uid": null,
+          "match_detail_shard": null
+        }
+      },
+      "project_search_context_only": {
+        "award_context_only": "NA22OAR4590512",
+        "project_context_only": "",
+        "wpo_award_cue_not_proof": true,
+        "reason_for_review": "WPO-pattern award cited but exact funded project deliverable unverified"
+      },
+      "disposition": "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL",
+      "review_question": "Reviewer question: Is this independently published output a deliverable of SPARK primary award NA22OAR4590512 (rather than merely topically related), and if so which project parent should it use?",
+      "scout_inbox_status": "VALIDATED_INBOX_DRAFT_NOT_PRIVATE_HUB",
+      "published_scout_batch_path": null,
+      "eligible_for_new_reach_addition": "NOT_VERIFIED",
+      "private_hub_import": "NOT_VERIFIED",
+      "human_approval": "NOT_VERIFIED"
+    },
+    {
+      "doi": "10.1016/j.atmosenv.2021.118760",
+      "source_event_id": "0d270dea59ef7bbcac0d99a5",
+      "source_file": "scout-operations/historical-crossref-phase2/2026-11-06-2329ET-project-first-three-originals-screening.json",
+      "source_sha256": "65780c73eadd127ceb9ef74d11787f2838dcd7357f0dfe75d44b2e9565d5f211",
+      "official_metadata": {
+        "status": "ok",
+        "provider": "crossref",
+        "evidence": "https://api.crossref.org/works/10.1016/j.atmosenv.2021.118760",
+        "title": "Update of land use/land cover and soil texture for Brazil: Impact on WRF modeling results over São Paulo",
+        "creators": [
+          "Rizzieri Pedruzzi",
+          "Willian Lemker Andreão",
+          "Bok Haeng Baek",
+          "Anderson Paulo Hudke",
+          "Timothy William Glotfelty",
+          "Edmilson Dias de Freitas",
+          "Jorge Alberto Martins",
+          "Jared H. Bowden",
+          "Janaina Antonino Pinto",
+          "Marcelo Felix Alonso",
+          "Taciana Toledo de Almeida Abuquerque"
+        ],
+        "resource_type": "journal-article",
+        "publication_status": "official_journal_article",
+        "abstract": "",
+        "pub_date": "2022-01-01",
+        "preprint_posted_date": "",
+        "pub_date_basis": "Crossref published-print",
+        "pub_date_precision": "month_imputed",
+        "publisher": "Elsevier BV",
+        "funding_references": [
+          {
+            "DOI": "10.13039/501100003562",
+            "name": "Ministry of Environment",
+            "doi-asserted-by": "publisher",
+            "id": [
+              {
+                "id": "10.13039/501100003562",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/100018277",
+            "name": "Companhia Ambiental do Estado de Sao Paulo",
+            "doi-asserted-by": "publisher",
+            "id": [
+              {
+                "id": "10.13039/100018277",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/501100003621",
+            "name": "Ministry of Science, ICT and Future Planning",
+            "doi-asserted-by": "publisher",
+            "id": [
+              {
+                "id": "10.13039/501100003621",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/501100001459",
+            "name": "Ministry of Education - Singapore",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "2019000160007"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "2019000160007"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/501100001459",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/100000192",
+            "name": "National Oceanic and Atmospheric Administration",
+            "doi-asserted-by": "publisher",
+            "id": [
+              {
+                "id": "10.13039/100000192",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/501100003625",
+            "name": "Ministry of Health and Welfare",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "NRF-2017M3D8A1092022"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "NRF-2017M3D8A1092022"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/501100003625",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/501100001807",
+            "name": "Fundação de Amparo à Pesquisa do Estado de São Paulo",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "16/18438-0"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "16/18438-0"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/501100001807",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/100006808",
+            "name": "University of North Carolina",
+            "doi-asserted-by": "publisher",
+            "id": [
+              {
+                "id": "10.13039/100006808",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/501100003654",
+            "name": "Korea Environmental Industry and Technology Institute",
+            "doi-asserted-by": "publisher",
+            "id": [
+              {
+                "id": "10.13039/501100003654",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/501100002322",
+            "name": "Coordenação de Aperfeiçoamento de Pessoal de Nível Superior",
+            "doi-asserted-by": "publisher",
+            "id": [
+              {
+                "id": "10.13039/501100002322",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/501100003725",
+            "name": "National Research Foundation of Korea",
+            "doi-asserted-by": "publisher",
+            "id": [
+              {
+                "id": "10.13039/501100003725",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/501100002347",
+            "name": "Bundesministerium für Bildung und Forschung",
+            "doi-asserted-by": "publisher",
+            "id": [
+              {
+                "id": "10.13039/501100002347",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/100016485",
+            "name": "Gund Institute for Environment",
+            "doi-asserted-by": "publisher",
+            "id": [
+              {
+                "id": "10.13039/100016485",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/100013864",
+            "name": "NOAA Research",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "NA19OAR4590081"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "NA19OAR4590081"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100013864",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          }
+        ],
+        "related_identifiers": {},
+        "attempts": [
+          {
+            "provider": "datacite",
+            "url": "https://api.datacite.org/dois/10.1016/j.atmosenv.2021.118760",
+            "error": {
+              "kind": "http",
+              "code": 404
+            }
+          },
+          {
+            "provider": "crossref",
+            "url": "https://api.crossref.org/works/10.1016/j.atmosenv.2021.118760",
+            "error": null
+          }
+        ]
+      },
+      "public_identity": {
+        "status": "NO_PUBLIC_IDENTITY_MATCH",
+        "reason": "NO_MATCH_IN_VERIFIED_PUBLIC_SNAPSHOT",
+        "matches": [],
+        "caveat": "Public snapshot only; private Hub decisions are not asserted.",
+        "noaa_ir_reach_check": {
+          "status": "DOI_NOT_IN_VERIFIED_IR_INDEX_UNKNOWN",
+          "official_url": null,
+          "match_uid": null,
+          "match_detail_shard": null
+        }
+      },
+      "project_search_context_only": {
+        "award_context_only": "NA19OAR4590081",
+        "project_context_only": "",
+        "wpo_award_cue_not_proof": true,
+        "reason_for_review": "WPO-pattern award cited but exact funded project deliverable unverified"
+      },
+      "disposition": "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL",
+      "review_question": "Reviewer question: Is this independently published output a deliverable of SPARK primary award NA19OAR4590081 (rather than merely topically related), and if so which project parent should it use?",
+      "scout_inbox_status": "VALIDATED_INBOX_DRAFT_NOT_PRIVATE_HUB",
+      "published_scout_batch_path": null,
+      "eligible_for_new_reach_addition": "NOT_VERIFIED",
+      "private_hub_import": "NOT_VERIFIED",
+      "human_approval": "NOT_VERIFIED"
+    },
+    {
+      "doi": "10.1016/j.pdisas.2026.100696",
+      "source_event_id": "9ef5e7b4094b96a4d47a5866",
+      "source_file": "scout-operations/historical-crossref-phase2/2026-11-08-1127ET-occupational-extreme-weather-noaa-ir-identity-hold.json",
+      "source_sha256": "c42f82cf4e24218005b54d4a599df2a55f52e8f35b661476d032e1f38a871c91",
+      "official_metadata": {
+        "status": "ok",
+        "provider": "crossref",
+        "evidence": "https://api.crossref.org/works/10.1016/j.pdisas.2026.100696",
+        "title": "Extreme weather as an occupational hazard: Structural vulnerability among multilingual immigrant workers",
+        "creators": [
+          "Elisabet De Jesús-Otero",
+          "Joseph E. Trujillo-Falcón",
+          "Anthony L. Corrales",
+          "América R. Gaviria Pabón",
+          "Samuel T. Halvorson",
+          "Salvatore Callesano",
+          "Liam E. Llewellyn",
+          "Eduardo Muñoz Suárez"
+        ],
+        "resource_type": "journal-article",
+        "publication_status": "official_journal_article",
+        "abstract": "",
+        "pub_date": "2026-10-01",
+        "preprint_posted_date": "",
+        "pub_date_basis": "Crossref published-print",
+        "pub_date_precision": "month_imputed",
+        "publisher": "Elsevier BV",
+        "funding_references": [
+          {
+            "DOI": "10.13039/100000192",
+            "name": "National Oceanic and Atmospheric Administration",
+            "doi-asserted-by": "publisher",
+            "id": [
+              {
+                "id": "10.13039/100000192",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/100018606",
+            "name": "NOAA Weather Program Office",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "NA22OAR4590187"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "NA22OAR4590187"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100018606",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          }
+        ],
+        "related_identifiers": {},
+        "attempts": [
+          {
+            "provider": "datacite",
+            "url": "https://api.datacite.org/dois/10.1016/j.pdisas.2026.100696",
+            "error": {
+              "kind": "http",
+              "code": 404
+            }
+          },
+          {
+            "provider": "crossref",
+            "url": "https://api.crossref.org/works/10.1016/j.pdisas.2026.100696",
+            "error": null
+          }
+        ]
+      },
+      "public_identity": {
+        "status": "IN_PUBLIC_SCOUT_QUEUE",
+        "reason": "CONSISTENT_SCOUT_PUBLIC_MIRRORS",
+        "matches": [
+          {
+            "source": "SCOUT_PUBLISHED",
+            "identity": "2026-11-02-monthly-preprint-hold-001:8",
+            "title": "Extreme weather as an occupational hazard: Structural vulnerability among multilingual immigrant workers",
+            "location": "scout-discoveries/batches/2026-11-02-monthly-preprint-hold-001.csv:8",
+            "match_bases": [
+              "exact_doi",
+              "exact_url",
+              "normalized_title"
+            ]
+          },
+          {
+            "source": "SCOUT_INBOX",
+            "identity": "2026-11-01-monthly-fast-d987856c32ed45.csv:2",
+            "title": "Extreme weather as an occupational hazard: Structural vulnerability among multilingual immigrant workers",
+            "location": "scout-discoveries/inbox/2026-11-01-monthly-fast-d987856c32ed45.csv:2",
+            "match_bases": [
+              "exact_doi",
+              "exact_url",
+              "normalized_title"
+            ]
+          },
+          {
+            "source": "SCOUT_INBOX",
+            "identity": "2026-11-02-monthly-reviewer-story-parity-001.csv:9",
+            "title": "Extreme weather as an occupational hazard: Structural vulnerability among multilingual immigrant workers",
+            "location": "scout-discoveries/inbox/2026-11-02-monthly-reviewer-story-parity-001.csv:9",
+            "match_bases": [
+              "exact_doi",
+              "exact_url",
+              "normalized_title"
+            ]
+          }
+        ],
+        "caveat": "Public snapshot only; private Hub decisions are not asserted.",
+        "noaa_ir_reach_check": {
+          "status": "VERIFIED_IR_URL_NOT_IN_PUBLIC_REACH",
+          "official_url": "https://repository.library.noaa.gov/view/noaa/77174",
+          "match_uid": null,
+          "match_detail_shard": null
+        }
+      },
+      "project_search_context_only": {
+        "award_context_only": "NA22OAR4590187",
+        "project_context_only": "",
+        "wpo_award_cue_not_proof": true,
+        "reason_for_review": "WPO-pattern award cited but exact funded project deliverable unverified"
+      },
+      "disposition": "HOLD_ALREADY_IN_PUBLIC_REACH_OR_SCOUT",
+      "review_question": "Check exact DOI/title/NOAA IR canonical URL against verified complete REACH and Scout published/inbox index; independently confirm exact primary SPARK project and deliverable relationship before any public proposal.",
+      "scout_inbox_status": "NOT_STAGED",
+      "published_scout_batch_path": null,
+      "eligible_for_new_reach_addition": "NOT_VERIFIED",
+      "private_hub_import": "NOT_VERIFIED",
+      "human_approval": "NOT_VERIFIED"
+    },
+    {
+      "doi": "10.1016/j.softx.2024.101863",
+      "source_event_id": "f1d3551fe78dcea964c73c00",
+      "source_file": "scout-operations/historical-crossref-phase2/2026-11-06-2329ET-project-first-three-originals-screening.json",
+      "source_sha256": "65780c73eadd127ceb9ef74d11787f2838dcd7357f0dfe75d44b2e9565d5f211",
+      "official_metadata": {
+        "status": "ok",
+        "provider": "crossref",
+        "evidence": "https://api.crossref.org/works/10.1016/j.softx.2024.101863",
+        "title": "PyGeoweaver: Tangible workflow tool for enhancing scientific research productivity and FAIRness",
+        "creators": [
+          "Gokul Prathin",
+          "Ziheng Sun",
+          "Sanjana Achan"
+        ],
+        "resource_type": "journal-article",
+        "publication_status": "official_journal_article",
+        "abstract": "",
+        "pub_date": "2024-09-01",
+        "preprint_posted_date": "",
+        "pub_date_basis": "Crossref published-print",
+        "pub_date_precision": "month_imputed",
+        "publisher": "Elsevier BV",
+        "funding_references": [
+          {
+            "DOI": "10.13039/100000192",
+            "name": "National Oceanic and Atmospheric Administration",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "NA22OAR4590512"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "NA22OAR4590512"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100000192",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/100000104",
+            "name": "National Aeronautics and Space Administration",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "80NSSC21M0028"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "80NSSC21M0028"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100000104",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/100000001",
+            "name": "National Science Foundation",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "OAC-2117834",
+              "EAR-1947893",
+              "EAR-1947875"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "OAC-2117834",
+                  "EAR-1947893",
+                  "EAR-1947875"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100000001",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          }
+        ],
+        "related_identifiers": {},
+        "attempts": [
+          {
+            "provider": "datacite",
+            "url": "https://api.datacite.org/dois/10.1016/j.softx.2024.101863",
+            "error": {
+              "kind": "http",
+              "code": 404
+            }
+          },
+          {
+            "provider": "crossref",
+            "url": "https://api.crossref.org/works/10.1016/j.softx.2024.101863",
+            "error": null
+          }
+        ]
+      },
+      "public_identity": {
+        "status": "NO_PUBLIC_IDENTITY_MATCH",
+        "reason": "NO_MATCH_IN_VERIFIED_PUBLIC_SNAPSHOT",
+        "matches": [],
+        "caveat": "Public snapshot only; private Hub decisions are not asserted.",
+        "noaa_ir_reach_check": {
+          "status": "DOI_NOT_IN_VERIFIED_IR_INDEX_UNKNOWN",
+          "official_url": null,
+          "match_uid": null,
+          "match_detail_shard": null
+        }
+      },
+      "project_search_context_only": {
+        "award_context_only": "NA22OAR4590512",
+        "project_context_only": "",
+        "wpo_award_cue_not_proof": true,
+        "reason_for_review": "WPO-pattern award cited but exact funded project deliverable unverified"
+      },
+      "disposition": "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL",
+      "review_question": "Reviewer question: Is this independently published output a deliverable of SPARK primary award NA22OAR4590512 (rather than merely topically related), and if so which project parent should it use?",
+      "scout_inbox_status": "VALIDATED_INBOX_DRAFT_NOT_PRIVATE_HUB",
+      "published_scout_batch_path": null,
+      "eligible_for_new_reach_addition": "NOT_VERIFIED",
+      "private_hub_import": "NOT_VERIFIED",
+      "human_approval": "NOT_VERIFIED"
+    },
+    {
+      "doi": "10.1029/2026jd046327",
+      "source_event_id": "93117f244321521036114636",
+      "source_file": "scout-operations/historical-crossref-phase2/2026-11-08-2329ET-compound-heat-ozone-publisher-attribution.json",
+      "source_sha256": "d3a5391fdcf835a6174fa903a8e7b8bd36cdf526444f129e1cf47cc7c840dd39",
+      "official_metadata": {
+        "status": "ok",
+        "provider": "crossref",
+        "evidence": "https://api.crossref.org/works/10.1029/2026jd046327",
+        "title": "Meteorological and Emission Drivers of Compound Heat and Ozone Pollution Episodes in Oklahoma City During Periods Influenced by Atlantic Tropical Cyclones",
+        "creators": [
+          "Xiao‐Ming Hu",
+          "Chenghao Wang",
+          "Siqi Ma",
+          "Daniel Tong",
+          "Ming Xue",
+          "Adriana E. Larrea Valdivia"
+        ],
+        "resource_type": "journal-article",
+        "publication_status": "official_journal_article",
+        "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>\n                    Compound heat and ozone (O\n                    <jats:sub>3</jats:sub>\n                    ) pollution events are widespread and pose significant health risks in urban areas. In the Southern Great Plains (SGP), where heat waves are becoming more frequent and intense, these compound events represent a growing environmental and public health concern, underscoring the need for improved process‐based understanding to support effective risk assessment and mitigation. This study investigates the three severe O\n                    <jats:sub>3</jats:sub>\n                    pollution episodes recorded in Oklahoma City (OKC) since 2014–19 July 2018 (106 ppb), 15 June 2021 (93 ppb), and 6–7 August 2024 (86 ppb)—with a particular focus on the June 2021 event that coincided with a pronounced heat wave. Using high‐resolution WRF‐Chem simulations, we examine the formation mechanisms and identify key meteorological and emission‐related contributors to the episode. The episode developed under atypical summer conditions over the SGP, characterized by a frontal passage coincided with the evolution of a tropical storm over the Atlantic Ocean. TROPOMI‐based satellite observations reveal substantial power plant emissions in addition to urban emissions in the Tulsa region. Under persistent northeasterly winds, southwestward transport of pollutants from Tulsa on 14–15 June supplied additional pollutants to OKC. Meanwhile, the weak‐wind zone over OKC on 15 June, ahead of the advancing front, further favored pollutant accumulation and O\n                    <jats:sub>3</jats:sub>\n                    production. WRF‐Chem sensitivity experiments illustrate that total NO\n                    <jats:sub>x</jats:sub>\n                    emissions from the Tulsa area contributed ∼4–15 ppbv of surface O\n                    <jats:sub>3</jats:sub>\n                    in OKC on 15 June 2021, while power plants alone accounted for ∼2–6 ppbv, with contributions varying by location.\n                  </jats:p>",
+        "pub_date": "2026-09-16",
+        "preprint_posted_date": "",
+        "pub_date_basis": "Crossref published-print",
+        "pub_date_precision": "day",
+        "publisher": "American Geophysical Union (AGU)",
+        "funding_references": [
+          {
+            "DOI": "10.13039/501100020326",
+            "name": "Universidad Nacional de San Agustin de Arequipa",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "20163646499"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "20163646499"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/501100020326",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/100017437",
+            "name": "NASA Headquarters",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "80NSSC24K1056"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "80NSSC24K1056"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100017437",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/100000001",
+            "name": "National Science Foundation",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "2138259"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "2138259"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100000001",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/100000001",
+            "name": "National Science Foundation",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "2138286"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "2138286"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100000001",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/100000001",
+            "name": "National Science Foundation",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "2138307"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "2138307"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100000001",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/100000001",
+            "name": "National Science Foundation",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "2137603"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "2137603"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100000001",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/100000001",
+            "name": "National Science Foundation",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "2138296"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "2138296"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100000001",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/100018606",
+            "name": "NOAA Weather Program Office",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "NA22OAR4590512"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "NA22OAR4590512"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100018606",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          }
+        ],
+        "related_identifiers": {
+          "has-preprint": [
+            {
+              "id-type": "doi",
+              "id": "10.22541/essoar.15007742/v2",
+              "asserted-by": "object"
+            }
+          ]
+        },
+        "attempts": [
+          {
+            "provider": "datacite",
+            "url": "https://api.datacite.org/dois/10.1029/2026jd046327",
+            "error": {
+              "kind": "http",
+              "code": 404
+            }
+          },
+          {
+            "provider": "crossref",
+            "url": "https://api.crossref.org/works/10.1029/2026jd046327",
+            "error": null
+          }
+        ]
+      },
+      "public_identity": {
+        "status": "NO_PUBLIC_IDENTITY_MATCH",
+        "reason": "NO_MATCH_IN_VERIFIED_PUBLIC_SNAPSHOT",
+        "matches": [],
+        "caveat": "Public snapshot only; private Hub decisions are not asserted.",
+        "noaa_ir_reach_check": {
+          "status": "VERIFIED_IR_URL_NOT_IN_PUBLIC_REACH",
+          "official_url": "https://repository.library.noaa.gov/view/noaa/77328",
+          "match_uid": null,
+          "match_detail_shard": null
+        }
+      },
+      "project_search_context_only": {
+        "award_context_only": "NA22OAR4590512",
+        "project_context_only": "",
+        "wpo_award_cue_not_proof": true,
+        "reason_for_review": "WPO-pattern award cited but exact funded project deliverable unverified"
+      },
+      "disposition": "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL",
+      "review_question": "Reviewer question: Is this independently published output a deliverable of SPARK primary award NA22OAR4590512 (rather than merely topically related), and if so which project parent should it use?",
+      "scout_inbox_status": "READY_DEFERRED_REVIEWER_CAP",
+      "published_scout_batch_path": null,
+      "eligible_for_new_reach_addition": "NOT_VERIFIED",
+      "private_hub_import": "NOT_VERIFIED",
+      "human_approval": "NOT_VERIFIED"
+    },
+    {
+      "doi": "10.1088/2515-7620/aeaad2",
+      "source_event_id": "cd59e0e4544333837aafb097",
+      "source_file": "scout-operations/historical-crossref-phase2/2026-11-09-0441ET-sfs-western-pacific-cyclone-project-attribution.json",
+      "source_sha256": "55a005344ffc9235eb97aa5c796b4581c196a17f89359dca2d07857a1fb3b04e",
+      "official_metadata": {
+        "status": "ok",
+        "provider": "crossref",
+        "evidence": "https://api.crossref.org/works/10.1088/2515-7620/aeaad2",
+        "title": "Dynamical prediction of western North Pacific seasonal accumulated cyclone energy with experimental SFS reforecasts",
+        "creators": [
+          "Douglas Nedza",
+          "Bohua Huang",
+          "Jieshun Zhu"
+        ],
+        "resource_type": "journal-article",
+        "publication_status": "official_journal_article",
+        "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>The National Oceanic and Atmospheric Administration experimental seasonal forecast system (SFS) reforecasts, based on two versions of the unified forecast system (UFS), prototypes Prototype 8 and High-Resolution Prototype 3, are evaluated for skill in predicting western North Pacific (WNP) seasonal tropical cyclone (TC) activity over 40 years of April initialized seasonal reforecasts (1982–2021). TC events are identified using the TempestExtremes event tracking algorithm based on sea level pressure and mid-troposphere temperature fields. Dynamical forecasts using the identified TC events are skillful when estimating seasonal variations of accumulated cyclone energy (ACE), but are not skillful when forecasting the number of TC events. We assess the influence of the large-scale environment on observed and simulated TC activity. The relationship between the large-scale environment and ACE is consistent between observations and the SFS reforecasts, emphasizing the influence of El Niño–Southern Oscillation (ENSO) variations. In contrast, the large scale relationship differs for the number of TC events, with TC events in SFS reforecasts having a ‘too positive’ relationship with ENSO resulting in low forecast skill. This is because the SFS reforecasts underestimate the observed reduction (increase) of TC events in the southwest WNP during positive (negative) ENSO years. These results suggest that these UFS prototypes skillfully represent interannual variations in TC intensity, as represented by ACE, but may require improvement in their representation of weaker events and the TC-genesis-ENSO teleconnection to skillfully forecast TC frequency.</jats:p>",
+        "pub_date": "2026-10-01",
+        "preprint_posted_date": "",
+        "pub_date_basis": "Crossref published-print",
+        "pub_date_precision": "day",
+        "publisher": "IOP Publishing",
+        "funding_references": [
+          {
+            "name": "National Oceanic and Atmospheric Administration",
+            "award": [
+              "NA24OARX459C0015"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "NA24OARX459C0015"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "https://ror.org/02z5nhe81",
+                "id-type": "ROR",
+                "asserted-by": "crossref"
+              }
+            ]
+          }
+        ],
+        "related_identifiers": {},
+        "attempts": [
+          {
+            "provider": "datacite",
+            "url": "https://api.datacite.org/dois/10.1088/2515-7620/aeaad2",
+            "error": {
+              "kind": "http",
+              "code": 404
+            }
+          },
+          {
+            "provider": "crossref",
+            "url": "https://api.crossref.org/works/10.1088/2515-7620/aeaad2",
+            "error": null
+          }
+        ]
+      },
+      "public_identity": {
+        "status": "IN_PUBLIC_SCOUT_QUEUE",
+        "reason": "CONSISTENT_SCOUT_PUBLIC_MIRRORS",
+        "matches": [
+          {
+            "source": "SCOUT_PUBLISHED",
+            "identity": "2026-11-02-monthly-preprint-hold-001:5",
+            "title": "Dynamical prediction of western North Pacific seasonal accumulated cyclone energy with experimental SFS reforecasts",
+            "location": "scout-discoveries/batches/2026-11-02-monthly-preprint-hold-001.csv:5",
+            "match_bases": [
+              "exact_doi",
+              "exact_url",
+              "normalized_title"
+            ]
+          },
+          {
+            "source": "SCOUT_INBOX",
+            "identity": "2026-11-01-monthly-fast-936c21c3648bb0.csv:2",
+            "title": "Dynamical prediction of western North Pacific seasonal accumulated cyclone energy with experimental SFS reforecasts",
+            "location": "scout-discoveries/inbox/2026-11-01-monthly-fast-936c21c3648bb0.csv:2",
+            "match_bases": [
+              "exact_doi",
+              "exact_url",
+              "normalized_title"
+            ]
+          },
+          {
+            "source": "SCOUT_INBOX",
+            "identity": "2026-11-02-monthly-reviewer-story-parity-001.csv:6",
+            "title": "Dynamical prediction of western North Pacific seasonal accumulated cyclone energy with experimental SFS reforecasts",
+            "location": "scout-discoveries/inbox/2026-11-02-monthly-reviewer-story-parity-001.csv:6",
+            "match_bases": [
+              "exact_doi",
+              "exact_url",
+              "normalized_title"
+            ]
+          }
+        ],
+        "caveat": "Public snapshot only; private Hub decisions are not asserted.",
+        "noaa_ir_reach_check": {
+          "status": "VERIFIED_IR_URL_NOT_IN_PUBLIC_REACH",
+          "official_url": "https://repository.library.noaa.gov/view/noaa/76692",
+          "match_uid": null,
+          "match_detail_shard": null
+        }
+      },
+      "project_search_context_only": {
+        "award_context_only": "NA24OARX459C0015",
+        "project_context_only": "",
+        "wpo_award_cue_not_proof": true,
+        "reason_for_review": "WPO-pattern award cited but exact funded project deliverable unverified"
+      },
+      "disposition": "HOLD_ALREADY_IN_PUBLIC_REACH_OR_SCOUT",
+      "review_question": "Verify NA24OARX459C0015 against exact primary SPARK Award Number(s) and project deliverable scope; then check current full SHA-verified REACH/Scout identity index including official NOAA IR canonical URL before any public proposal.",
+      "scout_inbox_status": "NOT_STAGED",
+      "published_scout_batch_path": null,
+      "eligible_for_new_reach_addition": "NOT_VERIFIED",
+      "private_hub_import": "NOT_VERIFIED",
+      "human_approval": "NOT_VERIFIED"
+    },
+    {
+      "doi": "10.1109/past49659.2022.9975045",
+      "source_event_id": "ac875314ad34444257a4378e",
+      "source_file": "scout-operations/historical-crossref-phase2/2026-11-05-2033ET-apar-project-title-pilot-scope-check.json",
+      "source_sha256": "d212c7177ae54ba69135ef1d07deffb8d7619f63f33d94c0f704d849c7d53dfd",
+      "official_metadata": {
+        "status": "ok",
+        "provider": "crossref",
+        "evidence": "https://api.crossref.org/works/10.1109/past49659.2022.9975045",
+        "title": "Two-Way Pattern Synthesis for the Airborne Phased Array Radar (APAR)",
+        "creators": [
+          "Eric Loew",
+          "Randy L. Haupt"
+        ],
+        "resource_type": "proceedings-article",
+        "publication_status": "other_or_unverified",
+        "abstract": "",
+        "pub_date": "2022-10-11",
+        "preprint_posted_date": "",
+        "pub_date_basis": "Crossref published-print",
+        "pub_date_precision": "day",
+        "publisher": "IEEE",
+        "funding_references": [],
+        "related_identifiers": {},
+        "attempts": [
+          {
+            "provider": "datacite",
+            "url": "https://api.datacite.org/dois/10.1109/past49659.2022.9975045",
+            "error": {
+              "kind": "http",
+              "code": 404
+            }
+          },
+          {
+            "provider": "crossref",
+            "url": "https://api.crossref.org/works/10.1109/past49659.2022.9975045",
+            "error": null
+          }
+        ]
+      },
+      "public_identity": {
+        "status": "NO_PUBLIC_IDENTITY_MATCH",
+        "reason": "NO_MATCH_IN_VERIFIED_PUBLIC_SNAPSHOT",
+        "matches": [],
+        "caveat": "Public snapshot only; private Hub decisions are not asserted.",
+        "noaa_ir_reach_check": {
+          "status": "DOI_NOT_IN_VERIFIED_IR_INDEX_UNKNOWN",
+          "official_url": null,
+          "match_uid": null,
+          "match_detail_shard": null
+        }
+      },
+      "project_search_context_only": {
+        "award_context_only": "NA18OAR4590431",
+        "project_context_only": "2019 - 2020 Airborne Phased Array Radar (APAR)",
+        "wpo_award_cue_not_proof": true,
+        "reason_for_review": "WPO-pattern award cited but exact funded project deliverable unverified"
+      },
+      "disposition": "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL",
+      "review_question": "Reviewer question: Is this independently published output a deliverable of SPARK primary award NA18OAR4590431 (rather than merely topically related), and if so which project parent should it use?",
+      "scout_inbox_status": "READY_DEFERRED_REVIEWER_CAP",
       "published_scout_batch_path": null,
       "eligible_for_new_reach_addition": "NOT_VERIFIED",
       "private_hub_import": "NOT_VERIFIED",
@@ -124,7 +1333,9 @@
       },
       "project_search_context_only": {
         "award_context_only": "NA18OAR4590431",
-        "project_context_only": ""
+        "project_context_only": "",
+        "wpo_award_cue_not_proof": true,
+        "reason_for_review": "WPO-pattern award cited but exact funded project deliverable unverified"
       },
       "disposition": "HOLD_ALREADY_IN_PUBLIC_REACH_OR_SCOUT",
       "review_question": "Reviewer question: Is this independently published output a deliverable of SPARK primary award NA18OAR4590431 (rather than merely topically related), and if so which project parent should it use?",
