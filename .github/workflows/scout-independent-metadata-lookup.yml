@@ -74,6 +74,12 @@ jobs:
           assert all('artifact_scope' in r for r in x['github_records'])
           assert x['doi_metadata_memory_hits']+x['doi_metadata_network_attempts']==x['doi_count']
           assert all(r.get('metadata_observed_at') for r in x['doi_records'])
+          assert all((not r['metadata_memory_hit']) or
+                     r['metadata_memory_reason']=='VERIFIED_CACHED_OFFICIAL_METADATA'
+                     for r in x['doi_records'])
+          assert all((not r['metadata_memory_hit']) or
+                     r['metadata'].get('status') in ('ok','unavailable_or_not_found')
+                     for r in x['doi_records'])
           from pathlib import Path
           memory=json.loads(Path('scout-operations/research-memory/doi-cache-index.json').read_text())
           assert memory['schema']=='reach-scout-public-doi-research-memory-v1'
