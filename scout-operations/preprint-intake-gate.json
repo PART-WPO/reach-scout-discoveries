@@ -1,8 +1,56 @@
 {
   "schema": "reach-scout-preprint-intake-gate-v1",
-  "checked_at": "2026-11-09T19:33:15.421343+00:00",
+  "checked_at": "2026-11-09T19:44:07.127158+00:00",
   "policy": "All new publication proposals require registry check. A preprint DOI cannot be staged through ANY origin. Uncertain metadata remains on hold. Existing human decisions unchanged.",
   "checks": [
+    {
+      "path": "scout-discoveries/inbox/2026-11-09-human-project-398fe73f0c7f3ffa37.csv",
+      "sha256": "ff6c13168265415ad31251ae5cd37e4603a746c2b002c89407a6d4e977705c47",
+      "verdict": "eligible",
+      "rows": [
+        {
+          "doi": "10.1016/j.softx.2024.101863",
+          "status": "eligible",
+          "reason": "Crossref identifies an officially issued scholarly publication",
+          "evidence": [
+            "https://api.crossref.org/works/10.1016/j.softx.2024.101863",
+            "https://api.datacite.org/dois/10.1016/j.softx.2024.101863"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "scout-discoveries/inbox/2026-11-09-human-project-866c8052a22849b2de.csv",
+      "sha256": "af3c9bd5b16a32fa7d1299d8fb0ba7da480a094d667e77105af35ab74ab0fd9f",
+      "verdict": "eligible",
+      "rows": [
+        {
+          "doi": "10.1016/j.atmosenv.2021.118760",
+          "status": "eligible",
+          "reason": "Crossref identifies an officially issued scholarly publication",
+          "evidence": [
+            "https://api.crossref.org/works/10.1016/j.atmosenv.2021.118760",
+            "https://api.datacite.org/dois/10.1016/j.atmosenv.2021.118760"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "scout-discoveries/inbox/2026-11-09-human-project-b332d53770e8cbc1d4.csv",
+      "sha256": "78a0383516a63efc40aabe7bd0e05dae204b6c7e4cd691cb85c038464cd3885b",
+      "verdict": "eligible",
+      "rows": [
+        {
+          "doi": "10.1007/s10596-024-10317-7",
+          "status": "eligible",
+          "reason": "Crossref identifies an officially issued scholarly publication",
+          "evidence": [
+            "https://api.crossref.org/works/10.1007/s10596-024-10317-7",
+            "https://api.datacite.org/dois/10.1007/s10596-024-10317-7"
+          ]
+        }
+      ]
+    },
     {
       "path": "scout-discoveries/batches/2026-10-28-hourly-datacite-expansion-award-fixes-001.csv",
       "sha256": "8e9e9209202e507d6b91cc50714d10b01f19ade6b55e2d1816dd7bca1faffa09",
@@ -327,6 +375,6 @@
       ]
     }
   ],
-  "eligible_batches": 11,
+  "eligible_batches": 14,
   "held_batches": 3
 }
