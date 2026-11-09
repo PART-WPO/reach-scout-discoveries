@@ -132,6 +132,18 @@ class DecisionPipelineTests(unittest.TestCase):
         self.assertEqual(result["status"], "POSSIBLE_PUBLIC_REACH_MATCH")
         self.assertEqual(result["reason"], "MULTIPLE_REACH_IDENTITIES")
 
+    def test_scout_published_and_inbox_mirror_does_not_trigger_identity_hold(self):
+        rec = {"source": "SCOUT_PUBLISHED", "identity": "mirror-published",
+               "title": "In Scout", "location": "batches/mirror.csv",
+               "dois": ["10.1234/scout"], "urls": []}
+        self.index["records"].append(rec)
+        pos = len(self.index["records"])-1
+        self.index["keys"]["doi"]["10.1234/scout"].append(pos)
+        self.index["keys"]["title"]["in scout"].append(pos)
+        result = lookup(self.index, doi="10.1234/scout", title="In Scout")
+        self.assertEqual(result["status"], "IN_PUBLIC_SCOUT_QUEUE")
+        self.assertEqual(result["reason"], "CONSISTENT_SCOUT_PUBLIC_MIRRORS")
+
     def test_scout_queue_same_identifier_different_titles_requires_review(self):
         result = lookup(self.index, doi="10.1234/scout",
                         title="A Dataset Distinct from the Scout Publication")
