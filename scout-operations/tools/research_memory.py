@@ -191,6 +191,48 @@ def write_index(root=ROOT):
     return data
 
 
+AUTHOR_LEAD_PATH = "scout-operations/research-memory/public-author-20261109-leads.json"
+
+
+def historical_author_lead(root, doi):
+    """Historical research hint by exact DOI digest; never an approval decision."""
+    path = root / AUTHOR_LEAD_PATH
+    if not path.is_file():
+        return None
+    doc = json.loads(path.read_text(encoding="utf-8"))
+    if doc.get("schema") != "reach-scout-public-author-lead-memory-v1":
+        raise ValueError("Unrecognized public author-lead memory")
+    snapshots = doc.get("snapshots")
+    if not isinstance(snapshots, list) or len(snapshots) != 32:
+        raise ValueError("Missing historical DOI research cases")
+    keys = [v.get("key") for v in snapshots]
+    if len(set(keys)) != len(keys):
+        raise ValueError("Duplicated historical DOI memory key")
+    d = norm_doi(doi)
+    if not d:
+        return None
+    lookup_key = digest(d.encode("utf-8"))[:18]
+    candidates = [e for e in snapshots if e.get("key") == lookup_key]
+    if not candidates:
+        return None
+    e = candidates[0]
+    allowed = {"DEFER_OFF_TOPIC_RETAIN_LEAD", "OTHER_AWARD_BRIDGE_RESEARCH_ONLY",
+               "DEFER_METADATA_RETRY_OFF_TOPIC"}
+    if e.get("tier") not in allowed:
+        raise ValueError("Unknown archived public research disposition")
+    return {
+        "previous_research_tier": e["tier"],
+        "research_state": "HISTORICAL_LEAD_CONTEXT_ONLY",
+        "source_award": doc["source_pilot_award"],
+        "evidence_snapshot": str(doc["source_github_run"]),
+        "project_funding_verified": False,
+        "recheck_current_reach_identity": True,
+        "may_resume_undiscovered_related_outputs": True,
+        "automatic_rejection_or_staging": False,
+    }
+
+
+
 def cli():
     p = argparse.ArgumentParser()
     p.add_argument("--rebuild", action="store_true")
