@@ -1,36 +1,20 @@
 {
   "schema": "reach-scout-preprint-intake-gate-v1",
-  "checked_at": "2026-11-09T20:35:05.311949+00:00",
+  "checked_at": "2026-11-09T20:35:54.172997+00:00",
   "policy": "All new publication proposals require registry check. A preprint DOI cannot be staged through ANY origin. Uncertain metadata remains on hold. Existing human decisions unchanged.",
   "checks": [
     {
-      "path": "scout-discoveries/inbox/2026-11-09-human-project-8963668e6a0f98ac1c.csv",
-      "sha256": "731f064e145a731d3838ef77adb62405e6932bf9cd10caddc0cc2623bc8994f3",
+      "path": "scout-discoveries/inbox/2026-11-09-human-project-e8ae57179ced9c8d19.csv",
+      "sha256": "ff8f5e767a561ef9da03013ca008bab2976b423532166cfe80a56504b0e40769",
       "verdict": "eligible",
       "rows": [
         {
-          "doi": "10.1029/2026jd046327",
+          "doi": "10.1126/sciadv.aee4171",
           "status": "eligible",
           "reason": "Crossref identifies an officially issued scholarly publication",
           "evidence": [
-            "https://api.crossref.org/works/10.1029/2026jd046327",
-            "https://api.datacite.org/dois/10.1029/2026jd046327"
-          ]
-        }
-      ]
-    },
-    {
-      "path": "scout-discoveries/inbox/2026-11-09-human-project-ec8541bda93af057fc.csv",
-      "sha256": "d3387f36e5bac7993a4cbb153ef2496349080a0d682f447f04c8c2409f8cca8b",
-      "verdict": "eligible",
-      "rows": [
-        {
-          "doi": "10.1109/past49659.2022.9975045",
-          "status": "eligible",
-          "reason": "Crossref identifies an officially issued scholarly publication",
-          "evidence": [
-            "https://api.crossref.org/works/10.1109/past49659.2022.9975045",
-            "https://api.datacite.org/dois/10.1109/past49659.2022.9975045"
+            "https://api.crossref.org/works/10.1126/sciadv.aee4171",
+            "https://api.datacite.org/dois/10.1126/sciadv.aee4171"
           ]
         }
       ]
@@ -359,6 +343,6 @@
       ]
     }
   ],
-  "eligible_batches": 13,
+  "eligible_batches": 12,
   "held_batches": 3
 }
