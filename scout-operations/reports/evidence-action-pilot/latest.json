@@ -1,0 +1,3349 @@
+{
+  "active_followup_preview": [
+    {
+      "evidence_note_paths": [
+        "scout-operations/historical-crossref-phase2/2026-11-05-2131ET-wofs-project-title-pilot-identity-funding-hold.json"
+      ],
+      "identity": "doi:10.1175/waf-d-22-0056.1",
+      "next_action": "Retry the specific official DOI registry/publisher endpoint once under recovery backoff; preserve an access hold if unavailable",
+      "owner": "EXACT_DOI_METADATA_RECOVERY",
+      "recommended_disposition": "DOI_METADATA_RECOVERY_ONLY"
+    },
+    {
+      "evidence_note_paths": [
+        "scout-operations/historical-crossref-phase2/2026-11-05-0233ET-gfdl-spear-cold-extremes-evidence.json",
+        "scout-operations/historical-crossref-phase2/2026-11-05-0324ET-gfdl-spear-award-scope-followup.json"
+      ],
+      "identity": "doi:10.1007/s00382-022-06655-w",
+      "next_action": "Ask whether 10.1007/s00382-022-06655-w is an output of the exact primary WPO SPARK project; present existing source URLs and disagreement, without reviewer justification requirement",
+      "owner": "HUMAN_PROJECT_ASSESSMENT",
+      "recommended_disposition": "BOUNDED_HUMAN_PROJECT_QUESTION"
+    },
+    {
+      "evidence_note_paths": [
+        "scout-operations/historical-crossref-phase2/2026-11-05-2033ET-apar-project-title-pilot-scope-check.json",
+        "scout-operations/historical-crossref-phase2/2026-11-05-2231ET-apar-radarconf-official-program-followup.json"
+      ],
+      "identity": "doi:10.1109/radarconf2248738.2022.9764246",
+      "next_action": "Ask whether 10.1109/radarconf2248738.2022.9764246 is an output of the exact primary WPO SPARK project; present existing source URLs and disagreement, without reviewer justification requirement",
+      "owner": "HUMAN_PROJECT_ASSESSMENT",
+      "recommended_disposition": "BOUNDED_HUMAN_PROJECT_QUESTION"
+    },
+    {
+      "evidence_note_paths": [
+        "scout-operations/historical-crossref-phase2/2026-11-07-1430ET-publisher-award-scope-oklahoma-ozone.json",
+        "scout-operations/historical-crossref-phase2/2026-11-08-2329ET-compound-heat-ozone-publisher-attribution.json"
+      ],
+      "identity": "doi:10.1029/2026jd046327",
+      "next_action": "Verify publication/release status from official DOI registry and publisher; if preprint, route monthly watchlist",
+      "owner": "SCOUT_BOUNDED_RESEARCH",
+      "recommended_disposition": "TARGETED_OFFICIAL_PUBLICATION_CHECK"
+    },
+    {
+      "evidence_note_paths": [
+        "scout-operations/historical-crossref-phase2/2026-11-07-1430ET-publisher-award-scope-great-lakes-snow.json"
+      ],
+      "identity": "doi:10.1029/2026jd046349",
+      "next_action": "Verify publication/release status from official DOI registry and publisher; if preprint, route monthly watchlist",
+      "owner": "SCOUT_BOUNDED_RESEARCH",
+      "recommended_disposition": "TARGETED_OFFICIAL_PUBLICATION_CHECK"
+    },
+    {
+      "evidence_note_paths": [
+        "scout-operations/historical-crossref-phase2/2026-11-05-1226ET-activated-carbon-primary-funding-contradiction.json"
+      ],
+      "identity": "doi:10.3390/c4040066",
+      "next_action": "Verify publication/release status from official DOI registry and publisher; if preprint, route monthly watchlist",
+      "owner": "SCOUT_BOUNDED_RESEARCH",
+      "recommended_disposition": "TARGETED_OFFICIAL_PUBLICATION_CHECK"
+    }
+  ],
+  "annotated_decision_cases_available": 19,
+  "cases": [
+    {
+      "compiled_decision": {
+        "decision_is_research_route_only": true,
+        "decision_reason": "Preprint is not eligible for new-output staging",
+        "formal_original_completed": false,
+        "human_reviewer_approval": false,
+        "next_action": "Monitor official published-version DOI(s) on monthly watchlist; independently screen any final DOI",
+        "owner": "MONTHLY_WATCHLIST",
+        "private_hub_write": false,
+        "public_proposal_created": false,
+        "recommended_disposition": "PREPRINT_MONTHLY_WATCH",
+        "reopen_or_finish_trigger": "Official published version or corrected source publication status",
+        "separate_expansion_completed": false
+      },
+      "evaluation": {
+        "ambiguous_identity": false,
+        "bounded_human_referral_evidence": false,
+        "contradictory_project_evidence": false,
+        "documented_source_claims": {
+          "metadata_complete_claim": false,
+          "missing_project_proof_claim": false,
+          "official_publication_claim": false,
+          "preprint_claim": true,
+          "primary_spark_claim": false,
+          "project_conflict_claim": false,
+          "same_project_claim": false,
+          "technical_access_failure_claim": false
+        },
+        "doi": "10.1002/essoar.10504829.1",
+        "gates": {
+          "contradictions": "NOT_FOUND_IN_STRUCTURED_RESEARCH_NOT_A_NEGATIVE_PROOF",
+          "identity": "SCREENED_NEEDS_FINAL_VERSION_AND_SECONDARY_LINK_CHECK",
+          "publication": "PREPRINT_NOT_ELIGIBLE",
+          "related_output_scope": "SEED_ORIGINAL_EXPANSION_REMAINS_SEPARATE",
+          "required_metadata": "INCOMPLETE_OR_NOT_VERIFIED",
+          "same_project_wpo_funding": "EXACT_PRIMARY_PROJECT_PROOF_MISSING",
+          "technical": "NO_TECHNICAL_HOLD_RECORDED"
+        },
+        "note_event_count": 3,
+        "preprint": true,
+        "primary_project_supported_by_prior_evidence": false,
+        "prior_dispositions": [
+          "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+          "PREPRINT_MONTHLY_WATCH"
+        ],
+        "prior_research_budget_exhausted": false,
+        "prior_research_rounds": 1,
+        "prior_secondary_identity_checked": false,
+        "public_identity": "PREPRINT_WATCHLIST_HOLD",
+        "public_no_action": false,
+        "public_recorded_statuses": [
+          "not_verified"
+        ],
+        "publicly_staged": false,
+        "published_claim": false,
+        "source_note_sha256": [
+          {
+            "event_id": "4c6786815b8846bac4602334",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-05-0628ET-essoar-10504829-preprint-status-evidence.json",
+            "sha256": "df43b71c551314c6e254936374b118d131093b95781871a8e22f892f4b0c33cb"
+          },
+          {
+            "event_id": "b17c0745a9ce03c51e3e17d5",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-05-0732ET-essoar-10504829-author-cv-version-followup.json",
+            "sha256": "c4d13e86da0973d842b82e8d388e2e62424d3cd7c4b0c9d3e3b342ed6191266a"
+          },
+          {
+            "event_id": "cf0766e4f9051077a52234a6",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-05-1834ET-tornado-infrasound-preprint-conference-distinct-source-followup.json",
+            "sha256": "a066399203990024aed003072083d7626ae59d3e6fae3c77b17b458a0e33db25"
+          }
+        ],
+        "source_url_count": 3,
+        "source_url_pointers": [
+          "https://d197for5662m48.cloudfront.net/documents/publicationstatus/103965/preprint_pdf/cf2d1864d8dda72f5a5efec9afc58950.pdf",
+          "https://studio.m-anage.com/agu/fm20/webprogram/Paper738390.html",
+          "https://www.flowphysicslab.org/wp-content/uploads/2024/03/Elbing_CV.pdf"
+        ],
+        "technical_hold": false,
+        "verified_public_reach": false
+      },
+      "existing_reviewer_status_unchanged": true,
+      "identity": "doi:10.1002/essoar.10504829.1",
+      "independent_critique": {
+        "adversarial_gate_checks_passed": true,
+        "blocking_safety_issues": [],
+        "grant_clue_or_author_overlap_never_confirms_funding": true,
+        "missing_for_autonomous_reviewer_handoff": [
+          "LIVE_SAME_PROJECT_WPO_FUNDING",
+          "OFFICIAL_RELEASE",
+          "SECONDARY_IDENTITY_CHECK",
+          "COMPLETE_METADATA"
+        ],
+        "official_metadata_pointer_not_current_without_recheck": true,
+        "private_hub_delivery_not_inferred": true
+      },
+      "latest_recorded_disposition_unchanged": "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+      "output_kind": "DOI",
+      "read_only": true,
+      "source_recorded_dispositions": [
+        "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+        "PREPRINT_MONTHLY_WATCH"
+      ]
+    },
+    {
+      "compiled_decision": {
+        "decision_is_research_route_only": true,
+        "decision_reason": "Current public source verifies the existing REACH identity",
+        "formal_original_completed": false,
+        "human_reviewer_approval": false,
+        "next_action": "Do not propose this original again; separately explore relevant project-linked datasets, code or articles",
+        "owner": "SCOUT_EXPANSION",
+        "private_hub_write": false,
+        "public_proposal_created": false,
+        "recommended_disposition": "REUSE_EXISTING_REACH_IDENTITY_KEEP_EXPANSION",
+        "reopen_or_finish_trigger": "New related-output source evidence or a changed public identity",
+        "separate_expansion_completed": false
+      },
+      "evaluation": {
+        "ambiguous_identity": false,
+        "bounded_human_referral_evidence": false,
+        "contradictory_project_evidence": false,
+        "documented_source_claims": {
+          "metadata_complete_claim": false,
+          "missing_project_proof_claim": false,
+          "official_publication_claim": false,
+          "preprint_claim": false,
+          "primary_spark_claim": false,
+          "project_conflict_claim": false,
+          "same_project_claim": false,
+          "technical_access_failure_claim": false
+        },
+        "doi": "10.1002/essoar.10507067.1",
+        "gates": {
+          "contradictions": "NOT_FOUND_IN_STRUCTURED_RESEARCH_NOT_A_NEGATIVE_PROOF",
+          "identity": "ALREADY_IN_REACH",
+          "publication": "OFFICIAL_RELEASE_NOT_VERIFIED",
+          "related_output_scope": "SEED_ORIGINAL_EXPANSION_REMAINS_SEPARATE",
+          "required_metadata": "INCOMPLETE_OR_NOT_VERIFIED",
+          "same_project_wpo_funding": "EXACT_PRIMARY_PROJECT_PROOF_MISSING",
+          "technical": "NO_TECHNICAL_HOLD_RECORDED"
+        },
+        "note_event_count": 4,
+        "preprint": true,
+        "primary_project_supported_by_prior_evidence": false,
+        "prior_dispositions": [
+          "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+          "PROJECT_EVIDENCE_HOLD"
+        ],
+        "prior_research_budget_exhausted": true,
+        "prior_research_rounds": 2,
+        "prior_secondary_identity_checked": false,
+        "public_identity": "VERIFIED_EXISTING_PUBLIC_REACH",
+        "public_no_action": false,
+        "public_recorded_statuses": [
+          "not_verified"
+        ],
+        "publicly_staged": false,
+        "published_claim": false,
+        "source_note_sha256": [
+          {
+            "event_id": "257771a53fe3507dd0c58008",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-05-0828ET-gulf-stream-essoar-final-lead.json",
+            "sha256": "0a7017ece59a4beeb42c33f9057c56c189c42672e453d832f3160e05002c24f9"
+          },
+          {
+            "event_id": "b842049ff55098aefbeaef81",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-05-0930ET-gulf-stream-exact-reach-doi-crosscheck.json",
+            "sha256": "a082620cc45fe8456f2ee87152e6619fd012064697c41430fed56b59ceb11d15"
+          },
+          {
+            "event_id": "c5d69cc936b462a9e53c2137",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-05-1426ET-gulf-stream-publisher-data-availability-seed-expansion.json",
+            "sha256": "127ad0556d44127549399d34f014ca9bffbe7a108cc0b17766953d9f21ee4f30"
+          },
+          {
+            "event_id": "94e02ca10b89338b18a9af4f",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-05-1733ET-gulf-stream-preprint-published-data-availability-followup.json",
+            "sha256": "2cb0602241d67153e4665ca478c558837c02087fd0b133dda4628d32adb8fde0"
+          }
+        ],
+        "source_url_count": 9,
+        "source_url_pointers": [
+          "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021GL096709",
+          "https://d197for5662m48.cloudfront.net/documents/publicationstatus/106421/preprint_pdf/5e98e62837db71d99a7bdadbc45fc1a6.pdf",
+          "https://impacts.ucar.edu/en/publications/decadal-variability-of-southeast-us-rainfall-in-an-eddying-global/",
+          "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/details/part-052.csv",
+          "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/manifest.json",
+          "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-operations/historical-crossref-phase2/2026-11-05-0828ET-gulf-stream-essoar-final-lead.json",
+          "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-operations/historical-crossref-screening/actionable-routing.json",
+          "https://repository.library.noaa.gov/view/noaa/43170",
+          "https://repository.library.noaa.gov/view/noaa/43170/noaa_43170_DS1.pdf"
+        ],
+        "technical_hold": false,
+        "verified_public_reach": true
+      },
+      "existing_reviewer_status_unchanged": true,
+      "identity": "doi:10.1002/essoar.10507067.1",
+      "independent_critique": {
+        "adversarial_gate_checks_passed": true,
+        "blocking_safety_issues": [],
+        "grant_clue_or_author_overlap_never_confirms_funding": true,
+        "missing_for_autonomous_reviewer_handoff": [
+          "LIVE_SAME_PROJECT_WPO_FUNDING",
+          "OFFICIAL_RELEASE",
+          "SECONDARY_IDENTITY_CHECK",
+          "COMPLETE_METADATA"
+        ],
+        "official_metadata_pointer_not_current_without_recheck": true,
+        "private_hub_delivery_not_inferred": true
+      },
+      "latest_recorded_disposition_unchanged": "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+      "output_kind": "DOI",
+      "read_only": true,
+      "source_recorded_dispositions": [
+        "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+        "PROJECT_EVIDENCE_HOLD"
+      ]
+    },
+    {
+      "compiled_decision": {
+        "decision_is_research_route_only": true,
+        "decision_reason": "Preprint is not eligible for new-output staging",
+        "formal_original_completed": false,
+        "human_reviewer_approval": false,
+        "next_action": "Monitor official published-version DOI(s) on monthly watchlist; independently screen any final DOI",
+        "owner": "MONTHLY_WATCHLIST",
+        "private_hub_write": false,
+        "public_proposal_created": false,
+        "recommended_disposition": "PREPRINT_MONTHLY_WATCH",
+        "reopen_or_finish_trigger": "Official published version or corrected source publication status",
+        "separate_expansion_completed": false
+      },
+      "evaluation": {
+        "ambiguous_identity": false,
+        "bounded_human_referral_evidence": false,
+        "contradictory_project_evidence": false,
+        "documented_source_claims": {
+          "metadata_complete_claim": false,
+          "missing_project_proof_claim": false,
+          "official_publication_claim": false,
+          "preprint_claim": false,
+          "primary_spark_claim": false,
+          "project_conflict_claim": false,
+          "same_project_claim": false,
+          "technical_access_failure_claim": false
+        },
+        "doi": "10.1002/essoar.10507281.1",
+        "gates": {
+          "contradictions": "NOT_FOUND_IN_STRUCTURED_RESEARCH_NOT_A_NEGATIVE_PROOF",
+          "identity": "SCREENED_NEEDS_FINAL_VERSION_AND_SECONDARY_LINK_CHECK",
+          "publication": "PREPRINT_NOT_ELIGIBLE",
+          "related_output_scope": "SEED_ORIGINAL_EXPANSION_REMAINS_SEPARATE",
+          "required_metadata": "INCOMPLETE_OR_NOT_VERIFIED",
+          "same_project_wpo_funding": "EXACT_PRIMARY_PROJECT_PROOF_MISSING",
+          "technical": "NO_TECHNICAL_HOLD_RECORDED"
+        },
+        "note_event_count": 4,
+        "preprint": true,
+        "primary_project_supported_by_prior_evidence": false,
+        "prior_dispositions": [
+          "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+          "PROJECT_EVIDENCE_HOLD"
+        ],
+        "prior_research_budget_exhausted": true,
+        "prior_research_rounds": 2,
+        "prior_secondary_identity_checked": false,
+        "public_identity": "PREPRINT_WATCHLIST_HOLD",
+        "public_no_action": false,
+        "public_recorded_statuses": [
+          "not_verified"
+        ],
+        "publicly_staged": false,
+        "published_claim": false,
+        "source_note_sha256": [
+          {
+            "event_id": "0208185a7cbc4ca07d225344",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-04-2129ET-essoar-10507281-research-evidence.json",
+            "sha256": "cc021c84dc651c5c83c74a7defc483b435acc4a166a5124e1396f91fe9d3713f"
+          },
+          {
+            "event_id": "f54d0a1f94b2df4a4adc0ea0",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-04-2232ET-essoar-10507281-followup.json",
+            "sha256": "5a6a78403edf1d2f874c5e4e8a4f5ef4fbb277905ffa3dba8fa6cf198264864f"
+          },
+          {
+            "event_id": "179f5ccad96a1b43c26bf204",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-04-2330ET-essoar-10507281-publisher-assets-followup.json",
+            "sha256": "2d7337d9ae65ceeba88c05ff56ea579e8b1b06d222960f06c173510f25332ed3"
+          },
+          {
+            "event_id": "e7f41df6004ceb1c7b228141",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-05-0024ET-essoar-10507281-manuscript-crosscheck.json",
+            "sha256": "c362b411416bca899fa37a8279f95736ed7ad7d503d7503d3a2cba2b9f03a402"
+          }
+        ],
+        "source_url_count": 3,
+        "source_url_pointers": [
+          "https://egusphere.copernicus.org/preprints/2022/egusphere-2022-52/egusphere-2022-52-manuscript-version3.pdf",
+          "https://hess.copernicus.org/articles/26/3941/2022/",
+          "https://hess.copernicus.org/articles/26/3941/2022/hess-26-3941-2022-assets.html"
+        ],
+        "technical_hold": false,
+        "verified_public_reach": false
+      },
+      "existing_reviewer_status_unchanged": true,
+      "identity": "doi:10.1002/essoar.10507281.1",
+      "independent_critique": {
+        "adversarial_gate_checks_passed": true,
+        "blocking_safety_issues": [],
+        "grant_clue_or_author_overlap_never_confirms_funding": true,
+        "missing_for_autonomous_reviewer_handoff": [
+          "LIVE_SAME_PROJECT_WPO_FUNDING",
+          "OFFICIAL_RELEASE",
+          "SECONDARY_IDENTITY_CHECK",
+          "COMPLETE_METADATA"
+        ],
+        "official_metadata_pointer_not_current_without_recheck": true,
+        "private_hub_delivery_not_inferred": true
+      },
+      "latest_recorded_disposition_unchanged": "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+      "output_kind": "DOI",
+      "read_only": true,
+      "source_recorded_dispositions": [
+        "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+        "PROJECT_EVIDENCE_HOLD"
+      ]
+    },
+    {
+      "compiled_decision": {
+        "decision_is_research_route_only": true,
+        "decision_reason": "Prior source-specific project evidence hold is unresolved",
+        "formal_original_completed": false,
+        "human_reviewer_approval": false,
+        "next_action": "Preserve the lead without repeating generic searches; reopen only for a new exact primary SPARK project/output funding source",
+        "owner": "SCOUT_ON_NEW_EVIDENCE",
+        "private_hub_write": false,
+        "public_proposal_created": false,
+        "recommended_disposition": "BOUNDED_PROJECT_EVIDENCE_HOLD",
+        "reopen_or_finish_trigger": "New project-specific evidence, verified human instruction, or changed DOI identity",
+        "separate_expansion_completed": false
+      },
+      "evaluation": {
+        "ambiguous_identity": false,
+        "bounded_human_referral_evidence": false,
+        "contradictory_project_evidence": false,
+        "documented_source_claims": {
+          "metadata_complete_claim": false,
+          "missing_project_proof_claim": false,
+          "official_publication_claim": false,
+          "preprint_claim": false,
+          "primary_spark_claim": false,
+          "project_conflict_claim": false,
+          "same_project_claim": false,
+          "technical_access_failure_claim": false
+        },
+        "doi": "10.1002/jwmg.732",
+        "gates": {
+          "contradictions": "NOT_FOUND_IN_STRUCTURED_RESEARCH_NOT_A_NEGATIVE_PROOF",
+          "identity": "SCREENED_NEEDS_FINAL_VERSION_AND_SECONDARY_LINK_CHECK",
+          "publication": "OFFICIAL_RELEASE_NOT_VERIFIED",
+          "related_output_scope": "SEED_ORIGINAL_EXPANSION_REMAINS_SEPARATE",
+          "required_metadata": "INCOMPLETE_OR_NOT_VERIFIED",
+          "same_project_wpo_funding": "EXACT_PRIMARY_PROJECT_PROOF_MISSING",
+          "technical": "NO_TECHNICAL_HOLD_RECORDED"
+        },
+        "note_event_count": 1,
+        "preprint": false,
+        "primary_project_supported_by_prior_evidence": false,
+        "prior_dispositions": [
+          "PROJECT_EVIDENCE_HOLD"
+        ],
+        "prior_research_budget_exhausted": false,
+        "prior_research_rounds": 1,
+        "prior_secondary_identity_checked": false,
+        "public_identity": "PUBLIC_SCREEN_COMPLETED_NOT_NEW_OUTPUT_PROOF",
+        "public_no_action": false,
+        "public_recorded_statuses": [
+          "not_verified"
+        ],
+        "publicly_staged": false,
+        "published_claim": false,
+        "source_note_sha256": [
+          {
+            "event_id": "2f3d6a1aba42c6c873dbbe7b",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-06-2032ET-montana-wildlife-primary-award-evidence-hold.json",
+            "sha256": "ceef48c1524009d0d809b6fe76b6c1e92ecf2041b4654bfaaad80beaf00668fd"
+          }
+        ],
+        "source_url_count": 2,
+        "source_url_pointers": [
+          "https://umimpact.umt.edu/en/publications/the-montana-deer-and-elk-hunting-population-the-importance-of-coh/",
+          "https://wildlife.onlinelibrary.wiley.com/doi/10.1002/jwmg.732"
+        ],
+        "technical_hold": false,
+        "verified_public_reach": false
+      },
+      "existing_reviewer_status_unchanged": true,
+      "identity": "doi:10.1002/jwmg.732",
+      "independent_critique": {
+        "adversarial_gate_checks_passed": true,
+        "blocking_safety_issues": [],
+        "grant_clue_or_author_overlap_never_confirms_funding": true,
+        "missing_for_autonomous_reviewer_handoff": [
+          "LIVE_SAME_PROJECT_WPO_FUNDING",
+          "OFFICIAL_RELEASE",
+          "SECONDARY_IDENTITY_CHECK",
+          "COMPLETE_METADATA"
+        ],
+        "official_metadata_pointer_not_current_without_recheck": true,
+        "private_hub_delivery_not_inferred": true
+      },
+      "latest_recorded_disposition_unchanged": "PROJECT_EVIDENCE_HOLD",
+      "output_kind": "DOI",
+      "read_only": true,
+      "source_recorded_dispositions": [
+        "PROJECT_EVIDENCE_HOLD"
+      ]
+    },
+    {
+      "compiled_decision": {
+        "decision_is_research_route_only": true,
+        "decision_reason": "Prior source-specific project evidence hold is unresolved",
+        "formal_original_completed": false,
+        "human_reviewer_approval": false,
+        "next_action": "Preserve the lead without repeating generic searches; reopen only for a new exact primary SPARK project/output funding source",
+        "owner": "SCOUT_ON_NEW_EVIDENCE",
+        "private_hub_write": false,
+        "public_proposal_created": false,
+        "recommended_disposition": "BOUNDED_PROJECT_EVIDENCE_HOLD",
+        "reopen_or_finish_trigger": "New project-specific evidence, verified human instruction, or changed DOI identity",
+        "separate_expansion_completed": false
+      },
+      "evaluation": {
+        "ambiguous_identity": false,
+        "bounded_human_referral_evidence": false,
+        "contradictory_project_evidence": false,
+        "documented_source_claims": {
+          "metadata_complete_claim": false,
+          "missing_project_proof_claim": false,
+          "official_publication_claim": false,
+          "preprint_claim": false,
+          "primary_spark_claim": false,
+          "project_conflict_claim": false,
+          "same_project_claim": false,
+          "technical_access_failure_claim": false
+        },
+        "doi": "10.1002/qj.5049",
+        "gates": {
+          "contradictions": "NOT_FOUND_IN_STRUCTURED_RESEARCH_NOT_A_NEGATIVE_PROOF",
+          "identity": "SCREENED_NEEDS_FINAL_VERSION_AND_SECONDARY_LINK_CHECK",
+          "publication": "OFFICIAL_RELEASE_NOT_VERIFIED",
+          "related_output_scope": "SEED_ORIGINAL_EXPANSION_REMAINS_SEPARATE",
+          "required_metadata": "INCOMPLETE_OR_NOT_VERIFIED",
+          "same_project_wpo_funding": "EXACT_PRIMARY_PROJECT_PROOF_MISSING",
+          "technical": "NO_TECHNICAL_HOLD_RECORDED"
+        },
+        "note_event_count": 1,
+        "preprint": false,
+        "primary_project_supported_by_prior_evidence": false,
+        "prior_dispositions": [
+          "PROJECT_EVIDENCE_HOLD"
+        ],
+        "prior_research_budget_exhausted": false,
+        "prior_research_rounds": 0,
+        "prior_secondary_identity_checked": false,
+        "public_identity": "PUBLIC_SCREEN_COMPLETED_NOT_NEW_OUTPUT_PROOF",
+        "public_no_action": false,
+        "public_recorded_statuses": [
+          "not_verified"
+        ],
+        "publicly_staged": false,
+        "published_claim": false,
+        "source_note_sha256": [
+          {
+            "event_id": "600c05ae9a8b7f8a7444d8c7",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-06-2125ET-ar-recon-drifter-publisher-funding-scope-hold.json",
+            "sha256": "3b099258bd87f8f5c5f7fa5456a2c207632aff37e5e7694076464fac433f39fb"
+          }
+        ],
+        "source_url_count": 1,
+        "source_url_pointers": [
+          "https://rmets.onlinelibrary.wiley.com/doi/10.1002/qj.5049"
+        ],
+        "technical_hold": false,
+        "verified_public_reach": false
+      },
+      "existing_reviewer_status_unchanged": true,
+      "identity": "doi:10.1002/qj.5049",
+      "independent_critique": {
+        "adversarial_gate_checks_passed": true,
+        "blocking_safety_issues": [],
+        "grant_clue_or_author_overlap_never_confirms_funding": true,
+        "missing_for_autonomous_reviewer_handoff": [
+          "LIVE_SAME_PROJECT_WPO_FUNDING",
+          "OFFICIAL_RELEASE",
+          "SECONDARY_IDENTITY_CHECK",
+          "COMPLETE_METADATA"
+        ],
+        "official_metadata_pointer_not_current_without_recheck": true,
+        "private_hub_delivery_not_inferred": true
+      },
+      "latest_recorded_disposition_unchanged": "PROJECT_EVIDENCE_HOLD",
+      "output_kind": "DOI",
+      "read_only": true,
+      "source_recorded_dispositions": [
+        "PROJECT_EVIDENCE_HOLD"
+      ]
+    },
+    {
+      "compiled_decision": {
+        "decision_is_research_route_only": true,
+        "decision_reason": "Prior public no-action or existing-state disposition",
+        "formal_original_completed": false,
+        "human_reviewer_approval": false,
+        "next_action": "Preserve public disposition; separately pursue valid expansion leads only when new source evidence warrants",
+        "owner": "SCOUT_ON_NEW_EVIDENCE",
+        "private_hub_write": false,
+        "public_proposal_created": false,
+        "recommended_disposition": "RETAIN_RECORDED_NO_ACTION_REOPEN_ON_NEW_EVIDENCE",
+        "reopen_or_finish_trigger": "Materially different exact DOI/project evidence or authorized reviewer instruction",
+        "separate_expansion_completed": false
+      },
+      "evaluation": {
+        "ambiguous_identity": false,
+        "bounded_human_referral_evidence": false,
+        "contradictory_project_evidence": false,
+        "documented_source_claims": {
+          "metadata_complete_claim": false,
+          "missing_project_proof_claim": false,
+          "official_publication_claim": false,
+          "preprint_claim": false,
+          "primary_spark_claim": false,
+          "project_conflict_claim": false,
+          "same_project_claim": false,
+          "technical_access_failure_claim": false
+        },
+        "doi": "10.1002/qj.70325",
+        "gates": {
+          "contradictions": "NOT_FOUND_IN_STRUCTURED_RESEARCH_NOT_A_NEGATIVE_PROOF",
+          "identity": "PUBLIC_NO_ACTION_RECORDED",
+          "publication": "OFFICIAL_RELEASE_NOT_VERIFIED",
+          "related_output_scope": "SEED_ORIGINAL_EXPANSION_REMAINS_SEPARATE",
+          "required_metadata": "INCOMPLETE_OR_NOT_VERIFIED",
+          "same_project_wpo_funding": "EXACT_PRIMARY_PROJECT_PROOF_MISSING",
+          "technical": "NO_TECHNICAL_HOLD_RECORDED"
+        },
+        "note_event_count": 3,
+        "preprint": false,
+        "primary_project_supported_by_prior_evidence": false,
+        "prior_dispositions": [
+          "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+          "PROJECT_EVIDENCE_HOLD"
+        ],
+        "prior_research_budget_exhausted": false,
+        "prior_research_rounds": null,
+        "prior_secondary_identity_checked": false,
+        "public_identity": "PUBLIC_NO_ACTION_OR_EXISTING_RECORDED",
+        "public_no_action": true,
+        "public_recorded_statuses": [
+          "no_action",
+          "not_verified"
+        ],
+        "publicly_staged": false,
+        "published_claim": false,
+        "source_note_sha256": [
+          {
+            "event_id": "d1c7f1c43f43721992142729",
+            "path": "scout-operations/monthly-research/2026-11-06-0528ET-storm-harry-qj70325-project-scope-hold.json",
+            "sha256": "9bf7c3c778f1cbf1622db3e994b7facc446367f5cc3ed6094517ab5884722911"
+          },
+          {
+            "event_id": "1123d5d49a2fceef0f66a7c7",
+            "path": "scout-operations/monthly-research/2026-11-06-0630ET-storm-harry-ecmwf-two-doi-access-holds.json",
+            "sha256": "38d2065e50f5691c4452ea054a54409a88392e3d76f60969a311a78d96b3bf7c"
+          },
+          {
+            "event_id": "1629d646439b0c79a7350f55",
+            "path": "scout-operations/monthly-research/2026-11-06-0830ET-storm-harry-global-drifter-award-scope-followup.json",
+            "sha256": "684a66155c7ad188613f0217e371ba692f300a27bb1ab16a1b7d40f09c1198bc"
+          }
+        ],
+        "source_url_count": 4,
+        "source_url_pointers": [
+          "https://cw3e.ucsd.edu/cw3e-publication-notice-the-mediterranean-extreme-events-experiment-and-storm-harry-in-january-2026/",
+          "https://repository.library.noaa.gov/view/noaa/77398",
+          "https://rmets.onlinelibrary.wiley.com/doi/10.1002/qj.70325",
+          "https://wpo.noaa.gov/spark/"
+        ],
+        "technical_hold": false,
+        "verified_public_reach": false
+      },
+      "existing_reviewer_status_unchanged": true,
+      "identity": "doi:10.1002/qj.70325",
+      "independent_critique": {
+        "adversarial_gate_checks_passed": true,
+        "blocking_safety_issues": [],
+        "grant_clue_or_author_overlap_never_confirms_funding": true,
+        "missing_for_autonomous_reviewer_handoff": [
+          "LIVE_SAME_PROJECT_WPO_FUNDING",
+          "OFFICIAL_RELEASE",
+          "SECONDARY_IDENTITY_CHECK",
+          "COMPLETE_METADATA"
+        ],
+        "official_metadata_pointer_not_current_without_recheck": true,
+        "private_hub_delivery_not_inferred": true
+      },
+      "latest_recorded_disposition_unchanged": "PROJECT_EVIDENCE_HOLD",
+      "output_kind": "DOI",
+      "read_only": true,
+      "source_recorded_dispositions": [
+        "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+        "PROJECT_EVIDENCE_HOLD"
+      ]
+    },
+    {
+      "compiled_decision": {
+        "decision_is_research_route_only": true,
+        "decision_reason": "Prior source-specific project evidence hold is unresolved",
+        "formal_original_completed": false,
+        "human_reviewer_approval": false,
+        "next_action": "Preserve the lead without repeating generic searches; reopen only for a new exact primary SPARK project/output funding source",
+        "owner": "SCOUT_ON_NEW_EVIDENCE",
+        "private_hub_write": false,
+        "public_proposal_created": false,
+        "recommended_disposition": "BOUNDED_PROJECT_EVIDENCE_HOLD",
+        "reopen_or_finish_trigger": "New project-specific evidence, verified human instruction, or changed DOI identity",
+        "separate_expansion_completed": false
+      },
+      "evaluation": {
+        "ambiguous_identity": false,
+        "bounded_human_referral_evidence": false,
+        "contradictory_project_evidence": false,
+        "documented_source_claims": {
+          "metadata_complete_claim": false,
+          "missing_project_proof_claim": false,
+          "official_publication_claim": false,
+          "preprint_claim": false,
+          "primary_spark_claim": false,
+          "project_conflict_claim": false,
+          "same_project_claim": false,
+          "technical_access_failure_claim": false
+        },
+        "doi": "10.1007/s00330-020-07133-9",
+        "gates": {
+          "contradictions": "NOT_FOUND_IN_STRUCTURED_RESEARCH_NOT_A_NEGATIVE_PROOF",
+          "identity": "SCREENED_NEEDS_FINAL_VERSION_AND_SECONDARY_LINK_CHECK",
+          "publication": "OFFICIAL_RELEASE_NOT_VERIFIED",
+          "related_output_scope": "SEED_ORIGINAL_EXPANSION_REMAINS_SEPARATE",
+          "required_metadata": "INCOMPLETE_OR_NOT_VERIFIED",
+          "same_project_wpo_funding": "EXACT_PRIMARY_PROJECT_PROOF_MISSING",
+          "technical": "NO_TECHNICAL_HOLD_RECORDED"
+        },
+        "note_event_count": 3,
+        "preprint": false,
+        "primary_project_supported_by_prior_evidence": false,
+        "prior_dispositions": [
+          "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+          "PROJECT_EVIDENCE_HOLD"
+        ],
+        "prior_research_budget_exhausted": false,
+        "prior_research_rounds": 1,
+        "prior_secondary_identity_checked": false,
+        "public_identity": "PUBLIC_SCREEN_COMPLETED_NOT_NEW_OUTPUT_PROOF",
+        "public_no_action": false,
+        "public_recorded_statuses": [
+          "not_verified"
+        ],
+        "publicly_staged": false,
+        "published_claim": false,
+        "source_note_sha256": [
+          {
+            "event_id": "b6aed5934697d450ac2739eb",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-05-1026ET-biomedical-award-attribution-holds.json",
+            "sha256": "7f83ecada2ad8cb6bb98e20112747ef8cb1be9df163dd1b19ca86720a6bfe9e9"
+          },
+          {
+            "event_id": "58cc18122c555b1ecbc73735",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-05-1125ET-biomedical-immutable-source-attribution-audit.json",
+            "sha256": "def68b12e4580097accce8ece54fb780df79170b77a65e76fa393e3927290b85"
+          },
+          {
+            "event_id": "502a41388436021c4a669c3e",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-05-1328ET-reconciliation-exception-evidence-gate-audit.json",
+            "sha256": "2548b344e7a1e439fd2b7d1bfb2981db10d93fec1a81d9f8d4516beb7f7b0964"
+          }
+        ],
+        "source_url_count": 2,
+        "source_url_pointers": [
+          "https://openalex.org/W3082637224",
+          "https://pubmed.ncbi.nlm.nih.gov/32870396/"
+        ],
+        "technical_hold": false,
+        "verified_public_reach": false
+      },
+      "existing_reviewer_status_unchanged": true,
+      "identity": "doi:10.1007/s00330-020-07133-9",
+      "independent_critique": {
+        "adversarial_gate_checks_passed": true,
+        "blocking_safety_issues": [],
+        "grant_clue_or_author_overlap_never_confirms_funding": true,
+        "missing_for_autonomous_reviewer_handoff": [
+          "LIVE_SAME_PROJECT_WPO_FUNDING",
+          "OFFICIAL_RELEASE",
+          "SECONDARY_IDENTITY_CHECK",
+          "COMPLETE_METADATA"
+        ],
+        "official_metadata_pointer_not_current_without_recheck": true,
+        "private_hub_delivery_not_inferred": true
+      },
+      "latest_recorded_disposition_unchanged": "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+      "output_kind": "DOI",
+      "read_only": true,
+      "source_recorded_dispositions": [
+        "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+        "PROJECT_EVIDENCE_HOLD"
+      ]
+    },
+    {
+      "compiled_decision": {
+        "decision_is_research_route_only": true,
+        "decision_reason": "Earlier source-backed research explicitly requests one bounded human judgment",
+        "formal_original_completed": false,
+        "human_reviewer_approval": false,
+        "next_action": "Ask whether 10.1007/s00382-022-06655-w is an output of the exact primary WPO SPARK project; present existing source URLs and disagreement, without reviewer justification requirement",
+        "owner": "HUMAN_PROJECT_ASSESSMENT",
+        "private_hub_write": false,
+        "public_proposal_created": false,
+        "recommended_disposition": "BOUNDED_HUMAN_PROJECT_QUESTION",
+        "reopen_or_finish_trigger": "Specific reviewer response or new exact primary award/deliverable evidence",
+        "separate_expansion_completed": false
+      },
+      "evaluation": {
+        "ambiguous_identity": false,
+        "bounded_human_referral_evidence": true,
+        "contradictory_project_evidence": false,
+        "documented_source_claims": {
+          "metadata_complete_claim": false,
+          "missing_project_proof_claim": false,
+          "official_publication_claim": false,
+          "preprint_claim": false,
+          "primary_spark_claim": false,
+          "project_conflict_claim": false,
+          "same_project_claim": false,
+          "technical_access_failure_claim": false
+        },
+        "doi": "10.1007/s00382-022-06655-w",
+        "gates": {
+          "contradictions": "NOT_FOUND_IN_STRUCTURED_RESEARCH_NOT_A_NEGATIVE_PROOF",
+          "identity": "SCREENED_NEEDS_FINAL_VERSION_AND_SECONDARY_LINK_CHECK",
+          "publication": "OFFICIAL_RELEASE_NOT_VERIFIED",
+          "related_output_scope": "SEED_ORIGINAL_EXPANSION_REMAINS_SEPARATE",
+          "required_metadata": "INCOMPLETE_OR_NOT_VERIFIED",
+          "same_project_wpo_funding": "EXACT_PRIMARY_PROJECT_PROOF_MISSING",
+          "technical": "NO_TECHNICAL_HOLD_RECORDED"
+        },
+        "note_event_count": 2,
+        "preprint": false,
+        "primary_project_supported_by_prior_evidence": false,
+        "prior_dispositions": [
+          "BOUNDED_PROJECT_QUESTION_FOR_HUMAN",
+          "PROJECT_EVIDENCE_HOLD"
+        ],
+        "prior_research_budget_exhausted": true,
+        "prior_research_rounds": 2,
+        "prior_secondary_identity_checked": false,
+        "public_identity": "PUBLIC_SCREEN_COMPLETED_NOT_NEW_OUTPUT_PROOF",
+        "public_no_action": false,
+        "public_recorded_statuses": [
+          "not_verified"
+        ],
+        "publicly_staged": false,
+        "published_claim": false,
+        "source_note_sha256": [
+          {
+            "event_id": "4084d342a9666f4fb7af23a5",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-05-0233ET-gfdl-spear-cold-extremes-evidence.json",
+            "sha256": "e4322f5b8c7ce1d70653f4388a8afd1ad30488e8f0af7416c22a77116a6f4e13"
+          },
+          {
+            "event_id": "cedc14ffa6da658087675f4c",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-05-0324ET-gfdl-spear-award-scope-followup.json",
+            "sha256": "d38bcd57645123aadeb95ff9eb7e050ce1154ff122971bff6f7630548b6e688e"
+          }
+        ],
+        "source_url_count": 6,
+        "source_url_pointers": [
+          "https://essd.copernicus.org/preprints/essd-2023-389/essd-2023-389.pdf",
+          "https://pubmed.ncbi.nlm.nih.gov/40247814/",
+          "https://repository.library.noaa.gov/view/noaa/66066",
+          "https://repository.library.noaa.gov/view/noaa/66066/noaa_66066_DS1.pdf",
+          "https://www.gfdl.noaa.gov/climate-dynamics-and-prediction-publications/",
+          "https://www.gfdl.noaa.gov/wp-content/uploads/2023/09/GFDL_Summer_2023_Bulletin.pdf"
+        ],
+        "technical_hold": false,
+        "verified_public_reach": false
+      },
+      "existing_reviewer_status_unchanged": true,
+      "identity": "doi:10.1007/s00382-022-06655-w",
+      "independent_critique": {
+        "adversarial_gate_checks_passed": true,
+        "blocking_safety_issues": [],
+        "grant_clue_or_author_overlap_never_confirms_funding": true,
+        "missing_for_autonomous_reviewer_handoff": [
+          "LIVE_SAME_PROJECT_WPO_FUNDING",
+          "OFFICIAL_RELEASE",
+          "SECONDARY_IDENTITY_CHECK",
+          "COMPLETE_METADATA"
+        ],
+        "official_metadata_pointer_not_current_without_recheck": true,
+        "private_hub_delivery_not_inferred": true
+      },
+      "latest_recorded_disposition_unchanged": "BOUNDED_PROJECT_QUESTION_FOR_HUMAN",
+      "output_kind": "DOI",
+      "read_only": true,
+      "source_recorded_dispositions": [
+        "BOUNDED_PROJECT_QUESTION_FOR_HUMAN",
+        "PROJECT_EVIDENCE_HOLD"
+      ]
+    },
+    {
+      "compiled_decision": {
+        "decision_is_research_route_only": true,
+        "decision_reason": "Prior source-specific project evidence hold is unresolved",
+        "formal_original_completed": false,
+        "human_reviewer_approval": false,
+        "next_action": "Preserve the lead without repeating generic searches; reopen only for a new exact primary SPARK project/output funding source",
+        "owner": "SCOUT_ON_NEW_EVIDENCE",
+        "private_hub_write": false,
+        "public_proposal_created": false,
+        "recommended_disposition": "BOUNDED_PROJECT_EVIDENCE_HOLD",
+        "reopen_or_finish_trigger": "New project-specific evidence, verified human instruction, or changed DOI identity",
+        "separate_expansion_completed": false
+      },
+      "evaluation": {
+        "ambiguous_identity": false,
+        "bounded_human_referral_evidence": false,
+        "contradictory_project_evidence": false,
+        "documented_source_claims": {
+          "metadata_complete_claim": false,
+          "missing_project_proof_claim": false,
+          "official_publication_claim": false,
+          "preprint_claim": false,
+          "primary_spark_claim": false,
+          "project_conflict_claim": false,
+          "same_project_claim": false,
+          "technical_access_failure_claim": false
+        },
+        "doi": "10.1007/s10596-024-10317-7",
+        "gates": {
+          "contradictions": "NOT_FOUND_IN_STRUCTURED_RESEARCH_NOT_A_NEGATIVE_PROOF",
+          "identity": "SCREENED_NEEDS_FINAL_VERSION_AND_SECONDARY_LINK_CHECK",
+          "publication": "OFFICIAL_RELEASE_NOT_VERIFIED",
+          "related_output_scope": "SEED_ORIGINAL_EXPANSION_REMAINS_SEPARATE",
+          "required_metadata": "INCOMPLETE_OR_NOT_VERIFIED",
+          "same_project_wpo_funding": "EXACT_PRIMARY_PROJECT_PROOF_MISSING",
+          "technical": "NO_TECHNICAL_HOLD_RECORDED"
+        },
+        "note_event_count": 1,
+        "preprint": false,
+        "primary_project_supported_by_prior_evidence": false,
+        "prior_dispositions": [
+          "PROJECT_EVIDENCE_HOLD"
+        ],
+        "prior_research_budget_exhausted": false,
+        "prior_research_rounds": 0,
+        "prior_secondary_identity_checked": false,
+        "public_identity": "PUBLIC_SCREEN_COMPLETED_NOT_NEW_OUTPUT_PROOF",
+        "public_no_action": false,
+        "public_recorded_statuses": [
+          "not_verified"
+        ],
+        "publicly_staged": false,
+        "published_claim": false,
+        "source_note_sha256": [
+          {
+            "event_id": "f9f3707a419fecce79a25c2c",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-06-2329ET-project-first-three-originals-screening.json",
+            "sha256": "65780c73eadd127ceb9ef74d11787f2838dcd7357f0dfe75d44b2e9565d5f211"
+          }
+        ],
+        "source_url_count": 1,
+        "source_url_pointers": [
+          "https://doi.org/10.1007/s10596-024-10317-7"
+        ],
+        "technical_hold": false,
+        "verified_public_reach": false
+      },
+      "existing_reviewer_status_unchanged": true,
+      "identity": "doi:10.1007/s10596-024-10317-7",
+      "independent_critique": {
+        "adversarial_gate_checks_passed": true,
+        "blocking_safety_issues": [],
+        "grant_clue_or_author_overlap_never_confirms_funding": true,
+        "missing_for_autonomous_reviewer_handoff": [
+          "LIVE_SAME_PROJECT_WPO_FUNDING",
+          "OFFICIAL_RELEASE",
+          "SECONDARY_IDENTITY_CHECK",
+          "COMPLETE_METADATA"
+        ],
+        "official_metadata_pointer_not_current_without_recheck": true,
+        "private_hub_delivery_not_inferred": true
+      },
+      "latest_recorded_disposition_unchanged": "PROJECT_EVIDENCE_HOLD",
+      "output_kind": "DOI",
+      "read_only": true,
+      "source_recorded_dispositions": [
+        "PROJECT_EVIDENCE_HOLD"
+      ]
+    },
+    {
+      "compiled_decision": {
+        "decision_is_research_route_only": true,
+        "decision_reason": "Prior source-specific project evidence hold is unresolved",
+        "formal_original_completed": false,
+        "human_reviewer_approval": false,
+        "next_action": "Preserve the lead without repeating generic searches; reopen only for a new exact primary SPARK project/output funding source",
+        "owner": "SCOUT_ON_NEW_EVIDENCE",
+        "private_hub_write": false,
+        "public_proposal_created": false,
+        "recommended_disposition": "BOUNDED_PROJECT_EVIDENCE_HOLD",
+        "reopen_or_finish_trigger": "New project-specific evidence, verified human instruction, or changed DOI identity",
+        "separate_expansion_completed": false
+      },
+      "evaluation": {
+        "ambiguous_identity": false,
+        "bounded_human_referral_evidence": false,
+        "contradictory_project_evidence": false,
+        "documented_source_claims": {
+          "metadata_complete_claim": false,
+          "missing_project_proof_claim": false,
+          "official_publication_claim": false,
+          "preprint_claim": false,
+          "primary_spark_claim": false,
+          "project_conflict_claim": false,
+          "same_project_claim": false,
+          "technical_access_failure_claim": false
+        },
+        "doi": "10.1007/s10606-020-09380-2",
+        "gates": {
+          "contradictions": "NOT_FOUND_IN_STRUCTURED_RESEARCH_NOT_A_NEGATIVE_PROOF",
+          "identity": "SCREENED_NEEDS_FINAL_VERSION_AND_SECONDARY_LINK_CHECK",
+          "publication": "OFFICIAL_RELEASE_NOT_VERIFIED",
+          "related_output_scope": "SEED_ORIGINAL_EXPANSION_REMAINS_SEPARATE",
+          "required_metadata": "INCOMPLETE_OR_NOT_VERIFIED",
+          "same_project_wpo_funding": "EXACT_PRIMARY_PROJECT_PROOF_MISSING",
+          "technical": "NO_TECHNICAL_HOLD_RECORDED"
+        },
+        "note_event_count": 2,
+        "preprint": false,
+        "primary_project_supported_by_prior_evidence": false,
+        "prior_dispositions": [
+          "PROJECT_EVIDENCE_HOLD"
+        ],
+        "prior_research_budget_exhausted": true,
+        "prior_research_rounds": 2,
+        "prior_secondary_identity_checked": false,
+        "public_identity": "PUBLIC_SCREEN_COMPLETED_NOT_NEW_OUTPUT_PROOF",
+        "public_no_action": false,
+        "public_recorded_statuses": [
+          "not_verified"
+        ],
+        "publicly_staged": false,
+        "published_claim": false,
+        "source_note_sha256": [
+          {
+            "event_id": "7059050458b5df90bbc8ee5d",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-05-0430ET-risk-communication-publisher-ir-evidence.json",
+            "sha256": "cd1aecc21bdafc2e27abc91abf86919269fc314b3010de398123b7e5b66d13fc"
+          },
+          {
+            "event_id": "337f49501b5d7ce59a7894c7",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-05-0529ET-risk-communication-spark-project-crosscheck.json",
+            "sha256": "d96a933a13f27e2eb28fc4beeb0ecc2b6ce29802ac817b2b4419b7d5d935a6d3"
+          }
+        ],
+        "source_url_count": 4,
+        "source_url_pointers": [
+          "https://link.springer.com/article/10.1007/s10606-020-09380-2",
+          "https://repository.library.noaa.gov/view/noaa/58643",
+          "https://wpo.noaa.gov/spark/",
+          "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf"
+        ],
+        "technical_hold": false,
+        "verified_public_reach": false
+      },
+      "existing_reviewer_status_unchanged": true,
+      "identity": "doi:10.1007/s10606-020-09380-2",
+      "independent_critique": {
+        "adversarial_gate_checks_passed": true,
+        "blocking_safety_issues": [],
+        "grant_clue_or_author_overlap_never_confirms_funding": true,
+        "missing_for_autonomous_reviewer_handoff": [
+          "LIVE_SAME_PROJECT_WPO_FUNDING",
+          "OFFICIAL_RELEASE",
+          "SECONDARY_IDENTITY_CHECK",
+          "COMPLETE_METADATA"
+        ],
+        "official_metadata_pointer_not_current_without_recheck": true,
+        "private_hub_delivery_not_inferred": true
+      },
+      "latest_recorded_disposition_unchanged": "PROJECT_EVIDENCE_HOLD",
+      "output_kind": "DOI",
+      "read_only": true,
+      "source_recorded_dispositions": [
+        "PROJECT_EVIDENCE_HOLD"
+      ]
+    },
+    {
+      "compiled_decision": {
+        "decision_is_research_route_only": true,
+        "decision_reason": "Prior source-specific project evidence hold is unresolved",
+        "formal_original_completed": false,
+        "human_reviewer_approval": false,
+        "next_action": "Preserve the lead without repeating generic searches; reopen only for a new exact primary SPARK project/output funding source",
+        "owner": "SCOUT_ON_NEW_EVIDENCE",
+        "private_hub_write": false,
+        "public_proposal_created": false,
+        "recommended_disposition": "BOUNDED_PROJECT_EVIDENCE_HOLD",
+        "reopen_or_finish_trigger": "New project-specific evidence, verified human instruction, or changed DOI identity",
+        "separate_expansion_completed": false
+      },
+      "evaluation": {
+        "ambiguous_identity": false,
+        "bounded_human_referral_evidence": false,
+        "contradictory_project_evidence": false,
+        "documented_source_claims": {
+          "metadata_complete_claim": false,
+          "missing_project_proof_claim": false,
+          "official_publication_claim": false,
+          "preprint_claim": false,
+          "primary_spark_claim": false,
+          "project_conflict_claim": false,
+          "same_project_claim": false,
+          "technical_access_failure_claim": false
+        },
+        "doi": "10.1007/s12035-019-01667-w",
+        "gates": {
+          "contradictions": "NOT_FOUND_IN_STRUCTURED_RESEARCH_NOT_A_NEGATIVE_PROOF",
+          "identity": "SCREENED_NEEDS_FINAL_VERSION_AND_SECONDARY_LINK_CHECK",
+          "publication": "OFFICIAL_RELEASE_NOT_VERIFIED",
+          "related_output_scope": "SEED_ORIGINAL_EXPANSION_REMAINS_SEPARATE",
+          "required_metadata": "INCOMPLETE_OR_NOT_VERIFIED",
+          "same_project_wpo_funding": "EXACT_PRIMARY_PROJECT_PROOF_MISSING",
+          "technical": "NO_TECHNICAL_HOLD_RECORDED"
+        },
+        "note_event_count": 3,
+        "preprint": false,
+        "primary_project_supported_by_prior_evidence": false,
+        "prior_dispositions": [
+          "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+          "PROJECT_EVIDENCE_HOLD"
+        ],
+        "prior_research_budget_exhausted": false,
+        "prior_research_rounds": 1,
+        "prior_secondary_identity_checked": false,
+        "public_identity": "PUBLIC_SCREEN_COMPLETED_NOT_NEW_OUTPUT_PROOF",
+        "public_no_action": false,
+        "public_recorded_statuses": [
+          "not_verified"
+        ],
+        "publicly_staged": false,
+        "published_claim": false,
+        "source_note_sha256": [
+          {
+            "event_id": "1cb9ac70bea9e6fa3d4a2ec1",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-05-1026ET-biomedical-award-attribution-holds.json",
+            "sha256": "7f83ecada2ad8cb6bb98e20112747ef8cb1be9df163dd1b19ca86720a6bfe9e9"
+          },
+          {
+            "event_id": "3f7be639763a8a1cd028b03e",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-05-1125ET-biomedical-immutable-source-attribution-audit.json",
+            "sha256": "def68b12e4580097accce8ece54fb780df79170b77a65e76fa393e3927290b85"
+          },
+          {
+            "event_id": "16b6e7e0c06125084cfb8c5c",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-05-1328ET-reconciliation-exception-evidence-gate-audit.json",
+            "sha256": "2548b344e7a1e439fd2b7d1bfb2981db10d93fec1a81d9f8d4516beb7f7b0964"
+          }
+        ],
+        "source_url_count": 3,
+        "source_url_pointers": [
+          "https://openalex.org/W2952542498",
+          "https://pubmed.ncbi.nlm.nih.gov/31218647/",
+          "https://www4.uib.no/en/find-employees/kari-espolin.fladmark"
+        ],
+        "technical_hold": false,
+        "verified_public_reach": false
+      },
+      "existing_reviewer_status_unchanged": true,
+      "identity": "doi:10.1007/s12035-019-01667-w",
+      "independent_critique": {
+        "adversarial_gate_checks_passed": true,
+        "blocking_safety_issues": [],
+        "grant_clue_or_author_overlap_never_confirms_funding": true,
+        "missing_for_autonomous_reviewer_handoff": [
+          "LIVE_SAME_PROJECT_WPO_FUNDING",
+          "OFFICIAL_RELEASE",
+          "SECONDARY_IDENTITY_CHECK",
+          "COMPLETE_METADATA"
+        ],
+        "official_metadata_pointer_not_current_without_recheck": true,
+        "private_hub_delivery_not_inferred": true
+      },
+      "latest_recorded_disposition_unchanged": "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+      "output_kind": "DOI",
+      "read_only": true,
+      "source_recorded_dispositions": [
+        "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+        "PROJECT_EVIDENCE_HOLD"
+      ]
+    },
+    {
+      "compiled_decision": {
+        "decision_is_research_route_only": true,
+        "decision_reason": "Prior source-specific project evidence hold is unresolved",
+        "formal_original_completed": false,
+        "human_reviewer_approval": false,
+        "next_action": "Preserve the lead without repeating generic searches; reopen only for a new exact primary SPARK project/output funding source",
+        "owner": "SCOUT_ON_NEW_EVIDENCE",
+        "private_hub_write": false,
+        "public_proposal_created": false,
+        "recommended_disposition": "BOUNDED_PROJECT_EVIDENCE_HOLD",
+        "reopen_or_finish_trigger": "New project-specific evidence, verified human instruction, or changed DOI identity",
+        "separate_expansion_completed": false
+      },
+      "evaluation": {
+        "ambiguous_identity": false,
+        "bounded_human_referral_evidence": false,
+        "contradictory_project_evidence": false,
+        "documented_source_claims": {
+          "metadata_complete_claim": false,
+          "missing_project_proof_claim": false,
+          "official_publication_claim": false,
+          "preprint_claim": false,
+          "primary_spark_claim": false,
+          "project_conflict_claim": false,
+          "same_project_claim": false,
+          "technical_access_failure_claim": false
+        },
+        "doi": "10.1016/j.atmosenv.2021.118760",
+        "gates": {
+          "contradictions": "NOT_FOUND_IN_STRUCTURED_RESEARCH_NOT_A_NEGATIVE_PROOF",
+          "identity": "SCREENED_NEEDS_FINAL_VERSION_AND_SECONDARY_LINK_CHECK",
+          "publication": "OFFICIAL_RELEASE_NOT_VERIFIED",
+          "related_output_scope": "SEED_ORIGINAL_EXPANSION_REMAINS_SEPARATE",
+          "required_metadata": "INCOMPLETE_OR_NOT_VERIFIED",
+          "same_project_wpo_funding": "EXACT_PRIMARY_PROJECT_PROOF_MISSING",
+          "technical": "NO_TECHNICAL_HOLD_RECORDED"
+        },
+        "note_event_count": 1,
+        "preprint": false,
+        "primary_project_supported_by_prior_evidence": false,
+        "prior_dispositions": [
+          "PROJECT_EVIDENCE_HOLD"
+        ],
+        "prior_research_budget_exhausted": false,
+        "prior_research_rounds": 0,
+        "prior_secondary_identity_checked": false,
+        "public_identity": "PUBLIC_SCREEN_COMPLETED_NOT_NEW_OUTPUT_PROOF",
+        "public_no_action": false,
+        "public_recorded_statuses": [
+          "not_verified"
+        ],
+        "publicly_staged": false,
+        "published_claim": false,
+        "source_note_sha256": [
+          {
+            "event_id": "0d270dea59ef7bbcac0d99a5",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-06-2329ET-project-first-three-originals-screening.json",
+            "sha256": "65780c73eadd127ceb9ef74d11787f2838dcd7357f0dfe75d44b2e9565d5f211"
+          }
+        ],
+        "source_url_count": 1,
+        "source_url_pointers": [
+          "https://doi.org/10.1016/j.atmosenv.2021.118760"
+        ],
+        "technical_hold": false,
+        "verified_public_reach": false
+      },
+      "existing_reviewer_status_unchanged": true,
+      "identity": "doi:10.1016/j.atmosenv.2021.118760",
+      "independent_critique": {
+        "adversarial_gate_checks_passed": true,
+        "blocking_safety_issues": [],
+        "grant_clue_or_author_overlap_never_confirms_funding": true,
+        "missing_for_autonomous_reviewer_handoff": [
+          "LIVE_SAME_PROJECT_WPO_FUNDING",
+          "OFFICIAL_RELEASE",
+          "SECONDARY_IDENTITY_CHECK",
+          "COMPLETE_METADATA"
+        ],
+        "official_metadata_pointer_not_current_without_recheck": true,
+        "private_hub_delivery_not_inferred": true
+      },
+      "latest_recorded_disposition_unchanged": "PROJECT_EVIDENCE_HOLD",
+      "output_kind": "DOI",
+      "read_only": true,
+      "source_recorded_dispositions": [
+        "PROJECT_EVIDENCE_HOLD"
+      ]
+    },
+    {
+      "compiled_decision": {
+        "decision_is_research_route_only": true,
+        "decision_reason": "Prior source-specific project evidence hold is unresolved",
+        "formal_original_completed": false,
+        "human_reviewer_approval": false,
+        "next_action": "Preserve the lead without repeating generic searches; reopen only for a new exact primary SPARK project/output funding source",
+        "owner": "SCOUT_ON_NEW_EVIDENCE",
+        "private_hub_write": false,
+        "public_proposal_created": false,
+        "recommended_disposition": "BOUNDED_PROJECT_EVIDENCE_HOLD",
+        "reopen_or_finish_trigger": "New project-specific evidence, verified human instruction, or changed DOI identity",
+        "separate_expansion_completed": false
+      },
+      "evaluation": {
+        "ambiguous_identity": false,
+        "bounded_human_referral_evidence": false,
+        "contradictory_project_evidence": false,
+        "documented_source_claims": {
+          "metadata_complete_claim": false,
+          "missing_project_proof_claim": false,
+          "official_publication_claim": false,
+          "preprint_claim": false,
+          "primary_spark_claim": false,
+          "project_conflict_claim": false,
+          "same_project_claim": false,
+          "technical_access_failure_claim": false
+        },
+        "doi": "10.1016/j.cageo.2022.105193",
+        "gates": {
+          "contradictions": "NOT_FOUND_IN_STRUCTURED_RESEARCH_NOT_A_NEGATIVE_PROOF",
+          "identity": "SCREENED_NEEDS_FINAL_VERSION_AND_SECONDARY_LINK_CHECK",
+          "publication": "OFFICIAL_RELEASE_NOT_VERIFIED",
+          "related_output_scope": "SEED_ORIGINAL_EXPANSION_REMAINS_SEPARATE",
+          "required_metadata": "INCOMPLETE_OR_NOT_VERIFIED",
+          "same_project_wpo_funding": "EXACT_PRIMARY_PROJECT_PROOF_MISSING",
+          "technical": "NO_TECHNICAL_HOLD_RECORDED"
+        },
+        "note_event_count": 1,
+        "preprint": false,
+        "primary_project_supported_by_prior_evidence": false,
+        "prior_dispositions": [
+          "PROJECT_EVIDENCE_HOLD"
+        ],
+        "prior_research_budget_exhausted": false,
+        "prior_research_rounds": 1,
+        "prior_secondary_identity_checked": false,
+        "public_identity": "PUBLIC_SCREEN_COMPLETED_NOT_NEW_OUTPUT_PROOF",
+        "public_no_action": false,
+        "public_recorded_statuses": [
+          "not_verified"
+        ],
+        "publicly_staged": false,
+        "published_claim": false,
+        "source_note_sha256": [
+          {
+            "event_id": "c4f3f800dc1d556eb37935f6",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-07-0729ET-kalman-noaa-ir-project-evidence.json",
+            "sha256": "629ef0ff57edbd0524c258b910e77a7896cf568a838a2a516aacaa7263be57bb"
+          }
+        ],
+        "source_url_count": 2,
+        "source_url_pointers": [
+          "https://doi.org/10.1016/j.cageo.2022.105193",
+          "https://repository.library.noaa.gov/view/noaa/57846"
+        ],
+        "technical_hold": false,
+        "verified_public_reach": false
+      },
+      "existing_reviewer_status_unchanged": true,
+      "identity": "doi:10.1016/j.cageo.2022.105193",
+      "independent_critique": {
+        "adversarial_gate_checks_passed": true,
+        "blocking_safety_issues": [],
+        "grant_clue_or_author_overlap_never_confirms_funding": true,
+        "missing_for_autonomous_reviewer_handoff": [
+          "LIVE_SAME_PROJECT_WPO_FUNDING",
+          "OFFICIAL_RELEASE",
+          "SECONDARY_IDENTITY_CHECK",
+          "COMPLETE_METADATA"
+        ],
+        "official_metadata_pointer_not_current_without_recheck": true,
+        "private_hub_delivery_not_inferred": true
+      },
+      "latest_recorded_disposition_unchanged": "PROJECT_EVIDENCE_HOLD",
+      "output_kind": "DOI",
+      "read_only": true,
+      "source_recorded_dispositions": [
+        "PROJECT_EVIDENCE_HOLD"
+      ]
+    },
+    {
+      "compiled_decision": {
+        "decision_is_research_route_only": true,
+        "decision_reason": "Public Scout staging exists; private Hub import remains unknown",
+        "formal_original_completed": false,
+        "human_reviewer_approval": false,
+        "next_action": "Check whether the existing public staging was delivered through authorized reviewer workflow; do not create a duplicate",
+        "owner": "PUBLIC_HANDOFF_VERIFICATION",
+        "private_hub_write": false,
+        "public_proposal_created": false,
+        "recommended_disposition": "PUBLIC_PROPOSAL_ALREADY_STAGED_NO_DUPLICATE",
+        "reopen_or_finish_trigger": "Authenticated private handoff or materially changed source evidence",
+        "separate_expansion_completed": false
+      },
+      "evaluation": {
+        "ambiguous_identity": false,
+        "bounded_human_referral_evidence": false,
+        "contradictory_project_evidence": false,
+        "documented_source_claims": {
+          "metadata_complete_claim": false,
+          "missing_project_proof_claim": false,
+          "official_publication_claim": false,
+          "preprint_claim": false,
+          "primary_spark_claim": false,
+          "project_conflict_claim": false,
+          "same_project_claim": false,
+          "technical_access_failure_claim": false
+        },
+        "doi": "10.1016/j.pdisas.2026.100696",
+        "gates": {
+          "contradictions": "NOT_FOUND_IN_STRUCTURED_RESEARCH_NOT_A_NEGATIVE_PROOF",
+          "identity": "ALREADY_PUBLICLY_STAGED",
+          "publication": "OFFICIAL_RELEASE_NOT_VERIFIED",
+          "related_output_scope": "SEED_ORIGINAL_EXPANSION_REMAINS_SEPARATE",
+          "required_metadata": "INCOMPLETE_OR_NOT_VERIFIED",
+          "same_project_wpo_funding": "EXACT_PRIMARY_PROJECT_PROOF_MISSING",
+          "technical": "NO_TECHNICAL_HOLD_RECORDED"
+        },
+        "note_event_count": 1,
+        "preprint": false,
+        "primary_project_supported_by_prior_evidence": false,
+        "prior_dispositions": [
+          "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY"
+        ],
+        "prior_research_budget_exhausted": false,
+        "prior_research_rounds": null,
+        "prior_secondary_identity_checked": false,
+        "public_identity": "PUBLIC_SCOUT_PROPOSAL_RECORDED",
+        "public_no_action": false,
+        "public_recorded_statuses": [
+          "not_verified",
+          "staged_for_hub_import"
+        ],
+        "publicly_staged": true,
+        "published_claim": false,
+        "source_note_sha256": [
+          {
+            "event_id": "9ef5e7b4094b96a4d47a5866",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-08-1127ET-occupational-extreme-weather-noaa-ir-identity-hold.json",
+            "sha256": "c42f82cf4e24218005b54d4a599df2a55f52e8f35b661476d032e1f38a871c91"
+          }
+        ],
+        "source_url_count": 2,
+        "source_url_pointers": [
+          "https://raw.githubusercontent.com/PART-WPO/reach-scout-discoveries/main/scout-operations/crossref-candidate-queue.json",
+          "https://repository.library.noaa.gov/view/noaa/77174"
+        ],
+        "technical_hold": false,
+        "verified_public_reach": false
+      },
+      "existing_reviewer_status_unchanged": true,
+      "identity": "doi:10.1016/j.pdisas.2026.100696",
+      "independent_critique": {
+        "adversarial_gate_checks_passed": true,
+        "blocking_safety_issues": [],
+        "grant_clue_or_author_overlap_never_confirms_funding": true,
+        "missing_for_autonomous_reviewer_handoff": [
+          "LIVE_SAME_PROJECT_WPO_FUNDING",
+          "OFFICIAL_RELEASE",
+          "SECONDARY_IDENTITY_CHECK",
+          "COMPLETE_METADATA"
+        ],
+        "official_metadata_pointer_not_current_without_recheck": true,
+        "private_hub_delivery_not_inferred": true
+      },
+      "latest_recorded_disposition_unchanged": "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+      "output_kind": "DOI",
+      "read_only": true,
+      "source_recorded_dispositions": [
+        "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY"
+      ]
+    },
+    {
+      "compiled_decision": {
+        "decision_is_research_route_only": true,
+        "decision_reason": "Prior source-specific project evidence hold is unresolved",
+        "formal_original_completed": false,
+        "human_reviewer_approval": false,
+        "next_action": "Preserve the lead without repeating generic searches; reopen only for a new exact primary SPARK project/output funding source",
+        "owner": "SCOUT_ON_NEW_EVIDENCE",
+        "private_hub_write": false,
+        "public_proposal_created": false,
+        "recommended_disposition": "BOUNDED_PROJECT_EVIDENCE_HOLD",
+        "reopen_or_finish_trigger": "New project-specific evidence, verified human instruction, or changed DOI identity",
+        "separate_expansion_completed": false
+      },
+      "evaluation": {
+        "ambiguous_identity": false,
+        "bounded_human_referral_evidence": false,
+        "contradictory_project_evidence": false,
+        "documented_source_claims": {
+          "metadata_complete_claim": false,
+          "missing_project_proof_claim": false,
+          "official_publication_claim": false,
+          "preprint_claim": false,
+          "primary_spark_claim": false,
+          "project_conflict_claim": false,
+          "same_project_claim": false,
+          "technical_access_failure_claim": false
+        },
+        "doi": "10.1016/j.softx.2024.101863",
+        "gates": {
+          "contradictions": "NOT_FOUND_IN_STRUCTURED_RESEARCH_NOT_A_NEGATIVE_PROOF",
+          "identity": "SCREENED_NEEDS_FINAL_VERSION_AND_SECONDARY_LINK_CHECK",
+          "publication": "OFFICIAL_RELEASE_NOT_VERIFIED",
+          "related_output_scope": "SEED_ORIGINAL_EXPANSION_REMAINS_SEPARATE",
+          "required_metadata": "INCOMPLETE_OR_NOT_VERIFIED",
+          "same_project_wpo_funding": "EXACT_PRIMARY_PROJECT_PROOF_MISSING",
+          "technical": "NO_TECHNICAL_HOLD_RECORDED"
+        },
+        "note_event_count": 1,
+        "preprint": false,
+        "primary_project_supported_by_prior_evidence": false,
+        "prior_dispositions": [
+          "PROJECT_EVIDENCE_HOLD"
+        ],
+        "prior_research_budget_exhausted": false,
+        "prior_research_rounds": 0,
+        "prior_secondary_identity_checked": false,
+        "public_identity": "PUBLIC_SCREEN_COMPLETED_NOT_NEW_OUTPUT_PROOF",
+        "public_no_action": false,
+        "public_recorded_statuses": [
+          "not_verified"
+        ],
+        "publicly_staged": false,
+        "published_claim": false,
+        "source_note_sha256": [
+          {
+            "event_id": "f1d3551fe78dcea964c73c00",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-06-2329ET-project-first-three-originals-screening.json",
+            "sha256": "65780c73eadd127ceb9ef74d11787f2838dcd7357f0dfe75d44b2e9565d5f211"
+          }
+        ],
+        "source_url_count": 1,
+        "source_url_pointers": [
+          "https://doi.org/10.1016/j.softx.2024.101863"
+        ],
+        "technical_hold": false,
+        "verified_public_reach": false
+      },
+      "existing_reviewer_status_unchanged": true,
+      "identity": "doi:10.1016/j.softx.2024.101863",
+      "independent_critique": {
+        "adversarial_gate_checks_passed": true,
+        "blocking_safety_issues": [],
+        "grant_clue_or_author_overlap_never_confirms_funding": true,
+        "missing_for_autonomous_reviewer_handoff": [
+          "LIVE_SAME_PROJECT_WPO_FUNDING",
+          "OFFICIAL_RELEASE",
+          "SECONDARY_IDENTITY_CHECK",
+          "COMPLETE_METADATA"
+        ],
+        "official_metadata_pointer_not_current_without_recheck": true,
+        "private_hub_delivery_not_inferred": true
+      },
+      "latest_recorded_disposition_unchanged": "PROJECT_EVIDENCE_HOLD",
+      "output_kind": "DOI",
+      "read_only": true,
+      "source_recorded_dispositions": [
+        "PROJECT_EVIDENCE_HOLD"
+      ]
+    },
+    {
+      "compiled_decision": {
+        "decision_is_research_route_only": true,
+        "decision_reason": "Prior source-specific project evidence hold is unresolved",
+        "formal_original_completed": false,
+        "human_reviewer_approval": false,
+        "next_action": "Preserve the lead without repeating generic searches; reopen only for a new exact primary SPARK project/output funding source",
+        "owner": "SCOUT_ON_NEW_EVIDENCE",
+        "private_hub_write": false,
+        "public_proposal_created": false,
+        "recommended_disposition": "BOUNDED_PROJECT_EVIDENCE_HOLD",
+        "reopen_or_finish_trigger": "New project-specific evidence, verified human instruction, or changed DOI identity",
+        "separate_expansion_completed": false
+      },
+      "evaluation": {
+        "ambiguous_identity": false,
+        "bounded_human_referral_evidence": false,
+        "contradictory_project_evidence": false,
+        "documented_source_claims": {
+          "metadata_complete_claim": false,
+          "missing_project_proof_claim": false,
+          "official_publication_claim": false,
+          "preprint_claim": false,
+          "primary_spark_claim": false,
+          "project_conflict_claim": false,
+          "same_project_claim": false,
+          "technical_access_failure_claim": false
+        },
+        "doi": "10.1016/j.uclim.2025.102375",
+        "gates": {
+          "contradictions": "NOT_FOUND_IN_STRUCTURED_RESEARCH_NOT_A_NEGATIVE_PROOF",
+          "identity": "SCREENED_NEEDS_FINAL_VERSION_AND_SECONDARY_LINK_CHECK",
+          "publication": "OFFICIAL_RELEASE_NOT_VERIFIED",
+          "related_output_scope": "SEED_ORIGINAL_EXPANSION_REMAINS_SEPARATE",
+          "required_metadata": "INCOMPLETE_OR_NOT_VERIFIED",
+          "same_project_wpo_funding": "EXACT_PRIMARY_PROJECT_PROOF_MISSING",
+          "technical": "NO_TECHNICAL_HOLD_RECORDED"
+        },
+        "note_event_count": 1,
+        "preprint": false,
+        "primary_project_supported_by_prior_evidence": false,
+        "prior_dispositions": [
+          "PROJECT_EVIDENCE_HOLD"
+        ],
+        "prior_research_budget_exhausted": false,
+        "prior_research_rounds": 1,
+        "prior_secondary_identity_checked": false,
+        "public_identity": "PUBLIC_SCREEN_COMPLETED_NOT_NEW_OUTPUT_PROOF",
+        "public_no_action": false,
+        "public_recorded_statuses": [
+          "not_verified"
+        ],
+        "publicly_staged": false,
+        "published_claim": false,
+        "source_note_sha256": [
+          {
+            "event_id": "b87940b970383764ab7fae25",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-06-1624ET-urban-hydroclimate-institutional-attribution-hold.json",
+            "sha256": "ab0d97a1cc2202adbeee9d0b8e106f18c5f4e4d8657852d7057913892990be5c"
+          }
+        ],
+        "source_url_count": 2,
+        "source_url_pointers": [
+          "https://impacts.ucar.edu/en/publications/assessment-of-convection-permitting-hydroclimate-modeling-in-urba/",
+          "https://www.mmm.ucar.edu/opensky-publications/articles%3A43294/assessment-of-convection-permitting-hydroclimate-modeling-in-urban-areas-across-the-contiguous-united-states"
+        ],
+        "technical_hold": false,
+        "verified_public_reach": false
+      },
+      "existing_reviewer_status_unchanged": true,
+      "identity": "doi:10.1016/j.uclim.2025.102375",
+      "independent_critique": {
+        "adversarial_gate_checks_passed": true,
+        "blocking_safety_issues": [],
+        "grant_clue_or_author_overlap_never_confirms_funding": true,
+        "missing_for_autonomous_reviewer_handoff": [
+          "LIVE_SAME_PROJECT_WPO_FUNDING",
+          "OFFICIAL_RELEASE",
+          "SECONDARY_IDENTITY_CHECK",
+          "COMPLETE_METADATA"
+        ],
+        "official_metadata_pointer_not_current_without_recheck": true,
+        "private_hub_delivery_not_inferred": true
+      },
+      "latest_recorded_disposition_unchanged": "PROJECT_EVIDENCE_HOLD",
+      "output_kind": "DOI",
+      "read_only": true,
+      "source_recorded_dispositions": [
+        "PROJECT_EVIDENCE_HOLD"
+      ]
+    },
+    {
+      "compiled_decision": {
+        "decision_is_research_route_only": true,
+        "decision_reason": "Prior source-specific project evidence hold is unresolved",
+        "formal_original_completed": false,
+        "human_reviewer_approval": false,
+        "next_action": "Preserve the lead without repeating generic searches; reopen only for a new exact primary SPARK project/output funding source",
+        "owner": "SCOUT_ON_NEW_EVIDENCE",
+        "private_hub_write": false,
+        "public_proposal_created": false,
+        "recommended_disposition": "BOUNDED_PROJECT_EVIDENCE_HOLD",
+        "reopen_or_finish_trigger": "New project-specific evidence, verified human instruction, or changed DOI identity",
+        "separate_expansion_completed": false
+      },
+      "evaluation": {
+        "ambiguous_identity": false,
+        "bounded_human_referral_evidence": false,
+        "contradictory_project_evidence": false,
+        "documented_source_claims": {
+          "metadata_complete_claim": false,
+          "missing_project_proof_claim": false,
+          "official_publication_claim": false,
+          "preprint_claim": false,
+          "primary_spark_claim": false,
+          "project_conflict_claim": false,
+          "same_project_claim": false,
+          "technical_access_failure_claim": false
+        },
+        "doi": "10.1029/2023gl106354",
+        "gates": {
+          "contradictions": "NOT_FOUND_IN_STRUCTURED_RESEARCH_NOT_A_NEGATIVE_PROOF",
+          "identity": "SCREENED_NEEDS_FINAL_VERSION_AND_SECONDARY_LINK_CHECK",
+          "publication": "OFFICIAL_RELEASE_NOT_VERIFIED",
+          "related_output_scope": "SEED_ORIGINAL_EXPANSION_REMAINS_SEPARATE",
+          "required_metadata": "INCOMPLETE_OR_NOT_VERIFIED",
+          "same_project_wpo_funding": "EXACT_PRIMARY_PROJECT_PROOF_MISSING",
+          "technical": "NO_TECHNICAL_HOLD_RECORDED"
+        },
+        "note_event_count": 1,
+        "preprint": false,
+        "primary_project_supported_by_prior_evidence": false,
+        "prior_dispositions": [
+          "PROJECT_EVIDENCE_HOLD"
+        ],
+        "prior_research_budget_exhausted": false,
+        "prior_research_rounds": 0,
+        "prior_secondary_identity_checked": false,
+        "public_identity": "PUBLIC_SCREEN_COMPLETED_NOT_NEW_OUTPUT_PROOF",
+        "public_no_action": false,
+        "public_recorded_statuses": [
+          "not_verified"
+        ],
+        "publicly_staged": false,
+        "published_claim": false,
+        "source_note_sha256": [
+          {
+            "event_id": "18d13390900c0c984803fa7d",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-07-0329ET-two-publisher-award-project-proof-screen.json",
+            "sha256": "9ae178ef42b1a4dc2c34e16ce3457bdcdc8069193c5f3370e5452f15d4f3e6bf"
+          }
+        ],
+        "source_url_count": 1,
+        "source_url_pointers": [
+          "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2023GL106354"
+        ],
+        "technical_hold": false,
+        "verified_public_reach": false
+      },
+      "existing_reviewer_status_unchanged": true,
+      "identity": "doi:10.1029/2023gl106354",
+      "independent_critique": {
+        "adversarial_gate_checks_passed": true,
+        "blocking_safety_issues": [],
+        "grant_clue_or_author_overlap_never_confirms_funding": true,
+        "missing_for_autonomous_reviewer_handoff": [
+          "LIVE_SAME_PROJECT_WPO_FUNDING",
+          "OFFICIAL_RELEASE",
+          "SECONDARY_IDENTITY_CHECK",
+          "COMPLETE_METADATA"
+        ],
+        "official_metadata_pointer_not_current_without_recheck": true,
+        "private_hub_delivery_not_inferred": true
+      },
+      "latest_recorded_disposition_unchanged": "PROJECT_EVIDENCE_HOLD",
+      "output_kind": "DOI",
+      "read_only": true,
+      "source_recorded_dispositions": [
+        "PROJECT_EVIDENCE_HOLD"
+      ]
+    },
+    {
+      "compiled_decision": {
+        "decision_is_research_route_only": true,
+        "decision_reason": "Prior source-specific project evidence hold is unresolved",
+        "formal_original_completed": false,
+        "human_reviewer_approval": false,
+        "next_action": "Preserve the lead without repeating generic searches; reopen only for a new exact primary SPARK project/output funding source",
+        "owner": "SCOUT_ON_NEW_EVIDENCE",
+        "private_hub_write": false,
+        "public_proposal_created": false,
+        "recommended_disposition": "BOUNDED_PROJECT_EVIDENCE_HOLD",
+        "reopen_or_finish_trigger": "New project-specific evidence, verified human instruction, or changed DOI identity",
+        "separate_expansion_completed": false
+      },
+      "evaluation": {
+        "ambiguous_identity": false,
+        "bounded_human_referral_evidence": false,
+        "contradictory_project_evidence": false,
+        "documented_source_claims": {
+          "metadata_complete_claim": false,
+          "missing_project_proof_claim": false,
+          "official_publication_claim": false,
+          "preprint_claim": false,
+          "primary_spark_claim": false,
+          "project_conflict_claim": false,
+          "same_project_claim": false,
+          "technical_access_failure_claim": false
+        },
+        "doi": "10.1029/2023gl106872",
+        "gates": {
+          "contradictions": "NOT_FOUND_IN_STRUCTURED_RESEARCH_NOT_A_NEGATIVE_PROOF",
+          "identity": "SCREENED_NEEDS_FINAL_VERSION_AND_SECONDARY_LINK_CHECK",
+          "publication": "OFFICIAL_RELEASE_NOT_VERIFIED",
+          "related_output_scope": "SEED_ORIGINAL_EXPANSION_REMAINS_SEPARATE",
+          "required_metadata": "INCOMPLETE_OR_NOT_VERIFIED",
+          "same_project_wpo_funding": "EXACT_PRIMARY_PROJECT_PROOF_MISSING",
+          "technical": "NO_TECHNICAL_HOLD_RECORDED"
+        },
+        "note_event_count": 1,
+        "preprint": false,
+        "primary_project_supported_by_prior_evidence": false,
+        "prior_dispositions": [
+          "PROJECT_EVIDENCE_HOLD"
+        ],
+        "prior_research_budget_exhausted": false,
+        "prior_research_rounds": 0,
+        "prior_secondary_identity_checked": false,
+        "public_identity": "PUBLIC_SCREEN_COMPLETED_NOT_NEW_OUTPUT_PROOF",
+        "public_no_action": false,
+        "public_recorded_statuses": [
+          "not_verified"
+        ],
+        "publicly_staged": false,
+        "published_claim": false,
+        "source_note_sha256": [
+          {
+            "event_id": "706087c7072c2ca937b40be0",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-07-0329ET-two-publisher-award-project-proof-screen.json",
+            "sha256": "9ae178ef42b1a4dc2c34e16ce3457bdcdc8069193c5f3370e5452f15d4f3e6bf"
+          }
+        ],
+        "source_url_count": 1,
+        "source_url_pointers": [
+          "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2023GL106872"
+        ],
+        "technical_hold": false,
+        "verified_public_reach": false
+      },
+      "existing_reviewer_status_unchanged": true,
+      "identity": "doi:10.1029/2023gl106872",
+      "independent_critique": {
+        "adversarial_gate_checks_passed": true,
+        "blocking_safety_issues": [],
+        "grant_clue_or_author_overlap_never_confirms_funding": true,
+        "missing_for_autonomous_reviewer_handoff": [
+          "LIVE_SAME_PROJECT_WPO_FUNDING",
+          "OFFICIAL_RELEASE",
+          "SECONDARY_IDENTITY_CHECK",
+          "COMPLETE_METADATA"
+        ],
+        "official_metadata_pointer_not_current_without_recheck": true,
+        "private_hub_delivery_not_inferred": true
+      },
+      "latest_recorded_disposition_unchanged": "PROJECT_EVIDENCE_HOLD",
+      "output_kind": "DOI",
+      "read_only": true,
+      "source_recorded_dispositions": [
+        "PROJECT_EVIDENCE_HOLD"
+      ]
+    },
+    {
+      "compiled_decision": {
+        "decision_is_research_route_only": true,
+        "decision_reason": "Official release remains unverified",
+        "formal_original_completed": false,
+        "human_reviewer_approval": false,
+        "next_action": "Verify publication/release status from official DOI registry and publisher; if preprint, route monthly watchlist",
+        "owner": "SCOUT_BOUNDED_RESEARCH",
+        "private_hub_write": false,
+        "public_proposal_created": false,
+        "recommended_disposition": "TARGETED_OFFICIAL_PUBLICATION_CHECK",
+        "reopen_or_finish_trigger": "Source-recorded official publication/release or preprint",
+        "separate_expansion_completed": false
+      },
+      "evaluation": {
+        "ambiguous_identity": false,
+        "bounded_human_referral_evidence": false,
+        "contradictory_project_evidence": false,
+        "documented_source_claims": {
+          "metadata_complete_claim": false,
+          "missing_project_proof_claim": false,
+          "official_publication_claim": false,
+          "preprint_claim": false,
+          "primary_spark_claim": false,
+          "project_conflict_claim": false,
+          "same_project_claim": false,
+          "technical_access_failure_claim": false
+        },
+        "doi": "10.1029/2026jd046327",
+        "gates": {
+          "contradictions": "NOT_FOUND_IN_STRUCTURED_RESEARCH_NOT_A_NEGATIVE_PROOF",
+          "identity": "SCREENED_NEEDS_FINAL_VERSION_AND_SECONDARY_LINK_CHECK",
+          "publication": "OFFICIAL_RELEASE_NOT_VERIFIED",
+          "related_output_scope": "SEED_ORIGINAL_EXPANSION_REMAINS_SEPARATE",
+          "required_metadata": "INCOMPLETE_OR_NOT_VERIFIED",
+          "same_project_wpo_funding": "EXACT_PRIMARY_PROJECT_PROOF_MISSING",
+          "technical": "NO_TECHNICAL_HOLD_RECORDED"
+        },
+        "note_event_count": 2,
+        "preprint": false,
+        "primary_project_supported_by_prior_evidence": false,
+        "prior_dispositions": [
+          "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY"
+        ],
+        "prior_research_budget_exhausted": false,
+        "prior_research_rounds": null,
+        "prior_secondary_identity_checked": false,
+        "public_identity": "PUBLIC_SCREEN_COMPLETED_NOT_NEW_OUTPUT_PROOF",
+        "public_no_action": false,
+        "public_recorded_statuses": [
+          "not_verified"
+        ],
+        "publicly_staged": false,
+        "published_claim": false,
+        "source_note_sha256": [
+          {
+            "event_id": "2b3f15a701dc1d1b7a7e449b",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-07-1430ET-publisher-award-scope-oklahoma-ozone.json",
+            "sha256": "a4ba761892caeef436ff1fed3668ac13c644d1602f387285bdf0d4a966af7b96"
+          },
+          {
+            "event_id": "93117f244321521036114636",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-08-2329ET-compound-heat-ozone-publisher-attribution.json",
+            "sha256": "d3a5391fdcf835a6174fa903a8e7b8bd36cdf526444f129e1cf47cc7c840dd39"
+          }
+        ],
+        "source_url_count": 1,
+        "source_url_pointers": [
+          "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2026JD046327"
+        ],
+        "technical_hold": false,
+        "verified_public_reach": false
+      },
+      "existing_reviewer_status_unchanged": true,
+      "identity": "doi:10.1029/2026jd046327",
+      "independent_critique": {
+        "adversarial_gate_checks_passed": true,
+        "blocking_safety_issues": [],
+        "grant_clue_or_author_overlap_never_confirms_funding": true,
+        "missing_for_autonomous_reviewer_handoff": [
+          "LIVE_SAME_PROJECT_WPO_FUNDING",
+          "OFFICIAL_RELEASE",
+          "SECONDARY_IDENTITY_CHECK",
+          "COMPLETE_METADATA"
+        ],
+        "official_metadata_pointer_not_current_without_recheck": true,
+        "private_hub_delivery_not_inferred": true
+      },
+      "latest_recorded_disposition_unchanged": "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+      "output_kind": "DOI",
+      "read_only": true,
+      "source_recorded_dispositions": [
+        "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY"
+      ]
+    },
+    {
+      "compiled_decision": {
+        "decision_is_research_route_only": true,
+        "decision_reason": "Official release remains unverified",
+        "formal_original_completed": false,
+        "human_reviewer_approval": false,
+        "next_action": "Verify publication/release status from official DOI registry and publisher; if preprint, route monthly watchlist",
+        "owner": "SCOUT_BOUNDED_RESEARCH",
+        "private_hub_write": false,
+        "public_proposal_created": false,
+        "recommended_disposition": "TARGETED_OFFICIAL_PUBLICATION_CHECK",
+        "reopen_or_finish_trigger": "Source-recorded official publication/release or preprint",
+        "separate_expansion_completed": false
+      },
+      "evaluation": {
+        "ambiguous_identity": false,
+        "bounded_human_referral_evidence": false,
+        "contradictory_project_evidence": false,
+        "documented_source_claims": {
+          "metadata_complete_claim": false,
+          "missing_project_proof_claim": false,
+          "official_publication_claim": false,
+          "preprint_claim": false,
+          "primary_spark_claim": false,
+          "project_conflict_claim": false,
+          "same_project_claim": false,
+          "technical_access_failure_claim": false
+        },
+        "doi": "10.1029/2026jd046349",
+        "gates": {
+          "contradictions": "NOT_FOUND_IN_STRUCTURED_RESEARCH_NOT_A_NEGATIVE_PROOF",
+          "identity": "SCREENED_NEEDS_FINAL_VERSION_AND_SECONDARY_LINK_CHECK",
+          "publication": "OFFICIAL_RELEASE_NOT_VERIFIED",
+          "related_output_scope": "SEED_ORIGINAL_EXPANSION_REMAINS_SEPARATE",
+          "required_metadata": "INCOMPLETE_OR_NOT_VERIFIED",
+          "same_project_wpo_funding": "EXACT_PRIMARY_PROJECT_PROOF_MISSING",
+          "technical": "NO_TECHNICAL_HOLD_RECORDED"
+        },
+        "note_event_count": 1,
+        "preprint": false,
+        "primary_project_supported_by_prior_evidence": false,
+        "prior_dispositions": [
+          "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY"
+        ],
+        "prior_research_budget_exhausted": false,
+        "prior_research_rounds": null,
+        "prior_secondary_identity_checked": false,
+        "public_identity": "PUBLIC_SCREEN_COMPLETED_NOT_NEW_OUTPUT_PROOF",
+        "public_no_action": false,
+        "public_recorded_statuses": [
+          "not_verified"
+        ],
+        "publicly_staged": false,
+        "published_claim": false,
+        "source_note_sha256": [
+          {
+            "event_id": "1d8f4ab20222511daf90e6e6",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-07-1430ET-publisher-award-scope-great-lakes-snow.json",
+            "sha256": "1ec4c166ed7d7944b9b25edbb9b928033f622407739f566ccd0850e3e2039af4"
+          }
+        ],
+        "source_url_count": 0,
+        "source_url_pointers": [],
+        "technical_hold": false,
+        "verified_public_reach": false
+      },
+      "existing_reviewer_status_unchanged": true,
+      "identity": "doi:10.1029/2026jd046349",
+      "independent_critique": {
+        "adversarial_gate_checks_passed": true,
+        "blocking_safety_issues": [],
+        "grant_clue_or_author_overlap_never_confirms_funding": true,
+        "missing_for_autonomous_reviewer_handoff": [
+          "LIVE_SAME_PROJECT_WPO_FUNDING",
+          "OFFICIAL_RELEASE",
+          "SECONDARY_IDENTITY_CHECK",
+          "COMPLETE_METADATA"
+        ],
+        "official_metadata_pointer_not_current_without_recheck": true,
+        "private_hub_delivery_not_inferred": true
+      },
+      "latest_recorded_disposition_unchanged": "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+      "output_kind": "DOI",
+      "read_only": true,
+      "source_recorded_dispositions": [
+        "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY"
+      ]
+    },
+    {
+      "compiled_decision": {
+        "decision_is_research_route_only": true,
+        "decision_reason": "Prior source-specific project evidence hold is unresolved",
+        "formal_original_completed": false,
+        "human_reviewer_approval": false,
+        "next_action": "Preserve the lead without repeating generic searches; reopen only for a new exact primary SPARK project/output funding source",
+        "owner": "SCOUT_ON_NEW_EVIDENCE",
+        "private_hub_write": false,
+        "public_proposal_created": false,
+        "recommended_disposition": "BOUNDED_PROJECT_EVIDENCE_HOLD",
+        "reopen_or_finish_trigger": "New project-specific evidence, verified human instruction, or changed DOI identity",
+        "separate_expansion_completed": false
+      },
+      "evaluation": {
+        "ambiguous_identity": false,
+        "bounded_human_referral_evidence": false,
+        "contradictory_project_evidence": false,
+        "documented_source_claims": {
+          "metadata_complete_claim": false,
+          "missing_project_proof_claim": false,
+          "official_publication_claim": false,
+          "preprint_claim": false,
+          "primary_spark_claim": false,
+          "project_conflict_claim": false,
+          "same_project_claim": false,
+          "technical_access_failure_claim": false
+        },
+        "doi": "10.1038/s41597-024-03916-7",
+        "gates": {
+          "contradictions": "NOT_FOUND_IN_STRUCTURED_RESEARCH_NOT_A_NEGATIVE_PROOF",
+          "identity": "SCREENED_NEEDS_FINAL_VERSION_AND_SECONDARY_LINK_CHECK",
+          "publication": "OFFICIAL_RELEASE_NOT_VERIFIED",
+          "related_output_scope": "SEED_ORIGINAL_EXPANSION_REMAINS_SEPARATE",
+          "required_metadata": "INCOMPLETE_OR_NOT_VERIFIED",
+          "same_project_wpo_funding": "EXACT_PRIMARY_PROJECT_PROOF_MISSING",
+          "technical": "NO_TECHNICAL_HOLD_RECORDED"
+        },
+        "note_event_count": 1,
+        "preprint": false,
+        "primary_project_supported_by_prior_evidence": false,
+        "prior_dispositions": [
+          "PROJECT_EVIDENCE_HOLD"
+        ],
+        "prior_research_budget_exhausted": false,
+        "prior_research_rounds": 1,
+        "prior_secondary_identity_checked": false,
+        "public_identity": "PUBLIC_SCREEN_COMPLETED_NOT_NEW_OUTPUT_PROOF",
+        "public_no_action": false,
+        "public_recorded_statuses": [
+          "not_verified"
+        ],
+        "publicly_staged": false,
+        "published_claim": false,
+        "source_note_sha256": [
+          {
+            "event_id": "d16e5932589403dd5fd3e900",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-07-0729ET-hyg-noaa-ir-project-evidence.json",
+            "sha256": "cc2ee4c38e6b14a9ef4bf8fc4f26dc5ccb35a55fba7e3cd83ebeb5e6615d0e3a"
+          }
+        ],
+        "source_url_count": 2,
+        "source_url_pointers": [
+          "https://repository.library.noaa.gov/view/noaa/67831",
+          "https://www.nature.com/articles/s41597-024-03916-7"
+        ],
+        "technical_hold": false,
+        "verified_public_reach": false
+      },
+      "existing_reviewer_status_unchanged": true,
+      "identity": "doi:10.1038/s41597-024-03916-7",
+      "independent_critique": {
+        "adversarial_gate_checks_passed": true,
+        "blocking_safety_issues": [],
+        "grant_clue_or_author_overlap_never_confirms_funding": true,
+        "missing_for_autonomous_reviewer_handoff": [
+          "LIVE_SAME_PROJECT_WPO_FUNDING",
+          "OFFICIAL_RELEASE",
+          "SECONDARY_IDENTITY_CHECK",
+          "COMPLETE_METADATA"
+        ],
+        "official_metadata_pointer_not_current_without_recheck": true,
+        "private_hub_delivery_not_inferred": true
+      },
+      "latest_recorded_disposition_unchanged": "PROJECT_EVIDENCE_HOLD",
+      "output_kind": "DOI",
+      "read_only": true,
+      "source_recorded_dispositions": [
+        "PROJECT_EVIDENCE_HOLD"
+      ]
+    },
+    {
+      "compiled_decision": {
+        "decision_is_research_route_only": true,
+        "decision_reason": "Public Scout staging exists; private Hub import remains unknown",
+        "formal_original_completed": false,
+        "human_reviewer_approval": false,
+        "next_action": "Check whether the existing public staging was delivered through authorized reviewer workflow; do not create a duplicate",
+        "owner": "PUBLIC_HANDOFF_VERIFICATION",
+        "private_hub_write": false,
+        "public_proposal_created": false,
+        "recommended_disposition": "PUBLIC_PROPOSAL_ALREADY_STAGED_NO_DUPLICATE",
+        "reopen_or_finish_trigger": "Authenticated private handoff or materially changed source evidence",
+        "separate_expansion_completed": false
+      },
+      "evaluation": {
+        "ambiguous_identity": false,
+        "bounded_human_referral_evidence": false,
+        "contradictory_project_evidence": false,
+        "documented_source_claims": {
+          "metadata_complete_claim": false,
+          "missing_project_proof_claim": true,
+          "official_publication_claim": true,
+          "preprint_claim": false,
+          "primary_spark_claim": false,
+          "project_conflict_claim": false,
+          "same_project_claim": false,
+          "technical_access_failure_claim": false
+        },
+        "doi": "10.1088/2515-7620/aeaad2",
+        "gates": {
+          "contradictions": "NOT_FOUND_IN_STRUCTURED_RESEARCH_NOT_A_NEGATIVE_PROOF",
+          "identity": "ALREADY_PUBLICLY_STAGED",
+          "publication": "PUBLISHED_CLAIM_SUPPORTED_IN_PRIOR_SOURCE",
+          "related_output_scope": "SEED_ORIGINAL_EXPANSION_REMAINS_SEPARATE",
+          "required_metadata": "INCOMPLETE_OR_NOT_VERIFIED",
+          "same_project_wpo_funding": "EXACT_PRIMARY_PROJECT_PROOF_MISSING",
+          "technical": "NO_TECHNICAL_HOLD_RECORDED"
+        },
+        "note_event_count": 1,
+        "preprint": false,
+        "primary_project_supported_by_prior_evidence": false,
+        "prior_dispositions": [
+          "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY"
+        ],
+        "prior_research_budget_exhausted": false,
+        "prior_research_rounds": null,
+        "prior_secondary_identity_checked": false,
+        "public_identity": "PUBLIC_SCOUT_PROPOSAL_RECORDED",
+        "public_no_action": false,
+        "public_recorded_statuses": [
+          "not_verified",
+          "staged_for_hub_import"
+        ],
+        "publicly_staged": true,
+        "published_claim": true,
+        "source_note_sha256": [
+          {
+            "event_id": "cd59e0e4544333837aafb097",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-09-0441ET-sfs-western-pacific-cyclone-project-attribution.json",
+            "sha256": "55a005344ffc9235eb97aa5c796b4581c196a17f89359dca2d07857a1fb3b04e"
+          }
+        ],
+        "source_url_count": 2,
+        "source_url_pointers": [
+          "https://repository.library.noaa.gov/view/noaa/76692",
+          "https://vlab.noaa.gov/web/osti-modeling/seasonal-forecast-system/sfs-publications"
+        ],
+        "technical_hold": false,
+        "verified_public_reach": false
+      },
+      "existing_reviewer_status_unchanged": true,
+      "identity": "doi:10.1088/2515-7620/aeaad2",
+      "independent_critique": {
+        "adversarial_gate_checks_passed": true,
+        "blocking_safety_issues": [],
+        "grant_clue_or_author_overlap_never_confirms_funding": true,
+        "missing_for_autonomous_reviewer_handoff": [
+          "LIVE_SAME_PROJECT_WPO_FUNDING",
+          "SECONDARY_IDENTITY_CHECK",
+          "COMPLETE_METADATA"
+        ],
+        "official_metadata_pointer_not_current_without_recheck": true,
+        "private_hub_delivery_not_inferred": true
+      },
+      "latest_recorded_disposition_unchanged": "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+      "output_kind": "DOI",
+      "read_only": true,
+      "source_recorded_dispositions": [
+        "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY"
+      ]
+    },
+    {
+      "compiled_decision": {
+        "decision_is_research_route_only": true,
+        "decision_reason": "Prior source-specific project evidence hold is unresolved",
+        "formal_original_completed": false,
+        "human_reviewer_approval": false,
+        "next_action": "Preserve the lead without repeating generic searches; reopen only for a new exact primary SPARK project/output funding source",
+        "owner": "SCOUT_ON_NEW_EVIDENCE",
+        "private_hub_write": false,
+        "public_proposal_created": false,
+        "recommended_disposition": "BOUNDED_PROJECT_EVIDENCE_HOLD",
+        "reopen_or_finish_trigger": "New project-specific evidence, verified human instruction, or changed DOI identity",
+        "separate_expansion_completed": false
+      },
+      "evaluation": {
+        "ambiguous_identity": false,
+        "bounded_human_referral_evidence": false,
+        "contradictory_project_evidence": false,
+        "documented_source_claims": {
+          "metadata_complete_claim": false,
+          "missing_project_proof_claim": false,
+          "official_publication_claim": false,
+          "preprint_claim": false,
+          "primary_spark_claim": false,
+          "project_conflict_claim": false,
+          "same_project_claim": false,
+          "technical_access_failure_claim": false
+        },
+        "doi": "10.1109/past49659.2022.9975045",
+        "gates": {
+          "contradictions": "NOT_FOUND_IN_STRUCTURED_RESEARCH_NOT_A_NEGATIVE_PROOF",
+          "identity": "NO_VERIFIED_PUBLIC_IDENTITY_GATE",
+          "publication": "OFFICIAL_RELEASE_NOT_VERIFIED",
+          "related_output_scope": "SEED_ORIGINAL_EXPANSION_REMAINS_SEPARATE",
+          "required_metadata": "INCOMPLETE_OR_NOT_VERIFIED",
+          "same_project_wpo_funding": "EXACT_PRIMARY_PROJECT_PROOF_MISSING",
+          "technical": "NO_TECHNICAL_HOLD_RECORDED"
+        },
+        "note_event_count": 1,
+        "preprint": false,
+        "primary_project_supported_by_prior_evidence": false,
+        "prior_dispositions": [
+          "PROJECT_EVIDENCE_HOLD"
+        ],
+        "prior_research_budget_exhausted": false,
+        "prior_research_rounds": null,
+        "prior_secondary_identity_checked": false,
+        "public_identity": "NOT_IN_VERIFIED_PREFLIGHT_COHORT",
+        "public_no_action": false,
+        "public_recorded_statuses": [],
+        "publicly_staged": false,
+        "published_claim": false,
+        "source_note_sha256": [
+          {
+            "event_id": "ac875314ad34444257a4378e",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-05-2033ET-apar-project-title-pilot-scope-check.json",
+            "sha256": "d212c7177ae54ba69135ef1d07deffb8d7619f63f33d94c0f704d849c7d53dfd"
+          }
+        ],
+        "source_url_count": 2,
+        "source_url_pointers": [
+          "https://api.crossref.org/works/10.1109/past49659.2022.9975045",
+          "https://impacts.ucar.edu/en/publications/two-way-pattern-synthesis-for-the-airborne-phased-array-radar-apa/"
+        ],
+        "technical_hold": false,
+        "verified_public_reach": false
+      },
+      "existing_reviewer_status_unchanged": true,
+      "identity": "doi:10.1109/past49659.2022.9975045",
+      "independent_critique": {
+        "adversarial_gate_checks_passed": true,
+        "blocking_safety_issues": [],
+        "grant_clue_or_author_overlap_never_confirms_funding": true,
+        "missing_for_autonomous_reviewer_handoff": [
+          "LIVE_SAME_PROJECT_WPO_FUNDING",
+          "OFFICIAL_RELEASE",
+          "SECONDARY_IDENTITY_CHECK",
+          "COMPLETE_METADATA"
+        ],
+        "official_metadata_pointer_not_current_without_recheck": true,
+        "private_hub_delivery_not_inferred": true
+      },
+      "latest_recorded_disposition_unchanged": "PROJECT_EVIDENCE_HOLD",
+      "output_kind": "DOI",
+      "read_only": true,
+      "source_recorded_dispositions": [
+        "PROJECT_EVIDENCE_HOLD"
+      ]
+    },
+    {
+      "compiled_decision": {
+        "decision_is_research_route_only": true,
+        "decision_reason": "Earlier source-backed research explicitly requests one bounded human judgment",
+        "formal_original_completed": false,
+        "human_reviewer_approval": false,
+        "next_action": "Ask whether 10.1109/radarconf2248738.2022.9764246 is an output of the exact primary WPO SPARK project; present existing source URLs and disagreement, without reviewer justification requirement",
+        "owner": "HUMAN_PROJECT_ASSESSMENT",
+        "private_hub_write": false,
+        "public_proposal_created": false,
+        "recommended_disposition": "BOUNDED_HUMAN_PROJECT_QUESTION",
+        "reopen_or_finish_trigger": "Specific reviewer response or new exact primary award/deliverable evidence",
+        "separate_expansion_completed": false
+      },
+      "evaluation": {
+        "ambiguous_identity": false,
+        "bounded_human_referral_evidence": true,
+        "contradictory_project_evidence": false,
+        "documented_source_claims": {
+          "metadata_complete_claim": false,
+          "missing_project_proof_claim": false,
+          "official_publication_claim": false,
+          "preprint_claim": false,
+          "primary_spark_claim": false,
+          "project_conflict_claim": false,
+          "same_project_claim": false,
+          "technical_access_failure_claim": false
+        },
+        "doi": "10.1109/radarconf2248738.2022.9764246",
+        "gates": {
+          "contradictions": "NOT_FOUND_IN_STRUCTURED_RESEARCH_NOT_A_NEGATIVE_PROOF",
+          "identity": "NO_VERIFIED_PUBLIC_IDENTITY_GATE",
+          "publication": "OFFICIAL_RELEASE_NOT_VERIFIED",
+          "related_output_scope": "SEED_ORIGINAL_EXPANSION_REMAINS_SEPARATE",
+          "required_metadata": "INCOMPLETE_OR_NOT_VERIFIED",
+          "same_project_wpo_funding": "EXACT_PRIMARY_PROJECT_PROOF_MISSING",
+          "technical": "NO_TECHNICAL_HOLD_RECORDED"
+        },
+        "note_event_count": 2,
+        "preprint": false,
+        "primary_project_supported_by_prior_evidence": false,
+        "prior_dispositions": [
+          "BOUNDED_PROJECT_QUESTION_FOR_HUMAN",
+          "PROJECT_EVIDENCE_HOLD"
+        ],
+        "prior_research_budget_exhausted": false,
+        "prior_research_rounds": null,
+        "prior_secondary_identity_checked": false,
+        "public_identity": "NOT_IN_VERIFIED_PREFLIGHT_COHORT",
+        "public_no_action": false,
+        "public_recorded_statuses": [],
+        "publicly_staged": false,
+        "published_claim": false,
+        "source_note_sha256": [
+          {
+            "event_id": "a0e60121b5554c4e0acac9df",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-05-2033ET-apar-project-title-pilot-scope-check.json",
+            "sha256": "d212c7177ae54ba69135ef1d07deffb8d7619f63f33d94c0f704d849c7d53dfd"
+          },
+          {
+            "event_id": "445a9cede9b3f94148591719",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-05-2231ET-apar-radarconf-official-program-followup.json",
+            "sha256": "8341596626813521be8754d933aae5085333f66f2ee2dd89783409864b227904"
+          }
+        ],
+        "source_url_count": 4,
+        "source_url_pointers": [
+          "https://api.crossref.org/works/10.1109/radarconf2248738.2022.9764246",
+          "https://ieeexplore.ieee.org/document/9764246/",
+          "https://storage.googleapis.com/wzukusers/user-34871099/documents/971a1bf9225f4299b15aabac1a4633aa/RadarConf_2022_Program_web_V4.pdf",
+          "https://wpo.noaa.gov/spark/"
+        ],
+        "technical_hold": false,
+        "verified_public_reach": false
+      },
+      "existing_reviewer_status_unchanged": true,
+      "identity": "doi:10.1109/radarconf2248738.2022.9764246",
+      "independent_critique": {
+        "adversarial_gate_checks_passed": true,
+        "blocking_safety_issues": [],
+        "grant_clue_or_author_overlap_never_confirms_funding": true,
+        "missing_for_autonomous_reviewer_handoff": [
+          "LIVE_SAME_PROJECT_WPO_FUNDING",
+          "OFFICIAL_RELEASE",
+          "SECONDARY_IDENTITY_CHECK",
+          "COMPLETE_METADATA"
+        ],
+        "official_metadata_pointer_not_current_without_recheck": true,
+        "private_hub_delivery_not_inferred": true
+      },
+      "latest_recorded_disposition_unchanged": "BOUNDED_PROJECT_QUESTION_FOR_HUMAN",
+      "output_kind": "DOI",
+      "read_only": true,
+      "source_recorded_dispositions": [
+        "BOUNDED_PROJECT_QUESTION_FOR_HUMAN",
+        "PROJECT_EVIDENCE_HOLD"
+      ]
+    },
+    {
+      "compiled_decision": {
+        "decision_is_research_route_only": true,
+        "decision_reason": "Prior source-specific project evidence hold is unresolved",
+        "formal_original_completed": false,
+        "human_reviewer_approval": false,
+        "next_action": "Preserve the lead without repeating generic searches; reopen only for a new exact primary SPARK project/output funding source",
+        "owner": "SCOUT_ON_NEW_EVIDENCE",
+        "private_hub_write": false,
+        "public_proposal_created": false,
+        "recommended_disposition": "BOUNDED_PROJECT_EVIDENCE_HOLD",
+        "reopen_or_finish_trigger": "New project-specific evidence, verified human instruction, or changed DOI identity",
+        "separate_expansion_completed": false
+      },
+      "evaluation": {
+        "ambiguous_identity": false,
+        "bounded_human_referral_evidence": false,
+        "contradictory_project_evidence": false,
+        "documented_source_claims": {
+          "metadata_complete_claim": false,
+          "missing_project_proof_claim": false,
+          "official_publication_claim": false,
+          "preprint_claim": false,
+          "primary_spark_claim": false,
+          "project_conflict_claim": false,
+          "same_project_claim": false,
+          "technical_access_failure_claim": false
+        },
+        "doi": "10.1175/aies-d-23-0106.1",
+        "gates": {
+          "contradictions": "NOT_FOUND_IN_STRUCTURED_RESEARCH_NOT_A_NEGATIVE_PROOF",
+          "identity": "NO_VERIFIED_PUBLIC_IDENTITY_GATE",
+          "publication": "OFFICIAL_RELEASE_NOT_VERIFIED",
+          "related_output_scope": "SEED_ORIGINAL_EXPANSION_REMAINS_SEPARATE",
+          "required_metadata": "INCOMPLETE_OR_NOT_VERIFIED",
+          "same_project_wpo_funding": "EXACT_PRIMARY_PROJECT_PROOF_MISSING",
+          "technical": "NO_TECHNICAL_HOLD_RECORDED"
+        },
+        "note_event_count": 1,
+        "preprint": false,
+        "primary_project_supported_by_prior_evidence": false,
+        "prior_dispositions": [
+          "PROJECT_EVIDENCE_HOLD"
+        ],
+        "prior_research_budget_exhausted": false,
+        "prior_research_rounds": null,
+        "prior_secondary_identity_checked": false,
+        "public_identity": "NOT_IN_VERIFIED_PREFLIGHT_COHORT",
+        "public_no_action": false,
+        "public_recorded_statuses": [],
+        "publicly_staged": false,
+        "published_claim": false,
+        "source_note_sha256": [
+          {
+            "event_id": "f3cea886bd3393050ce56849",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-06-0333ET-wofs-forecast-skill-project-award-contradiction.json",
+            "sha256": "64721d2daf81b50b102530823c7fd53c33f70b9ecb9b9b8d68aeb7992e218b99"
+          }
+        ],
+        "source_url_count": 2,
+        "source_url_pointers": [
+          "https://journals.ametsoc.org/view/journals/aies/3/3/AIES-D-23-0106.1.xml",
+          "https://repository.library.noaa.gov/view/noaa/67920"
+        ],
+        "technical_hold": false,
+        "verified_public_reach": false
+      },
+      "existing_reviewer_status_unchanged": true,
+      "identity": "doi:10.1175/aies-d-23-0106.1",
+      "independent_critique": {
+        "adversarial_gate_checks_passed": true,
+        "blocking_safety_issues": [],
+        "grant_clue_or_author_overlap_never_confirms_funding": true,
+        "missing_for_autonomous_reviewer_handoff": [
+          "LIVE_SAME_PROJECT_WPO_FUNDING",
+          "OFFICIAL_RELEASE",
+          "SECONDARY_IDENTITY_CHECK",
+          "COMPLETE_METADATA"
+        ],
+        "official_metadata_pointer_not_current_without_recheck": true,
+        "private_hub_delivery_not_inferred": true
+      },
+      "latest_recorded_disposition_unchanged": "PROJECT_EVIDENCE_HOLD",
+      "output_kind": "DOI",
+      "read_only": true,
+      "source_recorded_dispositions": [
+        "PROJECT_EVIDENCE_HOLD"
+      ]
+    },
+    {
+      "compiled_decision": {
+        "decision_is_research_route_only": true,
+        "decision_reason": "Prior source-specific project evidence hold is unresolved",
+        "formal_original_completed": false,
+        "human_reviewer_approval": false,
+        "next_action": "Preserve the lead without repeating generic searches; reopen only for a new exact primary SPARK project/output funding source",
+        "owner": "SCOUT_ON_NEW_EVIDENCE",
+        "private_hub_write": false,
+        "public_proposal_created": false,
+        "recommended_disposition": "BOUNDED_PROJECT_EVIDENCE_HOLD",
+        "reopen_or_finish_trigger": "New project-specific evidence, verified human instruction, or changed DOI identity",
+        "separate_expansion_completed": false
+      },
+      "evaluation": {
+        "ambiguous_identity": false,
+        "bounded_human_referral_evidence": false,
+        "contradictory_project_evidence": false,
+        "documented_source_claims": {
+          "metadata_complete_claim": false,
+          "missing_project_proof_claim": false,
+          "official_publication_claim": false,
+          "preprint_claim": false,
+          "primary_spark_claim": false,
+          "project_conflict_claim": false,
+          "same_project_claim": false,
+          "technical_access_failure_claim": false
+        },
+        "doi": "10.1175/jcli-d-21-0364.1",
+        "gates": {
+          "contradictions": "NOT_FOUND_IN_STRUCTURED_RESEARCH_NOT_A_NEGATIVE_PROOF",
+          "identity": "NO_VERIFIED_PUBLIC_IDENTITY_GATE",
+          "publication": "OFFICIAL_RELEASE_NOT_VERIFIED",
+          "related_output_scope": "SEED_ORIGINAL_EXPANSION_REMAINS_SEPARATE",
+          "required_metadata": "INCOMPLETE_OR_NOT_VERIFIED",
+          "same_project_wpo_funding": "EXACT_PRIMARY_PROJECT_PROOF_MISSING",
+          "technical": "NO_TECHNICAL_HOLD_RECORDED"
+        },
+        "note_event_count": 1,
+        "preprint": false,
+        "primary_project_supported_by_prior_evidence": false,
+        "prior_dispositions": [
+          "PROJECT_EVIDENCE_HOLD"
+        ],
+        "prior_research_budget_exhausted": false,
+        "prior_research_rounds": null,
+        "prior_secondary_identity_checked": false,
+        "public_identity": "NOT_IN_VERIFIED_PREFLIGHT_COHORT",
+        "public_no_action": false,
+        "public_recorded_statuses": [],
+        "publicly_staged": false,
+        "published_claim": false,
+        "source_note_sha256": [
+          {
+            "event_id": "c010d6bb48ea34c471cce200",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-06-1726ET-gfdl-spear-heat-extremes-related-project-hold.json",
+            "sha256": "b0a497437a4d15cb11b85c292a6f25b0d0bca03d0283c559608a0f4f77597882"
+          }
+        ],
+        "source_url_count": 2,
+        "source_url_pointers": [
+          "https://cimes.princeton.edu/publications/keyword/gfdl-spear",
+          "https://www.gfdl.noaa.gov/spear/"
+        ],
+        "technical_hold": false,
+        "verified_public_reach": false
+      },
+      "existing_reviewer_status_unchanged": true,
+      "identity": "doi:10.1175/jcli-d-21-0364.1",
+      "independent_critique": {
+        "adversarial_gate_checks_passed": true,
+        "blocking_safety_issues": [],
+        "grant_clue_or_author_overlap_never_confirms_funding": true,
+        "missing_for_autonomous_reviewer_handoff": [
+          "LIVE_SAME_PROJECT_WPO_FUNDING",
+          "OFFICIAL_RELEASE",
+          "SECONDARY_IDENTITY_CHECK",
+          "COMPLETE_METADATA"
+        ],
+        "official_metadata_pointer_not_current_without_recheck": true,
+        "private_hub_delivery_not_inferred": true
+      },
+      "latest_recorded_disposition_unchanged": "PROJECT_EVIDENCE_HOLD",
+      "output_kind": "DOI",
+      "read_only": true,
+      "source_recorded_dispositions": [
+        "PROJECT_EVIDENCE_HOLD"
+      ]
+    },
+    {
+      "compiled_decision": {
+        "decision_is_research_route_only": true,
+        "decision_reason": "A technical source-access problem must not become negative funding proof",
+        "formal_original_completed": false,
+        "human_reviewer_approval": false,
+        "next_action": "Retry the specific official DOI registry/publisher endpoint once under recovery backoff; preserve an access hold if unavailable",
+        "owner": "EXACT_DOI_METADATA_RECOVERY",
+        "private_hub_write": false,
+        "public_proposal_created": false,
+        "recommended_disposition": "DOI_METADATA_RECOVERY_ONLY",
+        "reopen_or_finish_trigger": "Recovery retry becomes due or source API responds",
+        "separate_expansion_completed": false
+      },
+      "evaluation": {
+        "ambiguous_identity": false,
+        "bounded_human_referral_evidence": false,
+        "contradictory_project_evidence": false,
+        "documented_source_claims": {
+          "metadata_complete_claim": false,
+          "missing_project_proof_claim": false,
+          "official_publication_claim": false,
+          "preprint_claim": false,
+          "primary_spark_claim": false,
+          "project_conflict_claim": false,
+          "same_project_claim": false,
+          "technical_access_failure_claim": false
+        },
+        "doi": "10.1175/waf-d-22-0056.1",
+        "gates": {
+          "contradictions": "NOT_FOUND_IN_STRUCTURED_RESEARCH_NOT_A_NEGATIVE_PROOF",
+          "identity": "NO_VERIFIED_PUBLIC_IDENTITY_GATE",
+          "publication": "OFFICIAL_RELEASE_NOT_VERIFIED",
+          "related_output_scope": "SEED_ORIGINAL_EXPANSION_REMAINS_SEPARATE",
+          "required_metadata": "INCOMPLETE_OR_NOT_VERIFIED",
+          "same_project_wpo_funding": "EXACT_PRIMARY_PROJECT_PROOF_MISSING",
+          "technical": "PREVIOUS_METADATA_RECOVERY_HOLD"
+        },
+        "note_event_count": 1,
+        "preprint": false,
+        "primary_project_supported_by_prior_evidence": false,
+        "prior_dispositions": [
+          "TECHNICAL_METADATA_RECOVERY"
+        ],
+        "prior_research_budget_exhausted": false,
+        "prior_research_rounds": null,
+        "prior_secondary_identity_checked": false,
+        "public_identity": "NOT_IN_VERIFIED_PREFLIGHT_COHORT",
+        "public_no_action": false,
+        "public_recorded_statuses": [],
+        "publicly_staged": false,
+        "published_claim": false,
+        "source_note_sha256": [
+          {
+            "event_id": "47f992551c7815d91789d380",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-05-2131ET-wofs-project-title-pilot-identity-funding-hold.json",
+            "sha256": "eaff76789f856c2b00729dda58edd5439075ed5221b708e99a875c209dedefea"
+          }
+        ],
+        "source_url_count": 2,
+        "source_url_pointers": [
+          "https://journals.ametsoc.org/view/journals/wefo/37/10/WAF-D-22-0056.1.xml",
+          "https://repository.library.noaa.gov/view/noaa/45383"
+        ],
+        "technical_hold": true,
+        "verified_public_reach": false
+      },
+      "existing_reviewer_status_unchanged": true,
+      "identity": "doi:10.1175/waf-d-22-0056.1",
+      "independent_critique": {
+        "adversarial_gate_checks_passed": true,
+        "blocking_safety_issues": [],
+        "grant_clue_or_author_overlap_never_confirms_funding": true,
+        "missing_for_autonomous_reviewer_handoff": [
+          "LIVE_SAME_PROJECT_WPO_FUNDING",
+          "OFFICIAL_RELEASE",
+          "SECONDARY_IDENTITY_CHECK",
+          "COMPLETE_METADATA"
+        ],
+        "official_metadata_pointer_not_current_without_recheck": true,
+        "private_hub_delivery_not_inferred": true
+      },
+      "latest_recorded_disposition_unchanged": "TECHNICAL_METADATA_RECOVERY",
+      "output_kind": "DOI",
+      "read_only": true,
+      "source_recorded_dispositions": [
+        "TECHNICAL_METADATA_RECOVERY"
+      ]
+    },
+    {
+      "compiled_decision": {
+        "decision_is_research_route_only": true,
+        "decision_reason": "Prior source-specific project evidence hold is unresolved",
+        "formal_original_completed": false,
+        "human_reviewer_approval": false,
+        "next_action": "Preserve the lead without repeating generic searches; reopen only for a new exact primary SPARK project/output funding source",
+        "owner": "SCOUT_ON_NEW_EVIDENCE",
+        "private_hub_write": false,
+        "public_proposal_created": false,
+        "recommended_disposition": "BOUNDED_PROJECT_EVIDENCE_HOLD",
+        "reopen_or_finish_trigger": "New project-specific evidence, verified human instruction, or changed DOI identity",
+        "separate_expansion_completed": false
+      },
+      "evaluation": {
+        "ambiguous_identity": false,
+        "bounded_human_referral_evidence": false,
+        "contradictory_project_evidence": false,
+        "documented_source_claims": {
+          "metadata_complete_claim": false,
+          "missing_project_proof_claim": false,
+          "official_publication_claim": false,
+          "preprint_claim": false,
+          "primary_spark_claim": false,
+          "project_conflict_claim": false,
+          "same_project_claim": false,
+          "technical_access_failure_claim": false
+        },
+        "doi": "10.1175/wcas-d-25-0104.1",
+        "gates": {
+          "contradictions": "NOT_FOUND_IN_STRUCTURED_RESEARCH_NOT_A_NEGATIVE_PROOF",
+          "identity": "SCREENED_NEEDS_FINAL_VERSION_AND_SECONDARY_LINK_CHECK",
+          "publication": "OFFICIAL_RELEASE_NOT_VERIFIED",
+          "related_output_scope": "SEED_ORIGINAL_EXPANSION_REMAINS_SEPARATE",
+          "required_metadata": "INCOMPLETE_OR_NOT_VERIFIED",
+          "same_project_wpo_funding": "EXACT_PRIMARY_PROJECT_PROOF_MISSING",
+          "technical": "NO_TECHNICAL_HOLD_RECORDED"
+        },
+        "note_event_count": 1,
+        "preprint": false,
+        "primary_project_supported_by_prior_evidence": false,
+        "prior_dispositions": [
+          "PROJECT_EVIDENCE_HOLD"
+        ],
+        "prior_research_budget_exhausted": false,
+        "prior_research_rounds": 0,
+        "prior_secondary_identity_checked": false,
+        "public_identity": "PUBLIC_SCREEN_COMPLETED_NOT_NEW_OUTPUT_PROOF",
+        "public_no_action": false,
+        "public_recorded_statuses": [
+          "not_verified"
+        ],
+        "publicly_staged": false,
+        "published_claim": false,
+        "source_note_sha256": [
+          {
+            "event_id": "1478d61898d954837513ee17",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-08-0325ET-mcv-dashboard-project-attribution-hold.json",
+            "sha256": "e702a1cfd2fb7c2e3f0cb3da9fae960f7378d6a77205772500af35e6b5766101"
+          }
+        ],
+        "source_url_count": 0,
+        "source_url_pointers": [],
+        "technical_hold": false,
+        "verified_public_reach": false
+      },
+      "existing_reviewer_status_unchanged": true,
+      "identity": "doi:10.1175/wcas-d-25-0104.1",
+      "independent_critique": {
+        "adversarial_gate_checks_passed": true,
+        "blocking_safety_issues": [],
+        "grant_clue_or_author_overlap_never_confirms_funding": true,
+        "missing_for_autonomous_reviewer_handoff": [
+          "LIVE_SAME_PROJECT_WPO_FUNDING",
+          "OFFICIAL_RELEASE",
+          "SECONDARY_IDENTITY_CHECK",
+          "COMPLETE_METADATA"
+        ],
+        "official_metadata_pointer_not_current_without_recheck": true,
+        "private_hub_delivery_not_inferred": true
+      },
+      "latest_recorded_disposition_unchanged": "PROJECT_EVIDENCE_HOLD",
+      "output_kind": "DOI",
+      "read_only": true,
+      "source_recorded_dispositions": [
+        "PROJECT_EVIDENCE_HOLD"
+      ]
+    },
+    {
+      "compiled_decision": {
+        "decision_is_research_route_only": true,
+        "decision_reason": "Prior source-specific project evidence hold is unresolved",
+        "formal_original_completed": false,
+        "human_reviewer_approval": false,
+        "next_action": "Preserve the lead without repeating generic searches; reopen only for a new exact primary SPARK project/output funding source",
+        "owner": "SCOUT_ON_NEW_EVIDENCE",
+        "private_hub_write": false,
+        "public_proposal_created": false,
+        "recommended_disposition": "BOUNDED_PROJECT_EVIDENCE_HOLD",
+        "reopen_or_finish_trigger": "New project-specific evidence, verified human instruction, or changed DOI identity",
+        "separate_expansion_completed": false
+      },
+      "evaluation": {
+        "ambiguous_identity": false,
+        "bounded_human_referral_evidence": false,
+        "contradictory_project_evidence": false,
+        "documented_source_claims": {
+          "metadata_complete_claim": false,
+          "missing_project_proof_claim": false,
+          "official_publication_claim": false,
+          "preprint_claim": false,
+          "primary_spark_claim": false,
+          "project_conflict_claim": false,
+          "same_project_claim": false,
+          "technical_access_failure_claim": false
+        },
+        "doi": "10.21957/befj-es73",
+        "gates": {
+          "contradictions": "NOT_FOUND_IN_STRUCTURED_RESEARCH_NOT_A_NEGATIVE_PROOF",
+          "identity": "NO_VERIFIED_PUBLIC_IDENTITY_GATE",
+          "publication": "OFFICIAL_RELEASE_NOT_VERIFIED",
+          "related_output_scope": "SEED_ORIGINAL_EXPANSION_REMAINS_SEPARATE",
+          "required_metadata": "INCOMPLETE_OR_NOT_VERIFIED",
+          "same_project_wpo_funding": "EXACT_PRIMARY_PROJECT_PROOF_MISSING",
+          "technical": "NO_TECHNICAL_HOLD_RECORDED"
+        },
+        "note_event_count": 1,
+        "preprint": false,
+        "primary_project_supported_by_prior_evidence": false,
+        "prior_dispositions": [
+          "PROJECT_EVIDENCE_HOLD"
+        ],
+        "prior_research_budget_exhausted": false,
+        "prior_research_rounds": null,
+        "prior_secondary_identity_checked": false,
+        "public_identity": "NOT_IN_VERIFIED_PREFLIGHT_COHORT",
+        "public_no_action": false,
+        "public_recorded_statuses": [],
+        "publicly_staged": false,
+        "published_claim": false,
+        "source_note_sha256": [
+          {
+            "event_id": "9f32b68fa0cca987df497fc6",
+            "path": "scout-operations/monthly-research/2026-11-06-0730ET-storm-harry-ecmwf-official-catalog-followup.json",
+            "sha256": "7a63adfadb964734abec498d27cc54bc6e431d0cb8f51c11bdc8f4e6131491c3"
+          }
+        ],
+        "source_url_count": 2,
+        "source_url_pointers": [
+          "https://apps.ecmwf.int/ifs-experiments/",
+          "https://rmets.onlinelibrary.wiley.com/doi/10.1002/qj.70325"
+        ],
+        "technical_hold": false,
+        "verified_public_reach": false
+      },
+      "existing_reviewer_status_unchanged": true,
+      "identity": "doi:10.21957/befj-es73",
+      "independent_critique": {
+        "adversarial_gate_checks_passed": true,
+        "blocking_safety_issues": [],
+        "grant_clue_or_author_overlap_never_confirms_funding": true,
+        "missing_for_autonomous_reviewer_handoff": [
+          "LIVE_SAME_PROJECT_WPO_FUNDING",
+          "OFFICIAL_RELEASE",
+          "SECONDARY_IDENTITY_CHECK",
+          "COMPLETE_METADATA"
+        ],
+        "official_metadata_pointer_not_current_without_recheck": true,
+        "private_hub_delivery_not_inferred": true
+      },
+      "latest_recorded_disposition_unchanged": "PROJECT_EVIDENCE_HOLD",
+      "output_kind": "DOI",
+      "read_only": true,
+      "source_recorded_dispositions": [
+        "PROJECT_EVIDENCE_HOLD"
+      ]
+    },
+    {
+      "compiled_decision": {
+        "decision_is_research_route_only": true,
+        "decision_reason": "Prior source-specific project evidence hold is unresolved",
+        "formal_original_completed": false,
+        "human_reviewer_approval": false,
+        "next_action": "Preserve the lead without repeating generic searches; reopen only for a new exact primary SPARK project/output funding source",
+        "owner": "SCOUT_ON_NEW_EVIDENCE",
+        "private_hub_write": false,
+        "public_proposal_created": false,
+        "recommended_disposition": "BOUNDED_PROJECT_EVIDENCE_HOLD",
+        "reopen_or_finish_trigger": "New project-specific evidence, verified human instruction, or changed DOI identity",
+        "separate_expansion_completed": false
+      },
+      "evaluation": {
+        "ambiguous_identity": false,
+        "bounded_human_referral_evidence": false,
+        "contradictory_project_evidence": false,
+        "documented_source_claims": {
+          "metadata_complete_claim": false,
+          "missing_project_proof_claim": false,
+          "official_publication_claim": false,
+          "preprint_claim": false,
+          "primary_spark_claim": false,
+          "project_conflict_claim": false,
+          "same_project_claim": false,
+          "technical_access_failure_claim": false
+        },
+        "doi": "10.21957/e8rz-wh72",
+        "gates": {
+          "contradictions": "NOT_FOUND_IN_STRUCTURED_RESEARCH_NOT_A_NEGATIVE_PROOF",
+          "identity": "NO_VERIFIED_PUBLIC_IDENTITY_GATE",
+          "publication": "OFFICIAL_RELEASE_NOT_VERIFIED",
+          "related_output_scope": "SEED_ORIGINAL_EXPANSION_REMAINS_SEPARATE",
+          "required_metadata": "INCOMPLETE_OR_NOT_VERIFIED",
+          "same_project_wpo_funding": "EXACT_PRIMARY_PROJECT_PROOF_MISSING",
+          "technical": "NO_TECHNICAL_HOLD_RECORDED"
+        },
+        "note_event_count": 1,
+        "preprint": false,
+        "primary_project_supported_by_prior_evidence": false,
+        "prior_dispositions": [
+          "PROJECT_EVIDENCE_HOLD"
+        ],
+        "prior_research_budget_exhausted": false,
+        "prior_research_rounds": null,
+        "prior_secondary_identity_checked": false,
+        "public_identity": "NOT_IN_VERIFIED_PREFLIGHT_COHORT",
+        "public_no_action": false,
+        "public_recorded_statuses": [],
+        "publicly_staged": false,
+        "published_claim": false,
+        "source_note_sha256": [
+          {
+            "event_id": "275a9ce917d6c210323c1ef9",
+            "path": "scout-operations/monthly-research/2026-11-06-0730ET-storm-harry-ecmwf-official-catalog-followup.json",
+            "sha256": "7a63adfadb964734abec498d27cc54bc6e431d0cb8f51c11bdc8f4e6131491c3"
+          }
+        ],
+        "source_url_count": 2,
+        "source_url_pointers": [
+          "https://apps.ecmwf.int/ifs-experiments/",
+          "https://rmets.onlinelibrary.wiley.com/doi/10.1002/qj.70325"
+        ],
+        "technical_hold": false,
+        "verified_public_reach": false
+      },
+      "existing_reviewer_status_unchanged": true,
+      "identity": "doi:10.21957/e8rz-wh72",
+      "independent_critique": {
+        "adversarial_gate_checks_passed": true,
+        "blocking_safety_issues": [],
+        "grant_clue_or_author_overlap_never_confirms_funding": true,
+        "missing_for_autonomous_reviewer_handoff": [
+          "LIVE_SAME_PROJECT_WPO_FUNDING",
+          "OFFICIAL_RELEASE",
+          "SECONDARY_IDENTITY_CHECK",
+          "COMPLETE_METADATA"
+        ],
+        "official_metadata_pointer_not_current_without_recheck": true,
+        "private_hub_delivery_not_inferred": true
+      },
+      "latest_recorded_disposition_unchanged": "PROJECT_EVIDENCE_HOLD",
+      "output_kind": "DOI",
+      "read_only": true,
+      "source_recorded_dispositions": [
+        "PROJECT_EVIDENCE_HOLD"
+      ]
+    },
+    {
+      "compiled_decision": {
+        "decision_is_research_route_only": true,
+        "decision_reason": "Official release remains unverified",
+        "formal_original_completed": false,
+        "human_reviewer_approval": false,
+        "next_action": "Verify publication/release status from official DOI registry and publisher; if preprint, route monthly watchlist",
+        "owner": "SCOUT_BOUNDED_RESEARCH",
+        "private_hub_write": false,
+        "public_proposal_created": false,
+        "recommended_disposition": "TARGETED_OFFICIAL_PUBLICATION_CHECK",
+        "reopen_or_finish_trigger": "Source-recorded official publication/release or preprint",
+        "separate_expansion_completed": false
+      },
+      "evaluation": {
+        "ambiguous_identity": false,
+        "bounded_human_referral_evidence": false,
+        "contradictory_project_evidence": false,
+        "documented_source_claims": {
+          "metadata_complete_claim": false,
+          "missing_project_proof_claim": false,
+          "official_publication_claim": false,
+          "preprint_claim": false,
+          "primary_spark_claim": false,
+          "project_conflict_claim": false,
+          "same_project_claim": false,
+          "technical_access_failure_claim": false
+        },
+        "doi": "10.3390/c4040066",
+        "gates": {
+          "contradictions": "NOT_FOUND_IN_STRUCTURED_RESEARCH_NOT_A_NEGATIVE_PROOF",
+          "identity": "SCREENED_NEEDS_FINAL_VERSION_AND_SECONDARY_LINK_CHECK",
+          "publication": "OFFICIAL_RELEASE_NOT_VERIFIED",
+          "related_output_scope": "SEED_ORIGINAL_EXPANSION_REMAINS_SEPARATE",
+          "required_metadata": "INCOMPLETE_OR_NOT_VERIFIED",
+          "same_project_wpo_funding": "EXACT_PRIMARY_PROJECT_PROOF_MISSING",
+          "technical": "NO_TECHNICAL_HOLD_RECORDED"
+        },
+        "note_event_count": 1,
+        "preprint": false,
+        "primary_project_supported_by_prior_evidence": false,
+        "prior_dispositions": [
+          "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY"
+        ],
+        "prior_research_budget_exhausted": false,
+        "prior_research_rounds": 0,
+        "prior_secondary_identity_checked": false,
+        "public_identity": "PUBLIC_SCREEN_COMPLETED_NOT_NEW_OUTPUT_PROOF",
+        "public_no_action": false,
+        "public_recorded_statuses": [
+          "not_verified"
+        ],
+        "publicly_staged": false,
+        "published_claim": false,
+        "source_note_sha256": [
+          {
+            "event_id": "e442f391209be823d3141b72",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-05-1226ET-activated-carbon-primary-funding-contradiction.json",
+            "sha256": "84a96b9cbbc853aa91b6e63cdf8e601cc5e43cb6bc203a9b23baa2da4cebd62e"
+          }
+        ],
+        "source_url_count": 1,
+        "source_url_pointers": [
+          "https://www.mdpi.com/2311-5629/4/4/66"
+        ],
+        "technical_hold": false,
+        "verified_public_reach": false
+      },
+      "existing_reviewer_status_unchanged": true,
+      "identity": "doi:10.3390/c4040066",
+      "independent_critique": {
+        "adversarial_gate_checks_passed": true,
+        "blocking_safety_issues": [],
+        "grant_clue_or_author_overlap_never_confirms_funding": true,
+        "missing_for_autonomous_reviewer_handoff": [
+          "LIVE_SAME_PROJECT_WPO_FUNDING",
+          "OFFICIAL_RELEASE",
+          "SECONDARY_IDENTITY_CHECK",
+          "COMPLETE_METADATA"
+        ],
+        "official_metadata_pointer_not_current_without_recheck": true,
+        "private_hub_delivery_not_inferred": true
+      },
+      "latest_recorded_disposition_unchanged": "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+      "output_kind": "DOI",
+      "read_only": true,
+      "source_recorded_dispositions": [
+        "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY"
+      ]
+    },
+    {
+      "compiled_decision": {
+        "decision_is_research_route_only": true,
+        "decision_reason": "Prior source-specific project evidence hold is unresolved",
+        "formal_original_completed": false,
+        "human_reviewer_approval": false,
+        "next_action": "Preserve the lead without repeating generic searches; reopen only for a new exact primary SPARK project/output funding source",
+        "owner": "SCOUT_ON_NEW_EVIDENCE",
+        "private_hub_write": false,
+        "public_proposal_created": false,
+        "recommended_disposition": "BOUNDED_PROJECT_EVIDENCE_HOLD",
+        "reopen_or_finish_trigger": "New project-specific evidence, verified human instruction, or changed DOI identity",
+        "separate_expansion_completed": false
+      },
+      "evaluation": {
+        "ambiguous_identity": false,
+        "bounded_human_referral_evidence": false,
+        "contradictory_project_evidence": false,
+        "documented_source_claims": {
+          "metadata_complete_claim": false,
+          "missing_project_proof_claim": true,
+          "official_publication_claim": false,
+          "preprint_claim": false,
+          "primary_spark_claim": false,
+          "project_conflict_claim": false,
+          "same_project_claim": false,
+          "technical_access_failure_claim": false
+        },
+        "doi": "10.5281/zenodo.4433147",
+        "gates": {
+          "contradictions": "NOT_FOUND_IN_STRUCTURED_RESEARCH_NOT_A_NEGATIVE_PROOF",
+          "identity": "NO_VERIFIED_PUBLIC_IDENTITY_GATE",
+          "publication": "OFFICIAL_RELEASE_NOT_VERIFIED",
+          "related_output_scope": "RELATED_OUTPUT_INDEPENDENT_VERIFICATION_REQUIRED",
+          "required_metadata": "INCOMPLETE_OR_NOT_VERIFIED",
+          "same_project_wpo_funding": "EXACT_PRIMARY_PROJECT_PROOF_MISSING",
+          "technical": "NO_TECHNICAL_HOLD_RECORDED"
+        },
+        "note_event_count": 1,
+        "preprint": false,
+        "primary_project_supported_by_prior_evidence": false,
+        "prior_dispositions": [
+          "PROJECT_EVIDENCE_HOLD"
+        ],
+        "prior_research_budget_exhausted": false,
+        "prior_research_rounds": null,
+        "prior_secondary_identity_checked": false,
+        "public_identity": "NOT_IN_VERIFIED_PREFLIGHT_COHORT",
+        "public_no_action": false,
+        "public_recorded_statuses": [],
+        "publicly_staged": false,
+        "published_claim": false,
+        "source_note_sha256": [
+          {
+            "event_id": "34eb5fe4df3fa75c953f4469",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-09-1129ET-seus-rainfall-zenodo-related-ci-award-hold.json",
+            "sha256": "0883da54489273c03831e2801fddc9d20c6ba8bfaa48fe10a83b34a0cc4e28e5"
+          }
+        ],
+        "source_url_count": 2,
+        "source_url_pointers": [
+          "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021GL096709",
+          "https://repository.library.noaa.gov/view/noaa/43170/noaa_43170_DS1.pdf"
+        ],
+        "technical_hold": false,
+        "verified_public_reach": false
+      },
+      "existing_reviewer_status_unchanged": true,
+      "identity": "doi:10.5281/zenodo.4433147",
+      "independent_critique": {
+        "adversarial_gate_checks_passed": true,
+        "blocking_safety_issues": [],
+        "grant_clue_or_author_overlap_never_confirms_funding": true,
+        "missing_for_autonomous_reviewer_handoff": [
+          "LIVE_SAME_PROJECT_WPO_FUNDING",
+          "OFFICIAL_RELEASE",
+          "SECONDARY_IDENTITY_CHECK",
+          "COMPLETE_METADATA"
+        ],
+        "official_metadata_pointer_not_current_without_recheck": true,
+        "private_hub_delivery_not_inferred": true
+      },
+      "latest_recorded_disposition_unchanged": "PROJECT_EVIDENCE_HOLD",
+      "output_kind": "DOI",
+      "read_only": true,
+      "source_recorded_dispositions": [
+        "PROJECT_EVIDENCE_HOLD"
+      ]
+    },
+    {
+      "compiled_decision": {
+        "decision_is_research_route_only": true,
+        "decision_reason": "Prior source-specific project evidence hold is unresolved",
+        "formal_original_completed": false,
+        "human_reviewer_approval": false,
+        "next_action": "Preserve the lead without repeating generic searches; reopen only for a new exact primary SPARK project/output funding source",
+        "owner": "SCOUT_ON_NEW_EVIDENCE",
+        "private_hub_write": false,
+        "public_proposal_created": false,
+        "recommended_disposition": "BOUNDED_PROJECT_EVIDENCE_HOLD",
+        "reopen_or_finish_trigger": "New project-specific evidence, verified human instruction, or changed DOI identity",
+        "separate_expansion_completed": false
+      },
+      "evaluation": {
+        "ambiguous_identity": false,
+        "bounded_human_referral_evidence": false,
+        "contradictory_project_evidence": false,
+        "documented_source_claims": {
+          "metadata_complete_claim": false,
+          "missing_project_proof_claim": true,
+          "official_publication_claim": false,
+          "preprint_claim": false,
+          "primary_spark_claim": false,
+          "project_conflict_claim": false,
+          "same_project_claim": false,
+          "technical_access_failure_claim": false
+        },
+        "doi": "10.5281/zenodo.5057616",
+        "gates": {
+          "contradictions": "NOT_FOUND_IN_STRUCTURED_RESEARCH_NOT_A_NEGATIVE_PROOF",
+          "identity": "NO_VERIFIED_PUBLIC_IDENTITY_GATE",
+          "publication": "OFFICIAL_RELEASE_NOT_VERIFIED",
+          "related_output_scope": "RELATED_OUTPUT_INDEPENDENT_VERIFICATION_REQUIRED",
+          "required_metadata": "INCOMPLETE_OR_NOT_VERIFIED",
+          "same_project_wpo_funding": "EXACT_PRIMARY_PROJECT_PROOF_MISSING",
+          "technical": "NO_TECHNICAL_HOLD_RECORDED"
+        },
+        "note_event_count": 1,
+        "preprint": false,
+        "primary_project_supported_by_prior_evidence": false,
+        "prior_dispositions": [
+          "PROJECT_EVIDENCE_HOLD"
+        ],
+        "prior_research_budget_exhausted": false,
+        "prior_research_rounds": null,
+        "prior_secondary_identity_checked": false,
+        "public_identity": "NOT_IN_VERIFIED_PREFLIGHT_COHORT",
+        "public_no_action": false,
+        "public_recorded_statuses": [],
+        "publicly_staged": false,
+        "published_claim": false,
+        "source_note_sha256": [
+          {
+            "event_id": "83e6197c20d7cf3f57631f4c",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-09-1129ET-seus-rainfall-zenodo-related-ci-award-hold.json",
+            "sha256": "0883da54489273c03831e2801fddc9d20c6ba8bfaa48fe10a83b34a0cc4e28e5"
+          }
+        ],
+        "source_url_count": 2,
+        "source_url_pointers": [
+          "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021GL096709",
+          "https://repository.library.noaa.gov/view/noaa/43170/noaa_43170_DS1.pdf"
+        ],
+        "technical_hold": false,
+        "verified_public_reach": false
+      },
+      "existing_reviewer_status_unchanged": true,
+      "identity": "doi:10.5281/zenodo.5057616",
+      "independent_critique": {
+        "adversarial_gate_checks_passed": true,
+        "blocking_safety_issues": [],
+        "grant_clue_or_author_overlap_never_confirms_funding": true,
+        "missing_for_autonomous_reviewer_handoff": [
+          "LIVE_SAME_PROJECT_WPO_FUNDING",
+          "OFFICIAL_RELEASE",
+          "SECONDARY_IDENTITY_CHECK",
+          "COMPLETE_METADATA"
+        ],
+        "official_metadata_pointer_not_current_without_recheck": true,
+        "private_hub_delivery_not_inferred": true
+      },
+      "latest_recorded_disposition_unchanged": "PROJECT_EVIDENCE_HOLD",
+      "output_kind": "DOI",
+      "read_only": true,
+      "source_recorded_dispositions": [
+        "PROJECT_EVIDENCE_HOLD"
+      ]
+    },
+    {
+      "compiled_decision": {
+        "decision_is_research_route_only": true,
+        "decision_reason": "Structured source flags a conflicting project/funding association",
+        "formal_original_completed": false,
+        "human_reviewer_approval": false,
+        "next_action": "Do not propose. Reopen only with independent exact output-to-primary-WPO-project evidence resolving the contradiction",
+        "owner": "SCOUT_ON_NEW_EVIDENCE",
+        "private_hub_write": false,
+        "public_proposal_created": false,
+        "recommended_disposition": "PROJECT_ATTRIBUTION_CONFLICT_HOLD",
+        "reopen_or_finish_trigger": "New DOI-level funding evidence and matching primary SPARK project source",
+        "separate_expansion_completed": false
+      },
+      "evaluation": {
+        "ambiguous_identity": false,
+        "bounded_human_referral_evidence": false,
+        "contradictory_project_evidence": true,
+        "documented_source_claims": {
+          "metadata_complete_claim": false,
+          "missing_project_proof_claim": false,
+          "official_publication_claim": false,
+          "preprint_claim": false,
+          "primary_spark_claim": false,
+          "project_conflict_claim": true,
+          "same_project_claim": false,
+          "technical_access_failure_claim": false
+        },
+        "doi": null,
+        "gates": {
+          "contradictions": "EXPLICIT_PROJECT_EVIDENCE_CONFLICT",
+          "identity": "NO_VERIFIED_PUBLIC_IDENTITY_GATE",
+          "publication": "OFFICIAL_RELEASE_NOT_VERIFIED",
+          "related_output_scope": "SEED_ORIGINAL_EXPANSION_REMAINS_SEPARATE",
+          "required_metadata": "INCOMPLETE_OR_NOT_VERIFIED",
+          "same_project_wpo_funding": "CONFLICT_SOURCE_RECORDED",
+          "technical": "NO_TECHNICAL_HOLD_RECORDED"
+        },
+        "note_event_count": 1,
+        "preprint": false,
+        "primary_project_supported_by_prior_evidence": false,
+        "prior_dispositions": [
+          "PROJECT_EVIDENCE_HOLD"
+        ],
+        "prior_research_budget_exhausted": false,
+        "prior_research_rounds": null,
+        "prior_secondary_identity_checked": false,
+        "public_identity": "NOT_IN_VERIFIED_PREFLIGHT_COHORT",
+        "public_no_action": false,
+        "public_recorded_statuses": [],
+        "publicly_staged": false,
+        "published_claim": false,
+        "source_note_sha256": [
+          {
+            "event_id": "ad914db75ecbc50de25b72e5",
+            "path": "scout-operations/historical-crossref-phase2/2026-11-06-0429ET-wofs-forecast-skill-code-project-scope-hold.json",
+            "sha256": "9975c1d7605b641c862c82bb267f3343b5a18830c9d77e3555e955ffa26f7a2a"
+          }
+        ],
+        "source_url_count": 1,
+        "source_url_pointers": [
+          "https://raw.githubusercontent.com/coreypotvin/wofs_fcst_skill/main/README.md"
+        ],
+        "technical_hold": false,
+        "verified_public_reach": false
+      },
+      "existing_reviewer_status_unchanged": true,
+      "identity": "url:https://github.com/coreypotvin/wofs_fcst_skill",
+      "independent_critique": {
+        "adversarial_gate_checks_passed": true,
+        "blocking_safety_issues": [],
+        "grant_clue_or_author_overlap_never_confirms_funding": true,
+        "missing_for_autonomous_reviewer_handoff": [
+          "LIVE_SAME_PROJECT_WPO_FUNDING",
+          "OFFICIAL_RELEASE",
+          "SECONDARY_IDENTITY_CHECK",
+          "COMPLETE_METADATA",
+          "NO_CONTRADICTION"
+        ],
+        "official_metadata_pointer_not_current_without_recheck": true,
+        "private_hub_delivery_not_inferred": true
+      },
+      "latest_recorded_disposition_unchanged": "PROJECT_EVIDENCE_HOLD",
+      "output_kind": "PUBLIC_CODE_OR_URL",
+      "read_only": true,
+      "source_recorded_dispositions": [
+        "PROJECT_EVIDENCE_HOLD"
+      ]
+    }
+  ],
+  "formal_original_or_expansion_closures": 0,
+  "human_approvals": "NOT_VERIFIED",
+  "human_questions_identified_not_delivered": 2,
+  "pilot_mode": "READ_ONLY_STRUCTURED_EVIDENCE_REVIEW_NO_REAL_WORLD_ACTIONS",
+  "policy": "This rubric compiles decision-support suggestions for source-backed research history. Unknown funding, source access and project scope are never recast as negative proof. A held lead can be resolved as a bounded research *pass* without formally closing originals or their expansion. The pilot does not contact reviewers, publish Scout proposals, or write any downstream system.",
+  "private_hub_imports": "NOT_VERIFIED",
+  "proposed_active_followups_not_executed": 6,
+  "published_reach_additions": 0,
+  "recommended_disposition_counts": {
+    "BOUNDED_HUMAN_PROJECT_QUESTION": 2,
+    "BOUNDED_PROJECT_EVIDENCE_HOLD": 21,
+    "DOI_METADATA_RECOVERY_ONLY": 1,
+    "PREPRINT_MONTHLY_WATCH": 2,
+    "PROJECT_ATTRIBUTION_CONFLICT_HOLD": 1,
+    "PUBLIC_PROPOSAL_ALREADY_STAGED_NO_DUPLICATE": 2,
+    "RETAIN_RECORDED_NO_ACTION_REOPEN_ON_NEW_EVIDENCE": 1,
+    "REUSE_EXISTING_REACH_IDENTITY_KEEP_EXPANSION": 1,
+    "TARGETED_OFFICIAL_PUBLICATION_CHECK": 3
+  },
+  "recommended_owner_counts": {
+    "EXACT_DOI_METADATA_RECOVERY": 1,
+    "HUMAN_PROJECT_ASSESSMENT": 2,
+    "MONTHLY_WATCHLIST": 2,
+    "PUBLIC_HANDOFF_VERIFICATION": 2,
+    "SCOUT_BOUNDED_RESEARCH": 3,
+    "SCOUT_EXPANSION": 1,
+    "SCOUT_ON_NEW_EVIDENCE": 23
+  },
+  "research_ready_review_proposals_automatically_created": 0,
+  "schema": "reach-scout-read-only-evidence-action-pilot-v1",
+  "source_author_pi_collaborator_names_copied": false,
+  "source_case_dispositions_unchanged": true,
+  "source_fingerprint": "7e3e21d370cd9f61e25f78fe62a652ca553acd835374edc7beeffee0a8365574",
+  "source_research_note_events": 52,
+  "source_sha256": {
+    "annotated_prior_case_snapshot": "4672c4f82ed696de205ebac8e10abeff0392db2d23a086d583b88ad4c19eddf4",
+    "live_unified_preflight_source_fingerprint": "b657eadac8a90c53af57536beaef96096b7236d87ac6e31583e5943c599f83cb",
+    "preflight_input_manifest_shas": {
+      "crossref_research_cases": "4672c4f82ed696de205ebac8e10abeff0392db2d23a086d583b88ad4c19eddf4",
+      "crossref_routing": "a80c7fa8556a63dbc0f5f991e4e9b65e8fa32544dc5e5c121828aae043a525ca",
+      "historical_crossref_manifest": "799744c7e83f218d22cc19afacb7cfcf2762feb490659efde9f58bf19473b1fa",
+      "historical_datacite_manifest": "b21e3b81cf47c3187eb851d1d2b5ec0200d8ed54970c01f871bbd8b96475921e",
+      "historical_datacite_triage": "2687b6eff7e46530b96ae4cbbcbabcd25384720c63c38d51af0f2f3c8d51e852",
+      "independent_leads": "62243d1c3228561ed15786b7030ce02689f6d4a26247387e361fa2c84f5e7fa2",
+      "monthly_api_manifest": "d83ad64b647fcb89a5db04321833ecc7bec177dbfcca7ef1995b06c09deeb335",
+      "monthly_related_leads": "d4deec7a5df5191b77cf4002573bd766f6bdff0b85880b7175249f38d2ba55a4",
+      "monthly_triage": "a8c740b0181978a37b2bb8156cbd1ea4261ef08730573669586f26bb516a6224",
+      "preprint_watchlist": "9aee820ffa8eafb416d68f80d7cddb534ab33c97f61e1246ec892fb08f33b65e",
+      "reviewer_feedback": "a3202402ea621e42eaf660c622f313c1d52a6bed1112d5d31b16947d2adfdb94"
+    },
+    "public_research_notes": {
+      "scout-operations/historical-crossref-phase2/2026-11-04-2129ET-essoar-10507281-research-evidence.json": "cc021c84dc651c5c83c74a7defc483b435acc4a166a5124e1396f91fe9d3713f",
+      "scout-operations/historical-crossref-phase2/2026-11-04-2232ET-essoar-10507281-followup.json": "5a6a78403edf1d2f874c5e4e8a4f5ef4fbb277905ffa3dba8fa6cf198264864f",
+      "scout-operations/historical-crossref-phase2/2026-11-04-2330ET-essoar-10507281-publisher-assets-followup.json": "2d7337d9ae65ceeba88c05ff56ea579e8b1b06d222960f06c173510f25332ed3",
+      "scout-operations/historical-crossref-phase2/2026-11-05-0024ET-essoar-10507281-manuscript-crosscheck.json": "c362b411416bca899fa37a8279f95736ed7ad7d503d7503d3a2cba2b9f03a402",
+      "scout-operations/historical-crossref-phase2/2026-11-05-0233ET-gfdl-spear-cold-extremes-evidence.json": "e4322f5b8c7ce1d70653f4388a8afd1ad30488e8f0af7416c22a77116a6f4e13",
+      "scout-operations/historical-crossref-phase2/2026-11-05-0324ET-gfdl-spear-award-scope-followup.json": "d38bcd57645123aadeb95ff9eb7e050ce1154ff122971bff6f7630548b6e688e",
+      "scout-operations/historical-crossref-phase2/2026-11-05-0430ET-risk-communication-publisher-ir-evidence.json": "cd1aecc21bdafc2e27abc91abf86919269fc314b3010de398123b7e5b66d13fc",
+      "scout-operations/historical-crossref-phase2/2026-11-05-0529ET-risk-communication-spark-project-crosscheck.json": "d96a933a13f27e2eb28fc4beeb0ecc2b6ce29802ac817b2b4419b7d5d935a6d3",
+      "scout-operations/historical-crossref-phase2/2026-11-05-0628ET-essoar-10504829-preprint-status-evidence.json": "df43b71c551314c6e254936374b118d131093b95781871a8e22f892f4b0c33cb",
+      "scout-operations/historical-crossref-phase2/2026-11-05-0732ET-essoar-10504829-author-cv-version-followup.json": "c4d13e86da0973d842b82e8d388e2e62424d3cd7c4b0c9d3e3b342ed6191266a",
+      "scout-operations/historical-crossref-phase2/2026-11-05-0828ET-gulf-stream-essoar-final-lead.json": "0a7017ece59a4beeb42c33f9057c56c189c42672e453d832f3160e05002c24f9",
+      "scout-operations/historical-crossref-phase2/2026-11-05-0930ET-gulf-stream-exact-reach-doi-crosscheck.json": "a082620cc45fe8456f2ee87152e6619fd012064697c41430fed56b59ceb11d15",
+      "scout-operations/historical-crossref-phase2/2026-11-05-1026ET-biomedical-award-attribution-holds.json": "7f83ecada2ad8cb6bb98e20112747ef8cb1be9df163dd1b19ca86720a6bfe9e9",
+      "scout-operations/historical-crossref-phase2/2026-11-05-1125ET-biomedical-immutable-source-attribution-audit.json": "def68b12e4580097accce8ece54fb780df79170b77a65e76fa393e3927290b85",
+      "scout-operations/historical-crossref-phase2/2026-11-05-1226ET-activated-carbon-primary-funding-contradiction.json": "84a96b9cbbc853aa91b6e63cdf8e601cc5e43cb6bc203a9b23baa2da4cebd62e",
+      "scout-operations/historical-crossref-phase2/2026-11-05-1328ET-reconciliation-exception-evidence-gate-audit.json": "2548b344e7a1e439fd2b7d1bfb2981db10d93fec1a81d9f8d4516beb7f7b0964",
+      "scout-operations/historical-crossref-phase2/2026-11-05-1426ET-gulf-stream-publisher-data-availability-seed-expansion.json": "127ad0556d44127549399d34f014ca9bffbe7a108cc0b17766953d9f21ee4f30",
+      "scout-operations/historical-crossref-phase2/2026-11-05-1733ET-gulf-stream-preprint-published-data-availability-followup.json": "2cb0602241d67153e4665ca478c558837c02087fd0b133dda4628d32adb8fde0",
+      "scout-operations/historical-crossref-phase2/2026-11-05-1834ET-tornado-infrasound-preprint-conference-distinct-source-followup.json": "a066399203990024aed003072083d7626ae59d3e6fae3c77b17b458a0e33db25",
+      "scout-operations/historical-crossref-phase2/2026-11-05-2033ET-apar-project-title-pilot-scope-check.json": "d212c7177ae54ba69135ef1d07deffb8d7619f63f33d94c0f704d849c7d53dfd",
+      "scout-operations/historical-crossref-phase2/2026-11-05-2131ET-wofs-project-title-pilot-identity-funding-hold.json": "eaff76789f856c2b00729dda58edd5439075ed5221b708e99a875c209dedefea",
+      "scout-operations/historical-crossref-phase2/2026-11-05-2231ET-apar-radarconf-official-program-followup.json": "8341596626813521be8754d933aae5085333f66f2ee2dd89783409864b227904",
+      "scout-operations/historical-crossref-phase2/2026-11-06-0333ET-wofs-forecast-skill-project-award-contradiction.json": "64721d2daf81b50b102530823c7fd53c33f70b9ecb9b9b8d68aeb7992e218b99",
+      "scout-operations/historical-crossref-phase2/2026-11-06-0429ET-wofs-forecast-skill-code-project-scope-hold.json": "9975c1d7605b641c862c82bb267f3343b5a18830c9d77e3555e955ffa26f7a2a",
+      "scout-operations/historical-crossref-phase2/2026-11-06-1624ET-urban-hydroclimate-institutional-attribution-hold.json": "ab0d97a1cc2202adbeee9d0b8e106f18c5f4e4d8657852d7057913892990be5c",
+      "scout-operations/historical-crossref-phase2/2026-11-06-1726ET-gfdl-spear-heat-extremes-related-project-hold.json": "b0a497437a4d15cb11b85c292a6f25b0d0bca03d0283c559608a0f4f77597882",
+      "scout-operations/historical-crossref-phase2/2026-11-06-2032ET-montana-wildlife-primary-award-evidence-hold.json": "ceef48c1524009d0d809b6fe76b6c1e92ecf2041b4654bfaaad80beaf00668fd",
+      "scout-operations/historical-crossref-phase2/2026-11-06-2125ET-ar-recon-drifter-publisher-funding-scope-hold.json": "3b099258bd87f8f5c5f7fa5456a2c207632aff37e5e7694076464fac433f39fb",
+      "scout-operations/historical-crossref-phase2/2026-11-06-2329ET-project-first-three-originals-screening.json": "65780c73eadd127ceb9ef74d11787f2838dcd7357f0dfe75d44b2e9565d5f211",
+      "scout-operations/historical-crossref-phase2/2026-11-07-0329ET-two-publisher-award-project-proof-screen.json": "9ae178ef42b1a4dc2c34e16ce3457bdcdc8069193c5f3370e5452f15d4f3e6bf",
+      "scout-operations/historical-crossref-phase2/2026-11-07-0729ET-hyg-noaa-ir-project-evidence.json": "cc2ee4c38e6b14a9ef4bf8fc4f26dc5ccb35a55fba7e3cd83ebeb5e6615d0e3a",
+      "scout-operations/historical-crossref-phase2/2026-11-07-0729ET-kalman-noaa-ir-project-evidence.json": "629ef0ff57edbd0524c258b910e77a7896cf568a838a2a516aacaa7263be57bb",
+      "scout-operations/historical-crossref-phase2/2026-11-07-1430ET-publisher-award-scope-great-lakes-snow.json": "1ec4c166ed7d7944b9b25edbb9b928033f622407739f566ccd0850e3e2039af4",
+      "scout-operations/historical-crossref-phase2/2026-11-07-1430ET-publisher-award-scope-oklahoma-ozone.json": "a4ba761892caeef436ff1fed3668ac13c644d1602f387285bdf0d4a966af7b96",
+      "scout-operations/historical-crossref-phase2/2026-11-08-0325ET-mcv-dashboard-project-attribution-hold.json": "e702a1cfd2fb7c2e3f0cb3da9fae960f7378d6a77205772500af35e6b5766101",
+      "scout-operations/historical-crossref-phase2/2026-11-08-1127ET-occupational-extreme-weather-noaa-ir-identity-hold.json": "c42f82cf4e24218005b54d4a599df2a55f52e8f35b661476d032e1f38a871c91",
+      "scout-operations/historical-crossref-phase2/2026-11-08-2329ET-compound-heat-ozone-publisher-attribution.json": "d3a5391fdcf835a6174fa903a8e7b8bd36cdf526444f129e1cf47cc7c840dd39",
+      "scout-operations/historical-crossref-phase2/2026-11-09-0441ET-sfs-western-pacific-cyclone-project-attribution.json": "55a005344ffc9235eb97aa5c796b4581c196a17f89359dca2d07857a1fb3b04e",
+      "scout-operations/historical-crossref-phase2/2026-11-09-1129ET-seus-rainfall-zenodo-related-ci-award-hold.json": "0883da54489273c03831e2801fddc9d20c6ba8bfaa48fe10a83b34a0cc4e28e5",
+      "scout-operations/monthly-research/2026-11-06-0528ET-storm-harry-qj70325-project-scope-hold.json": "9bf7c3c778f1cbf1622db3e994b7facc446367f5cc3ed6094517ab5884722911",
+      "scout-operations/monthly-research/2026-11-06-0630ET-storm-harry-ecmwf-two-doi-access-holds.json": "38d2065e50f5691c4452ea054a54409a88392e3d76f60969a311a78d96b3bf7c",
+      "scout-operations/monthly-research/2026-11-06-0730ET-storm-harry-ecmwf-official-catalog-followup.json": "7a63adfadb964734abec498d27cc54bc6e431d0cb8f51c11bdc8f4e6131491c3",
+      "scout-operations/monthly-research/2026-11-06-0830ET-storm-harry-global-drifter-award-scope-followup.json": "684a66155c7ad188613f0217e371ba692f300a27bb1ab16a1b7d40f09c1198bc"
+    }
+  },
+  "unique_research_identities": 34
+}
