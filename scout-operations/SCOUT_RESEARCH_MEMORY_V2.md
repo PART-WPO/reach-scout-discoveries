@@ -16,6 +16,28 @@ An earlier research note is reusable evidence *context*, not proof of finished o
 
 Preprint originals retain existing monthly-watchlist policy. A failed metadata request is not a negative result. New public source evidence is checked against all source hashes; stale or mismatched input stops the graph from being represented as verified.
 
+## Compact hourly mission index
+
+The full relation graph is detailed (over 1 MB) and is not an efficient file
+to read on every hourly run. The same source-verified generation now writes
+`scout-operations/research-memory/mission-index.json` — a bounded preview of
+at most 12 candidate DOI tasks per lane, with the same input source fingerprint.
+
+Every hourly mission should read this compact index **after** reading the
+existing authoritative `active-workstream.json`, not replace its prioritization.
+The preview includes separate monthly originals, monthly related, Crossref
+identity/research, verified-REACH related-output expansion, historical DataCite,
+and DOI-less code research lanes. It downranks previously researched evidence
+without discarding it, preserves exact DOI paths and independent expansion.
+The hourly agent may select a different DOI if new evidence or the workstream
+indicates a better task. A fixed preview is not a finished scan or a mandate to
+repeat the same item. If the graph and preview fingerprints disagree, do not
+reuse them; refresh from verified public input.
+
+The compact index is a **selection aid**, not proof of previous research
+completion. Do not claim API requests or reviewer effort were saved without
+measuring actual subsequent mission behavior.
+
 ## How to use the memory as a research tool
 
 For an hourly mission or a manual investigation, read the graph's `work_items` for the requested DOI or `primary_role`:
