@@ -90,7 +90,7 @@ class QueueTests(unittest.TestCase):
   got={x["doi"]:x for x in q["items"]}
   self.assertEqual(got["10.1234/ci"]["funding_signal"],"CI_432_NEEDS_PROJECT_PROOF")
   self.assertEqual(got["10.1234/ci"]["priority"],25)
-  self.assertEqual(got["10.1234/other"]["funding_signal"],"INCONCLUSIVE")
+  self.assertEqual(got["10.1234/other"]["funding_signal"],"NON_WPO_OAR_AWARD")
   self.assertNotIn("Strong WPO",got["10.1234/other"]["next_action"])
 
  def test_mission_preview_only_includes_cases_requiring_a_real_decision(self):
