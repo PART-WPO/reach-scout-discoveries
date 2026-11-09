@@ -59,6 +59,35 @@ class HumanProjectReferrals(unittest.TestCase):
         self.assertLessEqual(score_for_human_review(metadata,self.identity("",""),project,
                                                     event["checked_evidence_urls"])["score"],70)
 
+    def test_verified_459_new_candidate_passes_full_24_column_preflight(self):
+        import csv
+        import json
+        import sys
+        sys.path.insert(0,str(Path(__file__).resolve().parents[2]/"scout-discoveries/tools"))
+        from prepare_batch import prepare, validate_canonical
+        event={"doi":"10.1029/2026jd046349","event_id":"verify-459",
+               "checked_evidence_urls":["https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JD046349",
+                                        "https://repository.library.noaa.gov/view/noaa/76032"]}
+        meta={**self.published(),"title":"The Synoptic, Microphysical, and Radar Characteristics of Upper Great Lakes Snow Events",
+              "publication_status":"official_journal_article","resource_type":"journal-article",
+              "evidence":"https://api.crossref.org/works/10.1029/2026jd046349",
+              "funding_references":[{"award":["NA21OAR4590367"]},{"award":["NA20OAR4320278"]}]}
+        project={"award_context_only":"NA21OAR4590367","wpo_award_cue_not_proof":True}
+        candidate=proposal(event["doi"],meta,event,project,self.identity("",""))
+        with tempfile.TemporaryDirectory() as d:
+            source=Path(d)/"proposals.json"
+            output=Path(d)/"candidate.csv"
+            source.write_text(json.dumps({"candidates":[candidate]}),encoding="utf-8")
+            report=prepare(source,output)
+            self.assertEqual(report["record_count"],1)
+            self.assertEqual(validate_canonical(output)["record_count"],1)
+            with output.open(encoding="utf-8-sig",newline="") as f:
+                rows=list(csv.DictReader(f))
+            self.assertEqual(len(rows[0]),24)
+            self.assertEqual(rows[0]["NOAA Award Number(s)"],"NA21OAR4590367")
+            self.assertEqual(rows[0]["Suggested Parent Project"],"")
+            self.assertIn("Scout classification: NEW CANDIDATE",rows[0]["Scout Discovery Rationale"])
+
     def test_unverified_459_or_only_non_wpo_awards_remains_needs_investigation(self):
         event={"doi":"10.1234/test","event_id":"no-source","research_lane":"original",
                "checked_evidence_urls":["https://publisher.example/article"]}
