@@ -8,6 +8,7 @@ after explicit human authorization.
 import argparse
 import csv
 import json
+import os
 from collections import Counter
 from pathlib import Path
 
@@ -69,13 +70,59 @@ def score(benchmark,gold):
             "verified_public_reach_additions":"NOT_MEASURED_BY_THIS_TEST",
             "privacy":"AGGREGATES_ONLY_NOT_APPROVED_FOR_PUBLIC_POSTING_WITHOUT_REVIEW"}
 
+
+def create_private_gold_template(benchmark, destination, *, root=PUBLIC.parents[1]):
+    """Export blank independently labeled rows outside public GitHub checkout.
+
+    The template intentionally excludes Scout predictions to reduce anchoring.
+    It has no reviewer names or private sheet identifiers.
+    """
+    selected = benchmark.get("cases", [])
+    if len(selected) != 100 or len({x.get("case_id") for x in selected}) != 100:
+        raise ValueError("Expected 100 unique frozen evaluation cases")
+    dest = Path(destination).expanduser().resolve()
+    if dest.is_relative_to(Path(root).resolve()):
+        raise ValueError("Private gold labels must remain outside public GitHub repository")
+    if not dest.parent.is_dir():
+        raise ValueError("Use an existing authorized private directory for gold labels")
+    # Exclusive create prevents silent overwrites. Mode is private for the
+    # writer on POSIX; use equivalent restricted ACLs on Windows.
+    fd = os.open(dest, os.O_CREAT | os.O_EXCL | os.O_WRONLY, 0o600)
+    try:
+        with os.fdopen(fd, "w", newline="", encoding="utf-8") as stream:
+            writer = csv.DictWriter(stream, fieldnames=[
+                "case_id", "doi", "stratum", "gold_label", "evidence_url",
+                "reviewer_minutes"])
+            writer.writeheader()
+            for case in selected:
+                writer.writerow({"case_id": case["case_id"], "doi": case["doi"],
+                                 "stratum": case["stratum"],
+                                 "gold_label": "", "evidence_url": "",
+                                 "reviewer_minutes": ""})
+    except BaseException:
+        dest.unlink(missing_ok=True)
+        raise
+    return len(selected)
+
+
 def main():
     cli=argparse.ArgumentParser()
-    cli.add_argument("--gold-private-csv",type=Path,required=True)
+    exclusive=cli.add_mutually_exclusive_group(required=True)
+    exclusive.add_argument("--gold-private-csv",type=Path)
+    exclusive.add_argument("--create-private-template",type=Path)
     args=cli.parse_args()
+    bench=json.loads(PUBLIC.read_text(encoding="utf-8"))
+    if args.create_private_template is not None:
+        count=create_private_gold_template(bench,args.create_private_template)
+        print(json.dumps({"private_blank_cases_created":count,
+                          "reference_labels_collected":0,
+                          "predictions_in_template":False,
+                          "public_repository_modified":False}))
+        return
+    if args.gold_private_csv.resolve().is_relative_to(PUBLIC.parents[1].resolve()):
+        raise ValueError("Gold label CSV must not be inside the public repository")
     with args.gold_private_csv.open(encoding="utf-8-sig",newline="") as f:
         gold=list(csv.DictReader(f))
-    bench=json.loads(PUBLIC.read_text(encoding="utf-8"))
     print(json.dumps(score(bench,gold),indent=2))
 
 if __name__=="__main__":main()
