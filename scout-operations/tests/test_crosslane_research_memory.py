@@ -137,6 +137,78 @@ class CrosslaneMemoryTests(unittest.TestCase):
                             and x["doi"] == target["related_doi"]
                             for x in g["work_items"]))
 
+    def test_each_zenodo_child_preserves_expansion_hold_without_original_closure(self):
+        graph=self.graph
+        compact=mission_index(graph)
+        children={"10.5281/zenodo.4433147","10.5281/zenodo.5057616"}
+        for child in children:
+            node=next(n for n in graph["nodes"] if n["doi"]==child)
+            self.assertEqual(node["original_research"]["recorded_note_count"],0)
+            related=node["expansion_research"]
+            self.assertEqual(related["recorded_related_note_count"],1)
+            self.assertIn("PROJECT_EVIDENCE_HOLD",
+                          related["nonterminal_related_dispositions"])
+            self.assertTrue(related["reuse_prior_related_notes_before_new_queries"])
+            self.assertFalse(related["separate_expansion_closed_by_memory"])
+            self.assertIn("10.1029/2021gl096709",related["explicit_parent_dois"])
+            self.assertEqual(len(related["related_source_evidence_file_sha256"]),1)
+            link=next(x for x in graph["links"] if x["related_doi"]==child
+                      and x["source_doi"]=="10.1029/2021gl096709")
+            self.assertTrue(any(s["relationship_origin"]==
+                "official_sources_verified_related_research_note"
+                for s in link["source_files"]))
+            self.assertEqual(link["funded_by_same_wpo_project"],"NOT_VERIFIED")
+            self.assertFalse(link["separate_expansion_complete"])
+            entries=[x for x in compact["recommended_preview"]["additional_related_output"]
+                     if x["doi"]==child]
+            self.assertEqual(len(entries),1)
+            entry=entries[0]
+            self.assertEqual(entry["original_prior_note_count"],0)
+            self.assertEqual(entry["related_prior_note_count"],1)
+            self.assertIn("PROJECT_EVIDENCE_HOLD",entry["related_prior_dispositions"])
+            self.assertEqual(entry["next_action"],
+                "REUSE_RECORDED_PROJECT_HOLD_REOPEN_ON_DISTINCT_EVIDENCE")
+            self.assertFalse(entry["automatically_completed_or_staged"])
+        self.assertEqual(graph["human_reviewer_decisions_changed"],0)
+        self.assertEqual(graph["originals_closed_by_memory"],0)
+        self.assertEqual(graph["expansions_closed_by_memory"],0)
+
+    def test_related_note_change_only_reopens_expansion_fingerprint(self):
+        from build_research_outcome_registry import build as registry_build
+        journal=registry_build()
+        key="10.5281/zenodo.4433147"
+        normal=next(n for n in self.graph["nodes"] if n["doi"]==key)
+        revised=dict(journal)
+        revised["events"]=[dict(e) for e in journal["events"]]
+        event=next(e for e in revised["events"] if e.get("doi")==key
+                   and e.get("role_in_note")=="related_output")
+        event["event_id"]="f" * 24
+        with patch("build_crosslane_research_memory.research_registry",return_value=revised):
+            updated=build()
+        changed=next(n for n in updated["nodes"] if n["doi"]==key)
+        self.assertEqual(changed["original_research"]["input_fingerprint"],
+                         normal["original_research"]["input_fingerprint"])
+        self.assertNotEqual(changed["expansion_research"]["input_fingerprint"],
+                            normal["expansion_research"]["input_fingerprint"])
+        self.assertFalse(changed["expansion_research"]["separate_expansion_closed_by_memory"])
+
+    def test_related_note_without_independent_proof_adds_no_verified_edge(self):
+        from build_research_outcome_registry import build as registry_build
+        journal=registry_build()
+        revised=dict(journal)
+        revised["events"]=[dict(e) for e in journal["events"]]
+        for e in revised["events"]:
+            if e.get("role_in_note")=="related_output":
+                e["relationship_verified_from_two_official_sources"]=False
+        with patch("build_crosslane_research_memory.research_registry",return_value=revised):
+            graph=build()
+        for link in graph["links"]:
+            if link["related_doi"] in {
+                    "10.5281/zenodo.4433147","10.5281/zenodo.5057616"}:
+                self.assertFalse(any(s["relationship_origin"]==
+                    "official_sources_verified_related_research_note"
+                    for s in link["source_files"]))
+
     def test_new_relation_changes_expansion_evidence_not_original_identity(self):
         baseline = self.graph
         seed = next(x["doi"] for x in baseline["nodes"]
