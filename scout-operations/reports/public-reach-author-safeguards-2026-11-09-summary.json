@@ -1,0 +1,65 @@
+{
+  "schema": "reach-scout-author-safeguards-calibrated-summary-v1",
+  "date": "2026-11-09",
+  "pilot_award": "NA22OAR4590515",
+  "source": "Exact 32 public DOI/source pairs from prior verified author pilot",
+  "source_fingerprints": {
+    "doi_sha256": "b9802e61422b65a810a9fa7a67b36114db4565d634ffb9a63037bb32f0c30379",
+    "doi_and_seed_pairs_sha256": "7cc712f78155410399ada9d74f2e7b1c1a160e64558d708d274b0909f682fc4b"
+  },
+  "github_evaluation_run": "https://github.com/PART-WPO/reach-scout-discoveries/actions/runs/42639478736",
+  "source_reach_journal_publications_rechecked": 4,
+  "prior_unqualified_leads": 32,
+  "results": {
+    "other_award_research_only": 1,
+    "off_topic_retain_for_research": 25,
+    "metadata_unavailable_and_off_topic_retain": 6,
+    "immediate_hub_eligible": 0,
+    "verified_target_award_funding": 0
+  },
+  "topic": {
+    "direct_air_quality": 1,
+    "outside_target_domain": 15,
+    "no_target_topic_signal": 16
+  },
+  "author_identity": {
+    "same_crossref_reported_orcid": 1,
+    "conflicting_crossref_orcid": 1,
+    "unresolved_from_public_metadata": 24,
+    "metadata_unavailable": 6
+  },
+  "funding": {
+    "target_noaa_award_reported": 0,
+    "different_noaa_award_reported": 1,
+    "no_structured_award_evidence": 25,
+    "metadata_unavailable": 6
+  },
+  "isolated_research_lead": {
+    "doi": "10.1016/j.envpol.2025.126311",
+    "title": "Assessing health risks and socioeconomic disparities associated with ambient air pollution and point sources across the United States",
+    "associated_public_reach_seed": "10.1088/1748-9326/adb16c",
+    "author_identity_support": "Same ORCID reported by public Crossref metadata on both works",
+    "source_reported_noaa_award": "NA20OAR4310293",
+    "pilot_award": "NA22OAR4590515",
+    "interpretation": "Relevant topic and public author link, but no verified target WPO-award association. Research-only award bridge, not a reviewer or REACH candidate."
+  },
+  "validation": {
+    "source_replay_sha_verified": true,
+    "live_public_reach_manifest_sha_verified": true,
+    "read_only": true,
+    "author_names_persisted": false,
+    "spark_personnel_accessed": false,
+    "discovery_hub_modified": false,
+    "public_reach_modified": false,
+    "human_review_outcomes_inferred": false
+  },
+  "caveats": [
+    "The exact 32 DOI lead snapshot was used, not a fresh Crossref author search; the fresh query drifted from 32 to 25, demonstrating non-reproducibility without saved sources.",
+    "Crossref exact-DOI metadata availability was inconsistent: a previous run lacked one record, while final calibrated replay lacked six. Missing metadata is never treated as proof of irrelevance.",
+    "The topic profile is tied specifically to the atmospheric/air-quality work represented by award NA22OAR4590515; it is not a universal NOAA weather-research relevance classifier.",
+    "Matching public ORCID identifies a bibliographic author link, not proof of target award support.",
+    "A different registered NOAA grant cannot prove the target award was absent, and missing funding metadata is not evidence against eligibility.",
+    "This case set does not contain independently labeled new WPO funded positives, so recall and false-exclusion rates are not yet measurable."
+  ],
+  "next_decision": "Retain safeguards for manual-only author discovery research. Do not schedule hourly before source checkpoint persistence, stable metadata caching, separate project-topic profiles and human-independent gold-label validation."
+}
