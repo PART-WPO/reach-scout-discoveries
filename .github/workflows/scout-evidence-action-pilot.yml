@@ -1,0 +1,89 @@
+name: Scout evidence evaluator and decision compiler pilot
+on:
+  pull_request:
+    paths:
+      - 'scout-operations/tools/evaluate_research_to_action.py'
+      - 'scout-operations/tests/test_evidence_action_pilot.py'
+      - '.github/workflows/scout-evidence-action-pilot.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'scout-operations/tools/evaluate_research_to_action.py'
+      - 'scout-operations/research-decision-cases.json'
+      - '.github/workflows/scout-evidence-action-pilot.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: scout-evidence-action-pilot-main
+  cancel-in-progress: false
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate historical public research evidence, decision safety and controlled preflight
+        run: |
+          set -euo pipefail
+          python -m py_compile scout-operations/tools/evaluate_research_to_action.py
+          python -m unittest discover -s scout-operations/tests -p 'test_evidence_action_pilot.py' -v
+          python -m unittest discover -s scout-operations/tests -p 'test_research_outcome_registry.py' -v
+          python -m unittest discover -s scout-operations/tests -p 'test_unified_source_preflight.py' -v
+      - name: Produce and validate full 34-case read-only pilot report
+        run: |
+          set -euo pipefail
+          python scout-operations/tools/evaluate_research_to_action.py
+          python scout-operations/tools/evaluate_research_to_action.py --check
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('scout-operations/reports/evidence-action-pilot/latest.json')
+          j=json.loads(p.read_text())
+          assert j['schema']=='reach-scout-read-only-evidence-action-pilot-v1'
+          assert j['unique_research_identities']>=34
+          assert j['source_research_note_events']>=52
+          assert len(j['cases'])==j['unique_research_identities']
+          assert j['research_ready_review_proposals_automatically_created']==j['published_reach_additions']==0
+          assert j['formal_original_or_expansion_closures']==0
+          assert j['private_hub_imports']=='NOT_VERIFIED'
+          assert j['source_author_pi_collaborator_names_copied'] is False
+          assert all(case['read_only'] and case['independent_critique']['adversarial_gate_checks_passed']
+                     and not case['compiled_decision']['private_hub_write']
+                     and not case['compiled_decision']['public_proposal_created'] for case in j['cases'])
+          print(json.dumps({'unique_identities':j['unique_research_identities'],
+                'prior_evidence_events':j['source_research_note_events'],
+                'proposed_action_counts':j['recommended_disposition_counts'],
+                'private_hub_writes':0,'public_review_proposals':0},sort_keys=True))
+          PY
+      - name: Publish pilot evidence-assessment report only, no actual workflow actions
+        if: github.event_name != 'pull_request'
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3 4 5; do
+            git reset --hard HEAD
+            git fetch origin main
+            git checkout -B main origin/main
+            python scout-operations/tools/evaluate_research_to_action.py
+            python scout-operations/tools/evaluate_research_to_action.py --check
+            git add scout-operations/reports/evidence-action-pilot/latest.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m 'Publish read-only source-backed Scout research-to-action evaluation pilot'
+            if git push origin HEAD:main; then exit 0; fi
+            sleep "$((attempt * 2))"
+          done
+          exit 1
+      - name: Upload research-to-action assessment for human inspection
+        uses: actions/upload-artifact@v4
+        with:
+          name: scout-evidence-action-pilot
+          path: scout-operations/reports/evidence-action-pilot/latest.json
+          retention-days: 14
+          if-no-files-found: error
