@@ -1,11 +1,13 @@
 {
   "schema": "reach-scout-bounded-project-human-referral-v1",
-  "source_outcome_event_count": 58,
-  "source_outcome_sha256": "b174f12857cc6ee590309768465a94c87bd11e8b118203056019df642df62bd4",
-  "unique_bounded_project_questions": 2,
-  "potential_wpo_cases_quick_screened": 12,
-  "human_referral_drafts_prevalidated": 0,
-  "draft_paths": [],
+  "source_outcome_event_count": 60,
+  "source_outcome_sha256": "a36b849bca518839ccf193198237801c6d731846d43a93664ec3f3044bb4b9b7",
+  "unique_bounded_project_questions": 3,
+  "potential_wpo_cases_quick_screened": 13,
+  "human_referral_drafts_prevalidated": 1,
+  "draft_paths": [
+    "scout-discoveries/inbox/2026-11-09-human-project-d0211ffa5c6285cecf.csv"
+  ],
   "published_batch_paths": [
     "scout-discoveries/batches/2026-11-09-human-project-b332d53770e8cbc1d4.csv",
     "scout-discoveries/batches/2026-11-09-human-project-866c8052a22849b2de.csv",
@@ -1884,6 +1886,103 @@
       "review_question": "Reviewer question: Is this independently published output a deliverable of SPARK primary award NA19OAR4590128 (rather than merely topically related), and if so which project parent should it use?",
       "scout_inbox_status": "PUBLISHED_PUBLIC_SCOUT_FEED_NOT_PRIVATE_HUB",
       "published_scout_batch_path": "scout-discoveries/batches/2026-11-09-aies-d-23-0094-wpo459-reclassification-001.csv",
+      "eligible_for_new_reach_addition": "NOT_VERIFIED",
+      "private_hub_import": "NOT_VERIFIED",
+      "human_approval": "NOT_VERIFIED"
+    },
+    {
+      "doi": "10.1175/aies-d-24-0063.1",
+      "source_event_id": "0963d0103cec344cc7c8827c",
+      "source_file": "scout-operations/historical-crossref-phase2/2026-11-09-1830ET-generative-ai-precipitation-459-human-referral-disposition.json",
+      "source_sha256": "162437f1a294893384a8070e81472d939a6b06b6b34921c98270086ea37134a8",
+      "official_metadata": {
+        "status": "ok",
+        "provider": "crossref",
+        "evidence": "https://api.crossref.org/works/10.1175/aies-d-24-0063.1",
+        "title": "Improving Ensemble Extreme Precipitation Forecasts Using Generative Artificial Intelligence",
+        "creators": [
+          "Yingkai Sha",
+          "Ryan A. Sobash",
+          "David John Gagne"
+        ],
+        "resource_type": "journal-article",
+        "publication_status": "official_journal_article",
+        "abstract": "<jats:title>Abstract</jats:title>\n<jats:p>An ensemble postprocessing method is developed to improve the probabilistic forecasts of extreme precipitation events across the conterminous United States (CONUS). The method combines a 3D vision transformer (ViT) for bias correction with a latent diffusion model (LDM), a generative artificial intelligence (AI) method, to postprocess 6-hourly precipitation ensemble forecasts and produce an enlarged generative ensemble that contains spatiotemporally consistent precipitation trajectories. These trajectories are expected to improve the characterization of extreme precipitation events and offer skillful multiday accumulated and 6-hourly precipitation guidance. The method is tested using the Global Ensemble Forecast System (GEFS) precipitation forecasts out to day 6 and is verified against the Climatology-Calibrated Precipitation Analysis (CCPA) data. Verification results indicate that the method generated skillful ensemble members with improved continuous ranked probabilistic skill scores (CRPSSs) and Brier skill scores (BSSs) over the raw operational GEFS and a multivariate statistical postprocessing baseline. It showed skillful and reliable probabilities for events at extreme precipitation thresholds. Explainability studies were further conducted, which revealed the decision-making process of the method and confirmed its effectiveness on ensemble member generation. This work introduces a novel, generative AI–based approach to address the limitation of small numerical ensembles and the need for larger ensembles to identify extreme precipitation events.</jats:p>\n<jats:sec>\n<jats:title>Significance Statement</jats:title>\n<jats:p>We use a new artificial intelligence (AI) technique to improve extreme precipitation forecasts from a numerical weather prediction ensemble, generating more scenarios that better characterize extreme precipitation events. This AI-generated ensemble improved the accuracy of precipitation forecasts and probabilistic warnings for extreme precipitation events. The study explores AI methods to generate precipitation forecasts and explains the decision-making mechanisms of such AI techniques to prove their effectiveness.</jats:p></jats:sec>",
+        "pub_date": "2025-04-01",
+        "preprint_posted_date": "",
+        "pub_date_basis": "Crossref published-print",
+        "pub_date_precision": "month_imputed",
+        "publisher": "American Meteorological Society",
+        "funding_references": [
+          {
+            "name": "NOAA Oceanic and Atmospheric Research Grant",
+            "award": [
+              "NA19OAR4590128"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "NA19OAR4590128"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "NSF National Center for Atmospheric Research Short-term Explicit Prediction Program"
+          },
+          {
+            "name": "National Science Foundation",
+            "award": [
+              "RISE-2019758"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "RISE-2019758"
+                ]
+              }
+            ]
+          }
+        ],
+        "related_identifiers": {},
+        "attempts": [
+          {
+            "provider": "datacite",
+            "url": "https://api.datacite.org/dois/10.1175/aies-d-24-0063.1",
+            "error": {
+              "kind": "http",
+              "code": 404
+            }
+          },
+          {
+            "provider": "crossref",
+            "url": "https://api.crossref.org/works/10.1175/aies-d-24-0063.1",
+            "error": null
+          }
+        ]
+      },
+      "public_identity": {
+        "status": "NO_PUBLIC_IDENTITY_MATCH",
+        "reason": "NO_MATCH_IN_VERIFIED_PUBLIC_SNAPSHOT",
+        "matches": [],
+        "caveat": "Public snapshot only; private Hub decisions are not asserted.",
+        "noaa_ir_reach_check": {
+          "status": "DOI_NOT_IN_VERIFIED_IR_INDEX_UNKNOWN",
+          "official_url": null,
+          "match_uid": null,
+          "match_detail_shard": null
+        }
+      },
+      "project_search_context_only": {
+        "award_context_only": "NA19OAR4590128",
+        "project_context_only": "",
+        "wpo_award_cue_not_proof": true,
+        "reason_for_review": "WPO-pattern award cited but exact funded project deliverable unverified"
+      },
+      "disposition": "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL",
+      "review_question": "Reviewer question: Select and verify the correct SPARK parent for the explicitly funded WPO award NA19OAR4590128; confirm the output belongs with that parent before addition.",
+      "scout_inbox_status": "VALIDATED_INBOX_DRAFT_NOT_PRIVATE_HUB",
+      "published_scout_batch_path": null,
       "eligible_for_new_reach_addition": "NOT_VERIFIED",
       "private_hub_import": "NOT_VERIFIED",
       "human_approval": "NOT_VERIFIED"
