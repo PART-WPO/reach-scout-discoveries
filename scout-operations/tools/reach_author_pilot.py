@@ -37,6 +37,7 @@ def publication_dois(cache, ir_index, award):
             for url in urls:
                 reverse.setdefault(str(url).lower().rstrip("/"), set()).add(norm_doi(raw_doi))
     seeds = []
+    seen = set()
     for rec in cache.get("records", []):
         if not award_matches(rec, award):
             continue
@@ -47,6 +48,9 @@ def publication_dois(cache, ir_index, award):
             dois.add(norm_doi(url))
             dois.update(reverse.get(str(url).lower().rstrip("/"), set()))
         for doi in sorted(d for d in dois if d):
+            if doi in seen:
+                continue
+            seen.add(doi)
             seeds.append({"doi": doi, "reach_uid": rec["reach_uid"],
                           "reach_title": rec.get("title", "")})
     return seeds
@@ -83,50 +87,88 @@ def accepted_public_journal_source(seed, data):
                 norm_title(titles[0]) == norm_title(seed["reach_title"]))
 
 
+
+def author_identity_key(x):
+    """Conservative bibliographic identity: full family + first given name.
+
+    Middle initials may vary between journal records. This is a *search lead*
+    only and never establishes a person identity or WPO funding affiliation.
+    """
+    given = str(x.get("given") or "").split()
+    family = str(x.get("family") or "").strip()
+    if not given or not family:
+        return ()
+    first = norm_title(given[0].replace(".", ""))
+    last = norm_title(family)
+    return (first, last) if len(first) > 1 and last else ()
+
+
 def research_award(index, watchlist, ir_index, cache, award, *, doi_lookup,
                    author_search, max_publications=5, max_authors=4,
-                   max_results_per_author=5):
-    """Bounded author expansion with DOI-only outputs; never persist names."""
+                   max_results_per_author=15, max_source_dois=15):
+    """Bounded, diverse, REACH-anchored author expansion. DOI-only outputs."""
     if not re.fullmatch(r"NA[0-9]{2}[A-Z0-9]+(?:-[A-Z0-9]+)*", award.upper().strip()):
         raise ValueError("Exact NOAA award number required")
-    seed_items = publication_dois(cache, ir_index, award)
-    authors = {}
-    verified_publications = 0
-    for seed in seed_items[:max_publications]:
+    if not (1 <= max_publications <= 10 and 1 <= max_authors <= 12
+            and 1 <= max_results_per_author <= 30 and 1 <= max_source_dois <= 30):
+        raise ValueError("Bounded author pilot limits required")
+    seeds = publication_dois(cache, ir_index, award)
+    verified = []
+    source_dois_checked = 0
+    for seed in seeds[:max_source_dois]:
+        source_dois_checked += 1
         data = doi_lookup(seed["doi"])
         if not accepted_public_journal_source(seed, data):
             continue
-        verified_publications += 1
+        verified.append((seed, data))
+        if len(verified) >= max_publications:
+            break
+
+    # Round-robin the verified articles rather than allocating all author
+    # queries to the first (possibly highly coauthored) journal publication.
+    pools = []
+    for seed, data in verified:
+        pool = []
         for raw in data.get("author", []):
             name = author_name(raw)
-            # A full given+family is required to avoid surname-only searches.
-            if not raw.get("given") or not raw.get("family") or not name:
+            key = author_identity_key(raw)
+            if key and name:
+                pool.append((key, name, seed))
+        pools.append(pool)
+    authors = {}
+    for position in range(max((len(p) for p in pools), default=0)):
+        for pool in pools:
+            if position >= len(pool):
                 continue
-            authors.setdefault(name.casefold(), (name, seed))
+            key, name, seed = pool[position]
+            authors.setdefault(key, (name, seed))
             if len(authors) >= max_authors:
                 break
         if len(authors) >= max_authors:
             break
+
     leads = {}
-    for _key, (name, seed) in authors.items():
-        for work in (author_search(name, max_results_per_author) or [])[:max_results_per_author]:
+    search_returned = matching_author_works = existing_or_held = 0
+    for key, (name, seed) in authors.items():
+        results = (author_search(name, max_results_per_author) or [])[:max_results_per_author]
+        search_returned += len(results)
+        for work in results:
             doi = norm_doi(work.get("DOI"))
             title = (work.get("title") or [""])[0]
-            # Not even a prospective candidate without DOI/title/author-match.
             if not doi or not title or work.get("type") != "journal-article":
                 continue
-            if name.casefold() not in {
-                author_name(a).casefold() for a in work.get("author", [])
+            if key not in {
+                author_identity_key(a) for a in work.get("author", [])
             }:
                 continue
+            matching_author_works += 1
             disposition = verified_disposition(index, watchlist, ir_index,
                                                doi=doi, title=title,
                                                url="https://doi.org/" + doi)
             if disposition["disposition"] not in {"NO_PUBLIC_IDENTITY_MATCH",
                                                    "PUBLISHED_VERSION_LEAD"}:
+                existing_or_held += 1
                 continue
-            # No author fields, SPARK metadata, or personnel identifiers in
-            # returned/persisted evidence. Shared authorship is a lead only.
             leads.setdefault(doi, {
                 "doi": doi, "title": title,
                 "seed_reach_uid": seed["reach_uid"],
@@ -141,9 +183,13 @@ def research_award(index, watchlist, ir_index, cache, award, *, doi_lookup,
         "schema": "reach-scout-public-reach-author-pilot-v1",
         "source": "SHA_VERIFIED_PUBLIC_REACH_AND_CROSSREF",
         "award": award.upper().strip(),
-        "potential_seed_dois": len(seed_items),
-        "verified_publications": verified_publications,
+        "potential_seed_dois": len(seeds),
+        "source_dois_checked": source_dois_checked,
+        "verified_publications": len(verified),
         "transient_authors_used": len(authors),
+        "crossref_search_rows_examined": search_returned,
+        "rows_with_matching_public_author": matching_author_works,
+        "existing_or_identity_held_rows": existing_or_held,
         "independent_doi_leads": sorted(leads.values(), key=lambda x: x["doi"]),
         "pii_publication": "NO_AUTHOR_NAMES_PERSISTED_OR_PRINTED",
         "spark_author_data_accessed": False,
