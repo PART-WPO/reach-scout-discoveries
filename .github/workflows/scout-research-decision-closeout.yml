@@ -99,6 +99,22 @@ jobs:
               raise SystemExit("STOP: Live REACH manifest changed; refresh the verified comparison cache first")
           PY
             python scout-operations/tools/reconcile_derived_reporting.py
+            python - <<'PY'
+          import json
+          from pathlib import Path
+          routing=json.loads(Path("scout-operations/historical-crossref-screening/actionable-routing.json").read_text())
+          idx=json.loads(Path("scout-operations/identity-cache/public-identity-index.json").read_text())
+          assert routing["shared_identity_index_fingerprint"]==idx["source_fingerprint"], (
+              "Historical routing must be built from same current shared public REACH/Scout identity index")
+          by_doi={r["doi"]:r for r in routing["entries"]}
+          for doi in ("10.1175/aies-d-26-0004.1","10.1029/2026jd046327"):
+              row=by_doi[doi]
+              hits=row["scout_public_queue_matches"]
+              assert any(h["source"].startswith("SCOUT_") and
+                         {"exact_doi","normalized_title"}.issubset(h["basis"])
+                         for h in hits), ("Missing exact existing public Scout review identity",doi)
+          print("Current public Scout review units are represented in the regenerated historical Crossref queue")
+          PY
             python -m unittest discover -v -s scout-operations/tests
             python - <<'PY'
           import subprocess,sys
@@ -123,6 +139,7 @@ jobs:
               scout-operations/research-decision-cases.json \
               scout-operations/research-evidence-coverage.json \
               scout-operations/research-decision-rollup.json \
+              scout-operations/historical-crossref-screening/actionable-routing.json \
               scout-operations/expansion-relevance-priority.json \
               scout-operations/active-workstream.json \
               scout-operations/unified-source-preflight.json \
