@@ -4,7 +4,7 @@
   "expansions_closed_by_memory": 0,
   "explicit_related_output_links": 11,
   "historical_metadata_pointers_not_treated_as_current": 229,
-  "historical_note_events_reused_as_context": 56,
+  "historical_note_events_reused_as_context": 57,
   "hub_records_automatically_staged": 0,
   "human_reviewer_decisions_changed": 0,
   "lane_doi_counts": {
@@ -10899,7 +10899,7 @@
         "explicit_parent_dois": [],
         "explicit_related_doi_count": 0,
         "explicit_related_dois": [],
-        "input_fingerprint": "7301ea917b9786e7df3c57352b800434187e3b3f5a461172a6d95f779de581b2",
+        "input_fingerprint": "4e9cc8e7df68a6d53bf74eda4cd94fc27bb73447657f9d2742bf9ffc99a67cae",
         "nonterminal_related_dispositions": [],
         "recorded_related_note_count": 0,
         "recorded_related_note_event_ids": [],
@@ -10917,12 +10917,21 @@
       "original_research": {
         "formal_original_closed_by_memory": false,
         "identity_screened_current_snapshot": true,
-        "input_fingerprint": "517a32c11de9f7870c705d1d64c8c305327c892f71cdbadbb1e3d37eb52ceaf7",
-        "nonterminal_dispositions": [],
-        "recorded_note_count": 0,
-        "recorded_note_event_ids": [],
-        "reuse_prior_notes_before_new_queries": false,
-        "source_evidence_file_sha256": []
+        "input_fingerprint": "7433cabd892255087324ea474b9ab225045478c321d7e23fcb4ba77033508119",
+        "nonterminal_dispositions": [
+          "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY"
+        ],
+        "recorded_note_count": 1,
+        "recorded_note_event_ids": [
+          "1d3f18462bd5a1af8fcf034a"
+        ],
+        "reuse_prior_notes_before_new_queries": true,
+        "source_evidence_file_sha256": [
+          {
+            "path": "scout-operations/historical-crossref-phase2/2026-11-09-1624ET-generative-ensemble-severe-weather-official-publisher-human-screen.json",
+            "sha256": "b54cfbd6e5596ebeb72606363e5abff9b2c87a9d5df415ed30addb418b9f1d59"
+          }
+        ]
       },
       "preprint_or_version_hold": false,
       "primary_role": "HISTORICAL_CROSSREF",
@@ -36047,8 +36056,8 @@
   "public_author_names_or_spark_personnel_indexed": false,
   "read_only": true,
   "schema": "reach-scout-crosslane-research-memory-v1",
-  "source_documented_doi_nodes": 36,
-  "source_documented_doi_note_events": 55,
+  "source_documented_doi_nodes": 37,
+  "source_documented_doi_note_events": 56,
   "source_documented_nondoi_note_events": 1,
   "source_evidence_sha256": {
     "historical_metadata_checkpoint_sha256": "3e41e0eaa517a4f490d28a95a8b8b1b3341103acdcc110ad744a506fb2683894",
@@ -36110,6 +36119,7 @@
       "scout-operations/historical-crossref-phase2/2026-11-09-1431ET-severe-hail-target-dataset-primary-project-hold.json": "09a3e6fa677ee15376755e371e38c346571c913f1497272d1b794f22f5cfe059",
       "scout-operations/historical-crossref-phase2/2026-11-09-1533ET-oklahoma-compound-heat-ozone-wpo-human-fast-screen.json": "3226e5f30819b3a63ad32968889a46d8ed80640505a36ed17d0cd966d6028f08",
       "scout-operations/historical-crossref-phase2/2026-11-09-1535ET-stratospheric-wave-sciadv-human-fast-screen.json": "9a0569c1210478eb7634bae0a57241c315114babbaa6d854ed23234b24484ebc",
+      "scout-operations/historical-crossref-phase2/2026-11-09-1624ET-generative-ensemble-severe-weather-official-publisher-human-screen.json": "b54cfbd6e5596ebeb72606363e5abff9b2c87a9d5df415ed30addb418b9f1d59",
       "scout-operations/monthly-research/2026-11-06-0528ET-storm-harry-qj70325-project-scope-hold.json": "9bf7c3c778f1cbf1622db3e994b7facc446367f5cc3ed6094517ab5884722911",
       "scout-operations/monthly-research/2026-11-06-0630ET-storm-harry-ecmwf-two-doi-access-holds.json": "38d2065e50f5691c4452ea054a54409a88392e3d76f60969a311a78d96b3bf7c",
       "scout-operations/monthly-research/2026-11-06-0730ET-storm-harry-ecmwf-official-catalog-followup.json": "7a63adfadb964734abec498d27cc54bc6e431d0cb8f51c11bdc8f4e6131491c3",
@@ -36130,19 +36140,19 @@
       "reviewer_feedback": "63e5c7fe9991f0a2cfd576b3c8e5685e89c4491f06ba31f99d1bbec08db4a45e"
     }
   },
-  "source_fingerprint": "dd91a2ab62a52c891aa6f3c672bd2918dd48e3e81b2a31b0ed0137a1de043c81",
+  "source_fingerprint": "db74b5ec03d119c259fafa7a47b74214d93228709a89c7595ae6d63434bc077e",
   "verified_reach_originals_preserved_as_expansion_seeds": 426,
   "work_action_counts": {
     "CONTINUE_DISTINCT_RELATED_OUTPUT_VERIFICATION": 2,
     "EXPAND_VERIFIED_WPO_REACH_SEED": 426,
-    "ORIGINAL_SOURCE_SPECIFIC_RESEARCH_NEEDED": 326,
+    "ORIGINAL_SOURCE_SPECIFIC_RESEARCH_NEEDED": 325,
     "PREPRINT_WATCHLIST_NOT_ELIGIBLE_AS_ORIGINAL": 20,
     "PRESERVE_SEED_RELATED_RESEARCH_WITH_PREPRINT_HOLD": 17,
     "RECHECK_DISTINCT_OUTPUT_IDENTITY_AND_AWARD_PROOF": 7,
     "REUSE_PUBLIC_CODE_EVIDENCE_RECHECK_RELEASE_WHEN_NEEDED": 1,
     "REUSE_RECORDED_MONTHLY_PUBLIC_TRIAGE_NO_AUTOMATIC_REPROPOSAL": 11,
     "REUSE_RECORDED_PROJECT_HOLD_REOPEN_ON_DISTINCT_EVIDENCE": 2,
-    "REUSE_SOURCE_VERIFIED_PRIOR_RESEARCH_NOT_CLOSURE": 20,
+    "REUSE_SOURCE_VERIFIED_PRIOR_RESEARCH_NOT_CLOSURE": 21,
     "REUSE_VERIFIED_REACH_IDENTITY_NO_DUPLICATE_ORIGINAL": 424,
     "VERIFY_PROJECT_SCOPE_THEN_EXPAND": 367
   },
@@ -41623,26 +41633,26 @@
       "track": "EXPANSION"
     },
     {
-      "can_skip_retrieving_unchanged_prior_note": false,
+      "can_skip_retrieving_unchanged_prior_note": true,
       "complete": false,
       "doi": "10.1175/aies-d-23-0094.1",
-      "input_fingerprint": "517a32c11de9f7870c705d1d64c8c305327c892f71cdbadbb1e3d37eb52ceaf7",
+      "input_fingerprint": "7433cabd892255087324ea474b9ab225045478c321d7e23fcb4ba77033508119",
       "lane": "HISTORICAL_CROSSREF",
-      "next_action": "ORIGINAL_SOURCE_SPECIFIC_RESEARCH_NEEDED",
+      "next_action": "REUSE_SOURCE_VERIFIED_PRIOR_RESEARCH_NOT_CLOSURE",
       "not_a_human_decision": true,
-      "note_events_reused": 0,
+      "note_events_reused": 1,
       "track": "ORIGINAL"
     },
     {
-      "can_skip_retrieving_unchanged_prior_note": false,
+      "can_skip_retrieving_unchanged_prior_note": true,
       "complete": false,
       "doi": "10.1175/aies-d-23-0094.1",
       "existing_distinct_related_doi_links": 0,
-      "input_fingerprint": "7301ea917b9786e7df3c57352b800434187e3b3f5a461172a6d95f779de581b2",
+      "input_fingerprint": "4e9cc8e7df68a6d53bf74eda4cd94fc27bb73447657f9d2742bf9ffc99a67cae",
       "lane": "HISTORICAL_CROSSREF",
       "next_action": "VERIFY_PROJECT_SCOPE_THEN_EXPAND",
       "not_a_human_decision": true,
-      "note_events_reused": 0,
+      "note_events_reused": 1,
       "track": "EXPANSION"
     },
     {
