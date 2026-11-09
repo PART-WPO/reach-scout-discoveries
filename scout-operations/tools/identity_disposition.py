@@ -37,8 +37,8 @@ def version_relationships(watchlist, doi):
             siblings.extend(sorted(published))
         elif doi in published:
             parents.append(pre)
-    if len(parents) > 1 and doi not in seen:
-        raise ValueError("Conflicting preprint parents for one published DOI")
+    # Multiple earlier preprint iterations may legitimately point to one final DOI.
+    # Keep every known predecessor; do not collapse or discard their history.
     return {"is_original_preprint": doi in seen,
             "preprint_dois": sorted(set(parents)),
             "official_published_doi_leads": sorted(set(siblings))}
