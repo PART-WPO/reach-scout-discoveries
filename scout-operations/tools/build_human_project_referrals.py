@@ -253,6 +253,32 @@ def existing_verified_self_draft(root,doi,event,check,previous):
 
 
 
+
+def verified_replacement_batch_names(root, doi, names, metadata):
+    """Follow only source-audited existing-review replacements; never mint a new unit."""
+    rules_path=root/"scout-discoveries/supersessions.json"
+    if not rules_path.is_file():
+        return names
+    rules=json.loads(rules_path.read_text(encoding="utf-8"))
+    if rules.get("schema")!="reach-scout-feed-supersessions-v1":
+        raise ValueError("Invalid Scout supersession contract")
+    result=set(names)
+    official=set(official_459_awards(metadata))
+    for original_id, rule in rules.get("superseded_batches",{}).items():
+        if (rule.get("replacement_kind")!="wpo_award_confirmation"
+            or original_id+".csv" not in names
+            or str(rule.get("exact_doi") or "").lower()!=doi):
+            continue
+        award=str(rule.get("confirmed_wpo_award") or "").upper()
+        source=root/"scout-discoveries/batches"/(original_id+".csv")
+        if (award not in official or not source.is_file()
+            or hashlib.sha256(source.read_bytes()).hexdigest()!=rule.get("original_sha256")
+            or rule.get("authoritative_source_url")!="https://api.crossref.org/works/"+doi):
+            raise ValueError("Existing public referral supersession lacks exact verified 459 evidence")
+        result.add(str(rule["replacement_id"])+".csv")
+    return result
+
+
 def existing_verified_published_self_referral(root,doi,event,check,previous):
     """Verify one previously owned, now published *public* Scout review unit.
 
@@ -275,6 +301,7 @@ def existing_verified_published_self_referral(root,doi,event,check,previous):
         if str(rel).startswith(("scout-discoveries/inbox/",
                                 "scout-discoveries/batches/"))}
     if not names:return None
+    names=verified_replacement_batch_names(root,doi,names,old.get("official_metadata") or {})
     manifest_path=root/"scout-discoveries/manifest.json"
     if not manifest_path.is_file():raise ValueError("Missing authoritative published feed manifest")
     manifest=json.loads(manifest_path.read_text(encoding="utf-8"))

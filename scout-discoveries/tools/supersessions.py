@@ -21,7 +21,9 @@ def approved_batches(folder, entries):
             raise ValueError("Batch replacement missing")
         if by_id[old_id]["sha256"] != rule["original_sha256"]:
             raise ValueError("Source batch digest changed")
-        if rule.get("replacement_kind") == "review_reclassification":
+        if rule.get("replacement_kind") == "wpo_award_confirmation":
+            verify_wpo_award_confirmation(folder, by_id[old_id], by_id[new_id], rule)
+        elif rule.get("replacement_kind") == "review_reclassification":
             verify_review_reclassification(folder, by_id[old_id], by_id[new_id], rule)
         elif rule.get("replacement_kind") == "metadata_refresh":
             verify_metadata_refresh(folder, by_id[old_id], by_id[new_id], rule)
@@ -58,6 +60,113 @@ def verify_rows(folder, before, after, excluded):
     expected = [row for row in old_rows if row["DOI"].lower() not in retired]
     if not expected or new_rows != expected:
         raise ValueError("Replacement does not retain original unaffected rows")
+
+
+
+def verify_wpo_award_confirmation(folder, before, after, rule):
+    """Reclassify exactly one existing review unit after official same-DOI 459 proof.
+
+    Neither source batch nor research note is overwritten. A new SHA-checked
+    public batch replaces the old manifest entry; a human still owns private
+    review and the selection of a SPARK parent. Never mint a second DOI unit.
+    """
+    import hashlib
+    import re
+
+    source_path = str(rule.get("evidence_path") or "")
+    evidence_dir = (folder.parent / "scout-operations/award-attribution-confirmations").resolve()
+    proof_file = (folder.parent / source_path).resolve()
+    if not source_path.startswith("scout-operations/award-attribution-confirmations/") or (
+        proof_file.parent != evidence_dir or not proof_file.is_file()
+    ):
+        raise ValueError("Missing approved source-grounded WPO attribution evidence")
+    proof = json.loads(proof_file.read_text(encoding="utf-8"))
+    if proof.get("schema") != "reach-scout-official-wpo-award-confirmation-v1":
+        raise ValueError("Invalid WPO confirmation evidence schema")
+    doi = str(rule.get("exact_doi") or "").lower()
+    award = str(rule.get("confirmed_wpo_award") or "").upper()
+    if not re.fullmatch(r"NA\d{2}OARX?459C?\d{4,}(?:-[A-Z0-9]+)?", award):
+        raise ValueError("WPO confirmation must use a complete exact OAR459 grant")
+    if (doi != proof.get("doi") or award != proof.get("exact_output_wpo_award")
+        or proof.get("official_metadata_provider") != "crossref"
+        or proof.get("private_hub_import") != "NOT_VERIFIED"
+        or proof.get("human_approval") != "NOT_VERIFIED"):
+        raise ValueError("Exact DOI, official provenance or human status mismatch")
+    source_url = "https://api.crossref.org/works/" + doi
+    if (proof.get("publisher_deposited_funding_url") != source_url
+        or rule.get("authoritative_source_url") != source_url
+        or not str(proof.get("publisher_article_url") or "").startswith("https://journals.ametsoc.org/")):
+        raise ValueError("Missing same-DOI publisher/Crossref source provenance")
+    refs = proof.get("same_doi_funding_references") or []
+    if not any(award in (x.get("award") or []) for x in refs if isinstance(x, dict)):
+        raise ValueError("Crossref deposited funding references do not prove this 459 award")
+    old_source_path = str(proof.get("original_research_evidence_path") or "")
+    original_source = (folder.parent / old_source_path).resolve()
+    if (not old_source_path.startswith("scout-operations/historical-crossref-phase2/")
+        or original_source.parent != (folder.parent / "scout-operations/historical-crossref-phase2").resolve()
+        or not original_source.is_file()
+        or hashlib.sha256(original_source.read_bytes()).hexdigest() !=
+           proof.get("original_research_evidence_sha256")):
+        raise ValueError("The original append-only publisher research source has changed")
+    note = json.loads(original_source.read_text(encoding="utf-8"))
+    if (str(note.get("original_doi") or "").lower() != doi
+        or str(note.get("structured_award") or "").upper() != award
+        or proof.get("title") != note.get("title")):
+        raise ValueError("Confirmed award contradicts primary original-output research")
+    old_rows, new_rows = rows_for(folder, before), rows_for(folder, after)
+    if len(old_rows) != 1 or len(new_rows) != 1:
+        raise ValueError("WPO reclassification must be exactly one review unit")
+    old, new = old_rows[0], new_rows[0]
+    if (old.get("DOI", "").lower() != doi or new.get("DOI", "").lower() != doi
+        or new.get("Title") != proof.get("title")
+        or proof.get("original_reviewer_batch_path") != before["path"]
+        or set(old) != set(new)):
+        raise ValueError("WPO reclassification cannot change review identity or schema")
+    changed = {k for k in old if old[k] != new[k]}
+    if changed != {"NOAA Award Number(s)", "Funding Evidence URL", "Scout Discovery Rationale"}:
+        raise ValueError("WPO reclassification may only change award, its proof and review narrative")
+    if old["NOAA Award Number(s)"] or old["Funding Evidence URL"]:
+        raise ValueError("Original review candidate already made an award claim")
+    if new["NOAA Award Number(s)"] != award or new["Funding Evidence URL"] != source_url:
+        raise ValueError("New verified funding field must use only this exact official 459 award")
+    previous = old["Scout Discovery Rationale"]
+    revised = new["Scout Discovery Rationale"]
+    required_previous = (
+        "Scout verification: Completed",
+        "Scout classification: NEEDS INVESTIGATION",
+        "Scout finding purpose: needs_investigation",
+        "Scout discovery route: Independent discovery",
+    )
+    required_new = (
+        "Scout verification: Completed",
+        "Scout classification: NEW CANDIDATE",
+        "Scout finding purpose: new_output_review",
+        "Scout discovery route: Independent discovery",
+        "Scout screening score: 70/100 (Medium)",
+        "WPO funding connection: CONFIRMED",
+        "Reviewer selects and verifies the SPARK parent",
+        source_url, award,
+        source_path,
+        "Private Hub import and any prior unsynchronized review remain NOT VERIFIED.",
+    )
+    if any(t not in previous for t in required_previous) or any(t not in revised for t in required_new):
+        raise ValueError("Official correction failed to preserve required evidence/review labels")
+    for label in ("Scout discovery path evidence:", "Scout origin method:", "Scout discovery route:",
+                  "Scout verification:", "Source Run ID:"):
+        for line in previous.splitlines():
+            if line.startswith(label) and line not in revised.splitlines():
+                raise ValueError("Correction lost immutable original source provenance")
+    if ("Scout classification: NEEDS INVESTIGATION" in revised or
+        "Scout finding purpose: needs_investigation" in revised or
+        revised.count("Reviewer question:") != 1 or
+        revised.count("What to check before adding this output:") != 1 or
+        proof.get("reviewer_question") not in revised):
+        raise ValueError("Corrected public reviewer action or classification is ambiguous")
+    if new.get("Suggested Parent Project") or new.get("Proposed Project Title"):
+        raise ValueError("Do not automatically select the protected SPARK/Smartsheet parent")
+    if (new["Source Run ID"] != old["Source Run ID"] or
+        new["Existing REACH Match"] != old["Existing REACH Match"]):
+        raise ValueError("Correction cannot change candidate identity or duplicate evidence")
 
 
 def verify_metadata_refresh(folder, before, after, rule):
