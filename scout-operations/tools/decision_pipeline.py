@@ -181,18 +181,37 @@ def lookup(index, doi="", title="", url=""):
         found.append({"source": rec["source"], "identity": rec["identity"],
                       "title": rec["title"], "location": rec["location"],
                       "match_bases": sorted(bases)})
+    # A shared identity screen must be at least as conservative as the bulk
+    # gate: a DOI or URL alone is a lead, not an automatic duplicate.
+    # Query title, unique source identity, and a strong identifier must agree.
+    # Related datasets, preprints, and published articles must not be merged
+    # merely because their titles resemble one another.
     strong = {"exact_doi", "exact_url"}
-    if any(x["source"] == "REACH" and strong.intersection(x["match_bases"]) for x in found):
-        status = "CONFIRMED_PUBLIC_REACH_IDENTITY"
-    elif any(x["source"] == "REACH" for x in found):
-        status = "POSSIBLE_PUBLIC_REACH_MATCH"
-    elif any(x["source"].startswith("SCOUT_") and strong.intersection(x["match_bases"]) for x in found):
-        status = "IN_PUBLIC_SCOUT_QUEUE"
-    elif found:
-        status = "POSSIBLE_SCOUT_QUEUE_MATCH"
+    reach = [x for x in found if x["source"] == "REACH"]
+    scout = [x for x in found if x["source"].startswith("SCOUT_")]
+
+    def uniquely_verified(group):
+        return (bool(t) and len({(x["source"], x["identity"]) for x in group}) == 1
+                and norm_title(group[0]["title"]) == t
+                and bool(strong.intersection(group[0]["match_bases"])))
+
+    if reach:
+        status = ("CONFIRMED_PUBLIC_REACH_IDENTITY" if uniquely_verified(reach)
+                  else "POSSIBLE_PUBLIC_REACH_MATCH")
+        reason = ("UNIQUE_STRONG_IDENTIFIER_AND_TITLE" if uniquely_verified(reach)
+                  else "MULTIPLE_REACH_IDENTITIES" if len({x["identity"] for x in reach}) > 1
+                  else "SOURCE_TITLE_REQUIRED" if not t
+                  else "IDENTIFIER_TITLE_OR_VERSION_REVIEW")
+    elif scout:
+        status = ("IN_PUBLIC_SCOUT_QUEUE" if uniquely_verified(scout)
+                  else "POSSIBLE_SCOUT_QUEUE_MATCH")
+        reason = ("UNIQUE_STRONG_IDENTIFIER_AND_TITLE" if uniquely_verified(scout)
+                  else "MULTIPLE_SCOUT_CANDIDATES" if len({(x["source"], x["identity"]) for x in scout}) > 1
+                  else "SOURCE_TITLE_REQUIRED" if not t
+                  else "IDENTIFIER_TITLE_OR_VERSION_REVIEW")
     else:
-        status = "NO_PUBLIC_IDENTITY_MATCH"
-    return {"status": status, "matches": found,
+        status, reason = "NO_PUBLIC_IDENTITY_MATCH", "NO_MATCH_IN_VERIFIED_PUBLIC_SNAPSHOT"
+    return {"status": status, "reason": reason, "matches": found,
             "caveat": "Public snapshot only; private Hub decisions are not asserted."}
 
 
@@ -262,6 +281,33 @@ def evaluate(case, index):
             "checked_sources": sorted(set(urls)),
             "unverified_private_hub_import": True,
             "automatically_staged": False, "seed_expansion_preserved": True}
+
+
+
+def current_checkpoints(index, cases, root=ROOT):
+    """Read ONLY the immutable revision for each exact current case+source.
+
+    Historical revisions for the same DOI are retained but must not inflate
+    current-run assertions or scorecards.
+    """
+    found = []
+    for case in cases:
+        doi = norm_doi(case.get("doi"))
+        demand(doi, "Canonical DOI required to identify checkpoint")
+        signature = sha_bytes(json.dumps({
+            "case": case, "index": index["source_fingerprint"],
+            "version": VERSION}, sort_keys=True).encode())
+        id_hash = sha_bytes(doi.encode())[:16]
+        path = root / "scout-operations/case-checkpoints" / ("doi-" + id_hash) / (
+            "rev-" + signature[:20] + ".json")
+        demand(path.is_file(), "Current case checkpoint missing: " + str(path))
+        record = read_json(path)
+        demand(record.get("case_input") == case and
+               record.get("input_fingerprint") == signature and
+               record.get("index_fingerprint") == index["source_fingerprint"],
+               "Current case checkpoint fingerprint does not agree: " + str(path))
+        found.append(record)
+    return found
 
 
 def main():

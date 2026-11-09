@@ -1,0 +1,38 @@
+name: Validate Scout shared identity and disposition (read only)
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/validate-scout-shared-identity.yml'
+      - 'scout-operations/tools/decision_pipeline.py'
+      - 'scout-operations/tools/identity_disposition.py'
+      - 'scout-operations/tests/test_decision_pipeline.py'
+      - 'scout-operations/tests/test_identity_disposition.py'
+      - 'scout-operations/decision-contract-v1.md'
+      - 'scout-operations/identity-cache/public-identity-index.json'
+      - 'scout-operations/reach-comparison-cache/comparison-index.json'
+      - 'scout-operations/preprint-watchlist.json'
+      - 'scout-operations/scout-v2-benchmark-100.json'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  strict-identity-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        # On pull_request, test the PR merge ref, never force checkout main.
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile and run focused decision/identity regression suite
+        run: |
+          set -euo pipefail
+          python -m py_compile scout-operations/tools/decision_pipeline.py scout-operations/tools/identity_disposition.py
+          python -m unittest discover -s scout-operations/tests -p 'test_decision_pipeline.py' -v
+          python -m unittest discover -s scout-operations/tests -p 'test_identity_disposition.py' -v
+          python -m unittest discover -s scout-operations/tests -p 'test_bulk_reach_dedup.py' -v
+      - name: Read-only frozen 100-case coverage replay (not accuracy scoring)
+        run: |
+          set -euo pipefail
+          python scout-operations/tools/identity_disposition.py --benchmark

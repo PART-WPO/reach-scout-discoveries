@@ -2,6 +2,7 @@ name: Scout decision pipeline validation
 on:
   workflow_dispatch:
   push:
+    branches: [main]
     paths:
       - '.github/workflows/scout-decision-pipeline.yml'
       - 'scout-operations/tools/decision_pipeline.py'
@@ -37,6 +38,7 @@ jobs:
         run: |
           set -euo pipefail
           python -m unittest discover -s scout-operations/tests -p 'test_decision_pipeline.py' -v
+          python -m unittest discover -s scout-operations/tests -p 'test_identity_disposition.py' -v
           python -m unittest discover -s scout-operations/tests -p 'test_ir_reach_identity.py' -v
           python -m py_compile scout-operations/tools/lookup_independent_dois.py scout-operations/tools/lookup_independent_metadata.py scout-operations/tools/ir_reach_identity.py scout-operations/historical-crossref-screening/build_actionable_routing.py
           python -m unittest discover -s scout-operations/tests -p 'test_quick_monthly_intake.py' -v
@@ -68,8 +70,12 @@ jobs:
             python scout-operations/tools/decision_pipeline.py evaluate --cases scout-operations/tests/flash-drought-positive-control-case.json
             python scout-operations/tools/decision_pipeline.py evaluate --cases scout-operations/tests/reach-canonical-url-closure-case-2026-11-04.json
             python - <<'PY'
-          import glob, json
+          import hashlib, json
           from pathlib import Path
+          from collections import Counter
+          import sys
+          sys.path.insert(0, "scout-operations/tools")
+          from decision_pipeline import current_checkpoints
           idx=json.loads(Path("scout-operations/identity-cache/public-identity-index.json").read_text())
           assert idx["schema"]=="reach-scout-identity-index-v1"
           assert idx["sources"]["scout_batches"]>=30
@@ -77,13 +83,8 @@ jobs:
           negatives=json.loads(Path("scout-operations/tests/published-crossref-decision-cases.json").read_text())["cases"]
           positives=json.loads(Path("scout-operations/tests/flash-drought-positive-control-case.json").read_text())["cases"]
           duplicates=json.loads(Path("scout-operations/tests/reach-canonical-url-closure-case-2026-11-04.json").read_text())["cases"]
-          ids={v["doi"] for v in negatives+positives+duplicates}
-          records=[]
-          for path in glob.glob("scout-operations/case-checkpoints/doi-*/rev-*.json"):
-              x=json.loads(Path(path).read_text())
-              if x["case_input"]["doi"] in ids and x["index_fingerprint"]==idx["source_fingerprint"]:
-                  records.append(x)
-          assert len(records)==5, "Expected three holds, one positive-control and one existing-REACH checkpoint"
+          records=current_checkpoints(idx, negatives+positives+duplicates)
+          assert len(records)==5, "Expected exactly five checkpoints for five current case-input fingerprints"
           held=[x for x in records if x["evaluation"]["doi"] in {v["doi"] for v in negatives}]
           ready=[x for x in records if x["evaluation"]["doi"] in {v["doi"] for v in positives}]
           existing=[x for x in records if x["evaluation"]["doi"] in {v["doi"] for v in duplicates}]

@@ -23,6 +23,40 @@ decisions or the 24-column Discovery Hub contract.
 in **that source snapshot**. It is not a global newness attestation. An index
 derived from stale REACH or Scout snapshots is invalid; refresh first.
 
+## Shared identity/disposition hardening (November 9, 2026)
+
+- The existing shared index remains the single public DOI/URL/title lookup. A
+  unique exact DOI or canonical URL is **not** sufficient for a terminal
+  duplicate call. Confirm a public REACH or Scout identity only when the
+  supplied normalized source title matches exactly one record in that
+  destination. Missing title, mismatched title, title-only overlap, and
+  multiple destination identities produce a bounded identity/version review,
+  never an automatic duplicate exclusion.
+- The read-only `tools/identity_disposition.py` resolves a public disposition
+  across REACH, Scout inbox/published queue and the separately maintained
+  preprint watchlist. It preserves every previous preprint DOI pointing to a
+  published version, but never treats a family relationship as proof of the
+  final article's award attribution. An original/seed's DOI-seeded expansion
+  remains open regardless of its original duplicate disposition.
+- Public absence means only no match in a verified snapshot. No GitHub
+  workflow can infer private Discovery Hub import, human decisions,
+  Smartsheet insertion or REACH publication.
+- **Author/privacy boundary:** NEVER pull author names, PIs, collaborators or
+  personnel from SPARK for discovery, and never publish them back into SPARK.
+  A future author-based discovery lane may take transient author seeds only
+  from checksum-verified **public REACH publication metadata**, joined to an
+  **exact primary award**. No verified REACH publication for the award means
+  **no author-based seed**. Search via award, DOI, citations, related datasets,
+  software, project title or other non-personal routes instead. A shared
+  author name alone is never WPO-funding proof. The current REACH comparison
+  cache has no author fields and thus deliberately returns zero author seeds.
+- The public frozen 100-case set is a **coverage/regression replay only**;
+  independent gold labels have not been collected. Do not publish accuracy,
+  recall, reviewer-time or accepted-output rates from source-derived labels.
+  Use `python scout-operations/tools/identity_disposition.py --benchmark`
+  only after confirming source fingerprints. Private truth labels remain
+  within authorized reviewer-controlled infrastructure.
+
 ## Funding-threshold distinction (do not flatten)
 
 - **Monthly Direct API originals:** Publisher/repository structured funding
