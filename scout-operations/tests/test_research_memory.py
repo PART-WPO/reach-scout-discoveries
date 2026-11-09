@@ -9,7 +9,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
 from research_memory import (
     INDEX, PARSER, REPORTS, SCHEMA, build_index, canonical,
-    key, metadata_result, read_index, write_index,
+    key, metadata_result, read_index, write_index, historical_author_lead,
 )
 
 
@@ -45,6 +45,26 @@ class SourceAwareMemoryTests(unittest.TestCase):
         file.write_text(json.dumps({"schema": REPORTS[0][1],
                                     "records": [rec]}))
         return root, file, rec
+
+    def test_live_32_doi_historical_memory_is_safely_resumable(self):
+        root = Path(__file__).resolve().parents[2]
+        import json
+        path = root/"scout-operations/research-memory/public-author-20261109-leads.json"
+        snapshot = json.loads(path.read_text(encoding="utf-8"))
+        self.assertEqual(snapshot["totals"]["lead_count"], 32)
+        self.assertEqual(snapshot["totals"]["dispositions"], {
+            "DEFER_OFF_TOPIC_RETAIN_LEAD": 25,
+            "DEFER_METADATA_RETRY_OFF_TOPIC": 6,
+            "OTHER_AWARD_BRIDGE_RESEARCH_ONLY": 1})
+        self.assertNotIn("author_name", path.read_text())
+        self.assertNotIn("authors", path.read_text())
+        lead = historical_author_lead(root, "10.1016/j.envpol.2025.126311")
+        self.assertEqual(lead["previous_research_tier"],
+                         "OTHER_AWARD_BRIDGE_RESEARCH_ONLY")
+        self.assertTrue(lead["recheck_current_reach_identity"])
+        self.assertFalse(lead["project_funding_verified"])
+        self.assertFalse(lead["automatic_rejection_or_staging"])
+        self.assertIsNone(historical_author_lead(root, "10.5555/not-in-pilot"))
 
     def test_build_index_uses_only_pointers_never_names_or_reviewer_state(self):
         root, path, rec = self.fixture()
