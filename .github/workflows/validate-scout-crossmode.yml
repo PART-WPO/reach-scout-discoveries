@@ -52,9 +52,9 @@ jobs:
           assert report['new_public_review_proposals'] == 0
           assert report['new_reach_additions'] == 0
           assert sum(sum(v.values()) for v in report['lane_decision_counts'].values()) == report['original_and_related_cases_preflighted']
-          assert len(report['rows']) == report['original_and_related_cases_preflighted']
-          assert all('public_identity_disposition' in c for c in report['rows'])
-          assert all(c['seed_expansion_closed'] is False for c in report['rows'])
+          assert len(report['cases']) == report['original_and_related_cases_preflighted']
+          assert all('public_identity_disposition' in c for c in report['cases'])
+          assert all(c['seed_expansion_closed'] is False for c in report['cases'])
           print(json.dumps({"preflighted": report['original_and_related_cases_preflighted'],
                             "no_auto_staging": True,"source_fingerprint": report["identity_index_fingerprint"]}))
           PY
