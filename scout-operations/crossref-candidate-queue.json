@@ -5,10 +5,10 @@
   "lane_counts": {
     "BOUNDED_IDENTITY_REVIEW": 54,
     "EXISTING_REACH_FAST_EXIT": 426,
-    "NOVEL_IDENTITY_RESEARCH": 103,
+    "NOVEL_IDENTITY_RESEARCH": 102,
     "PREPRINT_PUBLISHED_VERSION_LEAD": 11,
     "PREPRINT_WATCHLIST_HOLD": 7,
-    "WAIT_FOR_NEW_EVIDENCE": 13
+    "WAIT_FOR_NEW_EVIDENCE": 14
   },
   "items": [
     {
@@ -70,28 +70,6 @@
       ],
       "award_match_basis": "Historical Crossref feed structured award, matched to SPARK primary award at intake; output-to-project relevance still unverified",
       "prior_disposition": "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
-      "scout_overlap": false,
-      "verified_reach_uid": null,
-      "private_hub_review": "NOT_VERIFIED"
-    },
-    {
-      "preprint_status": null,
-      "verified_published_dois": [],
-      "doi": "10.1038/s43247-026-03991-1",
-      "title": "dual physical pathways shape subseasonal to seasonal predictability of north american summer heat extremes",
-      "lane": "NOVEL_IDENTITY_RESEARCH",
-      "priority": 80,
-      "next_action": "Verify eligibility, primary SPARK project and funding",
-      "funding_signal": "POSSIBLE_WPO_459",
-      "crossref_structured_award_numbers": [
-        "NA21OAR4310383",
-        "NA22OAR4590217"
-      ],
-      "award_evidence_source_batches": [
-        "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part002.csv"
-      ],
-      "award_match_basis": "Historical Crossref feed structured award, matched to SPARK primary award at intake; output-to-project relevance still unverified",
-      "prior_disposition": null,
       "scout_overlap": false,
       "verified_reach_uid": null,
       "private_hub_review": "NOT_VERIFIED"
@@ -3814,6 +3792,28 @@
       "funding_signal": "POSSIBLE_WPO_459",
       "crossref_structured_award_numbers": [
         "NA18OAR4590391"
+      ],
+      "award_evidence_source_batches": [
+        "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part002.csv"
+      ],
+      "award_match_basis": "Historical Crossref feed structured award, matched to SPARK primary award at intake; output-to-project relevance still unverified",
+      "prior_disposition": "PROJECT_EVIDENCE_HOLD",
+      "scout_overlap": false,
+      "verified_reach_uid": null,
+      "private_hub_review": "NOT_VERIFIED"
+    },
+    {
+      "preprint_status": null,
+      "verified_published_dois": [],
+      "doi": "10.1038/s43247-026-03991-1",
+      "title": "dual physical pathways shape subseasonal to seasonal predictability of north american summer heat extremes",
+      "lane": "WAIT_FOR_NEW_EVIDENCE",
+      "priority": 10,
+      "next_action": "Reopen only on new evidence or official publication",
+      "funding_signal": "POSSIBLE_WPO_459",
+      "crossref_structured_award_numbers": [
+        "NA21OAR4310383",
+        "NA22OAR4590217"
       ],
       "award_evidence_source_batches": [
         "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part002.csv"
@@ -13056,7 +13056,7 @@
   "new_review_proposals": 0,
   "source_sha256": {
     "scout-operations/historical-crossref-screening/actionable-routing.json": "a80c7fa8556a63dbc0f5f991e4e9b65e8fa32544dc5e5c121828aae043a525ca",
-    "scout-operations/research-outcome-registry.json": "443104f1c99b9f27310bc8a098ee2ea54471c71ec84646c41a7f85adf15be587",
+    "scout-operations/research-outcome-registry.json": "55a7590b19b50c4012a92d8c8a4df44012fcf518ff8d0ae2a7409b1ce73cf9f3",
     "api-discoveries/historical-crossref/manifest.json": "799744c7e83f218d22cc19afacb7cfcf2762feb490659efde9f58bf19473b1fa",
     "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part001.csv": "df420ff561050c5f019ccddd19eb93124ab642eba8aa6f87dc0636b6d5ee2de3",
     "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part002.csv": "1cc9e5f3c493c6fa7cde93e0060718224686f695c7ba6d648208ecf9a09d69d7",
