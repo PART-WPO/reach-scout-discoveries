@@ -85,7 +85,7 @@ def verify_wpo_award_confirmation(folder, before, after, rule):
         raise ValueError("Invalid WPO confirmation evidence schema")
     doi = str(rule.get("exact_doi") or "").lower()
     award = str(rule.get("confirmed_wpo_award") or "").upper()
-    if not re.fullmatch(r"NA\\d{2}OARX?459C?\\d{4,}(?:-[A-Z0-9]+)?", award):
+    if not re.fullmatch(r"NA\d{2}OARX?459C?\d{4,}(?:-[A-Z0-9]+)?", award):
         raise ValueError("WPO confirmation must use a complete exact OAR459 grant")
     if (doi != proof.get("doi") or award != proof.get("exact_output_wpo_award")
         or proof.get("official_metadata_provider") != "crossref"
