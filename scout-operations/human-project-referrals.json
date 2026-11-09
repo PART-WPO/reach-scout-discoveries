@@ -1562,9 +1562,21 @@
         ]
       },
       "public_identity": {
-        "status": "NO_PUBLIC_IDENTITY_MATCH",
-        "reason": "NO_MATCH_IN_VERIFIED_PUBLIC_SNAPSHOT",
-        "matches": [],
+        "status": "IN_PUBLIC_SCOUT_QUEUE",
+        "reason": "UNIQUE_STRONG_IDENTIFIER_AND_TITLE",
+        "matches": [
+          {
+            "source": "SCOUT_INBOX",
+            "identity": "2026-11-09-human-project-e8ae57179ced9c8d19.csv:2",
+            "title": "Stratospheric wave predictability enhances surface forecasts over North America",
+            "location": "scout-discoveries/inbox/2026-11-09-human-project-e8ae57179ced9c8d19.csv:2",
+            "match_bases": [
+              "exact_doi",
+              "exact_url",
+              "normalized_title"
+            ]
+          }
+        ],
         "caveat": "Public snapshot only; private Hub decisions are not asserted.",
         "noaa_ir_reach_check": {
           "status": "VERIFIED_IR_URL_NOT_IN_PUBLIC_REACH",
@@ -1581,7 +1593,7 @@
       },
       "disposition": "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL",
       "review_question": "Reviewer question: Is this independently published output a deliverable of SPARK primary award NA22OAR4590217 (rather than merely topically related), and if so which project parent should it use?",
-      "scout_inbox_status": "VALIDATED_INBOX_DRAFT_NOT_PRIVATE_HUB",
+      "scout_inbox_status": "EXISTING_VERIFIED_INBOX_DRAFT",
       "published_scout_batch_path": null,
       "eligible_for_new_reach_addition": "NOT_VERIFIED",
       "private_hub_import": "NOT_VERIFIED",
