@@ -6,6 +6,8 @@ import json
 from collections import Counter, defaultdict
 from pathlib import Path
 
+from extract_structured_research_evidence import extract as extract_public_note_facts
+
 ROOT = Path(__file__).resolve().parents[2]
 REG = Path("scout-operations/research-outcome-registry.json")
 STRUCT = Path("scout-operations/research-decision-cases.json")
@@ -46,6 +48,7 @@ def assess(case, structured, events):
     secondary = structured.get("secondary_identity_checked") is True
     rounds = structured.get("research_rounds", 0)
     exhausted = structured.get("research_budget_exhausted") is True
+    reopen_only = structured.get("evidence_reopen_only") is True
     latest_disposition = latest.get("operational_disposition", case.get("latest_operational_disposition", "UNKNOWN"))
     prior_preprint = "PREPRINT_MONTHLY_WATCH" in observed
     explicit_preprint = status == "PREPRINT" or latest_disposition == "PREPRINT_MONTHLY_WATCH"
@@ -88,6 +91,10 @@ def assess(case, structured, events):
         disposition = "EXISTING_REACH_KEEP_EXPANSION"
         action = "Do not stage duplicate original; preserve separate related-output expansion."
         owner = "SCOUT_EXPANSION"
+    elif project == "CONTRADICTED":
+        disposition = "CONTRADICTORY_PROJECT_EVIDENCE_HOLD"
+        action = "Resolve explicit award/project contradiction with independent primary project evidence; no public proposal."
+        owner = "NEW_EVIDENCE_TRIGGER"
     elif award_disproved:
         disposition = "NO_MATCHING_WPO_PROJECT_EVIDENCE"
         action = "Record tested nonmatch; reopen attribution only when independent new same-project primary-award evidence arrives."
@@ -107,7 +114,11 @@ def assess(case, structured, events):
         disposition = "ONE_BOUNDED_HUMAN_QUESTION"
         action = "Show one exact project-attribution question with source evidence; no reviewer justification required."
         owner = "HUMAN_PROJECT_CHECK"
-    elif exhausted or rounds >= 2:
+    elif latest_disposition == "TECHNICAL_METADATA_RECOVERY":
+        disposition = "EXACT_DOI_METADATA_RECOVERY"
+        action = "Consult existing exact-DOI recovery queue first; retry only the unmet technical metadata source, never infer a missing output."
+        owner = "SCOUT_METADATA_RECOVERY"
+    elif reopen_only or exhausted or rounds >= 2:
         disposition = "BOUNDED_EVIDENCE_HOLD"
         action = "Do not rerun identical research. Reopen only on a new verified source fingerprint, exact award evidence, or official publication/identity change."
         owner = "NEW_EVIDENCE_TRIGGER"
@@ -127,7 +138,7 @@ def assess(case, structured, events):
         "existing_event_count": len(events),
         "structured_case_present": bool(structured), "monthly_direct_api_threshold_applied": monthly_direct,
         "checked_source_url_count": len(evidence_urls),
-        "research_budget_exhausted": exhausted,
+        "research_budget_exhausted": exhausted, "new_material_evidence_required_to_reopen": reopen_only,
         "automatic_hub_write": False, "formal_original_closed": False,
         "separate_expansion_closed": False,
         "private_hub_state": "NOT_VERIFIED",
@@ -157,7 +168,9 @@ def build(root=ROOT):
         for evidence in c.get("source_evidence", []):
             verified_file(root, evidence["path"], evidence["sha256"])
         details[key] = c
+    note_facts = extract_public_note_facts(registry, root)
     compiled = []
+    baseline = []
     ids = set()
     for c in registry["cases"]:
         key = c["identity"]
@@ -167,10 +180,32 @@ def build(root=ROOT):
         ev = [event_by_id[x] for x in c["event_ids"]]
         if not ev or c["latest_event_id"] not in c["event_ids"]:
             raise ValueError("Inconsistent registry events for " + key)
-        compiled.append(assess(c, details.get(key, {}), ev))
+        old = assess(c, details.get(key, {}), ev)
+        baseline.append(old)
+        # Preserve prior curated 20 structured decision cases exactly.
+        # Extract explicit field facts from existing public note sources ONLY
+        # for research identities which have no previously structured case.
+        derived = key not in details
+        facts = note_facts[key] if derived else details[key]
+        new = assess(c, facts, ev)
+        new["evidence_origin"] = "VERIFIED_PUBLIC_NOTES_EXTRACTED" if derived else "EXISTING_STRUCTURED_CASE"
+        new["previous_suggested_disposition"] = old["suggested_disposition"]
+        new["decision_changed"] = old["suggested_disposition"] != new["suggested_disposition"]
+        new["source_note_provenance"] = (
+            facts.get("source_evidence", []) if derived else details[key].get("source_evidence", [])
+        )
+        if derived and new["suggested_disposition"] == "TARGETED_VERIFICATION":
+            # Use only SHA-verified, case-specific next actions already
+            # recorded by Scout. Never infer the missing evidence is present.
+            observed_next = str(next((x.get("next_action") for x in ev if
+                                     x["event_id"] == c["latest_event_id"]), "") or "")
+            if observed_next and observed_next != "Source-specific research evidence needs the next bounded identity or project check":
+                new["exact_next_action"] = observed_next[:500]
+        compiled.append(new)
     if len(compiled) != registry["distinct_research_identities"]:
         raise ValueError("Registry identity count mismatch")
     counts = dict(sorted(Counter(x["suggested_disposition"] for x in compiled).items()))
+    prior_counts = dict(sorted(Counter(x["suggested_disposition"] for x in baseline).items()))
     evidence_count = registry["research_note_events"]
     if evidence_count != len(event_by_id):
         raise ValueError("Registry event count mismatch")
@@ -181,7 +216,13 @@ def build(root=ROOT):
         "distinct_cases_evaluated": len(compiled),
         "research_events_source_sha_verified": evidence_count,
         "structured_case_inputs": len(details),
+        "previously_unstructured_identities": sum(not x["structured_case_present"] for x in baseline),
+        "evidence_extracted_from_verified_notes": sum(x["evidence_origin"] == "VERIFIED_PUBLIC_NOTES_EXTRACTED" for x in compiled),
         "unstructured_identity_cases": sum(not x["structured_case_present"] for x in compiled),
+        "before_extraction_disposition_counts": prior_counts,
+        "after_extraction_disposition_counts": counts,
+        "cases_with_changed_recommendation": sum(x["decision_changed"] for x in compiled),
+        "new_external_research_requests": 0,
         "disposition_counts": counts,
         "new_human_review_stages": 0, "new_public_reach_additions": 0,
         "private_hub_imports": "NOT_VERIFIED",
@@ -221,7 +262,23 @@ def main():
     else:
         (ROOT / OUT).parent.mkdir(parents=True, exist_ok=True)
         (ROOT / OUT).write_bytes(raw)
-        print(json.dumps({"cases": report["distinct_cases_evaluated"], "events": report["research_events_source_sha_verified"], "dispositions": report["disposition_counts"]}))
+        print(json.dumps({"cases": report["distinct_cases_evaluated"],
+                          "events": report["research_events_source_sha_verified"],
+                          "previously_unstructured": report["previously_unstructured_identities"],
+                          "extracted": report["evidence_extracted_from_verified_notes"],
+                          "before": report["before_extraction_disposition_counts"],
+                          "after": report["after_extraction_disposition_counts"],
+                          "changed": report["cases_with_changed_recommendation"],
+                          "new_external_requests": report["new_external_research_requests"]}))
+        for item in report["cases"]:
+            if item["decision_changed"]:
+                print(json.dumps({
+                    "identity": item["identity"],
+                    "before": item["previous_suggested_disposition"],
+                    "after": item["suggested_disposition"],
+                    "next_owner": item["next_owner"],
+                    "unmet_gate_count": len(item["unmet_gates"]),
+                }))
 
 if __name__ == "__main__":
     main()

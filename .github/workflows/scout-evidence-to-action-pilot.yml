@@ -5,6 +5,8 @@ on:
     paths:
       - 'scout-operations/tools/evidence_to_action_pilot.py'
       - 'scout-operations/tests/test_evidence_to_action_pilot.py'
+      - 'scout-operations/tools/extract_structured_research_evidence.py'
+      - 'scout-operations/tests/test_structured_evidence_extraction.py'
       - 'scout-operations/research-outcome-registry.json'
       - 'scout-operations/research-decision-cases.json'
       - 'scout-operations/historical-crossref-phase2/**'
@@ -20,15 +22,21 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Run conservative decision-safety tests
-        run: python -m unittest discover -s scout-operations/tests -p 'test_evidence_to_action_pilot.py' -v
+      - name: Validate initial safety and SHA-backed note extraction
+        run: |
+          python -m unittest discover -s scout-operations/tests -p 'test_evidence_to_action_pilot.py' -v
+          python -m unittest discover -s scout-operations/tests -p 'test_structured_evidence_extraction.py' -v
       - name: Evaluate all registry cases against SHA-pinned evidence
         run: |
+          python scout-operations/tools/extract_structured_research_evidence.py
+          python scout-operations/tools/extract_structured_research_evidence.py --check
           python scout-operations/tools/evidence_to_action_pilot.py
           python scout-operations/tools/evidence_to_action_pilot.py --check
       - name: Publish read-only pilot results as a downloadable artifact
         uses: actions/upload-artifact@v4
         with:
-          name: scout-evidence-to-action-pilot
-          path: scout-operations/reports/evidence-to-action-pilot.json
+          name: scout-evidence-to-action-pilot-v2
+          path: |
+            scout-operations/reports/evidence-to-action-pilot.json
+            scout-operations/reports/extracted-public-evidence-pilot.json
           retention-days: 30
