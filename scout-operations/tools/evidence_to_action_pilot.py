@@ -37,7 +37,7 @@ def normalize(doi):
 def assess(case, structured, events):
     """Conservative bounded decision; statuses are suggestions, never formal dispositions."""
     doi = case["identity"]
-    latest = events[-1] if events else {}
+    latest = next((e for e in events if e.get("event_id") == case.get("latest_event_id")), {})
     observed = case.get("observed_dispositions", [])
     status = str(structured.get("publication_status") or "NOT_CHECKED").upper()
     matching = structured.get("primary_award_match")
@@ -50,7 +50,15 @@ def assess(case, structured, events):
     prior_preprint = "PREPRINT_MONTHLY_WATCH" in observed
     explicit_preprint = status == "PREPRINT" or latest_disposition == "PREPRINT_MONTHLY_WATCH"
     explicit_reach = latest_disposition == "EXISTING_IN_REACH"
-    award_confirmed = matching is True and project in ("VERIFIED_SAME_PROJECT", "CONFIRMED_SAME_PROJECT")
+    cohort = str(structured.get("cohort") or "").lower()
+    monthly_direct = cohort in ("monthly_direct_api", "monthly_api", "monthly_crossref_direct", "monthly_datacite_direct")
+    # Authoritative decision-contract-v1 distinguishes direct monthly exact
+    # primary award without contradiction from historically discovered products.
+    direct_monthly_award = monthly_direct and matching is True and project not in (
+        "VERIFIED_DIFFERENT_PROJECT", "DISPROVED", "CONTRADICTED")
+    historical_same_project = matching is True and project in (
+        "VERIFIED_SAME_PROJECT", "CONFIRMED_SAME_PROJECT")
+    award_confirmed = direct_monthly_award or historical_same_project
     award_disproved = matching is False or project in ("VERIFIED_DIFFERENT_PROJECT", "DISPROVED")
     evidence_urls = list(dict.fromkeys(str(s) for s in (structured.get("checked_sources") or []) if isinstance(s, str) and s.startswith("https://")))
     gaps = []
@@ -58,7 +66,7 @@ def assess(case, structured, events):
         gaps.append("NO_STRUCTURED_DECISION_EVIDENCE")
     if status not in ("PUBLISHED", "PUBLICLY_RELEASED", "PREPRINT"):
         gaps.append("OFFICIAL_PUBLICATION_STATUS_UNVERIFIED")
-    if matching is not True or not award_confirmed:
+    if not award_confirmed:
         gaps.append("EXACT_PRIMARY_AWARD_AND_SAME_PROJECT_UNVERIFIED")
     if not secondary:
         gaps.append("CURRENT_REACH_SCOUT_AND_NOAA_IR_IDENTITY_UNVERIFIED")
@@ -88,8 +96,8 @@ def assess(case, structured, events):
         # Structural readiness only; a human still reviews, and source urls
         # must be present. No private Hub state assumed.
         if len(evidence_urls) >= 2:
-            disposition = "PROPOSE_FOR_HUMAN_REVIEW_ONLY"
-            action = "Present evidence and editable metadata to authorized human staging review; no automatic insertion."
+            disposition = "READY_FOR_EXISTING_VALIDATED_DRAFT_PREFLIGHT"
+            action = "Run existing SHA-fresh shared identity gate and 24-column public draft preflight, then authorized human review; no automatic insertion."
             owner = "HUMAN_REVIEWER"
         else:
             disposition = "TARGETED_SOURCE_VERIFICATION"
@@ -117,7 +125,7 @@ def assess(case, structured, events):
         "suggested_disposition": disposition, "next_owner": owner,
         "exact_next_action": action, "unmet_gates": gaps,
         "existing_event_count": len(events),
-        "structured_case_present": bool(structured),
+        "structured_case_present": bool(structured), "monthly_direct_api_threshold_applied": monthly_direct,
         "checked_source_url_count": len(evidence_urls),
         "research_budget_exhausted": exhausted,
         "automatic_hub_write": False, "formal_original_closed": False,
@@ -177,7 +185,26 @@ def build(root=ROOT):
         "disposition_counts": counts,
         "new_human_review_stages": 0, "new_public_reach_additions": 0,
         "private_hub_imports": "NOT_VERIFIED",
-        "policy": "Public evidence-based preliminary recommendations only; does not modify formal status, expansion, Hub, human review, or REACH.",
+        "authoritative_policy_paths": [
+            "scout-operations/SCOUT_OPERATING_POLICY_V2.md",
+            "scout-operations/decision-contract-v1.md",
+            "scout-operations/research-closeout-policy.md",
+            "scout-operations/preprint-watchlist-policy.md",
+            "scout-operations/no-action-disposition-policy.md",
+            "scout-operations/SCOUT_BATCH_PROJECT_FIRST_PILOT.md"
+        ],
+        "policy_sha256": {
+            p: digest((root / p).read_bytes())
+            for p in [
+                "scout-operations/SCOUT_OPERATING_POLICY_V2.md",
+                "scout-operations/decision-contract-v1.md",
+                "scout-operations/research-closeout-policy.md",
+                "scout-operations/preprint-watchlist-policy.md",
+                "scout-operations/no-action-disposition-policy.md",
+                "scout-operations/SCOUT_BATCH_PROJECT_FIRST_PILOT.md"
+            ]
+        },
+        "policy": "Provisional decision advice only; authoritative Scout policies, shared source-fresh identity gate and 24-column validation control formal proposals. No automatic original/expansion closure, Hub, human review, or REACH writes.",
         "cases": compiled
     }
 
