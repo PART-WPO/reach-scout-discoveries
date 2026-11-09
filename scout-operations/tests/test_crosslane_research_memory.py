@@ -77,8 +77,12 @@ class CrosslaneMemoryTests(unittest.TestCase):
         self.assertEqual(len(reach_seeds), verified_count)
         for node in reach_seeds:
             d = node["doi"]
-            self.assertEqual(original[d]["next_action"],
-                             "REUSE_VERIFIED_REACH_IDENTITY_NO_DUPLICATE_ORIGINAL")
+            if node["preprint_or_version_hold"]:
+                self.assertEqual(original[d]["next_action"],
+                                 "PREPRINT_WATCHLIST_NOT_ELIGIBLE_AS_ORIGINAL")
+            else:
+                self.assertEqual(original[d]["next_action"],
+                                 "REUSE_VERIFIED_REACH_IDENTITY_NO_DUPLICATE_ORIGINAL")
             self.assertEqual(expansions[d]["next_action"], "EXPAND_VERIFIED_WPO_REACH_SEED")
             self.assertFalse(original[d]["complete"])
             self.assertFalse(expansions[d]["complete"])
