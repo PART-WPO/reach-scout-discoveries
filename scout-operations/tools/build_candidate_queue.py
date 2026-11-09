@@ -3,6 +3,7 @@
 import argparse, csv, hashlib, json, re
 from collections import Counter
 from pathlib import Path
+from wpo_awards import is_wpo_459, oar_segment
 ROUTING="scout-operations/historical-crossref-screening/actionable-routing.json"
 REGISTRY="scout-operations/research-outcome-registry.json"
 OUTPUT="scout-operations/crossref-candidate-queue.json"
@@ -16,11 +17,16 @@ def norm(s):
   if s.startswith(prefix): s=s[len(prefix):]
  return s
 def funding_signal(awards):
- found=set()
- for award in awards or []:
-  m=re.fullmatch(r"NA\d{2}OARX?(432|459)C?\d{4,}(?:-[A-Z0-9]+)?",str(award).strip().upper())
-  if m: found.add(m.group(1))
- return "MIXED_432_459" if len(found)>1 else ("POSSIBLE_WPO_459" if "459" in found else ("CI_432_NEEDS_PROJECT_PROOF" if "432" in found else "INCONCLUSIVE"))
+ """459 is a confirmed WPO funding code; other OAR codes are not."""
+ segments={oar_segment(a) for a in (awards or [])}
+ segments.discard(None)
+ if "459" in segments:
+  return "CONFIRMED_WPO_459"
+ if "432" in segments:
+  return "CI_432_NEEDS_PROJECT_PROOF"
+ if segments:
+  return "NON_WPO_OAR_AWARD"
+ return "INCONCLUSIVE"
 def load_award_evidence(root):
  manifest=load(root,MANIFEST)
  evidence={}; source={MANIFEST:sha(root/MANIFEST)}
@@ -83,22 +89,20 @@ def build(routing,registry,award_evidence=None,preprints=None):
    lane,rank,action="NOVEL_IDENTITY_RESEARCH",60,"Complete fast published/identity check, then route plausible output to Needs Investigation in the same mission"
   else: raise ValueError("Unknown gate: "+str(gate))
   if lane in ("NOVEL_IDENTITY_RESEARCH","BOUNDED_IDENTITY_REVIEW") and disposition=="PROJECT_EVIDENCE_HOLD":
-   if signal in ("POSSIBLE_WPO_459","MIXED_432_459"):
-    lane,rank,action="HUMAN_REVIEW_FAST_SCREEN_DUE",85,"Prior research stopped at unverified funding. Reuse its source evidence; complete identity/publication checks and route plausible 459 WPO lead to Needs Investigation in this mission, not another generic project-proof round"
+   if signal in ("CONFIRMED_WPO_459",):
+    lane,rank,action="HUMAN_REVIEW_FAST_SCREEN_DUE",85,"459 is a WPO funding code. Reuse source evidence and confirm exact published DOI, publisher-deposited 459 award, public identity and preprint gates. Route verified WPO outputs to New Candidate; only unresolved attribution to Needs Investigation."
    elif signal=="CI_432_NEEDS_PROJECT_PROOF":
     lane,rank,action="NON_459_PROJECT_EVIDENCE_CHECK",30,"One specific SPARK primary-project check; refer only with credible WPO project scope, otherwise document evidence-limited decision"
    else:
-    lane,rank,action="WAIT_FOR_NEW_EVIDENCE",10,"Unresolved earlier hold without a specific WPO award clue: do not repeat original attribution searches unless source evidence materially changes"
+    lane,rank,action="WAIT_FOR_NEW_EVIDENCE",10,"Unresolved earlier hold without a verified 459 lead: do not repeat original attribution searches unless source evidence materially changes"
   elif lane in ("NOVEL_IDENTITY_RESEARCH","BOUNDED_IDENTITY_REVIEW") and disposition=="PREPRINT_HOLD":
    lane,rank,action="WAIT_FOR_NEW_EVIDENCE",10,"Original preprint remains monthly watchlist; do not re-research hourly"
   preprint=preprints.get(d)
   published=sorted(set(norm(x) for x in (preprint or {}).get("verified_published_dois",[]) if x))
-  if lane=="NOVEL_IDENTITY_RESEARCH" and signal=="MIXED_432_459":
-   rank,action=78,"459 WPO cue is strong, but distinguish CI umbrella; fast-screen then send plausible cases to Needs Investigation"
-  elif lane=="NOVEL_IDENTITY_RESEARCH" and signal=="CI_432_NEEDS_PROJECT_PROOF":
+  if lane=="NOVEL_IDENTITY_RESEARCH" and signal=="CI_432_NEEDS_PROJECT_PROOF":
    rank,action=25,"432 is not direct WPO attribution: verify a specific SPARK primary award/project before proposing a reviewer item"
-  elif lane=="NOVEL_IDENTITY_RESEARCH" and signal=="POSSIBLE_WPO_459":
-   rank,action=90,"Strong WPO award signal: fast-check publisher, current REACH/Scout/IR duplicate and preprint gates; send plausible distinct output to Needs Investigation with confidence score in THIS mission. Full project proof belongs to human review"
+  elif lane=="NOVEL_IDENTITY_RESEARCH" and signal=="CONFIRMED_WPO_459":
+   rank,action=90,"459 program code confirms WPO funding when deposited for this exact article. Fast-check official publisher award, REACH/Scout/IR duplicate and preprint gates; send verified published output as New Candidate in THIS mission, not Needs Investigation solely for WPO connection. Reviewer selects the SPARK parent."
   if preprint and lane!="EXISTING_REACH_FAST_EXIT":
    lane="PREPRINT_PUBLISHED_VERSION_LEAD" if published else "PREPRINT_WATCHLIST_HOLD"
    rank=15 if published else 5
@@ -106,7 +110,7 @@ def build(routing,registry,award_evidence=None,preprints=None):
   items.append({"preprint_status":(preprint or {}).get("status"),"already_in_public_scout_queue":bool(public_matches),
   "matched_public_review_locations":public_matches,"one_mission_disposition_required":lane in (
   "NOVEL_IDENTITY_RESEARCH","HUMAN_REVIEW_FAST_SCREEN_DUE","BOUNDED_IDENTITY_REVIEW",
-  "NON_459_PROJECT_EVIDENCE_CHECK"),"verified_published_dois":published,"doi":d,"title":e.get("title"),"lane":lane,"priority":rank,"next_action":action,"funding_signal":signal,"crossref_structured_award_numbers":awards,"award_evidence_source_batches":sorted(ev.get("source_batches",[])),"award_match_basis":"Historical Crossref feed structured award, matched to SPARK primary award at intake; output-to-project relevance still unverified","prior_disposition":disposition,"scout_overlap":bool(e.get("scout_overlap")),"verified_reach_uid":e["bulk_identity_gate"].get("verified_reach_uid"),"private_hub_review":"NOT_VERIFIED"})
+  "NON_459_PROJECT_EVIDENCE_CHECK"),"verified_published_dois":published,"doi":d,"title":e.get("title"),"lane":lane,"priority":rank,"next_action":action,"funding_signal":signal,"crossref_structured_award_numbers":awards,"wpo_459_award_numbers":[a for a in awards if is_wpo_459(a)],"award_evidence_source_batches":sorted(ev.get("source_batches",[])),"award_match_basis":"Historical Crossref publisher-deposited award for exact DOI; 459 identifies WPO funding. Exact SPARK parent and output identity still require verification before addition","prior_disposition":disposition,"scout_overlap":bool(e.get("scout_overlap")),"verified_reach_uid":e["bulk_identity_gate"].get("verified_reach_uid"),"private_hub_review":"NOT_VERIFIED"})
  items.sort(key=lambda x:(-x["priority"],x["doi"]))
  due=[x for x in items if x["one_mission_disposition_required"]]
  return {"schema":"reach-scout-crossref-candidate-queue-v2",

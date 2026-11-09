@@ -30,6 +30,84 @@ class HumanProjectReferrals(unittest.TestCase):
         self.assertEqual(row["provenance"]["classification"],"NEEDS INVESTIGATION")
         self.assertIn("Scout screening score:", " ".join(row["provenance"]["notes"]))
 
+    def test_publisher_deposited_459_is_confirmed_new_candidate_even_with_other_awards(self):
+        event={"doi":"10.1029/2026jd046349","event_id":"case-459",
+               "research_lane":"historical_crossref_original",
+               "checked_evidence_urls":["https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JD046349",
+                                        "https://repository.library.noaa.gov/view/noaa/76032"]}
+        note={"doi":event["doi"],"structured_award":"NA21OAR4590367"}
+        project=eligible_record(event,note)
+        metadata={**self.published(),
+                  "title":"The Synoptic, Microphysical, and Radar Characteristics of Upper Great Lakes Snow Events",
+                  "publication_status":"official_journal_article",
+                  "resource_type":"journal-article",
+                  "evidence":"https://api.crossref.org/works/10.1029/2026jd046349",
+                  "funding_references":[
+                      {"name":"NOAA Weather Program Office","award":["NA21OAR4590367"]},
+                      {"name":"Cooperative Institute","award":["NA20OAR4320278"]},
+                      {"name":"Other NOAA","award":["NA22OAR0110123","NA22OAR4690123"]}]}
+        candidate=proposal(event["doi"],metadata,event,project,self.identity("",""))
+        self.assertEqual(referral_state(event,metadata,self.identity("",""),project=project),
+                         "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL")
+        self.assertEqual(candidate["provenance"]["classification"],"NEW CANDIDATE")
+        self.assertEqual(candidate["fields"]["NOAA Award Number(s)"],"NA21OAR4590367")
+        self.assertEqual(candidate["fields"]["Suggested Parent Project"],"")
+        self.assertEqual(candidate["fields"]["Funding Evidence URL"],metadata["evidence"])
+        self.assertIn("WPO funding connection CONFIRMED"," ".join(candidate["provenance"]["notes"]))
+        self.assertIn("select the correct SPARK primary project parent",
+                      " ".join(candidate["provenance"]["notes"]))
+        self.assertLessEqual(score_for_human_review(metadata,self.identity("",""),project,
+                                                    event["checked_evidence_urls"])["score"],70)
+
+    def test_verified_459_new_candidate_passes_full_24_column_preflight(self):
+        import csv
+        import json
+        import sys
+        sys.path.insert(0,str(Path(__file__).resolve().parents[2]/"scout-discoveries/tools"))
+        from prepare_batch import prepare, validate_canonical
+        event={"doi":"10.1029/2026jd046349","event_id":"verify-459",
+               "checked_evidence_urls":["https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JD046349",
+                                        "https://repository.library.noaa.gov/view/noaa/76032"]}
+        meta={**self.published(),"title":"The Synoptic, Microphysical, and Radar Characteristics of Upper Great Lakes Snow Events",
+              "publication_status":"official_journal_article","resource_type":"journal-article",
+              "evidence":"https://api.crossref.org/works/10.1029/2026jd046349",
+              "funding_references":[{"award":["NA21OAR4590367"]},{"award":["NA20OAR4320278"]}]}
+        project={"award_context_only":"NA21OAR4590367","wpo_award_cue_not_proof":True}
+        candidate=proposal(event["doi"],meta,event,project,self.identity("",""))
+        with tempfile.TemporaryDirectory() as d:
+            source=Path(d)/"proposals.json"
+            output=Path(d)/"2026-11-09-verified-oar459-test.csv"
+            source.write_text(json.dumps({"candidates":[candidate]}),encoding="utf-8")
+            report=prepare(source,output)
+            self.assertEqual(report["record_count"],1)
+            self.assertEqual(validate_canonical(output)["record_count"],1)
+            with output.open(encoding="utf-8-sig",newline="") as f:
+                rows=list(csv.DictReader(f))
+            self.assertEqual(len(rows[0]),24)
+            self.assertEqual(rows[0]["NOAA Award Number(s)"],"NA21OAR4590367")
+            self.assertEqual(rows[0]["Suggested Parent Project"],"")
+            self.assertIn("Scout classification: NEW CANDIDATE",rows[0]["Scout Discovery Rationale"])
+
+    def test_unverified_459_or_only_non_wpo_awards_remains_needs_investigation(self):
+        event={"doi":"10.1234/test","event_id":"no-source","research_lane":"original",
+               "checked_evidence_urls":["https://publisher.example/article"]}
+        project={"award_context_only":"NA22OAR4590512","wpo_award_cue_not_proof":True}
+        metadata={**self.published(),"funding_references":[
+            {"award":["NA22OAR0110123","NA22OAR4690123","NA20OAR4320278"]}]}
+        candidate=proposal(event["doi"],metadata,event,project,self.identity("",""))
+        self.assertEqual(candidate["provenance"]["classification"],"NEEDS INVESTIGATION")
+        self.assertEqual(candidate["fields"]["NOAA Award Number(s)"],"")
+        self.assertEqual(candidate["fields"]["Funding Evidence URL"],"")
+
+    def test_459_on_different_project_award_requires_parent_review(self):
+        event={"doi":"10.1234/test","event_id":"conflict",
+               "checked_evidence_urls":["https://publisher.example/article"]}
+        metadata={**self.published(),"funding_references":[{"award":["NA22OAR4590512"]}]}
+        project={"award_context_only":"NA21OAR4590367","wpo_award_cue_not_proof":True}
+        candidate=proposal(event["doi"],metadata,event,project,self.identity("",""))
+        self.assertEqual(candidate["provenance"]["classification"],"NEEDS INVESTIGATION")
+        self.assertEqual(candidate["fields"]["NOAA Award Number(s)"],"")
+
     def test_clearly_contradictory_award_never_proposed(self):
         event={"doi":"10.1234/test","research_lane":"original"}
         doc={"doi":"10.1234/test","structured_award":"NA26OARX459C0001",
@@ -143,10 +221,14 @@ class HumanProjectReferrals(unittest.TestCase):
             folder.mkdir(parents=True)
             path=folder/"2026-11-06-human-project-safe.csv"
             import csv
+            import hashlib
+            expected="REACH-SCOUT-HUMAN-SCOPE-"+hashlib.sha256(
+                ("10.1109/testsafe|"+"a"*24).encode()).hexdigest()[:18]
             with path.open("w",newline="") as f:
-                w=csv.DictWriter(f,fieldnames=["DOI","Scout Discovery Rationale"])
+                w=csv.DictWriter(f,fieldnames=["DOI","Scout Discovery Rationale","Source Run ID"])
                 w.writeheader()
                 w.writerow({"DOI":"10.1109/testsafe",
+                    "Source Run ID":expected,
                     "Scout Discovery Rationale":"Scout classification: NEEDS INVESTIGATION"})
             event={"event_id":"a"*24,"source_sha256":"b"*64}
             rel=path.relative_to(root).as_posix()
@@ -203,7 +285,7 @@ class HumanProjectReferrals(unittest.TestCase):
         self.assertEqual(row["provenance"]["classification"],"NEEDS INVESTIGATION")
         self.assertEqual(row["fields"]["NOAA Award Number(s)"],"")
         self.assertEqual(row["fields"]["Funding Evidence URL"],"")
-        self.assertIn("NOT an eligible new REACH output", " ".join(row["provenance"]["notes"]))
+        self.assertIn("Needs Investigation", " ".join(row["provenance"]["notes"]))
         self.assertIn("NA18OAR4590431"," ".join(row["provenance"]["notes"]))
 
 if __name__=="__main__":unittest.main()

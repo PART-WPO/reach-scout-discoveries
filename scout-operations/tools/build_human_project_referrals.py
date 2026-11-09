@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Source-bound HUMAN WPO project referrals, not new-output eligibility.
+"""Source-bound Scout referrals for new outputs or funding-scope investigation.
 
-A bounded research pass with official publication and verified *public* absence
-may become a validated NEEDS INVESTIGATION draft. This never approves WPO
-funding, selects a Smartsheet parent, or proves a private Hub import.
+An official publisher-deposited 459 grant on the exact DOI establishes WPO
+funding and can yield a NEW CANDIDATE for review. All other unverified
+project leads remain NEEDS INVESTIGATION. Neither route approves a Smartsheet
+parent, proves private Hub import, or adds anything to public REACH.
 """
 import argparse
 import hashlib
@@ -15,13 +16,14 @@ from pathlib import Path
 from build_research_outcome_registry import build as source_registry
 from decision_pipeline import norm_doi
 from reviewer_feedback_guard import known_feedback_by_doi
+from wpo_awards import WPO_459, official_459_awards
 
 ROOT=Path(__file__).resolve().parents[2]
 OUTPUT=ROOT/"scout-operations/human-project-referrals.json"
 SCHEMA="reach-scout-bounded-project-human-referral-v1"
 PURPOSE="NEEDS INVESTIGATION"
 PROMOTE_LIMIT=3
-WPO_AWARD_CUE=re.compile(r"^NA\d{2}OARX?459(?:C)?[A-Z0-9-]+$", re.I)
+WPO_AWARD_CUE=WPO_459
 EXPLICIT_CONTRADICTION=(
     "CONTRADICTORY_TO_PILOT_PROJECT_AWARD",
     "NOT_CORROBORATED_AND_PARENT_PUBLICATION_HAS_CONTRADICTORY_AWARD",
@@ -108,8 +110,10 @@ def score_for_human_review(meta,identity,project,source_urls):
         points+=10
     points+=10  # fresh public identity screen has no matching output
     points=min(points,70)  # unconfirmed WPO project can never be "high"
+    funded=project.get("award_context_only","").upper() in official_459_awards(meta)
     return {"score":points,"band":("Medium" if points>=50 else "Low"),
-            "meaning":"Heuristic new-output screening priority; NOT calibrated probability or WPO funding proof"}
+            "meaning":("Heuristic reviewer-readiness score; official 459 establishes WPO funding, not automatic output acceptance" if funded else
+                       "Heuristic new-output screening priority; NOT calibrated probability or WPO funding proof")}
 
 def publication_meta_valid(meta):
     if meta.get("status")!="ok" or meta.get("publication_status")=="preprint":
@@ -146,36 +150,73 @@ def proposal(doi,meta,event,project,identity=None):
     core_id=hashlib.sha256((doi+"|"+event["event_id"]).encode()).hexdigest()[:18]
     confidence=score_for_human_review(meta,identity or {"status":"NO_PUBLIC_IDENTITY_MATCH"},
                                       project,urls)
+    official=official_459_awards(meta)
+    context_award=str(project.get("award_context_only") or "").strip().upper()
+    verified_awards=[a for a in official if a==context_award]
+    wpo_verified=bool(verified_awards)
+    classification="NEW CANDIDATE" if wpo_verified else PURPOSE
     fields={"Title":title,"DOI":doi,"Output URL":"https://doi.org/"+doi,
-        "Output Type":"1","NOAA Award Number(s)":"",
+        "Output Type":"1","NOAA Award Number(s)":"; ".join(verified_awards),
         "Proposed Project Title":"","Suggested Parent Project":"",
         "Authors / PI":authors,"Publication Date":meta.get("pub_date") or "",
         "Brief Abstract":meta.get("abstract") or "",
-        "Evidence URL":primary,"Funding Evidence URL":"",
+        "Evidence URL":primary,
+        "Funding Evidence URL":((meta.get("evidence") or "") if wpo_verified else ""),
         "Existing REACH Match":"No match in SHA-verified public REACH/Scout DOI, title or URL checks and official NOAA IR crosswalk. Private reviewer history not verified.",
         "Scout Confidence":confidence["band"],
         "Source Run ID":"REACH-SCOUT-HUMAN-SCOPE-"+core_id}
-    context="Research was bounded; publisher/program evidence supports publication identity but the specific WPO primary project association has NOT been demonstrated."
-    question=("Is this independently published output a deliverable of SPARK primary award "+
-             project["award_context_only"]+" (rather than merely topically related), and if so which project parent should it use?")
-    prov={"classification":PURPOSE,
-        "route":"Independent discovery",
-        "origin_method":"Independent discovery",
-        "discovery_method":"SPARK project-title lead, official publisher and program follow-up",
-        "path_evidence":meta.get("evidence") or primary,
-        "publication_status":"published",
-        "notes":[
-            "Finding: Official publication metadata identifies "+title+"; WPO project eligibility remains unresolved.",
-            "What to check before adding this output: Verify primary SPARK project award and explicit output-to-project bridge; check publisher funding; confirm no duplicate REACH or version family before approving.",
+    if wpo_verified:
+        question=("Select and verify the correct SPARK parent for the explicitly funded WPO award "+
+                  context_award+"; confirm the output belongs with that parent before addition.")
+        notes=[
+            "Finding: Exact officially published DOI explicitly lists NOAA OAR459 award "+context_award+
+                " in publisher-deposited Crossref funding metadata; WPO funding connection CONFIRMED.",
+            "What to check before adding this output: Confirm title/DOI/version and select the correct SPARK primary project parent for "+
+                context_award+"; reviewer retains final approval.",
             "Reviewer question: "+question,
             "Scout screening score: "+str(confidence["score"])+"/100 ("+confidence["band"]+"). "+confidence["meaning"],
-            "Finding: This officially dated output has a plausible WPO lead but its exact WPO project attribution needs the reviewer.",
-            "Research handoff: rapid Needs Investigation screening; NOT an eligible new REACH output or approved association.",
-            "Potential primary SPARK award SEARCH CONTEXT ONLY: "+project["award_context_only"],
+            "Funding rule: 459 following OAR or OARX is WPO. Other award program codes such as 432, 011 or 469 do not negate an independently verified 459 award.",
+            "Research handoff: NEW CANDIDATE, not Needs Investigation solely over WPO funding; no automatic private Hub/REACH insertion.",
+            "Verified WPO Award Number(s): "+"; ".join(verified_awards),
+            "Publisher-deposited funding evidence: "+str(meta.get("evidence") or primary),
             "Research source evidence: "+" ; ".join(urls[:5]),
-            "Private Hub import and any prior unsynchronized review remain NOT VERIFIED.",
-            context]}
+            "Private Hub import and any prior unsynchronized review remain NOT VERIFIED."
+        ]
+    else:
+        question=("Is this independently published output a deliverable of SPARK primary award "+
+                 context_award+" (rather than merely topically related), and if so which project parent should it use?")
+        notes=[
+            "Finding: Official publication metadata identifies "+title+"; a 459 WPO funding connection on this exact DOI has NOT been verified.",
+            "What to check before adding this output: Verify exact output-level WPO funding or a specific SPARK project relationship; check for duplicates before approval.",
+            "Reviewer question: "+question,
+            "Scout screening score: "+str(confidence["score"])+"/100 ("+confidence["band"]+"). "+confidence["meaning"],
+            "Research handoff: Needs Investigation; cannot assume parent/child funding inheritance or project eligibility.",
+            "Potential award SEARCH CONTEXT ONLY: "+context_award,
+            "Research source evidence: "+" ; ".join(urls[:5]),
+            "Private Hub import and any prior unsynchronized review remain NOT VERIFIED."
+        ]
+    prov={"classification":classification,
+        "route":"Independent discovery",
+        "origin_method":"Independent discovery",
+        "discovery_method":"Publisher-deposited Crossref OAR459 award and SPARK parent selection" if wpo_verified
+                           else "SPARK project-title lead, official publisher and program follow-up",
+        "path_evidence":meta.get("evidence") or primary,
+        "publication_status":"published",
+        "notes":notes}
     return {"fields":fields,"provenance":prov}
+
+
+def valid_prior_referral_row(row, metadata, expected_source_run_id):
+    """Honor immutable old Needs Investigation batches and new verified-459 units."""
+    if row.get("Source Run ID")!=expected_source_run_id:
+        return False
+    rationale=str(row.get("Scout Discovery Rationale",""))
+    award=str(row.get("NOAA Award Number(s)") or "").strip().upper()
+    if "Scout classification: NEEDS INVESTIGATION" in rationale:
+        return not award
+    if "Scout classification: NEW CANDIDATE" in rationale:
+        return bool(award and award in official_459_awards(metadata))
+    return False
 
 def existing_verified_self_draft(root,doi,event,check,previous):
     """Only recognize an exact prior self-created inbox DOI, never another case."""
@@ -200,8 +241,9 @@ def existing_verified_self_draft(root,doi,event,check,previous):
         with path.open(encoding="utf-8-sig",newline="") as f:
             rows=list(csv.DictReader(f))
         if (len(rows)!=1 or str(rows[0].get("DOI","")).lower()!=doi or
-            "Scout classification: NEEDS INVESTIGATION" not in
-                str(rows[0].get("Scout Discovery Rationale",""))):
+            not valid_prior_referral_row(rows[0],old.get("official_metadata") or {},
+                "REACH-SCOUT-HUMAN-SCOPE-"+hashlib.sha256(
+                    (doi+"|"+event["event_id"]).encode()).hexdigest()[:18])):
             continue
         matches=check.get("matches",[])
         if (matches and all(m.get("source")=="SCOUT_INBOX" and
@@ -262,9 +304,7 @@ def existing_verified_published_self_referral(root,doi,event,check,previous):
         row=target[0]
         expected="REACH-SCOUT-HUMAN-SCOPE-"+hashlib.sha256(
             (doi+"|"+event["event_id"]).encode()).hexdigest()[:18]
-        if (row.get("Source Run ID")!=expected or row.get("NOAA Award Number(s)")
-            or "Scout classification: NEEDS INVESTIGATION" not in
-               str(row.get("Scout Discovery Rationale",""))):
+        if not valid_prior_referral_row(row,old.get("official_metadata") or {},expected):
             raise ValueError("Published referral identity, funding or category contradiction")
         matches=check.get("matches",[])
         if (not any(m.get("source")=="SCOUT_PUBLISHED"
@@ -306,8 +346,8 @@ def build(root=ROOT,metadata=None,public_identity=None,stage=False):
         if hashlib.sha256(raw).hexdigest()!=event["source_sha256"]:
             raise ValueError("Source research note SHA mismatch: "+event["source_path"])
         doc=json.loads(raw)
-        # Quick official-publication / 459 WPO-cue screen. These are leads,
-        # not claims that this award actually funded the specific output.
+        # Research notes select the DOI/award context. Exact publisher-deposited
+        # 459 funding is checked separately from the official DOI metadata.
         project=eligible_record(event,doc)
         if (event.get("bounded_human_question_to_verify") or
              (project and event.get("checked_evidence_urls"))):
@@ -388,7 +428,7 @@ def build(root=ROOT,metadata=None,public_identity=None,stage=False):
         "human_reviewer_decisions":"NOT_VERIFIED",
         "private_hub_imports":"NOT_VERIFIED",
         "new_approved_reach_outputs":0,
-        "policy":"Fast-screen plausible 459 WPO award cues and specific project-title leads into confidence-scored Needs Investigation after official DOI metadata, checked public REACH+Scout+IR identity, preprint and past-review gates. Award context stays out of authoritative WPO award field; score is not probability or funding proof. Private Hub import is not verified.",
+        "policy":"A publisher-deposited Crossref funding record explicitly associating a valid OAR459/OARX459 award with this DOI confirms WPO funding. Route such officially published, publicly novel outputs to NEW CANDIDATE with the verified WPO award populated; other OAR codes (432, 011, 469) alone do not confirm WPO. Unverified/contradictory project leads remain NEEDS INVESTIGATION. Reviewer selects the correct SPARK parent; no auto approval, Hub import, or REACH addition.",
         "referrals":responses}
 
 def main():

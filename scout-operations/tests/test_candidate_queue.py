@@ -1,14 +1,18 @@
-import importlib.util, unittest
+import importlib.util, unittest, sys
 from pathlib import Path
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"tools"))
 spec=importlib.util.spec_from_file_location("candidate_queue",Path(__file__).resolve().parents[1]/"tools/build_candidate_queue.py")
 m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
 class QueueTests(unittest.TestCase):
  def test_award_format(self):
-  self.assertEqual(m.funding_signal(["NA26OARX459C0001"]),"POSSIBLE_WPO_459")
-  self.assertEqual(m.funding_signal(["NA22OAR4590527"]),"POSSIBLE_WPO_459")
+  self.assertEqual(m.funding_signal(["NA26OARX459C0001"]),"CONFIRMED_WPO_459")
+  self.assertEqual(m.funding_signal(["NA22OAR4590527"]),"CONFIRMED_WPO_459")
   self.assertEqual(m.funding_signal(["NA20OAR4320278"]),"CI_432_NEEDS_PROJECT_PROOF")
-  self.assertEqual(m.funding_signal(["NA26OARX459C0001","NA20OAR4320278"]),"MIXED_432_459")
+  self.assertEqual(m.funding_signal(["NA26OARX459C0001","NA20OAR4320278"]),"CONFIRMED_WPO_459")
   self.assertEqual(m.funding_signal(["NA26OARX459C0001-not-a-match"]),"INCONCLUSIVE")
+  self.assertEqual(m.funding_signal(["NA22OAR0110123"]),"NON_WPO_OAR_AWARD")
+  self.assertEqual(m.funding_signal(["NA22OAR4690123"]),"NON_WPO_OAR_AWARD")
+  self.assertEqual(m.funding_signal(["NA22OAR0110123","NA21OAR4590367"]),"CONFIRMED_WPO_459")
  def test_fast_exit_and_ambiguous(self):
   def entry(d,status,uid=None):
    return {"doi":d,"title":"test","bulk_identity_gate":{"status":status,"verified_reach_uid":uid}}
@@ -21,7 +25,7 @@ class QueueTests(unittest.TestCase):
   r={"total":2,"bulk_identity_screening":{"source_dois":2},"entries":[{"doi":"10.1/a","bulk_identity_gate":{"status":"NO_PUBLIC_REACH_MATCH"}},{"doi":"10.1/b","bulk_identity_gate":{"status":"NO_PUBLIC_REACH_MATCH"}}]}
   awards={"10.1/a":{"awards":{"NA26OARX459C0001"},"source_batches":{"batch1.csv"}},"10.1/b":{"awards":{"NA20OAR4320278"},"source_batches":{"batch2.csv"}}}
   q=m.build(r,{"cases":[]},awards)
-  self.assertEqual(q["items"][0]["funding_signal"],"POSSIBLE_WPO_459")
+  self.assertEqual(q["items"][0]["funding_signal"],"CONFIRMED_WPO_459")
   self.assertEqual(q["items"][0]["priority"],90)
   self.assertEqual(q["items"][1]["funding_signal"],"CI_432_NEEDS_PROJECT_PROOF")
   self.assertEqual(q["items"][1]["priority"],25)
@@ -67,7 +71,7 @@ class QueueTests(unittest.TestCase):
   self.assertEqual(item["priority"],90)
   self.assertTrue(item["one_mission_disposition_required"])
   self.assertFalse(item["already_in_public_scout_queue"])
-  self.assertIn("Needs Investigation",item["next_action"])
+  self.assertIn("New Candidate",item["next_action"])
 
  def test_project_hold_for_459_is_human_handoff_due_not_research_loop(self):
   r={"total":1,"bulk_identity_screening":{"source_dois":1},
@@ -86,7 +90,7 @@ class QueueTests(unittest.TestCase):
   got={x["doi"]:x for x in q["items"]}
   self.assertEqual(got["10.1234/ci"]["funding_signal"],"CI_432_NEEDS_PROJECT_PROOF")
   self.assertEqual(got["10.1234/ci"]["priority"],25)
-  self.assertEqual(got["10.1234/other"]["funding_signal"],"INCONCLUSIVE")
+  self.assertEqual(got["10.1234/other"]["funding_signal"],"NON_WPO_OAR_AWARD")
   self.assertNotIn("Strong WPO",got["10.1234/other"]["next_action"])
 
  def test_mission_preview_only_includes_cases_requiring_a_real_decision(self):
