@@ -1,25 +1,25 @@
 {
   "counts": {
-    "abstract_missing_in_scout_and_crossref": 0,
+    "abstract_missing_in_scout_and_crossref": 4,
     "abstract_missing_in_scout_recoverable": 0,
-    "api_full_pub_date": 27,
-    "crossref_has_abstract": 42,
-    "crossref_has_funder_awards": 35,
-    "crossref_publications": 52,
+    "api_full_pub_date": 32,
+    "crossref_has_abstract": 48,
+    "crossref_has_funder_awards": 43,
+    "crossref_publications": 62,
     "crossref_vs_scout_date_differs": 17,
-    "first_of_month_defaults": 24,
+    "first_of_month_defaults": 29,
     "no_publication_date": 1,
-    "partial_only_pub_date": 24,
+    "partial_only_pub_date": 29,
     "preferred_date_differs_from_existing_scout": 17,
-    "preferred_date_matches_existing_scout": 27,
-    "reach_pub_date_satisfied": 51,
+    "preferred_date_matches_existing_scout": 37,
+    "reach_pub_date_satisfied": 61,
     "scout_missing_date": 7,
     "scout_missing_date_recoverable": 7,
     "scout_missing_date_resolved_by_exact_pub": 1,
     "scout_missing_date_resolved_by_month_first": 6,
     "scout_missing_date_still_unresolved": 0,
     "source_field_online": 11,
-    "source_field_print": 38
+    "source_field_print": 48
   },
   "policy": "WPO uses Crossref published-print first, else published-online (posted for preprints), else published/issued. If YYYY-MM only, use YYYY-MM-01 with a flag. Crossref created is DOI registration and not Pub Date. Preserve existing human reviews.",
   "records": [
@@ -137,6 +137,124 @@
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
+      "accepted_date_precision": "month",
+      "accepted_reach_pub_date": "2024-12-01",
+      "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
+      "authors": [
+        "Ziheng Sun",
+        "Talya ten Brink",
+        "Wendy Carande",
+        "Gerbrand Koren",
+        "Nicoleta Cristea",
+        "Corin Jorgenson",
+        "Bhargavi Janga",
+        "Gokul Prathin Asamani",
+        "Sanjana Achan",
+        "Mike Mahoney",
+        "Qian Huang",
+        "Armin Mehrabian",
+        "Thilanka Munasinghe",
+        "Zhong Liu",
+        "Aaron Margolis",
+        "Peter Webley",
+        "Bing Gong",
+        "Yuhan Rao",
+        "Annie Burgess",
+        "Andrew Huang",
+        "Laura Sandoval",
+        "Brianna R. Pagán",
+        "Sebnem Duzgun"
+      ],
+      "awards_in_abstract": [],
+      "awards_in_crossref_funder": [
+        "1947875",
+        "1947893",
+        "2117834",
+        "80NSSC21M0028",
+        "NA22OAR4590512"
+      ],
+      "best_partial_basis": "published-print",
+      "best_partial_date": "2024-12",
+      "crossref_publication_date": "",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "matched",
+      "doi": "10.1007/s10596-024-10317-7",
+      "doi_registered_date": {
+        "full_date": "2024-09-02",
+        "precision": "day",
+        "value": "2024-09-02"
+      },
+      "evidence": "https://api.crossref.org/works/10.1007/s10596-024-10317-7",
+      "first_of_month_default": true,
+      "funder_names": [
+        "National Science Foundation",
+        "National Science Foundation",
+        "National Science Foundation",
+        "National Aeronautics and Space Administration",
+        "National Oceanic and Atmospheric Administration"
+      ],
+      "issue": "6",
+      "journal": "Computational Geosciences",
+      "license_urls": [
+        "https://creativecommons.org/licenses/by/4.0",
+        "https://creativecommons.org/licenses/by/4.0"
+      ],
+      "metadata_deposited_date": {
+        "full_date": "2024-12-13",
+        "precision": "day",
+        "value": "2024-12-13"
+      },
+      "pages": "1305-1329",
+      "preferred_date_differs_from_existing_scout": false,
+      "preferred_date_matches_existing_scout": true,
+      "pub_date_satisfied": true,
+      "publication_dates": {
+        "issued": {
+          "full_date": "2024-09-02",
+          "precision": "day",
+          "value": "2024-09-02"
+        },
+        "posted": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published": {
+          "full_date": "2024-09-02",
+          "precision": "day",
+          "value": "2024-09-02"
+        },
+        "published-online": {
+          "full_date": "2024-09-02",
+          "precision": "day",
+          "value": "2024-09-02"
+        },
+        "published-print": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2024-12"
+        }
+      },
+      "publisher": "Springer Science and Business Media LLC",
+      "reach_output_type": "1",
+      "related_record_evidence": {},
+      "review_keys": [],
+      "reviewable_recovered_fields": [],
+      "scout_origins": [
+        "staged"
+      ],
+      "scout_publication_dates": [
+        "2024-12-01"
+      ],
+      "scout_source_rows": 1,
+      "source": "crossref",
+      "title": "Towards practical artificial intelligence in Earth sciences",
+      "volume": "28",
+      "work_type": "journal-article"
+    },
+    {
+      "abstract_already_in_scout": true,
+      "abstract_available_from_crossref": true,
       "accepted_date_precision": "day",
       "accepted_reach_pub_date": "2024-11-12",
       "accepted_reach_pub_date_source": "Crossref published-online",
@@ -218,6 +336,126 @@
       "source": "crossref",
       "title": "Analysing trends of computational urban science and data science approaches for sustainable development",
       "volume": "4",
+      "work_type": "journal-article"
+    },
+    {
+      "abstract_already_in_scout": false,
+      "abstract_available_from_crossref": false,
+      "accepted_date_precision": "month",
+      "accepted_reach_pub_date": "2022-01-01",
+      "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
+      "authors": [
+        "Rizzieri Pedruzzi",
+        "Willian Lemker Andreão",
+        "Bok Haeng Baek",
+        "Anderson Paulo Hudke",
+        "Timothy William Glotfelty",
+        "Edmilson Dias de Freitas",
+        "Jorge Alberto Martins",
+        "Jared H. Bowden",
+        "Janaina Antonino Pinto",
+        "Marcelo Felix Alonso",
+        "Taciana Toledo de Almeida Abuquerque"
+      ],
+      "awards_in_abstract": [],
+      "awards_in_crossref_funder": [
+        "16/18438-0",
+        "2019000160007",
+        "NA19OAR4590081",
+        "NRF-2017M3D8A1092022"
+      ],
+      "best_partial_basis": "published-print",
+      "best_partial_date": "2022-01",
+      "crossref_publication_date": "",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "matched",
+      "doi": "10.1016/j.atmosenv.2021.118760",
+      "doi_registered_date": {
+        "full_date": "2021-10-09",
+        "precision": "day",
+        "value": "2021-10-09"
+      },
+      "evidence": "https://api.crossref.org/works/10.1016/j.atmosenv.2021.118760",
+      "first_of_month_default": true,
+      "funder_names": [
+        "Ministry of Environment",
+        "Companhia Ambiental do Estado de Sao Paulo",
+        "Ministry of Science, ICT and Future Planning",
+        "Ministry of Education - Singapore",
+        "National Oceanic and Atmospheric Administration",
+        "Ministry of Health and Welfare",
+        "Fundação de Amparo à Pesquisa do Estado de São Paulo",
+        "University of North Carolina",
+        "Korea Environmental Industry and Technology Institute",
+        "Coordenação de Aperfeiçoamento de Pessoal de Nível Superior",
+        "National Research Foundation of Korea",
+        "Bundesministerium für Bildung und Forschung",
+        "Gund Institute for Environment",
+        "NOAA Research"
+      ],
+      "issue": "",
+      "journal": "Atmospheric Environment",
+      "license_urls": [
+        "https://www.elsevier.com/tdm/userlicense/1.0/",
+        "https://www.elsevier.com/legal/tdmrep-license",
+        "http://www.elsevier.com/open-access/userlicense/1.0/",
+        "https://doi.org/10.15223/policy-017",
+        "https://doi.org/10.15223/policy-037",
+        "https://doi.org/10.15223/policy-012",
+        "https://doi.org/10.15223/policy-029",
+        "https://doi.org/10.15223/policy-004"
+      ],
+      "metadata_deposited_date": {
+        "full_date": "2025-11-05",
+        "precision": "day",
+        "value": "2025-11-05"
+      },
+      "pages": "118760",
+      "preferred_date_differs_from_existing_scout": false,
+      "preferred_date_matches_existing_scout": true,
+      "pub_date_satisfied": true,
+      "publication_dates": {
+        "issued": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2022-01"
+        },
+        "posted": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2022-01"
+        },
+        "published-online": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published-print": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2022-01"
+        }
+      },
+      "publisher": "Elsevier BV",
+      "reach_output_type": "1",
+      "related_record_evidence": {},
+      "review_keys": [],
+      "reviewable_recovered_fields": [],
+      "scout_origins": [
+        "staged"
+      ],
+      "scout_publication_dates": [
+        "2022-01-01"
+      ],
+      "scout_source_rows": 1,
+      "source": "crossref",
+      "title": "Update of land use/land cover and soil texture for Brazil: Impact on WRF modeling results over São Paulo",
+      "volume": "268",
       "work_type": "journal-article"
     },
     {
@@ -316,6 +554,103 @@
       "source": "crossref",
       "title": "Extreme weather as an occupational hazard: Structural vulnerability among multilingual immigrant workers",
       "volume": "31",
+      "work_type": "journal-article"
+    },
+    {
+      "abstract_already_in_scout": false,
+      "abstract_available_from_crossref": false,
+      "accepted_date_precision": "month",
+      "accepted_reach_pub_date": "2024-09-01",
+      "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
+      "authors": [
+        "Gokul Prathin",
+        "Ziheng Sun",
+        "Sanjana Achan"
+      ],
+      "awards_in_abstract": [],
+      "awards_in_crossref_funder": [
+        "80NSSC21M0028",
+        "EAR-1947875",
+        "EAR-1947893",
+        "NA22OAR4590512",
+        "OAC-2117834"
+      ],
+      "best_partial_basis": "published-print",
+      "best_partial_date": "2024-09",
+      "crossref_publication_date": "",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "matched",
+      "doi": "10.1016/j.softx.2024.101863",
+      "doi_registered_date": {
+        "full_date": "2024-09-05",
+        "precision": "day",
+        "value": "2024-09-05"
+      },
+      "evidence": "https://api.crossref.org/works/10.1016/j.softx.2024.101863",
+      "first_of_month_default": true,
+      "funder_names": [
+        "National Oceanic and Atmospheric Administration",
+        "National Aeronautics and Space Administration",
+        "National Science Foundation"
+      ],
+      "issue": "",
+      "journal": "SoftwareX",
+      "license_urls": [
+        "https://www.elsevier.com/tdm/userlicense/1.0/",
+        "https://www.elsevier.com/legal/tdmrep-license",
+        "http://creativecommons.org/licenses/by/4.0/"
+      ],
+      "metadata_deposited_date": {
+        "full_date": "2025-05-10",
+        "precision": "day",
+        "value": "2025-05-10"
+      },
+      "pages": "101863",
+      "preferred_date_differs_from_existing_scout": false,
+      "preferred_date_matches_existing_scout": true,
+      "pub_date_satisfied": true,
+      "publication_dates": {
+        "issued": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2024-09"
+        },
+        "posted": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2024-09"
+        },
+        "published-online": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published-print": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2024-09"
+        }
+      },
+      "publisher": "Elsevier BV",
+      "reach_output_type": "1",
+      "related_record_evidence": {},
+      "review_keys": [],
+      "reviewable_recovered_fields": [],
+      "scout_origins": [
+        "staged"
+      ],
+      "scout_publication_dates": [
+        "2024-09-01"
+      ],
+      "scout_source_rows": 1,
+      "source": "crossref",
+      "title": "PyGeoweaver: Tangible workflow tool for enhancing scientific research productivity and FAIRness",
+      "volume": "27",
       "work_type": "journal-article"
     },
     {
@@ -684,6 +1019,215 @@
       "source": "crossref",
       "title": "Parameterization of Frequency‐Dependent Internal Wave Drag in Global Ocean Models",
       "volume": "17",
+      "work_type": "journal-article"
+    },
+    {
+      "abstract_already_in_scout": true,
+      "abstract_available_from_crossref": true,
+      "accepted_date_precision": "day",
+      "accepted_reach_pub_date": "2026-09-16",
+      "accepted_reach_pub_date_source": "Crossref published-print",
+      "authors": [
+        "Xiao‐Ming Hu",
+        "Chenghao Wang",
+        "Siqi Ma",
+        "Daniel Tong",
+        "Ming Xue",
+        "Adriana E. Larrea Valdivia"
+      ],
+      "awards_in_abstract": [],
+      "awards_in_crossref_funder": [
+        "20163646499",
+        "2137603",
+        "2138259",
+        "2138286",
+        "2138296",
+        "2138307",
+        "80NSSC24K1056",
+        "NA22OAR4590512"
+      ],
+      "best_partial_basis": "published-print",
+      "best_partial_date": "2026-09-16",
+      "crossref_publication_date": "2026-09-16",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "matched",
+      "doi": "10.1029/2026jd046327",
+      "doi_registered_date": {
+        "full_date": "2026-09-03",
+        "precision": "day",
+        "value": "2026-09-03"
+      },
+      "evidence": "https://api.crossref.org/works/10.1029/2026jd046327",
+      "first_of_month_default": false,
+      "funder_names": [
+        "Universidad Nacional de San Agustin de Arequipa",
+        "NASA Headquarters",
+        "National Science Foundation",
+        "National Science Foundation",
+        "National Science Foundation",
+        "National Science Foundation",
+        "National Science Foundation",
+        "NOAA Weather Program Office"
+      ],
+      "issue": "17",
+      "journal": "Journal of Geophysical Research: Atmospheres",
+      "license_urls": [
+        "http://creativecommons.org/licenses/by/4.0/",
+        "http://doi.wiley.com/10.1002/tdm_license_1.1"
+      ],
+      "metadata_deposited_date": {
+        "full_date": "2026-09-23",
+        "precision": "day",
+        "value": "2026-09-23"
+      },
+      "pages": "e2026JD046327",
+      "preferred_date_differs_from_existing_scout": false,
+      "preferred_date_matches_existing_scout": true,
+      "pub_date_satisfied": true,
+      "publication_dates": {
+        "issued": {
+          "full_date": "2026-09-03",
+          "precision": "day",
+          "value": "2026-09-03"
+        },
+        "posted": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published": {
+          "full_date": "2026-09-03",
+          "precision": "day",
+          "value": "2026-09-03"
+        },
+        "published-online": {
+          "full_date": "2026-09-03",
+          "precision": "day",
+          "value": "2026-09-03"
+        },
+        "published-print": {
+          "full_date": "2026-09-16",
+          "precision": "day",
+          "value": "2026-09-16"
+        }
+      },
+      "publisher": "American Geophysical Union (AGU)",
+      "reach_output_type": "1",
+      "related_record_evidence": {
+        "has-preprint": [
+          {
+            "asserted-by": "object",
+            "id": "10.22541/essoar.15007742/v2",
+            "id-type": "doi"
+          }
+        ]
+      },
+      "review_keys": [],
+      "reviewable_recovered_fields": [],
+      "scout_origins": [
+        "staged"
+      ],
+      "scout_publication_dates": [
+        "2026-09-16"
+      ],
+      "scout_source_rows": 1,
+      "source": "crossref",
+      "title": "Meteorological and Emission Drivers of Compound Heat and Ozone Pollution Episodes in Oklahoma City During Periods Influenced by Atlantic Tropical Cyclones",
+      "volume": "131",
+      "work_type": "journal-article"
+    },
+    {
+      "abstract_already_in_scout": true,
+      "abstract_available_from_crossref": true,
+      "accepted_date_precision": "day",
+      "accepted_reach_pub_date": "2026-07-28",
+      "accepted_reach_pub_date_source": "Crossref published-print",
+      "authors": [
+        "Timothy J. Wagner",
+        "Jack Richter",
+        "Marian Mateling",
+        "Claire Pettersen",
+        "Mark Kulie"
+      ],
+      "awards_in_abstract": [],
+      "awards_in_crossref_funder": [
+        "NA20NES4320003",
+        "NA21OAR4590367"
+      ],
+      "best_partial_basis": "published-print",
+      "best_partial_date": "2026-07-28",
+      "crossref_publication_date": "2026-07-28",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "matched",
+      "doi": "10.1029/2026jd046349",
+      "doi_registered_date": {
+        "full_date": "2026-07-17",
+        "precision": "day",
+        "value": "2026-07-17"
+      },
+      "evidence": "https://api.crossref.org/works/10.1029/2026jd046349",
+      "first_of_month_default": false,
+      "funder_names": [
+        "National Environmental Satellite, Data, and Information Service",
+        "National Environmental Satellite, Data, and Information Service"
+      ],
+      "issue": "14",
+      "journal": "Journal of Geophysical Research: Atmospheres",
+      "license_urls": [
+        "http://creativecommons.org/licenses/by/4.0/",
+        "http://doi.wiley.com/10.1002/tdm_license_1.1"
+      ],
+      "metadata_deposited_date": {
+        "full_date": "2026-10-23",
+        "precision": "day",
+        "value": "2026-10-23"
+      },
+      "pages": "e2026JD046349",
+      "preferred_date_differs_from_existing_scout": false,
+      "preferred_date_matches_existing_scout": true,
+      "pub_date_satisfied": true,
+      "publication_dates": {
+        "issued": {
+          "full_date": "2026-07-16",
+          "precision": "day",
+          "value": "2026-07-16"
+        },
+        "posted": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published": {
+          "full_date": "2026-07-16",
+          "precision": "day",
+          "value": "2026-07-16"
+        },
+        "published-online": {
+          "full_date": "2026-07-16",
+          "precision": "day",
+          "value": "2026-07-16"
+        },
+        "published-print": {
+          "full_date": "2026-07-28",
+          "precision": "day",
+          "value": "2026-07-28"
+        }
+      },
+      "publisher": "American Geophysical Union (AGU)",
+      "reach_output_type": "1",
+      "related_record_evidence": {},
+      "review_keys": [],
+      "reviewable_recovered_fields": [],
+      "scout_origins": [
+        "staged"
+      ],
+      "scout_publication_dates": [
+        "2026-07-28"
+      ],
+      "scout_source_rows": 1,
+      "source": "crossref",
+      "title": "The Synoptic, Microphysical, and Radar Characteristics of Upper Great Lakes Snow Events",
+      "volume": "131",
       "work_type": "journal-article"
     },
     {
@@ -1513,6 +2057,178 @@
       "work_type": "journal-article"
     },
     {
+      "abstract_already_in_scout": false,
+      "abstract_available_from_crossref": false,
+      "accepted_date_precision": "day",
+      "accepted_reach_pub_date": "2022-10-11",
+      "accepted_reach_pub_date_source": "Crossref published-print",
+      "authors": [
+        "Eric Loew",
+        "Randy L. Haupt"
+      ],
+      "awards_in_abstract": [],
+      "awards_in_crossref_funder": [],
+      "best_partial_basis": "published-print",
+      "best_partial_date": "2022-10-11",
+      "crossref_publication_date": "2022-10-11",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "matched",
+      "doi": "10.1109/past49659.2022.9975045",
+      "doi_registered_date": {
+        "full_date": "2022-12-19",
+        "precision": "day",
+        "value": "2022-12-19"
+      },
+      "evidence": "https://api.crossref.org/works/10.1109/past49659.2022.9975045",
+      "first_of_month_default": false,
+      "funder_names": [],
+      "issue": "",
+      "journal": "2022 IEEE International Symposium on Phased Array Systems &amp; Technology (PAST)",
+      "license_urls": [
+        "https://doi.org/10.15223/policy-029",
+        "https://doi.org/10.15223/policy-037"
+      ],
+      "metadata_deposited_date": {
+        "full_date": "2023-01-16",
+        "precision": "day",
+        "value": "2023-01-16"
+      },
+      "pages": "1-3",
+      "preferred_date_differs_from_existing_scout": false,
+      "preferred_date_matches_existing_scout": true,
+      "pub_date_satisfied": true,
+      "publication_dates": {
+        "issued": {
+          "full_date": "2022-10-11",
+          "precision": "day",
+          "value": "2022-10-11"
+        },
+        "posted": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published": {
+          "full_date": "2022-10-11",
+          "precision": "day",
+          "value": "2022-10-11"
+        },
+        "published-online": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published-print": {
+          "full_date": "2022-10-11",
+          "precision": "day",
+          "value": "2022-10-11"
+        }
+      },
+      "publisher": "IEEE",
+      "reach_output_type": "1",
+      "related_record_evidence": {},
+      "review_keys": [],
+      "reviewable_recovered_fields": [],
+      "scout_origins": [
+        "staged"
+      ],
+      "scout_publication_dates": [
+        "2022-10-11"
+      ],
+      "scout_source_rows": 1,
+      "source": "crossref",
+      "title": "Two-Way Pattern Synthesis for the Airborne Phased Array Radar (APAR)",
+      "volume": "",
+      "work_type": "proceedings-article"
+    },
+    {
+      "abstract_already_in_scout": false,
+      "abstract_available_from_crossref": false,
+      "accepted_date_precision": "day",
+      "accepted_reach_pub_date": "2022-03-21",
+      "accepted_reach_pub_date_source": "Crossref published-print",
+      "authors": [
+        "Mark Yaklich",
+        "Mark C. Leifer"
+      ],
+      "awards_in_abstract": [],
+      "awards_in_crossref_funder": [],
+      "best_partial_basis": "published-print",
+      "best_partial_date": "2022-03-21",
+      "crossref_publication_date": "2022-03-21",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "matched",
+      "doi": "10.1109/radarconf2248738.2022.9764246",
+      "doi_registered_date": {
+        "full_date": "2022-05-03",
+        "precision": "day",
+        "value": "2022-05-03"
+      },
+      "evidence": "https://api.crossref.org/works/10.1109/radarconf2248738.2022.9764246",
+      "first_of_month_default": false,
+      "funder_names": [
+        "UCAR"
+      ],
+      "issue": "",
+      "journal": "2022 IEEE Radar Conference (RadarConf22)",
+      "license_urls": [
+        "https://doi.org/10.15223/policy-029",
+        "https://doi.org/10.15223/policy-037"
+      ],
+      "metadata_deposited_date": {
+        "full_date": "2022-07-04",
+        "precision": "day",
+        "value": "2022-07-04"
+      },
+      "pages": "1-4",
+      "preferred_date_differs_from_existing_scout": false,
+      "preferred_date_matches_existing_scout": true,
+      "pub_date_satisfied": true,
+      "publication_dates": {
+        "issued": {
+          "full_date": "2022-03-21",
+          "precision": "day",
+          "value": "2022-03-21"
+        },
+        "posted": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published": {
+          "full_date": "2022-03-21",
+          "precision": "day",
+          "value": "2022-03-21"
+        },
+        "published-online": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published-print": {
+          "full_date": "2022-03-21",
+          "precision": "day",
+          "value": "2022-03-21"
+        }
+      },
+      "publisher": "IEEE",
+      "reach_output_type": "1",
+      "related_record_evidence": {},
+      "review_keys": [],
+      "reviewable_recovered_fields": [],
+      "scout_origins": [
+        "staged"
+      ],
+      "scout_publication_dates": [
+        "2022-03-21"
+      ],
+      "scout_source_rows": 1,
+      "source": "crossref",
+      "title": "Airborne Phased Array Radar (APAR) Program Status &amp; Critical Requirements Analyses",
+      "volume": "",
+      "work_type": "proceedings-article"
+    },
+    {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": false,
       "accepted_date_precision": "month",
@@ -1616,6 +2332,100 @@
       "source": "crossref",
       "title": "Ceilometer-Based Rain-Rate Estimation: A Case-Study Comparison With S-Band Radar and Disdrometer Retrievals in the Context of VORTEX-SE",
       "volume": "58",
+      "work_type": "journal-article"
+    },
+    {
+      "abstract_already_in_scout": true,
+      "abstract_available_from_crossref": true,
+      "accepted_date_precision": "day",
+      "accepted_reach_pub_date": "2026-09-18",
+      "accepted_reach_pub_date_source": "Crossref published-print",
+      "authors": [
+        "Xiuyuan Ding",
+        "Baoqiang Xiang",
+        "Gang Chen",
+        "Liping Wang"
+      ],
+      "awards_in_abstract": [],
+      "awards_in_crossref_funder": [
+        "NA21OAR4310383",
+        "NA22OAR4590217",
+        "NA23OAR4320198"
+      ],
+      "best_partial_basis": "published-print",
+      "best_partial_date": "2026-09-18",
+      "crossref_publication_date": "2026-09-18",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "matched",
+      "doi": "10.1126/sciadv.aee4171",
+      "doi_registered_date": {
+        "full_date": "2026-09-18",
+        "precision": "day",
+        "value": "2026-09-18"
+      },
+      "evidence": "https://api.crossref.org/works/10.1126/sciadv.aee4171",
+      "first_of_month_default": false,
+      "funder_names": [
+        "National Oceanic and Atmospheric Administration",
+        "UCAR’s Cooperative Programs for the Advancement of Earth System Science",
+        "OAA Climate Test Bed program"
+      ],
+      "issue": "38",
+      "journal": "Science Advances",
+      "license_urls": [
+        "https://www.science.org/content/page/science-licenses-journal-article-reuse"
+      ],
+      "metadata_deposited_date": {
+        "full_date": "2026-09-18",
+        "precision": "day",
+        "value": "2026-09-18"
+      },
+      "pages": "eaee4171",
+      "preferred_date_differs_from_existing_scout": false,
+      "preferred_date_matches_existing_scout": true,
+      "pub_date_satisfied": true,
+      "publication_dates": {
+        "issued": {
+          "full_date": "2026-09-18",
+          "precision": "day",
+          "value": "2026-09-18"
+        },
+        "posted": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published": {
+          "full_date": "2026-09-18",
+          "precision": "day",
+          "value": "2026-09-18"
+        },
+        "published-online": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published-print": {
+          "full_date": "2026-09-18",
+          "precision": "day",
+          "value": "2026-09-18"
+        }
+      },
+      "publisher": "American Association for the Advancement of Science (AAAS)",
+      "reach_output_type": "1",
+      "related_record_evidence": {},
+      "review_keys": [],
+      "reviewable_recovered_fields": [],
+      "scout_origins": [
+        "staged"
+      ],
+      "scout_publication_dates": [
+        "2026-09-18"
+      ],
+      "scout_source_rows": 1,
+      "source": "crossref",
+      "title": "Stratospheric wave predictability enhances surface forecasts over North America",
+      "volume": "12",
       "work_type": "journal-article"
     },
     {
@@ -1804,6 +2614,100 @@
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
       "accepted_date_precision": "month",
+      "accepted_reach_pub_date": "2024-04-01",
+      "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
+      "authors": [
+        "Yingkai Sha",
+        "Ryan A. Sobash",
+        "David John Gagne"
+      ],
+      "awards_in_abstract": [],
+      "awards_in_crossref_funder": [
+        "1852977",
+        "ICER-2019758",
+        "NA19OAR4590128"
+      ],
+      "best_partial_basis": "published-print",
+      "best_partial_date": "2024-04",
+      "crossref_publication_date": "",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "matched",
+      "doi": "10.1175/aies-d-23-0094.1",
+      "doi_registered_date": {
+        "full_date": "2024-03-12",
+        "precision": "day",
+        "value": "2024-03-12"
+      },
+      "evidence": "https://api.crossref.org/works/10.1175/aies-d-23-0094.1",
+      "first_of_month_default": true,
+      "funder_names": [
+        "National Science Foundation",
+        "NOAA Office of Oceanic and Atmospheric Research",
+        "NCAR Short-term Explicit Prediction Program",
+        "National Science Foundation"
+      ],
+      "issue": "2",
+      "journal": "Artificial Intelligence for the Earth Systems",
+      "license_urls": [
+        "http://www.ametsoc.org/PUBSReuseLicenses"
+      ],
+      "metadata_deposited_date": {
+        "full_date": "2026-10-16",
+        "precision": "day",
+        "value": "2026-10-16"
+      },
+      "pages": "",
+      "preferred_date_differs_from_existing_scout": false,
+      "preferred_date_matches_existing_scout": true,
+      "pub_date_satisfied": true,
+      "publication_dates": {
+        "issued": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2024-04"
+        },
+        "posted": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2024-04"
+        },
+        "published-online": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published-print": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2024-04"
+        }
+      },
+      "publisher": "American Meteorological Society",
+      "reach_output_type": "1",
+      "related_record_evidence": {},
+      "review_keys": [],
+      "reviewable_recovered_fields": [],
+      "scout_origins": [
+        "staged"
+      ],
+      "scout_publication_dates": [
+        "2024-04-01"
+      ],
+      "scout_source_rows": 1,
+      "source": "crossref",
+      "title": "Generative Ensemble Deep Learning Severe Weather Prediction from a Deterministic Convection-Allowing Model",
+      "volume": "3",
+      "work_type": "journal-article"
+    },
+    {
+      "abstract_already_in_scout": true,
+      "abstract_available_from_crossref": true,
+      "accepted_date_precision": "month",
       "accepted_reach_pub_date": "2026-10-01",
       "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
       "authors": [
@@ -1838,9 +2742,9 @@
         "http://www.ametsoc.org/PUBSReuseLicenses"
       ],
       "metadata_deposited_date": {
-        "full_date": "2026-11-02",
+        "full_date": "2026-11-06",
         "precision": "day",
-        "value": "2026-11-02"
+        "value": "2026-11-06"
       },
       "pages": "",
       "preferred_date_differs_from_existing_scout": false,
@@ -2190,9 +3094,9 @@
         "http://www.ametsoc.org/PUBSReuseLicenses"
       ],
       "metadata_deposited_date": {
-        "full_date": "2026-11-02",
+        "full_date": "2026-11-06",
         "precision": "day",
-        "value": "2026-11-02"
+        "value": "2026-11-06"
       },
       "pages": "E2450-E2460",
       "preferred_date_differs_from_existing_scout": true,
@@ -2421,6 +3325,98 @@
       "source": "crossref",
       "title": "Estimation of Tropical Cyclone Intensity in the North Atlantic and Northeastern Pacific Basins Using TRMM Satellite Passive Microwave Observations",
       "volume": "58",
+      "work_type": "journal-article"
+    },
+    {
+      "abstract_already_in_scout": true,
+      "abstract_available_from_crossref": true,
+      "accepted_date_precision": "month",
+      "accepted_reach_pub_date": "2026-06-01",
+      "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
+      "authors": [
+        "W. Lee Ellenburg",
+        "Shaelyn Deal"
+      ],
+      "awards_in_abstract": [],
+      "awards_in_crossref_funder": [
+        "2317820",
+        "NA22NWS4320003",
+        "NA23OAR4590590"
+      ],
+      "best_partial_basis": "published-print",
+      "best_partial_date": "2026-06",
+      "crossref_publication_date": "",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "matched",
+      "doi": "10.1175/jamc-d-25-0108.1",
+      "doi_registered_date": {
+        "full_date": "2026-05-25",
+        "precision": "day",
+        "value": "2026-05-25"
+      },
+      "evidence": "https://api.crossref.org/works/10.1175/jamc-d-25-0108.1",
+      "first_of_month_default": true,
+      "funder_names": [
+        "NOAA Weather Program Office",
+        "CIROH",
+        "National Science Foundation"
+      ],
+      "issue": "6",
+      "journal": "Journal of Applied Meteorology and Climatology",
+      "license_urls": [
+        "http://www.ametsoc.org/PUBSReuseLicenses"
+      ],
+      "metadata_deposited_date": {
+        "full_date": "2026-06-09",
+        "precision": "day",
+        "value": "2026-06-09"
+      },
+      "pages": "861-879",
+      "preferred_date_differs_from_existing_scout": false,
+      "preferred_date_matches_existing_scout": true,
+      "pub_date_satisfied": true,
+      "publication_dates": {
+        "issued": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2026-06"
+        },
+        "posted": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2026-06"
+        },
+        "published-online": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published-print": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2026-06"
+        }
+      },
+      "publisher": "American Meteorological Society",
+      "reach_output_type": "1",
+      "related_record_evidence": {},
+      "review_keys": [],
+      "reviewable_recovered_fields": [],
+      "scout_origins": [
+        "staged"
+      ],
+      "scout_publication_dates": [
+        "2026-06-01"
+      ],
+      "scout_source_rows": 1,
+      "source": "crossref",
+      "title": "Flash Drought Risk and Agricultural Exposure in the Southeast United States",
+      "volume": "65",
       "work_type": "journal-article"
     },
     {
@@ -4940,8 +5936,8 @@
       "rows": 13
     },
     "staged": {
-      "batches": 30,
-      "rows": 83
+      "batches": 40,
+      "rows": 93
     }
   }
 }
