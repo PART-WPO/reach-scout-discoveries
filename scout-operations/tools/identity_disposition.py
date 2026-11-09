@@ -54,12 +54,14 @@ def decide(index, watchlist, *, doi="", title="", url=""):
     status = identity["status"]
     if status == "CONFIRMED_PUBLIC_REACH_IDENTITY":
         disposition, action = "EXISTING_IN_REACH", "SKIP_ORIGINAL_RETAIN_EXPANSION"
+    elif family["is_original_preprint"]:
+        # An original preprint is not eligible even if it was accidentally
+        # submitted to a public Scout queue; keep all version leads.
+        disposition, action = "PREPRINT_WATCHLIST_HOLD", "MONTHLY_PREPRINT_MONITOR_ONLY"
     elif status == "IN_PUBLIC_SCOUT_QUEUE":
         disposition, action = "EXISTING_PUBLIC_SCOUT_CANDIDATE", "DO_NOT_REPROPOSE"
     elif status in ("POSSIBLE_PUBLIC_REACH_MATCH", "POSSIBLE_SCOUT_QUEUE_MATCH"):
         disposition, action = "IDENTITY_REVIEW_REQUIRED", "BOUNDED_IDENTITY_AND_VERSION_REVIEW"
-    elif family["is_original_preprint"]:
-        disposition, action = "PREPRINT_WATCHLIST_HOLD", "MONTHLY_PREPRINT_MONITOR_ONLY"
     elif family["preprint_dois"]:
         disposition, action = "PUBLISHED_VERSION_LEAD", "VERIFY_FINAL_DOI_INDEPENDENTLY"
     else:
@@ -78,6 +80,44 @@ def decide(index, watchlist, *, doi="", title="", url=""):
         "private_review": "NOT_VERIFIED",
         "source_fingerprint": index["source_fingerprint"],
     }
+
+
+
+def verified_disposition(index, watchlist, ir_index, *, doi="", title="", url=""):
+    """One read-only screen for monthly, historical and independent research.
+
+    The direct shared gate and the separately trusted NOAA IR DOI->URL mapping
+    are reconciled. No reviewer state or funding attribution is inferred.
+    """
+    from ir_reach_identity import identity_check
+    result = decide(index, watchlist, doi=doi, title=title, url=url)
+    check = identity_check(index, ir_index, doi, title, url)
+    ir = check["noaa_ir_reach_check"]
+    result["official_noaa_ir"] = {
+        "status": ir["status"],
+        "match_uid": ir["match_uid"],
+        "official_url": ir["official_url"],
+    }
+    if result["disposition"] == "EXISTING_IN_REACH":
+        return result
+    if result["explicit_version_family"]["is_original_preprint"]:
+        return result
+    if ir["status"] == "VERIFIED_OFFICIAL_IR_DOI_TO_EXISTING_REACH_URL":
+        if check["status"] != "CONFIRMED_PUBLIC_REACH_IDENTITY":
+            raise ValueError("Official IR verification contradicts public identity")
+        result["disposition"] = "EXISTING_IN_REACH"
+        result["next_action"] = "SKIP_ORIGINAL_RETAIN_EXPANSION"
+        result["identity_confirmation_basis"] = "VERIFIED_IR_DOI_URL_AND_TITLE"
+    elif ir["status"] in {
+        "IR_INDEX_UNAVAILABLE_HOLD", "AMBIGUOUS_IR_DOI_HOLD",
+        "MULTIPLE_REACH_RECORDS_HOLD", "REACH_DOI_CONFLICT_VERSION_REVIEW",
+        "IR_URL_MATCH_REQUIRES_REVIEW"
+    } and result["disposition"] in {"NO_PUBLIC_IDENTITY_MATCH", "PUBLISHED_VERSION_LEAD"}:
+        # May still research other evidence, but no no-match assertion may
+        # be promoted into a new-output recommendation until identity resolved.
+        result["disposition"] = "IDENTITY_REVIEW_REQUIRED"
+        result["next_action"] = "VERIFY_OFFICIAL_IR_IDENTITY_FIRST"
+    return result
 
 
 def public_reach_author_seeds(cache, award):
