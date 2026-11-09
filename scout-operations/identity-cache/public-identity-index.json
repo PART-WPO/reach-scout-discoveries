@@ -3,8 +3,8 @@
   "sources": {
     "reach_cache_sha256": "6660562e325a6a141198f59acce84f2e30d9a2d14e6cf5acd29769c8a4b68e1e",
     "reach_manifest_sha256": "f94ae52cac483b52e9a5cd6e775c6faa01ad6ec33610b249b3d486aed6daa003",
-    "scout_manifest_sha256": "3132cae7c691bc3d5b3f0e45aa1d470fb06c4a64b7a3ad18c5b7a2e5513416b4",
-    "scout_batches": 32,
+    "scout_manifest_sha256": "ad428fb7b9c863cc1ae1f4d9a4546cc4b4280c35be7769362e9b7093e01a4756",
+    "scout_batches": 35,
     "inbox_files": [
       {
         "path": "scout-discoveries/inbox/2026-10-30-hourly-2232ET-iot-water-gauge-001.csv",
@@ -95,10 +95,25 @@
         "path": "scout-discoveries/inbox/2026-11-06-human-project-b616c2488c1fe907f3.csv",
         "sha256": "4a53b6d29397aa2f6633aaee8236816fd7b5ccf4a9a128dbfc54721d0cadf608",
         "rows": 1
+      },
+      {
+        "path": "scout-discoveries/inbox/2026-11-09-human-project-398fe73f0c7f3ffa37.csv",
+        "sha256": "ff6c13168265415ad31251ae5cd37e4603a746c2b002c89407a6d4e977705c47",
+        "rows": 1
+      },
+      {
+        "path": "scout-discoveries/inbox/2026-11-09-human-project-866c8052a22849b2de.csv",
+        "sha256": "af3c9bd5b16a32fa7d1299d8fb0ba7da480a094d667e77105af35ab74ab0fd9f",
+        "rows": 1
+      },
+      {
+        "path": "scout-discoveries/inbox/2026-11-09-human-project-b332d53770e8cbc1d4.csv",
+        "sha256": "78a0383516a63efc40aabe7bd0e05dae204b6c7e4cd691cb85c038464cd3885b",
+        "rows": 1
       }
     ]
   },
-  "source_fingerprint": "b657eadac8a90c53af57536beaef96096b7236d87ac6e31583e5943c599f83cb",
+  "source_fingerprint": "de67cc1dbb7741a1cc512ea8ca3c5315bfdda146e747409a9ed964cd60ec8a88",
   "records": [
     {
       "source": "REACH",
@@ -14054,6 +14069,42 @@
       "location": "scout-discoveries/batches/2026-11-06-human-project-b616c2488c1fe907f3.csv:2"
     },
     {
+      "source": "SCOUT_PUBLISHED",
+      "identity": "2026-11-09-human-project-398fe73f0c7f3ffa37:2",
+      "title": "PyGeoweaver: Tangible workflow tool for enhancing scientific research productivity and FAIRness",
+      "dois": [
+        "10.1016/j.softx.2024.101863"
+      ],
+      "urls": [
+        "https://doi.org/10.1016/j.softx.2024.101863"
+      ],
+      "location": "scout-discoveries/batches/2026-11-09-human-project-398fe73f0c7f3ffa37.csv:2"
+    },
+    {
+      "source": "SCOUT_PUBLISHED",
+      "identity": "2026-11-09-human-project-866c8052a22849b2de:2",
+      "title": "Update of land use/land cover and soil texture for Brazil: Impact on WRF modeling results over São Paulo",
+      "dois": [
+        "10.1016/j.atmosenv.2021.118760"
+      ],
+      "urls": [
+        "https://doi.org/10.1016/j.atmosenv.2021.118760"
+      ],
+      "location": "scout-discoveries/batches/2026-11-09-human-project-866c8052a22849b2de.csv:2"
+    },
+    {
+      "source": "SCOUT_PUBLISHED",
+      "identity": "2026-11-09-human-project-b332d53770e8cbc1d4:2",
+      "title": "Towards practical artificial intelligence in Earth sciences",
+      "dois": [
+        "10.1007/s10596-024-10317-7"
+      ],
+      "urls": [
+        "https://doi.org/10.1007/s10596-024-10317-7"
+      ],
+      "location": "scout-discoveries/batches/2026-11-09-human-project-b332d53770e8cbc1d4.csv:2"
+    },
+    {
       "source": "SCOUT_INBOX",
       "identity": "2026-10-30-hourly-2232ET-iot-water-gauge-001.csv:2",
       "title": "A low-cost IoT-based deep learning method of water gauge measurement for flood monitoring",
@@ -14384,6 +14435,42 @@
         "https://doi.org/10.1109/radarconf2248738.2022.9764246"
       ],
       "location": "scout-discoveries/inbox/2026-11-06-human-project-b616c2488c1fe907f3.csv:2"
+    },
+    {
+      "source": "SCOUT_INBOX",
+      "identity": "2026-11-09-human-project-398fe73f0c7f3ffa37.csv:2",
+      "title": "PyGeoweaver: Tangible workflow tool for enhancing scientific research productivity and FAIRness",
+      "dois": [
+        "10.1016/j.softx.2024.101863"
+      ],
+      "urls": [
+        "https://doi.org/10.1016/j.softx.2024.101863"
+      ],
+      "location": "scout-discoveries/inbox/2026-11-09-human-project-398fe73f0c7f3ffa37.csv:2"
+    },
+    {
+      "source": "SCOUT_INBOX",
+      "identity": "2026-11-09-human-project-866c8052a22849b2de.csv:2",
+      "title": "Update of land use/land cover and soil texture for Brazil: Impact on WRF modeling results over São Paulo",
+      "dois": [
+        "10.1016/j.atmosenv.2021.118760"
+      ],
+      "urls": [
+        "https://doi.org/10.1016/j.atmosenv.2021.118760"
+      ],
+      "location": "scout-discoveries/inbox/2026-11-09-human-project-866c8052a22849b2de.csv:2"
+    },
+    {
+      "source": "SCOUT_INBOX",
+      "identity": "2026-11-09-human-project-b332d53770e8cbc1d4.csv:2",
+      "title": "Towards practical artificial intelligence in Earth sciences",
+      "dois": [
+        "10.1007/s10596-024-10317-7"
+      ],
+      "urls": [
+        "https://doi.org/10.1007/s10596-024-10317-7"
+      ],
+      "location": "scout-discoveries/inbox/2026-11-09-human-project-b332d53770e8cbc1d4.csv:2"
     }
   ],
   "keys": {
@@ -15303,88 +15390,100 @@
       ],
       "10.1080/19475705.2024.2364777": [
         1301,
-        1323
+        1326
       ],
       "10.1177/10506519261455873": [
         1302,
-        1324
+        1327
       ],
       "10.1175/wcas-d-23-0046.1": [
         1303
       ],
       "10.1145/3794916.3794919": [
         1305,
-        1334
+        1337
       ],
       "10.5281/zenodo.6385057": [
         1306,
-        1335
+        1338
       ],
       "10.1007/s43762-024-00142-0": [
         1309,
-        1338
+        1341
       ],
       "10.17632/43vrcwvdf8.1": [
         1310,
-        1339
+        1342
       ],
       "10.1175/bams-d-25-0140.1": [
         1311,
-        1340
+        1343
       ],
       "10.1175/bams-d-25-0032.1": [
         1312
       ],
       "10.1080/01431161.2026.2749622": [
         1313,
-        1329
+        1332
       ],
       "10.1175/waf-d-25-0044.1": [
         1314,
-        1325,
-        1341
+        1328,
+        1344
       ],
       "10.5194/tc-20-5973-2026": [
         1315,
-        1326,
-        1342
+        1329,
+        1345
       ],
       "10.1175/aies-d-26-0004.1": [
         1316,
-        1327,
-        1343
+        1330,
+        1346
       ],
       "10.1088/2515-7620/aeaad2": [
         1317,
-        1330,
-        1345
-      ],
-      "10.3390/rs18193383": [
-        1318,
-        1331,
-        1346
-      ],
-      "10.1175/waf-d-26-0084.1": [
-        1319,
-        1332,
-        1347
-      ],
-      "10.1016/j.pdisas.2026.100696": [
-        1320,
         1333,
         1348
       ],
+      "10.3390/rs18193383": [
+        1318,
+        1334,
+        1349
+      ],
+      "10.1175/waf-d-26-0084.1": [
+        1319,
+        1335,
+        1350
+      ],
+      "10.1016/j.pdisas.2026.100696": [
+        1320,
+        1336,
+        1351
+      ],
       "10.1175/jamc-d-25-0108.1": [
         1321,
-        1349
+        1352
       ],
       "10.1109/radarconf2248738.2022.9764246": [
         1322,
-        1350
+        1353
+      ],
+      "10.1016/j.softx.2024.101863": [
+        1323,
+        1354
+      ],
+      "10.1016/j.atmosenv.2021.118760": [
+        1324,
+        1355
+      ],
+      "10.1007/s10596-024-10317-7": [
+        1325,
+        1356
       ],
       "10.5194/egusphere-2026-5876": [
-        1328,
-        1344
+        1331,
+        1347
       ]
     },
     "url": {
@@ -19374,96 +19473,108 @@
       ],
       "https://doi.org/10.1080/19475705.2024.2364777": [
         1301,
-        1323
+        1326
       ],
       "https://doi.org/10.1177/10506519261455873": [
         1302,
-        1324
+        1327
       ],
       "https://journals.ametsoc.org/view/journals/wcas/15/4/wcas-d-23-0046.1.xml": [
         1303
       ],
       "https://doi.org/10.1145/3794916.3794919": [
         1305,
-        1334
+        1337
       ],
       "https://doi.org/10.5281/zenodo.6385057": [
         1306,
-        1335
+        1338
       ],
       "https://github.com/mesh-team/mesh_code_irregular/releases/tag/mesh_diffusive_cns_v0.1": [
         1307,
-        1336
+        1339
       ],
       "https://github.com/mesh-team/mesh_cnt/releases/tag/mesh_cnt_v0.1": [
         1308,
-        1337
+        1340
       ],
       "https://doi.org/10.1007/s43762-024-00142-0": [
         1309,
-        1338
+        1341
       ],
       "https://doi.org/10.17632/43vrcwvdf8.1": [
         1310,
-        1339
+        1342
       ],
       "https://doi.org/10.1175/bams-d-25-0140.1": [
         1311,
-        1340
+        1343
       ],
       "https://journals.ametsoc.org/view/journals/bams/107/10/bams-d-25-0032.1.xml": [
         1312
       ],
       "https://doi.org/10.1080/01431161.2026.2749622": [
         1313,
-        1329
+        1332
       ],
       "https://doi.org/10.1175/waf-d-25-0044.1": [
         1314,
-        1325,
-        1341
+        1328,
+        1344
       ],
       "https://doi.org/10.5194/tc-20-5973-2026": [
         1315,
-        1326,
-        1342
+        1329,
+        1345
       ],
       "https://doi.org/10.1175/aies-d-26-0004.1": [
         1316,
-        1327,
-        1343
+        1330,
+        1346
       ],
       "https://doi.org/10.1088/2515-7620/aeaad2": [
         1317,
-        1330,
-        1345
-      ],
-      "https://doi.org/10.3390/rs18193383": [
-        1318,
-        1331,
-        1346
-      ],
-      "https://doi.org/10.1175/waf-d-26-0084.1": [
-        1319,
-        1332,
-        1347
-      ],
-      "https://doi.org/10.1016/j.pdisas.2026.100696": [
-        1320,
         1333,
         1348
       ],
+      "https://doi.org/10.3390/rs18193383": [
+        1318,
+        1334,
+        1349
+      ],
+      "https://doi.org/10.1175/waf-d-26-0084.1": [
+        1319,
+        1335,
+        1350
+      ],
+      "https://doi.org/10.1016/j.pdisas.2026.100696": [
+        1320,
+        1336,
+        1351
+      ],
       "https://doi.org/10.1175/jamc-d-25-0108.1": [
         1321,
-        1349
+        1352
       ],
       "https://doi.org/10.1109/radarconf2248738.2022.9764246": [
         1322,
-        1350
+        1353
+      ],
+      "https://doi.org/10.1016/j.softx.2024.101863": [
+        1323,
+        1354
+      ],
+      "https://doi.org/10.1016/j.atmosenv.2021.118760": [
+        1324,
+        1355
+      ],
+      "https://doi.org/10.1007/s10596-024-10317-7": [
+        1325,
+        1356
       ],
       "https://doi.org/10.5194/egusphere-2026-5876": [
-        1328,
-        1344
+        1331,
+        1347
       ]
     },
     "title": {
@@ -23301,96 +23412,108 @@
       ],
       "a low cost iot based deep learning method of water gauge measurement for flood monitoring": [
         1301,
-        1323
+        1326
       ],
       "bridging the gap between numbers and experience identifying community risk thresholds in extreme weather communication": [
         1302,
-        1324
+        1327
       ],
       "contextualizing disaster phases using social media data hurricane risk visualizations during the forecast and warning phase of hurricane irma": [
         1303
       ],
       "visualizing probabilistic forecast information around community risk thresholds an action research collaboration between environmental rhetoricians and the national weather service": [
         1305,
-        1334
+        1337
       ],
       "modeled data related to the article diffusive wave models for operational forecasting of channel routing at continental scale": [
         1306,
-        1335
+        1338
       ],
       "mesh code irregular crank nicolson over space cns release": [
         1307,
-        1336
+        1339
       ],
       "mesh cnt crank nicolson over time cnt release": [
         1308,
-        1337
+        1340
       ],
       "analysing trends of computational urban science and data science approaches for sustainable development": [
         1309,
-        1338
+        1341
       ],
       "u heat urban heat experiment around lubbock texas datasets": [
         1310,
-        1339
+        1342
       ],
       "near real time inundation mapping utilizing large uncrewed aerial system platforms": [
         1311,
-        1340
+        1343
       ],
       "visualizing weather risks participatory design workshops for hurricane threats and impacts graphics": [
         1312
       ],
       "improving extreme fire radiative power forecasting with gaussian loss based transformer and lstm models": [
         1313,
-        1329
+        1332
       ],
       "a blending method for multiscale valid time shifting within an rrfs like ensemble based data assimilation system": [
         1314,
-        1325,
-        1341
+        1328,
+        1344
       ],
       "improving snow simulations through improved representations of vegetation conditions insights from high resolution simulations over california": [
         1315,
-        1326,
-        1342
+        1329,
+        1345
       ],
       "the impact of target dataset choice on machine learning prediction of severe hail wind and tornadoes": [
         1316,
-        1327,
-        1343
+        1330,
+        1346
       ],
       "dynamical prediction of western north pacific seasonal accumulated cyclone energy with experimental sfs reforecasts": [
         1317,
-        1330,
-        1345
-      ],
-      "impact of assimilating remote sensing observations on wind and wave analysis offshore of the contiguous united states": [
-        1318,
-        1331,
-        1346
-      ],
-      "evaluation of a cumulus scheme in the fv3 lam and of experimental mpas forecasts for the summer 2025 flash flood and intense rainfall experiment": [
-        1319,
-        1332,
-        1347
-      ],
-      "extreme weather as an occupational hazard structural vulnerability among multilingual immigrant workers": [
-        1320,
         1333,
         1348
       ],
+      "impact of assimilating remote sensing observations on wind and wave analysis offshore of the contiguous united states": [
+        1318,
+        1334,
+        1349
+      ],
+      "evaluation of a cumulus scheme in the fv3 lam and of experimental mpas forecasts for the summer 2025 flash flood and intense rainfall experiment": [
+        1319,
+        1335,
+        1350
+      ],
+      "extreme weather as an occupational hazard structural vulnerability among multilingual immigrant workers": [
+        1320,
+        1336,
+        1351
+      ],
       "flash drought risk and agricultural exposure in the southeast united states": [
         1321,
-        1349
+        1352
       ],
       "airborne phased array radar apar program status critical requirements analyses": [
         1322,
-        1350
+        1353
+      ],
+      "pygeoweaver tangible workflow tool for enhancing scientific research productivity and fairness": [
+        1323,
+        1354
+      ],
+      "update of land use land cover and soil texture for brazil impact on wrf modeling results over s o paulo": [
+        1324,
+        1355
+      ],
+      "towards practical artificial intelligence in earth sciences": [
+        1325,
+        1356
       ],
       "we 3 skynet or how we learned to stop worrying and love the bot responses in our survey data": [
-        1328,
-        1344
+        1331,
+        1347
       ]
     }
   }

@@ -1,11 +1,11 @@
 {
   "schema": "reach-scout-unified-source-preflight-v1",
-  "identity_index_fingerprint": "b657eadac8a90c53af57536beaef96096b7236d87ac6e31583e5943c599f83cb",
+  "identity_index_fingerprint": "de67cc1dbb7741a1cc512ea8ca3c5315bfdda146e747409a9ed964cd60ec8a88",
   "identity_index_source_sha256": {
     "reach_cache_sha256": "6660562e325a6a141198f59acce84f2e30d9a2d14e6cf5acd29769c8a4b68e1e",
     "reach_manifest_sha256": "f94ae52cac483b52e9a5cd6e775c6faa01ad6ec33610b249b3d486aed6daa003",
-    "scout_manifest_sha256": "3132cae7c691bc3d5b3f0e45aa1d470fb06c4a64b7a3ad18c5b7a2e5513416b4",
-    "scout_batches": 32,
+    "scout_manifest_sha256": "ad428fb7b9c863cc1ae1f4d9a4546cc4b4280c35be7769362e9b7093e01a4756",
+    "scout_batches": 35,
     "inbox_files": [
       {
         "path": "scout-discoveries/inbox/2026-10-30-hourly-2232ET-iot-water-gauge-001.csv",
@@ -96,6 +96,21 @@
         "path": "scout-discoveries/inbox/2026-11-06-human-project-b616c2488c1fe907f3.csv",
         "sha256": "4a53b6d29397aa2f6633aaee8236816fd7b5ccf4a9a128dbfc54721d0cadf608",
         "rows": 1
+      },
+      {
+        "path": "scout-discoveries/inbox/2026-11-09-human-project-398fe73f0c7f3ffa37.csv",
+        "sha256": "ff6c13168265415ad31251ae5cd37e4603a746c2b002c89407a6d4e977705c47",
+        "rows": 1
+      },
+      {
+        "path": "scout-discoveries/inbox/2026-11-09-human-project-866c8052a22849b2de.csv",
+        "sha256": "af3c9bd5b16a32fa7d1299d8fb0ba7da480a094d667e77105af35ab74ab0fd9f",
+        "rows": 1
+      },
+      {
+        "path": "scout-discoveries/inbox/2026-11-09-human-project-b332d53770e8cbc1d4.csv",
+        "sha256": "78a0383516a63efc40aabe7bd0e05dae204b6c7e4cd691cb85c038464cd3885b",
+        "rows": 1
       }
     ]
   },
@@ -107,7 +122,7 @@
     "crossref_research_cases": "860b45ecbf2b26c4344aabf0b6507295d23af5131be251b0c8f1e15de9303158",
     "monthly_related_leads": "d4deec7a5df5191b77cf4002573bd766f6bdff0b85880b7175249f38d2ba55a4",
     "independent_leads": "62243d1c3228561ed15786b7030ce02689f6d4a26247387e361fa2c84f5e7fa2",
-    "crossref_routing": "25de5c0c973e3519da2d5c328bfc88d60718235f12359350ad1897c6b7c6bf59",
+    "crossref_routing": "56ce0e3e125888be66e6a0f4db87a0ab43901d39a8d9f948586619602ee33909",
     "historical_crossref_manifest": "799744c7e83f218d22cc19afacb7cfcf2762feb490659efde9f58bf19473b1fa",
     "monthly_api_manifest": "d83ad64b647fcb89a5db04321833ecc7bec177dbfcca7ef1995b06c09deeb335",
     "historical_datacite_manifest": "b21e3b81cf47c3187eb851d1d2b5ec0200d8ed54970c01f871bbd8b96475921e"
@@ -116,11 +131,11 @@
   "lane_decision_counts": {
     "historical_crossref": {
       "EXISTING_IN_REACH_VERIFIED_BULK": 426,
-      "EXISTING_SCOUT_CANDIDATE": 12,
+      "EXISTING_SCOUT_CANDIDATE": 15,
       "IDENTITY_REVIEW_REQUIRED": 1,
       "IDENTITY_REVIEW_REQUIRED_FROM_BULK": 54,
       "PREPRINT_HOLD": 16,
-      "PUBLICATION_STATUS_UNVERIFIED": 105
+      "PUBLICATION_STATUS_UNVERIFIED": 102
     },
     "historical_datacite": {
       "EXISTING_IN_REACH": 11,
@@ -6665,19 +6680,19 @@
       "source_batch": "verified_historical_crossref_routing",
       "raw_source_identity": "10.1007/s10596-024-10317-7",
       "recorded_status_unchanged": "NOT_VERIFIED",
-      "shared_gate_decision": "PUBLICATION_STATUS_UNVERIFIED",
-      "public_identity_disposition": "NO_PUBLIC_IDENTITY_MATCH",
-      "public_identity_next_action": "PROCEED_TO_ELIGIBILITY_AND_FUNDING_RESEARCH",
+      "shared_gate_decision": "EXISTING_SCOUT_CANDIDATE",
+      "public_identity_disposition": "EXISTING_PUBLIC_SCOUT_CANDIDATE",
+      "public_identity_next_action": "DO_NOT_REPROPOSE",
       "explicit_preprint_family": {
         "is_original_preprint": false,
         "preprint_dois": [],
         "official_published_doi_leads": []
       },
-      "effective_identity_or_preflight": "PUBLICATION_STATUS_UNVERIFIED",
+      "effective_identity_or_preflight": "EXISTING_SCOUT_CANDIDATE",
       "trusted_bulk_public_reach_uid": null,
       "source_awards_are_unverified_hints": [],
       "publication_status": "NOT_CHECKED",
-      "identity_match_status": "NO_PUBLIC_IDENTITY_MATCH",
+      "identity_match_status": "IN_PUBLIC_SCOUT_QUEUE",
       "private_review_status": "NOT_VERIFIED",
       "authenticated_prior_review_event_id": null,
       "authenticated_prior_review_code": null,
@@ -6973,19 +6988,19 @@
       "source_batch": "verified_historical_crossref_routing",
       "raw_source_identity": "10.1016/j.atmosenv.2021.118760",
       "recorded_status_unchanged": "NOT_VERIFIED",
-      "shared_gate_decision": "PUBLICATION_STATUS_UNVERIFIED",
-      "public_identity_disposition": "NO_PUBLIC_IDENTITY_MATCH",
-      "public_identity_next_action": "PROCEED_TO_ELIGIBILITY_AND_FUNDING_RESEARCH",
+      "shared_gate_decision": "EXISTING_SCOUT_CANDIDATE",
+      "public_identity_disposition": "EXISTING_PUBLIC_SCOUT_CANDIDATE",
+      "public_identity_next_action": "DO_NOT_REPROPOSE",
       "explicit_preprint_family": {
         "is_original_preprint": false,
         "preprint_dois": [],
         "official_published_doi_leads": []
       },
-      "effective_identity_or_preflight": "PUBLICATION_STATUS_UNVERIFIED",
+      "effective_identity_or_preflight": "EXISTING_SCOUT_CANDIDATE",
       "trusted_bulk_public_reach_uid": null,
       "source_awards_are_unverified_hints": [],
       "publication_status": "NOT_CHECKED",
-      "identity_match_status": "NO_PUBLIC_IDENTITY_MATCH",
+      "identity_match_status": "IN_PUBLIC_SCOUT_QUEUE",
       "private_review_status": "NOT_VERIFIED",
       "authenticated_prior_review_event_id": null,
       "authenticated_prior_review_code": null,
@@ -7981,19 +7996,19 @@
       "source_batch": "verified_historical_crossref_routing",
       "raw_source_identity": "10.1016/j.softx.2024.101863",
       "recorded_status_unchanged": "NOT_VERIFIED",
-      "shared_gate_decision": "PUBLICATION_STATUS_UNVERIFIED",
-      "public_identity_disposition": "NO_PUBLIC_IDENTITY_MATCH",
-      "public_identity_next_action": "PROCEED_TO_ELIGIBILITY_AND_FUNDING_RESEARCH",
+      "shared_gate_decision": "EXISTING_SCOUT_CANDIDATE",
+      "public_identity_disposition": "EXISTING_PUBLIC_SCOUT_CANDIDATE",
+      "public_identity_next_action": "DO_NOT_REPROPOSE",
       "explicit_preprint_family": {
         "is_original_preprint": false,
         "preprint_dois": [],
         "official_published_doi_leads": []
       },
-      "effective_identity_or_preflight": "PUBLICATION_STATUS_UNVERIFIED",
+      "effective_identity_or_preflight": "EXISTING_SCOUT_CANDIDATE",
       "trusted_bulk_public_reach_uid": null,
       "source_awards_are_unverified_hints": [],
       "publication_status": "NOT_CHECKED",
-      "identity_match_status": "NO_PUBLIC_IDENTITY_MATCH",
+      "identity_match_status": "IN_PUBLIC_SCOUT_QUEUE",
       "private_review_status": "NOT_VERIFIED",
       "authenticated_prior_review_event_id": null,
       "authenticated_prior_review_code": null,

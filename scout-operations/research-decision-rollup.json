@@ -1,19 +1,19 @@
 {
   "schema": "reach-scout-research-decision-rollup-v1",
   "source_cases_sha256": "860b45ecbf2b26c4344aabf0b6507295d23af5131be251b0c8f1e15de9303158",
-  "identity_index_fingerprint": "b657eadac8a90c53af57536beaef96096b7236d87ac6e31583e5943c599f83cb",
+  "identity_index_fingerprint": "de67cc1dbb7741a1cc512ea8ca3c5315bfdda146e747409a9ed964cd60ec8a88",
   "cases_evaluated": 21,
   "decision_counts": {
     "EXISTING_IN_REACH": 1,
-    "EXISTING_SCOUT_CANDIDATE": 1,
+    "EXISTING_SCOUT_CANDIDATE": 4,
     "PREPRINT_HOLD": 2,
-    "PUBLICATION_STATUS_UNVERIFIED": 17
+    "PUBLICATION_STATUS_UNVERIFIED": 14
   },
   "next_action_counts": {
     "BOUNDED_RESEARCH_COMPLETE_NEEDS_HUMAN_ASSESSMENT": 2,
-    "LINK_EXISTING_PUBLIC_REVIEW_UNIT_NO_DUPLICATE": 1,
+    "LINK_EXISTING_PUBLIC_REVIEW_UNIT_NO_DUPLICATE": 4,
     "MONTHLY_PREPRINT_WATCHLIST": 2,
-    "TARGETED_RESEARCH_OR_IDENTITY_VERIFICATION": 15,
+    "TARGETED_RESEARCH_OR_IDENTITY_VERIFICATION": 12,
     "VERIFY_EXISTING_ORIGINAL_IN_LEDGER_KEEP_EXPANSION_OPEN": 1
   },
   "private_hub_import": "NOT_VERIFIED",
@@ -29,7 +29,7 @@
       "decision": "PREPRINT_HOLD",
       "research_rounds": 1,
       "next_action": "MONTHLY_PREPRINT_WATCHLIST",
-      "checkpoint_path": "scout-operations/case-checkpoints/doi-795c087948114480/rev-56fc26e6c32a85ef0605.json",
+      "checkpoint_path": "scout-operations/case-checkpoints/doi-795c087948114480/rev-c230a6b5b0cf66723581.json",
       "expansion_status": "UNCHANGED_RESEARCH_SEED",
       "public_scout_candidate_created": false,
       "private_hub_decision": "NOT_VERIFIED"
@@ -39,7 +39,7 @@
       "decision": "EXISTING_IN_REACH",
       "research_rounds": 2,
       "next_action": "VERIFY_EXISTING_ORIGINAL_IN_LEDGER_KEEP_EXPANSION_OPEN",
-      "checkpoint_path": "scout-operations/case-checkpoints/doi-b9a45d41df4214e0/rev-28d3776eef29785edfc5.json",
+      "checkpoint_path": "scout-operations/case-checkpoints/doi-b9a45d41df4214e0/rev-b327e5a8094d858fa34f.json",
       "expansion_status": "UNCHANGED_RESEARCH_SEED",
       "public_scout_candidate_created": false,
       "private_hub_decision": "NOT_VERIFIED"
@@ -49,7 +49,7 @@
       "decision": "PREPRINT_HOLD",
       "research_rounds": 2,
       "next_action": "MONTHLY_PREPRINT_WATCHLIST",
-      "checkpoint_path": "scout-operations/case-checkpoints/doi-4d2e438d49207029/rev-f4484a75a81a16df6010.json",
+      "checkpoint_path": "scout-operations/case-checkpoints/doi-4d2e438d49207029/rev-9fb296f63a0e86a82b7a.json",
       "expansion_status": "UNCHANGED_RESEARCH_SEED",
       "public_scout_candidate_created": false,
       "private_hub_decision": "NOT_VERIFIED"
@@ -59,7 +59,7 @@
       "decision": "PUBLICATION_STATUS_UNVERIFIED",
       "research_rounds": 1,
       "next_action": "TARGETED_RESEARCH_OR_IDENTITY_VERIFICATION",
-      "checkpoint_path": "scout-operations/case-checkpoints/doi-6f92623909c8b04d/rev-d52b7db4fdc72df5cd42.json",
+      "checkpoint_path": "scout-operations/case-checkpoints/doi-6f92623909c8b04d/rev-3395009816bd4735d133.json",
       "expansion_status": "UNCHANGED_RESEARCH_SEED",
       "public_scout_candidate_created": false,
       "private_hub_decision": "NOT_VERIFIED"
@@ -69,7 +69,7 @@
       "decision": "PUBLICATION_STATUS_UNVERIFIED",
       "research_rounds": 0,
       "next_action": "TARGETED_RESEARCH_OR_IDENTITY_VERIFICATION",
-      "checkpoint_path": "scout-operations/case-checkpoints/doi-85c60c771ef45cfc/rev-99dffe45c25f18d7510f.json",
+      "checkpoint_path": "scout-operations/case-checkpoints/doi-85c60c771ef45cfc/rev-05d5d4327d0a73acfd07.json",
       "expansion_status": "UNCHANGED_RESEARCH_SEED",
       "public_scout_candidate_created": false,
       "private_hub_decision": "NOT_VERIFIED"
@@ -79,7 +79,7 @@
       "decision": "PUBLICATION_STATUS_UNVERIFIED",
       "research_rounds": 1,
       "next_action": "TARGETED_RESEARCH_OR_IDENTITY_VERIFICATION",
-      "checkpoint_path": "scout-operations/case-checkpoints/doi-10eaa7b56eb45178/rev-402e0f1dc4fa3d72315e.json",
+      "checkpoint_path": "scout-operations/case-checkpoints/doi-10eaa7b56eb45178/rev-819d3c5272c72c21f712.json",
       "expansion_status": "UNCHANGED_RESEARCH_SEED",
       "public_scout_candidate_created": false,
       "private_hub_decision": "NOT_VERIFIED"
@@ -89,17 +89,17 @@
       "decision": "PUBLICATION_STATUS_UNVERIFIED",
       "research_rounds": 2,
       "next_action": "BOUNDED_RESEARCH_COMPLETE_NEEDS_HUMAN_ASSESSMENT",
-      "checkpoint_path": "scout-operations/case-checkpoints/doi-0bcfa0305be128e4/rev-5954c0e55a6ef8721570.json",
+      "checkpoint_path": "scout-operations/case-checkpoints/doi-0bcfa0305be128e4/rev-cabc73c001245db11360.json",
       "expansion_status": "UNCHANGED_RESEARCH_SEED",
       "public_scout_candidate_created": false,
       "private_hub_decision": "NOT_VERIFIED"
     },
     {
       "doi": "10.1007/s10596-024-10317-7",
-      "decision": "PUBLICATION_STATUS_UNVERIFIED",
+      "decision": "EXISTING_SCOUT_CANDIDATE",
       "research_rounds": 0,
-      "next_action": "TARGETED_RESEARCH_OR_IDENTITY_VERIFICATION",
-      "checkpoint_path": "scout-operations/case-checkpoints/doi-b332d53770e8cbc1/rev-4cadee2fa1dd7d164a0d.json",
+      "next_action": "LINK_EXISTING_PUBLIC_REVIEW_UNIT_NO_DUPLICATE",
+      "checkpoint_path": "scout-operations/case-checkpoints/doi-b332d53770e8cbc1/rev-d6440539fd204b621fa4.json",
       "expansion_status": "UNCHANGED_RESEARCH_SEED",
       "public_scout_candidate_created": false,
       "private_hub_decision": "NOT_VERIFIED"
@@ -109,7 +109,7 @@
       "decision": "PUBLICATION_STATUS_UNVERIFIED",
       "research_rounds": 2,
       "next_action": "BOUNDED_RESEARCH_COMPLETE_NEEDS_HUMAN_ASSESSMENT",
-      "checkpoint_path": "scout-operations/case-checkpoints/doi-2b530fa8e45c7d4e/rev-2a1768986d1d27f22ad5.json",
+      "checkpoint_path": "scout-operations/case-checkpoints/doi-2b530fa8e45c7d4e/rev-9c4e44112cd11229d306.json",
       "expansion_status": "UNCHANGED_RESEARCH_SEED",
       "public_scout_candidate_created": false,
       "private_hub_decision": "NOT_VERIFIED"
@@ -119,17 +119,17 @@
       "decision": "PUBLICATION_STATUS_UNVERIFIED",
       "research_rounds": 1,
       "next_action": "TARGETED_RESEARCH_OR_IDENTITY_VERIFICATION",
-      "checkpoint_path": "scout-operations/case-checkpoints/doi-5756f73487f1796b/rev-3ed5212015813a33faf2.json",
+      "checkpoint_path": "scout-operations/case-checkpoints/doi-5756f73487f1796b/rev-3beb8d6a57b8726a67d8.json",
       "expansion_status": "UNCHANGED_RESEARCH_SEED",
       "public_scout_candidate_created": false,
       "private_hub_decision": "NOT_VERIFIED"
     },
     {
       "doi": "10.1016/j.atmosenv.2021.118760",
-      "decision": "PUBLICATION_STATUS_UNVERIFIED",
+      "decision": "EXISTING_SCOUT_CANDIDATE",
       "research_rounds": 0,
-      "next_action": "TARGETED_RESEARCH_OR_IDENTITY_VERIFICATION",
-      "checkpoint_path": "scout-operations/case-checkpoints/doi-866c8052a22849b2/rev-722fd24f401ea0bcb87d.json",
+      "next_action": "LINK_EXISTING_PUBLIC_REVIEW_UNIT_NO_DUPLICATE",
+      "checkpoint_path": "scout-operations/case-checkpoints/doi-866c8052a22849b2/rev-bc19f09b6135636aa30b.json",
       "expansion_status": "UNCHANGED_RESEARCH_SEED",
       "public_scout_candidate_created": false,
       "private_hub_decision": "NOT_VERIFIED"
@@ -139,17 +139,17 @@
       "decision": "PUBLICATION_STATUS_UNVERIFIED",
       "research_rounds": 1,
       "next_action": "TARGETED_RESEARCH_OR_IDENTITY_VERIFICATION",
-      "checkpoint_path": "scout-operations/case-checkpoints/doi-b8d519c3e1a123e8/rev-c3d17a47fbf2be12f4dc.json",
+      "checkpoint_path": "scout-operations/case-checkpoints/doi-b8d519c3e1a123e8/rev-0b1e8a08e77ebb2c7723.json",
       "expansion_status": "UNCHANGED_RESEARCH_SEED",
       "public_scout_candidate_created": false,
       "private_hub_decision": "NOT_VERIFIED"
     },
     {
       "doi": "10.1016/j.softx.2024.101863",
-      "decision": "PUBLICATION_STATUS_UNVERIFIED",
+      "decision": "EXISTING_SCOUT_CANDIDATE",
       "research_rounds": 0,
-      "next_action": "TARGETED_RESEARCH_OR_IDENTITY_VERIFICATION",
-      "checkpoint_path": "scout-operations/case-checkpoints/doi-398fe73f0c7f3ffa/rev-837fe350c2f56c95baab.json",
+      "next_action": "LINK_EXISTING_PUBLIC_REVIEW_UNIT_NO_DUPLICATE",
+      "checkpoint_path": "scout-operations/case-checkpoints/doi-398fe73f0c7f3ffa/rev-bb1dfb6cf4ebd78d8286.json",
       "expansion_status": "UNCHANGED_RESEARCH_SEED",
       "public_scout_candidate_created": false,
       "private_hub_decision": "NOT_VERIFIED"
@@ -159,7 +159,7 @@
       "decision": "PUBLICATION_STATUS_UNVERIFIED",
       "research_rounds": 1,
       "next_action": "TARGETED_RESEARCH_OR_IDENTITY_VERIFICATION",
-      "checkpoint_path": "scout-operations/case-checkpoints/doi-6c53903a73193712/rev-f262ff48f7807b395bab.json",
+      "checkpoint_path": "scout-operations/case-checkpoints/doi-6c53903a73193712/rev-dc6e4cfce0016534437c.json",
       "expansion_status": "UNCHANGED_RESEARCH_SEED",
       "public_scout_candidate_created": false,
       "private_hub_decision": "NOT_VERIFIED"
@@ -169,7 +169,7 @@
       "decision": "PUBLICATION_STATUS_UNVERIFIED",
       "research_rounds": 0,
       "next_action": "TARGETED_RESEARCH_OR_IDENTITY_VERIFICATION",
-      "checkpoint_path": "scout-operations/case-checkpoints/doi-18f0a904d40d7fd8/rev-00a5b875da041d079b8c.json",
+      "checkpoint_path": "scout-operations/case-checkpoints/doi-18f0a904d40d7fd8/rev-eb92dc81362a656d529b.json",
       "expansion_status": "UNCHANGED_RESEARCH_SEED",
       "public_scout_candidate_created": false,
       "private_hub_decision": "NOT_VERIFIED"
@@ -179,7 +179,7 @@
       "decision": "PUBLICATION_STATUS_UNVERIFIED",
       "research_rounds": 0,
       "next_action": "TARGETED_RESEARCH_OR_IDENTITY_VERIFICATION",
-      "checkpoint_path": "scout-operations/case-checkpoints/doi-4687afbf63fe06fe/rev-2585c51b710a20972a54.json",
+      "checkpoint_path": "scout-operations/case-checkpoints/doi-4687afbf63fe06fe/rev-1a7ed4ee80340a215e71.json",
       "expansion_status": "UNCHANGED_RESEARCH_SEED",
       "public_scout_candidate_created": false,
       "private_hub_decision": "NOT_VERIFIED"
@@ -189,7 +189,7 @@
       "decision": "PUBLICATION_STATUS_UNVERIFIED",
       "research_rounds": 1,
       "next_action": "TARGETED_RESEARCH_OR_IDENTITY_VERIFICATION",
-      "checkpoint_path": "scout-operations/case-checkpoints/doi-0d9ca4d64361951c/rev-cbe2bda3f4d36d8916d6.json",
+      "checkpoint_path": "scout-operations/case-checkpoints/doi-0d9ca4d64361951c/rev-4b1a811290152141d62d.json",
       "expansion_status": "UNCHANGED_RESEARCH_SEED",
       "public_scout_candidate_created": false,
       "private_hub_decision": "NOT_VERIFIED"
@@ -199,7 +199,7 @@
       "decision": "PUBLICATION_STATUS_UNVERIFIED",
       "research_rounds": 0,
       "next_action": "TARGETED_RESEARCH_OR_IDENTITY_VERIFICATION",
-      "checkpoint_path": "scout-operations/case-checkpoints/doi-39f06212d9583909/rev-9739a5c0a73cd699318b.json",
+      "checkpoint_path": "scout-operations/case-checkpoints/doi-39f06212d9583909/rev-4337d0a80ab8f22eba1f.json",
       "expansion_status": "UNCHANGED_RESEARCH_SEED",
       "public_scout_candidate_created": false,
       "private_hub_decision": "NOT_VERIFIED"
@@ -209,7 +209,7 @@
       "decision": "EXISTING_SCOUT_CANDIDATE",
       "research_rounds": 0,
       "next_action": "LINK_EXISTING_PUBLIC_REVIEW_UNIT_NO_DUPLICATE",
-      "checkpoint_path": "scout-operations/case-checkpoints/doi-519c036c7cc61c2a/rev-9ead682da812f65269e3.json",
+      "checkpoint_path": "scout-operations/case-checkpoints/doi-519c036c7cc61c2a/rev-84a3a9133e40b9659240.json",
       "expansion_status": "UNCHANGED_RESEARCH_SEED",
       "public_scout_candidate_created": false,
       "private_hub_decision": "NOT_VERIFIED"
@@ -219,7 +219,7 @@
       "decision": "PUBLICATION_STATUS_UNVERIFIED",
       "research_rounds": 0,
       "next_action": "TARGETED_RESEARCH_OR_IDENTITY_VERIFICATION",
-      "checkpoint_path": "scout-operations/case-checkpoints/doi-febf4de412715b8e/rev-91400db03b3e5a1f03d6.json",
+      "checkpoint_path": "scout-operations/case-checkpoints/doi-febf4de412715b8e/rev-8f13e715f4a21a1d6d10.json",
       "expansion_status": "UNCHANGED_RESEARCH_SEED",
       "public_scout_candidate_created": false,
       "private_hub_decision": "NOT_VERIFIED"
@@ -229,7 +229,7 @@
       "decision": "PUBLICATION_STATUS_UNVERIFIED",
       "research_rounds": 0,
       "next_action": "TARGETED_RESEARCH_OR_IDENTITY_VERIFICATION",
-      "checkpoint_path": "scout-operations/case-checkpoints/doi-a95460a91ebc3330/rev-386fc24634cd59d5341f.json",
+      "checkpoint_path": "scout-operations/case-checkpoints/doi-a95460a91ebc3330/rev-2f868ee5323bbd4e949f.json",
       "expansion_status": "UNCHANGED_RESEARCH_SEED",
       "public_scout_candidate_created": false,
       "private_hub_decision": "NOT_VERIFIED"
