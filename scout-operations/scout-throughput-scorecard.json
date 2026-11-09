@@ -1,25 +1,25 @@
 {
   "schema": "reach-scout-throughput-scorecard-v1",
   "source_sha256": {
-    "scout-operations/crossref-candidate-queue.json": "8939b81c4e5508d0145e3868d7c6f497bc77b4d666736b23a0942c827e66d598",
+    "scout-operations/crossref-candidate-queue.json": "667d159a96bbf19568a30162815a603967dcf5cae9d654a6049ef4a1446fa762",
     "scout-operations/historical-crossref-coverage.json": "92d36650e2077bbfc4a8f27d2f166be40b6c3831b7dd33ffdbd5fafef7057860",
     "scout-operations/historical-coverage.json": "f0d440a18f983a07bef10c16047d9dfae2d67039178a22f56294d935403cfb59",
-    "scout-discoveries/manifest.json": "3de4673c1054f36c8547b4bc8719bd29eab75edcfed1f15fcec94511261df263",
+    "scout-discoveries/manifest.json": "457936a40a26000386fb891df49057f792e10e9fe5e39ef2d569d0cc7c544fdd",
     "scout-operations/preprint-watchlist.json": "9aee820ffa8eafb416d68f80d7cddb534ab33c97f61e1246ec892fb08f33b65e",
     "scout-operations/preprint-retirement-archive.json": "5707f60b259e3bebac9adadfa04b5191971f4f5feed8472d127fb6f0ef82c2b5",
     "scout-operations/preprint-13-identity-reconciliation.json": "1fb1025f8dc2f8ee3fb745bf1f4771b6a7246b21d59d78d4d11a8596f2063844",
-    "scout-operations/research-outcome-registry.json": "11e6ed8e5bfaa118b2e06f9d51826bef2ef0a661b42e604f6b21e4fdcb867a4d"
+    "scout-operations/research-outcome-registry.json": "6e2331474966feafb7ad86aa3351b612f647aec96fdb59f3e90b88ebe74c804a"
   },
   "source_freshness": {
     "crossref_queue_source_checks": {
       "scout-operations/historical-crossref-screening/actionable-routing.json": {
-        "recorded_sha256": "b9070e14efdbb1386c182729ba510f8cffea6a4bbea5630ccc2ac95e477a3e1a",
-        "current_sha256": "b9070e14efdbb1386c182729ba510f8cffea6a4bbea5630ccc2ac95e477a3e1a",
+        "recorded_sha256": "e2c669b3f494975fecd35955d96935d10f98f018e350006c36526a5448aacda4",
+        "current_sha256": "e2c669b3f494975fecd35955d96935d10f98f018e350006c36526a5448aacda4",
         "fresh": true
       },
       "scout-operations/research-outcome-registry.json": {
-        "recorded_sha256": "11e6ed8e5bfaa118b2e06f9d51826bef2ef0a661b42e604f6b21e4fdcb867a4d",
-        "current_sha256": "11e6ed8e5bfaa118b2e06f9d51826bef2ef0a661b42e604f6b21e4fdcb867a4d",
+        "recorded_sha256": "6e2331474966feafb7ad86aa3351b612f647aec96fdb59f3e90b88ebe74c804a",
+        "current_sha256": "6e2331474966feafb7ad86aa3351b612f647aec96fdb59f3e90b88ebe74c804a",
         "fresh": true
       },
       "api-discoveries/historical-crossref/manifest.json": {
@@ -75,7 +75,7 @@
     "historical_crossref_dois": 614,
     "identity_fast_exits": 426,
     "bounded_identity_reviews": 51,
-    "novel_research_candidates": 88,
+    "novel_research_candidates": 87,
     "preprint_holds": 7,
     "published_version_leads": 11,
     "other_evidence_holds": 2
@@ -108,8 +108,8 @@
     }
   },
   "public_candidate_pipeline": {
-    "public_feed_rows": 92,
-    "public_feed_batches": 39,
+    "public_feed_rows": 93,
+    "public_feed_batches": 40,
     "private_hub_imports": "NOT_VERIFIED",
     "reviewer_approvals": "NOT_VERIFIED",
     "new_public_reach_additions": "NOT_VERIFIED"
