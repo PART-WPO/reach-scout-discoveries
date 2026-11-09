@@ -1,0 +1,68 @@
+{
+  "schema": "reach-scout-decision-checkpoint-v1",
+  "decision_contract": "reach-scout-decision-pipeline-v2",
+  "input_fingerprint": "26f771e31190c505b1e9f8f86ce3c1034ed10309fbcbcd858d9dd398b4705210",
+  "index_fingerprint": "d4d4b973940a5371ba828e416132251a8c7cce00dd8d41e3296f6881b8e62871",
+  "case_input": {
+    "doi": "10.1007/s00382-022-06655-w",
+    "title": "Seasonal prediction of North American wintertime cold extremes in the GFDL SPEAR forecast system",
+    "cohort": "historical_crossref",
+    "publication_status": "NOT_CHECKED",
+    "primary_award_match": null,
+    "project_attribution": "NOT_CHECKED",
+    "checked_sources": [
+      "https://essd.copernicus.org/preprints/essd-2023-389/essd-2023-389.pdf",
+      "https://pubmed.ncbi.nlm.nih.gov/40247814/",
+      "https://repository.library.noaa.gov/view/noaa/66066",
+      "https://repository.library.noaa.gov/view/noaa/66066/noaa_66066_DS1.pdf",
+      "https://www.gfdl.noaa.gov/climate-dynamics-and-prediction-publications/",
+      "https://www.gfdl.noaa.gov/wp-content/uploads/2023/09/GFDL_Summer_2023_Bulletin.pdf"
+    ],
+    "research_rounds": 2,
+    "secondary_identity_checked": false,
+    "required_metadata_verified": false,
+    "private_review_status": "NOT_VERIFIED",
+    "source_evidence": [
+      {
+        "path": "scout-operations/historical-crossref-phase2/2026-11-05-0233ET-gfdl-spear-cold-extremes-evidence.json",
+        "sha256": "e4322f5b8c7ce1d70653f4388a8afd1ad30488e8f0af7416c22a77116a6f4e13"
+      },
+      {
+        "path": "scout-operations/historical-crossref-phase2/2026-11-05-0324ET-gfdl-spear-award-scope-followup.json",
+        "sha256": "d38bcd57645123aadeb95ff9eb7e050ce1154ff122971bff6f7630548b6e688e"
+      }
+    ],
+    "research_budget_exhausted": true
+  },
+  "evaluation": {
+    "doi": "10.1007/s00382-022-06655-w",
+    "cohort": "historical_crossref",
+    "identity_check": {
+      "status": "NO_PUBLIC_IDENTITY_MATCH",
+      "reason": "NO_MATCH_IN_VERIFIED_PUBLIC_SNAPSHOT",
+      "matches": [],
+      "caveat": "Public snapshot only; private Hub decisions are not asserted."
+    },
+    "project_attribution": "NOT_CHECKED",
+    "primary_award_match": null,
+    "publication_status": "NOT_CHECKED",
+    "private_review_status": "NOT_VERIFIED",
+    "research_rounds": 2,
+    "decision": "PUBLICATION_STATUS_UNVERIFIED",
+    "review_action": "NONE",
+    "notes": [],
+    "checked_sources": [
+      "https://essd.copernicus.org/preprints/essd-2023-389/essd-2023-389.pdf",
+      "https://pubmed.ncbi.nlm.nih.gov/40247814/",
+      "https://repository.library.noaa.gov/view/noaa/66066",
+      "https://repository.library.noaa.gov/view/noaa/66066/noaa_66066_DS1.pdf",
+      "https://www.gfdl.noaa.gov/climate-dynamics-and-prediction-publications/",
+      "https://www.gfdl.noaa.gov/wp-content/uploads/2023/09/GFDL_Summer_2023_Bulletin.pdf"
+    ],
+    "unverified_private_hub_import": true,
+    "automatically_staged": false,
+    "seed_expansion_preserved": true
+  },
+  "source_case_path": "scout-operations/research-decision-cases.json",
+  "human_decision_modified": false
+}
