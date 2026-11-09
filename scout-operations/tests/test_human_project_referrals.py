@@ -192,10 +192,14 @@ class HumanProjectReferrals(unittest.TestCase):
             folder.mkdir(parents=True)
             path=folder/"2026-11-06-human-project-safe.csv"
             import csv
+            import hashlib
+            expected="REACH-SCOUT-HUMAN-SCOPE-"+hashlib.sha256(
+                ("10.1109/testsafe|"+"a"*24).encode()).hexdigest()[:18]
             with path.open("w",newline="") as f:
-                w=csv.DictWriter(f,fieldnames=["DOI","Scout Discovery Rationale"])
+                w=csv.DictWriter(f,fieldnames=["DOI","Scout Discovery Rationale","Source Run ID"])
                 w.writeheader()
                 w.writerow({"DOI":"10.1109/testsafe",
+                    "Source Run ID":expected,
                     "Scout Discovery Rationale":"Scout classification: NEEDS INVESTIGATION"})
             event={"event_id":"a"*24,"source_sha256":"b"*64}
             rel=path.relative_to(root).as_posix()
