@@ -121,7 +121,7 @@ class SharedDispositionTests(unittest.TestCase):
     def test_shared_and_official_ir_identify_existing_reach_consistently(self):
         public=index()
         url="https://repository.library.noaa.gov/view/noaa/333"
-        public["records"][0]["urls"].append(url)
+        public["records"][0]["dois"] = []  # Official IR fallback only when no conflicting REACH DOI\n        public["records"][0]["urls"].append(url)
         public["keys"]["url"][url]=[0]
         ir={"dois":{"10.1234/alternate-doi":[url]}}
         result=verified_disposition(public,watchlist(),ir,doi="10.1234/alternate-doi",
