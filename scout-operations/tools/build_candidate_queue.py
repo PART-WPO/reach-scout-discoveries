@@ -85,8 +85,10 @@ def build(routing,registry,award_evidence=None,preprints=None):
   if lane in ("NOVEL_IDENTITY_RESEARCH","BOUNDED_IDENTITY_REVIEW") and disposition=="PROJECT_EVIDENCE_HOLD":
    if signal in ("POSSIBLE_WPO_459","MIXED_432_459"):
     lane,rank,action="HUMAN_REVIEW_FAST_SCREEN_DUE",85,"Prior research stopped at unverified funding. Reuse its source evidence; complete identity/publication checks and route plausible 459 WPO lead to Needs Investigation in this mission, not another generic project-proof round"
+   elif signal=="CI_432_NEEDS_PROJECT_PROOF":
+    lane,rank,action="NON_459_PROJECT_EVIDENCE_CHECK",30,"One specific SPARK primary-project check; refer only with credible WPO project scope, otherwise document evidence-limited decision"
    else:
-    lane,rank,action="NON_459_PROJECT_EVIDENCE_CHECK",30,"One specific SPARK primary-project check; refer if concrete evidence supports WPO project scope, otherwise document evidence-limited decision"
+    lane,rank,action="WAIT_FOR_NEW_EVIDENCE",10,"Unresolved earlier hold without a specific WPO award clue: do not repeat original attribution searches unless source evidence materially changes"
   elif lane in ("NOVEL_IDENTITY_RESEARCH","BOUNDED_IDENTITY_REVIEW") and disposition=="PREPRINT_HOLD":
    lane,rank,action="WAIT_FOR_NEW_EVIDENCE",10,"Original preprint remains monthly watchlist; do not re-research hourly"
   preprint=preprints.get(d)
