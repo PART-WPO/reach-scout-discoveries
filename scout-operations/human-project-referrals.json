@@ -1,21 +1,22 @@
 {
   "schema": "reach-scout-bounded-project-human-referral-v1",
-  "source_outcome_event_count": 55,
-  "source_outcome_sha256": "bb0e53938d7d55b79c8c78c86c738c20eff02b0d211ef65a066cb67c1536c209",
+  "source_outcome_event_count": 56,
+  "source_outcome_sha256": "4d588f1c07e08c0721b42e0540ffca99f35e072650b24bd4c58fdb4ab5158737",
   "unique_bounded_project_questions": 2,
-  "potential_wpo_cases_quick_screened": 9,
-  "human_referral_drafts_prevalidated": 2,
+  "potential_wpo_cases_quick_screened": 10,
+  "human_referral_drafts_prevalidated": 1,
   "draft_paths": [
-    "scout-discoveries/inbox/2026-11-09-human-project-8963668e6a0f98ac1c.csv",
-    "scout-discoveries/inbox/2026-11-09-human-project-ec8541bda93af057fc.csv"
+    "scout-discoveries/inbox/2026-11-09-human-project-e8ae57179ced9c8d19.csv"
   ],
   "published_batch_paths": [
     "scout-discoveries/batches/2026-11-09-human-project-b332d53770e8cbc1d4.csv",
     "scout-discoveries/batches/2026-11-09-human-project-866c8052a22849b2de.csv",
     "scout-discoveries/batches/2026-11-09-human-project-398fe73f0c7f3ffa37.csv",
+    "scout-discoveries/batches/2026-11-09-human-project-8963668e6a0f98ac1c.csv",
+    "scout-discoveries/batches/2026-11-09-human-project-ec8541bda93af057fc.csv",
     "scout-discoveries/batches/2026-11-06-human-project-b616c2488c1fe907f3.csv"
   ],
-  "verified_public_scout_referral_batches": 4,
+  "verified_public_scout_referral_batches": 6,
   "human_reviewer_decisions": "NOT_VERIFIED",
   "private_hub_imports": "NOT_VERIFIED",
   "new_approved_reach_outputs": 0,
@@ -1101,9 +1102,32 @@
         ]
       },
       "public_identity": {
-        "status": "NO_PUBLIC_IDENTITY_MATCH",
-        "reason": "NO_MATCH_IN_VERIFIED_PUBLIC_SNAPSHOT",
-        "matches": [],
+        "status": "IN_PUBLIC_SCOUT_QUEUE",
+        "reason": "CONSISTENT_SCOUT_PUBLIC_MIRRORS",
+        "matches": [
+          {
+            "source": "SCOUT_PUBLISHED",
+            "identity": "2026-11-09-human-project-8963668e6a0f98ac1c:2",
+            "title": "Meteorological and Emission Drivers of Compound Heat and Ozone Pollution Episodes in Oklahoma City During Periods Influenced by Atlantic Tropical Cyclones",
+            "location": "scout-discoveries/batches/2026-11-09-human-project-8963668e6a0f98ac1c.csv:2",
+            "match_bases": [
+              "exact_doi",
+              "exact_url",
+              "normalized_title"
+            ]
+          },
+          {
+            "source": "SCOUT_INBOX",
+            "identity": "2026-11-09-human-project-8963668e6a0f98ac1c.csv:2",
+            "title": "Meteorological and Emission Drivers of Compound Heat and Ozone Pollution Episodes in Oklahoma City During Periods Influenced by Atlantic Tropical Cyclones",
+            "location": "scout-discoveries/inbox/2026-11-09-human-project-8963668e6a0f98ac1c.csv:2",
+            "match_bases": [
+              "exact_doi",
+              "exact_url",
+              "normalized_title"
+            ]
+          }
+        ],
         "caveat": "Public snapshot only; private Hub decisions are not asserted.",
         "noaa_ir_reach_check": {
           "status": "VERIFIED_IR_URL_NOT_IN_PUBLIC_REACH",
@@ -1118,10 +1142,10 @@
         "wpo_award_cue_not_proof": true,
         "reason_for_review": "WPO-pattern award cited but exact funded project deliverable unverified"
       },
-      "disposition": "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL",
+      "disposition": "HOLD_ALREADY_IN_PUBLIC_REACH_OR_SCOUT",
       "review_question": "Reviewer question: Is this independently published output a deliverable of SPARK primary award NA22OAR4590512 (rather than merely topically related), and if so which project parent should it use?",
-      "scout_inbox_status": "VALIDATED_INBOX_DRAFT_NOT_PRIVATE_HUB",
-      "published_scout_batch_path": null,
+      "scout_inbox_status": "PUBLISHED_PUBLIC_SCOUT_FEED_NOT_PRIVATE_HUB",
+      "published_scout_batch_path": "scout-discoveries/batches/2026-11-09-human-project-8963668e6a0f98ac1c.csv",
       "eligible_for_new_reach_addition": "NOT_VERIFIED",
       "private_hub_import": "NOT_VERIFIED",
       "human_approval": "NOT_VERIFIED"
@@ -1289,9 +1313,32 @@
         ]
       },
       "public_identity": {
-        "status": "NO_PUBLIC_IDENTITY_MATCH",
-        "reason": "NO_MATCH_IN_VERIFIED_PUBLIC_SNAPSHOT",
-        "matches": [],
+        "status": "IN_PUBLIC_SCOUT_QUEUE",
+        "reason": "CONSISTENT_SCOUT_PUBLIC_MIRRORS",
+        "matches": [
+          {
+            "source": "SCOUT_PUBLISHED",
+            "identity": "2026-11-09-human-project-ec8541bda93af057fc:2",
+            "title": "Two-Way Pattern Synthesis for the Airborne Phased Array Radar (APAR)",
+            "location": "scout-discoveries/batches/2026-11-09-human-project-ec8541bda93af057fc.csv:2",
+            "match_bases": [
+              "exact_doi",
+              "exact_url",
+              "normalized_title"
+            ]
+          },
+          {
+            "source": "SCOUT_INBOX",
+            "identity": "2026-11-09-human-project-ec8541bda93af057fc.csv:2",
+            "title": "Two-Way Pattern Synthesis for the Airborne Phased Array Radar (APAR)",
+            "location": "scout-discoveries/inbox/2026-11-09-human-project-ec8541bda93af057fc.csv:2",
+            "match_bases": [
+              "exact_doi",
+              "exact_url",
+              "normalized_title"
+            ]
+          }
+        ],
         "caveat": "Public snapshot only; private Hub decisions are not asserted.",
         "noaa_ir_reach_check": {
           "status": "DOI_NOT_IN_VERIFIED_IR_INDEX_UNKNOWN",
@@ -1306,10 +1353,10 @@
         "wpo_award_cue_not_proof": true,
         "reason_for_review": "WPO-pattern award cited but exact funded project deliverable unverified"
       },
-      "disposition": "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL",
+      "disposition": "HOLD_ALREADY_IN_PUBLIC_REACH_OR_SCOUT",
       "review_question": "Reviewer question: Is this independently published output a deliverable of SPARK primary award NA18OAR4590431 (rather than merely topically related), and if so which project parent should it use?",
-      "scout_inbox_status": "VALIDATED_INBOX_DRAFT_NOT_PRIVATE_HUB",
-      "published_scout_batch_path": null,
+      "scout_inbox_status": "PUBLISHED_PUBLIC_SCOUT_FEED_NOT_PRIVATE_HUB",
+      "published_scout_batch_path": "scout-discoveries/batches/2026-11-09-human-project-ec8541bda93af057fc.csv",
       "eligible_for_new_reach_addition": "NOT_VERIFIED",
       "private_hub_import": "NOT_VERIFIED",
       "human_approval": "NOT_VERIFIED"
@@ -1412,6 +1459,130 @@
       "review_question": "Reviewer question: Is this independently published output a deliverable of SPARK primary award NA18OAR4590431 (rather than merely topically related), and if so which project parent should it use?",
       "scout_inbox_status": "PUBLISHED_PUBLIC_SCOUT_FEED_NOT_PRIVATE_HUB",
       "published_scout_batch_path": "scout-discoveries/batches/2026-11-06-human-project-b616c2488c1fe907f3.csv",
+      "eligible_for_new_reach_addition": "NOT_VERIFIED",
+      "private_hub_import": "NOT_VERIFIED",
+      "human_approval": "NOT_VERIFIED"
+    },
+    {
+      "doi": "10.1126/sciadv.aee4171",
+      "source_event_id": "b9430b021a3c30bcb5270193",
+      "source_file": "scout-operations/historical-crossref-phase2/2026-11-09-1535ET-stratospheric-wave-sciadv-human-fast-screen.json",
+      "source_sha256": "9a0569c1210478eb7634bae0a57241c315114babbaa6d854ed23234b24484ebc",
+      "official_metadata": {
+        "status": "ok",
+        "provider": "crossref",
+        "evidence": "https://api.crossref.org/works/10.1126/sciadv.aee4171",
+        "title": "Stratospheric wave predictability enhances surface forecasts over North America",
+        "creators": [
+          "Xiuyuan Ding",
+          "Baoqiang Xiang",
+          "Gang Chen",
+          "Liping Wang"
+        ],
+        "resource_type": "journal-article",
+        "publication_status": "official_journal_article",
+        "abstract": "<jats:p>Advances in subseasonal-to-seasonal (S2S) forecasting have broad socioeconomic benefits. Stratospheric variability has been identified as a major source of surface predictability on S2S timescales, yet its influence on forecasting North American cold extremes has not been fully understood. Here, using hindcasts from a coupled S2S forecast system, we identify a wave-1–like pattern among leading sources of predictability in the lower stratosphere during extended winters. This mode, characterized by strong stratospheric wave activity, improves second-week temperature prediction over North America by 15% (2 to 28%). It also increases the likelihood of North American cold extremes by 50%. Prediction skill for these extremes increases by 28% in forecasts conditioned on the wave-1–like stratospheric mode, across regions inhabited by over 69% of the Canadian population and over 30% of the U.S. population. These skill enhancements are attributed to the vertical wave coupling between the stratosphere and troposphere, distinct from the well-known downward influence of sudden stratospheric warmings (SSW). By conditioning forecasts on stratospheric states, our findings highlight strong stratospheric waves as windows of opportunity for skillful winter S2S predictions.</jats:p>",
+        "pub_date": "2026-09-18",
+        "preprint_posted_date": "",
+        "pub_date_basis": "Crossref published-print",
+        "pub_date_precision": "day",
+        "publisher": "American Association for the Advancement of Science (AAAS)",
+        "funding_references": [
+          {
+            "DOI": "10.13039/100000192",
+            "name": "National Oceanic and Atmospheric Administration",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "NA23OAR4320198"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "NA23OAR4320198"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100000192",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "name": "UCAR’s Cooperative Programs for the Advancement of Earth System Science",
+            "award": [
+              "NA21OAR4310383"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "NA21OAR4310383"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "https://ror.org/0015pkk46",
+                "id-type": "ROR",
+                "asserted-by": "crossref"
+              }
+            ]
+          },
+          {
+            "name": "OAA Climate Test Bed program",
+            "award": [
+              "NA22OAR4590217"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "NA22OAR4590217"
+                ]
+              }
+            ]
+          }
+        ],
+        "related_identifiers": {},
+        "attempts": [
+          {
+            "provider": "datacite",
+            "url": "https://api.datacite.org/dois/10.1126/sciadv.aee4171",
+            "error": {
+              "kind": "http",
+              "code": 404
+            }
+          },
+          {
+            "provider": "crossref",
+            "url": "https://api.crossref.org/works/10.1126/sciadv.aee4171",
+            "error": null
+          }
+        ]
+      },
+      "public_identity": {
+        "status": "NO_PUBLIC_IDENTITY_MATCH",
+        "reason": "NO_MATCH_IN_VERIFIED_PUBLIC_SNAPSHOT",
+        "matches": [],
+        "caveat": "Public snapshot only; private Hub decisions are not asserted.",
+        "noaa_ir_reach_check": {
+          "status": "VERIFIED_IR_URL_NOT_IN_PUBLIC_REACH",
+          "official_url": "https://repository.library.noaa.gov/view/noaa/76513",
+          "match_uid": null,
+          "match_detail_shard": null
+        }
+      },
+      "project_search_context_only": {
+        "award_context_only": "NA22OAR4590217",
+        "project_context_only": "",
+        "wpo_award_cue_not_proof": true,
+        "reason_for_review": "WPO-pattern award cited but exact funded project deliverable unverified"
+      },
+      "disposition": "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL",
+      "review_question": "Reviewer question: Is this independently published output a deliverable of SPARK primary award NA22OAR4590217 (rather than merely topically related), and if so which project parent should it use?",
+      "scout_inbox_status": "VALIDATED_INBOX_DRAFT_NOT_PRIVATE_HUB",
+      "published_scout_batch_path": null,
       "eligible_for_new_reach_addition": "NOT_VERIFIED",
       "private_hub_import": "NOT_VERIFIED",
       "human_approval": "NOT_VERIFIED"
