@@ -8,6 +8,7 @@ funding, selects a Smartsheet parent, or proves a private Hub import.
 import argparse
 import hashlib
 import json
+import re
 from datetime import date
 from pathlib import Path
 
@@ -20,24 +21,95 @@ OUTPUT=ROOT/"scout-operations/human-project-referrals.json"
 SCHEMA="reach-scout-bounded-project-human-referral-v1"
 PURPOSE="NEEDS INVESTIGATION"
 PROMOTE_LIMIT=3
+WPO_AWARD_CUE=re.compile(r"^NA\d{2}OARX?459(?:C)?[A-Z0-9-]+$", re.I)
+EXPLICIT_CONTRADICTION=(
+    "CONTRADICTORY_TO_PILOT_PROJECT_AWARD",
+    "NOT_CORROBORATED_AND_PARENT_PUBLICATION_HAS_CONTRADICTORY_AWARD",
+    "VERIFIED_DIFFERENT_PROJECT",
+    "CONTRADICTED",
+    "DISPROVED",
+)
+
+
+def matching_note_case(event, doc):
+    """Match exact output; never inherit parent funding into a child DOI."""
+    subject=doc.get("research_subject")
+    if isinstance(subject,dict) and subject.get("child_dois"):
+        return None
+    cases=doc.get("cases")
+    if isinstance(cases,list):
+        selected=[x for x in cases if isinstance(x,dict)
+                  and norm_doi(x.get("doi"))==norm_doi(event.get("doi"))]
+        return selected[0] if len(selected)==1 else None
+    own=(doc.get("doi") or doc.get("original_doi") or
+         doc.get("source_parent_original_doi"))
+    if own and norm_doi(own)!=norm_doi(event.get("doi")):
+        return None
+    return doc
+
+def note_contradicts_target(entry,doc):
+    """Only structured *explicit* contradiction fields can screen out."""
+    for obj in (entry,doc):
+        if not isinstance(obj,dict):
+            continue
+        for key in ("funding","project_attribution","same_project_wpo_funding",
+                    "award_evidence_status","funding_signal"):
+            if str(obj.get(key) or "").strip().upper() in EXPLICIT_CONTRADICTION:
+                return True
+    return False
 
 def eligible_record(event, doc):
-    """Provide an exact project-award search context, not a verified award."""
-    cases=doc.get("cases")
-    entry=next((x for x in cases if norm_doi(x.get("doi"))==norm_doi(event["doi"])),
-               {}) if isinstance(cases,list) else doc
-    award=str(entry.get("spark_primary_award_context") or entry.get("proposed_primary_award")
+    """Plausible WPO context for *human investigation*, not eligible funding."""
+    entry=matching_note_case(event,doc)
+    if entry is None or note_contradicts_target(entry,doc):
+        return None
+    award=str(entry.get("spark_primary_award_context")
+              or entry.get("proposed_primary_award")
+              or entry.get("primary_award_candidate")
+              or entry.get("structured_award")
+              or entry.get("structured_award_context")
+              or entry.get("award_number_in_official_noaa_ir")
+              or entry.get("wpo_primary_award")
               or doc.get("proposed_primary_award") or "").strip()
-    # General NOAA umbrella awards alone are not adequate project-specific
-    # clues for automatic generation of another reviewer card.
     project=str(entry.get("spark_project_title") or entry.get("proposed_spark_project")
                 or doc.get("proposed_spark_project") or "").strip()
-    if not award or award in {"NOT_VERIFIED","UNK"}:
+    if not award or award in {"NOT_VERIFIED","UNK","UNKNOWN","NONE"}:
         return None
-    if "PROJECT_TITLE" not in str(event.get("research_lane","")).upper() and not project:
+    direct_wpo_cue=bool(WPO_AWARD_CUE.fullmatch(award))
+    # Generic NOAA or Cooperative Institute context alone never creates an
+    # automatic reviewer card, but a documented, specific SPARK project-title
+    # lead remains a plausible human question.
+    project_title_lead=("PROJECT_TITLE" in
+        str(event.get("research_lane","")).upper() and bool(project))
+    if not direct_wpo_cue and not project_title_lead:
         return None
     return {"award_context_only":award,"project_context_only":project,
-            "source_case":entry}
+            "source_case":entry,
+            "wpo_award_cue_not_proof":direct_wpo_cue,
+            "reason_for_review":("WPO-pattern award cited but exact funded project deliverable unverified"
+                                if direct_wpo_cue else
+                                "Specific SPARK project-title research lead needs human association")}
+
+def score_for_human_review(meta,identity,project,source_urls):
+    """Uncalibrated prioritization points, not probability or grant proof."""
+    if not publication_meta_valid(meta) or identity.get("status")!="NO_PUBLIC_IDENTITY_MATCH":
+        return {"score":0,"band":"Not ready","meaning":"Fast-screen eligibility unmet"}
+    points=25  # officially dated distinct output identity
+    if project.get("wpo_award_cue_not_proof"):
+        points+=20
+    if project.get("project_context_only"):
+        points+=10
+    if len({u for u in source_urls if str(u).startswith("https://")})>=2:
+        points+=10
+    if (identity.get("noaa_ir_reach_check") or {}).get("status") not in (
+        "IR_INDEX_UNAVAILABLE_HOLD","AMBIGUOUS_IR_DOI_HOLD",
+        "MULTIPLE_REACH_RECORDS_HOLD","REACH_DOI_CONFLICT_VERSION_REVIEW",
+        "IR_URL_MATCH_REQUIRES_REVIEW"):
+        points+=10
+    points+=10  # fresh public identity screen has no matching output
+    points=min(points,70)  # unconfirmed WPO project can never be "high"
+    return {"score":points,"band":("Medium" if points>=50 else "Low"),
+            "meaning":"Heuristic new-output screening priority; NOT calibrated probability or WPO funding proof"}
 
 def publication_meta_valid(meta):
     if meta.get("status")!="ok" or meta.get("publication_status")=="preprint":
@@ -62,11 +134,9 @@ def referral_state(event,meta,identity,prior=None,watched=False,project=None):
                "MULTIPLE_REACH_RECORDS_HOLD","REACH_DOI_CONFLICT_VERSION_REVIEW",
                "IR_URL_MATCH_REQUIRES_REVIEW"}:
         return "HOLD_IR_OR_REACH_SOURCE_INCOMPLETE"
-    if not event.get("bounded_human_question_to_verify"):
-        return "HOLD_RESEARCH_PROOF_INCOMPLETE"
     return "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL"
 
-def proposal(doi,meta,event,project):
+def proposal(doi,meta,event,project,identity=None):
     urls=event["checked_evidence_urls"]
     primary=next((x for x in urls if "ieeexplore.ieee.org" in x or
                   "journals.ametsoc.org" in x or "onlinelibrary.wiley.com" in x),urls[0])
@@ -74,6 +144,8 @@ def proposal(doi,meta,event,project):
     if not title:return None
     authors="; ".join(str(x) for x in meta.get("creators",[])[:20] if x)
     core_id=hashlib.sha256((doi+"|"+event["event_id"]).encode()).hexdigest()[:18]
+    confidence=score_for_human_review(meta,identity or {"status":"NO_PUBLIC_IDENTITY_MATCH"},
+                                      project,urls)
     fields={"Title":title,"DOI":doi,"Output URL":"https://doi.org/"+doi,
         "Output Type":"1","NOAA Award Number(s)":"",
         "Proposed Project Title":"","Suggested Parent Project":"",
@@ -81,7 +153,7 @@ def proposal(doi,meta,event,project):
         "Brief Abstract":meta.get("abstract") or "",
         "Evidence URL":primary,"Funding Evidence URL":"",
         "Existing REACH Match":"No public DOI/title/URL match in SHA-verified REACH/Scout + official NOAA IR crosswalk. Private history not verified.",
-        "Scout Confidence":"Low",
+        "Scout Confidence":confidence["band"],
         "Source Run ID":"REACH-SCOUT-HUMAN-SCOPE-"+core_id}
     context="Research was bounded; publisher/program evidence supports publication identity but the specific WPO primary project association has NOT been demonstrated."
     question=("Is this independently published output a deliverable of SPARK primary award "+
@@ -96,7 +168,9 @@ def proposal(doi,meta,event,project):
             "Finding: Official publication metadata identifies "+title+"; WPO project eligibility remains unresolved.",
             "What to check before adding this output: Verify primary SPARK project award and explicit output-to-project bridge; check publisher funding; confirm no duplicate REACH or version family before approving.",
             "Reviewer question: "+question,
-            "Research handoff: bounded project-attribution question, NOT an eligible new REACH output or approved association.",
+            "Scout screening score: "+str(confidence["score"])+"/100 ("+confidence["band"]+"). "+confidence["meaning"],
+            "Finding: This officially dated output has a plausible WPO lead but its exact WPO project attribution needs the reviewer.",
+            "Research handoff: rapid Needs Investigation screening; NOT an eligible new REACH output or approved association.",
             "Potential primary SPARK award SEARCH CONTEXT ONLY: "+project["award_context_only"],
             "Research source evidence: "+" ; ".join(urls[:5]),
             "Private Hub import and any prior unsynchronized review remain NOT VERIFIED.",
@@ -224,8 +298,19 @@ def build(root=ROOT,metadata=None,public_identity=None,stage=False):
         raise ValueError("Unexpected previous human referral contract; do not overwrite")
     potential={}
     for event in registry["events"]:
-        if (event["bounded_human_question_to_verify"] and event["doi"] and
-            event["operational_disposition"]=="BOUNDED_PROJECT_QUESTION_FOR_HUMAN"):
+        if not event.get("doi") or not event["source_path"].startswith(
+                "scout-operations/historical-crossref-phase2/"):
+            continue
+        path=root/event["source_path"]
+        raw=path.read_bytes()
+        if hashlib.sha256(raw).hexdigest()!=event["source_sha256"]:
+            raise ValueError("Source research note SHA mismatch: "+event["source_path"])
+        doc=json.loads(raw)
+        # Quick official-publication / 459 WPO-cue screen. These are leads,
+        # not claims that this award actually funded the specific output.
+        project=eligible_record(event,doc)
+        if project and (event.get("checked_evidence_urls") or
+                        event.get("bounded_human_question_to_verify")):
             potential.setdefault(event["doi"],[]).append(event)
     responses=[]
     submitted=[]
@@ -250,7 +335,7 @@ def build(root=ROOT,metadata=None,public_identity=None,stage=False):
         effective_check=({**check,"status":"NO_PUBLIC_IDENTITY_MATCH"} if own_draft else check)
         state=referral_state(source,meta,effective_check,previous.get(doi),
               is_tracked_preprint(doi),project)
-        candidate=proposal(doi,meta,source,project) if state=="READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL" else None
+        candidate=proposal(doi,meta,source,project,effective_check) if state=="READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL" else None
         status="NOT_STAGED"
         if own_published:
             # A public proposal is an existing unit of review work, never
@@ -280,7 +365,7 @@ def build(root=ROOT,metadata=None,public_identity=None,stage=False):
             "official_metadata":meta,"public_identity":check,
             "project_search_context_only":{k:v for k,v in (project or {}).items() if k!="source_case"},
             "disposition":state,
-            "review_question":(candidate["provenance"]["notes"][2] if candidate else
+            "review_question":(next((n for n in candidate["provenance"]["notes"] if n.startswith("Reviewer question:")), "") if candidate else
                                cached.get("review_question",source["next_action"]) if cached else
                                source["next_action"]),
             "scout_inbox_status":status,
@@ -292,7 +377,10 @@ def build(root=ROOT,metadata=None,public_identity=None,stage=False):
     return {"schema":SCHEMA,
         "source_outcome_event_count":registry["research_note_events"],
         "source_outcome_sha256":hashlib.sha256(json.dumps(registry,sort_keys=True).encode()).hexdigest(),
-        "unique_bounded_project_questions":len(potential),
+        "unique_bounded_project_questions":sum(
+            any(e.get("bounded_human_question_to_verify") for e in events)
+            for events in potential.values()),
+        "potential_wpo_cases_quick_screened":len(potential),
         "human_referral_drafts_prevalidated":len(submitted),
         "draft_paths":submitted,
         "published_batch_paths":already_published,
@@ -300,7 +388,7 @@ def build(root=ROOT,metadata=None,public_identity=None,stage=False):
         "human_reviewer_decisions":"NOT_VERIFIED",
         "private_hub_imports":"NOT_VERIFIED",
         "new_approved_reach_outputs":0,
-        "policy":"Bounded investigation can refer an independently published DOI for a human WPO-project funding question. No project award or REACH eligibility is asserted. Preprint, duplicate, no-source or prior-human-review cases stay held.",
+        "policy":"Fast-screen plausible 459 WPO award cues and specific project-title leads into confidence-scored Needs Investigation after official DOI metadata, checked public REACH+Scout+IR identity, preprint and past-review gates. Award context stays out of authoritative WPO award field; score is not probability or funding proof. Private Hub import is not verified.",
         "referrals":responses}
 
 def main():
@@ -313,6 +401,7 @@ def main():
     if not OUTPUT.exists() or OUTPUT.read_text(encoding="utf-8")!=text:
         OUTPUT.write_text(text,encoding="utf-8")
     print(json.dumps({"review_questions":r["unique_bounded_project_questions"],
+                      "potential_wpo_cases_quick_screened":r["potential_wpo_cases_quick_screened"],
                       "validated_inbox_drafts":r["human_referral_drafts_prevalidated"],
                       "statuses":{x["doi"]:x["disposition"] for x in r["referrals"]}},indent=2))
 
