@@ -46,18 +46,19 @@
     "scout-operations/historical-crossref-phase2/2026-11-09-1129ET-seus-rainfall-zenodo-related-ci-award-hold.json": "0883da54489273c03831e2801fddc9d20c6ba8bfaa48fe10a83b34a0cc4e28e5",
     "scout-operations/historical-crossref-phase2/2026-11-09-1332ET-north-american-heat-s2s-publisher-ir-project-hold.json": "1ca15edd7e9ed9e9cadcc5032273de83d8f891f129e2f167ce17c9d818695127",
     "scout-operations/historical-crossref-phase2/2026-11-09-1431ET-severe-hail-target-dataset-primary-project-hold.json": "09a3e6fa677ee15376755e371e38c346571c913f1497272d1b794f22f5cfe059",
+    "scout-operations/historical-crossref-phase2/2026-11-09-1533ET-oklahoma-compound-heat-ozone-wpo-human-fast-screen.json": "3226e5f30819b3a63ad32968889a46d8ed80640505a36ed17d0cd966d6028f08",
     "scout-operations/monthly-research/2026-11-06-0528ET-storm-harry-qj70325-project-scope-hold.json": "9bf7c3c778f1cbf1622db3e994b7facc446367f5cc3ed6094517ab5884722911",
     "scout-operations/monthly-research/2026-11-06-0630ET-storm-harry-ecmwf-two-doi-access-holds.json": "38d2065e50f5691c4452ea054a54409a88392e3d76f60969a311a78d96b3bf7c",
     "scout-operations/monthly-research/2026-11-06-0730ET-storm-harry-ecmwf-official-catalog-followup.json": "7a63adfadb964734abec498d27cc54bc6e431d0cb8f51c11bdc8f4e6131491c3",
     "scout-operations/monthly-research/2026-11-06-0830ET-storm-harry-global-drifter-award-scope-followup.json": "684a66155c7ad188613f0217e371ba692f300a27bb1ab16a1b7d40f09c1198bc"
   },
-  "evidence_files_scanned": 45,
+  "evidence_files_scanned": 46,
   "source_files_without_explicit_output_id": [],
-  "research_note_events": 54,
+  "research_note_events": 55,
   "distinct_research_identities": 36,
   "operational_disposition_counts": {
     "BOUNDED_PROJECT_QUESTION_FOR_HUMAN": 2,
-    "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY": 19,
+    "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY": 20,
     "PREPRINT_MONTHLY_WATCH": 1,
     "PROJECT_EVIDENCE_HOLD": 31,
     "TECHNICAL_METADATA_RECOVERY": 1
@@ -1259,6 +1260,31 @@
       "reviewer_approval": "NOT_VERIFIED"
     },
     {
+      "event_id": "18c34833b7b9cf4a087ba479",
+      "identity": "doi:10.1029/2026jd046327",
+      "doi": "10.1029/2026jd046327",
+      "url_only": null,
+      "role_in_note": "original",
+      "research_lane": "historical_crossref_original",
+      "source_path": "scout-operations/historical-crossref-phase2/2026-11-09-1533ET-oklahoma-compound-heat-ozone-wpo-human-fast-screen.json",
+      "source_sha256": "3226e5f30819b3a63ad32968889a46d8ed80640505a36ed17d0cd966d6028f08",
+      "source_time": "2026-11-09T15:33:42-05:00",
+      "raw_decision": "NEEDS_INVESTIGATION_PUBLIC_REFERRAL_REQUEST",
+      "operational_disposition": "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+      "next_action": "Use source-verified official DOI metadata and current full REACH+Scout+NOAA IR and signed human feedback to create at most one confidence-scored Needs Investigation public inbox draft. Reviewer question: Is this journal article a deliverable of primary SPARK award NA22OAR4590512, given the publisher says only NEMO development was partially funded by WPO? Keep award/parent fields blank until verified. If existing public Scout match, fast exit without restaging.",
+      "checked_evidence_urls": [
+        "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2026JD046327",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/scout-operations/crossref-candidate-queue.json"
+      ],
+      "source_count": 2,
+      "bounded_human_question_to_verify": false,
+      "formal_original_closed": false,
+      "separate_expansion_closed": false,
+      "new_public_proposal": false,
+      "private_hub_import": "NOT_VERIFIED",
+      "reviewer_approval": "NOT_VERIFIED"
+    },
+    {
       "event_id": "d1c7f1c43f43721992142729",
       "identity": "doi:10.1002/qj.70325",
       "doi": "10.1002/qj.70325",
@@ -1697,16 +1723,17 @@
     },
     {
       "identity": "doi:10.1029/2026jd046327",
-      "latest_event_id": "93117f244321521036114636",
-      "latest_evidence_path": "scout-operations/historical-crossref-phase2/2026-11-08-2329ET-compound-heat-ozone-publisher-attribution.json",
+      "latest_event_id": "18c34833b7b9cf4a087ba479",
+      "latest_evidence_path": "scout-operations/historical-crossref-phase2/2026-11-09-1533ET-oklahoma-compound-heat-ozone-wpo-human-fast-screen.json",
       "latest_operational_disposition": "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
       "observed_dispositions": [
         "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY"
       ],
-      "source_file_count": 2,
+      "source_file_count": 3,
       "event_ids": [
         "2b3f15a701dc1d1b7a7e449b",
-        "93117f244321521036114636"
+        "93117f244321521036114636",
+        "18c34833b7b9cf4a087ba479"
       ],
       "project_judgment_referral_possible": false,
       "human_review_staged": false,
