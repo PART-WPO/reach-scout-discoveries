@@ -4,7 +4,7 @@
   "expansions_closed_by_memory": 0,
   "explicit_related_output_links": 11,
   "historical_metadata_pointers_not_treated_as_current": 229,
-  "historical_note_events_reused_as_context": 59,
+  "historical_note_events_reused_as_context": 60,
   "hub_records_automatically_staged": 0,
   "human_reviewer_decisions_changed": 0,
   "lane_doi_counts": {
@@ -11174,7 +11174,7 @@
         "explicit_parent_dois": [],
         "explicit_related_doi_count": 0,
         "explicit_related_dois": [],
-        "input_fingerprint": "cad944529e3eb03fadf12ad68edb18eb8b758db5eb3d3df2295f833462bb2450",
+        "input_fingerprint": "b5ce577092cfc4b48e80793e78495742f0f72a71b06b638bcc5c29d13b6b6b16",
         "nonterminal_related_dispositions": [],
         "recorded_related_note_count": 0,
         "recorded_related_note_event_ids": [],
@@ -11192,12 +11192,14 @@
       "original_research": {
         "formal_original_closed_by_memory": false,
         "identity_screened_current_snapshot": true,
-        "input_fingerprint": "cfe400b7ba39ed8596f88b720cf6129b4ad13b5cd863a09f84e449568913cae3",
+        "input_fingerprint": "21d78a2592c158cb1cf94ebbf033b18a57921f98bacc8b31f4df1c86c30aa208",
         "nonterminal_dispositions": [
+          "BOUNDED_PROJECT_QUESTION_FOR_HUMAN",
           "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY"
         ],
-        "recorded_note_count": 1,
+        "recorded_note_count": 2,
         "recorded_note_event_ids": [
+          "0963d0103cec344cc7c8827c",
           "e9a3eb855a80038a8a040456"
         ],
         "reuse_prior_notes_before_new_queries": true,
@@ -11205,6 +11207,10 @@
           {
             "path": "scout-operations/historical-crossref-phase2/2026-11-09-1829ET-generative-ai-extreme-precipitation-official-459-screen.json",
             "sha256": "d09c724da23e5bf9bdf253a3f8a0198642c4d5473b2bb4a8f804692604f2b3d1"
+          },
+          {
+            "path": "scout-operations/historical-crossref-phase2/2026-11-09-1830ET-generative-ai-precipitation-459-human-referral-disposition.json",
+            "sha256": "162437f1a294893384a8070e81472d939a6b06b6b34921c98270086ea37134a8"
           }
         ]
       },
@@ -36071,7 +36077,7 @@
   "read_only": true,
   "schema": "reach-scout-crosslane-research-memory-v1",
   "source_documented_doi_nodes": 38,
-  "source_documented_doi_note_events": 58,
+  "source_documented_doi_note_events": 59,
   "source_documented_nondoi_note_events": 1,
   "source_evidence_sha256": {
     "historical_metadata_checkpoint_sha256": "3e41e0eaa517a4f490d28a95a8b8b1b3341103acdcc110ad744a506fb2683894",
@@ -36136,6 +36142,7 @@
       "scout-operations/historical-crossref-phase2/2026-11-09-1624ET-generative-ensemble-severe-weather-official-publisher-human-screen.json": "b54cfbd6e5596ebeb72606363e5abff9b2c87a9d5df415ed30addb418b9f1d59",
       "scout-operations/historical-crossref-phase2/2026-11-09-1729ET-upper-great-lakes-snow-publisher-459-new-candidate-screen.json": "8572e730725edf1227baaf8a12d095755fc13a716563e1bda3cca306c49fe955",
       "scout-operations/historical-crossref-phase2/2026-11-09-1829ET-generative-ai-extreme-precipitation-official-459-screen.json": "d09c724da23e5bf9bdf253a3f8a0198642c4d5473b2bb4a8f804692604f2b3d1",
+      "scout-operations/historical-crossref-phase2/2026-11-09-1830ET-generative-ai-precipitation-459-human-referral-disposition.json": "162437f1a294893384a8070e81472d939a6b06b6b34921c98270086ea37134a8",
       "scout-operations/monthly-research/2026-11-06-0528ET-storm-harry-qj70325-project-scope-hold.json": "9bf7c3c778f1cbf1622db3e994b7facc446367f5cc3ed6094517ab5884722911",
       "scout-operations/monthly-research/2026-11-06-0630ET-storm-harry-ecmwf-two-doi-access-holds.json": "38d2065e50f5691c4452ea054a54409a88392e3d76f60969a311a78d96b3bf7c",
       "scout-operations/monthly-research/2026-11-06-0730ET-storm-harry-ecmwf-official-catalog-followup.json": "7a63adfadb964734abec498d27cc54bc6e431d0cb8f51c11bdc8f4e6131491c3",
@@ -36156,7 +36163,7 @@
       "reviewer_feedback": "f54c95077b5d772008e5f630d4b81605749b24f2db3a4d6f43394aedf0c4fa2c"
     }
   },
-  "source_fingerprint": "f7dcb91d8abca7fed912cd4ee6dd8326db92131795efceb5c8c8475328baae65",
+  "source_fingerprint": "d2c7a7b12034a0da95a0a28092b9c33cc6faad285768b7ebfcdd83b00de24610",
   "verified_reach_originals_preserved_as_expansion_seeds": 426,
   "work_action_counts": {
     "CONTINUE_DISTINCT_RELATED_OUTPUT_VERIFICATION": 2,
@@ -41767,11 +41774,11 @@
       "can_skip_retrieving_unchanged_prior_note": true,
       "complete": false,
       "doi": "10.1175/aies-d-24-0063.1",
-      "input_fingerprint": "cfe400b7ba39ed8596f88b720cf6129b4ad13b5cd863a09f84e449568913cae3",
+      "input_fingerprint": "21d78a2592c158cb1cf94ebbf033b18a57921f98bacc8b31f4df1c86c30aa208",
       "lane": "HISTORICAL_CROSSREF",
       "next_action": "REUSE_SOURCE_VERIFIED_PRIOR_RESEARCH_NOT_CLOSURE",
       "not_a_human_decision": true,
-      "note_events_reused": 1,
+      "note_events_reused": 2,
       "track": "ORIGINAL"
     },
     {
@@ -41779,11 +41786,11 @@
       "complete": false,
       "doi": "10.1175/aies-d-24-0063.1",
       "existing_distinct_related_doi_links": 0,
-      "input_fingerprint": "cad944529e3eb03fadf12ad68edb18eb8b758db5eb3d3df2295f833462bb2450",
+      "input_fingerprint": "b5ce577092cfc4b48e80793e78495742f0f72a71b06b638bcc5c29d13b6b6b16",
       "lane": "HISTORICAL_CROSSREF",
       "next_action": "VERIFY_PROJECT_SCOPE_THEN_EXPAND",
       "not_a_human_decision": true,
-      "note_events_reused": 1,
+      "note_events_reused": 2,
       "track": "EXPANSION"
     },
     {
