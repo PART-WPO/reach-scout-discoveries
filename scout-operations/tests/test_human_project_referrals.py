@@ -115,13 +115,24 @@ class HumanProjectReferrals(unittest.TestCase):
         report=json.loads((root/"scout-operations/human-project-referrals.json").read_text())
         source=next(x for x in report["referrals"] if x["doi"]==doi)
         old_name=Path(source["published_scout_batch_path"]).name
+        replacement="2026-11-09-aies-d-23-0094-wpo459-reclassification-001.csv"
+        original="2026-11-09-human-project-9509397cf11df96346.csv"
         names=verified_replacement_batch_names(root,doi,{old_name},source["official_metadata"])
         self.assertIn(old_name,names)
-        self.assertIn("2026-11-09-aies-d-23-0094-wpo459-reclassification-001.csv",names)
+        self.assertIn(replacement,names)
+        # Both the original source batch and the already-upgraded batch must
+        # validate the SAME exact-DOI award, without adding a second review unit.
+        self.assertEqual(
+            verified_replacement_batch_names(root,doi,{original},source["official_metadata"]),
+            {original,replacement})
+        self.assertEqual(
+            verified_replacement_batch_names(root,doi,{replacement},source["official_metadata"]),
+            {replacement})
         self.assertEqual(verified_replacement_batch_names(root,"10.9999/unrelated",{old_name},
                          source["official_metadata"]),{old_name})
-        with self.assertRaises(ValueError):
-            verified_replacement_batch_names(root,doi,{old_name},self.published())
+        for starting_name in (original,replacement):
+            with self.assertRaises(ValueError):
+                verified_replacement_batch_names(root,doi,{starting_name},self.published())
 
     def test_clearly_contradictory_award_never_proposed(self):
         event={"doi":"10.1234/test","research_lane":"original"}
