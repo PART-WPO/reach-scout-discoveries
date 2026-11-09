@@ -188,7 +188,7 @@ def main():
     report = build()
     raw = (json.dumps(report, indent=2, ensure_ascii=False) + "\n").encode("utf-8")
     if args.check:
-        if not OUT.is_file() or OUT.read_bytes() != raw:
+        if not (ROOT / OUT).is_file() or (ROOT / OUT).read_bytes() != raw:
             raise SystemExit("Evidence-to-action pilot report is stale or missing")
         print("Pilot source SHA validation and deterministic report PASS")
     else:
