@@ -60,5 +60,25 @@ jobs:
           print(json.dumps({"preflighted": report['original_and_related_cases_preflighted'],
                             "no_auto_staging": True,"source_fingerprint": report["identity_index_fingerprint"]}))
           PY
-      - name: Verify public read-only 100-case identity replay (not accuracy)
-        run: python scout-operations/tools/identity_disposition.py --benchmark
+      - name: Rebuild read-only verified source index for 100-case replay (not accuracy)
+        run: |
+          python - <<'PY'
+          import json,sys
+          from collections import Counter
+          from pathlib import Path
+          sys.path.insert(0,'scout-operations/tools')
+          from decision_pipeline import ROOT, build_index, read_json
+          from identity_disposition import decide
+          idx=build_index(ROOT)
+          watch=read_json(ROOT/'scout-operations/preprint-watchlist.json')
+          sample=read_json(ROOT/'scout-operations/scout-v2-benchmark-100.json')
+          assert sample['sample_size']==len(sample['cases'])==100
+          outcomes=Counter(decide(idx,watch,doi=x['doi'])['disposition']
+                           for x in sample['cases'])
+          assert sum(outcomes.values())==100
+          print(json.dumps({'cases_replayed':100,
+                            'mode':'read_only_rebuild_from_checksum_verified_PR_sources',
+                            'dispositions':dict(outcomes),
+                            'gold_truth':'NOT_COLLECTED',
+                            'accuracy':'NOT_ESTIMABLE'}))
+          PY
