@@ -31,6 +31,14 @@ class CrosslaneMemoryTests(unittest.TestCase):
             self.assertEqual(g["lane_doi_counts"][lane], minimum)
         self.assertEqual(sum(g["lane_doi_counts"].values()), 827)
         self.assertEqual(g["historical_note_events_reused_as_context"], 50)
+        self.assertEqual(g["source_documented_doi_note_events"], 49)
+        self.assertEqual(g["source_documented_nondoi_note_events"], 1)
+        self.assertEqual(len(g["non_doi_code_or_url_research_notes"]), 1)
+        self.assertTrue(all(not e["research_complete_inferred"]
+                            and not e["human_review_inferred"]
+                            for e in g["non_doi_code_or_url_research_notes"]))
+        self.assertTrue(any(x["track"] == "CODE_OR_URL_EVIDENCE"
+                            for x in g["work_items"]))
         self.assertGreater(g["explicit_related_output_links"], 0)
         self.assertEqual(len(g["nodes"]), g["distinct_public_doi_nodes"])
         self.assertEqual(len(g["links"]), g["explicit_related_output_links"])
