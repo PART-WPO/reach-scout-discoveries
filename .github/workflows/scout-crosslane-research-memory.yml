@@ -1,0 +1,114 @@
+name: Scout cross-lane research memory and expansion checkpoint
+on:
+  pull_request:
+    paths:
+      - 'scout-operations/tools/build_crosslane_research_memory.py'
+      - 'scout-operations/tests/test_crosslane_research_memory.py'
+      - '.github/workflows/scout-crosslane-research-memory.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'scout-operations/tools/build_crosslane_research_memory.py'
+      - 'scout-operations/research-outcome-registry.json'
+      - 'scout-operations/unified-source-preflight.json'
+      - 'scout-operations/monthly-expansion-leads.json'
+      - 'scout-operations/independent-discovery-leads.json'
+      - 'scout-operations/research-leads/**'
+      - 'scout-operations/historical-crossref-phase2/*.json'
+      - 'scout-operations/monthly-research/*.json'
+      - 'scout-operations/historical-crossref-screening/actionable-routing.json'
+      - 'api-discoveries/historical/manifest.json'
+      - 'api-discoveries/historical-crossref/manifest.json'
+      - 'scout-operations/reports/doi-metadata-checkpoint/latest.json'
+      - '.github/workflows/scout-crosslane-research-memory.yml'
+  workflow_run:
+    workflows:
+      - 'Scout unified discovery preflight'
+      - 'Scout all-lane research outcome registry'
+      - 'Historical Crossref actionable routing'
+      - 'REACH Scout direct DOI metadata checkpoint'
+    branches: [main]
+    types: [completed]
+  schedule:
+    - cron: '35 11 * * 1-5'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: scout-crosslane-research-memory-main
+  cancel-in-progress: false
+jobs:
+  index:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile and validate source-verified graph, expansion safety and source freshness
+        run: |
+          set -euo pipefail
+          python -m py_compile scout-operations/tools/build_crosslane_research_memory.py
+          python -m unittest discover -s scout-operations/tests -p 'test_crosslane_research_memory.py' -v
+          python -m unittest discover -s scout-operations/tests -p 'test_unified_source_preflight.py' -v
+          python -m unittest discover -s scout-operations/tests -p 'test_research_outcome_registry.py' -v
+      - name: Build graph and verify deterministic second pass
+        run: |
+          set -euo pipefail
+          python scout-operations/tools/build_crosslane_research_memory.py
+          python scout-operations/tools/build_crosslane_research_memory.py --check
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('scout-operations/research-memory/crosslane-relationship-graph.json')
+          m=json.loads(p.read_text())
+          assert m['schema']=='reach-scout-crosslane-research-memory-v1'
+          assert m['preflighted_lane_doi_records'] >= 827
+          assert m['verified_reach_originals_preserved_as_expansion_seeds'] >= 426
+          assert m['explicit_related_output_links'] > 0
+          assert m['human_reviewer_decisions_changed']==m['new_reach_publications']==0
+          assert m['originals_closed_by_memory']==m['expansions_closed_by_memory']==0
+          assert m['hub_records_automatically_staged']==0
+          assert not m['public_author_names_or_spark_personnel_indexed']
+          assert all(not x['complete'] for x in m['work_items'])
+          print(json.dumps({
+              'source_verified_cases':m['preflighted_lane_doi_records'],
+              'expansion_seeds_preserved':m['verified_reach_originals_preserved_as_expansion_seeds'],
+              'explicit_related_links':m['explicit_related_output_links'],
+              'prior_research_notes_reused':m['historical_note_events_reused_as_context'],
+              'new_review_or_reach_additions':0,
+          },sort_keys=True))
+          PY
+      - name: Publish only graph memory from freshly verified main sources
+        if: github.event_name != 'pull_request'
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3 4 5; do
+            git reset --hard HEAD
+            git fetch origin main
+            git checkout -B main origin/main
+            python scout-operations/tools/build_crosslane_research_memory.py
+            python scout-operations/tools/build_crosslane_research_memory.py --check
+            git add scout-operations/research-memory/crosslane-relationship-graph.json
+            if git diff --cached --quiet; then
+              echo 'Research relationship graph already current'
+              exit 0
+            fi
+            git commit -m 'Refresh source-SHA-verified cross-lane research memory and distinct expansion'
+            if git push origin HEAD:main; then exit 0; fi
+            sleep "$((attempt * 2))"
+          done
+          exit 1
+      - name: Upload reproducible public-only research graph
+        uses: actions/upload-artifact@v4
+        with:
+          name: scout-crosslane-research-graph
+          path: scout-operations/research-memory/crosslane-relationship-graph.json
+          retention-days: 14
+          if-no-files-found: error
