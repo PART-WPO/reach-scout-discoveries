@@ -250,6 +250,12 @@ def build(root=ROOT):
                 "MONTHLY" if "monthly_api" in lanes else "EXPLICIT_RELATED_RESEARCH"))
         record = {
             "doi": d, "lanes": lanes, "primary_role": primary_role,
+            "public_recorded_statuses_by_lane": {
+                lane: sorted({str(c["recorded_status_unchanged"])
+                              for c in cases if c["discovery_lane"] == lane
+                              and c.get("recorded_status_unchanged")})
+                for lane in lanes
+            },
             "public_reach_verified_existing": bool(verified_reach),
             "preprint_or_version_hold": bool(preprint),
             "original_research": {
@@ -282,7 +288,8 @@ def build(root=ROOT):
         }
         nodes.append(record)
 
-        if cases and "monthly_related_outputs" not in lanes and "independent" not in lanes:
+        if any(lane in ("monthly_api", "historical_crossref", "historical_datacite")
+               for lane in lanes):
             if verified_reach:
                 original = "REUSE_VERIFIED_REACH_IDENTITY_NO_DUPLICATE_ORIGINAL"
             elif preprint:
@@ -352,6 +359,7 @@ def build(root=ROOT):
     return {
         "schema": SCHEMA,
         "source_fingerprint": source_fingerprint,
+        "builder_policy_sha256": sha((root / "scout-operations/tools/build_crosslane_research_memory.py").read_bytes()),
         "source_evidence_sha256": sources,
         "preflighted_lane_doi_records": len(cohort_pairs),
         "distinct_public_doi_nodes": len(nodes),
@@ -405,6 +413,7 @@ def mission_index(graph, *, max_per_lane=12):
         "verified_reach_expansion": [],
         "historical_datacite_original": [],
         "additional_related_output": [],
+        "existing_public_related_or_staged": [],
         "preprint_watchlist_only": [],
         "code_or_url_research": [],
     }
@@ -428,28 +437,41 @@ def mission_index(graph, *, max_per_lane=12):
             "doi": d, "track": track, "next_action": item["next_action"],
             "original_prior_note_count": note_count,
             "explicit_related_links": child_count,
+            "public_recorded_statuses_by_lane": node["public_recorded_statuses_by_lane"],
             "input_fingerprint": item.get("input_fingerprint"),
             "recheck_current_identity_and_award": True,
             "automatically_completed_or_staged": False,
         }
         if track == "RELATED_OUTPUT":
-            category = ("monthly_related" if "monthly_related_outputs" in node["lanes"]
-                        else "additional_related_output")
-            groups[category].append(candidate)
-        elif track == "ORIGINAL" and item["lane"] == "MONTHLY":
-            if node["preprint_or_version_hold"]:
-                groups["preprint_watchlist_only"].append(candidate)
+            recorded = {
+                str(status).strip().lower()
+                for statuses in node["public_recorded_statuses_by_lane"].values()
+                for status in statuses
+            }
+            already_handled_publicly = bool(recorded & {
+                "already_in_reach", "staged_for_human_review",
+                "pending_human_intake", "forwarded_to_hub",
+                "metadata_update_forwarded", "research_complete_human_intake",
+                "research_complete_human_intake_pending_private_ui"})
+            if already_handled_publicly:
+                candidate["next_action"] = "PRESERVE_EXISTING_PUBLIC_STATUS_DO_NOT_RESTAGE"
+                groups["existing_public_related_or_staged"].append(candidate)
+            elif "monthly_related_outputs" in node["lanes"]:
+                groups["monthly_related"].append(candidate)
             else:
+                groups["additional_related_output"].append(candidate)
+        elif track == "ORIGINAL":
+            # One DOI may be in multiple original source cohorts. Never let
+            # Crossref's primary-role precedence hide a monthly original.
+            if node["preprint_or_version_hold"]:
+                candidate["hourly_original_research_allowed"] = False
+                groups["preprint_watchlist_only"].append(candidate)
+            elif "monthly_api" in node["lanes"]:
                 groups["monthly_original"].append(candidate)
-        elif track == "ORIGINAL" and item["lane"] == "HISTORICAL_CROSSREF":
-            if item["next_action"] not in (
-                "REUSE_VERIFIED_REACH_IDENTITY_NO_DUPLICATE_ORIGINAL",
-                "PREPRINT_WATCHLIST_NOT_ELIGIBLE_AS_ORIGINAL"):
-                groups["historical_crossref_original"].append(candidate)
-        elif track == "ORIGINAL" and item["lane"] == "HISTORICAL_DATACITE":
-            if node["preprint_or_version_hold"]:
-                groups["preprint_watchlist_only"].append(candidate)
-            else:
+            elif "historical_crossref" in node["lanes"]:
+                if item["next_action"] != "REUSE_VERIFIED_REACH_IDENTITY_NO_DUPLICATE_ORIGINAL":
+                    groups["historical_crossref_original"].append(candidate)
+            elif "historical_datacite" in node["lanes"]:
                 groups["historical_datacite_original"].append(candidate)
         elif track == "EXPANSION" and item["next_action"] == "EXPAND_VERIFIED_WPO_REACH_SEED":
             groups["verified_reach_expansion"].append(candidate)
@@ -471,6 +493,7 @@ def mission_index(graph, *, max_per_lane=12):
         "schema": "reach-scout-compact-crosslane-mission-index-v1",
         "graph_schema": SCHEMA,
         "source_fingerprint": graph["source_fingerprint"],
+        "builder_policy_sha256": graph["builder_policy_sha256"],
         "group_counts_before_preview_bound": counts,
         "max_preview_per_group": max_per_lane,
         "recommended_preview": {
