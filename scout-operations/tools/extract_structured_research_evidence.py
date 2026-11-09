@@ -190,8 +190,11 @@ def extract(registry, root=ROOT):
             note_decision = textflag(scoped.get("decision") or scoped.get("operational_disposition")
                                       or doc.get("operational_disposition"))
             note_action = str(scoped.get("next_action") or doc.get("next_action") or "")
-            if note_decision.startswith("SOFT_DEFER_UNTIL_MATERIAL_") or note_action.lower().startswith("only reopen if"):
-                reopen_only = True
+            if eid == case["latest_event_id"]:
+                # A previous hold cannot indefinitely override a later note.
+                # Only the current explicit reopen-only directive is binding.
+                reopen_only = (note_decision.startswith("SOFT_DEFER_UNTIL_MATERIAL_")
+                               or note_action.lower().startswith("only reopen if"))
             if (event["source_path"].startswith("scout-operations/monthly-research/")
                 and event.get("role_in_note") in ("original", "original_followup_and_expansion_leads")
                 and textflag(doc.get("origin")) == "DIRECT API"):
