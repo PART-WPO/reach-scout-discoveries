@@ -33,6 +33,16 @@ class ReportingTests(unittest.TestCase):
                              p["bounded_project_questions_identified"])
         self.assertGreaterEqual(p["human_project_question_published_public_scout_feed"],0)
         self.assertEqual(p["private_human_project_imports"],"NOT_VERIFIED")
+        referrals=json.loads((Path(__file__).resolve().parents[1]/"human-project-referrals.json").read_text())
+        self.assertEqual(p["rapid_screen_needs_investigation_cases"],
+                         referrals.get("potential_wpo_cases_quick_screened",
+                                       referrals["unique_bounded_project_questions"]))
+        self.assertEqual(p["rapid_screen_needs_investigation_inbox_drafts"],
+                         referrals["human_referral_drafts_prevalidated"])
+        self.assertLessEqual(p["human_project_question_inbox_drafts_prevalidated"]+
+                             p["human_project_question_published_public_scout_feed"],
+                             p["bounded_project_questions_identified"])
+        self.assertEqual(p["private_hub_imports"],"NOT_VERIFIED")
         self.assertTrue(x["source_health"]["new_research_dispositions_are_not_formal_terminal_completions"])
         self.assertIn(x["source_health"]["post_research_handoff_status"],
                       {"CURRENT","SOURCE_REFRESH_NEEDED"})
