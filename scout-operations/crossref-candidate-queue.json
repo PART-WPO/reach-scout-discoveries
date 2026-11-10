@@ -3,7 +3,7 @@
   "purpose": "Read-only selection; not completed research or approval",
   "completion_target": "Each hourly mission handles at least one full novel-output screening through a concrete disposition or public human-review handoff. Skipped known records do not count; technical blockers must be reported, not represented as completed.",
   "one_mission_actionable_original_count": 135,
-  "ledger_cooldown_excluded_count": 1,
+  "ledger_cooldown_excluded_count": 0,
   "live_manifest_verified_fast_exit_count": 48,
   "special_publication_type_review_count": 1,
   "special_publication_review_preview": [
@@ -84,13 +84,13 @@
   "lane_counts": {
     "ALREADY_IN_SCOUT_REVIEW_FAST_EXIT": 32,
     "BOUNDED_IDENTITY_REVIEW": 51,
-    "DURABLE_BLOCKER_COOLDOWN": 1,
     "EXISTING_REACH_FAST_EXIT": 426,
     "HUMAN_REVIEW_FAST_SCREEN_DUE": 5,
     "NON_459_PROJECT_EVIDENCE_CHECK": 2,
     "NOVEL_IDENTITY_RESEARCH": 77,
     "PREPRINT_PUBLISHED_VERSION_LEAD": 11,
     "PREPRINT_WATCHLIST_HOLD": 6,
+    "RETIRED_PREPRINT_EXISTING_REACH_FAST_EXIT": 1,
     "SPECIAL_PUBLICATION_TYPE_REVIEW": 1,
     "WAIT_FOR_NEW_EVIDENCE": 2
   },
@@ -6811,7 +6811,9 @@
       "preprint_status": null,
       "already_in_public_scout_queue": true,
       "matched_public_review_locations": [
-        "scout-discoveries/batches/2026-11-10-human-project-6c53903a7319371213.csv"
+        "scout-discoveries/batches/2026-11-10-human-project-6c53903a7319371213.csv",
+        "scout-discoveries/batches/2026-11-10-human-project-6c53903a7319371213.csv:2",
+        "scout-discoveries/inbox/2026-11-10-human-project-6c53903a7319371213.csv:2"
       ],
       "live_public_title_conflict": false,
       "handoff_ledger_state": "PUBLISHED_PUBLIC_SCOUT",
@@ -14161,9 +14163,9 @@
         "scout-discoveries/inbox/2026-11-10-human-project-8eb678e5c990af2471.csv:2"
       ],
       "live_public_title_conflict": false,
-      "handoff_ledger_state": "BLOCKED",
-      "handoff_ledger_reason": "NOT_NEW_IN_REACH_OR_SCOUT",
-      "handoff_retry_after": "2026-12-10T02:55:34.231920+00:00",
+      "handoff_ledger_state": "PUBLISHED_PUBLIC_SCOUT",
+      "handoff_ledger_reason": "PUBLIC_SCOUT_REVIEW_UNIT_VERIFIED",
+      "handoff_retry_after": null,
       "special_publication_type": null,
       "one_mission_disposition_required": false,
       "verified_published_dois": [],
@@ -19730,17 +19732,17 @@
       "already_in_public_scout_queue": false,
       "matched_public_review_locations": [],
       "live_public_title_conflict": false,
-      "handoff_ledger_state": "BLOCKED",
-      "handoff_ledger_reason": "OFFICIAL_PUBLICATION_UNVERIFIED",
-      "handoff_retry_after": "2026-11-11T16:43:08.098991+00:00",
+      "handoff_ledger_state": "RESOLVED_EXISTING_REACH",
+      "handoff_ledger_reason": "PREPRINT_FINAL_VERSION_ALREADY_IN_REACH",
+      "handoff_retry_after": null,
       "special_publication_type": null,
       "one_mission_disposition_required": false,
       "verified_published_dois": [],
       "doi": "10.5194/gmd-2022-311",
       "title": "developing spring wheat in the noah mp lsm v4 4 for growing season dynamics and responses to temperature stress",
-      "lane": "DURABLE_BLOCKER_COOLDOWN",
+      "lane": "RETIRED_PREPRINT_EXISTING_REACH_FAST_EXIT",
       "priority": 0,
-      "next_action": "Blocked until 2026-11-11T16:43:08.098991+00:00; rotate to another DOI",
+      "next_action": "Official published version and REACH UID already verified; never re-screen original preprint DOI. Related-output expansion stays separate.",
       "funding_signal": "CONFIRMED_WPO_459",
       "crossref_structured_award_numbers": [
         "NA18OAR4590381"
@@ -19924,7 +19926,7 @@
   "original_dispositions_changed": 0,
   "new_review_proposals": 0,
   "source_sha256": {
-    "scout-operations/historical-crossref-screening/actionable-routing.json": "cdd00433a181ed9e088b688b981dd90881d1e6f2e663b30b1807d638054bde53",
+    "scout-operations/historical-crossref-screening/actionable-routing.json": "08c6a5f2e3550a65b18389bc60c5400182ae0412616d46a1efb4e0ea0d9b3584",
     "scout-operations/research-outcome-registry.json": "c583a8153e3bd7e3250e15ddad56463292a7d3727ae41d06ebece6f15817af31",
     "api-discoveries/historical-crossref/manifest.json": "799744c7e83f218d22cc19afacb7cfcf2762feb490659efde9f58bf19473b1fa",
     "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part001.csv": "df420ff561050c5f019ccddd19eb93124ab642eba8aa6f87dc0636b6d5ee2de3",
@@ -19934,10 +19936,13 @@
     "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part005.csv": "cb7f87d98ebd06ec7417a48cecd0c1cfae1d3433637a39b9f40a11b69d97f146",
     "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part006.csv": "ba946468775b8b4d4a54b984eaa8b10f8b20e92f45d4af03fe04c58048e496bd",
     "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part007.csv": "c274d3c6d2f5643bc08f3184d5524dd86d139e2e89e3e1524353e431bcec9ad4",
-    "scout-operations/preprint-watchlist.json": "9aee820ffa8eafb416d68f80d7cddb534ab33c97f61e1246ec892fb08f33b65e"
+    "scout-operations/preprint-watchlist.json": "9aee820ffa8eafb416d68f80d7cddb534ab33c97f61e1246ec892fb08f33b65e",
+    "scout-operations/preprint-retirement-archive.json": "5707f60b259e3bebac9adadfa04b5191971f4f5feed8472d127fb6f0ef82c2b5",
+    "scout-operations/identity-cache/public-identity-index.json": "0c2881725bb78f76507e13c220559a3dffc1095064a45804807b6c1a684842ff",
+    "scout-operations/reach-comparison-cache/comparison-index.json": "6660562e325a6a141198f59acce84f2e30d9a2d14e6cf5acd29769c8a4b68e1e"
   },
   "dynamic_selection_sha256": {
-    "scout-operations/decision-handoff-ledger.json": "2e080908620469af99c1c2bb112753f92d54ce352dad51483b11f06ec318cf96",
+    "scout-operations/decision-handoff-ledger.json": "eac789517b02daec4ef24e77c48a971efb365f3cc9b5e1564b6598af592c7bcc",
     "scout-discoveries/manifest.json": "3ba8c67d977bef05213154f703f9c0a83121c5e662ae15267607734775203be4"
   },
   "funding_signal_counts": {
