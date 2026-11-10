@@ -140,7 +140,10 @@ def build(root=ROOT):
     for directory in DIRS:
         base=root/directory
         if not base.is_dir():raise ValueError("Missing public research evidence directory: "+directory)
-        for path in sorted(base.glob("20*.json")):
+        # Accept immutable dated research notes and the verified hourly
+        # handoff notes only. Never treat arbitrary JSON/debug files as evidence.
+        accepted = list(base.glob("20*.json")) + list(base.glob("auto-verified-oar459-*.json"))
+        for path in sorted(set(accepted)):
             relative=path.relative_to(root).as_posix()
             raw=path.read_bytes(); source_shas[relative]=sha(raw)
             doc=json.loads(raw)
