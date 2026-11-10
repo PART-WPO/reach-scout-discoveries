@@ -1,0 +1,123 @@
+name: Scout hourly guarded DOI decision handoff
+
+on:
+  pull_request:
+    paths:
+      - 'scout-operations/tools/hourly_decision_handoff.py'
+      - 'scout-operations/tests/test_hourly_decision_handoff.py'
+      - '.github/workflows/scout-hourly-guarded-handoff.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'scout-operations/tools/hourly_decision_handoff.py'
+      - 'scout-operations/tests/test_hourly_decision_handoff.py'
+      - '.github/workflows/scout-hourly-guarded-handoff.yml'
+  schedule:
+    # Let the established :29 Scout mission write its own source evidence first.
+    # This GitHub-owned backstop completes the guarded decision path at :34 ET-independent UTC minute.
+    - cron: '34 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  # Serialize with the public-feed publisher and refuse overlapping same-repo
+  # writes from this workflow. GitHub repo writers still require retry on race.
+  group: scout-discovery-manifest-main
+  cancel-in-progress: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Static compile
+        run: python -m py_compile scout-operations/tools/hourly_decision_handoff.py
+      - name: Verify official DOI, 459 funding and blocker rotation
+        run: python -m unittest discover -s scout-operations/tests -p 'test_hourly_decision_handoff.py' -v
+      - name: Existing source-verified human referral regression suite
+        run: python -m unittest discover -s scout-operations/tests -p 'test_human_project_referrals.py' -v
+      - name: Canonical Scout 24-column and public metadata privacy suite
+        run: python -m unittest discover -s scout-discoveries/tools/tests -v
+
+  guarded-decision:
+    if: github.event_name != 'pull_request'
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Complete an original screening on fresh main; persist safe failures
+        env:
+          SCOUT_PREPRINT_GATE_REQUIRED: '1'
+        shell: bash
+        run: |
+          set -euo pipefail
+          # GitHub cron uses UTC: enforce weekdays in America/New_York,
+          # including daylight-saving shifts, without Sunday-night leakage.
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            if ! python - <<'PY'
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+          import sys
+          sys.exit(0 if datetime.now(ZoneInfo("America/New_York")).weekday() < 5 else 1)
+          PY
+            then
+              echo "Outside the existing weekday Scout research schedule in Eastern time."
+              exit 0
+            fi
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3; do
+            echo "Source-snapshot attempt $attempt"
+            git fetch origin main
+            git checkout -B main origin/main
+            # Refresh the authoritative queue first; reject nonmatching source SHAs.
+            python scout-operations/tools/build_candidate_queue.py
+            # This commits no approval. It writes only a DOI-specific research
+            # evidence note, fresh guarded referral, and durable blocker report.
+            python scout-operations/tools/hourly_decision_handoff.py --limit 5
+            if python - <<'PY'
+          import json,sys
+          from pathlib import Path
+          r=json.loads(Path("scout-operations/reports/hourly-decision-handoff.json").read_text())
+          sys.exit(0 if r["public_review_handoffs_staged"] else 1)
+          PY
+            then
+              # Run exactly the same official preprint and 24-column gates as
+              # the existing public-feed publisher. Bot-authored commits do
+              # not trigger all ordinary push Actions, so do it in THIS job.
+              python scout-operations/tools/verify_preprint_intake.py
+              python scout-discoveries/tools/promote_inbox.py --verified-referrals-only
+              python scout-discoveries/tools/build_manifest.py
+              python scout-operations/tools/verify_preprint_intake.py --audit-active
+              python scout-operations/tools/hourly_decision_handoff.py --confirm-published
+            else
+              echo "No verified new handoff in this bounded mission; blocker/rotation disposition recorded."
+            fi
+            git add -A --               scout-operations/crossref-candidate-queue.json               scout-operations/decision-handoff-ledger.json               scout-operations/reports/hourly-decision-handoff.json               scout-operations/historical-crossref-phase2/               scout-operations/research-outcome-registry.json               scout-operations/human-project-referrals.json               scout-operations/preprint-intake-gate.json               scout-operations/preprint-watchlist.json               scout-discoveries/inbox/               scout-discoveries/batches/               scout-discoveries/manifest.json
+            if git diff --cached --quiet; then
+              echo "Source checks and public feed are up to date."
+              exit 0
+            fi
+            git commit -m 'Complete one guarded WPO DOI screening or record source-backed blocker'
+            if git push origin HEAD:main; then
+              echo "Validated Scout disposition and public manifest committed."
+              exit 0
+            fi
+            echo "::warning::GitHub main changed during candidate validation; restart from the NEW verified source snapshot"
+            sleep "$((attempt * 2))"
+          done
+          echo "::error::Could not commit a fully source-fresh Scout decision after three protected attempts"
+          exit 1
