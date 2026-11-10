@@ -1,5 +1,31 @@
 {
   "schema": "reach-scout-separated-completed-mission-scorecard-v1",
+  "github_bounded_expansion_research": {
+    "verified_research_report_count": 4,
+    "distinct_verified_reach_seeds_investigated": 3,
+    "distinct_seed_dois": [
+      "10.1002/2017ms001154",
+      "10.1002/hyp.13998",
+      "10.1029/2021gl096709"
+    ],
+    "source_driven_research_report_count": 3,
+    "new_distinct_source_backed_doi_leads": 1,
+    "distinct_source_backed_doi_leads": [
+      "10.6075/j0sn07g9"
+    ],
+    "new_leads_with_official_metadata_retrieved": 1,
+    "completed_distinct_expansion_decisions": 0,
+    "new_public_candidates_from_these_expansions": 0,
+    "source_report_sha256": {
+      "scout-operations/reports/bounded-expansion-research/github-4283268291611-a3a962d116f6.json": "d2596241c6dd0aac568018bc544db3bd800b4f0e9529adfd87a5f85098d8d4e3",
+      "scout-operations/reports/bounded-expansion-research/github-4284093061011-2fda4a31f24d.json": "bfbf155aa6d30199c3e2a9987e2665e4c36385c325c86993424d83874d274f55",
+      "scout-operations/reports/bounded-expansion-research/github-4284227094411-498465698700.json": "519fecc2257a91ecd447af595ea3f2febe89f12d486951d16999d9c81cce9793",
+      "scout-operations/reports/bounded-expansion-research/github-4284327390711-498465698700.json": "63310e7b4c9d10ede7642a10712f3724a6a78729742235a8f259f7b9d92ac463"
+    },
+    "private_hub_imports": "NOT_VERIFIED",
+    "human_approvals": "NOT_VERIFIED",
+    "interpretation": "Distinct seeds, DOI leads and official metadata retrieval are research progress, not completed expansions or public candidate/REACH additions."
+  },
   "measurement_limitation": "Only timestamped reports in source folders; record count is not the number of scheduled task attempts. GitHub backstop is never an hourly ChatGPT mission. In-process reuse differs from persistent cache reuse. No causal inference.",
   "by_producer": {
     "chatgpt_hourly_mission": {
@@ -21,22 +47,23 @@
       "private_hub_status": "NOT_VERIFIED"
     },
     "github_guarded_crossref_backstop": {
-      "verified_report_count": 2,
+      "verified_report_count": 3,
       "no_report_is_not_proof_no_mission_ran": true,
-      "completed_original_decision_missions": 2,
-      "confirmed_public_handoff_missions": 2,
-      "completed_original_decisions_counted_per_mission": 2,
+      "completed_original_decision_missions": 3,
+      "confirmed_public_handoff_missions": 3,
+      "completed_original_decisions_counted_per_mission": 3,
       "distinct_completed_original_dois": [
+        "10.1016/j.cageo.2022.105193",
         "10.1175/wcas-d-25-0019.1",
         "10.3390/atmos16070881"
       ],
       "decision_missions_per_recorded_mission": 1.0,
       "public_handoff_missions_per_recorded_mission": 1.0,
       "prior_note_sha256_reused_count": 0,
-      "external_http_counts_instrumented_missions": 2,
-      "observed_metadata_requests_sum_only_instrumented_missions": 4,
-      "cache_reuse_counts_instrumented_missions": 2,
-      "observed_cache_reuse_sum_only_instrumented_missions": 2,
+      "external_http_counts_instrumented_missions": 3,
+      "observed_metadata_requests_sum_only_instrumented_missions": 8,
+      "cache_reuse_counts_instrumented_missions": 3,
+      "observed_cache_reuse_sum_only_instrumented_missions": 3,
       "avoided_requests_claimed": null,
       "private_hub_imports_verified": null,
       "private_hub_status": "NOT_VERIFIED"

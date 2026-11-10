@@ -1,0 +1,56 @@
+{
+  "schema": "scout-source-backed-research-evidence-v1",
+  "recorded_at": "2026-11-10T16:43:08.098991+00:00",
+  "lane": "historical_crossref_original",
+  "original_doi": "10.1016/j.cageo.2022.105193",
+  "title": "Adaptive conditional bias-penalized Kalman filter with minimization of degrees of freedom for noise for superior state estimation and prediction of extremes",
+  "decision": "NEW_CANDIDATE_PUBLIC_REFERRAL_REQUEST_SUBJECT_TO_GUARDED_CHECKS",
+  "operational_disposition": "BOUNDED_PROJECT_QUESTION_FOR_HUMAN",
+  "structured_award": "NA16OAR4590232",
+  "spark_primary_award_context": "NA16OAR4590232",
+  "funding": "OFFICIAL_CROSSREF_EXACT_DOI_WPO459_CONFIRMED",
+  "publication_status": "OFFICIALLY_PUBLISHED_JOURNAL_ARTICLE",
+  "publisher_published_date": "2022-09-01",
+  "preprint_original": false,
+  "source_evidence": [
+    {
+      "url": "https://api.crossref.org/works/10.1016/j.cageo.2022.105193",
+      "type": "exact_doi_official_crossref_funding",
+      "finding": "Official Crossref article-level funding records explicitly identify NA16OAR4590232 for 10.1016/j.cageo.2022.105193"
+    },
+    {
+      "url": "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part001.csv",
+      "type": "sha_verified_historical_crossref_batch",
+      "finding": "Historical Crossref intake independently indexed the same full WPO award against the same DOI."
+    },
+    {
+      "url": "https://doi.org/10.1016/j.cageo.2022.105193",
+      "type": "persistent_official_publication_identifier",
+      "finding": "Official journal publication identity and date confirmed from exact DOI metadata."
+    }
+  ],
+  "identity_status": "NO_PUBLIC_IDENTITY_MATCH",
+  "noaa_ir_reach_check": {
+    "status": "VERIFIED_IR_URL_NOT_IN_PUBLIC_REACH",
+    "official_url": "https://repository.library.noaa.gov/view/noaa/57846",
+    "match_uid": null,
+    "match_detail_shard": null
+  },
+  "award_evidence_source_batches": [
+    "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part001.csv"
+  ],
+  "exact_primary_spark_award_verified_for_output": true,
+  "output_to_specific_primary_wpo_project_verified": false,
+  "public_proposal_eligible": false,
+  "private_hub_action": "NONE",
+  "original_status_changed": false,
+  "expansion_completed": false,
+  "next_action": "Guarded GitHub 24-column NEW CANDIDATE handoff; human reviewer selects and verifies SPARK parent; do not infer private Hub import or REACH publication.",
+  "research_counts": {
+    "originals_screened": 1,
+    "originals_deeply_examined": 1,
+    "expansion_cases_examined": 0,
+    "new_explicit_child_doi_links": 0,
+    "private_hub_outcomes_verified": 0
+  }
+}

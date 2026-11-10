@@ -1,0 +1,64 @@
+{
+  "schema": "reach-scout-decision-checkpoint-v1",
+  "decision_contract": "reach-scout-decision-pipeline-v2",
+  "input_fingerprint": "834bcaf7322934f9854ec4d31864f9aef5b0bd5fb7c06aa3aa41ea135afb11ce",
+  "index_fingerprint": "23577a6f9d51a91580fc217e6279147bfd85ab24255a602405d2f70b1cfa2538",
+  "case_input": {
+    "doi": "10.1007/s10606-020-09380-2",
+    "title": "Achieving Accuracy through Ambiguity: the Interactivity of Risk Communication in Severe Weather Events",
+    "cohort": "historical_crossref",
+    "publication_status": "NOT_CHECKED",
+    "primary_award_match": true,
+    "project_attribution": "UNRESOLVED",
+    "checked_sources": [
+      "https://link.springer.com/article/10.1007/s10606-020-09380-2",
+      "https://repository.library.noaa.gov/view/noaa/58643",
+      "https://wpo.noaa.gov/spark/",
+      "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf"
+    ],
+    "research_rounds": 2,
+    "secondary_identity_checked": false,
+    "required_metadata_verified": false,
+    "private_review_status": "NOT_VERIFIED",
+    "source_evidence": [
+      {
+        "path": "scout-operations/historical-crossref-phase2/2026-11-05-0430ET-risk-communication-publisher-ir-evidence.json",
+        "sha256": "cd1aecc21bdafc2e27abc91abf86919269fc314b3010de398123b7e5b66d13fc"
+      },
+      {
+        "path": "scout-operations/historical-crossref-phase2/2026-11-05-0529ET-risk-communication-spark-project-crosscheck.json",
+        "sha256": "d96a933a13f27e2eb28fc4beeb0ecc2b6ce29802ac817b2b4419b7d5d935a6d3"
+      }
+    ],
+    "research_budget_exhausted": true
+  },
+  "evaluation": {
+    "doi": "10.1007/s10606-020-09380-2",
+    "cohort": "historical_crossref",
+    "identity_check": {
+      "status": "NO_PUBLIC_IDENTITY_MATCH",
+      "reason": "NO_MATCH_IN_VERIFIED_PUBLIC_SNAPSHOT",
+      "matches": [],
+      "caveat": "Public snapshot only; private Hub decisions are not asserted."
+    },
+    "project_attribution": "UNRESOLVED",
+    "primary_award_match": true,
+    "publication_status": "NOT_CHECKED",
+    "private_review_status": "NOT_VERIFIED",
+    "research_rounds": 2,
+    "decision": "PUBLICATION_STATUS_UNVERIFIED",
+    "review_action": "NONE",
+    "notes": [],
+    "checked_sources": [
+      "https://link.springer.com/article/10.1007/s10606-020-09380-2",
+      "https://repository.library.noaa.gov/view/noaa/58643",
+      "https://wpo.noaa.gov/spark/",
+      "https://wpo.noaa.gov/wp-content/uploads/2023/01/WPO-Project-List.pdf"
+    ],
+    "unverified_private_hub_import": true,
+    "automatically_staged": false,
+    "seed_expansion_preserved": true
+  },
+  "source_case_path": "scout-operations/research-decision-cases.json",
+  "human_decision_modified": false
+}

@@ -1,0 +1,81 @@
+{
+  "schema": "reach-scout-decision-checkpoint-v1",
+  "decision_contract": "reach-scout-decision-pipeline-v2",
+  "input_fingerprint": "9d1aea63d9803c8d548b228997006e9d5613bac5d16b67c7f9c22168e4618d24",
+  "index_fingerprint": "23577a6f9d51a91580fc217e6279147bfd85ab24255a602405d2f70b1cfa2538",
+  "case_input": {
+    "doi": "10.1175/aies-d-26-0004.1",
+    "title": "The Impact of Target Dataset Choice on Machine Learning Prediction of Severe Hail, Wind, and Tornadoes",
+    "cohort": "historical_crossref",
+    "publication_status": "NOT_CHECKED",
+    "primary_award_match": null,
+    "project_attribution": "NOT_CHECKED",
+    "checked_sources": [],
+    "research_rounds": 0,
+    "secondary_identity_checked": false,
+    "required_metadata_verified": false,
+    "private_review_status": "NOT_VERIFIED",
+    "source_evidence": [
+      {
+        "path": "scout-operations/historical-crossref-phase2/2026-11-09-1431ET-severe-hail-target-dataset-primary-project-hold.json",
+        "sha256": "09a3e6fa677ee15376755e371e38c346571c913f1497272d1b794f22f5cfe059"
+      }
+    ],
+    "research_budget_exhausted": false
+  },
+  "evaluation": {
+    "doi": "10.1175/aies-d-26-0004.1",
+    "cohort": "historical_crossref",
+    "identity_check": {
+      "status": "IN_PUBLIC_SCOUT_QUEUE",
+      "reason": "CONSISTENT_SCOUT_PUBLIC_MIRRORS",
+      "matches": [
+        {
+          "source": "SCOUT_PUBLISHED",
+          "identity": "2026-11-02-monthly-preprint-hold-001:4",
+          "title": "The Impact of Target Dataset Choice on Machine Learning Prediction of Severe Hail, Wind, and Tornadoes",
+          "location": "scout-discoveries/batches/2026-11-02-monthly-preprint-hold-001.csv:4",
+          "match_bases": [
+            "exact_doi",
+            "normalized_title"
+          ]
+        },
+        {
+          "source": "SCOUT_INBOX",
+          "identity": "2026-11-01-monthly-fast-17bff79084ce37.csv:2",
+          "title": "The Impact of Target Dataset Choice on Machine Learning Prediction of Severe Hail, Wind, and Tornadoes",
+          "location": "scout-discoveries/inbox/2026-11-01-monthly-fast-17bff79084ce37.csv:2",
+          "match_bases": [
+            "exact_doi",
+            "normalized_title"
+          ]
+        },
+        {
+          "source": "SCOUT_INBOX",
+          "identity": "2026-11-02-monthly-reviewer-story-parity-001.csv:4",
+          "title": "The Impact of Target Dataset Choice on Machine Learning Prediction of Severe Hail, Wind, and Tornadoes",
+          "location": "scout-discoveries/inbox/2026-11-02-monthly-reviewer-story-parity-001.csv:4",
+          "match_bases": [
+            "exact_doi",
+            "normalized_title"
+          ]
+        }
+      ],
+      "caveat": "Public snapshot only; private Hub decisions are not asserted."
+    },
+    "project_attribution": "NOT_CHECKED",
+    "primary_award_match": null,
+    "publication_status": "NOT_CHECKED",
+    "private_review_status": "NOT_VERIFIED",
+    "research_rounds": 0,
+    "decision": "EXISTING_SCOUT_CANDIDATE",
+    "review_action": "NONE",
+    "notes": [],
+    "checked_sources": [],
+    "unverified_private_hub_import": true,
+    "automatically_staged": false,
+    "seed_expansion_preserved": true
+  },
+  "source_case_path": "scout-operations/research-decision-cases.json",
+  "human_decision_modified": false
+}

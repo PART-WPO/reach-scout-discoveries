@@ -2,9 +2,9 @@
   "schema": "reach-scout-crossref-candidate-queue-v2",
   "purpose": "Read-only selection; not completed research or approval",
   "completion_target": "Each hourly mission handles at least one full novel-output screening through a concrete disposition or public human-review handoff. Skipped known records do not count; technical blockers must be reported, not represented as completed.",
-  "one_mission_actionable_original_count": 138,
-  "ledger_cooldown_excluded_count": 0,
-  "live_manifest_verified_fast_exit_count": 46,
+  "one_mission_actionable_original_count": 136,
+  "ledger_cooldown_excluded_count": 1,
+  "live_manifest_verified_fast_exit_count": 47,
   "special_publication_type_review_count": 1,
   "special_publication_review_preview": [
     {
@@ -15,22 +15,6 @@
     }
   ],
   "next_one_mission_original_preview": [
-    {
-      "doi": "10.5194/gmd-2022-311",
-      "lane": "NOVEL_IDENTITY_RESEARCH",
-      "priority": 90,
-      "funding_signal": "CONFIRMED_WPO_459",
-      "required_outcome": "FINISH_ORIGINAL_SCREENING_DECISION_THIS_RUN",
-      "action": "459 program code confirms WPO funding when deposited for this exact article. Fast-check official publisher award, REACH/Scout/IR duplicate and preprint gates; send verified published output as New Candidate in THIS mission, not Needs Investigation solely for WPO connection. Reviewer selects the SPARK parent."
-    },
-    {
-      "doi": "10.1016/j.cageo.2022.105193",
-      "lane": "HUMAN_REVIEW_FAST_SCREEN_DUE",
-      "priority": 85,
-      "funding_signal": "CONFIRMED_WPO_459",
-      "required_outcome": "FINISH_ORIGINAL_SCREENING_DECISION_THIS_RUN",
-      "action": "459 is a WPO funding code. Reuse source evidence and confirm exact published DOI, publisher-deposited 459 award, public identity and preprint gates. Route verified WPO outputs to New Candidate; only unresolved attribution to Needs Investigation."
-    },
     {
       "doi": "10.1016/j.uclim.2025.102375",
       "lane": "HUMAN_REVIEW_FAST_SCREEN_DUE",
@@ -78,86 +62,39 @@
       "funding_signal": "CONFIRMED_WPO_459",
       "required_outcome": "FINISH_ORIGINAL_SCREENING_DECISION_THIS_RUN",
       "action": "459 is a WPO funding code. Reuse source evidence and confirm exact published DOI, publisher-deposited 459 award, public identity and preprint gates. Route verified WPO outputs to New Candidate; only unresolved attribution to Needs Investigation."
+    },
+    {
+      "doi": "10.1002/essoar.10507281.2",
+      "lane": "BOUNDED_IDENTITY_REVIEW",
+      "priority": 70,
+      "funding_signal": "CONFIRMED_WPO_459",
+      "required_outcome": "FINISH_ORIGINAL_SCREENING_DECISION_THIS_RUN",
+      "action": "Complete one bounded identity/version check and record a final screening decision in this mission"
+    },
+    {
+      "doi": "10.1002/essoar.10507439.1",
+      "lane": "BOUNDED_IDENTITY_REVIEW",
+      "priority": 70,
+      "funding_signal": "NON_WPO_OAR_AWARD",
+      "required_outcome": "FINISH_ORIGINAL_SCREENING_DECISION_THIS_RUN",
+      "action": "Complete one bounded identity/version check and record a final screening decision in this mission"
     }
   ],
   "total": 614,
   "lane_counts": {
-    "ALREADY_IN_SCOUT_REVIEW_FAST_EXIT": 30,
+    "ALREADY_IN_SCOUT_REVIEW_FAST_EXIT": 31,
     "BOUNDED_IDENTITY_REVIEW": 51,
+    "DURABLE_BLOCKER_COOLDOWN": 1,
     "EXISTING_REACH_FAST_EXIT": 426,
-    "HUMAN_REVIEW_FAST_SCREEN_DUE": 7,
+    "HUMAN_REVIEW_FAST_SCREEN_DUE": 6,
     "NON_459_PROJECT_EVIDENCE_CHECK": 2,
-    "NOVEL_IDENTITY_RESEARCH": 78,
+    "NOVEL_IDENTITY_RESEARCH": 77,
     "PREPRINT_PUBLISHED_VERSION_LEAD": 11,
     "PREPRINT_WATCHLIST_HOLD": 6,
     "SPECIAL_PUBLICATION_TYPE_REVIEW": 1,
     "WAIT_FOR_NEW_EVIDENCE": 2
   },
   "items": [
-    {
-      "preprint_status": null,
-      "already_in_public_scout_queue": false,
-      "matched_public_review_locations": [],
-      "live_public_title_conflict": false,
-      "handoff_ledger_state": null,
-      "handoff_ledger_reason": null,
-      "handoff_retry_after": null,
-      "special_publication_type": null,
-      "one_mission_disposition_required": true,
-      "verified_published_dois": [],
-      "doi": "10.5194/gmd-2022-311",
-      "title": "developing spring wheat in the noah mp lsm v4 4 for growing season dynamics and responses to temperature stress",
-      "lane": "NOVEL_IDENTITY_RESEARCH",
-      "priority": 90,
-      "next_action": "459 program code confirms WPO funding when deposited for this exact article. Fast-check official publisher award, REACH/Scout/IR duplicate and preprint gates; send verified published output as New Candidate in THIS mission, not Needs Investigation solely for WPO connection. Reviewer selects the SPARK parent.",
-      "funding_signal": "CONFIRMED_WPO_459",
-      "crossref_structured_award_numbers": [
-        "NA18OAR4590381"
-      ],
-      "wpo_459_award_numbers": [
-        "NA18OAR4590381"
-      ],
-      "award_evidence_source_batches": [
-        "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part007.csv"
-      ],
-      "award_match_basis": "Historical Crossref publisher-deposited award for exact DOI; 459 identifies WPO funding. Exact SPARK parent and output identity still require verification before addition",
-      "prior_disposition": null,
-      "scout_overlap": false,
-      "verified_reach_uid": null,
-      "private_hub_review": "NOT_VERIFIED"
-    },
-    {
-      "preprint_status": null,
-      "already_in_public_scout_queue": false,
-      "matched_public_review_locations": [],
-      "live_public_title_conflict": false,
-      "handoff_ledger_state": null,
-      "handoff_ledger_reason": null,
-      "handoff_retry_after": null,
-      "special_publication_type": null,
-      "one_mission_disposition_required": true,
-      "verified_published_dois": [],
-      "doi": "10.1016/j.cageo.2022.105193",
-      "title": "adaptive conditional bias penalized kalman filter with minimization of degrees of freedom for noise for superior state estimation and prediction of extremes",
-      "lane": "HUMAN_REVIEW_FAST_SCREEN_DUE",
-      "priority": 85,
-      "next_action": "459 is a WPO funding code. Reuse source evidence and confirm exact published DOI, publisher-deposited 459 award, public identity and preprint gates. Route verified WPO outputs to New Candidate; only unresolved attribution to Needs Investigation.",
-      "funding_signal": "CONFIRMED_WPO_459",
-      "crossref_structured_award_numbers": [
-        "NA16OAR4590232"
-      ],
-      "wpo_459_award_numbers": [
-        "NA16OAR4590232"
-      ],
-      "award_evidence_source_batches": [
-        "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part001.csv"
-      ],
-      "award_match_basis": "Historical Crossref publisher-deposited award for exact DOI; 459 identifies WPO funding. Exact SPARK parent and output identity still require verification before addition",
-      "prior_disposition": "PROJECT_EVIDENCE_HOLD",
-      "scout_overlap": false,
-      "verified_reach_uid": null,
-      "private_hub_review": "NOT_VERIFIED"
-    },
     {
       "preprint_status": null,
       "already_in_public_scout_queue": false,
@@ -6077,6 +6014,40 @@
       "prior_disposition": null,
       "scout_overlap": false,
       "verified_reach_uid": "reachuid-v1-d0bfcc3e2c905137c0bcf7da328e0071",
+      "private_hub_review": "NOT_VERIFIED"
+    },
+    {
+      "preprint_status": null,
+      "already_in_public_scout_queue": true,
+      "matched_public_review_locations": [
+        "scout-discoveries/batches/2026-11-10-human-project-b8d519c3e1a123e83c.csv"
+      ],
+      "live_public_title_conflict": false,
+      "handoff_ledger_state": "PUBLISHED_PUBLIC_SCOUT",
+      "handoff_ledger_reason": "SOURCE_VERIFIED_AND_MANIFEST_VALIDATED",
+      "handoff_retry_after": null,
+      "special_publication_type": null,
+      "one_mission_disposition_required": false,
+      "verified_published_dois": [],
+      "doi": "10.1016/j.cageo.2022.105193",
+      "title": "adaptive conditional bias penalized kalman filter with minimization of degrees of freedom for noise for superior state estimation and prediction of extremes",
+      "lane": "ALREADY_IN_SCOUT_REVIEW_FAST_EXIT",
+      "priority": 0,
+      "next_action": "Already in Scout's public review pipeline: do not repeat original research or create another proposal; keep independent expansion",
+      "funding_signal": "CONFIRMED_WPO_459",
+      "crossref_structured_award_numbers": [
+        "NA16OAR4590232"
+      ],
+      "wpo_459_award_numbers": [
+        "NA16OAR4590232"
+      ],
+      "award_evidence_source_batches": [
+        "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part001.csv"
+      ],
+      "award_match_basis": "Historical Crossref publisher-deposited award for exact DOI; 459 identifies WPO funding. Exact SPARK parent and output identity still require verification before addition",
+      "prior_disposition": "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+      "scout_overlap": false,
+      "verified_reach_uid": null,
       "private_hub_review": "NOT_VERIFIED"
     },
     {
@@ -19743,6 +19714,38 @@
       "already_in_public_scout_queue": false,
       "matched_public_review_locations": [],
       "live_public_title_conflict": false,
+      "handoff_ledger_state": "BLOCKED",
+      "handoff_ledger_reason": "OFFICIAL_PUBLICATION_UNVERIFIED",
+      "handoff_retry_after": "2026-11-11T16:43:08.098991+00:00",
+      "special_publication_type": null,
+      "one_mission_disposition_required": false,
+      "verified_published_dois": [],
+      "doi": "10.5194/gmd-2022-311",
+      "title": "developing spring wheat in the noah mp lsm v4 4 for growing season dynamics and responses to temperature stress",
+      "lane": "DURABLE_BLOCKER_COOLDOWN",
+      "priority": 0,
+      "next_action": "Blocked until 2026-11-11T16:43:08.098991+00:00; rotate to another DOI",
+      "funding_signal": "CONFIRMED_WPO_459",
+      "crossref_structured_award_numbers": [
+        "NA18OAR4590381"
+      ],
+      "wpo_459_award_numbers": [
+        "NA18OAR4590381"
+      ],
+      "award_evidence_source_batches": [
+        "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part007.csv"
+      ],
+      "award_match_basis": "Historical Crossref publisher-deposited award for exact DOI; 459 identifies WPO funding. Exact SPARK parent and output identity still require verification before addition",
+      "prior_disposition": null,
+      "scout_overlap": false,
+      "verified_reach_uid": null,
+      "private_hub_review": "NOT_VERIFIED"
+    },
+    {
+      "preprint_status": null,
+      "already_in_public_scout_queue": false,
+      "matched_public_review_locations": [],
+      "live_public_title_conflict": false,
       "handoff_ledger_state": null,
       "handoff_ledger_reason": null,
       "handoff_retry_after": null,
@@ -19906,7 +19909,7 @@
   "new_review_proposals": 0,
   "source_sha256": {
     "scout-operations/historical-crossref-screening/actionable-routing.json": "b9974c131132723d35810ab4b5f2f34a064ec002ecfa2fdc9c910760e3f3bf07",
-    "scout-operations/research-outcome-registry.json": "5703e413d936d31876959a53a75e86c78c0aa0df20d81dd1fcd5566bc44e403e",
+    "scout-operations/research-outcome-registry.json": "13098e1a872f0b142955de06fd1e99ab4e73454b026c97882028fcd5dfe3f064",
     "api-discoveries/historical-crossref/manifest.json": "799744c7e83f218d22cc19afacb7cfcf2762feb490659efde9f58bf19473b1fa",
     "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part001.csv": "df420ff561050c5f019ccddd19eb93124ab642eba8aa6f87dc0636b6d5ee2de3",
     "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part002.csv": "1cc9e5f3c493c6fa7cde93e0060718224686f695c7ba6d648208ecf9a09d69d7",
@@ -19918,8 +19921,8 @@
     "scout-operations/preprint-watchlist.json": "9aee820ffa8eafb416d68f80d7cddb534ab33c97f61e1246ec892fb08f33b65e"
   },
   "dynamic_selection_sha256": {
-    "scout-operations/decision-handoff-ledger.json": "c6d21d7d23af3b23a936070a09089969dee1b1380c87383bbd45732ee014f2a6",
-    "scout-discoveries/manifest.json": "6df8a1c15c019fe2d0dbce43aeb5e5c2caccac0f08c53a23bc4ea6a04b16626c"
+    "scout-operations/decision-handoff-ledger.json": "a4c6057bfe44511a224a940f34c0dcd5660613fa0a5e7ab00170e77a58aae1bf",
+    "scout-discoveries/manifest.json": "f7360c6d6363b0063b8c08ef34419103d4f62ad95e4c8d3589774ac1aeb53d4d"
   },
   "funding_signal_counts": {
     "CI_432_NEEDS_PROJECT_PROOF": 41,

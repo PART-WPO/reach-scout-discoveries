@@ -1,11 +1,13 @@
 {
   "schema": "reach-scout-bounded-project-human-referral-v1",
-  "source_outcome_event_count": 67,
-  "source_outcome_sha256": "bad9ffe3c9634e773d51841387367796c42c49499d715367dc26e9e26bc39d10",
+  "source_outcome_event_count": 68,
+  "source_outcome_sha256": "70d1707f0b39478a2058342145d4c1043c7b98dd841e3c0af3cdfbe207d4605a",
   "unique_bounded_project_questions": 3,
-  "potential_wpo_cases_quick_screened": 20,
-  "human_referral_drafts_prevalidated": 0,
-  "draft_paths": [],
+  "potential_wpo_cases_quick_screened": 21,
+  "human_referral_drafts_prevalidated": 1,
+  "draft_paths": [
+    "scout-discoveries/inbox/2026-11-10-human-project-b8d519c3e1a123e83c.csv"
+  ],
   "published_batch_paths": [
     "scout-discoveries/batches/2026-11-09-human-project-b332d53770e8cbc1d4.csv",
     "scout-discoveries/batches/2026-11-09-human-project-866c8052a22849b2de.csv",
@@ -575,6 +577,96 @@
       "review_question": "Reviewer question: Is this independently published output a deliverable of SPARK primary award NA19OAR4590081 (rather than merely topically related), and if so which project parent should it use?",
       "scout_inbox_status": "PUBLISHED_PUBLIC_SCOUT_FEED_NOT_PRIVATE_HUB",
       "published_scout_batch_path": "scout-discoveries/batches/2026-11-09-human-project-866c8052a22849b2de.csv",
+      "eligible_for_new_reach_addition": "NOT_VERIFIED",
+      "private_hub_import": "NOT_VERIFIED",
+      "human_approval": "NOT_VERIFIED"
+    },
+    {
+      "doi": "10.1016/j.cageo.2022.105193",
+      "source_event_id": "bc12abb2aa0448ed4c46278f",
+      "source_file": "scout-operations/historical-crossref-phase2/auto-verified-oar459-b8d519c3e1a123e83c.json",
+      "source_sha256": "9c3a69dc064d79ecb79b5dcc74086d3f232cc5f00c54d684b54b6b3e1f8f7747",
+      "official_metadata": {
+        "status": "ok",
+        "provider": "crossref",
+        "evidence": "https://api.crossref.org/works/10.1016/j.cageo.2022.105193",
+        "title": "Adaptive conditional bias-penalized Kalman filter with minimization of degrees of freedom for noise for superior state estimation and prediction of extremes",
+        "creators": [
+          "Dong-Jun Seo",
+          "Haojing Shen",
+          "Haksu Lee"
+        ],
+        "resource_type": "journal-article",
+        "publication_status": "official_journal_article",
+        "abstract": "",
+        "pub_date": "2022-09-01",
+        "preprint_posted_date": "",
+        "pub_date_basis": "Crossref published-print",
+        "pub_date_precision": "month_imputed",
+        "publisher": "Elsevier BV",
+        "funding_references": [
+          {
+            "DOI": "10.13039/100000192",
+            "name": "NOAA",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "NA16OAR4590232"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "NA16OAR4590232"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100000192",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          }
+        ],
+        "related_identifiers": {},
+        "attempts": [
+          {
+            "provider": "datacite",
+            "url": "https://api.datacite.org/dois/10.1016/j.cageo.2022.105193",
+            "error": {
+              "kind": "http",
+              "code": 404
+            }
+          },
+          {
+            "provider": "crossref",
+            "url": "https://api.crossref.org/works/10.1016/j.cageo.2022.105193",
+            "error": null
+          }
+        ]
+      },
+      "public_identity": {
+        "status": "NO_PUBLIC_IDENTITY_MATCH",
+        "reason": "NO_MATCH_IN_VERIFIED_PUBLIC_SNAPSHOT",
+        "matches": [],
+        "caveat": "Public snapshot only; private Hub decisions are not asserted.",
+        "noaa_ir_reach_check": {
+          "status": "VERIFIED_IR_URL_NOT_IN_PUBLIC_REACH",
+          "official_url": "https://repository.library.noaa.gov/view/noaa/57846",
+          "match_uid": null,
+          "match_detail_shard": null
+        }
+      },
+      "project_search_context_only": {
+        "award_context_only": "NA16OAR4590232",
+        "project_context_only": "",
+        "wpo_award_cue_not_proof": true,
+        "reason_for_review": "WPO-pattern award cited but exact funded project deliverable unverified"
+      },
+      "disposition": "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL",
+      "review_question": "Reviewer question: Select and verify the correct SPARK parent for the explicitly funded WPO award NA16OAR4590232; confirm the output belongs with that parent before addition.",
+      "scout_inbox_status": "VALIDATED_INBOX_DRAFT_NOT_PRIVATE_HUB",
+      "published_scout_batch_path": null,
       "eligible_for_new_reach_addition": "NOT_VERIFIED",
       "private_hub_import": "NOT_VERIFIED",
       "human_approval": "NOT_VERIFIED"

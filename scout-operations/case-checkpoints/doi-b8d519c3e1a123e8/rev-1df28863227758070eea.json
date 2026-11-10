@@ -1,0 +1,77 @@
+{
+  "schema": "reach-scout-decision-checkpoint-v1",
+  "decision_contract": "reach-scout-decision-pipeline-v2",
+  "input_fingerprint": "1df28863227758070eea317cd3fd6e772034fb43bce5e7053100b114e2f3a977",
+  "index_fingerprint": "23577a6f9d51a91580fc217e6279147bfd85ab24255a602405d2f70b1cfa2538",
+  "case_input": {
+    "doi": "10.1016/j.cageo.2022.105193",
+    "title": "Adaptive conditional bias-penalized Kalman filter with minimization of degrees of freedom for noise for superior state estimation and prediction of extremes",
+    "cohort": "historical_crossref",
+    "publication_status": "NOT_CHECKED",
+    "primary_award_match": null,
+    "project_attribution": "NOT_CHECKED",
+    "checked_sources": [
+      "https://doi.org/10.1016/j.cageo.2022.105193",
+      "https://repository.library.noaa.gov/view/noaa/57846"
+    ],
+    "research_rounds": 1,
+    "secondary_identity_checked": false,
+    "required_metadata_verified": false,
+    "private_review_status": "NOT_VERIFIED",
+    "source_evidence": [
+      {
+        "path": "scout-operations/historical-crossref-phase2/2026-11-07-0729ET-kalman-noaa-ir-project-evidence.json",
+        "sha256": "629ef0ff57edbd0524c258b910e77a7896cf568a838a2a516aacaa7263be57bb"
+      }
+    ],
+    "research_budget_exhausted": false
+  },
+  "evaluation": {
+    "doi": "10.1016/j.cageo.2022.105193",
+    "cohort": "historical_crossref",
+    "identity_check": {
+      "status": "IN_PUBLIC_SCOUT_QUEUE",
+      "reason": "CONSISTENT_SCOUT_PUBLIC_MIRRORS",
+      "matches": [
+        {
+          "source": "SCOUT_PUBLISHED",
+          "identity": "2026-11-10-human-project-b8d519c3e1a123e83c:2",
+          "title": "Adaptive conditional bias-penalized Kalman filter with minimization of degrees of freedom for noise for superior state estimation and prediction of extremes",
+          "location": "scout-discoveries/batches/2026-11-10-human-project-b8d519c3e1a123e83c.csv:2",
+          "match_bases": [
+            "exact_doi",
+            "normalized_title"
+          ]
+        },
+        {
+          "source": "SCOUT_INBOX",
+          "identity": "2026-11-10-human-project-b8d519c3e1a123e83c.csv:2",
+          "title": "Adaptive conditional bias-penalized Kalman filter with minimization of degrees of freedom for noise for superior state estimation and prediction of extremes",
+          "location": "scout-discoveries/inbox/2026-11-10-human-project-b8d519c3e1a123e83c.csv:2",
+          "match_bases": [
+            "exact_doi",
+            "normalized_title"
+          ]
+        }
+      ],
+      "caveat": "Public snapshot only; private Hub decisions are not asserted."
+    },
+    "project_attribution": "NOT_CHECKED",
+    "primary_award_match": null,
+    "publication_status": "NOT_CHECKED",
+    "private_review_status": "NOT_VERIFIED",
+    "research_rounds": 1,
+    "decision": "EXISTING_SCOUT_CANDIDATE",
+    "review_action": "NONE",
+    "notes": [],
+    "checked_sources": [
+      "https://doi.org/10.1016/j.cageo.2022.105193",
+      "https://repository.library.noaa.gov/view/noaa/57846"
+    ],
+    "unverified_private_hub_import": true,
+    "automatically_staged": false,
+    "seed_expansion_preserved": true
+  },
+  "source_case_path": "scout-operations/research-decision-cases.json",
+  "human_decision_modified": false
+}

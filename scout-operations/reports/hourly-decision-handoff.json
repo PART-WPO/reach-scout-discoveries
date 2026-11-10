@@ -1,20 +1,26 @@
 {
   "schema": "reach-scout-hourly-decision-handoff-v1",
-  "ran_at": "2026-11-10T14:18:37.229682+00:00",
-  "source_selection_sha256": "df4e79f5fc69a921f82065913f4b3de0cc6df05c1961e009bfe2757a42643e28",
-  "attempted_originals": 1,
+  "ran_at": "2026-11-10T16:43:08.098991+00:00",
+  "source_selection_sha256": "47156993dc00771bd2374043c5753b1efb897e5203d48dc4b43c29f49a6a44f7",
+  "attempted_originals": 2,
   "public_review_batches_validated_this_run": 1,
   "public_review_handoffs_staged": 0,
   "outcomes": [
     {
-      "doi": "10.3390/atmos16070881",
+      "doi": "10.5194/gmd-2022-311",
+      "decision": "OFFICIAL_PUBLICATION_UNVERIFIED",
+      "status": "BLOCKED",
+      "retry_after": "2026-11-11T16:43:08.098991+00:00"
+    },
+    {
+      "doi": "10.1016/j.cageo.2022.105193",
       "decision": "SOURCE_VERIFIED_FOR_GUARDED_REVIEW",
       "status": "PUBLISHED_PUBLIC_SCOUT",
-      "award": "NA19OAR4590133",
-      "evidence_url": "https://api.crossref.org/works/10.3390/atmos16070881",
-      "source_note": "scout-operations/historical-crossref-phase2/auto-verified-oar459-69e9278b9a8267f272.json",
+      "award": "NA16OAR4590232",
+      "evidence_url": "https://api.crossref.org/works/10.1016/j.cageo.2022.105193",
+      "source_note": "scout-operations/historical-crossref-phase2/auto-verified-oar459-b8d519c3e1a123e83c.json",
       "prior_research_note_sha256_reused": null,
-      "published_batch": "scout-discoveries/batches/2026-11-10-human-project-69e9278b9a8267f272.csv"
+      "published_batch": "scout-discoveries/batches/2026-11-10-human-project-b8d519c3e1a123e83c.csv"
     }
   ],
   "skipped_cooldown_or_already_staged": [
@@ -25,8 +31,8 @@
     }
   ],
   "measurement": {
-    "metadata_resolver_calls": 1,
-    "provider_http_requests_observed": 2,
+    "metadata_resolver_calls": 2,
+    "provider_http_requests_observed": 4,
     "in_process_metadata_reuses": 1,
     "prior_research_note_sha256_reused": [],
     "avoided_requests_measured": null,
