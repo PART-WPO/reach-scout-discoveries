@@ -11,6 +11,7 @@ import io
 import json
 import re
 import urllib.request
+from urllib.parse import urlsplit
 from pathlib import Path
 
 from preprint_watchlist import norm_doi
@@ -22,6 +23,20 @@ UID = re.compile(r"reachuid-v1-[0-9a-f]{32}\Z")
 CLASSIFICATION = re.compile(r"(?im)^\s*Scout classification:\s*([^\r\n]+)")
 ROUTE = re.compile(r"(?im)^\s*Scout discovery route:\s*([^\r\n]+)")
 UPDATE_FIELDS = re.compile(r"(?im)^\s*REACH update fields:\s*(\S[^\r\n]{9,})")
+NOAA_IR = re.compile(r"/view/noaa/\d+\Z")
+
+
+def norm_official_ir(value):
+    """Canonicalize exact public NOAA IR item URLs only (not arbitrary URL similarity)."""
+    parts = urlsplit(str(value or "").strip())
+    if (parts.scheme not in {"http", "https"} or
+            (parts.hostname or "").lower() != "repository.library.noaa.gov" or
+            parts.username or parts.password or parts.port):
+        return ""
+    path = parts.path.rstrip("/")
+    return ("https://repository.library.noaa.gov" + path.lower()
+            if NOAA_IR.fullmatch(path.lower()) else "")
+
 
 
 def version_links(root):
@@ -55,11 +70,17 @@ def version_links(root):
                 final = norm_doi(final)
                 if not re.fullmatch(r"10\.\d{4,9}/\S+", final, re.I) or not pre:
                     continue
-                entry = links.setdefault(final, {"preprints": set(), "reach_ids": set()})
+                entry = links.setdefault(final, {"preprints": set(), "reach_ids": set(), "reach_uids": set(), "official_ir_urls": set()})
                 entry["preprints"].add(pre)
                 if source == "retired":
-                    entry["reach_ids"].update(
-                        r for r in item.get("reach_ids", []) if RID.fullmatch(str(r)))
+                    for identity in item.get("reach_ids", []):
+                        if RID.fullmatch(str(identity)):
+                            entry["reach_ids"].add(identity)
+                        elif UID.fullmatch(str(identity)):
+                            entry["reach_uids"].add(identity)
+                    source_url = norm_official_ir(item.get("verification_source"))
+                    if source_url:
+                        entry["official_ir_urls"].add(source_url)
                 if source == "leads":
                     for match in (item.get("public_reach_index_screen") or {}).get("matches", []):
                         rid = match.get("record_id", "")
@@ -85,7 +106,7 @@ def fetch_reach_index(fetch_bytes=_download):
     shards = manifest.get("index", {}).get("files", [])
     if not shards or not isinstance(shards, list):
         raise ValueError("Missing REACH index shards")
-    result = {"by_doi": {}, "by_id": {}, "manifest_sha256": hashlib.sha256(raw_manifest).hexdigest()}
+    result = {"by_doi": {}, "by_id": {}, "by_uid": {}, "by_url": {}, "manifest_sha256": hashlib.sha256(raw_manifest).hexdigest()}
     total = 0
     for shard in shards:
         path = shard.get("path", "")
@@ -104,12 +125,16 @@ def fetch_reach_index(fetch_bytes=_download):
         total += len(rows)
         for row in rows:
             rid, uid = row["Record ID"], row["REACH UID"]
-            if not RID.fullmatch(rid) or not UID.fullmatch(uid) or rid in result["by_id"]:
+            if not RID.fullmatch(rid) or not UID.fullmatch(uid) or rid in result["by_id"] or uid in result["by_uid"]:
                 raise ValueError("Invalid or duplicate REACH identity")
             item = {"record_id": rid, "reach_uid": uid,
                     "output_type": row["Output Type"], "title": row.get("Title", ""),
                     "award": row.get("Award Number(s)", ""), "link": row["Link to Output"]}
             result["by_id"][rid] = item
+            result["by_uid"][uid] = item
+            official_ir = norm_official_ir(row["Link to Output"])
+            if official_ir:
+                result["by_url"].setdefault(official_ir, []).append(item)
             doi = norm_doi(row["Link to Output"])
             if re.fullmatch(r"10\.\d{4,9}/\S+", doi, re.I):
                 result["by_doi"].setdefault(doi, []).append(item)
@@ -135,7 +160,17 @@ def version_decision(row, linked, reach_index):
     for rid in relation["reach_ids"]:
         item = reach_index["by_id"].get(rid)
         if item and item["output_type"] == "1":
-            candidates[rid] = item
+            candidates[item["record_id"]] = item
+    for uid in relation.get("reach_uids", ()):
+        item = reach_index.get("by_uid", {}).get(uid)
+        if item and item["output_type"] == "1":
+            candidates[item["record_id"]] = item
+    # Public REACH often uses the NOAA IR link as its primary URL, not a
+    # doi.org link. Require exact item URL and a verified preprint/final link.
+    for official_ir in relation.get("official_ir_urls", ()):
+        for item in reach_index.get("by_url", {}).get(official_ir, []):
+            if item["output_type"] == "1":
+                candidates[item["record_id"]] = item
     if not candidates:
         return ("eligible", "Verified article version relationship; no matching prior or final publication DOI found in complete SHA-verified public REACH index")
     if len(candidates) != 1:
