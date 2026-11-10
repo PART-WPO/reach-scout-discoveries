@@ -79,7 +79,7 @@ class VisibleText(HTMLParser):
         if tag in {"script", "style", "noscript"}:
             self.hidden += 1
         if tag in {"p", "div", "li", "tr", "section", "h2", "h3", "h4", "br"}:
-            self.text.append("\\n")
+            self.text.append("\n")
 
     def handle_endtag(self, tag):
         if tag in {"script", "style", "noscript"} and self.hidden:
@@ -92,7 +92,7 @@ class VisibleText(HTMLParser):
             self.text.append(data)
 
     def plain(self):
-        return re.sub(r"\s+", " ", html.unescape(" ".join(self.text)))
+        return re.sub(r"[ \t]+", " ", html.unescape(" ".join(self.text)))
 
 
 def candidate_cues(text, seed, evidence_kind, url):
@@ -102,7 +102,7 @@ def candidate_cues(text, seed, evidence_kind, url):
         doi = canonical(match.group())
         if not doi or doi == seed:
             continue
-        before = text[max(0, match.start() - 300):match.start()].split("\\n")[-1]
+        before = text[max(0, match.start() - 300):match.start()].split("\n")[-1]
         after = text[match.end():match.end() + 60]
         context = (before + match.group() + after).strip()
         if not DATA_CUE.search(before):
