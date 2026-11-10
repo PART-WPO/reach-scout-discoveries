@@ -1,12 +1,12 @@
 {
   "schema": "reach-scout-bounded-project-human-referral-v1",
-  "source_outcome_event_count": 65,
-  "source_outcome_sha256": "4d27b80a7d636b8901b8042b6391b440e9aa6103231f61275a91669e07ab1ce5",
+  "source_outcome_event_count": 66,
+  "source_outcome_sha256": "34327cda0dc308226b84bffaa87b49494a710684b277270faae710b263beb702",
   "unique_bounded_project_questions": 3,
-  "potential_wpo_cases_quick_screened": 18,
+  "potential_wpo_cases_quick_screened": 19,
   "human_referral_drafts_prevalidated": 1,
   "draft_paths": [
-    "scout-discoveries/inbox/2026-11-10-human-project-3bb30323909753e956.csv"
+    "scout-discoveries/inbox/2026-11-10-human-project-bfcdcca18eb647d9c5.csv"
   ],
   "published_batch_paths": [
     "scout-discoveries/batches/2026-11-09-human-project-b332d53770e8cbc1d4.csv",
@@ -22,9 +22,10 @@
     "scout-discoveries/batches/2026-11-10-human-project-31f68eaae5993b3626.csv",
     "scout-discoveries/batches/2026-11-10-human-project-8eb678e5c990af2471.csv",
     "scout-discoveries/batches/2026-11-10-human-project-e65c593e29a9643d34.csv",
-    "scout-discoveries/batches/2026-11-10-human-project-a6d179727eeaf598b3.csv"
+    "scout-discoveries/batches/2026-11-10-human-project-a6d179727eeaf598b3.csv",
+    "scout-discoveries/batches/2026-11-10-human-project-3bb30323909753e956.csv"
   ],
-  "verified_public_scout_referral_batches": 14,
+  "verified_public_scout_referral_batches": 15,
   "human_reviewer_decisions": "NOT_VERIFIED",
   "private_hub_imports": "NOT_VERIFIED",
   "new_approved_reach_outputs": 0,
@@ -2679,9 +2680,32 @@
         ]
       },
       "public_identity": {
-        "status": "NO_PUBLIC_IDENTITY_MATCH",
-        "reason": "NO_MATCH_IN_VERIFIED_PUBLIC_SNAPSHOT",
-        "matches": [],
+        "status": "IN_PUBLIC_SCOUT_QUEUE",
+        "reason": "CONSISTENT_SCOUT_PUBLIC_MIRRORS",
+        "matches": [
+          {
+            "source": "SCOUT_PUBLISHED",
+            "identity": "2026-11-10-human-project-3bb30323909753e956:2",
+            "title": "On the Use of Freezing Rain Local Storm Reports for Quantitative Purposes",
+            "location": "scout-discoveries/batches/2026-11-10-human-project-3bb30323909753e956.csv:2",
+            "match_bases": [
+              "exact_doi",
+              "exact_url",
+              "normalized_title"
+            ]
+          },
+          {
+            "source": "SCOUT_INBOX",
+            "identity": "2026-11-10-human-project-3bb30323909753e956.csv:2",
+            "title": "On the Use of Freezing Rain Local Storm Reports for Quantitative Purposes",
+            "location": "scout-discoveries/inbox/2026-11-10-human-project-3bb30323909753e956.csv:2",
+            "match_bases": [
+              "exact_doi",
+              "exact_url",
+              "normalized_title"
+            ]
+          }
+        ],
         "caveat": "Public snapshot only; private Hub decisions are not asserted.",
         "noaa_ir_reach_check": {
           "status": "VERIFIED_IR_URL_NOT_IN_PUBLIC_REACH",
@@ -2696,8 +2720,95 @@
         "wpo_award_cue_not_proof": true,
         "reason_for_review": "WPO-pattern award cited but exact funded project deliverable unverified"
       },
-      "disposition": "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL",
+      "disposition": "HOLD_ALREADY_IN_PUBLIC_REACH_OR_SCOUT",
       "review_question": "Reviewer question: Select and verify the correct SPARK parent for the explicitly funded WPO award NA22OAR4590169; confirm the output belongs with that parent before addition.",
+      "scout_inbox_status": "PUBLISHED_PUBLIC_SCOUT_FEED_NOT_PRIVATE_HUB",
+      "published_scout_batch_path": "scout-discoveries/batches/2026-11-10-human-project-3bb30323909753e956.csv",
+      "eligible_for_new_reach_addition": "NOT_VERIFIED",
+      "private_hub_import": "NOT_VERIFIED",
+      "human_approval": "NOT_VERIFIED"
+    },
+    {
+      "doi": "10.1175/wcas-d-25-0019.1",
+      "source_event_id": "791ab5f69d6bb9c44a00dbd2",
+      "source_file": "scout-operations/historical-crossref-phase2/auto-verified-oar459-bfcdcca18eb647d9c5.json",
+      "source_sha256": "68ca01bc2682b08f2b9b10ab31ccf74941f089522a56695f827784a2da58f703",
+      "official_metadata": {
+        "status": "ok",
+        "provider": "crossref",
+        "evidence": "https://api.crossref.org/works/10.1175/wcas-d-25-0019.1",
+        "title": "“As Ready as We Can Be”: The Dynamics of Preparedness in Hurricane Florence",
+        "creators": [
+          "Blake Checkoway",
+          "Jen Henderson"
+        ],
+        "resource_type": "journal-article",
+        "publication_status": "official_journal_article",
+        "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>Landfalling tropical cyclones (LTCs) create potentially dangerous conditions that require many people to prepare to evacuate or shelter in place. Yet such activities are rarely “one and done.” Instead, the multiple threats that can accompany LTCs—e.g., tornadoes, flooding, and storm surge—necessitate a continual risk assessment of hazards as they evolve relative to individual locations, resources, and risk perceptions. Important to individual decision-making is the way in which people find themselves reliant on physical and social structures, which can facilitate or hamper their choices. These dependencies evolve during the LTC, as well, changing with individual hazard impacts in ways that illustrate the complexity of preparedness and its dynamic nature. Results of an analysis of Twitter users posting about their experiences with Hurricane Florence in 2018 suggest such preparedness for LTCs is dependent on various physical and social structures, not just before landfall, as people make their prestorm preparations but, importantly, as they decide to return home from evacuation. Three types of dependencies emerged as most influential in shaping Twitter users’ preparedness decisions: workplace-related contingencies, school system decisions, and infrastructural dependencies. Common across each of these contexts is how these entities impose rules, regulations, and timelines on people in ways that limit preparedness options and diminish individuals’ agency for decision-making. Ultimately, these dependencies potentially increase people’s vulnerability to hazardous situations, limit their adaptive capacity, and necessitate dynamic preparedness throughout the life cycle of the hurricane.</jats:p>",
+        "pub_date": "2026-07-01",
+        "preprint_posted_date": "",
+        "pub_date_basis": "Crossref published-print",
+        "pub_date_precision": "month_imputed",
+        "publisher": "American Meteorological Society",
+        "funding_references": [
+          {
+            "name": "NOAA Research",
+            "award": [
+              "NA18OAR4590309"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "NA18OAR4590309"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "https://ror.org/02kgve346",
+                "id-type": "ROR",
+                "asserted-by": "crossref"
+              }
+            ]
+          }
+        ],
+        "related_identifiers": {},
+        "attempts": [
+          {
+            "provider": "datacite",
+            "url": "https://api.datacite.org/dois/10.1175/wcas-d-25-0019.1",
+            "error": {
+              "kind": "http",
+              "code": 404
+            }
+          },
+          {
+            "provider": "crossref",
+            "url": "https://api.crossref.org/works/10.1175/wcas-d-25-0019.1",
+            "error": null
+          }
+        ]
+      },
+      "public_identity": {
+        "status": "NO_PUBLIC_IDENTITY_MATCH",
+        "reason": "NO_MATCH_IN_VERIFIED_PUBLIC_SNAPSHOT",
+        "matches": [],
+        "caveat": "Public snapshot only; private Hub decisions are not asserted.",
+        "noaa_ir_reach_check": {
+          "status": "DOI_NOT_IN_VERIFIED_IR_INDEX_UNKNOWN",
+          "official_url": null,
+          "match_uid": null,
+          "match_detail_shard": null
+        }
+      },
+      "project_search_context_only": {
+        "award_context_only": "NA18OAR4590309",
+        "project_context_only": "",
+        "wpo_award_cue_not_proof": true,
+        "reason_for_review": "WPO-pattern award cited but exact funded project deliverable unverified"
+      },
+      "disposition": "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL",
+      "review_question": "Reviewer question: Select and verify the correct SPARK parent for the explicitly funded WPO award NA18OAR4590309; confirm the output belongs with that parent before addition.",
       "scout_inbox_status": "VALIDATED_INBOX_DRAFT_NOT_PRIVATE_HUB",
       "published_scout_batch_path": null,
       "eligible_for_new_reach_addition": "NOT_VERIFIED",

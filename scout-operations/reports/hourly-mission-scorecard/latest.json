@@ -1,0 +1,44 @@
+{
+  "schema": "reach-scout-separated-completed-mission-scorecard-v1",
+  "measurement_limitation": "Only timestamped reports in source folders; record count is not the number of scheduled task attempts. GitHub backstop is never an hourly ChatGPT mission. In-process reuse differs from persistent cache reuse. No causal inference.",
+  "by_producer": {
+    "chatgpt_hourly_mission": {
+      "verified_report_count": 0,
+      "no_report_is_not_proof_no_mission_ran": true,
+      "completed_original_decision_missions": 0,
+      "confirmed_public_handoff_missions": 0,
+      "completed_original_decisions_counted_per_mission": 0,
+      "distinct_completed_original_dois": [],
+      "decision_missions_per_recorded_mission": null,
+      "public_handoff_missions_per_recorded_mission": null,
+      "prior_note_sha256_reused_count": 0,
+      "external_http_counts_instrumented_missions": 0,
+      "observed_metadata_requests_sum_only_instrumented_missions": null,
+      "cache_reuse_counts_instrumented_missions": 0,
+      "observed_cache_reuse_sum_only_instrumented_missions": null,
+      "avoided_requests_claimed": null,
+      "private_hub_imports_verified": null,
+      "private_hub_status": "NOT_VERIFIED"
+    },
+    "github_guarded_crossref_backstop": {
+      "verified_report_count": 1,
+      "no_report_is_not_proof_no_mission_ran": true,
+      "completed_original_decision_missions": 1,
+      "confirmed_public_handoff_missions": 1,
+      "completed_original_decisions_counted_per_mission": 1,
+      "distinct_completed_original_dois": [
+        "10.1175/wcas-d-25-0019.1"
+      ],
+      "decision_missions_per_recorded_mission": 1.0,
+      "public_handoff_missions_per_recorded_mission": 1.0,
+      "prior_note_sha256_reused_count": 0,
+      "external_http_counts_instrumented_missions": 1,
+      "observed_metadata_requests_sum_only_instrumented_missions": 2,
+      "cache_reuse_counts_instrumented_missions": 1,
+      "observed_cache_reuse_sum_only_instrumented_missions": 1,
+      "avoided_requests_claimed": null,
+      "private_hub_imports_verified": null,
+      "private_hub_status": "NOT_VERIFIED"
+    }
+  }
+}
