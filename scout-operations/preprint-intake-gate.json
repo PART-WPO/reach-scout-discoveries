@@ -1,20 +1,36 @@
 {
   "schema": "reach-scout-preprint-intake-gate-v1",
-  "checked_at": "2026-11-10T00:27:36.433197+00:00",
+  "checked_at": "2026-11-10T02:55:36.458454+00:00",
   "policy": "All new publication proposals require registry check. A preprint DOI cannot be staged through ANY origin. Uncertain metadata remains on hold. Existing human decisions unchanged.",
   "checks": [
     {
-      "path": "scout-discoveries/inbox/2026-11-10-human-project-31f68eaae5993b3626.csv",
-      "sha256": "c62a6a395314d160d27612a2ed70c37b7747cc6cc557dc90e89cb649cd223478",
+      "path": "scout-discoveries/inbox/2026-11-10-human-project-8eb678e5c990af2471.csv",
+      "sha256": "ac9783bdbd98812dded1535d43de11fc01ea3f500a5becef8b84ff2e73a41a6c",
       "verdict": "eligible",
       "rows": [
         {
-          "doi": "10.1175/jcli-d-25-0247.1",
+          "doi": "10.1175/mwr-d-25-0146.1",
           "status": "eligible",
           "reason": "Crossref identifies an officially issued scholarly publication",
           "evidence": [
-            "https://api.crossref.org/works/10.1175/jcli-d-25-0247.1",
-            "https://api.datacite.org/dois/10.1175/jcli-d-25-0247.1"
+            "https://api.crossref.org/works/10.1175/mwr-d-25-0146.1",
+            "https://api.datacite.org/dois/10.1175/mwr-d-25-0146.1"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "scout-discoveries/inbox/2026-11-10-human-project-e65c593e29a9643d34.csv",
+      "sha256": "11c5a8ac55519f08b695250cde26e76066d34c4573e3dd953110eb7071d541e7",
+      "verdict": "eligible",
+      "rows": [
+        {
+          "doi": "10.1175/mwr-d-26-0134.1",
+          "status": "eligible",
+          "reason": "Crossref identifies an officially issued scholarly publication",
+          "evidence": [
+            "https://api.crossref.org/works/10.1175/mwr-d-26-0134.1",
+            "https://api.datacite.org/dois/10.1175/mwr-d-26-0134.1"
           ]
         }
       ]
@@ -359,6 +375,6 @@
       ]
     }
   ],
-  "eligible_batches": 13,
+  "eligible_batches": 14,
   "held_batches": 3
 }

@@ -3,19 +3,27 @@
   "cases": {
     "10.1175/mwr-d-25-0146.1": {
       "state": "BLOCKED",
-      "reason": "REVIEWER_HANDOFF_NOT_READY",
-      "attempt_count": 1,
-      "checked_at": "2026-11-10T02:51:25.976258+00:00",
-      "retry_after": "2026-11-10T02:51:25.976258+00:00",
-      "official_evidence_url": null,
+      "reason": "NOT_NEW_IN_REACH_OR_SCOUT",
+      "attempt_count": 2,
+      "checked_at": "2026-11-10T02:55:34.231920+00:00",
+      "retry_after": "2026-12-10T02:55:34.231920+00:00",
+      "official_evidence_url": "https://api.crossref.org/works/10.1175/mwr-d-25-0146.1",
       "detail": "",
+      "private_hub_import": "NOT_VERIFIED"
+    },
+    "10.1175/mwr-d-26-0134.1": {
+      "state": "PUBLISHED_PUBLIC_SCOUT",
+      "reason": "SOURCE_VERIFIED_AND_MANIFEST_VALIDATED",
+      "checked_at": "2026-11-10T02:55:34.231920+00:00",
+      "attempt_count": 1,
+      "source_note": "scout-operations/historical-crossref-phase2/auto-verified-oar459-e65c593e29a9643d34.json",
       "private_hub_import": "NOT_VERIFIED",
-      "remediation": "2026-11-09: New hourly note filename was not indexed by registry 20*.json filter; fixed source scanner and reset only this technical handoff cooldown. Preserve original attempted date and failure."
+      "published_batch": "scout-discoveries/batches/2026-11-10-human-project-e65c593e29a9643d34.csv"
     }
   },
   "last_mission": {
-    "at": "2026-11-10T02:51:25.976258+00:00",
-    "attempted": 1,
-    "staged": 0
+    "at": "2026-11-10T02:55:34.231920+00:00",
+    "attempted": 2,
+    "staged": 1
   }
 }

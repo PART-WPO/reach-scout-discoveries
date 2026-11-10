@@ -1,12 +1,13 @@
 {
   "schema": "reach-scout-bounded-project-human-referral-v1",
-  "source_outcome_event_count": 62,
-  "source_outcome_sha256": "aa0edf30e86a24ba77aa73ca5774cf6c7fbcbbac4d562be35f180b224b6f9316",
+  "source_outcome_event_count": 63,
+  "source_outcome_sha256": "944ef71f0c013c41cf97398b0f307f670d9080654e0460bf1a1494c4cce20152",
   "unique_bounded_project_questions": 3,
-  "potential_wpo_cases_quick_screened": 15,
-  "human_referral_drafts_prevalidated": 1,
+  "potential_wpo_cases_quick_screened": 16,
+  "human_referral_drafts_prevalidated": 2,
   "draft_paths": [
-    "scout-discoveries/inbox/2026-11-10-human-project-8eb678e5c990af2471.csv"
+    "scout-discoveries/inbox/2026-11-10-human-project-8eb678e5c990af2471.csv",
+    "scout-discoveries/inbox/2026-11-10-human-project-e65c593e29a9643d34.csv"
   ],
   "published_batch_paths": [
     "scout-discoveries/batches/2026-11-09-human-project-b332d53770e8cbc1d4.csv",
@@ -2279,6 +2280,93 @@
       "disposition": "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL",
       "review_question": "Reviewer question: Select and verify the correct SPARK parent for the explicitly funded WPO award NA24OARX459C0006; confirm the output belongs with that parent before addition.",
       "scout_inbox_status": "EXISTING_VERIFIED_INBOX_DRAFT",
+      "published_scout_batch_path": null,
+      "eligible_for_new_reach_addition": "NOT_VERIFIED",
+      "private_hub_import": "NOT_VERIFIED",
+      "human_approval": "NOT_VERIFIED"
+    },
+    {
+      "doi": "10.1175/mwr-d-26-0134.1",
+      "source_event_id": "0fe3289af6febbde6d8e84e4",
+      "source_file": "scout-operations/historical-crossref-phase2/auto-verified-oar459-e65c593e29a9643d34.json",
+      "source_sha256": "97274447952ce0cf2d517ab7cf5f09e245796edb49dbc4e16ca7a9b2a4f9b1ab",
+      "official_metadata": {
+        "status": "ok",
+        "provider": "crossref",
+        "evidence": "https://api.crossref.org/works/10.1175/mwr-d-26-0134.1",
+        "title": "Convection-Allowing Ensemble-Based Land–Atmosphere Coupled Background Error Covariance and Its Sampling Error: A Dryline Case Study",
+        "creators": [
+          "Aaron Johnson",
+          "Xuguang Wang"
+        ],
+        "resource_type": "journal-article",
+        "publication_status": "official_journal_article",
+        "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>Land surface characteristics such as soil moisture can influence convection initiation (CI) along the Great Plains dryline, while convective precipitation itself influences soil moisture. Therefore, land–atmosphere strongly coupled data assimilation (SCDA) is particularly attractive in the context of dryline CI events. However, effective convective-scale ensemble-based SCDA requires a better understanding of the characteristics of the coupled-correlation structure associated with land surface uncertainty and the sampling error associated with ensemble-based estimates of that coupled-correlation structure. Herein, a dryline CI case study shows that the coupled correlations between land and atmosphere variables are particularly pronounced along the dryline, in the vicinity of the subsequent CI. While this study does not attempt to provide a fully optimized estimate of the coupled background error covariance or the optimal localization length scales, some guidance for future development of convective-scale land–atmosphere SCDA can be inferred. Quantitatively, this study suggests that smaller horizontal localization length scales are likely optimal for soil variables than for atmosphere thermodynamic variables for a given ensemble size. Additionally, smaller ensembles (in this case, ∼60 members) are likely sufficient for land–atmosphere coupled correlations involving soil temperature but larger ensembles (in this case, ∼100–200 members) are likely needed to reliably estimate the sign of the coupled correlations involving soil moisture. Qualitatively, this study also suggests that treatments of sampling error that are not distance based are likely necessary during convective-scale SCDA to mitigate the sampling error that dominates across much of the domain while still retaining the part of the ensemble-based cross-component correlation that would be expected to improve dryline CI analyses and forecasts.</jats:p>",
+        "pub_date": "2026-11-01",
+        "preprint_posted_date": "",
+        "pub_date_basis": "Crossref published-print",
+        "pub_date_precision": "month_imputed",
+        "publisher": "American Meteorological Society",
+        "funding_references": [
+          {
+            "name": "NOAA Weather Program Office",
+            "award": [
+              "NA24OARX459C0001"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "NA24OARX459C0001"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "https://ror.org/01q70bz83",
+                "id-type": "ROR",
+                "asserted-by": "crossref"
+              }
+            ]
+          }
+        ],
+        "related_identifiers": {},
+        "attempts": [
+          {
+            "provider": "datacite",
+            "url": "https://api.datacite.org/dois/10.1175/mwr-d-26-0134.1",
+            "error": {
+              "kind": "http",
+              "code": 404
+            }
+          },
+          {
+            "provider": "crossref",
+            "url": "https://api.crossref.org/works/10.1175/mwr-d-26-0134.1",
+            "error": null
+          }
+        ]
+      },
+      "public_identity": {
+        "status": "NO_PUBLIC_IDENTITY_MATCH",
+        "reason": "NO_MATCH_IN_VERIFIED_PUBLIC_SNAPSHOT",
+        "matches": [],
+        "caveat": "Public snapshot only; private Hub decisions are not asserted.",
+        "noaa_ir_reach_check": {
+          "status": "DOI_NOT_IN_VERIFIED_IR_INDEX_UNKNOWN",
+          "official_url": null,
+          "match_uid": null,
+          "match_detail_shard": null
+        }
+      },
+      "project_search_context_only": {
+        "award_context_only": "NA24OARX459C0001",
+        "project_context_only": "",
+        "wpo_award_cue_not_proof": true,
+        "reason_for_review": "WPO-pattern award cited but exact funded project deliverable unverified"
+      },
+      "disposition": "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL",
+      "review_question": "Reviewer question: Select and verify the correct SPARK parent for the explicitly funded WPO award NA24OARX459C0001; confirm the output belongs with that parent before addition.",
+      "scout_inbox_status": "VALIDATED_INBOX_DRAFT_NOT_PRIVATE_HUB",
       "published_scout_batch_path": null,
       "eligible_for_new_reach_addition": "NOT_VERIFIED",
       "private_hub_import": "NOT_VERIFIED",
