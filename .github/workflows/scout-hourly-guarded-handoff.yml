@@ -103,7 +103,7 @@ jobs:
             echo "Source-snapshot attempt $attempt"
             # An unsuccessful git push must not leave an uncommitted mission
             # record that could be mistaken for a separately completed run.
-            rm -f scout-operations/reports/guarded-backstop-missions/github-"${{ github.run_id }}"-*.json
+            git clean -fd -- scout-operations/reports/guarded-backstop-missions/
             git fetch origin main
             git checkout -B main origin/main
             # Refresh the authoritative queue first; reject nonmatching source SHAs.
