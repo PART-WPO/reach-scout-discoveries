@@ -123,6 +123,35 @@ def candidate_cues(text, seed, evidence_kind, url):
     return found
 
 
+def pdf_reference_cues(text, seed, url):
+    """Find data/code DOI citations despite PDF line and page breaks.
+
+    Unlike HTML, PDF text extraction can insert blank lines *within* a single
+    reference. Flatten whitespace, then restrict the local cue to the most
+    recent citation-year boundary so it cannot borrow a data cue from a
+    preceding, unrelated reference.
+    """
+    flat = re.sub(r"\s+", " ", text)
+    found = []
+    for match in DOI_RE.finditer(flat):
+        doi = canonical(match.group())
+        if not doi or doi == seed:
+            continue
+        before = flat[max(0, match.start()-550):match.start()]
+        years = list(re.finditer(r"\((?:19|20)\d{2}[a-z]?\)", before, re.I))
+        if years:
+            before = before[years[-1].start():]
+        if not DATA_CUE.search(before):
+            continue
+        found.append({
+            "doi": doi, "evidence_kind": "noaa_ir_accepted_manuscript_pdf",
+            "source_url": url,
+            "context_excerpt": (before + match.group())[-320:],
+            "eligibility": "RESEARCH_LEAD_ONLY",
+        })
+    return found
+
+
 def crossref_reference_leads(raw, seed, url):
     result = []
     doc = json.loads(raw)
@@ -209,10 +238,12 @@ def noaa_ir_pdf_leads(seed, ir_url, fetch=request_source, pdf_to_text=None):
         text = (pdf_to_text or pdf_text_from_bytes)(pdf_raw)
         if not isinstance(text, str):
             raise ValueError("Public manuscript text extractor returned invalid text")
-        leads = candidate_cues(text, seed, "noaa_ir_accepted_manuscript_pdf", pdf_url)
+        leads = pdf_reference_cues(text, seed, pdf_url)
         sources.append({"kind": "noaa_ir_manuscript_pdf", "url": pdf_url,
                         "status": "SOURCE_READ", "source_sha256": hashlib.sha256(pdf_raw).hexdigest(),
-                        "data_code_doi_matches": len(leads)})
+                        "data_code_doi_matches": len(leads),
+                        "pdf_text_characters": len(text),
+                        "pdf_doi_tokens_observed": len(DOI_RE.findall(text))})
         for lead in leads:
             lead["source_sha256"] = hashlib.sha256(pdf_raw).hexdigest()
     except (ValueError, OSError, TimeoutError, subprocess.SubprocessError,
