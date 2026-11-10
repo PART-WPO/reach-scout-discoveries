@@ -2,15 +2,15 @@
   "schema": "reach-scout-discovery-origin-rollup-v1",
   "snapshot_date": "2026-11-10",
   "source": "Automated SHA-256-verified scout-discoveries/manifest.json and every published batch",
-  "source_manifest_sha256": "c7e95da64ba679e283560331a12f62cc1169ed907cab6af86bfd5efad049af2f",
-  "source_manifest_generated_at": "2026-11-10T00:27:50Z",
-  "batch_count": 42,
-  "staged_review_rows": 95,
+  "source_manifest_sha256": "6df8a1c15c019fe2d0dbce43aeb5e5c2caccac0f08c53a23bc4ea6a04b16626c",
+  "source_manifest_generated_at": "2026-11-10T14:18:49Z",
+  "batch_count": 48,
+  "staged_review_rows": 101,
   "manifest_rows_verified": true,
   "route_counts": {
     "Direct API": 14,
     "API-seeded expansion": 14,
-    "Independent discovery": 23,
+    "Independent discovery": 29,
     "Metadata correction": 4,
     "Unclassified explicit": 0,
     "Unclassified legacy (route missing)": 40
@@ -18,16 +18,16 @@
   "raw_route_counts": {
     "Direct API": 14,
     "API-seeded expansion": 14,
-    "Independent discovery": 23,
+    "Independent discovery": 29,
     "Metadata correction": 4,
     "Unclassified explicit": 0,
     "Unclassified legacy (route missing)": 40
   },
   "effective_discovery_method_counts": {
-    "Direct API": 22,
+    "Direct API": 28,
     "API-seeded expansion": 16,
-    "Independent discovery": 57,
-    "Unclassified": 0
+    "Independent discovery": 46,
+    "Unclassified": 11
   },
   "discovery_method_display_labels": {
     "Direct API": "Found in API results",
@@ -36,7 +36,7 @@
     "Unclassified": "Discovery method unknown"
   },
   "effective_finding_purpose_counts": {
-    "new_output_review": 53,
+    "new_output_review": 59,
     "metadata_correction": 21,
     "possible_duplicate_review": 2,
     "existing_duplicate_review": 2,
@@ -48,6 +48,124 @@
     "ledger_sha256": "2c8e501eea0b65ca7874b343f70ebf55499f288313dff095dc72d0deb8965a4a",
     "source_verified_records": 4,
     "validation": "EXACT_MANIFEST_BATCH_SHA_AND_ROW_IDENTITY_VERIFIED"
+  },
+  "historical_crossref_method_reconciliation": {
+    "verified_explicit_independent_to_direct_corrections": 6,
+    "corrected_record_evidence": [
+      {
+        "batch_id": "2026-11-10-human-project-3bb30323909753e956",
+        "row": 1,
+        "doi": "10.1175/waf-d-25-0244.1",
+        "method": "Direct API",
+        "source_note_sha256": "5b15e69ec281d9f3820d205ee60d98eb5633829b661729adf0c4492820864475",
+        "source_batch_sha256": "cb7f87d98ebd06ec7417a48cecd0c1cfae1d3433637a39b9f40a11b69d97f146",
+        "source_batch_path": "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part005.csv"
+      },
+      {
+        "batch_id": "2026-11-10-human-project-69e9278b9a8267f272",
+        "row": 1,
+        "doi": "10.3390/atmos16070881",
+        "method": "Direct API",
+        "source_note_sha256": "5d1a2ba2bd8acccdaafb5b28cae2eccbacfec04c51e59072c2d197c40f569828",
+        "source_batch_sha256": "ba946468775b8b4d4a54b984eaa8b10f8b20e92f45d4af03fe04c58048e496bd",
+        "source_batch_path": "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part006.csv"
+      },
+      {
+        "batch_id": "2026-11-10-human-project-8eb678e5c990af2471",
+        "row": 1,
+        "doi": "10.1175/mwr-d-25-0146.1",
+        "method": "Direct API",
+        "source_note_sha256": "d7d749f81e0637dded549ceace267808a5192d5b2bafb993b831083a12387ae6",
+        "source_batch_sha256": "b906ee0d4f0e4750d7223ab082716b0b778d8445e3a17a6424be4e1dd15203f5",
+        "source_batch_path": "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part004.csv"
+      },
+      {
+        "batch_id": "2026-11-10-human-project-a6d179727eeaf598b3",
+        "row": 1,
+        "doi": "10.1175/waf-d-20-0098.1",
+        "method": "Direct API",
+        "source_note_sha256": "dfe779ff8cfc15716f3447d0f6a5947bf20512c4f53f057ee64673962af078fd",
+        "source_batch_sha256": "cb7f87d98ebd06ec7417a48cecd0c1cfae1d3433637a39b9f40a11b69d97f146",
+        "source_batch_path": "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part005.csv"
+      },
+      {
+        "batch_id": "2026-11-10-human-project-bfcdcca18eb647d9c5",
+        "row": 1,
+        "doi": "10.1175/wcas-d-25-0019.1",
+        "method": "Direct API",
+        "source_note_sha256": "68ca01bc2682b08f2b9b10ab31ccf74941f089522a56695f827784a2da58f703",
+        "source_batch_sha256": "ba946468775b8b4d4a54b984eaa8b10f8b20e92f45d4af03fe04c58048e496bd",
+        "source_batch_path": "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part006.csv"
+      },
+      {
+        "batch_id": "2026-11-10-human-project-e65c593e29a9643d34",
+        "row": 1,
+        "doi": "10.1175/mwr-d-26-0134.1",
+        "method": "Direct API",
+        "source_note_sha256": "97274447952ce0cf2d517ab7cf5f09e245796edb49dbc4e16ca7a9b2a4f9b1ab",
+        "source_batch_sha256": "b906ee0d4f0e4750d7223ab082716b0b778d8445e3a17a6424be4e1dd15203f5",
+        "source_batch_path": "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part004.csv"
+      }
+    ],
+    "unverified_origin_rows": [
+      {
+        "batch_id": "2026-11-06-human-project-b616c2488c1fe907f3",
+        "row": 1,
+        "doi": "10.1109/radarconf2248738.2022.9764246"
+      },
+      {
+        "batch_id": "2026-11-09-aies-d-23-0094-wpo459-reclassification-001",
+        "row": 1,
+        "doi": "10.1175/aies-d-23-0094.1"
+      },
+      {
+        "batch_id": "2026-11-09-human-project-398fe73f0c7f3ffa37",
+        "row": 1,
+        "doi": "10.1016/j.softx.2024.101863"
+      },
+      {
+        "batch_id": "2026-11-09-human-project-866c8052a22849b2de",
+        "row": 1,
+        "doi": "10.1016/j.atmosenv.2021.118760"
+      },
+      {
+        "batch_id": "2026-11-09-human-project-8963668e6a0f98ac1c",
+        "row": 1,
+        "doi": "10.1029/2026jd046327"
+      },
+      {
+        "batch_id": "2026-11-09-human-project-b332d53770e8cbc1d4",
+        "row": 1,
+        "doi": "10.1007/s10596-024-10317-7"
+      },
+      {
+        "batch_id": "2026-11-09-human-project-d0211ffa5c6285cecf",
+        "row": 1,
+        "doi": "10.1175/aies-d-24-0063.1"
+      },
+      {
+        "batch_id": "2026-11-09-human-project-e8ae57179ced9c8d19",
+        "row": 1,
+        "doi": "10.1126/sciadv.aee4171"
+      },
+      {
+        "batch_id": "2026-11-09-human-project-ec8541bda93af057fc",
+        "row": 1,
+        "doi": "10.1109/past49659.2022.9975045"
+      },
+      {
+        "batch_id": "2026-11-09-human-project-f706c52fc493a7d6a2",
+        "row": 1,
+        "doi": "10.1029/2026jd046349"
+      },
+      {
+        "batch_id": "2026-11-10-human-project-31f68eaae5993b3626",
+        "row": 1,
+        "doi": "10.1175/jcli-d-25-0247.1"
+      }
+    ],
+    "method_original_batch_immutable": true,
+    "rule": "Exact DOI, publisher WPO459 award and source SHA must match historical API batch and original screened note."
   },
   "legacy_provenance": {
     "ledger_path": "scout-operations/legacy-provenance-backfill.json",
@@ -64,15 +182,15 @@
   "attribution_metrics": {
     "direct_api_staged": 14,
     "api_seeded_expansion_staged": 14,
-    "independent_discovery_staged": 23,
+    "independent_discovery_staged": 29,
     "metadata_correction_staged": 4,
     "unclassified_staged": 40,
-    "beyond_direct_api_staged_review_candidates": 39,
-    "previous_raw_routed_beyond_direct_api_staged": 37,
-    "effective_independent_discovery_method_staged": 57,
+    "beyond_direct_api_staged_review_candidates": 35,
+    "previous_raw_routed_beyond_direct_api_staged": 43,
+    "effective_independent_discovery_method_staged": 46,
     "effective_api_seeded_expansion_method_staged": 16,
-    "effective_direct_api_method_staged": 22,
-    "effective_unclassified_method_staged": 0,
+    "effective_direct_api_method_staged": 28,
+    "effective_unclassified_method_staged": 11,
     "effective_metadata_correction_purpose_staged": 21,
     "human_confirmed_attribution_recoveries": "NOT_VERIFIED",
     "private_hub_imports": "NOT_VERIFIED",
@@ -84,17 +202,17 @@
     "source_manifest": "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json",
     "source_manifest_sha": "ab844173f761617a2fe1def5cf218b1fc94b3e7d"
   },
-  "human_review_status": "NOT_VERIFIED; 95 staged proposals are not approvals or public REACH additions.",
+  "human_review_status": "NOT_VERIFIED; 101 staged proposals are not approvals or public REACH additions.",
   "latest_verified_run": {
-    "batch_id": "2026-11-10-human-project-31f68eaae5993b3626",
+    "batch_id": "2026-11-10-human-project-e65c593e29a9643d34",
     "source_run_ids": [
-      "REACH-SCOUT-HUMAN-SCOPE-b555d974aa12de2434"
+      "REACH-SCOUT-HUMAN-SCOPE-60b8440de1fa99e292"
     ],
     "record_count": 1,
     "manifest_verified": true,
     "human_hub_import": "NOT_VERIFIED"
   },
-  "note": "route_counts and raw_route_counts preserve literal source-CSV route buckets for historical compatibility; effective_discovery_method_counts and effective_finding_purpose_counts use verified source-identity-matched legacy annotations. A metadata correction is a finding purpose, not a discovery method. Never infer an undocumented route or human approval; prior public REACH baseline is not refreshed.",
+  "note": "route_counts and raw_route_counts preserve literal source-CSV route buckets for historical compatibility; effective_discovery_method_counts and effective_finding_purpose_counts use verified source-identity-matched historic/legacy evidence, including explicit bot-route corrections. A metadata correction is a finding purpose, not a discovery method. Never infer an undocumented route or human approval; prior public REACH baseline is not refreshed.",
   "overnight_2026_10_28_2029ET_to_2026_10_29_0734ET": {
     "new_batches": 4,
     "staged_proposals": 10,
