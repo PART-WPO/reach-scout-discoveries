@@ -29,25 +29,25 @@
     "interpretation": "Distinct seeds, DOI leads and official metadata retrieval are research progress, not completed expansions or public candidate/REACH additions."
   },
   "source_sha256": {
-    "scout-operations/crossref-candidate-queue.json": "23f35d7be14c585e406b456f3d296c57c3437d0c6f1f66fe2599cfb53f5b7869",
+    "scout-operations/crossref-candidate-queue.json": "1783b0071b861d671156c73336887df1c0858b60f8354d54cba30e934565d483",
     "scout-operations/historical-crossref-coverage.json": "92d36650e2077bbfc4a8f27d2f166be40b6c3831b7dd33ffdbd5fafef7057860",
     "scout-operations/historical-coverage.json": "f0d440a18f983a07bef10c16047d9dfae2d67039178a22f56294d935403cfb59",
-    "scout-discoveries/manifest.json": "3ba8c67d977bef05213154f703f9c0a83121c5e662ae15267607734775203be4",
+    "scout-discoveries/manifest.json": "c2207df4f1e9b8f3bf5c484af5c06c6e512d20f61114612f43b0f85c3179ff72",
     "scout-operations/preprint-watchlist.json": "9aee820ffa8eafb416d68f80d7cddb534ab33c97f61e1246ec892fb08f33b65e",
     "scout-operations/preprint-retirement-archive.json": "5707f60b259e3bebac9adadfa04b5191971f4f5feed8472d127fb6f0ef82c2b5",
     "scout-operations/preprint-13-identity-reconciliation.json": "1fb1025f8dc2f8ee3fb745bf1f4771b6a7246b21d59d78d4d11a8596f2063844",
-    "scout-operations/research-outcome-registry.json": "c583a8153e3bd7e3250e15ddad56463292a7d3727ae41d06ebece6f15817af31"
+    "scout-operations/research-outcome-registry.json": "30c6d70bb2fa08f2148d86315d3565825cfb4d15f83bc4e0fdd30916d1cbd414"
   },
   "source_freshness": {
     "crossref_queue_source_checks": {
       "scout-operations/historical-crossref-screening/actionable-routing.json": {
-        "recorded_sha256": "cdd00433a181ed9e088b688b981dd90881d1e6f2e663b30b1807d638054bde53",
-        "current_sha256": "08c6a5f2e3550a65b18389bc60c5400182ae0412616d46a1efb4e0ea0d9b3584",
+        "recorded_sha256": "08c6a5f2e3550a65b18389bc60c5400182ae0412616d46a1efb4e0ea0d9b3584",
+        "current_sha256": "62346fe9cbc47773b069ec4b3c0978463476228f036a7377bb48b5260a1a9cdc",
         "fresh": false
       },
       "scout-operations/research-outcome-registry.json": {
-        "recorded_sha256": "c583a8153e3bd7e3250e15ddad56463292a7d3727ae41d06ebece6f15817af31",
-        "current_sha256": "c583a8153e3bd7e3250e15ddad56463292a7d3727ae41d06ebece6f15817af31",
+        "recorded_sha256": "30c6d70bb2fa08f2148d86315d3565825cfb4d15f83bc4e0fdd30916d1cbd414",
+        "current_sha256": "30c6d70bb2fa08f2148d86315d3565825cfb4d15f83bc4e0fdd30916d1cbd414",
         "fresh": true
       },
       "api-discoveries/historical-crossref/manifest.json": {
@@ -94,6 +94,21 @@
         "recorded_sha256": "9aee820ffa8eafb416d68f80d7cddb534ab33c97f61e1246ec892fb08f33b65e",
         "current_sha256": "9aee820ffa8eafb416d68f80d7cddb534ab33c97f61e1246ec892fb08f33b65e",
         "fresh": true
+      },
+      "scout-operations/preprint-retirement-archive.json": {
+        "recorded_sha256": "5707f60b259e3bebac9adadfa04b5191971f4f5feed8472d127fb6f0ef82c2b5",
+        "current_sha256": "5707f60b259e3bebac9adadfa04b5191971f4f5feed8472d127fb6f0ef82c2b5",
+        "fresh": true
+      },
+      "scout-operations/identity-cache/public-identity-index.json": {
+        "recorded_sha256": "0c2881725bb78f76507e13c220559a3dffc1095064a45804807b6c1a684842ff",
+        "current_sha256": "bc87612ec8e4395117d76a5aa56d7b5174d77bb0e1b2a361088b61ce1d5c0957",
+        "fresh": false
+      },
+      "scout-operations/reach-comparison-cache/comparison-index.json": {
+        "recorded_sha256": "6660562e325a6a141198f59acce84f2e30d9a2d14e6cf5acd29769c8a4b68e1e",
+        "current_sha256": "6660562e325a6a141198f59acce84f2e30d9a2d14e6cf5acd29769c8a4b68e1e",
+        "fresh": true
       }
     },
     "crossref_queue_fresh": false,
@@ -136,8 +151,8 @@
     }
   },
   "public_candidate_pipeline": {
-    "public_feed_rows": 103,
-    "public_feed_batches": 50,
+    "public_feed_rows": 104,
+    "public_feed_batches": 51,
     "private_hub_imports": "NOT_VERIFIED",
     "reviewer_approvals": "NOT_VERIFIED",
     "new_public_reach_additions": "NOT_VERIFIED"
