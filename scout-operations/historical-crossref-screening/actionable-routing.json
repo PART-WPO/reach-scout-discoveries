@@ -6,8 +6,8 @@
   "reach_source_manifest_sha256": "f94ae52cac483b52e9a5cd6e775c6faa01ad6ec33610b249b3d486aed6daa003",
   "noaa_ir_manifest_sha256": "b3acfe20b0b685b7aeb988e969999db96e322b7169f00ec819c1a96eea997342",
   "noaa_ir_existing_reach_url_matches": 351,
-  "shared_identity_index_fingerprint": "23577a6f9d51a91580fc217e6279147bfd85ab24255a602405d2f70b1cfa2538",
-  "public_scout_queue_overlap_dois": 48,
+  "shared_identity_index_fingerprint": "8b30c715e58d4e0899103a19e0a36db382649374a84dab78bb66b9a095cbf90b",
+  "public_scout_queue_overlap_dois": 49,
   "reach_source_records": 1238,
   "total": 614,
   "counts": {
@@ -3037,8 +3037,27 @@
       "title": "assessment of convection permitting hydroclimate modeling in urban areas across the contiguous united states",
       "outcome": "NOT_FOUND_IN_REACH_INDEX",
       "route": "ADVANCE_TO_FUNDING_AND_METADATA_RESEARCH",
-      "scout_public_queue_matches": [],
-      "scout_public_queue_match_count": 0,
+      "scout_public_queue_matches": [
+        {
+          "source": "SCOUT_PUBLISHED",
+          "identity": "2026-11-10-human-project-6c53903a7319371213:2",
+          "location": "scout-discoveries/batches/2026-11-10-human-project-6c53903a7319371213.csv:2",
+          "basis": [
+            "exact_doi",
+            "normalized_title"
+          ]
+        },
+        {
+          "source": "SCOUT_INBOX",
+          "identity": "2026-11-10-human-project-6c53903a7319371213.csv:2",
+          "location": "scout-discoveries/inbox/2026-11-10-human-project-6c53903a7319371213.csv:2",
+          "basis": [
+            "exact_doi",
+            "normalized_title"
+          ]
+        }
+      ],
+      "scout_public_queue_match_count": 2,
       "scout_overlap": false,
       "noaa_ir_reach_check": {
         "status": "DOI_NOT_IN_VERIFIED_IR_INDEX_UNKNOWN",

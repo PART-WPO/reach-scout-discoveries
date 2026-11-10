@@ -29,25 +29,25 @@
     "interpretation": "Distinct seeds, DOI leads and official metadata retrieval are research progress, not completed expansions or public candidate/REACH additions."
   },
   "source_sha256": {
-    "scout-operations/crossref-candidate-queue.json": "51c45a774d312fb2132d904ef6f139d2883c3e7b729065c99f93504090b194e9",
+    "scout-operations/crossref-candidate-queue.json": "23f35d7be14c585e406b456f3d296c57c3437d0c6f1f66fe2599cfb53f5b7869",
     "scout-operations/historical-crossref-coverage.json": "92d36650e2077bbfc4a8f27d2f166be40b6c3831b7dd33ffdbd5fafef7057860",
     "scout-operations/historical-coverage.json": "f0d440a18f983a07bef10c16047d9dfae2d67039178a22f56294d935403cfb59",
-    "scout-discoveries/manifest.json": "f7360c6d6363b0063b8c08ef34419103d4f62ad95e4c8d3589774ac1aeb53d4d",
+    "scout-discoveries/manifest.json": "3ba8c67d977bef05213154f703f9c0a83121c5e662ae15267607734775203be4",
     "scout-operations/preprint-watchlist.json": "9aee820ffa8eafb416d68f80d7cddb534ab33c97f61e1246ec892fb08f33b65e",
     "scout-operations/preprint-retirement-archive.json": "5707f60b259e3bebac9adadfa04b5191971f4f5feed8472d127fb6f0ef82c2b5",
     "scout-operations/preprint-13-identity-reconciliation.json": "1fb1025f8dc2f8ee3fb745bf1f4771b6a7246b21d59d78d4d11a8596f2063844",
-    "scout-operations/research-outcome-registry.json": "13098e1a872f0b142955de06fd1e99ab4e73454b026c97882028fcd5dfe3f064"
+    "scout-operations/research-outcome-registry.json": "c583a8153e3bd7e3250e15ddad56463292a7d3727ae41d06ebece6f15817af31"
   },
   "source_freshness": {
     "crossref_queue_source_checks": {
       "scout-operations/historical-crossref-screening/actionable-routing.json": {
-        "recorded_sha256": "d5070d031f70c56437c76cc1128a29a27d7558c7adab2bbf7de227974ba9f435",
-        "current_sha256": "d5070d031f70c56437c76cc1128a29a27d7558c7adab2bbf7de227974ba9f435",
-        "fresh": true
+        "recorded_sha256": "cdd00433a181ed9e088b688b981dd90881d1e6f2e663b30b1807d638054bde53",
+        "current_sha256": "08c6a5f2e3550a65b18389bc60c5400182ae0412616d46a1efb4e0ea0d9b3584",
+        "fresh": false
       },
       "scout-operations/research-outcome-registry.json": {
-        "recorded_sha256": "13098e1a872f0b142955de06fd1e99ab4e73454b026c97882028fcd5dfe3f064",
-        "current_sha256": "13098e1a872f0b142955de06fd1e99ab4e73454b026c97882028fcd5dfe3f064",
+        "recorded_sha256": "c583a8153e3bd7e3250e15ddad56463292a7d3727ae41d06ebece6f15817af31",
+        "current_sha256": "c583a8153e3bd7e3250e15ddad56463292a7d3727ae41d06ebece6f15817af31",
         "fresh": true
       },
       "api-discoveries/historical-crossref/manifest.json": {
@@ -96,7 +96,7 @@
         "fresh": true
       }
     },
-    "crossref_queue_fresh": true,
+    "crossref_queue_fresh": false,
     "targeted_reconciliation_scope_is_snapshot": true
   },
   "screening_not_research": {
@@ -136,8 +136,8 @@
     }
   },
   "public_candidate_pipeline": {
-    "public_feed_rows": 102,
-    "public_feed_batches": 49,
+    "public_feed_rows": 103,
+    "public_feed_batches": 50,
     "private_hub_imports": "NOT_VERIFIED",
     "reviewer_approvals": "NOT_VERIFIED",
     "new_public_reach_additions": "NOT_VERIFIED"
