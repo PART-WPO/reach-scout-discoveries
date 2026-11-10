@@ -67,7 +67,7 @@ def norm_title(value):
 def load_active_scout(root):
  """Use only SHA-verified active public batches; an inactive old CSV is not a fast exit."""
  manifest=load(root,PUBLIC_MANIFEST)
- if manifest.get("schema") != "scout-discovery-manifest-v1":
+ if manifest.get("schema") != "reach-scout-discovery-feed-v1":
   raise ValueError("Unknown active public Scout manifest schema")
  result={}
  for batch in manifest["batches"]:
