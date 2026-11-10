@@ -52,18 +52,19 @@
     "scout-operations/historical-crossref-phase2/2026-11-09-1729ET-upper-great-lakes-snow-publisher-459-new-candidate-screen.json": "8572e730725edf1227baaf8a12d095755fc13a716563e1bda3cca306c49fe955",
     "scout-operations/historical-crossref-phase2/2026-11-09-1829ET-generative-ai-extreme-precipitation-official-459-screen.json": "d09c724da23e5bf9bdf253a3f8a0198642c4d5473b2bb4a8f804692604f2b3d1",
     "scout-operations/historical-crossref-phase2/2026-11-09-1830ET-generative-ai-precipitation-459-human-referral-disposition.json": "162437f1a294893384a8070e81472d939a6b06b6b34921c98270086ea37134a8",
+    "scout-operations/historical-crossref-phase2/2026-11-09-1929ET-mjo-coupling-article-459-guarded-public-screen.json": "75637bd8c456ecfc39eb8855c4846c654d351eb66679f7ca98e3a97267642694",
     "scout-operations/monthly-research/2026-11-06-0528ET-storm-harry-qj70325-project-scope-hold.json": "9bf7c3c778f1cbf1622db3e994b7facc446367f5cc3ed6094517ab5884722911",
     "scout-operations/monthly-research/2026-11-06-0630ET-storm-harry-ecmwf-two-doi-access-holds.json": "38d2065e50f5691c4452ea054a54409a88392e3d76f60969a311a78d96b3bf7c",
     "scout-operations/monthly-research/2026-11-06-0730ET-storm-harry-ecmwf-official-catalog-followup.json": "7a63adfadb964734abec498d27cc54bc6e431d0cb8f51c11bdc8f4e6131491c3",
     "scout-operations/monthly-research/2026-11-06-0830ET-storm-harry-global-drifter-award-scope-followup.json": "684a66155c7ad188613f0217e371ba692f300a27bb1ab16a1b7d40f09c1198bc"
   },
-  "evidence_files_scanned": 51,
+  "evidence_files_scanned": 52,
   "source_files_without_explicit_output_id": [],
-  "research_note_events": 60,
-  "distinct_research_identities": 39,
+  "research_note_events": 61,
+  "distinct_research_identities": 40,
   "operational_disposition_counts": {
     "BOUNDED_PROJECT_QUESTION_FOR_HUMAN": 3,
-    "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY": 24,
+    "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY": 25,
     "PREPRINT_MONTHLY_WATCH": 1,
     "PROJECT_EVIDENCE_HOLD": 31,
     "TECHNICAL_METADATA_RECOVERY": 1
@@ -1416,6 +1417,32 @@
       "reviewer_approval": "NOT_VERIFIED"
     },
     {
+      "event_id": "93357fdd84fbcdb3cedf4c42",
+      "identity": "doi:10.1175/jcli-d-25-0247.1",
+      "doi": "10.1175/jcli-d-25-0247.1",
+      "url_only": null,
+      "role_in_note": "original",
+      "research_lane": "historical_crossref_original",
+      "source_path": "scout-operations/historical-crossref-phase2/2026-11-09-1929ET-mjo-coupling-article-459-guarded-public-screen.json",
+      "source_sha256": "75637bd8c456ecfc39eb8855c4846c654d351eb66679f7ca98e3a97267642694",
+      "source_time": "2026-11-09T19:29:00-05:00",
+      "raw_decision": "NEW_CANDIDATE_PUBLIC_REFERRAL_REQUEST_SUBJECT_TO_GUARDED_CHECKS",
+      "operational_disposition": "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+      "next_action": "Run production guarded referral validation with exact DOI Crossref funding, full REACH+Scout+IR and protected review dedup, and preprint gate. If all pass, publish one canonical 24-column NEW CANDIDATE with verified NA22OAR4590216 and official funding URL; reviewer must select correct SPARK parent. If blocked, do not claim completion.",
+      "checked_evidence_urls": [
+        "https://api.crossref.org/works/10.1175/jcli-d-25-0247.1",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part003.csv",
+        "https://journals.ametsoc.org/view/journals/clim/39/13/clim.39.issue-13.xml"
+      ],
+      "source_count": 3,
+      "bounded_human_question_to_verify": false,
+      "formal_original_closed": false,
+      "separate_expansion_closed": false,
+      "new_public_proposal": false,
+      "private_hub_import": "NOT_VERIFIED",
+      "reviewer_approval": "NOT_VERIFIED"
+    },
+    {
       "event_id": "d1c7f1c43f43721992142729",
       "identity": "doi:10.1002/qj.70325",
       "doi": "10.1002/qj.70325",
@@ -2062,6 +2089,22 @@
       "source_file_count": 1,
       "event_ids": [
         "c010d6bb48ea34c471cce200"
+      ],
+      "project_judgment_referral_possible": false,
+      "human_review_staged": false,
+      "private_hub_import": "NOT_VERIFIED"
+    },
+    {
+      "identity": "doi:10.1175/jcli-d-25-0247.1",
+      "latest_event_id": "93357fdd84fbcdb3cedf4c42",
+      "latest_evidence_path": "scout-operations/historical-crossref-phase2/2026-11-09-1929ET-mjo-coupling-article-459-guarded-public-screen.json",
+      "latest_operational_disposition": "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+      "observed_dispositions": [
+        "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY"
+      ],
+      "source_file_count": 1,
+      "event_ids": [
+        "93357fdd84fbcdb3cedf4c42"
       ],
       "project_judgment_referral_possible": false,
       "human_review_staged": false,
