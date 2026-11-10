@@ -73,6 +73,10 @@ def verify(root=ROOT):
     if mission["schema"] != "reach-scout-separated-completed-mission-scorecard-v1":
         raise ValueError("Unexpected mission metrics schema")
     expansion = mission["github_bounded_expansion_research"]
+    for name, report in (("operational", operational), ("throughput", throughput), ("impact", impact)):
+        seen = report.get("source_driven_related_output_research")
+        if seen != expansion:
+            raise ValueError("STALE_OR_INCONSISTENT_" + name.upper() + "_SOURCE_DISCOVERY_COUNTS")
     if expansion["new_distinct_source_backed_doi_leads"] != len(expansion["distinct_source_backed_doi_leads"]):
         raise ValueError("Non-distinct discovery leads")
     if expansion["distinct_verified_reach_seeds_investigated"] != len(expansion["distinct_seed_dois"]):
