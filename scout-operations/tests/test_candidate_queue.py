@@ -105,6 +105,63 @@ class QueueTests(unittest.TestCase):
   self.assertEqual(q["next_one_mission_original_preview"][0]["doi"],"10.1234/new")
   self.assertEqual(q["items"][-1]["lane"],"ALREADY_IN_SCOUT_REVIEW_FAST_EXIT")
 
+ def test_special_editorial_notices_route_to_low_priority_human_check(self):
+  notices=[
+   ("10.1234/corr","Corrigendum", "CORRIGENDUM"),
+   ("10.1234/erratum","Erratum: Original paper", "ERRATUM"),
+   ("10.1234/correction","Publisher Correction: Original paper","CORRECTION_NOTICE"),
+   ("10.1234/retract","Retraction of: Original paper","RETRACTION"),
+   ("10.1234/concern","Expression of Concern: Original paper","EXPRESSION_OF_CONCERN"),
+  ]
+  normal=[
+   ("10.1234/bias","Bias correction for improved weather forecasts"),
+   ("10.1234/data","Correction of radar bias in a novel forecast system"),
+   ("10.1234/original","Physical modeling of severe storms")
+  ]
+  all_entries=[{"doi":doi,"title":title,
+                "bulk_identity_gate":{"status":"NO_PUBLIC_REACH_MATCH"}}
+               for doi,title,*_ in notices+normal]
+  r={"total":len(all_entries),
+     "bulk_identity_screening":{"source_dois":len(all_entries)},
+     "entries":all_entries}
+  grants={x["doi"]:{"awards":{"NA24OARX459C0001"}} for x in all_entries}
+  q=m.build(r,{"cases":[]},grants)
+  by={x["doi"]:x for x in q["items"]}
+  self.assertEqual(q["special_publication_type_review_count"],len(notices))
+  self.assertEqual(len(q["special_publication_review_preview"]),len(notices))
+  self.assertEqual(q["one_mission_actionable_original_count"],len(normal))
+  for doi,title,kind in notices:
+   self.assertEqual(by[doi]["lane"],"SPECIAL_PUBLICATION_TYPE_REVIEW")
+   self.assertEqual(by[doi]["priority"],12)
+   self.assertEqual(by[doi]["special_publication_type"],kind)
+   self.assertFalse(by[doi]["one_mission_disposition_required"])
+   self.assertNotIn(doi,[x["doi"] for x in q["next_one_mission_original_preview"]])
+  for doi,title in normal:
+   self.assertEqual(by[doi]["lane"],"NOVEL_IDENTITY_RESEARCH")
+   self.assertEqual(by[doi]["priority"],90)
+   self.assertIsNone(by[doi]["special_publication_type"])
+
+ def test_special_notice_does_not_override_existing_reach_scout_or_preprint(self):
+  entries=[
+   {"doi":"10.1234/old","title":"Corrigendum",
+    "bulk_identity_gate":{"status":"VERIFIED_EXISTING_REACH","verified_reach_uid":"reach-old"}},
+   {"doi":"10.1234/scout","title":"Corrigendum",
+    "bulk_identity_gate":{"status":"NO_PUBLIC_REACH_MATCH"},
+    "scout_public_queue_matches":[{"source":"SCOUT_PUBLISHED",
+       "location":"scout-discoveries/batches/old.csv:2",
+       "basis":["exact_doi","normalized_title"]}]},
+   {"doi":"10.1234/preprint","title":"Erratum",
+    "bulk_identity_gate":{"status":"NO_PUBLIC_REACH_MATCH"}}]
+  r={"total":3,"bulk_identity_screening":{"source_dois":3},"entries":entries}
+  grants={x["doi"]:{"awards":{"NA24OARX459C0001"}} for x in entries}
+  pre={"10.1234/preprint":{"status":"tracking_preprint"}}
+  q=m.build(r,{"cases":[]},grants,pre)
+  by={x["doi"]:x["lane"] for x in q["items"]}
+  self.assertEqual(by["10.1234/old"],"EXISTING_REACH_FAST_EXIT")
+  self.assertEqual(by["10.1234/scout"],"ALREADY_IN_SCOUT_REVIEW_FAST_EXIT")
+  self.assertEqual(by["10.1234/preprint"],"PREPRINT_WATCHLIST_HOLD")
+  self.assertEqual(q["special_publication_type_review_count"],0)
+
  def test_hold_does_not_research_again(self):
   r={"total":1,"bulk_identity_screening":{"source_dois":1},"entries":[{"doi":"10.1/c","bulk_identity_gate":{"status":"NO_PUBLIC_REACH_MATCH"}}]}
   q=m.build(r,{"cases":[{"identity":"doi:10.1/c","latest_operational_disposition":"PROJECT_EVIDENCE_HOLD"}]})
