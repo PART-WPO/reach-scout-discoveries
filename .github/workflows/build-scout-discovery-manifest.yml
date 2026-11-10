@@ -1,6 +1,14 @@
 name: Validate and Publish Scout Discovery Feed
 
 on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scout-operations/tools/reach_version_identity.py'
+      - 'scout-operations/tools/verify_preprint_intake.py'
+      - 'scout-operations/tests/test_reach_version_identity.py'
+      - 'scout-discoveries/tools/prepare_batch.py'
+      - '.github/workflows/build-scout-discovery-manifest.yml'
   push:
     branches: [main]
     paths:
@@ -15,7 +23,9 @@ on:
       - 'scout-operations/preprint-intake-gate.json'
       - 'scout-operations/preprint-watchlist.json'
       - 'scout-operations/tools/verify_preprint_intake.py'
+      - 'scout-operations/tools/reach_version_identity.py'
       - 'scout-operations/tests/test_universal_preprint_gate.py'
+      - 'scout-operations/tests/test_reach_version_identity.py'
       - 'scout-operations/tools/reconcile_monthly_staging.py'
       - 'scout-discoveries/tools/promote_inbox.py'
       - 'scout-discoveries/tools/rebuild_discovery_rollup.py'
@@ -41,8 +51,19 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  test-version-identity:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Regression tests for five Scout modes and preprint/final REACH identity
+        run: |
+          python3 -m unittest discover -s scout-operations/tests -p test_reach_version_identity.py -v
+          python3 -m unittest discover -s scout-operations/tests -p test_universal_preprint_gate.py -v
+          python3 -m unittest discover -s scout-operations/tests -p test_reach_version_identity.py -v
+
   validate-and-refresh-manifest:
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    if: github.event_name != 'pull_request' && (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success')
     runs-on: ubuntu-latest
     steps:
       - name: Check out Scout staging repository
