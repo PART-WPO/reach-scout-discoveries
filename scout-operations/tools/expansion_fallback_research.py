@@ -14,6 +14,9 @@ from pathlib import Path
 TOOLS = Path(__file__).resolve().parent
 sys.path.insert(0, str(TOOLS))
 from lookup_independent_dois import metadata as lookup_metadata
+from source_driven_expansion import discover as discover_sources
+from ir_reach_identity import verified_snapshot, identity_check
+from wpo_awards import official_459_awards
 
 ROOT = Path(__file__).resolve().parents[2]
 GRAPH = "scout-operations/research-memory/crosslane-relationship-graph.json"
@@ -110,7 +113,7 @@ def pick_seed(graph, ledger, now):
     return candidates[0] if candidates else None
 
 
-def bounded_research(root, graph, ledger, now, metadata_fn=lookup_metadata):
+def bounded_research(root, graph, ledger, now, metadata_fn=lookup_metadata, *, source_fn=None, identity_fn=None):
     selected = pick_seed(graph, ledger, now)
     if not selected:
         return None
@@ -155,6 +158,85 @@ def bounded_research(root, graph, ledger, now, metadata_fn=lookup_metadata):
             "separate_output_uniqueness": "NOT_VERIFIED",
             "same_WPO_project_parent": "NOT_VERIFIED",
         })
+    # Source-driven DOI discovery is independent from preexisting graph edges.
+    # Every new lead remains NONTERMINAL, even when publisher context is explicit.
+    # Tests may inject source_fn and identity_fn without network or private data.
+    source_discovery = {
+        "schema": "reach-scout-source-driven-expansion-v1", "seed_doi": seed,
+        "source_checks": [], "discovered_doi_leads": [],
+        "status": "NOT_INSTRUMENTED", "new_public_candidates": 0,
+        "private_hub_import": "NOT_VERIFIED",
+    }
+    screened_leads = []
+    if source_fn is not None:
+        try:
+            source_discovery = source_fn(seed)
+            if source_discovery.get("seed_doi") != seed or source_discovery.get("schema") != "reach-scout-source-driven-expansion-v1":
+                raise ValueError("Source discovery seed/schema mismatch")
+            if len(source_discovery.get("discovered_doi_leads", [])) > 3:
+                raise ValueError("Source discovery exceeded bounded lead limit")
+        except (ValueError, OSError, TimeoutError) as err:
+            source_discovery = {**source_discovery, "status": "SOURCE_DISCOVERY_TECHNICAL_HOLD",
+                                "error_type": type(err).__name__, "discovered_doi_leads": []}
+        public_cache = None
+        for lead in source_discovery.get("discovered_doi_leads", []):
+            child = norm(lead.get("doi"))
+            if child == seed or not child.startswith("10.") or "/" not in child:
+                continue
+            try:
+                meta = metadata_fn(child)
+            except (OSError, ValueError, TimeoutError):
+                meta = {"status": "OFFICIAL_METADATA_ACCESS_ERROR"}
+            ok = isinstance(meta, dict) and meta.get("status") == "ok"
+            if identity_fn is not None and ok:
+                try:
+                    identity = identity_fn(child, meta.get("title", ""))
+                    public_status = identity.get("status", "NOT_VERIFIED")
+                    ir_status = (identity.get("noaa_ir_reach_check") or {}).get("status", "NOT_VERIFIED")
+                except (ValueError, OSError):
+                    public_status, ir_status = "IDENTITY_GATE_UNAVAILABLE", "NOT_VERIFIED"
+            elif ok:
+                try:
+                    if public_cache is None:
+                        public_cache = verified_snapshot(root)
+                    identity = identity_check(public_cache[0], public_cache[1], child, meta.get("title", ""),
+                                              "https://doi.org/" + child)
+                    public_status = identity.get("status", "NOT_VERIFIED")
+                    ir_status = (identity.get("noaa_ir_reach_check") or {}).get("status", "NOT_VERIFIED")
+                except (ValueError, OSError):
+                    public_status, ir_status = "IDENTITY_GATE_UNAVAILABLE", "NOT_VERIFIED"
+            else:
+                public_status, ir_status = "NOT_VERIFIED", "NOT_VERIFIED"
+            awards = official_459_awards(meta) if ok else []
+            if not ok:
+                next_gate = "OFFICIAL_METADATA_UNVERIFIED"
+            elif public_status in {"CONFIRMED_PUBLIC_REACH_IDENTITY", "IN_PUBLIC_SCOUT_QUEUE"}:
+                next_gate = "EXISTING_PUBLIC_IDENTITY_NO_RESTAGING"
+            elif meta.get("publication_status") == "preprint":
+                next_gate = "PREPRINT_WATCHLIST_HOLD"
+            elif public_status not in {"NO_PUBLIC_MATCH", "NOT_FOUND", "NO_MATCH"}:
+                # An index-negative signal is not a blanket proof of novelty.
+                # Different decision_pipeline versions use different names.
+                next_gate = "BOUNDED_PUBLIC_IDENTITY_REVIEW"
+            elif not awards:
+                next_gate = "VERIFY_EXACT_OUTPUT_WPO_PROJECT_FUNDING"
+            else:
+                next_gate = "VERIFY_SEPARATE_OUTPUT_IDENTITY_AND_PROJECT_PARENT"
+            screened_leads.append({
+                "doi": child, "source_url": lead.get("source_url"),
+                "source_sha256": lead.get("source_sha256"),
+                "source_context_type": lead.get("evidence_kind"),
+                "official_metadata_status": meta.get("status") if isinstance(meta, dict) else "MALFORMED",
+                "official_metadata_url": meta.get("evidence") if ok else None,
+                "official_title": meta.get("title") if ok else None,
+                "official_resource_type": meta.get("resource_type") if ok else None,
+                "publication_status": meta.get("publication_status") if ok else "NOT_VERIFIED",
+                "exact_doi_publisher_deposited_wpo_awards": awards,
+                "public_identity_status": public_status,
+                "official_ir_reach_status": ir_status,
+                "next_gate": next_gate,
+                "eligibility": "RESEARCH_LEAD_ONLY_NOT_STAGED",
+            })
     succeeded = sum(x["source_status"] == "ok" for x in checked)
     status = "OFFICIAL_SOURCE_CHECK_RECORDED" if succeeded else "TECHNICAL_ACCESS_HOLD"
     prior = ledger["cases"].get(seed, {})
@@ -176,6 +258,9 @@ def bounded_research(root, graph, ledger, now, metadata_fn=lookup_metadata):
         "seed_reach_identity_verified_in_graph": True,
         "explicit_related_dois_preserved": explicit,
         "source_lookups": checked, "status": status,
+        "source_driven_discovery": source_discovery,
+        "new_source_driven_leads_screened": screened_leads,
+        "new_distinct_doi_leads_found": len(screened_leads),
         "new_public_candidate_count": 0,
         "new_related_output_eligibility_confirmed": 0,
         "separate_expansion_decisions_completed": 0,
@@ -188,12 +273,34 @@ def bounded_research(root, graph, ledger, now, metadata_fn=lookup_metadata):
     }
 
 
-def run(root, now, run_id, metadata_fn=lookup_metadata):
+def run(root, now, run_id, metadata_fn=lookup_metadata, *, source_fn=None, identity_fn=None, seed_override=None):
     if not eligible_monthly_state(root):
         return {"status": "MONTHLY_ORIGINALS_HAVE_PRIORITY", "source_lookup_count": 0}
     graph, index = source_snapshot(root)
     ledger = read_ledger(root)
-    report = bounded_research(root, graph, ledger, now, metadata_fn)
+    # An explicit manual positive-control seed must still be in the SHA-verified
+    # graph and may not override an existing cooldown.
+    if seed_override:
+        requested = norm(seed_override)
+        original = pick_seed
+        eligible = [(t, (next((n for n in graph["nodes"] if n["doi"] == requested), {})))
+                    for t in graph.get("work_items", []) if norm(t.get("doi")) == requested
+                    and t.get("track") == "EXPANSION"
+                    and t.get("next_action") == "EXPAND_VERIFIED_WPO_REACH_SEED"]
+        if len(eligible) != 1 or not eligible[0][1].get("public_reach_verified_existing"):
+            raise ValueError("Manual seed is not a verified REACH expansion task")
+        data = eligible[0][1]["expansion_research"]
+        prior = ledger.get("cases", {}).get(requested)
+        if prior and prior.get("source_fingerprint") == data.get("input_fingerprint") and now < datetime.fromisoformat(prior["recheck_after"].replace("Z","+00:00")):
+            return {"status": "SEED_COOLDOWN_ACTIVE", "seed": requested, "source_lookup_count": 0}
+        from unittest.mock import patch
+        with patch.object(sys.modules[__name__], "pick_seed",
+                          return_value=(requested, eligible[0][1], data["input_fingerprint"])):
+            report = bounded_research(root, graph, ledger, now, metadata_fn,
+                                      source_fn=source_fn, identity_fn=identity_fn)
+    else:
+        report = bounded_research(root, graph, ledger, now, metadata_fn,
+                                  source_fn=source_fn, identity_fn=identity_fn)
     if report is None:
         return {"status": "NO_ELIGIBLE_UNWORKED_EXPANSION_SEED", "source_lookup_count": 0}
     # One immutable research record per observed GitHub execution. The report
@@ -213,6 +320,7 @@ def run(root, now, run_id, metadata_fn=lookup_metadata):
     dest.write_text(json.dumps(ledger,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
     return {"status": report["status"], "seed": report["seed_doi"],
             "related_leads_checked": len(report["source_lookups"])-1,
+            "source_driven_leads_found": report.get("new_distinct_doi_leads_found", 0),
             "source_lookup_count": len(report["source_lookups"]),
             "source_verified_lookups": sum(x["source_status"]=="ok" for x in report["source_lookups"]),
             "research_report": rel, "new_public_candidates": 0, "completed_expansions": 0}
@@ -222,8 +330,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--root", type=Path, default=ROOT)
     ap.add_argument("--run-id", required=True)
+    ap.add_argument("--seed-doi", default=None, help="Optional verified REACH seed for controlled positive-control replay")
     args = ap.parse_args()
-    result = run(args.root, datetime.now(timezone.utc), args.run_id)
+    result = run(args.root, datetime.now(timezone.utc), args.run_id, source_fn=discover_sources, seed_override=args.seed_doi)
     print(json.dumps(result,sort_keys=True))
 
 
