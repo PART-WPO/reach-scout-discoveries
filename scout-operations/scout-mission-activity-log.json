@@ -580,8 +580,36 @@
       },
       "baseline_only": false,
       "interpretation": "Public artifact deltas, not proof of causal mission output. Research-note event growth is not verified formal research completion; public feed rows are not Hub approvals."
+    },
+    {
+      "event_id": "13a75217a086a08497567a76",
+      "observed_at_utc": "2026-11-10T10:00:15.982448+00:00",
+      "event_type": "VERIFIED_PUBLIC_ARTIFACT_SNAPSHOT",
+      "evidence_fingerprint": "13a75217a086a08497567a76bff9c4c8cb634e55bc0efc6841ac8ac60075ce2b",
+      "scorecard_sha256": "fb5d0e54c5b5abd3779d7dbaa1106b0c0f499eb69dc1849e8163d501817e7a4a",
+      "research_registry_sha256": "d529280a5388e01976fa42150ae0a4983e9a5703e8412a8b97d31fd02eb8603d",
+      "metrics": {
+        "crossref_verified_completed": 48,
+        "datacite_verified_completed": 186,
+        "crossref_expansion_verified_completed": 0,
+        "public_scout_feed_rows": 98,
+        "research_evidence_events": 64,
+        "research_evidence_identities": 43,
+        "archived_preprint_versions": 20
+      },
+      "delta_since_previous_observation": {
+        "crossref_verified_completed": 0,
+        "datacite_verified_completed": 0,
+        "crossref_expansion_verified_completed": 0,
+        "public_scout_feed_rows": 3,
+        "research_evidence_events": 3,
+        "research_evidence_identities": 3,
+        "archived_preprint_versions": 0
+      },
+      "baseline_only": false,
+      "interpretation": "Public artifact deltas, not proof of causal mission output. Research-note event growth is not verified formal research completion; public feed rows are not Hub approvals."
     }
   ],
-  "observation_count": 21,
-  "last_event_id": "395f899a72e74adaacbb4b08"
+  "observation_count": 22,
+  "last_event_id": "13a75217a086a08497567a76"
 }

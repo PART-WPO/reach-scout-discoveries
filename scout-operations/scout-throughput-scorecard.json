@@ -1,14 +1,14 @@
 {
   "schema": "reach-scout-throughput-scorecard-v1",
   "source_sha256": {
-    "scout-operations/crossref-candidate-queue.json": "d5f9e193454b65900cfdac6afdfcd32dac32b8c7d20be6b7a06b0881bbba5126",
+    "scout-operations/crossref-candidate-queue.json": "9c54ae7f61dcc44cd919ec5ff7158ea7e26bfc883555414d1f73845ba7857d01",
     "scout-operations/historical-crossref-coverage.json": "92d36650e2077bbfc4a8f27d2f166be40b6c3831b7dd33ffdbd5fafef7057860",
     "scout-operations/historical-coverage.json": "f0d440a18f983a07bef10c16047d9dfae2d67039178a22f56294d935403cfb59",
-    "scout-discoveries/manifest.json": "c7e95da64ba679e283560331a12f62cc1169ed907cab6af86bfd5efad049af2f",
+    "scout-discoveries/manifest.json": "dca638c6c58d4505f1de170339b3f5ac3cf0aeaa2b012c855e105910a7ee8064",
     "scout-operations/preprint-watchlist.json": "9aee820ffa8eafb416d68f80d7cddb534ab33c97f61e1246ec892fb08f33b65e",
     "scout-operations/preprint-retirement-archive.json": "5707f60b259e3bebac9adadfa04b5191971f4f5feed8472d127fb6f0ef82c2b5",
     "scout-operations/preprint-13-identity-reconciliation.json": "1fb1025f8dc2f8ee3fb745bf1f4771b6a7246b21d59d78d4d11a8596f2063844",
-    "scout-operations/research-outcome-registry.json": "796efcd12c44d5aa7497355aec38c5472fefd859a610c48d1a528d21d821cf99"
+    "scout-operations/research-outcome-registry.json": "d529280a5388e01976fa42150ae0a4983e9a5703e8412a8b97d31fd02eb8603d"
   },
   "source_freshness": {
     "crossref_queue_source_checks": {
@@ -18,8 +18,8 @@
         "fresh": true
       },
       "scout-operations/research-outcome-registry.json": {
-        "recorded_sha256": "796efcd12c44d5aa7497355aec38c5472fefd859a610c48d1a528d21d821cf99",
-        "current_sha256": "796efcd12c44d5aa7497355aec38c5472fefd859a610c48d1a528d21d821cf99",
+        "recorded_sha256": "d529280a5388e01976fa42150ae0a4983e9a5703e8412a8b97d31fd02eb8603d",
+        "current_sha256": "d529280a5388e01976fa42150ae0a4983e9a5703e8412a8b97d31fd02eb8603d",
         "fresh": true
       },
       "api-discoveries/historical-crossref/manifest.json": {
@@ -75,7 +75,7 @@
     "historical_crossref_dois": 614,
     "identity_fast_exits": 426,
     "bounded_identity_reviews": 51,
-    "novel_research_candidates": 85,
+    "novel_research_candidates": 84,
     "preprint_holds": 7,
     "published_version_leads": 11,
     "other_evidence_holds": 2
@@ -108,8 +108,8 @@
     }
   },
   "public_candidate_pipeline": {
-    "public_feed_rows": 95,
-    "public_feed_batches": 42,
+    "public_feed_rows": 98,
+    "public_feed_batches": 45,
     "private_hub_imports": "NOT_VERIFIED",
     "reviewer_approvals": "NOT_VERIFIED",
     "new_public_reach_additions": "NOT_VERIFIED"
