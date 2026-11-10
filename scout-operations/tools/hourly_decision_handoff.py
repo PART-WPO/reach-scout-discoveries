@@ -263,9 +263,7 @@ def run(root=ROOT, metadata_fn=fetch_metadata, now=None, limit=MAX_ATTEMPTS,
                      and r.get("scout_inbox_status") in {
                          "VALIDATED_INBOX_DRAFT_NOT_PRIVATE_HUB", "EXISTING_VERIFIED_INBOX_DRAFT",
                      }]
-            if len(valid) != 1 or not any(doi in [
-                r.get("doi") for r in rows if r.get("scout_inbox_status") in {
-                    "VALIDATED_INBOX_DRAFT_NOT_PRIVATE_HUB", "EXISTING_VERIFIED_INBOX_DRAFT"}]):
+            if len(valid) != 1:
                 # A protected late identity conflict or staging cap must never be called completed.
                 blocked_outcome = disposition(ledger, doi, "REVIEWER_HANDOFF_NOT_READY", now)
                 outcome.update(blocked_outcome)
