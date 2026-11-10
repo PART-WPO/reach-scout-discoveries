@@ -16,6 +16,7 @@ on:
       - 'scout-operations/research-leads/**'
       - 'scout-operations/tools/lookup_independent_metadata.py'
       - 'scout-operations/tools/lookup_independent_dois.py'
+      - 'scout-operations/tools/audit_independent_lookup.py'
       - 'scout-operations/tools/research_memory.py'
       - 'scout-operations/tools/ir_reach_identity.py'
       - 'scout-operations/noaa-ir/manifest.json'
@@ -87,17 +88,21 @@ jobs:
           assert memory['private_reviewer_state']=='NOT_VERIFIED'
           print('DOIs',x['doi_count'],'GitHub',x['github_count'],'artifact scope inventoried')
           PY
+      - name: Measure verified metadata reuse and actual DOI registry requests
+        run: python3 scout-operations/tools/audit_independent_lookup.py --mode independent-metadata
       - uses: actions/upload-artifact@v4
         with:
           name: scout-independent-metadata
-          path: scout-operations/reports/independent-metadata-lookup/latest.json
+          path: |
+            scout-operations/reports/independent-metadata-lookup/latest.json
+            scout-operations/reports/research-memory-reuse/independent-metadata-latest.json
           retention-days: 90
       - name: Publish read-only report
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add scout-operations/reports/independent-metadata-lookup/latest.json scout-operations/research-memory/doi-cache-index.json scout-operations/preprint-watchlist.json scout-operations/preprint-publication-leads.json
+          git add scout-operations/reports/independent-metadata-lookup/latest.json scout-operations/research-memory/doi-cache-index.json scout-operations/preprint-watchlist.json scout-operations/preprint-publication-leads.json scout-operations/reports/research-memory-reuse/independent-metadata-latest.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m 'Refresh Scout independent metadata lookup'
           for attempt in 1 2 3 4 5; do
