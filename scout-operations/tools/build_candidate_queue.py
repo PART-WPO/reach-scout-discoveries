@@ -6,6 +6,7 @@ from collections import Counter
 from pathlib import Path
 from wpo_awards import is_wpo_459, oar_segment
 from special_publication_types import special_publication_type
+from reconcile_public_handoff import public_reach_preprint_resolutions
 ROUTING="scout-operations/historical-crossref-screening/actionable-routing.json"
 REGISTRY="scout-operations/research-outcome-registry.json"
 OUTPUT="scout-operations/crossref-candidate-queue.json"
@@ -13,6 +14,9 @@ MANIFEST="api-discoveries/historical-crossref/manifest.json"
 WATCHLIST="scout-operations/preprint-watchlist.json"
 HANDOFF_LEDGER="scout-operations/decision-handoff-ledger.json"
 PUBLIC_MANIFEST="scout-discoveries/manifest.json"
+RETIREMENT="scout-operations/preprint-retirement-archive.json"
+IDENTITY_CACHE="scout-operations/identity-cache/public-identity-index.json"
+REACH_CACHE="scout-operations/reach-comparison-cache/comparison-index.json"
 def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
 def load(root,p): return json.loads((root/p).read_text())
 def norm(s):
@@ -106,8 +110,9 @@ def cooldown_active(case, now):
  except (KeyError,TypeError,ValueError):
   return False
 
-def build(routing,registry,award_evidence=None,preprints=None,*,active_public=None,handoff_ledger=None,now=None):
+def build(routing,registry,award_evidence=None,preprints=None,*,active_public=None,handoff_ledger=None,retired_preprints=None,now=None):
  preprints=preprints or {}
+ retired_preprints=retired_preprints or {}
  award_evidence=award_evidence or {}
  active_public=active_public or {}
  handoff_ledger=handoff_ledger or {"cases":{}}
@@ -134,7 +139,11 @@ def build(routing,registry,award_evidence=None,preprints=None,*,active_public=No
   signal=funding_signal(awards)
   prior=cases.get("doi:"+d,{})
   disposition=prior.get("latest_operational_disposition")
-  if live_title_conflict and gate!="VERIFIED_EXISTING_REACH":
+  if d in retired_preprints:
+   lane,rank,action="RETIRED_PREPRINT_EXISTING_REACH_FAST_EXIT",0,"Official published version and REACH UID already verified; never re-screen original preprint DOI. Related-output expansion stays separate."
+  elif ledger_case.get("state")=="RESOLVED_EXISTING_REACH":
+   lane,rank,action="RESOLVED_REACH_IDENTITY_FAST_EXIT",0,"Public REACH identity resolved; no publication-identity research retry. Expansion remains independent."
+  elif live_title_conflict and gate!="VERIFIED_EXISTING_REACH":
    lane,rank,action="BOUNDED_IDENTITY_REVIEW",70,"Current public Scout DOI has a conflicting title; verify distinct article/version before any original proposal"
   elif gate=="VERIFIED_EXISTING_REACH":
    assert e["bulk_identity_gate"].get("verified_reach_uid")
@@ -149,7 +158,7 @@ def build(routing,registry,award_evidence=None,preprints=None,*,active_public=No
   elif gate=="NO_PUBLIC_REACH_MATCH":
    lane,rank,action="NOVEL_IDENTITY_RESEARCH",60,"Complete fast published/identity check, then route plausible output to Needs Investigation in the same mission"
   else: raise ValueError("Unknown gate: "+str(gate))
-  if lane not in ("EXISTING_REACH_FAST_EXIT","ALREADY_IN_SCOUT_REVIEW_FAST_EXIT","BOUNDED_IDENTITY_REVIEW"):
+  if lane not in ("EXISTING_REACH_FAST_EXIT","ALREADY_IN_SCOUT_REVIEW_FAST_EXIT","RETIRED_PREPRINT_EXISTING_REACH_FAST_EXIT","RESOLVED_REACH_IDENTITY_FAST_EXIT","BOUNDED_IDENTITY_REVIEW"):
    if ledger_case.get("state")=="PUBLISHED_PUBLIC_SCOUT":
     lane,rank,action="PUBLISHED_LEDGER_FEED_MISMATCH",0,"Ledger reports public batch but no current exact-title active manifest match: reconcile, never restage blindly"
    elif ledger_case.get("state")=="STAGED_VALIDATED_INBOX":
@@ -172,7 +181,7 @@ def build(routing,registry,award_evidence=None,preprints=None,*,active_public=No
    rank,action=25,"432 is not direct WPO attribution: verify a specific SPARK primary award/project before proposing a reviewer item"
   elif lane=="NOVEL_IDENTITY_RESEARCH" and signal=="CONFIRMED_WPO_459":
    rank,action=90,"459 program code confirms WPO funding when deposited for this exact article. Fast-check official publisher award, REACH/Scout/IR duplicate and preprint gates; send verified published output as New Candidate in THIS mission, not Needs Investigation solely for WPO connection. Reviewer selects the SPARK parent."
-  if preprint and lane not in ("EXISTING_REACH_FAST_EXIT","ALREADY_IN_SCOUT_REVIEW_FAST_EXIT","ALREADY_STAGED_PUBLIC_DRAFT","DURABLE_BLOCKER_COOLDOWN","PUBLISHED_LEDGER_FEED_MISMATCH"):
+  if preprint and lane not in ("EXISTING_REACH_FAST_EXIT","ALREADY_IN_SCOUT_REVIEW_FAST_EXIT","ALREADY_STAGED_PUBLIC_DRAFT","DURABLE_BLOCKER_COOLDOWN","PUBLISHED_LEDGER_FEED_MISMATCH","RETIRED_PREPRINT_EXISTING_REACH_FAST_EXIT","RESOLVED_REACH_IDENTITY_FAST_EXIT"):
    lane="PREPRINT_PUBLISHED_VERSION_LEAD" if published else "PREPRINT_WATCHLIST_HOLD"
    rank=15 if published else 5
    action=("Investigate official published DOI(s) as separate identities; never stage preprint DOI" if published else "Await scheduled publication recheck; no hourly deep research")
@@ -215,10 +224,12 @@ def load_preprints(root):
 def main():
  p=argparse.ArgumentParser();p.add_argument("--root",type=Path,default=Path(__file__).resolve().parents[2]);p.add_argument("--check",action="store_true");a=p.parse_args()
  awards,award_sources=load_award_evidence(a.root)
- q=build(load(a.root,ROUTING),load(a.root,REGISTRY),awards,load_preprints(a.root),active_public=load_active_scout(a.root),handoff_ledger=read_handoff_ledger(a.root))
+ q=build(load(a.root,ROUTING),load(a.root,REGISTRY),awards,load_preprints(a.root),active_public=load_active_scout(a.root),handoff_ledger=read_handoff_ledger(a.root),retired_preprints=public_reach_preprint_resolutions(a.root))
  q["source_sha256"]={f:sha(a.root/f) for f in (ROUTING,REGISTRY)}
  q["source_sha256"].update(award_sources)
  q["source_sha256"][WATCHLIST]=sha(a.root/WATCHLIST)
+ for p in (RETIREMENT, IDENTITY_CACHE, REACH_CACHE):
+  if (a.root/p).exists(): q["source_sha256"][p]=sha(a.root/p)
  q["dynamic_selection_sha256"]={p:sha(a.root/p) for p in (HANDOFF_LEDGER,PUBLIC_MANIFEST) if (a.root/p).exists()}
  q["funding_signal_counts"]=dict(sorted(Counter(x["funding_signal"] for x in q["items"]).items()))
  dest=a.root/OUTPUT;raw=json.dumps(q,indent=2,ensure_ascii=False)+"\n"
