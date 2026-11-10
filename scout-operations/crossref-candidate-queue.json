@@ -2,16 +2,8 @@
   "schema": "reach-scout-crossref-candidate-queue-v2",
   "purpose": "Read-only selection; not completed research or approval",
   "completion_target": "Each hourly mission handles at least one full novel-output screening through a concrete disposition or public human-review handoff. Skipped known records do not count; technical blockers must be reported, not represented as completed.",
-  "one_mission_actionable_original_count": 146,
+  "one_mission_actionable_original_count": 145,
   "next_one_mission_original_preview": [
-    {
-      "doi": "10.1175/jcli-d-25-0247.1",
-      "lane": "NOVEL_IDENTITY_RESEARCH",
-      "priority": 90,
-      "funding_signal": "CONFIRMED_WPO_459",
-      "required_outcome": "FINISH_ORIGINAL_SCREENING_DECISION_THIS_RUN",
-      "action": "459 program code confirms WPO funding when deposited for this exact article. Fast-check official publisher award, REACH/Scout/IR duplicate and preprint gates; send verified published output as New Candidate in THIS mission, not Needs Investigation solely for WPO connection. Reviewer selects the SPARK parent."
-    },
     {
       "doi": "10.1175/mwr-d-19-0165.1",
       "lane": "NOVEL_IDENTITY_RESEARCH",
@@ -67,48 +59,29 @@
       "funding_signal": "CONFIRMED_WPO_459",
       "required_outcome": "FINISH_ORIGINAL_SCREENING_DECISION_THIS_RUN",
       "action": "459 program code confirms WPO funding when deposited for this exact article. Fast-check official publisher award, REACH/Scout/IR duplicate and preprint gates; send verified published output as New Candidate in THIS mission, not Needs Investigation solely for WPO connection. Reviewer selects the SPARK parent."
+    },
+    {
+      "doi": "10.5194/gmd-2022-311",
+      "lane": "NOVEL_IDENTITY_RESEARCH",
+      "priority": 90,
+      "funding_signal": "CONFIRMED_WPO_459",
+      "required_outcome": "FINISH_ORIGINAL_SCREENING_DECISION_THIS_RUN",
+      "action": "459 program code confirms WPO funding when deposited for this exact article. Fast-check official publisher award, REACH/Scout/IR duplicate and preprint gates; send verified published output as New Candidate in THIS mission, not Needs Investigation solely for WPO connection. Reviewer selects the SPARK parent."
     }
   ],
   "total": 614,
   "lane_counts": {
-    "ALREADY_IN_SCOUT_REVIEW_FAST_EXIT": 22,
+    "ALREADY_IN_SCOUT_REVIEW_FAST_EXIT": 23,
     "BOUNDED_IDENTITY_REVIEW": 51,
     "EXISTING_REACH_FAST_EXIT": 426,
     "HUMAN_REVIEW_FAST_SCREEN_DUE": 7,
     "NON_459_PROJECT_EVIDENCE_CHECK": 2,
-    "NOVEL_IDENTITY_RESEARCH": 86,
+    "NOVEL_IDENTITY_RESEARCH": 85,
     "PREPRINT_PUBLISHED_VERSION_LEAD": 11,
     "PREPRINT_WATCHLIST_HOLD": 7,
     "WAIT_FOR_NEW_EVIDENCE": 2
   },
   "items": [
-    {
-      "preprint_status": null,
-      "already_in_public_scout_queue": false,
-      "matched_public_review_locations": [],
-      "one_mission_disposition_required": true,
-      "verified_published_dois": [],
-      "doi": "10.1175/jcli-d-25-0247.1",
-      "title": "the role of atmosphere ocean coupling on the prediction of madden julian oscillation",
-      "lane": "NOVEL_IDENTITY_RESEARCH",
-      "priority": 90,
-      "next_action": "459 program code confirms WPO funding when deposited for this exact article. Fast-check official publisher award, REACH/Scout/IR duplicate and preprint gates; send verified published output as New Candidate in THIS mission, not Needs Investigation solely for WPO connection. Reviewer selects the SPARK parent.",
-      "funding_signal": "CONFIRMED_WPO_459",
-      "crossref_structured_award_numbers": [
-        "NA22OAR4590216"
-      ],
-      "wpo_459_award_numbers": [
-        "NA22OAR4590216"
-      ],
-      "award_evidence_source_batches": [
-        "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part003.csv"
-      ],
-      "award_match_basis": "Historical Crossref publisher-deposited award for exact DOI; 459 identifies WPO funding. Exact SPARK parent and output identity still require verification before addition",
-      "prior_disposition": null,
-      "scout_overlap": false,
-      "verified_reach_uid": null,
-      "private_hub_review": "NOT_VERIFIED"
-    },
     {
       "preprint_status": null,
       "already_in_public_scout_queue": false,
@@ -9811,6 +9784,35 @@
     },
     {
       "preprint_status": null,
+      "already_in_public_scout_queue": true,
+      "matched_public_review_locations": [
+        "scout-discoveries/inbox/2026-11-10-human-project-31f68eaae5993b3626.csv:2"
+      ],
+      "one_mission_disposition_required": false,
+      "verified_published_dois": [],
+      "doi": "10.1175/jcli-d-25-0247.1",
+      "title": "the role of atmosphere ocean coupling on the prediction of madden julian oscillation",
+      "lane": "ALREADY_IN_SCOUT_REVIEW_FAST_EXIT",
+      "priority": 0,
+      "next_action": "Already in Scout's public review pipeline: do not repeat original research or create another proposal; keep independent expansion",
+      "funding_signal": "CONFIRMED_WPO_459",
+      "crossref_structured_award_numbers": [
+        "NA22OAR4590216"
+      ],
+      "wpo_459_award_numbers": [
+        "NA22OAR4590216"
+      ],
+      "award_evidence_source_batches": [
+        "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part003.csv"
+      ],
+      "award_match_basis": "Historical Crossref publisher-deposited award for exact DOI; 459 identifies WPO funding. Exact SPARK parent and output identity still require verification before addition",
+      "prior_disposition": "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+      "scout_overlap": false,
+      "verified_reach_uid": null,
+      "private_hub_review": "NOT_VERIFIED"
+    },
+    {
+      "preprint_status": null,
       "already_in_public_scout_queue": false,
       "matched_public_review_locations": [],
       "one_mission_disposition_required": false,
@@ -16769,8 +16771,8 @@
   "original_dispositions_changed": 0,
   "new_review_proposals": 0,
   "source_sha256": {
-    "scout-operations/historical-crossref-screening/actionable-routing.json": "9fe083c8a08f42f1c6004accad4229c4dee9310f44afd4bea6ed079ca6368398",
-    "scout-operations/research-outcome-registry.json": "8d28c964fa92b0c25e6e47cc7069c55ab23cc76338f6100bd34a1bc21dd9e246",
+    "scout-operations/historical-crossref-screening/actionable-routing.json": "f2bcd9dc8e8fce3bbbc5963032b7e81619512f54828b984055be6224bc08d0eb",
+    "scout-operations/research-outcome-registry.json": "796efcd12c44d5aa7497355aec38c5472fefd859a610c48d1a528d21d821cf99",
     "api-discoveries/historical-crossref/manifest.json": "799744c7e83f218d22cc19afacb7cfcf2762feb490659efde9f58bf19473b1fa",
     "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part001.csv": "df420ff561050c5f019ccddd19eb93124ab642eba8aa6f87dc0636b6d5ee2de3",
     "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part002.csv": "1cc9e5f3c493c6fa7cde93e0060718224686f695c7ba6d648208ecf9a09d69d7",
