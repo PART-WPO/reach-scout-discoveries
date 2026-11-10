@@ -63,6 +63,8 @@ jobs:
         run: python -m py_compile scout-operations/tools/hourly_decision_handoff.py scout-operations/tools/write_hourly_mission_metrics.py scout-operations/tools/validate_hourly_mission.py
       - name: Verify official DOI, 459 funding and blocker rotation
         run: python -m unittest discover -s scout-operations/tests -p 'test_hourly_decision_handoff.py' -v
+      - name: Reconcile public REACH/Scout identity without retrying human review
+        run: python -m unittest discover -s scout-operations/tests -p 'test_public_handoff_reconciliation.py' -v
       - name: Discovery attribution and source DOI reporting regressions
         run: python -m unittest discover -v -s scout-operations/tests -p 'test_discovery_metrics_reconciliation.py'
       - name: Verify full current manifest-origin-scorecard reconciliation
