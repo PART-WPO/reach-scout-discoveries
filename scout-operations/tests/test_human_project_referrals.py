@@ -314,4 +314,22 @@ class HumanProjectReferrals(unittest.TestCase):
         self.assertIn("Needs Investigation", " ".join(row["provenance"]["notes"]))
         self.assertIn("NA18OAR4590431"," ".join(row["provenance"]["notes"]))
 
+    def test_historical_crossref_exact_original_uses_verified_direct_api_method(self):
+        event = {"doi":"10.3390/atmos16070881", "event_id":"origin-verified",
+                 "research_lane":"historical_crossref_original",
+                 "source_path":"scout-operations/historical-crossref-phase2/auto-verified-oar459-69e9278b9a8267f272.json",
+                 "checked_evidence_urls":["https://api.crossref.org/works/10.3390/atmos16070881"]}
+        project = {"award_context_only":"NA19OAR4590133"}
+        metadata = {**self.published(), "evidence":"https://api.crossref.org/works/10.3390/atmos16070881",
+                    "funding_references":[{"award":["NA19OAR4590133"]}]}
+        proof = {"method":"Direct API",
+                 "path_evidence_url":"https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/batches/source.csv"}
+        with patch("build_human_project_referrals.historical_crossref_source", return_value=proof):
+            candidate = proposal(event["doi"], metadata, event, project, self.identity("",""))
+        self.assertEqual(candidate["provenance"]["route"], "Direct API")
+        self.assertEqual(candidate["provenance"]["origin_method"], "Direct API")
+        with patch("build_human_project_referrals.historical_crossref_source", return_value=None):
+            unverified = proposal(event["doi"], metadata, event, project, self.identity("",""))
+        self.assertEqual(unverified["provenance"]["route"], "Unclassified")
+
 if __name__=="__main__":unittest.main()
