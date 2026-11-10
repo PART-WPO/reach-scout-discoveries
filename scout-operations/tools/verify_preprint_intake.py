@@ -96,7 +96,8 @@ def read_batches(root=ROOT):
         if str(p.relative_to(root)).replace("\\", "/") not in old)
     return paths
 
-def verify(root=ROOT, fetch_crossref=crossref, fetch_datacite=datacite, now=None):
+def verify(root=ROOT, fetch_crossref=crossref, fetch_datacite=datacite,
+           now=None, fetch_reach=fetch_reach_index):
     now = now or dt.datetime.now(dt.timezone.utc).isoformat()
     watch = watchlist(root)
     known = {norm_doi(x["preprint_doi"]) for x in watch["entries"]}
@@ -139,7 +140,7 @@ def verify(root=ROOT, fetch_crossref=crossref, fetch_datacite=datacite, now=None
             if status == "eligible" and doi:
                 rationale = row.get("Scout Discovery Rationale", "")
                 classification = re.search(
-                    r"(?im)^\\s*Scout classification:\\s*([^\\r\\n]+)", rationale)
+                    r"(?im)^\s*Scout classification:\s*([^\r\n]+)", rationale)
                 class_text = classification.group(1).upper() if classification else ""
                 if doi in staged_dois and "NEW CANDIDATE" in class_text:
                     status = "identity_hold"
@@ -150,7 +151,7 @@ def verify(root=ROOT, fetch_crossref=crossref, fetch_datacite=datacite, now=None
                     if not reach_index_checked:
                         reach_index_checked = True
                         try:
-                            reach_index = fetch_reach_index()
+                            reach_index = fetch_reach()
                         except Exception as error:
                             reach_index_error = type(error).__name__
                     if reach_index is None:
