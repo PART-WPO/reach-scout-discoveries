@@ -58,6 +58,15 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Verify public manuscript PDF text extractor
+        run: |
+          if command -v pdftotext >/dev/null 2>&1; then
+            pdftotext -v
+          else
+            sudo apt-get update -qq
+            sudo apt-get install -y poppler-utils
+            pdftotext -v
+          fi
       - name: Research ONE unworked verified REACH expansion seed; persist only evidence
         shell: bash
         env:

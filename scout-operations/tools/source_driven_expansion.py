@@ -9,12 +9,16 @@ import hashlib
 import html
 import json
 import re
+import subprocess
 import urllib.error
 import urllib.request
 from html.parser import HTMLParser
-from urllib.parse import quote, urlparse
+from urllib.parse import quote, urlparse, urljoin
 
 MAX_BYTES = 2_000_000
+MAX_PDF_BYTES = 8_000_000
+IR_HOST = "repository.library.noaa.gov"
+IR_ITEM_RE = re.compile(r"^https://repository\.library\.noaa\.gov/view/noaa/\d+$")
 USER_AGENT = "NOAA-WPO-Scout-Source-Expansion/1.0 (source-evidence-only)"
 DOI_RE = re.compile(r"10\.\d{4,9}/[^\s<>\[\]{}\"']+", re.I)
 DATA_CUE = re.compile(
@@ -52,7 +56,7 @@ def request_source(url):
     """HTTPS-only bounded official fetch; disallow unrelated redirects and payloads."""
     host = urlparse(url).hostname
     if urlparse(url).scheme != "https" or host not in {
-        "api.crossref.org", *PUBLISHER_PREFIXES.values()
+        "api.crossref.org", IR_HOST, *PUBLISHER_PREFIXES.values()
     }:
         raise ValueError("Unapproved official source hostname")
     req = urllib.request.Request(url, headers={
@@ -63,8 +67,9 @@ def request_source(url):
         actual = urlparse(response.geturl())
         if actual.scheme != "https" or actual.hostname != host:
             raise ValueError("Publisher redirected outside trusted source host")
-        data = response.read(MAX_BYTES + 1)
-        if len(data) > MAX_BYTES:
+        cap = MAX_PDF_BYTES if host == IR_HOST and actual.path.lower().endswith(".pdf") else MAX_BYTES
+        data = response.read(cap + 1)
+        if len(data) > cap:
             raise ValueError("Official source exceeded bounded byte limit")
         return data
 
@@ -145,7 +150,79 @@ def crossref_reference_leads(raw, seed, url):
     return result
 
 
-def discover(seed, fetch=request_source, max_leads=LEAD_LIMIT):
+class PdfLinks(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.hrefs = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag == "a":
+            for name, value in attrs:
+                if name == "href" and isinstance(value, str):
+                    self.hrefs.append(value)
+
+
+def pdf_text_from_bytes(data):
+    """Use the runner's sandboxed Poppler extractor; never execute PDF content."""
+    if not isinstance(data, bytes) or not data.startswith(b"%PDF-") or len(data) > MAX_PDF_BYTES:
+        raise ValueError("Invalid or oversized public manuscript PDF")
+    proc = subprocess.run(
+        ["pdftotext", "-layout", "-", "-"], input=data, stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE, timeout=20, check=True,
+    )
+    text = proc.stdout.decode("utf-8", errors="replace")[:250_000]
+    # Join within-paragraph PDF line wraps, keep blank-line boundaries to
+    # prevent data cues from leaking across unrelated citations.
+    return re.sub(r"(?<!\n)\n(?!\n)", " ", text)
+
+
+def noaa_ir_pdf_leads(seed, ir_url, fetch=request_source, pdf_to_text=None):
+    """Use only a SHA-indexed exact-DOI NOAA IR item and that item's own PDF link."""
+    if not IR_ITEM_RE.fullmatch(str(ir_url or "")):
+        raise ValueError("NOAA IR item is not an exact trusted public URL")
+    sources, leads = [], []
+    try:
+        item_raw = fetch(ir_url)
+        if not isinstance(item_raw, bytes) or len(item_raw) > MAX_BYTES:
+            raise ValueError("Oversized NOAA IR public item page")
+        links = PdfLinks()
+        links.feed(item_raw.decode("utf-8", errors="replace"))
+        sources.append({"kind": "noaa_ir_landing", "url": ir_url, "status": "SOURCE_READ",
+                        "source_sha256": hashlib.sha256(item_raw).hexdigest()})
+        allowed = sorted({
+            urljoin(ir_url + "/", href) for href in links.hrefs
+            if isinstance(href, str)
+        })
+        pdf_links = [u for u in allowed if (
+            urlparse(u).scheme == "https" and urlparse(u).hostname == IR_HOST
+            and u.startswith(ir_url + "/") and
+            re.fullmatch(r"noaa_\d+_DS\d+\.pdf", urlparse(u).path.rsplit("/", 1)[-1], re.I)
+        )]
+        if not pdf_links:
+            sources.append({"kind": "noaa_ir_manuscript_pdf", "url": ir_url,
+                            "status": "NO_VALIDATED_MANUSCRIPT_PDF_LINK"})
+            return sources, leads
+        pdf_url = pdf_links[0]
+        pdf_raw = fetch(pdf_url)
+        if not isinstance(pdf_raw, bytes) or len(pdf_raw) > MAX_PDF_BYTES:
+            raise ValueError("Oversized manuscript PDF")
+        text = (pdf_to_text or pdf_text_from_bytes)(pdf_raw)
+        if not isinstance(text, str):
+            raise ValueError("Public manuscript text extractor returned invalid text")
+        leads = candidate_cues(text, seed, "noaa_ir_accepted_manuscript_pdf", pdf_url)
+        sources.append({"kind": "noaa_ir_manuscript_pdf", "url": pdf_url,
+                        "status": "SOURCE_READ", "source_sha256": hashlib.sha256(pdf_raw).hexdigest(),
+                        "data_code_doi_matches": len(leads)})
+        for lead in leads:
+            lead["source_sha256"] = hashlib.sha256(pdf_raw).hexdigest()
+    except (ValueError, OSError, TimeoutError, subprocess.SubprocessError,
+            urllib.error.URLError) as exc:
+        sources.append({"kind": "noaa_ir_accepted_manuscript", "url": ir_url,
+                        "status": "SOURCE_ACCESS_OR_PARSE_HOLD", "error_type": type(exc).__name__})
+    return sources, leads
+
+
+def discover(seed, fetch=request_source, max_leads=LEAD_LIMIT, *, ir_url=None, pdf_to_text=None):
     """Fetch at most two official sources and return at most three leads."""
     seed = canonical(seed)
     if not seed:
@@ -178,6 +255,18 @@ def discover(seed, fetch=request_source, max_leads=LEAD_LIMIT):
                 "kind": kind, "url": url, "status": "SOURCE_ACCESS_OR_PARSE_HOLD",
                 "error_type": type(exc).__name__,
             })
+    # Wiley and other publisher sites can reject unattended clients. When
+    # SHA-verified NOAA IR metadata proves the exact seed item, try its own
+    # publicly linked accepted manuscript; never infer PDF URLs or follow
+    # arbitrary article links.
+    if ir_url and not leads:
+        extra_sources, extra_leads = noaa_ir_pdf_leads(
+            seed, ir_url, fetch=fetch, pdf_to_text=pdf_to_text)
+        sources.extend(extra_sources)
+        for lead in extra_leads:
+            if lead["doi"] not in seen and len(leads) < max_leads:
+                seen.add(lead["doi"])
+                leads.append(lead)
     return {
         "schema": "reach-scout-source-driven-expansion-v1",
         "seed_doi": seed, "source_checks": sources,

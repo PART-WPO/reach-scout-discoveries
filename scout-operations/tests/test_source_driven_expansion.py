@@ -82,5 +82,55 @@ class SourceDrivenResearchTests(unittest.TestCase):
         self.assertEqual(src.canonical("DOI:10.6075/J0SN07G9"), DATASET)
 
 
+
+    def test_verified_noaa_ir_manuscript_fallback_discovers_positive_dataset(self):
+        item = "https://repository.library.noaa.gov/view/noaa/57177"
+        pdf = item + "/noaa_57177_DS1.pdf"
+        seen = []
+        def fetch(url):
+            seen.append(url)
+            if url.startswith("https://api.crossref.org/works/"):
+                return json.dumps({"message":{"DOI":SEED,"reference":[]}}).encode()
+            if url.startswith("https://onlinelibrary.wiley.com/doi/"):
+                raise OSError("Publisher blocked automated access")
+            if url == item:
+                return (('<a href="https://attacker.example/bad.pdf">bad</a>'
+                         '<a href="noaa_57177_DS1.pdf">Accepted manuscript</a>').encode())
+            if url == pdf:
+                return b"%PDF-1.5 accepted manuscript bytes fixture"
+            raise AssertionError("Unexpected untrusted request: " + url)
+        def text_extractor(raw):
+            self.assertTrue(raw.startswith(b"%PDF"))
+            return ("A dataset is discussed.\n"
+                    "Sumargo E et al. Data from: A soil moisture monitoring network "
+                    "https://doi.org/10.6075/J0SN07G9.\n"
+                    "Ordinary reference https://doi.org/10.1175/WAF-D-19-0019.1.")
+        result = src.discover(SEED, fetch=fetch, ir_url=item, pdf_to_text=text_extractor)
+        self.assertEqual(result["status"], "SOURCE_BACKED_LEADS_FOUND")
+        self.assertEqual([x["doi"] for x in result["discovered_doi_leads"]], [DATASET])
+        self.assertIn(pdf, seen)
+        self.assertTrue(all("attacker.example" not in url for url in seen))
+        self.assertEqual(result["source_checks"][-1]["status"], "SOURCE_READ")
+        self.assertEqual(result["source_checks"][-1]["kind"], "noaa_ir_manuscript_pdf")
+
+    def test_noaa_ir_item_must_match_verified_host_and_path(self):
+        with self.assertRaisesRegex(ValueError, "not an exact trusted"):
+            src.noaa_ir_pdf_leads(SEED, "https://example.com/view/noaa/57177",
+                                 fetch=lambda _: b"")
+        with self.assertRaisesRegex(ValueError, "not an exact trusted"):
+            src.noaa_ir_pdf_leads(SEED, "https://repository.library.noaa.gov/view/noaa/57177/evil",
+                                 fetch=lambda _: b"")
+
+    def test_does_not_invent_noaa_ir_pdf_path_when_page_has_no_link(self):
+        item = "https://repository.library.noaa.gov/view/noaa/57177"
+        fetched = []
+        def fetch(url):
+            fetched.append(url)
+            return b"<html><p>No public PDF link here.</p></html>"
+        sources, leads = src.noaa_ir_pdf_leads(SEED, item, fetch=fetch)
+        self.assertEqual(fetched, [item])
+        self.assertEqual(leads, [])
+        self.assertEqual(sources[-1]["status"], "NO_VALIDATED_MANUSCRIPT_PDF_LINK")
+
 if __name__ == "__main__":
     unittest.main()
