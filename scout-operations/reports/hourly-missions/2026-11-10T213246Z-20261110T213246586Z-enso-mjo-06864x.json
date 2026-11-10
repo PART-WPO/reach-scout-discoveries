@@ -1,0 +1,46 @@
+{
+  "schema": "reach-scout-hourly-mission-outcome-v1",
+  "producer": "chatgpt_hourly_mission",
+  "not_chatgpt_hourly_mission": false,
+  "mission_id": "20261110T213246586Z-enso-mjo-06864x",
+  "started_at_utc": "2026-11-10T21:32:46.586Z",
+  "completed_at_utc": "2026-11-10T21:33:10.891Z",
+  "policy_commit_sha": "863e249b46f03c71ef6058436b3c665ae8c7acae",
+  "memory_source_fingerprint": "98344ca9ee18144c76f9bce066259cd15122762e4be8a5172dea6c62048e50fe",
+  "memory_builder_policy_sha256": "12b0ec18f0c2c1d7b82edbe746a485c33afe5d493e0c56f72fd0932b305c04a6",
+  "lane": "related_expansion",
+  "handoff_status": "NOT_ATTEMPTED",
+  "handoff_blocker": null,
+  "cache_hits_observed": null,
+  "external_requests_observed": null,
+  "avoided_requests_measured": null,
+  "private_hub_import": "NOT_VERIFIED",
+  "human_decision": "NOT_VERIFIED",
+  "public_reach_addition": "NOT_VERIFIED",
+  "selected_original_dois": [],
+  "selected_expansion_seed_dois": [
+    "10.1007/s00382-023-06864-x"
+  ],
+  "fast_exited_public_reach": [],
+  "fast_exited_public_scout": [],
+  "new_original_full_decisions": [],
+  "new_expansion_decisions": [],
+  "research_only_holds": [
+    "10.1007/s00382-023-06864-x"
+  ],
+  "technical_or_funding_holds": [],
+  "published_public_batch_urls": [],
+  "guarded_handoff_run_urls": [],
+  "prior_note_sha256_reused": [],
+  "prior_metadata_fingerprints_reused": [],
+  "research_evidence": [
+    {
+      "seed_doi": "10.1007/s00382-023-06864-x",
+      "source_url": "https://www.osti.gov/pages/servlets/purl/2576207",
+      "finding": "Official public manuscript data availability names existing NCEP-NCAR Reanalysis-2 and windspharm Python package, without distinct newly deposited dataset/code DOI; funding statement lists 431/432 awards, not exact 459. No distinct child output verified.",
+      "disposition": "RESEARCH_ONLY_HOLD",
+      "source_sha256": "NOT_VERIFIED",
+      "next_action": "Only reopen with distinct deposited output DOI and independently verified WPO attribution."
+    }
+  ]
+}
