@@ -1,12 +1,12 @@
 {
   "schema": "reach-scout-bounded-project-human-referral-v1",
-  "source_outcome_event_count": 66,
-  "source_outcome_sha256": "34327cda0dc308226b84bffaa87b49494a710684b277270faae710b263beb702",
+  "source_outcome_event_count": 67,
+  "source_outcome_sha256": "bad9ffe3c9634e773d51841387367796c42c49499d715367dc26e9e26bc39d10",
   "unique_bounded_project_questions": 3,
-  "potential_wpo_cases_quick_screened": 19,
+  "potential_wpo_cases_quick_screened": 20,
   "human_referral_drafts_prevalidated": 1,
   "draft_paths": [
-    "scout-discoveries/inbox/2026-11-10-human-project-bfcdcca18eb647d9c5.csv"
+    "scout-discoveries/inbox/2026-11-10-human-project-69e9278b9a8267f272.csv"
   ],
   "published_batch_paths": [
     "scout-discoveries/batches/2026-11-09-human-project-b332d53770e8cbc1d4.csv",
@@ -23,9 +23,10 @@
     "scout-discoveries/batches/2026-11-10-human-project-8eb678e5c990af2471.csv",
     "scout-discoveries/batches/2026-11-10-human-project-e65c593e29a9643d34.csv",
     "scout-discoveries/batches/2026-11-10-human-project-a6d179727eeaf598b3.csv",
-    "scout-discoveries/batches/2026-11-10-human-project-3bb30323909753e956.csv"
+    "scout-discoveries/batches/2026-11-10-human-project-3bb30323909753e956.csv",
+    "scout-discoveries/batches/2026-11-10-human-project-bfcdcca18eb647d9c5.csv"
   ],
-  "verified_public_scout_referral_batches": 15,
+  "verified_public_scout_referral_batches": 16,
   "human_reviewer_decisions": "NOT_VERIFIED",
   "private_hub_imports": "NOT_VERIFIED",
   "new_approved_reach_outputs": 0,
@@ -2790,9 +2791,32 @@
         ]
       },
       "public_identity": {
-        "status": "NO_PUBLIC_IDENTITY_MATCH",
-        "reason": "NO_MATCH_IN_VERIFIED_PUBLIC_SNAPSHOT",
-        "matches": [],
+        "status": "IN_PUBLIC_SCOUT_QUEUE",
+        "reason": "CONSISTENT_SCOUT_PUBLIC_MIRRORS",
+        "matches": [
+          {
+            "source": "SCOUT_PUBLISHED",
+            "identity": "2026-11-10-human-project-bfcdcca18eb647d9c5:2",
+            "title": "“As Ready as We Can Be”: The Dynamics of Preparedness in Hurricane Florence",
+            "location": "scout-discoveries/batches/2026-11-10-human-project-bfcdcca18eb647d9c5.csv:2",
+            "match_bases": [
+              "exact_doi",
+              "exact_url",
+              "normalized_title"
+            ]
+          },
+          {
+            "source": "SCOUT_INBOX",
+            "identity": "2026-11-10-human-project-bfcdcca18eb647d9c5.csv:2",
+            "title": "“As Ready as We Can Be”: The Dynamics of Preparedness in Hurricane Florence",
+            "location": "scout-discoveries/inbox/2026-11-10-human-project-bfcdcca18eb647d9c5.csv:2",
+            "match_bases": [
+              "exact_doi",
+              "exact_url",
+              "normalized_title"
+            ]
+          }
+        ],
         "caveat": "Public snapshot only; private Hub decisions are not asserted.",
         "noaa_ir_reach_check": {
           "status": "DOI_NOT_IN_VERIFIED_IR_INDEX_UNKNOWN",
@@ -2807,8 +2831,89 @@
         "wpo_award_cue_not_proof": true,
         "reason_for_review": "WPO-pattern award cited but exact funded project deliverable unverified"
       },
-      "disposition": "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL",
+      "disposition": "HOLD_ALREADY_IN_PUBLIC_REACH_OR_SCOUT",
       "review_question": "Reviewer question: Select and verify the correct SPARK parent for the explicitly funded WPO award NA18OAR4590309; confirm the output belongs with that parent before addition.",
+      "scout_inbox_status": "PUBLISHED_PUBLIC_SCOUT_FEED_NOT_PRIVATE_HUB",
+      "published_scout_batch_path": "scout-discoveries/batches/2026-11-10-human-project-bfcdcca18eb647d9c5.csv",
+      "eligible_for_new_reach_addition": "NOT_VERIFIED",
+      "private_hub_import": "NOT_VERIFIED",
+      "human_approval": "NOT_VERIFIED"
+    },
+    {
+      "doi": "10.3390/atmos16070881",
+      "source_event_id": "af7e02726a8a2c31d07765b8",
+      "source_file": "scout-operations/historical-crossref-phase2/auto-verified-oar459-69e9278b9a8267f272.json",
+      "source_sha256": "5d1a2ba2bd8acccdaafb5b28cae2eccbacfec04c51e59072c2d197c40f569828",
+      "official_metadata": {
+        "status": "ok",
+        "provider": "crossref",
+        "evidence": "https://api.crossref.org/works/10.3390/atmos16070881",
+        "title": "Exploring the Explainability of a Machine Learning Tool to Improve Severe Thunderstorm Wind Reports",
+        "creators": [
+          "Elizabeth Tirone",
+          "William A. Gallus",
+          "Alexander J. Hamilton"
+        ],
+        "resource_type": "journal-article",
+        "publication_status": "official_journal_article",
+        "abstract": "<jats:p>Output from a machine learning tool that assigns a probability that a severe thunderstorm wind report was caused by severe intensity wind was evaluated to understand counterintuitive cases where reports that had a high (low) wind speed received a low (high) diagnosed probability. Meteorological data for these cases was compared to that for valid cases where the machine learning probability seemed consistent with the observed severity of the winds. The comparison revealed that the cases with high winds but low probabilities occurred in less conducive environments for severe wind production (less instability, greater low-level relative humidity, weaker lapse rates) than in the cases where high winds occurred with high probabilities. Cases with a low speed but a high probability had environmental characteristics that were more conducive to producing severe wind. These results suggest that the machine learning model is assigning probabilities based on storm modes that more often have measured severe wind speeds (i.e., clusters of cells and bow echoes), and counterintuitive values may reflect events where storm interactions or other smaller-scale features play a bigger role. In addition, some evidence suggests improper reporting may be common for some of these counterintuitive cases.</jats:p>",
+        "pub_date": "2025-07-18",
+        "preprint_posted_date": "",
+        "pub_date_basis": "Crossref published-online",
+        "pub_date_precision": "day",
+        "publisher": "MDPI AG",
+        "funding_references": [
+          {
+            "name": "NOAA",
+            "award": [
+              "NA19OAR4590133"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "NA19OAR4590133"
+                ]
+              }
+            ]
+          }
+        ],
+        "related_identifiers": {},
+        "attempts": [
+          {
+            "provider": "datacite",
+            "url": "https://api.datacite.org/dois/10.3390/atmos16070881",
+            "error": {
+              "kind": "http",
+              "code": 404
+            }
+          },
+          {
+            "provider": "crossref",
+            "url": "https://api.crossref.org/works/10.3390/atmos16070881",
+            "error": null
+          }
+        ]
+      },
+      "public_identity": {
+        "status": "NO_PUBLIC_IDENTITY_MATCH",
+        "reason": "NO_MATCH_IN_VERIFIED_PUBLIC_SNAPSHOT",
+        "matches": [],
+        "caveat": "Public snapshot only; private Hub decisions are not asserted.",
+        "noaa_ir_reach_check": {
+          "status": "DOI_NOT_IN_VERIFIED_IR_INDEX_UNKNOWN",
+          "official_url": null,
+          "match_uid": null,
+          "match_detail_shard": null
+        }
+      },
+      "project_search_context_only": {
+        "award_context_only": "NA19OAR4590133",
+        "project_context_only": "",
+        "wpo_award_cue_not_proof": true,
+        "reason_for_review": "WPO-pattern award cited but exact funded project deliverable unverified"
+      },
+      "disposition": "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL",
+      "review_question": "Reviewer question: Select and verify the correct SPARK parent for the explicitly funded WPO award NA19OAR4590133; confirm the output belongs with that parent before addition.",
       "scout_inbox_status": "VALIDATED_INBOX_DRAFT_NOT_PRIVATE_HUB",
       "published_scout_batch_path": null,
       "eligible_for_new_reach_addition": "NOT_VERIFIED",
