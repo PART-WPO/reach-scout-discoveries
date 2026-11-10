@@ -125,6 +125,8 @@ jobs:
             git fetch origin main
             git checkout -B main origin/main
             # Refresh the authoritative queue first; reject nonmatching source SHAs.
+            python scout-operations/tools/reconcile_public_handoff.py
+            python scout-operations/tools/reconcile_public_handoff.py --check
             python scout-operations/tools/build_candidate_queue.py
             # This commits no approval. It writes only a DOI-specific research
             # evidence note, fresh guarded referral, and durable blocker report.
