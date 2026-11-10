@@ -8,6 +8,7 @@ Never guess private human outcomes.
 import hashlib
 import json
 from pathlib import Path
+from source_discovery_metrics import summary as source_discovery_summary
 
 ROOT=Path(__file__).resolve().parents[2]
 OUTPUT=ROOT/"scout-operations/scout-operational-scorecard.json"
@@ -90,6 +91,7 @@ def main():
         "expansion_relevance":relevance_sha}
     result={
         "schema":"reach-scout-operational-scorecard-v1",
+        "source_driven_related_output_research": source_discovery_summary(ROOT),
         "source_sha256":artifacts,
         "reach_screening":{"historical_crossref_source_dois":route["total"],
             "confirmed_reach":route["counts"].get("CONFIRMED_IN_REACH",0),

@@ -9,6 +9,11 @@ on:
       - 'scout-operations/tools/validate_hourly_mission.py'
       - 'scout-operations/tests/test_hourly_mission_metrics.py'
       - 'scout-operations/tools/summarize_hourly_missions.py'
+      - 'scout-operations/tools/reconcile_scout_metrics.py'
+      - 'scout-operations/tools/source_discovery_metrics.py'
+      - 'scout-operations/tools/discovery_origin_evidence.py'
+      - 'scout-discoveries/tools/rebuild_discovery_rollup.py'
+      - 'scout-operations/tools/build_human_project_referrals.py'
       - 'scout-operations/tests/test_hourly_mission_scorecard.py'
       - 'scout-operations/tools/audit_independent_lookup.py'
       - 'scout-operations/tests/test_independent_lookup_audit.py'
@@ -22,6 +27,11 @@ on:
       - 'scout-operations/tools/validate_hourly_mission.py'
       - 'scout-operations/tests/test_hourly_mission_metrics.py'
       - 'scout-operations/tools/summarize_hourly_missions.py'
+      - 'scout-operations/tools/reconcile_scout_metrics.py'
+      - 'scout-operations/tools/source_discovery_metrics.py'
+      - 'scout-operations/tools/discovery_origin_evidence.py'
+      - 'scout-discoveries/tools/rebuild_discovery_rollup.py'
+      - 'scout-operations/tools/build_human_project_referrals.py'
       - 'scout-operations/tests/test_hourly_mission_scorecard.py'
       - 'scout-operations/tools/audit_independent_lookup.py'
       - 'scout-operations/tests/test_independent_lookup_audit.py'
@@ -53,6 +63,12 @@ jobs:
         run: python -m py_compile scout-operations/tools/hourly_decision_handoff.py scout-operations/tools/write_hourly_mission_metrics.py scout-operations/tools/validate_hourly_mission.py
       - name: Verify official DOI, 459 funding and blocker rotation
         run: python -m unittest discover -s scout-operations/tests -p 'test_hourly_decision_handoff.py' -v
+      - name: Discovery attribution and source DOI reporting regressions
+        run: python -m unittest discover -v -s scout-operations/tests -p 'test_discovery_metrics_reconciliation.py'
+      - name: Verify full current manifest-origin-scorecard reconciliation
+        run: |
+          python scout-operations/tools/reconcile_scout_metrics.py
+          python scout-operations/tools/reconcile_scout_metrics.py --check
       - name: Completed-mission measurement and privacy regressions
         run: python -m unittest discover -s scout-operations/tests -p 'test_hourly_mission_metrics.py' -v
       - name: Independent DOI cache/HTTP reuse measurement regressions
@@ -142,6 +158,25 @@ jobs:
               --github-attempt "$((10 * ${{ github.run_attempt }} + attempt))" \
               --source-commit "$(git rev-parse HEAD)"
             python scout-operations/tools/summarize_hourly_missions.py
+            # Regenerate ALL public provenance and impact metrics in the same
+            # commit that publishes a guarded candidate. Bot pushes do not
+            # reliably trigger a second metrics workflow.
+            python scout-operations/tools/reconcile_scout_metrics.py
+            python scout-operations/tools/reconcile_scout_metrics.py --check
+            # Carry the existing Issue #35 identity-DAG refresh in the
+            # SAME commit when a newly published manifest invalidates it.
+            python - <<'PY'
+            import subprocess, sys
+            sys.path.insert(0, "scout-operations/tools")
+            from reconcile_derived_reporting import DERIVED_FILES
+            subprocess.run(["git", "add", "--", *DERIVED_FILES,
+                            "scout-operations/case-checkpoints/"], check=True)
+            PY
+            git add -- scout-operations/discovery-origin-rollup.json \
+              scout-operations/scout-operational-scorecard.json \
+              scout-operations/scout-throughput-scorecard.json \
+              scout-operations/scout-v2-impact-report.json \
+              scout-operations/reports/hourly-mission-scorecard/latest.json
             git add -A --               scout-operations/reports/guarded-backstop-missions/               scout-operations/reports/hourly-mission-scorecard/latest.json               scout-operations/crossref-candidate-queue.json               scout-operations/decision-handoff-ledger.json               scout-operations/reports/hourly-decision-handoff.json               scout-operations/historical-crossref-phase2/               scout-operations/research-outcome-registry.json               scout-operations/human-project-referrals.json               scout-operations/preprint-intake-gate.json               scout-operations/preprint-watchlist.json               scout-discoveries/inbox/               scout-discoveries/batches/               scout-discoveries/manifest.json
             if git diff --cached --quiet; then
               echo "Source checks and public feed are up to date."

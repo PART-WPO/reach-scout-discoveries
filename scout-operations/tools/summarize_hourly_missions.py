@@ -8,6 +8,7 @@ from pathlib import Path
 TOOLS = Path(__file__).resolve().parent
 sys.path.insert(0, str(TOOLS))
 from validate_hourly_mission import validate
+from source_discovery_metrics import summary as source_discovery_summary
 
 ROOT = Path(__file__).resolve().parents[2]
 INPUTS = {
@@ -62,8 +63,10 @@ def summarize(root=ROOT):
             "private_hub_imports_verified": None,
             "private_hub_status": "NOT_VERIFIED",
         }
+    expansion = source_discovery_summary(root)
     return {
         "schema": "reach-scout-separated-completed-mission-scorecard-v1",
+        "github_bounded_expansion_research": expansion,
         "measurement_limitation": "Only timestamped reports in source folders; record count is not the number of scheduled task attempts. GitHub backstop is never an hourly ChatGPT mission. In-process reuse differs from persistent cache reuse. No causal inference.",
         "by_producer": categories,
     }

@@ -3,6 +3,10 @@ on:
   pull_request:
     paths:
       - 'scout-operations/tools/expansion_fallback_research.py'
+      - 'scout-operations/tools/reconcile_scout_metrics.py'
+      - 'scout-operations/tools/source_discovery_metrics.py'
+      - 'scout-operations/tools/discovery_origin_evidence.py'
+      - 'scout-discoveries/tools/rebuild_discovery_rollup.py'
       - 'scout-operations/tools/source_driven_expansion.py'
       - 'scout-operations/tests/test_source_driven_expansion.py'
       - 'scout-operations/tests/test_expansion_fallback_research.py'
@@ -11,6 +15,10 @@ on:
     branches: [main]
     paths:
       - 'scout-operations/tools/expansion_fallback_research.py'
+      - 'scout-operations/tools/reconcile_scout_metrics.py'
+      - 'scout-operations/tools/source_discovery_metrics.py'
+      - 'scout-operations/tools/discovery_origin_evidence.py'
+      - 'scout-discoveries/tools/rebuild_discovery_rollup.py'
       - 'scout-operations/tools/source_driven_expansion.py'
       - 'scout-operations/tests/test_source_driven_expansion.py'
       - 'scout-operations/tests/test_expansion_fallback_research.py'
@@ -44,6 +52,9 @@ jobs:
           python -m py_compile scout-operations/tools/expansion_fallback_research.py scout-operations/tools/source_driven_expansion.py
           python -m unittest discover -v -s scout-operations/tests -p 'test_expansion_fallback_research.py'
           python -m unittest discover -v -s scout-operations/tests -p 'test_source_driven_expansion.py'
+          python -m unittest discover -v -s scout-operations/tests -p 'test_discovery_metrics_reconciliation.py'
+          python scout-operations/tools/reconcile_scout_metrics.py
+          python scout-operations/tools/reconcile_scout_metrics.py --check
 
   bounded-source-pass:
     if: github.event_name != 'pull_request'
@@ -95,11 +106,29 @@ jobs:
             python scout-operations/tools/expansion_fallback_research.py \
               --run-id "${{ github.run_id }}$((10 * ${{ github.run_attempt }} + attempt))" \
               --seed-doi "${SCOUT_EXPANSION_SEED_DOI:-}"
+            # Research progress, not output completion: refresh the separated
+            # counts and current public pipeline metrics after each note.
+            python scout-operations/tools/reconcile_scout_metrics.py
+            python scout-operations/tools/reconcile_scout_metrics.py --check
+            # Carry the existing Issue #35 identity-DAG refresh in the
+            # SAME commit when a newly published manifest invalidates it.
+            python - <<'PY'
+            import subprocess, sys
+            sys.path.insert(0, "scout-operations/tools")
+            from reconcile_derived_reporting import DERIVED_FILES
+            subprocess.run(["git", "add", "--", *DERIVED_FILES,
+                            "scout-operations/case-checkpoints/"], check=True)
+            PY
             if [ ! -f scout-operations/research-memory/expansion-fallback-ledger.json ]; then
               echo "No source-backed assignment was written; leaving main unchanged."
               exit 0
             fi
             git add scout-operations/research-memory/expansion-fallback-ledger.json scout-operations/reports/bounded-expansion-research/
+            git add -- scout-operations/discovery-origin-rollup.json \
+              scout-operations/scout-operational-scorecard.json \
+              scout-operations/scout-throughput-scorecard.json \
+              scout-operations/scout-v2-impact-report.json \
+              scout-operations/reports/hourly-mission-scorecard/latest.json
             if git diff --cached --quiet; then
               echo "No eligible new seed or monthly originals still have priority."
               exit 0

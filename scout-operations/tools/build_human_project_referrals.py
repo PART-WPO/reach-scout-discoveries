@@ -17,6 +17,7 @@ from build_research_outcome_registry import build as source_registry
 from decision_pipeline import norm_doi
 from reviewer_feedback_guard import known_feedback_by_doi
 from wpo_awards import WPO_459, official_459_awards
+from discovery_origin_evidence import historical_crossref_source
 
 ROOT=Path(__file__).resolve().parents[2]
 OUTPUT=ROOT/"scout-operations/human-project-referrals.json"
@@ -195,12 +196,21 @@ def proposal(doi,meta,event,project,identity=None):
             "Research source evidence: "+" ; ".join(urls[:5]),
             "Private Hub import and any prior unsynchronized review remain NOT VERIFIED."
         ]
+    # The historical Crossref bot note is an exact-output API intake source,
+    # not independent research. Fail closed to Unclassified if that proof
+    # cannot be verified; never mint an unsupported independent attribution.
+    historical = (str(event.get("research_lane") or "") == "historical_crossref_original"
+                  and str(event.get("source_path") or "").startswith(
+                      "scout-operations/historical-crossref-phase2/auto-verified-oar459-"))
+    origin = historical_crossref_source(ROOT, doi) if historical else None
+    method = ("Direct API" if origin else "Unclassified" if historical
+              else "Independent discovery")
     prov={"classification":classification,
-        "route":"Independent discovery",
-        "origin_method":"Independent discovery",
+        "route":method,
+        "origin_method":method,
         "discovery_method":"Publisher-deposited Crossref OAR459 award and SPARK parent selection" if wpo_verified
                            else "SPARK project-title lead, official publisher and program follow-up",
-        "path_evidence":meta.get("evidence") or primary,
+        "path_evidence":(origin["path_evidence_url"] if origin else meta.get("evidence") or primary),
         "publication_status":"published",
         "notes":notes}
     return {"fields":fields,"provenance":prov}

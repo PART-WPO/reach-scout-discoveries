@@ -8,6 +8,7 @@ import hashlib
 import json
 from collections import Counter
 from pathlib import Path
+from source_discovery_metrics import summary as source_discovery_summary
 
 ROOT=Path(__file__).resolve().parents[2]
 OUTPUT=ROOT/"scout-operations/scout-v2-impact-report.json"
@@ -191,6 +192,7 @@ def build(root=ROOT):
             "original_source_and_expansion_stages_separate":True,
         },
         "pipeline":stage,
+        "source_driven_related_output_research": source_discovery_summary(root),
         "supplemental_discovery_pilot":{
             "month":pointer["month"],
             "run_mode":archived["run_mode"],
