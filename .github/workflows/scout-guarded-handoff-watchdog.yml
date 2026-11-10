@@ -1,5 +1,10 @@
 name: Scout guarded handoff watchdog and recovery
 on:
+  pull_request:
+    paths:
+      - 'scout-operations/tools/guarded_handoff_watchdog.py'
+      - 'scout-operations/tests/test_guarded_handoff_watchdog.py'
+      - '.github/workflows/scout-guarded-handoff-watchdog.yml'
   schedule:
     # Separate from :34 backstop; two chances/hour to notice missing cron.
     - cron: '12,49 * * * *'
@@ -31,6 +36,7 @@ jobs:
           python -m py_compile scout-operations/tools/guarded_handoff_watchdog.py
           python -m unittest discover -s scout-operations/tests -p 'test_guarded_handoff_watchdog.py' -v
       - name: Inspect actual guarded handoff runs
+        if: github.event_name != 'pull_request'
         shell: bash
         run: |
           set -euo pipefail
@@ -46,6 +52,7 @@ jobs:
             cat "${RUNNER_TEMP}/scout-guarded-heartbeat.json"
           } >> "$GITHUB_STEP_SUMMARY"
       - name: Recover missed completion and maintain one public alert
+        if: github.event_name != 'pull_request'
         shell: bash
         run: |
           set -euo pipefail
@@ -74,7 +81,7 @@ jobs:
             echo "Watchdog action: $state; no duplicate dispatch" >> "$GITHUB_STEP_SUMMARY"
           fi
       - uses: actions/upload-artifact@v4
-        if: always()
+        if: always() && github.event_name != 'pull_request'
         with:
           name: scout-guarded-handoff-heartbeat
           path: ${{ runner.temp }}/scout-guarded-heartbeat.json
