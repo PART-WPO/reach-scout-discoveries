@@ -170,7 +170,8 @@ jobs:
               scout-operations/scout-operational-scorecard.json \
               scout-operations/scout-throughput-scorecard.json \
               scout-operations/scout-v2-impact-report.json \
-              scout-operations/reports/hourly-mission-scorecard/latest.json
+              scout-operations/reports/hourly-mission-scorecard/latest.json \
+              scout-operations/reports/queued-doi-metadata/latest.json
             git add -A --               scout-operations/reports/guarded-backstop-missions/               scout-operations/reports/hourly-mission-scorecard/latest.json               scout-operations/crossref-candidate-queue.json               scout-operations/decision-handoff-ledger.json               scout-operations/reports/hourly-decision-handoff.json               scout-operations/historical-crossref-phase2/               scout-operations/research-outcome-registry.json               scout-operations/human-project-referrals.json               scout-operations/preprint-intake-gate.json               scout-operations/preprint-watchlist.json               scout-discoveries/inbox/               scout-discoveries/batches/               scout-discoveries/manifest.json
             if git diff --cached --quiet; then
               echo "Source checks and public feed are up to date."
