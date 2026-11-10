@@ -26,6 +26,7 @@ from lookup_independent_dois import metadata as fetch_metadata
 from reviewer_feedback_guard import known_feedback_by_doi
 from wpo_awards import official_459_awards
 from special_publication_types import special_publication_type
+from reconcile_public_handoff import public_source_resolutions, reconcile as reconcile_public_ledger
 
 QUEUE = "scout-operations/crossref-candidate-queue.json"
 LEDGER = "scout-operations/decision-handoff-ledger.json"
@@ -293,6 +294,8 @@ def run(root=ROOT, metadata_fn=fetch_metadata, now=None, limit=MAX_ATTEMPTS,
 
     queue = verified_queue(root)
     ledger = read_ledger(root)
+    retired, public_units, source_titles = public_source_resolutions(root)
+    identity_repairs = reconcile_public_ledger(ledger, retired, public_units, source_titles)
     if public is None:
         public, ir_index = verified_snapshot(root)
     reviews = known_feedback_by_doi(root)
@@ -350,6 +353,8 @@ def run(root=ROOT, metadata_fn=fetch_metadata, now=None, limit=MAX_ATTEMPTS,
               "attempted_originals": len(outcomes), "public_review_batches_validated_this_run": 0,
               "public_review_handoffs_staged": sum(x["status"] == "STAGED_VALIDATED_INBOX" for x in outcomes),
               "outcomes": outcomes, "skipped_cooldown_or_already_staged": skipped[:25],
+              "public_identity_retry_reconciliations": identity_repairs,
+              "private_hub_verification": "NOT_VERIFIED",
               "measurement": {
                   "metadata_resolver_calls": measurement["metadata_resolver_calls"],
                   "provider_http_requests_observed": (
