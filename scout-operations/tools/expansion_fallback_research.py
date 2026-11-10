@@ -110,7 +110,7 @@ def pick_seed(graph, ledger, now, preferred=None):
     candidates.sort(key=lambda x: (-len(x[1]["expansion_research"].get("explicit_related_dois") or []),
                                    x[1]["expansion_research"].get("recorded_related_note_count",0),
                                    x[0]))
-    if preferred is not None:
+    if preferred:
         filtered = [c for c in candidates if c[0] == norm(preferred)]
         if not filtered:
             raise ValueError("Manual seed is not eligible or remains on cooldown")

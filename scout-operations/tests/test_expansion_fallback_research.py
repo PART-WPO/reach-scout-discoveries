@@ -169,5 +169,14 @@ class FallbackTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "not eligible or remains on cooldown"):
             m.run(self.root, NOW+timedelta(minutes=2), "2001", self.metadata, seed_override=D2)
 
+
+    def test_omitted_workflow_dispatch_input_uses_normal_rotation(self):
+        # GitHub schedule and push events pass an empty optional seed input.
+        # Empty must NOT force manual selection or fail the production run.
+        first = m.run(self.root, NOW, "2201", self.metadata, seed_override="")
+        self.assertEqual(first["seed"], D1)
+        second = m.run(self.root, NOW + timedelta(hours=1), "2202", self.metadata, seed_override="")
+        self.assertEqual(second["seed"], D2)
+
 if __name__=="__main__":
     unittest.main()
