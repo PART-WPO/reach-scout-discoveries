@@ -2,6 +2,7 @@
 """Evidence-pinned Scout throughput scorecard; never equate routing with research."""
 import hashlib,json,argparse
 from pathlib import Path
+from source_discovery_metrics import summary as source_discovery_summary
 from collections import Counter
 ROOT=Path(__file__).resolve().parents[2]
 FILES={"queue":"scout-operations/crossref-candidate-queue.json","crossref":"scout-operations/historical-crossref-coverage.json","datacite":"scout-operations/historical-coverage.json","feed":"scout-discoveries/manifest.json","watchlist":"scout-operations/preprint-watchlist.json","archive":"scout-operations/preprint-retirement-archive.json","reconciliation":"scout-operations/preprint-13-identity-reconciliation.json","registry":"scout-operations/research-outcome-registry.json"}
@@ -24,6 +25,7 @@ def build(root):
  # A queue may be stale after monthly retirement; never misrepresent its counts as current.
  counts=Counter(x["classification"] for x in r["entries"])
  result={"schema":"reach-scout-throughput-scorecard-v1",
+ "source_driven_related_output_research": source_discovery_summary(root),
  "source_sha256":current_sha,
  "source_freshness":{"crossref_queue_source_checks":queue_sources,"crossref_queue_fresh":queue_fresh,"targeted_reconciliation_scope_is_snapshot":True},
  "screening_not_research":{"historical_crossref_dois":q["total"],"identity_fast_exits":lane["EXISTING_REACH_FAST_EXIT"],"bounded_identity_reviews":lane["BOUNDED_IDENTITY_REVIEW"],"novel_research_candidates":lane["NOVEL_IDENTITY_RESEARCH"],"preprint_holds":lane["PREPRINT_WATCHLIST_HOLD"],"published_version_leads":lane["PREPRINT_PUBLISHED_VERSION_LEAD"],"other_evidence_holds":lane["WAIT_FOR_NEW_EVIDENCE"]},
