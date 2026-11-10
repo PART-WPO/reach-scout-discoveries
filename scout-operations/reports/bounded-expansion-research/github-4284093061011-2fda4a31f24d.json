@@ -1,0 +1,64 @@
+{
+  "schema": "reach-scout-bounded-expansion-research-v1",
+  "observed_at_utc": "2026-11-10T15:06:57.293335+00:00",
+  "seed_doi": "10.1002/2017ms001154",
+  "source_graph_sha256": "3753508184bffab4ea7e0b84344b0904f71487253d072a46cbde92aae192733e",
+  "seed_expansion_fingerprint": "4f33edb60e9d94b57d2d02c43ff904de0e6b003958df69f8822fe920e0001bab",
+  "seed_reach_identity_verified_in_graph": true,
+  "explicit_related_dois_preserved": [],
+  "source_lookups": [
+    {
+      "doi": "10.1002/2017ms001154",
+      "role": "VERIFIED_REACH_EXPANSION_SEED",
+      "source_status": "ok",
+      "official_provider": "crossref",
+      "official_title": "Precipitation Dynamical Downscaling Over the Great Plains",
+      "official_metadata_url": "https://api.crossref.org/works/10.1002/2017ms001154",
+      "publication_status": "official_journal_article",
+      "official_award_numbers_observed": [
+        "AGS‐0941491",
+        "AGS‐1046081",
+        "AGS‐1046171",
+        "AGS‐1261776",
+        "G15AP00131",
+        "NA17OAR4590188",
+        "NNX17AG11G"
+      ],
+      "separate_output_uniqueness": "NOT_VERIFIED",
+      "same_WPO_project_parent": "NOT_VERIFIED"
+    }
+  ],
+  "status": "OFFICIAL_SOURCE_CHECK_RECORDED",
+  "source_driven_discovery": {
+    "schema": "reach-scout-source-driven-expansion-v1",
+    "seed_doi": "10.1002/2017ms001154",
+    "source_checks": [
+      {
+        "kind": "crossref_references",
+        "url": "https://api.crossref.org/works/10.1002/2017ms001154",
+        "status": "SOURCE_READ",
+        "source_sha256": "d351e8bd387ff4fbd786c8321d2347f19ac9db429a2436f21fd6f128f8dbdb92",
+        "data_code_doi_matches": 0
+      },
+      {
+        "kind": "publisher_article_html",
+        "url": "https://onlinelibrary.wiley.com/doi/10.1002/2017ms001154",
+        "status": "SOURCE_ACCESS_OR_PARSE_HOLD",
+        "error_type": "HTTPError"
+      }
+    ],
+    "discovered_doi_leads": [],
+    "status": "NO_DATA_CODE_DOI_IDENTIFIED",
+    "new_public_candidates": 0,
+    "private_hub_import": "NOT_VERIFIED"
+  },
+  "new_source_driven_leads_screened": [],
+  "new_distinct_doi_leads_found": 0,
+  "new_public_candidate_count": 0,
+  "new_related_output_eligibility_confirmed": 0,
+  "separate_expansion_decisions_completed": 0,
+  "reason_not_a_completed_expansion": "Source metadata and DOI edges are research leads; distinct output identity, preprint, public REACH/Scout duplicate and exact WPO project funding require independent checks.",
+  "next_action": "Investigate official metadata and full current REACH/Scout identity for distinct linked DOI(s); verify their OWN publisher award and primary SPARK parent before any Needs Investigation or New Candidate.",
+  "private_hub_import": "NOT_VERIFIED",
+  "human_approval": "NOT_VERIFIED"
+}
