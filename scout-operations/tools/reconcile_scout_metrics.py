@@ -103,11 +103,36 @@ def verify(root=ROOT):
     }
 
 
+def ensure_fresh_public_identity_derivatives(root):
+    """Issue #35's existing verified DAG is required when the feed advanced.
+
+    Never manufacture a fresh scorecard from a stale public-identity cache.
+    Older derived reports are rebuilt in source dependency order and protected
+    human/original/expansion statuses are checked for non-mutation.
+    """
+    manifest = "scout-discoveries/manifest.json"
+    index_path = "scout-operations/identity-cache/public-identity-index.json"
+    rebuild_needed = True
+    if (root / index_path).exists():
+        current = load(root, index_path)
+        rebuild_needed = (current.get("sources", {}).get("scout_manifest_sha256")
+                          != sha(root, manifest))
+    if rebuild_needed:
+        subprocess.run([sys.executable,
+                        str(root / "scout-operations/tools/reconcile_derived_reporting.py")],
+                       check=True, cwd=root)
+        current = load(root, index_path)
+        if current.get("sources", {}).get("scout_manifest_sha256") != sha(root, manifest):
+            raise ValueError("Derived index regeneration did not synchronize to public feed")
+    return rebuild_needed
+
+
 def main():
     a = argparse.ArgumentParser()
     a.add_argument("--check", action="store_true", help="Read only: verify previously generated outputs")
     args = a.parse_args()
     if not args.check:
+        ensure_fresh_public_identity_derivatives(ROOT)
         for rel in SCRIPT_STEPS:
             subprocess.run([sys.executable, str(ROOT / rel)], check=True, cwd=ROOT)
     print(json.dumps(verify(ROOT), indent=2, sort_keys=True))
