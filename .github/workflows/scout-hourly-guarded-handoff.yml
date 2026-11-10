@@ -8,6 +8,8 @@ on:
       - 'scout-operations/tools/write_hourly_mission_metrics.py'
       - 'scout-operations/tools/validate_hourly_mission.py'
       - 'scout-operations/tests/test_hourly_mission_metrics.py'
+      - 'scout-operations/tools/audit_independent_lookup.py'
+      - 'scout-operations/tests/test_independent_lookup_audit.py'
       - '.github/workflows/scout-hourly-guarded-handoff.yml'
   push:
     branches: [main]
@@ -17,6 +19,8 @@ on:
       - 'scout-operations/tools/write_hourly_mission_metrics.py'
       - 'scout-operations/tools/validate_hourly_mission.py'
       - 'scout-operations/tests/test_hourly_mission_metrics.py'
+      - 'scout-operations/tools/audit_independent_lookup.py'
+      - 'scout-operations/tests/test_independent_lookup_audit.py'
       - '.github/workflows/scout-hourly-guarded-handoff.yml'
   schedule:
     # Let the established :29 Scout mission write its own source evidence first.
@@ -47,6 +51,8 @@ jobs:
         run: python -m unittest discover -s scout-operations/tests -p 'test_hourly_decision_handoff.py' -v
       - name: Completed-mission measurement and privacy regressions
         run: python -m unittest discover -s scout-operations/tests -p 'test_hourly_mission_metrics.py' -v
+      - name: Independent DOI cache/HTTP reuse measurement regressions
+        run: python -m unittest discover -s scout-operations/tests -p 'test_independent_lookup_audit.py' -v
       - name: Existing source-verified human referral regression suite
         run: python -m unittest discover -s scout-operations/tests -p 'test_human_project_referrals.py' -v
       - name: Canonical Scout 24-column and public metadata privacy suite
