@@ -76,3 +76,93 @@ def historical_crossref_source(root, doi):
                     "basis": "Exact original DOI and publisher-deposited WPO459 award in SHA-verified historical Crossref capture and exact-output screen",
                 }
     return None
+
+
+def verified_historical_scope_origin(root, doi):
+    """Evidence-backed original discovery method for historical-scope referrals.
+
+    The *first captured exact DOI* in the November 2 historical Crossref
+    original intake is Direct API even if a later source check uses publisher,
+    project or repository data. A separate project-title pilot explicitly
+    recorded as NOT a direct API result can establish Independent research.
+    Keep any other origin Unclassified; never rewrite an immutable CSV.
+    """
+    doi = str(doi or "").strip().lower()
+    earlier = historical_crossref_source(root, doi)
+    if earlier:
+        return earlier
+    registry_path = root / "scout-operations/research-outcome-registry.json"
+    queue_path = root / QUEUE
+    if not registry_path.is_file():
+        return None
+    registry_raw = registry_path.read_bytes()
+    registry = json.loads(registry_raw)
+    if registry.get("schema") != "reach-scout-all-lane-research-outcomes-v1":
+        raise ValueError("Unknown source-verified research registry")
+    verified = []
+    for event in registry.get("events", []):
+        if (str(event.get("doi") or "").lower() != doi
+            or not str(event.get("source_path") or "").startswith(
+                "scout-operations/historical-crossref-phase2/")):
+            continue
+        path = event["source_path"]
+        actual = hashlib.sha256((root / path).read_bytes()).hexdigest()
+        if (actual != event.get("source_sha256")
+            or actual != registry.get("source_sha256", {}).get(path)):
+            raise ValueError("Original research note SHA mismatch for origin: " + path)
+        note = json.loads((root / path).read_text(encoding="utf-8"))
+        verified.append((event, note))
+    if not verified:
+        return None
+    if queue_path.is_file():
+        queue = json.loads(queue_path.read_text(encoding="utf-8"))
+        if queue.get("schema") != "reach-scout-crossref-candidate-queue-v2":
+            raise ValueError("Unrecognized historical Crossref queue")
+        entries = [item for item in queue.get("items", [])
+                   if str(item.get("doi") or "").lower() == doi]
+        if len(entries) > 1:
+            raise ValueError("Repeated historical Crossref DOI identity")
+        if entries:
+            item = entries[0]
+            for path in sorted(item.get("award_evidence_source_batches", [])):
+                if not (path.startswith(API_PREFIX) and path.endswith(".csv")
+                        and path in queue.get("source_sha256", {})):
+                    continue
+                raw = (root / path).read_bytes()
+                if hashlib.sha256(raw).hexdigest() != queue["source_sha256"][path]:
+                    raise ValueError("Captured original API batch SHA mismatch")
+                with (root / path).open(newline="", encoding="utf-8-sig") as stream:
+                    matches = [row for row in csv.DictReader(stream)
+                               if str(row.get("DOI") or "").lower().strip() == doi
+                               and any(award in str(row.get("NOAA Award Number(s)") or "").upper()
+                                       for award in item.get("wpo_459_award_numbers", []))]
+                if len(matches) != 1:
+                    continue
+                # Require a separate SHA-verified source note, not simply that
+                # a paper is *now* resolvable through Crossref.
+                event, _note = verified[0]
+                return {
+                    "method": "Direct API", "original_doi": doi,
+                    "source_batch_path": path, "source_batch_sha256": queue["source_sha256"][path],
+                    "source_note_path": event["source_path"],
+                    "source_note_sha256": event["source_sha256"],
+                    "path_evidence_url": PUBLIC_PREFIX + path,
+                    "basis": "Exact original DOI in historical Crossref primary-award batch and distinct SHA-verified research note",
+                }
+
+    # Only an explicitly documented project-title discovery method, not a
+    # generic Crossref metadata URL or an arbitrary Independent default.
+    for event, note in verified:
+        for case in note.get("cases", []) if isinstance(note.get("cases"), list) else []:
+            if (str(case.get("doi") or "").lower() == doi
+                and case.get("source_origin") == "PROJECT_TITLE_SEARCH_NOT_DIRECT_API"
+                and str(case.get("initial_source") or "").startswith("https://")
+                and note.get("research_lane") == "supplemental_project_title_pilot"):
+                return {
+                    "method": "Independent discovery", "original_doi": doi,
+                    "source_note_path": event["source_path"],
+                    "source_note_sha256": event["source_sha256"],
+                    "path_evidence_url": case["initial_source"],
+                    "basis": "SHA-verified independent SPARK project-title pilot explicitly not sourced from direct API intake",
+                }
+    return None
