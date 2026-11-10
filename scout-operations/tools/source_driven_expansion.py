@@ -18,7 +18,7 @@ from urllib.parse import quote, urlparse, urljoin
 MAX_BYTES = 2_000_000
 MAX_PDF_BYTES = 8_000_000
 IR_HOST = "repository.library.noaa.gov"
-IR_ITEM_RE = re.compile(r"^https://repository\\.library\\.noaa\\.gov/view/noaa/\\d+$")
+IR_ITEM_RE = re.compile(r"^https://repository\.library\.noaa\.gov/view/noaa/\d+$")
 USER_AGENT = "NOAA-WPO-Scout-Source-Expansion/1.0 (source-evidence-only)"
 DOI_RE = re.compile(r"10\.\d{4,9}/[^\s<>\[\]{}\"']+", re.I)
 DATA_CUE = re.compile(
