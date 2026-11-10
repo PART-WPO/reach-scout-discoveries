@@ -1,6 +1,6 @@
 {
   "schema": "reach-scout-unified-source-preflight-v1",
-  "identity_index_fingerprint": "4bcc9bcaf2f71642bbc0c1036db7d8d6513aad00d613a29be31888e6518acfd2",
+  "identity_index_fingerprint": "38a34913ef6edc7538d40cf139098fb674592ac1e4f796d6104a0e910a2e81cc",
   "identity_index_source_sha256": {
     "reach_cache_sha256": "6660562e325a6a141198f59acce84f2e30d9a2d14e6cf5acd29769c8a4b68e1e",
     "reach_manifest_sha256": "f94ae52cac483b52e9a5cd6e775c6faa01ad6ec33610b249b3d486aed6daa003",
@@ -141,18 +141,23 @@
         "path": "scout-discoveries/inbox/2026-11-09-human-project-f706c52fc493a7d6a2.csv",
         "sha256": "7bc7ed710c7f9d4873762ce5a54f86887d767b753c629e7300679b1026ea0d0d",
         "rows": 1
+      },
+      {
+        "path": "scout-discoveries/inbox/2026-11-10-human-project-31f68eaae5993b3626.csv",
+        "sha256": "c62a6a395314d160d27612a2ed70c37b7747cc6cc557dc90e89cb649cd223478",
+        "rows": 1
       }
     ]
   },
   "source_manifest_sha256": {
     "preprint_watchlist": "9aee820ffa8eafb416d68f80d7cddb534ab33c97f61e1246ec892fb08f33b65e",
-    "reviewer_feedback": "1065798a6281a2f032b9be732c554b44c2d35414feaa694e4920ef10845cbf56",
+    "reviewer_feedback": "e329fe3eb76c6fdfc8ca356998a0ceb4507ae9a0833c00f1336950fbfd7edea8",
     "monthly_triage": "a8c740b0181978a37b2bb8156cbd1ea4261ef08730573669586f26bb516a6224",
     "historical_datacite_triage": "2687b6eff7e46530b96ae4cbbcbabcd25384720c63c38d51af0f2f3c8d51e852",
-    "crossref_research_cases": "d4f7ece8ab41bf45ab7c9dcd88ed83dffd01b59a4960a3e74d425ef4b7d55dcb",
+    "crossref_research_cases": "a11dacb756496a401b6ba1a8e181fb83bc3d5a3386ce790558b5bd34f1c5de21",
     "monthly_related_leads": "d4deec7a5df5191b77cf4002573bd766f6bdff0b85880b7175249f38d2ba55a4",
     "independent_leads": "62243d1c3228561ed15786b7030ce02689f6d4a26247387e361fa2c84f5e7fa2",
-    "crossref_routing": "9fe083c8a08f42f1c6004accad4229c4dee9310f44afd4bea6ed079ca6368398",
+    "crossref_routing": "f2bcd9dc8e8fce3bbbc5963032b7e81619512f54828b984055be6224bc08d0eb",
     "historical_crossref_manifest": "799744c7e83f218d22cc19afacb7cfcf2762feb490659efde9f58bf19473b1fa",
     "monthly_api_manifest": "d83ad64b647fcb89a5db04321833ecc7bec177dbfcca7ef1995b06c09deeb335",
     "historical_datacite_manifest": "b21e3b81cf47c3187eb851d1d2b5ec0200d8ed54970c01f871bbd8b96475921e"
@@ -161,11 +166,11 @@
   "lane_decision_counts": {
     "historical_crossref": {
       "EXISTING_IN_REACH_VERIFIED_BULK": 426,
-      "EXISTING_SCOUT_CANDIDATE": 20,
+      "EXISTING_SCOUT_CANDIDATE": 21,
       "IDENTITY_REVIEW_REQUIRED": 1,
       "IDENTITY_REVIEW_REQUIRED_FROM_BULK": 54,
       "PREPRINT_HOLD": 16,
-      "PUBLICATION_STATUS_UNVERIFIED": 97
+      "PUBLICATION_STATUS_UNVERIFIED": 96
     },
     "historical_datacite": {
       "EXISTING_IN_REACH": 11,
@@ -13600,19 +13605,19 @@
       "source_batch": "verified_historical_crossref_routing",
       "raw_source_identity": "10.1175/jcli-d-25-0247.1",
       "recorded_status_unchanged": "NOT_VERIFIED",
-      "shared_gate_decision": "PUBLICATION_STATUS_UNVERIFIED",
-      "public_identity_disposition": "NO_PUBLIC_IDENTITY_MATCH",
-      "public_identity_next_action": "PROCEED_TO_ELIGIBILITY_AND_FUNDING_RESEARCH",
+      "shared_gate_decision": "EXISTING_SCOUT_CANDIDATE",
+      "public_identity_disposition": "EXISTING_PUBLIC_SCOUT_CANDIDATE",
+      "public_identity_next_action": "DO_NOT_REPROPOSE",
       "explicit_preprint_family": {
         "is_original_preprint": false,
         "preprint_dois": [],
         "official_published_doi_leads": []
       },
-      "effective_identity_or_preflight": "PUBLICATION_STATUS_UNVERIFIED",
+      "effective_identity_or_preflight": "EXISTING_SCOUT_CANDIDATE",
       "trusted_bulk_public_reach_uid": null,
       "source_awards_are_unverified_hints": [],
       "publication_status": "NOT_CHECKED",
-      "identity_match_status": "NO_PUBLIC_IDENTITY_MATCH",
+      "identity_match_status": "IN_PUBLIC_SCOUT_QUEUE",
       "private_review_status": "NOT_VERIFIED",
       "authenticated_prior_review_event_id": null,
       "authenticated_prior_review_code": null,

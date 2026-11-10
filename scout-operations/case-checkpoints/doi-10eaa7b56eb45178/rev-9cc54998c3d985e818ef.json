@@ -1,0 +1,64 @@
+{
+  "schema": "reach-scout-decision-checkpoint-v1",
+  "decision_contract": "reach-scout-decision-pipeline-v2",
+  "input_fingerprint": "9cc54998c3d985e818ef534948418096ef8dbdf97fc1500f6cdb998bbd6c1794",
+  "index_fingerprint": "38a34913ef6edc7538d40cf139098fb674592ac1e4f796d6104a0e910a2e81cc",
+  "case_input": {
+    "doi": "10.1007/s00330-020-07133-9",
+    "title": "Quantitative thoracic aorta calcification assessment by 18F-NaF PET/CT and its correlation with atherosclerotic cardiovascular disorders and increasing age",
+    "cohort": "historical_crossref",
+    "publication_status": "NOT_CHECKED",
+    "primary_award_match": null,
+    "project_attribution": "NOT_CHECKED",
+    "checked_sources": [
+      "https://openalex.org/W3082637224",
+      "https://pubmed.ncbi.nlm.nih.gov/32870396/"
+    ],
+    "research_rounds": 1,
+    "secondary_identity_checked": false,
+    "required_metadata_verified": false,
+    "private_review_status": "NOT_VERIFIED",
+    "source_evidence": [
+      {
+        "path": "scout-operations/historical-crossref-phase2/2026-11-05-1026ET-biomedical-award-attribution-holds.json",
+        "sha256": "7f83ecada2ad8cb6bb98e20112747ef8cb1be9df163dd1b19ca86720a6bfe9e9"
+      },
+      {
+        "path": "scout-operations/historical-crossref-phase2/2026-11-05-1125ET-biomedical-immutable-source-attribution-audit.json",
+        "sha256": "def68b12e4580097accce8ece54fb780df79170b77a65e76fa393e3927290b85"
+      },
+      {
+        "path": "scout-operations/historical-crossref-phase2/2026-11-05-1328ET-reconciliation-exception-evidence-gate-audit.json",
+        "sha256": "2548b344e7a1e439fd2b7d1bfb2981db10d93fec1a81d9f8d4516beb7f7b0964"
+      }
+    ],
+    "research_budget_exhausted": false
+  },
+  "evaluation": {
+    "doi": "10.1007/s00330-020-07133-9",
+    "cohort": "historical_crossref",
+    "identity_check": {
+      "status": "NO_PUBLIC_IDENTITY_MATCH",
+      "reason": "NO_MATCH_IN_VERIFIED_PUBLIC_SNAPSHOT",
+      "matches": [],
+      "caveat": "Public snapshot only; private Hub decisions are not asserted."
+    },
+    "project_attribution": "NOT_CHECKED",
+    "primary_award_match": null,
+    "publication_status": "NOT_CHECKED",
+    "private_review_status": "NOT_VERIFIED",
+    "research_rounds": 1,
+    "decision": "PUBLICATION_STATUS_UNVERIFIED",
+    "review_action": "NONE",
+    "notes": [],
+    "checked_sources": [
+      "https://openalex.org/W3082637224",
+      "https://pubmed.ncbi.nlm.nih.gov/32870396/"
+    ],
+    "unverified_private_hub_import": true,
+    "automatically_staged": false,
+    "seed_expansion_preserved": true
+  },
+  "source_case_path": "scout-operations/research-decision-cases.json",
+  "human_decision_modified": false
+}
