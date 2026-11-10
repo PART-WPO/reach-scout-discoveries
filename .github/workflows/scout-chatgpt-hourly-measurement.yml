@@ -1,0 +1,90 @@
+name: Scout ChatGPT hourly mission measurement reconciliation
+
+on:
+  pull_request:
+    paths:
+      - 'scout-operations/tools/summarize_hourly_missions.py'
+      - 'scout-operations/tools/validate_hourly_mission.py'
+      - 'scout-operations/tools/reconcile_scout_metrics.py'
+      - 'scout-operations/tests/test_hourly_mission_scorecard.py'
+      - '.github/workflows/scout-chatgpt-hourly-measurement.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'scout-operations/reports/hourly-missions/*.json'
+      - 'scout-operations/tools/summarize_hourly_missions.py'
+      - 'scout-operations/tools/validate_hourly_mission.py'
+      - 'scout-operations/tools/reconcile_scout_metrics.py'
+      - '.github/workflows/scout-chatgpt-hourly-measurement.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: scout-chatgpt-mission-measurement-main
+  cancel-in-progress: false
+
+jobs:
+  validate-public-hourly-reports:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check ChatGPT/GitHub producer separation and timestamp/privacy validation
+        run: |
+          python -m unittest discover -s scout-operations/tests -p 'test_hourly_mission_scorecard.py' -v
+          python -m unittest discover -s scout-operations/tests -p 'test_hourly_mission_metrics.py' -v
+          python -m py_compile scout-operations/tools/summarize_hourly_missions.py scout-operations/tools/validate_hourly_mission.py
+          python - <<'PY'
+          import sys
+          from pathlib import Path
+          sys.path.insert(0, 'scout-operations/tools')
+          from summarize_hourly_missions import summarize
+          root = Path('.')
+          result = summarize(root)
+          chat = result['by_producer']['chatgpt_hourly_mission']
+          print('Validated independently recorded ChatGPT missions:', chat['verified_report_count'])
+          assert result['by_producer']['github_guarded_crossref_backstop']['verified_report_count'] >= 0
+          assert chat['private_hub_status'] == 'NOT_VERIFIED'
+          PY
+
+  refresh-mission-metrics:
+    if: github.event_name != 'pull_request'
+    needs: validate-public-hourly-reports
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Refresh only public measured-mission report; no research, Hub or REACH writes
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git checkout -B main origin/main
+            python scout-operations/tools/summarize_hourly_missions.py
+            git add -- scout-operations/reports/hourly-mission-scorecard/latest.json
+            if git diff --cached --quiet; then
+              echo "Mission metrics already reflect the current public records."
+              exit 0
+            fi
+            git commit -m 'Reconcile independently recorded ChatGPT hourly mission outcomes'
+            if git push origin HEAD:main; then
+              echo "Timestamped, separately counted mission metrics published."
+              exit 0
+            fi
+            echo "::warning::Main changed; revalidate mission sources after fetching current main"
+            sleep "$((attempt * 2))"
+          done
+          echo "::error::Unable to publish fresh hourly metrics after three attempts"
+          exit 1
