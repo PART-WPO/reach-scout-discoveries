@@ -1,12 +1,12 @@
 {
   "schema": "reach-scout-bounded-project-human-referral-v1",
-  "source_outcome_event_count": 64,
-  "source_outcome_sha256": "086685954901a4a3caa9710bcf48bff61cb98683633465b703ab4ff5fa92c529",
+  "source_outcome_event_count": 65,
+  "source_outcome_sha256": "4d27b80a7d636b8901b8042b6391b440e9aa6103231f61275a91669e07ab1ce5",
   "unique_bounded_project_questions": 3,
-  "potential_wpo_cases_quick_screened": 17,
+  "potential_wpo_cases_quick_screened": 18,
   "human_referral_drafts_prevalidated": 1,
   "draft_paths": [
-    "scout-discoveries/inbox/2026-11-10-human-project-a6d179727eeaf598b3.csv"
+    "scout-discoveries/inbox/2026-11-10-human-project-3bb30323909753e956.csv"
   ],
   "published_batch_paths": [
     "scout-discoveries/batches/2026-11-09-human-project-b332d53770e8cbc1d4.csv",
@@ -21,9 +21,10 @@
     "scout-discoveries/batches/2026-11-09-human-project-d0211ffa5c6285cecf.csv",
     "scout-discoveries/batches/2026-11-10-human-project-31f68eaae5993b3626.csv",
     "scout-discoveries/batches/2026-11-10-human-project-8eb678e5c990af2471.csv",
-    "scout-discoveries/batches/2026-11-10-human-project-e65c593e29a9643d34.csv"
+    "scout-discoveries/batches/2026-11-10-human-project-e65c593e29a9643d34.csv",
+    "scout-discoveries/batches/2026-11-10-human-project-a6d179727eeaf598b3.csv"
   ],
-  "verified_public_scout_referral_batches": 13,
+  "verified_public_scout_referral_batches": 14,
   "human_reviewer_decisions": "NOT_VERIFIED",
   "private_hub_imports": "NOT_VERIFIED",
   "new_approved_reach_outputs": 0,
@@ -2543,9 +2544,32 @@
         ]
       },
       "public_identity": {
-        "status": "NO_PUBLIC_IDENTITY_MATCH",
-        "reason": "NO_MATCH_IN_VERIFIED_PUBLIC_SNAPSHOT",
-        "matches": [],
+        "status": "IN_PUBLIC_SCOUT_QUEUE",
+        "reason": "CONSISTENT_SCOUT_PUBLIC_MIRRORS",
+        "matches": [
+          {
+            "source": "SCOUT_PUBLISHED",
+            "identity": "2026-11-10-human-project-a6d179727eeaf598b3:2",
+            "title": "A Progress Report on the Development of the High-Resolution Rapid Refresh Ensemble",
+            "location": "scout-discoveries/batches/2026-11-10-human-project-a6d179727eeaf598b3.csv:2",
+            "match_bases": [
+              "exact_doi",
+              "exact_url",
+              "normalized_title"
+            ]
+          },
+          {
+            "source": "SCOUT_INBOX",
+            "identity": "2026-11-10-human-project-a6d179727eeaf598b3.csv:2",
+            "title": "A Progress Report on the Development of the High-Resolution Rapid Refresh Ensemble",
+            "location": "scout-discoveries/inbox/2026-11-10-human-project-a6d179727eeaf598b3.csv:2",
+            "match_bases": [
+              "exact_doi",
+              "exact_url",
+              "normalized_title"
+            ]
+          }
+        ],
         "caveat": "Public snapshot only; private Hub decisions are not asserted.",
         "noaa_ir_reach_check": {
           "status": "VERIFIED_IR_URL_NOT_IN_PUBLIC_REACH",
@@ -2560,8 +2584,120 @@
         "wpo_award_cue_not_proof": true,
         "reason_for_review": "WPO-pattern award cited but exact funded project deliverable unverified"
       },
-      "disposition": "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL",
+      "disposition": "HOLD_ALREADY_IN_PUBLIC_REACH_OR_SCOUT",
       "review_question": "Reviewer question: Select and verify the correct SPARK parent for the explicitly funded WPO award NA17OAR4590172; confirm the output belongs with that parent before addition.",
+      "scout_inbox_status": "PUBLISHED_PUBLIC_SCOUT_FEED_NOT_PRIVATE_HUB",
+      "published_scout_batch_path": "scout-discoveries/batches/2026-11-10-human-project-a6d179727eeaf598b3.csv",
+      "eligible_for_new_reach_addition": "NOT_VERIFIED",
+      "private_hub_import": "NOT_VERIFIED",
+      "human_approval": "NOT_VERIFIED"
+    },
+    {
+      "doi": "10.1175/waf-d-25-0244.1",
+      "source_event_id": "f94ec7bc128c4b9f6dd4c88b",
+      "source_file": "scout-operations/historical-crossref-phase2/auto-verified-oar459-3bb30323909753e956.json",
+      "source_sha256": "5b15e69ec281d9f3820d205ee60d98eb5633829b661729adf0c4492820864475",
+      "official_metadata": {
+        "status": "ok",
+        "provider": "crossref",
+        "evidence": "https://api.crossref.org/works/10.1175/waf-d-25-0244.1",
+        "title": "On the Use of Freezing Rain Local Storm Reports for Quantitative Purposes",
+        "creators": [
+          "Adam D. Werkema",
+          "Heather D. Reeves",
+          "Jonathan J. Gourley"
+        ],
+        "resource_type": "journal-article",
+        "publication_status": "official_journal_article",
+        "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>This study evaluates the reliability and utility of local storm reports (LSRs) of ice accumulation from freezing rain (FZRA) and freezing drizzle with an emphasis on their potential use for quantitative applications. While the Automated Surface Observing System (ASOS) provides calibrated, automated measurements, its limited spatial coverage leaves observational gaps that LSRs can help fill. Analysis of 21 winter seasons reveals that FZRA LSRs offer valuable impact information and supplement ASOS observations during moderate- and high-impact events; however, they exhibit inconsistencies in reporting frequency, timing, and measurement methods. Notably, FZRA LSRs often lack standardization and clear specification of measurement type (flat vs radial ice) and surface used (e.g., road vs trees), introducing uncertainty in the reported magnitude. Recommendations include updating the LSR submission form to specify measurement type and to provide additional temporal detail for the accumulation. Accounting for population and time-of-day biases is also encouraged when using LSR data.</jats:p>\n                  <jats:sec>\n                    <jats:title>Significance Statement</jats:title>\n                    <jats:p>Freezing rain and drizzle can cause hazardous ice on roads, power lines, and trees, even in small amounts. This study examines the value of local storm reports (LSRs) collected by weather forecasters as a supplement to automated sensor networks. We find that while LSRs often provide useful impact information and fill important observational gaps, they vary widely in how and when they are reported. These inconsistencies limit their use in scientific analysis and verifying forecasts. Improving how LSRs document ice measurements—such as specifying how ice was measured—would make them more reliable for research, forecast verification, and real-time decision-making. Future efforts should focus on standardizing LSR reporting.</jats:p>\n                  </jats:sec>",
+        "pub_date": "2026-08-01",
+        "preprint_posted_date": "",
+        "pub_date_basis": "Crossref published-print",
+        "pub_date_precision": "month_imputed",
+        "publisher": "American Meteorological Society",
+        "funding_references": [
+          {
+            "DOI": "10.13039/100013864",
+            "name": "NOAA Research",
+            "doi-asserted-by": "crossref",
+            "award": [
+              "NA21OAR4320204"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "NA21OAR4320204"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100013864",
+                "id-type": "DOI",
+                "asserted-by": "crossref"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/100013864",
+            "name": "NOAA Research",
+            "doi-asserted-by": "crossref",
+            "award": [
+              "NA22OAR4590169"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "NA22OAR4590169"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100013864",
+                "id-type": "DOI",
+                "asserted-by": "crossref"
+              }
+            ]
+          }
+        ],
+        "related_identifiers": {},
+        "attempts": [
+          {
+            "provider": "datacite",
+            "url": "https://api.datacite.org/dois/10.1175/waf-d-25-0244.1",
+            "error": {
+              "kind": "http",
+              "code": 404
+            }
+          },
+          {
+            "provider": "crossref",
+            "url": "https://api.crossref.org/works/10.1175/waf-d-25-0244.1",
+            "error": null
+          }
+        ]
+      },
+      "public_identity": {
+        "status": "NO_PUBLIC_IDENTITY_MATCH",
+        "reason": "NO_MATCH_IN_VERIFIED_PUBLIC_SNAPSHOT",
+        "matches": [],
+        "caveat": "Public snapshot only; private Hub decisions are not asserted.",
+        "noaa_ir_reach_check": {
+          "status": "VERIFIED_IR_URL_NOT_IN_PUBLIC_REACH",
+          "official_url": "https://repository.library.noaa.gov/view/noaa/76002",
+          "match_uid": null,
+          "match_detail_shard": null
+        }
+      },
+      "project_search_context_only": {
+        "award_context_only": "NA22OAR4590169",
+        "project_context_only": "",
+        "wpo_award_cue_not_proof": true,
+        "reason_for_review": "WPO-pattern award cited but exact funded project deliverable unverified"
+      },
+      "disposition": "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL",
+      "review_question": "Reviewer question: Select and verify the correct SPARK parent for the explicitly funded WPO award NA22OAR4590169; confirm the output belongs with that parent before addition.",
       "scout_inbox_status": "VALIDATED_INBOX_DRAFT_NOT_PRIVATE_HUB",
       "published_scout_batch_path": null,
       "eligible_for_new_reach_addition": "NOT_VERIFIED",
