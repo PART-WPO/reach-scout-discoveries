@@ -15,7 +15,7 @@ on:
   schedule:
     # Let the established :29 Scout mission write its own source evidence first.
     # This GitHub-owned backstop completes the guarded decision path at :34 ET-independent UTC minute.
-    - cron: '34 * * * 1-5'
+    - cron: '34 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -63,6 +63,20 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          # GitHub cron uses UTC: enforce weekdays in America/New_York,
+          # including daylight-saving shifts, without Sunday-night leakage.
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            if ! python - <<'PY'
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+          import sys
+          sys.exit(0 if datetime.now(ZoneInfo("America/New_York")).weekday() < 5 else 1)
+          PY
+            then
+              echo "Outside the existing weekday Scout research schedule in Eastern time."
+              exit 0
+            fi
+          fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           for attempt in 1 2 3; do
