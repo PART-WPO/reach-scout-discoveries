@@ -129,6 +129,11 @@ jobs:
             else
               echo "No verified new handoff in this bounded mission; blocker/rotation disposition recorded."
             fi
+            # Publication or new blockers change the effective selection.
+            # Rebuild the public-facing queue AFTER these guarded writes, so
+            # the next ChatGPT mission does not start with stale priority-90 DOIs.
+            python scout-operations/tools/build_candidate_queue.py
+            python scout-operations/tools/build_candidate_queue.py --check
             # Metrics are emitted only after the guarded publication gate
             # succeeded or a bounded blocked/no-op mission was completed.
             # GitHub backstop records are never ChatGPT hourly mission records.
