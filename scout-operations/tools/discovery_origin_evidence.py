@@ -36,7 +36,7 @@ def historical_crossref_source(root, doi):
         or note.get("publication_status") != "OFFICIALLY_PUBLISHED_JOURNAL_ARTICLE"):
         return None
     queue = json.loads(qpath.read_text(encoding="utf-8"))
-    if queue.get("schema") != "reach-scout-crossref-candidate-queue-v1":
+    if queue.get("schema") != "reach-scout-crossref-candidate-queue-v2":
         raise ValueError("Unexpected source queue schema for discovery method")
     items = [x for x in queue.get("items", []) if x.get("doi", "").lower() == doi]
     if len(items) != 1:
