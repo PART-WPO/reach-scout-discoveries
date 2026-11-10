@@ -131,12 +131,33 @@ def ensure_fresh_public_identity_derivatives(root):
     return rebuild_needed
 
 
+def refresh_cached_recovery_if_registry_changed(root):
+    """Re-pin existing recovered DataCite/Crossref evidence without new HTTP.
+
+    Immutable research notes can advance independently of the metadata-recovery
+    scheduled job; never let an old source SHA make Impact metrics stale.
+    This only reuses already verified cached DOI metadata and preserves holds.
+    """
+    registry = "scout-operations/research-outcome-registry.json"
+    report = "scout-operations/reports/queued-doi-metadata/latest.json"
+    required = sha(root, registry)
+    old = load(root, report) if (root / report).exists() else {}
+    if old.get("source_registry_sha256") != required:
+        subprocess.run([sys.executable, str(root / "scout-operations/tools/recover_queued_doi_metadata.py"),
+                        "--max-new", "0"], check=True, cwd=root)
+        if load(root, report).get("source_registry_sha256") != required:
+            raise ValueError("Source-backed DOI recovery report remains stale")
+        return True
+    return False
+
+
 def main():
     a = argparse.ArgumentParser()
     a.add_argument("--check", action="store_true", help="Read only: verify previously generated outputs")
     args = a.parse_args()
     if not args.check:
         ensure_fresh_public_identity_derivatives(ROOT)
+        refresh_cached_recovery_if_registry_changed(ROOT)
         for rel in SCRIPT_STEPS:
             subprocess.run([sys.executable, str(ROOT / rel)], check=True, cwd=ROOT)
     print(json.dumps(verify(ROOT), indent=2, sort_keys=True))

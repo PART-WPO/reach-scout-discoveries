@@ -112,13 +112,7 @@ jobs:
             python scout-operations/tools/reconcile_scout_metrics.py --check
             # Carry the existing Issue #35 identity-DAG refresh in the
             # SAME commit when a newly published manifest invalidates it.
-            python - <<'PY'
-            import subprocess, sys
-            sys.path.insert(0, "scout-operations/tools")
-            from reconcile_derived_reporting import DERIVED_FILES
-            subprocess.run(["git", "add", "--", *DERIVED_FILES,
-                            "scout-operations/case-checkpoints/"], check=True)
-            PY
+            python -c 'import subprocess,sys; sys.path.insert(0,"scout-operations/tools"); from reconcile_derived_reporting import DERIVED_FILES; subprocess.run(["git","add","--",*DERIVED_FILES,"scout-operations/case-checkpoints/"],check=True)'
             if [ ! -f scout-operations/research-memory/expansion-fallback-ledger.json ]; then
               echo "No source-backed assignment was written; leaving main unchanged."
               exit 0
@@ -128,7 +122,8 @@ jobs:
               scout-operations/scout-operational-scorecard.json \
               scout-operations/scout-throughput-scorecard.json \
               scout-operations/scout-v2-impact-report.json \
-              scout-operations/reports/hourly-mission-scorecard/latest.json
+              scout-operations/reports/hourly-mission-scorecard/latest.json \
+              scout-operations/reports/queued-doi-metadata/latest.json
             if git diff --cached --quiet; then
               echo "No eligible new seed or monthly originals still have priority."
               exit 0
