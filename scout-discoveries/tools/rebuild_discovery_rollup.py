@@ -14,7 +14,7 @@ import sys
 
 from build_manifest import ROOT
 sys.path.insert(0, str(ROOT.parent / 'scout-operations/tools'))
-from discovery_origin_evidence import historical_crossref_source
+from discovery_origin_evidence import verified_historical_scope_origin
 
 MANIFEST = ROOT / "manifest.json"
 ROLLUP = ROOT.parent / "scout-operations" / "discovery-origin-rollup.json"
@@ -167,21 +167,25 @@ def enrich_from_legacy(manifest, ledger, correction_ledger=None):
                     "REACH-SCOUT-HUMAN-SCOPE-")
                 if scope_run and route in {"Independent discovery", "Direct API"}:
                     doi = str(row.get("DOI") or "").strip().lower()
-                    proof = historical_crossref_source(ROOT.parent, doi)
+                    proof = verified_historical_scope_origin(ROOT.parent, doi)
                     if proof:
-                        if method == "Independent discovery":
+                        verified_method = proof["method"]
+                        if method != verified_method:
                             corrected_historical_crossref.append({
                                 "batch_id": batch["id"], "row": index,
-                                "doi": doi, "method": "Direct API",
+                                "doi": doi, "method": verified_method,
+                                "original_published_method": method,
                                 "source_note_sha256": proof["source_note_sha256"],
-                                "source_batch_sha256": proof["source_batch_sha256"],
-                                "source_batch_path": proof["source_batch_path"],
+                                "source_note_path": proof["source_note_path"],
+                                "source_batch_sha256": proof.get("source_batch_sha256"),
+                                "source_batch_path": proof.get("source_batch_path"),
+                                "method_basis": proof["basis"],
                             })
-                        method = "Direct API"
+                        method = verified_method
                     else:
-                        # The generator is known to have supplied an arbitrary
-                        # Independent default to this specific historical lane.
-                        # Preserve UNKNOWN instead of inventing attribution.
+                        # A historical referral's prior Independent label was
+                        # an arbitrary fallback; preserve unknown when proof
+                        # cannot establish its first discovery pathway.
                         method = "Unclassified"
                         unverified_historical_crossref.append({
                             "batch_id": batch["id"], "row": index, "doi": doi
@@ -338,7 +342,7 @@ def main():
             "corrected_record_evidence": effective["verified_explicit_historical_crossref_method_corrections"],
             "unverified_origin_rows": effective["unverified_historical_crossref_origin_rows"],
             "method_original_batch_immutable": True,
-            "rule": "Exact DOI, publisher WPO459 award and source SHA must match historical API batch and original screened note.",
+            "rule": "Exact DOI and WPO459 award in SHA-pinned historical Crossref captured batch plus source note establishes Direct API; SHA-verified project-title pilot explicitly not direct API establishes Independent.",
         },
         "legacy_provenance": {
             "ledger_path": "scout-operations/legacy-provenance-backfill.json" if legacy_bytes else None,
