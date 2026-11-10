@@ -8,6 +8,8 @@ on:
       - 'scout-operations/tools/write_hourly_mission_metrics.py'
       - 'scout-operations/tools/validate_hourly_mission.py'
       - 'scout-operations/tests/test_hourly_mission_metrics.py'
+      - 'scout-operations/tools/summarize_hourly_missions.py'
+      - 'scout-operations/tests/test_hourly_mission_scorecard.py'
       - 'scout-operations/tools/audit_independent_lookup.py'
       - 'scout-operations/tests/test_independent_lookup_audit.py'
       - '.github/workflows/scout-hourly-guarded-handoff.yml'
@@ -19,6 +21,8 @@ on:
       - 'scout-operations/tools/write_hourly_mission_metrics.py'
       - 'scout-operations/tools/validate_hourly_mission.py'
       - 'scout-operations/tests/test_hourly_mission_metrics.py'
+      - 'scout-operations/tools/summarize_hourly_missions.py'
+      - 'scout-operations/tests/test_hourly_mission_scorecard.py'
       - 'scout-operations/tools/audit_independent_lookup.py'
       - 'scout-operations/tests/test_independent_lookup_audit.py'
       - '.github/workflows/scout-hourly-guarded-handoff.yml'
@@ -53,6 +57,8 @@ jobs:
         run: python -m unittest discover -s scout-operations/tests -p 'test_hourly_mission_metrics.py' -v
       - name: Independent DOI cache/HTTP reuse measurement regressions
         run: python -m unittest discover -s scout-operations/tests -p 'test_independent_lookup_audit.py' -v
+      - name: Mission scorecard separation regression
+        run: python -m unittest discover -s scout-operations/tests -p 'test_hourly_mission_scorecard.py' -v
       - name: Existing source-verified human referral regression suite
         run: python -m unittest discover -s scout-operations/tests -p 'test_human_project_referrals.py' -v
       - name: Canonical Scout 24-column and public metadata privacy suite
@@ -130,7 +136,8 @@ jobs:
               --github-run-id "${{ github.run_id }}" \
               --github-attempt "$((10 * ${{ github.run_attempt }} + attempt))" \
               --source-commit "$(git rev-parse HEAD)"
-            git add -A --               scout-operations/reports/guarded-backstop-missions/               scout-operations/crossref-candidate-queue.json               scout-operations/decision-handoff-ledger.json               scout-operations/reports/hourly-decision-handoff.json               scout-operations/historical-crossref-phase2/               scout-operations/research-outcome-registry.json               scout-operations/human-project-referrals.json               scout-operations/preprint-intake-gate.json               scout-operations/preprint-watchlist.json               scout-discoveries/inbox/               scout-discoveries/batches/               scout-discoveries/manifest.json
+            python scout-operations/tools/summarize_hourly_missions.py
+            git add -A --               scout-operations/reports/guarded-backstop-missions/               scout-operations/reports/hourly-mission-scorecard/latest.json               scout-operations/crossref-candidate-queue.json               scout-operations/decision-handoff-ledger.json               scout-operations/reports/hourly-decision-handoff.json               scout-operations/historical-crossref-phase2/               scout-operations/research-outcome-registry.json               scout-operations/human-project-referrals.json               scout-operations/preprint-intake-gate.json               scout-operations/preprint-watchlist.json               scout-discoveries/inbox/               scout-discoveries/batches/               scout-discoveries/manifest.json
             if git diff --cached --quiet; then
               echo "Source checks and public feed are up to date."
               exit 0
