@@ -1,0 +1,51 @@
+{
+  "schema": "scout-source-backed-research-evidence-v1",
+  "recorded_at": "2026-11-09T19:29:00-05:00",
+  "lane": "historical_crossref_original",
+  "original_doi": "10.1175/JCLI-D-25-0247.1",
+  "title": "The Role of Atmosphere–Ocean Coupling on the Prediction of Madden–Julian Oscillation",
+  "decision": "NEW_CANDIDATE_PUBLIC_REFERRAL_REQUEST_SUBJECT_TO_GUARDED_CHECKS",
+  "operational_disposition": "BOUNDED_PROJECT_QUESTION_FOR_HUMAN",
+  "structured_award": "NA22OAR4590216",
+  "spark_primary_award_context": "NA22OAR4590216",
+  "funding": "ARCHIVED_CROSSREF_EXACT_DOI_459_PENDING_FRESH_PUBLISHER_DEPOSIT_REVALIDATION",
+  "publication_status": "PUBLISHED_JOURNAL_ARTICLE_PUBLISHER_ISSUE_CONFIRMED",
+  "preprint_original": false,
+  "source_evidence": [
+    {
+      "url": "https://journals.ametsoc.org/view/journals/clim/39/13/clim.39.issue-13.xml",
+      "type": "official_publisher_journal_issue",
+      "finding": "Publisher lists this exact DOI and title in July 2026 Journal of Climate 39(13), pages 3669-3684."
+    },
+    {
+      "url": "https://api.crossref.org/works/10.1175/jcli-d-25-0247.1",
+      "type": "official_exact_doi_crossref_funding_endpoint_for_independent_validation",
+      "finding": "Historical publisher-deposited Crossref candidate archive records NA22OAR4590216 for this exact DOI; fresh official metadata must be checked by guarded production workflow before funding is treated as confirmed."
+    },
+    {
+      "url": "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part003.csv",
+      "type": "archived_historical_crossref_source",
+      "finding": "Source-backed candidate queue points to exact-DOI 459 award in archived Crossref batch, not inferred from author matching."
+    }
+  ],
+  "selection_provenance": {
+    "queue_lane": "NOVEL_IDENTITY_RESEARCH",
+    "queue_priority": 90,
+    "queue_source_sha_revalidation": "Not independently recomputed in this mission; queue used only as selection hint; guarded workflow must independently check source-fresh identities and publisher metadata",
+    "compact_index_source_fingerprint": "dee55689a084c93d5dcedd3adccc3cf0df98a01f7209aaeabdcb4ee16a54a79c",
+    "full_graph_refetched": false,
+    "prior_original_note_reused": false
+  },
+  "public_proposal_eligible": false,
+  "private_hub_action": "NONE",
+  "original_status_changed": false,
+  "expansion_completed": false,
+  "next_action": "Run production guarded referral validation with exact DOI Crossref funding, full REACH+Scout+IR and protected review dedup, and preprint gate. If all pass, publish one canonical 24-column NEW CANDIDATE with verified NA22OAR4590216 and official funding URL; reviewer must select correct SPARK parent. If blocked, do not claim completion.",
+  "research_counts": {
+    "originals_screened": 1,
+    "originals_deeply_examined": 1,
+    "expansion_cases_examined": 0,
+    "new_explicit_child_doi_links": 0,
+    "private_hub_outcomes_verified": 0
+  }
+}
