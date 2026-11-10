@@ -122,7 +122,8 @@ jobs:
               scout-operations/scout-operational-scorecard.json \
               scout-operations/scout-throughput-scorecard.json \
               scout-operations/scout-v2-impact-report.json \
-              scout-operations/reports/hourly-mission-scorecard/latest.json
+              scout-operations/reports/hourly-mission-scorecard/latest.json \
+              scout-operations/reports/queued-doi-metadata/latest.json
             if git diff --cached --quiet; then
               echo "No eligible new seed or monthly originals still have priority."
               exit 0
