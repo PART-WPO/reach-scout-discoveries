@@ -1,5 +1,11 @@
 name: Scout guarded handoff watchdog and recovery
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'scout-operations/tools/guarded_handoff_watchdog.py'
+      - 'scout-operations/tests/test_guarded_handoff_watchdog.py'
+      - '.github/workflows/scout-guarded-handoff-watchdog.yml'
   pull_request:
     paths:
       - 'scout-operations/tools/guarded_handoff_watchdog.py'
