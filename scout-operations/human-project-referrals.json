@@ -4,13 +4,12 @@
   "source_outcome_sha256": "70d1707f0b39478a2058342145d4c1043c7b98dd841e3c0af3cdfbe207d4605a",
   "unique_bounded_project_questions": 3,
   "potential_wpo_cases_quick_screened": 21,
-  "human_referral_drafts_prevalidated": 1,
-  "draft_paths": [
-    "scout-discoveries/inbox/2026-11-10-human-project-b8d519c3e1a123e83c.csv"
-  ],
+  "human_referral_drafts_prevalidated": 0,
+  "draft_paths": [],
   "published_batch_paths": [
     "scout-discoveries/batches/2026-11-09-human-project-b332d53770e8cbc1d4.csv",
     "scout-discoveries/batches/2026-11-09-human-project-866c8052a22849b2de.csv",
+    "scout-discoveries/batches/2026-11-10-human-project-b8d519c3e1a123e83c.csv",
     "scout-discoveries/batches/2026-11-09-human-project-398fe73f0c7f3ffa37.csv",
     "scout-discoveries/batches/2026-11-09-human-project-8963668e6a0f98ac1c.csv",
     "scout-discoveries/batches/2026-11-09-human-project-f706c52fc493a7d6a2.csv",
@@ -27,7 +26,7 @@
     "scout-discoveries/batches/2026-11-10-human-project-bfcdcca18eb647d9c5.csv",
     "scout-discoveries/batches/2026-11-10-human-project-69e9278b9a8267f272.csv"
   ],
-  "verified_public_scout_referral_batches": 17,
+  "verified_public_scout_referral_batches": 18,
   "human_reviewer_decisions": "NOT_VERIFIED",
   "private_hub_imports": "NOT_VERIFIED",
   "new_approved_reach_outputs": 0,
@@ -646,9 +645,32 @@
         ]
       },
       "public_identity": {
-        "status": "NO_PUBLIC_IDENTITY_MATCH",
-        "reason": "NO_MATCH_IN_VERIFIED_PUBLIC_SNAPSHOT",
-        "matches": [],
+        "status": "IN_PUBLIC_SCOUT_QUEUE",
+        "reason": "CONSISTENT_SCOUT_PUBLIC_MIRRORS",
+        "matches": [
+          {
+            "source": "SCOUT_PUBLISHED",
+            "identity": "2026-11-10-human-project-b8d519c3e1a123e83c:2",
+            "title": "Adaptive conditional bias-penalized Kalman filter with minimization of degrees of freedom for noise for superior state estimation and prediction of extremes",
+            "location": "scout-discoveries/batches/2026-11-10-human-project-b8d519c3e1a123e83c.csv:2",
+            "match_bases": [
+              "exact_doi",
+              "exact_url",
+              "normalized_title"
+            ]
+          },
+          {
+            "source": "SCOUT_INBOX",
+            "identity": "2026-11-10-human-project-b8d519c3e1a123e83c.csv:2",
+            "title": "Adaptive conditional bias-penalized Kalman filter with minimization of degrees of freedom for noise for superior state estimation and prediction of extremes",
+            "location": "scout-discoveries/inbox/2026-11-10-human-project-b8d519c3e1a123e83c.csv:2",
+            "match_bases": [
+              "exact_doi",
+              "exact_url",
+              "normalized_title"
+            ]
+          }
+        ],
         "caveat": "Public snapshot only; private Hub decisions are not asserted.",
         "noaa_ir_reach_check": {
           "status": "VERIFIED_IR_URL_NOT_IN_PUBLIC_REACH",
@@ -663,10 +685,10 @@
         "wpo_award_cue_not_proof": true,
         "reason_for_review": "WPO-pattern award cited but exact funded project deliverable unverified"
       },
-      "disposition": "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL",
+      "disposition": "HOLD_ALREADY_IN_PUBLIC_REACH_OR_SCOUT",
       "review_question": "Reviewer question: Select and verify the correct SPARK parent for the explicitly funded WPO award NA16OAR4590232; confirm the output belongs with that parent before addition.",
-      "scout_inbox_status": "VALIDATED_INBOX_DRAFT_NOT_PRIVATE_HUB",
-      "published_scout_batch_path": null,
+      "scout_inbox_status": "PUBLISHED_PUBLIC_SCOUT_FEED_NOT_PRIVATE_HUB",
+      "published_scout_batch_path": "scout-discoveries/batches/2026-11-10-human-project-b8d519c3e1a123e83c.csv",
       "eligible_for_new_reach_addition": "NOT_VERIFIED",
       "private_hub_import": "NOT_VERIFIED",
       "human_approval": "NOT_VERIFIED"
