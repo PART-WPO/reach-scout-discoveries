@@ -1,0 +1,74 @@
+{
+  "schema": "reach-scout-bounded-expansion-research-v1",
+  "observed_at_utc": "2026-11-10T20:55:47.617456+00:00",
+  "seed_doi": "10.1002/met.70089",
+  "source_graph_sha256": "98344ca9ee18144c76f9bce066259cd15122762e4be8a5172dea6c62048e50fe",
+  "seed_expansion_fingerprint": "3beb27e6d0600da5ee2ab54c8506b44bb496146bb4d8569a71c9defcff4d5477",
+  "seed_reach_identity_verified_in_graph": true,
+  "explicit_related_dois_preserved": [],
+  "source_lookups": [
+    {
+      "doi": "10.1002/met.70089",
+      "role": "VERIFIED_REACH_EXPANSION_SEED",
+      "source_status": "ok",
+      "official_provider": "crossref",
+      "official_title": "Developing Experimental Probabilistic Intensity Forecast Products for Landfalling Tropical Cyclones",
+      "official_metadata_url": "https://api.crossref.org/works/10.1002/met.70089",
+      "publication_status": "official_journal_article",
+      "official_award_numbers_observed": [
+        "NA22OAR4590185",
+        "SUBAWD002943"
+      ],
+      "separate_output_uniqueness": "NOT_VERIFIED",
+      "same_WPO_project_parent": "NOT_VERIFIED"
+    }
+  ],
+  "status": "OFFICIAL_SOURCE_CHECK_RECORDED",
+  "source_driven_discovery": {
+    "schema": "reach-scout-source-driven-expansion-v1",
+    "seed_doi": "10.1002/met.70089",
+    "source_checks": [
+      {
+        "kind": "crossref_references",
+        "url": "https://api.crossref.org/works/10.1002/met.70089",
+        "status": "SOURCE_READ",
+        "source_sha256": "882e461600f2340a032639f5e3d6eca45ba5fe9ef6a213b99c0ad2a09a6e123d",
+        "data_code_doi_matches": 0
+      },
+      {
+        "kind": "publisher_article_html",
+        "url": "https://onlinelibrary.wiley.com/doi/10.1002/met.70089",
+        "status": "SOURCE_ACCESS_OR_PARSE_HOLD",
+        "error_type": "HTTPError"
+      },
+      {
+        "kind": "noaa_ir_landing",
+        "url": "https://repository.library.noaa.gov/view/noaa/71980",
+        "status": "SOURCE_READ",
+        "source_sha256": "fadcdf3a69321272d6fa0a60f856f0e2d1c08c97bfcc83d6361a5acdba18478f"
+      },
+      {
+        "kind": "noaa_ir_manuscript_pdf",
+        "url": "https://repository.library.noaa.gov/view/noaa/71980/noaa_71980_DS1.pdf",
+        "status": "SOURCE_READ",
+        "source_sha256": "14c43f6c830b54458ed7fc8a4d6a5b41f5a416987527b0bcb192d281ca39b4be",
+        "data_code_doi_matches": 0,
+        "pdf_text_characters": 128774,
+        "pdf_doi_tokens_observed": 1
+      }
+    ],
+    "discovered_doi_leads": [],
+    "status": "NO_DATA_CODE_DOI_IDENTIFIED",
+    "new_public_candidates": 0,
+    "private_hub_import": "NOT_VERIFIED"
+  },
+  "new_source_driven_leads_screened": [],
+  "new_distinct_doi_leads_found": 0,
+  "new_public_candidate_count": 0,
+  "new_related_output_eligibility_confirmed": 0,
+  "separate_expansion_decisions_completed": 0,
+  "reason_not_a_completed_expansion": "Source metadata and DOI edges are research leads; distinct output identity, preprint, public REACH/Scout duplicate and exact WPO project funding require independent checks.",
+  "next_action": "Investigate official metadata and full current REACH/Scout identity for distinct linked DOI(s); verify their OWN publisher award and primary SPARK parent before any Needs Investigation or New Candidate.",
+  "private_hub_import": "NOT_VERIFIED",
+  "human_approval": "NOT_VERIFIED"
+}
