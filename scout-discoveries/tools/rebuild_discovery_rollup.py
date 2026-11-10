@@ -10,8 +10,11 @@ import json
 import re
 from datetime import datetime, timezone
 from pathlib import Path
+import sys
 
 from build_manifest import ROOT
+sys.path.insert(0, str(ROOT.parent / 'scout-operations/tools'))
+from discovery_origin_evidence import historical_crossref_source
 
 MANIFEST = ROOT / "manifest.json"
 ROLLUP = ROOT.parent / "scout-operations" / "discovery-origin-rollup.json"
@@ -107,6 +110,8 @@ def enrich_from_legacy(manifest, ledger, correction_ledger=None):
     seen_corrections = set()
     legacy_cohorts = {}
     verified_new_output_non_direct = 0
+    corrected_historical_crossref = []
+    unverified_historical_crossref = []
     for batch in manifest["batches"]:
         path = ROOT.parent / batch["path"]
         with path.open("r", newline="", encoding="utf-8-sig") as stream:
@@ -154,6 +159,33 @@ def enrich_from_legacy(manifest, ledger, correction_ledger=None):
                     if value not in PURPOSES or value != purpose:
                         raise ValueError(f"Invalid/conflicting explicit finding purpose: {key}")
                     purpose = value
+                # Only the exact bot-authored historical Crossref notes may
+                # correct misleading explicit Independent labels. Both note
+                # and raw API batch must match this DOI, award and source SHA.
+                # No published CSV or human decision is ever rewritten.
+                scope_run = str(row.get("Source Run ID") or "").startswith(
+                    "REACH-SCOUT-HUMAN-SCOPE-")
+                if scope_run and route in {"Independent discovery", "Direct API"}:
+                    doi = str(row.get("DOI") or "").strip().lower()
+                    proof = historical_crossref_source(ROOT.parent, doi)
+                    if proof:
+                        if method == "Independent discovery":
+                            corrected_historical_crossref.append({
+                                "batch_id": batch["id"], "row": index,
+                                "doi": doi, "method": "Direct API",
+                                "source_note_sha256": proof["source_note_sha256"],
+                                "source_batch_sha256": proof["source_batch_sha256"],
+                                "source_batch_path": proof["source_batch_path"],
+                            })
+                        method = "Direct API"
+                    else:
+                        # The generator is known to have supplied an arbitrary
+                        # Independent default to this specific historical lane.
+                        # Preserve UNKNOWN instead of inventing attribution.
+                        method = "Unclassified"
+                        unverified_historical_crossref.append({
+                            "batch_id": batch["id"], "row": index, "doi": doi
+                        })
                 raw_classified += 1
             else:
                 entry = by_key.get(key)
@@ -202,6 +234,8 @@ def enrich_from_legacy(manifest, ledger, correction_ledger=None):
         "legacy_method_backfilled": backfilled,
         "metadata_correction_origins_recovered": len(seen_corrections),
         "legacy_still_unclassified": unresolved_legacy,
+        "verified_explicit_historical_crossref_method_corrections": corrected_historical_crossref,
+        "unverified_historical_crossref_origin_rows": unverified_historical_crossref,
         "legacy_cohort_counts": legacy_cohorts,
         "modern_explicit_route_rows": raw_classified,
         "beyond_direct_api_new_output_review_proposals": verified_new_output_non_direct,
@@ -298,6 +332,14 @@ def main():
             "source_verified_records": effective["metadata_correction_origins_recovered"],
             "validation": "EXACT_MANIFEST_BATCH_SHA_AND_ROW_IDENTITY_VERIFIED",
         },
+        "historical_crossref_method_reconciliation": {
+            "verified_explicit_independent_to_direct_corrections":
+                len(effective["verified_explicit_historical_crossref_method_corrections"]),
+            "corrected_record_evidence": effective["verified_explicit_historical_crossref_method_corrections"],
+            "unverified_origin_rows": effective["unverified_historical_crossref_origin_rows"],
+            "method_original_batch_immutable": True,
+            "rule": "Exact DOI, publisher WPO459 award and source SHA must match historical API batch and original screened note.",
+        },
         "legacy_provenance": {
             "ledger_path": "scout-operations/legacy-provenance-backfill.json" if legacy_bytes else None,
             "ledger_sha256": hashlib.sha256(legacy_bytes).hexdigest() if legacy_bytes else None,
@@ -335,7 +377,7 @@ def main():
             "human_hub_import": "NOT_VERIFIED",
         } if latest else None),
         "note": ("route_counts and raw_route_counts preserve literal source-CSV route buckets for historical compatibility; "
-                 "effective_discovery_method_counts and effective_finding_purpose_counts use verified source-identity-matched legacy annotations. "
+                 "effective_discovery_method_counts and effective_finding_purpose_counts use verified source-identity-matched historic/legacy evidence, including explicit bot-route corrections. "
                  "A metadata correction is a finding purpose, not a discovery method. "
                  "Never infer an undocumented route or human approval; prior public REACH baseline is not refreshed."),
     }
