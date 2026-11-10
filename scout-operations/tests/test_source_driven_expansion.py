@@ -102,9 +102,11 @@ class SourceDrivenResearchTests(unittest.TestCase):
         def text_extractor(raw):
             self.assertTrue(raw.startswith(b"%PDF"))
             return ("A dataset is discussed.\n"
-                    "Sumargo E et al. Data from: A soil moisture monitoring network "
+                    "Sumargo E et al. (2020b). Data\nfrom: A soil moisture monitoring network\n\n"
+                    "UC San Diego Library Digital Collections.\n"
                     "https://doi.org/10.6075/J0SN07G9.\n"
-                    "Ordinary reference https://doi.org/10.1175/WAF-D-19-0019.1.")
+                    "Smith et al. (2020a). Ordinary reference "
+                    "https://doi.org/10.1175/WAF-D-19-0019.1.")
         result = src.discover(SEED, fetch=fetch, ir_url=item, pdf_to_text=text_extractor)
         self.assertEqual(result["status"], "SOURCE_BACKED_LEADS_FOUND")
         self.assertEqual([x["doi"] for x in result["discovered_doi_leads"]], [DATASET])
@@ -131,6 +133,19 @@ class SourceDrivenResearchTests(unittest.TestCase):
         self.assertEqual(fetched, [item])
         self.assertEqual(leads, [])
         self.assertEqual(sources[-1]["status"], "NO_VALIDATED_MANUSCRIPT_PDF_LINK")
+
+    def test_pdf_wrapped_citation_and_new_reference_do_not_bleed(self):
+        pdf = ("Sumargo, E., McMillan, H., et al. (2020b). Data\n"
+               "from: A Soil Moisture Monitoring Network to Assess Controls\n"
+               "on Runoff Generation During Atmospheric River Events.\n\n"
+               "UC San Diego Library Digital Collections.\n"
+               "https://doi.org/10.6075/J0SN07G9\n"
+               "Sumargo, E., Wilson, A. (2020a). The Hydrometeorological\n"
+               "Observation Network. doi: https://doi.org/10.1175/BAMS-D-19-0253.1")
+        found = src.pdf_reference_cues(
+            pdf, SEED, "https://repository.library.noaa.gov/view/noaa/57177/noaa_57177_DS1.pdf")
+        self.assertEqual([x["doi"] for x in found], [DATASET])
+
 
 if __name__ == "__main__":
     unittest.main()
