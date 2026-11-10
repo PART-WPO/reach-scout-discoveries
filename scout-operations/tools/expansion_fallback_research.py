@@ -85,7 +85,7 @@ def read_ledger(root):
     return data
 
 
-def pick_seed(graph, ledger, now):
+def pick_seed(graph, ledger, now, preferred=None):
     nodes = {n["doi"]: n for n in graph.get("nodes", [])}
     candidates = []
     for task in graph.get("work_items", []):
@@ -110,11 +110,16 @@ def pick_seed(graph, ledger, now):
     candidates.sort(key=lambda x: (-len(x[1]["expansion_research"].get("explicit_related_dois") or []),
                                    x[1]["expansion_research"].get("recorded_related_note_count",0),
                                    x[0]))
+    if preferred is not None:
+        filtered = [c for c in candidates if c[0] == norm(preferred)]
+        if not filtered:
+            raise ValueError("Manual seed is not eligible or remains on cooldown")
+        return filtered[0]
     return candidates[0] if candidates else None
 
 
-def bounded_research(root, graph, ledger, now, metadata_fn=lookup_metadata, *, source_fn=None, identity_fn=None):
-    selected = pick_seed(graph, ledger, now)
+def bounded_research(root, graph, ledger, now, metadata_fn=lookup_metadata, *, source_fn=None, identity_fn=None, seed_override=None):
+    selected = pick_seed(graph, ledger, now, preferred=seed_override)
     if not selected:
         return None
     seed, node, fingerprint = selected
@@ -214,7 +219,7 @@ def bounded_research(root, graph, ledger, now, metadata_fn=lookup_metadata, *, s
                 next_gate = "EXISTING_PUBLIC_IDENTITY_NO_RESTAGING"
             elif meta.get("publication_status") == "preprint":
                 next_gate = "PREPRINT_WATCHLIST_HOLD"
-            elif public_status not in {"NO_PUBLIC_MATCH", "NOT_FOUND", "NO_MATCH"}:
+            elif public_status != "NO_PUBLIC_IDENTITY_MATCH" or ir_status not in {"DOI_NOT_IN_VERIFIED_IR_INDEX_UNKNOWN", "VERIFIED_IR_URL_NOT_IN_PUBLIC_REACH"}:
                 # An index-negative signal is not a blanket proof of novelty.
                 # Different decision_pipeline versions use different names.
                 next_gate = "BOUNDED_PUBLIC_IDENTITY_REVIEW"
@@ -278,29 +283,9 @@ def run(root, now, run_id, metadata_fn=lookup_metadata, *, source_fn=None, ident
         return {"status": "MONTHLY_ORIGINALS_HAVE_PRIORITY", "source_lookup_count": 0}
     graph, index = source_snapshot(root)
     ledger = read_ledger(root)
-    # An explicit manual positive-control seed must still be in the SHA-verified
-    # graph and may not override an existing cooldown.
-    if seed_override:
-        requested = norm(seed_override)
-        original = pick_seed
-        eligible = [(t, (next((n for n in graph["nodes"] if n["doi"] == requested), {})))
-                    for t in graph.get("work_items", []) if norm(t.get("doi")) == requested
-                    and t.get("track") == "EXPANSION"
-                    and t.get("next_action") == "EXPAND_VERIFIED_WPO_REACH_SEED"]
-        if len(eligible) != 1 or not eligible[0][1].get("public_reach_verified_existing"):
-            raise ValueError("Manual seed is not a verified REACH expansion task")
-        data = eligible[0][1]["expansion_research"]
-        prior = ledger.get("cases", {}).get(requested)
-        if prior and prior.get("source_fingerprint") == data.get("input_fingerprint") and now < datetime.fromisoformat(prior["recheck_after"].replace("Z","+00:00")):
-            return {"status": "SEED_COOLDOWN_ACTIVE", "seed": requested, "source_lookup_count": 0}
-        from unittest.mock import patch
-        with patch.object(sys.modules[__name__], "pick_seed",
-                          return_value=(requested, eligible[0][1], data["input_fingerprint"])):
-            report = bounded_research(root, graph, ledger, now, metadata_fn,
-                                      source_fn=source_fn, identity_fn=identity_fn)
-    else:
-        report = bounded_research(root, graph, ledger, now, metadata_fn,
-                                  source_fn=source_fn, identity_fn=identity_fn)
+    report = bounded_research(root, graph, ledger, now, metadata_fn,
+                              source_fn=source_fn, identity_fn=identity_fn,
+                              seed_override=seed_override)
     if report is None:
         return {"status": "NO_ELIGIBLE_UNWORKED_EXPANSION_SEED", "source_lookup_count": 0}
     # One immutable research record per observed GitHub execution. The report
