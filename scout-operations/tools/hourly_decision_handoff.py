@@ -26,6 +26,7 @@ from lookup_independent_dois import metadata as fetch_metadata
 from reviewer_feedback_guard import known_feedback_by_doi
 from wpo_awards import official_459_awards
 from special_publication_types import special_publication_type
+from reconcile_public_handoff import public_source_resolutions, reconcile as reconcile_public_ledger
 
 QUEUE = "scout-operations/crossref-candidate-queue.json"
 LEDGER = "scout-operations/decision-handoff-ledger.json"
@@ -45,7 +46,6 @@ BLOCK_HOURS = {
     "PREPRINT_WATCHLIST": 24 * 30,
     "HUMAN_FEEDBACK_ALREADY_EXISTS": 24 * 30,
     "SPECIAL_PUBLICATION_TYPE": 24 * 14,
-    "NOT_NEW_IN_REACH_OR_SCOUT": 24 * 30,
     "REVIEWER_HANDOFF_NOT_READY": 3,
 }
 
@@ -117,7 +117,8 @@ def candidate_order(queue, ledger, now, limit=MAX_ATTEMPTS):
             skipped.append({"doi": doi, "retry_after": prior["retry_after"],
                             "reason": prior.get("reason")})
             continue
-        if prior and prior.get("state") in {"PUBLISHED_PUBLIC_SCOUT", "STAGED_VALIDATED_INBOX"}:
+        if prior and prior.get("state") in {"PUBLISHED_PUBLIC_SCOUT", "STAGED_VALIDATED_INBOX",
+                                          "RESOLVED_EXISTING_REACH", "PUBLIC_IDENTITY_ALREADY_KNOWN"}:
             # A fresh official identity lookup is still required for any new proposal.
             # Staged records are handled by the dedicated publisher, not recreated.
             skipped.append({"doi": doi, "reason": prior["state"]})
@@ -139,6 +140,31 @@ def disposition(ledger, doi, reason, now, *, evidence="", details=""):
     }
     return {"doi": doi, "decision": reason, "status": "BLOCKED",
             "retry_after": ledger["cases"][doi]["retry_after"]}
+
+
+def public_identity_exit(ledger, doi, identity_status, now, evidence=""):
+    """Existing public identity is a terminal ORIGINAL screening, not a retry timer.
+
+    A public Scout match still has an independent private Hub stage to verify,
+    and never represents human approval or REACH insertion.
+    """
+    row = ledger["cases"].get(doi, {})
+    reach = identity_status == "CONFIRMED_PUBLIC_REACH_IDENTITY"
+    state = "RESOLVED_EXISTING_REACH" if reach else "PUBLIC_IDENTITY_ALREADY_KNOWN"
+    reason = "VERIFIED_PUBLIC_REACH_IDENTITY" if reach else "EXISTS_IN_PUBLIC_SCOUT_IDENTITY_SCREEN"
+    ledger["cases"][doi] = {
+        "state": state, "reason": reason,
+        "checked_at": now.isoformat(),
+        "attempt_count": int(row.get("attempt_count") or 0) + 1,
+        "official_evidence_url": evidence or None,
+        "research_retry_required": False,
+        "original_formally_closed": False,
+        "seed_expansion_closed": False,
+        "private_hub_import": "NOT_VERIFIED",
+        "downstream_hub_verification": "NOT_VERIFIED",
+    }
+    return {"doi": doi, "decision": reason, "status": state,
+            "research_retry_required": False, "private_hub_import": "NOT_VERIFIED"}
 
 
 def screened_note(doi, item, meta, award, identity, now):
@@ -211,7 +237,7 @@ def evaluate(item, root, public, ir_index, known_reviews, watched, metadata_fn, 
                            details="Historical award context does not match current exact DOI funding deposit.")
     check = identity_check(public, ir_index, doi, md["title"], "https://doi.org/" + doi)
     if check["status"] in {"CONFIRMED_PUBLIC_REACH_IDENTITY", "IN_PUBLIC_SCOUT_QUEUE"}:
-        fast_exit = disposition(ledger, doi, "NOT_NEW_IN_REACH_OR_SCOUT", now, evidence=evidence)
+        fast_exit = public_identity_exit(ledger, doi, check["status"], now, evidence=evidence)
         fast_exit["fast_exit_kind"] = (
             "reach" if check["status"] == "CONFIRMED_PUBLIC_REACH_IDENTITY" else "scout"
         )
@@ -268,6 +294,8 @@ def run(root=ROOT, metadata_fn=fetch_metadata, now=None, limit=MAX_ATTEMPTS,
 
     queue = verified_queue(root)
     ledger = read_ledger(root)
+    retired, public_units, source_titles = public_source_resolutions(root)
+    identity_repairs = reconcile_public_ledger(ledger, retired, public_units, source_titles)
     if public is None:
         public, ir_index = verified_snapshot(root)
     reviews = known_feedback_by_doi(root)
@@ -325,6 +353,8 @@ def run(root=ROOT, metadata_fn=fetch_metadata, now=None, limit=MAX_ATTEMPTS,
               "attempted_originals": len(outcomes), "public_review_batches_validated_this_run": 0,
               "public_review_handoffs_staged": sum(x["status"] == "STAGED_VALIDATED_INBOX" for x in outcomes),
               "outcomes": outcomes, "skipped_cooldown_or_already_staged": skipped[:25],
+              "public_identity_retry_reconciliations": identity_repairs,
+              "private_hub_verification": "NOT_VERIFIED",
               "measurement": {
                   "metadata_resolver_calls": measurement["metadata_resolver_calls"],
                   "provider_http_requests_observed": (

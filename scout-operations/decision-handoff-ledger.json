@@ -2,14 +2,17 @@
   "schema": "reach-scout-hourly-decision-handoff-v1",
   "cases": {
     "10.1175/mwr-d-25-0146.1": {
-      "state": "BLOCKED",
-      "reason": "NOT_NEW_IN_REACH_OR_SCOUT",
+      "state": "PUBLISHED_PUBLIC_SCOUT",
+      "reason": "PUBLIC_SCOUT_REVIEW_UNIT_VERIFIED",
       "attempt_count": 2,
       "checked_at": "2026-11-10T02:55:34.231920+00:00",
-      "retry_after": "2026-12-10T02:55:34.231920+00:00",
       "official_evidence_url": "https://api.crossref.org/works/10.1175/mwr-d-25-0146.1",
       "detail": "",
-      "private_hub_import": "NOT_VERIFIED"
+      "private_hub_import": "NOT_VERIFIED",
+      "published_batch": "scout-discoveries/batches/2026-11-10-human-project-8eb678e5c990af2471.csv",
+      "research_retry_required": false,
+      "downstream_hub_verification": "NOT_VERIFIED",
+      "seed_expansion_closed": false
     },
     "10.1175/mwr-d-26-0134.1": {
       "state": "PUBLISHED_PUBLIC_SCOUT",
@@ -57,14 +60,20 @@
       "published_batch": "scout-discoveries/batches/2026-11-10-human-project-69e9278b9a8267f272.csv"
     },
     "10.5194/gmd-2022-311": {
-      "state": "BLOCKED",
-      "reason": "OFFICIAL_PUBLICATION_UNVERIFIED",
+      "state": "RESOLVED_EXISTING_REACH",
+      "reason": "PREPRINT_FINAL_VERSION_ALREADY_IN_REACH",
       "attempt_count": 1,
       "checked_at": "2026-11-10T16:43:08.098991+00:00",
-      "retry_after": "2026-11-11T16:43:08.098991+00:00",
-      "official_evidence_url": "https://api.crossref.org/works/10.5194/gmd-2022-311",
+      "official_evidence_url": "https://repository.library.noaa.gov/view/noaa/58453",
       "detail": "posted-content",
-      "private_hub_import": "NOT_VERIFIED"
+      "private_hub_import": "NOT_VERIFIED",
+      "published_doi": "10.5194/gmd-16-3809-2023",
+      "reach_uid": "reachuid-v1-04d227bc0979ce0e23a055c1a3eba317",
+      "evidence_basis": "ARCHIVED_FINAL_DOI_AND_VERIFIED_PUBLIC_REACH_UID_IR_URL",
+      "research_retry_required": false,
+      "original_publication_eligibility": "PREPRINT_DOI_NOT_ELIGIBLE",
+      "original_formally_closed": false,
+      "seed_expansion_closed": false
     },
     "10.1016/j.cageo.2022.105193": {
       "state": "PUBLISHED_PUBLIC_SCOUT",
