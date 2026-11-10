@@ -237,44 +237,47 @@ def run(root=ROOT, metadata_fn=fetch_metadata, now=None, limit=MAX_ATTEMPTS,
         raise ValueError("Unverified preprint watchlist")
     watched = {norm_doi(x.get("preprint_doi")) for x in watch.get("entries", [])}
     selected, skipped = candidate_order(queue, ledger, now, limit)
-    outcomes, passed = [], []
+    outcomes = []
     memo = {}
     for item in selected:
         outcome = evaluate(item, root, public, ir_index, reviews, watched, metadata_fn, now, ledger)
         if outcome["status"] == "SOURCE_VERIFIED":
             memo[outcome["doi"]] = outcome.pop("metadata")
-            passed.append(outcome["doi"])
+            if stage:
+                registry = build_registry(root)
+                (root / REGISTRY).write_text(
+                    json.dumps(registry, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+                def reuse_verified(doi):
+                    return memo[doi] if doi in memo else metadata_fn(doi)
+                result = build_referrals(root=root, metadata=reuse_verified, stage=True)
+                (root / REFERRALS).write_text(
+                    json.dumps(result, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+                doi = outcome["doi"]
+                rows = [r for r in result["referrals"] if r["doi"] == doi]
+                valid = [r for r in rows if r.get("disposition") == "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL"
+                         and r.get("scout_inbox_status") in {
+                             "VALIDATED_INBOX_DRAFT_NOT_PRIVATE_HUB", "EXISTING_VERIFIED_INBOX_DRAFT",
+                         }]
+                if len(valid) != 1:
+                    # Record an actual failed handoff; keep the source note
+                    # append-only and try the NEXT DOI in the SAME mission.
+                    outcome.update(disposition(ledger, doi, "REVIEWER_HANDOFF_NOT_READY", now,
+                        evidence=outcome.get("evidence_url", ""),
+                        details=rows[0]["disposition"] if len(rows) == 1
+                                else "NO_EXACT_DOI_REFERRAL_RECORD"))
+                else:
+                    ledger["cases"][doi] = {
+                        "state": "STAGED_VALIDATED_INBOX", "reason": "PENDING_PUBLICATION_GATE",
+                        "checked_at": now.isoformat(), "attempt_count":
+                            int(ledger["cases"].get(doi, {}).get("attempt_count") or 0) + 1,
+                        "source_note": outcome["source_note"],
+                        "private_hub_import": "NOT_VERIFIED"}
+                    outcome["status"] = "STAGED_VALIDATED_INBOX"
         outcomes.append(outcome)
-        if passed:
+        if outcome["status"] == "STAGED_VALIDATED_INBOX" or (
+            not stage and outcome["status"] == "SOURCE_VERIFIED"
+        ):
             break
-    if passed and stage:
-        registry = build_registry(root)
-        (root / REGISTRY).write_text(json.dumps(registry, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-        def reuse_verified(doi):
-            return memo[doi] if doi in memo else metadata_fn(doi)
-        result = build_referrals(root=root, metadata=reuse_verified, stage=True)
-        (root / REFERRALS).write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-        for outcome in outcomes:
-            if outcome["status"] != "SOURCE_VERIFIED":
-                continue
-            doi = outcome["doi"]
-            rows = [r for r in result["referrals"] if r["doi"] == doi]
-            valid = [r for r in rows if r.get("disposition") == "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL"
-                     and r.get("scout_inbox_status") in {
-                         "VALIDATED_INBOX_DRAFT_NOT_PRIVATE_HUB", "EXISTING_VERIFIED_INBOX_DRAFT",
-                     }]
-            if len(valid) != 1:
-                # A protected late identity conflict or staging cap must never be called completed.
-                blocked_outcome = disposition(ledger, doi, "REVIEWER_HANDOFF_NOT_READY", now)
-                outcome.update(blocked_outcome)
-            else:
-                ledger["cases"][doi] = {
-                    "state": "STAGED_VALIDATED_INBOX", "reason": "PENDING_PUBLICATION_GATE",
-                    "checked_at": now.isoformat(), "attempt_count":
-                        int(ledger["cases"].get(doi, {}).get("attempt_count") or 0) + 1,
-                    "source_note": outcome["source_note"],
-                    "private_hub_import": "NOT_VERIFIED"}
-                outcome["status"] = "STAGED_VALIDATED_INBOX"
     report = {"schema": SCHEMA, "ran_at": now.isoformat(),
               "source_selection_sha256": checksum((root / QUEUE).read_bytes()),
               "attempted_originals": len(outcomes), "public_review_batches_validated_this_run": 0,
