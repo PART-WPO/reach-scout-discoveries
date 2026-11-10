@@ -1,0 +1,94 @@
+name: Scout bounded verified-REACH expansion research
+on:
+  pull_request:
+    paths:
+      - 'scout-operations/tools/expansion_fallback_research.py'
+      - 'scout-operations/tests/test_expansion_fallback_research.py'
+      - '.github/workflows/scout-bounded-expansion-fallback.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'scout-operations/tools/expansion_fallback_research.py'
+      - 'scout-operations/tests/test_expansion_fallback_research.py'
+      - '.github/workflows/scout-bounded-expansion-fallback.yml'
+  schedule:
+    # Source-backed research ready before the ChatGPT hourly :29 mission.
+    - cron: '21 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+concurrency:
+  group: scout-bounded-expansion-fallback-main
+  cancel-in-progress: false
+
+jobs:
+  regressions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate bounded REACH seed expansion, SHA evidence and cooldown
+        run: |
+          python -m py_compile scout-operations/tools/expansion_fallback_research.py
+          python -m unittest discover -v -s scout-operations/tests -p 'test_expansion_fallback_research.py'
+
+  bounded-source-pass:
+    if: github.event_name != 'pull_request'
+    needs: regressions
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Research ONE unworked verified REACH expansion seed; persist only evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Existing weekday cadence; first-of-month weekend priority remains
+          # with monthly intake rather than unrequested supplemental expansion.
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            if ! python - <<'PY'
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+          import sys
+          sys.exit(0 if datetime.now(ZoneInfo("America/New_York")).weekday() < 5 else 1)
+          PY
+            then
+              echo "Existing weekday research cadence: no weekend expansion"
+              exit 0
+            fi
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git checkout -B main origin/main
+            python scout-operations/tools/expansion_fallback_research.py \
+              --run-id "${{ github.run_id }}$((10 * ${{ github.run_attempt }} + attempt))"
+            if [ ! -f scout-operations/research-memory/expansion-fallback-ledger.json ]; then
+              echo "No source-backed assignment was written; leaving main unchanged."
+              exit 0
+            fi
+            git add scout-operations/research-memory/expansion-fallback-ledger.json scout-operations/reports/bounded-expansion-research/
+            if git diff --cached --quiet; then
+              echo "No eligible new seed or monthly originals still have priority."
+              exit 0
+            fi
+            git commit -m "Record one bounded official-source research pass on rotated REACH seed"
+            if git push origin HEAD:main; then
+              echo "Research note committed; no expansion completion, public approval or private Hub claim."
+              exit 0
+            fi
+            echo "::warning::Main changed: rescreen sources and select next seed from fresh graph"
+            sleep "$((attempt * 2))"
+          done
+          echo "::error::Failed to commit one source-fresh bounded expansion pass"
+          exit 1

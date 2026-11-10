@@ -1,0 +1,95 @@
+name: Scout guarded handoff watchdog and recovery
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scout-operations/tools/guarded_handoff_watchdog.py'
+      - 'scout-operations/tests/test_guarded_handoff_watchdog.py'
+      - '.github/workflows/scout-guarded-handoff-watchdog.yml'
+  pull_request:
+    paths:
+      - 'scout-operations/tools/guarded_handoff_watchdog.py'
+      - 'scout-operations/tests/test_guarded_handoff_watchdog.py'
+      - '.github/workflows/scout-guarded-handoff-watchdog.yml'
+  schedule:
+    # Separate from :34 backstop; two chances/hour to notice missing cron.
+    - cron: '12,49 * * * *'
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  issues: write
+  contents: read
+
+concurrency:
+  group: scout-guarded-handoff-watchdog
+  cancel-in-progress: false
+
+jobs:
+  heartbeat:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify bounded recovery policy without touching live API
+        run: |
+          python -m py_compile scout-operations/tools/guarded_handoff_watchdog.py
+          python -m unittest discover -s scout-operations/tests -p 'test_guarded_handoff_watchdog.py' -v
+      - name: Inspect actual guarded handoff runs
+        if: github.event_name != 'pull_request'
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh api -X GET "repos/${GH_REPO}/actions/workflows/scout-hourly-guarded-handoff.yml/runs?per_page=70" > "${RUNNER_TEMP}/scout-guarded-runs.json"
+          python scout-operations/tools/guarded_handoff_watchdog.py \
+            --runs-file "${RUNNER_TEMP}/scout-guarded-runs.json" \
+            --output-file "${RUNNER_TEMP}/scout-guarded-heartbeat.json"
+          {
+            echo "### Guarded DOI handoff heartbeat"
+            echo ''
+            echo 'This is an independent watchdog observation, not a ChatGPT mission or a published candidate.'
+            echo ''
+            cat "${RUNNER_TEMP}/scout-guarded-heartbeat.json"
+          } >> "$GITHUB_STEP_SUMMARY"
+      - name: Recover missed completion and maintain one public alert
+        if: github.event_name != 'pull_request'
+        shell: bash
+        run: |
+          set -euo pipefail
+          state="$(python -c 'import json,os;print(json.load(open(os.environ["RUNNER_TEMP"]+"/scout-guarded-heartbeat.json"))["action"])')"
+          title="REACH Scout guarded DOI handoff: missing scheduled completion"
+          issue="$(gh issue list -R "$GH_REPO" --state open --limit 100 --json number,title | \
+            python -c 'import sys,json;print(next((str(x["number"]) for x in json.load(sys.stdin) if x["title"]=="REACH Scout guarded DOI handoff: missing scheduled completion"),""))')"
+          if [ "$state" = "RECOVERY_REQUIRED" ]; then
+            echo "::warning::Guarded handoff is stale, no recent active or dispatched job: recovering with normal workflow gates."
+            if [ -z "$issue" ]; then
+              gh issue create -R "$GH_REPO" --title "$title" \
+                --body "The independently scheduled watchdog observed no successful guarded DOI handoff within 85 minutes and no recent active/recovery run. A guarded workflow_dispatch recovery is being attempted. Verify actual completion in Actions; no output or private Hub approval is inferred from this alert."
+            fi
+            # GitHub workflow_dispatch is a documented exception to GITHUB_TOKEN
+            # secondary workflow suppression; the target still serializes and
+            # revalidates its ledger, identity and public manifest before writes.
+            gh api -X POST "repos/${GH_REPO}/actions/workflows/scout-hourly-guarded-handoff.yml/dispatches" -f ref=main
+            echo 'Recovery dispatched; not counted until completed.' >> "$GITHUB_STEP_SUMMARY"
+          elif [ "$state" = "HEALTHY" ]; then
+            if [ -n "$issue" ]; then
+              gh issue close -R "$GH_REPO" "$issue" \
+                --comment "The independent watchdog now observes a successfully completed guarded run within 85 minutes. Closing the missed-run alert; public candidate and private Hub status are evaluated separately."
+            fi
+            echo 'Guarded handoff completed recently; no recovery needed.' >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Watchdog action: $state; no duplicate dispatch" >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always() && github.event_name != 'pull_request'
+        with:
+          name: scout-guarded-handoff-heartbeat
+          path: ${{ runner.temp }}/scout-guarded-heartbeat.json
+          retention-days: 30
+          if-no-files-found: warn

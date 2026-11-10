@@ -69,6 +69,18 @@ class HandoffTests(unittest.TestCase):
         p = self.root / mission.QUEUE
         p.write_text(json.dumps(q))
 
+    def test_public_selection_inputs_must_be_current(self):
+        p=self.root/mission.QUEUE
+        queue=json.loads(p.read_text())
+        queue["dynamic_selection_sha256"]={
+            "scout-operations/research-outcome-registry.json":
+            mission.checksum((self.root/"scout-operations/research-outcome-registry.json").read_bytes())}
+        p.write_text(json.dumps(queue))
+        mission.verified_queue(self.root)
+        (self.root/"scout-operations/research-outcome-registry.json").write_text("different")
+        with self.assertRaisesRegex(ValueError,"STALE_QUEUE"):
+            mission.verified_queue(self.root)
+
     def test_source_fingerprint_must_be_fresh(self):
         self.assertEqual(len(mission.verified_queue(self.root)["items"]), 3)
         (self.root / "scout-operations/research-outcome-registry.json").write_text("modified")

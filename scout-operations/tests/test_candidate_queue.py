@@ -1,4 +1,5 @@
-import importlib.util, unittest, sys
+import importlib.util, unittest, sys, hashlib, tempfile, csv, json
+from datetime import datetime, timezone
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"tools"))
 spec=importlib.util.spec_from_file_location("candidate_queue",Path(__file__).resolve().parents[1]/"tools/build_candidate_queue.py")
@@ -161,6 +162,69 @@ class QueueTests(unittest.TestCase):
   self.assertEqual(by["10.1234/scout"],"ALREADY_IN_SCOUT_REVIEW_FAST_EXIT")
   self.assertEqual(by["10.1234/preprint"],"PREPRINT_WATCHLIST_HOLD")
   self.assertEqual(q["special_publication_type_review_count"],0)
+
+ def test_real_sha_verified_manifest_and_durable_ledger_overlay(self):
+  with tempfile.TemporaryDirectory() as tmp:
+   root=Path(tmp)
+   batches=root/"scout-discoveries/batches"
+   batches.mkdir(parents=True)
+   path=batches/"public.csv"
+   with path.open("w",newline="") as f:
+    w=csv.DictWriter(f,fieldnames=["DOI","Title"])
+    w.writeheader()
+    w.writerow({"DOI":"10.1175/mwr-d-26-0134.1","Title":"Same Published Title"})
+    w.writerow({"DOI":"10.1175/mwr-d-25-0146.1","Title":"Same Previous Scout Title"})
+   rel=path.relative_to(root).as_posix()
+   manifest={"schema":"reach-scout-discovery-feed-v1","batches":[{
+    "path":rel,"sha256":hashlib.sha256(path.read_bytes()).hexdigest(),"record_count":2}]}
+   manifest_path=root/m.PUBLIC_MANIFEST
+   manifest_path.write_text(json.dumps(manifest))
+   pub=m.load_active_scout(root)
+   self.assertEqual(len(pub),2)
+   e=[
+    {"doi":"10.1175/mwr-d-26-0134.1","title":"Same Published Title",
+     "bulk_identity_gate":{"status":"NO_PUBLIC_REACH_MATCH"}},
+    {"doi":"10.1175/mwr-d-25-0146.1","title":"Same Previous Scout Title",
+     "bulk_identity_gate":{"status":"NO_PUBLIC_REACH_MATCH"}},
+    {"doi":"10.1175/waf-d-20-0098.1","title":"Published in ledger but not active",
+     "bulk_identity_gate":{"status":"NO_PUBLIC_REACH_MATCH"}},
+    {"doi":"10.1175/not-found","title":"Unresolved technical block",
+     "bulk_identity_gate":{"status":"NO_PUBLIC_REACH_MATCH"}},
+    {"doi":"10.1175/next-original","title":"A novel verified candidate",
+     "bulk_identity_gate":{"status":"NO_PUBLIC_REACH_MATCH"}},
+   ]
+   ledger={"schema":"reach-scout-hourly-decision-handoff-v1","cases":{
+    "10.1175/waf-d-20-0098.1":{"state":"PUBLISHED_PUBLIC_SCOUT"},
+    "10.1175/not-found":{"state":"BLOCKED","reason":"OFFICIAL_METADATA_UNAVAILABLE",
+     "retry_after":"2026-11-11T15:00:00+00:00"}}}
+   queue=m.build({"total":5,"bulk_identity_screening":{"source_dois":5},"entries":e},
+     {"cases":[]},award_evidence={x["doi"]:{"awards":{"NA24OARX459C0001"}} for x in e},
+     active_public=pub,handoff_ledger=ledger,now=datetime(2026,11,10,14,tzinfo=timezone.utc))
+   by={x["doi"]:x for x in queue["items"]}
+   for d in ("10.1175/mwr-d-26-0134.1","10.1175/mwr-d-25-0146.1"):
+    self.assertEqual(by[d]["lane"],"ALREADY_IN_SCOUT_REVIEW_FAST_EXIT")
+    self.assertFalse(by[d]["one_mission_disposition_required"])
+   self.assertEqual(by["10.1175/waf-d-20-0098.1"]["lane"],"PUBLISHED_LEDGER_FEED_MISMATCH")
+   self.assertFalse(by["10.1175/waf-d-20-0098.1"]["one_mission_disposition_required"])
+   self.assertEqual(by["10.1175/not-found"]["lane"],"DURABLE_BLOCKER_COOLDOWN")
+   self.assertFalse(by["10.1175/not-found"]["one_mission_disposition_required"])
+   self.assertEqual(queue["one_mission_actionable_original_count"],1)
+   self.assertEqual(queue["next_one_mission_original_preview"][0]["doi"],"10.1175/next-original")
+   # Tampered active manifest rows are not allowed to suppress another DOI.
+   path.write_text("DOI,Title\n")
+   with self.assertRaisesRegex(ValueError,"SHA mismatch"):
+    m.load_active_scout(root)
+
+ def test_same_doi_different_title_is_not_a_duplicate_fast_exit(self):
+  r={"total":1,"bulk_identity_screening":{"source_dois":1},"entries":[{
+   "doi":"10.1175/conflicting-title","title":"Distinct new title",
+   "bulk_identity_gate":{"status":"NO_PUBLIC_REACH_MATCH"}}]}
+  q=m.build(r,{"cases":[]},active_public={"10.1175/conflicting-title":[{
+   "title":"Different published title","location":"scout-discoveries/batches/old.csv"}]})
+  item=q["items"][0]
+  self.assertEqual(item["lane"],"BOUNDED_IDENTITY_REVIEW")
+  self.assertTrue(item["live_public_title_conflict"])
+  self.assertFalse(item["already_in_public_scout_queue"])
 
  def test_hold_does_not_research_again(self):
   r={"total":1,"bulk_identity_screening":{"source_dois":1},"entries":[{"doi":"10.1/c","bulk_identity_gate":{"status":"NO_PUBLIC_REACH_MATCH"}}]}
