@@ -21,7 +21,7 @@ def canonical_dois(values):
     cleaned = []
     for value in values:
         doi = str(value or "").strip().lower()
-        doi = re.sub(r"^(?:https?://(?:dx\\.)?doi\\.org/|doi:)", "", doi)
+        doi = re.sub(r"^(?:https?://(?:dx\.)?doi\.org/|doi:)", "", doi)
         if doi.startswith("10.") and doi not in cleaned:
             cleaned.append(doi)
     return cleaned
