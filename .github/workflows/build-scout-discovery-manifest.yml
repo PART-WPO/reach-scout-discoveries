@@ -7,6 +7,7 @@ on:
       - 'scout-operations/tools/reach_version_identity.py'
       - 'scout-operations/tools/verify_preprint_intake.py'
       - 'scout-operations/tests/test_reach_version_identity.py'
+      - 'scout-operations/tests/test_universal_preprint_gate.py'
       - 'scout-discoveries/tools/prepare_batch.py'
       - '.github/workflows/build-scout-discovery-manifest.yml'
   push:
@@ -60,6 +61,7 @@ jobs:
         run: |
           python3 -m unittest discover -s scout-operations/tests -p test_reach_version_identity.py -v
           python3 -m unittest discover -s scout-operations/tests -p test_universal_preprint_gate.py -v
+          python3 -m unittest discover -s scout-discoveries/tools/tests -v
 
   validate-and-refresh-manifest:
     if: github.event_name != 'pull_request' && (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success')
