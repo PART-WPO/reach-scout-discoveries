@@ -1,0 +1,48 @@
+{
+  "schema": "reach-scout-hourly-mission-outcome-v1",
+  "producer": "chatgpt_hourly_mission",
+  "not_chatgpt_hourly_mission": false,
+  "mission_id": "20261110T202441431Z-nao-06965-7",
+  "started_at_utc": "2026-11-10T20:24:41.431Z",
+  "completed_at_utc": "2026-11-10T20:24:57.582Z",
+  "policy_commit_sha": "NOT_VERIFIED",
+  "memory_source_fingerprint": "98344ca9ee18144c76f9bce066259cd15122762e4be8a5172dea6c62048e50fe",
+  "memory_builder_policy_sha256": "12b0ec18f0c2c1d7b82edbe746a485c33afe5d493e0c56f72fd0932b305c04a6",
+  "lane": "related_expansion",
+  "selected_original_dois": [],
+  "selected_expansion_seed_dois": [
+    "10.1007/s00382-023-06965-7"
+  ],
+  "fast_exited_public_reach": [],
+  "fast_exited_public_scout": [],
+  "new_original_full_decisions": [],
+  "new_expansion_decisions": [],
+  "research_only_holds": [
+    "10.1007/s00382-023-06965-7"
+  ],
+  "technical_or_funding_holds": [],
+  "published_public_batch_urls": [],
+  "guarded_handoff_run_urls": [],
+  "handoff_status": "NOT_ATTEMPTED",
+  "handoff_blocker": null,
+  "prior_note_sha256_reused": [],
+  "prior_metadata_fingerprints_reused": [],
+  "cache_hits_observed": null,
+  "external_requests_observed": null,
+  "avoided_requests_measured": null,
+  "private_hub_import": "NOT_VERIFIED",
+  "human_decision": "NOT_VERIFIED",
+  "public_reach_addition": "NOT_VERIFIED",
+  "research_evidence": [
+    {
+      "seed_doi": "10.1007/s00382-023-06965-7",
+      "disposition": "RESEARCH_ONLY_HOLD_NO_DISTINCT_ELIGIBLE_OUTPUT",
+      "sources": [
+        "https://scholarship.miami.edu/esploro/outputs/journalArticle/Sensitivity-of-the-blocking-North-Atlantic-Oscillation/991032632326302976",
+        "https://assets-eu.researchsquare.com/files/rs-1577983/v1/1504d615-8e37-4752-b6e8-dba9743f7f8b.pdf?c=1696864009"
+      ],
+      "observation": "University of Miami repository verifies published article identity; Research Square preprint 10.21203/rs.3.rs-1577983/v1 explicitly links to this published version. The preprint is not an eligible separate new output; no distinct dataset/code DOI verified.",
+      "next_step": "Check published article data availability and supplementary material for a separately registered eligible output."
+    }
+  ]
+}
