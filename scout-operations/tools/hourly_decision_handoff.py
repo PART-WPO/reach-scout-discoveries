@@ -206,7 +206,11 @@ def evaluate(item, root, public, ir_index, known_reviews, watched, metadata_fn, 
                            details="Historical award context does not match current exact DOI funding deposit.")
     check = identity_check(public, ir_index, doi, md["title"], "https://doi.org/" + doi)
     if check["status"] in {"CONFIRMED_PUBLIC_REACH_IDENTITY", "IN_PUBLIC_SCOUT_QUEUE"}:
-        return disposition(ledger, doi, "NOT_NEW_IN_REACH_OR_SCOUT", now, evidence=evidence)
+        fast_exit = disposition(ledger, doi, "NOT_NEW_IN_REACH_OR_SCOUT", now, evidence=evidence)
+        fast_exit["fast_exit_kind"] = (
+            "reach" if check["status"] == "CONFIRMED_PUBLIC_REACH_IDENTITY" else "scout"
+        )
+        return fast_exit
     if check["status"] != "NO_PUBLIC_IDENTITY_MATCH" or check.get("noaa_ir_reach_check", {}).get("status") in {
         "IR_INDEX_UNAVAILABLE_HOLD", "AMBIGUOUS_IR_DOI_HOLD",
         "MULTIPLE_REACH_RECORDS_HOLD", "REACH_DOI_CONFLICT_VERSION_REVIEW",
@@ -219,7 +223,9 @@ def evaluate(item, root, public, ir_index, known_reviews, watched, metadata_fn, 
     award = sorted(verified_awards)[0]
     path, note = screened_note(doi, item, md, award, check, now)
     target = root / path
+    reused_note_sha = None
     if target.is_file():
+        reused_note_sha = checksum(target.read_bytes())
         old = json.loads(target.read_text(encoding="utf-8"))
         if norm_doi(old.get("original_doi")) != doi or old.get("structured_award") != award:
             raise ValueError("Existing immutable research note contradicts verified source")
@@ -228,12 +234,33 @@ def evaluate(item, root, public, ir_index, known_reviews, watched, metadata_fn, 
         target.write_text(json.dumps(note, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     return {"doi": doi, "decision": "SOURCE_VERIFIED_FOR_GUARDED_REVIEW",
             "status": "SOURCE_VERIFIED", "award": award, "evidence_url": evidence,
-            "source_note": path, "metadata": md}
+            "source_note": path, "metadata": md,
+            "prior_research_note_sha256_reused": reused_note_sha}
 
 
 def run(root=ROOT, metadata_fn=fetch_metadata, now=None, limit=MAX_ATTEMPTS,
         *, stage=True, public=None, ir_index=None):
     now = now or datetime.now(timezone.utc)
+    measurement = {
+        "metadata_resolver_calls": 0,
+        "provider_http_requests_observed": 0,
+        "all_resolver_calls_instrumented": True,
+        "in_process_metadata_reuses": 0,
+    }
+    raw_metadata_fn = metadata_fn
+
+    def measured_metadata(doi):
+        measurement["metadata_resolver_calls"] += 1
+        md = raw_metadata_fn(doi)
+        # An exact provider request is observable only if the resolver
+        # returned its actual 'attempts' log, not inferred from DOI count.
+        attempts = md.get("attempts") if isinstance(md, dict) else None
+        if isinstance(attempts, list):
+            measurement["provider_http_requests_observed"] += len(attempts)
+        else:
+            measurement["all_resolver_calls_instrumented"] = False
+        return md
+
     queue = verified_queue(root)
     ledger = read_ledger(root)
     if public is None:
@@ -247,7 +274,7 @@ def run(root=ROOT, metadata_fn=fetch_metadata, now=None, limit=MAX_ATTEMPTS,
     outcomes = []
     memo = {}
     for item in selected:
-        outcome = evaluate(item, root, public, ir_index, reviews, watched, metadata_fn, now, ledger)
+        outcome = evaluate(item, root, public, ir_index, reviews, watched, measured_metadata, now, ledger)
         if outcome["status"] == "SOURCE_VERIFIED":
             memo[outcome["doi"]] = outcome.pop("metadata")
             if stage:
@@ -255,7 +282,10 @@ def run(root=ROOT, metadata_fn=fetch_metadata, now=None, limit=MAX_ATTEMPTS,
                 (root / REGISTRY).write_text(
                     json.dumps(registry, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
                 def reuse_verified(doi):
-                    return memo[doi] if doi in memo else metadata_fn(doi)
+                    if doi in memo:
+                        measurement["in_process_metadata_reuses"] += 1
+                        return memo[doi]
+                    return measured_metadata(doi)
                 result = build_referrals(root=root, metadata=reuse_verified, stage=True)
                 (root / REFERRALS).write_text(
                     json.dumps(result, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
@@ -290,6 +320,20 @@ def run(root=ROOT, metadata_fn=fetch_metadata, now=None, limit=MAX_ATTEMPTS,
               "attempted_originals": len(outcomes), "public_review_batches_validated_this_run": 0,
               "public_review_handoffs_staged": sum(x["status"] == "STAGED_VALIDATED_INBOX" for x in outcomes),
               "outcomes": outcomes, "skipped_cooldown_or_already_staged": skipped[:25],
+              "measurement": {
+                  "metadata_resolver_calls": measurement["metadata_resolver_calls"],
+                  "provider_http_requests_observed": (
+                      measurement["provider_http_requests_observed"]
+                      if measurement["all_resolver_calls_instrumented"] else None
+                  ),
+                  "in_process_metadata_reuses": measurement["in_process_metadata_reuses"],
+                  "prior_research_note_sha256_reused": sorted(set(
+                      x["prior_research_note_sha256_reused"] for x in outcomes
+                      if x.get("prior_research_note_sha256_reused")
+                  )),
+                  "avoided_requests_measured": None,
+                  "scope": "THIS_GITHUB_BACKSTOP_PROCESS_ONLY_NOT_CHATGPT_HOURLY"
+              },
               "private_hub_import": "NOT_VERIFIED", "human_approval": "NOT_VERIFIED",
               "note": "Publication status counted only after the universal preprint gate, canonical 24-column check and active manifest verify."}
     ledger["last_mission"] = {"at": now.isoformat(), "attempted": len(outcomes),
