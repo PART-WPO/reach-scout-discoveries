@@ -1,13 +1,12 @@
 {
   "schema": "reach-scout-bounded-project-human-referral-v1",
-  "source_outcome_event_count": 63,
-  "source_outcome_sha256": "944ef71f0c013c41cf97398b0f307f670d9080654e0460bf1a1494c4cce20152",
+  "source_outcome_event_count": 64,
+  "source_outcome_sha256": "086685954901a4a3caa9710bcf48bff61cb98683633465b703ab4ff5fa92c529",
   "unique_bounded_project_questions": 3,
-  "potential_wpo_cases_quick_screened": 16,
-  "human_referral_drafts_prevalidated": 2,
+  "potential_wpo_cases_quick_screened": 17,
+  "human_referral_drafts_prevalidated": 1,
   "draft_paths": [
-    "scout-discoveries/inbox/2026-11-10-human-project-8eb678e5c990af2471.csv",
-    "scout-discoveries/inbox/2026-11-10-human-project-e65c593e29a9643d34.csv"
+    "scout-discoveries/inbox/2026-11-10-human-project-a6d179727eeaf598b3.csv"
   ],
   "published_batch_paths": [
     "scout-discoveries/batches/2026-11-09-human-project-b332d53770e8cbc1d4.csv",
@@ -20,9 +19,11 @@
     "scout-discoveries/batches/2026-11-09-human-project-e8ae57179ced9c8d19.csv",
     "scout-discoveries/batches/2026-11-09-aies-d-23-0094-wpo459-reclassification-001.csv",
     "scout-discoveries/batches/2026-11-09-human-project-d0211ffa5c6285cecf.csv",
-    "scout-discoveries/batches/2026-11-10-human-project-31f68eaae5993b3626.csv"
+    "scout-discoveries/batches/2026-11-10-human-project-31f68eaae5993b3626.csv",
+    "scout-discoveries/batches/2026-11-10-human-project-8eb678e5c990af2471.csv",
+    "scout-discoveries/batches/2026-11-10-human-project-e65c593e29a9643d34.csv"
   ],
-  "verified_public_scout_referral_batches": 11,
+  "verified_public_scout_referral_batches": 13,
   "human_reviewer_decisions": "NOT_VERIFIED",
   "private_hub_imports": "NOT_VERIFIED",
   "new_approved_reach_outputs": 0,
@@ -2249,8 +2250,19 @@
       },
       "public_identity": {
         "status": "IN_PUBLIC_SCOUT_QUEUE",
-        "reason": "UNIQUE_STRONG_IDENTIFIER_AND_TITLE",
+        "reason": "CONSISTENT_SCOUT_PUBLIC_MIRRORS",
         "matches": [
+          {
+            "source": "SCOUT_PUBLISHED",
+            "identity": "2026-11-10-human-project-8eb678e5c990af2471:2",
+            "title": "Estimates of Entrainment Zone Depth across the United States from Dual-Polarization WSR-88D Radar Observations",
+            "location": "scout-discoveries/batches/2026-11-10-human-project-8eb678e5c990af2471.csv:2",
+            "match_bases": [
+              "exact_doi",
+              "exact_url",
+              "normalized_title"
+            ]
+          },
           {
             "source": "SCOUT_INBOX",
             "identity": "2026-11-10-human-project-8eb678e5c990af2471.csv:2",
@@ -2277,10 +2289,10 @@
         "wpo_award_cue_not_proof": true,
         "reason_for_review": "WPO-pattern award cited but exact funded project deliverable unverified"
       },
-      "disposition": "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL",
+      "disposition": "HOLD_ALREADY_IN_PUBLIC_REACH_OR_SCOUT",
       "review_question": "Reviewer question: Select and verify the correct SPARK parent for the explicitly funded WPO award NA24OARX459C0006; confirm the output belongs with that parent before addition.",
-      "scout_inbox_status": "EXISTING_VERIFIED_INBOX_DRAFT",
-      "published_scout_batch_path": null,
+      "scout_inbox_status": "PUBLISHED_PUBLIC_SCOUT_FEED_NOT_PRIVATE_HUB",
+      "published_scout_batch_path": "scout-discoveries/batches/2026-11-10-human-project-8eb678e5c990af2471.csv",
       "eligible_for_new_reach_addition": "NOT_VERIFIED",
       "private_hub_import": "NOT_VERIFIED",
       "human_approval": "NOT_VERIFIED"
@@ -2347,9 +2359,32 @@
         ]
       },
       "public_identity": {
-        "status": "NO_PUBLIC_IDENTITY_MATCH",
-        "reason": "NO_MATCH_IN_VERIFIED_PUBLIC_SNAPSHOT",
-        "matches": [],
+        "status": "IN_PUBLIC_SCOUT_QUEUE",
+        "reason": "CONSISTENT_SCOUT_PUBLIC_MIRRORS",
+        "matches": [
+          {
+            "source": "SCOUT_PUBLISHED",
+            "identity": "2026-11-10-human-project-e65c593e29a9643d34:2",
+            "title": "Convection-Allowing Ensemble-Based Land–Atmosphere Coupled Background Error Covariance and Its Sampling Error: A Dryline Case Study",
+            "location": "scout-discoveries/batches/2026-11-10-human-project-e65c593e29a9643d34.csv:2",
+            "match_bases": [
+              "exact_doi",
+              "exact_url",
+              "normalized_title"
+            ]
+          },
+          {
+            "source": "SCOUT_INBOX",
+            "identity": "2026-11-10-human-project-e65c593e29a9643d34.csv:2",
+            "title": "Convection-Allowing Ensemble-Based Land–Atmosphere Coupled Background Error Covariance and Its Sampling Error: A Dryline Case Study",
+            "location": "scout-discoveries/inbox/2026-11-10-human-project-e65c593e29a9643d34.csv:2",
+            "match_bases": [
+              "exact_doi",
+              "exact_url",
+              "normalized_title"
+            ]
+          }
+        ],
         "caveat": "Public snapshot only; private Hub decisions are not asserted.",
         "noaa_ir_reach_check": {
           "status": "DOI_NOT_IN_VERIFIED_IR_INDEX_UNKNOWN",
@@ -2364,8 +2399,169 @@
         "wpo_award_cue_not_proof": true,
         "reason_for_review": "WPO-pattern award cited but exact funded project deliverable unverified"
       },
-      "disposition": "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL",
+      "disposition": "HOLD_ALREADY_IN_PUBLIC_REACH_OR_SCOUT",
       "review_question": "Reviewer question: Select and verify the correct SPARK parent for the explicitly funded WPO award NA24OARX459C0001; confirm the output belongs with that parent before addition.",
+      "scout_inbox_status": "PUBLISHED_PUBLIC_SCOUT_FEED_NOT_PRIVATE_HUB",
+      "published_scout_batch_path": "scout-discoveries/batches/2026-11-10-human-project-e65c593e29a9643d34.csv",
+      "eligible_for_new_reach_addition": "NOT_VERIFIED",
+      "private_hub_import": "NOT_VERIFIED",
+      "human_approval": "NOT_VERIFIED"
+    },
+    {
+      "doi": "10.1175/waf-d-20-0098.1",
+      "source_event_id": "6ed509b30f12eb06eba80fdc",
+      "source_file": "scout-operations/historical-crossref-phase2/auto-verified-oar459-a6d179727eeaf598b3.json",
+      "source_sha256": "dfe779ff8cfc15716f3447d0f6a5947bf20512c4f53f057ee64673962af078fd",
+      "official_metadata": {
+        "status": "ok",
+        "provider": "crossref",
+        "evidence": "https://api.crossref.org/works/10.1175/waf-d-20-0098.1",
+        "title": "A Progress Report on the Development of the High-Resolution Rapid Refresh Ensemble",
+        "creators": [
+          "Evan A. Kalina",
+          "Isidora Jankov",
+          "Trevor Alcott",
+          "Joseph Olson",
+          "Jeffrey Beck",
+          "Judith Berner",
+          "David Dowell",
+          "Curtis Alexander"
+        ],
+        "resource_type": "journal-article",
+        "publication_status": "official_journal_article",
+        "abstract": "<jats:title>Abstract</jats:title><jats:p>The High-Resolution Rapid Refresh Ensemble (HRRRE) is a 36-member ensemble analysis system with 9 forecast members that utilizes the Advanced Research version of the Weather Research and Forecasting (ARW-WRF) dynamic core and the physics suite from the operational Rapid Refresh/High-Resolution Rapid Refresh deterministic modeling system. A goal of HRRRE development is a system with sufficient spread among members, comparable in magnitude to the random error in the ensemble mean, to represent the range of possible future atmospheric states. HRRRE member diversity has traditionally been obtained by perturbing the initial and lateral boundary conditions of each member, but recent development has focused on implementing stochastic approaches in HRRRE to generate additional spread. These techniques were tested in retrospective experiments and in the May 2019 Hazardous Weather Testbed Spring Experiment (HWT-SE). Results show a 6%–25% increase in the ensemble spread in 2-m temperature, 2-m mixing ratio, and 10-m wind speed when stochastic parameter perturbations are used in HRRRE (HRRRE-SPP). Case studies from HWT-SE demonstrate that HRRRE-SPP performed similar to or better than the operational High-Resolution Ensemble Forecast system, version 2 (HREFv2), and the nonstochastic HRRRE. However, subjective evaluations provided by HWT-SE forecasters indicated that overall, HRRRE-SPP predicted lower probabilities of severe weather (using updraft helicity as a proxy) compared to HREFv2. A statistical analysis of the performance of HRRRE-SPP and HREFv2 from the 2019 summer convective season supports this claim, but also demonstrates that the two systems have similar reliability for prediction of severe weather using updraft helicity.</jats:p>",
+        "pub_date": "2021-06-01",
+        "preprint_posted_date": "",
+        "pub_date_basis": "Crossref published-print",
+        "pub_date_precision": "month_imputed",
+        "publisher": "American Meteorological Society",
+        "funding_references": [
+          {
+            "DOI": "10.13039/100000192",
+            "name": "National Oceanic and Atmospheric Administration",
+            "doi-asserted-by": "crossref",
+            "award": [
+              "NA17OAR4590172"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "NA17OAR4590172"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100000192",
+                "id-type": "DOI",
+                "asserted-by": "crossref"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/100000192",
+            "name": "National Oceanic and Atmospheric Administration",
+            "doi-asserted-by": "crossref",
+            "award": [
+              "NA17OAR4320101"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "NA17OAR4320101"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100000192",
+                "id-type": "DOI",
+                "asserted-by": "crossref"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/100000192",
+            "name": "National Oceanic and Atmospheric Administration",
+            "doi-asserted-by": "crossref",
+            "award": [
+              "NA17OAR4590181"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "NA17OAR4590181"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100000192",
+                "id-type": "DOI",
+                "asserted-by": "crossref"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/100000192",
+            "name": "National Oceanic and Atmospheric Administration",
+            "doi-asserted-by": "crossref",
+            "award": [
+              "NA19OAR4320073"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "NA19OAR4320073"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100000192",
+                "id-type": "DOI",
+                "asserted-by": "crossref"
+              }
+            ]
+          }
+        ],
+        "related_identifiers": {},
+        "attempts": [
+          {
+            "provider": "datacite",
+            "url": "https://api.datacite.org/dois/10.1175/waf-d-20-0098.1",
+            "error": {
+              "kind": "http",
+              "code": 404
+            }
+          },
+          {
+            "provider": "crossref",
+            "url": "https://api.crossref.org/works/10.1175/waf-d-20-0098.1",
+            "error": null
+          }
+        ]
+      },
+      "public_identity": {
+        "status": "NO_PUBLIC_IDENTITY_MATCH",
+        "reason": "NO_MATCH_IN_VERIFIED_PUBLIC_SNAPSHOT",
+        "matches": [],
+        "caveat": "Public snapshot only; private Hub decisions are not asserted.",
+        "noaa_ir_reach_check": {
+          "status": "VERIFIED_IR_URL_NOT_IN_PUBLIC_REACH",
+          "official_url": "https://repository.library.noaa.gov/view/noaa/30977",
+          "match_uid": null,
+          "match_detail_shard": null
+        }
+      },
+      "project_search_context_only": {
+        "award_context_only": "NA17OAR4590172",
+        "project_context_only": "",
+        "wpo_award_cue_not_proof": true,
+        "reason_for_review": "WPO-pattern award cited but exact funded project deliverable unverified"
+      },
+      "disposition": "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL",
+      "review_question": "Reviewer question: Select and verify the correct SPARK parent for the explicitly funded WPO award NA17OAR4590172; confirm the output belongs with that parent before addition.",
       "scout_inbox_status": "VALIDATED_INBOX_DRAFT_NOT_PRIVATE_HUB",
       "published_scout_batch_path": null,
       "eligible_for_new_reach_addition": "NOT_VERIFIED",

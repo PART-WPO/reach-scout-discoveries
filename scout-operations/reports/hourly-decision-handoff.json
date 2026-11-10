@@ -1,28 +1,37 @@
 {
   "schema": "reach-scout-hourly-decision-handoff-v1",
-  "ran_at": "2026-11-10T02:55:34.231920+00:00",
-  "source_selection_sha256": "d61770d86e58adbc3f42b3d14081d52bf4f9fc15eab0c93fd676661401ea31b6",
-  "attempted_originals": 2,
+  "ran_at": "2026-11-10T04:14:14.693107+00:00",
+  "source_selection_sha256": "2d8d27483a84f7f1bf9250d1acafba564caa18b599721d2dbfea0140d88d2b82",
+  "attempted_originals": 1,
   "public_review_batches_validated_this_run": 1,
   "public_review_handoffs_staged": 0,
   "outcomes": [
     {
+      "doi": "10.1175/waf-d-20-0098.1",
+      "decision": "SOURCE_VERIFIED_FOR_GUARDED_REVIEW",
+      "status": "PUBLISHED_PUBLIC_SCOUT",
+      "award": "NA17OAR4590172",
+      "evidence_url": "https://api.crossref.org/works/10.1175/waf-d-20-0098.1",
+      "source_note": "scout-operations/historical-crossref-phase2/auto-verified-oar459-a6d179727eeaf598b3.json",
+      "published_batch": "scout-discoveries/batches/2026-11-10-human-project-a6d179727eeaf598b3.csv"
+    }
+  ],
+  "skipped_cooldown_or_already_staged": [
+    {
       "doi": "10.1175/mwr-d-25-0146.1",
-      "decision": "NOT_NEW_IN_REACH_OR_SCOUT",
-      "status": "BLOCKED",
-      "retry_after": "2026-12-10T02:55:34.231920+00:00"
+      "retry_after": "2026-12-10T02:55:34.231920+00:00",
+      "reason": "NOT_NEW_IN_REACH_OR_SCOUT"
     },
     {
       "doi": "10.1175/mwr-d-26-0134.1",
-      "decision": "SOURCE_VERIFIED_FOR_GUARDED_REVIEW",
-      "status": "PUBLISHED_PUBLIC_SCOUT",
-      "award": "NA24OARX459C0001",
-      "evidence_url": "https://api.crossref.org/works/10.1175/mwr-d-26-0134.1",
-      "source_note": "scout-operations/historical-crossref-phase2/auto-verified-oar459-e65c593e29a9643d34.json",
-      "published_batch": "scout-discoveries/batches/2026-11-10-human-project-e65c593e29a9643d34.csv"
+      "reason": "PUBLISHED_PUBLIC_SCOUT"
+    },
+    {
+      "doi": "10.1175/mwr-d-19-0165.1",
+      "reason": "SPECIAL_PUBLICATION_TYPE_REVIEW",
+      "detail": "Separate editorial-notice eligibility, not ordinary original screening"
     }
   ],
-  "skipped_cooldown_or_already_staged": [],
   "private_hub_import": "NOT_VERIFIED",
   "human_approval": "NOT_VERIFIED",
   "note": "Publication status counted only after the universal preprint gate, canonical 24-column check and active manifest verify."
