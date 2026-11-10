@@ -1,0 +1,100 @@
+{
+  "schema": "reach-scout-bounded-expansion-research-v1",
+  "observed_at_utc": "2026-11-10T15:20:43.186518+00:00",
+  "seed_doi": "10.1002/hyp.13998",
+  "source_graph_sha256": "3753508184bffab4ea7e0b84344b0904f71487253d072a46cbde92aae192733e",
+  "seed_expansion_fingerprint": "408e2e2fae3da7147e1bda30bf46abc5741e46afa58504fcbe0944bec02e96b2",
+  "seed_reach_identity_verified_in_graph": true,
+  "explicit_related_dois_preserved": [],
+  "source_lookups": [
+    {
+      "doi": "10.1002/hyp.13998",
+      "role": "VERIFIED_REACH_EXPANSION_SEED",
+      "source_status": "ok",
+      "official_provider": "crossref",
+      "official_title": "A soil moisture monitoring network to assess controls on runoff generation during atmospheric river events",
+      "official_metadata_url": "https://api.crossref.org/works/10.1002/hyp.13998",
+      "publication_status": "official_journal_article",
+      "official_award_numbers_observed": [
+        "NA17OAR4590185",
+        "W912HZ‐15‐2‐0019"
+      ],
+      "separate_output_uniqueness": "NOT_VERIFIED",
+      "same_WPO_project_parent": "NOT_VERIFIED"
+    }
+  ],
+  "status": "OFFICIAL_SOURCE_CHECK_RECORDED",
+  "source_driven_discovery": {
+    "schema": "reach-scout-source-driven-expansion-v1",
+    "seed_doi": "10.1002/hyp.13998",
+    "source_checks": [
+      {
+        "kind": "crossref_references",
+        "url": "https://api.crossref.org/works/10.1002/hyp.13998",
+        "status": "SOURCE_READ",
+        "source_sha256": "d99aed5bac1076da92681b49b1dca3ad94130a9c4ec1d90a868394b354825345",
+        "data_code_doi_matches": 0
+      },
+      {
+        "kind": "publisher_article_html",
+        "url": "https://onlinelibrary.wiley.com/doi/10.1002/hyp.13998",
+        "status": "SOURCE_ACCESS_OR_PARSE_HOLD",
+        "error_type": "HTTPError"
+      },
+      {
+        "kind": "noaa_ir_landing",
+        "url": "https://repository.library.noaa.gov/view/noaa/57177",
+        "status": "SOURCE_READ",
+        "source_sha256": "c15b274b237aa616a6c3cc09c480e30172c85a75dfaccd25d3f42de9066f7608"
+      },
+      {
+        "kind": "noaa_ir_manuscript_pdf",
+        "url": "https://repository.library.noaa.gov/view/noaa/57177/noaa_57177_DS1.pdf",
+        "status": "SOURCE_READ",
+        "source_sha256": "2d28deb66eececd74e07a2ff160dc7f22692d6f96603b70e06255006fa585789",
+        "data_code_doi_matches": 1,
+        "pdf_text_characters": 81449,
+        "pdf_doi_tokens_observed": 15
+      }
+    ],
+    "discovered_doi_leads": [
+      {
+        "doi": "10.6075/j0sn07g9",
+        "evidence_kind": "noaa_ir_accepted_manuscript_pdf",
+        "source_url": "https://repository.library.noaa.gov/view/noaa/57177/noaa_57177_DS1.pdf",
+        "context_excerpt": "(2020b). Data from: A Soil Moisture Monitoring Network to Assess Controls on Runoff Generation During Atmospheric River Events. UC San Diego Library Digital Collections. https://doi.org/10.6075/J0SN07G9",
+        "eligibility": "RESEARCH_LEAD_ONLY",
+        "source_sha256": "2d28deb66eececd74e07a2ff160dc7f22692d6f96603b70e06255006fa585789"
+      }
+    ],
+    "status": "SOURCE_BACKED_LEADS_FOUND",
+    "new_public_candidates": 0,
+    "private_hub_import": "NOT_VERIFIED"
+  },
+  "new_source_driven_leads_screened": [
+    {
+      "doi": "10.6075/j0sn07g9",
+      "source_url": "https://repository.library.noaa.gov/view/noaa/57177/noaa_57177_DS1.pdf",
+      "source_sha256": "2d28deb66eececd74e07a2ff160dc7f22692d6f96603b70e06255006fa585789",
+      "source_context_type": "noaa_ir_accepted_manuscript_pdf",
+      "official_metadata_status": "ok",
+      "official_metadata_url": "https://api.datacite.org/dois/10.6075/j0sn07g9",
+      "official_title": "Data from: A Soil Moisture Monitoring Network to Assess Controls on Runoff Generation During Atmospheric River Events. In Center for Western Weather and Water Extremes (CW3E) Surface Meteorological Observational Dataset",
+      "official_resource_type": "Dataset",
+      "publication_status": "other_or_unverified",
+      "exact_doi_publisher_deposited_wpo_awards": [],
+      "public_identity_status": "NO_PUBLIC_IDENTITY_MATCH",
+      "official_ir_reach_status": "DOI_NOT_IN_VERIFIED_IR_INDEX_UNKNOWN",
+      "next_gate": "VERIFY_EXACT_OUTPUT_WPO_PROJECT_FUNDING",
+      "eligibility": "RESEARCH_LEAD_ONLY_NOT_STAGED"
+    }
+  ],
+  "new_distinct_doi_leads_found": 1,
+  "new_public_candidate_count": 0,
+  "new_related_output_eligibility_confirmed": 0,
+  "separate_expansion_decisions_completed": 0,
+  "reason_not_a_completed_expansion": "Source metadata and DOI edges are research leads; distinct output identity, preprint, public REACH/Scout duplicate and exact WPO project funding require independent checks.",
+  "next_action": "Investigate official metadata and full current REACH/Scout identity for distinct linked DOI(s); verify their OWN publisher award and primary SPARK parent before any Needs Investigation or New Candidate.",
+  "private_hub_import": "NOT_VERIFIED",
+  "human_approval": "NOT_VERIFIED"
+}
