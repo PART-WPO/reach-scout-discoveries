@@ -52,6 +52,9 @@ jobs:
           python -m py_compile scout-operations/tools/expansion_fallback_research.py scout-operations/tools/source_driven_expansion.py
           python -m unittest discover -v -s scout-operations/tests -p 'test_expansion_fallback_research.py'
           python -m unittest discover -v -s scout-operations/tests -p 'test_source_driven_expansion.py'
+          python -m unittest discover -v -s scout-operations/tests -p 'test_discovery_metrics_reconciliation.py'
+          python scout-operations/tools/reconcile_scout_metrics.py
+          python scout-operations/tools/reconcile_scout_metrics.py --check
 
   bounded-source-pass:
     if: github.event_name != 'pull_request'
