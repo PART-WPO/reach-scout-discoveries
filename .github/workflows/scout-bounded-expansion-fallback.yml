@@ -3,18 +3,27 @@ on:
   pull_request:
     paths:
       - 'scout-operations/tools/expansion_fallback_research.py'
+      - 'scout-operations/tools/source_driven_expansion.py'
+      - 'scout-operations/tests/test_source_driven_expansion.py'
       - 'scout-operations/tests/test_expansion_fallback_research.py'
       - '.github/workflows/scout-bounded-expansion-fallback.yml'
   push:
     branches: [main]
     paths:
       - 'scout-operations/tools/expansion_fallback_research.py'
+      - 'scout-operations/tools/source_driven_expansion.py'
+      - 'scout-operations/tests/test_source_driven_expansion.py'
       - 'scout-operations/tests/test_expansion_fallback_research.py'
       - '.github/workflows/scout-bounded-expansion-fallback.yml'
   schedule:
     # Source-backed research ready before the ChatGPT hourly :29 mission.
     - cron: '21 * * * *'
   workflow_dispatch:
+    inputs:
+      seed_doi:
+        description: 'Optional verified REACH DOI for controlled source-discovery positive-control run (cooldowns enforced)'
+        required: false
+        type: string
 
 permissions:
   contents: write
@@ -32,8 +41,9 @@ jobs:
           python-version: '3.11'
       - name: Validate bounded REACH seed expansion, SHA evidence and cooldown
         run: |
-          python -m py_compile scout-operations/tools/expansion_fallback_research.py
+          python -m py_compile scout-operations/tools/expansion_fallback_research.py scout-operations/tools/source_driven_expansion.py
           python -m unittest discover -v -s scout-operations/tests -p 'test_expansion_fallback_research.py'
+          python -m unittest discover -v -s scout-operations/tests -p 'test_source_driven_expansion.py'
 
   bounded-source-pass:
     if: github.event_name != 'pull_request'
@@ -50,6 +60,8 @@ jobs:
           python-version: '3.11'
       - name: Research ONE unworked verified REACH expansion seed; persist only evidence
         shell: bash
+        env:
+          SCOUT_EXPANSION_SEED_DOI: ${{ github.event.inputs.seed_doi }}
         run: |
           set -euo pipefail
           # Existing weekday cadence; first-of-month weekend priority remains
@@ -72,7 +84,8 @@ jobs:
             git fetch origin main
             git checkout -B main origin/main
             python scout-operations/tools/expansion_fallback_research.py \
-              --run-id "${{ github.run_id }}$((10 * ${{ github.run_attempt }} + attempt))"
+              --run-id "${{ github.run_id }}$((10 * ${{ github.run_attempt }} + attempt))" \
+              --seed-doi "${SCOUT_EXPANSION_SEED_DOI:-}"
             if [ ! -f scout-operations/research-memory/expansion-fallback-ledger.json ]; then
               echo "No source-backed assignment was written; leaving main unchanged."
               exit 0
