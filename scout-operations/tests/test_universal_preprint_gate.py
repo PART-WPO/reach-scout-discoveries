@@ -105,7 +105,8 @@ class UniversalPreprintGateTests(unittest.TestCase):
             published.write_bytes(p.read_bytes())
             (root/"scout-discoveries/manifest.json").write_text(json.dumps(
                 {"batches":[{"path":"scout-discoveries/batches/original.csv",
-                             "sha256":hashlib.sha256(p.read_bytes()).hexdigest()}]}))
+                             "sha256":hashlib.sha256(p.read_bytes()).hexdigest(),
+                             "record_count":1}]}))
             report=verify(root,fetch_crossref=lambda doi:
                 self.fail("published DOI should not be reclassified in new-intake gate"),
                 fetch_datacite=lambda doi:None)

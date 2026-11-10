@@ -52,3 +52,16 @@ See [Scout-only monthly intake protocol](api-discoveries/README.md) for the chec
 ## Monthly Excel comparison reports
 
 Starting with the November 1, 2026 run for the October 2026 publication window, the DataCite/Crossref GitHub Action saves a read-only, seven-sheet Excel workbook in [api-discoveries/reports/](api-discoveries/reports/README.md), plus a downloadable 90-day GitHub Actions artifact. It includes a five-column Crossref legacy view to compare with existing Google Sheets results. The workbook is for verification only and does not feed the Discovery Hub.
+
+
+## Same-work preprint / final-publication identity gate (November 2026)
+
+Every Scout origin (monthly API, historical Crossref, historical DataCite, independent discovery and seeded expansion) must screen a final published DOI against verified earlier-version DOIs **before** classifying it as a new research output. A new DOI is not automatically a new intellectual work.
+
+- Scout's public preprint watchlist, published-version leads and preprint-retirement archive provide explicit preprint-to-final DOI links, including retired preprints. The intake gate reads every current SHA-verified public REACH index shard before declaring a linked final version absent. On an unavailable or invalid index it **holds** the candidate rather than claiming no match.
+- If the earlier preprint or final DOI is already represented by a public REACH publication, **do not submit NEW CANDIDATE**. Where a useful correction exists, submit `Scout classification: REACH METADATA UPDATE`, `Scout discovery route: Metadata correction`, and an accurate `Scout origin method`. Put the exact public record ID in `Existing REACH Match`, include its full stable REACH UID there or in the rationale, and include a case-specific `REACH update fields:` line. Preserve the existing REACH UID and send the proposed correction to human review; never insert a second publication record automatically.
+- If the known earlier DOI is **not** represented in the fully verified public REACH index, the official journal publication can proceed through normal new-output screening after funding, title, URLs, other versions and prior candidate checks.
+- A DOI already present in a previously manifested public Scout batch must not be staged again as NEW CANDIDATE. That does **not** prove any particular private Hub rejection, acceptance or Smartsheet insertion. The Discovery Hub remains the authoritative location for private human decisions. No private reviewer data is mirrored into the public repository.
+- Software archives and code releases are independently citable outputs and are not merged into the related scholarly article by this version-identity control.
+
+**Regression example:** journal `10.5194/gmd-18-7969-2025` is the final version of preprint `10.5194/egusphere-2025-1142`, already represented by `reach-000460` (UID `reachuid-v1-5e51cfb8d4bb28f5094f75b0463b735b`). The published article is an existing-REACH metadata-update case, not a new publication record. Historic public batches remain immutable; the private Hub rejection is not edited by Scout.

@@ -17,6 +17,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scout-operations/tools"))
 from preprint_watchlist import crossref, datacite, norm_doi, SCHEMA
+from reach_version_identity import (version_links, fetch_reach_index,
+                                    version_decision, public_staged_dois)
 
 REPORT = ROOT / "scout-operations/preprint-intake-gate.json"
 WATCH = ROOT / "scout-operations/preprint-watchlist.json"
@@ -94,10 +96,18 @@ def read_batches(root=ROOT):
         if str(p.relative_to(root)).replace("\\", "/") not in old)
     return paths
 
-def verify(root=ROOT, fetch_crossref=crossref, fetch_datacite=datacite, now=None):
+def verify(root=ROOT, fetch_crossref=crossref, fetch_datacite=datacite,
+           now=None, fetch_reach=fetch_reach_index):
     now = now or dt.datetime.now(dt.timezone.utc).isoformat()
     watch = watchlist(root)
     known = {norm_doi(x["preprint_doi"]) for x in watch["entries"]}
+    # The public version index includes retired preprints, so a journal DOI
+    # cannot return as NEW after earlier DOI versions leave the watchlist.
+    linked = version_links(root)
+    staged_dois = public_staged_dois(root)
+    reach_index = None
+    reach_index_error = None
+    reach_index_checked = False
     checks = []
     cache = {}
     for path in read_batches(root):
@@ -127,6 +137,32 @@ def verify(root=ROOT, fetch_crossref=crossref, fetch_datacite=datacite, now=None
                 doi, row.get("Output Type", ""), cr, dc, cr_error, dc_error,
                 doi in known, row.get("Scout Discovery Rationale", ""),
                 row.get("Output URL", ""))
+            if status == "eligible" and doi:
+                rationale = row.get("Scout Discovery Rationale", "")
+                classification = re.search(
+                    r"(?im)^\s*Scout classification:\s*([^\r\n]+)", rationale)
+                class_text = classification.group(1).upper() if classification else ""
+                if doi in staged_dois and "NEW CANDIDATE" in class_text:
+                    status = "identity_hold"
+                    reason = ("DOI already exists in public Scout candidate batches; "
+                              "a prior Hub decision is private and must not be inferred. "
+                              "Do not send a second NEW CANDIDATE.")
+                elif doi in linked and str(row.get("Output Type", "")) == "1":
+                    if not reach_index_checked:
+                        reach_index_checked = True
+                        try:
+                            reach_index = fetch_reach()
+                        except Exception as error:
+                            reach_index_error = type(error).__name__
+                    if reach_index is None:
+                        status = "identity_hold"
+                        reason = ("Public REACH index unavailable or incomplete (" +
+                                  str(reach_index_error) + "); cannot clear "
+                                  "known preprint-to-published version DOI")
+                    else:
+                        verdict = version_decision(row, linked, reach_index)
+                        if verdict is not None:
+                            status, reason = verdict
             if status == "preprint_hold" and doi and doi not in known:
                 watch["entries"].append({
                     "preprint_doi": doi, "title": row.get("Title", ""),
