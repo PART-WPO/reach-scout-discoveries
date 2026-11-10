@@ -66,6 +66,11 @@ def verified_queue(root):
             or not (root / rel).is_file()
             or checksum((root / rel).read_bytes()) != expected):
             raise ValueError("STALE_QUEUE_SOURCE: " + str(rel))
+    for rel, expected in (raw.get("dynamic_selection_sha256") or {}).items():
+        if (not isinstance(rel,str) or rel.startswith("/") or ".." in Path(rel).parts
+            or not (root/rel).is_file()
+            or checksum((root/rel).read_bytes()) != expected):
+            raise ValueError("STALE_QUEUE_DYNAMIC_STATE: "+str(rel))
     return raw
 
 
