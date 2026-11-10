@@ -4,6 +4,7 @@ import argparse, csv, hashlib, json, re
 from collections import Counter
 from pathlib import Path
 from wpo_awards import is_wpo_459, oar_segment
+from special_publication_types import special_publication_type
 ROUTING="scout-operations/historical-crossref-screening/actionable-routing.json"
 REGISTRY="scout-operations/research-outcome-registry.json"
 OUTPUT="scout-operations/crossref-candidate-queue.json"
@@ -107,8 +108,17 @@ def build(routing,registry,award_evidence=None,preprints=None):
    lane="PREPRINT_PUBLISHED_VERSION_LEAD" if published else "PREPRINT_WATCHLIST_HOLD"
    rank=15 if published else 5
    action=("Investigate official published DOI(s) as separate identities; never stage preprint DOI" if published else "Await scheduled publication recheck; no hourly deep research")
+  # Editorial notices are not ordinary original research. Preserve verified
+  # REACH/Scout duplicate exits, preprint holds, and existing evidence holds.
+  # Route them to a distinct low-priority human eligibility question instead.
+  notice=special_publication_type(e.get("title"))
+  if notice and lane in ("NOVEL_IDENTITY_RESEARCH","HUMAN_REVIEW_FAST_SCREEN_DUE","BOUNDED_IDENTITY_REVIEW","NON_459_PROJECT_EVIDENCE_CHECK"):
+   lane,rank="SPECIAL_PUBLICATION_TYPE_REVIEW",12
+   action=("Editorial notice ("+notice+"): verify distinct output eligibility, parent-article identity "
+           "and any prior REACH/Scout notice before proposing a human-review item. "
+           "Do not auto-stage as an original scientific publication.")
   items.append({"preprint_status":(preprint or {}).get("status"),"already_in_public_scout_queue":bool(public_matches),
-  "matched_public_review_locations":public_matches,"one_mission_disposition_required":lane in (
+  "matched_public_review_locations":public_matches,"special_publication_type":notice or None,"one_mission_disposition_required":lane in (
   "NOVEL_IDENTITY_RESEARCH","HUMAN_REVIEW_FAST_SCREEN_DUE","BOUNDED_IDENTITY_REVIEW",
   "NON_459_PROJECT_EVIDENCE_CHECK"),"verified_published_dois":published,"doi":d,"title":e.get("title"),"lane":lane,"priority":rank,"next_action":action,"funding_signal":signal,"crossref_structured_award_numbers":awards,"wpo_459_award_numbers":[a for a in awards if is_wpo_459(a)],"award_evidence_source_batches":sorted(ev.get("source_batches",[])),"award_match_basis":"Historical Crossref publisher-deposited award for exact DOI; 459 identifies WPO funding. Exact SPARK parent and output identity still require verification before addition","prior_disposition":disposition,"scout_overlap":bool(e.get("scout_overlap")),"verified_reach_uid":e["bulk_identity_gate"].get("verified_reach_uid"),"private_hub_review":"NOT_VERIFIED"})
  items.sort(key=lambda x:(-x["priority"],x["doi"]))
@@ -117,6 +127,8 @@ def build(routing,registry,award_evidence=None,preprints=None):
  "purpose":"Read-only selection; not completed research or approval",
  "completion_target":"Each hourly mission handles at least one full novel-output screening through a concrete disposition or public human-review handoff. Skipped known records do not count; technical blockers must be reported, not represented as completed.",
  "one_mission_actionable_original_count":len(due),
+ "special_publication_type_review_count":sum(x["lane"]=="SPECIAL_PUBLICATION_TYPE_REVIEW" for x in items),
+ "special_publication_review_preview":[{"doi":x["doi"],"title":x["title"],"type":x["special_publication_type"],"action":x["next_action"]} for x in items if x["lane"]=="SPECIAL_PUBLICATION_TYPE_REVIEW"][:8],
  "next_one_mission_original_preview":[{
    "doi":x["doi"],"lane":x["lane"],"priority":x["priority"],
    "funding_signal":x["funding_signal"],"required_outcome":"FINISH_ORIGINAL_SCREENING_DECISION_THIS_RUN",

@@ -75,11 +75,24 @@ class HandoffTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "STALE_QUEUE_SOURCE"):
             mission.verified_queue(self.root)
 
-    def test_corrigendum_is_deprioritized_without_discarding_other_originals(self):
+    def test_corrigendum_is_routed_out_of_autonomous_originals(self):
         queue = mission.verified_queue(self.root)
-        choices, _ = mission.candidate_order(queue, mission.read_ledger(self.root), NOW)
-        self.assertEqual([x["doi"] for x in choices[:2]], [D1, D2])
-        self.assertEqual(choices[-1]["title"], "Corrigendum")
+        choices, skipped = mission.candidate_order(queue, mission.read_ledger(self.root), NOW)
+        self.assertEqual([x["doi"] for x in choices], [D1, D2])
+        self.assertEqual(skipped[-1]["doi"], "10.1175/mwr-d-19-0165.1")
+        self.assertEqual(skipped[-1]["reason"], "SPECIAL_PUBLICATION_TYPE_REVIEW")
+
+    def test_scientific_bias_correction_is_not_editorial_notice(self):
+        from special_publication_types import special_publication_type
+        self.assertEqual(special_publication_type("Bias Correction of NWP Forecasts"), "")
+        self.assertEqual(special_publication_type("Correction of radar bias in forecasts"), "")
+        self.assertEqual(special_publication_type("Correction to: Original Article"), "CORRECTION_NOTICE")
+        self.assertEqual(special_publication_type("Corrigendum"), "CORRIGENDUM")
+        normal = item("10.1234/science",A1,"Bias Correction of NWP Forecasts")
+        choices, skipped = mission.candidate_order({"items":[normal]},
+                             mission.read_ledger(self.root), NOW)
+        self.assertEqual(len(choices),1)
+        self.assertEqual(skipped,[])
 
     def test_official_crossref_unavailable_rotates_and_persists_cooldown(self):
         lookup = {D1: {"status":"unavailable_or_not_found"},

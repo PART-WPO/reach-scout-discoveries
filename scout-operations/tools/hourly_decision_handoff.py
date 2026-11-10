@@ -25,6 +25,7 @@ from ir_reach_identity import verified_snapshot, identity_check
 from lookup_independent_dois import metadata as fetch_metadata
 from reviewer_feedback_guard import known_feedback_by_doi
 from wpo_awards import official_459_awards
+from special_publication_types import special_publication_type
 
 QUEUE = "scout-operations/crossref-candidate-queue.json"
 LEDGER = "scout-operations/decision-handoff-ledger.json"
@@ -47,7 +48,6 @@ BLOCK_HOURS = {
     "NOT_NEW_IN_REACH_OR_SCOUT": 24 * 30,
     "REVIEWER_HANDOFF_NOT_READY": 3,
 }
-SPECIAL = re.compile(r"\b(corrigendum|erratum|correction|retraction|expression of concern)\b", re.I)
 
 
 def checksum(data):
@@ -94,6 +94,15 @@ def candidate_order(queue, ledger, now, limit=MAX_ATTEMPTS):
     skipped = []
     for item in queue.get("items", []):
         doi = norm_doi(item.get("doi"))
+        # Respect the shared editorial-review lane even when an old pinned
+        # queue still reports priority 90 for a corrigendum/erratum.
+        if doi and special_publication_type(item.get("title")) and item.get("lane") not in {
+            "EXISTING_REACH_FAST_EXIT", "ALREADY_IN_SCOUT_REVIEW_FAST_EXIT",
+            "PREPRINT_WATCHLIST_HOLD", "PREPRINT_PUBLISHED_VERSION_LEAD",
+        }:
+            skipped.append({"doi": doi, "reason": "SPECIAL_PUBLICATION_TYPE_REVIEW",
+                            "detail": "Separate editorial-notice eligibility, not ordinary original screening"})
+            continue
         if (not doi or item.get("lane") not in PUBLISHABLE
             or item.get("funding_signal") != "CONFIRMED_WPO_459"
             or item.get("already_in_public_scout_queue")):
@@ -109,9 +118,7 @@ def candidate_order(queue, ledger, now, limit=MAX_ATTEMPTS):
             skipped.append({"doi": doi, "reason": prior["state"]})
             continue
         due.append(item)
-    # Ordinary articles first. Corrigenda need distinct eligibility review.
-    due.sort(key=lambda x: (bool(SPECIAL.search(str(x.get("title") or ""))),
-                            -int(x.get("priority") or 0), str(x["doi"])))
+    due.sort(key=lambda x: (-int(x.get("priority") or 0), str(x["doi"])))
     return due[:limit], skipped
 
 
@@ -175,7 +182,7 @@ def screened_note(doi, item, meta, award, identity, now):
 
 def evaluate(item, root, public, ir_index, known_reviews, watched, metadata_fn, now, ledger):
     doi = norm_doi(item["doi"])
-    if SPECIAL.search(str(item.get("title") or "")):
+    if special_publication_type(item.get("title")):
         return disposition(ledger, doi, "SPECIAL_PUBLICATION_TYPE", now,
                            details="Distinct correction/corrigendum eligibility requires manual review.")
     # GitHub Actions is the verification authority; queue is NOT proof.
