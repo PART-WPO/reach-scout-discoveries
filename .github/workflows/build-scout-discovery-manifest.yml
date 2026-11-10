@@ -60,7 +60,6 @@ jobs:
         run: |
           python3 -m unittest discover -s scout-operations/tests -p test_reach_version_identity.py -v
           python3 -m unittest discover -s scout-operations/tests -p test_universal_preprint_gate.py -v
-          python3 -m unittest discover -s scout-operations/tests -p test_reach_version_identity.py -v
 
   validate-and-refresh-manifest:
     if: github.event_name != 'pull_request' && (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success')
@@ -78,6 +77,7 @@ jobs:
       - name: Verify actual Crossref/DataCite publication status for every new batch
         run: |
           python3 -m unittest discover -s scout-operations/tests -p test_universal_preprint_gate.py -v
+          python3 -m unittest discover -s scout-operations/tests -p test_reach_version_identity.py -v
           python3 scout-operations/tools/verify_preprint_intake.py
       - name: Preflight and promote only validated new inbox drafts
         env:
