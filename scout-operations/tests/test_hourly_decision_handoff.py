@@ -113,6 +113,50 @@ class HandoffTests(unittest.TestCase):
                                             NOW + timedelta(minutes=10))
         self.assertFalse(any(x["doi"] in {D1,D2} for x in choices))
 
+    def test_auto_verified_note_enters_real_research_registry(self):
+        from build_research_outcome_registry import build
+        note_dir = self.root / mission.NOTES
+        note_dir.mkdir(parents=True, exist_ok=True)
+        (self.root / "scout-operations/monthly-research").mkdir(parents=True)
+        md = official(D1, self.rows[0]["title"], A1)
+        identity={"status":"NO_PUBLIC_IDENTITY_MATCH",
+                  "noaa_ir_reach_check":{"status":"DOI_NOT_IN_VERIFIED_IR_INDEX_UNKNOWN"}}
+        rel, doc = mission.screened_note(D1, self.rows[0], md, A1, identity, NOW)
+        (self.root / rel).write_text(json.dumps(doc))
+        report=build(self.root)
+        records=[e for e in report["events"] if e.get("doi")==D1]
+        self.assertEqual(len(records),1)
+        self.assertEqual(records[0]["source_path"],rel)
+        self.assertGreaterEqual(records[0]["source_count"],2)
+        self.assertEqual(records[0]["research_lane"],"historical_crossref_original")
+
+    def test_technical_handoff_rejection_rotates_to_second_source_verified_doi(self):
+        metadata = {D1:official(D1,self.rows[0]["title"],A1),
+                    D2:official(D2,self.rows[1]["title"],A2)}
+        ident={"status":"NO_PUBLIC_IDENTITY_MATCH",
+               "noaa_ir_reach_check":{"status":"DOI_NOT_IN_VERIFIED_IR_INDEX_UNKNOWN"}}
+        counter=[0]
+        def fake_referrals(**kwargs):
+            counter[0]+=1
+            if counter[0]==1:
+                return {"referrals":[{"doi":D1,"disposition":"HOLD_METADATA_VALIDATION",
+                                      "scout_inbox_status":"NOT_STAGED"}],
+                        "human_referral_drafts_prevalidated":0,"draft_paths":[]}
+            return {"referrals":[{"doi":D2,
+                     "disposition":"READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL",
+                     "scout_inbox_status":"VALIDATED_INBOX_DRAFT_NOT_PRIVATE_HUB"}],
+                    "human_referral_drafts_prevalidated":1,"draft_paths":[]}
+        with patch.object(mission,"identity_check",return_value=ident), \
+             patch.object(mission,"build_registry",return_value={"events":[],"cases":[]}), \
+             patch.object(mission,"build_referrals",side_effect=fake_referrals):
+            report=mission.run(root=self.root,now=NOW,metadata_fn=lambda doi:metadata[doi],
+                        public={},ir_index={"dois":{}},stage=True,limit=2)
+        self.assertEqual(report["attempted_originals"],2)
+        self.assertEqual(report["public_review_handoffs_staged"],1)
+        self.assertEqual([x["status"] for x in report["outcomes"]],
+                         ["BLOCKED","STAGED_VALIDATED_INBOX"])
+        self.assertEqual(counter[0],2)
+
     def test_unverified_award_cannot_stage(self):
         md=official(D1,self.rows[0]["title"],"NA19NES4320002")
         result=mission.run(root=self.root,now=NOW,metadata_fn=lambda doi:md,
