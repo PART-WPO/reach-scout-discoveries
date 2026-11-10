@@ -29,7 +29,7 @@
     "interpretation": "Distinct seeds, DOI leads and official metadata retrieval are research progress, not completed expansions or public candidate/REACH additions."
   },
   "source_sha256": {
-    "scout-operations/crossref-candidate-queue.json": "0ad4b0ef82e5baf9a0a58a70a996461eeb110e036633a5c6238614bb3dc7606f",
+    "scout-operations/crossref-candidate-queue.json": "51c45a774d312fb2132d904ef6f139d2883c3e7b729065c99f93504090b194e9",
     "scout-operations/historical-crossref-coverage.json": "92d36650e2077bbfc4a8f27d2f166be40b6c3831b7dd33ffdbd5fafef7057860",
     "scout-operations/historical-coverage.json": "f0d440a18f983a07bef10c16047d9dfae2d67039178a22f56294d935403cfb59",
     "scout-discoveries/manifest.json": "f7360c6d6363b0063b8c08ef34419103d4f62ad95e4c8d3589774ac1aeb53d4d",
@@ -41,9 +41,9 @@
   "source_freshness": {
     "crossref_queue_source_checks": {
       "scout-operations/historical-crossref-screening/actionable-routing.json": {
-        "recorded_sha256": "b9974c131132723d35810ab4b5f2f34a064ec002ecfa2fdc9c910760e3f3bf07",
+        "recorded_sha256": "d5070d031f70c56437c76cc1128a29a27d7558c7adab2bbf7de227974ba9f435",
         "current_sha256": "d5070d031f70c56437c76cc1128a29a27d7558c7adab2bbf7de227974ba9f435",
-        "fresh": false
+        "fresh": true
       },
       "scout-operations/research-outcome-registry.json": {
         "recorded_sha256": "13098e1a872f0b142955de06fd1e99ab4e73454b026c97882028fcd5dfe3f064",
@@ -96,7 +96,7 @@
         "fresh": true
       }
     },
-    "crossref_queue_fresh": false,
+    "crossref_queue_fresh": true,
     "targeted_reconciliation_scope_is_snapshot": true
   },
   "screening_not_research": {
