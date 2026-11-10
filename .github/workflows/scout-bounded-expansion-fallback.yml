@@ -112,13 +112,7 @@ jobs:
             python scout-operations/tools/reconcile_scout_metrics.py --check
             # Carry the existing Issue #35 identity-DAG refresh in the
             # SAME commit when a newly published manifest invalidates it.
-            python - <<'PY'
-            import subprocess, sys
-            sys.path.insert(0, "scout-operations/tools")
-            from reconcile_derived_reporting import DERIVED_FILES
-            subprocess.run(["git", "add", "--", *DERIVED_FILES,
-                            "scout-operations/case-checkpoints/"], check=True)
-            PY
+            python -c 'import subprocess,sys; sys.path.insert(0,"scout-operations/tools"); from reconcile_derived_reporting import DERIVED_FILES; subprocess.run(["git","add","--",*DERIVED_FILES,"scout-operations/case-checkpoints/"],check=True)'
             if [ ! -f scout-operations/research-memory/expansion-fallback-ledger.json ]; then
               echo "No source-backed assignment was written; leaving main unchanged."
               exit 0
