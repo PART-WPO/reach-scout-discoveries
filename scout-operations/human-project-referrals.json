@@ -1,11 +1,13 @@
 {
   "schema": "reach-scout-bounded-project-human-referral-v1",
-  "source_outcome_event_count": 61,
-  "source_outcome_sha256": "e9c39a00eff45d6c54aa200365adf4120ed7a4591aa19fedab9996d485bfac76",
+  "source_outcome_event_count": 62,
+  "source_outcome_sha256": "aa0edf30e86a24ba77aa73ca5774cf6c7fbcbbac4d562be35f180b224b6f9316",
   "unique_bounded_project_questions": 3,
-  "potential_wpo_cases_quick_screened": 14,
-  "human_referral_drafts_prevalidated": 0,
-  "draft_paths": [],
+  "potential_wpo_cases_quick_screened": 15,
+  "human_referral_drafts_prevalidated": 1,
+  "draft_paths": [
+    "scout-discoveries/inbox/2026-11-10-human-project-8eb678e5c990af2471.csv"
+  ],
   "published_batch_paths": [
     "scout-discoveries/batches/2026-11-09-human-project-b332d53770e8cbc1d4.csv",
     "scout-discoveries/batches/2026-11-09-human-project-866c8052a22849b2de.csv",
@@ -2163,6 +2165,109 @@
       "review_question": "Reviewer question: Select and verify the correct SPARK parent for the explicitly funded WPO award NA22OAR4590216; confirm the output belongs with that parent before addition.",
       "scout_inbox_status": "PUBLISHED_PUBLIC_SCOUT_FEED_NOT_PRIVATE_HUB",
       "published_scout_batch_path": "scout-discoveries/batches/2026-11-10-human-project-31f68eaae5993b3626.csv",
+      "eligible_for_new_reach_addition": "NOT_VERIFIED",
+      "private_hub_import": "NOT_VERIFIED",
+      "human_approval": "NOT_VERIFIED"
+    },
+    {
+      "doi": "10.1175/mwr-d-25-0146.1",
+      "source_event_id": "728fbb458123be438fe1769a",
+      "source_file": "scout-operations/historical-crossref-phase2/auto-verified-oar459-8eb678e5c990af2471.json",
+      "source_sha256": "d7d749f81e0637dded549ceace267808a5192d5b2bafb993b831083a12387ae6",
+      "official_metadata": {
+        "status": "ok",
+        "provider": "crossref",
+        "evidence": "https://api.crossref.org/works/10.1175/mwr-d-25-0146.1",
+        "title": "Estimates of Entrainment Zone Depth across the United States from Dual-Polarization WSR-88D Radar Observations",
+        "creators": [
+          "Braedon C. Stouffer",
+          "David J. Stensrud",
+          "Yunji Zhang"
+        ],
+        "resource_type": "journal-article",
+        "publication_status": "official_journal_article",
+        "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>\n                    Recent work has shown that dual-polarization WSR-88D radars can be used to accurately estimate both convective boundary layer depth\n                    <jats:italic>h</jats:italic>\n                    and entrainment zone depth Δ\n                    <jats:italic>h</jats:italic>\n                    . We build on this work by developing an algorithm to estimate Δ\n                    <jats:italic>h</jats:italic>\n                    from WSR-88D data and apply it to a large dataset of WSR-88D observations for the calendar year 2022. Given the existence of a national network of WSR-88Ds, this produces the most spatiotemporally comprehensive dataset of Δ\n                    <jats:italic>h</jats:italic>\n                    to date. We find that there are regional and seasonal variations in Δ\n                    <jats:italic>h</jats:italic>\n                    with median values near 300 m in January and increasing to 600 m in summer. The values of Δ\n                    <jats:italic>h</jats:italic>\n                    are largest in the southeastern CONUS and smallest in the northwestern CONUS. Yearly mean Δ\n                    <jats:italic>h</jats:italic>\n                    /\n                    <jats:italic>h</jats:italic>\n                    is a maximum at 1000 local time, with values above 0.6, decreasing to ∼0.4 in the afternoon. We also evaluate and extend an existing Δ\n                    <jats:italic>h</jats:italic>\n                    parameterization based on lidar data and provide improved fits for days with large Δ\n                    <jats:italic>h</jats:italic>\n                    .\n                  </jats:p>\n                  <jats:sec>\n                    <jats:title>Significance Statement</jats:title>\n                    <jats:p>The boundary layer is the lowest layer of the atmosphere and experiences significant changes in depth throughout the day. The entrainment zone exists at the top of the boundary layer, separating it from the rest of the atmosphere above. Processes within the entrainment zone play a role in boundary layer growth and many weather phenomena. Unfortunately, observations of the depth of the entrainment zone have been very limited. In our study, we apply a new technique of estimating entrainment zone depth from weather radar data across the United States. We also evaluate the performance of a simple model for estimating entrainment zone depth and offer conclusions on how it could be improved.</jats:p>\n                  </jats:sec>",
+        "pub_date": "2025-12-01",
+        "preprint_posted_date": "",
+        "pub_date_basis": "Crossref published-print",
+        "pub_date_precision": "month_imputed",
+        "publisher": "American Meteorological Society",
+        "funding_references": [
+          {
+            "name": "National Science Foundation",
+            "award": [
+              "AGS-2045504"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "AGS-2045504"
+                ]
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/100000192",
+            "name": "National Oceanic and Atmospheric Administration",
+            "doi-asserted-by": "crossref",
+            "award": [
+              "NA24OARX459C0006"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "NA24OARX459C0006"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100000192",
+                "id-type": "DOI",
+                "asserted-by": "crossref"
+              }
+            ]
+          }
+        ],
+        "related_identifiers": {},
+        "attempts": [
+          {
+            "provider": "datacite",
+            "url": "https://api.datacite.org/dois/10.1175/mwr-d-25-0146.1",
+            "error": {
+              "kind": "http",
+              "code": 404
+            }
+          },
+          {
+            "provider": "crossref",
+            "url": "https://api.crossref.org/works/10.1175/mwr-d-25-0146.1",
+            "error": null
+          }
+        ]
+      },
+      "public_identity": {
+        "status": "NO_PUBLIC_IDENTITY_MATCH",
+        "reason": "NO_MATCH_IN_VERIFIED_PUBLIC_SNAPSHOT",
+        "matches": [],
+        "caveat": "Public snapshot only; private Hub decisions are not asserted.",
+        "noaa_ir_reach_check": {
+          "status": "VERIFIED_IR_URL_NOT_IN_PUBLIC_REACH",
+          "official_url": "https://repository.library.noaa.gov/view/noaa/72506",
+          "match_uid": null,
+          "match_detail_shard": null
+        }
+      },
+      "project_search_context_only": {
+        "award_context_only": "NA24OARX459C0006",
+        "project_context_only": "",
+        "wpo_award_cue_not_proof": true,
+        "reason_for_review": "WPO-pattern award cited but exact funded project deliverable unverified"
+      },
+      "disposition": "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL",
+      "review_question": "Reviewer question: Select and verify the correct SPARK parent for the explicitly funded WPO award NA24OARX459C0006; confirm the output belongs with that parent before addition.",
+      "scout_inbox_status": "VALIDATED_INBOX_DRAFT_NOT_PRIVATE_HUB",
+      "published_scout_batch_path": null,
       "eligible_for_new_reach_addition": "NOT_VERIFIED",
       "private_hub_import": "NOT_VERIFIED",
       "human_approval": "NOT_VERIFIED"
