@@ -324,12 +324,28 @@ class HumanProjectReferrals(unittest.TestCase):
                     "funding_references":[{"award":["NA19OAR4590133"]}]}
         proof = {"method":"Direct API",
                  "path_evidence_url":"https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/batches/source.csv"}
-        with patch("build_human_project_referrals.historical_crossref_source", return_value=proof):
+        with patch("build_human_project_referrals.verified_historical_scope_origin", return_value=proof):
             candidate = proposal(event["doi"], metadata, event, project, self.identity("",""))
         self.assertEqual(candidate["provenance"]["route"], "Direct API")
         self.assertEqual(candidate["provenance"]["origin_method"], "Direct API")
-        with patch("build_human_project_referrals.historical_crossref_source", return_value=None):
+        with patch("build_human_project_referrals.verified_historical_scope_origin", return_value=None):
             unverified = proposal(event["doi"], metadata, event, project, self.identity("",""))
         self.assertEqual(unverified["provenance"]["route"], "Unclassified")
+
+    def test_source_verified_project_title_method_is_independent(self):
+        event = {"doi":"10.1109/radarconf2248738.2022.9764246",
+                 "event_id":"project-title-origin",
+                 "research_lane":"supplemental_project_title_pilot",
+                 "source_path":"scout-operations/historical-crossref-phase2/project-title.json",
+                 "checked_evidence_urls":["https://ieeexplore.ieee.org/document/9764246"]}
+        project = {"award_context_only":"NA18OAR4590431"}
+        proof = {"method":"Independent discovery",
+                 "path_evidence_url":"https://wpo.noaa.gov/spark/"}
+        with patch("build_human_project_referrals.verified_historical_scope_origin",
+                   return_value=proof):
+            row = proposal(event["doi"],self.published(),event,project,self.identity("",""))
+        self.assertEqual(row["provenance"]["route"],"Independent discovery")
+        self.assertEqual(row["provenance"]["origin_method"],"Independent discovery")
+        self.assertEqual(row["provenance"]["path_evidence"],proof["path_evidence_url"])
 
 if __name__=="__main__":unittest.main()
