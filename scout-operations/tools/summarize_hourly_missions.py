@@ -59,7 +59,7 @@ def summarize(root=ROOT):
             "cache_reuse_counts_instrumented_missions": len(cache),
             "observed_cache_reuse_sum_only_instrumented_missions": sum(cache) if cache else None,
             "avoided_requests_claimed": None,
-            "private_hub_imports_verified": 0,
+            "private_hub_imports_verified": None,
             "private_hub_status": "NOT_VERIFIED",
         }
     return {
