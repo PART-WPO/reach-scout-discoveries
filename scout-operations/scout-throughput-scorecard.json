@@ -1,14 +1,40 @@
 {
   "schema": "reach-scout-throughput-scorecard-v1",
+  "source_driven_related_output_research": {
+    "verified_research_report_count": 4,
+    "distinct_verified_reach_seeds_investigated": 3,
+    "distinct_seed_dois": [
+      "10.1002/2017ms001154",
+      "10.1002/hyp.13998",
+      "10.1029/2021gl096709"
+    ],
+    "source_driven_research_report_count": 3,
+    "new_distinct_source_backed_doi_leads": 1,
+    "distinct_source_backed_doi_leads": [
+      "10.6075/j0sn07g9"
+    ],
+    "new_leads_with_official_metadata_retrieved": 1,
+    "completed_distinct_expansion_decisions": 0,
+    "new_public_candidates_from_these_expansions": 0,
+    "source_report_sha256": {
+      "scout-operations/reports/bounded-expansion-research/github-4283268291611-a3a962d116f6.json": "d2596241c6dd0aac568018bc544db3bd800b4f0e9529adfd87a5f85098d8d4e3",
+      "scout-operations/reports/bounded-expansion-research/github-4284093061011-2fda4a31f24d.json": "bfbf155aa6d30199c3e2a9987e2665e4c36385c325c86993424d83874d274f55",
+      "scout-operations/reports/bounded-expansion-research/github-4284227094411-498465698700.json": "519fecc2257a91ecd447af595ea3f2febe89f12d486951d16999d9c81cce9793",
+      "scout-operations/reports/bounded-expansion-research/github-4284327390711-498465698700.json": "63310e7b4c9d10ede7642a10712f3724a6a78729742235a8f259f7b9d92ac463"
+    },
+    "private_hub_imports": "NOT_VERIFIED",
+    "human_approvals": "NOT_VERIFIED",
+    "interpretation": "Distinct seeds, DOI leads and official metadata retrieval are research progress, not completed expansions or public candidate/REACH additions."
+  },
   "source_sha256": {
-    "scout-operations/crossref-candidate-queue.json": "9c54ae7f61dcc44cd919ec5ff7158ea7e26bfc883555414d1f73845ba7857d01",
+    "scout-operations/crossref-candidate-queue.json": "47156993dc00771bd2374043c5753b1efb897e5203d48dc4b43c29f49a6a44f7",
     "scout-operations/historical-crossref-coverage.json": "92d36650e2077bbfc4a8f27d2f166be40b6c3831b7dd33ffdbd5fafef7057860",
     "scout-operations/historical-coverage.json": "f0d440a18f983a07bef10c16047d9dfae2d67039178a22f56294d935403cfb59",
-    "scout-discoveries/manifest.json": "dca638c6c58d4505f1de170339b3f5ac3cf0aeaa2b012c855e105910a7ee8064",
+    "scout-discoveries/manifest.json": "6df8a1c15c019fe2d0dbce43aeb5e5c2caccac0f08c53a23bc4ea6a04b16626c",
     "scout-operations/preprint-watchlist.json": "9aee820ffa8eafb416d68f80d7cddb534ab33c97f61e1246ec892fb08f33b65e",
     "scout-operations/preprint-retirement-archive.json": "5707f60b259e3bebac9adadfa04b5191971f4f5feed8472d127fb6f0ef82c2b5",
     "scout-operations/preprint-13-identity-reconciliation.json": "1fb1025f8dc2f8ee3fb745bf1f4771b6a7246b21d59d78d4d11a8596f2063844",
-    "scout-operations/research-outcome-registry.json": "d529280a5388e01976fa42150ae0a4983e9a5703e8412a8b97d31fd02eb8603d"
+    "scout-operations/research-outcome-registry.json": "5703e413d936d31876959a53a75e86c78c0aa0df20d81dd1fcd5566bc44e403e"
   },
   "source_freshness": {
     "crossref_queue_source_checks": {
@@ -18,8 +44,8 @@
         "fresh": true
       },
       "scout-operations/research-outcome-registry.json": {
-        "recorded_sha256": "d529280a5388e01976fa42150ae0a4983e9a5703e8412a8b97d31fd02eb8603d",
-        "current_sha256": "d529280a5388e01976fa42150ae0a4983e9a5703e8412a8b97d31fd02eb8603d",
+        "recorded_sha256": "5703e413d936d31876959a53a75e86c78c0aa0df20d81dd1fcd5566bc44e403e",
+        "current_sha256": "5703e413d936d31876959a53a75e86c78c0aa0df20d81dd1fcd5566bc44e403e",
         "fresh": true
       },
       "api-discoveries/historical-crossref/manifest.json": {
@@ -75,8 +101,8 @@
     "historical_crossref_dois": 614,
     "identity_fast_exits": 426,
     "bounded_identity_reviews": 51,
-    "novel_research_candidates": 84,
-    "preprint_holds": 7,
+    "novel_research_candidates": 78,
+    "preprint_holds": 6,
     "published_version_leads": 11,
     "other_evidence_holds": 2
   },
@@ -108,8 +134,8 @@
     }
   },
   "public_candidate_pipeline": {
-    "public_feed_rows": 98,
-    "public_feed_batches": 45,
+    "public_feed_rows": 101,
+    "public_feed_batches": 48,
     "private_hub_imports": "NOT_VERIFIED",
     "reviewer_approvals": "NOT_VERIFIED",
     "new_public_reach_additions": "NOT_VERIFIED"
