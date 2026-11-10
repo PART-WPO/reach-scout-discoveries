@@ -8,10 +8,15 @@ import argparse
 import csv
 import json
 import re
+import sys
 from pathlib import Path
 
 from build_manifest import INPUT, inspect_batch, ROOT
 from noaa_ir_lookup import enrich as enrich_noaa_ir, trusted_index as read_noaa_ir_index
+
+# Public version-identity leads also support deterministic local preflight.
+sys.path.insert(0, str(ROOT.parent / "scout-operations/tools"))
+from reach_version_identity import version_links, norm_doi
 
 ALLOWED_CLASSIFICATIONS = {
     "NEW CANDIDATE", "POSSIBLE DUPLICATE", "KNOWN DUPLICATE",
@@ -157,11 +162,26 @@ def compose_rationale(prov):
 
 def validate_canonical(path):
     entry = inspect_batch(path)  # Exact 24-column, safety, provenance and DOI rules
+    known_final_versions = version_links(ROOT.parent)
     with path.open("r", newline="", encoding="utf-8-sig") as stream:
         for num, row in enumerate(csv.DictReader(stream), 2):
             rationale = row["Scout Discovery Rationale"] or ""
             if is_tracked_preprint(row.get("DOI"), rationale):
                 raise ValueError(f"Tracked preprint DOI cannot enter Scout reviewed feed: {path.name}:{num}")
+            # Historical example: the published MJO DOI was declared NEW even
+            # though its exact preprint version and REACH ID were known.
+            # Block that mistake before inbox promotion, without inventing
+            # private Hub decisions. Remaining cases get the full live REACH
+            # index check in verify_preprint_intake.py.
+            version = known_final_versions.get(norm_doi(row.get("DOI")))
+            if version and str(row.get("Output Type", "")) == "1" and re.search(
+                    r"(?im)^\s*Scout classification:\s*(?:A\s+)?NEW CANDIDATE\b", rationale):
+                existing = row.get("Existing REACH Match", "")
+                if version["reach_ids"] or re.search(r"\breach-\d{6}\b", existing, re.I):
+                    raise ValueError(
+                        f"Known published version has a prior REACH candidate/record; "
+                        f"NEW CANDIDATE blocked: {path.name}:{num}. "
+                        "Resolve as REACH METADATA UPDATE or hold identity for investigation.")
             found = re.findall(r"(?im)^\s*Scout classification:\s*([^\r\n]+)", rationale)
             if len(found) != 1 or found[0].strip() not in ALLOWED_CLASSIFICATIONS:
                 raise ValueError(f"Non-canonical Scout classification: {path.name}:{num}")
