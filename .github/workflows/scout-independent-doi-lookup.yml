@@ -47,18 +47,22 @@ jobs:
           assert all(r.get('metadata_observed_at') for r in x['records'])
           print('Independent DOI coverage:',x['record_count'],'successes:',x['successful'])
           PY
+      - name: Measure verified metadata reuse and actual DOI registry requests
+        run: python3 scout-operations/tools/audit_independent_lookup.py --mode independent-doi
       - name: Upload source evidence
         uses: actions/upload-artifact@v4
         with:
           name: scout-independent-doi-metadata
-          path: scout-operations/reports/independent-doi-lookup/latest.json
+          path: |
+            scout-operations/reports/independent-doi-lookup/latest.json
+            scout-operations/reports/research-memory-reuse/independent-doi-latest.json
           retention-days: 90
       - name: Commit read-only lookup results
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add scout-operations/reports/independent-doi-lookup/latest.json scout-operations/research-memory/doi-cache-index.json scout-operations/preprint-watchlist.json scout-operations/preprint-publication-leads.json
+          git add scout-operations/reports/independent-doi-lookup/latest.json scout-operations/research-memory/doi-cache-index.json scout-operations/preprint-watchlist.json scout-operations/preprint-publication-leads.json scout-operations/reports/research-memory-reuse/independent-doi-latest.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m 'Refresh Scout independent DOI lookup'
           for attempt in 1 2 3 4 5; do
