@@ -1,0 +1,70 @@
+{
+  "schema": "reach-scout-bounded-expansion-research-v1",
+  "observed_at_utc": "2026-11-10T16:43:29.772833+00:00",
+  "seed_doi": "10.1002/hyp.14960",
+  "source_graph_sha256": "3753508184bffab4ea7e0b84344b0904f71487253d072a46cbde92aae192733e",
+  "seed_expansion_fingerprint": "aaacd8f15f4f171197cce40f2a0decb029040fa1348642b7fac62a3899a55fd3",
+  "seed_reach_identity_verified_in_graph": true,
+  "explicit_related_dois_preserved": [],
+  "source_lookups": [
+    {
+      "doi": "10.1002/hyp.14960",
+      "role": "VERIFIED_REACH_EXPANSION_SEED",
+      "source_status": "ok",
+      "official_provider": "crossref",
+      "official_title": "Quantifying patterns of streamflow peaks over the southeastern United States using a <scp>long‐term</scp> retrospective data set",
+      "official_metadata_url": "https://api.crossref.org/works/10.1002/hyp.14960",
+      "publication_status": "official_journal_article",
+      "official_award_numbers_observed": [
+        "NA19OAR4590411"
+      ],
+      "separate_output_uniqueness": "NOT_VERIFIED",
+      "same_WPO_project_parent": "NOT_VERIFIED"
+    }
+  ],
+  "status": "OFFICIAL_SOURCE_CHECK_RECORDED",
+  "source_driven_discovery": {
+    "schema": "reach-scout-source-driven-expansion-v1",
+    "seed_doi": "10.1002/hyp.14960",
+    "source_checks": [
+      {
+        "kind": "crossref_references",
+        "url": "https://api.crossref.org/works/10.1002/hyp.14960",
+        "status": "SOURCE_READ",
+        "source_sha256": "ffdd479a3f946603d88547aa16b821a687b058a1f2573e8f77f64436949f8302",
+        "data_code_doi_matches": 0
+      },
+      {
+        "kind": "publisher_article_html",
+        "url": "https://onlinelibrary.wiley.com/doi/10.1002/hyp.14960",
+        "status": "SOURCE_ACCESS_OR_PARSE_HOLD",
+        "error_type": "HTTPError"
+      },
+      {
+        "kind": "noaa_ir_landing",
+        "url": "https://repository.library.noaa.gov/view/noaa/63787",
+        "status": "SOURCE_READ",
+        "source_sha256": "7fc1c5de57599c308a42603e7aa73c80ede5408350e965953fafe3043c1e85cc"
+      },
+      {
+        "kind": "noaa_ir_accepted_manuscript",
+        "url": "https://repository.library.noaa.gov/view/noaa/63787",
+        "status": "SOURCE_ACCESS_OR_PARSE_HOLD",
+        "error_type": "ValueError"
+      }
+    ],
+    "discovered_doi_leads": [],
+    "status": "NO_DATA_CODE_DOI_IDENTIFIED",
+    "new_public_candidates": 0,
+    "private_hub_import": "NOT_VERIFIED"
+  },
+  "new_source_driven_leads_screened": [],
+  "new_distinct_doi_leads_found": 0,
+  "new_public_candidate_count": 0,
+  "new_related_output_eligibility_confirmed": 0,
+  "separate_expansion_decisions_completed": 0,
+  "reason_not_a_completed_expansion": "Source metadata and DOI edges are research leads; distinct output identity, preprint, public REACH/Scout duplicate and exact WPO project funding require independent checks.",
+  "next_action": "Investigate official metadata and full current REACH/Scout identity for distinct linked DOI(s); verify their OWN publisher award and primary SPARK parent before any Needs Investigation or New Candidate.",
+  "private_hub_import": "NOT_VERIFIED",
+  "human_approval": "NOT_VERIFIED"
+}
