@@ -109,8 +109,8 @@ class HandoffTests(unittest.TestCase):
         self.assertEqual(note["structured_award"],A2)
         self.assertIn("official",note["source_evidence"][0]["type"])
         self.assertEqual(note["private_hub_action"],"NONE")
-        choices,_ = mission.candidate_order(mission.verified_queue(self.root),
-                                            ledger, NOW + timedelta(minutes=10))
+        choices,_ = mission.candidate_order({"items": self.rows}, ledger,
+                                            NOW + timedelta(minutes=10))
         self.assertFalse(any(x["doi"] in {D1,D2} for x in choices))
 
     def test_unverified_award_cannot_stage(self):
