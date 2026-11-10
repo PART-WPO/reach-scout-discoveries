@@ -149,6 +149,21 @@ class PublicHandoffReconciliationTests(unittest.TestCase):
             self.assertIn(UID,decision[1])
             self.assertIn(IR,links[FINAL]["official_ir_urls"])
 
+    def test_repository_snapshot_has_actual_evidence_for_both_cases(self):
+        # Run on the current SHA-verified source snapshot, never the private Hub.
+        root=Path(__file__).resolve().parents[2]
+        verified=public_reach_preprint_resolutions(root)
+        self.assertEqual(verified[PRE]["reach_uid"],UID)
+        self.assertEqual(verified[PRE]["published_doi"],FINAL)
+        public=active_public_scout(root)
+        self.assertTrue(any(x["path"]==BATCH and x["output_type"]=="1"
+                            for x in public[MWR]))
+        ledger=json.loads((root/"scout-operations/decision-handoff-ledger.json").read_text())
+        self.assertEqual(ledger["cases"][PRE]["state"],"RESOLVED_EXISTING_REACH")
+        self.assertEqual(ledger["cases"][MWR]["state"],"PUBLISHED_PUBLIC_SCOUT")
+        self.assertNotIn("retry_after",ledger["cases"][PRE])
+        self.assertNotIn("retry_after",ledger["cases"][MWR])
+
     def test_original_queue_fast_exit_preserves_expansion(self):
         routing={"total":2,"bulk_identity_screening":{"source_dois":2},"entries":[
             {"doi":PRE,"title":"Spring wheat","bulk_identity_gate":{"status":"NO_PUBLIC_REACH_MATCH"}},
