@@ -1,33 +1,17 @@
 {
   "schema": "reach-scout-preprint-intake-gate-v1",
-  "checked_at": "2026-11-10T16:43:09.908334+00:00",
+  "checked_at": "2026-11-10T18:12:25.813883+00:00",
   "policy": "All new publication proposals require registry check. A preprint DOI cannot be staged through ANY origin. Uncertain metadata remains on hold. Existing human decisions unchanged.",
   "checks": [
     {
-      "path": "scout-discoveries/inbox/2026-11-10-human-project-b8d519c3e1a123e83c.csv",
-      "sha256": "31505a85cbe35203d059b1fd23f7a3ae0f852b0f760d6d93f88615dbd9d2674d",
-      "verdict": "eligible",
-      "rows": [
-        {
-          "doi": "10.1016/j.cageo.2022.105193",
-          "status": "eligible",
-          "reason": "Crossref identifies an officially issued scholarly publication",
-          "evidence": [
-            "https://api.crossref.org/works/10.1016/j.cageo.2022.105193",
-            "https://api.datacite.org/dois/10.1016/j.cageo.2022.105193"
-          ]
-        }
-      ]
-    },
-    {
       "path": "scout-discoveries/batches/2026-10-28-hourly-datacite-expansion-award-fixes-001.csv",
       "sha256": "8e9e9209202e507d6b91cc50714d10b01f19ade6b55e2d1816dd7bca1faffa09",
-      "verdict": "eligible",
+      "verdict": "hold",
       "rows": [
         {
           "doi": "10.1175/wcas-d-23-0046.1",
-          "status": "eligible",
-          "reason": "Crossref identifies an officially issued scholarly publication",
+          "status": "identity_hold",
+          "reason": "DOI already exists in public Scout candidate batches; a prior Hub decision is private and must not be inferred. Do not send a second NEW CANDIDATE.",
           "evidence": [
             "https://api.crossref.org/works/10.1175/wcas-d-23-0046.1",
             "https://api.datacite.org/dois/10.1175/wcas-d-23-0046.1"
@@ -69,8 +53,8 @@
       "rows": [
         {
           "doi": "10.1175/bams-d-25-0032.1",
-          "status": "eligible",
-          "reason": "Crossref identifies an officially issued scholarly publication",
+          "status": "identity_hold",
+          "reason": "DOI already exists in public Scout candidate batches; a prior Hub decision is private and must not be inferred. Do not send a second NEW CANDIDATE.",
           "evidence": [
             "https://api.crossref.org/works/10.1175/bams-d-25-0032.1",
             "https://api.datacite.org/dois/10.1175/bams-d-25-0032.1"
@@ -90,12 +74,12 @@
     {
       "path": "scout-discoveries/batches/2026-11-01-monthly-fast-0c3a5f836cdc62.csv",
       "sha256": "947da6414675b7430b318d277d884adfcec660a998654e5e15e3e804cc97cf64",
-      "verdict": "eligible",
+      "verdict": "hold",
       "rows": [
         {
           "doi": "10.1175/waf-d-25-0044.1",
-          "status": "eligible",
-          "reason": "Crossref identifies an officially issued scholarly publication",
+          "status": "identity_hold",
+          "reason": "DOI already exists in public Scout candidate batches; a prior Hub decision is private and must not be inferred. Do not send a second NEW CANDIDATE.",
           "evidence": [
             "https://api.crossref.org/works/10.1175/waf-d-25-0044.1",
             "https://api.datacite.org/dois/10.1175/waf-d-25-0044.1"
@@ -106,12 +90,12 @@
     {
       "path": "scout-discoveries/batches/2026-11-01-monthly-fast-1136c0387b8237.csv",
       "sha256": "f7580554d9d1e017260b0b1d32fac140cab8312f6718b1c7c8ba7266fc5f0e8b",
-      "verdict": "eligible",
+      "verdict": "hold",
       "rows": [
         {
           "doi": "10.5194/tc-20-5973-2026",
-          "status": "eligible",
-          "reason": "Crossref identifies an officially issued scholarly publication",
+          "status": "identity_hold",
+          "reason": "DOI already exists in public Scout candidate batches; a prior Hub decision is private and must not be inferred. Do not send a second NEW CANDIDATE.",
           "evidence": [
             "https://api.crossref.org/works/10.5194/tc-20-5973-2026",
             "https://api.datacite.org/dois/10.5194/tc-20-5973-2026"
@@ -122,12 +106,12 @@
     {
       "path": "scout-discoveries/batches/2026-11-01-monthly-fast-17bff79084ce37.csv",
       "sha256": "575ef33d648668843003a3cd334d26389841521b690cf34f338a43475df56280",
-      "verdict": "eligible",
+      "verdict": "hold",
       "rows": [
         {
           "doi": "10.1175/aies-d-26-0004.1",
-          "status": "eligible",
-          "reason": "Crossref identifies an officially issued scholarly publication",
+          "status": "identity_hold",
+          "reason": "DOI already exists in public Scout candidate batches; a prior Hub decision is private and must not be inferred. Do not send a second NEW CANDIDATE.",
           "evidence": [
             "https://api.crossref.org/works/10.1175/aies-d-26-0004.1",
             "https://api.datacite.org/dois/10.1175/aies-d-26-0004.1"
@@ -170,12 +154,12 @@
     {
       "path": "scout-discoveries/batches/2026-11-01-monthly-fast-936c21c3648bb0.csv",
       "sha256": "1c0fb25e5e92ac64703a8b981efe50f2bf33237201987b887f07fd347159896c",
-      "verdict": "eligible",
+      "verdict": "hold",
       "rows": [
         {
           "doi": "10.1088/2515-7620/aeaad2",
-          "status": "eligible",
-          "reason": "Crossref identifies an officially issued scholarly publication",
+          "status": "identity_hold",
+          "reason": "DOI already exists in public Scout candidate batches; a prior Hub decision is private and must not be inferred. Do not send a second NEW CANDIDATE.",
           "evidence": [
             "https://api.crossref.org/works/10.1088/2515-7620/aeaad2",
             "https://api.datacite.org/dois/10.1088/2515-7620/aeaad2"
@@ -186,12 +170,12 @@
     {
       "path": "scout-discoveries/batches/2026-11-01-monthly-fast-a56abc5841e724.csv",
       "sha256": "e93f04e0cbcadfaa17d99fb332f65223850582cb4da92d6dc09a42a1ca5d5f6b",
-      "verdict": "eligible",
+      "verdict": "hold",
       "rows": [
         {
           "doi": "10.3390/rs18193383",
-          "status": "eligible",
-          "reason": "Crossref identifies an officially issued scholarly publication",
+          "status": "identity_hold",
+          "reason": "DOI already exists in public Scout candidate batches; a prior Hub decision is private and must not be inferred. Do not send a second NEW CANDIDATE.",
           "evidence": [
             "https://api.crossref.org/works/10.3390/rs18193383",
             "https://api.datacite.org/dois/10.3390/rs18193383"
@@ -202,12 +186,12 @@
     {
       "path": "scout-discoveries/batches/2026-11-01-monthly-fast-d4c4a2d852eeca.csv",
       "sha256": "30efe652879f6108a6b57c7ecd01d6ba4692143b4f33b5bbc8e65c85c6773531",
-      "verdict": "eligible",
+      "verdict": "hold",
       "rows": [
         {
           "doi": "10.1175/waf-d-26-0084.1",
-          "status": "eligible",
-          "reason": "Crossref identifies an officially issued scholarly publication",
+          "status": "identity_hold",
+          "reason": "DOI already exists in public Scout candidate batches; a prior Hub decision is private and must not be inferred. Do not send a second NEW CANDIDATE.",
           "evidence": [
             "https://api.crossref.org/works/10.1175/waf-d-26-0084.1",
             "https://api.datacite.org/dois/10.1175/waf-d-26-0084.1"
@@ -250,12 +234,12 @@
     {
       "path": "scout-discoveries/batches/2026-11-02-monthly-review-ready-pdisas-100696-001.csv",
       "sha256": "f4ca3cce05a598f93cecdb50a8b347bb0c2260c29c262cc6ce703e2897ab98cc",
-      "verdict": "eligible",
+      "verdict": "hold",
       "rows": [
         {
           "doi": "10.1016/j.pdisas.2026.100696",
-          "status": "eligible",
-          "reason": "Crossref identifies an officially issued scholarly publication",
+          "status": "identity_hold",
+          "reason": "DOI already exists in public Scout candidate batches; a prior Hub decision is private and must not be inferred. Do not send a second NEW CANDIDATE.",
           "evidence": [
             "https://api.crossref.org/works/10.1016/j.pdisas.2026.100696",
             "https://api.datacite.org/dois/10.1016/j.pdisas.2026.100696"
@@ -270,8 +254,8 @@
       "rows": [
         {
           "doi": "10.1175/waf-d-25-0044.1",
-          "status": "eligible",
-          "reason": "Crossref identifies an officially issued scholarly publication",
+          "status": "identity_hold",
+          "reason": "DOI already exists in public Scout candidate batches; a prior Hub decision is private and must not be inferred. Do not send a second NEW CANDIDATE.",
           "evidence": [
             "https://api.crossref.org/works/10.1175/waf-d-25-0044.1",
             "https://api.datacite.org/dois/10.1175/waf-d-25-0044.1"
@@ -279,8 +263,8 @@
         },
         {
           "doi": "10.5194/tc-20-5973-2026",
-          "status": "eligible",
-          "reason": "Crossref identifies an officially issued scholarly publication",
+          "status": "identity_hold",
+          "reason": "DOI already exists in public Scout candidate batches; a prior Hub decision is private and must not be inferred. Do not send a second NEW CANDIDATE.",
           "evidence": [
             "https://api.crossref.org/works/10.5194/tc-20-5973-2026",
             "https://api.datacite.org/dois/10.5194/tc-20-5973-2026"
@@ -288,8 +272,8 @@
         },
         {
           "doi": "10.1175/aies-d-26-0004.1",
-          "status": "eligible",
-          "reason": "Crossref identifies an officially issued scholarly publication",
+          "status": "identity_hold",
+          "reason": "DOI already exists in public Scout candidate batches; a prior Hub decision is private and must not be inferred. Do not send a second NEW CANDIDATE.",
           "evidence": [
             "https://api.crossref.org/works/10.1175/aies-d-26-0004.1",
             "https://api.datacite.org/dois/10.1175/aies-d-26-0004.1"
@@ -306,8 +290,8 @@
         },
         {
           "doi": "10.1088/2515-7620/aeaad2",
-          "status": "eligible",
-          "reason": "Crossref identifies an officially issued scholarly publication",
+          "status": "identity_hold",
+          "reason": "DOI already exists in public Scout candidate batches; a prior Hub decision is private and must not be inferred. Do not send a second NEW CANDIDATE.",
           "evidence": [
             "https://api.crossref.org/works/10.1088/2515-7620/aeaad2",
             "https://api.datacite.org/dois/10.1088/2515-7620/aeaad2"
@@ -315,8 +299,8 @@
         },
         {
           "doi": "10.3390/rs18193383",
-          "status": "eligible",
-          "reason": "Crossref identifies an officially issued scholarly publication",
+          "status": "identity_hold",
+          "reason": "DOI already exists in public Scout candidate batches; a prior Hub decision is private and must not be inferred. Do not send a second NEW CANDIDATE.",
           "evidence": [
             "https://api.crossref.org/works/10.3390/rs18193383",
             "https://api.datacite.org/dois/10.3390/rs18193383"
@@ -324,8 +308,8 @@
         },
         {
           "doi": "10.1175/waf-d-26-0084.1",
-          "status": "eligible",
-          "reason": "Crossref identifies an officially issued scholarly publication",
+          "status": "identity_hold",
+          "reason": "DOI already exists in public Scout candidate batches; a prior Hub decision is private and must not be inferred. Do not send a second NEW CANDIDATE.",
           "evidence": [
             "https://api.crossref.org/works/10.1175/waf-d-26-0084.1",
             "https://api.datacite.org/dois/10.1175/waf-d-26-0084.1"
@@ -333,8 +317,8 @@
         },
         {
           "doi": "10.1016/j.pdisas.2026.100696",
-          "status": "eligible",
-          "reason": "Crossref identifies an officially issued scholarly publication",
+          "status": "identity_hold",
+          "reason": "DOI already exists in public Scout candidate batches; a prior Hub decision is private and must not be inferred. Do not send a second NEW CANDIDATE.",
           "evidence": [
             "https://api.crossref.org/works/10.1016/j.pdisas.2026.100696",
             "https://api.datacite.org/dois/10.1016/j.pdisas.2026.100696"
@@ -359,6 +343,6 @@
       ]
     }
   ],
-  "eligible_batches": 13,
-  "held_batches": 3
+  "eligible_batches": 4,
+  "held_batches": 11
 }
