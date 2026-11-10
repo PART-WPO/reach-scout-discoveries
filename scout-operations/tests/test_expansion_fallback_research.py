@@ -115,5 +115,59 @@ class FallbackTests(unittest.TestCase):
         self.assertEqual(note["source_lookups"][0]["source_status"],"OFFICIAL_METADATA_ACCESS_ERROR")
         self.assertEqual(note["new_related_output_eligibility_confirmed"],0)
 
+
+    def test_source_driven_dataset_stays_research_only_pending_exact_award(self):
+        dataset = "10.6075/j0sn07g9"
+        def source(seed):
+            return {
+                "schema": "reach-scout-source-driven-expansion-v1",
+                "seed_doi": seed, "status": "SOURCE_BACKED_LEADS_FOUND",
+                "source_checks": [{"kind": "publisher_article_html", "status": "SOURCE_READ"}],
+                "discovered_doi_leads": [{
+                    "doi": dataset, "source_url": "https://onlinelibrary.wiley.com/doi/10.1002/hyp.13998",
+                    "source_sha256": "a"*64, "evidence_kind": "crossref_structured_data_code_citation",
+                    "eligibility": "RESEARCH_LEAD_ONLY"}],
+            }
+        def meta(doi):
+            return {"status": "ok", "provider": "datacite", "title": "Data from: soil moisture network",
+                    "resource_type": "Dataset", "publication_status": "other_or_unverified",
+                    "evidence": "https://api.datacite.org/dois/" + doi, "funding_references": []}
+        def identity(_doi,_title):
+            return {"status": "NO_PUBLIC_IDENTITY_MATCH",
+                    "noaa_ir_reach_check": {"status": "DOI_NOT_IN_VERIFIED_IR_INDEX_UNKNOWN"}}
+        result = m.run(self.root, NOW, "2020", meta, source_fn=source, identity_fn=identity, seed_override=D2)
+        self.assertEqual(result["seed"], D2)
+        self.assertEqual(result["source_driven_leads_found"], 1)
+        note = json.loads((self.root/result["research_report"]).read_text())
+        child = note["new_source_driven_leads_screened"][0]
+        self.assertEqual(child["doi"], dataset)
+        self.assertEqual(child["next_gate"], "VERIFY_EXACT_OUTPUT_WPO_PROJECT_FUNDING")
+        self.assertEqual(child["eligibility"], "RESEARCH_LEAD_ONLY_NOT_STAGED")
+        self.assertEqual(note["new_related_output_eligibility_confirmed"], 0)
+        self.assertEqual(note["separate_expansion_decisions_completed"], 0)
+        self.assertEqual(note["new_public_candidate_count"], 0)
+        self.assertEqual(note["private_hub_import"], "NOT_VERIFIED")
+
+    def test_source_driven_existing_public_identity_never_restaged(self):
+        dataset = "10.6075/j0sn07g9"
+        def source(seed):
+            return {"schema":"reach-scout-source-driven-expansion-v1", "seed_doi":seed,
+                    "discovered_doi_leads":[{"doi":dataset}]}
+        def identity(_doi, _title):
+            return {"status":"CONFIRMED_PUBLIC_REACH_IDENTITY",
+                    "noaa_ir_reach_check":{"status":"NOT_NEEDED_DIRECT_REACH"}}
+        result = m.run(self.root, NOW, "2021", self.metadata,
+                       source_fn=source, identity_fn=identity, seed_override=D2)
+        note = json.loads((self.root/result["research_report"]).read_text())
+        self.assertEqual(note["new_source_driven_leads_screened"][0]["next_gate"],
+                         "EXISTING_PUBLIC_IDENTITY_NO_RESTAGING")
+        self.assertEqual(note["new_public_candidate_count"], 0)
+
+    def test_manual_seed_respects_ledger_cooldown(self):
+        result = m.run(self.root, NOW, "2000", self.metadata, seed_override=D2)
+        self.assertEqual(result["seed"], D2)
+        with self.assertRaisesRegex(ValueError, "not eligible or remains on cooldown"):
+            m.run(self.root, NOW+timedelta(minutes=2), "2001", self.metadata, seed_override=D2)
+
 if __name__=="__main__":
     unittest.main()
