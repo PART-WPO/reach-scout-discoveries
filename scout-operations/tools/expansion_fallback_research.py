@@ -16,6 +16,7 @@ sys.path.insert(0, str(TOOLS))
 from lookup_independent_dois import metadata as lookup_metadata
 from source_driven_expansion import discover as discover_sources
 from ir_reach_identity import verified_snapshot, identity_check
+from noaa_ir_lookup import trusted_index
 from wpo_awards import official_459_awards
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -175,7 +176,15 @@ def bounded_research(root, graph, ledger, now, metadata_fn=lookup_metadata, *, s
     screened_leads = []
     if source_fn is not None:
         try:
-            source_discovery = source_fn(seed)
+            if source_fn is discover_sources:
+                # The public IR index verifies the seed DOI -> exact NOAA IR
+                # landing page against every shard SHA before any PDF is read.
+                ir_index = trusted_index(root)
+                ir_matches = (ir_index or {}).get("dois", {}).get(seed, [])
+                ir_url = ir_matches[0] if len(ir_matches) == 1 else None
+                source_discovery = source_fn(seed, ir_url=ir_url)
+            else:
+                source_discovery = source_fn(seed)
             if source_discovery.get("seed_doi") != seed or source_discovery.get("schema") != "reach-scout-source-driven-expansion-v1":
                 raise ValueError("Source discovery seed/schema mismatch")
             if len(source_discovery.get("discovered_doi_leads", [])) > 3:
