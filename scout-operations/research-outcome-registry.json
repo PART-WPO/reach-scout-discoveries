@@ -53,18 +53,19 @@
     "scout-operations/historical-crossref-phase2/2026-11-09-1829ET-generative-ai-extreme-precipitation-official-459-screen.json": "d09c724da23e5bf9bdf253a3f8a0198642c4d5473b2bb4a8f804692604f2b3d1",
     "scout-operations/historical-crossref-phase2/2026-11-09-1830ET-generative-ai-precipitation-459-human-referral-disposition.json": "162437f1a294893384a8070e81472d939a6b06b6b34921c98270086ea37134a8",
     "scout-operations/historical-crossref-phase2/2026-11-09-1929ET-mjo-coupling-article-459-guarded-public-screen.json": "75637bd8c456ecfc39eb8855c4846c654d351eb66679f7ca98e3a97267642694",
+    "scout-operations/historical-crossref-phase2/auto-verified-oar459-8eb678e5c990af2471.json": "d7d749f81e0637dded549ceace267808a5192d5b2bafb993b831083a12387ae6",
     "scout-operations/monthly-research/2026-11-06-0528ET-storm-harry-qj70325-project-scope-hold.json": "9bf7c3c778f1cbf1622db3e994b7facc446367f5cc3ed6094517ab5884722911",
     "scout-operations/monthly-research/2026-11-06-0630ET-storm-harry-ecmwf-two-doi-access-holds.json": "38d2065e50f5691c4452ea054a54409a88392e3d76f60969a311a78d96b3bf7c",
     "scout-operations/monthly-research/2026-11-06-0730ET-storm-harry-ecmwf-official-catalog-followup.json": "7a63adfadb964734abec498d27cc54bc6e431d0cb8f51c11bdc8f4e6131491c3",
     "scout-operations/monthly-research/2026-11-06-0830ET-storm-harry-global-drifter-award-scope-followup.json": "684a66155c7ad188613f0217e371ba692f300a27bb1ab16a1b7d40f09c1198bc"
   },
-  "evidence_files_scanned": 52,
+  "evidence_files_scanned": 53,
   "source_files_without_explicit_output_id": [],
-  "research_note_events": 61,
-  "distinct_research_identities": 40,
+  "research_note_events": 62,
+  "distinct_research_identities": 41,
   "operational_disposition_counts": {
     "BOUNDED_PROJECT_QUESTION_FOR_HUMAN": 3,
-    "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY": 25,
+    "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY": 26,
     "PREPRINT_MONTHLY_WATCH": 1,
     "PROJECT_EVIDENCE_HOLD": 31,
     "TECHNICAL_METADATA_RECOVERY": 1
@@ -1443,6 +1444,32 @@
       "reviewer_approval": "NOT_VERIFIED"
     },
     {
+      "event_id": "728fbb458123be438fe1769a",
+      "identity": "doi:10.1175/mwr-d-25-0146.1",
+      "doi": "10.1175/mwr-d-25-0146.1",
+      "url_only": null,
+      "role_in_note": "original",
+      "research_lane": "historical_crossref_original",
+      "source_path": "scout-operations/historical-crossref-phase2/auto-verified-oar459-8eb678e5c990af2471.json",
+      "source_sha256": "d7d749f81e0637dded549ceace267808a5192d5b2bafb993b831083a12387ae6",
+      "source_time": "2026-11-10T02:51:25.976258+00:00",
+      "raw_decision": "NEW_CANDIDATE_PUBLIC_REFERRAL_REQUEST_SUBJECT_TO_GUARDED_CHECKS",
+      "operational_disposition": "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+      "next_action": "Guarded GitHub 24-column NEW CANDIDATE handoff; human reviewer selects and verifies SPARK parent; do not infer private Hub import or REACH publication.",
+      "checked_evidence_urls": [
+        "https://api.crossref.org/works/10.1175/mwr-d-25-0146.1",
+        "https://doi.org/10.1175/mwr-d-25-0146.1",
+        "https://github.com/PART-WPO/reach-scout-discoveries/blob/main/api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part004.csv"
+      ],
+      "source_count": 3,
+      "bounded_human_question_to_verify": false,
+      "formal_original_closed": false,
+      "separate_expansion_closed": false,
+      "new_public_proposal": false,
+      "private_hub_import": "NOT_VERIFIED",
+      "reviewer_approval": "NOT_VERIFIED"
+    },
+    {
       "event_id": "d1c7f1c43f43721992142729",
       "identity": "doi:10.1002/qj.70325",
       "doi": "10.1002/qj.70325",
@@ -2105,6 +2132,22 @@
       "source_file_count": 1,
       "event_ids": [
         "93357fdd84fbcdb3cedf4c42"
+      ],
+      "project_judgment_referral_possible": false,
+      "human_review_staged": false,
+      "private_hub_import": "NOT_VERIFIED"
+    },
+    {
+      "identity": "doi:10.1175/mwr-d-25-0146.1",
+      "latest_event_id": "728fbb458123be438fe1769a",
+      "latest_evidence_path": "scout-operations/historical-crossref-phase2/auto-verified-oar459-8eb678e5c990af2471.json",
+      "latest_operational_disposition": "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+      "observed_dispositions": [
+        "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY"
+      ],
+      "source_file_count": 1,
+      "event_ids": [
+        "728fbb458123be438fe1769a"
       ],
       "project_judgment_referral_possible": false,
       "human_review_staged": false,
