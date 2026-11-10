@@ -7,6 +7,8 @@ Write a privacy-minimized JSON record at `scout-operations/reports/hourly-missio
 ```json
 {
   "schema": "reach-scout-hourly-mission-outcome-v1",
+  "producer": "chatgpt_hourly_mission",
+  "not_chatgpt_hourly_mission": false,
   "mission_id": "unique non-personal ID",
   "started_at_utc": "ISO-8601",
   "completed_at_utc": "ISO-8601",
@@ -47,3 +49,11 @@ Before each external lookup, check applicable graph/node source fingerprints, pr
 
 ## Evaluation and QA
 Compute completed-mission denominators from timestamped mission records only. Separately report original full decisions, public handoffs, research holds, expansion cases, fast exits, cache reuse and observed requests; deduplicate DOI identities across lanes. Do not equate GitHub Actions success with hourly mission success. Run schema validation on sample successful, blocked and uninstrumented mission fixtures before enabling automated reporting. No private Hub import, reviewer approval, Smartsheet insertion or REACH addition may be inferred from public artifacts.
+
+## Production integration: distinct measurement producers
+- **ChatGPT hourly Scout task:** At the beginning of actual execution capture the observed start timestamp; at completed closeout capture the actual end time. If connected GitHub write access and accurate observed timestamps are available, validate and commit ONE new immutable public record under `scout-operations/reports/hourly-missions/`; use `producer: chatgpt_hourly_mission` and `not_chatgpt_hourly_mission: false`. Record new original decisions only when source-backed and truly completed; a research hold, queued handoff, duplicate exit or failed lookup never satisfies the one-original target. If no safe write access or reliable observation is possible, report `NOT_INSTRUMENTED` with the blocker in the mission response and **do not fabricate a record**.
+- **GitHub guarded Crossref backstop:** The existing end-to-end processor runs its own exact-DOI publication gates and now creates source-backed records under `scout-operations/reports/guarded-backstop-missions/` via `write_hourly_mission_metrics.py`, with `producer: github_guarded_crossref_backstop` and `not_chatgpt_hourly_mission: true`. The workflow writes the record only after its bounded run and the applicable guarded-publication gate, then commits the record with the validated batch or blocker. These jobs are NOT ChatGPT hourly research missions, and pre-existing queue skips are not counted as new mission fast exits.
+- **Independent metadata lookups:** `audit_independent_lookup.py` measures persistent cache reuse actually reported by the existing SHA/TTL-verifying resolver and counts real DataCite/Crossref provider attempts from uncached responses. Reports are under `scout-operations/reports/research-memory-reuse/`. The count deliberately excludes Zenodo scope checks, GitHub metadata, IR checks, other HTTP calls, and all requests originally recorded inside reused cached responses. Avoided requests remain `null` without a measured counterfactual.
+- **Scorecard:** `summarize_hourly_missions.py` aggregates the two mission-producer folders separately. Rates divide by *actually recorded completed mission records*, not schedules or GitHub test runs. A missing record means **missing coverage**, not proof no run occurred. A current public batch does not imply a private Hub import.
+
+Do not rewrite or backfill earlier runs with guessed timestamps or inferred hits. Existing records are append-only; use canonical DOI identities and source fingerprints. Before each ChatGPT hourly mission, read the existing guarded backstop outcomes to avoid duplicate research. Where a **lane-compatible** guarded publication path is available, carry it through in the same mission; otherwise record the precise unavailable intake gate and advance to another distinct candidate. Never use the Crossref 459 automated gate for ineligible/other cohorts merely to meet the target.
