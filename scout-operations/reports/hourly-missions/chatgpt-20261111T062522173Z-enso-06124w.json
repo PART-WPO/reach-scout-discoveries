@@ -1,0 +1,47 @@
+{
+  "schema": "reach-scout-hourly-mission-outcome-v1",
+  "producer": "chatgpt_hourly_mission",
+  "not_chatgpt_hourly_mission": false,
+  "mission_id": "20261111T062522173Z-enso-06124w",
+  "started_at_utc": "2026-11-11T06:25:22.173Z",
+  "completed_at_utc": "2026-11-11T06:25:52.357Z",
+  "policy_commit_sha": "NOT_VERIFIED",
+  "memory_source_fingerprint": "48cadbdecd687bf28895e74749107ab085883c0a357332f66b97c5303e0d843c",
+  "memory_builder_policy_sha256": "6c77012241b8abd0544dcb9e8a22e38aad5b76bb6c3664afafcdeedbc2d4cc17",
+  "lane": "related_expansion",
+  "selected_original_dois": [],
+  "selected_expansion_seed_dois": [
+    "10.1007/s00382-021-06124-w"
+  ],
+  "fast_exited_public_reach": [],
+  "fast_exited_public_scout": [],
+  "new_original_full_decisions": [],
+  "new_expansion_decisions": [],
+  "research_only_holds": [
+    "10.1007/s00382-021-06124-w"
+  ],
+  "technical_or_funding_holds": [],
+  "published_public_batch_urls": [],
+  "guarded_handoff_run_urls": [],
+  "handoff_status": "NOT_ATTEMPTED",
+  "handoff_blocker": null,
+  "prior_note_sha256_reused": [],
+  "prior_metadata_fingerprints_reused": [],
+  "cache_hits_observed": null,
+  "external_requests_observed": null,
+  "avoided_requests_measured": null,
+  "private_hub_import": "NOT_VERIFIED",
+  "human_decision": "NOT_VERIFIED",
+  "public_reach_addition": "NOT_VERIFIED",
+  "research_evidence": [
+    {
+      "seed_doi": "10.1007/s00382-021-06124-w",
+      "source_url": "https://par.nsf.gov/servlets/purl/10339462",
+      "finding": "Publisher manuscript archived by NSF confirms NOAA CTB award NA20OAR4590316 on this article; data cited are existing GODAS and NCEP-DOE Reanalysis-2, not a newly created distinct dataset. No independently attributable new DOI established.",
+      "disposition": "RESEARCH_ONLY_HOLD",
+      "next_action": "Investigate only upon distinct dataset/code identity and project attribution evidence."
+    }
+  ],
+  "monthly_original_due": 0,
+  "archived_source_recoveries": 0
+}
