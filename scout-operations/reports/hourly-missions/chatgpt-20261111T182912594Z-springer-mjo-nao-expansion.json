@@ -1,0 +1,51 @@
+{
+  "schema": "reach-scout-hourly-mission-outcome-v1",
+  "producer": "chatgpt_hourly_mission",
+  "not_chatgpt_hourly_mission": false,
+  "mission_id": "chatgpt-20261111T182912594Z-springer-mjo-nao-expansion",
+  "started_at_utc": "2026-11-11T18:29:12.594Z",
+  "completed_at_utc": "2026-11-11T18:29:51.863Z",
+  "policy_commit_sha": "NOT_VERIFIED",
+  "memory_source_fingerprint": "NOT_VERIFIED",
+  "memory_builder_policy_sha256": "6c77012241b8abd0544dcb9e8a22e38aad5b76bb6c3664afafcdeedbc2d4cc17",
+  "lane": "related_expansion",
+  "selected_original_dois": [],
+  "selected_expansion_seed_dois": [
+    "10.1007/s00382-023-06864-x",
+    "10.1007/s00382-023-06965-7"
+  ],
+  "fast_exited_public_reach": [],
+  "fast_exited_public_scout": [],
+  "new_original_full_decisions": [],
+  "new_expansion_decisions": [],
+  "research_only_holds": [
+    "10.1007/s00382-023-06864-x",
+    "10.1007/s00382-023-06965-7"
+  ],
+  "technical_or_funding_holds": [
+    {
+      "doi": "10.1007/s00382-023-06864-x",
+      "reason": "Publisher full-text preview explicitly cites existing NCEP-NCAR Reanalysis-2 and preexisting windspharm Python package; no distinct publicly deposited project output URL established. Publisher acknowledgments only 431/432 NOAA awards, not 459.",
+      "evidence_url": "https://link.springer.com/article/10.1007/s00382-023-06864-x",
+      "disposition": "NO_DISTINCT_DEPOSIT_IDENTIFIED_RESEARCH_ONLY"
+    },
+    {
+      "doi": "10.1007/s00382-023-06965-7",
+      "reason": "Publisher says study-generated datasets and algorithm available on reasonable request, not a separately identifiable deposited public artifact. Explicit funding only NOAA 431/432, NSF and DOE, no exact-output 459.",
+      "evidence_url": "https://link.springer.com/article/10.1007/s00382-023-06965-7",
+      "disposition": "UNPUBLISHED_ARTIFACT_IDENTITY_NOT_ESTABLISHED_RESEARCH_ONLY"
+    }
+  ],
+  "published_public_batch_urls": [],
+  "guarded_handoff_run_urls": [],
+  "prior_note_sha256_reused": [],
+  "prior_metadata_fingerprints_reused": [],
+  "handoff_status": "NOT_ATTEMPTED",
+  "handoff_blocker": null,
+  "cache_hits_observed": null,
+  "external_requests_observed": null,
+  "avoided_requests_measured": null,
+  "private_hub_import": "NOT_VERIFIED",
+  "human_decision": "NOT_VERIFIED",
+  "public_reach_addition": "NOT_VERIFIED"
+}
