@@ -32,6 +32,55 @@ Use [HOURLY_MISSION_MEASUREMENT_V1.md](HOURLY_MISSION_MEASUREMENT_V1.md) as the 
 
 The independent DOI evidence audit reports verified persistent metadata-cache hits and observed provider requests using the existing source-SHA/TTL cache; the guarded Crossref processor measures in-process metadata reuse and actual resolver attempts separately. Counts not observed are `null`, not zero. Reuse of a prior immutable note is counted only when its source SHA is actually consulted. A 16/16 control test is not proof of real mission savings. Generated graph/index refreshes are not new research or child relationships. The separate completed-mission scorecard is an observational report, not proof of causality.
 
+## Mandatory completed-original gate and bounded independent research rotation — November 11, 2026
+
+**Before any external metadata request or research selection**, use the latest
+SHA-verified `scout-operations/research-memory/mission-index.json` and
+`historical-coverage.json`, canonical historical triage and active public
+`scout-discoveries/manifest.json`. Do not select a DOI as a NEW original if
+its historical DataCite research status is validated terminal, if its exact DOI
+is in a verified public Scout staging batch, or if the complete REACH identity
+gate confirms it already exists. An existing original remains a potential
+seed for *genuinely distinct* related output research, not a new original.
+The research-memory builder now separates `historical_reconciliation_needed`
+from `historical_datacite_original`. Entries with missing evidence for an
+older terminal handoff are **reconciliation actions**, never automatically
+new research or a fresh Discovery Hub proposal. Do not infer private reviewer
+approval, Smartsheet insertion or production REACH publication.
+
+If an eligible DOI's official DataCite/Crossref endpoint is unavailable, first
+reuse a fresh SHA/TTL-verified official metadata cache if available. Consult
+the matching immutable historical source batch and its SHA-verified native
+repository links before declaring metadata unobtainable; when practical use
+the official institution's native DOI record, the original publisher
+repository, or a separately verified source. The
+`tools/recover_historical_datacite.py` helper returns
+`archived_source_recovered` as **research-only prior evidence**, never a
+verified live publication date, official funding decision or Hub-ready item.
+Never treat a search result by itself as authoritative publication or project
+attribution. Record the exact source access failure and checked fallback.
+
+**A source access failure must not consume the whole hourly mission.**
+When no additional distinct authoritative source is accessible for an
+eligible DOI, record a reversible DOI-specific source hold and immediately
+rotate to another eligible DOI. Attempt up to five **distinct** DOI identities
+per mission using `tools/select_independent_mission_candidates.py`
+(or equivalent SHA-verified index filtering when running via connected tools);
+do not count a blocked/previously staged original as a completed decision.
+Do not repeatedly spend a full mission on the same unchanged DOI or retry the
+same unavailable endpoint; reopen only on new source fingerprint, evidenced
+new source or a documented cooldown expiry. If all eligible entries are
+blocked, report an explicit zero-completion mission rather than manufacture
+progress. The historical Crossref OAR459 guarded lane retains its own
+independent processor; do not duplicate its already delegated checks.
+
+Record separately: previously completed originals skipped, archived
+recoveries (not live verifications), native official page checks, source
+holds, distinct DOIs attempted, source-backed complete original decisions,
+separate expansion evidence, validated public staging, unresolved terminal
+reconciliations, and privately verified human outcomes. The completed
+original denominator excludes all unchanged public notes and technical holds.
+
 ## Evidence and implementation references
 Use current SHA-verified `scout-operations/crossref-candidate-queue.json`, `scout-operations/active-workstream.json`, `scout-operations/research-outcome-registry.json`, `scout-operations/human-project-referrals.json`, `scout-discoveries/manifest.json`, `scout-operations/preprint-watchlist.json`, `scout-operations/reach-comparison-cache/comparison-index.json`, `scout-operations/research-feedback.json` and NOAA IR index. Specialized procedures remain in `SCOUT_SHARED_IDENTITY_AND_PRIVACY_PILOT.md`, `index-project-discovery-policy.md`, and source-specific workflow scripts. They provide implementation detail, **not conflicting operating policy**. The [verbatim older policy archive](policy-archive/SCOUT_OPERATING_POLICY_V2_2026-11-09_pre_consolidation.md) is reference-only.
 
