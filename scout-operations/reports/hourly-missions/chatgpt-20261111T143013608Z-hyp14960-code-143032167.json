@@ -1,0 +1,47 @@
+{
+  "schema": "reach-scout-hourly-mission-outcome-v1",
+  "producer": "chatgpt_hourly_mission",
+  "not_chatgpt_hourly_mission": false,
+  "mission_id": "chatgpt-20261111T143013608Z-hyp14960-code-143032167",
+  "started_at_utc": "2026-11-11T14:30:13.608Z",
+  "completed_at_utc": "2026-11-11T14:30:32.167Z",
+  "policy_commit_sha": "NOT_VERIFIED",
+  "memory_source_fingerprint": "48cadbdecd687bf28895e74749107ab085883c0a357332f66b97c5303e0d843c",
+  "memory_builder_policy_sha256": "6c77012241b8abd0544dcb9e8a22e38aad5b76bb6c3664afafcdeedbc2d4cc17",
+  "lane": "related_expansion",
+  "handoff_status": "NOT_ATTEMPTED",
+  "handoff_blocker": null,
+  "cache_hits_observed": null,
+  "external_requests_observed": null,
+  "avoided_requests_measured": null,
+  "private_hub_import": "NOT_VERIFIED",
+  "human_decision": "NOT_VERIFIED",
+  "public_reach_addition": "NOT_VERIFIED",
+  "selected_original_dois": [],
+  "selected_expansion_seed_dois": [
+    "10.1002/hyp.14960"
+  ],
+  "fast_exited_public_reach": [],
+  "fast_exited_public_scout": [],
+  "new_original_full_decisions": [],
+  "new_expansion_decisions": [],
+  "research_only_holds": [
+    "10.1002/hyp.14960"
+  ],
+  "technical_or_funding_holds": [
+    {
+      "identity": "https://github.com/chrisrac/objective_thresholds",
+      "reason": "Publisher explicitly identifies separately accessible objective_thresholds Python code, and source repository confirms functionality and 2022 authorship; no verified exact-software WPO award, distinct project attribution, or complete REACH/Scout code-URL duplicate clearance. Research only; do not stage.",
+      "sources": [
+        "https://onlinelibrary.wiley.com/doi/abs/10.1002/hyp.14960",
+        "https://github.com/chrisrac/objective_thresholds",
+        "https://repository.library.noaa.gov/view/noaa/63787"
+      ],
+      "next_action": "Check exact repository URL against REACH/Scout code records and obtain source-backed software award/project attribution before public review."
+    }
+  ],
+  "published_public_batch_urls": [],
+  "guarded_handoff_run_urls": [],
+  "prior_note_sha256_reused": [],
+  "prior_metadata_fingerprints_reused": []
+}
