@@ -37,7 +37,7 @@
     "interpretation": "Distinct seeds, DOI leads and official metadata retrieval are research progress, not completed expansions or public candidate/REACH additions."
   },
   "source_sha256": {
-    "scout-operations/crossref-candidate-queue.json": "f2434fa46ee9e5f80f5bed02378c66d47d24f2f15133320b0d76ef7a9f9563cc",
+    "scout-operations/crossref-candidate-queue.json": "0c8259ebbdfd78038fa3a0e9bb81e38736c90a0011808ac520aaa0029a629349",
     "scout-operations/historical-crossref-coverage.json": "92d36650e2077bbfc4a8f27d2f166be40b6c3831b7dd33ffdbd5fafef7057860",
     "scout-operations/historical-coverage.json": "f0d440a18f983a07bef10c16047d9dfae2d67039178a22f56294d935403cfb59",
     "scout-discoveries/manifest.json": "3dbbb5793737d7d9a9819b1bd71885343c3658397a2cc21a7a6f9156bb201371",
@@ -49,9 +49,9 @@
   "source_freshness": {
     "crossref_queue_source_checks": {
       "scout-operations/historical-crossref-screening/actionable-routing.json": {
-        "recorded_sha256": "88a46bde748323f6531e1c7224defd23395c3a69dd96e38e9ee6429f48178428",
+        "recorded_sha256": "3bc994752a21cf77ca8424a2bb40048bfcc445ab03f7f21ec0061fc63eae232a",
         "current_sha256": "3bc994752a21cf77ca8424a2bb40048bfcc445ab03f7f21ec0061fc63eae232a",
-        "fresh": false
+        "fresh": true
       },
       "scout-operations/research-outcome-registry.json": {
         "recorded_sha256": "48953c728be98f8d919e2329c56e9a114b922a67323808a8c6c3a89ea84ffa78",
@@ -109,9 +109,9 @@
         "fresh": true
       },
       "scout-operations/identity-cache/public-identity-index.json": {
-        "recorded_sha256": "ff409a51817f9e26aabf9d79fa8cfee33c344daa464c65a9e374b0011c842e53",
+        "recorded_sha256": "45d290a50a2770be689ae31cff30f1e52a03d95f9bacd0c424708e4517d17721",
         "current_sha256": "45d290a50a2770be689ae31cff30f1e52a03d95f9bacd0c424708e4517d17721",
-        "fresh": false
+        "fresh": true
       },
       "scout-operations/reach-comparison-cache/comparison-index.json": {
         "recorded_sha256": "6660562e325a6a141198f59acce84f2e30d9a2d14e6cf5acd29769c8a4b68e1e",
@@ -119,7 +119,7 @@
         "fresh": true
       }
     },
-    "crossref_queue_fresh": false,
+    "crossref_queue_fresh": true,
     "targeted_reconciliation_scope_is_snapshot": true
   },
   "screening_not_research": {
