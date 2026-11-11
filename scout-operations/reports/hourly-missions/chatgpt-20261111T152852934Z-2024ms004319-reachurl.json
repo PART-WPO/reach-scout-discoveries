@@ -1,0 +1,57 @@
+{
+  "schema": "reach-scout-hourly-mission-outcome-v1",
+  "producer": "chatgpt_hourly_mission",
+  "not_chatgpt_hourly_mission": false,
+  "mission_id": "chatgpt-20261111T152852934Z-2024ms004319-reachurl",
+  "started_at_utc": "2026-11-11T15:28:52.934Z",
+  "completed_at_utc": "2026-11-11T15:29:27.471Z",
+  "policy_commit_sha": "6298b74b3f5a7c036927ca15295a5f272a295ba2",
+  "memory_source_fingerprint": "48cadbdecd687bf28895e74749107ab085883c0a357332f66b97c5303e0d843c",
+  "memory_builder_policy_sha256": "6c77012241b8abd0544dcb9e8a22e38aad5b76bb6c3664afafcdeedbc2d4cc17",
+  "lane": "related_expansion",
+  "selected_original_dois": [],
+  "selected_expansion_seed_dois": [
+    "10.1029/2024ms004319",
+    "10.1029/2024gl109890"
+  ],
+  "fast_exited_public_reach": [
+    "https://github.com/c2xu/MOM6/releases/tag/v1.0.0"
+  ],
+  "fast_exited_public_scout": [],
+  "new_original_full_decisions": [],
+  "new_expansion_decisions": [],
+  "research_only_holds": [
+    "10.1029/2024gl109890"
+  ],
+  "technical_or_funding_holds": [],
+  "published_public_batch_urls": [],
+  "guarded_handoff_run_urls": [],
+  "handoff_status": "NOT_ATTEMPTED",
+  "handoff_blocker": null,
+  "prior_note_sha256_reused": [],
+  "prior_metadata_fingerprints_reused": [],
+  "cache_hits_observed": null,
+  "external_requests_observed": null,
+  "avoided_requests_measured": null,
+  "private_hub_import": "NOT_VERIFIED",
+  "human_decision": "NOT_VERIFIED",
+  "public_reach_addition": "NOT_VERIFIED",
+  "research_evidence": [
+    {
+      "seed_doi": "10.1029/2024ms004319",
+      "finding": "Publisher Data Availability points to https://github.com/c2xu/MOM6/releases/tag/v1.0.0 and DOI 10.5281/zenodo.13379023. SHA-indexed REACH comparison cache locates source code as reach-001213. Current original REACH agent-data/index/part-010.csv confirms exact primary Link to Output, output type 2, UID reachuid-v1-1023907617dc45799b3df133490df592, award NA22OAR0110487. Existing code; 011-only not WPO 459. Zenodo DOI is separate identity lead, not independently verified in this mission.",
+      "sources": [
+        "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2024MS004319",
+        "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/index/part-010.csv"
+      ]
+    },
+    {
+      "seed_doi": "10.1029/2024gl109890",
+      "finding": "Independent NOAA IR identifies article already in public REACH seed cohort and acknowledges NA21OAR4590367 and NA22OAR4320150; no distinct dataset or software output identified from bounded available source inspection; no new candidate.",
+      "sources": [
+        "https://repository.library.noaa.gov/view/noaa/67940"
+      ]
+    }
+  ],
+  "research_summary": "One exact code artifact primary-URL fast exit confirmed in current REACH; rotated to another REACH seed. No novel separate WPO-funded output confirmed; no public candidate staged."
+}
