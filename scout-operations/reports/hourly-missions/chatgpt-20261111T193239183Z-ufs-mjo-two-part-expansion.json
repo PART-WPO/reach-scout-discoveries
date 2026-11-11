@@ -1,0 +1,61 @@
+{
+  "schema": "reach-scout-hourly-mission-outcome-v1",
+  "producer": "chatgpt_hourly_mission",
+  "not_chatgpt_hourly_mission": false,
+  "mission_id": "chatgpt-20261111T193239183Z-ufs-mjo-two-part-expansion",
+  "started_at_utc": "2026-11-11T19:32:39.183Z",
+  "completed_at_utc": "2026-11-11T19:33:07.822Z",
+  "policy_commit_sha": "NOT_VERIFIED",
+  "memory_source_fingerprint": "8ee84bb5d4aa440dc99923c0ce5fec63a77b17e9488457dd2b36b15f052a2a13",
+  "memory_builder_policy_sha256": "6c77012241b8abd0544dcb9e8a22e38aad5b76bb6c3664afafcdeedbc2d4cc17",
+  "lane": "related_expansion",
+  "selected_original_dois": [],
+  "selected_expansion_seed_dois": [
+    "10.1007/s00382-024-07377-x",
+    "10.1007/s00382-024-07512-8"
+  ],
+  "fast_exited_public_reach": [],
+  "fast_exited_public_scout": [],
+  "new_original_full_decisions": [],
+  "new_expansion_decisions": [],
+  "research_only_holds": [],
+  "technical_or_funding_holds": [],
+  "published_public_batch_urls": [],
+  "guarded_handoff_run_urls": [],
+  "handoff_status": "NOT_ATTEMPTED",
+  "handoff_blocker": null,
+  "prior_note_sha256_reused": [],
+  "prior_metadata_fingerprints_reused": [],
+  "cache_hits_observed": null,
+  "external_requests_observed": null,
+  "avoided_requests_measured": null,
+  "private_hub_import": "NOT_VERIFIED",
+  "human_decision": "NOT_VERIFIED",
+  "public_reach_addition": "NOT_VERIFIED",
+  "research_evidence": [
+    {
+      "seed_doi": "10.1007/s00382-024-07377-x",
+      "source_url": "https://link.springer.com/article/10.1007/s00382-024-07377-x",
+      "finding": "Publisher identifies ERA-Interim and existing NOAA UFS S2S AWS reforecast collection; no distinct project-generated output or separately published artifact identified in inspected data-availability statement.",
+      "disposition": "BOUNDED_EXPANSION_NO_DISTINCT_OUTPUT"
+    },
+    {
+      "seed_doi": "10.1007/s00382-024-07512-8",
+      "source_url": "https://link.springer.com/article/10.1007/s00382-024-07512-8",
+      "funding_evidence": "Publisher acknowledges WPO grant NA22OAR4590216 for this study, not independently for any new artifact.",
+      "finding": "Publisher data-availability section points to ERA-Interim and existing NOAA UFS S2S AWS collection; full REACH comparison cache yielded no exact link match for AWS registry URL, which is not evidence of novelty; no separate project-generated output established.",
+      "disposition": "BOUNDED_EXPANSION_NO_DISTINCT_OUTPUT"
+    }
+  ],
+  "artifact_url_gate": {
+    "url": "https://registry.opendata.aws/noaa-ufs-s2s/",
+    "cache_source": "scout-operations/reach-comparison-cache/comparison-index.json",
+    "cache_git_blob_sha": "00dd3ac2aba8dbf4838090a02d85b7604bb6329d",
+    "exact_cache_link_matches": 0,
+    "disposition": "NO_CACHE_LINK_MATCH_FULL_REACH_GATE_STILL_REQUIRED; generic pre-existing NOAA public data source, not a new project-specific candidate",
+    "canonical_shard_check": "NOT_APPLICABLE_NO_CACHE_MATCH",
+    "public_scout_manifest_source": "scout-discoveries/manifest.json",
+    "public_scout_manifest_sha": "a87c1cd558d7dcbbe1d97c6fbb013e50fe89fbdd",
+    "public_inbox_exact_url": "NOT_VERIFIED"
+  }
+}
