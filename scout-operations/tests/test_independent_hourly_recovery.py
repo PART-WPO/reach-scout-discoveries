@@ -87,8 +87,11 @@ class IndependentRecoveryTests(unittest.TestCase):
                    self.index["recommended_preview"]["historical_datacite_original"]}
         historical = json.loads((ROOT / "scout-operations/historical-coverage.json").read_text())
         exceptions = json.loads((ROOT / "scout-operations/historical-reconciliation-exceptions.json").read_text())
+        from build_crosslane_research_memory import build as graph_builder
+        held = {n["doi"] for n in graph_builder()["nodes"]
+                if n["preprint_or_version_hold"]}
         expected = {e["identity"].removeprefix("doi:").lower()
-                    for e in exceptions["exceptions"]}
+                    for e in exceptions["exceptions"]} - held
         if historical["remaining"] <= self.index["max_preview_per_group"]:
             self.assertEqual(pending, expected)
         self.assertNotIn(self.doi, pending)
