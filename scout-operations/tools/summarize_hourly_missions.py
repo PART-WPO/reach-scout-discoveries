@@ -41,8 +41,34 @@ def summarize(root=ROOT):
         req = [r["external_requests_observed"] for r in records if r["external_requests_observed"] is not None]
         cache = [r["cache_hits_observed"] for r in records if r["cache_hits_observed"] is not None]
         cases = sorted({d.lower() for r in records for d in r["new_original_full_decisions"]})
+        # A bounded negative is not a formal expansion closure. Do not treat a
+        # technical/funding hold or simply zero candidates as a negative result.
+        bounded_negative = [
+            r for r in records
+            if r["selected_expansion_seed_dois"]
+            and r["research_only_holds"]
+            and not r["new_expansion_decisions"]
+            and not r["technical_or_funding_holds"]
+        ]
+        negative_seeds = sorted({
+            d.lower() for r in bounded_negative for d in r["selected_expansion_seed_dois"]
+        })
+        explored_seeds = sorted({
+            d.lower() for r in records for d in r["selected_expansion_seed_dois"]
+        })
+        seed_mission_counts = {
+            d: sum(d in {x.lower() for x in r["selected_expansion_seed_dois"]} for r in records)
+            for d in explored_seeds
+        }
         categories[producer] = {
             "verified_report_count": n,
+            "distinct_expansion_seeds_investigated": len(explored_seeds),
+            "bounded_seed_no_new_output_missions": len(bounded_negative),
+            "distinct_bounded_seed_no_new_output_dois": negative_seeds,
+            "distinct_bounded_seed_no_new_output_count": len(negative_seeds),
+            "expansion_seeds_revisited_across_missions": sum(v > 1 for v in seed_mission_counts.values()),
+            "formal_expansion_decision_missions": sum(bool(r["new_expansion_decisions"]) for r in records),
+            "bounded_negative_definition": "Explicit seed plus research-only hold, no formal expansion decision or technical/funding hold; not exhaustive proof of absence.",
             "no_report_is_not_proof_no_mission_ran": True,
             "completed_original_decision_missions": len(completed),
             "confirmed_public_handoff_missions": len(public),
