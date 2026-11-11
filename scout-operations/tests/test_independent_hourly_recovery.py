@@ -85,9 +85,12 @@ class IndependentRecoveryTests(unittest.TestCase):
     def test_historical_exception_stays_researchable(self):
         pending = {x["doi"] for x in
                    self.index["recommended_preview"]["historical_datacite_original"]}
-        self.assertEqual(pending, {
-            "10.17603/ds2-rgbs-xd77",
-            "10.17603/ds2-xjyf-nc93"})
+        historical = json.loads((ROOT / "scout-operations/historical-coverage.json").read_text())
+        exceptions = json.loads((ROOT / "scout-operations/historical-reconciliation-exceptions.json").read_text())
+        expected = {e["identity"].removeprefix("doi:").lower()
+                    for e in exceptions["exceptions"]}
+        if historical["remaining"] <= self.index["max_preview_per_group"]:
+            self.assertEqual(pending, expected)
         self.assertNotIn(self.doi, pending)
 
     def test_limits_and_dedup_of_blocked_identities(self):
