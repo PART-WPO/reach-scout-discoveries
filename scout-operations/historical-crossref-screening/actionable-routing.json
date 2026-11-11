@@ -6,8 +6,8 @@
   "reach_source_manifest_sha256": "f94ae52cac483b52e9a5cd6e775c6faa01ad6ec33610b249b3d486aed6daa003",
   "noaa_ir_manifest_sha256": "b3acfe20b0b685b7aeb988e969999db96e322b7169f00ec819c1a96eea997342",
   "noaa_ir_existing_reach_url_matches": 351,
-  "shared_identity_index_fingerprint": "1c3953557312cb2413676006b475188de4ea31c752202c6e959f59d581252538",
-  "public_scout_queue_overlap_dois": 51,
+  "shared_identity_index_fingerprint": "1ac34ce781083df9f61632735311d15be37b16ad0aff5fb836a911301e7901ed",
+  "public_scout_queue_overlap_dois": 52,
   "reach_source_records": 1238,
   "total": 614,
   "counts": {
@@ -6732,8 +6732,27 @@
       "title": "hyg a hydraulic geometry dataset derived from historical stream gage measurements across the conterminous us",
       "outcome": "NOT_FOUND_IN_REACH_INDEX",
       "route": "ADVANCE_TO_FUNDING_AND_METADATA_RESEARCH",
-      "scout_public_queue_matches": [],
-      "scout_public_queue_match_count": 0,
+      "scout_public_queue_matches": [
+        {
+          "source": "SCOUT_PUBLISHED",
+          "identity": "2026-11-11-human-project-0d9ca4d64361951c31:2",
+          "location": "scout-discoveries/batches/2026-11-11-human-project-0d9ca4d64361951c31.csv:2",
+          "basis": [
+            "exact_doi",
+            "normalized_title"
+          ]
+        },
+        {
+          "source": "SCOUT_INBOX",
+          "identity": "2026-11-11-human-project-0d9ca4d64361951c31.csv:2",
+          "location": "scout-discoveries/inbox/2026-11-11-human-project-0d9ca4d64361951c31.csv:2",
+          "basis": [
+            "exact_doi",
+            "normalized_title"
+          ]
+        }
+      ],
+      "scout_public_queue_match_count": 2,
       "scout_overlap": false,
       "noaa_ir_reach_check": {
         "status": "VERIFIED_IR_URL_NOT_IN_PUBLIC_REACH",
