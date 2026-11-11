@@ -1,0 +1,25 @@
+name: Scout same-mission REACH artifact URL verification
+
+on:
+  pull_request:
+    paths:
+      - 'scout-operations/tools/verify_reach_artifact_url.py'
+      - 'scout-operations/tests/test_verify_reach_artifact_url.py'
+      - '.github/workflows/scout-reach-artifact-url-regression.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-read-only-url-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile read-only verifier
+        run: python -m py_compile scout-operations/tools/verify_reach_artifact_url.py
+      - name: Test primary software URL vs secondary article link
+        run: python -m unittest discover -s scout-operations/tests -p 'test_verify_reach_artifact_url.py' -v
