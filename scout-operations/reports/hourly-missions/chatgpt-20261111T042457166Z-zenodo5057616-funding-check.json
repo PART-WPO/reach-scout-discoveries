@@ -1,0 +1,48 @@
+{
+  "schema": "reach-scout-hourly-mission-outcome-v1",
+  "producer": "chatgpt_hourly_mission",
+  "not_chatgpt_hourly_mission": false,
+  "mission_id": "20261111T042457166Z-zenodo5057616-funding-check",
+  "started_at_utc": "2026-11-11T04:24:57.166Z",
+  "completed_at_utc": "2026-11-11T04:25:17.375Z",
+  "policy_commit_sha": "NOT_VERIFIED",
+  "memory_source_fingerprint": "48cadbdecd687bf28895e74749107ab085883c0a357332f66b97c5303e0d843c",
+  "memory_builder_policy_sha256": "6c77012241b8abd0544dcb9e8a22e38aad5b76bb6c3664afafcdeedbc2d4cc17",
+  "lane": "related_expansion",
+  "selected_original_dois": [],
+  "selected_expansion_seed_dois": [
+    "10.5281/zenodo.5057616"
+  ],
+  "fast_exited_public_reach": [],
+  "fast_exited_public_scout": [],
+  "new_original_full_decisions": [],
+  "new_expansion_decisions": [],
+  "research_only_holds": [
+    "10.5281/zenodo.5057616"
+  ],
+  "technical_or_funding_holds": [
+    "10.5281/zenodo.5057616"
+  ],
+  "published_public_batch_urls": [],
+  "guarded_handoff_run_urls": [],
+  "handoff_status": "NOT_ATTEMPTED",
+  "handoff_blocker": null,
+  "prior_note_sha256_reused": [],
+  "prior_metadata_fingerprints_reused": [],
+  "cache_hits_observed": null,
+  "external_requests_observed": null,
+  "avoided_requests_measured": null,
+  "private_hub_import": "NOT_VERIFIED",
+  "human_decision": "NOT_VERIFIED",
+  "public_reach_addition": "NOT_VERIFIED",
+  "research_note": {
+    "doi": "10.5281/zenodo.5057616",
+    "finding": "Publisher article explicitly links archived CCSM4 model simulations to this dataset DOI, but publisher and NOAA IR funding statements for the article list NA18OAR4320123, NA18OAR4310293, NA15OAR4320064 only; none confirms OAR459. Article funding is not independent dataset funding. No public eligibility decision.",
+    "source_urls": [
+      "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021GL096709",
+      "https://repository.library.noaa.gov/view/noaa/43170"
+    ],
+    "source_sha256": "NOT_VERIFIED",
+    "next_action": "Hold dataset attribution pending exact-dataset WPO award evidence; do not stage as original."
+  }
+}
