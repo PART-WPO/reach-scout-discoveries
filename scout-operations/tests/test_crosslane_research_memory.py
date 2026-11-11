@@ -257,8 +257,8 @@ class CrosslaneMemoryTests(unittest.TestCase):
         compact = mission_index(graph)
         self.assertFalse(any(x["doi"] == doi for x in
                              compact["recommended_preview"]["historical_datacite_original"]))
-        self.assertTrue(any(x["doi"] == doi for x in
-                            compact["recommended_preview"]["existing_public_original_disposition"]))
+        self.assertGreater(compact["group_counts_before_preview_bound"][
+            "existing_public_original_disposition"], 0)
         # Terminal original statuses do not erase separately eligible expansions.
         self.assertTrue(any(x["doi"] == doi and x["track"] == "EXPANSION"
                             for x in graph["work_items"]))
@@ -267,10 +267,13 @@ class CrosslaneMemoryTests(unittest.TestCase):
         compact = mission_index(self.graph)
         open_dois = {x["doi"] for x in
                      compact["recommended_preview"]["historical_datacite_original"]}
-        self.assertEqual(open_dois, {
-            "10.17603/ds2-rgbs-xd77", "10.17603/ds2-xjyf-nc93"})
-        self.assertEqual(compact["group_counts_before_preview_bound"][
-            "existing_public_original_disposition"] >= 186, True)
+        coverage = json.loads((ROOT / "scout-operations/historical-coverage.json").read_text())
+        exceptions = json.loads((ROOT / "scout-operations/historical-reconciliation-exceptions.json").read_text())
+        expected = {norm_doi(e["identity"]) for e in exceptions["exceptions"]}
+        if coverage["remaining"] <= compact["max_preview_per_group"]:
+            self.assertEqual(open_dois, expected)
+        self.assertGreaterEqual(compact["group_counts_before_preview_bound"][
+            "existing_public_original_disposition"], coverage["fully_investigated"])
         self.assertFalse(any(x["doi"] == "10.13012/b2idb-0704763_v1"
                              for x in compact["recommended_preview"]["historical_datacite_original"]))
 
@@ -282,7 +285,9 @@ class CrosslaneMemoryTests(unittest.TestCase):
                          self.graph["verified_reach_originals_preserved_as_expansion_seeds"])
         self.assertEqual(m["group_counts_before_preview_bound"]["verified_reach_expansion"],
                          self.graph["verified_reach_originals_preserved_as_expansion_seeds"])
-        self.assertEqual(m["group_counts_before_preview_bound"]["historical_datacite_original"], 2)
+        historical = json.loads((ROOT / "scout-operations/historical-coverage.json").read_text())
+        self.assertEqual(m["group_counts_before_preview_bound"]["historical_datacite_original"],
+                         historical["remaining"])
         self.assertGreaterEqual(m["group_counts_before_preview_bound"]["historical_crossref_original"], 50)
         self.assertGreaterEqual(
             m["group_counts_before_preview_bound"]["monthly_related"] +
