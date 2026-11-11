@@ -1,0 +1,49 @@
+{
+  "schema": "reach-scout-hourly-mission-outcome-v1",
+  "producer": "chatgpt_hourly_mission",
+  "not_chatgpt_hourly_mission": false,
+  "mission_id": "chatgpt-20261111T172654251Z-s00382-021-06124-w",
+  "started_at_utc": "2026-11-11T17:26:54.251Z",
+  "completed_at_utc": "2026-11-11T17:27:23.403Z",
+  "policy_commit_sha": "NOT_VERIFIED",
+  "memory_source_fingerprint": "48cadbdecd687bf28895e74749107ab085883c0a357332f66b97c5303e0d843c",
+  "memory_builder_policy_sha256": "6c77012241b8abd0544dcb9e8a22e38aad5b76bb6c3664afafcdeedbc2d4cc17",
+  "lane": "related_expansion",
+  "selected_original_dois": [],
+  "selected_expansion_seed_dois": [
+    "10.1007/s00382-021-06124-w"
+  ],
+  "fast_exited_public_reach": [],
+  "fast_exited_public_scout": [],
+  "new_original_full_decisions": [],
+  "new_expansion_decisions": [],
+  "research_only_holds": [
+    "10.1007/s00382-021-06124-w"
+  ],
+  "technical_or_funding_holds": [],
+  "published_public_batch_urls": [],
+  "guarded_handoff_run_urls": [],
+  "handoff_status": "NOT_ATTEMPTED",
+  "handoff_blocker": null,
+  "prior_note_sha256_reused": [],
+  "prior_metadata_fingerprints_reused": [],
+  "cache_hits_observed": null,
+  "external_requests_observed": null,
+  "avoided_requests_measured": null,
+  "private_hub_import": "NOT_VERIFIED",
+  "human_decision": "NOT_VERIFIED",
+  "public_reach_addition": "NOT_VERIFIED",
+  "research_evidence": {
+    "seed_title": "Oceanic meridional transports and their roles in warm water volume variability and ENSO in the tropical Pacific",
+    "finding": "Bounded publisher official full accessible HTML and NOAA PSL source inspection found citations to existing shared GODAS and NCEP/DOE Reanalysis-2 data, but no separately identified project-generated dataset/code DOI or release in inspected publisher acknowledgments and data links. No distinct output established; not a global negative. Crossref API inaccessible, not needed for bounded seed conclusion. Article itself is already REACH reach-000453 with primary DOI and WPO award NA20OAR4590316; current canonical index part-004.csv verified exact primary URL, UID reachuid-v1-03e63015f9d130bfe78e59abdc72ef04, output type 1. Publisher acknowledgement confirms award. Existing external shared data URLs are not new project-created artifacts and should not be submitted as novel. No newly discovered code/software/data artifact URL needing separate same-mission identity check.",
+    "sources": [
+      "https://link.springer.com/article/10.1007/s00382-021-06124-w",
+      "https://psl.noaa.gov/data/gridded/data.godas.html",
+      "https://psl.noaa.gov/data/gridded/data.ncep.reanalysis2.html",
+      "https://raw.githubusercontent.com/PART-WPO/reach-dashboard/main/agent-data/index/part-004.csv"
+    ],
+    "source_reach_cache_blob_sha": "00dd3ac2aba8dbf4838090a02d85b7604bb6329d",
+    "source_mission_index_blob_sha": "f91c8ce8aed6c9eaf83b577bd416c3e926d13f7f",
+    "rotation": "Next eligible verified REACH expansion seed not under existing GitHub expansion ledger cooldown; no retry of this unchanged source."
+  }
+}
