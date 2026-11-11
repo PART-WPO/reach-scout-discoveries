@@ -1,0 +1,68 @@
+{
+  "schema": "reach-scout-bounded-expansion-research-v1",
+  "observed_at_utc": "2026-11-11T07:51:40.160517+00:00",
+  "seed_doi": "10.1007/s00382-021-06120-0",
+  "source_graph_sha256": "48cadbdecd687bf28895e74749107ab085883c0a357332f66b97c5303e0d843c",
+  "seed_expansion_fingerprint": "7303d7d07900822319f9c2839e1fdb137c5ec493d682e27361792bfd240bbb2e",
+  "seed_reach_identity_verified_in_graph": true,
+  "explicit_related_dois_preserved": [],
+  "source_lookups": [
+    {
+      "doi": "10.1007/s00382-021-06120-0",
+      "role": "VERIFIED_REACH_EXPANSION_SEED",
+      "source_status": "ok",
+      "official_provider": "crossref",
+      "official_title": "Prediction of extreme events in precipitation and temperature over CONUS during boreal summer in the UFS coupled model",
+      "official_metadata_url": "https://api.crossref.org/works/10.1007/s00382-021-06120-0",
+      "publication_status": "official_journal_article",
+      "official_award_numbers_observed": [
+        "NA18NWS4680069",
+        "NA19NES4320002"
+      ],
+      "separate_output_uniqueness": "NOT_VERIFIED",
+      "same_WPO_project_parent": "NOT_VERIFIED"
+    }
+  ],
+  "status": "OFFICIAL_SOURCE_CHECK_RECORDED",
+  "source_driven_discovery": {
+    "schema": "reach-scout-source-driven-expansion-v1",
+    "seed_doi": "10.1007/s00382-021-06120-0",
+    "source_checks": [
+      {
+        "kind": "crossref_references",
+        "url": "https://api.crossref.org/works/10.1007/s00382-021-06120-0",
+        "status": "SOURCE_READ",
+        "source_sha256": "5ca967ef5684fd969a43664890bbdcd4c7f3b8248a69cf7d6e7db909524a833f",
+        "data_code_doi_matches": 0
+      },
+      {
+        "kind": "noaa_ir_landing",
+        "url": "https://repository.library.noaa.gov/view/noaa/46526",
+        "status": "SOURCE_READ",
+        "source_sha256": "fffe29aa65434065e612b251512da1d02471dd50e8caf610ad30f9a1d5ddb16e"
+      },
+      {
+        "kind": "noaa_ir_manuscript_pdf",
+        "url": "https://repository.library.noaa.gov/view/noaa/46526/noaa_46526_DS1.pdf",
+        "status": "SOURCE_READ",
+        "source_sha256": "78ff13505ca9faebbe6aa6efe342b4a60ae787f6a9d226e83f7fd35fe73ee793",
+        "data_code_doi_matches": 0,
+        "pdf_text_characters": 71111,
+        "pdf_doi_tokens_observed": 1
+      }
+    ],
+    "discovered_doi_leads": [],
+    "status": "NO_DATA_CODE_DOI_IDENTIFIED",
+    "new_public_candidates": 0,
+    "private_hub_import": "NOT_VERIFIED"
+  },
+  "new_source_driven_leads_screened": [],
+  "new_distinct_doi_leads_found": 0,
+  "new_public_candidate_count": 0,
+  "new_related_output_eligibility_confirmed": 0,
+  "separate_expansion_decisions_completed": 0,
+  "reason_not_a_completed_expansion": "Source metadata and DOI edges are research leads; distinct output identity, preprint, public REACH/Scout duplicate and exact WPO project funding require independent checks.",
+  "next_action": "Investigate official metadata and full current REACH/Scout identity for distinct linked DOI(s); verify their OWN publisher award and primary SPARK parent before any Needs Investigation or New Candidate.",
+  "private_hub_import": "NOT_VERIFIED",
+  "human_approval": "NOT_VERIFIED"
+}
