@@ -586,8 +586,9 @@ def mission_index(graph, *, max_per_lane=12):
             if node["preprint_or_version_hold"]:
                 candidate["hourly_original_research_allowed"] = False
                 groups["preprint_watchlist_only"].append(candidate)
-            elif node.get("public_staged_in_scout_manifest") or node.get(
-                    "historical_original_verified_terminal"):
+            elif (node.get("public_staged_in_scout_manifest") or
+                  node.get("historical_original_verified_terminal")) and (
+                      "monthly_api" not in node["lanes"]):
                 candidate["next_action"] = "EXISTING_VERIFIED_PUBLIC_ORIGINAL_DO_NOT_RESEARCH_AGAIN"
                 candidate["hourly_original_research_allowed"] = False
                 groups["existing_public_original_disposition"].append(candidate)
