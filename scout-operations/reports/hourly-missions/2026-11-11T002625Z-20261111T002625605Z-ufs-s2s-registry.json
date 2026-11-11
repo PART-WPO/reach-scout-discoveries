@@ -1,0 +1,47 @@
+{
+  "schema": "reach-scout-hourly-mission-outcome-v1",
+  "producer": "chatgpt_hourly_mission",
+  "not_chatgpt_hourly_mission": false,
+  "mission_id": "20261111T002625605Z-ufs-s2s-registry",
+  "started_at_utc": "2026-11-11T00:26:25.605Z",
+  "completed_at_utc": "2026-11-11T00:27:08.163Z",
+  "policy_commit_sha": "NOT_VERIFIED",
+  "memory_source_fingerprint": "98344ca9ee18144c76f9bce066259cd15122762e4be8a5172dea6c62048e50fe",
+  "memory_builder_policy_sha256": "12b0ec18f0c2c1d7b82edbe746a485c33afe5d493e0c56f72fd0932b305c04a6",
+  "lane": "related_expansion",
+  "selected_original_dois": [],
+  "selected_expansion_seed_dois": [
+    "10.1007/s00382-024-07512-8"
+  ],
+  "fast_exited_public_reach": [],
+  "fast_exited_public_scout": [],
+  "new_original_full_decisions": [],
+  "new_expansion_decisions": [],
+  "research_only_holds": [
+    "10.1007/s00382-024-07512-8"
+  ],
+  "technical_or_funding_holds": [],
+  "published_public_batch_urls": [],
+  "guarded_handoff_run_urls": [],
+  "handoff_status": "NOT_ATTEMPTED",
+  "handoff_blocker": null,
+  "prior_note_sha256_reused": [],
+  "prior_metadata_fingerprints_reused": [],
+  "cache_hits_observed": null,
+  "external_requests_observed": null,
+  "avoided_requests_measured": null,
+  "private_hub_import": "NOT_VERIFIED",
+  "human_decision": "NOT_VERIFIED",
+  "public_reach_addition": "NOT_VERIFIED",
+  "research_evidence": [
+    {
+      "seed_doi": "10.1007/s00382-024-07512-8",
+      "source_url": "https://registry.opendata.aws/noaa-ufs-s2s/",
+      "source_kind": "official_dataset_registry",
+      "finding": "Confirmed named NOAA UFS S2S Prototypes open-data collection with S3 bucket noaa-ufs-prototypes-pds, prototypes 5-8 and acknowledgment of WPO sponsorship; registry citation is URL/date, not a distinct DOI. Dataset project-specific attribution and REACH identity not independently established; no new candidate.",
+      "disposition": "RESEARCH_ONLY_HOLD",
+      "source_sha256": "NOT_VERIFIED",
+      "novelty_note": "Fresh distinct-source registry verification of prior seed's data availability lead; not a new seed or completed expansion."
+    }
+  ]
+}
