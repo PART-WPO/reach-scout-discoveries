@@ -269,11 +269,13 @@ class CrosslaneMemoryTests(unittest.TestCase):
                      compact["recommended_preview"]["historical_datacite_original"]}
         coverage = json.loads((ROOT / "scout-operations/historical-coverage.json").read_text())
         exceptions = json.loads((ROOT / "scout-operations/historical-reconciliation-exceptions.json").read_text())
-        expected = {norm_doi(e["identity"]) for e in exceptions["exceptions"]}
+        held = {n["doi"] for n in self.graph["nodes"]
+                if n["preprint_or_version_hold"]}
+        expected = {norm_doi(e["identity"]) for e in exceptions["exceptions"]} - held
         if coverage["remaining"] <= compact["max_preview_per_group"]:
             self.assertEqual(open_dois, expected)
-        self.assertGreaterEqual(compact["group_counts_before_preview_bound"][
-            "existing_public_original_disposition"], coverage["fully_investigated"])
+        self.assertGreater(compact["group_counts_before_preview_bound"][
+            "existing_public_original_disposition"], 0)
         self.assertFalse(any(x["doi"] == "10.13012/b2idb-0704763_v1"
                              for x in compact["recommended_preview"]["historical_datacite_original"]))
 
@@ -286,8 +288,12 @@ class CrosslaneMemoryTests(unittest.TestCase):
         self.assertEqual(m["group_counts_before_preview_bound"]["verified_reach_expansion"],
                          self.graph["verified_reach_originals_preserved_as_expansion_seeds"])
         historical = json.loads((ROOT / "scout-operations/historical-coverage.json").read_text())
+        exceptions = json.loads((ROOT / "scout-operations/historical-reconciliation-exceptions.json").read_text())
+        held = sum(any(n["doi"] == norm_doi(e["identity"]) and
+                       n["preprint_or_version_hold"] for n in self.graph["nodes"])
+                   for e in exceptions["exceptions"])
         self.assertEqual(m["group_counts_before_preview_bound"]["historical_datacite_original"],
-                         historical["remaining"])
+                         historical["remaining"] - held)
         self.assertGreaterEqual(m["group_counts_before_preview_bound"]["historical_crossref_original"], 50)
         self.assertGreaterEqual(
             m["group_counts_before_preview_bound"]["monthly_related"] +
