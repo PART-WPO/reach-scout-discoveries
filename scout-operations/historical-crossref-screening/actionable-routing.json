@@ -6,8 +6,8 @@
   "reach_source_manifest_sha256": "f94ae52cac483b52e9a5cd6e775c6faa01ad6ec33610b249b3d486aed6daa003",
   "noaa_ir_manifest_sha256": "b3acfe20b0b685b7aeb988e969999db96e322b7169f00ec819c1a96eea997342",
   "noaa_ir_existing_reach_url_matches": 351,
-  "shared_identity_index_fingerprint": "2a7622e93b16fc7dc34ee5c4f537f75c1990413fe9223c10033a26b51c0e8104",
-  "public_scout_queue_overlap_dois": 53,
+  "shared_identity_index_fingerprint": "dccf03ab1929fd9e8e82e878f0e688a3e03febdb69857f0b6ebcdabac889fe2a",
+  "public_scout_queue_overlap_dois": 54,
   "reach_source_records": 1238,
   "total": 614,
   "counts": {
@@ -19384,8 +19384,27 @@
       "title": "multilingual community visualizations mcv a gis dashboard for linguistic research and nws operations",
       "outcome": "NOT_FOUND_IN_REACH_INDEX",
       "route": "ADVANCE_TO_FUNDING_AND_METADATA_RESEARCH",
-      "scout_public_queue_matches": [],
-      "scout_public_queue_match_count": 0,
+      "scout_public_queue_matches": [
+        {
+          "source": "SCOUT_PUBLISHED",
+          "identity": "2026-11-11-human-project-febf4de412715b8e8b:2",
+          "location": "scout-discoveries/batches/2026-11-11-human-project-febf4de412715b8e8b.csv:2",
+          "basis": [
+            "exact_doi",
+            "normalized_title"
+          ]
+        },
+        {
+          "source": "SCOUT_INBOX",
+          "identity": "2026-11-11-human-project-febf4de412715b8e8b.csv:2",
+          "location": "scout-discoveries/inbox/2026-11-11-human-project-febf4de412715b8e8b.csv:2",
+          "basis": [
+            "exact_doi",
+            "normalized_title"
+          ]
+        }
+      ],
+      "scout_public_queue_match_count": 2,
       "scout_overlap": false,
       "noaa_ir_reach_check": {
         "status": "DOI_NOT_IN_VERIFIED_IR_INDEX_UNKNOWN",

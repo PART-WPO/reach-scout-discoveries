@@ -2,9 +2,9 @@
   "schema": "reach-scout-crossref-candidate-queue-v2",
   "purpose": "Read-only selection; not completed research or approval",
   "completion_target": "Each hourly mission handles at least one full novel-output screening through a concrete disposition or public human-review handoff. Skipped known records do not count; technical blockers must be reported, not represented as completed.",
-  "one_mission_actionable_original_count": 131,
+  "one_mission_actionable_original_count": 130,
   "ledger_cooldown_excluded_count": 0,
-  "live_manifest_verified_fast_exit_count": 52,
+  "live_manifest_verified_fast_exit_count": 53,
   "special_publication_type_review_count": 1,
   "special_publication_review_preview": [
     {
@@ -15,14 +15,6 @@
     }
   ],
   "next_one_mission_original_preview": [
-    {
-      "doi": "10.1175/wcas-d-25-0104.1",
-      "lane": "HUMAN_REVIEW_FAST_SCREEN_DUE",
-      "priority": 85,
-      "funding_signal": "CONFIRMED_WPO_459",
-      "required_outcome": "FINISH_ORIGINAL_SCREENING_DECISION_THIS_RUN",
-      "action": "459 is a WPO funding code. Reuse source evidence and confirm exact published DOI, publisher-deposited 459 award, public identity and preprint gates. Route verified WPO outputs to New Candidate; only unresolved attribution to Needs Investigation."
-    },
     {
       "doi": "10.1002/essoar.10507281.2",
       "lane": "BOUNDED_IDENTITY_REVIEW",
@@ -78,14 +70,21 @@
       "funding_signal": "CONFIRMED_WPO_459",
       "required_outcome": "FINISH_ORIGINAL_SCREENING_DECISION_THIS_RUN",
       "action": "Complete one bounded identity/version check and record a final screening decision in this mission"
+    },
+    {
+      "doi": "10.1029/2021ms002774",
+      "lane": "BOUNDED_IDENTITY_REVIEW",
+      "priority": 70,
+      "funding_signal": "NON_WPO_OAR_AWARD",
+      "required_outcome": "FINISH_ORIGINAL_SCREENING_DECISION_THIS_RUN",
+      "action": "Complete one bounded identity/version check and record a final screening decision in this mission"
     }
   ],
   "total": 614,
   "lane_counts": {
-    "ALREADY_IN_SCOUT_REVIEW_FAST_EXIT": 36,
+    "ALREADY_IN_SCOUT_REVIEW_FAST_EXIT": 37,
     "BOUNDED_IDENTITY_REVIEW": 51,
     "EXISTING_REACH_FAST_EXIT": 426,
-    "HUMAN_REVIEW_FAST_SCREEN_DUE": 1,
     "NON_459_PROJECT_EVIDENCE_CHECK": 2,
     "NOVEL_IDENTITY_RESEARCH": 77,
     "PREPRINT_PUBLISHED_VERSION_LEAD": 11,
@@ -95,38 +94,6 @@
     "WAIT_FOR_NEW_EVIDENCE": 2
   },
   "items": [
-    {
-      "preprint_status": null,
-      "already_in_public_scout_queue": false,
-      "matched_public_review_locations": [],
-      "live_public_title_conflict": false,
-      "handoff_ledger_state": null,
-      "handoff_ledger_reason": null,
-      "handoff_retry_after": null,
-      "special_publication_type": null,
-      "one_mission_disposition_required": true,
-      "verified_published_dois": [],
-      "doi": "10.1175/wcas-d-25-0104.1",
-      "title": "multilingual community visualizations mcv a gis dashboard for linguistic research and nws operations",
-      "lane": "HUMAN_REVIEW_FAST_SCREEN_DUE",
-      "priority": 85,
-      "next_action": "459 is a WPO funding code. Reuse source evidence and confirm exact published DOI, publisher-deposited 459 award, public identity and preprint gates. Route verified WPO outputs to New Candidate; only unresolved attribution to Needs Investigation.",
-      "funding_signal": "CONFIRMED_WPO_459",
-      "crossref_structured_award_numbers": [
-        "NA22OAR4590187"
-      ],
-      "wpo_459_award_numbers": [
-        "NA22OAR4590187"
-      ],
-      "award_evidence_source_batches": [
-        "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part006.csv"
-      ],
-      "award_match_basis": "Historical Crossref publisher-deposited award for exact DOI; 459 identifies WPO funding. Exact SPARK parent and output identity still require verification before addition",
-      "prior_disposition": "PROJECT_EVIDENCE_HOLD",
-      "scout_overlap": false,
-      "verified_reach_uid": null,
-      "private_hub_review": "NOT_VERIFIED"
-    },
     {
       "preprint_status": null,
       "already_in_public_scout_queue": false,
@@ -9022,7 +8989,7 @@
       ],
       "live_public_title_conflict": false,
       "handoff_ledger_state": "PUBLISHED_PUBLIC_SCOUT",
-      "handoff_ledger_reason": "SOURCE_VERIFIED_AND_MANIFEST_VALIDATED",
+      "handoff_ledger_reason": "PUBLIC_SCOUT_REVIEW_UNIT_VERIFIED",
       "handoff_retry_after": null,
       "special_publication_type": null,
       "one_mission_disposition_required": false,
@@ -18210,6 +18177,40 @@
     },
     {
       "preprint_status": null,
+      "already_in_public_scout_queue": true,
+      "matched_public_review_locations": [
+        "scout-discoveries/batches/2026-11-11-human-project-febf4de412715b8e8b.csv"
+      ],
+      "live_public_title_conflict": false,
+      "handoff_ledger_state": "PUBLISHED_PUBLIC_SCOUT",
+      "handoff_ledger_reason": "SOURCE_VERIFIED_AND_MANIFEST_VALIDATED",
+      "handoff_retry_after": null,
+      "special_publication_type": null,
+      "one_mission_disposition_required": false,
+      "verified_published_dois": [],
+      "doi": "10.1175/wcas-d-25-0104.1",
+      "title": "multilingual community visualizations mcv a gis dashboard for linguistic research and nws operations",
+      "lane": "ALREADY_IN_SCOUT_REVIEW_FAST_EXIT",
+      "priority": 0,
+      "next_action": "Already in Scout's public review pipeline: do not repeat original research or create another proposal; keep independent expansion",
+      "funding_signal": "CONFIRMED_WPO_459",
+      "crossref_structured_award_numbers": [
+        "NA22OAR4590187"
+      ],
+      "wpo_459_award_numbers": [
+        "NA22OAR4590187"
+      ],
+      "award_evidence_source_batches": [
+        "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part006.csv"
+      ],
+      "award_match_basis": "Historical Crossref publisher-deposited award for exact DOI; 459 identifies WPO funding. Exact SPARK parent and output identity still require verification before addition",
+      "prior_disposition": "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+      "scout_overlap": false,
+      "verified_reach_uid": null,
+      "private_hub_review": "NOT_VERIFIED"
+    },
+    {
+      "preprint_status": null,
       "already_in_public_scout_queue": false,
       "matched_public_review_locations": [],
       "live_public_title_conflict": false,
@@ -19943,7 +19944,7 @@
   "new_review_proposals": 0,
   "source_sha256": {
     "scout-operations/historical-crossref-screening/actionable-routing.json": "3bc994752a21cf77ca8424a2bb40048bfcc445ab03f7f21ec0061fc63eae232a",
-    "scout-operations/research-outcome-registry.json": "48953c728be98f8d919e2329c56e9a114b922a67323808a8c6c3a89ea84ffa78",
+    "scout-operations/research-outcome-registry.json": "ef830f73430d6581b2e316e71af27c6f31a27dfcc9ba00ad90b817d2ad6c8a4f",
     "api-discoveries/historical-crossref/manifest.json": "799744c7e83f218d22cc19afacb7cfcf2762feb490659efde9f58bf19473b1fa",
     "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part001.csv": "df420ff561050c5f019ccddd19eb93124ab642eba8aa6f87dc0636b6d5ee2de3",
     "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part002.csv": "1cc9e5f3c493c6fa7cde93e0060718224686f695c7ba6d648208ecf9a09d69d7",
@@ -19958,8 +19959,8 @@
     "scout-operations/reach-comparison-cache/comparison-index.json": "6660562e325a6a141198f59acce84f2e30d9a2d14e6cf5acd29769c8a4b68e1e"
   },
   "dynamic_selection_sha256": {
-    "scout-operations/decision-handoff-ledger.json": "b3dc4ae3bf9f06c9f4c1f0e0651a4e6d432f68b163a627ec84a5b58223356179",
-    "scout-discoveries/manifest.json": "3dbbb5793737d7d9a9819b1bd71885343c3658397a2cc21a7a6f9156bb201371"
+    "scout-operations/decision-handoff-ledger.json": "afa4b7f3efc9592c2f77820879835e0f95eceb13376c5bf6ea991ce382128c0e",
+    "scout-discoveries/manifest.json": "e2772f6756ff04f4a5a1ec3847b37a64619cc2f5b2ab762b9281f1d93df5dbdc"
   },
   "funding_signal_counts": {
     "CI_432_NEEDS_PROJECT_PROOF": 41,

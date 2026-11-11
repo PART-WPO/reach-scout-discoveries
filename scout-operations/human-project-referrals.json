@@ -1,12 +1,12 @@
 {
   "schema": "reach-scout-bounded-project-human-referral-v1",
-  "source_outcome_event_count": 73,
-  "source_outcome_sha256": "f3d334514a3421602523f438c37fbe23e51b2c2c3bbfd936256234f71eb089f2",
+  "source_outcome_event_count": 74,
+  "source_outcome_sha256": "422da05a9f7281d6c6f6eaa83ccef661e7b3c586ea4acb8410c248491ee511e1",
   "unique_bounded_project_questions": 3,
-  "potential_wpo_cases_quick_screened": 26,
+  "potential_wpo_cases_quick_screened": 27,
   "human_referral_drafts_prevalidated": 1,
   "draft_paths": [
-    "scout-discoveries/inbox/2026-11-11-human-project-39f06212d958390941.csv"
+    "scout-discoveries/inbox/2026-11-11-human-project-febf4de412715b8e8b.csv"
   ],
   "published_batch_paths": [
     "scout-discoveries/batches/2026-11-09-human-project-b332d53770e8cbc1d4.csv",
@@ -19,6 +19,7 @@
     "scout-discoveries/batches/2026-11-09-human-project-8963668e6a0f98ac1c.csv",
     "scout-discoveries/batches/2026-11-09-human-project-f706c52fc493a7d6a2.csv",
     "scout-discoveries/batches/2026-11-11-human-project-0d9ca4d64361951c31.csv",
+    "scout-discoveries/batches/2026-11-11-human-project-39f06212d958390941.csv",
     "scout-discoveries/batches/2026-11-09-human-project-ec8541bda93af057fc.csv",
     "scout-discoveries/batches/2026-11-06-human-project-b616c2488c1fe907f3.csv",
     "scout-discoveries/batches/2026-11-09-human-project-e8ae57179ced9c8d19.csv",
@@ -32,7 +33,7 @@
     "scout-discoveries/batches/2026-11-10-human-project-bfcdcca18eb647d9c5.csv",
     "scout-discoveries/batches/2026-11-10-human-project-69e9278b9a8267f272.csv"
   ],
-  "verified_public_scout_referral_batches": 22,
+  "verified_public_scout_referral_batches": 23,
   "human_reviewer_decisions": "NOT_VERIFIED",
   "private_hub_imports": "NOT_VERIFIED",
   "new_approved_reach_outputs": 0,
@@ -2420,9 +2421,32 @@
         ]
       },
       "public_identity": {
-        "status": "NO_PUBLIC_IDENTITY_MATCH",
-        "reason": "NO_MATCH_IN_VERIFIED_PUBLIC_SNAPSHOT",
-        "matches": [],
+        "status": "IN_PUBLIC_SCOUT_QUEUE",
+        "reason": "CONSISTENT_SCOUT_PUBLIC_MIRRORS",
+        "matches": [
+          {
+            "source": "SCOUT_PUBLISHED",
+            "identity": "2026-11-11-human-project-39f06212d958390941:2",
+            "title": "Dual physical pathways shape subseasonal-to-seasonal predictability of North American summer heat extremes",
+            "location": "scout-discoveries/batches/2026-11-11-human-project-39f06212d958390941.csv:2",
+            "match_bases": [
+              "exact_doi",
+              "exact_url",
+              "normalized_title"
+            ]
+          },
+          {
+            "source": "SCOUT_INBOX",
+            "identity": "2026-11-11-human-project-39f06212d958390941.csv:2",
+            "title": "Dual physical pathways shape subseasonal-to-seasonal predictability of North American summer heat extremes",
+            "location": "scout-discoveries/inbox/2026-11-11-human-project-39f06212d958390941.csv:2",
+            "match_bases": [
+              "exact_doi",
+              "exact_url",
+              "normalized_title"
+            ]
+          }
+        ],
         "caveat": "Public snapshot only; private Hub decisions are not asserted.",
         "noaa_ir_reach_check": {
           "status": "VERIFIED_IR_URL_NOT_IN_PUBLIC_REACH",
@@ -2437,10 +2461,10 @@
         "wpo_award_cue_not_proof": true,
         "reason_for_review": "WPO-pattern award cited but exact funded project deliverable unverified"
       },
-      "disposition": "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL",
+      "disposition": "HOLD_ALREADY_IN_PUBLIC_REACH_OR_SCOUT",
       "review_question": "Reviewer question: Select and verify the correct SPARK parent for the explicitly funded WPO award NA22OAR4590217; confirm the output belongs with that parent before addition.",
-      "scout_inbox_status": "VALIDATED_INBOX_DRAFT_NOT_PRIVATE_HUB",
-      "published_scout_batch_path": null,
+      "scout_inbox_status": "PUBLISHED_PUBLIC_SCOUT_FEED_NOT_PRIVATE_HUB",
+      "published_scout_batch_path": "scout-discoveries/batches/2026-11-11-human-project-39f06212d958390941.csv",
       "eligible_for_new_reach_addition": "NOT_VERIFIED",
       "private_hub_import": "NOT_VERIFIED",
       "human_approval": "NOT_VERIFIED"
@@ -3983,6 +4007,117 @@
       "review_question": "Reviewer question: Select and verify the correct SPARK parent for the explicitly funded WPO award NA18OAR4590309; confirm the output belongs with that parent before addition.",
       "scout_inbox_status": "PUBLISHED_PUBLIC_SCOUT_FEED_NOT_PRIVATE_HUB",
       "published_scout_batch_path": "scout-discoveries/batches/2026-11-10-human-project-bfcdcca18eb647d9c5.csv",
+      "eligible_for_new_reach_addition": "NOT_VERIFIED",
+      "private_hub_import": "NOT_VERIFIED",
+      "human_approval": "NOT_VERIFIED"
+    },
+    {
+      "doi": "10.1175/wcas-d-25-0104.1",
+      "source_event_id": "cee2d5f0b3eafd9957bbe632",
+      "source_file": "scout-operations/historical-crossref-phase2/auto-verified-oar459-febf4de412715b8e8b.json",
+      "source_sha256": "047f8257915a4aba1cb6a8541165b9d5c59224a6a04b86b7e334dd900a6ad8c8",
+      "official_metadata": {
+        "status": "ok",
+        "provider": "crossref",
+        "evidence": "https://api.crossref.org/works/10.1175/wcas-d-25-0104.1",
+        "title": "Multilingual Community Visualizations (MCV): A GIS Dashboard for Linguistic Research and NWS Operations",
+        "creators": [
+          "Liam E. Llewellyn",
+          "Joseph E. Trujillo-Falcón",
+          "Todd D. Fagin",
+          "Monica L. Bozeman",
+          "Samuel T. Halvorson",
+          "Ennis Shabab"
+        ],
+        "resource_type": "journal-article",
+        "publication_status": "official_journal_article",
+        "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>The NWS is actively expanding its multilingual outreach to better serve the 68.8 million U.S. individuals who speak a language other than English at home. Among these, 26.3 million individuals with limited English proficiency (LEP) are of particular concern, as they often rely entirely on translated forecasts to make life-saving decisions. Yet identifying where these populations are concentrated has remained a persistent challenge for researchers and forecasters alike. To address this issue, we developed the multilingual community visualizations (MCV) dashboard, a geospatial tool that maps language diversity of LEP populations across all 122 NWS Weather Forecast Offices. Using 2019 American Community Survey (ACS) 5-yr estimates, we implemented a detailed data processing workflow, including dasymetric mapping to resolve modifiable areal unit problems where county warning area (CWA) boundaries do not align with census geography. The dashboard, developed in ArcGIS Online, provides interactive, CWA-specific insights through data visualizations, percentage maps, and dot density layers. Since its release, MCV has supported language services across the NWS and informed targeted research and operations in vulnerable LEP communities. It serves as both a research tool and an operational asset, demonstrating the power of GIS-integrated demographic analysis. We conclude with a discussion of future improvements, including automating the workflow, integrating updated ACS data, and incorporating broader demographic indicators. The MCV dashboard represents a scalable model for leveraging demographic data to advance targeted, data-driven public safety communication.</jats:p>\n                  <jats:sec>\n                    <jats:title>Significance Statement</jats:title>\n                    <jats:p>Language barriers pose a major challenge to effective risk communication during extreme weather events. This study introduces the multilingual community visualizations (MCV) dashboard, a novel GIS-based tool that maps limited English proficient populations across all NWS jurisdictions. By displaying U.S. Census data through spatial analysis and visualization techniques, the MCV enables researchers, forecasters, and emergency managers to identify language-specific needs and improve multilingual services and outreach. The dashboard supports more tailored, data-informed strategies to protect vulnerable communities and enhance resilience to disasters.</jats:p>\n                  </jats:sec>",
+        "pub_date": "2026-04-01",
+        "preprint_posted_date": "",
+        "pub_date_basis": "Crossref published-print",
+        "pub_date_precision": "month_imputed",
+        "publisher": "American Meteorological Society",
+        "funding_references": [
+          {
+            "name": "NOAA Weather Program Office",
+            "award": [
+              "NA22OAR4590187"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "NA22OAR4590187"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "https://ror.org/01q70bz83",
+                "id-type": "ROR",
+                "asserted-by": "crossref"
+              }
+            ]
+          },
+          {
+            "name": "University of Illinois at Urbana-Champaign",
+            "id": [
+              {
+                "id": "https://ror.org/047426m28",
+                "id-type": "ROR",
+                "asserted-by": "crossref"
+              }
+            ]
+          },
+          {
+            "name": "University of Oklahoma",
+            "id": [
+              {
+                "id": "https://ror.org/02aqsxs83",
+                "id-type": "ROR",
+                "asserted-by": "crossref"
+              }
+            ]
+          }
+        ],
+        "related_identifiers": {},
+        "attempts": [
+          {
+            "provider": "datacite",
+            "url": "https://api.datacite.org/dois/10.1175/wcas-d-25-0104.1",
+            "error": {
+              "kind": "http",
+              "code": 404
+            }
+          },
+          {
+            "provider": "crossref",
+            "url": "https://api.crossref.org/works/10.1175/wcas-d-25-0104.1",
+            "error": null
+          }
+        ]
+      },
+      "public_identity": {
+        "status": "NO_PUBLIC_IDENTITY_MATCH",
+        "reason": "NO_MATCH_IN_VERIFIED_PUBLIC_SNAPSHOT",
+        "matches": [],
+        "caveat": "Public snapshot only; private Hub decisions are not asserted.",
+        "noaa_ir_reach_check": {
+          "status": "DOI_NOT_IN_VERIFIED_IR_INDEX_UNKNOWN",
+          "official_url": null,
+          "match_uid": null,
+          "match_detail_shard": null
+        }
+      },
+      "project_search_context_only": {
+        "award_context_only": "NA22OAR4590187",
+        "project_context_only": "",
+        "wpo_award_cue_not_proof": true,
+        "reason_for_review": "WPO-pattern award cited but exact funded project deliverable unverified"
+      },
+      "disposition": "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL",
+      "review_question": "Reviewer question: Select and verify the correct SPARK parent for the explicitly funded WPO award NA22OAR4590187; confirm the output belongs with that parent before addition.",
+      "scout_inbox_status": "VALIDATED_INBOX_DRAFT_NOT_PRIVATE_HUB",
+      "published_scout_batch_path": null,
       "eligible_for_new_reach_addition": "NOT_VERIFIED",
       "private_hub_import": "NOT_VERIFIED",
       "human_approval": "NOT_VERIFIED"
