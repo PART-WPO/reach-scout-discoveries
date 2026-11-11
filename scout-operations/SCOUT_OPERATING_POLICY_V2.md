@@ -100,3 +100,48 @@ For a historic Crossref bot referral, do NOT default the discovery method to Ind
 Source-driven expansions count seeds investigated, distinct new DOI leads found from official sources, candidate metadata/identity/attribution checks, separately completed eligibility decisions, and valid public handoffs as different events. Prevent repeated identical leads from inflating unique discovery counts. Keep recorded ChatGPT hourly mission coverage separate from GitHub work; missing reports mean unknown coverage, not zero work.
 
 For every actual **ChatGPT hourly** execution, the first tool action must capture a live actual UTC start timestamp before source reads or analysis (never scheduled_for). At closeout capture the actual UTC completion timestamp and attempt to commit one immutable, privacy-minimized `chatgpt_hourly_mission` JSON under `scout-operations/reports/hourly-missions/` per the validated `reach-scout-hourly-mission-outcome-v1` schema. Do not use a prior run's start time, invent tool request counts, or mark a source-only hold a completion. If capture or authenticated GitHub writing is unavailable, report `NOT_INSTRUMENTED` with the exact reason. The standalone `Scout ChatGPT hourly mission measurement reconciliation` GitHub workflow validates these source records and updates the **separate** ChatGPT/GitHub scorecard, without triggering a new research mission, publishing a new candidate, or modifying private Hub/REACH systems.
+
+## Same-mission existing REACH artifact URL gate — November 11, 2026
+
+For each distinct related code/software/dataset repository URL identified during a
+ChatGPT or repository-owned expansion mission, verify the URL against **current
+public REACH in that same mission before a novelty, attribution or technical
+hold is finalized**. A source-verified exact REACH match is an immediate
+existing-public-output fast exit; rotate to the next independent eligible seed
+rather than using another mission to redo the check.
+
+Use the SHA-pinned complete `reach-comparison-cache/comparison-index.json`
+as a candidate locator, then independently read the **live original**
+`PART-WPO/reach-dashboard/main/agent-data/index/part-XXX.csv` shard for
+each matching record; check canonical `Link to Output`, `Output Type`,
+`Record ID`, and `REACH UID`. The same artifact URL may occur in a
+related article's *supporting links* and in a separate code-release record's
+*primary output URL*. A supporting-link match alone is an ambiguity to
+resolve, **not** proof the supporting article and software are one output.
+Do not demand a software title equal its citing article's title when the
+software's exact primary URL and code-release identity have already matched.
+Normalize safe URL equivalents (GitHub host/case, http/https, trailing slash,
+query/fragment and root `.git`), without collapsing forks, subpaths, file
+versions or distinct DOIs. Source changes or inaccessible index shards fail
+closed for any **negative** finding; check additional current REACH shards
+where required. Then check the public Scout manifest/inbox before any
+possible new-output handoff. No private review or approval may be inferred.
+
+A read-only reference implementation is
+`tools/verify_reach_artifact_url.py --url <full HTTPS artifact URL>`. It
+verifies only cache-linked shard candidates. The status
+`EXISTING_REACH_PRIMARY_OUTPUT_URL` is positive exact-current-primary-URL
+evidence; `SUPPORTING_LINK_ONLY_FULL_REACH_GATE_REQUIRED` and
+`NO_CACHE_LINK_MATCH_FULL_REACH_GATE_STILL_REQUIRED` are **not** proof an
+output is novel. A source failure requires a source-specific reversible hold
+and rotation. If no script execution is available, use connected GitHub
+file reads to perform these same checks in the *same* ChatGPT mission.
+
+Regression: the repository
+`https://github.com/chrisrac/objective_thresholds` is already a REACH
+**Code Release** (record `reach-000079`, UID
+`reachuid-v1-2db795d7c2e4513ff44d2c5a7fd97532`,
+primary award `NA19OAR4590411`). It is also linked as supporting
+information by article `reach-000066`. Any rediscovery of this exact
+software URL must fast-exit as existing REACH and continue to another
+eligible seed in the **same mission**. Do not alter older immutable reports.
