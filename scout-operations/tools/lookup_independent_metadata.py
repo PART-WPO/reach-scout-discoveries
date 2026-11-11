@@ -8,6 +8,7 @@ sys.path.insert(0,str(TOOLS))
 from ir_reach_identity import verified_snapshot,identity_check,research_route
 from identity_disposition import verified_disposition
 from research_memory import read_index, metadata_result, write_index, historical_author_lead
+from recover_historical_datacite import recover as recover_historical_datacite
 from datetime import datetime,timezone
 OUT=ROOT/"scout-operations/reports/independent-metadata-lookup/latest.json"
 def load(name):
@@ -62,6 +63,8 @@ def main():
   else:
    md=doi.metadata(d)
    observed=datetime.now(timezone.utc).isoformat()
+  if md.get("status") == "unavailable_or_not_found":
+   md=recover_historical_datacite(ROOT,d,md)
   doi_records.append({**v,"metadata":md,
                       "previous_public_research":historical_author_lead(ROOT,d),
                       "metadata_observed_at":observed,
@@ -78,10 +81,10 @@ def main():
  resume=[]
  for entry in doi_records:
   m=entry["metadata"]
-  resume.append({"public_identity_status":entry["identity_gate"]["public_identity"]["status"],"noaa_ir_identity":entry["identity_gate"]["noaa_ir_identity"],"identity":"doi:"+entry["doi"],"kind":"doi","lookup_status":m["status"],"metadata_source":m.get("provider"),"evidence":m.get("evidence"),"lead_files":entry["lead_files"],"next_action":entry["identity_gate"]["identity_next_action"] if m["status"]=="ok" else "retry_or_escalate_metadata"})
+  resume.append({"public_identity_status":entry["identity_gate"]["public_identity"]["status"],"noaa_ir_identity":entry["identity_gate"]["noaa_ir_identity"],"identity":"doi:"+entry["doi"],"kind":"doi","lookup_status":m["status"],"metadata_source":m.get("provider"),"evidence":m.get("evidence"),"lead_files":entry["lead_files"],"next_action":entry["identity_gate"]["identity_next_action"] if m["status"]=="ok" else ("check_existing_public_original_then_verify_native_source" if m["status"]=="archived_source_recovered" else "retry_or_escalate_metadata")})
  for entry in code_records:
   resume.append({"identity":entry.get("identity"),"output_url":entry.get("output_url"),"kind":"github","lookup_status":entry.get("status"),"evidence":entry.get("evidence",[]),"next_action":"resume_research_verification" if entry.get("status")=="ok" else "retry_or_escalate_metadata"})
- result={"artifact_scope_policy":"Zenodo file listings and exact GitHub tag trees are read-only evidence, not funding or approval. Access failures do not mean files are absent.","resume_queue":resume,"schema":"reach-scout-independent-metadata-lookup-v1","read_only":True,"public_identity_source_fingerprint":public["source_fingerprint"],"noaa_ir_index_verified":ir_index is not None,"doi_records":doi_records,"github_records":code_records,"doi_count":len(doi_records),"github_count":len(code_records),"doi_metadata_memory_hits":hits,"doi_metadata_network_attempts":len(doi_records)-hits,"doi_successful":sum(x["metadata"]["status"]=="ok" for x in doi_records),"github_successful":sum(x["status"]=="ok" for x in code_records),"policy":"Metadata enrichment does not change independent discovery provenance, establish funding/standalone eligibility, approve review or publish REACH outputs. Crossref created and GitHub repository created are not publication dates."}
+ result={"artifact_scope_policy":"Zenodo file listings and exact GitHub tag trees are read-only evidence, not funding or approval. Access failures do not mean files are absent.","resume_queue":resume,"schema":"reach-scout-independent-metadata-lookup-v1","read_only":True,"public_identity_source_fingerprint":public["source_fingerprint"],"noaa_ir_index_verified":ir_index is not None,"doi_records":doi_records,"github_records":code_records,"doi_count":len(doi_records),"github_count":len(code_records),"doi_metadata_memory_hits":hits,"doi_metadata_network_attempts":len(doi_records)-hits,"doi_successful":sum(x["metadata"]["status"]=="ok" for x in doi_records),"historical_archive_recoveries":sum(x["metadata"]["status"]=="archived_source_recovered" for x in doi_records),"github_successful":sum(x["status"]=="ok" for x in code_records),"policy":"Metadata enrichment does not change independent discovery provenance, establish funding/standalone eligibility, approve review or publish REACH outputs. Crossref created and GitHub repository created are not publication dates."}
  OUT.parent.mkdir(parents=True,exist_ok=True)
  OUT.write_text(json.dumps(result,indent=2,sort_keys=True,ensure_ascii=False)+"\n",encoding="utf8")
  write_index(ROOT)
