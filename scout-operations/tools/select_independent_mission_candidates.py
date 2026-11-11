@@ -79,6 +79,12 @@ def eligible(index, *, blocked=(), limit=MAX_ATTEMPTS):
                 continue
             if item.get("hourly_original_research_allowed") is False:
                 continue
+            # An unchanged source-backed project hold is not a fresh research
+            # target. Reopen after a new evidence note changes its disposition,
+            # rather than repeatedly using an hourly slot on the same hold.
+            if item.get("next_action") == (
+                    "REUSE_RECORDED_PROJECT_HOLD_REOPEN_ON_DISTINCT_EVIDENCE"):
+                continue
             if lane.endswith("_original"):
                 statuses = {
                     str(v).strip().lower()

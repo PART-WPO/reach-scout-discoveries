@@ -97,6 +97,14 @@ class IndependentRecoveryTests(unittest.TestCase):
         self.assertNotIn(self.doi, pending)
         self.assertFalse({x["doi"] for x in eligible(self.index)} & expected)
 
+    def test_unchanged_project_evidence_holds_do_not_consume_a_mission(self):
+        unchanged = {x["doi"] for x in self.index["recommended_preview"][
+            "additional_related_output"]
+            if x["next_action"] ==
+            "REUSE_RECORDED_PROJECT_HOLD_REOPEN_ON_DISTINCT_EVIDENCE"}
+        self.assertTrue(unchanged)
+        self.assertFalse(unchanged & {x["doi"] for x in eligible(self.index)})
+
     def test_limits_and_dedup_of_blocked_identities(self):
         with self.assertRaisesRegex(ValueError, "bounded"):
             eligible(self.index, limit=6)
