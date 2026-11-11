@@ -1,0 +1,51 @@
+{
+  "schema": "reach-scout-hourly-mission-outcome-v1",
+  "producer": "chatgpt_hourly_mission",
+  "not_chatgpt_hourly_mission": false,
+  "mission_id": "chatgpt-20261111T162630887Z-zenodo20046428-sourcehold",
+  "started_at_utc": "2026-11-11T16:26:30.887Z",
+  "completed_at_utc": "2026-11-11T16:27:00.555Z",
+  "policy_commit_sha": "NOT_VERIFIED",
+  "memory_source_fingerprint": "NOT_VERIFIED",
+  "memory_builder_policy_sha256": "6c77012241b8abd0544dcb9e8a22e38aad5b76bb6c3664afafcdeedbc2d4cc17",
+  "lane": "related_expansion",
+  "selected_original_dois": [],
+  "selected_expansion_seed_dois": [
+    "10.5281/zenodo.20046428"
+  ],
+  "fast_exited_public_reach": [],
+  "fast_exited_public_scout": [],
+  "new_original_full_decisions": [],
+  "new_expansion_decisions": [],
+  "research_only_holds": [
+    "10.5281/zenodo.20046428"
+  ],
+  "technical_or_funding_holds": [
+    "10.5281/zenodo.20046428 — SPECIFIC_ZENODO_DATACITE_SOURCE_ACCESS_BLOCKER: direct Zenodo record, DataCite DOI endpoint and DOI resolver could not be accessed in this run; no authoritative artifact identity or WPO award proof. REACH comparison cache full 1238 records had no exact DOI match; cache-negative is not proof of global novelty."
+  ],
+  "published_public_batch_urls": [],
+  "guarded_handoff_run_urls": [],
+  "handoff_status": "NOT_ATTEMPTED",
+  "handoff_blocker": null,
+  "prior_note_sha256_reused": [],
+  "prior_metadata_fingerprints_reused": [],
+  "cache_hits_observed": null,
+  "external_requests_observed": null,
+  "avoided_requests_measured": null,
+  "private_hub_import": "NOT_VERIFIED",
+  "human_decision": "NOT_VERIFIED",
+  "public_reach_addition": "NOT_VERIFIED",
+  "research_evidence": {
+    "seed_source": "scout-operations/research-memory/mission-index.json",
+    "seed_index_blob_sha": "f91c8ce8aed6c9eaf83b577bd416c3e926d13f7f",
+    "reach_comparison_cache_blob_sha": "00dd3ac2aba8dbf4838090a02d85b7604bb6329d",
+    "reach_comparison_manifest_sha256": "f94ae52cac483b52e9a5cd6e775c6faa01ad6ec33610b249b3d486aed6daa003",
+    "checked_urls": [
+      "https://zenodo.org/records/20046428",
+      "https://api.datacite.org/dois/10.5281/zenodo.20046428",
+      "https://doi.org/10.5281/zenodo.20046428"
+    ],
+    "finding": "Source inaccessible, exact REACH DOI cache link not found; no novelty or funding decision. Related DOI 10.5281/zenodo.4433147 had previously recorded project hold and publisher article cites only non-WPO 432/431 awards, so not reopened without new evidence.",
+    "rotation": "Next eligible distinct seed; do not retry unchanged Zenodo endpoint in this mission."
+  }
+}
