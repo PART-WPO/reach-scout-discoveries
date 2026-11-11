@@ -1,11 +1,11 @@
 {
   "schema": "reach-scout-unified-source-preflight-v1",
-  "identity_index_fingerprint": "026405fe5c28767cac50e8ad618efa45fc46d766589c142e65cb9a2c496ccef6",
+  "identity_index_fingerprint": "1c3953557312cb2413676006b475188de4ea31c752202c6e959f59d581252538",
   "identity_index_source_sha256": {
     "reach_cache_sha256": "6660562e325a6a141198f59acce84f2e30d9a2d14e6cf5acd29769c8a4b68e1e",
     "reach_manifest_sha256": "f94ae52cac483b52e9a5cd6e775c6faa01ad6ec33610b249b3d486aed6daa003",
-    "scout_manifest_sha256": "c2207df4f1e9b8f3bf5c484af5c06c6e512d20f61114612f43b0f85c3179ff72",
-    "scout_batches": 51,
+    "scout_manifest_sha256": "f32f40f9b8ba0f7c7e7f91376322c7761370fe7c80a55675c797a2964565df1c",
+    "scout_batches": 52,
     "inbox_files": [
       {
         "path": "scout-discoveries/inbox/2026-10-30-hourly-2232ET-iot-water-gauge-001.csv",
@@ -191,18 +191,23 @@
         "path": "scout-discoveries/inbox/2026-11-10-human-project-e65c593e29a9643d34.csv",
         "sha256": "11c5a8ac55519f08b695250cde26e76066d34c4573e3dd953110eb7071d541e7",
         "rows": 1
+      },
+      {
+        "path": "scout-discoveries/inbox/2026-11-11-human-project-4687afbf63fe06fea0.csv",
+        "sha256": "94f80ae958709a9984f2f6845eed5b6a6cb4c448f1bd4f9aeb31ec83ce629963",
+        "rows": 1
       }
     ]
   },
   "source_manifest_sha256": {
     "preprint_watchlist": "9aee820ffa8eafb416d68f80d7cddb534ab33c97f61e1246ec892fb08f33b65e",
-    "reviewer_feedback": "be88d8deb200e7a71832bc204cc292ad350535fee8b5aab509e96ee410378472",
+    "reviewer_feedback": "a569a6baa98ea5075325d9ba220211214dd425997ffbc3860af902a729e445ab",
     "monthly_triage": "a8c740b0181978a37b2bb8156cbd1ea4261ef08730573669586f26bb516a6224",
     "historical_datacite_triage": "2687b6eff7e46530b96ae4cbbcbabcd25384720c63c38d51af0f2f3c8d51e852",
     "crossref_research_cases": "a11dacb756496a401b6ba1a8e181fb83bc3d5a3386ce790558b5bd34f1c5de21",
     "monthly_related_leads": "d4deec7a5df5191b77cf4002573bd766f6bdff0b85880b7175249f38d2ba55a4",
     "independent_leads": "62243d1c3228561ed15786b7030ce02689f6d4a26247387e361fa2c84f5e7fa2",
-    "crossref_routing": "62346fe9cbc47773b069ec4b3c0978463476228f036a7377bb48b5260a1a9cdc",
+    "crossref_routing": "ee92cc141a2fc91e9a76704cf98e169f4b6de57f56e8d35084da9b7367d5ff83",
     "historical_crossref_manifest": "799744c7e83f218d22cc19afacb7cfcf2762feb490659efde9f58bf19473b1fa",
     "monthly_api_manifest": "d83ad64b647fcb89a5db04321833ecc7bec177dbfcca7ef1995b06c09deeb335",
     "historical_datacite_manifest": "b21e3b81cf47c3187eb851d1d2b5ec0200d8ed54970c01f871bbd8b96475921e"
@@ -211,11 +216,11 @@
   "lane_decision_counts": {
     "historical_crossref": {
       "EXISTING_IN_REACH_VERIFIED_BULK": 426,
-      "EXISTING_SCOUT_CANDIDATE": 30,
+      "EXISTING_SCOUT_CANDIDATE": 31,
       "IDENTITY_REVIEW_REQUIRED": 1,
       "IDENTITY_REVIEW_REQUIRED_FROM_BULK": 54,
       "PREPRINT_HOLD": 16,
-      "PUBLICATION_STATUS_UNVERIFIED": 87
+      "PUBLICATION_STATUS_UNVERIFIED": 86
     },
     "historical_datacite": {
       "EXISTING_IN_REACH": 11,
@@ -9476,19 +9481,19 @@
       "source_batch": "verified_historical_crossref_routing",
       "raw_source_identity": "10.1029/2023gl106872",
       "recorded_status_unchanged": "NOT_VERIFIED",
-      "shared_gate_decision": "PUBLICATION_STATUS_UNVERIFIED",
-      "public_identity_disposition": "NO_PUBLIC_IDENTITY_MATCH",
-      "public_identity_next_action": "PROCEED_TO_ELIGIBILITY_AND_FUNDING_RESEARCH",
+      "shared_gate_decision": "EXISTING_SCOUT_CANDIDATE",
+      "public_identity_disposition": "EXISTING_PUBLIC_SCOUT_CANDIDATE",
+      "public_identity_next_action": "DO_NOT_REPROPOSE",
       "explicit_preprint_family": {
         "is_original_preprint": false,
         "preprint_dois": [],
         "official_published_doi_leads": []
       },
-      "effective_identity_or_preflight": "PUBLICATION_STATUS_UNVERIFIED",
+      "effective_identity_or_preflight": "EXISTING_SCOUT_CANDIDATE",
       "trusted_bulk_public_reach_uid": null,
       "source_awards_are_unverified_hints": [],
       "publication_status": "NOT_CHECKED",
-      "identity_match_status": "NO_PUBLIC_IDENTITY_MATCH",
+      "identity_match_status": "IN_PUBLIC_SCOUT_QUEUE",
       "private_review_status": "NOT_VERIFIED",
       "authenticated_prior_review_event_id": null,
       "authenticated_prior_review_code": null,

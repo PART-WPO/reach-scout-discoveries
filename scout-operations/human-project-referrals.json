@@ -1,12 +1,12 @@
 {
   "schema": "reach-scout-bounded-project-human-referral-v1",
-  "source_outcome_event_count": 70,
-  "source_outcome_sha256": "13cbbe1181168bc28ccb8deb265930061134aa92223d54c2fc16bea7ad8e38d2",
+  "source_outcome_event_count": 71,
+  "source_outcome_sha256": "abf4ab2802d6cf1d71b4f3e71e637a974a2377d859570790676040e941b3d7fd",
   "unique_bounded_project_questions": 3,
-  "potential_wpo_cases_quick_screened": 23,
+  "potential_wpo_cases_quick_screened": 24,
   "human_referral_drafts_prevalidated": 1,
   "draft_paths": [
-    "scout-discoveries/inbox/2026-11-10-human-project-18f0a904d40d7fd8be.csv"
+    "scout-discoveries/inbox/2026-11-11-human-project-4687afbf63fe06fea0.csv"
   ],
   "published_batch_paths": [
     "scout-discoveries/batches/2026-11-09-human-project-b332d53770e8cbc1d4.csv",
@@ -14,6 +14,7 @@
     "scout-discoveries/batches/2026-11-10-human-project-b8d519c3e1a123e83c.csv",
     "scout-discoveries/batches/2026-11-09-human-project-398fe73f0c7f3ffa37.csv",
     "scout-discoveries/batches/2026-11-10-human-project-6c53903a7319371213.csv",
+    "scout-discoveries/batches/2026-11-10-human-project-18f0a904d40d7fd8be.csv",
     "scout-discoveries/batches/2026-11-09-human-project-8963668e6a0f98ac1c.csv",
     "scout-discoveries/batches/2026-11-09-human-project-f706c52fc493a7d6a2.csv",
     "scout-discoveries/batches/2026-11-09-human-project-ec8541bda93af057fc.csv",
@@ -29,7 +30,7 @@
     "scout-discoveries/batches/2026-11-10-human-project-bfcdcca18eb647d9c5.csv",
     "scout-discoveries/batches/2026-11-10-human-project-69e9278b9a8267f272.csv"
   ],
-  "verified_public_scout_referral_batches": 19,
+  "verified_public_scout_referral_batches": 20,
   "human_reviewer_decisions": "NOT_VERIFIED",
   "private_hub_imports": "NOT_VERIFIED",
   "new_approved_reach_outputs": 0,
@@ -1455,13 +1456,237 @@
         ]
       },
       "public_identity": {
+        "status": "IN_PUBLIC_SCOUT_QUEUE",
+        "reason": "CONSISTENT_SCOUT_PUBLIC_MIRRORS",
+        "matches": [
+          {
+            "source": "SCOUT_PUBLISHED",
+            "identity": "2026-11-10-human-project-18f0a904d40d7fd8be:2",
+            "title": "Quantifying the Contribution of Ocean Advection and Surface Flux to the Upper‐Ocean Salinity Variability Resolved by Climate Model Simulations",
+            "location": "scout-discoveries/batches/2026-11-10-human-project-18f0a904d40d7fd8be.csv:2",
+            "match_bases": [
+              "exact_doi",
+              "exact_url",
+              "normalized_title"
+            ]
+          },
+          {
+            "source": "SCOUT_INBOX",
+            "identity": "2026-11-10-human-project-18f0a904d40d7fd8be.csv:2",
+            "title": "Quantifying the Contribution of Ocean Advection and Surface Flux to the Upper‐Ocean Salinity Variability Resolved by Climate Model Simulations",
+            "location": "scout-discoveries/inbox/2026-11-10-human-project-18f0a904d40d7fd8be.csv:2",
+            "match_bases": [
+              "exact_doi",
+              "exact_url",
+              "normalized_title"
+            ]
+          }
+        ],
+        "caveat": "Public snapshot only; private Hub decisions are not asserted.",
+        "noaa_ir_reach_check": {
+          "status": "VERIFIED_IR_URL_NOT_IN_PUBLIC_REACH",
+          "official_url": "https://repository.library.noaa.gov/view/noaa/67890",
+          "match_uid": null,
+          "match_detail_shard": null
+        }
+      },
+      "project_search_context_only": {
+        "award_context_only": "NA23OAR4590383",
+        "project_context_only": "",
+        "wpo_award_cue_not_proof": true,
+        "reason_for_review": "WPO-pattern award cited but exact funded project deliverable unverified"
+      },
+      "disposition": "HOLD_ALREADY_IN_PUBLIC_REACH_OR_SCOUT",
+      "review_question": "Reviewer question: Select and verify the correct SPARK parent for the explicitly funded WPO award NA23OAR4590383; confirm the output belongs with that parent before addition.",
+      "scout_inbox_status": "PUBLISHED_PUBLIC_SCOUT_FEED_NOT_PRIVATE_HUB",
+      "published_scout_batch_path": "scout-discoveries/batches/2026-11-10-human-project-18f0a904d40d7fd8be.csv",
+      "eligible_for_new_reach_addition": "NOT_VERIFIED",
+      "private_hub_import": "NOT_VERIFIED",
+      "human_approval": "NOT_VERIFIED"
+    },
+    {
+      "doi": "10.1029/2023gl106872",
+      "source_event_id": "f1348f8b78ec7c2298d28c63",
+      "source_file": "scout-operations/historical-crossref-phase2/auto-verified-oar459-4687afbf63fe06fea0.json",
+      "source_sha256": "2170ec9883e9e4236af424d1fe69971cecc301b1aedc246c3adeec73e899e4b5",
+      "official_metadata": {
+        "status": "ok",
+        "provider": "crossref",
+        "evidence": "https://api.crossref.org/works/10.1029/2023gl106872",
+        "title": "Impact of MJO Propagation Speed on Active Atlantic Tropical Cyclone Activity Periods",
+        "creators": [
+          "Kurt A. Hansen",
+          "Matthew A. Janiga",
+          "Sharanya J. Majumdar",
+          "Benjamin P. Kirtman"
+        ],
+        "resource_type": "journal-article",
+        "publication_status": "official_journal_article",
+        "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>The Madden‐Julian Oscillation (MJO) is often used for subseasonal forecasting of tropical cyclone (TC) activity. However, TC activity still has considerable variability even given the state of the MJO. This study evaluates the connection between MJO propagation speed with Atlantic TC activity and possible physical mechanisms guiding this relation. We find the Atlantic sees the highest accumulated cyclone energy (ACE) during MJO phase 2. However, the odds of above average ACE in the Atlantic is greatest during slow MJO propagation. We find that slow propagation of the MJO results in lower vertical wind shear anomalies over the Caribbean and main development region compared with typical MJO propagation. Typical MJO propagation produces an amplified height pattern and lower height anomalies along the region of the tropical upper tropospheric trough which is known to impede Atlantic TC activity. Slow MJO propagation sees weaker height anomalies over the Atlantic.</jats:p>",
+        "pub_date": "2024-03-16",
+        "preprint_posted_date": "",
+        "pub_date_basis": "Crossref published-print",
+        "pub_date_precision": "day",
+        "publisher": "American Geophysical Union (AGU)",
+        "funding_references": [
+          {
+            "DOI": "10.13039/100000001",
+            "name": "National Science Foundation",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "AGS‐1747781"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "AGS‐1747781"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100000001",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/100000001",
+            "name": "National Science Foundation",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "AGS 2241538"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "AGS 2241538"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100000001",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/100000192",
+            "name": "National Oceanic and Atmospheric Administration",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "NA20OAR4320472"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "NA20OAR4320472"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100000192",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/100000192",
+            "name": "National Oceanic and Atmospheric Administration",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "NA22OAR4310603"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "NA22OAR4310603"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100000192",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/100000192",
+            "name": "National Oceanic and Atmospheric Administration",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "NA23OAR4590383"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "NA23OAR4590383"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100000192",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/100009917",
+            "name": "U.S. Naval Research Laboratory",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "PE 62435N"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "PE 62435N"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100009917",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          }
+        ],
+        "related_identifiers": {},
+        "attempts": [
+          {
+            "provider": "datacite",
+            "url": "https://api.datacite.org/dois/10.1029/2023gl106872",
+            "error": {
+              "kind": "http",
+              "code": 404
+            }
+          },
+          {
+            "provider": "crossref",
+            "url": "https://api.crossref.org/works/10.1029/2023gl106872",
+            "error": null
+          }
+        ]
+      },
+      "public_identity": {
         "status": "NO_PUBLIC_IDENTITY_MATCH",
         "reason": "NO_MATCH_IN_VERIFIED_PUBLIC_SNAPSHOT",
         "matches": [],
         "caveat": "Public snapshot only; private Hub decisions are not asserted.",
         "noaa_ir_reach_check": {
           "status": "VERIFIED_IR_URL_NOT_IN_PUBLIC_REACH",
-          "official_url": "https://repository.library.noaa.gov/view/noaa/67890",
+          "official_url": "https://repository.library.noaa.gov/view/noaa/67891",
           "match_uid": null,
           "match_detail_shard": null
         }

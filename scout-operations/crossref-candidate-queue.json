@@ -2,9 +2,9 @@
   "schema": "reach-scout-crossref-candidate-queue-v2",
   "purpose": "Read-only selection; not completed research or approval",
   "completion_target": "Each hourly mission handles at least one full novel-output screening through a concrete disposition or public human-review handoff. Skipped known records do not count; technical blockers must be reported, not represented as completed.",
-  "one_mission_actionable_original_count": 134,
+  "one_mission_actionable_original_count": 133,
   "ledger_cooldown_excluded_count": 0,
-  "live_manifest_verified_fast_exit_count": 49,
+  "live_manifest_verified_fast_exit_count": 50,
   "special_publication_type_review_count": 1,
   "special_publication_review_preview": [
     {
@@ -15,14 +15,6 @@
     }
   ],
   "next_one_mission_original_preview": [
-    {
-      "doi": "10.1029/2023gl106872",
-      "lane": "HUMAN_REVIEW_FAST_SCREEN_DUE",
-      "priority": 85,
-      "funding_signal": "CONFIRMED_WPO_459",
-      "required_outcome": "FINISH_ORIGINAL_SCREENING_DECISION_THIS_RUN",
-      "action": "459 is a WPO funding code. Reuse source evidence and confirm exact published DOI, publisher-deposited 459 award, public identity and preprint gates. Route verified WPO outputs to New Candidate; only unresolved attribution to Needs Investigation."
-    },
     {
       "doi": "10.1038/s41597-024-03916-7",
       "lane": "HUMAN_REVIEW_FAST_SCREEN_DUE",
@@ -78,14 +70,22 @@
       "funding_signal": "NON_WPO_OAR_AWARD",
       "required_outcome": "FINISH_ORIGINAL_SCREENING_DECISION_THIS_RUN",
       "action": "Complete one bounded identity/version check and record a final screening decision in this mission"
+    },
+    {
+      "doi": "10.1002/essoar.10508027.1",
+      "lane": "BOUNDED_IDENTITY_REVIEW",
+      "priority": 70,
+      "funding_signal": "CONFIRMED_WPO_459",
+      "required_outcome": "FINISH_ORIGINAL_SCREENING_DECISION_THIS_RUN",
+      "action": "Complete one bounded identity/version check and record a final screening decision in this mission"
     }
   ],
   "total": 614,
   "lane_counts": {
-    "ALREADY_IN_SCOUT_REVIEW_FAST_EXIT": 33,
+    "ALREADY_IN_SCOUT_REVIEW_FAST_EXIT": 34,
     "BOUNDED_IDENTITY_REVIEW": 51,
     "EXISTING_REACH_FAST_EXIT": 426,
-    "HUMAN_REVIEW_FAST_SCREEN_DUE": 4,
+    "HUMAN_REVIEW_FAST_SCREEN_DUE": 3,
     "NON_459_PROJECT_EVIDENCE_CHECK": 2,
     "NOVEL_IDENTITY_RESEARCH": 77,
     "PREPRINT_PUBLISHED_VERSION_LEAD": 11,
@@ -95,38 +95,6 @@
     "WAIT_FOR_NEW_EVIDENCE": 2
   },
   "items": [
-    {
-      "preprint_status": null,
-      "already_in_public_scout_queue": false,
-      "matched_public_review_locations": [],
-      "live_public_title_conflict": false,
-      "handoff_ledger_state": null,
-      "handoff_ledger_reason": null,
-      "handoff_retry_after": null,
-      "special_publication_type": null,
-      "one_mission_disposition_required": true,
-      "verified_published_dois": [],
-      "doi": "10.1029/2023gl106872",
-      "title": "impact of mjo propagation speed on active atlantic tropical cyclone activity periods",
-      "lane": "HUMAN_REVIEW_FAST_SCREEN_DUE",
-      "priority": 85,
-      "next_action": "459 is a WPO funding code. Reuse source evidence and confirm exact published DOI, publisher-deposited 459 award, public identity and preprint gates. Route verified WPO outputs to New Candidate; only unresolved attribution to Needs Investigation.",
-      "funding_signal": "CONFIRMED_WPO_459",
-      "crossref_structured_award_numbers": [
-        "NA23OAR4590383"
-      ],
-      "wpo_459_award_numbers": [
-        "NA23OAR4590383"
-      ],
-      "award_evidence_source_batches": [
-        "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part002.csv"
-      ],
-      "award_match_basis": "Historical Crossref publisher-deposited award for exact DOI; 459 identifies WPO funding. Exact SPARK parent and output identity still require verification before addition",
-      "prior_disposition": "PROJECT_EVIDENCE_HOLD",
-      "scout_overlap": false,
-      "verified_reach_uid": null,
-      "private_hub_review": "NOT_VERIFIED"
-    },
     {
       "preprint_status": null,
       "already_in_public_scout_queue": false,
@@ -7885,13 +7853,47 @@
       ],
       "live_public_title_conflict": false,
       "handoff_ledger_state": "PUBLISHED_PUBLIC_SCOUT",
-      "handoff_ledger_reason": "SOURCE_VERIFIED_AND_MANIFEST_VALIDATED",
+      "handoff_ledger_reason": "PUBLIC_SCOUT_REVIEW_UNIT_VERIFIED",
       "handoff_retry_after": null,
       "special_publication_type": null,
       "one_mission_disposition_required": false,
       "verified_published_dois": [],
       "doi": "10.1029/2023gl106354",
       "title": "quantifying the contribution of ocean advection and surface flux to the upper ocean salinity variability resolved by climate model simulations",
+      "lane": "ALREADY_IN_SCOUT_REVIEW_FAST_EXIT",
+      "priority": 0,
+      "next_action": "Already in Scout's public review pipeline: do not repeat original research or create another proposal; keep independent expansion",
+      "funding_signal": "CONFIRMED_WPO_459",
+      "crossref_structured_award_numbers": [
+        "NA23OAR4590383"
+      ],
+      "wpo_459_award_numbers": [
+        "NA23OAR4590383"
+      ],
+      "award_evidence_source_batches": [
+        "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part002.csv"
+      ],
+      "award_match_basis": "Historical Crossref publisher-deposited award for exact DOI; 459 identifies WPO funding. Exact SPARK parent and output identity still require verification before addition",
+      "prior_disposition": "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
+      "scout_overlap": false,
+      "verified_reach_uid": null,
+      "private_hub_review": "NOT_VERIFIED"
+    },
+    {
+      "preprint_status": null,
+      "already_in_public_scout_queue": true,
+      "matched_public_review_locations": [
+        "scout-discoveries/batches/2026-11-11-human-project-4687afbf63fe06fea0.csv"
+      ],
+      "live_public_title_conflict": false,
+      "handoff_ledger_state": "PUBLISHED_PUBLIC_SCOUT",
+      "handoff_ledger_reason": "SOURCE_VERIFIED_AND_MANIFEST_VALIDATED",
+      "handoff_retry_after": null,
+      "special_publication_type": null,
+      "one_mission_disposition_required": false,
+      "verified_published_dois": [],
+      "doi": "10.1029/2023gl106872",
+      "title": "impact of mjo propagation speed on active atlantic tropical cyclone activity periods",
       "lane": "ALREADY_IN_SCOUT_REVIEW_FAST_EXIT",
       "priority": 0,
       "next_action": "Already in Scout's public review pipeline: do not repeat original research or create another proposal; keep independent expansion",
@@ -19931,7 +19933,7 @@
   "new_review_proposals": 0,
   "source_sha256": {
     "scout-operations/historical-crossref-screening/actionable-routing.json": "62346fe9cbc47773b069ec4b3c0978463476228f036a7377bb48b5260a1a9cdc",
-    "scout-operations/research-outcome-registry.json": "30c6d70bb2fa08f2148d86315d3565825cfb4d15f83bc4e0fdd30916d1cbd414",
+    "scout-operations/research-outcome-registry.json": "db18ddbf804f51b3b6b70f4abdef588536aa0ea7700c1f27b241f7e7ca40cb01",
     "api-discoveries/historical-crossref/manifest.json": "799744c7e83f218d22cc19afacb7cfcf2762feb490659efde9f58bf19473b1fa",
     "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part001.csv": "df420ff561050c5f019ccddd19eb93124ab642eba8aa6f87dc0636b6d5ee2de3",
     "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part002.csv": "1cc9e5f3c493c6fa7cde93e0060718224686f695c7ba6d648208ecf9a09d69d7",
@@ -19946,8 +19948,8 @@
     "scout-operations/reach-comparison-cache/comparison-index.json": "6660562e325a6a141198f59acce84f2e30d9a2d14e6cf5acd29769c8a4b68e1e"
   },
   "dynamic_selection_sha256": {
-    "scout-operations/decision-handoff-ledger.json": "625d3f702748f6e10ba8d3947a52cddb19125c7883642ae602f55b5b831420c8",
-    "scout-discoveries/manifest.json": "c2207df4f1e9b8f3bf5c484af5c06c6e512d20f61114612f43b0f85c3179ff72"
+    "scout-operations/decision-handoff-ledger.json": "1211918eee134b3b3c0668ca44543e19148a49b2f88d2434cdf55423a1676b75",
+    "scout-discoveries/manifest.json": "f32f40f9b8ba0f7c7e7f91376322c7761370fe7c80a55675c797a2964565df1c"
   },
   "funding_signal_counts": {
     "CI_432_NEEDS_PROJECT_PROOF": 41,

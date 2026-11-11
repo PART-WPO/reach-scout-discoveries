@@ -1,14 +1,14 @@
 {
   "schema": "reach-scout-discovery-origin-rollup-v1",
-  "snapshot_date": "2026-11-10",
+  "snapshot_date": "2026-11-11",
   "source": "Automated SHA-256-verified scout-discoveries/manifest.json and every published batch",
-  "source_manifest_sha256": "c2207df4f1e9b8f3bf5c484af5c06c6e512d20f61114612f43b0f85c3179ff72",
-  "source_manifest_generated_at": "2026-11-10T20:12:50Z",
-  "batch_count": 51,
-  "staged_review_rows": 104,
+  "source_manifest_sha256": "f32f40f9b8ba0f7c7e7f91376322c7761370fe7c80a55675c797a2964565df1c",
+  "source_manifest_generated_at": "2026-11-11T00:51:30Z",
+  "batch_count": 52,
+  "staged_review_rows": 105,
   "manifest_rows_verified": true,
   "route_counts": {
-    "Direct API": 17,
+    "Direct API": 18,
     "API-seeded expansion": 14,
     "Independent discovery": 29,
     "Metadata correction": 4,
@@ -16,7 +16,7 @@
     "Unclassified legacy (route missing)": 40
   },
   "raw_route_counts": {
-    "Direct API": 17,
+    "Direct API": 18,
     "API-seeded expansion": 14,
     "Independent discovery": 29,
     "Metadata correction": 4,
@@ -24,7 +24,7 @@
     "Unclassified legacy (route missing)": 40
   },
   "effective_discovery_method_counts": {
-    "Direct API": 31,
+    "Direct API": 32,
     "API-seeded expansion": 16,
     "Independent discovery": 46,
     "Unclassified": 11
@@ -36,7 +36,7 @@
     "Unclassified": "Discovery method unknown"
   },
   "effective_finding_purpose_counts": {
-    "new_output_review": 62,
+    "new_output_review": 63,
     "metadata_correction": 21,
     "possible_duplicate_review": 2,
     "existing_duplicate_review": 2,
@@ -180,7 +180,7 @@
     "validation": "EXACT_MANIFEST_BATCH_SHA_AND_ROW_IDENTITY_VERIFIED"
   },
   "attribution_metrics": {
-    "direct_api_staged": 17,
+    "direct_api_staged": 18,
     "api_seeded_expansion_staged": 14,
     "independent_discovery_staged": 29,
     "metadata_correction_staged": 4,
@@ -189,7 +189,7 @@
     "previous_raw_routed_beyond_direct_api_staged": 43,
     "effective_independent_discovery_method_staged": 46,
     "effective_api_seeded_expansion_method_staged": 16,
-    "effective_direct_api_method_staged": 31,
+    "effective_direct_api_method_staged": 32,
     "effective_unclassified_method_staged": 11,
     "effective_metadata_correction_purpose_staged": 21,
     "human_confirmed_attribution_recoveries": "NOT_VERIFIED",
@@ -202,11 +202,11 @@
     "source_manifest": "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json",
     "source_manifest_sha": "ab844173f761617a2fe1def5cf218b1fc94b3e7d"
   },
-  "human_review_status": "NOT_VERIFIED; 104 staged proposals are not approvals or public REACH additions.",
+  "human_review_status": "NOT_VERIFIED; 105 staged proposals are not approvals or public REACH additions.",
   "latest_verified_run": {
-    "batch_id": "2026-11-10-human-project-e65c593e29a9643d34",
+    "batch_id": "2026-11-11-human-project-4687afbf63fe06fea0",
     "source_run_ids": [
-      "REACH-SCOUT-HUMAN-SCOPE-60b8440de1fa99e292"
+      "REACH-SCOUT-HUMAN-SCOPE-635960d1dcf0bec33b"
     ],
     "record_count": 1,
     "manifest_verified": true,
