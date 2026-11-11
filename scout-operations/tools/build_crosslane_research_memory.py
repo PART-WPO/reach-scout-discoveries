@@ -180,7 +180,7 @@ def validated_public_original_exits(root, checked):
                 staged.add(d)
     if rows_checked != manifest.get("candidate_rows"):
         raise ValueError("Public Scout candidate manifest has incomplete batch coverage")
-    return verified, staged, {
+    return verified, staged, unresolved, {
         "historical_research_coverage_sha256": coverage_sha,
         "historical_reconciliation_exceptions_sha256": exceptions_sha,
         "historical_original_ledger_sha256": historical_sha,
@@ -204,7 +204,7 @@ def build(root=ROOT):
     for rel, checksum in journal["source_sha256"].items():
         require_sha(root, rel, checksum)
 
-    verified_historical, staged_public, exit_sources = validated_public_original_exits(root, checked)
+    verified_historical, staged_public, unresolved_historical, exit_sources = validated_public_original_exits(root, checked)
     edges, edge_sources = source_links(root)
     # Relate separately documented child DOI identities only when the
     # append-only note explicitly names parent/children AND two independent
@@ -341,6 +341,7 @@ def build(root=ROOT):
             "public_reach_verified_existing": bool(verified_reach),
             "preprint_or_version_hold": bool(preprint),
             "historical_original_verified_terminal": d in verified_historical,
+            "historical_original_reconciliation_exception": d in unresolved_historical,
             "public_staged_in_scout_manifest": d in staged_public,
             "original_research": {
                 "input_fingerprint": original_fingerprint,
@@ -393,6 +394,8 @@ def build(root=ROOT):
                 original = "PREPRINT_WATCHLIST_NOT_ELIGIBLE_AS_ORIGINAL"
             elif verified_reach:
                 original = "REUSE_VERIFIED_REACH_IDENTITY_NO_DUPLICATE_ORIGINAL"
+            elif d in unresolved_historical:
+                original = "RECONCILE_UNVERIFIED_TERMINAL_EVIDENCE_NO_NEW_ORIGINAL"
             elif d in staged_public:
                 original = "REUSE_VERIFIED_PUBLIC_SCOUT_PROPOSAL_NO_REPROPOSAL"
             elif d in verified_historical:
@@ -528,6 +531,7 @@ def mission_index(graph, *, max_per_lane=12):
         "historical_crossref_original": [],
         "verified_reach_expansion": [],
         "historical_datacite_original": [],
+        "historical_reconciliation_needed": [],
         "additional_related_output": [],
         "existing_public_related_or_staged": [],
         "preprint_watchlist_only": [],
@@ -581,6 +585,13 @@ def mission_index(graph, *, max_per_lane=12):
             else:
                 groups["additional_related_output"].append(candidate)
         elif track == "ORIGINAL":
+            # Unsupported *terminal* historical cases require handoff evidence
+            # reconciliation, not another new-output original DOI proposal.
+            if node.get("historical_original_reconciliation_exception"):
+                candidate["next_action"] = "RECONCILE_MISSING_HANDOFF_EVIDENCE_NOT_NEW_OUTPUT"
+                candidate["hourly_original_research_allowed"] = False
+                groups["historical_reconciliation_needed"].append(candidate)
+                continue
             # One DOI may be in multiple original source cohorts. Never let
             # Crossref's primary-role precedence hide a monthly original.
             if node["preprint_or_version_hold"]:
@@ -655,6 +666,8 @@ def mission_index(graph, *, max_per_lane=12):
                             "Use this bounded preview for choosing individual source-backed "
                             "work. Exclude completed originals in the validated historical "
                             "coverage and active Scout batches before external lookups; "
+                            "unverified terminal handoffs route separately to "
+                            "historical_reconciliation_needed, never as a new original; "
                             "a completed original can still seed distinct expansion. "
                             "Do not confuse a verified REACH original with completed "
                             "expansion. Recheck identity, preprint and exact WPO project "
