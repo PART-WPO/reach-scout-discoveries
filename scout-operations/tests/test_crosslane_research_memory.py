@@ -244,6 +244,45 @@ class CrosslaneMemoryTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "source changed"):
                 build(root)
 
+    def test_historical_completed_original_never_reselected(self):
+        graph = self.graph
+        doi = "10.13012/b2idb-0704763_v1"
+        node = next(n for n in graph["nodes"] if n["doi"] == doi)
+        self.assertTrue(node["historical_original_verified_terminal"])
+        self.assertTrue(node["public_staged_in_scout_manifest"])
+        original = next(x for x in graph["work_items"]
+                        if x["doi"] == doi and x["track"] == "ORIGINAL")
+        self.assertEqual(
+            original["next_action"], "REUSE_VERIFIED_PUBLIC_SCOUT_PROPOSAL_NO_REPROPOSAL")
+        compact = mission_index(graph)
+        self.assertFalse(any(x["doi"] == doi for x in
+                             compact["recommended_preview"]["historical_datacite_original"]))
+        self.assertGreater(compact["group_counts_before_preview_bound"][
+            "existing_public_original_disposition"], 0)
+        # Terminal original statuses do not erase separately eligible expansions.
+        self.assertTrue(any(x["doi"] == doi and x["track"] == "EXPANSION"
+                            for x in graph["work_items"]))
+
+    def test_unsupported_historical_terminal_exceptions_remain_actionable(self):
+        compact = mission_index(self.graph)
+        open_dois = {x["doi"] for x in
+                     compact["recommended_preview"]["historical_datacite_original"]}
+        coverage = json.loads((ROOT / "scout-operations/historical-coverage.json").read_text())
+        exceptions = json.loads((ROOT / "scout-operations/historical-reconciliation-exceptions.json").read_text())
+        expected = {norm_doi(e["identity"]) for e in exceptions["exceptions"]}
+        reconciliation = {x["doi"] for x in
+                          compact["recommended_preview"]["historical_reconciliation_needed"]}
+        if len(expected) <= compact["max_preview_per_group"]:
+            self.assertEqual(reconciliation, expected)
+        self.assertFalse(open_dois & expected)
+        self.assertTrue(all(x["hourly_original_research_allowed"] is False
+                            for x in compact["recommended_preview"][
+                                "historical_reconciliation_needed"]))
+        self.assertGreater(compact["group_counts_before_preview_bound"][
+            "existing_public_original_disposition"], 0)
+        self.assertFalse(any(x["doi"] == "10.13012/b2idb-0704763_v1"
+                             for x in compact["recommended_preview"]["historical_datacite_original"]))
+
     def test_compact_hourly_index_is_bounded_and_maintains_expansion(self):
         m = mission_index(self.graph)
         self.assertEqual(m["source_fingerprint"], self.graph["source_fingerprint"])
@@ -252,7 +291,13 @@ class CrosslaneMemoryTests(unittest.TestCase):
                          self.graph["verified_reach_originals_preserved_as_expansion_seeds"])
         self.assertEqual(m["group_counts_before_preview_bound"]["verified_reach_expansion"],
                          self.graph["verified_reach_originals_preserved_as_expansion_seeds"])
-        self.assertGreaterEqual(m["group_counts_before_preview_bound"]["historical_datacite_original"], 100)
+        historical = json.loads((ROOT / "scout-operations/historical-coverage.json").read_text())
+        exceptions = json.loads((ROOT / "scout-operations/historical-reconciliation-exceptions.json").read_text())
+        exceptions_count = len(exceptions["exceptions"])
+        self.assertEqual(m["group_counts_before_preview_bound"]["historical_reconciliation_needed"],
+                         exceptions_count)
+        self.assertLessEqual(m["group_counts_before_preview_bound"]["historical_datacite_original"],
+                             historical["remaining"] - exceptions_count)
         self.assertGreaterEqual(m["group_counts_before_preview_bound"]["historical_crossref_original"], 50)
         self.assertGreaterEqual(
             m["group_counts_before_preview_bound"]["monthly_related"] +

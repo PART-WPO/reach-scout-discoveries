@@ -12,7 +12,7 @@ import json
 from collections import Counter, defaultdict
 from pathlib import Path
 
-from decision_pipeline import norm_doi
+from decision_pipeline import norm_doi, checked_csv
 from unified_source_preflight import preflight
 from build_research_outcome_registry import build as research_registry
 
@@ -131,6 +131,63 @@ def metadata_pointers(root):
     return out, checksum
 
 
+def validated_public_original_exits(root, checked):
+    """Recorded public work may suppress another ORIGINAL, not its expansions.
+
+    Historical coverage is independently reconciled against the SHA-verified
+    original manifest. Exceptional/unsupported terminal dispositions remain
+    actionable; public Scout proposals require exact identities in a verified
+    immutable batch. Never infer private Hub ingestion or reviewer approval.
+    """
+    coverage, coverage_sha = file_doc(root, "scout-operations/historical-coverage.json")
+    exceptions, exceptions_sha = file_doc(
+        root, "scout-operations/historical-reconciliation-exceptions.json")
+    historical, historical_sha = file_doc(root, "scout-operations/historical-triage.json")
+    expected = checked["source_manifest_sha256"]["historical_datacite_manifest"]
+    if coverage.get("source_manifest_sha256") != expected:
+        raise ValueError("Historical coverage does not match the verified source manifest")
+    if exceptions.get("source_manifest_sha256") != expected:
+        raise ValueError("Historical reconciliation exceptions are stale")
+    if coverage.get("total_distinct_dois") != len(historical.get("entries", [])):
+        raise ValueError("Historical original count changed without reconciliation")
+    unresolved = {doi(x.get("identity")) for x in exceptions.get("exceptions", [])}
+    if None in unresolved or len(unresolved) != len(exceptions.get("exceptions", [])):
+        raise ValueError("Invalid or duplicate historical reconciliation exception")
+    terminal = {"already_in_reach", "forwarded_to_hub",
+                "metadata_update_forwarded", "no_action", "human_metadata_needed"}
+    verified = set()
+    for entry in historical["entries"]:
+        d = doi(entry.get("identity"))
+        if not d:
+            raise ValueError("Historical ledger has invalid DOI")
+        if str(entry.get("status", "")).lower() in terminal and d not in unresolved:
+            verified.add(d)
+    if len(verified) != coverage.get("fully_investigated"):
+        raise ValueError("Historical terminal evidence count disagrees with coverage")
+    if (len(historical["entries"]) - len(verified) != coverage.get("remaining")
+            or len(unresolved) != coverage.get("unverified_terminal_statuses")):
+        raise ValueError("Historical unresolved evidence count disagrees with coverage")
+
+    manifest, manifest_sha = file_doc(root, "scout-discoveries/manifest.json")
+    staged = set()
+    rows_checked = 0
+    for batch in manifest.get("batches", []):
+        rows = checked_csv(root, batch["path"], batch["sha256"], batch["record_count"])
+        rows_checked += len(rows)
+        for row in rows:
+            d = doi(row.get("DOI"))
+            if d:
+                staged.add(d)
+    if rows_checked != manifest.get("candidate_rows"):
+        raise ValueError("Public Scout candidate manifest has incomplete batch coverage")
+    return verified, staged, unresolved, {
+        "historical_research_coverage_sha256": coverage_sha,
+        "historical_reconciliation_exceptions_sha256": exceptions_sha,
+        "historical_original_ledger_sha256": historical_sha,
+        "active_public_scout_manifest_sha256": manifest_sha,
+    }
+
+
 def build(root=ROOT):
     # Both functions revalidate their own underlying public source manifests
     # and source-file hashes. Do not rely on a stale generated preflight file.
@@ -147,6 +204,7 @@ def build(root=ROOT):
     for rel, checksum in journal["source_sha256"].items():
         require_sha(root, rel, checksum)
 
+    verified_historical, staged_public, unresolved_historical, exit_sources = validated_public_original_exits(root, checked)
     edges, edge_sources = source_links(root)
     # Relate separately documented child DOI identities only when the
     # append-only note explicitly names parent/children AND two independent
@@ -282,6 +340,9 @@ def build(root=ROOT):
             },
             "public_reach_verified_existing": bool(verified_reach),
             "preprint_or_version_hold": bool(preprint),
+            "historical_original_verified_terminal": d in verified_historical,
+            "historical_original_reconciliation_exception": d in unresolved_historical,
+            "public_staged_in_scout_manifest": d in staged_public,
             "original_research": {
                 "input_fingerprint": original_fingerprint,
                 "recorded_note_count": len(original_events),
@@ -333,6 +394,12 @@ def build(root=ROOT):
                 original = "PREPRINT_WATCHLIST_NOT_ELIGIBLE_AS_ORIGINAL"
             elif verified_reach:
                 original = "REUSE_VERIFIED_REACH_IDENTITY_NO_DUPLICATE_ORIGINAL"
+            elif d in unresolved_historical:
+                original = "RECONCILE_UNVERIFIED_TERMINAL_EVIDENCE_NO_NEW_ORIGINAL"
+            elif d in staged_public:
+                original = "REUSE_VERIFIED_PUBLIC_SCOUT_PROPOSAL_NO_REPROPOSAL"
+            elif d in verified_historical:
+                original = "REUSE_VERIFIED_HISTORICAL_TERMINAL_NO_RESEARCH_REPEAT"
             elif monthly_previous_public:
                 original = "REUSE_RECORDED_MONTHLY_PUBLIC_TRIAGE_NO_AUTOMATIC_REPROPOSAL"
             elif original_events:
@@ -403,6 +470,7 @@ def build(root=ROOT):
         "research_notes_sha256": dict(sorted(journal["source_sha256"].items())),
         "related_lead_file_sha256": dict(sorted(edge_sources.items())),
         "historical_metadata_checkpoint_sha256": historic_sha,
+        "verified_public_original_exit_source_sha256": exit_sources,
     }
     source_fingerprint = sha(canonical(sources))
     return {
@@ -458,10 +526,12 @@ def mission_index(graph, *, max_per_lane=12):
     groups = {
         "monthly_original": [],
         "monthly_existing_public_disposition": [],
+        "existing_public_original_disposition": [],
         "monthly_related": [],
         "historical_crossref_original": [],
         "verified_reach_expansion": [],
         "historical_datacite_original": [],
+        "historical_reconciliation_needed": [],
         "additional_related_output": [],
         "existing_public_related_or_staged": [],
         "preprint_watchlist_only": [],
@@ -515,11 +585,24 @@ def mission_index(graph, *, max_per_lane=12):
             else:
                 groups["additional_related_output"].append(candidate)
         elif track == "ORIGINAL":
+            # Unsupported *terminal* historical cases require handoff evidence
+            # reconciliation, not another new-output original DOI proposal.
+            if node.get("historical_original_reconciliation_exception"):
+                candidate["next_action"] = "RECONCILE_MISSING_HANDOFF_EVIDENCE_NOT_NEW_OUTPUT"
+                candidate["hourly_original_research_allowed"] = False
+                groups["historical_reconciliation_needed"].append(candidate)
+                continue
             # One DOI may be in multiple original source cohorts. Never let
             # Crossref's primary-role precedence hide a monthly original.
             if node["preprint_or_version_hold"]:
                 candidate["hourly_original_research_allowed"] = False
                 groups["preprint_watchlist_only"].append(candidate)
+            elif (node.get("public_staged_in_scout_manifest") or
+                  node.get("historical_original_verified_terminal")) and (
+                      "monthly_api" not in node["lanes"]):
+                candidate["next_action"] = "EXISTING_VERIFIED_PUBLIC_ORIGINAL_DO_NOT_RESEARCH_AGAIN"
+                candidate["hourly_original_research_allowed"] = False
+                groups["existing_public_original_disposition"].append(candidate)
             elif "monthly_api" in node["lanes"]:
                 statuses = {str(v).strip().lower() for v in
                             node["public_recorded_statuses_by_lane"]["monthly_api"]}
@@ -581,8 +664,11 @@ def mission_index(graph, *, max_per_lane=12):
         "spark_author_or_personnel_data_used": False,
         "priority_policy": ("Consult active-workstream.json for month-first scheduling. "
                             "Use this bounded preview for choosing individual source-backed "
-                            "work, check graph source fingerprint, and investigate one "
-                            "fresh distinct source rather than repeat unchanged notes. "
+                            "work. Exclude completed originals in the validated historical "
+                            "coverage and active Scout batches before external lookups; "
+                            "unverified terminal handoffs route separately to "
+                            "historical_reconciliation_needed, never as a new original; "
+                            "a completed original can still seed distinct expansion. "
                             "Do not confuse a verified REACH original with completed "
                             "expansion. Recheck identity, preprint and exact WPO project "
                             "funding independently. No private reviewer inference."),
