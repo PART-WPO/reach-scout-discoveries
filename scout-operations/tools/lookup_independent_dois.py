@@ -5,6 +5,7 @@ from pathlib import Path
 from ir_reach_identity import verified_snapshot,identity_check,research_route
 from identity_disposition import verified_disposition
 from research_memory import read_index, metadata_result, write_index, historical_author_lead
+from recover_historical_datacite import recover as recover_historical_datacite
 from urllib.parse import quote
 ROOT=Path(__file__).resolve().parents[2]
 OUT=ROOT/"scout-operations/reports/independent-doi-lookup/latest.json"
@@ -79,6 +80,8 @@ def main():
   else:
    md=metadata(d)
    observed=datetime.datetime.now(datetime.timezone.utc).isoformat()
+  if md.get("status") == "unavailable_or_not_found":
+   md=recover_historical_datacite(ROOT,d,md)
   check=identity_check(public,ir_index,d,md.get("title",""),"https://doi.org/"+d)
   shared=verified_disposition(public,watch,ir_index,doi=d,title=md.get("title",""),url="https://doi.org/"+d)
   records.append({**entry,"metadata":md,
@@ -90,7 +93,8 @@ def main():
                   "seed_expansion_preserved":True})
  result={"schema":"reach-scout-independent-doi-lookup-v1","read_only":True,"record_count":len(records),"metadata_memory_hits":hits,
  "metadata_network_attempts":len(records)-hits,
- "successful":sum(r["metadata"]["status"]=="ok" for r in records),"records":records,"public_identity_source_fingerprint":public["source_fingerprint"],"noaa_ir_index_verified":ir_index is not None,"policy":"DataCite created is office Pub Date; Crossref print then online then published/issued; month-only becomes first day, year-only never invented. Human decisions unchanged."}
+ "successful":sum(r["metadata"]["status"]=="ok" for r in records),
+ "historical_archive_recoveries":sum(r["metadata"]["status"]=="archived_source_recovered" for r in records),"records":records,"public_identity_source_fingerprint":public["source_fingerprint"],"noaa_ir_index_verified":ir_index is not None,"policy":"DataCite created is office Pub Date; Crossref print then online then published/issued; month-only becomes first day, year-only never invented. Human decisions unchanged."}
  OUT.parent.mkdir(parents=True,exist_ok=True)
  OUT.write_text(json.dumps(result,indent=2,sort_keys=True,ensure_ascii=False)+"\n",encoding="utf8")
  write_index(ROOT)
