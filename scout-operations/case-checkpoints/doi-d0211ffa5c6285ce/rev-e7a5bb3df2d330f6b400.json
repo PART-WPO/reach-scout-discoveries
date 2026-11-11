@@ -1,0 +1,75 @@
+{
+  "schema": "reach-scout-decision-checkpoint-v1",
+  "decision_contract": "reach-scout-decision-pipeline-v2",
+  "input_fingerprint": "e7a5bb3df2d330f6b400c928b01c961c02cd6619471d67b998282da36afa34c0",
+  "index_fingerprint": "2a7622e93b16fc7dc34ee5c4f537f75c1990413fe9223c10033a26b51c0e8104",
+  "case_input": {
+    "doi": "10.1175/aies-d-24-0063.1",
+    "title": "Improving Ensemble Extreme Precipitation Forecasts Using Generative Artificial Intelligence",
+    "cohort": "historical_crossref",
+    "publication_status": "NOT_CHECKED",
+    "primary_award_match": null,
+    "project_attribution": "NOT_CHECKED",
+    "checked_sources": [],
+    "research_rounds": 0,
+    "secondary_identity_checked": false,
+    "required_metadata_verified": false,
+    "private_review_status": "NOT_VERIFIED",
+    "source_evidence": [
+      {
+        "path": "scout-operations/historical-crossref-phase2/2026-11-09-1829ET-generative-ai-extreme-precipitation-official-459-screen.json",
+        "sha256": "d09c724da23e5bf9bdf253a3f8a0198642c4d5473b2bb4a8f804692604f2b3d1"
+      },
+      {
+        "path": "scout-operations/historical-crossref-phase2/2026-11-09-1830ET-generative-ai-precipitation-459-human-referral-disposition.json",
+        "sha256": "162437f1a294893384a8070e81472d939a6b06b6b34921c98270086ea37134a8"
+      }
+    ],
+    "research_budget_exhausted": false
+  },
+  "evaluation": {
+    "doi": "10.1175/aies-d-24-0063.1",
+    "cohort": "historical_crossref",
+    "identity_check": {
+      "status": "IN_PUBLIC_SCOUT_QUEUE",
+      "reason": "CONSISTENT_SCOUT_PUBLIC_MIRRORS",
+      "matches": [
+        {
+          "source": "SCOUT_PUBLISHED",
+          "identity": "2026-11-09-human-project-d0211ffa5c6285cecf:2",
+          "title": "Improving Ensemble Extreme Precipitation Forecasts Using Generative Artificial Intelligence",
+          "location": "scout-discoveries/batches/2026-11-09-human-project-d0211ffa5c6285cecf.csv:2",
+          "match_bases": [
+            "exact_doi",
+            "normalized_title"
+          ]
+        },
+        {
+          "source": "SCOUT_INBOX",
+          "identity": "2026-11-09-human-project-d0211ffa5c6285cecf.csv:2",
+          "title": "Improving Ensemble Extreme Precipitation Forecasts Using Generative Artificial Intelligence",
+          "location": "scout-discoveries/inbox/2026-11-09-human-project-d0211ffa5c6285cecf.csv:2",
+          "match_bases": [
+            "exact_doi",
+            "normalized_title"
+          ]
+        }
+      ],
+      "caveat": "Public snapshot only; private Hub decisions are not asserted."
+    },
+    "project_attribution": "NOT_CHECKED",
+    "primary_award_match": null,
+    "publication_status": "NOT_CHECKED",
+    "private_review_status": "NOT_VERIFIED",
+    "research_rounds": 0,
+    "decision": "EXISTING_SCOUT_CANDIDATE",
+    "review_action": "NONE",
+    "notes": [],
+    "checked_sources": [],
+    "unverified_private_hub_import": true,
+    "automatically_staged": false,
+    "seed_expansion_preserved": true
+  },
+  "source_case_path": "scout-operations/research-decision-cases.json",
+  "human_decision_modified": false
+}

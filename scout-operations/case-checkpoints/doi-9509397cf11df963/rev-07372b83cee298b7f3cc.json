@@ -1,0 +1,71 @@
+{
+  "schema": "reach-scout-decision-checkpoint-v1",
+  "decision_contract": "reach-scout-decision-pipeline-v2",
+  "input_fingerprint": "07372b83cee298b7f3ccde763532b8ed26d7b6eb4fc7c244e0087cf9de4ff6e0",
+  "index_fingerprint": "2a7622e93b16fc7dc34ee5c4f537f75c1990413fe9223c10033a26b51c0e8104",
+  "case_input": {
+    "doi": "10.1175/aies-d-23-0094.1",
+    "title": "Generative Ensemble Deep Learning Severe Weather Prediction from a Deterministic Convection-Allowing Model",
+    "cohort": "historical_crossref",
+    "publication_status": "NOT_CHECKED",
+    "primary_award_match": null,
+    "project_attribution": "NOT_CHECKED",
+    "checked_sources": [],
+    "research_rounds": 0,
+    "secondary_identity_checked": false,
+    "required_metadata_verified": false,
+    "private_review_status": "NOT_VERIFIED",
+    "source_evidence": [
+      {
+        "path": "scout-operations/historical-crossref-phase2/2026-11-09-1624ET-generative-ensemble-severe-weather-official-publisher-human-screen.json",
+        "sha256": "b54cfbd6e5596ebeb72606363e5abff9b2c87a9d5df415ed30addb418b9f1d59"
+      }
+    ],
+    "research_budget_exhausted": false
+  },
+  "evaluation": {
+    "doi": "10.1175/aies-d-23-0094.1",
+    "cohort": "historical_crossref",
+    "identity_check": {
+      "status": "IN_PUBLIC_SCOUT_QUEUE",
+      "reason": "CONSISTENT_SCOUT_PUBLIC_MIRRORS",
+      "matches": [
+        {
+          "source": "SCOUT_PUBLISHED",
+          "identity": "2026-11-09-aies-d-23-0094-wpo459-reclassification-001:2",
+          "title": "Generative Ensemble Deep Learning Severe Weather Prediction from a Deterministic Convection-Allowing Model",
+          "location": "scout-discoveries/batches/2026-11-09-aies-d-23-0094-wpo459-reclassification-001.csv:2",
+          "match_bases": [
+            "exact_doi",
+            "normalized_title"
+          ]
+        },
+        {
+          "source": "SCOUT_INBOX",
+          "identity": "2026-11-09-human-project-9509397cf11df96346.csv:2",
+          "title": "Generative Ensemble Deep Learning Severe Weather Prediction from a Deterministic Convection-Allowing Model",
+          "location": "scout-discoveries/inbox/2026-11-09-human-project-9509397cf11df96346.csv:2",
+          "match_bases": [
+            "exact_doi",
+            "normalized_title"
+          ]
+        }
+      ],
+      "caveat": "Public snapshot only; private Hub decisions are not asserted."
+    },
+    "project_attribution": "NOT_CHECKED",
+    "primary_award_match": null,
+    "publication_status": "NOT_CHECKED",
+    "private_review_status": "NOT_VERIFIED",
+    "research_rounds": 0,
+    "decision": "EXISTING_SCOUT_CANDIDATE",
+    "review_action": "NONE",
+    "notes": [],
+    "checked_sources": [],
+    "unverified_private_hub_import": true,
+    "automatically_staged": false,
+    "seed_expansion_preserved": true
+  },
+  "source_case_path": "scout-operations/research-decision-cases.json",
+  "human_decision_modified": false
+}

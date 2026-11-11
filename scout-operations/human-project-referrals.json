@@ -1,12 +1,12 @@
 {
   "schema": "reach-scout-bounded-project-human-referral-v1",
-  "source_outcome_event_count": 72,
-  "source_outcome_sha256": "a75db4c549825cf0a1d5565746fd8ea35e5c7023b5a31b702edc1b3c2997b8a1",
+  "source_outcome_event_count": 73,
+  "source_outcome_sha256": "f3d334514a3421602523f438c37fbe23e51b2c2c3bbfd936256234f71eb089f2",
   "unique_bounded_project_questions": 3,
-  "potential_wpo_cases_quick_screened": 25,
+  "potential_wpo_cases_quick_screened": 26,
   "human_referral_drafts_prevalidated": 1,
   "draft_paths": [
-    "scout-discoveries/inbox/2026-11-11-human-project-0d9ca4d64361951c31.csv"
+    "scout-discoveries/inbox/2026-11-11-human-project-39f06212d958390941.csv"
   ],
   "published_batch_paths": [
     "scout-discoveries/batches/2026-11-09-human-project-b332d53770e8cbc1d4.csv",
@@ -18,6 +18,7 @@
     "scout-discoveries/batches/2026-11-11-human-project-4687afbf63fe06fea0.csv",
     "scout-discoveries/batches/2026-11-09-human-project-8963668e6a0f98ac1c.csv",
     "scout-discoveries/batches/2026-11-09-human-project-f706c52fc493a7d6a2.csv",
+    "scout-discoveries/batches/2026-11-11-human-project-0d9ca4d64361951c31.csv",
     "scout-discoveries/batches/2026-11-09-human-project-ec8541bda93af057fc.csv",
     "scout-discoveries/batches/2026-11-06-human-project-b616c2488c1fe907f3.csv",
     "scout-discoveries/batches/2026-11-09-human-project-e8ae57179ced9c8d19.csv",
@@ -31,7 +32,7 @@
     "scout-discoveries/batches/2026-11-10-human-project-bfcdcca18eb647d9c5.csv",
     "scout-discoveries/batches/2026-11-10-human-project-69e9278b9a8267f272.csv"
   ],
-  "verified_public_scout_referral_batches": 21,
+  "verified_public_scout_referral_batches": 22,
   "human_reviewer_decisions": "NOT_VERIFIED",
   "private_hub_imports": "NOT_VERIFIED",
   "new_approved_reach_outputs": 0,
@@ -2239,9 +2240,32 @@
         ]
       },
       "public_identity": {
-        "status": "NO_PUBLIC_IDENTITY_MATCH",
-        "reason": "NO_MATCH_IN_VERIFIED_PUBLIC_SNAPSHOT",
-        "matches": [],
+        "status": "IN_PUBLIC_SCOUT_QUEUE",
+        "reason": "CONSISTENT_SCOUT_PUBLIC_MIRRORS",
+        "matches": [
+          {
+            "source": "SCOUT_PUBLISHED",
+            "identity": "2026-11-11-human-project-0d9ca4d64361951c31:2",
+            "title": "HyG: A hydraulic geometry dataset derived from historical stream gage measurements across the conterminous US",
+            "location": "scout-discoveries/batches/2026-11-11-human-project-0d9ca4d64361951c31.csv:2",
+            "match_bases": [
+              "exact_doi",
+              "exact_url",
+              "normalized_title"
+            ]
+          },
+          {
+            "source": "SCOUT_INBOX",
+            "identity": "2026-11-11-human-project-0d9ca4d64361951c31.csv:2",
+            "title": "HyG: A hydraulic geometry dataset derived from historical stream gage measurements across the conterminous US",
+            "location": "scout-discoveries/inbox/2026-11-11-human-project-0d9ca4d64361951c31.csv:2",
+            "match_bases": [
+              "exact_doi",
+              "exact_url",
+              "normalized_title"
+            ]
+          }
+        ],
         "caveat": "Public snapshot only; private Hub decisions are not asserted.",
         "noaa_ir_reach_check": {
           "status": "VERIFIED_IR_URL_NOT_IN_PUBLIC_REACH",
@@ -2256,8 +2280,165 @@
         "wpo_award_cue_not_proof": true,
         "reason_for_review": "WPO-pattern award cited but exact funded project deliverable unverified"
       },
-      "disposition": "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL",
+      "disposition": "HOLD_ALREADY_IN_PUBLIC_REACH_OR_SCOUT",
       "review_question": "Reviewer question: Select and verify the correct SPARK parent for the explicitly funded WPO award NA18OAR4590391; confirm the output belongs with that parent before addition.",
+      "scout_inbox_status": "PUBLISHED_PUBLIC_SCOUT_FEED_NOT_PRIVATE_HUB",
+      "published_scout_batch_path": "scout-discoveries/batches/2026-11-11-human-project-0d9ca4d64361951c31.csv",
+      "eligible_for_new_reach_addition": "NOT_VERIFIED",
+      "private_hub_import": "NOT_VERIFIED",
+      "human_approval": "NOT_VERIFIED"
+    },
+    {
+      "doi": "10.1038/s43247-026-03991-1",
+      "source_event_id": "7aa50c0c8c8ceca059158d5b",
+      "source_file": "scout-operations/historical-crossref-phase2/auto-verified-oar459-39f06212d958390941.json",
+      "source_sha256": "e9e235496d46decf1ed10a4d925f3191d7b924885ff089e3ab21d399a19d391c",
+      "official_metadata": {
+        "status": "ok",
+        "provider": "crossref",
+        "evidence": "https://api.crossref.org/works/10.1038/s43247-026-03991-1",
+        "title": "Dual physical pathways shape subseasonal-to-seasonal predictability of North American summer heat extremes",
+        "creators": [
+          "Baoqiang Xiang",
+          "Lucas Harris",
+          "Gan Zhang",
+          "Xiuyuan Ding"
+        ],
+        "resource_type": "journal-article",
+        "publication_status": "official_journal_article",
+        "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>Improving the subseasonal-to-seasonal (S2S) prediction of heatwaves is a critical scientific challenge due to their severe societal impacts and the limited predictability at these lead times. Here we show two dominant and physically distinct sources of S2S predictability for the weekly hot days across North America. The leading predictable mode, with its strongest loading over the southern U.S., reflects an ocean-forced mode associated with a Pacific Decadal Oscillation-like sea surface temperature pattern. In contrast, the second most predictable mode, with centers of action over northwestern and southeastern North America, is dominated by atmospheric internal variability associated with the summer Arctic Oscillation and summer North Atlantic Oscillation. Skillful week-3 forecasts of hot days are further characterized by quasi-stationary wave patterns coupled with regional soil moisture deficit, revealing dynamical and land-surface ‘windows of opportunity’ for extended S2S predictability. These findings identify the physical mechanisms governing North American heat extreme predictability and provide a scientific basis for improving extended-range early warnings of heat extremes.</jats:p>",
+        "pub_date": "2026-09-02",
+        "preprint_posted_date": "",
+        "pub_date_basis": "Crossref published-online",
+        "pub_date_precision": "day",
+        "publisher": "Springer Science and Business Media LLC",
+        "funding_references": [
+          {
+            "DOI": "10.13039/100000192",
+            "name": "United States Department of Commerce | National Oceanic and Atmospheric Administration",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "NA21OAR4310383"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "NA21OAR4310383"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100000192",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/100000192",
+            "name": "United States Department of Commerce | National Oceanic and Atmospheric Administration",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "NA22OAR4590217"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "NA22OAR4590217"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100000192",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/100000192",
+            "name": "United States Department of Commerce | National Oceanic and Atmospheric Administration",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "NA23OAR4320198"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "NA23OAR4320198"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100000192",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/100000001",
+            "name": "National Science Foundation",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "RISE-2530555"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "RISE-2530555"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100000001",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          }
+        ],
+        "related_identifiers": {},
+        "attempts": [
+          {
+            "provider": "datacite",
+            "url": "https://api.datacite.org/dois/10.1038/s43247-026-03991-1",
+            "error": {
+              "kind": "http",
+              "code": 404
+            }
+          },
+          {
+            "provider": "crossref",
+            "url": "https://api.crossref.org/works/10.1038/s43247-026-03991-1",
+            "error": null
+          }
+        ]
+      },
+      "public_identity": {
+        "status": "NO_PUBLIC_IDENTITY_MATCH",
+        "reason": "NO_MATCH_IN_VERIFIED_PUBLIC_SNAPSHOT",
+        "matches": [],
+        "caveat": "Public snapshot only; private Hub decisions are not asserted.",
+        "noaa_ir_reach_check": {
+          "status": "VERIFIED_IR_URL_NOT_IN_PUBLIC_REACH",
+          "official_url": "https://repository.library.noaa.gov/view/noaa/76179",
+          "match_uid": null,
+          "match_detail_shard": null
+        }
+      },
+      "project_search_context_only": {
+        "award_context_only": "NA22OAR4590217",
+        "project_context_only": "",
+        "wpo_award_cue_not_proof": true,
+        "reason_for_review": "WPO-pattern award cited but exact funded project deliverable unverified"
+      },
+      "disposition": "READY_FOR_VALIDATED_HUMAN_PROJECT_REFERRAL",
+      "review_question": "Reviewer question: Select and verify the correct SPARK parent for the explicitly funded WPO award NA22OAR4590217; confirm the output belongs with that parent before addition.",
       "scout_inbox_status": "VALIDATED_INBOX_DRAFT_NOT_PRIVATE_HUB",
       "published_scout_batch_path": null,
       "eligible_for_new_reach_addition": "NOT_VERIFIED",
