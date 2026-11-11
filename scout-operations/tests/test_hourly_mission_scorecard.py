@@ -54,6 +54,29 @@ class ScorecardTests(unittest.TestCase):
             self.assertIsNone(result["chatgpt_hourly_mission"]["observed_metadata_requests_sum_only_instrumented_missions"])
             self.assertEqual(result["chatgpt_hourly_mission"]["distinct_completed_original_dois"], ["10.1175/duplicate"])
 
+    def test_bounded_seed_negative_not_formal_expansion_or_technical_hold(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            folder = root / "scout-operations/reports/hourly-missions"
+            folder.mkdir(parents=True)
+            for i, kind in enumerate(("negative", "technical", "repeat")):
+                r = record("chatgpt_hourly_mission", f"seed-{i}", "10.1175/original")
+                r["lane"] = "related_expansion"
+                r["selected_original_dois"] = []
+                r["new_original_full_decisions"] = []
+                r["selected_expansion_seed_dois"] = ["10.1007/seed"]
+                r["new_expansion_decisions"] = []
+                r["research_only_holds"] = ["10.1007/seed"] if kind != "technical" else []
+                r["technical_or_funding_holds"] = ["10.1007/seed"] if kind == "technical" else []
+                r["published_public_batch_urls"] = []
+                r["handoff_status"] = "NOT_ATTEMPTED"
+                (folder / f"{i}.json").write_text(json.dumps(r))
+            x = summarize(root)["by_producer"]["chatgpt_hourly_mission"]
+            self.assertEqual(x["bounded_seed_no_new_output_missions"], 2)
+            self.assertEqual(x["distinct_bounded_seed_no_new_output_count"], 1)
+            self.assertEqual(x["expansion_seeds_revisited_across_missions"], 1)
+            self.assertEqual(x["formal_expansion_decision_missions"], 0)
+
 
 if __name__ == "__main__":
     unittest.main()
