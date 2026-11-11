@@ -93,10 +93,11 @@ jobs:
           assert small['group_counts_before_preview_bound']['monthly_original']>=0
           historical=json.loads(Path('scout-operations/historical-coverage.json').read_text())
           exceptions=json.loads(Path('scout-operations/historical-reconciliation-exceptions.json').read_text())
-          held={n['doi'] for n in m['nodes'] if n['preprint_or_version_hold']}
-          held_historical=sum(e['identity'].removeprefix('doi:').lower() in held
-                              for e in exceptions['exceptions'])
-          assert small['group_counts_before_preview_bound']['historical_datacite_original']==historical['remaining']-held_historical
+          exception_dois={e['identity'].removeprefix('doi:').lower() for e in exceptions['exceptions']}
+          assert small['group_counts_before_preview_bound']['historical_reconciliation_needed']==len(exception_dois)
+          assert not exception_dois & {e['doi'] for e in
+                small['recommended_preview']['historical_datacite_original']}
+          assert small['group_counts_before_preview_bound']['historical_datacite_original']<=historical['remaining']-len(exception_dois)
           assert not any(x['doi']=='10.13012/b2idb-0704763_v1' for x in
                          small['recommended_preview']['historical_datacite_original'])
           assert small['group_counts_before_preview_bound']['existing_public_original_disposition']>0
