@@ -1,0 +1,105 @@
+{
+  "schema": "reach-scout-bounded-expansion-research-v1",
+  "observed_at_utc": "2026-11-11T01:18:44.738024+00:00",
+  "seed_doi": "10.1007/s00382-021-05901-x",
+  "source_graph_sha256": "98344ca9ee18144c76f9bce066259cd15122762e4be8a5172dea6c62048e50fe",
+  "seed_expansion_fingerprint": "4ec4f79ad5ac73abfdc48344407832b41b038a75e2bdfd39dbcc2935a54f52dc",
+  "seed_reach_identity_verified_in_graph": true,
+  "explicit_related_dois_preserved": [],
+  "source_lookups": [
+    {
+      "doi": "10.1007/s00382-021-05901-x",
+      "role": "VERIFIED_REACH_EXPANSION_SEED",
+      "source_status": "ok",
+      "official_provider": "crossref",
+      "official_title": "Bulk connectivity of global SST and land precipitation variations",
+      "official_metadata_url": "https://api.crossref.org/works/10.1007/s00382-021-05901-x",
+      "publication_status": "official_journal_article",
+      "official_award_numbers_observed": [
+        "41775040",
+        "41930967",
+        "NA17OAR4310144",
+        "NA20OAR4590316"
+      ],
+      "separate_output_uniqueness": "NOT_VERIFIED",
+      "same_WPO_project_parent": "NOT_VERIFIED"
+    }
+  ],
+  "status": "OFFICIAL_SOURCE_CHECK_RECORDED",
+  "source_driven_discovery": {
+    "schema": "reach-scout-source-driven-expansion-v1",
+    "seed_doi": "10.1007/s00382-021-05901-x",
+    "source_checks": [
+      {
+        "kind": "crossref_references",
+        "url": "https://api.crossref.org/works/10.1007/s00382-021-05901-x",
+        "status": "SOURCE_READ",
+        "source_sha256": "e7520a4e348377debce0db70549539367f99ddecf1ced3eb72c71ca04e5a5d7a",
+        "data_code_doi_matches": 4
+      }
+    ],
+    "discovered_doi_leads": [
+      {
+        "doi": "10.1038/s41597-020-0453-3",
+        "evidence_kind": "crossref_structured_data_code_citation",
+        "source_url": "https://api.crossref.org/works/10.1007/s00382-021-05901-x",
+        "context_excerpt": "  Harris I, Osborn TJ, Jones P et al (2020) Version 4 of the CRU TS monthly high-resolution gridded multivariate climate dataset. Sci Data 7:109. https://doi.org/10.1038/s41597-020-0453-3 ",
+        "eligibility": "RESEARCH_LEAD_ONLY",
+        "source_sha256": "e7520a4e348377debce0db70549539367f99ddecf1ced3eb72c71ca04e5a5d7a"
+      },
+      {
+        "doi": "10.1175/jcli3637.1",
+        "evidence_kind": "crossref_structured_data_code_citation",
+        "source_url": "https://api.crossref.org/works/10.1007/s00382-021-05901-x",
+        "context_excerpt": "  Rayner N, Brohan P, Parker D, Folland C, Kennedy J, Vanicek M, Ansell T, Tett S (2006) Improved analyses of changes and uncertainties in sea surface temperature measured in situ since the mid-nineteenth century: the HadSST2 data set. J Clim 19(3):446–469. https://doi.org/10.1175/JCLI3637.1 ",
+        "eligibility": "RESEARCH_LEAD_ONLY",
+        "source_sha256": "e7520a4e348377debce0db70549539367f99ddecf1ced3eb72c71ca04e5a5d7a"
+      }
+    ],
+    "status": "SOURCE_BACKED_LEADS_FOUND",
+    "new_public_candidates": 0,
+    "private_hub_import": "NOT_VERIFIED"
+  },
+  "new_source_driven_leads_screened": [
+    {
+      "doi": "10.1038/s41597-020-0453-3",
+      "source_url": "https://api.crossref.org/works/10.1007/s00382-021-05901-x",
+      "source_sha256": "e7520a4e348377debce0db70549539367f99ddecf1ced3eb72c71ca04e5a5d7a",
+      "source_context_type": "crossref_structured_data_code_citation",
+      "official_metadata_status": "ok",
+      "official_metadata_url": "https://api.crossref.org/works/10.1038/s41597-020-0453-3",
+      "official_title": "Version 4 of the CRU TS monthly high-resolution gridded multivariate climate dataset",
+      "official_resource_type": "journal-article",
+      "publication_status": "official_journal_article",
+      "exact_doi_publisher_deposited_wpo_awards": [],
+      "public_identity_status": "NO_PUBLIC_IDENTITY_MATCH",
+      "official_ir_reach_status": "DOI_NOT_IN_VERIFIED_IR_INDEX_UNKNOWN",
+      "next_gate": "VERIFY_EXACT_OUTPUT_WPO_PROJECT_FUNDING",
+      "eligibility": "RESEARCH_LEAD_ONLY_NOT_STAGED"
+    },
+    {
+      "doi": "10.1175/jcli3637.1",
+      "source_url": "https://api.crossref.org/works/10.1007/s00382-021-05901-x",
+      "source_sha256": "e7520a4e348377debce0db70549539367f99ddecf1ced3eb72c71ca04e5a5d7a",
+      "source_context_type": "crossref_structured_data_code_citation",
+      "official_metadata_status": "ok",
+      "official_metadata_url": "https://api.crossref.org/works/10.1175/jcli3637.1",
+      "official_title": "Improved Analyses of Changes and Uncertainties in Sea Surface Temperature Measured In Situ since the Mid-Nineteenth Century: The HadSST2 Dataset",
+      "official_resource_type": "journal-article",
+      "publication_status": "official_journal_article",
+      "exact_doi_publisher_deposited_wpo_awards": [],
+      "public_identity_status": "NO_PUBLIC_IDENTITY_MATCH",
+      "official_ir_reach_status": "DOI_NOT_IN_VERIFIED_IR_INDEX_UNKNOWN",
+      "next_gate": "VERIFY_EXACT_OUTPUT_WPO_PROJECT_FUNDING",
+      "eligibility": "RESEARCH_LEAD_ONLY_NOT_STAGED"
+    }
+  ],
+  "new_distinct_doi_leads_found": 2,
+  "new_public_candidate_count": 0,
+  "new_related_output_eligibility_confirmed": 0,
+  "separate_expansion_decisions_completed": 0,
+  "reason_not_a_completed_expansion": "Source metadata and DOI edges are research leads; distinct output identity, preprint, public REACH/Scout duplicate and exact WPO project funding require independent checks.",
+  "next_action": "Investigate official metadata and full current REACH/Scout identity for distinct linked DOI(s); verify their OWN publisher award and primary SPARK parent before any Needs Investigation or New Candidate.",
+  "private_hub_import": "NOT_VERIFIED",
+  "human_approval": "NOT_VERIFIED"
+}
