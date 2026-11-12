@@ -7,7 +7,9 @@ review handoff. Existing REACH publications are SEEDS, never new originals.
 import argparse
 import hashlib
 import json
+import re
 import sys
+from urllib.parse import urlsplit
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -18,6 +20,8 @@ from source_driven_expansion import discover as discover_sources
 from ir_reach_identity import verified_snapshot, identity_check
 from noaa_ir_lookup import trusted_index
 from wpo_awards import official_459_awards
+from recover_related_output_source import recover as recover_related_source
+from related_output_identity import screen as complete_related_identity
 
 ROOT = Path(__file__).resolve().parents[2]
 GRAPH = "scout-operations/research-memory/crosslane-relationship-graph.json"
@@ -119,7 +123,25 @@ def pick_seed(graph, ledger, now, preferred=None):
     return candidates[0] if candidates else None
 
 
-def bounded_research(root, graph, ledger, now, metadata_fn=lookup_metadata, *, source_fn=None, identity_fn=None, seed_override=None):
+def cited_github_repo(lead):
+    """Only an exact repository URL in official publisher context is a source lead.
+
+    The recovery helper subsequently verifies the README's exact DOI; a random
+    upstream dependency or user-supplied third-party GitHub link is not proof.
+    """
+    evidence_url = str(lead.get("source_url") or "")
+    host = urlsplit(evidence_url).hostname
+    if host not in {"agupubs.onlinelibrary.wiley.com", "onlinelibrary.wiley.com",
+                    "www.nature.com", "link.springer.com", "journals.ametsoc.org"}:
+        return None
+    context = str(lead.get("context_excerpt") or "")
+    found = re.search(r"https://github\\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+(?:\\.git)?", context, re.I)
+    return found.group(0) if found else None
+
+
+def bounded_research(root, graph, ledger, now, metadata_fn=lookup_metadata, *,
+                     source_fn=None, identity_fn=None, recovery_fn=None,
+                     identity_screen_fn=None, seed_override=None):
     selected = pick_seed(graph, ledger, now, preferred=seed_override)
     if not selected:
         return None
@@ -140,6 +162,7 @@ def bounded_research(root, graph, ledger, now, metadata_fn=lookup_metadata, *, s
                 raise ValueError("STALE_RELATED_LINK_EVIDENCE: " + rel)
     target_dois = [seed] + explicit[:2]
     checked = []
+    first_metadata = {}
     for doi in target_dois:
         try:
             metadata = metadata_fn(doi)
@@ -148,6 +171,7 @@ def bounded_research(root, graph, ledger, now, metadata_fn=lookup_metadata, *, s
         except Exception as err:
             # Explicit technical hold; NEVER claim missing publication or no WPO link.
             metadata = {"status": "OFFICIAL_METADATA_ACCESS_ERROR", "error_type": type(err).__name__}
+        first_metadata[doi] = metadata
         good = metadata.get("status") == "ok"
         checked.append({
             "doi": doi, "role": "VERIFIED_REACH_EXPANSION_SEED" if doi == seed else "EXPLICIT_RELATED_DOI_LEAD",
@@ -193,61 +217,107 @@ def bounded_research(root, graph, ledger, now, metadata_fn=lookup_metadata, *, s
             source_discovery = {**source_discovery, "status": "SOURCE_DISCOVERY_TECHNICAL_HOLD",
                                 "error_type": type(err).__name__, "discovered_doi_leads": []}
         public_cache = None
-        for lead in source_discovery.get("discovered_doi_leads", []):
+        public_leads = list(source_discovery.get("discovered_doi_leads", []))
+        # The original graph's SHA-verified explicit related DOIs also need
+        # source recovery and a complete identity decision, even when no new
+        # publisher URL can be reached in this run.
+        seen = {norm(x.get("doi")) for x in public_leads}
+        for child in explicit[:2]:
+            if child not in seen:
+                public_leads.append({"doi": child,
+                    "evidence_kind": "sha_verified_graph_related_doi",
+                    "source_url": None, "context_excerpt": ""})
+                seen.add(child)
+        for lead in public_leads:
             child = norm(lead.get("doi"))
             if child == seed or not child.startswith("10.") or "/" not in child:
                 continue
-            try:
-                meta = metadata_fn(child)
-            except (OSError, ValueError, TimeoutError):
-                meta = {"status": "OFFICIAL_METADATA_ACCESS_ERROR"}
-            ok = isinstance(meta, dict) and meta.get("status") == "ok"
-            if identity_fn is not None and ok:
+            meta = first_metadata.get(child)
+            if meta is None:
                 try:
-                    identity = identity_fn(child, meta.get("title", ""))
-                    public_status = identity.get("status", "NOT_VERIFIED")
-                    ir_status = (identity.get("noaa_ir_reach_check") or {}).get("status", "NOT_VERIFIED")
-                except (ValueError, OSError):
-                    public_status, ir_status = "IDENTITY_GATE_UNAVAILABLE", "NOT_VERIFIED"
-            elif ok:
+                    meta = metadata_fn(child)
+                except (OSError, ValueError, TimeoutError):
+                    meta = {"status": "OFFICIAL_METADATA_ACCESS_ERROR"}
+            if not isinstance(meta, dict):
+                meta = {"status": "MALFORMED_METADATA_RESPONSE"}
+            ok = meta.get("status") == "ok"
+            github_repo = cited_github_repo(lead)
+            recovery = None
+            if not ok and recovery_fn is not None:
+                try:
+                    recovery = recovery_fn(
+                        child, github_repo_url=github_repo,
+                        github_source_url=lead.get("source_url") if github_repo else None)
+                except (OSError, ValueError, TimeoutError) as err:
+                    recovery = {"status": "SOURCE_ACCESS_FAILURE",
+                                "reason": "NATIVE_RECOVERY_FAILURE:" + type(err).__name__}
+            recovered = isinstance(recovery, dict) and recovery.get(
+                "official_exact_doi_verified") is True
+            official_title = meta.get("title") if ok else (
+                (recovery or {}).get("title") or "")
+            if identity_fn is not None:
+                # Existing unit-test injection, still runs even when metadata
+                # is unavailable. Production uses the complete live gate.
+                try:
+                    identity = identity_fn(child, official_title)
+                except (ValueError, OSError, TypeError):
+                    identity = {"status": "PUBLIC_IDENTITY_GATE_INCOMPLETE"}
+            elif identity_screen_fn is not None:
+                try:
+                    identity = identity_screen_fn(
+                        root, child, official_title, artifact_url=github_repo or "")
+                except (ValueError, OSError, TypeError):
+                    identity = {"status": "PUBLIC_IDENTITY_GATE_INCOMPLETE"}
+            else:
+                # Keep legacy offline/injected paths read-only; production uses
+                # the full live canonical REACH gate above.
                 try:
                     if public_cache is None:
                         public_cache = verified_snapshot(root)
-                    identity = identity_check(public_cache[0], public_cache[1], child, meta.get("title", ""),
-                                              "https://doi.org/" + child)
-                    public_status = identity.get("status", "NOT_VERIFIED")
-                    ir_status = (identity.get("noaa_ir_reach_check") or {}).get("status", "NOT_VERIFIED")
-                except (ValueError, OSError):
-                    public_status, ir_status = "IDENTITY_GATE_UNAVAILABLE", "NOT_VERIFIED"
-            else:
-                public_status, ir_status = "NOT_VERIFIED", "NOT_VERIFIED"
+                    identity = identity_check(public_cache[0], public_cache[1],
+                                              child, official_title, "https://doi.org/" + child)
+                except (ValueError, OSError, TypeError):
+                    identity = {"status": "PUBLIC_IDENTITY_GATE_INCOMPLETE"}
+            public_status = identity.get("status", "PUBLIC_IDENTITY_GATE_INCOMPLETE")
+            ir_status = (identity.get("noaa_ir_reach_check") or {}).get(
+                "status", "NOT_VERIFIED")
             awards = official_459_awards(meta) if ok else []
-            if not ok:
-                next_gate = "OFFICIAL_METADATA_UNVERIFIED"
-            elif public_status in {"CONFIRMED_PUBLIC_REACH_IDENTITY", "IN_PUBLIC_SCOUT_QUEUE"}:
+            if public_status in {"CONFIRMED_PUBLIC_REACH_IDENTITY", "IN_PUBLIC_SCOUT_QUEUE"}:
                 next_gate = "EXISTING_PUBLIC_IDENTITY_NO_RESTAGING"
             elif meta.get("publication_status") == "preprint":
                 next_gate = "PREPRINT_WATCHLIST_HOLD"
-            elif public_status != "NO_PUBLIC_IDENTITY_MATCH" or ir_status not in {"DOI_NOT_IN_VERIFIED_IR_INDEX_UNKNOWN", "VERIFIED_IR_URL_NOT_IN_PUBLIC_REACH"}:
-                # An index-negative signal is not a blanket proof of novelty.
-                # Different decision_pipeline versions use different names.
+            elif public_status == "PUBLIC_IDENTITY_GATE_INCOMPLETE":
+                next_gate = "PUBLIC_IDENTITY_GATE_INCOMPLETE"
+            elif public_status != "NO_PUBLIC_IDENTITY_MATCH":
                 next_gate = "BOUNDED_PUBLIC_IDENTITY_REVIEW"
+            elif not ok and not recovered:
+                next_gate = "OFFICIAL_METADATA_UNVERIFIED"
             elif not awards:
-                next_gate = "VERIFY_EXACT_OUTPUT_WPO_PROJECT_FUNDING"
+                # An exact source-backed output is a plausible review unit.
+                # Its parent's 459 award is NOT transferred to the output.
+                # No private Hub connection/ingestion is inferred.
+                next_gate = ("REVIEW_READY_NEEDS_INVESTIGATION_NOT_DELIVERED"
+                             if identity_screen_fn is not None else
+                             "VERIFY_EXACT_OUTPUT_WPO_PROJECT_FUNDING")
             else:
                 next_gate = "VERIFY_SEPARATE_OUTPUT_IDENTITY_AND_PROJECT_PARENT"
             screened_leads.append({
                 "doi": child, "source_url": lead.get("source_url"),
                 "source_sha256": lead.get("source_sha256"),
                 "source_context_type": lead.get("evidence_kind"),
-                "official_metadata_status": meta.get("status") if isinstance(meta, dict) else "MALFORMED",
+                "official_metadata_status": meta.get("status"),
                 "official_metadata_url": meta.get("evidence") if ok else None,
-                "official_title": meta.get("title") if ok else None,
-                "official_resource_type": meta.get("resource_type") if ok else None,
+                "official_title": official_title,
+                "official_resource_type": meta.get("resource_type") if ok else (
+                    (recovery or {}).get("resource_type")),
                 "publication_status": meta.get("publication_status") if ok else "NOT_VERIFIED",
                 "exact_doi_publisher_deposited_wpo_awards": awards,
                 "public_identity_status": public_status,
+                "public_identity_detail": identity,
                 "official_ir_reach_status": ir_status,
+                "native_source_recovery": recovery,
+                "new_public_candidate_count": 0,
+                "private_hub_import": "NOT_VERIFIED",
                 "next_gate": next_gate,
                 "eligibility": "RESEARCH_LEAD_ONLY_NOT_STAGED",
             })
@@ -274,7 +344,7 @@ def bounded_research(root, graph, ledger, now, metadata_fn=lookup_metadata, *, s
         "source_lookups": checked, "status": status,
         "source_driven_discovery": source_discovery,
         "new_source_driven_leads_screened": screened_leads,
-        "new_distinct_doi_leads_found": len(screened_leads),
+        "new_distinct_doi_leads_found": len({norm(x.get("doi")) for x in source_discovery.get("discovered_doi_leads", []) if norm(x.get("doi")) != seed}),
         "new_public_candidate_count": 0,
         "new_related_output_eligibility_confirmed": 0,
         "separate_expansion_decisions_completed": 0,
@@ -287,13 +357,18 @@ def bounded_research(root, graph, ledger, now, metadata_fn=lookup_metadata, *, s
     }
 
 
-def run(root, now, run_id, metadata_fn=lookup_metadata, *, source_fn=None, identity_fn=None, seed_override=None):
+def run(root, now, run_id, metadata_fn=lookup_metadata, *, source_fn=None, identity_fn=None,
+        recovery_fn=None, identity_screen_fn=None, seed_override=None):
     if not eligible_monthly_state(root):
         return {"status": "MONTHLY_ORIGINALS_HAVE_PRIORITY", "source_lookup_count": 0}
     graph, index = source_snapshot(root)
     ledger = read_ledger(root)
     report = bounded_research(root, graph, ledger, now, metadata_fn,
                               source_fn=source_fn, identity_fn=identity_fn,
+                              recovery_fn=(recovery_fn if recovery_fn is not None else
+                                           recover_related_source if source_fn is discover_sources else None),
+                              identity_screen_fn=(identity_screen_fn if identity_screen_fn is not None else
+                                                  complete_related_identity if source_fn is discover_sources else None),
                               seed_override=seed_override)
     if report is None:
         return {"status": "NO_ELIGIBLE_UNWORKED_EXPANSION_SEED", "source_lookup_count": 0}
