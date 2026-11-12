@@ -135,7 +135,7 @@ def cited_github_repo(lead):
                     "www.nature.com", "link.springer.com", "journals.ametsoc.org"}:
         return None
     context = str(lead.get("context_excerpt") or "")
-    found = re.search(r"https://github\\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+(?:\\.git)?", context, re.I)
+    found = re.search(r"https://github\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+(?:\.git)?", context, re.I)
     return found.group(0) if found else None
 
 
