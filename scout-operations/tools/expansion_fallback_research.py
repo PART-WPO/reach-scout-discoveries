@@ -22,6 +22,7 @@ from noaa_ir_lookup import trusted_index
 from wpo_awards import official_459_awards
 from recover_related_output_source import recover as recover_related_source
 from related_output_identity import screen as complete_related_identity
+from reach_version_identity import fetch_reach_index
 
 ROOT = Path(__file__).resolve().parents[2]
 GRAPH = "scout-operations/research-memory/crosslane-relationship-graph.json"
@@ -217,6 +218,24 @@ def bounded_research(root, graph, ledger, now, metadata_fn=lookup_metadata, *,
             source_discovery = {**source_discovery, "status": "SOURCE_DISCOVERY_TECHNICAL_HOLD",
                                 "error_type": type(err).__name__, "discovered_doi_leads": []}
         public_cache = None
+        shared_identity_sources = {}
+        def reused_snapshot(_root):
+            if "snapshot" not in shared_identity_sources:
+                shared_identity_sources["snapshot"] = verified_snapshot(_root)
+            return shared_identity_sources["snapshot"]
+
+        def reused_live_reach():
+            # One complete SHA-verified remote index per mission, even if
+            # multiple related DOI leads share the same verified source.
+            if "live_reach" not in shared_identity_sources and "live_failure" not in shared_identity_sources:
+                try:
+                    shared_identity_sources["live_reach"] = fetch_reach_index()
+                except (OSError, ValueError, KeyError, TypeError) as err:
+                    shared_identity_sources["live_failure"] = err
+            if "live_failure" in shared_identity_sources:
+                raise shared_identity_sources["live_failure"]
+            return shared_identity_sources["live_reach"]
+
         public_leads = list(source_discovery.get("discovered_doi_leads", []))
         # The original graph's SHA-verified explicit related DOIs also need
         # source recovery and a complete identity decision, even when no new
@@ -264,8 +283,13 @@ def bounded_research(root, graph, ledger, now, metadata_fn=lookup_metadata, *,
                     identity = {"status": "PUBLIC_IDENTITY_GATE_INCOMPLETE"}
             elif identity_screen_fn is not None:
                 try:
-                    identity = identity_screen_fn(
-                        root, child, official_title, artifact_url=github_repo or "")
+                    if identity_screen_fn is complete_related_identity:
+                        identity = identity_screen_fn(
+                            root, child, official_title, artifact_url=github_repo or "",
+                            snapshot_fn=reused_snapshot, live_fn=reused_live_reach)
+                    else:
+                        identity = identity_screen_fn(
+                            root, child, official_title, artifact_url=github_repo or "")
                 except (ValueError, OSError, TypeError):
                     identity = {"status": "PUBLIC_IDENTITY_GATE_INCOMPLETE"}
             else:
