@@ -1,0 +1,51 @@
+{
+  "schema": "reach-scout-hourly-mission-outcome-v1",
+  "producer": "chatgpt_hourly_mission",
+  "not_chatgpt_hourly_mission": false,
+  "mission_id": "20261112T140115059Z-zenodo20046428",
+  "started_at_utc": "2026-11-12T14:01:15.059Z",
+  "completed_at_utc": "2026-11-12T14:01:43.725Z",
+  "policy_commit_sha": "NOT_VERIFIED",
+  "memory_source_fingerprint": "8ee84bb5d4aa440dc99923c0ce5fec63a77b17e9488457dd2b36b15f052a2a13",
+  "memory_builder_policy_sha256": "6c77012241b8abd0544dcb9e8a22e38aad5b76bb6c3664afafcdeedbc2d4cc17",
+  "lane": "related_expansion",
+  "handoff_status": "NOT_ATTEMPTED",
+  "handoff_blocker": null,
+  "cache_hits_observed": null,
+  "external_requests_observed": null,
+  "avoided_requests_measured": null,
+  "private_hub_import": "NOT_VERIFIED",
+  "human_decision": "NOT_VERIFIED",
+  "public_reach_addition": "NOT_VERIFIED",
+  "selected_original_dois": [],
+  "selected_expansion_seed_dois": [
+    "10.5281/zenodo.20046428"
+  ],
+  "fast_exited_public_reach": [],
+  "fast_exited_public_scout": [],
+  "new_original_full_decisions": [],
+  "new_expansion_decisions": [],
+  "research_only_holds": [
+    "10.5281/zenodo.20046428"
+  ],
+  "technical_or_funding_holds": [
+    "10.5281/zenodo.20046428: SOURCE_ACCESS_FAILURE (official DataCite exact DOI, Zenodo record API and Zenodo record page inaccessible 2026-11-12); OUTPUT_METADATA_PARTIAL; PUBLIC_IDENTITY_GATE_INCOMPLETE (complete REACH live shards, Scout inbox, IR/version family not verified); PROJECT_ATTRIBUTION_UNVERIFIED; no novel artifact or handoff claimed."
+  ],
+  "published_public_batch_urls": [],
+  "guarded_handoff_run_urls": [],
+  "prior_note_sha256_reused": [],
+  "prior_metadata_fingerprints_reused": [],
+  "research_evidence": {
+    "source_attempts": [
+      "https://api.datacite.org/dois/10.5281/zenodo.20046428",
+      "https://zenodo.org/api/records/20046428",
+      "https://zenodo.org/records/20046428"
+    ],
+    "checked_date_utc": "2026-11-12",
+    "memory_index_blob_sha": "9b96faf17a169939842e0e9ac0186e73b6e3fff9",
+    "policy_blob_sha": "bacca5f7393c6466702aa33e8569b754d508af0c",
+    "policy_commit_sha_status": "NOT_VERIFIED",
+    "identity_status": "PUBLIC_IDENTITY_GATE_INCOMPLETE",
+    "new_output_verified": false
+  }
+}
