@@ -1,0 +1,41 @@
+{
+  "schema": "reach-scout-hourly-mission-outcome-v1",
+  "producer": "chatgpt_hourly_mission",
+  "not_chatgpt_hourly_mission": false,
+  "mission_id": "chatgpt-20261112T022817882Z-glstorm-provider-check",
+  "started_at_utc": "2026-11-12T02:28:17.882Z",
+  "completed_at_utc": "2026-11-12T02:28:41.668Z",
+  "policy_commit_sha": "NOT_VERIFIED",
+  "memory_source_fingerprint": "8ee84bb5d4aa440dc99923c0ce5fec63a77b17e9488457dd2b36b15f052a2a13",
+  "memory_builder_policy_sha256": "6c77012241b8abd0544dcb9e8a22e38aad5b76bb6c3664afafcdeedbc2d4cc17",
+  "lane": "related_expansion",
+  "selected_original_dois": [],
+  "selected_expansion_seed_dois": [
+    "10.1029/2024GL109890"
+  ],
+  "fast_exited_public_reach": [],
+  "fast_exited_public_scout": [],
+  "new_original_full_decisions": [],
+  "new_expansion_decisions": [],
+  "research_only_holds": [
+    "10.5281/zenodo.12627444",
+    "10.7302/17vn-x488"
+  ],
+  "technical_or_funding_holds": [
+    "10.5281/zenodo.12627444: OUTPUT_METADATA_PARTIAL; PUBLIC_IDENTITY_GATE_INCOMPLETE; PROJECT_ATTRIBUTION_UNVERIFIED. GitHub author README confirms source DOI, but Zenodo API inaccessible and full REACH shard/cache, Scout inbox/manifest identity, IR and version family not fully checked.",
+    "10.7302/17vn-x488: SOURCE_ACCESS_FAILURE; PUBLIC_IDENTITY_GATE_INCOMPLETE; PROJECT_ATTRIBUTION_UNVERIFIED. DataCite exact DOI API inaccessible; no verified native Deep Blue URL available."
+  ],
+  "published_public_batch_urls": [],
+  "guarded_handoff_run_urls": [],
+  "handoff_status": "NOT_ATTEMPTED",
+  "handoff_blocker": null,
+  "prior_note_sha256_reused": [],
+  "prior_metadata_fingerprints_reused": [],
+  "cache_hits_observed": null,
+  "external_requests_observed": null,
+  "avoided_requests_measured": null,
+  "private_hub_import": "NOT_VERIFIED",
+  "human_decision": "NOT_VERIFIED",
+  "public_reach_addition": "NOT_VERIFIED",
+  "research_notes": "2026-11-12 UTC: attempted https://api.zenodo.org/api/records/12627444 (inaccessible), https://api.datacite.org/dois/10.7302%2F17vn-x488 (inaccessible), https://github.com/abkenyon/GLStormTrends_2024 via web (disabled); independently fetched author repository README via connected GitHub, blob SHA 7af992fdbbbbabed1690fe9f695d7cd99d255aa2, which explicitly links publication Hutson et al. 2024 and DOI 10.5281/zenodo.12627444. No novel output or public handoff established. Original article award NA21OAR4590367 does not prove separate software/dataset award. Main policy blob SHA bacca5f7393c6466702aa33e8569b754d508af0c verified; main commit SHA NOT_VERIFIED. Existing research hold not reclassified. Do not retry unchanged sources."
+}
