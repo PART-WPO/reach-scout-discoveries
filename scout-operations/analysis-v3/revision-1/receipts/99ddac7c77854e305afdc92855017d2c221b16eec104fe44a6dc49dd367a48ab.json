@@ -1,0 +1,12 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://raw.githubusercontent.com/KeqinWu-NOAA/arafs/HEAD/README.md",
+  "final_url": "https://raw.githubusercontent.com/KeqinWu-NOAA/arafs/HEAD/README.md",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:56:40.203871+00:00",
+  "headers": {
+    "Content-Type": "text/plain; charset=utf-8",
+    "ETag": "\"ecf6ee34d3312923a16421958f82003a63fdfea13a89a05ba966c448a2dd1f45\""
+  },
+  "body": "How to use the workflow to run a test\n\nA. Get the code\n\nFor example, git clone --recursive https://github.com/KeqinWu-NOAA/arafs\n\nB. Build and install\n\nExecute following commands:\n\ncd arafs/sorc\n\n./build_all.sh\n\n./install_all.sh\n\n./link_fix.sh\n\nC. Configure\n\nEdit parameter files in arafs/parm:\n\ncd arafs/parm\n\nCheck which HPC machine you are in, replace system.conf with the corresponding system.conf.[machine].\n\nFor example, you most likely need to change \"COMgfs\" in system.conf to use sample gfs data available for different machines or use your own data.\n\nCOMgfs=/gpfs/f6/drsa-hurr4/scratch/Keqin.Wu/arafs-input/ctrl\n\nFor example:\n\ncp system.conf.hercules  system.conf\n\nEdit system.conf for following parameters to use your own accounts and directories:\n\n   disk_project (your project)\n\n   cpu_account (your account)\n\n   CDSAVE (your directory where you install your “ARAFS”)\n\n   CDSCRUB (where you will find the model output)\n\nEdit physics configuration file, e.g. parm/arafs_exp4.conf to fit your needs.\n\ncd arafs/rocoto\n\nIn cronjob_arafs_3km.sh, change(or add)\n\nHOMEarafs=${HOMEarafs:-{your ARAFS directory}}\n\nChange or edit opts=\"-t -f -s sites/gaeaC6_ensemble.ent\" to use an *.ent file that fit your machine environment.\n\nFor example, or hercules, you use\" opts=\"-t -f -s sites/hercules.ent\"\n\nD. Run ARAFS\n\nEdit cronjob_arafs_3km.sh to use your own configurations and forecast dates\n\nsh cronjob_arafs_3km.sh\n\nYou can use \"rocoto\" to manage the workflow, check status, rewind, rerun, etc.\n\nE. Here are some sample gfs data available for input in different machines:\n\nGaea/C6:\n\n/gpfs/f6/drsa-hurr4/scratch/Keqin.Wu/arafs-input/ctrl\n\nUrsa:\n\n/scratch4/NCEPDEV/hurricane/save/Keqin.Wu/arafs-input/ctrl\n\nOrion/Hercules:\n\n/work/noaa/hwrf/save/kwu/hafs-input/ctrl\n\n/work/noaa/hwrf/noscrub/hafs-input/COMGFSv16\n"
+}

@@ -1,0 +1,72 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=Assessing+the+mesoscale+variability+and+rapid+tornadogenesis+in+the+high-shear%2Flow-CAPE%2C+surging+QLCS+in+Northern+Alabama+on+01+April+2023&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=Assessing+the+mesoscale+variability+and+rapid+tornadogenesis+in+the+high-shear%2Flow-CAPE%2C+surging+QLCS+in+Northern+Alabama+on+01+April+2023&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:42.728319+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 5871662,
+      "items": [
+        {
+          "DOI": "10.1175/waf-d-25-0137.1",
+          "title": [
+            "Variability in High-Shear, Low-CAPE QLCS Environments in the Southeastern United States"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2026,
+                6
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1175/waf-d-21-0133.1",
+          "title": [
+            "Simulated QLCS Vortices in a High-Shear, Low-CAPE Environment"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2022,
+                6
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.15191/nwajom.2022.1004",
+          "title": [
+            "Analysis of the 12 April 2020 Northern Louisiana Tornadic QLCS"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2022,
+                7,
+                13
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

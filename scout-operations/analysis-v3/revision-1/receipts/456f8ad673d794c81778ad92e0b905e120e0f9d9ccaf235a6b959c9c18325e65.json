@@ -1,0 +1,611 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.datacite.org/dois/10.17603/ds2-3rc2-qy38",
+  "final_url": "https://api.datacite.org/dois/10.17603/ds2-3rc2-qy38",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:56:34.048856+00:00",
+  "headers": {
+    "Content-Type": "application/json; charset=utf-8",
+    "ETag": "W/\"d9b79064190a5d1200ffa9fd3dd579ea\""
+  },
+  "body": {
+    "data": {
+      "id": "10.17603/ds2-3rc2-qy38",
+      "type": "dois",
+      "attributes": {
+        "doi": "10.17603/ds2-3rc2-qy38",
+        "prefix": "10.17603",
+        "suffix": "ds2-3rc2-qy38",
+        "identifiers": [],
+        "alternateIdentifiers": [],
+        "creators": [
+          {
+            "nameType": "Personal",
+            "givenName": "Jennifer",
+            "familyName": "Henderson",
+            "affiliation": [],
+            "nameIdentifiers": []
+          },
+          {
+            "nameType": "Personal",
+            "givenName": "Erik",
+            "familyName": "Nielsen",
+            "affiliation": [],
+            "nameIdentifiers": []
+          },
+          {
+            "nameType": "Personal",
+            "givenName": "Jennifer",
+            "familyName": "Spinney",
+            "affiliation": [],
+            "nameIdentifiers": []
+          },
+          {
+            "nameType": "Personal",
+            "givenName": "Holly",
+            "familyName": "Obermeier",
+            "affiliation": [],
+            "nameIdentifiers": []
+          },
+          {
+            "nameType": "Personal",
+            "givenName": "Allie",
+            "familyName": "Mazurek",
+            "affiliation": [],
+            "nameIdentifiers": []
+          },
+          {
+            "nameType": "Personal",
+            "givenName": "Leysia",
+            "familyName": "Palen",
+            "affiliation": [],
+            "nameIdentifiers": []
+          },
+          {
+            "nameType": "Personal",
+            "givenName": "Ken",
+            "familyName": "Anderson",
+            "affiliation": [],
+            "nameIdentifiers": []
+          },
+          {
+            "nameType": "Personal",
+            "givenName": "Gerard",
+            "familyName": "Saez",
+            "affiliation": [],
+            "nameIdentifiers": []
+          }
+        ],
+        "titles": [
+          {
+            "title": "Hurricane Harvey Twitter Data"
+          }
+        ],
+        "publisher": "Designsafe-CI",
+        "container": {},
+        "publicationYear": 2021,
+        "subjects": [
+          {
+            "subject": "Twitter Data Collected during Hurricanes Harvey &amp; Florence"
+          }
+        ],
+        "contributors": [
+          {
+            "name": "Texas A&M University (TAMU)",
+            "nameType": "Organizational",
+            "affiliation": [],
+            "contributorType": "HostingInstitution",
+            "nameIdentifiers": []
+          },
+          {
+            "name": "Colorado State University",
+            "nameType": "Organizational",
+            "affiliation": [],
+            "contributorType": "HostingInstitution",
+            "nameIdentifiers": []
+          },
+          {
+            "name": "Twitter",
+            "nameType": "Organizational",
+            "affiliation": [],
+            "contributorType": "HostingInstitution",
+            "nameIdentifiers": []
+          },
+          {
+            "name": "Cooperative Institute for Mesoscale Meteorological Studies",
+            "nameType": "Organizational",
+            "affiliation": [],
+            "contributorType": "HostingInstitution",
+            "nameIdentifiers": []
+          },
+          {
+            "name": "York University",
+            "nameType": "Organizational",
+            "affiliation": [],
+            "contributorType": "HostingInstitution",
+            "nameIdentifiers": []
+          },
+          {
+            "name": "Texas Tech University (TTU)",
+            "nameType": "Organizational",
+            "affiliation": [],
+            "contributorType": "HostingInstitution",
+            "nameIdentifiers": []
+          },
+          {
+            "name": "University of Colorado, Boulder",
+            "nameType": "Organizational",
+            "affiliation": [],
+            "contributorType": "HostingInstitution",
+            "nameIdentifiers": []
+          }
+        ],
+        "dates": [],
+        "language": "en",
+        "types": {
+          "ris": "DATA",
+          "bibtex": "misc",
+          "citeproc": "dataset",
+          "schemaOrg": "Dataset",
+          "resourceType": "Mission/Texas & Louisiana",
+          "resourceTypeGeneral": "Dataset"
+        },
+        "relatedIdentifiers": [],
+        "relatedItems": [],
+        "sizes": [],
+        "formats": [],
+        "version": null,
+        "rightsList": [],
+        "descriptions": [
+          {
+            "lang": "en-Us",
+            "description": "Collected all tweets from a 12-day period from when Harvey first formed until remnants left the U.S. Tweets were collected using Twitter API searching for keywords of wind and water threats that co-occurred in the same tweet. Search terms included the following:  ((tornado OR #tornado OR \\\"funnel cloud\\” OR funnelcloud) (\\\"flash flood\\” OR flood OR flashflood OR \\\"storm surge\\\" OR stormsurge)). Tweets were classified into three categories: public user (e.g. seeking information and sharing personal experience), authoritative user (e.g. sharing information but not personal information), or other (e.g. private or deleted accounts and bots). After classification, Twitter was re queried via the API to collect contextual tweet streams (entire user history) for the 12-day period for public and authoritative users. As January 2021, the dataset contains 131,754 tweets from 233 authoritative users and 208,725 tweets from 337 public users.",
+            "descriptionType": "Abstract"
+          }
+        ],
+        "geoLocations": [],
+        "fundingReferences": [],
+        "xml": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHJlc291cmNlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCIgeHNpOnNjaGVtYUxvY2F0aW9uPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCBodHRwOi8vc2NoZW1hLmRhdGFjaXRlLm9yZy9tZXRhL2tlcm5lbC00L21ldGFkYXRhLnhzZCI+CiAgPGlkZW50aWZpZXIgaWRlbnRpZmllclR5cGU9IkRPSSI+MTAuMTc2MDMvRFMyLTNSQzItUVkzODwvaWRlbnRpZmllcj4KICA8Y3JlYXRvcnM+CiAgICA8Y3JlYXRvcj4KICAgICAgPGNyZWF0b3JOYW1lIG5hbWVUeXBlPSJQZXJzb25hbCI+SGVuZGVyc29uLCBKZW5uaWZlcjwvY3JlYXRvck5hbWU+CiAgICAgIDxnaXZlbk5hbWU+SmVubmlmZXI8L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWU+SGVuZGVyc29uPC9mYW1pbHlOYW1lPgogICAgPC9jcmVhdG9yPgogICAgPGNyZWF0b3I+CiAgICAgIDxjcmVhdG9yTmFtZSBuYW1lVHlwZT0iUGVyc29uYWwiPk5pZWxzZW4sIEVyaWs8L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPkVyaWs8L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWU+TmllbHNlbjwvZmFtaWx5TmFtZT4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5TcGlubmV5LCBKZW5uaWZlcjwvY3JlYXRvck5hbWU+CiAgICAgIDxnaXZlbk5hbWU+SmVubmlmZXI8L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWU+U3Bpbm5leTwvZmFtaWx5TmFtZT4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5PYmVybWVpZXIsIEhvbGx5PC9jcmVhdG9yTmFtZT4KICAgICAgPGdpdmVuTmFtZT5Ib2xseTwvZ2l2ZW5OYW1lPgogICAgICA8ZmFtaWx5TmFtZT5PYmVybWVpZXI8L2ZhbWlseU5hbWU+CiAgICA8L2NyZWF0b3I+CiAgICA8Y3JlYXRvcj4KICAgICAgPGNyZWF0b3JOYW1lIG5hbWVUeXBlPSJQZXJzb25hbCI+TWF6dXJlaywgQWxsaWU8L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPkFsbGllPC9naXZlbk5hbWU+CiAgICAgIDxmYW1pbHlOYW1lPk1henVyZWs8L2ZhbWlseU5hbWU+CiAgICA8L2NyZWF0b3I+CiAgICA8Y3JlYXRvcj4KICAgICAgPGNyZWF0b3JOYW1lIG5hbWVUeXBlPSJQZXJzb25hbCI+UGFsZW4sIExleXNpYTwvY3JlYXRvck5hbWU+CiAgICAgIDxnaXZlbk5hbWU+TGV5c2lhPC9naXZlbk5hbWU+CiAgICAgIDxmYW1pbHlOYW1lPlBhbGVuPC9mYW1pbHlOYW1lPgogICAgPC9jcmVhdG9yPgogICAgPGNyZWF0b3I+CiAgICAgIDxjcmVhdG9yTmFtZSBuYW1lVHlwZT0iUGVyc29uYWwiPkFuZGVyc29uLCBLZW48L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPktlbjwvZ2l2ZW5OYW1lPgogICAgICA8ZmFtaWx5TmFtZT5BbmRlcnNvbjwvZmFtaWx5TmFtZT4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5TYWV6LCBHZXJhcmQ8L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPkdlcmFyZDwvZ2l2ZW5OYW1lPgogICAgICA8ZmFtaWx5TmFtZT5TYWV6PC9mYW1pbHlOYW1lPgogICAgPC9jcmVhdG9yPgogIDwvY3JlYXRvcnM+CiAgPHRpdGxlcz4KICAgIDx0aXRsZT5IdXJyaWNhbmUgSGFydmV5IFR3aXR0ZXIgRGF0YTwvdGl0bGU+CiAgPC90aXRsZXM+CiAgPHB1Ymxpc2hlcj5EZXNpZ25zYWZlLUNJPC9wdWJsaXNoZXI+CiAgPHB1YmxpY2F0aW9uWWVhcj4yMDIxPC9wdWJsaWNhdGlvblllYXI+CiAgPHJlc291cmNlVHlwZSByZXNvdXJjZVR5cGVHZW5lcmFsPSJEYXRhc2V0Ij5NaXNzaW9uL1RleGFzICZhbXA7IExvdWlzaWFuYTwvcmVzb3VyY2VUeXBlPgogIDxzdWJqZWN0cz4KICAgIDxzdWJqZWN0PlR3aXR0ZXIgRGF0YSBDb2xsZWN0ZWQgZHVyaW5nIEh1cnJpY2FuZXMgSGFydmV5ICZhbXA7YW1wOyBGbG9yZW5jZTwvc3ViamVjdD4KICA8L3N1YmplY3RzPgogIDxjb250cmlidXRvcnM+CiAgICA8Y29udHJpYnV0b3IgY29udHJpYnV0b3JUeXBlPSJIb3N0aW5nSW5zdGl0dXRpb24iPgogICAgICA8Y29udHJpYnV0b3JOYW1lIG5hbWVUeXBlPSJPcmdhbml6YXRpb25hbCI+VGV4YXMgQSZhbXA7TSBVbml2ZXJzaXR5IChUQU1VKTwvY29udHJpYnV0b3JOYW1lPgogICAgPC9jb250cmlidXRvcj4KICAgIDxjb250cmlidXRvciBjb250cmlidXRvclR5cGU9Ikhvc3RpbmdJbnN0aXR1dGlvbiI+CiAgICAgIDxjb250cmlidXRvck5hbWUgbmFtZVR5cGU9Ik9yZ2FuaXphdGlvbmFsIj5Db2xvcmFkbyBTdGF0ZSBVbml2ZXJzaXR5PC9jb250cmlidXRvck5hbWU+CiAgICA8L2NvbnRyaWJ1dG9yPgogICAgPGNvbnRyaWJ1dG9yIGNvbnRyaWJ1dG9yVHlwZT0iSG9zdGluZ0luc3RpdHV0aW9uIj4KICAgICAgPGNvbnRyaWJ1dG9yTmFtZSBuYW1lVHlwZT0iT3JnYW5pemF0aW9uYWwiPlR3aXR0ZXI8L2NvbnRyaWJ1dG9yTmFtZT4KICAgIDwvY29udHJpYnV0b3I+CiAgICA8Y29udHJpYnV0b3IgY29udHJpYnV0b3JUeXBlPSJIb3N0aW5nSW5zdGl0dXRpb24iPgogICAgICA8Y29udHJpYnV0b3JOYW1lIG5hbWVUeXBlPSJPcmdhbml6YXRpb25hbCI+Q29vcGVyYXRpdmUgSW5zdGl0dXRlIGZvciBNZXNvc2NhbGUgTWV0ZW9yb2xvZ2ljYWwgU3R1ZGllczwvY29udHJpYnV0b3JOYW1lPgogICAgPC9jb250cmlidXRvcj4KICAgIDxjb250cmlidXRvciBjb250cmlidXRvclR5cGU9Ikhvc3RpbmdJbnN0aXR1dGlvbiI+CiAgICAgIDxjb250cmlidXRvck5hbWUgbmFtZVR5cGU9Ik9yZ2FuaXphdGlvbmFsIj5Zb3JrIFVuaXZlcnNpdHk8L2NvbnRyaWJ1dG9yTmFtZT4KICAgIDwvY29udHJpYnV0b3I+CiAgICA8Y29udHJpYnV0b3IgY29udHJpYnV0b3JUeXBlPSJIb3N0aW5nSW5zdGl0dXRpb24iPgogICAgICA8Y29udHJpYnV0b3JOYW1lIG5hbWVUeXBlPSJPcmdhbml6YXRpb25hbCI+VGV4YXMgVGVjaCBVbml2ZXJzaXR5IChUVFUpPC9jb250cmlidXRvck5hbWU+CiAgICA8L2NvbnRyaWJ1dG9yPgogICAgPGNvbnRyaWJ1dG9yIGNvbnRyaWJ1dG9yVHlwZT0iSG9zdGluZ0luc3RpdHV0aW9uIj4KICAgICAgPGNvbnRyaWJ1dG9yTmFtZSBuYW1lVHlwZT0iT3JnYW5pemF0aW9uYWwiPlVuaXZlcnNpdHkgb2YgQ29sb3JhZG8sIEJvdWxkZXI8L2NvbnRyaWJ1dG9yTmFtZT4KICAgIDwvY29udHJpYnV0b3I+CiAgPC9jb250cmlidXRvcnM+CiAgPGxhbmd1YWdlPmVuPC9sYW5ndWFnZT4KICA8c2l6ZXMvPgogIDxmb3JtYXRzLz4KICA8dmVyc2lvbi8+CiAgPGRlc2NyaXB0aW9ucz4KICAgIDxkZXNjcmlwdGlvbiB4bWw6bGFuZz0iZW4tVXMiIGRlc2NyaXB0aW9uVHlwZT0iQWJzdHJhY3QiPkNvbGxlY3RlZCBhbGwgdHdlZXRzIGZyb20gYSAxMi1kYXkgcGVyaW9kIGZyb20gd2hlbiBIYXJ2ZXkgZmlyc3QgZm9ybWVkIHVudGlsIHJlbW5hbnRzIGxlZnQgdGhlIFUuUy4gVHdlZXRzIHdlcmUgY29sbGVjdGVkIHVzaW5nIFR3aXR0ZXIgQVBJIHNlYXJjaGluZyBmb3Iga2V5d29yZHMgb2Ygd2luZCBhbmQgd2F0ZXIgdGhyZWF0cyB0aGF0IGNvLW9jY3VycmVkIGluIHRoZSBzYW1lIHR3ZWV0LiBTZWFyY2ggdGVybXMgaW5jbHVkZWQgdGhlIGZvbGxvd2luZzogICgodG9ybmFkbyBPUiAjdG9ybmFkbyBPUiBcImZ1bm5lbCBjbG91ZFzigJ0gT1IgZnVubmVsY2xvdWQpIChcImZsYXNoIGZsb29kXOKAnSBPUiBmbG9vZCBPUiBmbGFzaGZsb29kIE9SIFwic3Rvcm0gc3VyZ2VcIiBPUiBzdG9ybXN1cmdlKSkuIFR3ZWV0cyB3ZXJlIGNsYXNzaWZpZWQgaW50byB0aHJlZSBjYXRlZ29yaWVzOiBwdWJsaWMgdXNlciAoZS5nLiBzZWVraW5nIGluZm9ybWF0aW9uIGFuZCBzaGFyaW5nIHBlcnNvbmFsIGV4cGVyaWVuY2UpLCBhdXRob3JpdGF0aXZlIHVzZXIgKGUuZy4gc2hhcmluZyBpbmZvcm1hdGlvbiBidXQgbm90IHBlcnNvbmFsIGluZm9ybWF0aW9uKSwgb3Igb3RoZXIgKGUuZy4gcHJpdmF0ZSBvciBkZWxldGVkIGFjY291bnRzIGFuZCBib3RzKS4gQWZ0ZXIgY2xhc3NpZmljYXRpb24sIFR3aXR0ZXIgd2FzIHJlIHF1ZXJpZWQgdmlhIHRoZSBBUEkgdG8gY29sbGVjdCBjb250ZXh0dWFsIHR3ZWV0IHN0cmVhbXMgKGVudGlyZSB1c2VyIGhpc3RvcnkpIGZvciB0aGUgMTItZGF5IHBlcmlvZCBmb3IgcHVibGljIGFuZCBhdXRob3JpdGF0aXZlIHVzZXJzLiBBcyBKYW51YXJ5IDIwMjEsIHRoZSBkYXRhc2V0IGNvbnRhaW5zIDEzMSw3NTQgdHdlZXRzIGZyb20gMjMzIGF1dGhvcml0YXRpdmUgdXNlcnMgYW5kIDIwOCw3MjUgdHdlZXRzIGZyb20gMzM3IHB1YmxpYyB1c2Vycy48L2Rlc2NyaXB0aW9uPgogIDwvZGVzY3JpcHRpb25zPgo8L3Jlc291cmNlPgo=",
+        "url": "https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published/PRJ-3179/#details-4839059113733525996-242ac114-0001-012",
+        "contentUrl": null,
+        "metadataVersion": 1,
+        "schemaVersion": "http://datacite.org/schema/kernel-4",
+        "source": "api",
+        "isActive": true,
+        "state": "findable",
+        "reason": null,
+        "viewCount": 515,
+        "viewsOverTime": [
+          {
+            "yearMonth": "2022-06",
+            "total": 4
+          },
+          {
+            "yearMonth": "2022-07",
+            "total": 3
+          },
+          {
+            "yearMonth": "2022-08",
+            "total": 2
+          },
+          {
+            "yearMonth": "2022-09",
+            "total": 2
+          },
+          {
+            "yearMonth": "2022-11",
+            "total": 24
+          },
+          {
+            "yearMonth": "2022-12",
+            "total": 18
+          },
+          {
+            "yearMonth": "2023-01",
+            "total": 24
+          },
+          {
+            "yearMonth": "2023-02",
+            "total": 12
+          },
+          {
+            "yearMonth": "2023-03",
+            "total": 21
+          },
+          {
+            "yearMonth": "2023-04",
+            "total": 17
+          },
+          {
+            "yearMonth": "2023-05",
+            "total": 22
+          },
+          {
+            "yearMonth": "2023-06",
+            "total": 17
+          },
+          {
+            "yearMonth": "2023-07",
+            "total": 17
+          },
+          {
+            "yearMonth": "2023-08",
+            "total": 14
+          },
+          {
+            "yearMonth": "2023-09",
+            "total": 15
+          },
+          {
+            "yearMonth": "2023-10",
+            "total": 8
+          },
+          {
+            "yearMonth": "2023-11",
+            "total": 17
+          },
+          {
+            "yearMonth": "2023-12",
+            "total": 20
+          },
+          {
+            "yearMonth": "2024-01",
+            "total": 13
+          },
+          {
+            "yearMonth": "2024-02",
+            "total": 22
+          },
+          {
+            "yearMonth": "2024-03",
+            "total": 23
+          },
+          {
+            "yearMonth": "2024-04",
+            "total": 13
+          },
+          {
+            "yearMonth": "2024-05",
+            "total": 15
+          },
+          {
+            "yearMonth": "2024-06",
+            "total": 13
+          },
+          {
+            "yearMonth": "2024-07",
+            "total": 12
+          },
+          {
+            "yearMonth": "2024-08",
+            "total": 3
+          },
+          {
+            "yearMonth": "2024-09",
+            "total": 5
+          },
+          {
+            "yearMonth": "2024-10",
+            "total": 19
+          },
+          {
+            "yearMonth": "2024-11",
+            "total": 12
+          },
+          {
+            "yearMonth": "2024-12",
+            "total": 9
+          },
+          {
+            "yearMonth": "2025-01",
+            "total": 4
+          },
+          {
+            "yearMonth": "2025-02",
+            "total": 7
+          },
+          {
+            "yearMonth": "2025-03",
+            "total": 12
+          },
+          {
+            "yearMonth": "2025-04",
+            "total": 16
+          },
+          {
+            "yearMonth": "2025-05",
+            "total": 13
+          },
+          {
+            "yearMonth": "2025-06",
+            "total": 2
+          },
+          {
+            "yearMonth": "2025-07",
+            "total": 6
+          },
+          {
+            "yearMonth": "2025-08",
+            "total": 9
+          },
+          {
+            "yearMonth": "2025-09",
+            "total": 10
+          },
+          {
+            "yearMonth": "2025-10",
+            "total": 11
+          },
+          {
+            "yearMonth": "2026-02",
+            "total": 1
+          },
+          {
+            "yearMonth": "2026-03",
+            "total": 1
+          },
+          {
+            "yearMonth": "2026-05",
+            "total": 1
+          },
+          {
+            "yearMonth": "2026-06",
+            "total": 1
+          },
+          {
+            "yearMonth": "2026-06",
+            "total": 1
+          },
+          {
+            "yearMonth": "2026-07",
+            "total": 1
+          },
+          {
+            "yearMonth": "2026-08",
+            "total": 1
+          },
+          {
+            "yearMonth": "2026-10",
+            "total": 2
+          }
+        ],
+        "downloadCount": 27,
+        "downloadsOverTime": [
+          {
+            "yearMonth": "2022-06",
+            "total": 0
+          },
+          {
+            "yearMonth": "2022-07",
+            "total": 1
+          },
+          {
+            "yearMonth": "2022-08",
+            "total": 0
+          },
+          {
+            "yearMonth": "2022-09",
+            "total": 0
+          },
+          {
+            "yearMonth": "2022-11",
+            "total": 0
+          },
+          {
+            "yearMonth": "2022-12",
+            "total": 1
+          },
+          {
+            "yearMonth": "2023-01",
+            "total": 0
+          },
+          {
+            "yearMonth": "2023-02",
+            "total": 0
+          },
+          {
+            "yearMonth": "2023-03",
+            "total": 1
+          },
+          {
+            "yearMonth": "2023-04",
+            "total": 1
+          },
+          {
+            "yearMonth": "2023-05",
+            "total": 1
+          },
+          {
+            "yearMonth": "2023-06",
+            "total": 2
+          },
+          {
+            "yearMonth": "2023-07",
+            "total": 2
+          },
+          {
+            "yearMonth": "2023-08",
+            "total": 2
+          },
+          {
+            "yearMonth": "2023-09",
+            "total": 0
+          },
+          {
+            "yearMonth": "2023-10",
+            "total": 0
+          },
+          {
+            "yearMonth": "2023-11",
+            "total": 1
+          },
+          {
+            "yearMonth": "2023-12",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-01",
+            "total": 1
+          },
+          {
+            "yearMonth": "2024-02",
+            "total": 1
+          },
+          {
+            "yearMonth": "2024-03",
+            "total": 2
+          },
+          {
+            "yearMonth": "2024-04",
+            "total": 1
+          },
+          {
+            "yearMonth": "2024-05",
+            "total": 1
+          },
+          {
+            "yearMonth": "2024-06",
+            "total": 1
+          },
+          {
+            "yearMonth": "2024-07",
+            "total": 2
+          },
+          {
+            "yearMonth": "2024-08",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-09",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-10",
+            "total": 1
+          },
+          {
+            "yearMonth": "2024-11",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-12",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-01",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-02",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-03",
+            "total": 1
+          },
+          {
+            "yearMonth": "2025-04",
+            "total": 2
+          },
+          {
+            "yearMonth": "2025-05",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-06",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-07",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-08",
+            "total": 1
+          },
+          {
+            "yearMonth": "2025-09",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-10",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-02",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-03",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-06",
+            "total": 1
+          },
+          {
+            "yearMonth": "2026-07",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-08",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-10",
+            "total": 0
+          }
+        ],
+        "referenceCount": 0,
+        "citationCount": 0,
+        "citationsOverTime": [],
+        "partCount": 0,
+        "partOfCount": 0,
+        "versionCount": 0,
+        "versionOfCount": 0,
+        "created": "2021-11-04T19:20:09.000Z",
+        "registered": "2021-11-04T19:20:31.000Z",
+        "published": "2021",
+        "updated": "2025-06-02T16:00:14.000Z"
+      },
+      "relationships": {
+        "client": {
+          "data": {
+            "id": "tdl.tacc",
+            "type": "clients"
+          }
+        },
+        "provider": {
+          "data": {
+            "id": "hakl",
+            "type": "providers"
+          }
+        },
+        "media": {
+          "data": {
+            "id": "10.17603/ds2-3rc2-qy38",
+            "type": "media"
+          }
+        },
+        "references": {
+          "data": []
+        },
+        "citations": {
+          "data": []
+        },
+        "parts": {
+          "data": []
+        },
+        "partOf": {
+          "data": []
+        },
+        "versions": {
+          "data": []
+        },
+        "versionOf": {
+          "data": []
+        }
+      }
+    }
+  }
+}

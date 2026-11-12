@@ -1,0 +1,7 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://raw.githubusercontent.com/yiwenff/WUS-SR-data-descriptor/HEAD/README.md",
+  "status": 200,
+  "observed_at_utc": "2026-11-12T13:53:38.072695+00:00",
+  "body": "# WUS-SR-data-descriptor\nThis repository contains Matlab scripts used to generate the figures in the data descriptor paper.\n\nDatasets used in the scripts are uploaded in the data folder. To run f4_Plot_Reanalysis_SWE, raw netcdf files need to be downloaded from website and stored in directory:\n_output_dir_/N39_0W120_0_agg_16/WY2019/SWE_SCA_POST/N39_0W120_0_agg_16_SWE_SCA_POST_WY2018_19.nc\n\nwhere _output_dir_ is the directory you store these netcdf files.\nYou can modify the directory structure in the scripts when reading these files instead.\n\nExternal Functions used in the code includes:\n\n1. getPyPlot_cMap\nKonrad (2020). PyColormap4Matlab (https://github.com/f-k-s/PyColormap4Matlab), GitHub. Retrieved July 09, 2020.\n\n2. tight_subplot\nPekka Kumpulainen (2020). tight_subplot(Nh, Nw, gap, marg_h, marg_w) \n(https://www.mathworks.com/matlabcentral/fileexchange/27991-tight_subplot-nh-nw-gap-marg_h-marg_w), \nMATLAB Central File Exchange. Retrieved November 11, 2020.\n\n3. dscatter\nRobert Henson (2021). Flow Cytometry Data Reader and Visualization (https://www.mathworks.com/matlabcentral/fileexchange/8430-flow-cytometry-data-reader-and-visualization), MATLAB Central File Exchange. Retrieved July 30, 2021.\n"
+}

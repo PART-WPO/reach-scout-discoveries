@@ -1,0 +1,71 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=Case+study+of+the+extreme+high-shear%2Flow-CAPE%2C+strongly-forced+Tennessee+Valley+QLCS+of+12+February+2020&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=Case+study+of+the+extreme+high-shear%2Flow-CAPE%2C+strongly-forced+Tennessee+Valley+QLCS+of+12+February+2020&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:43.285380+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 12936111,
+      "items": [
+        {
+          "DOI": "10.1175/waf-d-21-0133.1",
+          "title": [
+            "Simulated QLCS Vortices in a High-Shear, Low-CAPE Environment"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2022,
+                6
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1175/waf-d-25-0137.1",
+          "title": [
+            "Variability in High-Shear, Low-CAPE QLCS Environments in the Southeastern United States"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2026,
+                6
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1061/(asce)0733-9429(1983)109:8(1093)",
+          "title": [
+            "Tennessee Valley Extreme Wind Speed Climatology"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                1983,
+                8
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

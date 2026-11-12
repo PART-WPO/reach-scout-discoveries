@@ -1,0 +1,73 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=AN+ASSESSMENT+OF+POLARIMETRIC+RADAR+SIGNATURES%0AASSOCIATED+WITH+HYDROMETEOR+SIZE+SORTING+IN%0ACONVECTIVE+STORMS&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=AN+ASSESSMENT+OF+POLARIMETRIC+RADAR+SIGNATURES%0AASSOCIATED+WITH+HYDROMETEOR+SIZE+SORTING+IN%0ACONVECTIVE+STORMS&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:40.608713+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 3451271,
+      "items": [
+        {
+          "DOI": "10.1029/2020gl088242",
+          "title": [
+            "Differentiating Between Tornadic and Nontornadic Supercells Using Polarimetric Radar Signatures of Hydrometeor Size Sorting"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2020,
+                6,
+                13
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1175/mwr-d-22-0228.1",
+          "title": [
+            "Investigating the Relationship between Polarimetric Radar Signatures of Hydrometeor Size Sorting and Tornadic Potential in Simulated Supercells"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2023,
+                7
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.5194/acp-2021-404",
+          "title": [
+            "Evaluation of modeled summertime convective storms using polarimetric radar observations"
+          ],
+          "type": "posted-content",
+          "published": {
+            "date-parts": [
+              [
+                2021,
+                6,
+                15
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

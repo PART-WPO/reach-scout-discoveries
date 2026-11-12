@@ -1,0 +1,74 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=There%27s+a+Chance+of+What%3F+Assessing+Numeracy+Skills+of+Forecasters%2C+Partners%2C+and+Publics+to+Improve+TC+Product+Uncertainty+Communication%2C+IDSS%2C+and+Training&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=There%27s+a+Chance+of+What%3F+Assessing+Numeracy+Skills+of+Forecasters%2C+Partners%2C+and+Publics+to+Improve+TC+Product+Uncertainty+Communication%2C+IDSS%2C+and+Training&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:47.641723+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 3141832,
+      "items": [
+        {
+          "DOI": "10.1136/bmj.e3069",
+          "title": [
+            "Doctors' numeracy and communication skills need to improve"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2012,
+                5,
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.4324/9781003044826-8",
+          "title": [
+            "Training To Improve Expert Witness Communication Skills"
+          ],
+          "type": "book-chapter",
+          "published": {
+            "date-parts": [
+              [
+                2021,
+                8,
+                5
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1201/9781315550336-9",
+          "title": [
+            "Training and Assessing Communication and Teamwork Skills"
+          ],
+          "type": "book-chapter",
+          "published": {
+            "date-parts": [
+              [
+                2017,
+                8,
+                4
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

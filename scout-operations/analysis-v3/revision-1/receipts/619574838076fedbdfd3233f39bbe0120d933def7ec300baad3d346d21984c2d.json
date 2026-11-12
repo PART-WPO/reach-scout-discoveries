@@ -1,0 +1,72 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=Risk+Perceptions+and+Evacuation+Decision-Making+During+Wildfire+Events+in+Rural+Texas&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=Risk+Perceptions+and+Evacuation+Decision-Making+During+Wildfire+Events+in+Rural+Texas&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:58:00.192307+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 5239872,
+      "items": [
+        {
+          "DOI": "10.5055/jem.1032",
+          "title": [
+            "Modeling evacuation decision-making in the Uttarakhand wildfire"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2026,
+                8,
+                29
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1080/17477891.2023.2220947",
+          "title": [
+            "Evacuation decision making and risk perception: flooded rural communities in Pakistan"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2023,
+                6,
+                13
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1504/ijem.2019.099206",
+          "title": [
+            "Information seeking and evacuation decision making in hypothetical hurricane events in the Rio Grande Valley, Texas"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2019
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=Environments+and+Origins+of+Low-Level+Vortices+within+High-Shear%2C+Low-CAPE+Convection&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=Environments+and+Origins+of+Low-Level+Vortices+within+High-Shear%2C+Low-CAPE+Convection&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:38.084956+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 5811161,
+      "items": [
+        {
+          "DOI": "10.1175/mwr-d-18-0246.1",
+          "title": [
+            "The Development of Severe Vortices within Simulated High-Shear, Low-CAPE Convection"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2019,
+                6
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1175/waf-d-13-00041.1",
+          "title": [
+            "Climatology and Ingredients of Significant Severe Convection in High-Shear, Low-CAPE Environments"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2014,
+                7,
+                22
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1175/waf-d-21-0133.1",
+          "title": [
+            "Simulated QLCS Vortices in a High-Shear, Low-CAPE Environment"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2022,
+                6
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

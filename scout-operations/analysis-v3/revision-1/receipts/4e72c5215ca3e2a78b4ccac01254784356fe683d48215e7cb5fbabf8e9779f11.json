@@ -1,0 +1,74 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=Airborne+Polarimetric+Doppler+Phased+Array+Weather+Radar%3A+Performance+Requirements+and+Design+Specifications&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=Airborne+Polarimetric+Doppler+Phased+Array+Weather+Radar%3A+Performance+Requirements+and+Design+Specifications&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:34.977748+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 4623868,
+      "items": [
+        {
+          "DOI": "10.1109/radarconf2043947.2020.9266530",
+          "title": [
+            "Airborne Polarimetric Doppler Phased Array Weather Radar: Performance Requirements and Design Specifications"
+          ],
+          "type": "proceedings-article",
+          "published": {
+            "date-parts": [
+              [
+                2020,
+                9,
+                21
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.5194/egusphere-egu2020-18421",
+          "title": [
+            "Airborne Phased-Array Radar (APAR): The Next Generation of Airborne Polarimetric Doppler Weather Radar"
+          ],
+          "type": "posted-content",
+          "published": {
+            "date-parts": [
+              [
+                2020,
+                3,
+                23
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1109/past49659.2022.9975084",
+          "title": [
+            "Airborne Polarimetric Doppler Phased Array Weather Radar: Digital Twin of the Active Electronically Scanned Array"
+          ],
+          "type": "proceedings-article",
+          "published": {
+            "date-parts": [
+              [
+                2022,
+                10,
+                11
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.datacite.org/dois/10.5281/zenodo.16652554",
+  "final_url": "https://api.datacite.org/dois/10.5281/zenodo.16652554",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:56:35.607728+00:00",
+  "headers": {
+    "Content-Type": "application/json; charset=utf-8",
+    "ETag": "W/\"0d0e0df96345b8d44c4a49c8881edcaf\""
+  },
+  "body": {
+    "data": {
+      "id": "10.5281/zenodo.16652554",
+      "type": "dois",
+      "attributes": {
+        "doi": "10.5281/zenodo.16652554",
+        "prefix": "10.5281",
+        "suffix": "zenodo.16652554",
+        "identifiers": [
+          {
+            "identifier": "oai:zenodo.org:16652554",
+            "identifierType": "oai"
+          }
+        ],
+        "alternateIdentifiers": [
+          {
+            "alternateIdentifierType": "oai",
+            "alternateIdentifier": "oai:zenodo.org:16652554"
+          }
+        ],
+        "creators": [
+          {
+            "name": "Kumler, Christina",
+            "nameType": "Personal",
+            "givenName": "Christina",
+            "familyName": "Kumler",
+            "nameIdentifiers": [
+              {
+                "nameIdentifier": "0000-0001-6129-1209",
+                "nameIdentifierScheme": "ORCID"
+              }
+            ],
+            "affiliation": []
+          }
+        ],
+        "titles": [
+          {
+            "title": "Random Forest Model predicting next-hour fire radiative power (FRP) for RAVE FRP and GFS weather variable inputs"
+          }
+        ],
+        "publisher": "Zenodo",
+        "container": {},
+        "publicationYear": 2025,
+        "subjects": [],
+        "contributors": [],
+        "dates": [
+          {
+            "date": "2025-07-31",
+            "dateType": "Issued"
+          },
+          {
+            "date": "2025-08-01",
+            "dateType": "Available"
+          }
+        ],
+        "language": null,
+        "types": {
+          "ris": "GEN",
+          "bibtex": "misc",
+          "citeproc": "article",
+          "schemaOrg": "CreativeWork",
+          "resourceType": "",
+          "resourceTypeGeneral": "Model"
+        },
+        "relatedIdentifiers": [
+          {
+            "relationType": "IsVersionOf",
+            "relatedIdentifier": "10.5281/zenodo.16652553",
+            "relatedIdentifierType": "DOI"
+          }
+        ],
+        "relatedItems": [],
+        "sizes": [],
+        "formats": [],
+        "version": null,
+        "rightsList": [
+          {
+            "rights": "Creative Commons Attribution 4.0 International",
+            "rightsUri": "https://creativecommons.org/licenses/by/4.0/legalcode",
+            "schemeUri": "https://spdx.org/licenses/",
+            "rightsIdentifier": "cc-by-4.0",
+            "rightsIdentifierScheme": "SPDX"
+          }
+        ],
+        "descriptions": [
+          {
+            "description": "This file is the random forest trained model for prediction of next-hour FRP given a set of Global Forecast System (GFS) inputs and gridded RAVE Fire Radiative Power (FRP) data points for the same corresponding hour. Inputs are listed below:\n\n \n\n\nlat'\n'lon'\n'u_wind_10m'\n'snow_depth_water'\n\n\n'CAPE'\n'dsflx'\n'v_wind_10m'\n'soilt_10_40cm'\n\n\n'acc_precip'\n'soilt_surf'\n'usflx'\n'soilt_40_100cm'\n\n\n'24_hr_roll_frp'\n'QC'\n'ulflx'\n'soilt_100_200cm'\n\n\n'hour'\n'temp_2m'\n'p_surf'\n'soilm_frac_10_40cm'\n\n\n'dlflx'\n'dewpt_2m'\n'precip_water'\n'soilm_frac_40_100cm'\n\n\n'soil_moist_frac'\n'sphum'\n'snow_depth'\n'soilm_frac_100_200cm'\n\n\n\n\nNotes on inputs: \n\n\n\nQC is a quality control flag from RAVE\n\n24_hr_roll_frp is the average FRP value over a 24-hour rolling time time window for the gridded GFS gridcell. This value is always greater than 0 as a model requirement.\n\nlat and lon are centroid lat and lon values from GFS grid\n\n\nThis model was trained on non-zero rolling 24-hour mean RAVE FRP data gridded to GFS resolution from 2019. The blind validation performance metrics are created from fires unseen in the training and testing process, for any models including this next-hour one, for August through December 2021. The random forest was set up with Model performance is listed below:\n\n      \n\n\nModel initialization\nInput Summary\nMAE\nMSE\nPersistence MAE\nTraining Count\nTesting Count\nInputs\nModel Name\n\n\nNext-hour FRP\nRolling FRP + climo hr + GFS vars hr (RF)\n201.81\n62769.5\n471.38\n272253\n116680\n28\nRF_GFS_RAVE.sav",
+            "descriptionType": "Abstract"
+          }
+        ],
+        "geoLocations": [],
+        "fundingReferences": [],
+        "xml": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHJlc291cmNlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCIgeHNpOnNjaGVtYUxvY2F0aW9uPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCBodHRwOi8vc2NoZW1hLmRhdGFjaXRlLm9yZy9tZXRhL2tlcm5lbC00L21ldGFkYXRhLnhzZCI+CiAgPGlkZW50aWZpZXIgaWRlbnRpZmllclR5cGU9IkRPSSI+MTAuNTI4MS9aRU5PRE8uMTY2NTI1NTQ8L2lkZW50aWZpZXI+CiAgPGNyZWF0b3JzPgogICAgPGNyZWF0b3I+CiAgICAgIDxjcmVhdG9yTmFtZSBuYW1lVHlwZT0iUGVyc29uYWwiPkt1bWxlciwgQ2hyaXN0aW5hPC9jcmVhdG9yTmFtZT4KICAgICAgPGdpdmVuTmFtZT5DaHJpc3RpbmE8L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWU+S3VtbGVyPC9mYW1pbHlOYW1lPgogICAgICA8bmFtZUlkZW50aWZpZXIgbmFtZUlkZW50aWZpZXJTY2hlbWU9Ik9SQ0lEIiBzY2hlbWVVUkk9IiI+MDAwMC0wMDAxLTYxMjktMTIwOTwvbmFtZUlkZW50aWZpZXI+CiAgICA8L2NyZWF0b3I+CiAgPC9jcmVhdG9ycz4KICA8dGl0bGVzPgogICAgPHRpdGxlPlJhbmRvbSBGb3Jlc3QgTW9kZWwgcHJlZGljdGluZyBuZXh0LWhvdXIgZmlyZSByYWRpYXRpdmUgcG93ZXIgKEZSUCkgZm9yIFJBVkUgRlJQIGFuZCBHRlMgd2VhdGhlciB2YXJpYWJsZSBpbnB1dHM8L3RpdGxlPgogIDwvdGl0bGVzPgogIDxwdWJsaXNoZXI+WmVub2RvPC9wdWJsaXNoZXI+CiAgPHB1YmxpY2F0aW9uWWVhcj4yMDI1PC9wdWJsaWNhdGlvblllYXI+CiAgPHJlc291cmNlVHlwZSByZXNvdXJjZVR5cGVHZW5lcmFsPSJNb2RlbCIvPgogIDxkYXRlcz4KICAgIDxkYXRlIGRhdGVUeXBlPSJJc3N1ZWQiPjIwMjUtMDctMzE8L2RhdGU+CiAgICA8ZGF0ZSBkYXRlVHlwZT0iQXZhaWxhYmxlIj4yMDI1LTA4LTAxPC9kYXRlPgogIDwvZGF0ZXM+CiAgPGFsdGVybmF0ZUlkZW50aWZpZXJzPgogICAgPGFsdGVybmF0ZUlkZW50aWZpZXIgYWx0ZXJuYXRlSWRlbnRpZmllclR5cGU9Im9haSI+b2FpOnplbm9kby5vcmc6MTY2NTI1NTQ8L2FsdGVybmF0ZUlkZW50aWZpZXI+CiAgPC9hbHRlcm5hdGVJZGVudGlmaWVycz4KICA8cmVsYXRlZElkZW50aWZpZXJzPgogICAgPHJlbGF0ZWRJZGVudGlmaWVyIHJlbGF0ZWRJZGVudGlmaWVyVHlwZT0iRE9JIiByZWxhdGlvblR5cGU9IklzVmVyc2lvbk9mIj4xMC41MjgxL3plbm9kby4xNjY1MjU1MzwvcmVsYXRlZElkZW50aWZpZXI+CiAgPC9yZWxhdGVkSWRlbnRpZmllcnM+CiAgPHNpemVzLz4KICA8Zm9ybWF0cy8+CiAgPHZlcnNpb24vPgogIDxyaWdodHNMaXN0PgogICAgPHJpZ2h0cyByaWdodHNVUkk9Imh0dHBzOi8vY3JlYXRpdmVjb21tb25zLm9yZy9saWNlbnNlcy9ieS80LjAvbGVnYWxjb2RlIiByaWdodHNJZGVudGlmaWVyPSJjYy1ieS00LjAiIHJpZ2h0c0lkZW50aWZpZXJTY2hlbWU9InNwZHgiPkNyZWF0aXZlIENvbW1vbnMgQXR0cmlidXRpb24gNC4wIEludGVybmF0aW9uYWw8L3JpZ2h0cz4KICA8L3JpZ2h0c0xpc3Q+CiAgPGRlc2NyaXB0aW9ucz4KICAgIDxkZXNjcmlwdGlvbiBkZXNjcmlwdGlvblR5cGU9IkFic3RyYWN0Ij5UaGlzIGZpbGUgaXMgdGhlIHJhbmRvbSBmb3Jlc3QgdHJhaW5lZCBtb2RlbCBmb3IgcHJlZGljdGlvbiBvZiBuZXh0LWhvdXIgRlJQIGdpdmVuIGEgc2V0IG9mIEdsb2JhbCBGb3JlY2FzdCBTeXN0ZW0gKEdGUykgaW5wdXRzIGFuZCBncmlkZGVkIFJBVkUgRmlyZSBSYWRpYXRpdmUgUG93ZXIgKEZSUCkgZGF0YSBwb2ludHMgZm9yIHRoZSBzYW1lIGNvcnJlc3BvbmRpbmcgaG91ci4gSW5wdXRzIGFyZSBsaXN0ZWQgYmVsb3c6CgogCgoKbGF0JwonbG9uJwondV93aW5kXzEwbScKJ3Nub3dfZGVwdGhfd2F0ZXInCgoKJ0NBUEUnCidkc2ZseCcKJ3Zfd2luZF8xMG0nCidzb2lsdF8xMF80MGNtJwoKCidhY2NfcHJlY2lwJwonc29pbHRfc3VyZicKJ3VzZmx4Jwonc29pbHRfNDBfMTAwY20nCgoKJzI0X2hyX3JvbGxfZnJwJwonUUMnCid1bGZseCcKJ3NvaWx0XzEwMF8yMDBjbScKCgonaG91cicKJ3RlbXBfMm0nCidwX3N1cmYnCidzb2lsbV9mcmFjXzEwXzQwY20nCgoKJ2RsZmx4JwonZGV3cHRfMm0nCidwcmVjaXBfd2F0ZXInCidzb2lsbV9mcmFjXzQwXzEwMGNtJwoKCidzb2lsX21vaXN0X2ZyYWMnCidzcGh1bScKJ3Nub3dfZGVwdGgnCidzb2lsbV9mcmFjXzEwMF8yMDBjbScKCgoKCk5vdGVzIG9uIGlucHV0czrCoAoKCgpRQyBpcyBhIHF1YWxpdHkgY29udHJvbCBmbGFnIGZyb20gUkFWRQoKMjRfaHJfcm9sbF9mcnAgaXMgdGhlIGF2ZXJhZ2UgRlJQIHZhbHVlIG92ZXIgYSAyNC1ob3VyIHJvbGxpbmcgdGltZSB0aW1lIHdpbmRvdyBmb3IgdGhlIGdyaWRkZWQgR0ZTIGdyaWRjZWxsLiBUaGlzIHZhbHVlIGlzIGFsd2F5cyBncmVhdGVyIHRoYW4gMCBhcyBhIG1vZGVsIHJlcXVpcmVtZW50LgoKbGF0IGFuZCBsb24gYXJlIGNlbnRyb2lkIGxhdCBhbmQgbG9uIHZhbHVlcyBmcm9tIEdGUyBncmlkCgoKVGhpcyBtb2RlbCB3YXMgdHJhaW5lZCBvbiBub24temVybyByb2xsaW5nIDI0LWhvdXIgbWVhbiBSQVZFIEZSUCBkYXRhIGdyaWRkZWQgdG8gR0ZTIHJlc29sdXRpb24gZnJvbSAyMDE5LiBUaGUgYmxpbmQgdmFsaWRhdGlvbiBwZXJmb3JtYW5jZSBtZXRyaWNzIGFyZSBjcmVhdGVkIGZyb20gZmlyZXMgdW5zZWVuIGluIHRoZSB0cmFpbmluZyBhbmQgdGVzdGluZyBwcm9jZXNzLCBmb3IgYW55IG1vZGVscyBpbmNsdWRpbmcgdGhpcyBuZXh0LWhvdXIgb25lLCBmb3IgQXVndXN0IHRocm91Z2ggRGVjZW1iZXIgMjAyMS4gVGhlIHJhbmRvbSBmb3Jlc3Qgd2FzIHNldCB1cCB3aXRoIE1vZGVsIHBlcmZvcm1hbmNlIGlzIGxpc3RlZCBiZWxvdzoKCiAgICAgIAoKCk1vZGVsIGluaXRpYWxpemF0aW9uCklucHV0IFN1bW1hcnkKTUFFCk1TRQpQZXJzaXN0ZW5jZSBNQUUKVHJhaW5pbmcgQ291bnQKVGVzdGluZyBDb3VudApJbnB1dHMKTW9kZWwgTmFtZQoKCk5leHQtaG91ciBGUlAKUm9sbGluZyBGUlAgKyBjbGltbyBociArIEdGUyB2YXJzIGhyIChSRikKMjAxLjgxCjYyNzY5LjUKNDcxLjM4CjI3MjI1MwoxMTY2ODAKMjgKUkZfR0ZTX1JBVkUuc2F2PC9kZXNjcmlwdGlvbj4KICA8L2Rlc2NyaXB0aW9ucz4KPC9yZXNvdXJjZT4K",
+        "url": "https://zenodo.org/doi/10.5281/zenodo.16652554",
+        "contentUrl": null,
+        "metadataVersion": 0,
+        "schemaVersion": "http://datacite.org/schema/kernel-4",
+        "source": "api",
+        "isActive": true,
+        "state": "findable",
+        "reason": null,
+        "viewCount": 0,
+        "viewsOverTime": [],
+        "downloadCount": 0,
+        "downloadsOverTime": [],
+        "referenceCount": 0,
+        "citationCount": 0,
+        "citationsOverTime": [],
+        "partCount": 0,
+        "partOfCount": 0,
+        "versionCount": 0,
+        "versionOfCount": 1,
+        "created": "2025-08-04T21:21:00.000Z",
+        "registered": "2025-08-04T21:21:00.000Z",
+        "published": "2025",
+        "updated": "2025-08-04T21:21:00.000Z"
+      },
+      "relationships": {
+        "client": {
+          "data": {
+            "id": "cern.zenodo",
+            "type": "clients"
+          }
+        },
+        "provider": {
+          "data": {
+            "id": "cern",
+            "type": "providers"
+          }
+        },
+        "media": {
+          "data": {
+            "id": "10.5281/zenodo.16652554",
+            "type": "media"
+          }
+        },
+        "references": {
+          "data": []
+        },
+        "citations": {
+          "data": []
+        },
+        "parts": {
+          "data": []
+        },
+        "partOf": {
+          "data": []
+        },
+        "versions": {
+          "data": []
+        },
+        "versionOf": {
+          "data": [
+            {
+              "id": "10.5281/zenodo.16652553",
+              "type": "dois"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

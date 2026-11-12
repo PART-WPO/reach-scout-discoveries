@@ -1,0 +1,71 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=Strengthening+Disaster+Preparedness%3A+Assessing+Risk+Perception+and+Early+Warning+for+Flash+Flooding&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=Strengthening+Disaster+Preparedness%3A+Assessing+Risk+Perception+and+Early+Warning+for+Flash+Flooding&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:58:02.931800+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 3473636,
+      "items": [
+        {
+          "DOI": "10.1175/1520-0477(1978)059<0690:nffwad>2.0.co;2",
+          "title": [
+            "NWS's Flash Flood Warning and Disaster Preparedness Programs"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                1978,
+                6
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1057/9780230109476_6",
+          "title": [
+            "Flooding, Disaster Prevention, and Environmental Risk Perception"
+          ],
+          "type": "book-chapter",
+          "published": {
+            "date-parts": [
+              [
+                2010
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.4324/9780203879238-15",
+          "title": [
+            "Disaster early warning and risk management"
+          ],
+          "type": "book-chapter",
+          "published": {
+            "date-parts": [
+              [
+                2009,
+                9,
+                10
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

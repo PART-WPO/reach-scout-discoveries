@@ -1,0 +1,74 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=Assessing+the+2023+Floods+in+Rural+Vermont%3A+Multimodal+Methodology+and+Community+Science+for+Mitigation+in+the+Black+River+Valley&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=Assessing+the+2023+Floods+in+Rural+Vermont%3A+Multimodal+Methodology+and+Community+Science+for+Mitigation+in+the+Black+River+Valley&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:58:01.071286+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 3366085,
+      "items": [
+        {
+          "DOI": "10.1177/08959048241239893",
+          "title": [
+            "Community School Implementation in Rural Vermont"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2024,
+                3,
+                25
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.4211/hs.5d88721054a5458d93ad837192f38abb",
+          "title": [
+            "High Water Marks July and December 2023 Vermont Floods - UVM Floodplains"
+          ],
+          "type": "dataset",
+          "published": {
+            "date-parts": [
+              [
+                2024,
+                9,
+                6
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.5744/florida/9780813061665.003.0009",
+          "title": [
+            "Late Prehistoric Social Practice in the Rural Black Warrior River Valley"
+          ],
+          "type": "book-chapter",
+          "published": {
+            "date-parts": [
+              [
+                2016,
+                2,
+                16
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=Understanding+and+Improving+Snow+Processes+in+Noah-MP+over+the+Northeast+United+States+via+the+New+York+State+Mesonet&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=Understanding+and+Improving+Snow+Processes+in+Noah-MP+over+the+Northeast+United+States+via+the+New+York+State+Mesonet&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:34.382350+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 8408457,
+      "items": [
+        {
+          "DOI": "10.21079/11681/45060",
+          "title": [
+            "Understanding and improving snow processes in Noah-MP over the Northeast United States via the New York State Mesonet"
+          ],
+          "type": "report",
+          "published": {
+            "date-parts": [
+              [
+                2022,
+                8,
+                15
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.54014/t9ca-g161",
+          "title": [
+            "Evaluating and Improving Snow Prediction in the National Water Model in New York State Using New York State Mesonet Data"
+          ],
+          "type": "dissertation"
+        },
+        {
+          "DOI": "10.1175/jhm-d-23-0211.1",
+          "title": [
+            "Evaluation of Noah-MP Snow Simulation across Site Conditions in the Western United States"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2024,
+                9
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

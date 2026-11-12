@@ -1,0 +1,54 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=Assessment+and+Evaluation+of+Heat+Index+and+Wet+Bulb+Globe+Temperature+in+North+Carolina&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=Assessment+and+Evaluation+of+Heat+Index+and+Wet+Bulb+Globe+Temperature+in+North+Carolina&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:35.188683+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 6465619,
+      "items": [
+        {
+          "DOI": "10.3861/kenko.84.2_52",
+          "title": [
+            "Comparison of wet-bulb globe temperature (WBGT) and mean temperature for assessment of heat-related mortality"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2018
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.3403/30311329u",
+          "title": [
+            "Ergonomics of the thermal environment. Assessment of heat stress using the WBGT (wet bulb globe temperature) index"
+          ],
+          "type": "standard"
+        },
+        {
+          "DOI": "10.3403/30311329",
+          "title": [
+            "Ergonomics of the thermal environment. Assessment of heat stress using the WBGT (wet bulb globe temperature) index"
+          ],
+          "type": "standard"
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

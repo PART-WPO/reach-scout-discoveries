@@ -1,0 +1,74 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=Insights+into+Extreme+Short-Term+Precipitation+Associated+with+Supercells+and+Mesovortices&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=Insights+into+Extreme+Short-Term+Precipitation+Associated+with+Supercells+and+Mesovortices&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:37.711869+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 3036958,
+      "items": [
+        {
+          "DOI": "10.1175/jas-d-17-0385.1",
+          "title": [
+            "Dynamical Insights into Extreme Short-Term Precipitation Associated with Supercells and Mesovortices"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2018,
+                8,
+                15
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1175/mwr-d-19-0146.1",
+          "title": [
+            "Observations of Extreme Short-Term Precipitation Associated with Supercells and Mesovortices"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2019,
+                12,
+                17
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1007/s10584-010-9955-x",
+          "title": [
+            "A relation between extreme daily precipitation and extreme short term precipitation"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2010,
+                12,
+                14
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

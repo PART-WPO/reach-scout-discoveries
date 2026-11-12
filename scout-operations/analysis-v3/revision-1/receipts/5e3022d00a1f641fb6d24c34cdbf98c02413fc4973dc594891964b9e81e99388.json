@@ -1,0 +1,74 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=The+Color+of+Weather%3A+Examining+Associations+for+Color+in+Forecast+Graphics&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=The+Color+of+Weather%3A+Examining+Associations+for+Color+in+Forecast+Graphics&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:50.050374+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 625873,
+      "items": [
+        {
+          "DOI": "10.1080/15551393.2025.2605093",
+          "title": [
+            "The Color of Weather: Examining Associations for Color in Forecast Graphics"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2026,
+                2,
+                20
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1007/978-3-031-63945-6_13",
+          "title": [
+            "Color Graphics!"
+          ],
+          "type": "book-chapter",
+          "published": {
+            "date-parts": [
+              [
+                2024,
+                9,
+                21
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1002/047134608x.w7504",
+          "title": [
+            "Color Graphics"
+          ],
+          "type": "other",
+          "published": {
+            "date-parts": [
+              [
+                1999,
+                12,
+                27
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

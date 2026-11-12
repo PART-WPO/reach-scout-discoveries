@@ -1,0 +1,73 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=Tornadogenesis+in+Simulated+Supercells+from+VORTEX2+Environments&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=Tornadogenesis+in+Simulated+Supercells+from+VORTEX2+Environments&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:37.642540+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 8391494,
+      "items": [
+        {
+          "DOI": "10.1175/mwr-d-17-0152.1",
+          "title": [
+            "Volatility of Tornadogenesis: An Ensemble of Simulated Nontornadic and Tornadic Supercells in VORTEX2 Environments"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2017,
+                11
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1175/mwr-d-16-0226.1",
+          "title": [
+            "Simulated Supercells in Nontornadic and Tornadic VORTEX2 Environments"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2016,
+                12,
+                16
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1175/jas-d-13-0219.1",
+          "title": [
+            "Vorticity Evolution Leading to Tornadogenesis and Tornadogenesis Failure in Simulated Supercells"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2014,
+                2,
+                27
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

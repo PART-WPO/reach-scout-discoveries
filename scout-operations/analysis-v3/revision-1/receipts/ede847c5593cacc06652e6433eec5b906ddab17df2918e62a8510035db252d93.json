@@ -1,0 +1,236 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.datacite.org/dois/10.17604/94qh-6m66",
+  "final_url": "https://api.datacite.org/dois/10.17604/94qh-6m66",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:56:28.689038+00:00",
+  "headers": {
+    "Content-Type": "application/json; charset=utf-8",
+    "ETag": "W/\"f077508033ad1a9f8fbde8d02dfed495\""
+  },
+  "body": {
+    "data": {
+      "id": "10.17604/94qh-6m66",
+      "type": "dois",
+      "attributes": {
+        "doi": "10.17604/94qh-6m66",
+        "prefix": "10.17604",
+        "suffix": "94qh-6m66",
+        "identifiers": [],
+        "alternateIdentifiers": [],
+        "creators": [
+          {
+            "name": "Gao, Yu",
+            "nameType": "Personal",
+            "givenName": "Yu",
+            "familyName": "Gao",
+            "affiliation": [
+              "University of Miami"
+            ],
+            "nameIdentifiers": [
+              {
+                "schemeUri": "https://orcid.org",
+                "nameIdentifier": "https://orcid.org/0000-0002-5123-2704",
+                "nameIdentifierScheme": "ORCID"
+              }
+            ]
+          },
+          {
+            "name": "Kamenkovich, Igor",
+            "nameType": "Personal",
+            "givenName": "Igor",
+            "familyName": "Kamenkovich",
+            "affiliation": [
+              "University of Miami"
+            ],
+            "nameIdentifiers": [
+              {
+                "schemeUri": "https://orcid.org",
+                "nameIdentifier": "https://orcid.org/0000-0001-6228-5599",
+                "nameIdentifierScheme": "ORCID"
+              }
+            ]
+          },
+          {
+            "name": "Perlin, Natalie",
+            "nameType": "Personal",
+            "givenName": "Natalie",
+            "familyName": "Perlin",
+            "affiliation": [
+              "University of Miami"
+            ],
+            "nameIdentifiers": [
+              {
+                "schemeUri": "https://orcid.org",
+                "nameIdentifier": "https://orcid.org/0000-0001-8266-4238",
+                "nameIdentifierScheme": "ORCID"
+              }
+            ]
+          },
+          {
+            "name": "Kirtman, Ben",
+            "nameType": "Personal",
+            "givenName": "Ben",
+            "familyName": "Kirtman",
+            "affiliation": [
+              "University of Miami"
+            ],
+            "nameIdentifiers": [
+              {
+                "schemeUri": "https://orcid.org",
+                "nameIdentifier": "https://orcid.org/0000-0001-7423-2734",
+                "nameIdentifierScheme": "ORCID"
+              }
+            ]
+          }
+        ],
+        "titles": [
+          {
+            "lang": "en",
+            "title": "Oceanic Advection Controls Mesoscale Mixed Layer Heat Budget and Air-sea Heat Exchange in the Southern Ocean",
+            "titleType": null
+          }
+        ],
+        "publisher": "University of Miami Libraries",
+        "container": {},
+        "publicationYear": 2021,
+        "subjects": [],
+        "contributors": [],
+        "dates": [],
+        "language": null,
+        "types": {
+          "ris": "DATA",
+          "bibtex": "misc",
+          "citeproc": "dataset",
+          "schemaOrg": "Dataset",
+          "resourceType": "data set",
+          "resourceTypeGeneral": "Dataset"
+        },
+        "relatedIdentifiers": [
+          {
+            "schemeUri": null,
+            "schemeType": null,
+            "relationType": "IsSupplementTo",
+            "relatedIdentifier": "10.1175/JPO-D-21-0063.1",
+            "resourceTypeGeneral": "JournalArticle",
+            "relatedIdentifierType": "DOI",
+            "relatedMetadataScheme": null
+          },
+          {
+            "schemeUri": null,
+            "schemeType": null,
+            "relationType": "IsDerivedFrom",
+            "relatedIdentifier": "10.1016/j.ocemod.2020.101660.",
+            "resourceTypeGeneral": "JournalArticle",
+            "relatedIdentifierType": "DOI",
+            "relatedMetadataScheme": null
+          }
+        ],
+        "relatedItems": [],
+        "sizes": [],
+        "formats": [],
+        "version": null,
+        "rightsList": [
+          {
+            "rights": "Open Data Commons Attribution License v1.0",
+            "rightsUri": "https://opendatacommons.org/licenses/by/1.0/",
+            "schemeUri": "https://spdx.org/licenses/",
+            "rightsIdentifier": "odc-by-1.0",
+            "rightsIdentifierScheme": "SPDX"
+          }
+        ],
+        "descriptions": [
+          {
+            "lang": "en",
+            "description": "We analyze the role of mesoscale heat advection in the Southern Ocean mixed layer (ML) heat budget using a regional high-resolution coupled model, with realistic atmospheric forcing and an idealized ocean component. In order to test if the overall current speed affect our conclusion, the simulations are carried out in two distinct cases: one with overall strong current (SC case) and the other with overall weak current (WC case). Mesoscale currents are defined with two different spatial filters to explore the scale dependence of mesoscale air-sea coupling: the departure from 300-km running average represents small-mesoscale, while the departure from zonal-mean anomalies represents large-mesoscale. This dataset describes how to re-create the results in Gao, Y., Kamenkovich, I., Perlin, N., Kirtman, B.P. 2021. Oceanic Advection Controls Mesoscale Mixed Layer Heat Budget and Air-sea Heat Exchange in the Southern Ocean, <i>Journal of Physical Oceanography</i>, 52(4), 537-555. https://doi.org/10.1175/JPO-D-21-0063.1. The data in this collection is based on numerical simulations in Regional Ocean–Atmosphere Model (ROAM) from Perlin, N., Kamenkovich, I., Gao, Y., Kirtman, B.P. (2020). A study of mesoscale air–sea interaction in the Southern Ocean with a regional coupled model. <i>Ocean Modelling</i> 153, 101660. https://doi.org/10.1016/j.ocemod.2020.101660.",
+            "descriptionType": "Abstract"
+          },
+          {
+            "lang": "en",
+            "description": "Contents: \n\n1)  Data output from atmospheric model simulations are created by ROAM (Perlin et al., 2020) and it is available upon request.\n\nThe atmospheric model data are\n\n\"atmospheric_model_data/CO2_SE_SST_W10mN_TauX_TauY_U10m_V10m_daily.nc\" and\n\n\"atmospheric_model_data/CO2_WE_SST_W10mN_TauX_TauY_U10m_V10m_daily.nc\"\n\nTheir content includes:\n\nDimensions:  (nlat_rho: 122, nlon_rho: 306, nlons_rho: 306, time: 735)\nDimensions without coordinates: nlat_rho, nlon_rho, nlons_rho, time\nData variables:\n    Wstr2    (time, nlat_rho, nlons_rho) float32 ...\n    SST2     (time, nlat_rho, nlons_rho) float32 274.6 275.2 ... 286.8 286.8\n    U10m2    (time, nlat_rho, nlons_rho) float32 ...\n    V10m2    (time, nlat_rho, nlons_rho) float32 ...\n    W10mN2   (time, nlat_rho, nlons_rho) float32 12.22 12.29 ... 9.797 9.753\n    TauX2    (time, nlat_rho, nlons_rho) float32 0.2507 0.254 ... 0.1394 0.1374\n    TauY2    (time, nlat_rho, nlons_rho) float32 0.05018 0.04944 ... 0.04877\n    lon2ocn  (nlat_rho, nlon_rho) float32 42.26 42.38 42.5 ... 77.57 77.68 77.8\n    lat2ocn  (nlat_rho, nlon_rho) float32 -49.96 -49.96 -49.96 ... -40.03 -40.03\n\n\n2) Monthly mixed layer heat budget files at small-mesoscale:\n\n\"monthly_ml_heat_budget_data_small_mesoscale/Strong/monthly_ml_heat_balance_2016-*_StrongEddies.nc\"\n\n\"monthly_ml_heat_budget_data_small_mesoscale/Weak/monthly_ml_heat_balance_2016-*_WeakEddies.nc\"\n\nThese files are aggregated data for monthly average Mixed layer heat budget at small-mesoscale in SC and WC case, respectively.\n\n\n3) Monthly mixed layer heat budget files at large-mesoscale:\n\n\"monthly_ml_heat_budget_large_mesoscale/Strong/monthly_ml_heat_balance_2016-*_StrongEddies.nc\"\n\n\"monthly_ml_heat_budget_large_mesoscale/Weak/monthly_ml_heat_balance_2016-*_WeakEddies.nc\"\n\nThese files are aggregated data for monthly average mixed layer heat budget at large-mesoscale in SC and WC case, respectively.\n\n\n4) Binned statistics between multiple pair of variables:\n\n\"Binned_stats_data/*.nc\" are the binned statistics derived from the monthly monthly average mixed layer heat budget files. The data can be recreated with the python notebooks listed below:\n\n\"Fig10a_ml_heating_cooling_binned_stats_300km.ipynb\"\n\n\"Fig10b_temp1_rate_binned_stats.ipynb\"\n\n\"Fig10c_meso_ml_heating_cooling_binned_stats.ipynb\"\n\n\"Fig12a_eddy_adv_ml_binned_stats.ipynb\"\n\n\"Fig12b_shfluxa_eddy_adv_Strong.ipynb\"\n\n\n5) SST and surface current data in Strong Current case:\n\n\"SST_UV_DATA/SST_2016-08_StrongEddies.nc\"\n\n\"SST_UV_DATA/Surface_U_2016-08_StrongEddies.nc\"\n\n\"SST_UV_DATA/Surface_V_2016-08_StrongEddies.nc\"\n\nThese files are aggregated monthly average data from ROAM simulations. \n\n\n6) Figures included in Gao et al. (2021)\n\n\"Figures/*\"\n\n\n7) Python notebooks to re-create the figures:\n\n\"python_code/*.ipynb\"\n\n\n8) Python Environment file\n\n\"environment.yaml\"\n\nPlease run the command below to re-create the python environment used in this analysis:\n\n$ conda env create --file environment.yaml",
+            "descriptionType": "TechnicalInfo"
+          }
+        ],
+        "geoLocations": [],
+        "fundingReferences": [],
+        "xml": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHJlc291cmNlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCIgeHNpOnNjaGVtYUxvY2F0aW9uPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCBodHRwOi8vc2NoZW1hLmRhdGFjaXRlLm9yZy9tZXRhL2tlcm5lbC00L21ldGFkYXRhLnhzZCI+CiAgPGlkZW50aWZpZXIgaWRlbnRpZmllclR5cGU9IkRPSSI+MTAuMTc2MDQvOTRRSC02TTY2PC9pZGVudGlmaWVyPgogIDxjcmVhdG9ycz4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5HYW8sIFl1PC9jcmVhdG9yTmFtZT4KICAgICAgPGdpdmVuTmFtZT5ZdTwvZ2l2ZW5OYW1lPgogICAgICA8ZmFtaWx5TmFtZT5HYW88L2ZhbWlseU5hbWU+CiAgICAgIDxuYW1lSWRlbnRpZmllciBuYW1lSWRlbnRpZmllclNjaGVtZT0iT1JDSUQiIHNjaGVtZVVSST0iaHR0cHM6Ly9vcmNpZC5vcmciPmh0dHBzOi8vb3JjaWQub3JnLzAwMDAtMDAwMi01MTIzLTI3MDQ8L25hbWVJZGVudGlmaWVyPgogICAgICA8YWZmaWxpYXRpb24gYWZmaWxpYXRpb25JZGVudGlmaWVyPSJodHRwczovL3Jvci5vcmcvMDJkZ2p5eTkyIiBhZmZpbGlhdGlvbklkZW50aWZpZXJTY2hlbWU9IlJPUiIgc2NoZW1lVVJJPSJodHRwczovL3Jvci5vcmciPlVuaXZlcnNpdHkgb2YgTWlhbWk8L2FmZmlsaWF0aW9uPgogICAgPC9jcmVhdG9yPgogICAgPGNyZWF0b3I+CiAgICAgIDxjcmVhdG9yTmFtZSBuYW1lVHlwZT0iUGVyc29uYWwiPkthbWVua292aWNoLCBJZ29yPC9jcmVhdG9yTmFtZT4KICAgICAgPGdpdmVuTmFtZT5JZ29yPC9naXZlbk5hbWU+CiAgICAgIDxmYW1pbHlOYW1lPkthbWVua292aWNoPC9mYW1pbHlOYW1lPgogICAgICA8bmFtZUlkZW50aWZpZXIgbmFtZUlkZW50aWZpZXJTY2hlbWU9Ik9SQ0lEIiBzY2hlbWVVUkk9Imh0dHBzOi8vb3JjaWQub3JnIj5odHRwczovL29yY2lkLm9yZy8wMDAwLTAwMDEtNjIyOC01NTk5PC9uYW1lSWRlbnRpZmllcj4KICAgICAgPGFmZmlsaWF0aW9uIGFmZmlsaWF0aW9uSWRlbnRpZmllcj0iaHR0cHM6Ly9yb3Iub3JnLzAyZGdqeXk5MiIgYWZmaWxpYXRpb25JZGVudGlmaWVyU2NoZW1lPSJST1IiIHNjaGVtZVVSST0iaHR0cHM6Ly9yb3Iub3JnIj5Vbml2ZXJzaXR5IG9mIE1pYW1pPC9hZmZpbGlhdGlvbj4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5QZXJsaW4sIE5hdGFsaWU8L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPk5hdGFsaWU8L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWU+UGVybGluPC9mYW1pbHlOYW1lPgogICAgICA8bmFtZUlkZW50aWZpZXIgbmFtZUlkZW50aWZpZXJTY2hlbWU9Ik9SQ0lEIiBzY2hlbWVVUkk9Imh0dHBzOi8vb3JjaWQub3JnIj5odHRwczovL29yY2lkLm9yZy8wMDAwLTAwMDEtODI2Ni00MjM4PC9uYW1lSWRlbnRpZmllcj4KICAgICAgPGFmZmlsaWF0aW9uIGFmZmlsaWF0aW9uSWRlbnRpZmllcj0iaHR0cHM6Ly9yb3Iub3JnLzAyZGdqeXk5MiIgYWZmaWxpYXRpb25JZGVudGlmaWVyU2NoZW1lPSJST1IiIHNjaGVtZVVSST0iaHR0cHM6Ly9yb3Iub3JnIj5Vbml2ZXJzaXR5IG9mIE1pYW1pPC9hZmZpbGlhdGlvbj4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5LaXJ0bWFuLCBCZW48L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPkJlbjwvZ2l2ZW5OYW1lPgogICAgICA8ZmFtaWx5TmFtZT5LaXJ0bWFuPC9mYW1pbHlOYW1lPgogICAgICA8bmFtZUlkZW50aWZpZXIgbmFtZUlkZW50aWZpZXJTY2hlbWU9Ik9SQ0lEIiBzY2hlbWVVUkk9Imh0dHBzOi8vb3JjaWQub3JnIj5odHRwczovL29yY2lkLm9yZy8wMDAwLTAwMDEtNzQyMy0yNzM0PC9uYW1lSWRlbnRpZmllcj4KICAgICAgPGFmZmlsaWF0aW9uIGFmZmlsaWF0aW9uSWRlbnRpZmllcj0iaHR0cHM6Ly9yb3Iub3JnLzAyZGdqeXk5MiIgYWZmaWxpYXRpb25JZGVudGlmaWVyU2NoZW1lPSJST1IiIHNjaGVtZVVSST0iaHR0cHM6Ly9yb3Iub3JnIj5Vbml2ZXJzaXR5IG9mIE1pYW1pPC9hZmZpbGlhdGlvbj4KICAgIDwvY3JlYXRvcj4KICA8L2NyZWF0b3JzPgogIDx0aXRsZXM+CiAgICA8dGl0bGUgeG1sOmxhbmc9ImVuIj5PY2VhbmljIEFkdmVjdGlvbiBDb250cm9scyBNZXNvc2NhbGUgTWl4ZWQgTGF5ZXIgSGVhdCBCdWRnZXQgYW5kIEFpci1zZWEgSGVhdCBFeGNoYW5nZSBpbiB0aGUgU291dGhlcm4gT2NlYW48L3RpdGxlPgogIDwvdGl0bGVzPgogIDxwdWJsaXNoZXI+VW5pdmVyc2l0eSBvZiBNaWFtaSBMaWJyYXJpZXM8L3B1Ymxpc2hlcj4KICA8cHVibGljYXRpb25ZZWFyPjIwMjE8L3B1YmxpY2F0aW9uWWVhcj4KICA8cmVzb3VyY2VUeXBlIHJlc291cmNlVHlwZUdlbmVyYWw9IkRhdGFzZXQiPmRhdGEgc2V0PC9yZXNvdXJjZVR5cGU+CiAgPHJlbGF0ZWRJZGVudGlmaWVycz4KICAgIDxyZWxhdGVkSWRlbnRpZmllciByZWxhdGVkSWRlbnRpZmllclR5cGU9IkRPSSIgcmVsYXRpb25UeXBlPSJJc1N1cHBsZW1lbnRUbyIgcmVzb3VyY2VUeXBlR2VuZXJhbD0iSm91cm5hbEFydGljbGUiPjEwLjExNzUvSlBPLUQtMjEtMDA2My4xPC9yZWxhdGVkSWRlbnRpZmllcj4KICAgIDxyZWxhdGVkSWRlbnRpZmllciByZWxhdGVkSWRlbnRpZmllclR5cGU9IkRPSSIgcmVsYXRpb25UeXBlPSJJc0Rlcml2ZWRGcm9tIiByZXNvdXJjZVR5cGVHZW5lcmFsPSJKb3VybmFsQXJ0aWNsZSI+MTAuMTAxNi9qLm9jZW1vZC4yMDIwLjEwMTY2MC48L3JlbGF0ZWRJZGVudGlmaWVyPgogIDwvcmVsYXRlZElkZW50aWZpZXJzPgogIDxzaXplcy8+CiAgPGZvcm1hdHMvPgogIDx2ZXJzaW9uLz4KICA8cmlnaHRzTGlzdD4KICAgIDxyaWdodHMgcmlnaHRzVVJJPSJodHRwczovL29wZW5kYXRhY29tbW9ucy5vcmcvbGljZW5zZXMvYnkvMS4wLyI+T3BlbiBEYXRhIENvbW1vbnMgQXR0cmlidXRpb24gTGljZW5zZSB2MS4wPC9yaWdodHM+CiAgPC9yaWdodHNMaXN0PgogIDxkZXNjcmlwdGlvbnM+CiAgICA8ZGVzY3JpcHRpb24geG1sOmxhbmc9ImVuIiBkZXNjcmlwdGlvblR5cGU9IkFic3RyYWN0Ij5XZSBhbmFseXplIHRoZSByb2xlIG9mIG1lc29zY2FsZSBoZWF0IGFkdmVjdGlvbiBpbiB0aGUgU291dGhlcm4gT2NlYW4gbWl4ZWQgbGF5ZXIgKE1MKSBoZWF0IGJ1ZGdldCB1c2luZyBhIHJlZ2lvbmFsIGhpZ2gtcmVzb2x1dGlvbiBjb3VwbGVkIG1vZGVsLCB3aXRoIHJlYWxpc3RpYyBhdG1vc3BoZXJpYyBmb3JjaW5nIGFuZCBhbiBpZGVhbGl6ZWQgb2NlYW4gY29tcG9uZW50LiBJbiBvcmRlciB0byB0ZXN0IGlmIHRoZSBvdmVyYWxsIGN1cnJlbnQgc3BlZWQgYWZmZWN0IG91ciBjb25jbHVzaW9uLCB0aGUgc2ltdWxhdGlvbnMgYXJlIGNhcnJpZWQgb3V0IGluIHR3byBkaXN0aW5jdCBjYXNlczogb25lIHdpdGggb3ZlcmFsbCBzdHJvbmcgY3VycmVudCAoU0MgY2FzZSkgYW5kIHRoZSBvdGhlciB3aXRoIG92ZXJhbGwgd2VhayBjdXJyZW50IChXQyBjYXNlKS4gTWVzb3NjYWxlIGN1cnJlbnRzIGFyZSBkZWZpbmVkIHdpdGggdHdvIGRpZmZlcmVudCBzcGF0aWFsIGZpbHRlcnMgdG8gZXhwbG9yZSB0aGUgc2NhbGUgZGVwZW5kZW5jZSBvZiBtZXNvc2NhbGUgYWlyLXNlYSBjb3VwbGluZzogdGhlIGRlcGFydHVyZSBmcm9tIDMwMC1rbSBydW5uaW5nIGF2ZXJhZ2UgcmVwcmVzZW50cyBzbWFsbC1tZXNvc2NhbGUsIHdoaWxlIHRoZSBkZXBhcnR1cmUgZnJvbSB6b25hbC1tZWFuIGFub21hbGllcyByZXByZXNlbnRzIGxhcmdlLW1lc29zY2FsZS4gVGhpcyBkYXRhc2V0IGRlc2NyaWJlcyBob3cgdG8gcmUtY3JlYXRlIHRoZSByZXN1bHRzIGluIEdhbywgWS4sIEthbWVua292aWNoLCBJLiwgUGVybGluLCBOLiwgS2lydG1hbiwgQi5QLiAyMDIxLiBPY2VhbmljIEFkdmVjdGlvbiBDb250cm9scyBNZXNvc2NhbGUgTWl4ZWQgTGF5ZXIgSGVhdCBCdWRnZXQgYW5kIEFpci1zZWEgSGVhdCBFeGNoYW5nZSBpbiB0aGUgU291dGhlcm4gT2NlYW4sICZsdDtpJmd0O0pvdXJuYWwgb2YgUGh5c2ljYWwgT2NlYW5vZ3JhcGh5Jmx0Oy9pJmd0OywgNTIoNCksIDUzNy01NTUuIGh0dHBzOi8vZG9pLm9yZy8xMC4xMTc1L0pQTy1ELTIxLTAwNjMuMS4gVGhlIGRhdGEgaW4gdGhpcyBjb2xsZWN0aW9uIGlzIGJhc2VkIG9uIG51bWVyaWNhbCBzaW11bGF0aW9ucyBpbiBSZWdpb25hbCBPY2VhbuKAk0F0bW9zcGhlcmUgTW9kZWwgKFJPQU0pIGZyb20gUGVybGluLCBOLiwgS2FtZW5rb3ZpY2gsIEkuLCBHYW8sIFkuLCBLaXJ0bWFuLCBCLlAuICgyMDIwKS4gQSBzdHVkeSBvZiBtZXNvc2NhbGUgYWly4oCTc2VhIGludGVyYWN0aW9uIGluIHRoZSBTb3V0aGVybiBPY2VhbiB3aXRoIGEgcmVnaW9uYWwgY291cGxlZCBtb2RlbC4gJmx0O2kmZ3Q7T2NlYW4gTW9kZWxsaW5nJmx0Oy9pJmd0OyAxNTMsIDEwMTY2MC4gaHR0cHM6Ly9kb2kub3JnLzEwLjEwMTYvai5vY2Vtb2QuMjAyMC4xMDE2NjAuPC9kZXNjcmlwdGlvbj4KICAgIDxkZXNjcmlwdGlvbiB4bWw6bGFuZz0iZW4iIGRlc2NyaXB0aW9uVHlwZT0iVGVjaG5pY2FsSW5mbyI+Q29udGVudHM6IAoKMSkgIERhdGEgb3V0cHV0IGZyb20gYXRtb3NwaGVyaWMgbW9kZWwgc2ltdWxhdGlvbnMgYXJlIGNyZWF0ZWQgYnkgUk9BTSAoUGVybGluIGV0IGFsLiwgMjAyMCkgYW5kIGl0IGlzIGF2YWlsYWJsZSB1cG9uIHJlcXVlc3QuCgpUaGUgYXRtb3NwaGVyaWMgbW9kZWwgZGF0YSBhcmUKCiJhdG1vc3BoZXJpY19tb2RlbF9kYXRhL0NPMl9TRV9TU1RfVzEwbU5fVGF1WF9UYXVZX1UxMG1fVjEwbV9kYWlseS5uYyIgYW5kCgoiYXRtb3NwaGVyaWNfbW9kZWxfZGF0YS9DTzJfV0VfU1NUX1cxMG1OX1RhdVhfVGF1WV9VMTBtX1YxMG1fZGFpbHkubmMiCgpUaGVpciBjb250ZW50IGluY2x1ZGVzOgoKRGltZW5zaW9uczogIChubGF0X3JobzogMTIyLCBubG9uX3JobzogMzA2LCBubG9uc19yaG86IDMwNiwgdGltZTogNzM1KQpEaW1lbnNpb25zIHdpdGhvdXQgY29vcmRpbmF0ZXM6IG5sYXRfcmhvLCBubG9uX3JobywgbmxvbnNfcmhvLCB0aW1lCkRhdGEgdmFyaWFibGVzOgogICAgV3N0cjIgICAgKHRpbWUsIG5sYXRfcmhvLCBubG9uc19yaG8pIGZsb2F0MzIgLi4uCiAgICBTU1QyICAgICAodGltZSwgbmxhdF9yaG8sIG5sb25zX3JobykgZmxvYXQzMiAyNzQuNiAyNzUuMiAuLi4gMjg2LjggMjg2LjgKICAgIFUxMG0yICAgICh0aW1lLCBubGF0X3JobywgbmxvbnNfcmhvKSBmbG9hdDMyIC4uLgogICAgVjEwbTIgICAgKHRpbWUsIG5sYXRfcmhvLCBubG9uc19yaG8pIGZsb2F0MzIgLi4uCiAgICBXMTBtTjIgICAodGltZSwgbmxhdF9yaG8sIG5sb25zX3JobykgZmxvYXQzMiAxMi4yMiAxMi4yOSAuLi4gOS43OTcgOS43NTMKICAgIFRhdVgyICAgICh0aW1lLCBubGF0X3JobywgbmxvbnNfcmhvKSBmbG9hdDMyIDAuMjUwNyAwLjI1NCAuLi4gMC4xMzk0IDAuMTM3NAogICAgVGF1WTIgICAgKHRpbWUsIG5sYXRfcmhvLCBubG9uc19yaG8pIGZsb2F0MzIgMC4wNTAxOCAwLjA0OTQ0IC4uLiAwLjA0ODc3CiAgICBsb24yb2NuICAobmxhdF9yaG8sIG5sb25fcmhvKSBmbG9hdDMyIDQyLjI2IDQyLjM4IDQyLjUgLi4uIDc3LjU3IDc3LjY4IDc3LjgKICAgIGxhdDJvY24gIChubGF0X3Jobywgbmxvbl9yaG8pIGZsb2F0MzIgLTQ5Ljk2IC00OS45NiAtNDkuOTYgLi4uIC00MC4wMyAtNDAuMDMKCgoyKSBNb250aGx5IG1peGVkIGxheWVyIGhlYXQgYnVkZ2V0IGZpbGVzIGF0IHNtYWxsLW1lc29zY2FsZToKCiJtb250aGx5X21sX2hlYXRfYnVkZ2V0X2RhdGFfc21hbGxfbWVzb3NjYWxlL1N0cm9uZy9tb250aGx5X21sX2hlYXRfYmFsYW5jZV8yMDE2LSpfU3Ryb25nRWRkaWVzLm5jIgoKIm1vbnRobHlfbWxfaGVhdF9idWRnZXRfZGF0YV9zbWFsbF9tZXNvc2NhbGUvV2Vhay9tb250aGx5X21sX2hlYXRfYmFsYW5jZV8yMDE2LSpfV2Vha0VkZGllcy5uYyIKClRoZXNlIGZpbGVzIGFyZSBhZ2dyZWdhdGVkIGRhdGEgZm9yIG1vbnRobHkgYXZlcmFnZSBNaXhlZCBsYXllciBoZWF0IGJ1ZGdldCBhdCBzbWFsbC1tZXNvc2NhbGUgaW4gU0MgYW5kIFdDIGNhc2UsIHJlc3BlY3RpdmVseS4KCgozKSBNb250aGx5IG1peGVkIGxheWVyIGhlYXQgYnVkZ2V0IGZpbGVzIGF0IGxhcmdlLW1lc29zY2FsZToKCiJtb250aGx5X21sX2hlYXRfYnVkZ2V0X2xhcmdlX21lc29zY2FsZS9TdHJvbmcvbW9udGhseV9tbF9oZWF0X2JhbGFuY2VfMjAxNi0qX1N0cm9uZ0VkZGllcy5uYyIKCiJtb250aGx5X21sX2hlYXRfYnVkZ2V0X2xhcmdlX21lc29zY2FsZS9XZWFrL21vbnRobHlfbWxfaGVhdF9iYWxhbmNlXzIwMTYtKl9XZWFrRWRkaWVzLm5jIgoKVGhlc2UgZmlsZXMgYXJlIGFnZ3JlZ2F0ZWQgZGF0YSBmb3IgbW9udGhseSBhdmVyYWdlIG1peGVkIGxheWVyIGhlYXQgYnVkZ2V0IGF0IGxhcmdlLW1lc29zY2FsZSBpbiBTQyBhbmQgV0MgY2FzZSwgcmVzcGVjdGl2ZWx5LgoKCjQpIEJpbm5lZCBzdGF0aXN0aWNzIGJldHdlZW4gbXVsdGlwbGUgcGFpciBvZiB2YXJpYWJsZXM6CgoiQmlubmVkX3N0YXRzX2RhdGEvKi5uYyIgYXJlIHRoZSBiaW5uZWQgc3RhdGlzdGljcyBkZXJpdmVkIGZyb20gdGhlIG1vbnRobHkgbW9udGhseSBhdmVyYWdlIG1peGVkIGxheWVyIGhlYXQgYnVkZ2V0IGZpbGVzLiBUaGUgZGF0YSBjYW4gYmUgcmVjcmVhdGVkIHdpdGggdGhlIHB5dGhvbiBub3RlYm9va3MgbGlzdGVkIGJlbG93OgoKIkZpZzEwYV9tbF9oZWF0aW5nX2Nvb2xpbmdfYmlubmVkX3N0YXRzXzMwMGttLmlweW5iIgoKIkZpZzEwYl90ZW1wMV9yYXRlX2Jpbm5lZF9zdGF0cy5pcHluYiIKCiJGaWcxMGNfbWVzb19tbF9oZWF0aW5nX2Nvb2xpbmdfYmlubmVkX3N0YXRzLmlweW5iIgoKIkZpZzEyYV9lZGR5X2Fkdl9tbF9iaW5uZWRfc3RhdHMuaXB5bmIiCgoiRmlnMTJiX3NoZmx1eGFfZWRkeV9hZHZfU3Ryb25nLmlweW5iIgoKCjUpIFNTVCBhbmQgc3VyZmFjZSBjdXJyZW50IGRhdGEgaW4gU3Ryb25nIEN1cnJlbnQgY2FzZToKCiJTU1RfVVZfREFUQS9TU1RfMjAxNi0wOF9TdHJvbmdFZGRpZXMubmMiCgoiU1NUX1VWX0RBVEEvU3VyZmFjZV9VXzIwMTYtMDhfU3Ryb25nRWRkaWVzLm5jIgoKIlNTVF9VVl9EQVRBL1N1cmZhY2VfVl8yMDE2LTA4X1N0cm9uZ0VkZGllcy5uYyIKClRoZXNlIGZpbGVzIGFyZSBhZ2dyZWdhdGVkIG1vbnRobHkgYXZlcmFnZSBkYXRhIGZyb20gUk9BTSBzaW11bGF0aW9ucy4gCgoKNikgRmlndXJlcyBpbmNsdWRlZCBpbiBHYW8gZXQgYWwuICgyMDIxKQoKIkZpZ3VyZXMvKiIKCgo3KSBQeXRob24gbm90ZWJvb2tzIHRvIHJlLWNyZWF0ZSB0aGUgZmlndXJlczoKCiJweXRob25fY29kZS8qLmlweW5iIgoKCjgpIFB5dGhvbiBFbnZpcm9ubWVudCBmaWxlCgoiZW52aXJvbm1lbnQueWFtbCIKClBsZWFzZSBydW4gdGhlIGNvbW1hbmQgYmVsb3cgdG8gcmUtY3JlYXRlIHRoZSBweXRob24gZW52aXJvbm1lbnQgdXNlZCBpbiB0aGlzIGFuYWx5c2lzOgoKJCBjb25kYSBlbnYgY3JlYXRlIC0tZmlsZSBlbnZpcm9ubWVudC55YW1sPC9kZXNjcmlwdGlvbj4KICA8L2Rlc2NyaXB0aW9ucz4KPC9yZXNvdXJjZT4K",
+        "url": "https://scholarship.miami.edu/esploro/outputs/dataset/Oceanic-Advection-Controls-Mesoscale-Mixed-Layer-Heat-Budget-and-Air-sea-Heat-Exchange-in-the-Southern-Ocean/991031558389002976",
+        "contentUrl": null,
+        "metadataVersion": 6,
+        "schemaVersion": "http://datacite.org/schema/kernel-4",
+        "source": "fabricaForm",
+        "isActive": true,
+        "state": "findable",
+        "reason": null,
+        "viewCount": 0,
+        "viewsOverTime": [],
+        "downloadCount": 0,
+        "downloadsOverTime": [],
+        "referenceCount": 1,
+        "citationCount": 1,
+        "citationsOverTime": [
+          {
+            "year": "2022",
+            "total": 1
+          }
+        ],
+        "partCount": 0,
+        "partOfCount": 0,
+        "versionCount": 0,
+        "versionOfCount": 0,
+        "created": "2021-03-18T16:58:00.000Z",
+        "registered": "2021-03-18T16:58:00.000Z",
+        "published": "2021",
+        "updated": "2022-03-25T15:10:55.000Z"
+      },
+      "relationships": {
+        "client": {
+          "data": {
+            "id": "uml.richter",
+            "type": "clients"
+          }
+        },
+        "provider": {
+          "data": {
+            "id": "uml",
+            "type": "providers"
+          }
+        },
+        "media": {
+          "data": {
+            "id": "10.17604/94qh-6m66",
+            "type": "media"
+          }
+        },
+        "references": {
+          "data": [
+            {
+              "id": "10.1175/jpo-d-21-0063.1",
+              "type": "dois"
+            }
+          ]
+        },
+        "citations": {
+          "data": [
+            {
+              "id": "10.1016/j.ocemod.2020.101660",
+              "type": "dois"
+            }
+          ]
+        },
+        "parts": {
+          "data": []
+        },
+        "partOf": {
+          "data": []
+        },
+        "versions": {
+          "data": []
+        },
+        "versionOf": {
+          "data": []
+        }
+      }
+    }
+  }
+}

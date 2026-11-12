@@ -1,0 +1,241 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.datacite.org/dois/10.5065/231h-jw06",
+  "final_url": "https://api.datacite.org/dois/10.5065/231h-jw06",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:56:26.837254+00:00",
+  "headers": {
+    "Content-Type": "application/json; charset=utf-8",
+    "ETag": "W/\"ccdef163a1273970fcef685eff98622d\""
+  },
+  "body": {
+    "data": {
+      "id": "10.5065/231h-jw06",
+      "type": "dois",
+      "attributes": {
+        "doi": "10.5065/231h-jw06",
+        "prefix": "10.5065",
+        "suffix": "231h-jw06",
+        "identifiers": [
+          {
+            "identifier": "https://gdex.ucar.edu/datasets/d583101",
+            "identifierType": "URL"
+          },
+          {
+            "identifier": "d583101",
+            "identifierType": "Local"
+          }
+        ],
+        "alternateIdentifiers": [
+          {
+            "alternateIdentifierType": "URL",
+            "alternateIdentifier": "https://gdex.ucar.edu/datasets/d583101"
+          },
+          {
+            "alternateIdentifierType": "Local",
+            "alternateIdentifier": "d583101"
+          }
+        ],
+        "creators": [
+          {
+            "name": "Kay, Junkyung",
+            "nameType": "Personal",
+            "givenName": "Junkyung",
+            "familyName": "Kay",
+            "nameIdentifiers": [
+              {
+                "schemeUri": "https://orcid.org",
+                "nameIdentifier": "https://orcid.org/0000-0002-3189-6706",
+                "nameIdentifierScheme": "ORCID"
+              }
+            ],
+            "affiliation": []
+          },
+          {
+            "name": "Weckwerth, Tammy",
+            "nameType": "Personal",
+            "givenName": "Tammy",
+            "familyName": "Weckwerth",
+            "nameIdentifiers": [
+              {
+                "schemeUri": "https://orcid.org",
+                "nameIdentifier": "https://orcid.org/0000-0003-3238-9156",
+                "nameIdentifierScheme": "ORCID"
+              }
+            ],
+            "affiliation": []
+          },
+          {
+            "name": "Lee, Wen-Chau",
+            "nameType": "Personal",
+            "givenName": "Wen-Chau",
+            "familyName": "Lee",
+            "nameIdentifiers": [
+              {
+                "schemeUri": "https://orcid.org",
+                "nameIdentifier": "https://orcid.org/0000-0002-7005-881X",
+                "nameIdentifierScheme": "ORCID"
+              }
+            ],
+            "affiliation": []
+          },
+          {
+            "name": "Sun, Juanzhen",
+            "nameType": "Personal",
+            "givenName": "Juanzhen",
+            "familyName": "Sun",
+            "nameIdentifiers": [
+              {
+                "schemeUri": "https://orcid.org",
+                "nameIdentifier": "https://orcid.org/0000-0001-6048-6362",
+                "nameIdentifierScheme": "ORCID"
+              }
+            ],
+            "affiliation": []
+          },
+          {
+            "name": "Romine, Glen",
+            "nameType": "Personal",
+            "givenName": "Glen",
+            "familyName": "Romine",
+            "nameIdentifiers": [
+              {
+                "schemeUri": "https://orcid.org",
+                "nameIdentifier": "https://orcid.org/0000-0003-3997-2627",
+                "nameIdentifierScheme": "ORCID"
+              }
+            ],
+            "affiliation": []
+          }
+        ],
+        "titles": [
+          {
+            "title": "MPD OSSE data"
+          }
+        ],
+        "publisher": "NSF National Center for Atmospheric Research",
+        "container": {},
+        "publicationYear": 2021,
+        "subjects": [
+          {
+            "subject": "EARTH SCIENCE &gt; ATMOSPHERE &gt; ATMOSPHERIC WATER VAPOR &gt; WATER VAPOR PROFILES &gt; VERTICALLY RESOLVED BACKSCATTER LIGHT",
+            "valueUri": "https://gcmd.earthdata.nasa.gov/kms/concept/1b9a1873-c02f-4b6c-906e-5da8833354d4",
+            "schemeUri": "https://gcmd.earthdata.nasa.gov/kms",
+            "subjectScheme": "GCMD"
+          }
+        ],
+        "contributors": [
+          {
+            "name": "University Corporation For Atmospheric Research (UCAR):NSF National Center for Atmospheric Research (NSF NCAR):Computational and Information Systems Laboratory (CISL):Information Services Division (ISD):Data Engineering and Curation Section (DECS)",
+            "affiliation": [],
+            "contributorType": "HostingInstitution",
+            "nameIdentifiers": []
+          }
+        ],
+        "dates": [
+          {
+            "date": "2021",
+            "dateType": "Issued"
+          }
+        ],
+        "language": "en",
+        "types": {
+          "ris": "DATA",
+          "bibtex": "misc",
+          "citeproc": "dataset",
+          "schemaOrg": "Dataset",
+          "resourceType": "climatologyMeteorologyAtmosphere",
+          "resourceTypeGeneral": "Dataset"
+        },
+        "relatedIdentifiers": [],
+        "relatedItems": [],
+        "sizes": [
+          "258.781 Gbytes"
+        ],
+        "formats": [
+          "HDF5/NetCDF4"
+        ],
+        "version": null,
+        "rightsList": [
+          {
+            "rights": "Creative Commons Attribution 4.0 International",
+            "rightsUri": "https://creativecommons.org/licenses/by/4.0/legalcode",
+            "schemeUri": "https://spdx.org/licenses/",
+            "rightsIdentifier": "cc-by-4.0",
+            "rightsIdentifierScheme": "SPDX"
+          }
+        ],
+        "descriptions": [
+          {
+            "description": "This numerical simulation data set is prepared for manuscript submission to the the Monthly Weather Review journal of the American Meteorological Society (AMS).The National Center for Atmospheric Research (NCAR) and Montana State University jointly developed water vapor MicroPulse Differential absorption lidars (MPDs) that are a significant advance in eye-safe, unattended, lidar-based water vapor remote sensing. We perform Observation System Simulation Experiments (OSSEs) to investigate MPD observation impact and its scientific significance of MPDs for convective weather analysis and predictions. In this study, the Data Assimilation Research Testbed (DART) and the Advanced Research version of the Weather Research and Forecasting model (WRF-ARW) are used to conduct OSSEs for a case study of a mesoscale convective system (MCS). We will submit OSSE results to the Monthly Weather Review journal of the American Meteorological Society (AMS). As this Journal is committed to the FAIR principles, all data used in the manuscript must be archived and cited/referenced properly. The dataset also have persistent identifiers such as DOIs.",
+            "descriptionType": "Abstract"
+          }
+        ],
+        "geoLocations": [],
+        "fundingReferences": [],
+        "xml": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHJlc291cmNlIHhtbG5zPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCIgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeHNpOnNjaGVtYUxvY2F0aW9uPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCBodHRwOi8vc2NoZW1hLmRhdGFjaXRlLm9yZy9tZXRhL2tlcm5lbC00LjYvbWV0YWRhdGEueHNkIj4KICA8aWRlbnRpZmllciBpZGVudGlmaWVyVHlwZT0iRE9JIj4xMC41MDY1LzIzMUgtSlcwNjwvaWRlbnRpZmllcj4KICA8Y3JlYXRvcnM+CiAgICA8Y3JlYXRvcj4KICAgICAgPGNyZWF0b3JOYW1lIG5hbWVUeXBlPSJQZXJzb25hbCI+S2F5LCBKdW5reXVuZzwvY3JlYXRvck5hbWU+CiAgICAgIDxnaXZlbk5hbWU+SnVua3l1bmc8L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWU+S2F5PC9mYW1pbHlOYW1lPgogICAgICA8bmFtZUlkZW50aWZpZXIgbmFtZUlkZW50aWZpZXJTY2hlbWU9Ik9SQ0lEIiBzY2hlbWVVUkk9Imh0dHBzOi8vb3JjaWQub3JnIj5odHRwczovL29yY2lkLm9yZy8wMDAwLTAwMDItMzE4OS02NzA2PC9uYW1lSWRlbnRpZmllcj4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5XZWNrd2VydGgsIFRhbW15PC9jcmVhdG9yTmFtZT4KICAgICAgPGdpdmVuTmFtZT5UYW1teTwvZ2l2ZW5OYW1lPgogICAgICA8ZmFtaWx5TmFtZT5XZWNrd2VydGg8L2ZhbWlseU5hbWU+CiAgICAgIDxuYW1lSWRlbnRpZmllciBuYW1lSWRlbnRpZmllclNjaGVtZT0iT1JDSUQiIHNjaGVtZVVSST0iaHR0cHM6Ly9vcmNpZC5vcmciPmh0dHBzOi8vb3JjaWQub3JnLzAwMDAtMDAwMy0zMjM4LTkxNTY8L25hbWVJZGVudGlmaWVyPgogICAgPC9jcmVhdG9yPgogICAgPGNyZWF0b3I+CiAgICAgIDxjcmVhdG9yTmFtZSBuYW1lVHlwZT0iUGVyc29uYWwiPkxlZSwgV2VuLUNoYXU8L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPldlbi1DaGF1PC9naXZlbk5hbWU+CiAgICAgIDxmYW1pbHlOYW1lPkxlZTwvZmFtaWx5TmFtZT4KICAgICAgPG5hbWVJZGVudGlmaWVyIG5hbWVJZGVudGlmaWVyU2NoZW1lPSJPUkNJRCIgc2NoZW1lVVJJPSJodHRwczovL29yY2lkLm9yZyI+aHR0cHM6Ly9vcmNpZC5vcmcvMDAwMC0wMDAyLTcwMDUtODgxWDwvbmFtZUlkZW50aWZpZXI+CiAgICA8L2NyZWF0b3I+CiAgICA8Y3JlYXRvcj4KICAgICAgPGNyZWF0b3JOYW1lIG5hbWVUeXBlPSJQZXJzb25hbCI+U3VuLCBKdWFuemhlbjwvY3JlYXRvck5hbWU+CiAgICAgIDxnaXZlbk5hbWU+SnVhbnpoZW48L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWU+U3VuPC9mYW1pbHlOYW1lPgogICAgICA8bmFtZUlkZW50aWZpZXIgbmFtZUlkZW50aWZpZXJTY2hlbWU9Ik9SQ0lEIiBzY2hlbWVVUkk9Imh0dHBzOi8vb3JjaWQub3JnIj5odHRwczovL29yY2lkLm9yZy8wMDAwLTAwMDEtNjA0OC02MzYyPC9uYW1lSWRlbnRpZmllcj4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5Sb21pbmUsIEdsZW48L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPkdsZW48L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWU+Um9taW5lPC9mYW1pbHlOYW1lPgogICAgICA8bmFtZUlkZW50aWZpZXIgbmFtZUlkZW50aWZpZXJTY2hlbWU9Ik9SQ0lEIiBzY2hlbWVVUkk9Imh0dHBzOi8vb3JjaWQub3JnIj5odHRwczovL29yY2lkLm9yZy8wMDAwLTAwMDMtMzk5Ny0yNjI3PC9uYW1lSWRlbnRpZmllcj4KICAgIDwvY3JlYXRvcj4KICA8L2NyZWF0b3JzPgogIDx0aXRsZXM+CiAgICA8dGl0bGU+TVBEIE9TU0UgZGF0YTwvdGl0bGU+CiAgPC90aXRsZXM+CiAgPHB1Ymxpc2hlciBwdWJsaXNoZXJJZGVudGlmaWVyPSJodHRwczovL3Jvci5vcmcvMDVjdmZjcjQ0IiBwdWJsaXNoZXJJZGVudGlmaWVyU2NoZW1lPSJST1IiIHNjaGVtZVVSST0iaHR0cHM6Ly9yb3Iub3JnLyI+TlNGIE5hdGlvbmFsIENlbnRlciBmb3IgQXRtb3NwaGVyaWMgUmVzZWFyY2g8L3B1Ymxpc2hlcj4KICA8cHVibGljYXRpb25ZZWFyPjIwMjE8L3B1YmxpY2F0aW9uWWVhcj4KICA8cmVzb3VyY2VUeXBlIHJlc291cmNlVHlwZUdlbmVyYWw9IkRhdGFzZXQiPmNsaW1hdG9sb2d5TWV0ZW9yb2xvZ3lBdG1vc3BoZXJlPC9yZXNvdXJjZVR5cGU+CiAgPHN1YmplY3RzPgogICAgPHN1YmplY3Qgc3ViamVjdFNjaGVtZT0iR0NNRCIgc2NoZW1lVVJJPSJodHRwczovL2djbWQuZWFydGhkYXRhLm5hc2EuZ292L2ttcyIgdmFsdWVVUkk9Imh0dHBzOi8vZ2NtZC5lYXJ0aGRhdGEubmFzYS5nb3Yva21zL2NvbmNlcHQvMWI5YTE4NzMtYzAyZi00YjZjLTkwNmUtNWRhODgzMzM1NGQ0Ij5FQVJUSCBTQ0lFTkNFICZndDsgQVRNT1NQSEVSRSAmZ3Q7IEFUTU9TUEhFUklDIFdBVEVSIFZBUE9SICZndDsgV0FURVIgVkFQT1IgUFJPRklMRVMgJmd0OyBWRVJUSUNBTExZIFJFU09MVkVEIEJBQ0tTQ0FUVEVSIExJR0hUPC9zdWJqZWN0PgogIDwvc3ViamVjdHM+CiAgPGNvbnRyaWJ1dG9ycz4KICAgIDxjb250cmlidXRvciBjb250cmlidXRvclR5cGU9Ikhvc3RpbmdJbnN0aXR1dGlvbiI+CiAgICAgIDxjb250cmlidXRvck5hbWU+VW5pdmVyc2l0eSBDb3Jwb3JhdGlvbiBGb3IgQXRtb3NwaGVyaWMgUmVzZWFyY2ggKFVDQVIpOk5TRiBOYXRpb25hbCBDZW50ZXIgZm9yIEF0bW9zcGhlcmljIFJlc2VhcmNoIChOU0YgTkNBUik6Q29tcHV0YXRpb25hbCBhbmQgSW5mb3JtYXRpb24gU3lzdGVtcyBMYWJvcmF0b3J5IChDSVNMKTpJbmZvcm1hdGlvbiBTZXJ2aWNlcyBEaXZpc2lvbiAoSVNEKTpEYXRhIEVuZ2luZWVyaW5nIGFuZCBDdXJhdGlvbiBTZWN0aW9uIChERUNTKTwvY29udHJpYnV0b3JOYW1lPgogICAgPC9jb250cmlidXRvcj4KICA8L2NvbnRyaWJ1dG9ycz4KICA8ZGF0ZXM+CiAgICA8ZGF0ZSBkYXRlVHlwZT0iVmFsaWQiPjIwMTUtMDctMTUgdG8gMjAxNS0wNy0xNTwvZGF0ZT4KICA8L2RhdGVzPgogIDxkZXNjcmlwdGlvbnM+CiAgICA8ZGVzY3JpcHRpb24gZGVzY3JpcHRpb25UeXBlPSJBYnN0cmFjdCI+VGhpcyBudW1lcmljYWwgc2ltdWxhdGlvbiBkYXRhIHNldCBpcyBwcmVwYXJlZCBmb3IgbWFudXNjcmlwdCBzdWJtaXNzaW9uIHRvIHRoZSB0aGUgTW9udGhseSBXZWF0aGVyIFJldmlldyBqb3VybmFsIG9mIHRoZSBBbWVyaWNhbiBNZXRlb3JvbG9naWNhbCBTb2NpZXR5IChBTVMpLlRoZSBOYXRpb25hbCBDZW50ZXIgZm9yIEF0bW9zcGhlcmljIFJlc2VhcmNoIChOQ0FSKSBhbmQgTW9udGFuYSBTdGF0ZSBVbml2ZXJzaXR5IGpvaW50bHkgZGV2ZWxvcGVkIHdhdGVyIHZhcG9yIE1pY3JvUHVsc2UgRGlmZmVyZW50aWFsIGFic29ycHRpb24gbGlkYXJzIChNUERzKSB0aGF0IGFyZSBhIHNpZ25pZmljYW50IGFkdmFuY2UgaW4gZXllLXNhZmUsIHVuYXR0ZW5kZWQsIGxpZGFyLWJhc2VkIHdhdGVyIHZhcG9yIHJlbW90ZSBzZW5zaW5nLiBXZSBwZXJmb3JtIE9ic2VydmF0aW9uIFN5c3RlbSBTaW11bGF0aW9uIEV4cGVyaW1lbnRzIChPU1NFcykgdG8gaW52ZXN0aWdhdGUgTVBEIG9ic2VydmF0aW9uIGltcGFjdCBhbmQgaXRzIHNjaWVudGlmaWMgc2lnbmlmaWNhbmNlIG9mIE1QRHMgZm9yIGNvbnZlY3RpdmUgd2VhdGhlciBhbmFseXNpcyBhbmQgcHJlZGljdGlvbnMuIEluIHRoaXMgc3R1ZHksIHRoZSBEYXRhIEFzc2ltaWxhdGlvbiBSZXNlYXJjaCBUZXN0YmVkIChEQVJUKSBhbmQgdGhlIEFkdmFuY2VkIFJlc2VhcmNoIHZlcnNpb24gb2YgdGhlIFdlYXRoZXIgUmVzZWFyY2ggYW5kIEZvcmVjYXN0aW5nIG1vZGVsIChXUkYtQVJXKSBhcmUgdXNlZCB0byBjb25kdWN0IE9TU0VzIGZvciBhIGNhc2Ugc3R1ZHkgb2YgYSBtZXNvc2NhbGUgY29udmVjdGl2ZSBzeXN0ZW0gKE1DUykuIFdlIHdpbGwgc3VibWl0IE9TU0UgcmVzdWx0cyB0byB0aGUgTW9udGhseSBXZWF0aGVyIFJldmlldyBqb3VybmFsIG9mIHRoZSBBbWVyaWNhbiBNZXRlb3JvbG9naWNhbCBTb2NpZXR5IChBTVMpLiBBcyB0aGlzIEpvdXJuYWwgaXMgY29tbWl0dGVkIHRvIHRoZSBGQUlSIHByaW5jaXBsZXMsIGFsbCBkYXRhIHVzZWQgaW4gdGhlIG1hbnVzY3JpcHQgbXVzdCBiZSBhcmNoaXZlZCBhbmQgY2l0ZWQvcmVmZXJlbmNlZCBwcm9wZXJseS4gVGhlIGRhdGFzZXQgYWxzbyBoYXZlIHBlcnNpc3RlbnQgaWRlbnRpZmllcnMgc3VjaCBhcyBET0lzLjwvZGVzY3JpcHRpb24+CiAgPC9kZXNjcmlwdGlvbnM+CiAgPGxhbmd1YWdlPmVuLVVTPC9sYW5ndWFnZT4KICA8YWx0ZXJuYXRlSWRlbnRpZmllcnM+CiAgICA8YWx0ZXJuYXRlSWRlbnRpZmllciBhbHRlcm5hdGVJZGVudGlmaWVyVHlwZT0iVVJMIj5odHRwczovL2dkZXgudWNhci5lZHUvZGF0YXNldHMvZDU4MzEwMTwvYWx0ZXJuYXRlSWRlbnRpZmllcj4KICAgIDxhbHRlcm5hdGVJZGVudGlmaWVyIGFsdGVybmF0ZUlkZW50aWZpZXJUeXBlPSJMb2NhbCI+ZDU4MzEwMTwvYWx0ZXJuYXRlSWRlbnRpZmllcj4KICA8L2FsdGVybmF0ZUlkZW50aWZpZXJzPgogIDxzaXplcz4KICAgIDxzaXplPjI1OC43ODEgR2J5dGVzPC9zaXplPgogIDwvc2l6ZXM+CiAgPGZvcm1hdHM+CiAgICA8Zm9ybWF0PkhERjUvTmV0Q0RGNDwvZm9ybWF0PgogIDwvZm9ybWF0cz4KICA8cmlnaHRzTGlzdD4KICAgIDxyaWdodHMgcmlnaHRzSWRlbnRpZmllcj0iQ0MtQlktNC4wIiByaWdodHNVUkk9Imh0dHBzOi8vY3JlYXRpdmVjb21tb25zLm9yZy9saWNlbnNlcy9ieS80LjAvIj5DcmVhdGl2ZSBDb21tb25zIEF0dHJpYnV0aW9uIDQuMCBJbnRlcm5hdGlvbmFsIExpY2Vuc2U8L3JpZ2h0cz4KICA8L3JpZ2h0c0xpc3Q+CjwvcmVzb3VyY2U+",
+        "url": "https://gdex.ucar.edu/datasets/d583101/",
+        "contentUrl": null,
+        "metadataVersion": 5,
+        "schemaVersion": "http://datacite.org/schema/kernel-4",
+        "source": "mds",
+        "isActive": true,
+        "state": "findable",
+        "reason": null,
+        "viewCount": 0,
+        "viewsOverTime": [],
+        "downloadCount": 0,
+        "downloadsOverTime": [],
+        "referenceCount": 0,
+        "citationCount": 0,
+        "citationsOverTime": [],
+        "partCount": 0,
+        "partOfCount": 0,
+        "versionCount": 0,
+        "versionOfCount": 0,
+        "created": "2021-10-19T00:03:32.000Z",
+        "registered": "2021-10-19T00:03:44.000Z",
+        "published": "2021",
+        "updated": "2026-04-22T03:12:56.000Z"
+      },
+      "relationships": {
+        "client": {
+          "data": {
+            "id": "ucar.ucar",
+            "type": "clients"
+          }
+        },
+        "provider": {
+          "data": {
+            "id": "ucar",
+            "type": "providers"
+          }
+        },
+        "media": {
+          "data": {
+            "id": "10.5065/231h-jw06",
+            "type": "media"
+          }
+        },
+        "references": {
+          "data": []
+        },
+        "citations": {
+          "data": []
+        },
+        "parts": {
+          "data": []
+        },
+        "partOf": {
+          "data": []
+        },
+        "versions": {
+          "data": []
+        },
+        "versionOf": {
+          "data": []
+        }
+      }
+    }
+  }
+}

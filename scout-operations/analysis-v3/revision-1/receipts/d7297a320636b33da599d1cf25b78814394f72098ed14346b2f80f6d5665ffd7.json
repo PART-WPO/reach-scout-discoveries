@@ -1,0 +1,71 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=The+Effect+of+Experiencing+Disaster+Losses+on+Risk+Perceptions+and+Preparedness+Behaviors&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=The+Effect+of+Experiencing+Disaster+Losses+on+Risk+Perceptions+and+Preparedness+Behaviors&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:55.615325+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 5241570,
+      "items": [
+        {
+          "DOI": "10.1093/geroni/igz038.1030",
+          "title": [
+            "DISASTER PERCEPTIONS AND PREPAREDNESS BEHAVIORS AMONG U.S. OLDER ADULTS"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2019,
+                11
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.33790/jphip1100115",
+          "title": [
+            "Disaster Preparedness Knowledge, Beliefs, Risk-Perceptions, and Mitigating Factors of Disaster Preparedness Behaviors of Undergraduate Students at a Large Midwest University"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2018
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.4324/9781003207887-5",
+          "title": [
+            "Disaster Preparedness/Disaster Risk Reduction"
+          ],
+          "type": "book-chapter",
+          "published": {
+            "date-parts": [
+              [
+                2025,
+                6,
+                3
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

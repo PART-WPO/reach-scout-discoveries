@@ -1,0 +1,63 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=Land+Use+Strategies+for+Wildfire+Risk+Reduction+During+Post-Fire+Recovery+in+the+Western+United+States&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=Land+Use+Strategies+for+Wildfire+Risk+Reduction+During+Post-Fire+Recovery+in+the+Western+United+States&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:58:01.254107+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 8512840,
+      "items": [
+        {
+          "DOI": "10.1186/s42408-024-00282-y",
+          "title": [
+            "Strategic fire zones are essential to wildfire risk reduction in the Western United States"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2024,
+                5,
+                21
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1130/abs/2017am-303397",
+          "title": [
+            "ESTIMATING POST-FIRE DEBRIS-FLOW HAZARDS IN THE WESTERN UNITED STATES PRIOR TO WILDFIRE"
+          ],
+          "type": "proceedings-article",
+          "published": {
+            "date-parts": [
+              [
+                2017
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.2737/rds-2024-0030",
+          "title": [
+            "Wildfire Risk to Communities: Community Wildfire Risk Reduction Zones for the United States"
+          ],
+          "type": "dataset"
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

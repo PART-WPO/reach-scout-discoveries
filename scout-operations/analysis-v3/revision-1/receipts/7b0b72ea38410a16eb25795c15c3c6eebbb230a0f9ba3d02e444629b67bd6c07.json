@@ -1,0 +1,580 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.datacite.org/dois/10.17603/ds2-3p1m-dr64",
+  "final_url": "https://api.datacite.org/dois/10.17603/ds2-3p1m-dr64",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:56:33.514619+00:00",
+  "headers": {
+    "Content-Type": "application/json; charset=utf-8",
+    "ETag": "W/\"0a0a1d017cdf6a24ccad16f6531b6db8\""
+  },
+  "body": {
+    "data": {
+      "id": "10.17603/ds2-3p1m-dr64",
+      "type": "dois",
+      "attributes": {
+        "doi": "10.17603/ds2-3p1m-dr64",
+        "prefix": "10.17603",
+        "suffix": "ds2-3p1m-dr64",
+        "identifiers": [
+          {
+            "identifier": "PRJ-3198",
+            "identifierType": "Project ID"
+          }
+        ],
+        "alternateIdentifiers": [
+          {
+            "alternateIdentifierType": "Project ID",
+            "alternateIdentifier": "PRJ-3198"
+          }
+        ],
+        "creators": [
+          {
+            "name": "Pozzi, Tara",
+            "givenName": "Tara",
+            "familyName": "Pozzi",
+            "affiliation": [],
+            "nameIdentifiers": []
+          },
+          {
+            "name": "Hillis, Vicken",
+            "givenName": "Vicken",
+            "familyName": "Hillis",
+            "affiliation": [],
+            "nameIdentifiers": []
+          }
+        ],
+        "titles": [
+          {
+            "title": "Drivers of Lidar Adoption"
+          },
+          {
+            "title": "in Facilitators and Barriers of Lidar Adoption for Flood Risk Management in the Pacific Northwest, US",
+            "titleType": "Subtitle"
+          }
+        ],
+        "publisher": "Designsafe-CI",
+        "container": {},
+        "publicationYear": 2021,
+        "subjects": [
+          {
+            "subject": "lidar"
+          },
+          {
+            "subject": "flood risk management"
+          },
+          {
+            "subject": "technology adoption"
+          }
+        ],
+        "contributors": [
+          {
+            "name": "Boise State University",
+            "nameType": "Organizational",
+            "contributorType": "HostingInstitution",
+            "affiliation": [],
+            "nameIdentifiers": []
+          }
+        ],
+        "dates": [],
+        "language": "en",
+        "types": {
+          "ris": "DATA",
+          "bibtex": "misc",
+          "citeproc": "dataset",
+          "schemaOrg": "Dataset",
+          "resourceType": "Mission/Pacific Northwest, UA",
+          "resourceTypeGeneral": "Dataset"
+        },
+        "relatedIdentifiers": [],
+        "relatedItems": [],
+        "sizes": [],
+        "formats": [],
+        "version": "1",
+        "rightsList": [],
+        "descriptions": [
+          {
+            "lang": "en-Us",
+            "description": "Flood risk and damage are expected to increase in the Pacific Northwest due to climate change. Light Detection and Ranging (lidar) is a remote sensing technology that provides high-resolution topographic data and can therefore produce higher accuracy floodplain maps, an important tool that communities use to assess their flood risk spatially. While availability of lidar data varies across the U.S., uptake also varies even when lidar is available. Our research asked what factors influence variable lidar adoption and how can we use those factors to increase uptake. Previous research investigated important factors in the role of technology adoption in reducing long-term environmental risk; however, the current literature infrequently examined the social processes that impact an individual’s choices about how to manage risk. We used a mixed-methods approach to examine the adoption of lidar by flood managers for risk mitigation, as a function of individual (e.g., risk perception, direct experience) and collective predictors (e.g., peer influence, peer expertise). We conducted eight interviews with flood risk managers in Idaho and gathered 232 survey responses from flood risk managers in Idaho, Oregon, Washington, and Alaska.\n\nWe envision our semi-structured interview instrument and survey instrument to be useful for social scientists interested in researching stakeholder decision-making processes. Additionally, the survey instrument is an example of how to employ an ego network analysis, a technique that is useful for identifying the role of social processes in a complex system. Finally, we envision our dataset to be useful for future research regarding flood risk management (e.g., discrepancy of risk perception and physical flood risk) due to the breadth of empirical data regarding flood risk manager experiences in the Pacific Northwest.",
+            "descriptionType": "Abstract"
+          },
+          {
+            "lang": "en-Us",
+            "description": "Our research has two components: (1) interview instrument and (2) survey instrument and data. The interview instrument was used to conduct eight, semi-structured interviews with stakeholders including flood risk managers, government officials, industry professionals, and academics. These interviews were used to identify common themes, ensure that our survey questions were relevant, and confirm that we were adequately identifying facilitators and barriers to lidar adoption. In this mission, we share the interview recruitment template and interview instrument however we do not include our interview data due to anonymity compliance with the IRB. The second component of our research was the survey instrument and data. Based on our literature review and interview findings, we settled on a set of individual and collective predictors that we built our survey instrument to measure. Our survey’s target population included floodplain managers and administrators in Idaho, Oregon, Washington, and Alaska. This also included individuals that may use lidar for flood risk management applications in conjunction with software applications such as Geographic Information System (GIS). The majority of sample respondents were municipal, state, and federal employees, as well as some private industry employees. In this component of the mission, we share the survey recruitment template, survey instrument, and survey data.",
+            "descriptionType": "Abstract"
+          }
+        ],
+        "geoLocations": [],
+        "fundingReferences": [],
+        "xml": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHJlc291cmNlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCIgeHNpOnNjaGVtYUxvY2F0aW9uPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCBodHRwOi8vc2NoZW1hLmRhdGFjaXRlLm9yZy9tZXRhL2tlcm5lbC00L21ldGFkYXRhLnhzZCI+CiAgPGlkZW50aWZpZXIgaWRlbnRpZmllclR5cGU9IkRPSSI+MTAuMTc2MDMvRFMyLTNQMU0tRFI2NDwvaWRlbnRpZmllcj4KICA8Y3JlYXRvcnM+CiAgICA8Y3JlYXRvcj4KICAgICAgPGNyZWF0b3JOYW1lPlBvenppLCBUYXJhPC9jcmVhdG9yTmFtZT4KICAgICAgPGdpdmVuTmFtZT5UYXJhPC9naXZlbk5hbWU+CiAgICAgIDxmYW1pbHlOYW1lPlBvenppPC9mYW1pbHlOYW1lPgogICAgPC9jcmVhdG9yPgogICAgPGNyZWF0b3I+CiAgICAgIDxjcmVhdG9yTmFtZT5IaWxsaXMsIFZpY2tlbjwvY3JlYXRvck5hbWU+CiAgICAgIDxnaXZlbk5hbWU+Vmlja2VuPC9naXZlbk5hbWU+CiAgICAgIDxmYW1pbHlOYW1lPkhpbGxpczwvZmFtaWx5TmFtZT4KICAgIDwvY3JlYXRvcj4KICA8L2NyZWF0b3JzPgogIDx0aXRsZXM+CiAgICA8dGl0bGU+RHJpdmVycyBvZiBMaWRhciBBZG9wdGlvbjwvdGl0bGU+CiAgICA8dGl0bGUgdGl0bGVUeXBlPSJTdWJ0aXRsZSI+aW4gRmFjaWxpdGF0b3JzIGFuZCBCYXJyaWVycyBvZiBMaWRhciBBZG9wdGlvbiBmb3IgRmxvb2QgUmlzayBNYW5hZ2VtZW50IGluIHRoZSBQYWNpZmljIE5vcnRod2VzdCwgVVM8L3RpdGxlPgogIDwvdGl0bGVzPgogIDxwdWJsaXNoZXI+RGVzaWduc2FmZS1DSTwvcHVibGlzaGVyPgogIDxwdWJsaWNhdGlvblllYXI+MjAyMTwvcHVibGljYXRpb25ZZWFyPgogIDxyZXNvdXJjZVR5cGUgcmVzb3VyY2VUeXBlR2VuZXJhbD0iRGF0YXNldCI+TWlzc2lvbi9QYWNpZmljIE5vcnRod2VzdCwgVUE8L3Jlc291cmNlVHlwZT4KICA8c3ViamVjdHM+CiAgICA8c3ViamVjdD5saWRhcjwvc3ViamVjdD4KICAgIDxzdWJqZWN0PmZsb29kIHJpc2sgbWFuYWdlbWVudDwvc3ViamVjdD4KICAgIDxzdWJqZWN0PnRlY2hub2xvZ3kgYWRvcHRpb248L3N1YmplY3Q+CiAgPC9zdWJqZWN0cz4KICA8Y29udHJpYnV0b3JzPgogICAgPGNvbnRyaWJ1dG9yIGNvbnRyaWJ1dG9yVHlwZT0iSG9zdGluZ0luc3RpdHV0aW9uIj4KICAgICAgPGNvbnRyaWJ1dG9yTmFtZSBuYW1lVHlwZT0iT3JnYW5pemF0aW9uYWwiPkJvaXNlIFN0YXRlIFVuaXZlcnNpdHk8L2NvbnRyaWJ1dG9yTmFtZT4KICAgIDwvY29udHJpYnV0b3I+CiAgPC9jb250cmlidXRvcnM+CiAgPGxhbmd1YWdlPkVuZ2xpc2g8L2xhbmd1YWdlPgogIDxhbHRlcm5hdGVJZGVudGlmaWVycz4KICAgIDxhbHRlcm5hdGVJZGVudGlmaWVyIGFsdGVybmF0ZUlkZW50aWZpZXJUeXBlPSJQcm9qZWN0IElEIj5QUkotMzE5ODwvYWx0ZXJuYXRlSWRlbnRpZmllcj4KICA8L2FsdGVybmF0ZUlkZW50aWZpZXJzPgogIDxzaXplcy8+CiAgPGZvcm1hdHMvPgogIDx2ZXJzaW9uPjE8L3ZlcnNpb24+CiAgPGRlc2NyaXB0aW9ucz4KICAgIDxkZXNjcmlwdGlvbiB4bWw6bGFuZz0iZW4tVXMiIGRlc2NyaXB0aW9uVHlwZT0iQWJzdHJhY3QiPkZsb29kIHJpc2sgYW5kIGRhbWFnZSBhcmUgZXhwZWN0ZWQgdG8gaW5jcmVhc2UgaW4gdGhlIFBhY2lmaWMgTm9ydGh3ZXN0IGR1ZSB0byBjbGltYXRlIGNoYW5nZS4gTGlnaHQgRGV0ZWN0aW9uIGFuZCBSYW5naW5nIChsaWRhcikgaXMgYSByZW1vdGUgc2Vuc2luZyB0ZWNobm9sb2d5IHRoYXQgcHJvdmlkZXMgaGlnaC1yZXNvbHV0aW9uIHRvcG9ncmFwaGljIGRhdGEgYW5kIGNhbiB0aGVyZWZvcmUgcHJvZHVjZSBoaWdoZXIgYWNjdXJhY3kgZmxvb2RwbGFpbiBtYXBzLCBhbiBpbXBvcnRhbnQgdG9vbCB0aGF0IGNvbW11bml0aWVzIHVzZSB0byBhc3Nlc3MgdGhlaXIgZmxvb2QgcmlzayBzcGF0aWFsbHkuIFdoaWxlIGF2YWlsYWJpbGl0eSBvZiBsaWRhciBkYXRhIHZhcmllcyBhY3Jvc3MgdGhlIFUuUy4sIHVwdGFrZSBhbHNvIHZhcmllcyBldmVuIHdoZW4gbGlkYXIgaXMgYXZhaWxhYmxlLiBPdXIgcmVzZWFyY2ggYXNrZWQgd2hhdCBmYWN0b3JzIGluZmx1ZW5jZSB2YXJpYWJsZSBsaWRhciBhZG9wdGlvbiBhbmQgaG93IGNhbiB3ZSB1c2UgdGhvc2UgZmFjdG9ycyB0byBpbmNyZWFzZSB1cHRha2UuIFByZXZpb3VzIHJlc2VhcmNoIGludmVzdGlnYXRlZCBpbXBvcnRhbnQgZmFjdG9ycyBpbiB0aGUgcm9sZSBvZiB0ZWNobm9sb2d5IGFkb3B0aW9uIGluIHJlZHVjaW5nIGxvbmctdGVybSBlbnZpcm9ubWVudGFsIHJpc2s7IGhvd2V2ZXIsIHRoZSBjdXJyZW50IGxpdGVyYXR1cmUgaW5mcmVxdWVudGx5IGV4YW1pbmVkIHRoZSBzb2NpYWwgcHJvY2Vzc2VzIHRoYXQgaW1wYWN0IGFuIGluZGl2aWR1YWzigJlzIGNob2ljZXMgYWJvdXQgaG93IHRvIG1hbmFnZSByaXNrLiBXZSB1c2VkIGEgbWl4ZWQtbWV0aG9kcyBhcHByb2FjaCB0byBleGFtaW5lIHRoZSBhZG9wdGlvbiBvZiBsaWRhciBieSBmbG9vZCBtYW5hZ2VycyBmb3IgcmlzayBtaXRpZ2F0aW9uLCBhcyBhIGZ1bmN0aW9uIG9mIGluZGl2aWR1YWwgKGUuZy4sIHJpc2sgcGVyY2VwdGlvbiwgZGlyZWN0IGV4cGVyaWVuY2UpIGFuZCBjb2xsZWN0aXZlIHByZWRpY3RvcnMgKGUuZy4sIHBlZXIgaW5mbHVlbmNlLCBwZWVyIGV4cGVydGlzZSkuIFdlIGNvbmR1Y3RlZCBlaWdodCBpbnRlcnZpZXdzIHdpdGggZmxvb2QgcmlzayBtYW5hZ2VycyBpbiBJZGFobyBhbmQgZ2F0aGVyZWQgMjMyIHN1cnZleSByZXNwb25zZXMgZnJvbSBmbG9vZCByaXNrIG1hbmFnZXJzIGluIElkYWhvLCBPcmVnb24sIFdhc2hpbmd0b24sIGFuZCBBbGFza2EuCgpXZSBlbnZpc2lvbiBvdXIgc2VtaS1zdHJ1Y3R1cmVkIGludGVydmlldyBpbnN0cnVtZW50IGFuZCBzdXJ2ZXkgaW5zdHJ1bWVudCB0byBiZSB1c2VmdWwgZm9yIHNvY2lhbCBzY2llbnRpc3RzIGludGVyZXN0ZWQgaW4gcmVzZWFyY2hpbmcgc3Rha2Vob2xkZXIgZGVjaXNpb24tbWFraW5nIHByb2Nlc3Nlcy4gQWRkaXRpb25hbGx5LCB0aGUgc3VydmV5IGluc3RydW1lbnQgaXMgYW4gZXhhbXBsZSBvZiBob3cgdG8gZW1wbG95IGFuIGVnbyBuZXR3b3JrIGFuYWx5c2lzLCBhIHRlY2huaXF1ZSB0aGF0IGlzIHVzZWZ1bCBmb3IgaWRlbnRpZnlpbmcgdGhlIHJvbGUgb2Ygc29jaWFsIHByb2Nlc3NlcyBpbiBhIGNvbXBsZXggc3lzdGVtLiBGaW5hbGx5LCB3ZSBlbnZpc2lvbiBvdXIgZGF0YXNldCB0byBiZSB1c2VmdWwgZm9yIGZ1dHVyZSByZXNlYXJjaCByZWdhcmRpbmcgZmxvb2QgcmlzayBtYW5hZ2VtZW50IChlLmcuLCBkaXNjcmVwYW5jeSBvZiByaXNrIHBlcmNlcHRpb24gYW5kIHBoeXNpY2FsIGZsb29kIHJpc2spIGR1ZSB0byB0aGUgYnJlYWR0aCBvZiBlbXBpcmljYWwgZGF0YSByZWdhcmRpbmcgZmxvb2QgcmlzayBtYW5hZ2VyIGV4cGVyaWVuY2VzIGluIHRoZSBQYWNpZmljIE5vcnRod2VzdC48L2Rlc2NyaXB0aW9uPgogICAgPGRlc2NyaXB0aW9uIHhtbDpsYW5nPSJlbi1VcyIgZGVzY3JpcHRpb25UeXBlPSJBYnN0cmFjdCI+T3VyIHJlc2VhcmNoIGhhcyB0d28gY29tcG9uZW50czogKDEpIGludGVydmlldyBpbnN0cnVtZW50IGFuZCAoMikgc3VydmV5IGluc3RydW1lbnQgYW5kIGRhdGEuIFRoZSBpbnRlcnZpZXcgaW5zdHJ1bWVudCB3YXMgdXNlZCB0byBjb25kdWN0IGVpZ2h0LCBzZW1pLXN0cnVjdHVyZWQgaW50ZXJ2aWV3cyB3aXRoIHN0YWtlaG9sZGVycyBpbmNsdWRpbmcgZmxvb2QgcmlzayBtYW5hZ2VycywgZ292ZXJubWVudCBvZmZpY2lhbHMsIGluZHVzdHJ5IHByb2Zlc3Npb25hbHMsIGFuZCBhY2FkZW1pY3MuIFRoZXNlIGludGVydmlld3Mgd2VyZSB1c2VkIHRvIGlkZW50aWZ5IGNvbW1vbiB0aGVtZXMsIGVuc3VyZSB0aGF0IG91ciBzdXJ2ZXkgcXVlc3Rpb25zIHdlcmUgcmVsZXZhbnQsIGFuZCBjb25maXJtIHRoYXQgd2Ugd2VyZSBhZGVxdWF0ZWx5IGlkZW50aWZ5aW5nIGZhY2lsaXRhdG9ycyBhbmQgYmFycmllcnMgdG8gbGlkYXIgYWRvcHRpb24uIEluIHRoaXMgbWlzc2lvbiwgd2Ugc2hhcmUgdGhlIGludGVydmlldyByZWNydWl0bWVudCB0ZW1wbGF0ZSBhbmQgaW50ZXJ2aWV3IGluc3RydW1lbnQgaG93ZXZlciB3ZSBkbyBub3QgaW5jbHVkZSBvdXIgaW50ZXJ2aWV3IGRhdGEgZHVlIHRvIGFub255bWl0eSBjb21wbGlhbmNlIHdpdGggdGhlIElSQi4gVGhlIHNlY29uZCBjb21wb25lbnQgb2Ygb3VyIHJlc2VhcmNoIHdhcyB0aGUgc3VydmV5IGluc3RydW1lbnQgYW5kIGRhdGEuIEJhc2VkIG9uIG91ciBsaXRlcmF0dXJlIHJldmlldyBhbmQgaW50ZXJ2aWV3IGZpbmRpbmdzLCB3ZSBzZXR0bGVkIG9uIGEgc2V0IG9mIGluZGl2aWR1YWwgYW5kIGNvbGxlY3RpdmUgcHJlZGljdG9ycyB0aGF0IHdlIGJ1aWx0IG91ciBzdXJ2ZXkgaW5zdHJ1bWVudCB0byBtZWFzdXJlLiBPdXIgc3VydmV54oCZcyB0YXJnZXQgcG9wdWxhdGlvbiBpbmNsdWRlZCBmbG9vZHBsYWluIG1hbmFnZXJzIGFuZCBhZG1pbmlzdHJhdG9ycyBpbiBJZGFobywgT3JlZ29uLCBXYXNoaW5ndG9uLCBhbmQgQWxhc2thLiBUaGlzIGFsc28gaW5jbHVkZWQgaW5kaXZpZHVhbHMgdGhhdCBtYXkgdXNlIGxpZGFyIGZvciBmbG9vZCByaXNrIG1hbmFnZW1lbnQgYXBwbGljYXRpb25zIGluIGNvbmp1bmN0aW9uIHdpdGggc29mdHdhcmUgYXBwbGljYXRpb25zIHN1Y2ggYXMgR2VvZ3JhcGhpYyBJbmZvcm1hdGlvbiBTeXN0ZW0gKEdJUykuIFRoZSBtYWpvcml0eSBvZiBzYW1wbGUgcmVzcG9uZGVudHMgd2VyZSBtdW5pY2lwYWwsIHN0YXRlLCBhbmQgZmVkZXJhbCBlbXBsb3llZXMsIGFzIHdlbGwgYXMgc29tZSBwcml2YXRlIGluZHVzdHJ5IGVtcGxveWVlcy4gSW4gdGhpcyBjb21wb25lbnQgb2YgdGhlIG1pc3Npb24sIHdlIHNoYXJlIHRoZSBzdXJ2ZXkgcmVjcnVpdG1lbnQgdGVtcGxhdGUsIHN1cnZleSBpbnN0cnVtZW50LCBhbmQgc3VydmV5IGRhdGEuPC9kZXNjcmlwdGlvbj4KICA8L2Rlc2NyaXB0aW9ucz4KPC9yZXNvdXJjZT4K",
+        "url": "https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published/PRJ-3198/#detail-7553060217310277140-242ac117-0001-012",
+        "contentUrl": null,
+        "metadataVersion": 5,
+        "schemaVersion": "http://datacite.org/schema/kernel-4",
+        "source": "api",
+        "isActive": true,
+        "state": "findable",
+        "reason": null,
+        "viewCount": 377,
+        "viewsOverTime": [
+          {
+            "yearMonth": "2022-06",
+            "total": 2
+          },
+          {
+            "yearMonth": "2022-08",
+            "total": 2
+          },
+          {
+            "yearMonth": "2022-11",
+            "total": 23
+          },
+          {
+            "yearMonth": "2022-12",
+            "total": 21
+          },
+          {
+            "yearMonth": "2023-01",
+            "total": 28
+          },
+          {
+            "yearMonth": "2023-02",
+            "total": 23
+          },
+          {
+            "yearMonth": "2023-03",
+            "total": 19
+          },
+          {
+            "yearMonth": "2023-04",
+            "total": 9
+          },
+          {
+            "yearMonth": "2023-05",
+            "total": 8
+          },
+          {
+            "yearMonth": "2023-06",
+            "total": 6
+          },
+          {
+            "yearMonth": "2023-07",
+            "total": 6
+          },
+          {
+            "yearMonth": "2023-08",
+            "total": 2
+          },
+          {
+            "yearMonth": "2023-09",
+            "total": 7
+          },
+          {
+            "yearMonth": "2023-10",
+            "total": 4
+          },
+          {
+            "yearMonth": "2023-11",
+            "total": 5
+          },
+          {
+            "yearMonth": "2023-12",
+            "total": 4
+          },
+          {
+            "yearMonth": "2024-01",
+            "total": 6
+          },
+          {
+            "yearMonth": "2024-02",
+            "total": 11
+          },
+          {
+            "yearMonth": "2024-03",
+            "total": 13
+          },
+          {
+            "yearMonth": "2024-04",
+            "total": 10
+          },
+          {
+            "yearMonth": "2024-05",
+            "total": 10
+          },
+          {
+            "yearMonth": "2024-06",
+            "total": 5
+          },
+          {
+            "yearMonth": "2024-07",
+            "total": 6
+          },
+          {
+            "yearMonth": "2024-08",
+            "total": 10
+          },
+          {
+            "yearMonth": "2024-09",
+            "total": 9
+          },
+          {
+            "yearMonth": "2024-10",
+            "total": 20
+          },
+          {
+            "yearMonth": "2024-11",
+            "total": 9
+          },
+          {
+            "yearMonth": "2024-12",
+            "total": 8
+          },
+          {
+            "yearMonth": "2025-01",
+            "total": 6
+          },
+          {
+            "yearMonth": "2025-02",
+            "total": 7
+          },
+          {
+            "yearMonth": "2025-03",
+            "total": 6
+          },
+          {
+            "yearMonth": "2025-04",
+            "total": 10
+          },
+          {
+            "yearMonth": "2025-05",
+            "total": 8
+          },
+          {
+            "yearMonth": "2025-06",
+            "total": 1
+          },
+          {
+            "yearMonth": "2025-07",
+            "total": 3
+          },
+          {
+            "yearMonth": "2025-08",
+            "total": 6
+          },
+          {
+            "yearMonth": "2025-09",
+            "total": 1
+          },
+          {
+            "yearMonth": "2025-10",
+            "total": 7
+          },
+          {
+            "yearMonth": "2025-12",
+            "total": 3
+          },
+          {
+            "yearMonth": "2026-01",
+            "total": 2
+          },
+          {
+            "yearMonth": "2026-02",
+            "total": 4
+          },
+          {
+            "yearMonth": "2026-03",
+            "total": 3
+          },
+          {
+            "yearMonth": "2026-03",
+            "total": 4
+          },
+          {
+            "yearMonth": "2026-04",
+            "total": 5
+          },
+          {
+            "yearMonth": "2026-05",
+            "total": 3
+          },
+          {
+            "yearMonth": "2026-05",
+            "total": 1
+          },
+          {
+            "yearMonth": "2026-06",
+            "total": 1
+          },
+          {
+            "yearMonth": "2026-07",
+            "total": 3
+          },
+          {
+            "yearMonth": "2026-08",
+            "total": 1
+          },
+          {
+            "yearMonth": "2026-08",
+            "total": 1
+          },
+          {
+            "yearMonth": "2026-09",
+            "total": 1
+          },
+          {
+            "yearMonth": "2026-10",
+            "total": 4
+          }
+        ],
+        "downloadCount": 16,
+        "downloadsOverTime": [
+          {
+            "yearMonth": "2022-06",
+            "total": 0
+          },
+          {
+            "yearMonth": "2022-08",
+            "total": 0
+          },
+          {
+            "yearMonth": "2022-11",
+            "total": 0
+          },
+          {
+            "yearMonth": "2022-12",
+            "total": 0
+          },
+          {
+            "yearMonth": "2023-01",
+            "total": 0
+          },
+          {
+            "yearMonth": "2023-02",
+            "total": 3
+          },
+          {
+            "yearMonth": "2023-03",
+            "total": 2
+          },
+          {
+            "yearMonth": "2023-04",
+            "total": 0
+          },
+          {
+            "yearMonth": "2023-05",
+            "total": 0
+          },
+          {
+            "yearMonth": "2023-06",
+            "total": 0
+          },
+          {
+            "yearMonth": "2023-07",
+            "total": 0
+          },
+          {
+            "yearMonth": "2023-08",
+            "total": 0
+          },
+          {
+            "yearMonth": "2023-09",
+            "total": 0
+          },
+          {
+            "yearMonth": "2023-10",
+            "total": 0
+          },
+          {
+            "yearMonth": "2023-11",
+            "total": 0
+          },
+          {
+            "yearMonth": "2023-12",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-01",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-02",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-03",
+            "total": 4
+          },
+          {
+            "yearMonth": "2024-04",
+            "total": 2
+          },
+          {
+            "yearMonth": "2024-05",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-06",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-07",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-08",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-09",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-10",
+            "total": 2
+          },
+          {
+            "yearMonth": "2024-11",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-12",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-01",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-02",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-03",
+            "total": 1
+          },
+          {
+            "yearMonth": "2025-04",
+            "total": 1
+          },
+          {
+            "yearMonth": "2025-05",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-06",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-07",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-08",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-09",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-10",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-12",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-01",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-02",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-03",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-04",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-05",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-06",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-07",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-08",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-09",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-10",
+            "total": 1
+          }
+        ],
+        "referenceCount": 0,
+        "citationCount": 0,
+        "citationsOverTime": [],
+        "partCount": 0,
+        "partOfCount": 0,
+        "versionCount": 0,
+        "versionOfCount": 0,
+        "created": "2021-09-21T20:34:54.000Z",
+        "registered": "2021-09-21T20:35:06.000Z",
+        "published": "2021",
+        "updated": "2025-06-02T15:57:20.000Z"
+      },
+      "relationships": {
+        "client": {
+          "data": {
+            "id": "tdl.tacc",
+            "type": "clients"
+          }
+        },
+        "provider": {
+          "data": {
+            "id": "hakl",
+            "type": "providers"
+          }
+        },
+        "media": {
+          "data": {
+            "id": "10.17603/ds2-3p1m-dr64",
+            "type": "media"
+          }
+        },
+        "references": {
+          "data": []
+        },
+        "citations": {
+          "data": []
+        },
+        "parts": {
+          "data": []
+        },
+        "partOf": {
+          "data": []
+        },
+        "versions": {
+          "data": []
+        },
+        "versionOf": {
+          "data": []
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=Sheltering+Behavior+During+the+December+2021+Tornado+in+Mayfield%2C+Kentucky&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=Sheltering+Behavior+During+the+December+2021+Tornado+in+Mayfield%2C+Kentucky&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:56.185368+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 3180029,
+      "items": [
+        {
+          "DOI": "10.1080/17477891.2026.2759638",
+          "title": [
+            "When preservation cannot compete: heritage loss after the 2021 Mayfield, Kentucky Tornado"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2026,
+                11,
+                10
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1080/00431672.2022.2065861",
+          "title": [
+            "The 2021 Tornado Season: December Devastation"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2022,
+                6,
+                16
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1504/ijem.2025.10072068",
+          "title": [
+            "Mortality tracking during a tornado outbreak in the Southeastern USA: December 2021"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2025
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

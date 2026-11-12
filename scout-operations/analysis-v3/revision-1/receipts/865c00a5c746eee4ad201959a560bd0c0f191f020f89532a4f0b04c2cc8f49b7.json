@@ -1,0 +1,325 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.datacite.org/dois/10.5061/dryad.2z34tmpzp",
+  "final_url": "https://api.datacite.org/dois/10.5061/dryad.2z34tmpzp",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:56:27.965576+00:00",
+  "headers": {
+    "Content-Type": "application/json; charset=utf-8",
+    "ETag": "W/\"8eb740e79175fe3fe8359424cc67357c\""
+  },
+  "body": {
+    "data": {
+      "id": "10.5061/dryad.2z34tmpzp",
+      "type": "dois",
+      "attributes": {
+        "doi": "10.5061/dryad.2z34tmpzp",
+        "prefix": "10.5061",
+        "suffix": "dryad.2z34tmpzp",
+        "identifiers": [],
+        "alternateIdentifiers": [],
+        "creators": [
+          {
+            "name": "James, Eric",
+            "nameType": "Personal",
+            "affiliation": [
+              "NOAA Global Systems Laboratory"
+            ],
+            "nameIdentifiers": [
+              {
+                "schemeUri": "https://orcid.org",
+                "nameIdentifier": "https://orcid.org/0000-0002-6507-4997",
+                "nameIdentifierScheme": "ORCID"
+              }
+            ]
+          },
+          {
+            "name": "Schumacher, Russ",
+            "nameType": "Personal",
+            "affiliation": [
+              "Colorado State University"
+            ],
+            "nameIdentifiers": [
+              {
+                "schemeUri": "https://orcid.org",
+                "nameIdentifier": "https://orcid.org/0000-0002-4404-3104",
+                "nameIdentifierScheme": "ORCID"
+              }
+            ]
+          }
+        ],
+        "titles": [
+          {
+            "title": "Progress toward forecasting excessive rainfall with random forests based on a deterministic convection-allowing model"
+          }
+        ],
+        "publisher": "Dryad",
+        "container": {},
+        "publicationYear": 2025,
+        "subjects": [
+          {
+            "subject": "FOS: Earth and related environmental sciences",
+            "schemeUri": "https://web-archive.oecd.org/2012-06-15/138575-38235147.pdf",
+            "subjectScheme": "fos"
+          },
+          {
+            "subject": "Random Forests"
+          },
+          {
+            "subject": "excessive rainfall"
+          },
+          {
+            "subject": "Numerical Weather Prediction"
+          }
+        ],
+        "contributors": [
+          {
+            "name": "James, Eric",
+            "nameType": "Personal",
+            "affiliation": [
+              "NOAA Global Systems Laboratory"
+            ],
+            "contributorType": "ContactPerson",
+            "nameIdentifiers": [
+              {
+                "schemeUri": "https://orcid.org",
+                "nameIdentifier": "https://orcid.org/0000-0002-6507-4997",
+                "nameIdentifierScheme": "ORCID"
+              }
+            ]
+          }
+        ],
+        "dates": [
+          {
+            "date": "2025-08-05T17:21:29Z",
+            "dateType": "Created"
+          },
+          {
+            "date": "2025-08-05T17:23:25Z",
+            "dateType": "Submitted"
+          },
+          {
+            "date": "2025-11-25T00:00:00Z",
+            "dateType": "Issued"
+          },
+          {
+            "date": "2025-11-25T00:00:00Z",
+            "dateType": "Available"
+          }
+        ],
+        "language": "en",
+        "types": {
+          "ris": "DATA",
+          "bibtex": "misc",
+          "citeproc": "dataset",
+          "schemaOrg": "Dataset",
+          "resourceType": "dataset",
+          "resourceTypeGeneral": "Dataset"
+        },
+        "relatedIdentifiers": [
+          {
+            "relationType": "IsCitedBy",
+            "relatedIdentifier": "10.1175/aies-d-26-0005.1",
+            "relatedIdentifierType": "DOI"
+          }
+        ],
+        "relatedItems": [],
+        "sizes": [
+          "110040350 bytes"
+        ],
+        "formats": [],
+        "version": "2",
+        "rightsList": [
+          {
+            "rights": "Creative Commons Zero v1.0 Universal",
+            "rightsUri": "https://creativecommons.org/publicdomain/zero/1.0/legalcode",
+            "schemeUri": "https://spdx.org/licenses/",
+            "rightsIdentifier": "cc0-1.0",
+            "rightsIdentifierScheme": "SPDX"
+          }
+        ],
+        "descriptions": [
+          {
+            "description": "This dataset consists of forecasts produced by random forests (RFs) using\n predictor information from NOAA's deterministic convection-allowing\n numerical weather prediction model, the High-Resolution Rapid Refresh.\n Included are sensitivity experiments on predictor assembly and model\n version, as well as real-time forecasts from three subsequent versions\n evaluated at the Weather Prediction Center's Flash Flood and Intense\n Rainfall Experiment (FFaIR) during 2021-2023. Sensitivity experiments\n reveal that the RF performs better when we use predictor information from\n all model gridpoints, not just sparse gridpoints, particularly in\n situations with small-scale precipitation maxima in the model forecast.\n The RF is also better able to learn the relationships between predictor\n values and resulting excessive rainfall risk when the RF considers mean\n predictors from three model simulations rather than predictors from a\n single simulation. The real-time RFs evaluated at FFaIR exhibited\n year-over-year improvements stemming from the results of these sensitivity\n experiments as well as feedback from FFaIR participants. However, RFs\n based on deterministic convection allow models to continue to underperform\n those based on coarse global ensemble systems.",
+            "descriptionType": "Abstract"
+          },
+          {
+            "description": "# Progress toward forecasting excessive rainfall with random forests based\n on a deterministic convection-allowing model Dataset DOI:\n [10.5061/dryad.2z34tmpzp](10.5061/dryad.2z34tmpzp) ## Description of the\n data and file structure The dataset includes zip files which contain daily\n random forest (RF) excessive rainfall forecasts in GRIB2 format, as well\n as files containing daily verification data and official excessive\n rainfall outlooks from the Weather Prediction Center (WPC). This project\n aimed to test various ways to construct random forests for predicting\n excessive rainfall based on predictors derived from deterministic\n convection-allowing numerical weather prediction model forecasts. The\n forecast model used is the NOAA High-Resolution Rapid Refresh (HRRR), with\n 3-km grid spacing (see the references below for more information).\n [https://doi.org/10.1175/WAF-D-21-0151.1](https://doi.org/10.1175/WAF-D-21-0151.1) [https://doi.org/10.1175/WAF-D-21-0130.1](https://doi.org/10.1175/WAF-D-21-0130.1) Forecast zip files contain forecasts in GRIB2 format. Gridded forecasts are encoded in values between 0 and 1, indicating probabilities of excessive rainfall from 0 to 100%. GRIB2 file naming convention includes a date stamp YYYYMMDD00, which indicates the initialization time of the HRRR forecast used to provide predictors to the RF. The forecast is valid for the 24-h period from 1200 UTC to 1200 UTC. For example, a file named EXQPF_DAY1_NSSL_PROBS_V1_2024042400.grib2 uses predictors derived from the HRRR forecast initialized at 0000 UTC 24 Apr 2024, and contains a gridded forecast valid for the 24-h period from 1200 UTC 24 Apr - 1200 UTC 25 Apr 2024. The grid_stat files, which contain verification data and official WPC excessive rainfall outlooks (EROs), have a date stamp which explicitly indicates the valid time. For example, the file named grid_stat_ALL_ERO_s2024042412_e2024042512_vhr09_240000L_20240425_120000V_pairs.nc is valid for the 24-h period from 1200 UTC 24 Apr - 1200 UTC 25 Apr 2024. The files are in netCDF format. The variable named FCST_ERO_Surface contains the 0900 UTC day one WPC ERO valid for the indicated time period, again with values between 0 and 1 indicating probabilities of excessive rainfall from 0 to 100%. The variable beginning with OBS_ALL contains the verification dataset derived from the Unified Flood Verification System (UFVS), described in more detail in this reference: [https://doi.org/10.1175/WAF-D-20-0020.1](https://doi.org/10.1175/WAF-D-20-0020.1) ### Files and variables #### File: control.zip **Description:** Daily random forest (RF) forecasts from the control experiment (CTRL) #### File: mean.zip **Description:** Daily RF forecasts from the MEAN experiment (using the spatial mean of predictor values) #### File: mean_max.zip **Description:** Daily RF forecasts from the MEAN_MAX experiment (using spatial max/min of storm attribute predictors, and spatial mean of environmental predictor values) #### File: tl.zip **Description:** Daily RF forecasts from the MEAN_MAX_TL experiment, using the mean of predictor values across three HRRR simulations (0000, 0600, 1200 UTC) #### File: hrrr2021.zip **Description:** Daily RF forecasts from the 2021 version of the HRRR-based RF, evaluated at the Flash Flood and Intense Rainfall (FFaIR) Experiment during 2021. #### File: hrrr2022.zip **Description:** Daily RF forecasts from the 2022 version of the HRRR-based RF, evaluated at the 2022 FFaIR experiment. #### File: hrrr2023.zip **Description:** Daily RF forecasts from the 2023 version of the HRRR-based RF, evaluated at the 2023 FFaIR experiment. #### File: hrrr2021_mismatch.zip **Description:** Daily RF forecasts from the 2021 version of the HRRR-based RF, trained on HRRRv3 but applied to HRRRv4 forecasts during Aug - Dec 2020. #### File: grid_stat_2020.zip **Description:** Daily verification data for 2020 from the Unified Flood Verification System (UFVS), as well as day one excessive rainfall outlooks (EROs) issued at 0900 UTC by the Weather Prediction Center (WPC) #### File: grid_stat_2021.zip **Description:** Daily verification data and EROs for 2021. #### File: grid_stat_2025.zip **Description:** Daily verification data and EROs for 2025. #### File: grid_stat_2023.zip **Description:** Daily verification data and EROs for 2023. #### File: grid_stat_2022.zip **Description:** Daily verification data and EROs for 2022. #### File: grid_stat_2024.zip **Description:** Daily verification data and EROs for 2024. ## Access information Other publicly accessible locations of the data: * none Data was derived from the following sources: * HRRR data available at several sites, outlined at [https://rapidrefresh.noaa.gov/hrrr/](https://rapidrefresh.noaa.gov/hrrr/)",
+            "descriptionType": "TechnicalInfo"
+          }
+        ],
+        "geoLocations": [],
+        "fundingReferences": [
+          {
+            "funderName": "NOAA Weather Program Office",
+            "awardNumber": "NA21OAR4590187",
+            "funderIdentifier": "https://ror.org/01q70bz83",
+            "funderIdentifierType": "ROR"
+          }
+        ],
+        "xml": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHJlc291cmNlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCIgeHNpOnNjaGVtYUxvY2F0aW9uPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCBodHRwOi8vc2NoZW1hLmRhdGFjaXRlLm9yZy9tZXRhL2tlcm5lbC00L21ldGFkYXRhLnhzZCI+CiAgPGlkZW50aWZpZXIgaWRlbnRpZmllclR5cGU9IkRPSSI+MTAuNTA2MS9EUllBRC4yWjM0VE1QWlA8L2lkZW50aWZpZXI+CiAgPGNyZWF0b3JzPgogICAgPGNyZWF0b3I+CiAgICAgIDxjcmVhdG9yTmFtZSBuYW1lVHlwZT0iUGVyc29uYWwiPkphbWVzLCBFcmljPC9jcmVhdG9yTmFtZT4KICAgICAgPG5hbWVJZGVudGlmaWVyIG5hbWVJZGVudGlmaWVyU2NoZW1lPSJPUkNJRCIgc2NoZW1lVVJJPSJodHRwOi8vb3JjaWQub3JnLyI+MDAwMC0wMDAyLTY1MDctNDk5NzwvbmFtZUlkZW50aWZpZXI+CiAgICAgIDxhZmZpbGlhdGlvbiBhZmZpbGlhdGlvbklkZW50aWZpZXI9Imh0dHBzOi8vcm9yLm9yZy8wMDZkZHlwMDUiIGFmZmlsaWF0aW9uSWRlbnRpZmllclNjaGVtZT0iUk9SIiBzY2hlbWVVUkk9Imh0dHBzOi8vcm9yLm9yZyI+Tk9BQSBHbG9iYWwgU3lzdGVtcyBMYWJvcmF0b3J5PC9hZmZpbGlhdGlvbj4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5TY2h1bWFjaGVyLCBSdXNzPC9jcmVhdG9yTmFtZT4KICAgICAgPG5hbWVJZGVudGlmaWVyIG5hbWVJZGVudGlmaWVyU2NoZW1lPSJPUkNJRCIgc2NoZW1lVVJJPSJodHRwOi8vb3JjaWQub3JnLyI+MDAwMC0wMDAyLTQ0MDQtMzEwNDwvbmFtZUlkZW50aWZpZXI+CiAgICAgIDxhZmZpbGlhdGlvbiBhZmZpbGlhdGlvbklkZW50aWZpZXI9Imh0dHBzOi8vcm9yLm9yZy8wM2sxZ3BqMTciIGFmZmlsaWF0aW9uSWRlbnRpZmllclNjaGVtZT0iUk9SIiBzY2hlbWVVUkk9Imh0dHBzOi8vcm9yLm9yZyI+Q29sb3JhZG8gU3RhdGUgVW5pdmVyc2l0eTwvYWZmaWxpYXRpb24+CiAgICA8L2NyZWF0b3I+CiAgPC9jcmVhdG9ycz4KICA8dGl0bGVzPgogICAgPHRpdGxlPgogICAgICBQcm9ncmVzcyB0b3dhcmQgZm9yZWNhc3RpbmcgZXhjZXNzaXZlIHJhaW5mYWxsIHdpdGggcmFuZG9tIGZvcmVzdHMgYmFzZWQKICAgICAgb24gYSBkZXRlcm1pbmlzdGljIGNvbnZlY3Rpb24tYWxsb3dpbmcgbW9kZWwKICAgIDwvdGl0bGU+CiAgPC90aXRsZXM+CiAgPHB1Ymxpc2hlciBwdWJsaXNoZXJJZGVudGlmaWVyPSJodHRwczovL3Jvci5vcmcvMDB4Nmg1bjk1IiBwdWJsaXNoZXJJZGVudGlmaWVyU2NoZW1lPSJST1IiIHNjaGVtZVVSST0iaHR0cHM6Ly9yb3Iub3JnLyI+RHJ5YWQ8L3B1Ymxpc2hlcj4KICA8cmVzb3VyY2VUeXBlIHJlc291cmNlVHlwZUdlbmVyYWw9IkRhdGFzZXQiPmRhdGFzZXQ8L3Jlc291cmNlVHlwZT4KICA8cHVibGljYXRpb25ZZWFyPjIwMjU8L3B1YmxpY2F0aW9uWWVhcj4KICA8c3ViamVjdHM+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJmb3MiIHNjaGVtZVVSST0iaHR0cHM6Ly93ZWItYXJjaGl2ZS5vZWNkLm9yZy8yMDEyLTA2LTE1LzEzODU3NS0zODIzNTE0Ny5wZGYiPkZPUzogRWFydGggYW5kIHJlbGF0ZWQgZW52aXJvbm1lbnRhbCBzY2llbmNlczwvc3ViamVjdD4KICAgIDxzdWJqZWN0PlJhbmRvbSBGb3Jlc3RzPC9zdWJqZWN0PgogICAgPHN1YmplY3Q+ZXhjZXNzaXZlIHJhaW5mYWxsPC9zdWJqZWN0PgogICAgPHN1YmplY3Q+TnVtZXJpY2FsIFdlYXRoZXIgUHJlZGljdGlvbjwvc3ViamVjdD4KICA8L3N1YmplY3RzPgogIDxmdW5kaW5nUmVmZXJlbmNlcz4KICAgIDxmdW5kaW5nUmVmZXJlbmNlPgogICAgICA8ZnVuZGVyTmFtZT5OT0FBIFdlYXRoZXIgUHJvZ3JhbSBPZmZpY2U8L2Z1bmRlck5hbWU+CiAgICAgIDxmdW5kZXJJZGVudGlmaWVyIGZ1bmRlcklkZW50aWZpZXJUeXBlPSJST1IiPmh0dHBzOi8vcm9yLm9yZy8wMXE3MGJ6ODM8L2Z1bmRlcklkZW50aWZpZXI+CiAgICAgIDxhd2FyZE51bWJlcj5OQTIxT0FSNDU5MDE4NzwvYXdhcmROdW1iZXI+CiAgICAgIDxhd2FyZFRpdGxlLz4KICAgIDwvZnVuZGluZ1JlZmVyZW5jZT4KICA8L2Z1bmRpbmdSZWZlcmVuY2VzPgogIDxjb250cmlidXRvcnM+CiAgICA8Y29udHJpYnV0b3IgY29udHJpYnV0b3JUeXBlPSJDb250YWN0UGVyc29uIj4KICAgICAgPGNvbnRyaWJ1dG9yTmFtZSBuYW1lVHlwZT0iUGVyc29uYWwiPkphbWVzLCBFcmljPC9jb250cmlidXRvck5hbWU+CiAgICAgIDxuYW1lSWRlbnRpZmllciBuYW1lSWRlbnRpZmllclNjaGVtZT0iT1JDSUQiIHNjaGVtZVVSST0iaHR0cDovL29yY2lkLm9yZy8iPjAwMDAtMDAwMi02NTA3LTQ5OTc8L25hbWVJZGVudGlmaWVyPgogICAgICA8YWZmaWxpYXRpb24gYWZmaWxpYXRpb25JZGVudGlmaWVyPSJodHRwczovL3Jvci5vcmcvMDA2ZGR5cDA1IiBhZmZpbGlhdGlvbklkZW50aWZpZXJTY2hlbWU9IlJPUiIgc2NoZW1lVVJJPSJodHRwczovL3Jvci5vcmciPk5PQUEgR2xvYmFsIFN5c3RlbXMgTGFib3JhdG9yeTwvYWZmaWxpYXRpb24+CiAgICA8L2NvbnRyaWJ1dG9yPgogIDwvY29udHJpYnV0b3JzPgogIDxkYXRlcz4KICAgIDxkYXRlIGRhdGVUeXBlPSJDcmVhdGVkIj4yMDI1LTA4LTA1VDE3OjIxOjI5WjwvZGF0ZT4KICAgIDxkYXRlIGRhdGVUeXBlPSJTdWJtaXR0ZWQiPjIwMjUtMDgtMDVUMTc6MjM6MjVaPC9kYXRlPgogICAgPGRhdGUgZGF0ZVR5cGU9Iklzc3VlZCI+MjAyNS0xMS0yNVQwMDowMDowMFo8L2RhdGU+CiAgICA8ZGF0ZSBkYXRlVHlwZT0iQXZhaWxhYmxlIj4yMDI1LTExLTI1VDAwOjAwOjAwWjwvZGF0ZT4KICA8L2RhdGVzPgogIDxsYW5ndWFnZT5lbjwvbGFuZ3VhZ2U+CiAgPHJlbGF0ZWRJZGVudGlmaWVycz4KICAgIDxyZWxhdGVkSWRlbnRpZmllciByZWxhdGlvblR5cGU9IklzQ2l0ZWRCeSIgcmVsYXRlZElkZW50aWZpZXJUeXBlPSJET0kiPmh0dHBzOi8vZG9pLm9yZy8xMC4xMTc1L2FpZXMtZC0yNi0wMDA1LjE8L3JlbGF0ZWRJZGVudGlmaWVyPgogIDwvcmVsYXRlZElkZW50aWZpZXJzPgogIDxzaXplcz4KICAgIDxzaXplPjExMDA0MDM1MCBieXRlczwvc2l6ZT4KICA8L3NpemVzPgogIDx2ZXJzaW9uPjI8L3ZlcnNpb24+CiAgPHJpZ2h0c0xpc3Q+CiAgICA8cmlnaHRzIHJpZ2h0c1VSST0iaHR0cHM6Ly9zcGR4Lm9yZy9saWNlbnNlcy9DQzAtMS4wLmh0bWwiPkNyZWF0aXZlIENvbW1vbnMgWmVybyB2MS4wIFVuaXZlcnNhbDwvcmlnaHRzPgogIDwvcmlnaHRzTGlzdD4KICA8ZGVzY3JpcHRpb25zPgogICAgPGRlc2NyaXB0aW9uIGRlc2NyaXB0aW9uVHlwZT0iQWJzdHJhY3QiPgogICAgICBUaGlzIGRhdGFzZXQgY29uc2lzdHMgb2YgZm9yZWNhc3RzIHByb2R1Y2VkIGJ5IHJhbmRvbSBmb3Jlc3RzIChSRnMpIHVzaW5nCiAgICAgIHByZWRpY3RvciBpbmZvcm1hdGlvbiBmcm9tIE5PQUEncyBkZXRlcm1pbmlzdGljIGNvbnZlY3Rpb24tYWxsb3dpbmcKICAgICAgbnVtZXJpY2FsIHdlYXRoZXIgcHJlZGljdGlvbiBtb2RlbCwgdGhlIEhpZ2gtUmVzb2x1dGlvbiBSYXBpZCBSZWZyZXNoLgogICAgICBJbmNsdWRlZCBhcmUgc2Vuc2l0aXZpdHkgZXhwZXJpbWVudHMgb24gcHJlZGljdG9yIGFzc2VtYmx5IGFuZCBtb2RlbAogICAgICB2ZXJzaW9uLCBhcyB3ZWxsIGFzIHJlYWwtdGltZSBmb3JlY2FzdHMgZnJvbSB0aHJlZSBzdWJzZXF1ZW50IHZlcnNpb25zCiAgICAgIGV2YWx1YXRlZCBhdCB0aGUgV2VhdGhlciBQcmVkaWN0aW9uIENlbnRlcidzIEZsYXNoIEZsb29kIGFuZCBJbnRlbnNlCiAgICAgIFJhaW5mYWxsIEV4cGVyaW1lbnQgKEZGYUlSKSBkdXJpbmcgMjAyMS0yMDIzLiBTZW5zaXRpdml0eSBleHBlcmltZW50cwogICAgICByZXZlYWwgdGhhdCB0aGUgUkYgcGVyZm9ybXMgYmV0dGVyIHdoZW4gd2UgdXNlIHByZWRpY3RvciBpbmZvcm1hdGlvbiBmcm9tCiAgICAgIGFsbCBtb2RlbCBncmlkcG9pbnRzLCBub3QganVzdCBzcGFyc2UgZ3JpZHBvaW50cywgcGFydGljdWxhcmx5IGluCiAgICAgIHNpdHVhdGlvbnMgd2l0aCBzbWFsbC1zY2FsZSBwcmVjaXBpdGF0aW9uIG1heGltYSBpbiB0aGUgbW9kZWwgZm9yZWNhc3QuCiAgICAgIFRoZSBSRiBpcyBhbHNvIGJldHRlciBhYmxlIHRvIGxlYXJuIHRoZSByZWxhdGlvbnNoaXBzIGJldHdlZW4gcHJlZGljdG9yCiAgICAgIHZhbHVlcyBhbmQgcmVzdWx0aW5nIGV4Y2Vzc2l2ZSByYWluZmFsbCByaXNrIHdoZW4gdGhlIFJGIGNvbnNpZGVycyBtZWFuCiAgICAgIHByZWRpY3RvcnMgZnJvbSB0aHJlZSBtb2RlbCBzaW11bGF0aW9ucyByYXRoZXIgdGhhbiBwcmVkaWN0b3JzIGZyb20gYQogICAgICBzaW5nbGUgc2ltdWxhdGlvbi4gVGhlIHJlYWwtdGltZSBSRnMgZXZhbHVhdGVkIGF0IEZGYUlSIGV4aGliaXRlZAogICAgICB5ZWFyLW92ZXIteWVhciBpbXByb3ZlbWVudHMgc3RlbW1pbmcgZnJvbSB0aGUgcmVzdWx0cyBvZiB0aGVzZSBzZW5zaXRpdml0eQogICAgICBleHBlcmltZW50cyBhcyB3ZWxsIGFzIGZlZWRiYWNrIGZyb20gRkZhSVIgcGFydGljaXBhbnRzLiBIb3dldmVyLCBSRnMKICAgICAgYmFzZWQgb24gZGV0ZXJtaW5pc3RpYyBjb252ZWN0aW9uIGFsbG93IG1vZGVscyB0byBjb250aW51ZSB0byB1bmRlcnBlcmZvcm0KICAgICAgdGhvc2UgYmFzZWQgb24gY29hcnNlIGdsb2JhbCBlbnNlbWJsZSBzeXN0ZW1zLgogICAgPC9kZXNjcmlwdGlvbj4KICAgIDxkZXNjcmlwdGlvbiBkZXNjcmlwdGlvblR5cGU9IlRlY2huaWNhbEluZm8iPgogICAgICAjIFByb2dyZXNzIHRvd2FyZCBmb3JlY2FzdGluZyBleGNlc3NpdmUgcmFpbmZhbGwgd2l0aCByYW5kb20gZm9yZXN0cyBiYXNlZAogICAgICBvbiBhIGRldGVybWluaXN0aWMgY29udmVjdGlvbi1hbGxvd2luZyBtb2RlbCBEYXRhc2V0IERPSToKICAgICAgWzEwLjUwNjEvZHJ5YWQuMnozNHRtcHpwXSgxMC41MDYxL2RyeWFkLjJ6MzR0bXB6cCkgIyMgRGVzY3JpcHRpb24gb2YgdGhlCiAgICAgIGRhdGEgYW5kIGZpbGUgc3RydWN0dXJlIFRoZSBkYXRhc2V0IGluY2x1ZGVzIHppcCBmaWxlcyB3aGljaCBjb250YWluIGRhaWx5CiAgICAgIHJhbmRvbSBmb3Jlc3QgKFJGKSBleGNlc3NpdmUgcmFpbmZhbGwgZm9yZWNhc3RzIGluIEdSSUIyIGZvcm1hdCwgYXMgd2VsbAogICAgICBhcyBmaWxlcyBjb250YWluaW5nIGRhaWx5IHZlcmlmaWNhdGlvbiBkYXRhIGFuZCBvZmZpY2lhbCBleGNlc3NpdmUKICAgICAgcmFpbmZhbGwgb3V0bG9va3MgZnJvbSB0aGUgV2VhdGhlciBQcmVkaWN0aW9uIENlbnRlciAoV1BDKS4gVGhpcyBwcm9qZWN0CiAgICAgIGFpbWVkIHRvIHRlc3QgdmFyaW91cyB3YXlzIHRvIGNvbnN0cnVjdCByYW5kb20gZm9yZXN0cyBmb3IgcHJlZGljdGluZwogICAgICBleGNlc3NpdmUgcmFpbmZhbGwgYmFzZWQgb24gcHJlZGljdG9ycyBkZXJpdmVkIGZyb20gZGV0ZXJtaW5pc3RpYwogICAgICBjb252ZWN0aW9uLWFsbG93aW5nIG51bWVyaWNhbCB3ZWF0aGVyIHByZWRpY3Rpb24gbW9kZWwgZm9yZWNhc3RzLiBUaGUKICAgICAgZm9yZWNhc3QgbW9kZWwgdXNlZCBpcyB0aGUgTk9BQSBIaWdoLVJlc29sdXRpb24gUmFwaWQgUmVmcmVzaCAoSFJSUiksIHdpdGgKICAgICAgMy1rbSBncmlkIHNwYWNpbmcgKHNlZSB0aGUgcmVmZXJlbmNlcyBiZWxvdyBmb3IgbW9yZSBpbmZvcm1hdGlvbikuCiAgICAgIFtodHRwczovL2RvaS5vcmcvMTAuMTE3NS9XQUYtRC0yMS0wMTUxLjFdKGh0dHBzOi8vZG9pLm9yZy8xMC4xMTc1L1dBRi1ELTIxLTAxNTEuMSkgW2h0dHBzOi8vZG9pLm9yZy8xMC4xMTc1L1dBRi1ELTIxLTAxMzAuMV0oaHR0cHM6Ly9kb2kub3JnLzEwLjExNzUvV0FGLUQtMjEtMDEzMC4xKSBGb3JlY2FzdCB6aXAgZmlsZXMgY29udGFpbiBmb3JlY2FzdHMgaW4gR1JJQjIgZm9ybWF0LiBHcmlkZGVkIGZvcmVjYXN0cyBhcmUgZW5jb2RlZCBpbiB2YWx1ZXMgYmV0d2VlbiAwIGFuZCAxLCBpbmRpY2F0aW5nIHByb2JhYmlsaXRpZXMgb2YgZXhjZXNzaXZlIHJhaW5mYWxsIGZyb20gMCB0byAxMDAlLiBHUklCMiBmaWxlIG5hbWluZyBjb252ZW50aW9uIGluY2x1ZGVzIGEgZGF0ZSBzdGFtcCBZWVlZTU1ERDAwLCB3aGljaCBpbmRpY2F0ZXMgdGhlIGluaXRpYWxpemF0aW9uIHRpbWUgb2YgdGhlIEhSUlIgZm9yZWNhc3QgdXNlZCB0byBwcm92aWRlIHByZWRpY3RvcnMgdG8gdGhlIFJGLiBUaGUgZm9yZWNhc3QgaXMgdmFsaWQgZm9yIHRoZSAyNC1oIHBlcmlvZCBmcm9tIDEyMDAgVVRDIHRvIDEyMDAgVVRDLiBGb3IgZXhhbXBsZSwgYSBmaWxlIG5hbWVkIEVYUVBGX0RBWTFfTlNTTF9QUk9CU19WMV8yMDI0MDQyNDAwLmdyaWIyIHVzZXMgcHJlZGljdG9ycyBkZXJpdmVkIGZyb20gdGhlIEhSUlIgZm9yZWNhc3QgaW5pdGlhbGl6ZWQgYXQgMDAwMCBVVEMgMjQgQXByIDIwMjQsIGFuZCBjb250YWlucyBhIGdyaWRkZWQgZm9yZWNhc3QgdmFsaWQgZm9yIHRoZSAyNC1oIHBlcmlvZCBmcm9tIDEyMDAgVVRDIDI0IEFwciAtIDEyMDAgVVRDIDI1IEFwciAyMDI0LiBUaGUgZ3JpZF9zdGF0IGZpbGVzLCB3aGljaCBjb250YWluIHZlcmlmaWNhdGlvbiBkYXRhIGFuZCBvZmZpY2lhbCBXUEMgZXhjZXNzaXZlIHJhaW5mYWxsIG91dGxvb2tzIChFUk9zKSwgaGF2ZSBhIGRhdGUgc3RhbXAgd2hpY2ggZXhwbGljaXRseSBpbmRpY2F0ZXMgdGhlIHZhbGlkIHRpbWUuIEZvciBleGFtcGxlLCB0aGUgZmlsZSBuYW1lZMKgZ3JpZF9zdGF0X0FMTF9FUk9fczIwMjQwNDI0MTJfZTIwMjQwNDI1MTJfdmhyMDlfMjQwMDAwTF8yMDI0MDQyNV8xMjAwMDBWX3BhaXJzLm5jIGlzIHZhbGlkIGZvciB0aGUgMjQtaCBwZXJpb2QgZnJvbSAxMjAwIFVUQyAyNCBBcHIgLSAxMjAwIFVUQyAyNSBBcHIgMjAyNC4gVGhlIGZpbGVzIGFyZSBpbiBuZXRDREYgZm9ybWF0LiBUaGUgdmFyaWFibGUgbmFtZWQgRkNTVF9FUk9fU3VyZmFjZSBjb250YWlucyB0aGUgMDkwMCBVVEMgZGF5IG9uZSBXUEMgRVJPIHZhbGlkIGZvciB0aGUgaW5kaWNhdGVkIHRpbWUgcGVyaW9kLCBhZ2FpbiB3aXRoIHZhbHVlcyBiZXR3ZWVuIDAgYW5kIDEgaW5kaWNhdGluZyBwcm9iYWJpbGl0aWVzIG9mIGV4Y2Vzc2l2ZSByYWluZmFsbCBmcm9tIDAgdG8gMTAwJS4gVGhlIHZhcmlhYmxlIGJlZ2lubmluZyB3aXRoIE9CU19BTEwgY29udGFpbnMgdGhlIHZlcmlmaWNhdGlvbiBkYXRhc2V0IGRlcml2ZWQgZnJvbSB0aGUgVW5pZmllZCBGbG9vZCBWZXJpZmljYXRpb24gU3lzdGVtIChVRlZTKSwgZGVzY3JpYmVkIGluIG1vcmUgZGV0YWlsIGluIHRoaXMgcmVmZXJlbmNlOiBbaHR0cHM6Ly9kb2kub3JnLzEwLjExNzUvV0FGLUQtMjAtMDAyMC4xXShodHRwczovL2RvaS5vcmcvMTAuMTE3NS9XQUYtRC0yMC0wMDIwLjEpICMjIyBGaWxlcyBhbmQgdmFyaWFibGVzICMjIyMgRmlsZTogY29udHJvbC56aXAgKipEZXNjcmlwdGlvbjoqKsKgRGFpbHkgcmFuZG9tIGZvcmVzdCAoUkYpIGZvcmVjYXN0cyBmcm9tIHRoZSBjb250cm9sIGV4cGVyaW1lbnQgKENUUkwpICMjIyMgRmlsZTogbWVhbi56aXAgKipEZXNjcmlwdGlvbjoqKsKgRGFpbHkgUkYgZm9yZWNhc3RzIGZyb20gdGhlIE1FQU4gZXhwZXJpbWVudCAodXNpbmcgdGhlIHNwYXRpYWwgbWVhbiBvZiBwcmVkaWN0b3IgdmFsdWVzKSAjIyMjIEZpbGU6IG1lYW5fbWF4LnppcCAqKkRlc2NyaXB0aW9uOioqwqBEYWlseSBSRiBmb3JlY2FzdHMgZnJvbSB0aGUgTUVBTl9NQVggZXhwZXJpbWVudCAodXNpbmcgc3BhdGlhbCBtYXgvbWluIG9mIHN0b3JtIGF0dHJpYnV0ZSBwcmVkaWN0b3JzLCBhbmQgc3BhdGlhbCBtZWFuIG9mIGVudmlyb25tZW50YWwgcHJlZGljdG9yIHZhbHVlcykgIyMjIyBGaWxlOiB0bC56aXAgKipEZXNjcmlwdGlvbjoqKsKgRGFpbHkgUkYgZm9yZWNhc3RzIGZyb20gdGhlIE1FQU5fTUFYX1RMIGV4cGVyaW1lbnQsIHVzaW5nIHRoZSBtZWFuIG9mIHByZWRpY3RvciB2YWx1ZXMgYWNyb3NzIHRocmVlIEhSUlIgc2ltdWxhdGlvbnMgKDAwMDAsIDA2MDAsIDEyMDAgVVRDKSAjIyMjIEZpbGU6IGhycnIyMDIxLnppcCAqKkRlc2NyaXB0aW9uOioqwqBEYWlseSBSRiBmb3JlY2FzdHMgZnJvbSB0aGUgMjAyMSB2ZXJzaW9uIG9mIHRoZSBIUlJSLWJhc2VkIFJGLCBldmFsdWF0ZWQgYXQgdGhlIEZsYXNoIEZsb29kIGFuZCBJbnRlbnNlIFJhaW5mYWxsIChGRmFJUikgRXhwZXJpbWVudCBkdXJpbmcgMjAyMS4gIyMjIyBGaWxlOiBocnJyMjAyMi56aXAgKipEZXNjcmlwdGlvbjoqKsKgRGFpbHkgUkYgZm9yZWNhc3RzIGZyb20gdGhlIDIwMjIgdmVyc2lvbiBvZiB0aGUgSFJSUi1iYXNlZCBSRiwgZXZhbHVhdGVkIGF0IHRoZSAyMDIyIEZGYUlSIGV4cGVyaW1lbnQuICMjIyMgRmlsZTogaHJycjIwMjMuemlwICoqRGVzY3JpcHRpb246KirCoERhaWx5IFJGIGZvcmVjYXN0cyBmcm9tIHRoZSAyMDIzIHZlcnNpb24gb2YgdGhlIEhSUlItYmFzZWQgUkYsIGV2YWx1YXRlZCBhdCB0aGUgMjAyMyBGRmFJUiBleHBlcmltZW50LiAjIyMjIEZpbGU6IGhycnIyMDIxX21pc21hdGNoLnppcCAqKkRlc2NyaXB0aW9uOioqwqBEYWlseSBSRiBmb3JlY2FzdHMgZnJvbSB0aGUgMjAyMSB2ZXJzaW9uIG9mIHRoZSBIUlJSLWJhc2VkIFJGLCB0cmFpbmVkIG9uIEhSUlJ2MyBidXQgYXBwbGllZCB0byBIUlJSdjQgZm9yZWNhc3RzIGR1cmluZyBBdWcgLSBEZWMgMjAyMC4gIyMjIyBGaWxlOiBncmlkX3N0YXRfMjAyMC56aXAgKipEZXNjcmlwdGlvbjoqKsKgRGFpbHkgdmVyaWZpY2F0aW9uIGRhdGEgZm9yIDIwMjAgZnJvbSB0aGUgVW5pZmllZCBGbG9vZCBWZXJpZmljYXRpb24gU3lzdGVtIChVRlZTKSwgYXMgd2VsbCBhcyBkYXkgb25lIGV4Y2Vzc2l2ZSByYWluZmFsbCBvdXRsb29rcyAoRVJPcykgaXNzdWVkIGF0IDA5MDAgVVRDIGJ5IHRoZSBXZWF0aGVyIFByZWRpY3Rpb24gQ2VudGVyIChXUEMpICMjIyMgRmlsZTogZ3JpZF9zdGF0XzIwMjEuemlwICoqRGVzY3JpcHRpb246KirCoERhaWx5IHZlcmlmaWNhdGlvbiBkYXRhIGFuZCBFUk9zIGZvciAyMDIxLiAjIyMjIEZpbGU6IGdyaWRfc3RhdF8yMDI1LnppcCAqKkRlc2NyaXB0aW9uOioqwqBEYWlseSB2ZXJpZmljYXRpb24gZGF0YSBhbmQgRVJPcyBmb3IgMjAyNS4gIyMjIyBGaWxlOiBncmlkX3N0YXRfMjAyMy56aXAgKipEZXNjcmlwdGlvbjoqKsKgRGFpbHkgdmVyaWZpY2F0aW9uIGRhdGEgYW5kIEVST3MgZm9yIDIwMjMuICMjIyMgRmlsZTogZ3JpZF9zdGF0XzIwMjIuemlwICoqRGVzY3JpcHRpb246KirCoERhaWx5IHZlcmlmaWNhdGlvbiBkYXRhIGFuZCBFUk9zIGZvciAyMDIyLiAjIyMjIEZpbGU6IGdyaWRfc3RhdF8yMDI0LnppcCAqKkRlc2NyaXB0aW9uOioqwqBEYWlseSB2ZXJpZmljYXRpb24gZGF0YSBhbmQgRVJPcyBmb3IgMjAyNC4gIyMgQWNjZXNzIGluZm9ybWF0aW9uIE90aGVyIHB1YmxpY2x5IGFjY2Vzc2libGUgbG9jYXRpb25zIG9mIHRoZSBkYXRhOiAqIG5vbmUgRGF0YSB3YXMgZGVyaXZlZCBmcm9tIHRoZSBmb2xsb3dpbmcgc291cmNlczogKiBIUlJSIGRhdGEgYXZhaWxhYmxlIGF0IHNldmVyYWwgc2l0ZXMsIG91dGxpbmVkIGF0wqBbaHR0cHM6Ly9yYXBpZHJlZnJlc2gubm9hYS5nb3YvaHJyci9dKGh0dHBzOi8vcmFwaWRyZWZyZXNoLm5vYWEuZ292L2hycnIvKQogICAgPC9kZXNjcmlwdGlvbj4KICA8L2Rlc2NyaXB0aW9ucz4KPC9yZXNvdXJjZT4=",
+        "url": "https://datadryad.org/dataset/doi:10.5061/dryad.2z34tmpzp",
+        "contentUrl": null,
+        "metadataVersion": 1,
+        "schemaVersion": "http://datacite.org/schema/kernel-4",
+        "source": "mds",
+        "isActive": true,
+        "state": "findable",
+        "reason": null,
+        "viewCount": 56,
+        "viewsOverTime": [
+          {
+            "yearMonth": "2025-09",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-11",
+            "total": 13
+          },
+          {
+            "yearMonth": "2026-01",
+            "total": 6
+          },
+          {
+            "yearMonth": "2026-02",
+            "total": 3
+          },
+          {
+            "yearMonth": "2026-04",
+            "total": 1
+          },
+          {
+            "yearMonth": "2026-05",
+            "total": 5
+          },
+          {
+            "yearMonth": "2026-06",
+            "total": 6
+          },
+          {
+            "yearMonth": "2026-07",
+            "total": 2
+          },
+          {
+            "yearMonth": "2026-08",
+            "total": 4
+          },
+          {
+            "yearMonth": "2026-09",
+            "total": 2
+          },
+          {
+            "yearMonth": "2026-10",
+            "total": 14
+          }
+        ],
+        "downloadCount": 5,
+        "downloadsOverTime": [
+          {
+            "yearMonth": "2025-09",
+            "total": 1
+          },
+          {
+            "yearMonth": "2025-11",
+            "total": 1
+          },
+          {
+            "yearMonth": "2026-01",
+            "total": 1
+          },
+          {
+            "yearMonth": "2026-02",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-04",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-05",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-06",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-07",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-08",
+            "total": 1
+          },
+          {
+            "yearMonth": "2026-09",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-10",
+            "total": 1
+          }
+        ],
+        "referenceCount": 0,
+        "citationCount": 1,
+        "citationsOverTime": [
+          {
+            "year": "2026",
+            "total": 1
+          }
+        ],
+        "partCount": 0,
+        "partOfCount": 0,
+        "versionCount": 0,
+        "versionOfCount": 0,
+        "created": "2025-11-25T14:42:54.000Z",
+        "registered": "2025-11-25T14:42:55.000Z",
+        "published": "2025",
+        "updated": "2026-11-11T01:10:34.000Z"
+      },
+      "relationships": {
+        "client": {
+          "data": {
+            "id": "dryad.dryad",
+            "type": "clients"
+          }
+        },
+        "provider": {
+          "data": {
+            "id": "dryad",
+            "type": "providers"
+          }
+        },
+        "media": {
+          "data": {
+            "id": "10.5061/dryad.2z34tmpzp",
+            "type": "media"
+          }
+        },
+        "references": {
+          "data": []
+        },
+        "citations": {
+          "data": [
+            {
+              "id": "10.1175/aies-d-26-0005.1",
+              "type": "dois"
+            }
+          ]
+        },
+        "parts": {
+          "data": []
+        },
+        "partOf": {
+          "data": []
+        },
+        "versions": {
+          "data": []
+        },
+        "versionOf": {
+          "data": []
+        }
+      }
+    }
+  }
+}

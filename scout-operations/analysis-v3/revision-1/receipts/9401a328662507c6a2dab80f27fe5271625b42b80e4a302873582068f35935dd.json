@@ -1,0 +1,552 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.datacite.org/dois/10.17603/ds2-c5db-q090",
+  "final_url": "https://api.datacite.org/dois/10.17603/ds2-c5db-q090",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:56:33.674090+00:00",
+  "headers": {
+    "Content-Type": "application/json; charset=utf-8",
+    "ETag": "W/\"432bf551314b7c73ee517d23870bb44f\""
+  },
+  "body": {
+    "data": {
+      "id": "10.17603/ds2-c5db-q090",
+      "type": "dois",
+      "attributes": {
+        "doi": "10.17603/ds2-c5db-q090",
+        "prefix": "10.17603",
+        "suffix": "ds2-c5db-q090",
+        "identifiers": [
+          {
+            "identifier": "PRJ-3324",
+            "identifierType": "Project ID"
+          }
+        ],
+        "alternateIdentifiers": [
+          {
+            "alternateIdentifierType": "Project ID",
+            "alternateIdentifier": "PRJ-3324"
+          }
+        ],
+        "creators": [
+          {
+            "name": "Watkins, Lance",
+            "givenName": "Lance",
+            "familyName": "Watkins",
+            "affiliation": [],
+            "nameIdentifiers": []
+          },
+          {
+            "name": "Wright, Mary",
+            "givenName": "Mary",
+            "familyName": "Wright",
+            "affiliation": [],
+            "nameIdentifiers": []
+          }
+        ],
+        "titles": [
+          {
+            "title": "iButton Instrument"
+          },
+          {
+            "title": "in Personal Heat Exposure",
+            "titleType": "Subtitle"
+          }
+        ],
+        "publisher": "Designsafe-CI",
+        "container": {},
+        "publicationYear": 2021,
+        "subjects": [
+          {
+            "subject": "3HEAT; Personal Heat Exposure"
+          }
+        ],
+        "contributors": [
+          {
+            "name": "Arizona State University (ASU)",
+            "nameType": "Organizational",
+            "contributorType": "HostingInstitution",
+            "affiliation": [],
+            "nameIdentifiers": []
+          }
+        ],
+        "dates": [],
+        "language": "en",
+        "types": {
+          "ris": "RPRT",
+          "bibtex": "techreport",
+          "citeproc": "report",
+          "schemaOrg": "Report",
+          "resourceType": "Report",
+          "resourceTypeGeneral": "Dataset"
+        },
+        "relatedIdentifiers": [],
+        "relatedItems": [],
+        "sizes": [],
+        "formats": [],
+        "version": "1",
+        "rightsList": [],
+        "descriptions": [
+          {
+            "lang": "en-Us",
+            "description": "This project was a component of the larger NSF funded Three City Heat and Electrical Failure AdapTation (3HEAT) Study, which aimed to assess the health impact of a simultaneous city-wide power outage and heatwave in the cities of Phoenix, Arizona; Detroit, Michigan; and Atlanta, Georgia. This subset of the larger 3HEAT project aimed to measure the personal heat exposure of Phoenix residents. Additionally we related residents' personal heat exposure profiles to their daily activities, cooling methods, and thermal comfort.  The data from this project could be reused to better understand the relationship between heat exposure, thermal comfort, and daily activity at an individual scale. This data could also be used in combination with similar datasets to explore these relationships across different cities or to compare different methods of assessing personal heat exposure.",
+            "descriptionType": "Abstract"
+          },
+          {
+            "lang": "en-Us",
+            "description": "The file in this collection contains  information about the iButton Temperature and Humidity Sensors that were used to collect data on personal heat exposure. The file contains information regarding the model of the iButton, sampling rate,  placement criteria for the sensor, the column headers and associated units of the iButton data. Additionally, the file details the time frame and spatial extent for which the data were collected.",
+            "descriptionType": "Abstract"
+          }
+        ],
+        "geoLocations": [],
+        "fundingReferences": [
+          {
+            "awardTitle": "National Science Foundation SEES-Hazard",
+            "funderName": "N/A",
+            "awardNumber": "NSF SES-1520803"
+          }
+        ],
+        "xml": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHJlc291cmNlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCIgeHNpOnNjaGVtYUxvY2F0aW9uPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCBodHRwOi8vc2NoZW1hLmRhdGFjaXRlLm9yZy9tZXRhL2tlcm5lbC00L21ldGFkYXRhLnhzZCI+CiAgPGlkZW50aWZpZXIgaWRlbnRpZmllclR5cGU9IkRPSSI+MTAuMTc2MDMvRFMyLUM1REItUTA5MDwvaWRlbnRpZmllcj4KICA8Y3JlYXRvcnM+CiAgICA8Y3JlYXRvcj4KICAgICAgPGNyZWF0b3JOYW1lPldhdGtpbnMsIExhbmNlPC9jcmVhdG9yTmFtZT4KICAgICAgPGdpdmVuTmFtZT5MYW5jZTwvZ2l2ZW5OYW1lPgogICAgICA8ZmFtaWx5TmFtZT5XYXRraW5zPC9mYW1pbHlOYW1lPgogICAgPC9jcmVhdG9yPgogICAgPGNyZWF0b3I+CiAgICAgIDxjcmVhdG9yTmFtZT5XcmlnaHQsIE1hcnk8L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPk1hcnk8L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWU+V3JpZ2h0PC9mYW1pbHlOYW1lPgogICAgPC9jcmVhdG9yPgogIDwvY3JlYXRvcnM+CiAgPHRpdGxlcz4KICAgIDx0aXRsZT5pQnV0dG9uIEluc3RydW1lbnQ8L3RpdGxlPgogICAgPHRpdGxlIHRpdGxlVHlwZT0iU3VidGl0bGUiPmluIFBlcnNvbmFsIEhlYXQgRXhwb3N1cmU8L3RpdGxlPgogIDwvdGl0bGVzPgogIDxwdWJsaXNoZXI+RGVzaWduc2FmZS1DSTwvcHVibGlzaGVyPgogIDxwdWJsaWNhdGlvblllYXI+MjAyMTwvcHVibGljYXRpb25ZZWFyPgogIDxyZXNvdXJjZVR5cGUgcmVzb3VyY2VUeXBlR2VuZXJhbD0iRGF0YXNldCI+UmVwb3J0PC9yZXNvdXJjZVR5cGU+CiAgPHN1YmplY3RzPgogICAgPHN1YmplY3Q+M0hFQVQ7IFBlcnNvbmFsIEhlYXQgRXhwb3N1cmU8L3N1YmplY3Q+CiAgPC9zdWJqZWN0cz4KICA8Y29udHJpYnV0b3JzPgogICAgPGNvbnRyaWJ1dG9yIGNvbnRyaWJ1dG9yVHlwZT0iSG9zdGluZ0luc3RpdHV0aW9uIj4KICAgICAgPGNvbnRyaWJ1dG9yTmFtZSBuYW1lVHlwZT0iT3JnYW5pemF0aW9uYWwiPkFyaXpvbmEgU3RhdGUgVW5pdmVyc2l0eSAoQVNVKTwvY29udHJpYnV0b3JOYW1lPgogICAgPC9jb250cmlidXRvcj4KICA8L2NvbnRyaWJ1dG9ycz4KICA8bGFuZ3VhZ2U+RW5nbGlzaDwvbGFuZ3VhZ2U+CiAgPGFsdGVybmF0ZUlkZW50aWZpZXJzPgogICAgPGFsdGVybmF0ZUlkZW50aWZpZXIgYWx0ZXJuYXRlSWRlbnRpZmllclR5cGU9IlByb2plY3QgSUQiPlBSSi0zMzI0PC9hbHRlcm5hdGVJZGVudGlmaWVyPgogIDwvYWx0ZXJuYXRlSWRlbnRpZmllcnM+CiAgPHNpemVzLz4KICA8Zm9ybWF0cy8+CiAgPHZlcnNpb24+MTwvdmVyc2lvbj4KICA8ZGVzY3JpcHRpb25zPgogICAgPGRlc2NyaXB0aW9uIHhtbDpsYW5nPSJlbi1VcyIgZGVzY3JpcHRpb25UeXBlPSJBYnN0cmFjdCI+VGhpcyBwcm9qZWN0IHdhcyBhIGNvbXBvbmVudCBvZiB0aGUgbGFyZ2VyIE5TRiBmdW5kZWQgVGhyZWUgQ2l0eSBIZWF0IGFuZCBFbGVjdHJpY2FsIEZhaWx1cmUgQWRhcFRhdGlvbiAoM0hFQVQpIFN0dWR5LCB3aGljaCBhaW1lZCB0byBhc3Nlc3MgdGhlIGhlYWx0aCBpbXBhY3Qgb2YgYSBzaW11bHRhbmVvdXMgY2l0eS13aWRlIHBvd2VyIG91dGFnZSBhbmQgaGVhdHdhdmUgaW4gdGhlIGNpdGllcyBvZiBQaG9lbml4LCBBcml6b25hOyBEZXRyb2l0LCBNaWNoaWdhbjsgYW5kIEF0bGFudGEsIEdlb3JnaWEuIFRoaXMgc3Vic2V0IG9mIHRoZSBsYXJnZXIgM0hFQVQgcHJvamVjdCBhaW1lZCB0byBtZWFzdXJlIHRoZSBwZXJzb25hbCBoZWF0IGV4cG9zdXJlIG9mIFBob2VuaXggcmVzaWRlbnRzLiBBZGRpdGlvbmFsbHkgd2UgcmVsYXRlZCByZXNpZGVudHMnIHBlcnNvbmFsIGhlYXQgZXhwb3N1cmUgcHJvZmlsZXMgdG8gdGhlaXIgZGFpbHkgYWN0aXZpdGllcywgY29vbGluZyBtZXRob2RzLCBhbmQgdGhlcm1hbCBjb21mb3J0LiAgVGhlIGRhdGEgZnJvbSB0aGlzIHByb2plY3QgY291bGQgYmUgcmV1c2VkIHRvIGJldHRlciB1bmRlcnN0YW5kIHRoZSByZWxhdGlvbnNoaXAgYmV0d2VlbiBoZWF0IGV4cG9zdXJlLCB0aGVybWFsIGNvbWZvcnQsIGFuZCBkYWlseSBhY3Rpdml0eSBhdCBhbiBpbmRpdmlkdWFsIHNjYWxlLiBUaGlzIGRhdGEgY291bGQgYWxzbyBiZSB1c2VkIGluIGNvbWJpbmF0aW9uIHdpdGggc2ltaWxhciBkYXRhc2V0cyB0byBleHBsb3JlIHRoZXNlIHJlbGF0aW9uc2hpcHMgYWNyb3NzIGRpZmZlcmVudCBjaXRpZXMgb3IgdG8gY29tcGFyZSBkaWZmZXJlbnQgbWV0aG9kcyBvZiBhc3Nlc3NpbmcgcGVyc29uYWwgaGVhdCBleHBvc3VyZS48L2Rlc2NyaXB0aW9uPgogICAgPGRlc2NyaXB0aW9uIHhtbDpsYW5nPSJlbi1VcyIgZGVzY3JpcHRpb25UeXBlPSJBYnN0cmFjdCI+VGhlIGZpbGUgaW4gdGhpcyBjb2xsZWN0aW9uIGNvbnRhaW5zICBpbmZvcm1hdGlvbiBhYm91dCB0aGUgaUJ1dHRvbiBUZW1wZXJhdHVyZSBhbmQgSHVtaWRpdHkgU2Vuc29ycyB0aGF0IHdlcmUgdXNlZCB0byBjb2xsZWN0IGRhdGEgb24gcGVyc29uYWwgaGVhdCBleHBvc3VyZS4gVGhlIGZpbGUgY29udGFpbnMgaW5mb3JtYXRpb24gcmVnYXJkaW5nIHRoZSBtb2RlbCBvZiB0aGUgaUJ1dHRvbiwgc2FtcGxpbmcgcmF0ZSwgIHBsYWNlbWVudCBjcml0ZXJpYSBmb3IgdGhlIHNlbnNvciwgdGhlIGNvbHVtbiBoZWFkZXJzIGFuZCBhc3NvY2lhdGVkIHVuaXRzIG9mIHRoZSBpQnV0dG9uIGRhdGEuIEFkZGl0aW9uYWxseSwgdGhlIGZpbGUgZGV0YWlscyB0aGUgdGltZSBmcmFtZSBhbmQgc3BhdGlhbCBleHRlbnQgZm9yIHdoaWNoIHRoZSBkYXRhIHdlcmUgY29sbGVjdGVkLjwvZGVzY3JpcHRpb24+CiAgPC9kZXNjcmlwdGlvbnM+CiAgPGZ1bmRpbmdSZWZlcmVuY2VzPgogICAgPGZ1bmRpbmdSZWZlcmVuY2U+CiAgICAgIDxmdW5kZXJOYW1lPk4vQTwvZnVuZGVyTmFtZT4KICAgICAgPGF3YXJkTnVtYmVyPk5TRiBTRVMtMTUyMDgwMzwvYXdhcmROdW1iZXI+CiAgICAgIDxhd2FyZFRpdGxlPk5hdGlvbmFsIFNjaWVuY2UgRm91bmRhdGlvbiBTRUVTLUhhemFyZDwvYXdhcmRUaXRsZT4KICAgIDwvZnVuZGluZ1JlZmVyZW5jZT4KICA8L2Z1bmRpbmdSZWZlcmVuY2VzPgo8L3Jlc291cmNlPgo=",
+        "url": "https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published/PRJ-3324/#detail-6778652395030974956-242ac114-0001-012",
+        "contentUrl": null,
+        "metadataVersion": 3,
+        "schemaVersion": "http://datacite.org/schema/kernel-4",
+        "source": "api",
+        "isActive": true,
+        "state": "findable",
+        "reason": null,
+        "viewCount": 548,
+        "viewsOverTime": [
+          {
+            "yearMonth": "2022-06",
+            "total": 19
+          },
+          {
+            "yearMonth": "2022-07",
+            "total": 4
+          },
+          {
+            "yearMonth": "2022-08",
+            "total": 3
+          },
+          {
+            "yearMonth": "2022-09",
+            "total": 5
+          },
+          {
+            "yearMonth": "2022-10",
+            "total": 1
+          },
+          {
+            "yearMonth": "2022-11",
+            "total": 18
+          },
+          {
+            "yearMonth": "2022-12",
+            "total": 15
+          },
+          {
+            "yearMonth": "2023-01",
+            "total": 19
+          },
+          {
+            "yearMonth": "2023-02",
+            "total": 23
+          },
+          {
+            "yearMonth": "2023-03",
+            "total": 19
+          },
+          {
+            "yearMonth": "2023-04",
+            "total": 12
+          },
+          {
+            "yearMonth": "2023-05",
+            "total": 16
+          },
+          {
+            "yearMonth": "2023-06",
+            "total": 10
+          },
+          {
+            "yearMonth": "2023-07",
+            "total": 10
+          },
+          {
+            "yearMonth": "2023-08",
+            "total": 11
+          },
+          {
+            "yearMonth": "2023-09",
+            "total": 8
+          },
+          {
+            "yearMonth": "2023-10",
+            "total": 19
+          },
+          {
+            "yearMonth": "2023-11",
+            "total": 14
+          },
+          {
+            "yearMonth": "2023-12",
+            "total": 21
+          },
+          {
+            "yearMonth": "2024-01",
+            "total": 16
+          },
+          {
+            "yearMonth": "2024-02",
+            "total": 22
+          },
+          {
+            "yearMonth": "2024-03",
+            "total": 22
+          },
+          {
+            "yearMonth": "2024-04",
+            "total": 20
+          },
+          {
+            "yearMonth": "2024-05",
+            "total": 16
+          },
+          {
+            "yearMonth": "2024-06",
+            "total": 14
+          },
+          {
+            "yearMonth": "2024-07",
+            "total": 16
+          },
+          {
+            "yearMonth": "2024-08",
+            "total": 3
+          },
+          {
+            "yearMonth": "2024-09",
+            "total": 11
+          },
+          {
+            "yearMonth": "2024-10",
+            "total": 18
+          },
+          {
+            "yearMonth": "2024-11",
+            "total": 12
+          },
+          {
+            "yearMonth": "2024-12",
+            "total": 10
+          },
+          {
+            "yearMonth": "2025-01",
+            "total": 10
+          },
+          {
+            "yearMonth": "2025-02",
+            "total": 14
+          },
+          {
+            "yearMonth": "2025-03",
+            "total": 18
+          },
+          {
+            "yearMonth": "2025-04",
+            "total": 13
+          },
+          {
+            "yearMonth": "2025-05",
+            "total": 9
+          },
+          {
+            "yearMonth": "2025-06",
+            "total": 5
+          },
+          {
+            "yearMonth": "2025-07",
+            "total": 4
+          },
+          {
+            "yearMonth": "2025-08",
+            "total": 10
+          },
+          {
+            "yearMonth": "2025-09",
+            "total": 5
+          },
+          {
+            "yearMonth": "2025-10",
+            "total": 15
+          },
+          {
+            "yearMonth": "2025-11",
+            "total": 2
+          },
+          {
+            "yearMonth": "2025-12",
+            "total": 2
+          },
+          {
+            "yearMonth": "2026-04",
+            "total": 3
+          },
+          {
+            "yearMonth": "2026-06",
+            "total": 2
+          },
+          {
+            "yearMonth": "2026-07",
+            "total": 1
+          },
+          {
+            "yearMonth": "2026-10",
+            "total": 8
+          }
+        ],
+        "downloadCount": 17,
+        "downloadsOverTime": [
+          {
+            "yearMonth": "2022-06",
+            "total": 2
+          },
+          {
+            "yearMonth": "2022-07",
+            "total": 1
+          },
+          {
+            "yearMonth": "2022-08",
+            "total": 0
+          },
+          {
+            "yearMonth": "2022-09",
+            "total": 0
+          },
+          {
+            "yearMonth": "2022-10",
+            "total": 0
+          },
+          {
+            "yearMonth": "2022-11",
+            "total": 0
+          },
+          {
+            "yearMonth": "2022-12",
+            "total": 0
+          },
+          {
+            "yearMonth": "2023-01",
+            "total": 1
+          },
+          {
+            "yearMonth": "2023-02",
+            "total": 0
+          },
+          {
+            "yearMonth": "2023-03",
+            "total": 0
+          },
+          {
+            "yearMonth": "2023-04",
+            "total": 1
+          },
+          {
+            "yearMonth": "2023-05",
+            "total": 0
+          },
+          {
+            "yearMonth": "2023-06",
+            "total": 0
+          },
+          {
+            "yearMonth": "2023-07",
+            "total": 0
+          },
+          {
+            "yearMonth": "2023-08",
+            "total": 0
+          },
+          {
+            "yearMonth": "2023-09",
+            "total": 0
+          },
+          {
+            "yearMonth": "2023-10",
+            "total": 2
+          },
+          {
+            "yearMonth": "2023-11",
+            "total": 0
+          },
+          {
+            "yearMonth": "2023-12",
+            "total": 1
+          },
+          {
+            "yearMonth": "2024-01",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-02",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-03",
+            "total": 3
+          },
+          {
+            "yearMonth": "2024-04",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-05",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-06",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-07",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-08",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-09",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-10",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-11",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-12",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-01",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-02",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-03",
+            "total": 1
+          },
+          {
+            "yearMonth": "2025-04",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-05",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-06",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-07",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-08",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-09",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-10",
+            "total": 1
+          },
+          {
+            "yearMonth": "2025-11",
+            "total": 2
+          },
+          {
+            "yearMonth": "2025-12",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-04",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-06",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-07",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-10",
+            "total": 2
+          }
+        ],
+        "referenceCount": 0,
+        "citationCount": 0,
+        "citationsOverTime": [],
+        "partCount": 0,
+        "partOfCount": 0,
+        "versionCount": 0,
+        "versionOfCount": 0,
+        "created": "2021-11-04T23:24:27.000Z",
+        "registered": "2021-11-04T23:24:40.000Z",
+        "published": "2021",
+        "updated": "2025-06-02T15:59:24.000Z"
+      },
+      "relationships": {
+        "client": {
+          "data": {
+            "id": "tdl.tacc",
+            "type": "clients"
+          }
+        },
+        "provider": {
+          "data": {
+            "id": "hakl",
+            "type": "providers"
+          }
+        },
+        "media": {
+          "data": {
+            "id": "10.17603/ds2-c5db-q090",
+            "type": "media"
+          }
+        },
+        "references": {
+          "data": []
+        },
+        "citations": {
+          "data": []
+        },
+        "parts": {
+          "data": []
+        },
+        "partOf": {
+          "data": []
+        },
+        "versions": {
+          "data": []
+        },
+        "versionOf": {
+          "data": []
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=Soil+Organic+Matter+Reduces+Persistent+Nighttime+Surface+Warm+Bias+in+Convection-Permitting+U.S.+Simulations&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=Soil+Organic+Matter+Reduces+Persistent+Nighttime+Surface+Warm+Bias+in+Convection-Permitting+U.S.+Simulations&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:58:02.523847+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 3747939,
+      "items": [
+        {
+          "DOI": "10.1029/2026gl123274",
+          "title": [
+            "Soil Organic Matter Reduces Persistent Nighttime Surface Warm Bias in Convection‐Permitting U.S. Simulations"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2026,
+                5,
+                28
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.5194/egusphere-egu25-11140",
+          "title": [
+            "Mitigating Nighttime Warm Bias in the GFS: The Role of Soil Organic Matter in Soil Thermal Conductivity"
+          ],
+          "type": "posted-content",
+          "published": {
+            "date-parts": [
+              [
+                2025,
+                3,
+                18
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.5194/egusphere-egu25-3571",
+          "title": [
+            "Cloud-circulation coupling in convection-permitting simulations"
+          ],
+          "type": "posted-content",
+          "published": {
+            "date-parts": [
+              [
+                2025,
+                3,
+                18
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

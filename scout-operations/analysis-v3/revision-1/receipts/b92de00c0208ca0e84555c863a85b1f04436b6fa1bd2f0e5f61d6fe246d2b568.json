@@ -1,0 +1,464 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.datacite.org/dois/10.5061/dryad.0rxwdbs7w",
+  "final_url": "https://api.datacite.org/dois/10.5061/dryad.0rxwdbs7w",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:56:28.405994+00:00",
+  "headers": {
+    "Content-Type": "application/json; charset=utf-8",
+    "ETag": "W/\"de2e1fe643f0224e64abdb51d3058108\""
+  },
+  "body": {
+    "data": {
+      "id": "10.5061/dryad.0rxwdbs7w",
+      "type": "dois",
+      "attributes": {
+        "doi": "10.5061/dryad.0rxwdbs7w",
+        "prefix": "10.5061",
+        "suffix": "dryad.0rxwdbs7w",
+        "identifiers": [],
+        "alternateIdentifiers": [],
+        "creators": [
+          {
+            "name": "Mazurek, Alexandra C.",
+            "nameType": "Personal",
+            "givenName": "Alexandra C.",
+            "familyName": "Mazurek",
+            "affiliation": [
+              "Colorado State University"
+            ],
+            "nameIdentifiers": [
+              {
+                "schemeUri": "https://orcid.org",
+                "nameIdentifier": "https://orcid.org/0000-0002-8171-2768",
+                "nameIdentifierScheme": "ORCID"
+              }
+            ]
+          },
+          {
+            "name": "Hill, Aaron J.",
+            "nameType": "Personal",
+            "givenName": "Aaron J.",
+            "familyName": "Hill",
+            "affiliation": [
+              "University of Oklahoma"
+            ],
+            "nameIdentifiers": [
+              {
+                "schemeUri": "https://orcid.org",
+                "nameIdentifier": "https://orcid.org/0000-0002-0337-8864",
+                "nameIdentifierScheme": "ORCID"
+              }
+            ]
+          },
+          {
+            "name": "Schumacher, Russ S.",
+            "nameType": "Personal",
+            "givenName": "Russ S.",
+            "familyName": "Schumacher",
+            "affiliation": [
+              "Colorado State University"
+            ],
+            "nameIdentifiers": [
+              {
+                "schemeUri": "https://orcid.org",
+                "nameIdentifier": "https://orcid.org/0000-0002-4404-3104",
+                "nameIdentifierScheme": "ORCID"
+              }
+            ]
+          },
+          {
+            "name": "McDaniel, Hanna J.",
+            "nameType": "Personal",
+            "givenName": "Hanna J.",
+            "familyName": "McDaniel",
+            "affiliation": [
+              "Florida State University"
+            ],
+            "nameIdentifiers": []
+          }
+        ],
+        "titles": [
+          {
+            "title": "Can ingredients based forecasting be learned? Disentangling a random forest's severe weather predictions"
+          }
+        ],
+        "publisher": "Dryad",
+        "container": {},
+        "publicationYear": 2024,
+        "subjects": [
+          {
+            "subject": "Machine learning",
+            "schemeUri": "https://github.com/PLOS/plos-thesaurus",
+            "subjectScheme": "PLOS Subject Area Thesaurus"
+          },
+          {
+            "subject": "Meteorology",
+            "schemeUri": "https://github.com/PLOS/plos-thesaurus",
+            "subjectScheme": "PLOS Subject Area Thesaurus"
+          },
+          {
+            "subject": "Storms",
+            "schemeUri": "https://github.com/PLOS/plos-thesaurus",
+            "subjectScheme": "PLOS Subject Area Thesaurus"
+          },
+          {
+            "subject": "Forecasting",
+            "schemeUri": "https://github.com/PLOS/plos-thesaurus",
+            "subjectScheme": "PLOS Subject Area Thesaurus"
+          },
+          {
+            "subject": "Weather",
+            "schemeUri": "https://github.com/PLOS/plos-thesaurus",
+            "subjectScheme": "PLOS Subject Area Thesaurus"
+          },
+          {
+            "subject": "Explainable artificial intelligence"
+          },
+          {
+            "subject": "FOS: Earth and related environmental sciences",
+            "schemeUri": "https://web-archive.oecd.org/2012-06-15/138575-38235147.pdf",
+            "subjectScheme": "fos"
+          },
+          {
+            "subject": "FOS: Earth and related environmental sciences",
+            "schemeUri": "http://www.oecd.org/science/inno/38235147.pdf",
+            "subjectScheme": "Fields of Science and Technology (FOS)"
+          }
+        ],
+        "contributors": [],
+        "dates": [
+          {
+            "date": "2024-05-02T17:26:28Z",
+            "dateType": "Created"
+          },
+          {
+            "date": "2024-05-02T18:06:43Z",
+            "dateType": "Submitted"
+          },
+          {
+            "date": "2024-05-06T00:00:00Z",
+            "dateType": "Issued"
+          },
+          {
+            "date": "2024-05-06T00:00:00Z",
+            "dateType": "Available"
+          }
+        ],
+        "language": "en",
+        "types": {
+          "ris": "DATA",
+          "bibtex": "misc",
+          "citeproc": "dataset",
+          "schemaOrg": "Dataset",
+          "resourceType": "dataset",
+          "resourceTypeGeneral": "Dataset"
+        },
+        "relatedIdentifiers": [
+          {
+            "relationType": "IsCitedBy",
+            "relatedIdentifier": "10.1175/waf-d-23-0193.1",
+            "relatedIdentifierType": "DOI"
+          }
+        ],
+        "relatedItems": [],
+        "sizes": [
+          "25394613650 bytes"
+        ],
+        "formats": [],
+        "version": "3",
+        "rightsList": [
+          {
+            "rights": "Creative Commons Zero v1.0 Universal",
+            "rightsUri": "https://creativecommons.org/publicdomain/zero/1.0/legalcode",
+            "schemeUri": "https://spdx.org/licenses/",
+            "rightsIdentifier": "cc0-1.0",
+            "rightsIdentifierScheme": "SPDX"
+          }
+        ],
+        "descriptions": [
+          {
+            "description": "Machine learning (ML)-based models have been rapidly integrated into\n forecast practices across the weather forecasting community in recent\n years. While ML tools introduce additional data to forecasting operations,\n there is a need for explainability to be available alongside the model\n output, such that the guidance can be transparent and trustworthy for the\n forecaster. This work makes use of the algorithm tree interpreter (TI) to\n disaggregate the contributions of meteorological features used in the\n Colorado State University Machine Learning Probabilities (CSU-MLP) system,\n a random forest-based ML tool that produces real-time probabilistic\n forecasts for severe weather using inputs from the Global Ensemble\n Forecast System v12. TI feature contributions are analyzed in time and\n space for CSU-MLP day-2 and 3 individual hazard (tornado, wind, and hail)\n forecasts and day-4 aggregate severe forecasts over a 2-yr period. For\n individual forecast periods, this work demonstrates that feature\n contributions derived from TI can be interpreted in an ingredients-based\n sense, effectively making the CSU-MLP probabilities physically\n interpretable. When investigated in an aggregate sense, TI illustrates\n that the CSU-MLP system's predictions use meteorological inputs in\n ways that are consistent with the spatiotemporal patterns seen in\n meteorological fields that pertain to severe storms climatology. This work\n concludes with a discussion on how these insights could be beneficial for\n model development, real-time forecast operations, and retrospective event\n analysis.",
+            "descriptionType": "Abstract"
+          },
+          {
+            "description": "<em>Forecast data:</em> These data include publically\n available local storm reports (from NOAA), publically available Storm\n Prediction Center (SPC) outlooks, and forecasts generated from the machine\n learning prediction system detailed in the manuscript. The local storm\n reports were retrieved from an online public-facing archive and gridded to\n NCEP grid 4. The SPC outlooks were originally in a shapefile format and\n ArcGIS was used to convert the shapefiles to a netCDF format. Then, the\n netCDF gridded SPC outlooks were regridded to NCEP grid 4 to conduct\n verification with local storm reports. Lastly, the machine learning-based\n forecasts are generated on the NCEP grid. Each of these datasets are then\n combined in a 'master' netCDF file for each forecast leadtime\n examined in the study (day 2, day 3, and day 4) for easy compression and\n storage. The master netCDF files additionally have metadata associated\n with the latitude and longitude points of the grid and forecast day\n strings. Forecasts span October 2020 through April 2023. \n <em>Feature contributions: </em>Feature contributions\n were calculated from the machine learning forecasts described above using\n the treeinterpreter\n package for python. For each forecast day for a given lead time\n and hazard type (tornado, wind, hail, severe), feature contributions are\n calculated for all environmental predictors in the dataset (~6,600). For\n each grid point, the feature contributions are summed according to the\n spatial neighborhood described in the methods of this manuscript for\n dimensionality reduction purposes. Thus, for a given forecast, the\n contributions have dimensions of environmental variable, forecast hour,\n latitude, and longitude. TI contributions corresponding to two years of\n machine learning forecasts (2021-2022) are combined into single netCDF\n files for each forecast hazard and lead time (i.e. 7 total files, day 2\n tornado, wind, and hail, day 3 tornado, wind, and hail, and day 4\n \"any severe\"). More details on the methods\n surrounding each of these datasets can be found in the methods section of\n the manuscript associated with this work.",
+            "descriptionType": "Methods"
+          },
+          {
+            "description": "# Data for: Can Ingredients-Based Forecasting be Learned? Disentangling a\n Random Forest's Severe Weather Predictions\n [https://doi.org/10.5061/dryad.0rxwdbs7w](https://doi.org/10.5061/dryad.0rxwdbs7w) Data for: \"Can Ingredients-Based Forecasting be Learned? Disentangling a Random Forest's Severe Weather Predictions\" Mazurek, Alexandra C., Aaron J. Hill, Russ S. Schumacher, and Hanna J. McDaniel: \"Can Ingredients-Based Forecasting be Learned? Disentangling a Random Forest's Severe Weather Predictions\", Weather and Forecasting. Day 2, 3, and 4 forecasts from the machine learning-based prediction system detailed in the associated manuscript (cited above) as well as those from the Storm Prediction Center (SPC) and observations (local storm reports) of severe thunderstorm hazards are included in this dataset. Forecasts, outlooks, and observations for each forecast day (day 2, day 3, day 4) are contained in a single netCDF file. For the day 2 and 3 forecasts, the netCDF files contain three separate machine learning-based forecasts for tornado, wind, and hail hazards; the day 4 files contain one forecast for \"any severe\" hazard (tornado, hail or wind). The feature contribution file contain the tree interpreter-derived contributions to the machine learning-based forecasts that are in the aforementioned netCDF files. The tree interpreter approach is described in the associated manuscript. Similar to the forecast files, there are separate netCDF files for each of the forecast lead times and hazard types (7 total; day 2 hail, wind, and tornado, day 3 hail, wind, and tornado, and day 4 any severe), with each containing the  contributions associated with the forecasts for each of the respective lead times.  ## Description of the data and file structure ## Forecast data There are 4 netCDF files containing the forecast data for the day 2, day 3 (two files, see forecast data notes below for details) and day 4 forecasts: * csu_mlp_2021_tor_day2.nc * csu_mlp_2021_tor_day3.nc * csu_mlp_2021_severe_day3.nc * csu_mlp_2021_severe_day4.nc The forecast netCDF files are structured as follows (example of the day 2 forecasts: csu_mlp_2021_tor_day2.nc): ### dimensions: lat = 56 ; lon = 139 ; time = 920 ; ### coordinates: float lat(lat) ; float lon(lon) ; datetime64 time(time); time: units = hours ; time: format = '%Y-%m-%d%H' ; time: timezone = 'UTC' ; time: calendar = \"gregorian\" ; ### variables: ##### CSU-MLP day 2 tornado machine learning-based forecasts float csu_mlp_2021_tor_day2(time, lat, lon) ; csu_mlp_2021_tor_day2:grid_type = \"Latitude/longitude\" ; csu_mlp_2021_tor_day2:initial_time = \"10/04/2020 (12:00)\" ; csu_mlp_2021_tor_day2:first_init = \"20201004\" ; csu_mlp_2021_tor_day2:valid_day_end = \"20230412\" ; csu_mlp_2021_tor_day2:version = \"csu_mlp_2021_tor_day2\" ; ##### SPC day 2 tornado outlook probabilities float day2otlk_netcdf_torn_fine_single_only(time, lat, lon) ; day2otlk_netcdf_torn_fine_single_only:first_init = \"20201004\" ; day2otlk_netcdf_torn_fine_single_only:valid_day_end = \"20230412\" ; day2otlk_netcdf_torn_fine_single_only:version = \"day2otlk_netcdf_torn_fine_single_only\" ; ##### gridded hail reports float hail_gridded(time, lat, lon) ; hail_gridded:first_init = \"20201004\" ; hail_gridded:valid_day_end = \"20230412\" ; ##### gridded wind reports float wind_gridded(time, lat, lon) ; wind_gridded:first_init = \"20201004\" ; wind_gridded:valid_day_end = \"20230412\" ; ##### gridded tornado reports float tor_gridded(time, lat, lon) ; tor_gridded:first_init = \"20201004\" ; tor_gridded:valid_day_end = \"20230412\" ; ##### CSU-MLP day 2 wind machine learning-based forecasts float csu_mlp_2021_wind_day2(time, lat, lon) ; csu_mlp_2021_wind_day2:grid_type = \"Latitude/longitude\" ; csu_mlp_2021_wind_day2:initial_time = \"10/04/2020 (12:00)\" ; csu_mlp_2021_wind_day2:first_init = \"20201004\" ; csu_mlp_2021_wind_day2:valid_day_end = \"20230412\" ; csu_mlp_2021_wind_day2:version = \"csu_mlp_2021_wind_day2\" ; ##### SPC day 2 wind outlook probabilities float day2otlk_netcdf_wind_fine_single_only(time, lat, lon) ; day2otlk_netcdf_wind_fine_single_only:first_init = \"20201004\" ; day2otlk_netcdf_wind_fine_single_only:valid_day_end = \"20230412\" ; day2otlk_netcdf_wind_fine_single_only:version = \"day2otlk_netcdf_wind_fine_single_only\" ; ##### CSU-MLP day 2 hail machine learning-based forecasts float csu_mlp_2021_hail_day2(time, lat, lon) ; csu_mlp_2021_hail_day2:grid_type = \"Latitude/longitude\" ; csu_mlp_2021_hail_day2:initial_time = \"10/04/2020 (12:00)\" ; csu_mlp_2021_hail_day2:first_init = \"20201004\" ; csu_mlp_2021_hail_day2:valid_day_end = \"20230412\" ; csu_mlp_2021_hail_day2:version = \"csu_mlp_2021_hail_day2\" ; ##### SPC day 2 hail outlook probabilities float day2otlk_netcdf_hail_fine_single_only(time, lat, lon) ; day2otlk_netcdf_hail_fine_single_only:first_init = \"20201004\" ; day2otlk_netcdf_hail_fine_single_only:valid_day_end = \"20230412\" ; day2otlk_netcdf_hail_fine_single_only:version = \"day2otlk_netcdf_hail_fine_single_only\" ; ### Forecast Data Notes All date/times represent the end date/time that the 24-h forecast, outlook, or report period is valid for. For example, the data for the date '2021-03-20 12:00' in the file would correspond to: * a day 2 CSU-MLP forecast initialized with GEFS model data that was initialized 2021-03-18 00:00 UTC * a day 2 SPC outlook issued 2021-03-18 * reports occurring between 2021-03-19 12:00 UTC to 2021-03-20 12:00 UTC All CSU-MLP forecasts in this dataset are initialized with data from 0000 UTC run of the operational Global Ensemble Forecast System (GEFS). The 0600 UTC SPC convective outlook is used in the dataset for day 2 period, and the 0730 UTC outlook is used for the day 3 period. For the day 4 forecasts (in the file titled \"csu_mlp_2021_severe_day4.nc\"), there are not individual forecasts generated for tornadoes, wind, and hail by the CSU-MLP system; only one set of probabilities for \"any severe\" hazard (i.e., tornado, wind or hail) are generated. SPC also does not issue forecasts for individual severe hazards at this lead time (only one forecast for \"any severe\" hazard). The variable names for the CSU-MLP forecasts and SPC forecasts at this lead time are 'csu_mlp_2021_severe_day4' and 'day4otlk_netcdf_prob_fine_single_only' respectively. Gridded reports for tornadoes, wind, and hail are still included as separate variables with the same variable names as the day 2 forecasts. The forecast file containing the day 3 CSU-MLP forecasts for the individual tornado, wind, and hail forecasts (\"csu_mlp_2021_tor_day3.nc\") does not contain fields for SPC forecasts, as there are no SPC probabilities issued for individual hazards at this lead time (only \"any severe\"). The day 3 SPC outlooks for \"any severe\" can be found in the file titled \"csu_mlp_2021_severe_day3.nc\". This file also contains CSU-MLP forecasts for \"any severe\" hazard (variable name 'csu_mlp_2021_severe_day3', not analyzed in this study). ## Tree Interpreter Feature Contribution files There are 7 netCDF files containing the feature contributions for the CSU-MLP machine learning-based forecasts. There is one file for each the contributions corresponding to each forecast hazard and lead time used in the study:  * day2h_TIcontributions_2021_to_2022.nc * day2t_TIcontributions_2021_to_2022.nc * day2w_TIcontributions_2021_to_2022.nc * day3h_TIcontributions_2021_to_2022.nc * day3t_TIcontributions_2021_to_2022.nc * day3w_TIcontributions_2021_to_2022.nc * day4_TIcontributions_2021_to_2022.nc The feature contribution files are structured in the same way for all forecast hazard types and lead times. The general structure is as follows: ### dimensions: lat = 56 ; lon = 139 ; vars = 15 ; (note this dimension is 12 in the feature contributions for the day 4 forecasts only) hours = 9 ; init_date = 727 ; ### coordinates: float lat(lat) ; float lon(lon) ; object vars(vars); int hours(hours) ; int cats() ; datetime64 init_date(init_date) ; init_date: units = hours ; init_date: format = '%Y-%m-%d%H' ; init_date: timezone = 'UTC' ; init_date: calendar = \"gregorian\" ; ### variables: float contributions(init_date, lat, lon, vars, hours) ; contributions:grid_type = \"Latitude/longitude\" ; contributions:initial_time = \"01/01/2021 (00:00)\" ; contributions:first_init = \"20210101\" ; contributions:valid_day_end = \"20221231\" ; ### Feature Contributions Data Notes All date/times (init_date coordinate) represent the initialization date/time for the 24-h forecast that the feature contributions are associated with. For example, the feature contributions data for the init_date '2021-03-20 00:00' in the file would correspond to a day 2 CSU-MLP forecast that is initialized with data from 2021-03-20 00:00 UTC and is valid between 2021-03-21 12:00 UTC to 2021-03-22 12:00 UTC. There are missing feature contributions data for the following dates: 2021-02-04, 2021-03-04, and 2021-12-12. The coordinate \"vars\" is short for variable. These are the environmental variables that are considered in the CSU-MLP machine learning-based forecasts. Variable names are abbreviated in the dataset, and the full description of each variable can be found in Table 1 of the manuscript associated with this dataset. The coordinate \"hours\" represent feature contributions at 3-hour timestamps within the 24-h forecast period. For example, for a day 2 forecast, the feature contributions at hour \"0\" would correspond to forecast hour 36 (which would be 1200 UTC at the start of the forecast period), hour \"1\" would correspond to forecast hour 39 (1500 UTC), hour \"2\" would correspond to forecast hour 42 (1800 UTC)... to hour \"8\", which would correspond to forecast hour 60 (1200 UTC at the end of the forecast period). The coordinate \"cats\" is short for categories. This is a placeholder variable that is an artifact of the dataset being parsed down for the sake of reducing filesize. The CSU-MLP model system makes three types of forecasts for each hazard/lead time: 0=no severe, 1=severe, and 2=significant severe. Only the feature contributions for the \"severe\" forecasts (category 1) are included in these files. Feature contributions associated with forecasts of the no severe and significant severe categories can be provided upon request. ## Sharing/Access information Data was derived from the following sources: * SPC outlooks are available via a public archive at [https://www.spc.noaa.gov/.](https://www.spc.noaa.gov/.Severe) * Severe weather reports are available from the Severe Weather Database at [https://www.spc.noaa.gov/wcm/](https://www.spc.noaa.gov/wcm/)",
+            "descriptionType": "TechnicalInfo"
+          }
+        ],
+        "geoLocations": [],
+        "fundingReferences": [
+          {
+            "schemeUri": "https://ror.org",
+            "funderName": "National Oceanic and Atmospheric Administration",
+            "awardNumber": "NA20OAR4590350",
+            "funderIdentifier": "https://ror.org/02z5nhe81",
+            "funderIdentifierType": "ROR"
+          }
+        ],
+        "xml": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHJlc291cmNlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCIgeHNpOnNjaGVtYUxvY2F0aW9uPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCBodHRwOi8vc2NoZW1hLmRhdGFjaXRlLm9yZy9tZXRhL2tlcm5lbC00L21ldGFkYXRhLnhzZCI+CiAgPGlkZW50aWZpZXIgaWRlbnRpZmllclR5cGU9IkRPSSI+MTAuNTA2MS9EUllBRC4wUlhXREJTN1c8L2lkZW50aWZpZXI+CiAgPGNyZWF0b3JzPgogICAgPGNyZWF0b3I+CiAgICAgIDxjcmVhdG9yTmFtZSBuYW1lVHlwZT0iUGVyc29uYWwiPk1henVyZWssIEFsZXhhbmRyYSBDLjwvY3JlYXRvck5hbWU+CiAgICAgIDxuYW1lSWRlbnRpZmllciBuYW1lSWRlbnRpZmllclNjaGVtZT0iT1JDSUQiIHNjaGVtZVVSST0iaHR0cDovL29yY2lkLm9yZy8iPjAwMDAtMDAwMi04MTcxLTI3Njg8L25hbWVJZGVudGlmaWVyPgogICAgICA8YWZmaWxpYXRpb24gYWZmaWxpYXRpb25JZGVudGlmaWVyPSJodHRwczovL3Jvci5vcmcvMDNrMWdwajE3IiBhZmZpbGlhdGlvbklkZW50aWZpZXJTY2hlbWU9IlJPUiIgc2NoZW1lVVJJPSJodHRwczovL3Jvci5vcmciPkNvbG9yYWRvIFN0YXRlIFVuaXZlcnNpdHk8L2FmZmlsaWF0aW9uPgogICAgPC9jcmVhdG9yPgogICAgPGNyZWF0b3I+CiAgICAgIDxjcmVhdG9yTmFtZSBuYW1lVHlwZT0iUGVyc29uYWwiPkhpbGwsIEFhcm9uIEouPC9jcmVhdG9yTmFtZT4KICAgICAgPG5hbWVJZGVudGlmaWVyIG5hbWVJZGVudGlmaWVyU2NoZW1lPSJPUkNJRCIgc2NoZW1lVVJJPSJodHRwOi8vb3JjaWQub3JnLyI+MDAwMC0wMDAyLTAzMzctODg2NDwvbmFtZUlkZW50aWZpZXI+CiAgICAgIDxhZmZpbGlhdGlvbiBhZmZpbGlhdGlvbklkZW50aWZpZXI9Imh0dHBzOi8vcm9yLm9yZy8wMmFxc3hzODMiIGFmZmlsaWF0aW9uSWRlbnRpZmllclNjaGVtZT0iUk9SIiBzY2hlbWVVUkk9Imh0dHBzOi8vcm9yLm9yZyI+VW5pdmVyc2l0eSBvZiBPa2xhaG9tYTwvYWZmaWxpYXRpb24+CiAgICA8L2NyZWF0b3I+CiAgICA8Y3JlYXRvcj4KICAgICAgPGNyZWF0b3JOYW1lIG5hbWVUeXBlPSJQZXJzb25hbCI+U2NodW1hY2hlciwgUnVzcyBTLjwvY3JlYXRvck5hbWU+CiAgICAgIDxuYW1lSWRlbnRpZmllciBuYW1lSWRlbnRpZmllclNjaGVtZT0iT1JDSUQiIHNjaGVtZVVSST0iaHR0cDovL29yY2lkLm9yZy8iPjAwMDAtMDAwMi00NDA0LTMxMDQ8L25hbWVJZGVudGlmaWVyPgogICAgICA8YWZmaWxpYXRpb24gYWZmaWxpYXRpb25JZGVudGlmaWVyPSJodHRwczovL3Jvci5vcmcvMDNrMWdwajE3IiBhZmZpbGlhdGlvbklkZW50aWZpZXJTY2hlbWU9IlJPUiIgc2NoZW1lVVJJPSJodHRwczovL3Jvci5vcmciPkNvbG9yYWRvIFN0YXRlIFVuaXZlcnNpdHk8L2FmZmlsaWF0aW9uPgogICAgPC9jcmVhdG9yPgogICAgPGNyZWF0b3I+CiAgICAgIDxjcmVhdG9yTmFtZSBuYW1lVHlwZT0iUGVyc29uYWwiPk1jRGFuaWVsLCBIYW5uYSBKLjwvY3JlYXRvck5hbWU+CiAgICAgIDxhZmZpbGlhdGlvbiBhZmZpbGlhdGlvbklkZW50aWZpZXI9Imh0dHBzOi8vcm9yLm9yZy8wNWczZHRlMTQiIGFmZmlsaWF0aW9uSWRlbnRpZmllclNjaGVtZT0iUk9SIiBzY2hlbWVVUkk9Imh0dHBzOi8vcm9yLm9yZyI+RmxvcmlkYSBTdGF0ZSBVbml2ZXJzaXR5PC9hZmZpbGlhdGlvbj4KICAgIDwvY3JlYXRvcj4KICA8L2NyZWF0b3JzPgogIDx0aXRsZXM+CiAgICA8dGl0bGU+CiAgICAgIENhbiBpbmdyZWRpZW50cyBiYXNlZCBmb3JlY2FzdGluZyBiZSBsZWFybmVkPyBEaXNlbnRhbmdsaW5nIGEgcmFuZG9tCiAgICAgIGZvcmVzdCdzIHNldmVyZSB3ZWF0aGVyIHByZWRpY3Rpb25zCiAgICA8L3RpdGxlPgogIDwvdGl0bGVzPgogIDxwdWJsaXNoZXIgcHVibGlzaGVySWRlbnRpZmllcj0iaHR0cHM6Ly9yb3Iub3JnLzAweDZoNW45NSIgcHVibGlzaGVySWRlbnRpZmllclNjaGVtZT0iUk9SIiBzY2hlbWVVUkk9Imh0dHBzOi8vcm9yLm9yZy8iPkRyeWFkPC9wdWJsaXNoZXI+CiAgPHJlc291cmNlVHlwZSByZXNvdXJjZVR5cGVHZW5lcmFsPSJEYXRhc2V0Ij5kYXRhc2V0PC9yZXNvdXJjZVR5cGU+CiAgPHB1YmxpY2F0aW9uWWVhcj4yMDI0PC9wdWJsaWNhdGlvblllYXI+CiAgPHN1YmplY3RzPgogICAgPHN1YmplY3Qgc3ViamVjdFNjaGVtZT0iUExPUyBTdWJqZWN0IEFyZWEgVGhlc2F1cnVzIiBzY2hlbWVVUkk9Imh0dHBzOi8vZ2l0aHViLmNvbS9QTE9TL3Bsb3MtdGhlc2F1cnVzIj5NYWNoaW5lIGxlYXJuaW5nPC9zdWJqZWN0PgogICAgPHN1YmplY3Qgc3ViamVjdFNjaGVtZT0iUExPUyBTdWJqZWN0IEFyZWEgVGhlc2F1cnVzIiBzY2hlbWVVUkk9Imh0dHBzOi8vZ2l0aHViLmNvbS9QTE9TL3Bsb3MtdGhlc2F1cnVzIj5NZXRlb3JvbG9neTwvc3ViamVjdD4KICAgIDxzdWJqZWN0IHN1YmplY3RTY2hlbWU9IlBMT1MgU3ViamVjdCBBcmVhIFRoZXNhdXJ1cyIgc2NoZW1lVVJJPSJodHRwczovL2dpdGh1Yi5jb20vUExPUy9wbG9zLXRoZXNhdXJ1cyI+U3Rvcm1zPC9zdWJqZWN0PgogICAgPHN1YmplY3Qgc3ViamVjdFNjaGVtZT0iUExPUyBTdWJqZWN0IEFyZWEgVGhlc2F1cnVzIiBzY2hlbWVVUkk9Imh0dHBzOi8vZ2l0aHViLmNvbS9QTE9TL3Bsb3MtdGhlc2F1cnVzIj5Gb3JlY2FzdGluZzwvc3ViamVjdD4KICAgIDxzdWJqZWN0IHN1YmplY3RTY2hlbWU9IlBMT1MgU3ViamVjdCBBcmVhIFRoZXNhdXJ1cyIgc2NoZW1lVVJJPSJodHRwczovL2dpdGh1Yi5jb20vUExPUy9wbG9zLXRoZXNhdXJ1cyI+V2VhdGhlcjwvc3ViamVjdD4KICAgIDxzdWJqZWN0PkV4cGxhaW5hYmxlIGFydGlmaWNpYWwgaW50ZWxsaWdlbmNlPC9zdWJqZWN0PgogICAgPHN1YmplY3Qgc3ViamVjdFNjaGVtZT0iZm9zIiBzY2hlbWVVUkk9Imh0dHBzOi8vd2ViLWFyY2hpdmUub2VjZC5vcmcvMjAxMi0wNi0xNS8xMzg1NzUtMzgyMzUxNDcucGRmIj5GT1M6IEVhcnRoIGFuZCByZWxhdGVkIGVudmlyb25tZW50YWwgc2NpZW5jZXM8L3N1YmplY3Q+CiAgPC9zdWJqZWN0cz4KICA8ZnVuZGluZ1JlZmVyZW5jZXM+CiAgICA8ZnVuZGluZ1JlZmVyZW5jZT4KICAgICAgPGZ1bmRlck5hbWU+TmF0aW9uYWwgT2NlYW5pYyBhbmQgQXRtb3NwaGVyaWMgQWRtaW5pc3RyYXRpb248L2Z1bmRlck5hbWU+CiAgICAgIDxmdW5kZXJJZGVudGlmaWVyIGZ1bmRlcklkZW50aWZpZXJUeXBlPSJST1IiPmh0dHBzOi8vcm9yLm9yZy8wMno1bmhlODE8L2Z1bmRlcklkZW50aWZpZXI+CiAgICAgIDxhd2FyZE51bWJlcj5OQTIwT0FSNDU5MDM1MDwvYXdhcmROdW1iZXI+CiAgICA8L2Z1bmRpbmdSZWZlcmVuY2U+CiAgPC9mdW5kaW5nUmVmZXJlbmNlcz4KICA8ZGF0ZXM+CiAgICA8ZGF0ZSBkYXRlVHlwZT0iQ3JlYXRlZCI+MjAyNC0wNS0wMlQxNzoyNjoyOFo8L2RhdGU+CiAgICA8ZGF0ZSBkYXRlVHlwZT0iU3VibWl0dGVkIj4yMDI0LTA1LTAyVDE4OjA2OjQzWjwvZGF0ZT4KICAgIDxkYXRlIGRhdGVUeXBlPSJJc3N1ZWQiPjIwMjQtMDUtMDZUMDA6MDA6MDBaPC9kYXRlPgogICAgPGRhdGUgZGF0ZVR5cGU9IkF2YWlsYWJsZSI+MjAyNC0wNS0wNlQwMDowMDowMFo8L2RhdGU+CiAgPC9kYXRlcz4KICA8bGFuZ3VhZ2U+ZW48L2xhbmd1YWdlPgogIDxyZWxhdGVkSWRlbnRpZmllcnM+CiAgICA8cmVsYXRlZElkZW50aWZpZXIgcmVsYXRpb25UeXBlPSJJc0NpdGVkQnkiIHJlbGF0ZWRJZGVudGlmaWVyVHlwZT0iRE9JIj5odHRwczovL2RvaS5vcmcvMTAuMTE3NS93YWYtZC0yMy0wMTkzLjE8L3JlbGF0ZWRJZGVudGlmaWVyPgogIDwvcmVsYXRlZElkZW50aWZpZXJzPgogIDxzaXplcz4KICAgIDxzaXplPjI1Mzk0NjEzNjUwIGJ5dGVzPC9zaXplPgogIDwvc2l6ZXM+CiAgPHZlcnNpb24+MzwvdmVyc2lvbj4KICA8cmlnaHRzTGlzdD4KICAgIDxyaWdodHMgcmlnaHRzVVJJPSJodHRwczovL3NwZHgub3JnL2xpY2Vuc2VzL0NDMC0xLjAuaHRtbCI+Q3JlYXRpdmUgQ29tbW9ucyBaZXJvIHYxLjAgVW5pdmVyc2FsPC9yaWdodHM+CiAgPC9yaWdodHNMaXN0PgogIDxkZXNjcmlwdGlvbnM+CiAgICA8ZGVzY3JpcHRpb24gZGVzY3JpcHRpb25UeXBlPSJBYnN0cmFjdCI+CiAgICAgIE1hY2hpbmUgbGVhcm5pbmcgKE1MKS1iYXNlZCBtb2RlbHMgaGF2ZSBiZWVuIHJhcGlkbHkgaW50ZWdyYXRlZCBpbnRvCiAgICAgIGZvcmVjYXN0IHByYWN0aWNlcyBhY3Jvc3MgdGhlIHdlYXRoZXIgZm9yZWNhc3RpbmcgY29tbXVuaXR5IGluIHJlY2VudAogICAgICB5ZWFycy4gV2hpbGUgTUwgdG9vbHMgaW50cm9kdWNlIGFkZGl0aW9uYWwgZGF0YSB0byBmb3JlY2FzdGluZyBvcGVyYXRpb25zLAogICAgICB0aGVyZSBpcyBhIG5lZWQgZm9yIGV4cGxhaW5hYmlsaXR5IHRvIGJlIGF2YWlsYWJsZSBhbG9uZ3NpZGUgdGhlIG1vZGVsCiAgICAgIG91dHB1dCwgc3VjaCB0aGF0IHRoZSBndWlkYW5jZSBjYW4gYmUgdHJhbnNwYXJlbnQgYW5kIHRydXN0d29ydGh5IGZvciB0aGUKICAgICAgZm9yZWNhc3Rlci4gVGhpcyB3b3JrIG1ha2VzIHVzZSBvZiB0aGUgYWxnb3JpdGhtIHRyZWUgaW50ZXJwcmV0ZXIgKFRJKSB0bwogICAgICBkaXNhZ2dyZWdhdGUgdGhlIGNvbnRyaWJ1dGlvbnMgb2YgbWV0ZW9yb2xvZ2ljYWwgZmVhdHVyZXMgdXNlZCBpbiB0aGUKICAgICAgQ29sb3JhZG8gU3RhdGUgVW5pdmVyc2l0eSBNYWNoaW5lIExlYXJuaW5nIFByb2JhYmlsaXRpZXMgKENTVS1NTFApIHN5c3RlbSwKICAgICAgYSByYW5kb20gZm9yZXN0LWJhc2VkIE1MIHRvb2wgdGhhdCBwcm9kdWNlcyByZWFsLXRpbWUgcHJvYmFiaWxpc3RpYwogICAgICBmb3JlY2FzdHMgZm9yIHNldmVyZSB3ZWF0aGVyIHVzaW5nIGlucHV0cyBmcm9tIHRoZSBHbG9iYWwgRW5zZW1ibGUKICAgICAgRm9yZWNhc3QgU3lzdGVtIHYxMi4gVEkgZmVhdHVyZSBjb250cmlidXRpb25zIGFyZSBhbmFseXplZCBpbiB0aW1lIGFuZAogICAgICBzcGFjZSBmb3IgQ1NVLU1MUCBkYXktMiBhbmQgMyBpbmRpdmlkdWFsIGhhemFyZCAodG9ybmFkbywgd2luZCwgYW5kIGhhaWwpCiAgICAgIGZvcmVjYXN0cyBhbmQgZGF5LTQgYWdncmVnYXRlIHNldmVyZSBmb3JlY2FzdHMgb3ZlciBhIDIteXIgcGVyaW9kLiBGb3IKICAgICAgaW5kaXZpZHVhbCBmb3JlY2FzdCBwZXJpb2RzLCB0aGlzIHdvcmsgZGVtb25zdHJhdGVzIHRoYXQgZmVhdHVyZQogICAgICBjb250cmlidXRpb25zIGRlcml2ZWQgZnJvbSBUSSBjYW4gYmUgaW50ZXJwcmV0ZWQgaW4gYW4gaW5ncmVkaWVudHMtYmFzZWQKICAgICAgc2Vuc2UsIGVmZmVjdGl2ZWx5IG1ha2luZyB0aGUgQ1NVLU1MUCBwcm9iYWJpbGl0aWVzIHBoeXNpY2FsbHkKICAgICAgaW50ZXJwcmV0YWJsZS4gV2hlbiBpbnZlc3RpZ2F0ZWQgaW4gYW4gYWdncmVnYXRlIHNlbnNlLCBUSSBpbGx1c3RyYXRlcwogICAgICB0aGF0IHRoZSBDU1UtTUxQIHN5c3RlbSdzIHByZWRpY3Rpb25zIHVzZSBtZXRlb3JvbG9naWNhbCBpbnB1dHMgaW4KICAgICAgd2F5cyB0aGF0IGFyZSBjb25zaXN0ZW50IHdpdGggdGhlIHNwYXRpb3RlbXBvcmFsIHBhdHRlcm5zIHNlZW4gaW4KICAgICAgbWV0ZW9yb2xvZ2ljYWwgZmllbGRzIHRoYXQgcGVydGFpbiB0byBzZXZlcmUgc3Rvcm1zIGNsaW1hdG9sb2d5LiBUaGlzIHdvcmsKICAgICAgY29uY2x1ZGVzIHdpdGggYSBkaXNjdXNzaW9uIG9uIGhvdyB0aGVzZSBpbnNpZ2h0cyBjb3VsZCBiZSBiZW5lZmljaWFsIGZvcgogICAgICBtb2RlbCBkZXZlbG9wbWVudCwgcmVhbC10aW1lIGZvcmVjYXN0IG9wZXJhdGlvbnMsIGFuZCByZXRyb3NwZWN0aXZlIGV2ZW50CiAgICAgIGFuYWx5c2lzLgogICAgPC9kZXNjcmlwdGlvbj4KICAgIDxkZXNjcmlwdGlvbiBkZXNjcmlwdGlvblR5cGU9Ik1ldGhvZHMiPgogICAgICAmbHQ7cCZndDsmbHQ7ZW0mZ3Q7Rm9yZWNhc3QgZGF0YTombHQ7L2VtJmd0OyBUaGVzZSBkYXRhIGluY2x1ZGUgcHVibGljYWxseQogICAgICBhdmFpbGFibGUgbG9jYWwgc3Rvcm0gcmVwb3J0cyAoZnJvbSBOT0FBKSwgcHVibGljYWxseSBhdmFpbGFibGUgU3Rvcm0KICAgICAgUHJlZGljdGlvbiBDZW50ZXIgKFNQQykgb3V0bG9va3MsIGFuZCBmb3JlY2FzdHMgZ2VuZXJhdGVkIGZyb20gdGhlIG1hY2hpbmUKICAgICAgbGVhcm5pbmcgcHJlZGljdGlvbiBzeXN0ZW0gZGV0YWlsZWQgaW4gdGhlIG1hbnVzY3JpcHQuIFRoZSBsb2NhbCBzdG9ybQogICAgICByZXBvcnRzIHdlcmUgcmV0cmlldmVkIGZyb20gYW4gb25saW5lIHB1YmxpYy1mYWNpbmcgYXJjaGl2ZSBhbmQgZ3JpZGRlZCB0bwogICAgICBOQ0VQIGdyaWQgNC4gVGhlIFNQQyBvdXRsb29rcyB3ZXJlIG9yaWdpbmFsbHkgaW4gYSBzaGFwZWZpbGUgZm9ybWF0IGFuZAogICAgICBBcmNHSVMgd2FzIHVzZWQgdG8gY29udmVydCB0aGUgc2hhcGVmaWxlcyB0byBhIG5ldENERiBmb3JtYXQuIFRoZW4sIHRoZQogICAgICBuZXRDREYgZ3JpZGRlZCBTUEMgb3V0bG9va3Mgd2VyZSByZWdyaWRkZWQgdG8gTkNFUCBncmlkIDQgdG8gY29uZHVjdAogICAgICB2ZXJpZmljYXRpb24gd2l0aCBsb2NhbCBzdG9ybSByZXBvcnRzLiBMYXN0bHksIHRoZSBtYWNoaW5lIGxlYXJuaW5nLWJhc2VkCiAgICAgIGZvcmVjYXN0cyBhcmUgZ2VuZXJhdGVkIG9uIHRoZSBOQ0VQIGdyaWQuIEVhY2ggb2YgdGhlc2UgZGF0YXNldHMgYXJlIHRoZW4KICAgICAgY29tYmluZWQgaW4gYSAnbWFzdGVyJyBuZXRDREYgZmlsZSBmb3IgZWFjaCBmb3JlY2FzdCBsZWFkdGltZQogICAgICBleGFtaW5lZCBpbiB0aGUgc3R1ZHkgKGRheSAyLCBkYXkgMywgYW5kIGRheSA0KSBmb3IgZWFzeSBjb21wcmVzc2lvbiBhbmQKICAgICAgc3RvcmFnZS4gVGhlIG1hc3RlciBuZXRDREYgZmlsZXMgYWRkaXRpb25hbGx5IGhhdmUgbWV0YWRhdGEgYXNzb2NpYXRlZAogICAgICB3aXRoIHRoZSBsYXRpdHVkZSBhbmQgbG9uZ2l0dWRlIHBvaW50cyBvZiB0aGUgZ3JpZCBhbmQgZm9yZWNhc3QgZGF5CiAgICAgIHN0cmluZ3MuIEZvcmVjYXN0cyBzcGFuIE9jdG9iZXIgMjAyMCB0aHJvdWdoIEFwcmlsIDIwMjMuwqAmbHQ7L3AmZ3Q7CiAgICAgICZsdDtwJmd0OyZsdDtlbSZndDtGZWF0dXJlIGNvbnRyaWJ1dGlvbnM6ICZsdDsvZW0mZ3Q7RmVhdHVyZSBjb250cmlidXRpb25zCiAgICAgIHdlcmUgY2FsY3VsYXRlZCBmcm9tIHRoZSBtYWNoaW5lIGxlYXJuaW5nIGZvcmVjYXN0cyBkZXNjcmliZWQgYWJvdmUgdXNpbmcKICAgICAgdGhlwqAmbHQ7YSB0aXRsZT0idHJlZWludGVycHJldGVyIEdpdEh1YiIKICAgICAgaHJlZj0iaHR0cHM6Ly9naXRodWIuY29tL2FuZG9zYS90cmVlaW50ZXJwcmV0ZXIiCiAgICAgIHRhcmdldD0iX2JsYW5rIiByZWw9Im5vb3BlbmVyIiZndDt0cmVlaW50ZXJwcmV0ZXIKICAgICAgcGFja2FnZSBmb3IgcHl0aG9uJmx0Oy9hJmd0Oy4gRm9yIGVhY2ggZm9yZWNhc3QgZGF5IGZvciBhIGdpdmVuIGxlYWQgdGltZQogICAgICBhbmQgaGF6YXJkIHR5cGUgKHRvcm5hZG8sIHdpbmQsIGhhaWwsIHNldmVyZSksIGZlYXR1cmUgY29udHJpYnV0aW9ucyBhcmUKICAgICAgY2FsY3VsYXRlZCBmb3IgYWxsIGVudmlyb25tZW50YWwgcHJlZGljdG9ycyBpbiB0aGUgZGF0YXNldCAofjYsNjAwKS4gRm9yCiAgICAgIGVhY2ggZ3JpZCBwb2ludCwgdGhlIGZlYXR1cmUgY29udHJpYnV0aW9ucyBhcmUgc3VtbWVkIGFjY29yZGluZyB0byB0aGUKICAgICAgc3BhdGlhbCBuZWlnaGJvcmhvb2QgZGVzY3JpYmVkIGluIHRoZSBtZXRob2RzIG9mIHRoaXMgbWFudXNjcmlwdCBmb3IKICAgICAgZGltZW5zaW9uYWxpdHkgcmVkdWN0aW9uIHB1cnBvc2VzLiBUaHVzLCBmb3IgYSBnaXZlbiBmb3JlY2FzdCwgdGhlCiAgICAgIGNvbnRyaWJ1dGlvbnMgaGF2ZSBkaW1lbnNpb25zIG9mIGVudmlyb25tZW50YWwgdmFyaWFibGUsIGZvcmVjYXN0IGhvdXIsCiAgICAgIGxhdGl0dWRlLCBhbmQgbG9uZ2l0dWRlLiBUSSBjb250cmlidXRpb25zIGNvcnJlc3BvbmRpbmcgdG8gdHdvIHllYXJzIG9mCiAgICAgIG1hY2hpbmUgbGVhcm5pbmcgZm9yZWNhc3RzICgyMDIxLTIwMjIpIGFyZSBjb21iaW5lZCBpbnRvIHNpbmdsZSBuZXRDREYKICAgICAgZmlsZXMgZm9yIGVhY2ggZm9yZWNhc3QgaGF6YXJkIGFuZCBsZWFkIHRpbWUgKGkuZS4gNyB0b3RhbCBmaWxlcywgZGF5IDIKICAgICAgdG9ybmFkbywgd2luZCwgYW5kIGhhaWwsIGRheSAzIHRvcm5hZG8sIHdpbmQsIGFuZCBoYWlsLCBhbmQgZGF5IDQKICAgICAgImFueSBzZXZlcmUiKS4mbHQ7L3AmZ3Q7ICZsdDtwJmd0O01vcmUgZGV0YWlscyBvbiB0aGUgbWV0aG9kcwogICAgICBzdXJyb3VuZGluZyBlYWNoIG9mIHRoZXNlIGRhdGFzZXRzIGNhbiBiZSBmb3VuZCBpbiB0aGUgbWV0aG9kcyBzZWN0aW9uIG9mCiAgICAgIHRoZSBtYW51c2NyaXB0IGFzc29jaWF0ZWQgd2l0aCB0aGlzIHdvcmsuJmx0Oy9wJmd0OwogICAgPC9kZXNjcmlwdGlvbj4KICAgIDxkZXNjcmlwdGlvbiBkZXNjcmlwdGlvblR5cGU9IlRlY2huaWNhbEluZm8iPgogICAgICAjIERhdGEgZm9yOiBDYW4gSW5ncmVkaWVudHMtQmFzZWQgRm9yZWNhc3RpbmcgYmUgTGVhcm5lZD8gRGlzZW50YW5nbGluZyBhCiAgICAgIFJhbmRvbSBGb3Jlc3QncyBTZXZlcmUgV2VhdGhlciBQcmVkaWN0aW9ucwogICAgICBbaHR0cHM6Ly9kb2kub3JnLzEwLjUwNjEvZHJ5YWQuMHJ4d2Riczd3XShodHRwczovL2RvaS5vcmcvMTAuNTA2MS9kcnlhZC4wcnh3ZGJzN3cpIERhdGEgZm9yOiAiQ2FuIEluZ3JlZGllbnRzLUJhc2VkIEZvcmVjYXN0aW5nIGJlIExlYXJuZWQ/IERpc2VudGFuZ2xpbmcgYSBSYW5kb20gRm9yZXN0J3MgU2V2ZXJlIFdlYXRoZXIgUHJlZGljdGlvbnMiIE1henVyZWssIEFsZXhhbmRyYSBDLiwgQWFyb24gSi4gSGlsbCwgUnVzcyBTLiBTY2h1bWFjaGVyLCBhbmQgSGFubmEgSi4gTWNEYW5pZWw6ICJDYW4gSW5ncmVkaWVudHMtQmFzZWQgRm9yZWNhc3RpbmcgYmUgTGVhcm5lZD8gRGlzZW50YW5nbGluZyBhIFJhbmRvbSBGb3Jlc3QncyBTZXZlcmUgV2VhdGhlciBQcmVkaWN0aW9ucyIsIFdlYXRoZXIgYW5kIEZvcmVjYXN0aW5nLiBEYXkgMiwgMywgYW5kIDTCoGZvcmVjYXN0cyBmcm9tIHRoZSBtYWNoaW5lIGxlYXJuaW5nLWJhc2VkIHByZWRpY3Rpb24gc3lzdGVtIGRldGFpbGVkIGluIHRoZSBhc3NvY2lhdGVkIG1hbnVzY3JpcHQgKGNpdGVkIGFib3ZlKSBhcyB3ZWxsIGFzIHRob3NlIGZyb20gdGhlIFN0b3JtIFByZWRpY3Rpb24gQ2VudGVyIChTUEMpIGFuZCBvYnNlcnZhdGlvbnMgKGxvY2FsIHN0b3JtIHJlcG9ydHMpIG9mIHNldmVyZSB0aHVuZGVyc3Rvcm0gaGF6YXJkcyBhcmUgaW5jbHVkZWQgaW4gdGhpcyBkYXRhc2V0LsKgRm9yZWNhc3RzLCBvdXRsb29rcywgYW5kIG9ic2VydmF0aW9ucyBmb3IgZWFjaCBmb3JlY2FzdCBkYXkgKGRheSAyLCBkYXkgMywgZGF5IDQpIGFyZSBjb250YWluZWQgaW4gYSBzaW5nbGUgbmV0Q0RGIGZpbGUuIEZvciB0aGUgZGF5IDIgYW5kIDMgZm9yZWNhc3RzLCB0aGUgbmV0Q0RGIGZpbGVzIGNvbnRhaW7CoHRocmVlIHNlcGFyYXRlIG1hY2hpbmUgbGVhcm5pbmctYmFzZWQgZm9yZWNhc3RzIGZvciB0b3JuYWRvLCB3aW5kLCBhbmQgaGFpbCBoYXphcmRzOyB0aGUgZGF5IDQgZmlsZXMgY29udGFpbiBvbmUgZm9yZWNhc3QgZm9yICJhbnkgc2V2ZXJlIiBoYXphcmQgKHRvcm5hZG8sIGhhaWwgb3Igd2luZCkuIFRoZSBmZWF0dXJlIGNvbnRyaWJ1dGlvbiBmaWxlIGNvbnRhaW4gdGhlIHRyZWUgaW50ZXJwcmV0ZXItZGVyaXZlZCBjb250cmlidXRpb25zIHRvIHRoZSBtYWNoaW5lIGxlYXJuaW5nLWJhc2VkIGZvcmVjYXN0cyB0aGF0IGFyZSBpbiB0aGUgYWZvcmVtZW50aW9uZWQgbmV0Q0RGIGZpbGVzLiBUaGUgdHJlZSBpbnRlcnByZXRlciBhcHByb2FjaCBpcyBkZXNjcmliZWQgaW4gdGhlIGFzc29jaWF0ZWQgbWFudXNjcmlwdC4gU2ltaWxhciB0byB0aGUgZm9yZWNhc3QgZmlsZXMsIHRoZXJlIGFyZSBzZXBhcmF0ZSBuZXRDREYgZmlsZXMgZm9yIGVhY2ggb2YgdGhlIGZvcmVjYXN0IGxlYWQgdGltZXMgYW5kIGhhemFyZCB0eXBlcyAoNyB0b3RhbDsgZGF5IDIgaGFpbCwgd2luZCwgYW5kIHRvcm5hZG8sIGRheSAzIGhhaWwsIHdpbmQsIGFuZCB0b3JuYWRvLCBhbmQgZGF5IDQgYW55IHNldmVyZSksIHdpdGggZWFjaCBjb250YWluaW5nIHRoZcKgIGNvbnRyaWJ1dGlvbnMgYXNzb2NpYXRlZCB3aXRoIHRoZSBmb3JlY2FzdHMgZm9yIGVhY2ggb2YgdGhlIHJlc3BlY3RpdmUgbGVhZCB0aW1lcy7CoCAjIyBEZXNjcmlwdGlvbiBvZiB0aGUgZGF0YSBhbmQgZmlsZSBzdHJ1Y3R1cmUgIyMgRm9yZWNhc3QgZGF0YSBUaGVyZSBhcmUgNCBuZXRDREYgZmlsZXMgY29udGFpbmluZyB0aGUgZm9yZWNhc3QgZGF0YSBmb3IgdGhlIGRheSAyLCBkYXkgMyAodHdvIGZpbGVzLCBzZWUgZm9yZWNhc3QgZGF0YSBub3RlcyBiZWxvdyBmb3IgZGV0YWlscykgYW5kIGRheSA0IGZvcmVjYXN0czogKiBjc3VfbWxwXzIwMjFfdG9yX2RheTIubmMgKiBjc3VfbWxwXzIwMjFfdG9yX2RheTMubmMgKiBjc3VfbWxwXzIwMjFfc2V2ZXJlX2RheTMubmMgKiBjc3VfbWxwXzIwMjFfc2V2ZXJlX2RheTQubmMgVGhlIGZvcmVjYXN0IG5ldENERiBmaWxlcyBhcmUgc3RydWN0dXJlZCBhcyBmb2xsb3dzIChleGFtcGxlIG9mIHRoZSBkYXkgMiBmb3JlY2FzdHM6IGNzdV9tbHBfMjAyMV90b3JfZGF5Mi5uYyk6ICMjIyBkaW1lbnNpb25zOiBsYXQgPSA1NiA7IGxvbiA9IDEzOSA7IHRpbWUgPSA5MjDCoDsgIyMjIGNvb3JkaW5hdGVzOiBmbG9hdCBsYXQobGF0KSA7IGZsb2F0IGxvbihsb24pIDsgZGF0ZXRpbWU2NCB0aW1lKHRpbWUpOyB0aW1lOiB1bml0cyA9IGhvdXJzIDsgdGltZTogZm9ybWF0ID0gJyVZLSVtLSVkJUgnIDsgdGltZTogdGltZXpvbmUgPSAnVVRDJyA7IHRpbWU6IGNhbGVuZGFyID0gImdyZWdvcmlhbiIgOyAjIyMgdmFyaWFibGVzOiAjIyMjIyBDU1UtTUxQIGRheSAyIHRvcm5hZG8gbWFjaGluZSBsZWFybmluZy1iYXNlZCBmb3JlY2FzdHMgZmxvYXQgY3N1X21scF8yMDIxX3Rvcl9kYXkyKHRpbWUsIGxhdCwgbG9uKSA7IGNzdV9tbHBfMjAyMV90b3JfZGF5MjpncmlkX3R5cGUgPSAiTGF0aXR1ZGUvbG9uZ2l0dWRlIiA7IGNzdV9tbHBfMjAyMV90b3JfZGF5Mjppbml0aWFsX3RpbWUgPSAiMTAvMDQvMjAyMCAoMTI6MDApIiA7IGNzdV9tbHBfMjAyMV90b3JfZGF5MjpmaXJzdF9pbml0ID0gIjIwMjAxMDA0IiA7IGNzdV9tbHBfMjAyMV90b3JfZGF5Mjp2YWxpZF9kYXlfZW5kID0gIjIwMjMwNDEyIiA7IGNzdV9tbHBfMjAyMV90b3JfZGF5Mjp2ZXJzaW9uID0gImNzdV9tbHBfMjAyMV90b3JfZGF5MiIgOyAjIyMjIyBTUEMgZGF5IDIgdG9ybmFkbyBvdXRsb29rIHByb2JhYmlsaXRpZXMgZmxvYXQgZGF5Mm90bGtfbmV0Y2RmX3Rvcm5fZmluZV9zaW5nbGVfb25seSh0aW1lLCBsYXQsIGxvbikgOyBkYXkyb3Rsa19uZXRjZGZfdG9ybl9maW5lX3NpbmdsZV9vbmx5OmZpcnN0X2luaXQgPSAiMjAyMDEwMDQiIDsgZGF5Mm90bGtfbmV0Y2RmX3Rvcm5fZmluZV9zaW5nbGVfb25seTp2YWxpZF9kYXlfZW5kID0gIjIwMjMwNDEyIiA7IGRheTJvdGxrX25ldGNkZl90b3JuX2ZpbmVfc2luZ2xlX29ubHk6dmVyc2lvbiA9ICJkYXkyb3Rsa19uZXRjZGZfdG9ybl9maW5lX3NpbmdsZV9vbmx5IiA7ICMjIyMjIGdyaWRkZWQgaGFpbCByZXBvcnRzIGZsb2F0IGhhaWxfZ3JpZGRlZCh0aW1lLCBsYXQsIGxvbikgOyBoYWlsX2dyaWRkZWQ6Zmlyc3RfaW5pdCA9ICIyMDIwMTAwNCIgOyBoYWlsX2dyaWRkZWQ6dmFsaWRfZGF5X2VuZCA9ICIyMDIzMDQxMiIgOyAjIyMjIyBncmlkZGVkIHdpbmQgcmVwb3J0cyBmbG9hdCB3aW5kX2dyaWRkZWQodGltZSwgbGF0LCBsb24pIDsgd2luZF9ncmlkZGVkOmZpcnN0X2luaXQgPSAiMjAyMDEwMDQiIDsgd2luZF9ncmlkZGVkOnZhbGlkX2RheV9lbmQgPSAiMjAyMzA0MTIiIDsgIyMjIyMgZ3JpZGRlZCB0b3JuYWRvIHJlcG9ydHMgZmxvYXQgdG9yX2dyaWRkZWQodGltZSwgbGF0LCBsb24pIDsgdG9yX2dyaWRkZWQ6Zmlyc3RfaW5pdCA9ICIyMDIwMTAwNCIgOyB0b3JfZ3JpZGRlZDp2YWxpZF9kYXlfZW5kID0gIjIwMjMwNDEyIiA7ICMjIyMjIENTVS1NTFAgZGF5IDIgd2luZCBtYWNoaW5lIGxlYXJuaW5nLWJhc2VkIGZvcmVjYXN0cyBmbG9hdCBjc3VfbWxwXzIwMjFfd2luZF9kYXkyKHRpbWUsIGxhdCwgbG9uKSA7IGNzdV9tbHBfMjAyMV93aW5kX2RheTI6Z3JpZF90eXBlID0gIkxhdGl0dWRlL2xvbmdpdHVkZSIgOyBjc3VfbWxwXzIwMjFfd2luZF9kYXkyOmluaXRpYWxfdGltZSA9ICIxMC8wNC8yMDIwICgxMjowMCkiIDsgY3N1X21scF8yMDIxX3dpbmRfZGF5MjpmaXJzdF9pbml0ID0gIjIwMjAxMDA0IiA7IGNzdV9tbHBfMjAyMV93aW5kX2RheTI6dmFsaWRfZGF5X2VuZCA9ICIyMDIzMDQxMiIgOyBjc3VfbWxwXzIwMjFfd2luZF9kYXkyOnZlcnNpb24gPSAiY3N1X21scF8yMDIxX3dpbmRfZGF5MiIgOyAjIyMjIyBTUEMgZGF5IDIgd2luZCBvdXRsb29rIHByb2JhYmlsaXRpZXMgZmxvYXQgZGF5Mm90bGtfbmV0Y2RmX3dpbmRfZmluZV9zaW5nbGVfb25seSh0aW1lLCBsYXQsIGxvbikgOyBkYXkyb3Rsa19uZXRjZGZfd2luZF9maW5lX3NpbmdsZV9vbmx5OmZpcnN0X2luaXQgPSAiMjAyMDEwMDQiIDsgZGF5Mm90bGtfbmV0Y2RmX3dpbmRfZmluZV9zaW5nbGVfb25seTp2YWxpZF9kYXlfZW5kID0gIjIwMjMwNDEyIiA7IGRheTJvdGxrX25ldGNkZl93aW5kX2ZpbmVfc2luZ2xlX29ubHk6dmVyc2lvbiA9ICJkYXkyb3Rsa19uZXRjZGZfd2luZF9maW5lX3NpbmdsZV9vbmx5IiA7ICMjIyMjIENTVS1NTFAgZGF5IDIgaGFpbCBtYWNoaW5lIGxlYXJuaW5nLWJhc2VkIGZvcmVjYXN0cyBmbG9hdCBjc3VfbWxwXzIwMjFfaGFpbF9kYXkyKHRpbWUsIGxhdCwgbG9uKSA7IGNzdV9tbHBfMjAyMV9oYWlsX2RheTI6Z3JpZF90eXBlID0gIkxhdGl0dWRlL2xvbmdpdHVkZSIgOyBjc3VfbWxwXzIwMjFfaGFpbF9kYXkyOmluaXRpYWxfdGltZSA9ICIxMC8wNC8yMDIwICgxMjowMCkiIDsgY3N1X21scF8yMDIxX2hhaWxfZGF5MjpmaXJzdF9pbml0ID0gIjIwMjAxMDA0IiA7IGNzdV9tbHBfMjAyMV9oYWlsX2RheTI6dmFsaWRfZGF5X2VuZCA9ICIyMDIzMDQxMiIgOyBjc3VfbWxwXzIwMjFfaGFpbF9kYXkyOnZlcnNpb24gPSAiY3N1X21scF8yMDIxX2hhaWxfZGF5MiIgOyAjIyMjIyBTUEMgZGF5IDIgaGFpbCBvdXRsb29rIHByb2JhYmlsaXRpZXMgZmxvYXQgZGF5Mm90bGtfbmV0Y2RmX2hhaWxfZmluZV9zaW5nbGVfb25seSh0aW1lLCBsYXQsIGxvbikgOyBkYXkyb3Rsa19uZXRjZGZfaGFpbF9maW5lX3NpbmdsZV9vbmx5OmZpcnN0X2luaXQgPSAiMjAyMDEwMDQiIDsgZGF5Mm90bGtfbmV0Y2RmX2hhaWxfZmluZV9zaW5nbGVfb25seTp2YWxpZF9kYXlfZW5kID0gIjIwMjMwNDEyIiA7IGRheTJvdGxrX25ldGNkZl9oYWlsX2ZpbmVfc2luZ2xlX29ubHk6dmVyc2lvbiA9ICJkYXkyb3Rsa19uZXRjZGZfaGFpbF9maW5lX3NpbmdsZV9vbmx5IiA7ICMjIyBGb3JlY2FzdCBEYXRhIE5vdGVzIEFsbCBkYXRlL3RpbWVzIHJlcHJlc2VudCB0aGUgZW5kIGRhdGUvdGltZSB0aGF0IHRoZSAyNC1oIGZvcmVjYXN0LCBvdXRsb29rLCBvciByZXBvcnQgcGVyaW9kIGlzIHZhbGlkIGZvci4gRm9yIGV4YW1wbGUsIHRoZSBkYXRhIGZvciB0aGUgZGF0ZSAnMjAyMS0wMy0yMCAxMjowMCcgaW4gdGhlIGZpbGUgd291bGQgY29ycmVzcG9uZCB0bzogKiBhIGRheSAyIENTVS1NTFAgZm9yZWNhc3QgaW5pdGlhbGl6ZWQgd2l0aCBHRUZTIG1vZGVsIGRhdGEgdGhhdCB3YXMgaW5pdGlhbGl6ZWQgMjAyMS0wMy0xOCAwMDowMCBVVEMgKiBhIGRheSAyIFNQQyBvdXRsb29rIGlzc3VlZCAyMDIxLTAzLTE4ICogcmVwb3J0cyBvY2N1cnJpbmcgYmV0d2VlbiAyMDIxLTAzLTE5IDEyOjAwIFVUQyB0byAyMDIxLTAzLTIwIDEyOjAwIFVUQyBBbGwgQ1NVLU1MUCBmb3JlY2FzdHMgaW4gdGhpcyBkYXRhc2V0IGFyZSBpbml0aWFsaXplZCB3aXRoIGRhdGEgZnJvbSAwMDAwIFVUQyBydW4gb2YgdGhlIG9wZXJhdGlvbmFsIEdsb2JhbCBFbnNlbWJsZSBGb3JlY2FzdCBTeXN0ZW0gKEdFRlMpLiBUaGUgMDYwMCBVVEMgU1BDIGNvbnZlY3RpdmUgb3V0bG9vayBpcyB1c2VkIGluIHRoZSBkYXRhc2V0IGZvciBkYXkgMiBwZXJpb2QsIGFuZCB0aGUgMDczMCBVVEMgb3V0bG9vayBpcyB1c2VkIGZvciB0aGUgZGF5IDMgcGVyaW9kLiBGb3IgdGhlIGRheSA0IGZvcmVjYXN0cyAoaW4gdGhlIGZpbGUgdGl0bGVkICJjc3VfbWxwXzIwMjFfc2V2ZXJlX2RheTQubmMiKSwgdGhlcmUgYXJlIG5vdCBpbmRpdmlkdWFsIGZvcmVjYXN0cyBnZW5lcmF0ZWQgZm9yIHRvcm5hZG9lcywgd2luZCwgYW5kIGhhaWwgYnkgdGhlIENTVS1NTFAgc3lzdGVtOyBvbmx5IG9uZSBzZXQgb2YgcHJvYmFiaWxpdGllcyBmb3IgImFueSBzZXZlcmUiIGhhemFyZCAoaS5lLiwgdG9ybmFkbywgd2luZCBvciBoYWlsKSBhcmUgZ2VuZXJhdGVkLiBTUEMgYWxzbyBkb2VzIG5vdCBpc3N1ZSBmb3JlY2FzdHMgZm9yIGluZGl2aWR1YWwgc2V2ZXJlIGhhemFyZHMgYXQgdGhpcyBsZWFkIHRpbWUgKG9ubHkgb25lIGZvcmVjYXN0IGZvciAiYW55IHNldmVyZSIgaGF6YXJkKS4gVGhlIHZhcmlhYmxlIG5hbWVzIGZvciB0aGUgQ1NVLU1MUCBmb3JlY2FzdHMgYW5kIFNQQyBmb3JlY2FzdHMgYXQgdGhpcyBsZWFkIHRpbWUgYXJlICdjc3VfbWxwXzIwMjFfc2V2ZXJlX2RheTQnIGFuZCAnZGF5NG90bGtfbmV0Y2RmX3Byb2JfZmluZV9zaW5nbGVfb25seScgcmVzcGVjdGl2ZWx5LiBHcmlkZGVkIHJlcG9ydHMgZm9yIHRvcm5hZG9lcywgd2luZCwgYW5kIGhhaWwgYXJlIHN0aWxsIGluY2x1ZGVkIGFzIHNlcGFyYXRlIHZhcmlhYmxlcyB3aXRoIHRoZSBzYW1lIHZhcmlhYmxlIG5hbWVzIGFzIHRoZSBkYXkgMiBmb3JlY2FzdHMuIFRoZSBmb3JlY2FzdCBmaWxlIGNvbnRhaW5pbmcgdGhlIGRheSAzIENTVS1NTFAgZm9yZWNhc3RzIGZvciB0aGUgaW5kaXZpZHVhbCB0b3JuYWRvLCB3aW5kLCBhbmQgaGFpbCBmb3JlY2FzdHMgKCJjc3VfbWxwXzIwMjFfdG9yX2RheTMubmMiKSBkb2VzIG5vdCBjb250YWluIGZpZWxkcyBmb3IgU1BDIGZvcmVjYXN0cywgYXMgdGhlcmUgYXJlIG5vIFNQQyBwcm9iYWJpbGl0aWVzIGlzc3VlZCBmb3IgaW5kaXZpZHVhbCBoYXphcmRzIGF0IHRoaXMgbGVhZCB0aW1lIChvbmx5ICJhbnkgc2V2ZXJlIikuIFRoZSBkYXkgMyBTUEMgb3V0bG9va3MgZm9yICJhbnkgc2V2ZXJlIiBjYW4gYmUgZm91bmQgaW4gdGhlIGZpbGUgdGl0bGVkICJjc3VfbWxwXzIwMjFfc2V2ZXJlX2RheTMubmMiLiBUaGlzIGZpbGUgYWxzbyBjb250YWlucyBDU1UtTUxQIGZvcmVjYXN0cyBmb3IgImFueSBzZXZlcmUiIGhhemFyZCAodmFyaWFibGUgbmFtZSAnY3N1X21scF8yMDIxX3NldmVyZV9kYXkzJywgbm90IGFuYWx5emVkIGluIHRoaXMgc3R1ZHkpLiAjIyBUcmVlIEludGVycHJldGVyIEZlYXR1cmUgQ29udHJpYnV0aW9uIGZpbGVzIFRoZXJlIGFyZSA3IG5ldENERiBmaWxlcyBjb250YWluaW5nIHRoZSBmZWF0dXJlIGNvbnRyaWJ1dGlvbnMgZm9yIHRoZSBDU1UtTUxQIG1hY2hpbmUgbGVhcm5pbmctYmFzZWQgZm9yZWNhc3RzLiBUaGVyZSBpcyBvbmUgZmlsZSBmb3IgZWFjaCB0aGUgY29udHJpYnV0aW9ucyBjb3JyZXNwb25kaW5nIHRvIGVhY2ggZm9yZWNhc3QgaGF6YXJkIGFuZCBsZWFkIHRpbWUgdXNlZCBpbiB0aGUgc3R1ZHk6wqAgKiBkYXkyaF9USWNvbnRyaWJ1dGlvbnNfMjAyMV90b18yMDIyLm5jICogZGF5MnRfVEljb250cmlidXRpb25zXzIwMjFfdG9fMjAyMi5uYyAqIGRheTJ3X1RJY29udHJpYnV0aW9uc18yMDIxX3RvXzIwMjIubmMgKiBkYXkzaF9USWNvbnRyaWJ1dGlvbnNfMjAyMV90b18yMDIyLm5jICogZGF5M3RfVEljb250cmlidXRpb25zXzIwMjFfdG9fMjAyMi5uYyAqIGRheTN3X1RJY29udHJpYnV0aW9uc18yMDIxX3RvXzIwMjIubmMgKiBkYXk0X1RJY29udHJpYnV0aW9uc18yMDIxX3RvXzIwMjIubmMgVGhlIGZlYXR1cmUgY29udHJpYnV0aW9uIGZpbGVzIGFyZSBzdHJ1Y3R1cmVkIGluIHRoZSBzYW1lIHdheSBmb3IgYWxsIGZvcmVjYXN0IGhhemFyZCB0eXBlcyBhbmQgbGVhZCB0aW1lcy4gVGhlIGdlbmVyYWwgc3RydWN0dXJlIGlzIGFzIGZvbGxvd3M6ICMjIyBkaW1lbnNpb25zOiBsYXQgPSA1NiA7IGxvbiA9IDEzOSA7IHZhcnMgPSAxNcKgOyAobm90ZSB0aGlzIGRpbWVuc2lvbiBpcyAxMiBpbiB0aGUgZmVhdHVyZSBjb250cmlidXRpb25zIGZvciB0aGUgZGF5IDQgZm9yZWNhc3RzIG9ubHkpIGhvdXJzID0gOSA7IGluaXRfZGF0ZSA9IDcyNyA7ICMjIyBjb29yZGluYXRlczogZmxvYXQgbGF0KGxhdCkgOyBmbG9hdCBsb24obG9uKSA7IG9iamVjdCB2YXJzKHZhcnMpOyBpbnQgaG91cnMoaG91cnMpIDsgaW50IGNhdHMoKSA7IGRhdGV0aW1lNjQgaW5pdF9kYXRlKGluaXRfZGF0ZSkgOyBpbml0X2RhdGU6IHVuaXRzID0gaG91cnMgOyBpbml0X2RhdGU6IGZvcm1hdCA9ICclWS0lbS0lZCVIJyA7IGluaXRfZGF0ZTogdGltZXpvbmUgPSAnVVRDJyA7IGluaXRfZGF0ZTogY2FsZW5kYXIgPSAiZ3JlZ29yaWFuIiA7ICMjIyB2YXJpYWJsZXM6IGZsb2F0IGNvbnRyaWJ1dGlvbnMoaW5pdF9kYXRlLCBsYXQsIGxvbiwgdmFycywgaG91cnMpIDsgY29udHJpYnV0aW9uczpncmlkX3R5cGUgPSAiTGF0aXR1ZGUvbG9uZ2l0dWRlIiA7IGNvbnRyaWJ1dGlvbnM6aW5pdGlhbF90aW1lID0gIjAxLzAxLzIwMjEgKDAwOjAwKSIgOyBjb250cmlidXRpb25zOmZpcnN0X2luaXQgPSAiMjAyMTAxMDEiIDsgY29udHJpYnV0aW9uczp2YWxpZF9kYXlfZW5kID0gIjIwMjIxMjMxIiA7ICMjIyBGZWF0dXJlIENvbnRyaWJ1dGlvbnMgRGF0YSBOb3RlcyBBbGwgZGF0ZS90aW1lcyAoaW5pdF9kYXRlIGNvb3JkaW5hdGUpIHJlcHJlc2VudCB0aGUgaW5pdGlhbGl6YXRpb24gZGF0ZS90aW1lIGZvciB0aGUgMjQtaCBmb3JlY2FzdCB0aGF0IHRoZSBmZWF0dXJlIGNvbnRyaWJ1dGlvbnMgYXJlIGFzc29jaWF0ZWQgd2l0aC4gRm9yIGV4YW1wbGUsIHRoZSBmZWF0dXJlIGNvbnRyaWJ1dGlvbnMgZGF0YSBmb3IgdGhlIGluaXRfZGF0ZSAnMjAyMS0wMy0yMCAwMDowMCcgaW4gdGhlIGZpbGUgd291bGQgY29ycmVzcG9uZCB0byBhIGRheSAyIENTVS1NTFAgZm9yZWNhc3QgdGhhdCBpcyBpbml0aWFsaXplZCB3aXRoIGRhdGEgZnJvbSAyMDIxLTAzLTIwIDAwOjAwIFVUQyBhbmQgaXMgdmFsaWQgYmV0d2VlbiAyMDIxLTAzLTIxIDEyOjAwIFVUQyB0byAyMDIxLTAzLTIyIDEyOjAwIFVUQy4gVGhlcmUgYXJlIG1pc3NpbmcgZmVhdHVyZSBjb250cmlidXRpb25zIGRhdGEgZm9yIHRoZSBmb2xsb3dpbmcgZGF0ZXM6IDIwMjEtMDItMDQsIDIwMjEtMDMtMDQsIGFuZCAyMDIxLTEyLTEyLiBUaGUgY29vcmRpbmF0ZSAidmFycyIgaXMgc2hvcnQgZm9yIHZhcmlhYmxlLiBUaGVzZSBhcmUgdGhlIGVudmlyb25tZW50YWwgdmFyaWFibGVzIHRoYXQgYXJlIGNvbnNpZGVyZWQgaW4gdGhlIENTVS1NTFAgbWFjaGluZSBsZWFybmluZy1iYXNlZCBmb3JlY2FzdHMuIFZhcmlhYmxlIG5hbWVzIGFyZSBhYmJyZXZpYXRlZCBpbiB0aGUgZGF0YXNldCwgYW5kIHRoZSBmdWxsIGRlc2NyaXB0aW9uIG9mIGVhY2ggdmFyaWFibGUgY2FuIGJlIGZvdW5kIGluIFRhYmxlIDEgb2YgdGhlIG1hbnVzY3JpcHQgYXNzb2NpYXRlZCB3aXRoIHRoaXMgZGF0YXNldC4gVGhlIGNvb3JkaW5hdGUgImhvdXJzIiByZXByZXNlbnQgZmVhdHVyZSBjb250cmlidXRpb25zIGF0IDMtaG91ciB0aW1lc3RhbXBzIHdpdGhpbiB0aGUgMjQtaCBmb3JlY2FzdCBwZXJpb2QuIEZvciBleGFtcGxlLCBmb3IgYSBkYXkgMiBmb3JlY2FzdCwgdGhlIGZlYXR1cmUgY29udHJpYnV0aW9ucyBhdCBob3VyICIwIiB3b3VsZCBjb3JyZXNwb25kIHRvIGZvcmVjYXN0IGhvdXIgMzYgKHdoaWNoIHdvdWxkIGJlIDEyMDAgVVRDIGF0IHRoZSBzdGFydCBvZiB0aGUgZm9yZWNhc3QgcGVyaW9kKSwgaG91ciAiMSIgd291bGQgY29ycmVzcG9uZCB0byBmb3JlY2FzdCBob3VyIDM5ICgxNTAwIFVUQyksIGhvdXIgIjIiIHdvdWxkIGNvcnJlc3BvbmQgdG8gZm9yZWNhc3QgaG91ciA0MiAoMTgwMCBVVEMpLi4uIHRvIGhvdXIgIjgiLCB3aGljaCB3b3VsZCBjb3JyZXNwb25kIHRvIGZvcmVjYXN0IGhvdXIgNjAgKDEyMDAgVVRDIGF0IHRoZSBlbmQgb2YgdGhlIGZvcmVjYXN0IHBlcmlvZCkuIFRoZSBjb29yZGluYXRlICJjYXRzIiBpcyBzaG9ydCBmb3IgY2F0ZWdvcmllcy4gVGhpcyBpcyBhIHBsYWNlaG9sZGVyIHZhcmlhYmxlIHRoYXQgaXMgYW4gYXJ0aWZhY3Qgb2YgdGhlIGRhdGFzZXQgYmVpbmcgcGFyc2VkIGRvd24gZm9yIHRoZSBzYWtlIG9mIHJlZHVjaW5nIGZpbGVzaXplLiBUaGUgQ1NVLU1MUCBtb2RlbCBzeXN0ZW0gbWFrZXMgdGhyZWUgdHlwZXMgb2YgZm9yZWNhc3RzIGZvciBlYWNoIGhhemFyZC9sZWFkIHRpbWU6IDA9bm8gc2V2ZXJlLCAxPXNldmVyZSwgYW5kIDI9c2lnbmlmaWNhbnQgc2V2ZXJlLiBPbmx5IHRoZSBmZWF0dXJlIGNvbnRyaWJ1dGlvbnMgZm9yIHRoZSAic2V2ZXJlIiBmb3JlY2FzdHMgKGNhdGVnb3J5IDEpIGFyZSBpbmNsdWRlZCBpbiB0aGVzZSBmaWxlcy4gRmVhdHVyZSBjb250cmlidXRpb25zIGFzc29jaWF0ZWQgd2l0aCBmb3JlY2FzdHMgb2YgdGhlIG5vIHNldmVyZSBhbmQgc2lnbmlmaWNhbnQgc2V2ZXJlIGNhdGVnb3JpZXMgY2FuIGJlIHByb3ZpZGVkIHVwb24gcmVxdWVzdC4gIyMgU2hhcmluZy9BY2Nlc3MgaW5mb3JtYXRpb24gRGF0YSB3YXMgZGVyaXZlZCBmcm9tIHRoZSBmb2xsb3dpbmcgc291cmNlczogKiBTUEMgb3V0bG9va3MgYXJlIGF2YWlsYWJsZSB2aWEgYSBwdWJsaWMgYXJjaGl2ZSBhdCBbaHR0cHM6Ly93d3cuc3BjLm5vYWEuZ292Ly5dKGh0dHBzOi8vd3d3LnNwYy5ub2FhLmdvdi8uU2V2ZXJlKSAqIFNldmVyZSB3ZWF0aGVyIHJlcG9ydHMgYXJlIGF2YWlsYWJsZSBmcm9tIHRoZSBTZXZlcmUgV2VhdGhlciBEYXRhYmFzZSBhdCBbaHR0cHM6Ly93d3cuc3BjLm5vYWEuZ292L3djbS9dKGh0dHBzOi8vd3d3LnNwYy5ub2FhLmdvdi93Y20vKQogICAgPC9kZXNjcmlwdGlvbj4KICA8L2Rlc2NyaXB0aW9ucz4KPC9yZXNvdXJjZT4=",
+        "url": "https://datadryad.org/dataset/doi:10.5061/dryad.0rxwdbs7w",
+        "contentUrl": null,
+        "metadataVersion": 5,
+        "schemaVersion": "http://datacite.org/schema/kernel-4",
+        "source": "mds",
+        "isActive": true,
+        "state": "findable",
+        "reason": null,
+        "viewCount": 89,
+        "viewsOverTime": [
+          {
+            "yearMonth": "2024-05",
+            "total": 2
+          },
+          {
+            "yearMonth": "2024-06",
+            "total": 3
+          },
+          {
+            "yearMonth": "2024-07",
+            "total": 1
+          },
+          {
+            "yearMonth": "2024-10",
+            "total": 3
+          },
+          {
+            "yearMonth": "2024-11",
+            "total": 3
+          },
+          {
+            "yearMonth": "2024-12",
+            "total": 2
+          },
+          {
+            "yearMonth": "2025-03",
+            "total": 4
+          },
+          {
+            "yearMonth": "2025-04",
+            "total": 2
+          },
+          {
+            "yearMonth": "2025-06",
+            "total": 1
+          },
+          {
+            "yearMonth": "2025-07",
+            "total": 1
+          },
+          {
+            "yearMonth": "2025-08",
+            "total": 4
+          },
+          {
+            "yearMonth": "2025-10",
+            "total": 2
+          },
+          {
+            "yearMonth": "2025-11",
+            "total": 5
+          },
+          {
+            "yearMonth": "2025-12",
+            "total": 4
+          },
+          {
+            "yearMonth": "2026-01",
+            "total": 5
+          },
+          {
+            "yearMonth": "2026-03",
+            "total": 6
+          },
+          {
+            "yearMonth": "2026-04",
+            "total": 4
+          },
+          {
+            "yearMonth": "2026-05",
+            "total": 10
+          },
+          {
+            "yearMonth": "2026-06",
+            "total": 6
+          },
+          {
+            "yearMonth": "2026-07",
+            "total": 1
+          },
+          {
+            "yearMonth": "2026-08",
+            "total": 6
+          },
+          {
+            "yearMonth": "2026-09",
+            "total": 8
+          },
+          {
+            "yearMonth": "2026-10",
+            "total": 6
+          }
+        ],
+        "downloadCount": 2,
+        "downloadsOverTime": [
+          {
+            "yearMonth": "2024-05",
+            "total": 1
+          },
+          {
+            "yearMonth": "2024-06",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-07",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-10",
+            "total": 1
+          },
+          {
+            "yearMonth": "2024-11",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-12",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-03",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-04",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-06",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-07",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-08",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-10",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-11",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-12",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-01",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-03",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-04",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-05",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-06",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-07",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-08",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-09",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-10",
+            "total": 0
+          }
+        ],
+        "referenceCount": 0,
+        "citationCount": 1,
+        "citationsOverTime": [
+          {
+            "year": "2026",
+            "total": 1
+          }
+        ],
+        "partCount": 0,
+        "partOfCount": 0,
+        "versionCount": 0,
+        "versionOfCount": 0,
+        "created": "2024-05-06T14:28:42.000Z",
+        "registered": "2024-05-06T14:28:43.000Z",
+        "published": "2024",
+        "updated": "2026-01-28T19:01:20.000Z"
+      },
+      "relationships": {
+        "client": {
+          "data": {
+            "id": "dryad.dryad",
+            "type": "clients"
+          }
+        },
+        "provider": {
+          "data": {
+            "id": "dryad",
+            "type": "providers"
+          }
+        },
+        "media": {
+          "data": {
+            "id": "10.5061/dryad.0rxwdbs7w",
+            "type": "media"
+          }
+        },
+        "references": {
+          "data": []
+        },
+        "citations": {
+          "data": [
+            {
+              "id": "10.1175/waf-d-23-0193.1",
+              "type": "dois"
+            }
+          ]
+        },
+        "parts": {
+          "data": []
+        },
+        "partOf": {
+          "data": []
+        },
+        "versions": {
+          "data": []
+        },
+        "versionOf": {
+          "data": []
+        }
+      }
+    }
+  }
+}

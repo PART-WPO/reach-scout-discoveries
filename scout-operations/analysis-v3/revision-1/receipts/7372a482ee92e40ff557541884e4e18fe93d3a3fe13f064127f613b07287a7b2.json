@@ -1,0 +1,455 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.datacite.org/dois/10.5061/dryad.gxd2547rt",
+  "final_url": "https://api.datacite.org/dois/10.5061/dryad.gxd2547rt",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:56:28.180899+00:00",
+  "headers": {
+    "Content-Type": "application/json; charset=utf-8",
+    "ETag": "W/\"a0a236c8bcb7862d92c807bc74e6accb\""
+  },
+  "body": {
+    "data": {
+      "id": "10.5061/dryad.gxd2547rt",
+      "type": "dois",
+      "attributes": {
+        "doi": "10.5061/dryad.gxd2547rt",
+        "prefix": "10.5061",
+        "suffix": "dryad.gxd2547rt",
+        "identifiers": [],
+        "alternateIdentifiers": [],
+        "creators": [
+          {
+            "name": "James, Eric",
+            "nameType": "Personal",
+            "givenName": "Eric",
+            "familyName": "James",
+            "affiliation": [
+              "Colorado State University"
+            ],
+            "nameIdentifiers": [
+              {
+                "schemeUri": "https://orcid.org",
+                "nameIdentifier": "https://orcid.org/0000-0002-6507-4997",
+                "nameIdentifierScheme": "ORCID"
+              }
+            ]
+          },
+          {
+            "name": "Schumacher, Russ",
+            "nameType": "Personal",
+            "givenName": "Russ",
+            "familyName": "Schumacher",
+            "affiliation": [
+              "Colorado State University"
+            ],
+            "nameIdentifiers": [
+              {
+                "schemeUri": "https://orcid.org",
+                "nameIdentifier": "https://orcid.org/0000-0002-4404-3104",
+                "nameIdentifierScheme": "ORCID"
+              }
+            ]
+          }
+        ],
+        "titles": [
+          {
+            "title": "Quantitative precipitation estimate (QPE) and forecast (QPF) exceedance comparison with flash flood reports"
+          }
+        ],
+        "publisher": "Dryad",
+        "container": {},
+        "publicationYear": 2023,
+        "subjects": [
+          {
+            "subject": "FOS: Physical sciences",
+            "schemeUri": "https://web-archive.oecd.org/2012-06-15/138575-38235147.pdf",
+            "subjectScheme": "fos"
+          },
+          {
+            "subject": "FOS: Physical sciences",
+            "schemeUri": "http://www.oecd.org/science/inno/38235147.pdf",
+            "subjectScheme": "Fields of Science and Technology (FOS)"
+          },
+          {
+            "subject": "flash flooding"
+          },
+          {
+            "subject": "quantitative precipitation estimates"
+          },
+          {
+            "subject": "Numerical Weather Prediction"
+          }
+        ],
+        "contributors": [],
+        "dates": [
+          {
+            "date": "2023-11-17T17:57:48Z",
+            "dateType": "Created"
+          },
+          {
+            "date": "2023-11-17T18:34:39Z",
+            "dateType": "Submitted"
+          },
+          {
+            "date": "2023-11-30T00:00:00Z",
+            "dateType": "Issued"
+          },
+          {
+            "date": "2023-11-30T00:00:00Z",
+            "dateType": "Available"
+          }
+        ],
+        "language": "en",
+        "types": {
+          "ris": "DATA",
+          "bibtex": "misc",
+          "citeproc": "dataset",
+          "schemaOrg": "Dataset",
+          "resourceType": "dataset",
+          "resourceTypeGeneral": "Dataset"
+        },
+        "relatedIdentifiers": [
+          {
+            "relationType": "IsCitedBy",
+            "relatedIdentifier": "10.1175/jhm-d-23-0203.1",
+            "relatedIdentifierType": "DOI"
+          }
+        ],
+        "relatedItems": [],
+        "sizes": [
+          "35720363400 bytes"
+        ],
+        "formats": [],
+        "version": "3",
+        "rightsList": [
+          {
+            "rights": "Creative Commons Zero v1.0 Universal",
+            "rightsUri": "https://creativecommons.org/publicdomain/zero/1.0/legalcode",
+            "schemeUri": "https://spdx.org/licenses/",
+            "rightsIdentifier": "cc0-1.0",
+            "rightsIdentifierScheme": "SPDX"
+          }
+        ],
+        "descriptions": [
+          {
+            "description": "Flash flooding remains a challenging prediction problem, which is\n exacerbated by the lack of a universally accepted definition of the\n phenomenon. In this article, we extend prior analysis to examine the\n correspondence of various combinations of quantitative precipitation\n estimates (QPE) and precipitation thresholds to observed occurrences of\n flash floods, additionally considering short-term quantitative\n precipitation forecasts from a convection-allowing model. Consistent with\n previous studies, there is large variability between QPE datasets in the\n frequency of “heavy” precipitation events. There is also large regional\n variability in the best thresholds for correspondence with reported flash\n floods. In general, Flash Flood Guidance (FFG) exceedances provide the\n best correspondence with observed flash floods, except in the interior\n western US where recurrence interval thresholds (for the southwestern US)\n and static thresholds (for the northern and central Rockies) provide\n better correspondence. Six-hour QPE provides better correspondence with\n observed flash floods than 1-h QPE in all regions except the west coast\n and southwestern US. Exceedances of precipitation thresholds in forecasts\n from the operational High-Resolution Rapid Refresh (HRRR) generally do not\n correspond with observed flash flood events as well as QPE datasets, but\n they outperform QPE datasets in some regions of complex terrain and sparse\n observational coverage such as the southwestern US. These results can\n provide context for forecasters seeking to identify potential flash flood\n events based on QPE or forecast-based exceedances of precipitation\n thresholds. ",
+            "descriptionType": "Abstract"
+          },
+          {
+            "description": "QPE and QPF data were collected from the NOAA HPSS for the\n seven-year period 2015-2021. All data were interpolated to the 3-km HRRR\n grid. Exceedances of precipitation thresholds (fixed thresholds, average\n recurrence intervals, and ratios of flash flood guidance) were determined\n on the 3-km grid. These exceedances were then upscaled to a 60 km grid for\n contingency table evaluation against flash flood reports. More details are\n provided in the manuscript.",
+            "descriptionType": "Methods"
+          },
+          {
+            "description": "Python is the preferred method to handle these netCDF files.",
+            "descriptionType": "Other"
+          },
+          {
+            "description": "# Quantitative Precipitation Estimate (QPE) and Forecast (QPF) exceedances\n of precipitation thresholds --- The dataset consists of a number of QPE\n datasets, in addition to QPF from the High-Resolution Rapid Refresh. The\n data are on a 60 km grid, and represent binary exceedances of various\n precipitation thresholds (fixed, average recurrence intervals, and ratios\n of flash flood guidance thresholds). The grids can be compared with\n observed flash flood reports on the same grid. QPE data have been\n subjected to the automated quality control procedure described in the\n associated paper. ## Description of the data and file structure Data are\n zipped up into files named {qpe}*{duration}*{threshold}.zip. {qpe} can be\n Stage IV QPE (stageIV), radar-only MRMS (mrms), gauge-corrected MRMS\n (mrmsGC), CCPA (ccpa), or HRRR QPF (hrrr). {duration} can be 6h or 1h. For\n HRRR, we also include 6-12h, as well as 3-4h and 6-7h, to examine QPF at\n different forecast lead times. {threshold} varies among fixed threshold,\n average recurrence intervals, and ratios of flash flood guidance. For\n fixed thresholds, {threshold} varies between 1 inch (25.4 mm) and 5 inches\n (127 mm) in {duration}, in increments of half an inch (12.7 mm), with\n labels of 1in, 1p5in, 2in, 2p5in, 3in, 3p5in, 4in, 4p5in, and 5in. For\n average recurrence interval (ARI) thresholds, {threshold} varies between\n 1-year ARI and 100-year ARI, with labels of 1yARI, 2yARI, 5yARI, 10yARI,\n 25yARI, 50yARI, and 100yARI. For ratios of flash flood guidance (FFG),\n {threshold} varies between 0.25FFG and 5xFFG, with labels of 0p25FFG,\n 0p5FFG, 0p75FFG, FFG, 1p5FFG, 2FFG, 2p5FFG, 3FFG, 3p5FFG, 4FFG, 4p5FFG,\n and 5FFG. The flash flood report data (on the same grid) are named\n ffr.zip. Within each zip file, netCDF files are named as\n {qpe}_{yyyymmdd12}.nc, where yyyy = 2-digit year, mm = 2-digit month, and\n dd = 2-digit day of month, and the label is associated with the end of the\n 24-h period represented (12 UTC on the label date). For the flash flood\n reports, the files are named LSR_${yyyymmdd12}.nc, where yyyy = 2-digit\n year, mm = 2-digit month, and dd = 2-digit day of month, and the label is\n associated with the end of the 24-h period represented (12 UTC on the\n label date). Each netCDF file contains three 2-D variables: latitude,\n longitude, and precip. Latitude and longitude are in degrees N and E,\n respectively, and precip is a binary (0 or 1) variable indicating the\n occurrence of precipitation exceeding the threshold in the precipitation\n dataset for that day. The precipitation dataset and date are provided in\n the netCDF file name, and the precipitation threshold is provided in the\n zip file name. For the LSR files, the precip variable indicates the\n ocurrence of flash flood reports for that day. ## Sharing/Access\n information Raw data are available in the following locations: Stage IV\n QPE: CCPA QPE:\n HRRR QPF:\n For this project, we\n acquired data from the NOAA High Performance Storage System (HPSS).",
+            "descriptionType": "TechnicalInfo"
+          }
+        ],
+        "geoLocations": [],
+        "fundingReferences": [
+          {
+            "schemeUri": "https://ror.org",
+            "funderName": "NOAA Oceanic and Atmospheric Research",
+            "awardNumber": "NA21OAR4590187",
+            "funderIdentifier": "https://ror.org/02kgve346",
+            "funderIdentifierType": "ROR"
+          }
+        ],
+        "xml": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHJlc291cmNlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCIgeHNpOnNjaGVtYUxvY2F0aW9uPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCBodHRwOi8vc2NoZW1hLmRhdGFjaXRlLm9yZy9tZXRhL2tlcm5lbC00L21ldGFkYXRhLnhzZCI+CiAgPGlkZW50aWZpZXIgaWRlbnRpZmllclR5cGU9IkRPSSI+MTAuNTA2MS9EUllBRC5HWEQyNTQ3UlQ8L2lkZW50aWZpZXI+CiAgPGNyZWF0b3JzPgogICAgPGNyZWF0b3I+CiAgICAgIDxjcmVhdG9yTmFtZSBuYW1lVHlwZT0iUGVyc29uYWwiPkphbWVzLCBFcmljPC9jcmVhdG9yTmFtZT4KICAgICAgPG5hbWVJZGVudGlmaWVyIG5hbWVJZGVudGlmaWVyU2NoZW1lPSJPUkNJRCIgc2NoZW1lVVJJPSJodHRwOi8vb3JjaWQub3JnLyI+MDAwMC0wMDAyLTY1MDctNDk5NzwvbmFtZUlkZW50aWZpZXI+CiAgICAgIDxhZmZpbGlhdGlvbiBhZmZpbGlhdGlvbklkZW50aWZpZXI9Imh0dHBzOi8vcm9yLm9yZy8wM2sxZ3BqMTciIGFmZmlsaWF0aW9uSWRlbnRpZmllclNjaGVtZT0iUk9SIiBzY2hlbWVVUkk9Imh0dHBzOi8vcm9yLm9yZyI+Q29sb3JhZG8gU3RhdGUgVW5pdmVyc2l0eTwvYWZmaWxpYXRpb24+CiAgICA8L2NyZWF0b3I+CiAgICA8Y3JlYXRvcj4KICAgICAgPGNyZWF0b3JOYW1lIG5hbWVUeXBlPSJQZXJzb25hbCI+U2NodW1hY2hlciwgUnVzczwvY3JlYXRvck5hbWU+CiAgICAgIDxuYW1lSWRlbnRpZmllciBuYW1lSWRlbnRpZmllclNjaGVtZT0iT1JDSUQiIHNjaGVtZVVSST0iaHR0cDovL29yY2lkLm9yZy8iPjAwMDAtMDAwMi00NDA0LTMxMDQ8L25hbWVJZGVudGlmaWVyPgogICAgICA8YWZmaWxpYXRpb24gYWZmaWxpYXRpb25JZGVudGlmaWVyPSJodHRwczovL3Jvci5vcmcvMDNrMWdwajE3IiBhZmZpbGlhdGlvbklkZW50aWZpZXJTY2hlbWU9IlJPUiIgc2NoZW1lVVJJPSJodHRwczovL3Jvci5vcmciPkNvbG9yYWRvIFN0YXRlIFVuaXZlcnNpdHk8L2FmZmlsaWF0aW9uPgogICAgPC9jcmVhdG9yPgogIDwvY3JlYXRvcnM+CiAgPHRpdGxlcz4KICAgIDx0aXRsZT4KICAgICAgUXVhbnRpdGF0aXZlIHByZWNpcGl0YXRpb24gZXN0aW1hdGUgKFFQRSkgYW5kIGZvcmVjYXN0IChRUEYpIGV4Y2VlZGFuY2UKICAgICAgY29tcGFyaXNvbiB3aXRoIGZsYXNoIGZsb29kIHJlcG9ydHMKICAgIDwvdGl0bGU+CiAgPC90aXRsZXM+CiAgPHB1Ymxpc2hlciBwdWJsaXNoZXJJZGVudGlmaWVyPSJodHRwczovL3Jvci5vcmcvMDB4Nmg1bjk1IiBwdWJsaXNoZXJJZGVudGlmaWVyU2NoZW1lPSJST1IiIHNjaGVtZVVSST0iaHR0cHM6Ly9yb3Iub3JnLyI+RHJ5YWQ8L3B1Ymxpc2hlcj4KICA8cmVzb3VyY2VUeXBlIHJlc291cmNlVHlwZUdlbmVyYWw9IkRhdGFzZXQiPmRhdGFzZXQ8L3Jlc291cmNlVHlwZT4KICA8cHVibGljYXRpb25ZZWFyPjIwMjM8L3B1YmxpY2F0aW9uWWVhcj4KICA8c3ViamVjdHM+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJmb3MiIHNjaGVtZVVSST0iaHR0cHM6Ly93ZWItYXJjaGl2ZS5vZWNkLm9yZy8yMDEyLTA2LTE1LzEzODU3NS0zODIzNTE0Ny5wZGYiPkZPUzogUGh5c2ljYWwgc2NpZW5jZXM8L3N1YmplY3Q+CiAgICA8c3ViamVjdD5mbGFzaCBmbG9vZGluZzwvc3ViamVjdD4KICAgIDxzdWJqZWN0PnF1YW50aXRhdGl2ZSBwcmVjaXBpdGF0aW9uIGVzdGltYXRlczwvc3ViamVjdD4KICAgIDxzdWJqZWN0Pk51bWVyaWNhbCBXZWF0aGVyIFByZWRpY3Rpb248L3N1YmplY3Q+CiAgPC9zdWJqZWN0cz4KICA8ZnVuZGluZ1JlZmVyZW5jZXM+CiAgICA8ZnVuZGluZ1JlZmVyZW5jZT4KICAgICAgPGZ1bmRlck5hbWU+Tk9BQSBPY2VhbmljIGFuZCBBdG1vc3BoZXJpYyBSZXNlYXJjaDwvZnVuZGVyTmFtZT4KICAgICAgPGZ1bmRlcklkZW50aWZpZXIgZnVuZGVySWRlbnRpZmllclR5cGU9IlJPUiI+aHR0cHM6Ly9yb3Iub3JnLzAya2d2ZTM0NjwvZnVuZGVySWRlbnRpZmllcj4KICAgICAgPGF3YXJkTnVtYmVyPk5BMjFPQVI0NTkwMTg3PC9hd2FyZE51bWJlcj4KICAgIDwvZnVuZGluZ1JlZmVyZW5jZT4KICA8L2Z1bmRpbmdSZWZlcmVuY2VzPgogIDxkYXRlcz4KICAgIDxkYXRlIGRhdGVUeXBlPSJDcmVhdGVkIj4yMDIzLTExLTE3VDE3OjU3OjQ4WjwvZGF0ZT4KICAgIDxkYXRlIGRhdGVUeXBlPSJTdWJtaXR0ZWQiPjIwMjMtMTEtMTdUMTg6MzQ6MzlaPC9kYXRlPgogICAgPGRhdGUgZGF0ZVR5cGU9Iklzc3VlZCI+MjAyMy0xMS0zMFQwMDowMDowMFo8L2RhdGU+CiAgICA8ZGF0ZSBkYXRlVHlwZT0iQXZhaWxhYmxlIj4yMDIzLTExLTMwVDAwOjAwOjAwWjwvZGF0ZT4KICA8L2RhdGVzPgogIDxsYW5ndWFnZT5lbjwvbGFuZ3VhZ2U+CiAgPHJlbGF0ZWRJZGVudGlmaWVycz4KICAgIDxyZWxhdGVkSWRlbnRpZmllciByZWxhdGlvblR5cGU9IklzQ2l0ZWRCeSIgcmVsYXRlZElkZW50aWZpZXJUeXBlPSJET0kiPmh0dHBzOi8vZG9pLm9yZy8xMC4xMTc1L0pITS1ELTIzLTAyMDMuMTwvcmVsYXRlZElkZW50aWZpZXI+CiAgPC9yZWxhdGVkSWRlbnRpZmllcnM+CiAgPHNpemVzPgogICAgPHNpemU+MzU3MjAzNjM0MDAgYnl0ZXM8L3NpemU+CiAgPC9zaXplcz4KICA8dmVyc2lvbj4zPC92ZXJzaW9uPgogIDxyaWdodHNMaXN0PgogICAgPHJpZ2h0cyByaWdodHNVUkk9Imh0dHBzOi8vc3BkeC5vcmcvbGljZW5zZXMvQ0MwLTEuMC5odG1sIj5DcmVhdGl2ZSBDb21tb25zIFplcm8gdjEuMCBVbml2ZXJzYWw8L3JpZ2h0cz4KICA8L3JpZ2h0c0xpc3Q+CiAgPGRlc2NyaXB0aW9ucz4KICAgIDxkZXNjcmlwdGlvbiBkZXNjcmlwdGlvblR5cGU9IkFic3RyYWN0Ij4KICAgICAgRmxhc2ggZmxvb2RpbmcgcmVtYWlucyBhIGNoYWxsZW5naW5nIHByZWRpY3Rpb24gcHJvYmxlbSwgd2hpY2ggaXMKICAgICAgZXhhY2VyYmF0ZWQgYnkgdGhlIGxhY2sgb2YgYSB1bml2ZXJzYWxseSBhY2NlcHRlZCBkZWZpbml0aW9uIG9mIHRoZQogICAgICBwaGVub21lbm9uLiBJbiB0aGlzIGFydGljbGUsIHdlIGV4dGVuZCBwcmlvciBhbmFseXNpcyB0byBleGFtaW5lIHRoZQogICAgICBjb3JyZXNwb25kZW5jZSBvZiB2YXJpb3VzIGNvbWJpbmF0aW9ucyBvZiBxdWFudGl0YXRpdmUgcHJlY2lwaXRhdGlvbgogICAgICBlc3RpbWF0ZXMgKFFQRSkgYW5kIHByZWNpcGl0YXRpb24gdGhyZXNob2xkcyB0byBvYnNlcnZlZCBvY2N1cnJlbmNlcyBvZgogICAgICBmbGFzaCBmbG9vZHMsIGFkZGl0aW9uYWxseSBjb25zaWRlcmluZyBzaG9ydC10ZXJtIHF1YW50aXRhdGl2ZQogICAgICBwcmVjaXBpdGF0aW9uIGZvcmVjYXN0cyBmcm9tIGEgY29udmVjdGlvbi1hbGxvd2luZyBtb2RlbC4gQ29uc2lzdGVudCB3aXRoCiAgICAgIHByZXZpb3VzIHN0dWRpZXMsIHRoZXJlIGlzIGxhcmdlIHZhcmlhYmlsaXR5IGJldHdlZW4gUVBFIGRhdGFzZXRzIGluIHRoZQogICAgICBmcmVxdWVuY3kgb2Yg4oCcaGVhdnnigJ0gcHJlY2lwaXRhdGlvbiBldmVudHMuIFRoZXJlIGlzIGFsc28gbGFyZ2UgcmVnaW9uYWwKICAgICAgdmFyaWFiaWxpdHkgaW4gdGhlIGJlc3QgdGhyZXNob2xkcyBmb3IgY29ycmVzcG9uZGVuY2Ugd2l0aCByZXBvcnRlZCBmbGFzaAogICAgICBmbG9vZHMuIEluIGdlbmVyYWwsIEZsYXNoIEZsb29kIEd1aWRhbmNlIChGRkcpIGV4Y2VlZGFuY2VzIHByb3ZpZGUgdGhlCiAgICAgIGJlc3QgY29ycmVzcG9uZGVuY2Ugd2l0aCBvYnNlcnZlZCBmbGFzaCBmbG9vZHMsIGV4Y2VwdCBpbiB0aGUgaW50ZXJpb3IKICAgICAgd2VzdGVybiBVUyB3aGVyZSByZWN1cnJlbmNlIGludGVydmFsIHRocmVzaG9sZHMgKGZvciB0aGUgc291dGh3ZXN0ZXJuIFVTKQogICAgICBhbmQgc3RhdGljIHRocmVzaG9sZHMgKGZvciB0aGUgbm9ydGhlcm4gYW5kIGNlbnRyYWwgUm9ja2llcykgcHJvdmlkZQogICAgICBiZXR0ZXIgY29ycmVzcG9uZGVuY2UuIFNpeC1ob3VyIFFQRSBwcm92aWRlcyBiZXR0ZXIgY29ycmVzcG9uZGVuY2Ugd2l0aAogICAgICBvYnNlcnZlZCBmbGFzaCBmbG9vZHMgdGhhbiAxLWggUVBFIGluIGFsbCByZWdpb25zIGV4Y2VwdCB0aGUgd2VzdCBjb2FzdAogICAgICBhbmQgc291dGh3ZXN0ZXJuIFVTLiBFeGNlZWRhbmNlcyBvZiBwcmVjaXBpdGF0aW9uIHRocmVzaG9sZHMgaW4gZm9yZWNhc3RzCiAgICAgIGZyb20gdGhlIG9wZXJhdGlvbmFsIEhpZ2gtUmVzb2x1dGlvbiBSYXBpZCBSZWZyZXNoIChIUlJSKSBnZW5lcmFsbHkgZG8gbm90CiAgICAgIGNvcnJlc3BvbmQgd2l0aCBvYnNlcnZlZCBmbGFzaCBmbG9vZCBldmVudHMgYXMgd2VsbCBhcyBRUEUgZGF0YXNldHMsIGJ1dAogICAgICB0aGV5IG91dHBlcmZvcm0gUVBFIGRhdGFzZXRzIGluIHNvbWUgcmVnaW9ucyBvZiBjb21wbGV4IHRlcnJhaW4gYW5kIHNwYXJzZQogICAgICBvYnNlcnZhdGlvbmFsIGNvdmVyYWdlIHN1Y2ggYXMgdGhlIHNvdXRod2VzdGVybiBVUy4gVGhlc2UgcmVzdWx0cyBjYW4KICAgICAgcHJvdmlkZSBjb250ZXh0IGZvciBmb3JlY2FzdGVycyBzZWVraW5nIHRvIGlkZW50aWZ5IHBvdGVudGlhbCBmbGFzaCBmbG9vZAogICAgICBldmVudHMgYmFzZWQgb24gUVBFIG9yIGZvcmVjYXN0LWJhc2VkIGV4Y2VlZGFuY2VzIG9mIHByZWNpcGl0YXRpb24KICAgICAgdGhyZXNob2xkcy4mYW1wO25ic3A7CiAgICA8L2Rlc2NyaXB0aW9uPgogICAgPGRlc2NyaXB0aW9uIGRlc2NyaXB0aW9uVHlwZT0iTWV0aG9kcyI+CiAgICAgICZsdDtwJmd0O1FQRSBhbmQgUVBGIGRhdGEgd2VyZSBjb2xsZWN0ZWQgZnJvbSB0aGUgTk9BQSBIUFNTIGZvciB0aGUKICAgICAgc2V2ZW4teWVhciBwZXJpb2QgMjAxNS0yMDIxLiBBbGwgZGF0YSB3ZXJlIGludGVycG9sYXRlZCB0byB0aGUgMy1rbSBIUlJSCiAgICAgIGdyaWQuIEV4Y2VlZGFuY2VzIG9mIHByZWNpcGl0YXRpb24gdGhyZXNob2xkcyAoZml4ZWQgdGhyZXNob2xkcywgYXZlcmFnZQogICAgICByZWN1cnJlbmNlIGludGVydmFscywgYW5kIHJhdGlvcyBvZiBmbGFzaCBmbG9vZCBndWlkYW5jZSkgd2VyZSBkZXRlcm1pbmVkCiAgICAgIG9uIHRoZSAzLWttIGdyaWQuIFRoZXNlIGV4Y2VlZGFuY2VzIHdlcmUgdGhlbiB1cHNjYWxlZCB0byBhIDYwIGttIGdyaWQgZm9yCiAgICAgIGNvbnRpbmdlbmN5IHRhYmxlIGV2YWx1YXRpb24gYWdhaW5zdCBmbGFzaCBmbG9vZCByZXBvcnRzLiBNb3JlIGRldGFpbHMgYXJlCiAgICAgIHByb3ZpZGVkIGluIHRoZSBtYW51c2NyaXB0LiZsdDsvcCZndDsKICAgIDwvZGVzY3JpcHRpb24+CiAgICA8ZGVzY3JpcHRpb24gZGVzY3JpcHRpb25UeXBlPSJPdGhlciI+Jmx0O3AmZ3Q7UHl0aG9uIGlzIHRoZSBwcmVmZXJyZWQgbWV0aG9kIHRvIGhhbmRsZSB0aGVzZSBuZXRDREYgZmlsZXMuJmx0Oy9wJmd0OzwvZGVzY3JpcHRpb24+CiAgICA8ZGVzY3JpcHRpb24gZGVzY3JpcHRpb25UeXBlPSJUZWNobmljYWxJbmZvIj4KICAgICAgIyBRdWFudGl0YXRpdmUgUHJlY2lwaXRhdGlvbiBFc3RpbWF0ZSAoUVBFKSBhbmQgRm9yZWNhc3QgKFFQRikgZXhjZWVkYW5jZXMKICAgICAgb2YgcHJlY2lwaXRhdGlvbiB0aHJlc2hvbGRzIC0tLSBUaGUgZGF0YXNldCBjb25zaXN0cyBvZiBhIG51bWJlciBvZiBRUEUKICAgICAgZGF0YXNldHMsIGluIGFkZGl0aW9uIHRvIFFQRiBmcm9tIHRoZSBIaWdoLVJlc29sdXRpb24gUmFwaWQgUmVmcmVzaC4gVGhlCiAgICAgIGRhdGEgYXJlIG9uIGEgNjAga20gZ3JpZCwgYW5kIHJlcHJlc2VudCBiaW5hcnkgZXhjZWVkYW5jZXMgb2YgdmFyaW91cwogICAgICBwcmVjaXBpdGF0aW9uIHRocmVzaG9sZHMgKGZpeGVkLCBhdmVyYWdlIHJlY3VycmVuY2UgaW50ZXJ2YWxzLCBhbmQgcmF0aW9zCiAgICAgIG9mIGZsYXNoIGZsb29kIGd1aWRhbmNlIHRocmVzaG9sZHMpLiBUaGUgZ3JpZHMgY2FuIGJlIGNvbXBhcmVkIHdpdGgKICAgICAgb2JzZXJ2ZWQgZmxhc2ggZmxvb2QgcmVwb3J0cyBvbiB0aGUgc2FtZSBncmlkLiBRUEUgZGF0YSBoYXZlIGJlZW4KICAgICAgc3ViamVjdGVkIHRvIHRoZSBhdXRvbWF0ZWQgcXVhbGl0eSBjb250cm9sIHByb2NlZHVyZSBkZXNjcmliZWQgaW4gdGhlCiAgICAgIGFzc29jaWF0ZWQgcGFwZXIuICMjIERlc2NyaXB0aW9uIG9mIHRoZSBkYXRhIGFuZCBmaWxlIHN0cnVjdHVyZSBEYXRhIGFyZQogICAgICB6aXBwZWQgdXAgaW50byBmaWxlcyBuYW1lZCB7cXBlfSp7ZHVyYXRpb259Knt0aHJlc2hvbGR9LnppcC4ge3FwZX0gY2FuIGJlCiAgICAgIFN0YWdlIElWIFFQRSAoc3RhZ2VJViksIHJhZGFyLW9ubHkgTVJNUyAobXJtcyksIGdhdWdlLWNvcnJlY3RlZCBNUk1TCiAgICAgIChtcm1zR0MpLCBDQ1BBIChjY3BhKSwgb3IgSFJSUiBRUEYgKGhycnIpLiB7ZHVyYXRpb259IGNhbiBiZSA2aCBvciAxaC4gRm9yCiAgICAgIEhSUlIsIHdlIGFsc28gaW5jbHVkZSA2LTEyaCwgYXMgd2VsbCBhcyAzLTRoIGFuZCA2LTdoLCB0byBleGFtaW5lIFFQRiBhdAogICAgICBkaWZmZXJlbnQgZm9yZWNhc3QgbGVhZCB0aW1lcy4ge3RocmVzaG9sZH0gdmFyaWVzIGFtb25nIGZpeGVkIHRocmVzaG9sZCwKICAgICAgYXZlcmFnZSByZWN1cnJlbmNlIGludGVydmFscywgYW5kIHJhdGlvcyBvZiBmbGFzaCBmbG9vZCBndWlkYW5jZS4gRm9yCiAgICAgIGZpeGVkIHRocmVzaG9sZHMsIHt0aHJlc2hvbGR9IHZhcmllcyBiZXR3ZWVuIDEgaW5jaCAoMjUuNCBtbSkgYW5kIDUgaW5jaGVzCiAgICAgICgxMjcgbW0pIGluIHtkdXJhdGlvbn0sIGluIGluY3JlbWVudHMgb2YgaGFsZiBhbiBpbmNoICgxMi43IG1tKSwgd2l0aAogICAgICBsYWJlbHMgb2YgMWluLCAxcDVpbiwgMmluLCAycDVpbiwgM2luLCAzcDVpbiwgNGluLCA0cDVpbiwgYW5kIDVpbi4gRm9yCiAgICAgIGF2ZXJhZ2UgcmVjdXJyZW5jZSBpbnRlcnZhbCAoQVJJKSB0aHJlc2hvbGRzLCB7dGhyZXNob2xkfSB2YXJpZXMgYmV0d2VlbgogICAgICAxLXllYXIgQVJJIGFuZCAxMDAteWVhciBBUkksIHdpdGggbGFiZWxzIG9mIDF5QVJJLCAyeUFSSSwgNXlBUkksIDEweUFSSSwKICAgICAgMjV5QVJJLCA1MHlBUkksIGFuZCAxMDB5QVJJLiBGb3IgcmF0aW9zIG9mIGZsYXNoIGZsb29kIGd1aWRhbmNlIChGRkcpLAogICAgICB7dGhyZXNob2xkfSB2YXJpZXMgYmV0d2VlbiAwLjI1RkZHIGFuZCA1eEZGRywgd2l0aCBsYWJlbHMgb2YgMHAyNUZGRywKICAgICAgMHA1RkZHLCAwcDc1RkZHLCBGRkcsIDFwNUZGRywgMkZGRywgMnA1RkZHLCAzRkZHLCAzcDVGRkcsIDRGRkcsIDRwNUZGRywKICAgICAgYW5kIDVGRkcuIFRoZSBmbGFzaCBmbG9vZCByZXBvcnQgZGF0YSAob24gdGhlIHNhbWUgZ3JpZCkgYXJlIG5hbWVkCiAgICAgIGZmci56aXAuIFdpdGhpbiBlYWNoIHppcCBmaWxlLCBuZXRDREYgZmlsZXMgYXJlIG5hbWVkIGFzCiAgICAgIHtxcGV9X3t5eXl5bW1kZDEyfS5uYywgd2hlcmUgeXl5eSA9IDItZGlnaXQgeWVhciwgbW0gPSAyLWRpZ2l0IG1vbnRoLCBhbmQKICAgICAgZGQgPSAyLWRpZ2l0IGRheSBvZiBtb250aCwgYW5kIHRoZSBsYWJlbCBpcyBhc3NvY2lhdGVkIHdpdGggdGhlIGVuZCBvZiB0aGUKICAgICAgMjQtaCBwZXJpb2QgcmVwcmVzZW50ZWQgKDEyIFVUQyBvbiB0aGUgbGFiZWwgZGF0ZSkuIEZvciB0aGUgZmxhc2ggZmxvb2QKICAgICAgcmVwb3J0cywgdGhlIGZpbGVzIGFyZSBuYW1lZCBMU1JfJHt5eXl5bW1kZDEyfS5uYywgd2hlcmUgeXl5eSA9IDItZGlnaXQKICAgICAgeWVhciwgbW0gPSAyLWRpZ2l0IG1vbnRoLCBhbmQgZGQgPSAyLWRpZ2l0IGRheSBvZiBtb250aCwgYW5kIHRoZSBsYWJlbCBpcwogICAgICBhc3NvY2lhdGVkIHdpdGggdGhlIGVuZCBvZiB0aGUgMjQtaCBwZXJpb2QgcmVwcmVzZW50ZWQgKDEyIFVUQyBvbiB0aGUKICAgICAgbGFiZWwgZGF0ZSkuIEVhY2ggbmV0Q0RGIGZpbGUgY29udGFpbnMgdGhyZWUgMi1EIHZhcmlhYmxlczogbGF0aXR1ZGUsCiAgICAgIGxvbmdpdHVkZSwgYW5kIHByZWNpcC4gTGF0aXR1ZGUgYW5kIGxvbmdpdHVkZSBhcmUgaW4gZGVncmVlcyBOIGFuZCBFLAogICAgICByZXNwZWN0aXZlbHksIGFuZCBwcmVjaXAgaXMgYSBiaW5hcnkgKDAgb3IgMSkgdmFyaWFibGUgaW5kaWNhdGluZyB0aGUKICAgICAgb2NjdXJyZW5jZSBvZiBwcmVjaXBpdGF0aW9uIGV4Y2VlZGluZyB0aGUgdGhyZXNob2xkIGluIHRoZSBwcmVjaXBpdGF0aW9uCiAgICAgIGRhdGFzZXQgZm9yIHRoYXQgZGF5LiBUaGUgcHJlY2lwaXRhdGlvbiBkYXRhc2V0IGFuZCBkYXRlIGFyZSBwcm92aWRlZCBpbgogICAgICB0aGUgbmV0Q0RGIGZpbGUgbmFtZSwgYW5kIHRoZSBwcmVjaXBpdGF0aW9uIHRocmVzaG9sZCBpcyBwcm92aWRlZCBpbiB0aGUKICAgICAgemlwIGZpbGUgbmFtZS4gRm9yIHRoZSBMU1IgZmlsZXMsIHRoZSBwcmVjaXAgdmFyaWFibGUgaW5kaWNhdGVzIHRoZQogICAgICBvY3VycmVuY2Ugb2YgZmxhc2ggZmxvb2QgcmVwb3J0cyBmb3IgdGhhdCBkYXkuICMjIFNoYXJpbmcvQWNjZXNzCiAgICAgIGluZm9ybWF0aW9uIFJhdyBkYXRhIGFyZSBhdmFpbGFibGUgaW4gdGhlIGZvbGxvd2luZyBsb2NhdGlvbnM6IFN0YWdlIElWCiAgICAgIFFQRTogJmx0O2h0dHBzOi8vZGF0YS5lb2wudWNhci5lZHUvZGF0YXNldC8yMS4wOTMmZ3Q7IENDUEEgUVBFOgogICAgICAmbHQ7aHR0cHM6Ly9mdHAuZW1jLm5jZXAubm9hYS5nb3YvZ2Nfd21iL3lsdW8vQ0NQQV92Mi9ocmFwLyZndDsgSFJSUiBRUEY6CiAgICAgICZsdDtodHRwczovL3JlZ2lzdHJ5Lm9wZW5kYXRhLmF3cy9ub2FhLWhycnItcGRzLyZndDsgRm9yIHRoaXMgcHJvamVjdCwgd2UKICAgICAgYWNxdWlyZWQgZGF0YSBmcm9tIHRoZSBOT0FBIEhpZ2ggUGVyZm9ybWFuY2UgU3RvcmFnZSBTeXN0ZW0gKEhQU1MpLgogICAgPC9kZXNjcmlwdGlvbj4KICA8L2Rlc2NyaXB0aW9ucz4KPC9yZXNvdXJjZT4=",
+        "url": "https://datadryad.org/dataset/doi:10.5061/dryad.gxd2547rt",
+        "contentUrl": null,
+        "metadataVersion": 5,
+        "schemaVersion": "http://datacite.org/schema/kernel-4",
+        "source": "mds",
+        "isActive": true,
+        "state": "findable",
+        "reason": null,
+        "viewCount": 387,
+        "viewsOverTime": [
+          {
+            "yearMonth": "2023-11",
+            "total": 212
+          },
+          {
+            "yearMonth": "2023-12",
+            "total": 108
+          },
+          {
+            "yearMonth": "2024-01",
+            "total": 1
+          },
+          {
+            "yearMonth": "2024-02",
+            "total": 1
+          },
+          {
+            "yearMonth": "2024-03",
+            "total": 2
+          },
+          {
+            "yearMonth": "2024-04",
+            "total": 1
+          },
+          {
+            "yearMonth": "2024-06",
+            "total": 2
+          },
+          {
+            "yearMonth": "2024-07",
+            "total": 1
+          },
+          {
+            "yearMonth": "2024-08",
+            "total": 2
+          },
+          {
+            "yearMonth": "2024-09",
+            "total": 7
+          },
+          {
+            "yearMonth": "2024-10",
+            "total": 2
+          },
+          {
+            "yearMonth": "2024-11",
+            "total": 2
+          },
+          {
+            "yearMonth": "2025-02",
+            "total": 1
+          },
+          {
+            "yearMonth": "2025-03",
+            "total": 2
+          },
+          {
+            "yearMonth": "2025-04",
+            "total": 1
+          },
+          {
+            "yearMonth": "2025-05",
+            "total": 5
+          },
+          {
+            "yearMonth": "2025-07",
+            "total": 2
+          },
+          {
+            "yearMonth": "2025-08",
+            "total": 1
+          },
+          {
+            "yearMonth": "2025-09",
+            "total": 2
+          },
+          {
+            "yearMonth": "2025-10",
+            "total": 1
+          },
+          {
+            "yearMonth": "2025-11",
+            "total": 3
+          },
+          {
+            "yearMonth": "2026-01",
+            "total": 1
+          },
+          {
+            "yearMonth": "2026-03",
+            "total": 1
+          },
+          {
+            "yearMonth": "2026-04",
+            "total": 6
+          },
+          {
+            "yearMonth": "2026-05",
+            "total": 2
+          },
+          {
+            "yearMonth": "2026-09",
+            "total": 5
+          },
+          {
+            "yearMonth": "2026-10",
+            "total": 13
+          }
+        ],
+        "downloadCount": 301,
+        "downloadsOverTime": [
+          {
+            "yearMonth": "2023-11",
+            "total": 207
+          },
+          {
+            "yearMonth": "2023-12",
+            "total": 91
+          },
+          {
+            "yearMonth": "2024-01",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-02",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-03",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-04",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-06",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-07",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-08",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-09",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-10",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-11",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-02",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-03",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-04",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-05",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-07",
+            "total": 1
+          },
+          {
+            "yearMonth": "2025-08",
+            "total": 1
+          },
+          {
+            "yearMonth": "2025-09",
+            "total": 0
+          },
+          {
+            "yearMonth": "2025-10",
+            "total": 1
+          },
+          {
+            "yearMonth": "2025-11",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-01",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-03",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-04",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-05",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-09",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-10",
+            "total": 0
+          }
+        ],
+        "referenceCount": 0,
+        "citationCount": 1,
+        "citationsOverTime": [
+          {
+            "year": "2025",
+            "total": 1
+          }
+        ],
+        "partCount": 0,
+        "partOfCount": 0,
+        "versionCount": 0,
+        "versionOfCount": 0,
+        "created": "2023-11-30T20:12:33.000Z",
+        "registered": "2023-11-30T20:12:34.000Z",
+        "published": "2023",
+        "updated": "2026-01-28T15:39:15.000Z"
+      },
+      "relationships": {
+        "client": {
+          "data": {
+            "id": "dryad.dryad",
+            "type": "clients"
+          }
+        },
+        "provider": {
+          "data": {
+            "id": "dryad",
+            "type": "providers"
+          }
+        },
+        "media": {
+          "data": {
+            "id": "10.5061/dryad.gxd2547rt",
+            "type": "media"
+          }
+        },
+        "references": {
+          "data": []
+        },
+        "citations": {
+          "data": [
+            {
+              "id": "10.1175/jhm-d-23-0203.1",
+              "type": "dois"
+            }
+          ]
+        },
+        "parts": {
+          "data": []
+        },
+        "partOf": {
+          "data": []
+        },
+        "versions": {
+          "data": []
+        },
+        "versionOf": {
+          "data": []
+        }
+      }
+    }
+  }
+}

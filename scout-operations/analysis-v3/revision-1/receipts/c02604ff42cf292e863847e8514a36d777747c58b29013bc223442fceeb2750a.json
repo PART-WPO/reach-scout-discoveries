@@ -1,0 +1,73 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=The+Role+of+360-Degree+Videos+in+Wildfire+Preparedness&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=The+Role+of+360-Degree+Videos+in+Wildfire+Preparedness&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:53.899954+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 1958277,
+      "items": [
+        {
+          "DOI": "10.1145/3318216.3363372",
+          "title": [
+            "FFmpeg360 for 360-degree videos"
+          ],
+          "type": "proceedings-article",
+          "published": {
+            "date-parts": [
+              [
+                2019,
+                11,
+                7
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1145/3097895.3097896",
+          "title": [
+            "Characterization of 360-degree Videos"
+          ],
+          "type": "proceedings-article",
+          "published": {
+            "date-parts": [
+              [
+                2017,
+                8,
+                11
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1109/noms47738.2020.9110464",
+          "title": [
+            "Optimizing HAS for 360-Degree Videos"
+          ],
+          "type": "proceedings-article",
+          "published": {
+            "date-parts": [
+              [
+                2020,
+                4
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}
