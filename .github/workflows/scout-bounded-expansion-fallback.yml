@@ -3,6 +3,8 @@ on:
   pull_request:
     paths:
       - 'scout-operations/tools/expansion_fallback_research.py'
+      - 'scout-operations/tools/recover_related_output_source.py'
+      - 'scout-operations/tools/related_output_identity.py'
       - 'scout-operations/tools/reconcile_scout_metrics.py'
       - 'scout-operations/tools/source_discovery_metrics.py'
       - 'scout-operations/tools/discovery_origin_evidence.py'
@@ -10,11 +12,15 @@ on:
       - 'scout-operations/tools/source_driven_expansion.py'
       - 'scout-operations/tests/test_source_driven_expansion.py'
       - 'scout-operations/tests/test_expansion_fallback_research.py'
+      - 'scout-operations/tests/test_recover_related_output_source.py'
+      - 'scout-operations/tests/test_related_output_identity.py'
       - '.github/workflows/scout-bounded-expansion-fallback.yml'
   push:
     branches: [main]
     paths:
       - 'scout-operations/tools/expansion_fallback_research.py'
+      - 'scout-operations/tools/recover_related_output_source.py'
+      - 'scout-operations/tools/related_output_identity.py'
       - 'scout-operations/tools/reconcile_scout_metrics.py'
       - 'scout-operations/tools/source_discovery_metrics.py'
       - 'scout-operations/tools/discovery_origin_evidence.py'
@@ -22,6 +28,8 @@ on:
       - 'scout-operations/tools/source_driven_expansion.py'
       - 'scout-operations/tests/test_source_driven_expansion.py'
       - 'scout-operations/tests/test_expansion_fallback_research.py'
+      - 'scout-operations/tests/test_recover_related_output_source.py'
+      - 'scout-operations/tests/test_related_output_identity.py'
       - '.github/workflows/scout-bounded-expansion-fallback.yml'
   schedule:
     # Source-backed research ready before the ChatGPT hourly :29 mission.
@@ -49,8 +57,10 @@ jobs:
           python-version: '3.11'
       - name: Validate bounded REACH seed expansion, SHA evidence and cooldown
         run: |
-          python -m py_compile scout-operations/tools/expansion_fallback_research.py scout-operations/tools/source_driven_expansion.py
+          python -m py_compile scout-operations/tools/expansion_fallback_research.py scout-operations/tools/source_driven_expansion.py scout-operations/tools/recover_related_output_source.py scout-operations/tools/related_output_identity.py
           python -m unittest discover -v -s scout-operations/tests -p 'test_expansion_fallback_research.py'
+          python -m unittest discover -v -s scout-operations/tests -p 'test_recover_related_output_source.py'
+          python -m unittest discover -v -s scout-operations/tests -p 'test_related_output_identity.py'
           python -m unittest discover -v -s scout-operations/tests -p 'test_source_driven_expansion.py'
           python -m unittest discover -v -s scout-operations/tests -p 'test_discovery_metrics_reconciliation.py'
           python scout-operations/tools/reconcile_scout_metrics.py

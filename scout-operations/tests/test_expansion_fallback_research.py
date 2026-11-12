@@ -178,5 +178,79 @@ class FallbackTests(unittest.TestCase):
         second = m.run(self.root, NOW + timedelta(hours=1), "2202", self.metadata, seed_override="")
         self.assertEqual(second["seed"], D2)
 
+    def test_native_fallback_and_complete_duplicate_gate_make_review_ready_not_staged(self):
+        dataset = "10.7302/17vn-x488"
+        def source(seed):
+            return {"schema": "reach-scout-source-driven-expansion-v1", "seed_doi": seed,
+                    "discovered_doi_leads": [{"doi": dataset, "evidence_kind": "publisher_article_html",
+                         "source_url": "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024GL109890"}]}
+        def metadata(doi):
+            if doi == dataset:
+                return {"status": "unavailable_or_not_found"}
+            return self.metadata(doi)
+        calls = []
+        def recover(doi, **kwargs):
+            calls.append(("recovery", doi))
+            return {"official_exact_doi_verified": True, "status": "OUTPUT_METADATA_PARTIAL",
+                    "title": "Great Lakes cyclone tracks and composites", "resource_type": "Dataset"}
+        def full_gate(root, doi, title, *, artifact_url=""):
+            calls.append(("identity", doi))
+            return {"status": "NO_PUBLIC_IDENTITY_MATCH",
+                    "checked_public_scout_manifest_and_inbox": True,
+                    "checked_live_complete_reach": True,
+                    "noaa_ir_reach_check": {"status": "DOI_NOT_IN_VERIFIED_IR_INDEX_UNKNOWN"}}
+        outcome = m.run(self.root, NOW, "9101", metadata, source_fn=source,
+                        recovery_fn=recover, identity_screen_fn=full_gate, seed_override=D2)
+        note = json.loads((self.root / outcome["research_report"]).read_text())
+        item = note["new_source_driven_leads_screened"][0]
+        self.assertEqual(item["next_gate"], "REVIEW_READY_NEEDS_INVESTIGATION_NOT_DELIVERED")
+        self.assertEqual(item["official_title"], "Great Lakes cyclone tracks and composites")
+        self.assertEqual(calls, [("recovery", dataset), ("identity", dataset)])
+        self.assertEqual(item["exact_doi_publisher_deposited_wpo_awards"], [])
+        self.assertEqual(item["private_hub_import"], "NOT_VERIFIED")
+        self.assertEqual(note["new_public_candidate_count"], 0)
+
+    def test_incomplete_live_identity_never_queues_human_candidate(self):
+        dataset = "10.7302/17vn-x488"
+        def source(seed):
+            return {"schema": "reach-scout-source-driven-expansion-v1", "seed_doi": seed,
+                    "discovered_doi_leads": [{"doi": dataset}]}
+        def recover(doi, **kwargs):
+            return {"official_exact_doi_verified": True, "title": "Storm tracks"}
+        outcome = m.run(self.root, NOW, "9102",
+                        lambda doi: {"status": "unavailable_or_not_found"},
+                        source_fn=source, recovery_fn=recover,
+                        identity_screen_fn=lambda *a, **k: {
+                            "status": "PUBLIC_IDENTITY_GATE_INCOMPLETE"},
+                        seed_override=D2)
+        note = json.loads((self.root / outcome["research_report"]).read_text())
+        self.assertEqual(note["new_source_driven_leads_screened"][0]["next_gate"],
+                         "PUBLIC_IDENTITY_GATE_INCOMPLETE")
+        self.assertEqual(note["new_public_candidate_count"], 0)
+
+    def test_existing_scout_candidate_fast_exits_even_under_metadata_failure(self):
+        dataset = "10.7302/17vn-x488"
+        def source(seed):
+            return {"schema": "reach-scout-source-driven-expansion-v1", "seed_doi": seed,
+                    "discovered_doi_leads": [{"doi": dataset}]}
+        outcome = m.run(self.root, NOW, "9103",
+                        lambda doi: {"status": "unavailable_or_not_found"},
+                        source_fn=source,
+                        recovery_fn=lambda *a, **k: {"status": "SOURCE_ACCESS_FAILURE"},
+                        identity_screen_fn=lambda *a, **k: {
+                            "status": "IN_PUBLIC_SCOUT_QUEUE"},
+                        seed_override=D2)
+        note = json.loads((self.root / outcome["research_report"]).read_text())
+        self.assertEqual(note["new_source_driven_leads_screened"][0]["next_gate"],
+                         "EXISTING_PUBLIC_IDENTITY_NO_RESTAGING")
+
+    def test_publisher_cited_github_repo_requires_official_source(self):
+        good = {"doi": CHILD, "source_url":
+                "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024GL109890",
+                "context_excerpt": "Study code https://github.com/abkenyon/GLStormTrends_2024 DOI 10.5281/zenodo.12627444"}
+        self.assertEqual(m.cited_github_repo(good),
+                         "https://github.com/abkenyon/GLStormTrends_2024")
+        self.assertIsNone(m.cited_github_repo({**good, "source_url": "https://random.example/fake"}))
+
 if __name__=="__main__":
     unittest.main()
