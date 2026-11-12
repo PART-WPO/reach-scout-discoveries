@@ -4,6 +4,9 @@ on:
   pull_request:
     paths:
       - 'scout-operations/tools/verify_reach_artifact_url.py'
+      - 'scout-operations/tools/cache_attestation.py'
+      - 'scout-operations/reach-comparison-cache/build_cache.py'
+      - 'scout-operations/tests/test_cache_attestation.py'
       - 'scout-operations/tests/test_verify_reach_artifact_url.py'
       - '.github/workflows/scout-reach-artifact-url-regression.yml'
   workflow_dispatch:
@@ -20,6 +23,8 @@ jobs:
         with:
           python-version: '3.11'
       - name: Compile read-only verifier
-        run: python -m py_compile scout-operations/tools/verify_reach_artifact_url.py
+        run: python -m py_compile scout-operations/tools/verify_reach_artifact_url.py scout-operations/tools/cache_attestation.py scout-operations/reach-comparison-cache/build_cache.py
+      - name: Test cache attestation, reuse, hash mismatch and source drift
+        run: python -m unittest discover -s scout-operations/tests -p 'test_cache_attestation.py' -v
       - name: Test primary software URL vs secondary article link
         run: python -m unittest discover -s scout-operations/tests -p 'test_verify_reach_artifact_url.py' -v
