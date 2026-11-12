@@ -147,6 +147,47 @@ software URL must fast-exit as existing REACH and continue to another
 eligible seed in the **same mission**. Do not alter older immutable reports.
 
 
+## Reusable REACH comparison-cache verification (November 11, 2026)
+
+The existing verified-cache build checks **every** official REACH index and detail
+shard's SHA-256, size, row count, and complete record join. Only after those
+checks pass does it publish the deterministic verification report
+(scout-operations/reach-comparison-cache/cache-verification.json) beside
+comparison-index.json in **the same atomic commit**. The report pins the cache
+SHA-256 and Git blob SHA, official source-manifest SHA-256 and Git blob SHA,
+record count, and verified shard count. The scheduled builder refreshes this
+source snapshot; hourly research need not re-download all shards.
+
+**Reuse/freshness (once per mission, not per DOI):**
+- In executable environments, run Python tools/cache_attestation.py --live
+  (under scout-operations). It hashes the local cache and reads just the
+  current official REACH manifest. Without internet, omit --live and record
+  source freshness NOT_CHECKED, never CURRENT.
+- With connected GitHub reads, fetch the attestation, cache, and current REACH
+  agent-data/manifest.json. Compare reported **Git blob SHAs** to each
+  fetch_file response's actual sha, and compare snapshot record counts.
+  Git blob SHA-1 and content SHA-256 are different checks: never conflate them.
+  If any relevant check cannot be completed, record NOT_VERIFIED and why.
+- VERIFIED_SNAPSHOT + matching current manifest blob is reusable. Changed live
+  source manifest means SOURCE_CHANGED (stale snapshot), a real content hash
+  mismatch means SHA_MISMATCH, missing/inaccessible evidence means
+  NOT_VERIFIED. Never report a skipped check as a checksum mismatch.
+- **Preserve exact LIVE REACH primary-URL fast exits**: a current canonical
+  Link to Output plus matching Record ID, REACH UID and output type proves
+  an existing artifact even if cache attestation is unavailable. Log the
+  duplicate and rotate within the same mission. A cache miss, supporting-link
+  hit, changed/unreadable shard, or incomplete full public gate is NEVER
+  proof of novelty; require complete REACH + Scout/IR/version screening.
+- Structured mission diagnostics should include cache_verification status,
+  reason, source_freshness and relevant pinned fingerprints plus the verified
+  actual main policy_commit_sha (or NOT_VERIFIED). Mention details in the
+  user-facing summary only when they affect a decision or require attention.
+
+The read-only artifact checker includes the separate attestation result;
+the cache builder and URL regression workflows test these classifications.
+Do not rewrite immutable earlier mission reports.
+
+
 ## Related-output native-source recovery and complete identity gate — November 11, 2026
 
 This rule extends the same-mission REACH artifact URL gate. A DOI resolver rejecting a redirect or a native landing page being inaccessible is **SOURCE_ACCESS_FAILURE**, not proof that the output or metadata is absent, irrelevant, or a duplicate.
