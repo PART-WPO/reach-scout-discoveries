@@ -1,0 +1,57 @@
+{
+  "schema": "reach-scout-bounded-expansion-research-v1",
+  "observed_at_utc": "2026-11-12T03:55:45.480653+00:00",
+  "seed_doi": "10.1007/s00382-023-06965-7",
+  "source_graph_sha256": "8ee84bb5d4aa440dc99923c0ce5fec63a77b17e9488457dd2b36b15f052a2a13",
+  "seed_expansion_fingerprint": "df907e7edbc9c3cb8b767a6dc2a17cbd15e979092a7cd4a5d316220a41b0d00c",
+  "seed_reach_identity_verified_in_graph": true,
+  "explicit_related_dois_preserved": [],
+  "source_lookups": [
+    {
+      "doi": "10.1007/s00382-023-06965-7",
+      "role": "VERIFIED_REACH_EXPANSION_SEED",
+      "source_status": "ok",
+      "official_provider": "crossref",
+      "official_title": "Sensitivity of the blocking-North Atlantic Oscillation relationship to index",
+      "official_metadata_url": "https://api.crossref.org/works/10.1007/s00382-023-06965-7",
+      "publication_status": "official_journal_article",
+      "official_award_numbers_observed": [
+        "DE-SC0019433",
+        "NA15OAR4320064",
+        "NA18OAR4310293",
+        "NA20OAR4320472",
+        "OCE1419569",
+        "OCE1559151"
+      ],
+      "separate_output_uniqueness": "NOT_VERIFIED",
+      "same_WPO_project_parent": "NOT_VERIFIED"
+    }
+  ],
+  "status": "OFFICIAL_SOURCE_CHECK_RECORDED",
+  "source_driven_discovery": {
+    "schema": "reach-scout-source-driven-expansion-v1",
+    "seed_doi": "10.1007/s00382-023-06965-7",
+    "source_checks": [
+      {
+        "kind": "crossref_references",
+        "url": "https://api.crossref.org/works/10.1007/s00382-023-06965-7",
+        "status": "SOURCE_READ",
+        "source_sha256": "0d089cf64f6a065281bde4b92c1a9fb10427c14dd40a2ee469a01ec6c9779561",
+        "data_code_doi_matches": 0
+      }
+    ],
+    "discovered_doi_leads": [],
+    "status": "NO_DATA_CODE_DOI_IDENTIFIED",
+    "new_public_candidates": 0,
+    "private_hub_import": "NOT_VERIFIED"
+  },
+  "new_source_driven_leads_screened": [],
+  "new_distinct_doi_leads_found": 0,
+  "new_public_candidate_count": 0,
+  "new_related_output_eligibility_confirmed": 0,
+  "separate_expansion_decisions_completed": 0,
+  "reason_not_a_completed_expansion": "Source metadata and DOI edges are research leads; distinct output identity, preprint, public REACH/Scout duplicate and exact WPO project funding require independent checks.",
+  "next_action": "Investigate official metadata and full current REACH/Scout identity for distinct linked DOI(s); verify their OWN publisher award and primary SPARK parent before any Needs Investigation or New Candidate.",
+  "private_hub_import": "NOT_VERIFIED",
+  "human_approval": "NOT_VERIFIED"
+}
