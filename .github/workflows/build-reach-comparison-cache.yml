@@ -3,6 +3,8 @@ on:
   push:
     paths:
       - 'scout-operations/reach-comparison-cache/build_cache.py'
+      - 'scout-operations/tools/cache_attestation.py'
+      - 'scout-operations/tests/test_cache_attestation.py'
       - '.github/workflows/build-reach-comparison-cache.yml'
   workflow_dispatch:
   schedule:
@@ -33,7 +35,12 @@ jobs:
             git fetch origin main
             git checkout -B main origin/main
             python scout-operations/reach-comparison-cache/build_cache.py
-            git add scout-operations/reach-comparison-cache/comparison-index.json
+            # Builder verifies all source shards; this rechecks the current
+            # live manifest and the newly published cache SHA without
+            # downloading all shard files again.
+            python scout-operations/tools/cache_attestation.py --live
+            git add scout-operations/reach-comparison-cache/comparison-index.json \
+              scout-operations/reach-comparison-cache/cache-verification.json
             if git diff --cached --quiet; then
               echo "REACH comparison cache unchanged"
               exit 0
