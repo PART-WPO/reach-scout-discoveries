@@ -1,0 +1,67 @@
+{
+  "schema": "reach-scout-bounded-expansion-research-v1",
+  "observed_at_utc": "2026-11-12T20:57:31.232277+00:00",
+  "seed_doi": "10.1007/s00382-024-07512-8",
+  "source_graph_sha256": "8ee84bb5d4aa440dc99923c0ce5fec63a77b17e9488457dd2b36b15f052a2a13",
+  "seed_expansion_fingerprint": "ab9cb2ccf7b87f696a460e3464ee86a889e4f946e8410889acc7389cc4914841",
+  "seed_reach_identity_verified_in_graph": true,
+  "explicit_related_dois_preserved": [],
+  "source_lookups": [
+    {
+      "doi": "10.1007/s00382-024-07512-8",
+      "role": "VERIFIED_REACH_EXPANSION_SEED",
+      "source_status": "ok",
+      "official_provider": "crossref",
+      "official_title": "The impact of vertical model levels on the prediction of MJO teleconnections. Part II: The stratospheric pathway in the UFS global coupled model",
+      "official_metadata_url": "https://api.crossref.org/works/10.1007/s00382-024-07512-8",
+      "publication_status": "official_journal_article",
+      "official_award_numbers_observed": [
+        "NA22OAR4590216"
+      ],
+      "separate_output_uniqueness": "NOT_VERIFIED",
+      "same_WPO_project_parent": "NOT_VERIFIED"
+    }
+  ],
+  "status": "OFFICIAL_SOURCE_CHECK_RECORDED",
+  "source_driven_discovery": {
+    "schema": "reach-scout-source-driven-expansion-v1",
+    "seed_doi": "10.1007/s00382-024-07512-8",
+    "source_checks": [
+      {
+        "kind": "crossref_references",
+        "url": "https://api.crossref.org/works/10.1007/s00382-024-07512-8",
+        "status": "SOURCE_READ",
+        "source_sha256": "f1d6db39ed06772377455847e48418291aa6af790e01c652263d6f47592cb171",
+        "data_code_doi_matches": 0
+      },
+      {
+        "kind": "noaa_ir_landing",
+        "url": "https://repository.library.noaa.gov/view/noaa/71973",
+        "status": "SOURCE_READ",
+        "source_sha256": "d2ce6d6131cf2d9913a612117abae313aab1bc555d89bfd05311d22c19805d44"
+      },
+      {
+        "kind": "noaa_ir_manuscript_pdf",
+        "url": "https://repository.library.noaa.gov/view/noaa/71973/noaa_71973_DS1.pdf",
+        "status": "SOURCE_READ",
+        "source_sha256": "4e211653802aa959f7a6ce8584385aac5aa91198490ead7c4a817951f5802929",
+        "data_code_doi_matches": 0,
+        "pdf_text_characters": 72974,
+        "pdf_doi_tokens_observed": 1
+      }
+    ],
+    "discovered_doi_leads": [],
+    "status": "NO_DATA_CODE_DOI_IDENTIFIED",
+    "new_public_candidates": 0,
+    "private_hub_import": "NOT_VERIFIED"
+  },
+  "new_source_driven_leads_screened": [],
+  "new_distinct_doi_leads_found": 0,
+  "new_public_candidate_count": 0,
+  "new_related_output_eligibility_confirmed": 0,
+  "separate_expansion_decisions_completed": 0,
+  "reason_not_a_completed_expansion": "Source metadata and DOI edges are research leads; distinct output identity, preprint, public REACH/Scout duplicate and exact WPO project funding require independent checks.",
+  "next_action": "Investigate official metadata and full current REACH/Scout identity for distinct linked DOI(s); verify their OWN publisher award and primary SPARK parent before any Needs Investigation or New Candidate.",
+  "private_hub_import": "NOT_VERIFIED",
+  "human_approval": "NOT_VERIFIED"
+}
