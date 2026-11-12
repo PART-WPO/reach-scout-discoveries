@@ -1,0 +1,63 @@
+{
+  "schema": "reach-scout-hourly-mission-outcome-v1",
+  "producer": "chatgpt_hourly_mission",
+  "not_chatgpt_hourly_mission": false,
+  "mission_id": "chatgpt-20261112T012920252Z-glstorm-native-recovery",
+  "started_at_utc": "2026-11-12T01:29:20.252Z",
+  "completed_at_utc": "2026-11-12T01:29:56.950Z",
+  "lane": "related_expansion",
+  "selected_original_dois": [],
+  "selected_expansion_seed_dois": [
+    "10.1029/2024GL109890"
+  ],
+  "fast_exited_public_reach": [],
+  "fast_exited_public_scout": [],
+  "new_original_full_decisions": [],
+  "new_expansion_decisions": [],
+  "research_only_holds": [
+    "10.5281/zenodo.12627444",
+    "10.7302/17vn-x488"
+  ],
+  "technical_or_funding_holds": [
+    "10.5281/zenodo.12627444: PUBLIC_IDENTITY_GATE_INCOMPLETE; PROJECT_ATTRIBUTION_UNVERIFIED",
+    "10.7302/17vn-x488: SOURCE_ACCESS_FAILURE; OUTPUT_METADATA_PARTIAL; PUBLIC_IDENTITY_GATE_INCOMPLETE; PROJECT_ATTRIBUTION_UNVERIFIED"
+  ],
+  "published_public_batch_urls": [],
+  "guarded_handoff_run_urls": [],
+  "prior_note_sha256_reused": [],
+  "prior_metadata_fingerprints_reused": [],
+  "cache_hits_observed": null,
+  "external_requests_observed": null,
+  "avoided_requests_measured": null,
+  "policy_commit_sha": "NOT_VERIFIED",
+  "policy_file_blob_sha": "bacca5f7393c6466702aa33e8569b754d508af0c",
+  "memory_source_fingerprint": "NOT_VERIFIED",
+  "memory_builder_policy_sha256": "6c77012241b8abd0544dcb9e8a22e38aad5b76bb6c3664afafcdeedbc2d4cc17",
+  "handoff_status": "NOT_ATTEMPTED",
+  "private_hub_import": "NOT_VERIFIED",
+  "human_decision": "NOT_VERIFIED",
+  "public_reach_addition": "NOT_VERIFIED",
+  "research_evidence": [
+    {
+      "doi": "10.5281/zenodo.12627444",
+      "source": "https://github.com/abkenyon/GLStormTrends_2024/blob/main/README.md",
+      "source_blob_sha": "7af992fdbbbbabed1690fe9f695d7cd99d255aa2",
+      "finding": "Author-maintained repository README explicitly identifies article Hutson et al. 2024 and exact Zenodo DOI; source-backed distinct software lead, not fully screened. Upstream ecjoliver/stormTracking is not the original artifact.",
+      "gates": "Zenodo exact record API inaccessible; REACH CSV fetch returned empty content; full cache/shard and Scout inbox, IR/version-family gates unfinished; award on citing article not output-level proof."
+    },
+    {
+      "doi": "10.7302/17vn-x488",
+      "source": "https://api.datacite.org/dois/10.7302%2F17vn-x488",
+      "finding": "Exact DataCite API request inaccessible; verified native Deep Blue URL unavailable; no source-backed full metadata or identity clearance.",
+      "gates": "REACH full comparison and canonical URL, Scout inbox, IR/version family unverified."
+    }
+  ],
+  "attempts": [
+    "GitHub native README fetched and SHA recorded",
+    "Zenodo record API inaccessible via web",
+    "DataCite exact DOI API inaccessible via web",
+    "REACH repository primary CSV fetch returned empty content",
+    "Scout manifest searched for exact two DOI strings, no direct matches in manifest metadata (not a full inbox search)"
+  ],
+  "disposition": "REVIEW_READY_NEEDS_INVESTIGATION_NOT_DELIVERED not established: source-backed code lead only; public identity and attribution incomplete. No human intake claimed."
+}
