@@ -11,6 +11,7 @@ from pathlib import Path
 TOOLS = Path(__file__).resolve().parents[1] / "tools"
 sys.path.insert(0, str(TOOLS))
 from verify_reach_artifact_url import CACHE, artifact_url, verify  # noqa: E402
+from cache_attestation import ATTESTATION, git_blob_sha  # noqa: E402
 
 URL = "https://github.com/chrisrac/objective_thresholds"
 INDEX = "agent-data/index/part-001.csv"
@@ -113,6 +114,59 @@ class ArtifactUrlVerification(unittest.TestCase):
         result = self.check(loader=lambda path: f.getvalue().encode("utf-8"))
         self.assertEqual(result["status"], "EXISTING_REACH_PRIMARY_OUTPUT_URL")
         self.assertFalse(result["matches"][0]["index_sha_matches_cache"])
+
+
+    def write_attestation(self, manifest=b"fixture-manifest"):
+        cache_file = self.root / CACHE
+        raw = cache_file.read_bytes()
+        proof = {
+            "schema": "reach-scout-comparison-attestation-v1",
+            "status": "VERIFIED_SNAPSHOT",
+            "source_repo": "PART-WPO/reach-dashboard",
+            "source_manifest_sha256": hashlib.sha256(manifest).hexdigest(),
+            "source_manifest_git_blob_sha": git_blob_sha(manifest),
+            "source_csv_sha256_declared": "fixture-csv-sha256",
+            "cache_sha256": hashlib.sha256(raw).hexdigest(),
+            "cache_git_blob_sha": git_blob_sha(raw),
+            "source_records": len(self.records),
+            "verified_shard_count": 1,
+        }
+        cache = json.loads(raw)
+        cache["source_manifest_sha256"] = proof["source_manifest_sha256"]
+        cache["source_csv_sha256_declared"] = proof["source_csv_sha256_declared"]
+        raw = (json.dumps(cache) + "\n").encode()
+        cache_file.write_bytes(raw)
+        proof["cache_sha256"] = hashlib.sha256(raw).hexdigest()
+        proof["cache_git_blob_sha"] = git_blob_sha(raw)
+        (self.root / ATTESTATION).write_text(json.dumps(proof))
+        return manifest
+
+    def test_existing_primary_url_fast_exit_when_full_cache_unverified(self):
+        result = self.check()
+        self.assertEqual(result["status"], "EXISTING_REACH_PRIMARY_OUTPUT_URL")
+        self.assertEqual(result["cache_verification"]["status"], "NOT_VERIFIED")
+        self.assertEqual(result["cache_verification"]["reason"], "ATTESTATION_MISSING")
+
+    def test_existing_primary_url_fast_exit_even_after_actual_cache_sha_mismatch(self):
+        self.write_attestation()
+        cache_file = self.root / CACHE
+        cache = json.loads(cache_file.read_text())
+        cache["records"][0]["links"].append("https://example.org/updated")
+        cache_file.write_text(json.dumps(cache))
+        result = self.check()
+        self.assertEqual(result["status"], "EXISTING_REACH_PRIMARY_OUTPUT_URL")
+        self.assertEqual(result["cache_verification"]["status"], "SHA_MISMATCH")
+
+    def test_verified_cache_live_manifest_check_is_separate_from_artifact(self):
+        manifest = self.write_attestation()
+        good = verify(URL, root=self.root, load_shard=lambda _: self.csvbytes,
+                      manifest_bytes=manifest)
+        self.assertEqual(good["cache_verification"]["status"], "VERIFIED_SNAPSHOT")
+        self.assertEqual(good["cache_verification"]["source_freshness"], "CURRENT")
+        stale = verify(URL, root=self.root, load_shard=lambda _: self.csvbytes,
+                       manifest_bytes=b"new official snapshot")
+        self.assertEqual(stale["status"], "EXISTING_REACH_PRIMARY_OUTPUT_URL")
+        self.assertEqual(stale["cache_verification"]["status"], "SOURCE_CHANGED")
 
 
 if __name__ == "__main__":
