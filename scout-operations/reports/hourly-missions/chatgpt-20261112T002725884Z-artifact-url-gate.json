@@ -1,0 +1,56 @@
+{
+  "schema": "reach-scout-hourly-mission-outcome-v1",
+  "producer": "chatgpt_hourly_mission",
+  "not_chatgpt_hourly_mission": false,
+  "mission_id": "20261112T002725884Z-artifact-url-gate",
+  "started_at_utc": "2026-11-12T00:27:25.884Z",
+  "completed_at_utc": "2026-11-12T00:28:16.436Z",
+  "policy_commit_sha": "NOT_VERIFIED",
+  "memory_source_fingerprint": "8ee84bb5d4aa440dc99923c0ce5fec63a77b17e9488457dd2b36b15f052a2a13",
+  "memory_builder_policy_sha256": "6c77012241b8abd0544dcb9e8a22e38aad5b76bb6c3664afafcdeedbc2d4cc17",
+  "lane": "related_expansion",
+  "selected_original_dois": [],
+  "selected_expansion_seed_dois": [
+    "10.1029/2024ms004319"
+  ],
+  "fast_exited_public_reach": [
+    {
+      "identity": "https://github.com/chrisrac/objective_thresholds",
+      "status": "VERIFIED_EXISTING_REACH_ARTIFACT",
+      "record_id": "reach-000079",
+      "uid": "reachuid-v1-2db795d7c2e4513ff44d2c5a7fd97532",
+      "award": "NA19OAR4590411",
+      "proof": "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-001.csv",
+      "source_blob_sha": "c831a106d176c09b4e2d5ea8a0d841cf17571c88"
+    },
+    {
+      "identity": "https://github.com/c2xu/MOM6/releases/tag/v1.0.0",
+      "related_doi": "10.5281/zenodo.13379023",
+      "status": "VERIFIED_EXISTING_REACH_ARTIFACT",
+      "record_id": "reach-001213",
+      "uid": "reachuid-v1-1023907617dc45799b3df133490df592",
+      "award": "NA22OAR0110487",
+      "proof": "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-010.csv",
+      "source_blob_sha": "5cd6e8899462d3afb9a3ea730e6dfcce913bc4c2",
+      "publisher_evidence": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2024MS004319"
+    }
+  ],
+  "fast_exited_public_scout": [],
+  "new_original_full_decisions": [],
+  "new_expansion_decisions": [],
+  "research_only_holds": [],
+  "technical_or_funding_holds": [],
+  "published_public_batch_urls": [],
+  "guarded_handoff_run_urls": [],
+  "handoff_status": "VERIFIED_ALREADY_PUBLIC",
+  "handoff_blocker": null,
+  "prior_note_sha256_reused": [],
+  "prior_metadata_fingerprints_reused": [],
+  "cache_hits_observed": null,
+  "external_requests_observed": null,
+  "avoided_requests_measured": null,
+  "private_hub_import": "NOT_VERIFIED",
+  "human_decision": "NOT_VERIFIED",
+  "public_reach_addition": "NOT_VERIFIED",
+  "notes": "Two primary artifact URLs independently confirmed against current main canonical index shards. Full comparison-cache SHA verification not established in this execution; no novelty decision or public handoff attempted. Second publisher's funding acknowledgment is OAR011, not WPO 459."
+}
