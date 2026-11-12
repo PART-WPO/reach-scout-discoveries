@@ -50,7 +50,7 @@ def main():
         raise ValueError("index/detail join incomplete")
     output={"schema":"reach-scout-comparison-cache-v1","source_repo":"PART-WPO/reach-dashboard","source_manifest_sha256":sha(manifest_bytes),"source_csv_sha256_declared":manifest["source"]["sha256"],"source_records":len(records),"verified_shards":checked,"records":sorted(records.values(),key=lambda x:x["record_id"])}
     HERE.mkdir(parents=True,exist_ok=True)
-    cache_bytes = (json.dumps(output,ensure_ascii=False,separators=(",",":"))+"\\n").encode("utf-8")
+    cache_bytes = (json.dumps(output,ensure_ascii=False,separators=(",",":"))+"\n").encode("utf-8")
     (HERE/"comparison-index.json").write_bytes(cache_bytes)
     # Produced only AFTER every shard's SHA-256, byte size, row count and
     # record identity have passed. This is a deterministic, reusable snapshot
@@ -68,7 +68,7 @@ def main():
         "verified_shard_count": len(checked),
     }
     (HERE/"cache-verification.json").write_text(
-        json.dumps(attestation,sort_keys=True,indent=2)+"\\n", encoding="utf-8")
+        json.dumps(attestation,sort_keys=True,indent=2)+"\n", encoding="utf-8")
     print(json.dumps({"records":len(records),"verified_shards":len(checked),
                       "cache_sha256":sha(cache_bytes),"attestation":"VERIFIED_SNAPSHOT"}))
 if __name__=="__main__":main()
