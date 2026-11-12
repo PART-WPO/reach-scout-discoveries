@@ -17,6 +17,7 @@ from urllib.parse import urlsplit, urlunsplit
 from urllib.request import Request, urlopen
 
 from decision_pipeline import norm_url
+from cache_attestation import verify_snapshot, fetch_manifest
 
 ROOT = Path(__file__).resolve().parents[2]
 CACHE = "scout-operations/reach-comparison-cache/comparison-index.json"
@@ -50,10 +51,14 @@ def official_index_bytes(relative, *, timeout=12):
         return response.read(3_000_001)
 
 
-def verify(url, *, root=ROOT, load_shard=official_index_bytes):
+def verify(url, *, root=ROOT, load_shard=official_index_bytes, manifest_bytes=None):
     target = artifact_url(url)
     if not target:
         raise ValueError("A full HTTPS artifact URL is required")
+    # A valid cached proof is reusable until its content changes. If it is
+    # missing, do not claim a verified full-cache comparison. Exact LIVE
+    # primary output URL matches can still prove that an artifact exists.
+    cache_verification = verify_snapshot(root=root, manifest_bytes=manifest_bytes)
     cache = json.loads((Path(root) / CACHE).read_text(encoding="utf-8"))
     if (cache.get("schema") != "reach-scout-comparison-cache-v1"
             or cache.get("source_repo") != "PART-WPO/reach-dashboard"
@@ -66,7 +71,8 @@ def verify(url, *, root=ROOT, load_shard=official_index_bytes):
     }]
     if not candidates:
         return {"status": "NO_CACHE_LINK_MATCH_FULL_REACH_GATE_STILL_REQUIRED",
-                "query_url": target, "matches": [], "scanned_shards": []}
+                "query_url": target, "matches": [], "scanned_shards": [],
+                "cache_verification": cache_verification}
 
     checked, errors, matches, secondary = [], [], [], []
     for path in sorted({rec.get("index_path", "") for rec in candidates}):
@@ -120,15 +126,28 @@ def verify(url, *, root=ROOT, load_shard=official_index_bytes):
         status = "SUPPORTING_LINK_ONLY_FULL_REACH_GATE_REQUIRED"
     return {"status": status, "query_url": target, "matches": matches,
             "supporting_link_records": secondary, "scanned_shards": checked,
-            "errors": errors, "source_cache_manifest_sha256": cache.get("source_manifest_sha256")}
+            "errors": errors, "source_cache_manifest_sha256": cache.get("source_manifest_sha256"),
+            "cache_verification": cache_verification}
 
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--url", required=True, help="Full distinct artifact URL")
     parser.add_argument("--root", type=Path, default=ROOT)
+    parser.add_argument("--check-current-manifest", action="store_true",
+                        help="Check snapshot freshness against the live source manifest")
     args = parser.parse_args()
-    result = verify(args.url, root=args.root)
+    if args.check_current_manifest:
+        try:
+            manifest_bytes = fetch_manifest()
+        except Exception as exc:
+            # This is not evidence that a checksum failed; source could not be read.
+            manifest_bytes = None
+            print(json.dumps({"source_manifest_check": "NOT_VERIFIED",
+                              "reason": "SOURCE_ACCESS_FAILURE:" + type(exc).__name__}))
+    else:
+        manifest_bytes = None
+    result = verify(args.url, root=args.root, manifest_bytes=manifest_bytes)
     print(json.dumps(result, indent=2))
     # Any source failure must be treated as an unresolved gate, never a new item.
     if result["status"] in ("REACH_URL_CHECK_BLOCKED", "POSSIBLE_REACH_IDENTITY_SOURCE_ERROR"):
