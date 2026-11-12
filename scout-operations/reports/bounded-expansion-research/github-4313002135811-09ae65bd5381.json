@@ -1,0 +1,54 @@
+{
+  "schema": "reach-scout-bounded-expansion-research-v1",
+  "observed_at_utc": "2026-11-12T00:49:18.935544+00:00",
+  "seed_doi": "10.1007/s00382-023-06864-x",
+  "source_graph_sha256": "8ee84bb5d4aa440dc99923c0ce5fec63a77b17e9488457dd2b36b15f052a2a13",
+  "seed_expansion_fingerprint": "7fbb16bb80b425d50ac68115f811e7bbc7861be2da7d888658bc2bcb15f218ad",
+  "seed_reach_identity_verified_in_graph": true,
+  "explicit_related_dois_preserved": [],
+  "source_lookups": [
+    {
+      "doi": "10.1007/s00382-023-06864-x",
+      "role": "VERIFIED_REACH_EXPANSION_SEED",
+      "source_status": "ok",
+      "official_provider": "crossref",
+      "official_title": "Using simplified linear and nonlinear models to assess ENSO-modulated MJO teleconnections",
+      "official_metadata_url": "https://api.crossref.org/works/10.1007/s00382-023-06864-x",
+      "publication_status": "official_journal_article",
+      "official_award_numbers_observed": [
+        "DE-SC0019433",
+        "NA18OAR4310293",
+        "OCE1419569"
+      ],
+      "separate_output_uniqueness": "NOT_VERIFIED",
+      "same_WPO_project_parent": "NOT_VERIFIED"
+    }
+  ],
+  "status": "OFFICIAL_SOURCE_CHECK_RECORDED",
+  "source_driven_discovery": {
+    "schema": "reach-scout-source-driven-expansion-v1",
+    "seed_doi": "10.1007/s00382-023-06864-x",
+    "source_checks": [
+      {
+        "kind": "crossref_references",
+        "url": "https://api.crossref.org/works/10.1007/s00382-023-06864-x",
+        "status": "SOURCE_READ",
+        "source_sha256": "5f7838338d5e12d856f5f80021d7547453bcc56bee9b639910dd82cc3e3b0429",
+        "data_code_doi_matches": 0
+      }
+    ],
+    "discovered_doi_leads": [],
+    "status": "NO_DATA_CODE_DOI_IDENTIFIED",
+    "new_public_candidates": 0,
+    "private_hub_import": "NOT_VERIFIED"
+  },
+  "new_source_driven_leads_screened": [],
+  "new_distinct_doi_leads_found": 0,
+  "new_public_candidate_count": 0,
+  "new_related_output_eligibility_confirmed": 0,
+  "separate_expansion_decisions_completed": 0,
+  "reason_not_a_completed_expansion": "Source metadata and DOI edges are research leads; distinct output identity, preprint, public REACH/Scout duplicate and exact WPO project funding require independent checks.",
+  "next_action": "Investigate official metadata and full current REACH/Scout identity for distinct linked DOI(s); verify their OWN publisher award and primary SPARK parent before any Needs Investigation or New Candidate.",
+  "private_hub_import": "NOT_VERIFIED",
+  "human_approval": "NOT_VERIFIED"
+}
