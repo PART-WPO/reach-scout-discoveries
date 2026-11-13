@@ -1,0 +1,74 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=Household-Targeted+Hurricane+Warnings+for+Effective+Evacuation&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=Household-Targeted+Hurricane+Warnings+for+Effective+Evacuation&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:52.992805+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 725501,
+      "items": [
+        {
+          "DOI": "10.1061/9780784483961.117",
+          "title": [
+            "Household-Targeted Hurricane Warnings for Effective Evacuation: Case Study of Hurricane Irma in North Miami Beach"
+          ],
+          "type": "proceedings-article",
+          "published": {
+            "date-parts": [
+              [
+                2022,
+                3,
+                7
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1007/s11069-011-9715-x",
+          "title": [
+            "The logistics of household hurricane evacuation"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2011,
+                1,
+                15
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.3390/su9112152",
+          "title": [
+            "Optimization of Evacuation Warnings Prior to a Hurricane Disaster"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2017,
+                11,
+                22
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

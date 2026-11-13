@@ -1,0 +1,69 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=Burned+Area+Emergency+Response+Teams%3A+Interactions+and+Opportunities+During+Southwestern+Monsoon+Seasons&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=Burned+Area+Emergency+Response+Teams%3A+Interactions+and+Opportunities+During+Southwestern+Monsoon+Seasons&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:57.305368+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 4779225,
+      "items": [
+        {
+          "DOI": "10.1007/978-3-642-31337-0_27",
+          "title": [
+            "Remote Sensing and Geospatial Support to Burned Area Emergency Response (BAER) Teams in Assessing Wildfire Effects to Hillslopes"
+          ],
+          "type": "book-chapter",
+          "published": {
+            "date-parts": [
+              [
+                2013
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.7748/en.14.1.7.s13",
+          "title": [
+            "Emergency response teams"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2006,
+                4
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1016/c2009-0-19907-5",
+          "title": [
+            "Hospital Emergency Response Teams"
+          ],
+          "type": "edited-book",
+          "published": {
+            "date-parts": [
+              [
+                2010
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

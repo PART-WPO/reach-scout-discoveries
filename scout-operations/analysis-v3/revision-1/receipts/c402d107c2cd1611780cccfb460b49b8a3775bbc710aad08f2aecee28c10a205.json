@@ -1,0 +1,64 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=Ceilometer-based+Rainfall+Rate+estimates+in+the+framework+of+VORTEX-SE+campaign%3A+A+discussion&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=Ceilometer-based+Rainfall+Rate+estimates+in+the+framework+of+VORTEX-SE+campaign%3A+A+discussion&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:40.292873+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 8168318,
+      "items": [
+        {
+          "DOI": "10.1109/tgrs.2020.2984458",
+          "title": [
+            "Ceilometer-Based Rain-Rate Estimation: A Case-Study Comparison With S-Band Radar and Disdrometer Retrievals in the Context of VORTEX-SE"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2020,
+                12
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.2172/1254298",
+          "title": [
+            "Laser Ceilometer CL51 Demonstration Field Campaign Report"
+          ],
+          "type": "report",
+          "published": {
+            "date-parts": [
+              [
+                2016,
+                5,
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1007/978-3-540-75369-8_4",
+          "title": [
+            "Rainfall Estimates"
+          ],
+          "type": "book-chapter"
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

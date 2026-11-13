@@ -1,0 +1,669 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.datacite.org/dois/10.17603/ds2-9v8w-y830",
+  "final_url": "https://api.datacite.org/dois/10.17603/ds2-9v8w-y830",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:56:34.112480+00:00",
+  "headers": {
+    "Content-Type": "application/json; charset=utf-8",
+    "ETag": "W/\"a227f205b2ea29d940f7000b940e68a5\""
+  },
+  "body": {
+    "data": {
+      "id": "10.17603/ds2-9v8w-y830",
+      "type": "dois",
+      "attributes": {
+        "doi": "10.17603/ds2-9v8w-y830",
+        "prefix": "10.17603",
+        "suffix": "ds2-9v8w-y830",
+        "identifiers": [
+          {
+            "identifier": "PRJ-3226",
+            "identifierType": "Project ID"
+          }
+        ],
+        "alternateIdentifiers": [
+          {
+            "alternateIdentifierType": "Project ID",
+            "alternateIdentifier": "PRJ-3226"
+          }
+        ],
+        "creators": [
+          {
+            "name": "Zhao, Xilei",
+            "givenName": "Xilei",
+            "familyName": "Zhao",
+            "affiliation": [],
+            "nameIdentifiers": []
+          },
+          {
+            "name": "Xu, Yiming",
+            "givenName": "Yiming",
+            "familyName": "Xu",
+            "affiliation": [],
+            "nameIdentifiers": []
+          },
+          {
+            "name": "Lovreglio, Ruggiero",
+            "givenName": "Ruggiero",
+            "familyName": "Lovreglio",
+            "affiliation": [],
+            "nameIdentifiers": []
+          },
+          {
+            "name": "Kuligowski, Erica",
+            "givenName": "Erica",
+            "familyName": "Kuligowski",
+            "affiliation": [],
+            "nameIdentifiers": []
+          },
+          {
+            "name": "Nilsson, Daniel",
+            "givenName": "Daniel",
+            "familyName": "Nilsson",
+            "affiliation": [],
+            "nameIdentifiers": []
+          }
+        ],
+        "titles": [
+          {
+            "title": "A Highway Vehicle Routing Dataset During the 2019 Kincade Fire Evacuation"
+          },
+          {
+            "title": "in A Highway Vehicle Routing Dataset During the 2019 Kincade Fire Evacuation",
+            "titleType": "Subtitle"
+          }
+        ],
+        "publisher": "Designsafe-CI",
+        "container": {},
+        "publicationYear": 2022,
+        "subjects": [
+          {
+            "subject": "Highway vehicle routing"
+          },
+          {
+            "subject": "GPS data"
+          },
+          {
+            "subject": "Wildfire evacuation"
+          },
+          {
+            "subject": "Kincade Fire"
+          },
+          {
+            "subject": "California"
+          }
+        ],
+        "contributors": [
+          {
+            "name": "University of Florida",
+            "nameType": "Organizational",
+            "contributorType": "HostingInstitution",
+            "affiliation": [],
+            "nameIdentifiers": []
+          },
+          {
+            "name": "Royal Melbourne Institute of Technology (RMIT)",
+            "nameType": "Organizational",
+            "contributorType": "HostingInstitution",
+            "affiliation": [],
+            "nameIdentifiers": []
+          },
+          {
+            "name": "Massey University (Te Kunenga ki Prehuroa)",
+            "nameType": "Organizational",
+            "contributorType": "HostingInstitution",
+            "affiliation": [],
+            "nameIdentifiers": []
+          },
+          {
+            "name": "University of Canterbury (Te Whare Wnanga o Waitaha)",
+            "nameType": "Organizational",
+            "contributorType": "HostingInstitution",
+            "affiliation": [],
+            "nameIdentifiers": []
+          }
+        ],
+        "dates": [],
+        "language": "en",
+        "types": {
+          "ris": "DATA",
+          "bibtex": "misc",
+          "citeproc": "dataset",
+          "schemaOrg": "Dataset",
+          "resourceType": "Mission/Sonoma County, California, United States",
+          "resourceTypeGeneral": "Dataset"
+        },
+        "relatedIdentifiers": [],
+        "relatedItems": [],
+        "sizes": [],
+        "formats": [],
+        "version": "1",
+        "rightsList": [],
+        "descriptions": [
+          {
+            "lang": "en-Us",
+            "description": "As wildfires become increasingly more prevalent and severe in California, it is imperative to study how people respond to wildfire events. To support wildfire evacuation research, this project publishes the first dataset to capture highway vehicle routing behavior during the 2019 Kincade Fire, Sonoma County, California. The dataset is completely anonymous and includes a total of 21,160 highway trips from October 16, 2019 to November 13, 2019. Fields of the new dataset include anonymous user ID, latitude of a vehicle’s entrance of a highway, longitude of a vehicle’s entrance of a highway, timestamp of a vehicle’s entrance of a highway, entrance highway, latitude of a vehicle’s exit of a highway, longitude of a vehicle’s exit of a highway, timestamp of a vehicle’s exit of a highway, exit highway. This highway vehicle routing dataset is presented in comma-separated values (CSV) format. We also provide a shapefile of the highways included in the dataset (i.e., U.S. Highway 101, State Highways 1, 12, 37, 116, 121, and 128). This new dataset can be used to better analyze a householder’s evacuation departure time and route choice and to validate the existing evacuation simulation models. This dataset can also serve as an educational instrument to train the next-generation disaster scientists and engineers who can leverage big data analytics for weather-ready research.",
+            "descriptionType": "Abstract"
+          },
+          {
+            "lang": "en-Us",
+            "description": "This mission publishes a dataset to capture highway vehicle routing behavior during the 2019 Kincade Fire, Sonoma County, California. The dataset is extracted from a GPS dataset that was collected from mobile devices. To extract the highway vehicle routing dataset, we firstly use GIS tools to conduct a spatial join for the raw GPS records and the highways. Based on the spatial join results, we extract the GPS records located in the highway areas. After that, we join these GPS records into trajectories based on the identifier and timestamp, and then extract the start and end points of these trajectories as the vehicles’ proxy entrance and exit points of the highways.",
+            "descriptionType": "Abstract"
+          }
+        ],
+        "geoLocations": [],
+        "fundingReferences": [
+          {
+            "awardTitle": "NIST",
+            "funderName": "N/A",
+            "awardNumber": "60NANB20D182"
+          },
+          {
+            "awardTitle": "Natural Hazards Center Weather Ready Research Award Program",
+            "funderName": "N/A",
+            "awardNumber": "No Number"
+          }
+        ],
+        "xml": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHJlc291cmNlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCIgeHNpOnNjaGVtYUxvY2F0aW9uPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCBodHRwOi8vc2NoZW1hLmRhdGFjaXRlLm9yZy9tZXRhL2tlcm5lbC00L21ldGFkYXRhLnhzZCI+CiAgPGlkZW50aWZpZXIgaWRlbnRpZmllclR5cGU9IkRPSSI+MTAuMTc2MDMvRFMyLTlWOFctWTgzMDwvaWRlbnRpZmllcj4KICA8Y3JlYXRvcnM+CiAgICA8Y3JlYXRvcj4KICAgICAgPGNyZWF0b3JOYW1lPlpoYW8sIFhpbGVpPC9jcmVhdG9yTmFtZT4KICAgICAgPGdpdmVuTmFtZT5YaWxlaTwvZ2l2ZW5OYW1lPgogICAgICA8ZmFtaWx5TmFtZT5aaGFvPC9mYW1pbHlOYW1lPgogICAgPC9jcmVhdG9yPgogICAgPGNyZWF0b3I+CiAgICAgIDxjcmVhdG9yTmFtZT5YdSwgWWltaW5nPC9jcmVhdG9yTmFtZT4KICAgICAgPGdpdmVuTmFtZT5ZaW1pbmc8L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWU+WHU8L2ZhbWlseU5hbWU+CiAgICA8L2NyZWF0b3I+CiAgICA8Y3JlYXRvcj4KICAgICAgPGNyZWF0b3JOYW1lPkxvdnJlZ2xpbywgUnVnZ2llcm88L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPlJ1Z2dpZXJvPC9naXZlbk5hbWU+CiAgICAgIDxmYW1pbHlOYW1lPkxvdnJlZ2xpbzwvZmFtaWx5TmFtZT4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWU+S3VsaWdvd3NraSwgRXJpY2E8L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPkVyaWNhPC9naXZlbk5hbWU+CiAgICAgIDxmYW1pbHlOYW1lPkt1bGlnb3dza2k8L2ZhbWlseU5hbWU+CiAgICA8L2NyZWF0b3I+CiAgICA8Y3JlYXRvcj4KICAgICAgPGNyZWF0b3JOYW1lPk5pbHNzb24sIERhbmllbDwvY3JlYXRvck5hbWU+CiAgICAgIDxnaXZlbk5hbWU+RGFuaWVsPC9naXZlbk5hbWU+CiAgICAgIDxmYW1pbHlOYW1lPk5pbHNzb248L2ZhbWlseU5hbWU+CiAgICA8L2NyZWF0b3I+CiAgPC9jcmVhdG9ycz4KICA8dGl0bGVzPgogICAgPHRpdGxlPkEgSGlnaHdheSBWZWhpY2xlIFJvdXRpbmcgRGF0YXNldCBEdXJpbmcgdGhlIDIwMTkgS2luY2FkZSBGaXJlIEV2YWN1YXRpb248L3RpdGxlPgogICAgPHRpdGxlIHRpdGxlVHlwZT0iU3VidGl0bGUiPmluIEEgSGlnaHdheSBWZWhpY2xlIFJvdXRpbmcgRGF0YXNldCBEdXJpbmcgdGhlIDIwMTkgS2luY2FkZSBGaXJlIEV2YWN1YXRpb248L3RpdGxlPgogIDwvdGl0bGVzPgogIDxwdWJsaXNoZXI+RGVzaWduc2FmZS1DSTwvcHVibGlzaGVyPgogIDxwdWJsaWNhdGlvblllYXI+MjAyMjwvcHVibGljYXRpb25ZZWFyPgogIDxyZXNvdXJjZVR5cGUgcmVzb3VyY2VUeXBlR2VuZXJhbD0iRGF0YXNldCI+TWlzc2lvbi9Tb25vbWEgQ291bnR5LCBDYWxpZm9ybmlhLCBVbml0ZWQgU3RhdGVzPC9yZXNvdXJjZVR5cGU+CiAgPHN1YmplY3RzPgogICAgPHN1YmplY3Q+SGlnaHdheSB2ZWhpY2xlIHJvdXRpbmc8L3N1YmplY3Q+CiAgICA8c3ViamVjdD5HUFMgZGF0YTwvc3ViamVjdD4KICAgIDxzdWJqZWN0PldpbGRmaXJlIGV2YWN1YXRpb248L3N1YmplY3Q+CiAgICA8c3ViamVjdD5LaW5jYWRlIEZpcmU8L3N1YmplY3Q+CiAgICA8c3ViamVjdD5DYWxpZm9ybmlhPC9zdWJqZWN0PgogIDwvc3ViamVjdHM+CiAgPGNvbnRyaWJ1dG9ycz4KICAgIDxjb250cmlidXRvciBjb250cmlidXRvclR5cGU9Ikhvc3RpbmdJbnN0aXR1dGlvbiI+CiAgICAgIDxjb250cmlidXRvck5hbWUgbmFtZVR5cGU9Ik9yZ2FuaXphdGlvbmFsIj5Vbml2ZXJzaXR5IG9mIEZsb3JpZGE8L2NvbnRyaWJ1dG9yTmFtZT4KICAgIDwvY29udHJpYnV0b3I+CiAgICA8Y29udHJpYnV0b3IgY29udHJpYnV0b3JUeXBlPSJIb3N0aW5nSW5zdGl0dXRpb24iPgogICAgICA8Y29udHJpYnV0b3JOYW1lIG5hbWVUeXBlPSJPcmdhbml6YXRpb25hbCI+Um95YWwgTWVsYm91cm5lIEluc3RpdHV0ZSBvZiBUZWNobm9sb2d5IChSTUlUKTwvY29udHJpYnV0b3JOYW1lPgogICAgPC9jb250cmlidXRvcj4KICAgIDxjb250cmlidXRvciBjb250cmlidXRvclR5cGU9Ikhvc3RpbmdJbnN0aXR1dGlvbiI+CiAgICAgIDxjb250cmlidXRvck5hbWUgbmFtZVR5cGU9Ik9yZ2FuaXphdGlvbmFsIj5NYXNzZXkgVW5pdmVyc2l0eSAoVGUgS3VuZW5nYSBraSBQcmVodXJvYSk8L2NvbnRyaWJ1dG9yTmFtZT4KICAgIDwvY29udHJpYnV0b3I+CiAgICA8Y29udHJpYnV0b3IgY29udHJpYnV0b3JUeXBlPSJIb3N0aW5nSW5zdGl0dXRpb24iPgogICAgICA8Y29udHJpYnV0b3JOYW1lIG5hbWVUeXBlPSJPcmdhbml6YXRpb25hbCI+VW5pdmVyc2l0eSBvZiBDYW50ZXJidXJ5IChUZSBXaGFyZSBXbmFuZ2EgbyBXYWl0YWhhKTwvY29udHJpYnV0b3JOYW1lPgogICAgPC9jb250cmlidXRvcj4KICA8L2NvbnRyaWJ1dG9ycz4KICA8bGFuZ3VhZ2U+RW5nbGlzaDwvbGFuZ3VhZ2U+CiAgPGFsdGVybmF0ZUlkZW50aWZpZXJzPgogICAgPGFsdGVybmF0ZUlkZW50aWZpZXIgYWx0ZXJuYXRlSWRlbnRpZmllclR5cGU9IlByb2plY3QgSUQiPlBSSi0zMjI2PC9hbHRlcm5hdGVJZGVudGlmaWVyPgogIDwvYWx0ZXJuYXRlSWRlbnRpZmllcnM+CiAgPHNpemVzLz4KICA8Zm9ybWF0cy8+CiAgPHZlcnNpb24+MTwvdmVyc2lvbj4KICA8ZGVzY3JpcHRpb25zPgogICAgPGRlc2NyaXB0aW9uIHhtbDpsYW5nPSJlbi1VcyIgZGVzY3JpcHRpb25UeXBlPSJBYnN0cmFjdCI+QXMgd2lsZGZpcmVzIGJlY29tZSBpbmNyZWFzaW5nbHkgbW9yZSBwcmV2YWxlbnQgYW5kIHNldmVyZSBpbiBDYWxpZm9ybmlhLCBpdCBpcyBpbXBlcmF0aXZlIHRvIHN0dWR5IGhvdyBwZW9wbGUgcmVzcG9uZCB0byB3aWxkZmlyZSBldmVudHMuIFRvIHN1cHBvcnQgd2lsZGZpcmUgZXZhY3VhdGlvbiByZXNlYXJjaCwgdGhpcyBwcm9qZWN0IHB1Ymxpc2hlcyB0aGUgZmlyc3QgZGF0YXNldCB0byBjYXB0dXJlIGhpZ2h3YXkgdmVoaWNsZSByb3V0aW5nIGJlaGF2aW9yIGR1cmluZyB0aGUgMjAxOSBLaW5jYWRlIEZpcmUsIFNvbm9tYSBDb3VudHksIENhbGlmb3JuaWEuIFRoZSBkYXRhc2V0IGlzIGNvbXBsZXRlbHkgYW5vbnltb3VzIGFuZCBpbmNsdWRlcyBhIHRvdGFsIG9mIDIxLDE2MCBoaWdod2F5IHRyaXBzIGZyb20gT2N0b2JlciAxNiwgMjAxOSB0byBOb3ZlbWJlciAxMywgMjAxOS4gRmllbGRzIG9mIHRoZSBuZXcgZGF0YXNldCBpbmNsdWRlIGFub255bW91cyB1c2VyIElELCBsYXRpdHVkZSBvZiBhIHZlaGljbGXigJlzIGVudHJhbmNlIG9mIGEgaGlnaHdheSwgbG9uZ2l0dWRlIG9mIGEgdmVoaWNsZeKAmXMgZW50cmFuY2Ugb2YgYSBoaWdod2F5LCB0aW1lc3RhbXAgb2YgYSB2ZWhpY2xl4oCZcyBlbnRyYW5jZSBvZiBhIGhpZ2h3YXksIGVudHJhbmNlIGhpZ2h3YXksIGxhdGl0dWRlIG9mIGEgdmVoaWNsZeKAmXMgZXhpdCBvZiBhIGhpZ2h3YXksIGxvbmdpdHVkZSBvZiBhIHZlaGljbGXigJlzIGV4aXQgb2YgYSBoaWdod2F5LCB0aW1lc3RhbXAgb2YgYSB2ZWhpY2xl4oCZcyBleGl0IG9mIGEgaGlnaHdheSwgZXhpdCBoaWdod2F5LiBUaGlzIGhpZ2h3YXkgdmVoaWNsZSByb3V0aW5nIGRhdGFzZXQgaXMgcHJlc2VudGVkIGluIGNvbW1hLXNlcGFyYXRlZCB2YWx1ZXMgKENTVikgZm9ybWF0LiBXZSBhbHNvIHByb3ZpZGUgYSBzaGFwZWZpbGUgb2YgdGhlIGhpZ2h3YXlzIGluY2x1ZGVkIGluIHRoZSBkYXRhc2V0IChpLmUuLCBVLlMuIEhpZ2h3YXkgMTAxLCBTdGF0ZSBIaWdod2F5cyAxLCAxMiwgMzcsIDExNiwgMTIxLCBhbmQgMTI4KS4gVGhpcyBuZXcgZGF0YXNldCBjYW4gYmUgdXNlZCB0byBiZXR0ZXIgYW5hbHl6ZSBhIGhvdXNlaG9sZGVy4oCZcyBldmFjdWF0aW9uIGRlcGFydHVyZSB0aW1lIGFuZCByb3V0ZSBjaG9pY2UgYW5kIHRvIHZhbGlkYXRlIHRoZSBleGlzdGluZyBldmFjdWF0aW9uIHNpbXVsYXRpb24gbW9kZWxzLiBUaGlzIGRhdGFzZXQgY2FuIGFsc28gc2VydmUgYXMgYW4gZWR1Y2F0aW9uYWwgaW5zdHJ1bWVudCB0byB0cmFpbiB0aGUgbmV4dC1nZW5lcmF0aW9uIGRpc2FzdGVyIHNjaWVudGlzdHMgYW5kIGVuZ2luZWVycyB3aG8gY2FuIGxldmVyYWdlIGJpZyBkYXRhIGFuYWx5dGljcyBmb3Igd2VhdGhlci1yZWFkeSByZXNlYXJjaC48L2Rlc2NyaXB0aW9uPgogICAgPGRlc2NyaXB0aW9uIHhtbDpsYW5nPSJlbi1VcyIgZGVzY3JpcHRpb25UeXBlPSJBYnN0cmFjdCI+VGhpcyBtaXNzaW9uIHB1Ymxpc2hlcyBhIGRhdGFzZXQgdG8gY2FwdHVyZSBoaWdod2F5IHZlaGljbGUgcm91dGluZyBiZWhhdmlvciBkdXJpbmcgdGhlIDIwMTkgS2luY2FkZSBGaXJlLCBTb25vbWEgQ291bnR5LCBDYWxpZm9ybmlhLiBUaGUgZGF0YXNldCBpcyBleHRyYWN0ZWQgZnJvbSBhIEdQUyBkYXRhc2V0IHRoYXQgd2FzIGNvbGxlY3RlZCBmcm9tIG1vYmlsZSBkZXZpY2VzLiBUbyBleHRyYWN0IHRoZSBoaWdod2F5IHZlaGljbGUgcm91dGluZyBkYXRhc2V0LCB3ZSBmaXJzdGx5IHVzZSBHSVMgdG9vbHMgdG8gY29uZHVjdCBhIHNwYXRpYWwgam9pbiBmb3IgdGhlIHJhdyBHUFMgcmVjb3JkcyBhbmQgdGhlIGhpZ2h3YXlzLiBCYXNlZCBvbiB0aGUgc3BhdGlhbCBqb2luIHJlc3VsdHMsIHdlIGV4dHJhY3QgdGhlIEdQUyByZWNvcmRzIGxvY2F0ZWQgaW4gdGhlIGhpZ2h3YXkgYXJlYXMuIEFmdGVyIHRoYXQsIHdlIGpvaW4gdGhlc2UgR1BTIHJlY29yZHMgaW50byB0cmFqZWN0b3JpZXMgYmFzZWQgb24gdGhlIGlkZW50aWZpZXIgYW5kIHRpbWVzdGFtcCwgYW5kIHRoZW4gZXh0cmFjdCB0aGUgc3RhcnQgYW5kIGVuZCBwb2ludHMgb2YgdGhlc2UgdHJhamVjdG9yaWVzIGFzIHRoZSB2ZWhpY2xlc+KAmSBwcm94eSBlbnRyYW5jZSBhbmQgZXhpdCBwb2ludHMgb2YgdGhlIGhpZ2h3YXlzLjwvZGVzY3JpcHRpb24+CiAgPC9kZXNjcmlwdGlvbnM+CiAgPGZ1bmRpbmdSZWZlcmVuY2VzPgogICAgPGZ1bmRpbmdSZWZlcmVuY2U+CiAgICAgIDxmdW5kZXJOYW1lPk4vQTwvZnVuZGVyTmFtZT4KICAgICAgPGF3YXJkTnVtYmVyPjYwTkFOQjIwRDE4MjwvYXdhcmROdW1iZXI+CiAgICAgIDxhd2FyZFRpdGxlPk5JU1Q8L2F3YXJkVGl0bGU+CiAgICA8L2Z1bmRpbmdSZWZlcmVuY2U+CiAgICA8ZnVuZGluZ1JlZmVyZW5jZT4KICAgICAgPGZ1bmRlck5hbWU+Ti9BPC9mdW5kZXJOYW1lPgogICAgICA8YXdhcmROdW1iZXI+Tm8gTnVtYmVyPC9hd2FyZE51bWJlcj4KICAgICAgPGF3YXJkVGl0bGU+TmF0dXJhbCBIYXphcmRzIENlbnRlciBXZWF0aGVyIFJlYWR5IFJlc2VhcmNoIEF3YXJkIFByb2dyYW08L2F3YXJkVGl0bGU+CiAgICA8L2Z1bmRpbmdSZWZlcmVuY2U+CiAgPC9mdW5kaW5nUmVmZXJlbmNlcz4KPC9yZXNvdXJjZT4K",
+        "url": "https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published/PRJ-3226/#detail-4519247666477264405-242ac117-0001-012",
+        "contentUrl": null,
+        "metadataVersion": 7,
+        "schemaVersion": "http://datacite.org/schema/kernel-4",
+        "source": "api",
+        "isActive": true,
+        "state": "findable",
+        "reason": null,
+        "viewCount": 744,
+        "viewsOverTime": [
+          {
+            "yearMonth": "2022-06",
+            "total": 5
+          },
+          {
+            "yearMonth": "2022-07",
+            "total": 1
+          },
+          {
+            "yearMonth": "2022-08",
+            "total": 21
+          },
+          {
+            "yearMonth": "2022-09",
+            "total": 32
+          },
+          {
+            "yearMonth": "2022-10",
+            "total": 12
+          },
+          {
+            "yearMonth": "2022-11",
+            "total": 22
+          },
+          {
+            "yearMonth": "2022-12",
+            "total": 18
+          },
+          {
+            "yearMonth": "2023-01",
+            "total": 21
+          },
+          {
+            "yearMonth": "2023-02",
+            "total": 16
+          },
+          {
+            "yearMonth": "2023-03",
+            "total": 18
+          },
+          {
+            "yearMonth": "2023-04",
+            "total": 10
+          },
+          {
+            "yearMonth": "2023-05",
+            "total": 12
+          },
+          {
+            "yearMonth": "2023-06",
+            "total": 13
+          },
+          {
+            "yearMonth": "2023-07",
+            "total": 13
+          },
+          {
+            "yearMonth": "2023-08",
+            "total": 9
+          },
+          {
+            "yearMonth": "2023-09",
+            "total": 17
+          },
+          {
+            "yearMonth": "2023-10",
+            "total": 11
+          },
+          {
+            "yearMonth": "2023-11",
+            "total": 24
+          },
+          {
+            "yearMonth": "2023-12",
+            "total": 21
+          },
+          {
+            "yearMonth": "2024-01",
+            "total": 22
+          },
+          {
+            "yearMonth": "2024-02",
+            "total": 21
+          },
+          {
+            "yearMonth": "2024-03",
+            "total": 16
+          },
+          {
+            "yearMonth": "2024-04",
+            "total": 11
+          },
+          {
+            "yearMonth": "2024-05",
+            "total": 13
+          },
+          {
+            "yearMonth": "2024-06",
+            "total": 9
+          },
+          {
+            "yearMonth": "2024-07",
+            "total": 8
+          },
+          {
+            "yearMonth": "2024-08",
+            "total": 13
+          },
+          {
+            "yearMonth": "2024-09",
+            "total": 15
+          },
+          {
+            "yearMonth": "2024-10",
+            "total": 21
+          },
+          {
+            "yearMonth": "2024-11",
+            "total": 9
+          },
+          {
+            "yearMonth": "2024-12",
+            "total": 11
+          },
+          {
+            "yearMonth": "2025-01",
+            "total": 18
+          },
+          {
+            "yearMonth": "2025-02",
+            "total": 24
+          },
+          {
+            "yearMonth": "2025-03",
+            "total": 19
+          },
+          {
+            "yearMonth": "2025-04",
+            "total": 9
+          },
+          {
+            "yearMonth": "2025-05",
+            "total": 8
+          },
+          {
+            "yearMonth": "2025-06",
+            "total": 11
+          },
+          {
+            "yearMonth": "2025-07",
+            "total": 8
+          },
+          {
+            "yearMonth": "2025-08",
+            "total": 8
+          },
+          {
+            "yearMonth": "2025-09",
+            "total": 10
+          },
+          {
+            "yearMonth": "2025-10",
+            "total": 16
+          },
+          {
+            "yearMonth": "2025-11",
+            "total": 15
+          },
+          {
+            "yearMonth": "2025-12",
+            "total": 11
+          },
+          {
+            "yearMonth": "2026-01",
+            "total": 11
+          },
+          {
+            "yearMonth": "2026-02",
+            "total": 9
+          },
+          {
+            "yearMonth": "2026-03",
+            "total": 9
+          },
+          {
+            "yearMonth": "2026-04",
+            "total": 11
+          },
+          {
+            "yearMonth": "2026-05",
+            "total": 10
+          },
+          {
+            "yearMonth": "2026-06",
+            "total": 11
+          },
+          {
+            "yearMonth": "2026-07",
+            "total": 10
+          },
+          {
+            "yearMonth": "2026-08",
+            "total": 15
+          },
+          {
+            "yearMonth": "2026-09",
+            "total": 7
+          },
+          {
+            "yearMonth": "2026-10",
+            "total": 29
+          }
+        ],
+        "downloadCount": 139,
+        "downloadsOverTime": [
+          {
+            "yearMonth": "2022-06",
+            "total": 1
+          },
+          {
+            "yearMonth": "2022-07",
+            "total": 0
+          },
+          {
+            "yearMonth": "2022-08",
+            "total": 1
+          },
+          {
+            "yearMonth": "2022-09",
+            "total": 4
+          },
+          {
+            "yearMonth": "2022-10",
+            "total": 3
+          },
+          {
+            "yearMonth": "2022-11",
+            "total": 5
+          },
+          {
+            "yearMonth": "2022-12",
+            "total": 0
+          },
+          {
+            "yearMonth": "2023-01",
+            "total": 2
+          },
+          {
+            "yearMonth": "2023-02",
+            "total": 3
+          },
+          {
+            "yearMonth": "2023-03",
+            "total": 3
+          },
+          {
+            "yearMonth": "2023-04",
+            "total": 0
+          },
+          {
+            "yearMonth": "2023-05",
+            "total": 2
+          },
+          {
+            "yearMonth": "2023-06",
+            "total": 3
+          },
+          {
+            "yearMonth": "2023-07",
+            "total": 3
+          },
+          {
+            "yearMonth": "2023-08",
+            "total": 2
+          },
+          {
+            "yearMonth": "2023-09",
+            "total": 2
+          },
+          {
+            "yearMonth": "2023-10",
+            "total": 2
+          },
+          {
+            "yearMonth": "2023-11",
+            "total": 12
+          },
+          {
+            "yearMonth": "2023-12",
+            "total": 1
+          },
+          {
+            "yearMonth": "2024-01",
+            "total": 6
+          },
+          {
+            "yearMonth": "2024-02",
+            "total": 2
+          },
+          {
+            "yearMonth": "2024-03",
+            "total": 2
+          },
+          {
+            "yearMonth": "2024-04",
+            "total": 1
+          },
+          {
+            "yearMonth": "2024-05",
+            "total": 6
+          },
+          {
+            "yearMonth": "2024-06",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-07",
+            "total": 0
+          },
+          {
+            "yearMonth": "2024-08",
+            "total": 2
+          },
+          {
+            "yearMonth": "2024-09",
+            "total": 1
+          },
+          {
+            "yearMonth": "2024-10",
+            "total": 1
+          },
+          {
+            "yearMonth": "2024-11",
+            "total": 1
+          },
+          {
+            "yearMonth": "2024-12",
+            "total": 2
+          },
+          {
+            "yearMonth": "2025-01",
+            "total": 4
+          },
+          {
+            "yearMonth": "2025-02",
+            "total": 9
+          },
+          {
+            "yearMonth": "2025-03",
+            "total": 4
+          },
+          {
+            "yearMonth": "2025-04",
+            "total": 2
+          },
+          {
+            "yearMonth": "2025-05",
+            "total": 1
+          },
+          {
+            "yearMonth": "2025-06",
+            "total": 3
+          },
+          {
+            "yearMonth": "2025-07",
+            "total": 1
+          },
+          {
+            "yearMonth": "2025-08",
+            "total": 1
+          },
+          {
+            "yearMonth": "2025-09",
+            "total": 2
+          },
+          {
+            "yearMonth": "2025-10",
+            "total": 1
+          },
+          {
+            "yearMonth": "2025-11",
+            "total": 5
+          },
+          {
+            "yearMonth": "2025-12",
+            "total": 2
+          },
+          {
+            "yearMonth": "2026-01",
+            "total": 3
+          },
+          {
+            "yearMonth": "2026-02",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-03",
+            "total": 0
+          },
+          {
+            "yearMonth": "2026-04",
+            "total": 2
+          },
+          {
+            "yearMonth": "2026-05",
+            "total": 6
+          },
+          {
+            "yearMonth": "2026-06",
+            "total": 1
+          },
+          {
+            "yearMonth": "2026-07",
+            "total": 2
+          },
+          {
+            "yearMonth": "2026-08",
+            "total": 5
+          },
+          {
+            "yearMonth": "2026-09",
+            "total": 4
+          },
+          {
+            "yearMonth": "2026-10",
+            "total": 8
+          }
+        ],
+        "referenceCount": 0,
+        "citationCount": 1,
+        "citationsOverTime": [
+          {
+            "year": "2022",
+            "total": 1
+          }
+        ],
+        "partCount": 0,
+        "partOfCount": 0,
+        "versionCount": 0,
+        "versionOfCount": 0,
+        "created": "2021-08-25T22:35:39.000Z",
+        "registered": "2021-08-25T22:48:59.000Z",
+        "published": "2022",
+        "updated": "2025-06-02T16:00:13.000Z"
+      },
+      "relationships": {
+        "client": {
+          "data": {
+            "id": "tdl.tacc",
+            "type": "clients"
+          }
+        },
+        "provider": {
+          "data": {
+            "id": "hakl",
+            "type": "providers"
+          }
+        },
+        "media": {
+          "data": {
+            "id": "10.17603/ds2-9v8w-y830",
+            "type": "media"
+          }
+        },
+        "references": {
+          "data": []
+        },
+        "citations": {
+          "data": [
+            {
+              "id": "10.1038/s41597-022-01731-6",
+              "type": "dois"
+            }
+          ]
+        },
+        "parts": {
+          "data": []
+        },
+        "partOf": {
+          "data": []
+        },
+        "versions": {
+          "data": []
+        },
+        "versionOf": {
+          "data": []
+        }
+      }
+    }
+  }
+}

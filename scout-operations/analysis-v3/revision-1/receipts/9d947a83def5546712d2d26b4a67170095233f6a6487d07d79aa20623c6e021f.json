@@ -1,0 +1,73 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=The+March+2020+Tennessee+Tornados&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=The+March+2020+Tennessee+Tornados&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:54.726377+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 366296,
+      "items": [
+        {
+          "DOI": "10.1061/(asce)sc.1943-5576.0000571",
+          "title": [
+            "Structural Observations and Tornado Damage Mitigation Concepts: March 2020 Tennessee Tornadoes"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2021,
+                5
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1515/9783486724042-033",
+          "title": [
+            "Tornados"
+          ],
+          "type": "book-chapter",
+          "published": {
+            "date-parts": [
+              [
+                1880,
+                12,
+                31
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1515/9783111685847-040",
+          "title": [
+            "39. Tornados"
+          ],
+          "type": "book-chapter",
+          "published": {
+            "date-parts": [
+              [
+                1898,
+                12,
+                31
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

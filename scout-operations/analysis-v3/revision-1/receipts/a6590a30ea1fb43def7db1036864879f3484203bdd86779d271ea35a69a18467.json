@@ -1,0 +1,72 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=Examining+Variations+in+Public+Information+Seeking+for+Severe+Weather+Events+on+National+Weather+Service+Social+Media+Posts&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=Examining+Variations+in+Public+Information+Seeking+for+Severe+Weather+Events+on+National+Weather+Service+Social+Media+Posts&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:51.112675+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 6063382,
+      "items": [
+        {
+          "DOI": "10.1175/wcas-d-25-0145.1",
+          "title": [
+            "Examining Variations in Public Information Seeking for Severe Weather Events on National Weather Service Social Media Posts"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2026,
+                4
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1175/waf-d-20-0159.1",
+          "title": [
+            "National Weather Service Severe Weather Warnings as Threats-in-Motion"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2021,
+                4
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.66284/brx-ory9yzrp5kd3",
+          "title": [
+            "Severe Weather Events"
+          ],
+          "type": "posted-content",
+          "published": {
+            "date-parts": [
+              [
+                2026,
+                4,
+                15
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

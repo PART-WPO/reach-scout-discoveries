@@ -1,0 +1,71 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=Transit+Agencies+and+Wildfire+Evacuation%3A+Case+Study+of+the+2021+Caldor+Fire&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=Transit+Agencies+and+Wildfire+Evacuation%3A+Case+Study+of+the+2021+Caldor+Fire&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:58.443707+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 8334241,
+      "items": [
+        {
+          "DOI": "10.1002/eco.70235",
+          "title": [
+            "Vegetation and Topographic Controls on Post‐Fire Snowpack: Evidence From the 2021 Caldor Fire"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2026,
+                6
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1016/j.firesaf.2023.103909",
+          "title": [
+            "The analysis of traffic data of wildfire evacuation: the case study of the 2020 Glass Fire"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2023,
+                12
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1016/j.foreco.2025.123424",
+          "title": [
+            "Fuel treatment effects on fire severity during the Caldor Fire (2021), Lake Tahoe, California, USA"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2026,
+                3
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

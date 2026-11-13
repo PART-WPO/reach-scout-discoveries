@@ -1,0 +1,223 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.datacite.org/dois/10.5065/0s63-m767",
+  "final_url": "https://api.datacite.org/dois/10.5065/0s63-m767",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:56:28.610078+00:00",
+  "headers": {
+    "Content-Type": "application/json; charset=utf-8",
+    "ETag": "W/\"be84844c2ced9ef110a2a52fa5f1fd3d\""
+  },
+  "body": {
+    "data": {
+      "id": "10.5065/0s63-m767",
+      "type": "dois",
+      "attributes": {
+        "doi": "10.5065/0s63-m767",
+        "prefix": "10.5065",
+        "suffix": "0s63-m767",
+        "identifiers": [
+          {
+            "identifier": "https://gdex.ucar.edu/datasets/d651060",
+            "identifierType": "URL"
+          },
+          {
+            "identifier": "d651060",
+            "identifierType": "Local"
+          }
+        ],
+        "alternateIdentifiers": [
+          {
+            "alternateIdentifierType": "URL",
+            "alternateIdentifier": "https://gdex.ucar.edu/datasets/d651060"
+          },
+          {
+            "alternateIdentifierType": "Local",
+            "alternateIdentifier": "d651060"
+          }
+        ],
+        "creators": [
+          {
+            "name": "Richter, Jadwiga",
+            "nameType": "Personal",
+            "givenName": "Jadwiga",
+            "familyName": "Richter",
+            "nameIdentifiers": [
+              {
+                "schemeUri": "https://orcid.org",
+                "nameIdentifier": "https://orcid.org/0000-0001-7048-0781",
+                "nameIdentifierScheme": "ORCID"
+              }
+            ],
+            "affiliation": []
+          },
+          {
+            "name": "Edwards, James",
+            "nameType": "Personal",
+            "givenName": "James",
+            "familyName": "Edwards",
+            "nameIdentifiers": [
+              {
+                "schemeUri": "https://orcid.org",
+                "nameIdentifier": "https://orcid.org/0000-0002-6673-1856",
+                "nameIdentifierScheme": "ORCID"
+              }
+            ],
+            "affiliation": []
+          }
+        ],
+        "titles": [
+          {
+            "title": "S2S Hindcasts"
+          }
+        ],
+        "publisher": "NSF National Center for Atmospheric Research",
+        "container": {},
+        "publicationYear": 2021,
+        "subjects": [
+          {
+            "subject": "EARTH SCIENCE &gt; ATMOSPHERE &gt; ATMOSPHERIC PRESSURE &gt; SURFACE PRESSURE",
+            "valueUri": "https://gcmd.earthdata.nasa.gov/kms/concept/b54de5cd-4475-4c7b-acbc-4eb529b9396e",
+            "schemeUri": "https://gcmd.earthdata.nasa.gov/kms",
+            "subjectScheme": "GCMD"
+          },
+          {
+            "subject": "EARTH SCIENCE &gt; ATMOSPHERE &gt; ATMOSPHERIC TEMPERATURE &gt; SURFACE TEMPERATURE",
+            "valueUri": "https://gcmd.earthdata.nasa.gov/kms/concept/5a7bb095-4d12-4232-bc75-b8e82197cb92",
+            "schemeUri": "https://gcmd.earthdata.nasa.gov/kms",
+            "subjectScheme": "GCMD"
+          },
+          {
+            "subject": "EARTH SCIENCE &gt; ATMOSPHERE &gt; ATMOSPHERIC WINDS &gt; UPPER LEVEL WINDS",
+            "valueUri": "https://gcmd.earthdata.nasa.gov/kms/concept/592d49c4-e8ae-4ab4-bf24-ae4a896d0637",
+            "schemeUri": "https://gcmd.earthdata.nasa.gov/kms",
+            "subjectScheme": "GCMD"
+          },
+          {
+            "subject": "EARTH SCIENCE &gt; ATMOSPHERE &gt; PRECIPITATION &gt; LIQUID PRECIPITATION",
+            "valueUri": "https://gcmd.earthdata.nasa.gov/kms/concept/7d45f108-dda2-4341-b853-ee3a490aad59",
+            "schemeUri": "https://gcmd.earthdata.nasa.gov/kms",
+            "subjectScheme": "GCMD"
+          },
+          {
+            "subject": "EARTH SCIENCE &gt; ATMOSPHERE &gt; WEATHER EVENTS &gt; Stability/Severe Weather Indices &gt; CONVECTIVE AVAILABLE POTENTIAL ENERGY (CAPE)",
+            "valueUri": "https://gcmd.earthdata.nasa.gov/kms/concept/00748b19-30cc-4d12-a7a3-0aa8b3be5a94",
+            "schemeUri": "https://gcmd.earthdata.nasa.gov/kms",
+            "subjectScheme": "GCMD"
+          }
+        ],
+        "contributors": [
+          {
+            "name": "University Corporation For Atmospheric Research (UCAR):NSF National Center for Atmospheric Research (NSF NCAR):Computational and Information Systems Laboratory (CISL):Information Services Division (ISD):Data Engineering and Curation Section (DECS)",
+            "affiliation": [],
+            "contributorType": "HostingInstitution",
+            "nameIdentifiers": []
+          }
+        ],
+        "dates": [
+          {
+            "date": "2021",
+            "dateType": "Issued"
+          }
+        ],
+        "language": "en",
+        "types": {
+          "ris": "DATA",
+          "bibtex": "misc",
+          "citeproc": "dataset",
+          "schemaOrg": "Dataset",
+          "resourceType": "climatologyMeteorologyAtmosphere",
+          "resourceTypeGeneral": "Dataset"
+        },
+        "relatedIdentifiers": [],
+        "relatedItems": [],
+        "sizes": [
+          "52.28 Tbytes"
+        ],
+        "formats": [
+          "NetCDF"
+        ],
+        "version": null,
+        "rightsList": [
+          {
+            "rights": "Creative Commons Attribution 4.0 International",
+            "rightsUri": "https://creativecommons.org/licenses/by/4.0/legalcode",
+            "schemeUri": "https://spdx.org/licenses/",
+            "rightsIdentifier": "cc-by-4.0",
+            "rightsIdentifierScheme": "SPDX"
+          }
+        ],
+        "descriptions": [
+          {
+            "description": "This dataset contains subseasonal-to-seasonal (S2S) hindcasts with CESM2 that were carried out as a community project and with community analysis in mind. These forecasts consist of 45-day long runs initialized every Monday from 1999 to 2019, 11 ensemble members. Output includes atmospheric, land, ocean and sea-ice variables (many requested by the community). These simulations are in support of the work done by the newly formed Earth System Predictability Working Group within CESM.",
+            "descriptionType": "Abstract"
+          }
+        ],
+        "geoLocations": [],
+        "fundingReferences": [],
+        "xml": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHJlc291cmNlIHhtbG5zPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCIgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeHNpOnNjaGVtYUxvY2F0aW9uPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCBodHRwOi8vc2NoZW1hLmRhdGFjaXRlLm9yZy9tZXRhL2tlcm5lbC00LjYvbWV0YWRhdGEueHNkIj4KICA8aWRlbnRpZmllciBpZGVudGlmaWVyVHlwZT0iRE9JIj4xMC41MDY1LzBTNjMtTTc2NzwvaWRlbnRpZmllcj4KICA8Y3JlYXRvcnM+CiAgICA8Y3JlYXRvcj4KICAgICAgPGNyZWF0b3JOYW1lIG5hbWVUeXBlPSJQZXJzb25hbCI+UmljaHRlciwgSmFkd2lnYTwvY3JlYXRvck5hbWU+CiAgICAgIDxnaXZlbk5hbWU+SmFkd2lnYTwvZ2l2ZW5OYW1lPgogICAgICA8ZmFtaWx5TmFtZT5SaWNodGVyPC9mYW1pbHlOYW1lPgogICAgICA8bmFtZUlkZW50aWZpZXIgbmFtZUlkZW50aWZpZXJTY2hlbWU9Ik9SQ0lEIiBzY2hlbWVVUkk9Imh0dHBzOi8vb3JjaWQub3JnIj5odHRwczovL29yY2lkLm9yZy8wMDAwLTAwMDEtNzA0OC0wNzgxPC9uYW1lSWRlbnRpZmllcj4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5FZHdhcmRzLCBKYW1lczwvY3JlYXRvck5hbWU+CiAgICAgIDxnaXZlbk5hbWU+SmFtZXM8L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWU+RWR3YXJkczwvZmFtaWx5TmFtZT4KICAgICAgPG5hbWVJZGVudGlmaWVyIG5hbWVJZGVudGlmaWVyU2NoZW1lPSJPUkNJRCIgc2NoZW1lVVJJPSJodHRwczovL29yY2lkLm9yZyI+aHR0cHM6Ly9vcmNpZC5vcmcvMDAwMC0wMDAyLTY2NzMtMTg1NjwvbmFtZUlkZW50aWZpZXI+CiAgICA8L2NyZWF0b3I+CiAgPC9jcmVhdG9ycz4KICA8dGl0bGVzPgogICAgPHRpdGxlPlMyUyBIaW5kY2FzdHM8L3RpdGxlPgogIDwvdGl0bGVzPgogIDxwdWJsaXNoZXIgcHVibGlzaGVySWRlbnRpZmllcj0iaHR0cHM6Ly9yb3Iub3JnLzA1Y3ZmY3I0NCIgcHVibGlzaGVySWRlbnRpZmllclNjaGVtZT0iUk9SIiBzY2hlbWVVUkk9Imh0dHBzOi8vcm9yLm9yZy8iPk5TRiBOYXRpb25hbCBDZW50ZXIgZm9yIEF0bW9zcGhlcmljIFJlc2VhcmNoPC9wdWJsaXNoZXI+CiAgPHB1YmxpY2F0aW9uWWVhcj4yMDIxPC9wdWJsaWNhdGlvblllYXI+CiAgPHJlc291cmNlVHlwZSByZXNvdXJjZVR5cGVHZW5lcmFsPSJEYXRhc2V0Ij5jbGltYXRvbG9neU1ldGVvcm9sb2d5QXRtb3NwaGVyZTwvcmVzb3VyY2VUeXBlPgogIDxzdWJqZWN0cz4KICAgIDxzdWJqZWN0IHN1YmplY3RTY2hlbWU9IkdDTUQiIHNjaGVtZVVSST0iaHR0cHM6Ly9nY21kLmVhcnRoZGF0YS5uYXNhLmdvdi9rbXMiIHZhbHVlVVJJPSJodHRwczovL2djbWQuZWFydGhkYXRhLm5hc2EuZ292L2ttcy9jb25jZXB0L2I1NGRlNWNkLTQ0NzUtNGM3Yi1hY2JjLTRlYjUyOWI5Mzk2ZSI+RUFSVEggU0NJRU5DRSAmZ3Q7IEFUTU9TUEhFUkUgJmd0OyBBVE1PU1BIRVJJQyBQUkVTU1VSRSAmZ3Q7IFNVUkZBQ0UgUFJFU1NVUkU8L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJHQ01EIiBzY2hlbWVVUkk9Imh0dHBzOi8vZ2NtZC5lYXJ0aGRhdGEubmFzYS5nb3Yva21zIiB2YWx1ZVVSST0iaHR0cHM6Ly9nY21kLmVhcnRoZGF0YS5uYXNhLmdvdi9rbXMvY29uY2VwdC81YTdiYjA5NS00ZDEyLTQyMzItYmM3NS1iOGU4MjE5N2NiOTIiPkVBUlRIIFNDSUVOQ0UgJmd0OyBBVE1PU1BIRVJFICZndDsgQVRNT1NQSEVSSUMgVEVNUEVSQVRVUkUgJmd0OyBTVVJGQUNFIFRFTVBFUkFUVVJFPC9zdWJqZWN0PgogICAgPHN1YmplY3Qgc3ViamVjdFNjaGVtZT0iR0NNRCIgc2NoZW1lVVJJPSJodHRwczovL2djbWQuZWFydGhkYXRhLm5hc2EuZ292L2ttcyIgdmFsdWVVUkk9Imh0dHBzOi8vZ2NtZC5lYXJ0aGRhdGEubmFzYS5nb3Yva21zL2NvbmNlcHQvNTkyZDQ5YzQtZThhZS00YWI0LWJmMjQtYWU0YTg5NmQwNjM3Ij5FQVJUSCBTQ0lFTkNFICZndDsgQVRNT1NQSEVSRSAmZ3Q7IEFUTU9TUEhFUklDIFdJTkRTICZndDsgVVBQRVIgTEVWRUwgV0lORFM8L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJHQ01EIiBzY2hlbWVVUkk9Imh0dHBzOi8vZ2NtZC5lYXJ0aGRhdGEubmFzYS5nb3Yva21zIiB2YWx1ZVVSST0iaHR0cHM6Ly9nY21kLmVhcnRoZGF0YS5uYXNhLmdvdi9rbXMvY29uY2VwdC83ZDQ1ZjEwOC1kZGEyLTQzNDEtYjg1My1lZTNhNDkwYWFkNTkiPkVBUlRIIFNDSUVOQ0UgJmd0OyBBVE1PU1BIRVJFICZndDsgUFJFQ0lQSVRBVElPTiAmZ3Q7IExJUVVJRCBQUkVDSVBJVEFUSU9OPC9zdWJqZWN0PgogICAgPHN1YmplY3Qgc3ViamVjdFNjaGVtZT0iR0NNRCIgc2NoZW1lVVJJPSJodHRwczovL2djbWQuZWFydGhkYXRhLm5hc2EuZ292L2ttcyIgdmFsdWVVUkk9Imh0dHBzOi8vZ2NtZC5lYXJ0aGRhdGEubmFzYS5nb3Yva21zL2NvbmNlcHQvMDA3NDhiMTktMzBjYy00ZDEyLWE3YTMtMGFhOGIzYmU1YTk0Ij5FQVJUSCBTQ0lFTkNFICZndDsgQVRNT1NQSEVSRSAmZ3Q7IFdFQVRIRVIgRVZFTlRTICZndDsgU3RhYmlsaXR5L1NldmVyZSBXZWF0aGVyIEluZGljZXMgJmd0OyBDT05WRUNUSVZFIEFWQUlMQUJMRSBQT1RFTlRJQUwgRU5FUkdZIChDQVBFKTwvc3ViamVjdD4KICA8L3N1YmplY3RzPgogIDxjb250cmlidXRvcnM+CiAgICA8Y29udHJpYnV0b3IgY29udHJpYnV0b3JUeXBlPSJIb3N0aW5nSW5zdGl0dXRpb24iPgogICAgICA8Y29udHJpYnV0b3JOYW1lPlVuaXZlcnNpdHkgQ29ycG9yYXRpb24gRm9yIEF0bW9zcGhlcmljIFJlc2VhcmNoIChVQ0FSKTpOU0YgTmF0aW9uYWwgQ2VudGVyIGZvciBBdG1vc3BoZXJpYyBSZXNlYXJjaCAoTlNGIE5DQVIpOkNvbXB1dGF0aW9uYWwgYW5kIEluZm9ybWF0aW9uIFN5c3RlbXMgTGFib3JhdG9yeSAoQ0lTTCk6SW5mb3JtYXRpb24gU2VydmljZXMgRGl2aXNpb24gKElTRCk6RGF0YSBFbmdpbmVlcmluZyBhbmQgQ3VyYXRpb24gU2VjdGlvbiAoREVDUyk8L2NvbnRyaWJ1dG9yTmFtZT4KICAgIDwvY29udHJpYnV0b3I+CiAgPC9jb250cmlidXRvcnM+CiAgPGRhdGVzPgogICAgPGRhdGUgZGF0ZVR5cGU9IlZhbGlkIj4xOTk5IHRvIDIwMjM8L2RhdGU+CiAgPC9kYXRlcz4KICA8ZGVzY3JpcHRpb25zPgogICAgPGRlc2NyaXB0aW9uIGRlc2NyaXB0aW9uVHlwZT0iQWJzdHJhY3QiPiBUaGlzIGRhdGFzZXQgY29udGFpbnMgc3Vic2Vhc29uYWwtdG8tc2Vhc29uYWwgKFMyUykgaGluZGNhc3RzIHdpdGggQ0VTTTIgdGhhdCB3ZXJlIGNhcnJpZWQgb3V0IGFzIGEgY29tbXVuaXR5IHByb2plY3QgYW5kIHdpdGggY29tbXVuaXR5IGFuYWx5c2lzIGluIG1pbmQuIFRoZXNlIGZvcmVjYXN0cyBjb25zaXN0IG9mIDQ1LWRheSBsb25nIHJ1bnMgaW5pdGlhbGl6ZWQgZXZlcnkgTW9uZGF5IGZyb20gMTk5OSB0byAyMDE5LCAxMSBlbnNlbWJsZSBtZW1iZXJzLiBPdXRwdXQgaW5jbHVkZXMgYXRtb3NwaGVyaWMsIGxhbmQsIG9jZWFuIGFuZCBzZWEtaWNlIHZhcmlhYmxlcyAobWFueSByZXF1ZXN0ZWQgYnkgdGhlIGNvbW11bml0eSkuIFRoZXNlIHNpbXVsYXRpb25zIGFyZSBpbiBzdXBwb3J0IG9mIHRoZSB3b3JrIGRvbmUgYnkgdGhlIG5ld2x5IGZvcm1lZCBFYXJ0aCBTeXN0ZW0gUHJlZGljdGFiaWxpdHkgV29ya2luZyBHcm91cCB3aXRoaW4gQ0VTTS48L2Rlc2NyaXB0aW9uPgogIDwvZGVzY3JpcHRpb25zPgogIDxsYW5ndWFnZT5lbi1VUzwvbGFuZ3VhZ2U+CiAgPGFsdGVybmF0ZUlkZW50aWZpZXJzPgogICAgPGFsdGVybmF0ZUlkZW50aWZpZXIgYWx0ZXJuYXRlSWRlbnRpZmllclR5cGU9IlVSTCI+aHR0cHM6Ly9nZGV4LnVjYXIuZWR1L2RhdGFzZXRzL2Q2NTEwNjA8L2FsdGVybmF0ZUlkZW50aWZpZXI+CiAgICA8YWx0ZXJuYXRlSWRlbnRpZmllciBhbHRlcm5hdGVJZGVudGlmaWVyVHlwZT0iTG9jYWwiPmQ2NTEwNjA8L2FsdGVybmF0ZUlkZW50aWZpZXI+CiAgPC9hbHRlcm5hdGVJZGVudGlmaWVycz4KICA8c2l6ZXM+CiAgICA8c2l6ZT41Mi4yOCBUYnl0ZXM8L3NpemU+CiAgPC9zaXplcz4KICA8Zm9ybWF0cz4KICAgIDxmb3JtYXQ+TmV0Q0RGPC9mb3JtYXQ+CiAgPC9mb3JtYXRzPgogIDxyaWdodHNMaXN0PgogICAgPHJpZ2h0cyByaWdodHNJZGVudGlmaWVyPSJDQy1CWS00LjAiIHJpZ2h0c1VSST0iaHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LzQuMC8iPkNyZWF0aXZlIENvbW1vbnMgQXR0cmlidXRpb24gNC4wIEludGVybmF0aW9uYWwgTGljZW5zZTwvcmlnaHRzPgogIDwvcmlnaHRzTGlzdD4KPC9yZXNvdXJjZT4=",
+        "url": "https://gdex.ucar.edu/datasets/d651060/",
+        "contentUrl": null,
+        "metadataVersion": 7,
+        "schemaVersion": "http://datacite.org/schema/kernel-4",
+        "source": "mds",
+        "isActive": true,
+        "state": "findable",
+        "reason": null,
+        "viewCount": 0,
+        "viewsOverTime": [],
+        "downloadCount": 0,
+        "downloadsOverTime": [],
+        "referenceCount": 0,
+        "citationCount": 0,
+        "citationsOverTime": [],
+        "partCount": 0,
+        "partOfCount": 0,
+        "versionCount": 0,
+        "versionOfCount": 0,
+        "created": "2021-02-17T22:43:02.000Z",
+        "registered": "2021-03-01T22:54:53.000Z",
+        "published": "2021",
+        "updated": "2026-04-21T03:56:36.000Z"
+      },
+      "relationships": {
+        "client": {
+          "data": {
+            "id": "ucar.ucar",
+            "type": "clients"
+          }
+        },
+        "provider": {
+          "data": {
+            "id": "ucar",
+            "type": "providers"
+          }
+        },
+        "media": {
+          "data": {
+            "id": "10.5065/0s63-m767",
+            "type": "media"
+          }
+        },
+        "references": {
+          "data": []
+        },
+        "citations": {
+          "data": []
+        },
+        "parts": {
+          "data": []
+        },
+        "partOf": {
+          "data": []
+        },
+        "versions": {
+          "data": []
+        },
+        "versionOf": {
+          "data": []
+        }
+      }
+    }
+  }
+}

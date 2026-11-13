@@ -1,0 +1,72 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=A+study+on+the+nocturnal+evolution+during+PERiLS+2023+IOP3%27s+supercells+to+QLCS+development&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=A+study+on+the+nocturnal+evolution+during+PERiLS+2023+IOP3%27s+supercells+to+QLCS+development&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:44.723169+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 11284170,
+      "items": [
+        {
+          "DOI": "10.1175/mwr-d-24-0166.1",
+          "title": [
+            "Surface Cold Pool Observations near Tornadic and Nontornadic QLCS Mesovortices during PERiLS"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2025,
+                9
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1175/mwr-d-25-0076.1",
+          "title": [
+            "Mesocyclone Evolution in a Simulated QLCS-Supercell Merger"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2026,
+                9,
+                15
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1175/waf-d-24-0200.1",
+          "title": [
+            "Characteristics of Tornadic and Nontornadic QLCS Mesovortices Observed Using Radar and Pod Data from PERiLS"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2025,
+                10
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

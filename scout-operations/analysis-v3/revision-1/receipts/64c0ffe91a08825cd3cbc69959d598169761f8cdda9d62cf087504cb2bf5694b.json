@@ -1,0 +1,74 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=Learning+the+dangers+of+storm+surges+in+virtual+reality%3A+coastal+leaders%27+attitudes+toward+VR+as+a+risk+communication+tool&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=Learning+the+dangers+of+storm+surges+in+virtual+reality%3A+coastal+leaders%27+attitudes+toward+VR+as+a+risk+communication+tool&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:51.114187+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 5877378,
+      "items": [
+        {
+          "DOI": "10.1080/13504622.2025.2465713",
+          "title": [
+            "Learning the dangers of storm surges in virtual reality: coastal leaders’ attitudes toward VR as a risk communication tool"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2025,
+                2,
+                13
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.4018/979-8-2600-0736-5.ch003",
+          "title": [
+            "Virtual Reality (VR) Learning Environments"
+          ],
+          "type": "book-chapter",
+          "published": {
+            "date-parts": [
+              [
+                2026,
+                4,
+                2
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1002/9781119383567.ch25",
+          "title": [
+            "Coastal Flooding and Storm Surges"
+          ],
+          "type": "other",
+          "published": {
+            "date-parts": [
+              [
+                2019,
+                9,
+                16
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

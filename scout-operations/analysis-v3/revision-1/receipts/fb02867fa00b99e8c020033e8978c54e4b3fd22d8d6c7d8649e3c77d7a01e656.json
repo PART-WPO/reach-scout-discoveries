@@ -1,0 +1,12 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://raw.githubusercontent.com/mdpletcher/SLR_random_forest_pletcher/HEAD/README.md",
+  "final_url": "https://raw.githubusercontent.com/mdpletcher/SLR_random_forest_pletcher/HEAD/README.md",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:56:29.060866+00:00",
+  "headers": {
+    "Content-Type": "text/plain; charset=utf-8",
+    "ETag": "\"ef0cc07e3ee72b0e206df89286c73367a208e33a2c2a78cdd308bc3fdf868b7f\""
+  },
+  "body": "# Random Forest snow-to-liquid ratio method\n\n## Introduction\nThis repository is the code associated with the [WAF](https://journals.ametsoc.org/view/journals/wefo/wefo-overview.xml) manuscript titled: \"Validation of cool-season snowfall forecasts at a high-elevation site in Utah's Little Cottonwood Canyon\" written by Pletcher, M. D., Veals, P. G., Wessler, M., Church, D., Harnos, K., Correia Jr., J., Chase, R. J., and W. James Steenburgh. *in review*. \n\n## Summary\n\nIn this study, we developed a random forest based snow-to-liquid ratio (SLR) algorithm using high quality snowfall observations at a mountain site in Little Cottonwood Canyon, UT [(Wassserstein and Steenburgh 2023)](https://hive.utah.edu/concern/datasets/0r967383v) and the ERA5 reanalysis [(Hersbach et al. 2018)](https://doi.org/10.24381/cds.bd0915c6). Details are provided in Pletcher et al. (2024).\n\n## Background on example dataset\n\nWe've provided a sample dataset (sample_data.pd) that was built using [HRRR BUFKIT data](https://meteor.geol.iastate.edu/~ckarsten/bufkit/bufkit.html).\n\nWe used BUFKIT files rather than HRRR 3D grids because of their smaller file size (~0.2 MB), increased vertical resolution, and hourly temporal resolution. \n\n## Notes\n* The model was trained using 12-h SLR and mean ERA5 variables, but we typically apply it using 1-h predictor variables to produce high-frequency SLR and snowfall forecasts, although it can be applied at lower temporal frequencies.\n* While this model can be used to predict SLR in any snow climate, it may produce skewed predictions when applied to regions with different snow climatologies (e.g., regions that experience winter storms that feature warm air aloft).\n\n## Acknowledgments\n* The research done to develop this model would not have been possible without Alta Ski Area and the hard work of Alta's ski patrol. We also acknowledge [scikit-learn](https://doi.org/10.48550/arXiv.1201.0490) and the availability of the ERA5 reanalysis for algorithm testing and development.\n\nQuestions? Email me at michael.pletcher@utah.edu\n"
+}

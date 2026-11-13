@@ -1,0 +1,231 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.datacite.org/dois/10.5281/zenodo.7967541",
+  "final_url": "https://api.datacite.org/dois/10.5281/zenodo.7967541",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:56:28.531571+00:00",
+  "headers": {
+    "Content-Type": "application/json; charset=utf-8",
+    "ETag": "W/\"3430272dc1c7557144d6e75af6167a54\""
+  },
+  "body": {
+    "data": {
+      "id": "10.5281/zenodo.7967541",
+      "type": "dois",
+      "attributes": {
+        "doi": "10.5281/zenodo.7967541",
+        "prefix": "10.5281",
+        "suffix": "zenodo.7967541",
+        "identifiers": [],
+        "alternateIdentifiers": [],
+        "creators": [
+          {
+            "name": "Wang, Chi-Tsan",
+            "givenName": "Chi-Tsan",
+            "familyName": "Wang",
+            "affiliation": [
+              "George Mason University"
+            ],
+            "nameIdentifiers": [
+              {
+                "schemeUri": "https://orcid.org",
+                "nameIdentifier": "https://orcid.org/0000-0002-5642-3323",
+                "nameIdentifierScheme": "ORCID"
+              }
+            ]
+          },
+          {
+            "name": "Baek, Bok H.",
+            "givenName": "Bok H.",
+            "familyName": "Baek",
+            "affiliation": [
+              "George Mason University"
+            ],
+            "nameIdentifiers": [
+              {
+                "schemeUri": "https://orcid.org",
+                "nameIdentifier": "https://orcid.org/0000-0003-1054-6325",
+                "nameIdentifierScheme": "ORCID"
+              }
+            ]
+          },
+          {
+            "name": "Vizuete, William",
+            "givenName": "William",
+            "familyName": "Vizuete",
+            "affiliation": [
+              "The University of North Carolina at Chapel Hill"
+            ],
+            "nameIdentifiers": [
+              {
+                "schemeUri": "https://orcid.org",
+                "nameIdentifier": "https://orcid.org/0000-0002-1399-2948",
+                "nameIdentifierScheme": "ORCID"
+              }
+            ]
+          },
+          {
+            "name": "Engel, Lawrence S.",
+            "givenName": "Lawrence S.",
+            "familyName": "Engel",
+            "affiliation": [
+              "The University of North Carolina at Chapel Hill"
+            ],
+            "nameIdentifiers": [
+              {
+                "schemeUri": "https://orcid.org",
+                "nameIdentifier": "https://orcid.org/0000-0001-9268-4830",
+                "nameIdentifierScheme": "ORCID"
+              }
+            ]
+          }
+        ],
+        "titles": [
+          {
+            "title": "The Styrene, Benzene, Toluene, Ethylbenzene and Xylenes (SBTEX) hourly gridding modeled emission and concentration in the U.S. Gulf region"
+          }
+        ],
+        "publisher": "Zenodo",
+        "container": {},
+        "publicationYear": 2023,
+        "subjects": [
+          {
+            "subject": "Styrene"
+          },
+          {
+            "subject": "Benzene"
+          },
+          {
+            "subject": "Toluene"
+          },
+          {
+            "subject": "Ethylbenzene"
+          },
+          {
+            "subject": "Xylene"
+          },
+          {
+            "subject": "HAPs"
+          },
+          {
+            "subject": "BTEX"
+          }
+        ],
+        "contributors": [],
+        "dates": [
+          {
+            "date": "2023-05-24",
+            "dateType": "Issued"
+          }
+        ],
+        "language": null,
+        "types": {
+          "ris": "DATA",
+          "bibtex": "misc",
+          "citeproc": "dataset",
+          "schemaOrg": "Dataset",
+          "resourceTypeGeneral": "Dataset"
+        },
+        "relatedIdentifiers": [
+          {
+            "relationType": "IsVersionOf",
+            "relatedIdentifier": "10.5281/zenodo.7967540",
+            "relatedIdentifierType": "DOI"
+          }
+        ],
+        "relatedItems": [],
+        "sizes": [],
+        "formats": [],
+        "version": null,
+        "rightsList": [
+          {
+            "rights": "Creative Commons Attribution 4.0 International",
+            "rightsUri": "https://creativecommons.org/licenses/by/4.0/legalcode",
+            "schemeUri": "https://spdx.org/licenses/",
+            "rightsIdentifier": "cc-by-4.0",
+            "rightsIdentifierScheme": "SPDX"
+          },
+          {
+            "rights": "Open Access",
+            "rightsUri": "info:eu-repo/semantics/openAccess"
+          }
+        ],
+        "descriptions": [
+          {
+            "description": "This Data includes three parts, the emission data, concentration data, and evaluation process for Styrene, Benzene, Toluene, Ethylbenzene, and Xylenes (SBTEX). We did the imputation for the missing emissions in the 2011 National Emission Inventory (NEI) and used the SMOKE model system (https://www.cmascenter.org/smoke/) to generate the hourly gridding (12x12km) explicit emission data (2012_May_to_SEP_SBTEX_emission_12K.zip). Then, we drove the CTM model (Comprehensive Air Quality Model with Extensions, CAMx model https://www.camx.com/) with flexi-nesting to (4x4km) and the reactive tracer method, which considers the chemical decay, physical transport, and dry/wet deposition processes, with the complete imputed spatiotemporal SBTEX emission data to simulate the individual hourly SBTEX concentration accurately. The concentration data (2012_May_to_SEP_SBTEX_concentration_4K.zip) is hourly gridding modeled concentration data in netCDF format for Gulf region states in the US for 2012 May to Sep. The concentration and emission data are in netCDF format and have two scenarios, original emission data (Base case) and complete imputed emission (Adj case). In the concentration data, BENZENE and BENZ are two variables to represent Benzene species; however, only \"BENZ\" in Adj case is recommended to use. The Adj case results are also recommended for other species. The file (Model_evaluation_support_document) has the codes for evaluating the model result with observation data https://www.epa.gov/amtic/amtic-ambient-monitoring-archive-haps. The SBTEX concentration can support any SBTEX-related human health studies in the Gulf region.",
+            "descriptionType": "Abstract"
+          }
+        ],
+        "geoLocations": [],
+        "fundingReferences": [],
+        "xml": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHJlc291cmNlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCIgeHNpOnNjaGVtYUxvY2F0aW9uPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCBodHRwOi8vc2NoZW1hLmRhdGFjaXRlLm9yZy9tZXRhL2tlcm5lbC00LjEvbWV0YWRhdGEueHNkIj4KICA8aWRlbnRpZmllciBpZGVudGlmaWVyVHlwZT0iRE9JIj4xMC41MjgxL1pFTk9ETy43OTY3NTQxPC9pZGVudGlmaWVyPgogIDxjcmVhdG9ycz4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWU+V2FuZywgQ2hpLVRzYW48L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPkNoaS1Uc2FuPC9naXZlbk5hbWU+CiAgICAgIDxmYW1pbHlOYW1lPldhbmc8L2ZhbWlseU5hbWU+CiAgICAgIDxuYW1lSWRlbnRpZmllciBuYW1lSWRlbnRpZmllclNjaGVtZT0iT1JDSUQiIHNjaGVtZVVSST0iaHR0cDovL29yY2lkLm9yZy8iPjAwMDAtMDAwMi01NjQyLTMzMjM8L25hbWVJZGVudGlmaWVyPgogICAgICA8YWZmaWxpYXRpb24+R2VvcmdlIE1hc29uIFVuaXZlcnNpdHk8L2FmZmlsaWF0aW9uPgogICAgPC9jcmVhdG9yPgogICAgPGNyZWF0b3I+CiAgICAgIDxjcmVhdG9yTmFtZT5CYWVrLCBCb2sgSC48L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPkJvayBILjwvZ2l2ZW5OYW1lPgogICAgICA8ZmFtaWx5TmFtZT5CYWVrPC9mYW1pbHlOYW1lPgogICAgICA8bmFtZUlkZW50aWZpZXIgbmFtZUlkZW50aWZpZXJTY2hlbWU9Ik9SQ0lEIiBzY2hlbWVVUkk9Imh0dHA6Ly9vcmNpZC5vcmcvIj4wMDAwLTAwMDMtMTA1NC02MzI1PC9uYW1lSWRlbnRpZmllcj4KICAgICAgPGFmZmlsaWF0aW9uPkdlb3JnZSBNYXNvbiBVbml2ZXJzaXR5PC9hZmZpbGlhdGlvbj4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWU+Vml6dWV0ZSwgV2lsbGlhbTwvY3JlYXRvck5hbWU+CiAgICAgIDxnaXZlbk5hbWU+V2lsbGlhbTwvZ2l2ZW5OYW1lPgogICAgICA8ZmFtaWx5TmFtZT5WaXp1ZXRlPC9mYW1pbHlOYW1lPgogICAgICA8bmFtZUlkZW50aWZpZXIgbmFtZUlkZW50aWZpZXJTY2hlbWU9Ik9SQ0lEIiBzY2hlbWVVUkk9Imh0dHA6Ly9vcmNpZC5vcmcvIj4wMDAwLTAwMDItMTM5OS0yOTQ4PC9uYW1lSWRlbnRpZmllcj4KICAgICAgPGFmZmlsaWF0aW9uPlRoZSBVbml2ZXJzaXR5IG9mIE5vcnRoIENhcm9saW5hIGF0IENoYXBlbCBIaWxsPC9hZmZpbGlhdGlvbj4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWU+RW5nZWwsIExhd3JlbmNlIFMuPC9jcmVhdG9yTmFtZT4KICAgICAgPGdpdmVuTmFtZT5MYXdyZW5jZSBTLjwvZ2l2ZW5OYW1lPgogICAgICA8ZmFtaWx5TmFtZT5FbmdlbDwvZmFtaWx5TmFtZT4KICAgICAgPG5hbWVJZGVudGlmaWVyIG5hbWVJZGVudGlmaWVyU2NoZW1lPSJPUkNJRCIgc2NoZW1lVVJJPSJodHRwOi8vb3JjaWQub3JnLyI+MDAwMC0wMDAxLTkyNjgtNDgzMDwvbmFtZUlkZW50aWZpZXI+CiAgICAgIDxhZmZpbGlhdGlvbj5UaGUgVW5pdmVyc2l0eSBvZiBOb3J0aCBDYXJvbGluYSBhdCBDaGFwZWwgSGlsbDwvYWZmaWxpYXRpb24+CiAgICA8L2NyZWF0b3I+CiAgPC9jcmVhdG9ycz4KICA8dGl0bGVzPgogICAgPHRpdGxlPlRoZSBTdHlyZW5lLCBCZW56ZW5lLCBUb2x1ZW5lLCBFdGh5bGJlbnplbmUgYW5kIFh5bGVuZXMgKFNCVEVYKSBob3VybHkgZ3JpZGRpbmcgbW9kZWxlZCBlbWlzc2lvbiBhbmQgY29uY2VudHJhdGlvbiBpbiB0aGUgVS5TLiBHdWxmIHJlZ2lvbjwvdGl0bGU+CiAgPC90aXRsZXM+CiAgPHB1Ymxpc2hlcj5aZW5vZG88L3B1Ymxpc2hlcj4KICA8cHVibGljYXRpb25ZZWFyPjIwMjM8L3B1YmxpY2F0aW9uWWVhcj4KICA8c3ViamVjdHM+CiAgICA8c3ViamVjdD5TdHlyZW5lPC9zdWJqZWN0PgogICAgPHN1YmplY3Q+QmVuemVuZTwvc3ViamVjdD4KICAgIDxzdWJqZWN0PlRvbHVlbmU8L3N1YmplY3Q+CiAgICA8c3ViamVjdD5FdGh5bGJlbnplbmU8L3N1YmplY3Q+CiAgICA8c3ViamVjdD5YeWxlbmU8L3N1YmplY3Q+CiAgICA8c3ViamVjdD5IQVBzPC9zdWJqZWN0PgogICAgPHN1YmplY3Q+QlRFWDwvc3ViamVjdD4KICA8L3N1YmplY3RzPgogIDxkYXRlcz4KICAgIDxkYXRlIGRhdGVUeXBlPSJJc3N1ZWQiPjIwMjMtMDUtMjQ8L2RhdGU+CiAgPC9kYXRlcz4KICA8cmVzb3VyY2VUeXBlIHJlc291cmNlVHlwZUdlbmVyYWw9IkRhdGFzZXQiLz4KICA8YWx0ZXJuYXRlSWRlbnRpZmllcnM+CiAgICA8YWx0ZXJuYXRlSWRlbnRpZmllciBhbHRlcm5hdGVJZGVudGlmaWVyVHlwZT0idXJsIj5odHRwczovL3plbm9kby5vcmcvcmVjb3JkLzc5Njc1NDE8L2FsdGVybmF0ZUlkZW50aWZpZXI+CiAgPC9hbHRlcm5hdGVJZGVudGlmaWVycz4KICA8cmVsYXRlZElkZW50aWZpZXJzPgogICAgPHJlbGF0ZWRJZGVudGlmaWVyIHJlbGF0ZWRJZGVudGlmaWVyVHlwZT0iRE9JIiByZWxhdGlvblR5cGU9IklzVmVyc2lvbk9mIj4xMC41MjgxL3plbm9kby43OTY3NTQwPC9yZWxhdGVkSWRlbnRpZmllcj4KICA8L3JlbGF0ZWRJZGVudGlmaWVycz4KICA8cmlnaHRzTGlzdD4KICAgIDxyaWdodHMgcmlnaHRzVVJJPSJodHRwczovL2NyZWF0aXZlY29tbW9ucy5vcmcvbGljZW5zZXMvYnkvNC4wL2xlZ2FsY29kZSI+Q3JlYXRpdmUgQ29tbW9ucyBBdHRyaWJ1dGlvbiA0LjAgSW50ZXJuYXRpb25hbDwvcmlnaHRzPgogICAgPHJpZ2h0cyByaWdodHNVUkk9ImluZm86ZXUtcmVwby9zZW1hbnRpY3Mvb3BlbkFjY2VzcyI+T3BlbiBBY2Nlc3M8L3JpZ2h0cz4KICA8L3JpZ2h0c0xpc3Q+CiAgPGRlc2NyaXB0aW9ucz4KICAgIDxkZXNjcmlwdGlvbiBkZXNjcmlwdGlvblR5cGU9IkFic3RyYWN0Ij4mbHQ7cCZndDtUaGlzIERhdGEgaW5jbHVkZXMgdGhyZWUgcGFydHMsIHRoZSBlbWlzc2lvbiBkYXRhLCBjb25jZW50cmF0aW9uIGRhdGEsIGFuZCBldmFsdWF0aW9uIHByb2Nlc3MgZm9yIFN0eXJlbmUsIEJlbnplbmUsIFRvbHVlbmUsIEV0aHlsYmVuemVuZSwgYW5kIFh5bGVuZXMgKFNCVEVYKS4gV2UgZGlkIHRoZSBpbXB1dGF0aW9uIGZvciB0aGUgbWlzc2luZyBlbWlzc2lvbnMgaW4gdGhlIDIwMTEgTmF0aW9uYWwgRW1pc3Npb24gSW52ZW50b3J5IChORUkpIGFuZCB1c2VkIHRoZSBTTU9LRSBtb2RlbCBzeXN0ZW0gKCZsdDthIGhyZWY9Imh0dHBzOi8vd3d3LmNtYXNjZW50ZXIub3JnL3Ntb2tlLyImZ3Q7aHR0cHM6Ly93d3cuY21hc2NlbnRlci5vcmcvc21va2UvJmx0Oy9hJmd0OykgdG8gZ2VuZXJhdGUgdGhlIGhvdXJseSBncmlkZGluZyAoMTJ4MTJrbSkgZXhwbGljaXQgZW1pc3Npb24gZGF0YSAoMjAxMl9NYXlfdG9fU0VQX1NCVEVYX2VtaXNzaW9uXzEySy56aXApLiBUaGVuLCB3ZSBkcm92ZSB0aGUgQ1RNIG1vZGVsIChDb21wcmVoZW5zaXZlIEFpciBRdWFsaXR5IE1vZGVsIHdpdGggRXh0ZW5zaW9ucywgQ0FNeCBtb2RlbCZhbXA7bmJzcDsmbHQ7YSBocmVmPSJodHRwczovL3d3dy5jYW14LmNvbS8iJmd0O2h0dHBzOi8vd3d3LmNhbXguY29tLyZsdDsvYSZndDspIHdpdGggZmxleGktbmVzdGluZyB0byAoNHg0a20pIGFuZCB0aGUgcmVhY3RpdmUgdHJhY2VyIG1ldGhvZCwgd2hpY2ggY29uc2lkZXJzIHRoZSBjaGVtaWNhbCBkZWNheSwgcGh5c2ljYWwgdHJhbnNwb3J0LCBhbmQgZHJ5L3dldCBkZXBvc2l0aW9uIHByb2Nlc3Nlcywgd2l0aCB0aGUgY29tcGxldGUgaW1wdXRlZCBzcGF0aW90ZW1wb3JhbCBTQlRFWCBlbWlzc2lvbiBkYXRhIHRvIHNpbXVsYXRlIHRoZSBpbmRpdmlkdWFsIGhvdXJseSBTQlRFWCBjb25jZW50cmF0aW9uIGFjY3VyYXRlbHkuIFRoZSBjb25jZW50cmF0aW9uIGRhdGEgKDIwMTJfTWF5X3RvX1NFUF9TQlRFWF9jb25jZW50cmF0aW9uXzRLLnppcCkgaXMgaG91cmx5IGdyaWRkaW5nIG1vZGVsZWQgY29uY2VudHJhdGlvbiBkYXRhIGluIG5ldENERiBmb3JtYXQgZm9yIEd1bGYgcmVnaW9uIHN0YXRlcyBpbiB0aGUgVVMgZm9yIDIwMTIgTWF5IHRvIFNlcC4gVGhlIGNvbmNlbnRyYXRpb24gYW5kIGVtaXNzaW9uIGRhdGEgYXJlIGluIG5ldENERiBmb3JtYXQgYW5kIGhhdmUgdHdvIHNjZW5hcmlvcywgb3JpZ2luYWwgZW1pc3Npb24gZGF0YSAoQmFzZSBjYXNlKSBhbmQgY29tcGxldGUgaW1wdXRlZCBlbWlzc2lvbiAoQWRqIGNhc2UpLiBJbiB0aGUgY29uY2VudHJhdGlvbiBkYXRhLCBCRU5aRU5FIGFuZCBCRU5aIGFyZSB0d28gdmFyaWFibGVzIHRvIHJlcHJlc2VudCBCZW56ZW5lIHNwZWNpZXM7IGhvd2V2ZXIsIG9ubHkgJmFtcDtxdW90O0JFTlomYW1wO3F1b3Q7IGluIEFkaiBjYXNlIGlzIHJlY29tbWVuZGVkIHRvIHVzZS4gVGhlIEFkaiBjYXNlIHJlc3VsdHMgYXJlIGFsc28gcmVjb21tZW5kZWQgZm9yIG90aGVyIHNwZWNpZXMuIFRoZSBmaWxlIChNb2RlbF9ldmFsdWF0aW9uX3N1cHBvcnRfZG9jdW1lbnQpIGhhcyB0aGUgY29kZXMgZm9yIGV2YWx1YXRpbmcgdGhlIG1vZGVsIHJlc3VsdCB3aXRoIG9ic2VydmF0aW9uIGRhdGEmYW1wO25ic3A7Jmx0O2EgaHJlZj0iaHR0cHM6Ly93d3cuZXBhLmdvdi9hbXRpYy9hbXRpYy1hbWJpZW50LW1vbml0b3JpbmctYXJjaGl2ZS1oYXBzIiZndDtodHRwczovL3d3dy5lcGEuZ292L2FtdGljL2FtdGljLWFtYmllbnQtbW9uaXRvcmluZy1hcmNoaXZlLWhhcHMmbHQ7L2EmZ3Q7LiBUaGUgU0JURVggY29uY2VudHJhdGlvbiBjYW4gc3VwcG9ydCBhbnkgU0JURVgtcmVsYXRlZCBodW1hbiBoZWFsdGggc3R1ZGllcyBpbiB0aGUgR3VsZiByZWdpb24uJmx0Oy9wJmd0OzwvZGVzY3JpcHRpb24+CiAgPC9kZXNjcmlwdGlvbnM+CjwvcmVzb3VyY2U+",
+        "url": "https://zenodo.org/record/7967541",
+        "contentUrl": null,
+        "metadataVersion": 1,
+        "schemaVersion": "http://datacite.org/schema/kernel-4",
+        "source": "mds",
+        "isActive": true,
+        "state": "findable",
+        "reason": null,
+        "viewCount": 0,
+        "viewsOverTime": [],
+        "downloadCount": 0,
+        "downloadsOverTime": [],
+        "referenceCount": 0,
+        "citationCount": 0,
+        "citationsOverTime": [],
+        "partCount": 0,
+        "partOfCount": 0,
+        "versionCount": 0,
+        "versionOfCount": 1,
+        "created": "2023-05-25T19:21:24.000Z",
+        "registered": "2023-05-25T19:21:25.000Z",
+        "published": "2023",
+        "updated": "2023-08-31T01:35:52.000Z"
+      },
+      "relationships": {
+        "client": {
+          "data": {
+            "id": "cern.zenodo",
+            "type": "clients"
+          }
+        },
+        "provider": {
+          "data": {
+            "id": "cern",
+            "type": "providers"
+          }
+        },
+        "media": {
+          "data": {
+            "id": "10.5281/zenodo.7967541",
+            "type": "media"
+          }
+        },
+        "references": {
+          "data": []
+        },
+        "citations": {
+          "data": []
+        },
+        "parts": {
+          "data": []
+        },
+        "partOf": {
+          "data": []
+        },
+        "versions": {
+          "data": []
+        },
+        "versionOf": {
+          "data": [
+            {
+              "id": "10.5281/zenodo.7967540",
+              "type": "dois"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=Making+Flood+Inundation+Mapping+%28FIM%29+Work+for+Multiple+Users%3A+Understanding+the+Value+and+Function+of+FIM+for+Decision+Support&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=Making+Flood+Inundation+Mapping+%28FIM%29+Work+for+Multiple+Users%3A+Understanding+the+Value+and+Function+of+FIM+for+Decision+Support&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:49.974759+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 5186248,
+      "items": [
+        {
+          "DOI": "10.1111/jfr3.70241",
+          "title": [
+            "Making Flood Inundation Mapping (\n                    <scp>FIM</scp>\n                    ) Work for Multiple Users: Improving the Design of\n                    <scp>FIM</scp>\n                    for Decision Support"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2026,
+                7,
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.22541/essoar.173991732.27843939/v1",
+          "title": [
+            "Enhancement of the NOAA Flood Inundation Mapping Framework (OWP HAND-FIM) through Surrogate Modeling"
+          ],
+          "type": "posted-content",
+          "published": {
+            "date-parts": [
+              [
+                2025,
+                2,
+                18
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.5194/egusphere-egu24-2941",
+          "title": [
+            "Use of Remote Sensing Flood Inundation Maps (FIM) for Evaluating Model-predicted FIM: Challenges and Strategies"
+          ],
+          "type": "posted-content",
+          "published": {
+            "date-parts": [
+              [
+                2025,
+                1,
+                20
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

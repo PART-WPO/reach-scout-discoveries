@@ -1,0 +1,71 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=SPRING+FORECASTING+EXPERIMENT+2024+Conducted+by+the%0AEXPERIMENTAL+FORECAST+PROGRAM+of+the+NOAA+HAZARDOUS+WEATHER+TESTBED&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=SPRING+FORECASTING+EXPERIMENT+2024+Conducted+by+the%0AEXPERIMENTAL+FORECAST+PROGRAM+of+the+NOAA+HAZARDOUS+WEATHER+TESTBED&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:38.192830+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 2345079,
+      "items": [
+        {
+          "DOI": "10.1175/bams-d-24-0249.1",
+          "title": [
+            "Advancing Hazardous Weather Prediction in the 2024 NOAA Hazardous Weather Testbed Spring Forecasting Experiment"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2024,
+                11
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1175/bams-d-11-00040.1",
+          "title": [
+            "An Overview of the 2010 Hazardous Weather Testbed Experimental Forecast Program Spring Experiment"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2012,
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1175/bams-d-23-0275.1",
+          "title": [
+            "The First Hybrid NOAA Hazardous Weather Testbed Spring Forecasting Experiment for Advancing Severe Weather Prediction"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2023,
+                12
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

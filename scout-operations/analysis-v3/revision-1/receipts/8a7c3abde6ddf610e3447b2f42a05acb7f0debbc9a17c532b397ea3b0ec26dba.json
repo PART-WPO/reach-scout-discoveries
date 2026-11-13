@@ -1,0 +1,74 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=Learning+From+Hurricane+Laura%27s+Near+Miss&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=Learning+From+Hurricane+Laura%27s+Near+Miss&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:55.086663+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 10546010,
+      "items": [
+        {
+          "DOI": "10.1029/93eo00554",
+          "title": [
+            "Hurricane Emily, the near miss of 1993"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                1993,
+                12,
+                28
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.48037/mbmj.v9i1.1362",
+          "title": [
+            "Passy-Muir Mishap: Learning from Near-miss Events"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2022,
+                8,
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1093/oseo/instance.00159541",
+          "title": [
+            "To Miss Laura Smyth"
+          ],
+          "type": "book-chapter",
+          "published": {
+            "date-parts": [
+              [
+                1976,
+                3,
+                3
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

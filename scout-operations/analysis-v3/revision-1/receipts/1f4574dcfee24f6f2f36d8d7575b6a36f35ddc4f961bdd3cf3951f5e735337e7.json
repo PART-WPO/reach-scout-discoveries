@@ -1,0 +1,63 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=Community-Based+Organization+Cultural+Brokering%3A+A+Case+Study+of+the+Almeda+Fire&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=Community-Based+Organization+Cultural+Brokering%3A+A+Case+Study+of+the+Almeda+Fire&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:59.565417+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 15083389,
+      "items": [
+        {
+          "DOI": "10.4324/9781315736211-29",
+          "title": [
+            "Action Brokering for Community Engagement: A Case Study of ACTion Alexandria"
+          ],
+          "type": "book-chapter",
+          "published": {
+            "date-parts": [
+              [
+                2015,
+                2,
+                20
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.15760/etd.4011",
+          "title": [
+            "Beyond Translating Cultures: Organizational Cultural Brokering and Latin@/e/x Community Resilience after the \"Mobile Home Parks\" Fire"
+          ],
+          "type": "dissertation"
+        },
+        {
+          "DOI": "10.5220/0003909704820491",
+          "title": [
+            "WEB-BASED EMERGENCY RESPONSE COMMUNITY - Framework and Case Study on Fire Response Community"
+          ],
+          "type": "proceedings-article",
+          "published": {
+            "date-parts": [
+              [
+                2012
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

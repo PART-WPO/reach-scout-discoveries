@@ -1,0 +1,268 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.datacite.org/dois/10.5281/zenodo.7150000",
+  "final_url": "https://api.datacite.org/dois/10.5281/zenodo.7150000",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:56:28.366082+00:00",
+  "headers": {
+    "Content-Type": "application/json; charset=utf-8",
+    "ETag": "W/\"d39e6e843b3030ff7df0ca605a35dea2\""
+  },
+  "body": {
+    "data": {
+      "id": "10.5281/zenodo.7150000",
+      "type": "dois",
+      "attributes": {
+        "doi": "10.5281/zenodo.7150000",
+        "prefix": "10.5281",
+        "suffix": "zenodo.7150000",
+        "identifiers": [],
+        "alternateIdentifiers": [],
+        "creators": [
+          {
+            "name": "Baek, Bok",
+            "givenName": "Bok",
+            "familyName": "Baek",
+            "affiliation": [
+              "George Mason University"
+            ],
+            "nameIdentifiers": [
+              {
+                "schemeUri": "https://orcid.org",
+                "nameIdentifier": "https://orcid.org/0000-0003-1054-6325",
+                "nameIdentifierScheme": "ORCID"
+              }
+            ]
+          }
+        ],
+        "titles": [
+          {
+            "title": "CMAQ-MetEmis: Development of Dynamic Meteorology-Induced Emissions Coupler (MetEmis) for Onroad Mobile Sources in the Community Multiscale Air Quality (CMAQ)"
+          }
+        ],
+        "publisher": "Zenodo",
+        "container": {},
+        "publicationYear": 2022,
+        "subjects": [
+          {
+            "subject": "MetEmis"
+          },
+          {
+            "subject": "CMAQ"
+          },
+          {
+            "subject": "Inline"
+          },
+          {
+            "subject": "Emissions"
+          }
+        ],
+        "contributors": [
+          {
+            "name": "Coats, Carlie",
+            "nameType": "Personal",
+            "givenName": "Carlie",
+            "familyName": "Coats",
+            "affiliation": [
+              "George Mason University"
+            ],
+            "contributorType": "Researcher",
+            "nameIdentifiers": []
+          },
+          {
+            "name": "Wang, Chi-Tsan",
+            "nameType": "Personal",
+            "givenName": "Chi-Tsan",
+            "familyName": "Wang",
+            "affiliation": [
+              "George Mason University"
+            ],
+            "contributorType": "Researcher",
+            "nameIdentifiers": [
+              {
+                "schemeUri": "https://orcid.org",
+                "nameIdentifier": "https://orcid.org/0000-0002-5642-3323",
+                "nameIdentifierScheme": "ORCID"
+              }
+            ]
+          },
+          {
+            "name": "Ma, Siqi",
+            "nameType": "Personal",
+            "givenName": "Siqi",
+            "familyName": "Ma",
+            "affiliation": [
+              "George Mason University"
+            ],
+            "contributorType": "Researcher",
+            "nameIdentifiers": [
+              {
+                "schemeUri": "https://orcid.org",
+                "nameIdentifier": "https://orcid.org/0000-0002-3796-2911",
+                "nameIdentifierScheme": "ORCID"
+              }
+            ]
+          },
+          {
+            "name": "Tong, Daniel",
+            "nameType": "Personal",
+            "givenName": "Daniel",
+            "familyName": "Tong",
+            "affiliation": [
+              "George Mason University"
+            ],
+            "contributorType": "Researcher",
+            "nameIdentifiers": [
+              {
+                "schemeUri": "https://orcid.org",
+                "nameIdentifier": "https://orcid.org/0000-0002-4255-4568",
+                "nameIdentifierScheme": "ORCID"
+              }
+            ]
+          },
+          {
+            "name": "Xing, Jia",
+            "nameType": "Personal",
+            "givenName": "Jia",
+            "familyName": "Xing",
+            "affiliation": [
+              "George Mason University"
+            ],
+            "contributorType": "Researcher",
+            "nameIdentifiers": [
+              {
+                "schemeUri": "https://orcid.org",
+                "nameIdentifier": "https://orcid.org/0000-0001-7574-2381",
+                "nameIdentifierScheme": "ORCID"
+              }
+            ]
+          },
+          {
+            "name": "Sooktae Kim",
+            "affiliation": [
+              "Ajou University"
+            ],
+            "contributorType": "Researcher",
+            "nameIdentifiers": []
+          },
+          {
+            "name": "Jun-Hun Woo",
+            "affiliation": [
+              "Konkuk University"
+            ],
+            "contributorType": "ContactPerson",
+            "nameIdentifiers": []
+          }
+        ],
+        "dates": [
+          {
+            "date": "2022-10-05",
+            "dateType": "Issued"
+          }
+        ],
+        "language": null,
+        "types": {
+          "ris": "COMP",
+          "bibtex": "misc",
+          "citeproc": "article",
+          "schemaOrg": "SoftwareSourceCode",
+          "resourceTypeGeneral": "Software"
+        },
+        "relatedIdentifiers": [
+          {
+            "relationType": "IsVersionOf",
+            "relatedIdentifier": "10.5281/zenodo.7149999",
+            "relatedIdentifierType": "DOI"
+          }
+        ],
+        "relatedItems": [],
+        "sizes": [],
+        "formats": [],
+        "version": "version 1.0",
+        "rightsList": [
+          {
+            "rights": "Creative Commons Attribution 4.0 International",
+            "rightsUri": "https://creativecommons.org/licenses/by/4.0/legalcode",
+            "schemeUri": "https://spdx.org/licenses/",
+            "rightsIdentifier": "cc-by-4.0",
+            "rightsIdentifierScheme": "SPDX"
+          },
+          {
+            "rights": "Open Access",
+            "rightsUri": "info:eu-repo/semantics/openAccess"
+          }
+        ],
+        "descriptions": [
+          {
+            "description": "The main focus of this study is to develop a dynamic-coupling “<strong><em>inline</em></strong>” air quality modeling system for the meteorology-induced emissions with simulated meteorological data. To improve the spatiotemporal representations and accuracy of onroad vehicle emissions, which are largely senstivie to local meteorology, we developed the “<strong><em>inline</em></strong>” coupler module called “<strong>MetEmis</strong>” for Meteorology-Induced Emission sources within the Community Multiscale Air Quality (CMAQ) version 5.3.2 modeling system. It can dynamically estimate meteorology-induced hourly gridded emissions within the CMAQ modeling system using modeled meteorology. The CMAQ air quality modeling system is applied over the continental U.S. for two months (January and July 2019) for two emissions scenarios: a) current “<strong><em>offline</em></strong>” based onroad vehicle emissions, and b) “<strong><em>inline</em></strong>” CMAQ-MetEmis onroad vehicle emissions. Overall, the “MetEmis” coupler allows us to dynamically simulate onroad vehicle emissions from the MOVES onroad emission model for CMAQ with a better spatio-temporal representation compared to the “<strong><em>offline</em></strong>” scenario based on static temporal profiles. With an instance interpolation calculation approach, the new “<strong><em>inline</em></strong>” approach significantly enhances the computational efficiency and accuracy of estimating mobile source emissions, compared to the existing “<strong><em>offline</em></strong>” approach that yields almost identical hourly emission estimation. The domain total of daily VOC emissions from the “inline” scenario shows the largest impacts from the local meteorology, which is approximately 10% lower than the ones from the “offline” scenario. Especially, the major difference of VOC estimates was shown over the California region. These local meteorology impacts on onroad vehicle emissions via CMAQ-MetEmis revealed an improvement in hourly NO<sub>2</sub>, daily maximum ozone, and daily average PM<sub>2.5</sub> patterns with a higher agreement and correlation with daily ground observations.",
+            "descriptionType": "Abstract"
+          }
+        ],
+        "geoLocations": [],
+        "fundingReferences": [],
+        "xml": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHJlc291cmNlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCIgeHNpOnNjaGVtYUxvY2F0aW9uPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCBodHRwOi8vc2NoZW1hLmRhdGFjaXRlLm9yZy9tZXRhL2tlcm5lbC00LjEvbWV0YWRhdGEueHNkIj4KICA8aWRlbnRpZmllciBpZGVudGlmaWVyVHlwZT0iRE9JIj4xMC41MjgxL1pFTk9ETy43MTUwMDAwPC9pZGVudGlmaWVyPgogIDxjcmVhdG9ycz4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWU+QmFlaywgQm9rPC9jcmVhdG9yTmFtZT4KICAgICAgPGdpdmVuTmFtZT5Cb2s8L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWU+QmFlazwvZmFtaWx5TmFtZT4KICAgICAgPG5hbWVJZGVudGlmaWVyIG5hbWVJZGVudGlmaWVyU2NoZW1lPSJPUkNJRCIgc2NoZW1lVVJJPSJodHRwOi8vb3JjaWQub3JnLyI+MDAwMC0wMDAzLTEwNTQtNjMyNTwvbmFtZUlkZW50aWZpZXI+CiAgICAgIDxhZmZpbGlhdGlvbj5HZW9yZ2UgTWFzb24gVW5pdmVyc2l0eTwvYWZmaWxpYXRpb24+CiAgICA8L2NyZWF0b3I+CiAgPC9jcmVhdG9ycz4KICA8dGl0bGVzPgogICAgPHRpdGxlPkNNQVEtTWV0RW1pczogRGV2ZWxvcG1lbnQgb2YgRHluYW1pYyBNZXRlb3JvbG9neS1JbmR1Y2VkIEVtaXNzaW9ucyBDb3VwbGVyIChNZXRFbWlzKSBmb3IgT25yb2FkIE1vYmlsZSBTb3VyY2VzIGluIHRoZSBDb21tdW5pdHkgTXVsdGlzY2FsZSBBaXIgUXVhbGl0eSAoQ01BUSk8L3RpdGxlPgogIDwvdGl0bGVzPgogIDxwdWJsaXNoZXI+WmVub2RvPC9wdWJsaXNoZXI+CiAgPHB1YmxpY2F0aW9uWWVhcj4yMDIyPC9wdWJsaWNhdGlvblllYXI+CiAgPHN1YmplY3RzPgogICAgPHN1YmplY3Q+TWV0RW1pczwvc3ViamVjdD4KICAgIDxzdWJqZWN0PkNNQVE8L3N1YmplY3Q+CiAgICA8c3ViamVjdD5JbmxpbmU8L3N1YmplY3Q+CiAgICA8c3ViamVjdD5FbWlzc2lvbnM8L3N1YmplY3Q+CiAgPC9zdWJqZWN0cz4KICA8Y29udHJpYnV0b3JzPgogICAgPGNvbnRyaWJ1dG9yIGNvbnRyaWJ1dG9yVHlwZT0iUmVzZWFyY2hlciI+CiAgICAgIDxjb250cmlidXRvck5hbWU+Q2FybGllIENvYXRzPC9jb250cmlidXRvck5hbWU+CiAgICAgIDxhZmZpbGlhdGlvbj5HZW9yZ2UgTWFzb24gVW5pdmVyc2l0eTwvYWZmaWxpYXRpb24+CiAgICA8L2NvbnRyaWJ1dG9yPgogICAgPGNvbnRyaWJ1dG9yIGNvbnRyaWJ1dG9yVHlwZT0iUmVzZWFyY2hlciI+CiAgICAgIDxjb250cmlidXRvck5hbWU+Q2hpLVRzYW4gV2FuZzwvY29udHJpYnV0b3JOYW1lPgogICAgICA8bmFtZUlkZW50aWZpZXIgbmFtZUlkZW50aWZpZXJTY2hlbWU9Ik9SQ0lEIiBzY2hlbWVVUkk9Imh0dHA6Ly9vcmNpZC5vcmcvIj4wMDAwLTAwMDItNTY0Mi0zMzIzPC9uYW1lSWRlbnRpZmllcj4KICAgICAgPGFmZmlsaWF0aW9uPkdlb3JnZSBNYXNvbiBVbml2ZXJzaXR5PC9hZmZpbGlhdGlvbj4KICAgIDwvY29udHJpYnV0b3I+CiAgICA8Y29udHJpYnV0b3IgY29udHJpYnV0b3JUeXBlPSJSZXNlYXJjaGVyIj4KICAgICAgPGNvbnRyaWJ1dG9yTmFtZT5TaXFpIE1hPC9jb250cmlidXRvck5hbWU+CiAgICAgIDxuYW1lSWRlbnRpZmllciBuYW1lSWRlbnRpZmllclNjaGVtZT0iT1JDSUQiIHNjaGVtZVVSST0iaHR0cDovL29yY2lkLm9yZy8iPjAwMDAtMDAwMi0zNzk2LTI5MTE8L25hbWVJZGVudGlmaWVyPgogICAgICA8YWZmaWxpYXRpb24+R2VvcmdlIE1hc29uIFVuaXZlcnNpdHk8L2FmZmlsaWF0aW9uPgogICAgPC9jb250cmlidXRvcj4KICAgIDxjb250cmlidXRvciBjb250cmlidXRvclR5cGU9IlJlc2VhcmNoZXIiPgogICAgICA8Y29udHJpYnV0b3JOYW1lPkRhbmllbCBUb25nPC9jb250cmlidXRvck5hbWU+CiAgICAgIDxuYW1lSWRlbnRpZmllciBuYW1lSWRlbnRpZmllclNjaGVtZT0iT1JDSUQiIHNjaGVtZVVSST0iaHR0cDovL29yY2lkLm9yZy8iPjAwMDAtMDAwMi00MjU1LTQ1Njg8L25hbWVJZGVudGlmaWVyPgogICAgICA8YWZmaWxpYXRpb24+R2VvcmdlIE1hc29uIFVuaXZlcnNpdHk8L2FmZmlsaWF0aW9uPgogICAgPC9jb250cmlidXRvcj4KICAgIDxjb250cmlidXRvciBjb250cmlidXRvclR5cGU9IlJlc2VhcmNoZXIiPgogICAgICA8Y29udHJpYnV0b3JOYW1lPkppYSBYaW5nPC9jb250cmlidXRvck5hbWU+CiAgICAgIDxuYW1lSWRlbnRpZmllciBuYW1lSWRlbnRpZmllclNjaGVtZT0iT1JDSUQiIHNjaGVtZVVSST0iaHR0cDovL29yY2lkLm9yZy8iPjAwMDAtMDAwMS03NTc0LTIzODE8L25hbWVJZGVudGlmaWVyPgogICAgICA8YWZmaWxpYXRpb24+R2VvcmdlIE1hc29uIFVuaXZlcnNpdHk8L2FmZmlsaWF0aW9uPgogICAgPC9jb250cmlidXRvcj4KICAgIDxjb250cmlidXRvciBjb250cmlidXRvclR5cGU9IlJlc2VhcmNoZXIiPgogICAgICA8Y29udHJpYnV0b3JOYW1lPlNvb2t0YWUgS2ltPC9jb250cmlidXRvck5hbWU+CiAgICAgIDxhZmZpbGlhdGlvbj5Bam91IFVuaXZlcnNpdHk8L2FmZmlsaWF0aW9uPgogICAgPC9jb250cmlidXRvcj4KICAgIDxjb250cmlidXRvciBjb250cmlidXRvclR5cGU9IkNvbnRhY3RQZXJzb24iPgogICAgICA8Y29udHJpYnV0b3JOYW1lPkp1bi1IdW4gV29vPC9jb250cmlidXRvck5hbWU+CiAgICAgIDxhZmZpbGlhdGlvbj5Lb25rdWsgVW5pdmVyc2l0eTwvYWZmaWxpYXRpb24+CiAgICA8L2NvbnRyaWJ1dG9yPgogIDwvY29udHJpYnV0b3JzPgogIDxkYXRlcz4KICAgIDxkYXRlIGRhdGVUeXBlPSJJc3N1ZWQiPjIwMjItMTAtMDU8L2RhdGU+CiAgPC9kYXRlcz4KICA8cmVzb3VyY2VUeXBlIHJlc291cmNlVHlwZUdlbmVyYWw9IlNvZnR3YXJlIi8+CiAgPGFsdGVybmF0ZUlkZW50aWZpZXJzPgogICAgPGFsdGVybmF0ZUlkZW50aWZpZXIgYWx0ZXJuYXRlSWRlbnRpZmllclR5cGU9InVybCI+aHR0cHM6Ly96ZW5vZG8ub3JnL3JlY29yZC83MTUwMDAwPC9hbHRlcm5hdGVJZGVudGlmaWVyPgogIDwvYWx0ZXJuYXRlSWRlbnRpZmllcnM+CiAgPHJlbGF0ZWRJZGVudGlmaWVycz4KICAgIDxyZWxhdGVkSWRlbnRpZmllciByZWxhdGVkSWRlbnRpZmllclR5cGU9IkRPSSIgcmVsYXRpb25UeXBlPSJJc1ZlcnNpb25PZiI+MTAuNTI4MS96ZW5vZG8uNzE0OTk5OTwvcmVsYXRlZElkZW50aWZpZXI+CiAgPC9yZWxhdGVkSWRlbnRpZmllcnM+CiAgPHZlcnNpb24+dmVyc2lvbiAxLjA8L3ZlcnNpb24+CiAgPHJpZ2h0c0xpc3Q+CiAgICA8cmlnaHRzIHJpZ2h0c1VSST0iaHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LzQuMC9sZWdhbGNvZGUiPkNyZWF0aXZlIENvbW1vbnMgQXR0cmlidXRpb24gNC4wIEludGVybmF0aW9uYWw8L3JpZ2h0cz4KICAgIDxyaWdodHMgcmlnaHRzVVJJPSJpbmZvOmV1LXJlcG8vc2VtYW50aWNzL29wZW5BY2Nlc3MiPk9wZW4gQWNjZXNzPC9yaWdodHM+CiAgPC9yaWdodHNMaXN0PgogIDxkZXNjcmlwdGlvbnM+CiAgICA8ZGVzY3JpcHRpb24gZGVzY3JpcHRpb25UeXBlPSJBYnN0cmFjdCI+Jmx0O3AmZ3Q7VGhlIG1haW4gZm9jdXMgb2YgdGhpcyBzdHVkeSBpcyB0byBkZXZlbG9wIGEgZHluYW1pYy1jb3VwbGluZyAmYW1wO2xkcXVvOyZsdDtzdHJvbmcmZ3Q7Jmx0O2VtJmd0O2lubGluZSZsdDsvZW0mZ3Q7Jmx0Oy9zdHJvbmcmZ3Q7JmFtcDtyZHF1bzsgYWlyIHF1YWxpdHkgbW9kZWxpbmcgc3lzdGVtIGZvciB0aGUgbWV0ZW9yb2xvZ3ktaW5kdWNlZCBlbWlzc2lvbnMgd2l0aCBzaW11bGF0ZWQgbWV0ZW9yb2xvZ2ljYWwgZGF0YS4gVG8gaW1wcm92ZSB0aGUgc3BhdGlvdGVtcG9yYWwgcmVwcmVzZW50YXRpb25zIGFuZCBhY2N1cmFjeSBvZiBvbnJvYWQgdmVoaWNsZSBlbWlzc2lvbnMsIHdoaWNoIGFyZSBsYXJnZWx5IHNlbnN0aXZpZSB0byBsb2NhbCBtZXRlb3JvbG9neSwgd2UgZGV2ZWxvcGVkIHRoZSAmYW1wO2xkcXVvOyZsdDtzdHJvbmcmZ3Q7Jmx0O2VtJmd0O2lubGluZSZsdDsvZW0mZ3Q7Jmx0Oy9zdHJvbmcmZ3Q7JmFtcDtyZHF1bzsgY291cGxlciBtb2R1bGUgY2FsbGVkICZhbXA7bGRxdW87Jmx0O3N0cm9uZyZndDtNZXRFbWlzJmx0Oy9zdHJvbmcmZ3Q7JmFtcDtyZHF1bzsgZm9yJmFtcDtuYnNwO01ldGVvcm9sb2d5LUluZHVjZWQmYW1wO25ic3A7RW1pc3Npb24gc291cmNlcyB3aXRoaW4gdGhlIENvbW11bml0eSBNdWx0aXNjYWxlIEFpciBRdWFsaXR5IChDTUFRKSB2ZXJzaW9uIDUuMy4yIG1vZGVsaW5nIHN5c3RlbS4gSXQgY2FuIGR5bmFtaWNhbGx5IGVzdGltYXRlIG1ldGVvcm9sb2d5LWluZHVjZWQgaG91cmx5IGdyaWRkZWQgZW1pc3Npb25zIHdpdGhpbiB0aGUgQ01BUSBtb2RlbGluZyBzeXN0ZW0gdXNpbmcgbW9kZWxlZCBtZXRlb3JvbG9neS4gVGhlIENNQVEgYWlyIHF1YWxpdHkgbW9kZWxpbmcgc3lzdGVtIGlzIGFwcGxpZWQgb3ZlciB0aGUgY29udGluZW50YWwgVS5TLiBmb3IgdHdvIG1vbnRocyAoSmFudWFyeSBhbmQgSnVseSAyMDE5KSBmb3IgdHdvIGVtaXNzaW9ucyBzY2VuYXJpb3M6IGEpIGN1cnJlbnQgJmFtcDtsZHF1bzsmbHQ7c3Ryb25nJmd0OyZsdDtlbSZndDtvZmZsaW5lJmx0Oy9lbSZndDsmbHQ7L3N0cm9uZyZndDsmYW1wO3JkcXVvOyBiYXNlZCBvbnJvYWQgdmVoaWNsZSBlbWlzc2lvbnMsIGFuZCBiKSAmYW1wO2xkcXVvOyZsdDtzdHJvbmcmZ3Q7Jmx0O2VtJmd0O2lubGluZSZsdDsvZW0mZ3Q7Jmx0Oy9zdHJvbmcmZ3Q7JmFtcDtyZHF1bzsgQ01BUS1NZXRFbWlzIG9ucm9hZCB2ZWhpY2xlIGVtaXNzaW9ucy4gT3ZlcmFsbCwgdGhlICZhbXA7bGRxdW87TWV0RW1pcyZhbXA7cmRxdW87IGNvdXBsZXIgYWxsb3dzIHVzIHRvIGR5bmFtaWNhbGx5IHNpbXVsYXRlIG9ucm9hZCB2ZWhpY2xlIGVtaXNzaW9ucyBmcm9tIHRoZSBNT1ZFUyBvbnJvYWQgZW1pc3Npb24gbW9kZWwgZm9yIENNQVEgd2l0aCBhIGJldHRlciBzcGF0aW8tdGVtcG9yYWwgcmVwcmVzZW50YXRpb24gY29tcGFyZWQgdG8gdGhlICZhbXA7bGRxdW87Jmx0O3N0cm9uZyZndDsmbHQ7ZW0mZ3Q7b2ZmbGluZSZsdDsvZW0mZ3Q7Jmx0Oy9zdHJvbmcmZ3Q7JmFtcDtyZHF1bzsgc2NlbmFyaW8gYmFzZWQgb24gc3RhdGljIHRlbXBvcmFsIHByb2ZpbGVzLiBXaXRoIGFuIGluc3RhbmNlIGludGVycG9sYXRpb24gY2FsY3VsYXRpb24gYXBwcm9hY2gsIHRoZSBuZXcgJmFtcDtsZHF1bzsmbHQ7c3Ryb25nJmd0OyZsdDtlbSZndDtpbmxpbmUmbHQ7L2VtJmd0OyZsdDsvc3Ryb25nJmd0OyZhbXA7cmRxdW87IGFwcHJvYWNoIHNpZ25pZmljYW50bHkgZW5oYW5jZXMgdGhlIGNvbXB1dGF0aW9uYWwgZWZmaWNpZW5jeSBhbmQgYWNjdXJhY3kgb2YgZXN0aW1hdGluZyBtb2JpbGUgc291cmNlIGVtaXNzaW9ucywgY29tcGFyZWQgdG8gdGhlIGV4aXN0aW5nICZhbXA7bGRxdW87Jmx0O3N0cm9uZyZndDsmbHQ7ZW0mZ3Q7b2ZmbGluZSZsdDsvZW0mZ3Q7Jmx0Oy9zdHJvbmcmZ3Q7JmFtcDtyZHF1bzsgYXBwcm9hY2ggdGhhdCB5aWVsZHMgYWxtb3N0IGlkZW50aWNhbCBob3VybHkgZW1pc3Npb24gZXN0aW1hdGlvbi4gVGhlIGRvbWFpbiB0b3RhbCBvZiBkYWlseSBWT0MgZW1pc3Npb25zIGZyb20gdGhlICZhbXA7bGRxdW87aW5saW5lJmFtcDtyZHF1bzsgc2NlbmFyaW8gc2hvd3MgdGhlIGxhcmdlc3QgaW1wYWN0cyBmcm9tIHRoZSBsb2NhbCBtZXRlb3JvbG9neSwgd2hpY2ggaXMgYXBwcm94aW1hdGVseSAxMCUgbG93ZXIgdGhhbiB0aGUgb25lcyBmcm9tIHRoZSAmYW1wO2xkcXVvO29mZmxpbmUmYW1wO3JkcXVvOyBzY2VuYXJpby4gRXNwZWNpYWxseSwgdGhlIG1ham9yIGRpZmZlcmVuY2Ugb2YgVk9DIGVzdGltYXRlcyB3YXMgc2hvd24gb3ZlciB0aGUgQ2FsaWZvcm5pYSByZWdpb24uIFRoZXNlIGxvY2FsIG1ldGVvcm9sb2d5IGltcGFjdHMgb24gb25yb2FkIHZlaGljbGUgZW1pc3Npb25zIHZpYSBDTUFRLU1ldEVtaXMgcmV2ZWFsZWQgYW4gaW1wcm92ZW1lbnQgaW4gaG91cmx5IE5PJmx0O3N1YiZndDsyJmx0Oy9zdWImZ3Q7LCBkYWlseSBtYXhpbXVtIG96b25lLCBhbmQgZGFpbHkgYXZlcmFnZSBQTSZsdDtzdWImZ3Q7Mi41Jmx0Oy9zdWImZ3Q7JmFtcDtuYnNwO3BhdHRlcm5zIHdpdGggYSBoaWdoZXIgYWdyZWVtZW50IGFuZCBjb3JyZWxhdGlvbiB3aXRoIGRhaWx5IGdyb3VuZCBvYnNlcnZhdGlvbnMuJmx0Oy9wJmd0OzwvZGVzY3JpcHRpb24+CiAgPC9kZXNjcmlwdGlvbnM+CjwvcmVzb3VyY2U+",
+        "url": "https://zenodo.org/record/7150000",
+        "contentUrl": null,
+        "metadataVersion": 3,
+        "schemaVersion": "http://datacite.org/schema/kernel-4",
+        "source": "mds",
+        "isActive": true,
+        "state": "findable",
+        "reason": null,
+        "viewCount": 0,
+        "viewsOverTime": [],
+        "downloadCount": 0,
+        "downloadsOverTime": [],
+        "referenceCount": 0,
+        "citationCount": 0,
+        "citationsOverTime": [],
+        "partCount": 0,
+        "partOfCount": 0,
+        "versionCount": 0,
+        "versionOfCount": 0,
+        "created": "2022-12-12T18:07:18.000Z",
+        "registered": "2022-12-12T18:07:19.000Z",
+        "published": "2022",
+        "updated": "2023-01-23T21:20:37.000Z"
+      },
+      "relationships": {
+        "client": {
+          "data": {
+            "id": "cern.zenodo",
+            "type": "clients"
+          }
+        },
+        "provider": {
+          "data": {
+            "id": "cern",
+            "type": "providers"
+          }
+        },
+        "media": {
+          "data": {
+            "id": "10.5281/zenodo.7150000",
+            "type": "media"
+          }
+        },
+        "references": {
+          "data": []
+        },
+        "citations": {
+          "data": []
+        },
+        "parts": {
+          "data": []
+        },
+        "partOf": {
+          "data": []
+        },
+        "versions": {
+          "data": []
+        },
+        "versionOf": {
+          "data": []
+        }
+      }
+    }
+  }
+}

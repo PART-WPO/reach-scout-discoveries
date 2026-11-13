@@ -1,0 +1,73 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=The+Relationship+Between+Cloud+Microphysics+and+Electrification+in+Southeast+U.S.+Storms+Investigated+using+Polarimetric%2C+Cold+Pool%2C+and+Lightning+Characteristics&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=The+Relationship+Between+Cloud+Microphysics+and+Electrification+in+Southeast+U.S.+Storms+Investigated+using+Polarimetric%2C+Cold+Pool%2C+and+Lightning+Characteristics&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:42.978661+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 9373930,
+      "items": [
+        {
+          "DOI": "10.1002/2016jd025142",
+          "title": [
+            "Polarimetric radar characteristics of storms with and without lightning activity"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2016,
+                12,
+                10
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1175/1520-0469(1991)048<2195:mpmace>2.0.co;2",
+          "title": [
+            "Mixed-Phase Microphysics and Cloud Electrification"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                1991,
+                10
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.5194/nhess-13-1085-2013",
+          "title": [
+            "Using a cloud electrification model to study relationships between lightning activity and cloud microphysical structure"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2013,
+                4,
+                24
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

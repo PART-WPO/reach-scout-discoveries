@@ -1,0 +1,49 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "checked_public_scout_batch_count": 55,
+  "public_reach_record_count": 1238,
+  "cases": [
+    {
+      "claim_label": "VERIFIED_SOURCE",
+      "paper_record_id": "reach-000014",
+      "artifact_urls_or_verified_family": [
+        "https://github.com/yiwenff/WUS-SR-data-descriptor"
+      ],
+      "current_catalog_manifest_matches_projected_snapshot": true,
+      "exact_primary_record_matches": [],
+      "scout_primary_identity_matches": [],
+      "disposition": "POSSIBLE_STANDALONE_ARTIFACT_RECORD_MISS_REQUIRES_REVIEW",
+      "relationship_tier": "supporting output of a named paper",
+      "own_artifact_award": "NOT_DETERMINED",
+      "sources": [
+        "scout-operations/analysis-v3/revision-1/snow-journal-fulltext.json:1",
+        "scout-operations/analysis-v3/revision-1/snow-readme.json:1"
+      ],
+      "finding": "Publisher Code availability explicitly links this repository; author README confirms figure-generation scripts and data.",
+      "noah_version_family_verified": null,
+      "limits": "No title-only absence or funding eligibility asserted; no proposal staged and no catalog correction made."
+    },
+    {
+      "claim_label": "VERIFIED_SOURCE",
+      "paper_record_id": "reach-000016",
+      "artifact_urls_or_verified_family": [
+        "https://doi.org/10.5281/zenodo.7145414",
+        "https://doi.org/10.5281/zenodo.6873384",
+        "https://doi.org/10.5281/zenodo.5777820"
+      ],
+      "current_catalog_manifest_matches_projected_snapshot": true,
+      "exact_primary_record_matches": [],
+      "scout_primary_identity_matches": [],
+      "disposition": "POSSIBLE_STANDALONE_ARTIFACT_RECORD_MISS_REQUIRES_REVIEW",
+      "relationship_tier": "supporting output of a named paper",
+      "own_artifact_award": "NOT_DETERMINED",
+      "sources": [
+        "scout-operations/analysis-v3/revision-1/noah-journal-fulltext.json:1",
+        "scout-operations/analysis-v3/revision-1/noah-zenodo-native.json:1"
+      ],
+      "finding": "Publisher cites version 6873384; native version metadata establishes the shared concept DOI with 7145414. Files contain code and data, but registry resource type is JournalArticle. Crossref funders for the paper are Korean; output-specific WPO funding is not established.",
+      "noah_version_family_verified": true,
+      "limits": "No title-only absence or funding eligibility asserted; no proposal staged and no catalog correction made."
+    }
+  ]
+}

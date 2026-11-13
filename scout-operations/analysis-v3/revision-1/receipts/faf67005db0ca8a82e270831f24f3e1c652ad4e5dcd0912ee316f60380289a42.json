@@ -1,0 +1,62 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=Personalizing+Heat+Information+for+Adults+over+65&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=Personalizing+Heat+Information+for+Adults+over+65&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:53.133428+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 2996700,
+      "items": [
+        {
+          "DOI": "10.1016/j.chb.2014.10.018",
+          "title": [
+            "“Who over 65 is online?” Older adults’ dispositions toward information communication technology"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2015,
+                2
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1016/b978-155860760-6/50009-1",
+          "title": [
+            "Personalizing information services"
+          ],
+          "type": "book-chapter",
+          "published": {
+            "date-parts": [
+              [
+                2003
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1109/ictta.2004.1307930",
+          "title": [
+            "Personalizing semantic information networks"
+          ],
+          "type": "proceedings-article"
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

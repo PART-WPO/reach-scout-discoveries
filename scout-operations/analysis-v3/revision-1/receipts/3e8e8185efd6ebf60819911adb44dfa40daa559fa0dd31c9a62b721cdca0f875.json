@@ -1,0 +1,12 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://raw.githubusercontent.com/chaneyn/HydroBlocks/HEAD/README.md",
+  "final_url": "https://raw.githubusercontent.com/chaneyn/HydroBlocks/HEAD/README.md",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:56:26.323885+00:00",
+  "headers": {
+    "Content-Type": "text/plain; charset=utf-8",
+    "ETag": "\"a6ad575845a20454d5de632182fa51a975f67a71bb8fdace18e82de5d4ad6be0\""
+  },
+  "body": "HydroBlocks\n==========\n\nThe following steps walk through how to install HydroBlocks\n\n**1. Clone the HydroBlocks repository.**\n\n```\ngit clone https://github.com/chaneyn/HydroBlocks.git\ncd HydroBlocks\n```\n\n**2. Create a conda environment named HB from the spec-file. Note that the only current spec-file in the repository is for a linux64 machine.** \n\n```\nconda create --name HB --file spec-file.txt\nsource activate HB\npip install git+https://github.com/chaneyn/geospatialtools@dev_nate\npip install psutil==5.9.4\n```\n\n**3. Install HydroBlocks.**\n\n```\npython setup.py \n```\n\n"
+}

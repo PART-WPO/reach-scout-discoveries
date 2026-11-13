@@ -1,0 +1,70 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=Risk+Messaging+During+Syndemics%3A+Hurricane+Laura+and+COVID-19&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=Risk+Messaging+During+Syndemics%3A+Hurricane+Laura+and+COVID-19&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:59.257377+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 4384837,
+      "items": [
+        {
+          "DOI": "10.1016/j.trd.2023.103820",
+          "title": [
+            "Household hurricane evacuation during a dual-threat event: Hurricane Laura and COVID-19"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2023,
+                8
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.2139/ssrn.4197593",
+          "title": [
+            "Household Hurricane Evacuation During a Dual-Threat Event: Hurricane Laura and COVID-19"
+          ],
+          "type": "posted-content",
+          "published": {
+            "date-parts": [
+              [
+                2022
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1175/wcas-d-22-0006.1",
+          "title": [
+            "Predictors of Evacuation Rates during Hurricane Laura: Weather Forecasts, Twitter, and COVID-19"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2023,
+                1
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

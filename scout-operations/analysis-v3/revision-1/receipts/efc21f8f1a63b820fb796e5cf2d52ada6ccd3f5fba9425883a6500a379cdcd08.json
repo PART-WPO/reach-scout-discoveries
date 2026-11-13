@@ -1,0 +1,73 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=Using+Evolutionary+Programming+to+Generate+a%0ATropical+Cyclone+Intensity+Model&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=Using+Evolutionary+Programming+to+Generate+a%0ATropical+Cyclone+Intensity+Model&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:41.442435+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 8693315,
+      "items": [
+        {
+          "DOI": "10.1175/mwr-d-19-0346.1",
+          "title": [
+            "Development and Evaluation of an Evolutionary Programming-Based Tropical Cyclone Intensity Model"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2020,
+                5
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1088/1748-9326/ad1bde",
+          "title": [
+            "Tropical cyclone intensity forecasting using model knowledge guided deep learning model"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2024,
+                1,
+                18
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1109/icmla58977.2023.00187",
+          "title": [
+            "Tropical Cyclone Intensity Forecasting Using Deep Learning"
+          ],
+          "type": "proceedings-article",
+          "published": {
+            "date-parts": [
+              [
+                2023,
+                12,
+                15
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

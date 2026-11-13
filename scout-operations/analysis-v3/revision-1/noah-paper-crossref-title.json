@@ -1,0 +1,1203 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=Optimization+of+snow-related+parameters+in+the+Noah+land+surface+model+%28v3.4.1%29+using+a+micro-genetic+algorithm+%28v1.7a%29&rows=2",
+  "status": 200,
+  "observed_at_utc": "2026-11-12T13:56:54.470239+00:00",
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 12806756,
+      "items": [
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                9,
+                15
+              ]
+            ],
+            "date-time": "2026-09-15T08:02:08Z",
+            "timestamp": 1789459328158,
+            "version": "build-2803163510"
+          },
+          "reference-count": 77,
+          "publisher": "Copernicus GmbH",
+          "issue": "22",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2022,
+                    11,
+                    22
+                  ]
+                ],
+                "date-time": "2022-11-22T00:00:00Z",
+                "timestamp": 1669075200000
+              },
+              "content-version": "vor",
+              "delay-in-days": 0,
+              "URL": "https://creativecommons.org/licenses/by/4.0/"
+            }
+          ],
+          "funder": [
+            {
+              "DOI": "10.13039/501100003725",
+              "name": "National Research Foundation of Korea",
+              "doi-asserted-by": "publisher",
+              "award": [
+                "2018R1A6A1A08025520"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "2018R1A6A1A08025520"
+                  ]
+                }
+              ],
+              "id": [
+                {
+                  "id": "10.13039/501100003725",
+                  "id-type": "DOI",
+                  "asserted-by": "publisher"
+                }
+              ]
+            },
+            {
+              "DOI": "10.13039/501100003725",
+              "name": "National Research Foundation of Korea",
+              "doi-asserted-by": "publisher",
+              "award": [
+                "NRF-2021R1A2C1095535"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "NRF-2021R1A2C1095535"
+                  ]
+                }
+              ],
+              "id": [
+                {
+                  "id": "10.13039/501100003725",
+                  "id-type": "DOI",
+                  "asserted-by": "publisher"
+                }
+              ]
+            },
+            {
+              "DOI": "10.13039/501100003629",
+              "name": "Korea Meteorological Administration",
+              "doi-asserted-by": "publisher",
+              "award": [
+                "NTIS-1365003222"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "NTIS-1365003222"
+                  ]
+                }
+              ],
+              "id": [
+                {
+                  "id": "10.13039/501100003629",
+                  "id-type": "DOI",
+                  "asserted-by": "publisher"
+                }
+              ]
+            }
+          ],
+          "content-domain": {
+            "domain": [],
+            "crossmark-restriction": false
+          },
+          "short-container-title": [
+            "Geosci. Model Dev."
+          ],
+          "abstract": "<jats:p>Snowfall prediction is important in winter and early spring because snowy conditions generate enormous economic damages. However, there is a lack of previous studies dealing with snow prediction, especially using land surface models (LSMs). Numerical weather prediction models directly interpret the snowfall events, whereas LSMs evaluate the snow cover, snow albedo, and snow depth through interaction with atmospheric conditions. Most LSMs include parameters based on empirical relations, resulting in uncertainties in model solutions. When the initially developed empirical parameters are local or inadequate, we need to optimize the parameter sets for a certain region. In this study, we seek the optimal parameter values in the snow-related processes \u2013 snow cover, snow albedo, and snow depth \u2013 of the Noah LSM, for South Korea, using the micro-genetic algorithm and the in situ surface observations and remotely sensed satellite data. Snow data from observation stations representing five land cover types \u2013 deciduous broadleaf forest, mixed forest, woody savanna, cropland, and urban and built-up lands \u2013 are used to optimize five snow-related parameters that calculate the fractional snow cover, maximum snow albedo of fresh snow, and fresh snow density associated with the snow depth. Another parameter, reflecting the dependence of fractional snow cover on the land cover types, is also optimized. Optimization of these six snow-related parameters has led to improvement in the root mean squared errors by 17.0\u2009%, 6.2\u2009%, and 3.3\u2009% in snow depth, snow albedo, and fractional snow cover, respectively. In terms of the mean bias, the underestimation problems of snow depth and overestimation problems of snow albedo have been alleviated through optimization of parameters calculating the fresh snow by about 44.2\u2009% and 31.0\u2009%, respectively.</jats:p>",
+          "DOI": "10.5194/gmd-15-8541-2022",
+          "type": "journal-article",
+          "created": {
+            "date-parts": [
+              [
+                2022,
+                11,
+                22
+              ]
+            ],
+            "date-time": "2022-11-22T04:57:12Z",
+            "timestamp": 1669093032000
+          },
+          "page": "8541-8559",
+          "source": "Crossref",
+          "is-referenced-by-count": 10,
+          "title": [
+            "Optimization of snow-related parameters in the Noah land surface model (v3.4.1) using a micro-genetic algorithm (v1.7a)"
+          ],
+          "prefix": "10.5194",
+          "volume": "15",
+          "author": [
+            {
+              "ORCID": "https://orcid.org/0000-0002-5720-8238",
+              "authenticated-orcid": false,
+              "given": "Sujeong",
+              "family": "Lim",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Hyeon-Ju",
+              "family": "Gim",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Ebony",
+              "family": "Lee",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Seungyeon",
+              "family": "Lee",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0002-3746-3020",
+              "authenticated-orcid": false,
+              "given": "Won Young",
+              "family": "Lee",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Yong Hee",
+              "family": "Lee",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0001-5212-3211",
+              "authenticated-orcid": false,
+              "given": "Claudio",
+              "family": "Cassardo",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0002-8538-911X",
+              "authenticated-orcid": false,
+              "given": "Seon Ki",
+              "family": "Park",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                },
+                {
+                  "role": "corresponding-author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            }
+          ],
+          "member": "3145",
+          "published-online": {
+            "date-parts": [
+              [
+                2022,
+                11,
+                22
+              ]
+            ]
+          },
+          "reference": [
+            {
+              "key": "ref1",
+              "unstructured": "Anderson, E. A.: National Weather Service River Forecast System: Snow Accumulation and Ablation Model, Tech. Mem., US Department of Commerce, National Oceanic and Atmospheric Administration, National Weather Service, vol. 17, https://repository.library.noaa.gov/view/noaa/13507 (last access: 24 October 2022), 1973.",
+              "type": "web-resource"
+            },
+            {
+              "key": "ref2",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Annan, J.\u00a0D. and Hargreaves, J.\u00a0C.: Efficient parameter estimation for a highly chaotic system, Tellus A, 56, 520\u2013526, 2004.",
+              "DOI": "10.3402/tellusa.v56i5.14438"
+            },
+            {
+              "key": "ref3",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Bonekamp, P. N.\u00a0J., Collier, E., and Immerzeel, W.\u00a0W.: The impact of spatial resolution, land use, and spinup time on resolving spatial precipitation patterns in the Himalayas, J. Hydrometeorol., 19, 1565\u20131581, 2018.",
+              "DOI": "10.1175/JHM-D-17-0212.1"
+            },
+            {
+              "key": "ref4",
+              "unstructured": "Carroll, D.\u00a0L.: Genetic algorithms and optimizing chemical oxygen-iodine lasers, Devel. Theor., 18, 411\u2013424, 1996."
+            },
+            {
+              "key": "ref5",
+              "unstructured": "Carroll, D. L.: Fortran Genetic Algorithm Front-End Driver Code, CU Aerospace [code], https://cuaerospace.com/products-services/genetic-algorithm/ga-drive-free-download, last access: 24 October 2022.",
+              "type": "software"
+            },
+            {
+              "key": "ref6",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Chen, F., Mitchell, K., Schaake, J., Xue, Y., Pan, H.-L., Koren, V., Duan, Q.\u00a0Y., Ek, M., and Betts, A.: Modeling of land surface evaporation by four schemes and comparison with FIFE observations, J. Geophys. Res.-Atmos., 101, 7251\u20137268, 1996.",
+              "DOI": "10.1029/95JD02165"
+            },
+            {
+              "key": "ref7",
+              "unstructured": "Cheong, S.-H., Byun, K.-Y., and Lee, T.-Y.: Classification of snowfalls over the Korean Peninsula based on developing mechanism, Atmosphere, 16, 33\u201348, 2006 (in Korean with English abstract)."
+            },
+            {
+              "key": "ref8",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Chinta, S. and Balaji, C.: Calibration of WRF model parameters using multiobjective adaptive surrogate model-based optimization to improve the prediction of the Indian summer monsoon, Clim. Dynam., 55, 631\u2013650, 2020.",
+              "DOI": "10.1007/s00382-020-05288-1"
+            },
+            {
+              "key": "ref9",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Cosgrove, B.\u00a0A., Lohmann, D., Mitchell, K.\u00a0E., Houser, P.\u00a0R., Wood, E.\u00a0F., Schaake, J.\u00a0C., Robock, A., Sheffield, J., Duan, Q., Luo, L., Higgins, R.\u00a0W., Pinker, R.\u00a0T., and Tarpley, J.\u00a0D.: Land surface model spin-up behavior in the North American Land Data Assimilation System (NLDAS), J. Geophys. Res.-Atmos., 108, 8845, 10.1029/2002JD003316, 2003.",
+              "DOI": "10.1029/2002JD003316"
+            },
+            {
+              "key": "ref10",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Duan, Q., Schaake, J., Andr\u00e9assian, V., Franks, S., Goteti, G., Gupta, H. V., Gusev, Y. M., Habets, F., Hall, A., Hay, L., Hogue, T., Huang, M., Leavesley, G., Liang, X., Nasonova, O. N., Noilhan, J., Oudin, L., Sorooshian, S., Wagener, T., and Wood, E. F.: Model Parameter Estimation Experiment (MOPEX): An overview of science strategy and major results from the second and third workshops, J. Hydrol., 320, 3\u201317, 2006.",
+              "DOI": "10.1016/j.jhydrol.2005.07.031"
+            },
+            {
+              "key": "ref11",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Duan, Q., Di, Z., Quan, J., Wang, C., Gong, W., Gan, Y., Ye, A., Miao, C., Miao, S., Liang, X., and Fan, S.: Automatic model calibration: A new way to improve numerical weather forecasting, B. Am. Meteorol. Soc., 98, 959\u2013970, 2017.",
+              "DOI": "10.1175/BAMS-D-15-00104.1"
+            },
+            {
+              "key": "ref12",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Ek, M.\u00a0B., Mitchell, K.\u00a0E., Lin, Y., Rogers, E., Grunmann, P., Koren, V., Gayno, G., and Tarpley, J.\u00a0D.: Implementation of Noah land surface model advances in the National Centers for Environmental Prediction operational mesoscale Eta model, J. Geophys. Res.-Atmos., 108, 8851, 10.1029/2002JD003296, 2003.",
+              "DOI": "10.1029/2002JD003296"
+            },
+            {
+              "key": "ref13",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Folberth, C., Elliott, J., M\u00fcller, C., Balkovi\u010d, J., Chryssanthacopoulos, J., Izaurralde, R.\u00a0C., Jones, C.\u00a0D., Khabarov, N., Liu, W., Reddy, A., Schmid, E., Skalsk\u00fd, R., Yang, H., Arneth, A., Ciais, P., Deryng, D., Lawrence, P.\u00a0J., Olin, S., Pugh, T. A.\u00a0M., Ruane, A.\u00a0C., and Wang, X.: Parameterization-induced uncertainties and impacts of crop management harmonization in a global gridded crop model ensemble, PLoS One, 14, e0221862, 10.1371/journal.pone.0221862, 2019.",
+              "DOI": "10.1371/journal.pone.0221862"
+            },
+            {
+              "key": "ref14",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Friedl, M. and Sulla-Menashe, D.: MCD12C1 MODIS/Terra+Aqua Land Cover Type Yearly L3 Global 0.05 Deg CMG V006, NASA EOSDIS Land Processes DAAC [data set], 10.5067/MODIS/MCD12C1.006, 2015.",
+              "DOI": "10.5067/MODIS/MCD12C1.006",
+              "type": "dataset"
+            },
+            {
+              "key": "ref15",
+              "unstructured": "Golberg, D.\u00a0E.: Genetic Algorithms in Search, Optimization, and Machine Learning, 1st edn., Addion-Wesley, Reading, MA, USA, 372 pp., ISBN 978-0-201-15767-3, 1989."
+            },
+            {
+              "key": "ref16",
+              "unstructured": "Gotleib, L.: A general runoff model for snowcovered and glacierized basins, in: Nord. Hydrol. Conf, vol.\u00a06, 172\u2013177, 1980."
+            },
+            {
+              "key": "ref17",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Gubler, S., Gruber, S., and Purves, R. S.: Uncertainties of parameterized surface downward clear-sky shortwave and all-sky longwave radiation., Atmos. Chem. Phys., 12, 5077\u20135098, 10.5194/acp-12-5077-2012, 2012.",
+              "DOI": "10.5194/acp-12-5077-2012"
+            },
+            {
+              "key": "ref18",
+              "doi-asserted-by": "crossref",
+              "unstructured": "G\u00fcnther, D., Marke, T., Essery, R., and Strasser, U.: Uncertainties in snowpack simulations \u2013 Assessing the impact of model structure, parameter choice, and forcing data error on point-scale energy balance snow model performance, Water Resour. Res., 55, 2779\u20132800, 2019.",
+              "DOI": "10.1029/2018WR023403"
+            },
+            {
+              "key": "ref19",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Hall, D.\u00a0K. and Riggs, G.\u00a0A.: Accuracy assessment of the MODIS snow products, Hydrol. Process., 21, 1534\u20131547, 2007.",
+              "DOI": "10.1002/hyp.6715"
+            },
+            {
+              "key": "ref20",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Hall, D. K. and Riggs, G. A.: MODIS/Terra Snow Cover Daily L3 Global 500m SIN Grid, Version 61. NASA National Snow and Ice Data Center Distributed Active Archive Center, Boulder, Colorado USA [data set], 10.5067/MODIS/MOD10A1.061, 2021.",
+              "DOI": "10.5067/MODIS/MOD10A1.061",
+              "type": "dataset"
+            },
+            {
+              "key": "ref21",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Hall, D.\u00a0K., Riggs, G.\u00a0A., and Salomonson, V.\u00a0V.: MODIS/Terra Snow Cover 5-Min L2 Swath 500m, Version 5. NASA National Snow and Ice Data Center Distributed Active Archive Center, Boulder, Colorado, USA [data set], 10.5067/ACYTYZB9BEOS, 2006.",
+              "DOI": "10.5067/ACYTYZB9BEOS",
+              "type": "dataset"
+            },
+            {
+              "key": "ref22",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Holland, J.\u00a0H.: Genetic algorithms and the optimal allocation of trials, SIAM J. Comput., 2, 88\u2013105, 1973.",
+              "DOI": "10.1137/0202009"
+            },
+            {
+              "key": "ref23",
+              "unstructured": "Holland, J.\u00a0H.: Adaptation in Natural and Artificial Systems: An Introductory Analysis with Applications to Biology, Control, and Artificial Intelligence, University of Michigan Press, Ann Arbor, MI, 1975."
+            },
+            {
+              "key": "ref24",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Hong, S., Yu, X., Park, S. K., Choi, Y.-S., and Myoung, B.: Assessing optimal set of implemented physical parameterization schemes in a multi-physics land surface model using genetic algorithm, Geosci. Model Dev., 7, 2517\u20132529, 10.5194/gmd-7-2517-2014, 2014.",
+              "DOI": "10.5194/gmd-7-2517-2014"
+            },
+            {
+              "key": "ref25",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Hong, S., Park, S.\u00a0K., and Yu, X.: Scheme-based optimization of land surface model using a micro-genetic algorithm: Assessment of its performance and usability for regional applications, SOLA, 11, 129\u2013133, 2015.",
+              "DOI": "10.2151/sola.2015-030"
+            },
+            {
+              "key": "ref26",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Hong, S.-Y., Kwon, Y.\u00a0C., Kim, T.-H., Kim, J.-E.\u00a0E., Choi, S.-J., Kwon, I.-H., Kim, J., Lee, E.-H., Park, R.-S., and Kim, D.-I.: The Korean Integrated Model (KIM) system for global weather forecasting, Asia-Pac. J. Atmos. Sci., 54, 267\u2013292, 2018.",
+              "DOI": "10.1007/s13143-018-0028-9"
+            },
+            {
+              "key": "ref27",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Jiang, Y., Chen, F., Gao, Y., He, C., Barlage, M., and Huang, W.: Assessment of uncertainty sources in snow cover simulation in the Tibetan Plateau, J. Geophys. Res.-Atmos., 125, e2020JD032674, 10.1029/2020JD032674, 2020.",
+              "DOI": "10.1029/2020JD032674"
+            },
+            {
+              "key": "ref28",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Jin, J. and Miller, N.\u00a0L.: Analysis of the impact of snow on daily weather variability in mountainous regions using MM5, J. Hydrometeorol., 8, 245\u2013258, 2007.",
+              "DOI": "10.1175/JHM565.1"
+            },
+            {
+              "key": "ref29",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Jonas, T., Marty, C., and Magnusson, J.: Estimating the snow water equivalent from snow depth measurements in the Swiss Alps, J. Hydrol., 378, 161\u2013167, 2009.",
+              "DOI": "10.1016/j.jhydrol.2009.09.021"
+            },
+            {
+              "key": "ref30",
+              "unstructured": "Jun, S., Park, J.-H., Boo, K.-O., and Kang, H.-S.: Analyzing off-line Noah land surface model spin-up behavior for initialization of global numerical weather prediction model, Journal of Korea Water Resources Association, 53, 181\u2013191, 2020 (in Korean with English abstract)."
+            },
+            {
+              "key": "ref31",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Jung, S.-H., Im, E.-S., and Han, S.-O.: The effect of topography and sea surface temperature on heavy snowfall in the Yeongdong region: A case study with high resolution WRF simulation, Asia-Pac. J. Atmos. Sci., 48, 259\u2013273, 2012.",
+              "DOI": "10.1007/s13143-012-0026-2"
+            },
+            {
+              "key": "ref32",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Kim, D.-E. and Park, S. K.: Uncertainty in predicting the Eurasian snow: Intercomparison of land surface models coupled to a regional climate model, The Cryosphere Discuss. [preprint], 10.5194/tc-2019-15, 2019.",
+              "DOI": "10.5194/tc-2019-15",
+              "type": "preprint"
+            },
+            {
+              "key": "ref33",
+              "unstructured": "Kim, G., Joo, H., and Kim, H.: The study for damage effect factors of heavy snowfall disasters: Focused on heavy snowfall disasters during the period of 2005 to 2014, Journal of the Korea Academia-Industrial cooperation Society, 19, 125\u2013136, 2018 (in Korean with English abstract)."
+            },
+            {
+              "key": "ref34",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Koo, M.-S., Baek, S., Seol, K.-H., and Cho, K.: Advances in land modeling of KIAPS based on the Noah land surface model, Asia-Pac. J. Atmos. Sci., 53, 361\u2013373, 2017.",
+              "DOI": "10.1007/s13143-017-0043-2"
+            },
+            {
+              "key": "ref35",
+              "unstructured": "Korea Meteorological Administration: Automated Synoptic Observing System (ASOS), Open MET Data Portal [data set], https://data.kma.go.kr/data/grnd/selectAsosRltmList.do?pgmNo=36, last access: 24\u00a0October\u00a02022.",
+              "type": "dataset"
+            },
+            {
+              "key": "ref36",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Koren, V., Schaake, J., Mitchell, K., Duan, Q.-Y., Chen, F., and Baker, J.\u00a0M.: A parameterization of snowpack and frozen ground intended for NCEP weather and climate models, J. Geophys. Res.-Atmos., 104, 19569\u201319585, 1999.",
+              "DOI": "10.1029/1999JD900232"
+            },
+            {
+              "key": "ref37",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Kotsuki, S., Terasaki, K., Yashiro, H., Tomita, H., Satoh, M., and Miyoshi, T.: Online model parameter estimation With ensemble data assimilation in the real global atmosphere: A case With the nonhydrostatic icosahedral atmospheric model (NICAM) and the global satellite mapping of precipitation data, J. Geophys. Res.-Atmos., 123, 7375\u20137392, 2018.",
+              "DOI": "10.1029/2017JD028092"
+            },
+            {
+              "key": "ref38",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Krishnakumar, K.: Micro-genetic algorithms for stationary and non-stationary function optimization, in: Intelligent Control and Adaptive Systems, 1989 Symposium on Visual Communications, Image Processing, and Intelligent Robotics Systems, 1989, Philadelphia, PA, United States, vol. 1196, International Society for Optics and Photonics, 289\u2013296, 10.1117/12.969927, 1990.",
+              "DOI": "10.1117/12.969927"
+            },
+            {
+              "key": "ref39",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Lee, J., Kim, S.-M., Park, H.-S., and Woo, B.-H.: Optimum design of cold-formed steel channel beams using micro Genetic Algorithm, Eng. Struct., 27, 17\u201324, 2005.",
+              "DOI": "10.1016/j.engstruct.2004.08.008"
+            },
+            {
+              "key": "ref40",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Lee, Y. H., Park, S. K., and Chang, D.-E.: Parameter estimation using the genetic algorithm and its impact on quantitative precipitation forecast, Ann. Geophys., 24, 3185\u20133189, 10.5194/angeo-24-3185-2006, 2006.",
+              "DOI": "10.5194/angeo-24-3185-2006"
+            },
+            {
+              "key": "ref41",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Li, J., Duan, Q., Wang, Y.-P., Gong, W., Gan, Y., and Wang, C.: Parameter optimization for carbon and water fluxes in two global land surface models based on surrogate modelling, Int. J. Climatol., 38, e1016\u2013e1031, 10.1002/joc.5428, 2018.",
+              "DOI": "10.1002/joc.5428"
+            },
+            {
+              "key": "ref42",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Li, J., Chen, F., Lu, X., Gong, W., Zhang, G., and Gan, Y.: Quantifying contributions of uncertainties in physical parameterization schemes and model parameters to overall errors in Noah-MP dynamic vegetation modeling, J. Adv. Model. Earth Sy., 12, e2019MS001914, 10.1029/2019MS001914, 2020.",
+              "DOI": "10.1029/2019MS001914"
+            },
+            {
+              "key": "ref43",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Lim, S., Gim, H.-J., Lee, E., Lee, S.-Y., Lee, W.\u00a0Y., Lee, Y.\u00a0H., Cassardo, C., and Park, S.\u00a0K.: Code and Data: Optimization of Snow-Related Parameters in Noah Land Surface Model (v3.4.1) Using Micro-Genetic Algorithm (v1.7a), Zenodo [code and data set], 10.5281/zenodo.6873384, 2021.",
+              "DOI": "10.5281/zenodo.6873384"
+            },
+            {
+              "key": "ref44",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Livneh, B., Xia, Y., Mitchell, K.\u00a0E., Ek, M.\u00a0B., and Lettenmaier, D.\u00a0P.: Noah LSM snow model diagnostics and enhancements, J. Hydrometeorol., 11, 721\u2013738, 2010.",
+              "DOI": "10.1175/2009JHM1174.1"
+            },
+            {
+              "key": "ref45",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Mallet, V. and Sportisse, B.: Uncertainty in a chemistry-transport model due to physical parameterizations and numerical approximations: An ensemble approach applied to ozone modeling, J. Geophys. Res.-Atmos., 111, D01302, 10.1029/2005JD006149, 2006.",
+              "DOI": "10.1029/2005JD006149"
+            },
+            {
+              "key": "ref46",
+              "unstructured": "Mitchell, K.\u00a0E.: The community Noah land-surface model (LSM): User\u2019s guide public release version 2.7.1, NCEP/EMC Doc., 26 pp., https://ral.ucar.edu/sites/default/files/public/product-tool/unified-noah-lsm/Noah_LSM_USERGUIDE_2.7.1.pdf (last access: 24 October 2022), 2005.",
+              "type": "web-resource"
+            },
+            {
+              "key": "ref47",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Mitchell, K.\u00a0E., Lohmann, D., Houser, P.\u00a0R., Wood, E.\u00a0F., Schaake, J.\u00a0C., Robock, A., Cosgrove, B.\u00a0A., Sheffield, J., Duan, Q., Luo, L., Higgins, R.\u00a0W., Pinker, R.\u00a0T., Tarpley, J.\u00a0D., Lettenmaier, D.\u00a0P., Marshall, C.\u00a0H., Entin, J.\u00a0K., Pan, M., Shi, W., Koren, V., Meng, J., Ramsay, B.\u00a0H., and Bailey, A.\u00a0A.: The multi-institution North American Land Data Assimilation System (NLDAS): Utilizing multiple GCIP products and partners in a continental distributed hydrological modeling system, J. Geophys. Res.-Atmos., 109, D07S90, 10.1029/2003jd003823, 2004.",
+              "DOI": "10.1029/2003jd003823"
+            },
+            {
+              "key": "ref48",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Mu\u00f1oz-Sabater, J.: ERA5-Land hourly data from 1981 to present, Copernicus Climate Change Service (C3S) Climate Data Store (CDS) [data set], 10.24381/cds.e2161bac, 2019.",
+              "DOI": "10.24381/cds.e2161bac",
+              "type": "dataset"
+            },
+            {
+              "key": "ref49",
+              "unstructured": "National Center for Atmosphere Research: Unified Noah LSM, NCAR [code], https://ral.ucar.edu/solutions/products/unified-wrf-noah-lsm, last access: 24 October 2022.",
+              "type": "software"
+            },
+            {
+              "key": "ref50",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Neelin, J.\u00a0D., Bracco, A., Luo, H., McWilliams, J.\u00a0C., and Meyerson, J.\u00a0E.: Considerations for parameter optimization and sensitivity in climate models, P. Natl. Acad. Sci., 107, 21349\u201321354, 2010.",
+              "DOI": "10.1073/pnas.1015473107"
+            },
+            {
+              "key": "ref51",
+              "unstructured": "Olafsson, H. and Bao, J.-W.: Uncertainties in Numerical Weather Prediction, 1st edn., Elsevier, 364 pp., ISBN 9780128154915, 2020."
+            },
+            {
+              "key": "ref52",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Pan, M., Sheffield, J., Wood, E.\u00a0F., Mitchell, K.\u00a0E., Houser, P.\u00a0R., Schaake, J.\u00a0C., Robock, A., Lohmann, D., Cosgrove, B., Duan, Q., Luo, L., Higgins, R. W., Pinker R. T., and Tarpley J. D.: Snow process modeling in the North American Land Data Assimilation System (NLDAS): 2. Evaluation of model simulated snow water equivalent, J. Geophys. Res.-Atmos., 108, 8850, 10.1029/2003JD003994, 2003.",
+              "DOI": "10.1029/2003JD003994"
+            },
+            {
+              "key": "ref53",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Park, S. and Park, S. K.: A micro-genetic algorithm (GA v1.7.1a) for combinatorial optimization of physics parameterizations in the Weather Research and Forecasting model (v4.0.3) for quantitative precipitation forecast in Korea, Geosci. Model Dev., 14, 6241\u20136255, 10.5194/gmd-14-6241-2021, 2021.",
+              "DOI": "10.5194/gmd-14-6241-2021"
+            },
+            {
+              "key": "ref54",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Pathak, R., Sahany, S., and Mishra, S.\u00a0K.: Uncertainty quantification based cloud parameterization sensitivity analysis in the NCAR community atmosphere model, Sci. Rep., 10, 17499, 10.1038/s41598-020-74441-x, 2020.",
+              "DOI": "10.1038/s41598-020-74441-x"
+            },
+            {
+              "key": "ref55",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Robinson, D.\u00a0A. and Kukla, G.: Maximum surface albedo of seasonally snow-covered lands in the Northern Hemisphere, J. Appl. Meteorol. Clim., 24, 402\u2013411, 1985.",
+              "DOI": "10.1175/1520-0450(1985)024<0402:MSAOSS>2.0.CO;2"
+            },
+            {
+              "key": "ref56",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Rosolem, R., Gupta, H.\u00a0V., Shuttleworth, W.\u00a0J., de\u00a0Gon\u00e7alves, L. G.\u00a0G., and Zeng, X.: Towards a Comprehensive Approach to Parameter Estimation in Land Surface Parameterization Schemes, Hydrol. Process., 27, 2075\u20132097, 2013.",
+              "DOI": "10.1002/hyp.9362"
+            },
+            {
+              "key": "ref57",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Rudnaya, S. and Santosa, F.: Application of a micro-genetic algorithm in optimal design of a diffractive optical element, in: System Modelling and Optimization: Methods, Theory and Applications. CSMO 1999, IFIPAICT, vol. 46, edited by: Powell, M. J.\u00a0D. and Scholtes, S., Springer, Boston, MA, USA, 251\u2013267, 10.1007/978-0-387-35514-6_12, 2000.",
+              "DOI": "10.1007/978-0-387-35514-6_12"
+            },
+            {
+              "key": "ref58",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Saha, S.\u00a0K., Sujith, K., Pokhrel, S., Chaudhari, H.\u00a0S., and Hazra, A.: Effects of multilayer snow scheme on the simulation of snow: Offline Noah and coupled with NCEP CFS v2, J. Adv. Model. Earth Sy., 9, 271\u2013290, 2017.",
+              "DOI": "10.1002/2016MS000845"
+            },
+            {
+              "key": "ref59",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Sheffield, J., Pan, M., Wood, E.\u00a0F., Mitchell, K.\u00a0E., Houser, P.\u00a0R., Schaake, J.\u00a0C., Robock, A., Lohmann, D., Cosgrove, B., Duan, Q., Luo, L., Higgins, R. W., Pinker, R. T., Tarpley, J. D. and Ramsay, B. H.: Snow process modeling in the North American Land Data Assimilation System (NLDAS): 1. Evaluation of model-simulated snow cover extent, J. Geophys. Res.-Atmos., 108, 8849, 10.1029/2002JD003274, 2003.",
+              "DOI": "10.1029/2002JD003274"
+            },
+            {
+              "key": "ref60",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Shutts, G. and Pallar\u00e8s, A.\u00a0C.: Assessing parametrization uncertainty associated with horizontal resolution in numerical weather prediction models, Philos. T. R. Soc. A., 372, 20130284, 10.1098/rsta.2013.0284, 2014.",
+              "DOI": "10.1098/rsta.2013.0284"
+            },
+            {
+              "key": "ref61",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Souza, A.\u00a0N., Wagner, G.\u00a0L., Ramadhan, A., Allen, B., Churavy, V., Schloss, J., Campin, J., Hill, C., Edelman, A., Marshall, J., Flierl, G., and Ferrari, R.: Uncertainty quantification of ocean parameterizations: Application to the K-profile-parameterization for penetrative convection, J. Adv. Model. Earth Sy., 12, e2020MS002108, 10.1029/2020MS002108, 2020.",
+              "DOI": "10.1029/2020MS002108"
+            },
+            {
+              "key": "ref62",
+              "unstructured": "Sulla-Menashe, D. and Friedl, M. A.: User Guide to Collection 6 MODIS Land Cover (MCD12Q1 and MCD12C1) Product, USGS, Reston, VA, USA, 1, 18 pp., 2018."
+            },
+            {
+              "key": "ref63",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Sultana, R., Hsu, K.-L., Li, J., and Sorooshian, S.: Evaluating the Utah Energy Balance (UEB) snow model in the Noah land-surface model, Hydrol. Earth Syst. Sci., 18, 3553\u20133570, 10.5194/hess-18-3553-2014, 2014.",
+              "DOI": "10.5194/hess-18-3553-2014"
+            },
+            {
+              "key": "ref64",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Suzuki, K. and Zupanski, M.: Uncertainty in solid precipitation and snow depth prediction for Siberia using the Noah and Noah-MP land surface models, Front. Earth Sci., 12, 672\u2013682, 2018.",
+              "DOI": "10.1007/s11707-018-0691-2"
+            },
+            {
+              "key": "ref65",
+              "unstructured": "USACE: Snow Hydrology: Summary Report of the Snow Investigations, Tech. Rep., US Army Corps of Engineers, North Pacific Division, Portland, Orgeon, USA, 437 pp., 1956."
+            },
+            {
+              "key": "ref66",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Wang, Q., Fang, H., and Zou, X.-K.: Application of Micro-GA for optimal cost base isolation design of bridges subject to transient earthquake loads, Struct. Multidiscip. O., 41, 765\u2013777, 2010.",
+              "DOI": "10.1007/s00158-009-0470-5"
+            },
+            {
+              "key": "ref67",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Wang, S. and Sun, B.: The impacts of different land surface parameterization schemes on Northeast China snowfall simulation, Meteorol. Atmos. Phys., 130, 583\u2013590, 2018.",
+              "DOI": "10.1007/s00703-017-0539-4"
+            },
+            {
+              "key": "ref68",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Wang, Z. and Zeng, X.: Evaluation of snow albedo in land models for weather and climate studies, J. Appl. Meteorol. Clim., 49, 363\u2013380, 10.1175/2009JAMC2134.1, 2010.",
+              "DOI": "10.1175/2009JAMC2134.1"
+            },
+            {
+              "key": "ref69",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Warren, S.\u00a0G.: Optical properties of snow, Rev. Geophys., 20, 67\u201389, 1982.",
+              "DOI": "10.1029/RG020i001p00067"
+            },
+            {
+              "key": "ref70",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Warren, S.\u00a0G. and Wiscombe, W.\u00a0J.: A model for the spectral albedo of snow. II: Snow containing atmospheric aerosols, J. Atmos. Sci., 37, 2734\u20132745, 1980.",
+              "DOI": "10.1175/1520-0469(1980)037<2734:AMFTSA>2.0.CO;2"
+            },
+            {
+              "key": "ref71",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Xu, Y., Jones, A., and Rhoades, A.: A quantitative method to decompose SWE differences between regional climate models and reanalysis datasets, Sci. Rep., 9, 16520, 10.1038/s41598-019-52880-5, 2019.",
+              "DOI": "10.1038/s41598-019-52880-5"
+            },
+            {
+              "key": "ref72",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Yan, J., Xu, Z., Yu, Y., Xu, H., and Gao, K.: Application of a hybrid optimized BP network model to estimate water quality parameters of Beihai Lake in Beijing, Appl. Sci., 9, 1863, 10.3390/app9091863, 2019.",
+              "DOI": "10.3390/app9091863"
+            },
+            {
+              "key": "ref73",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Yoon, J.\u00a0W., Lim, S., and Park, S.\u00a0K.: Combinational optimization of the WRF physical parameterization schemes to improve numerical sea breeze prediction using micro-genetic algorithm, Appl. Sci., 11, 11221, 10.3390/app112311221, 2021.",
+              "DOI": "10.3390/app112311221"
+            },
+            {
+              "key": "ref74",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Yu, X., Park, S.\u00a0K., Lee, Y.\u00a0H., and Choi, Y.\u00a0S.: Quantitative precipitation forecast of a tropical cyclone through optimal parameter estimation in a convective parameterization, SOLA, 9, 36\u201339, 2013.",
+              "DOI": "10.2151/sola.2013-009"
+            },
+            {
+              "key": "ref75",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Zhang, X., Zhang, S., Liu, Z., Wu, X., and Han, G.: Parameter optimization in an intermediate coupled climate model with biased physics, J. Climate, 28, 1227\u20131247, 2015.",
+              "DOI": "10.1175/JCLI-D-14-00348.1"
+            },
+            {
+              "key": "ref76",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Zhao, W. and Li, A.: A review on land surface processes modelling over complex terrain, Adv. Meteorol., 2015, 607187, 10.1155/2015/607181, 2015.",
+              "DOI": "10.1155/2015/607181"
+            },
+            {
+              "key": "ref77",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Zhu, J., Shu, J., and Yu, X.: Improvement of typhoon rainfall prediction based on optimization of the Kain-Fritsch convection parameterization scheme using a micro-genetic algorithm, Front. Earth Sci., 13, 721\u2013732, 2019.",
+              "DOI": "10.1007/s11707-019-0798-0"
+            }
+          ],
+          "container-title": [
+            "Geoscientific Model Development"
+          ],
+          "language": "en",
+          "link": [
+            {
+              "URL": "https://gmd.copernicus.org/articles/15/8541/2022/gmd-15-8541-2022.pdf",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2026,
+                9,
+                15
+              ]
+            ],
+            "date-time": "2026-09-15T07:02:03Z",
+            "timestamp": 1789455723000
+          },
+          "score": 58.47877,
+          "resource": {
+            "primary": {
+              "URL": "https://gmd.copernicus.org/articles/15/8541/2022/"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2022,
+                11,
+                22
+              ]
+            ]
+          },
+          "references-count": 77,
+          "journal-issue": {
+            "issue": "22",
+            "published-online": {
+              "date-parts": [
+                [
+                  2022
+                ]
+              ]
+            }
+          },
+          "URL": "https://doi.org/10.5194/gmd-15-8541-2022",
+          "relation": {
+            "has-preprint": [
+              {
+                "id-type": "doi",
+                "id": "10.5194/gmd-2021-333",
+                "asserted-by": "subject"
+              },
+              {
+                "id-type": "doi",
+                "id": "10.5194/gmd-2021-333",
+                "asserted-by": "object"
+              }
+            ],
+            "has-review": [
+              {
+                "id-type": "doi",
+                "id": "10.5194/gmd-2021-333-CEC1",
+                "asserted-by": "subject"
+              },
+              {
+                "id-type": "doi",
+                "id": "10.5194/gmd-2021-333-AC1",
+                "asserted-by": "subject"
+              },
+              {
+                "id-type": "doi",
+                "id": "10.5194/gmd-2021-333-RC1",
+                "asserted-by": "subject"
+              },
+              {
+                "id-type": "doi",
+                "id": "10.5194/gmd-2021-333-AC2",
+                "asserted-by": "subject"
+              },
+              {
+                "id-type": "doi",
+                "id": "10.5194/gmd-2021-333-RC2",
+                "asserted-by": "subject"
+              },
+              {
+                "id-type": "doi",
+                "id": "10.5194/gmd-2021-333-AC3",
+                "asserted-by": "subject"
+              },
+              {
+                "id-type": "doi",
+                "id": "10.5194/gmd-2021-333-CEC1",
+                "asserted-by": "object"
+              },
+              {
+                "id-type": "doi",
+                "id": "10.5194/gmd-2021-333-AC1",
+                "asserted-by": "object"
+              },
+              {
+                "id-type": "doi",
+                "id": "10.5194/gmd-2021-333-AC2",
+                "asserted-by": "object"
+              },
+              {
+                "id-type": "doi",
+                "id": "10.5194/gmd-2021-333-AC3",
+                "asserted-by": "object"
+              },
+              {
+                "id-type": "doi",
+                "id": "10.5194/gmd-2021-333-RC1",
+                "asserted-by": "object"
+              },
+              {
+                "id-type": "doi",
+                "id": "10.5194/gmd-2021-333-RC2",
+                "asserted-by": "object"
+              }
+            ],
+            "is-part-of": [
+              {
+                "id-type": "doi",
+                "id": "10.5067/MODIS/MOD10A1.061",
+                "asserted-by": "subject"
+              },
+              {
+                "id-type": "doi",
+                "id": "10.5281/zenodo.6873384",
+                "asserted-by": "subject"
+              }
+            ]
+          },
+          "ISSN": [
+            "1991-9603"
+          ],
+          "issn-type": [
+            {
+              "value": "1991-9603",
+              "type": "electronic"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2022,
+                11,
+                22
+              ]
+            ]
+          }
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                9,
+                15
+              ]
+            ],
+            "date-time": "2026-09-15T18:43:11Z",
+            "timestamp": 1789497791440,
+            "version": "build-2803163510"
+          },
+          "posted": {
+            "date-parts": [
+              [
+                2021,
+                10,
+                19
+              ]
+            ]
+          },
+          "group-title": "Atmospheric sciences",
+          "reference-count": 0,
+          "publisher": "Copernicus GmbH",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2021,
+                    10,
+                    19
+                  ]
+                ],
+                "date-time": "2021-10-19T00:00:00Z",
+                "timestamp": 1634601600000
+              },
+              "content-version": "vor",
+              "delay-in-days": 0,
+              "URL": "https://creativecommons.org/licenses/by/4.0/"
+            }
+          ],
+          "funder": [
+            {
+              "DOI": "10.13039/501100003725",
+              "name": "National Research Foundation of Korea",
+              "doi-asserted-by": "publisher",
+              "award": [
+                "2018R1A6A1A08025520"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "2018R1A6A1A08025520"
+                  ]
+                }
+              ],
+              "id": [
+                {
+                  "id": "10.13039/501100003725",
+                  "id-type": "DOI",
+                  "asserted-by": "publisher"
+                }
+              ]
+            },
+            {
+              "DOI": "10.13039/501100003725",
+              "name": "National Research Foundation of Korea",
+              "doi-asserted-by": "publisher",
+              "award": [
+                "NRF-2021R1A2C1095535"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "NRF-2021R1A2C1095535"
+                  ]
+                }
+              ],
+              "id": [
+                {
+                  "id": "10.13039/501100003725",
+                  "id-type": "DOI",
+                  "asserted-by": "publisher"
+                }
+              ]
+            },
+            {
+              "DOI": "10.13039/501100003629",
+              "name": "Korea Meteorological Administration",
+              "doi-asserted-by": "publisher",
+              "award": [
+                "NTIS-1365003222"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "NTIS-1365003222"
+                  ]
+                }
+              ],
+              "id": [
+                {
+                  "id": "10.13039/501100003629",
+                  "id-type": "DOI",
+                  "asserted-by": "publisher"
+                }
+              ]
+            }
+          ],
+          "content-domain": {
+            "domain": [],
+            "crossmark-restriction": false
+          },
+          "abstract": "<jats:p>Abstract. The snowfall prediction is important in winter and early spring because snowy conditions generate enormous economic damages. However, there is a lack of previous studies dealing with snow prediction, especially using land surface models (LSMs). Numerical weather prediction models directly interpret the snowfall events, whereas the LSMs evaluate the snow cover fraction, snow albedo, and snow depth through interaction with atmospheric conditions. When the initially-developed empirical parameters are local or inadequate, we need to optimize the parameter sets for a certain region. In this study, we seek for the optimal parameter values in the snow-related processes \u2013 snow cover fraction, snow albedo, and snow depth \u2013 of the Noah LSM, for South Korea, using the micro-genetic algorithm and the in-situ surface observations and remotely-sensed satellite data. Snow data from surface observation stations representing five land cover types \u2013 deciduous broadleaf forest, mixed forest, woody savanna, cropland, and urban and built-up lands \u2013 are used to optimize five snow-related parameters that calculate the snow cover fraction, maximum snow albedo of fresh snow, and the fresh snow density associated with the snow depth. Another parameter, reflecting the dependence of snow cover fraction on the land cover types, is also optimized. Optimization of these six snow-related parameters has led to improvement in the root-mean squared errors by 17.0\u2009%, 8.2\u2009%, and 5.6\u2009% on snow depth, snow cover fraction, and snow albedo, respectively. In terms of the mean bias, the underestimation problems of snow depth and overestimation problems of snow albedo have been alleviated through optimization of parameters calculating the fresh snow by about 45.1\u2009% and 32.6\u2009%, respectively.</jats:p>",
+          "DOI": "10.5194/gmd-2021-333",
+          "type": "posted-content",
+          "created": {
+            "date-parts": [
+              [
+                2021,
+                10,
+                19
+              ]
+            ],
+            "date-time": "2021-10-19T06:22:07Z",
+            "timestamp": 1634624527000
+          },
+          "source": "Crossref",
+          "is-referenced-by-count": 0,
+          "title": [
+            "Optimization of Snow-Related Parameters in Noah Land Surface Model (v3.4.1) Using Micro-Genetic Algorithm (v1.7a)"
+          ],
+          "prefix": "10.5194",
+          "author": [
+            {
+              "ORCID": "https://orcid.org/0000-0002-5720-8238",
+              "authenticated-orcid": false,
+              "given": "Sujeong",
+              "family": "Lim",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Hyeon-Ju",
+              "family": "Gim",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Ebony",
+              "family": "Lee",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Seung-Yeon",
+              "family": "Lee",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0002-3746-3020",
+              "authenticated-orcid": false,
+              "given": "Won Young",
+              "family": "Lee",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Yong Hee",
+              "family": "Lee",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0001-5212-3211",
+              "authenticated-orcid": false,
+              "given": "Claudio",
+              "family": "Cassardo",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0002-8538-911X",
+              "authenticated-orcid": false,
+              "given": "Seon Ki",
+              "family": "Park",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "member": "3145",
+          "deposited": {
+            "date-parts": [
+              [
+                2025,
+                1,
+                22
+              ]
+            ],
+            "date-time": "2025-01-22T23:28:12Z",
+            "timestamp": 1737588492000
+          },
+          "score": 62.132072,
+          "resource": {
+            "primary": {
+              "URL": "https://gmd.copernicus.org/articles/15/8541/2022/gmd-15-8541-2022-discussion.html"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2021,
+                10,
+                19
+              ]
+            ]
+          },
+          "references-count": 0,
+          "URL": "https://doi.org/10.5194/gmd-2021-333",
+          "relation": {
+            "has-comment": [
+              {
+                "id-type": "doi",
+                "id": "10.5194/gmd-2021-333-CEC1",
+                "asserted-by": "subject"
+              },
+              {
+                "id-type": "doi",
+                "id": "10.5194/gmd-2021-333-AC1",
+                "asserted-by": "subject"
+              },
+              {
+                "id-type": "doi",
+                "id": "10.5194/gmd-2021-333-AC2",
+                "asserted-by": "subject"
+              },
+              {
+                "id-type": "doi",
+                "id": "10.5194/gmd-2021-333-AC3",
+                "asserted-by": "subject"
+              }
+            ],
+            "has-review": [
+              {
+                "id-type": "doi",
+                "id": "10.5194/gmd-2021-333-RC1",
+                "asserted-by": "subject"
+              },
+              {
+                "id-type": "doi",
+                "id": "10.5194/gmd-2021-333-RC2",
+                "asserted-by": "subject"
+              }
+            ],
+            "is-preprint-of": [
+              {
+                "id-type": "doi",
+                "id": "10.5194/gmd-15-8541-2022",
+                "asserted-by": "subject"
+              },
+              {
+                "id-type": "doi",
+                "id": "10.5194/gmd-15-8541-2022",
+                "asserted-by": "object"
+              }
+            ]
+          },
+          "published": {
+            "date-parts": [
+              [
+                2021,
+                10,
+                19
+              ]
+            ]
+          },
+          "subtype": "preprint"
+        }
+      ],
+      "items-per-page": 2,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

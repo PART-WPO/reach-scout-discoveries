@@ -1,0 +1,64 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=An+Analysis+of+Associations+Between+Polarimetric+Supercell+Signatures&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=An+Analysis+of+Associations+Between+Polarimetric+Supercell+Signatures&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:35.122381+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 7899726,
+      "items": [
+        {
+          "DOI": "10.1175/2007jamc1874.1",
+          "title": [
+            "Polarimetric Signatures in Supercell Thunderstorms"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2008,
+                7,
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1109/igarss.2002.1025018",
+          "title": [
+            "Enhanced polarimetric radar signatures above the melting level in a supercell storm"
+          ],
+          "type": "proceedings-article"
+        },
+        {
+          "DOI": "10.1175/1520-0450(2002)041<1179:eprsat>2.0.co;2",
+          "title": [
+            "Enhanced Polarimetric Radar Signatures above the Melting Level in a Supercell Storm"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2002,
+                12
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

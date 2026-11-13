@@ -1,0 +1,477 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+  "final_url": "https://raw.githubusercontent.com/PART-WPO/SPARK/main/agent-data/manifest.json",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:58:03.179511+00:00",
+  "headers": {
+    "Content-Type": "text/plain; charset=utf-8",
+    "ETag": "\"6b1a71c8b73fe55a680f025f95d02320cfd33daa1b9b3d8cbe02ff8c8bdd2faa\""
+  },
+  "body": {
+    "feed": "spark-agent-feed",
+    "schema_version": 3,
+    "source": {
+      "path": "SPARK Report - SPARK Report.csv",
+      "bytes": 2141494,
+      "sha256": "687743e815dfc38544b677b72faed655f60e9dc28352091b8504480fee93ef6d",
+      "rows": 583
+    },
+    "index": {
+      "columns": [
+        "Record ID",
+        "Project Fingerprint",
+        "Primary",
+        "Project Title",
+        "Managing WPO Program",
+        "Award Number(s)",
+        "Parsed NOAA Awards",
+        "Related Award Number(s)",
+        "Parsed Related NOAA Awards",
+        "Umbrella Award Roots",
+        "Principal Investigator",
+        "Year Funded",
+        "Project Status",
+        "Research Keywords",
+        "Project Team Affiliations",
+        "Has Primary CI Award",
+        "Primary CI Awards",
+        "Has Related CI Award",
+        "Related CI Awards",
+        "Detail File"
+      ],
+      "files": [
+        {
+          "path": "agent-data/index/part-001.csv",
+          "rows": 108,
+          "bytes": 49149,
+          "sha256": "137f074982a6bc63474d64fa94b38a78f88004cb7da6e8d7545e50e2bd0cb66a"
+        },
+        {
+          "path": "agent-data/index/part-002.csv",
+          "rows": 113,
+          "bytes": 49132,
+          "sha256": "5d2da6ee480502e25e34c9f15cd0af724e03514831702d2319b16cfda3d11516"
+        },
+        {
+          "path": "agent-data/index/part-003.csv",
+          "rows": 103,
+          "bytes": 48754,
+          "sha256": "be3f6be2a48b9103fe3345a5db5bb4165dc315a618a1073555959bb451c301f7"
+        },
+        {
+          "path": "agent-data/index/part-004.csv",
+          "rows": 125,
+          "bytes": 48981,
+          "sha256": "f25dfbd6518977b1b2d49e07805771ca70cd9b7980901faa7bd252b9dd4c74d0"
+        },
+        {
+          "path": "agent-data/index/part-005.csv",
+          "rows": 111,
+          "bytes": 48936,
+          "sha256": "bc41d368d3309c948ef5abd894219697544c640d251340b0f29b9c75cad606f7"
+        },
+        {
+          "path": "agent-data/index/part-006.csv",
+          "rows": 23,
+          "bytes": 8470,
+          "sha256": "dc0ecd2e9e7e69ee2e2e810ca1f90c5a32c9c1fbd1833763bacc8316a4137fbe"
+        }
+      ]
+    },
+    "awards": {
+      "columns": [
+        "Award Number",
+        "Umbrella Award Root",
+        "Match Basis",
+        "Record ID",
+        "Project Fingerprint",
+        "Project Title",
+        "Managing WPO Program",
+        "Year Funded",
+        "Is CI Award",
+        "CI Base Award",
+        "CI Identifier Note",
+        "Detail File"
+      ],
+      "rows": 1010,
+      "files": [
+        {
+          "path": "agent-data/awards/part-001.csv",
+          "rows": 194,
+          "bytes": 49061,
+          "sha256": "68703d3a66ee62d777d084a2d9b0db95f35981b14fffd777ee9c1d8d7b5a2f15"
+        },
+        {
+          "path": "agent-data/awards/part-002.csv",
+          "rows": 196,
+          "bytes": 49032,
+          "sha256": "52679b0cda472ac7c35f984e54e655e89aed140f98737ca24e7ee099b9f06abb"
+        },
+        {
+          "path": "agent-data/awards/part-003.csv",
+          "rows": 191,
+          "bytes": 49049,
+          "sha256": "cd3c9ad2ab412dcfc0d0a3288576c90e49ac6b662439835d10bec245ef43a916"
+        },
+        {
+          "path": "agent-data/awards/part-004.csv",
+          "rows": 190,
+          "bytes": 48904,
+          "sha256": "95e1a9b1b3dcd73876f5d0c8c4bea83604b21501996157b58847305345c3e0ed"
+        },
+        {
+          "path": "agent-data/awards/part-005.csv",
+          "rows": 189,
+          "bytes": 49125,
+          "sha256": "00040af8b7a83f6dddd6e752c925dcce8ac35a06772b78bec313baa9a1ec351d"
+        },
+        {
+          "path": "agent-data/awards/part-006.csv",
+          "rows": 50,
+          "bytes": 12666,
+          "sha256": "94f635b142758af3422940330b69cbd2ca16350cbc99dd4d3451dc1469397a12"
+        }
+      ]
+    },
+    "details": {
+      "columns": [
+        "Record ID",
+        "Project Fingerprint",
+        "Primary",
+        "Level",
+        "Project Title",
+        "Project Goal",
+        "Managing WPO Program",
+        "Project Status",
+        "Project Start Date",
+        "Project End Date",
+        "Research Keywords",
+        "Associated Forecast Systems & Models",
+        "Method",
+        "Study Design",
+        "Sample",
+        "Project Description",
+        "Project Benefits",
+        "Transition Partner / Adopter",
+        "Transition POC",
+        "Project Team Affiliations",
+        "Award Number(s)",
+        "Weather Hazard",
+        "State",
+        "Related Award Number(s)",
+        "Related to Another Award?",
+        "Spelled Out Program Name",
+        "Year Funded",
+        "Period of Performance",
+        "Status Icon",
+        "Combined Keywords",
+        "Combined Search",
+        "Transition Partner Spelled Out",
+        "Affiliations (Comma Separated)",
+        "Weather Hazard Icon",
+        "REACH URLs",
+        "Truncated Project Goal",
+        "REACH Output #"
+      ],
+      "files": [
+        {
+          "path": "agent-data/details/part-001.csv",
+          "rows": 17,
+          "bytes": 47550,
+          "sha256": "232620cfe5f6bbb8f70ae46c2089ba58890fcd97761e3af5416626d7654927bd"
+        },
+        {
+          "path": "agent-data/details/part-002.csv",
+          "rows": 15,
+          "bytes": 48108,
+          "sha256": "1fbccb7dc6887c05e47fe3afa92227962b7de8bfc00e39175ab4d50fa8c4d49a"
+        },
+        {
+          "path": "agent-data/details/part-003.csv",
+          "rows": 12,
+          "bytes": 48120,
+          "sha256": "915e011152c6eeb4f78ecc18fc67fe814c96adbf467f736d5b243434e65c9f3f"
+        },
+        {
+          "path": "agent-data/details/part-004.csv",
+          "rows": 14,
+          "bytes": 48977,
+          "sha256": "9dbece2c1a5c4324a2d3deec0795a5e018d714310c63ccb8124c599aa855387a"
+        },
+        {
+          "path": "agent-data/details/part-005.csv",
+          "rows": 14,
+          "bytes": 48449,
+          "sha256": "64db47eae454a3d2bafb80f72140881d3fe523a82bbc9a5f813e4a02d657a954"
+        },
+        {
+          "path": "agent-data/details/part-006.csv",
+          "rows": 14,
+          "bytes": 48893,
+          "sha256": "bca355aa3e072e410b0b5835e349b3d1a1312584dab2c56c4041b82912578f02"
+        },
+        {
+          "path": "agent-data/details/part-007.csv",
+          "rows": 14,
+          "bytes": 47696,
+          "sha256": "fdd4f1de7c63f6e2fd920ad859f6f7f5d25d6ebcaaec590289581b31d938bd47"
+        },
+        {
+          "path": "agent-data/details/part-008.csv",
+          "rows": 13,
+          "bytes": 48151,
+          "sha256": "0f6e37bf2bc3e4b91c1c7ccd70ee247ea2efb5676af68f923d4ec52ee33cd65c"
+        },
+        {
+          "path": "agent-data/details/part-009.csv",
+          "rows": 9,
+          "bytes": 47856,
+          "sha256": "cf790ff86c725076cfae05138b9c2fc3a49a031eca31a8702e76eb758d634b1a"
+        },
+        {
+          "path": "agent-data/details/part-010.csv",
+          "rows": 8,
+          "bytes": 46703,
+          "sha256": "1f56403344fa5eaed876b98b8ef523317714433ebfca88a80c9003ddd1739646"
+        },
+        {
+          "path": "agent-data/details/part-011.csv",
+          "rows": 8,
+          "bytes": 46556,
+          "sha256": "fee9b4871d2d7b0f0cd37fbe4f02f7cd429904cf98c53e77091f031d20d30af5"
+        },
+        {
+          "path": "agent-data/details/part-012.csv",
+          "rows": 11,
+          "bytes": 48668,
+          "sha256": "591fc566ebbef5eeb017d75afec067b2b0b898c036a2c7c787763dceaf1f8d71"
+        },
+        {
+          "path": "agent-data/details/part-013.csv",
+          "rows": 9,
+          "bytes": 46415,
+          "sha256": "60b310102def8ba89d7737c0fbe1bfe0909169f61d971460186b4d4c9e2daddc"
+        },
+        {
+          "path": "agent-data/details/part-014.csv",
+          "rows": 14,
+          "bytes": 48837,
+          "sha256": "3dc7e2551a364772f0ac70815850515d4d7ec7859bb843cbe5534bcb9f627d3a"
+        },
+        {
+          "path": "agent-data/details/part-015.csv",
+          "rows": 15,
+          "bytes": 47377,
+          "sha256": "006492366207bed3b362ebd082c1c1b3f3e585ad298d1061318fee69569a9efa"
+        },
+        {
+          "path": "agent-data/details/part-016.csv",
+          "rows": 15,
+          "bytes": 47590,
+          "sha256": "6001823baf723d3c8aee14de0901da6b9a61fcdacd56c0888033dbe9ab5d2165"
+        },
+        {
+          "path": "agent-data/details/part-017.csv",
+          "rows": 16,
+          "bytes": 45858,
+          "sha256": "097be40685d9fda61c338bf3ba17766940f2cb22c19c613c03c68bd1674be67c"
+        },
+        {
+          "path": "agent-data/details/part-018.csv",
+          "rows": 12,
+          "bytes": 47004,
+          "sha256": "64d912be4aee60a3120d6407eac1881bdf0c9d20a8310739fdf370d656713dac"
+        },
+        {
+          "path": "agent-data/details/part-019.csv",
+          "rows": 11,
+          "bytes": 48958,
+          "sha256": "34f821536d694dfdd919f5cf16deb2d0c29ce660dd6a803c6f7f3885e159957d"
+        },
+        {
+          "path": "agent-data/details/part-020.csv",
+          "rows": 10,
+          "bytes": 48361,
+          "sha256": "2d1b0d1d67f39570cbf5775181074d776d0277590e762a9a5f196ec63071f5d1"
+        },
+        {
+          "path": "agent-data/details/part-021.csv",
+          "rows": 14,
+          "bytes": 48436,
+          "sha256": "720f0b48a86f384c11ae96f8175156febe4414d8e66c828291e585f44d05db15"
+        },
+        {
+          "path": "agent-data/details/part-022.csv",
+          "rows": 13,
+          "bytes": 45578,
+          "sha256": "89d771b23f9f29c148d71ce3db036e788bc3f44a8fb1d852c8cc700534f386e6"
+        },
+        {
+          "path": "agent-data/details/part-023.csv",
+          "rows": 13,
+          "bytes": 44119,
+          "sha256": "a8b8e85a63992d7ecba58f5e03b0e24b743cd797da66f7490dabae89b3fa08fa"
+        },
+        {
+          "path": "agent-data/details/part-024.csv",
+          "rows": 16,
+          "bytes": 48532,
+          "sha256": "900a0bae4978fee5f9c08f74bef223aa3c085103565770857680c4f0a9fc7361"
+        },
+        {
+          "path": "agent-data/details/part-025.csv",
+          "rows": 15,
+          "bytes": 48286,
+          "sha256": "5f42c3a7ac10d818925aabf3f176fc7dad6f0095c65f9556dd54edefe26bf387"
+        },
+        {
+          "path": "agent-data/details/part-026.csv",
+          "rows": 15,
+          "bytes": 48212,
+          "sha256": "ad7a5cd8ec424c384adfc198f19d33dbf284c602118867b09bf218840f4f6989"
+        },
+        {
+          "path": "agent-data/details/part-027.csv",
+          "rows": 10,
+          "bytes": 47317,
+          "sha256": "deddba89e75667eec183267bb1aced2991dfc43e30c292ed709b8b859a448e65"
+        },
+        {
+          "path": "agent-data/details/part-028.csv",
+          "rows": 11,
+          "bytes": 46041,
+          "sha256": "5ff8513ed5fdf90d7447958d47bd5a8fdac843f51e35522434b94060f7cf6f34"
+        },
+        {
+          "path": "agent-data/details/part-029.csv",
+          "rows": 14,
+          "bytes": 46495,
+          "sha256": "74ed4c49b4d12244320ea29f4c791fb996cb990c0bcb6bc7e9c91dc39790a678"
+        },
+        {
+          "path": "agent-data/details/part-030.csv",
+          "rows": 13,
+          "bytes": 46001,
+          "sha256": "374ce07d17b752cedddb5ef5ee02e7a0e415363246a6fd20ed34cf1dce219898"
+        },
+        {
+          "path": "agent-data/details/part-031.csv",
+          "rows": 9,
+          "bytes": 44966,
+          "sha256": "f40e9e3d8820734d7b8690e9127616ef9a23726dbf4faaa08669224d977f2cd4"
+        },
+        {
+          "path": "agent-data/details/part-032.csv",
+          "rows": 15,
+          "bytes": 48999,
+          "sha256": "a0acee3766b49d25982ec8aad022ad01d7db7e975fbf8da6aa45ed33804ca745"
+        },
+        {
+          "path": "agent-data/details/part-033.csv",
+          "rows": 13,
+          "bytes": 48544,
+          "sha256": "a352d70822e69e02f55e05879786c6f8511778890619140f34124ff0aaa5799f"
+        },
+        {
+          "path": "agent-data/details/part-034.csv",
+          "rows": 11,
+          "bytes": 47736,
+          "sha256": "2d52e81c78385bbc8cbefeccab859624f5b9061302b0aa08881d97b442c50ef7"
+        },
+        {
+          "path": "agent-data/details/part-035.csv",
+          "rows": 9,
+          "bytes": 46471,
+          "sha256": "b7787f8d28fb5714cd4b25fae07addacfcd966025ede671715a589dd49dec40b"
+        },
+        {
+          "path": "agent-data/details/part-036.csv",
+          "rows": 9,
+          "bytes": 47667,
+          "sha256": "a02ba9a731fd27f59ad770eb24ac6520bde81752fd3e31b85af7379ad5f1c092"
+        },
+        {
+          "path": "agent-data/details/part-037.csv",
+          "rows": 14,
+          "bytes": 48110,
+          "sha256": "17b554d9ef080e15d3e485b7aa880781457a6d99daf47adaa3db42c2e963408d"
+        },
+        {
+          "path": "agent-data/details/part-038.csv",
+          "rows": 16,
+          "bytes": 48644,
+          "sha256": "2a518116fe551ef21f93e1b7eb5eb8be7173002d3269cab8f173e4057d98d1f7"
+        },
+        {
+          "path": "agent-data/details/part-039.csv",
+          "rows": 12,
+          "bytes": 47882,
+          "sha256": "bf8a2a7de5713f60ffe9891524160f624b0577954a13429a016d359ff93eaf1a"
+        },
+        {
+          "path": "agent-data/details/part-040.csv",
+          "rows": 13,
+          "bytes": 46857,
+          "sha256": "b63ece09965b57ee6f675538d264ac39e5d473fba13c5691dbca429fb3e51cb1"
+        },
+        {
+          "path": "agent-data/details/part-041.csv",
+          "rows": 14,
+          "bytes": 46541,
+          "sha256": "1c5949fb782cea9f736ff0b794ca8e324fd69c9190d59a7a3beb26a76fb30298"
+        },
+        {
+          "path": "agent-data/details/part-042.csv",
+          "rows": 14,
+          "bytes": 46748,
+          "sha256": "cbce5b48b72f59322e48d55bd8ebe1d8908a7b74e6fdb16d09ca9c134ed639e1"
+        },
+        {
+          "path": "agent-data/details/part-043.csv",
+          "rows": 13,
+          "bytes": 48207,
+          "sha256": "efaaec11765d97e539083db4d0b69f7366ebd600cbe08bdd7bb2e4bbce7a2ee3"
+        },
+        {
+          "path": "agent-data/details/part-044.csv",
+          "rows": 8,
+          "bytes": 45774,
+          "sha256": "06ca7c191fe40e9655acc33b43c5d1071f0aa17ac0d458d7057535b3ff7ec85d"
+        },
+        {
+          "path": "agent-data/details/part-045.csv",
+          "rows": 20,
+          "bytes": 46412,
+          "sha256": "f599be218c6e354ef8d0681dd31601c589b17273cdc27ed1680ee7f46ac87f34"
+        },
+        {
+          "path": "agent-data/details/part-046.csv",
+          "rows": 8,
+          "bytes": 31260,
+          "sha256": "320ce7a4870dc3143afd3d0a9532d108c822060361e42d04ddf410df6144cbc3"
+        }
+      ]
+    },
+    "quality_notes": {
+      "projects_without_primary_award_tokens": 10,
+      "projects_with_related_award_identifiers": 118,
+      "projects_with_primary_ci_awards": 6,
+      "projects_with_related_ci_awards": 10,
+      "ci_award_lookup_entries": 16,
+      "ci_entries_with_extended_suffixes": 4,
+      "unparsed_primary_award_tokens": 198,
+      "unparsed_related_award_tokens": 97,
+      "duplicate_project_fingerprint_groups": 2
+    },
+    "ci_identification": {
+      "rule": "Base award matches NAyyOAR432xxxx or NAyyOAR405xxxx",
+      "subaward_suffixes": "Recognized, and one-letter extensions flagged for manual format verification",
+      "scope": "identifier screening only; NOT proof of funding for any WPO project",
+      "crosswalk": "Treat primary and related CI awards as distinct match types"
+    },
+    "identity_note": "Record ID identifies a row in this snapshot only. Project Fingerprint is a matching aid that may change when source metadata changes.",
+    "attribution_warning": "Primary awards, related awards, and CI award classification are DISTINCT evidence types. Related-award and umbrella-root matches are DISCOVERY LEADS, not proof that an output belongs to a specific WPO-funded project. Verify the linked SPARK workstream and primary funding evidence.",
+    "retrieval_note": "Read ALL index and award shards for global coverage; inspect Match Basis before interpreting any award relationship. Fetch details only for specific projects. Verify row counts and SHA-256 before declaring any record absent."
+  }
+}

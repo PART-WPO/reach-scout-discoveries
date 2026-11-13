@@ -1,0 +1,72 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=The+New+WxDash&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=The+New+WxDash&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:48.577177+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 3359007,
+      "items": [
+        {
+          "DOI": "10.1175/bams-d-19-0064.a",
+          "title": [
+            "The New WxDash: A Source for Tornado Warning Response Data"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2021,
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1017/cbo9781139003599.002",
+          "title": [
+            "New, new, new"
+          ],
+          "type": "book-chapter",
+          "published": {
+            "date-parts": [
+              [
+                2011,
+                9,
+                15
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1007/bf03219677",
+          "title": [
+            "Researching new literacies, new technologies, new kids, new times, new…"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                1998,
+                12
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

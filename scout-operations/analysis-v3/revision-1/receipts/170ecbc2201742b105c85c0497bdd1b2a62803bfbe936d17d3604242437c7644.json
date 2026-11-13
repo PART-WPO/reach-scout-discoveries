@@ -1,0 +1,74 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=A+Case+Study+on+the+Usage+and+Efficacy+of+Infrasound+Monitoring+Arrays+as+a+Means+of+Tornado+Detection&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=A+Case+Study+on+the+Usage+and+Efficacy+of+Infrasound+Monitoring+Arrays+as+a+Means+of+Tornado+Detection&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:42.309747+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 10861823,
+      "items": [
+        {
+          "DOI": "10.1121/10.0015979",
+          "title": [
+            "On the potential use of infrasound for tornado detection and monitoring"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2022,
+                10,
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1121/1.5035924",
+          "title": [
+            "Monitoring infrasound from a Tornado in Oklahoma"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2018,
+                3,
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1115/imece2009-10480",
+          "title": [
+            "The Infrasound Network (ISNet) as an 88D Adjunct Tornado Detection Tool: The Status of Infrasonic Tornado Detection"
+          ],
+          "type": "proceedings-article",
+          "published": {
+            "date-parts": [
+              [
+                2009,
+                1,
+                1
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

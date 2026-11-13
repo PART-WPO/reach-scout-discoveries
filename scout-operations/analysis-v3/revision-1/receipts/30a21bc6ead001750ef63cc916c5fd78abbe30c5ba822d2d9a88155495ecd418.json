@@ -1,0 +1,62 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=Optimizing+tropical+cyclone+information%3A+An+NOAA+Hurricane+Website+User+Experience+Study+from+a+Public+Perspective&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=Optimizing+tropical+cyclone+information%3A+An+NOAA+Hurricane+Website+User+Experience+Study+from+a+Public+Perspective&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:47.993762+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 17006550,
+      "items": [
+        {
+          "DOI": "10.1007/978-90-481-2639-2_159",
+          "title": [
+            "Tropical Cyclone/Hurricane"
+          ],
+          "type": "book-chapter",
+          "published": {
+            "date-parts": [
+              [
+                2011
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1007/springerreference_205937",
+          "title": [
+            "Tropical Cyclone/Hurricane"
+          ],
+          "type": "reference-entry"
+        },
+        {
+          "DOI": "10.1109/istafrica.2016.7530631",
+          "title": [
+            "E-government websites user experience from public value perspective: Case study of iTax website in Kenya"
+          ],
+          "type": "proceedings-article",
+          "published": {
+            "date-parts": [
+              [
+                2016,
+                5
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

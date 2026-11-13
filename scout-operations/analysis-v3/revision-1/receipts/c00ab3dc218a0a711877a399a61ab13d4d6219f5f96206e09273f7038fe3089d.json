@@ -1,0 +1,70 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=Support+for+Prescribed+Burning+in+Midwestern+States%3A+Results+From+an+Online+Experiment&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=Support+for+Prescribed+Burning+in+Midwestern+States%3A+Results+From+an+Online+Experiment&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:58.628186+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 10400375,
+      "items": [
+        {
+          "DOI": "10.1016/j.atmosenv.2020.117753",
+          "title": [
+            "Biomass burning organic aerosol from prescribed burning and other activities in the United States"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2020,
+                11
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.5962/p.400984",
+          "title": [
+            "Prescribed Burning"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2005,
+                4
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1007/978-3-319-51727-8_120-1",
+          "title": [
+            "Prescribed Burning"
+          ],
+          "type": "book-chapter",
+          "published": {
+            "date-parts": [
+              [
+                2018
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

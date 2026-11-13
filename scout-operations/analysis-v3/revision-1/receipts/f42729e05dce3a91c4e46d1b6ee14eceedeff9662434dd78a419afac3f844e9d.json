@@ -1,0 +1,72 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=A+case+study+of+the+19+March+2018+northern+Alabama+tornadic+supercell+and+its+relation+to+an+atmospheric+bore&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=A+case+study+of+the+19+March+2018+northern+Alabama+tornadic+supercell+and+its+relation+to+an+atmospheric+bore&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:44.668926+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 11337287,
+      "items": [
+        {
+          "DOI": "10.1016/j.atmosres.2005.08.007",
+          "title": [
+            "A multiscale observational case study of an isolated tornadic supercell"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2007,
+                2
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1103/physrevd.111.023018",
+          "title": [
+            "Effect of tornadic supercell thunderstorms on the atmospheric muon flux"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2025,
+                1,
+                8
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1002/qj.421",
+          "title": [
+            "Infrasound generation by tornadic supercell storms"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2009,
+                4
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

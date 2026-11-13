@@ -1,0 +1,72 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=Fire+Warnings+in+Context%3A+Operational+Insights+and%0Athe+Case+for+Interdisciplinary+Research%0ACoordination&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=Fire+Warnings+in+Context%3A+Operational+Insights+and%0Athe+Case+for+Interdisciplinary+Research%0ACoordination&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:53.661673+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 5504004,
+      "items": [
+        {
+          "DOI": "10.21203/rs.3.rs-9431466/v1",
+          "title": [
+            "Fire Warnings in Context: Operational Insights and the Case for Interdisciplinary Research Coordination"
+          ],
+          "type": "posted-content",
+          "published": {
+            "date-parts": [
+              [
+                2026,
+                4,
+                26
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.2139/ssrn.6234339",
+          "title": [
+            "Fire Warnings in Context: Operational Insights and the Case for Interdisciplinary Coordination"
+          ],
+          "type": "posted-content",
+          "published": {
+            "date-parts": [
+              [
+                2026
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1201/9781482289688-82",
+          "title": [
+            "FIRE WARNINGS"
+          ],
+          "type": "book-chapter",
+          "published": {
+            "date-parts": [
+              [
+                2006,
+                1,
+                20
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

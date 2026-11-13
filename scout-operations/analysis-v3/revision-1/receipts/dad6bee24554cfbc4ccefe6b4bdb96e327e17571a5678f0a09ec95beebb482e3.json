@@ -1,0 +1,199 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.datacite.org/dois/10.5281/zenodo.6478536",
+  "final_url": "https://api.datacite.org/dois/10.5281/zenodo.6478536",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:56:37.496809+00:00",
+  "headers": {
+    "Content-Type": "application/json; charset=utf-8",
+    "ETag": "W/\"043feeb013005fffd244e8647d529ad4\""
+  },
+  "body": {
+    "data": {
+      "id": "10.5281/zenodo.6478536",
+      "type": "dois",
+      "attributes": {
+        "doi": "10.5281/zenodo.6478536",
+        "prefix": "10.5281",
+        "suffix": "zenodo.6478536",
+        "identifiers": [],
+        "alternateIdentifiers": [],
+        "creators": [
+          {
+            "name": "Mouallem, Joseph",
+            "givenName": "Joseph",
+            "familyName": "Mouallem",
+            "affiliation": [
+              "Princeton University"
+            ],
+            "nameIdentifiers": [
+              {
+                "schemeUri": "https://orcid.org",
+                "nameIdentifier": "https://orcid.org/0000-0003-2468-3056",
+                "nameIdentifierScheme": "ORCID"
+              }
+            ]
+          },
+          {
+            "name": "Harris, Lucas",
+            "givenName": "Lucas",
+            "familyName": "Harris",
+            "affiliation": [
+              "Geophysical Fluid Dynamics Laboratory/NOAA"
+            ],
+            "nameIdentifiers": []
+          },
+          {
+            "name": "Benson, Rusty",
+            "givenName": "Rusty",
+            "familyName": "Benson",
+            "affiliation": [
+              "Geophysical Fluid Dynamics Laboratory/NOAA"
+            ],
+            "nameIdentifiers": []
+          }
+        ],
+        "titles": [
+          {
+            "title": "Multiple same-level and telescoping nesting in GFDL's dynamical core (Code and simulation namelists)"
+          }
+        ],
+        "publisher": "Zenodo",
+        "container": {},
+        "publicationYear": 2022,
+        "subjects": [
+          {
+            "subject": "CFD"
+          },
+          {
+            "subject": "Variable resolution"
+          },
+          {
+            "subject": "Model development"
+          },
+          {
+            "subject": "Software"
+          },
+          {
+            "subject": "HPC"
+          }
+        ],
+        "contributors": [],
+        "dates": [
+          {
+            "date": "2022-04-22",
+            "dateType": "Issued"
+          }
+        ],
+        "language": "en",
+        "types": {
+          "ris": "COMP",
+          "bibtex": "misc",
+          "citeproc": "article",
+          "schemaOrg": "SoftwareSourceCode",
+          "resourceTypeGeneral": "Software"
+        },
+        "relatedIdentifiers": [
+          {
+            "relationType": "Cites",
+            "relatedIdentifier": "10.5194/gmd-2021-442",
+            "resourceTypeGeneral": "JournalArticle",
+            "relatedIdentifierType": "DOI"
+          },
+          {
+            "relationType": "IsVersionOf",
+            "relatedIdentifier": "10.5281/zenodo.6478535",
+            "relatedIdentifierType": "DOI"
+          }
+        ],
+        "relatedItems": [],
+        "sizes": [],
+        "formats": [],
+        "version": null,
+        "rightsList": [
+          {
+            "rights": "Creative Commons Attribution 4.0 International",
+            "rightsUri": "https://creativecommons.org/licenses/by/4.0/legalcode",
+            "schemeUri": "https://spdx.org/licenses/",
+            "rightsIdentifier": "cc-by-4.0",
+            "rightsIdentifierScheme": "SPDX"
+          },
+          {
+            "rights": "Open Access",
+            "rightsUri": "info:eu-repo/semantics/openAccess"
+          }
+        ],
+        "descriptions": [
+          {
+            "description": "Source code and namelists of the Geoscientific Model Development technical paper: Multiple same-level and telescoping nesting in GFDL's dynamical core.<br> This paper studies the landfall of hurricane Laura (2020) and an Atmospheric river hitting California (2021) using global and regional domains with multiple same level and telescoping nested grids.<br> <br> The official source code to compile SHiELD is taken from:<br> 1- FV3: tag: FV3-202107-public<br> https://github.com/NOAA-GFDL/GFDL_atmos_cubed_sphere<br> 2- FMS: tag: 2021.02<br> https://github.com/NOAA-GFDL/GFDL_atmos_cubed_sphere<br> 3- SHiELD_physics: tag: SHiELD_v2021b (with a minor code change)<br> https://github.com/NOAA-GFDL/SHiELD_physics The input namelists are for the cases shown in this study:<br> 1- Global C48 + nests<br> 2- Global C768 + nests<br> 3- Regional R192 + nests The nests parameters, used in each of the top parent grid cases C48, C768 and R192, are set similarly (except for the nest dimensions and time steps which could be found in the original paper) but differ from case to case.",
+            "descriptionType": "Abstract"
+          }
+        ],
+        "geoLocations": [],
+        "fundingReferences": [],
+        "xml": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHJlc291cmNlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCIgeHNpOnNjaGVtYUxvY2F0aW9uPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCBodHRwOi8vc2NoZW1hLmRhdGFjaXRlLm9yZy9tZXRhL2tlcm5lbC00LjEvbWV0YWRhdGEueHNkIj4KICA8aWRlbnRpZmllciBpZGVudGlmaWVyVHlwZT0iRE9JIj4xMC41MjgxL1pFTk9ETy42NDc4NTM2PC9pZGVudGlmaWVyPgogIDxjcmVhdG9ycz4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWU+TW91YWxsZW0sIEpvc2VwaDwvY3JlYXRvck5hbWU+CiAgICAgIDxnaXZlbk5hbWU+Sm9zZXBoPC9naXZlbk5hbWU+CiAgICAgIDxmYW1pbHlOYW1lPk1vdWFsbGVtPC9mYW1pbHlOYW1lPgogICAgICA8bmFtZUlkZW50aWZpZXIgbmFtZUlkZW50aWZpZXJTY2hlbWU9Ik9SQ0lEIiBzY2hlbWVVUkk9Imh0dHA6Ly9vcmNpZC5vcmcvIj4wMDAwLTAwMDMtMjQ2OC0zMDU2PC9uYW1lSWRlbnRpZmllcj4KICAgICAgPGFmZmlsaWF0aW9uPlByaW5jZXRvbiBVbml2ZXJzaXR5PC9hZmZpbGlhdGlvbj4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWU+SGFycmlzLCBMdWNhczwvY3JlYXRvck5hbWU+CiAgICAgIDxnaXZlbk5hbWU+THVjYXM8L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWU+SGFycmlzPC9mYW1pbHlOYW1lPgogICAgICA8YWZmaWxpYXRpb24+R2VvcGh5c2ljYWwgRmx1aWQgRHluYW1pY3MgTGFib3JhdG9yeS9OT0FBPC9hZmZpbGlhdGlvbj4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWU+QmVuc29uLCBSdXN0eTwvY3JlYXRvck5hbWU+CiAgICAgIDxnaXZlbk5hbWU+UnVzdHk8L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWU+QmVuc29uPC9mYW1pbHlOYW1lPgogICAgICA8YWZmaWxpYXRpb24+R2VvcGh5c2ljYWwgRmx1aWQgRHluYW1pY3MgTGFib3JhdG9yeS9OT0FBPC9hZmZpbGlhdGlvbj4KICAgIDwvY3JlYXRvcj4KICA8L2NyZWF0b3JzPgogIDx0aXRsZXM+CiAgICA8dGl0bGU+TXVsdGlwbGUgc2FtZS1sZXZlbCBhbmQgdGVsZXNjb3BpbmcgbmVzdGluZyBpbiBHRkRMJ3MgZHluYW1pY2FsIGNvcmUgKENvZGUgYW5kIHNpbXVsYXRpb24gbmFtZWxpc3RzKTwvdGl0bGU+CiAgPC90aXRsZXM+CiAgPHB1Ymxpc2hlcj5aZW5vZG88L3B1Ymxpc2hlcj4KICA8cHVibGljYXRpb25ZZWFyPjIwMjI8L3B1YmxpY2F0aW9uWWVhcj4KICA8c3ViamVjdHM+CiAgICA8c3ViamVjdD5DRkQ8L3N1YmplY3Q+CiAgICA8c3ViamVjdD5WYXJpYWJsZSByZXNvbHV0aW9uPC9zdWJqZWN0PgogICAgPHN1YmplY3Q+TW9kZWwgZGV2ZWxvcG1lbnQ8L3N1YmplY3Q+CiAgICA8c3ViamVjdD5Tb2Z0d2FyZTwvc3ViamVjdD4KICAgIDxzdWJqZWN0PkhQQzwvc3ViamVjdD4KICA8L3N1YmplY3RzPgogIDxkYXRlcz4KICAgIDxkYXRlIGRhdGVUeXBlPSJJc3N1ZWQiPjIwMjItMDQtMjI8L2RhdGU+CiAgPC9kYXRlcz4KICA8bGFuZ3VhZ2U+ZW48L2xhbmd1YWdlPgogIDxyZXNvdXJjZVR5cGUgcmVzb3VyY2VUeXBlR2VuZXJhbD0iU29mdHdhcmUiLz4KICA8YWx0ZXJuYXRlSWRlbnRpZmllcnM+CiAgICA8YWx0ZXJuYXRlSWRlbnRpZmllciBhbHRlcm5hdGVJZGVudGlmaWVyVHlwZT0idXJsIj5odHRwczovL3plbm9kby5vcmcvcmVjb3JkLzY0Nzg1MzY8L2FsdGVybmF0ZUlkZW50aWZpZXI+CiAgPC9hbHRlcm5hdGVJZGVudGlmaWVycz4KICA8cmVsYXRlZElkZW50aWZpZXJzPgogICAgPHJlbGF0ZWRJZGVudGlmaWVyIHJlbGF0ZWRJZGVudGlmaWVyVHlwZT0iRE9JIiByZWxhdGlvblR5cGU9IkNpdGVzIiByZXNvdXJjZVR5cGVHZW5lcmFsPSJKb3VybmFsQXJ0aWNsZSI+MTAuNTE5NC9nbWQtMjAyMS00NDI8L3JlbGF0ZWRJZGVudGlmaWVyPgogICAgPHJlbGF0ZWRJZGVudGlmaWVyIHJlbGF0ZWRJZGVudGlmaWVyVHlwZT0iRE9JIiByZWxhdGlvblR5cGU9IklzVmVyc2lvbk9mIj4xMC41MjgxL3plbm9kby42NDc4NTM1PC9yZWxhdGVkSWRlbnRpZmllcj4KICA8L3JlbGF0ZWRJZGVudGlmaWVycz4KICA8cmlnaHRzTGlzdD4KICAgIDxyaWdodHMgcmlnaHRzVVJJPSJodHRwczovL2NyZWF0aXZlY29tbW9ucy5vcmcvbGljZW5zZXMvYnkvNC4wL2xlZ2FsY29kZSI+Q3JlYXRpdmUgQ29tbW9ucyBBdHRyaWJ1dGlvbiA0LjAgSW50ZXJuYXRpb25hbDwvcmlnaHRzPgogICAgPHJpZ2h0cyByaWdodHNVUkk9ImluZm86ZXUtcmVwby9zZW1hbnRpY3Mvb3BlbkFjY2VzcyI+T3BlbiBBY2Nlc3M8L3JpZ2h0cz4KICA8L3JpZ2h0c0xpc3Q+CiAgPGRlc2NyaXB0aW9ucz4KICAgIDxkZXNjcmlwdGlvbiBkZXNjcmlwdGlvblR5cGU9IkFic3RyYWN0Ij4mbHQ7cCZndDtTb3VyY2UgY29kZSBhbmQgbmFtZWxpc3RzIG9mIHRoZSBHZW9zY2llbnRpZmljIE1vZGVsIERldmVsb3BtZW50IHRlY2huaWNhbCBwYXBlcjogTXVsdGlwbGUgc2FtZS1sZXZlbCBhbmQgdGVsZXNjb3BpbmcgbmVzdGluZyBpbiBHRkRMJmFtcDsjMzk7cyBkeW5hbWljYWwgY29yZS4mbHQ7YnImZ3Q7ClRoaXMgcGFwZXIgc3R1ZGllcyB0aGUgbGFuZGZhbGwgb2YgaHVycmljYW5lIExhdXJhICgyMDIwKSBhbmQgYW4gQXRtb3NwaGVyaWMgcml2ZXIgaGl0dGluZyBDYWxpZm9ybmlhICgyMDIxKSB1c2luZyBnbG9iYWwgYW5kIHJlZ2lvbmFsIGRvbWFpbnMgd2l0aCBtdWx0aXBsZSBzYW1lIGxldmVsIGFuZCB0ZWxlc2NvcGluZyBuZXN0ZWQgZ3JpZHMuJmx0O2JyJmd0OwombHQ7YnImZ3Q7ClRoZSBvZmZpY2lhbCBzb3VyY2UgY29kZSB0byBjb21waWxlIFNIaUVMRCBpcyB0YWtlbiBmcm9tOiZsdDticiZndDsKMS0gRlYzOiB0YWc6IEZWMy0yMDIxMDctcHVibGljJmx0O2JyJmd0OwomYW1wO25ic3A7JmFtcDtuYnNwOyZhbXA7bmJzcDsgaHR0cHM6Ly9naXRodWIuY29tL05PQUEtR0ZETC9HRkRMX2F0bW9zX2N1YmVkX3NwaGVyZSZsdDticiZndDsKMi0gRk1TOiB0YWc6IDIwMjEuMDImbHQ7YnImZ3Q7CiZhbXA7bmJzcDsmYW1wO25ic3A7JmFtcDtuYnNwOyBodHRwczovL2dpdGh1Yi5jb20vTk9BQS1HRkRML0dGRExfYXRtb3NfY3ViZWRfc3BoZXJlJmx0O2JyJmd0OwozLSBTSGlFTERfcGh5c2ljczogdGFnOiBTSGlFTERfdjIwMjFiICh3aXRoIGEgbWlub3IgY29kZSBjaGFuZ2UpJmx0O2JyJmd0OwomYW1wO25ic3A7JmFtcDtuYnNwOyZhbXA7bmJzcDsgaHR0cHM6Ly9naXRodWIuY29tL05PQUEtR0ZETC9TSGlFTERfcGh5c2ljcyZsdDsvcCZndDsKCiZsdDtwJmd0O1RoZSBpbnB1dCBuYW1lbGlzdHMgYXJlIGZvciB0aGUgY2FzZXMgc2hvd24gaW4gdGhpcyBzdHVkeTombHQ7YnImZ3Q7CjEtIEdsb2JhbCBDNDggKyBuZXN0cyZsdDticiZndDsKMi0gR2xvYmFsIEM3NjggKyBuZXN0cyZsdDticiZndDsKMy0gUmVnaW9uYWwgUjE5MiArIG5lc3RzJmx0Oy9wJmd0OwoKJmx0O3AmZ3Q7VGhlIG5lc3RzIHBhcmFtZXRlcnMsIHVzZWQgaW4gZWFjaCBvZiB0aGUgdG9wIHBhcmVudCBncmlkIGNhc2VzIEM0OCwgQzc2OCBhbmQgUjE5MiwgYXJlIHNldCBzaW1pbGFybHkmYW1wO25ic3A7KGV4Y2VwdCBmb3IgdGhlIG5lc3QgZGltZW5zaW9ucyBhbmQgdGltZSBzdGVwcyB3aGljaCBjb3VsZCBiZSBmb3VuZCBpbiB0aGUgb3JpZ2luYWwgcGFwZXIpIGJ1dCBkaWZmZXIgZnJvbSBjYXNlIHRvIGNhc2UuJmx0Oy9wJmd0OzwvZGVzY3JpcHRpb24+CiAgPC9kZXNjcmlwdGlvbnM+CjwvcmVzb3VyY2U+",
+        "url": "https://zenodo.org/record/6478536",
+        "contentUrl": null,
+        "metadataVersion": 0,
+        "schemaVersion": "http://datacite.org/schema/kernel-4",
+        "source": "mds",
+        "isActive": true,
+        "state": "findable",
+        "reason": null,
+        "viewCount": 0,
+        "viewsOverTime": [],
+        "downloadCount": 0,
+        "downloadsOverTime": [],
+        "referenceCount": 0,
+        "citationCount": 0,
+        "citationsOverTime": [],
+        "partCount": 0,
+        "partOfCount": 0,
+        "versionCount": 0,
+        "versionOfCount": 0,
+        "created": "2022-04-22T21:52:25.000Z",
+        "registered": "2022-04-22T21:52:26.000Z",
+        "published": "2022",
+        "updated": "2022-04-22T21:52:26.000Z"
+      },
+      "relationships": {
+        "client": {
+          "data": {
+            "id": "cern.zenodo",
+            "type": "clients"
+          }
+        },
+        "provider": {
+          "data": {
+            "id": "cern",
+            "type": "providers"
+          }
+        },
+        "media": {
+          "data": {
+            "id": "10.5281/zenodo.6478536",
+            "type": "media"
+          }
+        },
+        "references": {
+          "data": []
+        },
+        "citations": {
+          "data": []
+        },
+        "parts": {
+          "data": []
+        },
+        "partOf": {
+          "data": []
+        },
+        "versions": {
+          "data": []
+        },
+        "versionOf": {
+          "data": []
+        }
+      }
+    }
+  }
+}

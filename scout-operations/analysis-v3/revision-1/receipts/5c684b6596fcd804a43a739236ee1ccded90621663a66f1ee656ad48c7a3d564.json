@@ -1,0 +1,71 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "url": "https://api.crossref.org/works?query.title=Shear-Relative+Asymmetric+Kinematic+Characteristics+of+Intensifying+Hurricanes+as+Observed+by+Airborne+Doppler+Radar&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "final_url": "https://api.crossref.org/works?query.title=Shear-Relative+Asymmetric+Kinematic+Characteristics+of+Intensifying+Hurricanes+as+Observed+by+Airborne+Doppler+Radar&rows=3&select=DOI%2Ctitle%2Ctype%2Cpublished",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-12T13:57:33.509878+00:00",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 1952350,
+      "items": [
+        {
+          "DOI": "10.1175/mwr-d-22-0340.1",
+          "title": [
+            "Shear-Relative Asymmetric Kinematic Characteristics of Intensifying Hurricanes as Observed by Airborne Doppler Radar"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2024,
+                2
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1016/j.atmosres.2007.11.026",
+          "title": [
+            "A comparison of the midlevel kinematic characteristics of a pair of supercell thunderstorms observed by airborne Doppler radar"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2008,
+                6
+              ]
+            ]
+          }
+        },
+        {
+          "DOI": "10.1175/1520-0426(2003)020<0269:asrtfa>2.0.co;2",
+          "title": [
+            "A Surface Reference Technique for Airborne Doppler Radar Measurements in Hurricanes"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2003,
+                2
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

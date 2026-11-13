@@ -1,0 +1,124 @@
+{
+  "claim_label": "VERIFIED_SOURCE",
+  "checked_at_utc": "2026-11-13T03:27:43.506462+00:00",
+  "source_commit": "b21f3271c92ad1e7a4643104920bfb214c65b186",
+  "branch": "analysis-v3-pr2-ledger-held",
+  "checks": [
+    {
+      "claim_label": "VERIFIED_SOURCE",
+      "check": "Inventory covers every original asset",
+      "passed": true,
+      "evidence": "inventory.csv:1 and source-files.csv:1"
+    },
+    {
+      "claim_label": "VERIFIED_SOURCE",
+      "check": "All original file hashes remain identical to captured source",
+      "passed": true,
+      "evidence": "source-files.csv:1; every original file recomputed"
+    },
+    {
+      "claim_label": "VERIFIED_SOURCE",
+      "check": "No existing tracked file differs from pinned Git source",
+      "passed": true,
+      "evidence": "git diff --name-only b21f3271c92ad1e7a4643104920bfb214c65b186"
+    },
+    {
+      "claim_label": "VERIFIED_SOURCE",
+      "check": "All added or untracked repository files stay inside requested folder",
+      "passed": true,
+      "evidence": "git diff and git ls-files --others --exclude-standard"
+    },
+    {
+      "claim_label": "VERIFIED_SOURCE",
+      "check": "One row for each of 933 public publication seeds",
+      "passed": true,
+      "evidence": "seed-ledger.json:1; import-summary.json:1"
+    },
+    {
+      "claim_label": "VERIFIED_SOURCE",
+      "check": "Import partition adds up",
+      "passed": true,
+      "evidence": "import-summary.json:1"
+    },
+    {
+      "claim_label": "VERIFIED_SOURCE",
+      "check": "Each seed has all four method states",
+      "passed": true,
+      "evidence": "seed-ledger.json:1"
+    },
+    {
+      "claim_label": "VERIFIED_SOURCE",
+      "check": "Unknown methods retain unknown attempts and no claimed completion",
+      "passed": true,
+      "evidence": "seed-ledger.json:1"
+    },
+    {
+      "claim_label": "VERIFIED_SOURCE",
+      "check": "No imported method is falsely marked complete",
+      "passed": true,
+      "evidence": "seed-ledger.json:1"
+    },
+    {
+      "claim_label": "VERIFIED_SOURCE",
+      "check": "Every seed has retry, blocker, input hash and attempts fields per method",
+      "passed": true,
+      "evidence": "seed-ledger.json:1"
+    },
+    {
+      "claim_label": "VERIFIED_SOURCE",
+      "check": "Pilot has 40 distinct seed IDs separate from all gold candidates",
+      "passed": true,
+      "evidence": "pilot-seeds.csv:1 and gold-candidates.csv:1"
+    },
+    {
+      "claim_label": "VERIFIED_SOURCE",
+      "check": "Pilot has no known DOI overlap with gold candidates",
+      "passed": true,
+      "evidence": "pilot-seeds.csv:1 and gold-candidates.csv:1"
+    },
+    {
+      "claim_label": "VERIFIED_SOURCE",
+      "check": "Pilot has no gold-candidate award overlap",
+      "passed": true,
+      "evidence": "reach-public-projection.json:1; pilot-seeds.csv:1; gold-candidates.csv:1"
+    },
+    {
+      "claim_label": "VERIFIED_SOURCE",
+      "check": "Artifact IDs unique and tiers restricted",
+      "passed": true,
+      "evidence": "artifact-leads.json:1"
+    },
+    {
+      "claim_label": "VERIFIED_SOURCE",
+      "check": "Exactly 20 specification cases and no implementation",
+      "passed": true,
+      "evidence": "scheduler-test-spec.md:1; specs only"
+    },
+    {
+      "claim_label": "VERIFIED_SOURCE",
+      "check": "All specified public detail shards were projected",
+      "passed": true,
+      "evidence": "reach-manifest.json:1 and reach-public-projection.json:1"
+    },
+    {
+      "claim_label": "VERIFIED_SOURCE",
+      "check": "Report source citations resolve to existing lines",
+      "passed": true,
+      "evidence": "[]"
+    },
+    {
+      "claim_label": "VERIFIED_SOURCE",
+      "check": "Gold candidate supported pairs exactly match written proposal",
+      "passed": true,
+      "evidence": "{\"candidate_pairs\": 38, \"human_adjudicated_pairs\": 0, \"source_reviewed_relation_basis\": {\"DOCUMENT_DOI_MENTION_REQUIRES_REVIEW\": 6, \"EXPLICIT_TYPED_SUPPORT_RELATION\": 4}, \"source_supported_proposal_pairs\": 10, \"supported_pair_sets_equal\": true}"
+    },
+    {
+      "claim_label": "VERIFIED_SOURCE",
+      "check": "Analysis is on its own local branch",
+      "passed": true,
+      "evidence": "git branch --show-current"
+    }
+  ],
+  "result": "PASS",
+  "scope": "Analysis integrity only. Discovery/workflow scripts and the 20 scheduler test cases were not executed."
+}
