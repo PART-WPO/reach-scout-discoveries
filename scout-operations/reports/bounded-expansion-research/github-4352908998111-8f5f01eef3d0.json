@@ -1,0 +1,67 @@
+{
+  "schema": "reach-scout-bounded-expansion-research-v1",
+  "observed_at_utc": "2026-11-13T23:43:16.540230+00:00",
+  "seed_doi": "10.1007/s00382-026-08236-7",
+  "source_graph_sha256": "8a48041ef050266ff00490ffce473bb77b784e5ef0003d9ecea27b9da2069c7b",
+  "seed_expansion_fingerprint": "597706a2edbba24a2f89540d5751bb266c1bdb0896d24304367f072b96537d00",
+  "seed_reach_identity_verified_in_graph": true,
+  "explicit_related_dois_preserved": [],
+  "source_lookups": [
+    {
+      "doi": "10.1007/s00382-026-08236-7",
+      "role": "VERIFIED_REACH_EXPANSION_SEED",
+      "source_status": "ok",
+      "official_provider": "crossref",
+      "official_title": "Inferring SST-forced seasonal atmospheric responses: an ensemble empirical tool",
+      "official_metadata_url": "https://api.crossref.org/works/10.1007/s00382-026-08236-7",
+      "publication_status": "official_journal_article",
+      "official_award_numbers_observed": [
+        "NA25OARX459C0150-T1-01"
+      ],
+      "separate_output_uniqueness": "NOT_VERIFIED",
+      "same_WPO_project_parent": "NOT_VERIFIED"
+    }
+  ],
+  "status": "OFFICIAL_SOURCE_CHECK_RECORDED",
+  "source_driven_discovery": {
+    "schema": "reach-scout-source-driven-expansion-v1",
+    "seed_doi": "10.1007/s00382-026-08236-7",
+    "source_checks": [
+      {
+        "kind": "crossref_references",
+        "url": "https://api.crossref.org/works/10.1007/s00382-026-08236-7",
+        "status": "SOURCE_READ",
+        "source_sha256": "7b9bb9c16d6ddbe66af0347426273d960fa916558bb9209174f6e327c4065c5b",
+        "data_code_doi_matches": 0
+      },
+      {
+        "kind": "noaa_ir_landing",
+        "url": "https://repository.library.noaa.gov/view/noaa/75529",
+        "status": "SOURCE_READ",
+        "source_sha256": "a9677f9bbd0efe8159d90e9c9dba912c06596187d59e545f050f3d4dd59876e1"
+      },
+      {
+        "kind": "noaa_ir_manuscript_pdf",
+        "url": "https://repository.library.noaa.gov/view/noaa/75529/noaa_75529_DS1.pdf",
+        "status": "SOURCE_READ",
+        "source_sha256": "cd1677bcdb50de7f0d39a012d7117796e9a81e3f426633a3872ec0bb5c836104",
+        "data_code_doi_matches": 0,
+        "pdf_text_characters": 66144,
+        "pdf_doi_tokens_observed": 1
+      }
+    ],
+    "discovered_doi_leads": [],
+    "status": "NO_DATA_CODE_DOI_IDENTIFIED",
+    "new_public_candidates": 0,
+    "private_hub_import": "NOT_VERIFIED"
+  },
+  "new_source_driven_leads_screened": [],
+  "new_distinct_doi_leads_found": 0,
+  "new_public_candidate_count": 0,
+  "new_related_output_eligibility_confirmed": 0,
+  "separate_expansion_decisions_completed": 0,
+  "reason_not_a_completed_expansion": "Source metadata and DOI edges are research leads; distinct output identity, preprint, public REACH/Scout duplicate and exact WPO project funding require independent checks.",
+  "next_action": "Investigate official metadata and full current REACH/Scout identity for distinct linked DOI(s); verify their OWN publisher award and primary SPARK parent before any Needs Investigation or New Candidate.",
+  "private_hub_import": "NOT_VERIFIED",
+  "human_approval": "NOT_VERIFIED"
+}
