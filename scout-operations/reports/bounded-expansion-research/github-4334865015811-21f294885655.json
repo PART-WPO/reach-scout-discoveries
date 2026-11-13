@@ -1,0 +1,67 @@
+{
+  "schema": "reach-scout-bounded-expansion-research-v1",
+  "observed_at_utc": "2026-11-13T01:58:17.417623+00:00",
+  "seed_doi": "10.1007/s00382-025-07740-6",
+  "source_graph_sha256": "8ee84bb5d4aa440dc99923c0ce5fec63a77b17e9488457dd2b36b15f052a2a13",
+  "seed_expansion_fingerprint": "041997ad1871fa4b3d40b358bdd49f00ef1864f25ec5279dd9bf1e65b48bb506",
+  "seed_reach_identity_verified_in_graph": true,
+  "explicit_related_dois_preserved": [],
+  "source_lookups": [
+    {
+      "doi": "10.1007/s00382-025-07740-6",
+      "role": "VERIFIED_REACH_EXPANSION_SEED",
+      "source_status": "ok",
+      "official_provider": "crossref",
+      "official_title": "Characterization of Western US hydrologic processes linked to atmospheric rivers in two sets of seasonal global retrospective forecasts",
+      "official_metadata_url": "https://api.crossref.org/works/10.1007/s00382-025-07740-6",
+      "publication_status": "official_journal_article",
+      "official_award_numbers_observed": [
+        "AGS2241538",
+        "NA20OAR4320472",
+        "NA22OAR4310603",
+        "NA23OAR4590383"
+      ],
+      "separate_output_uniqueness": "NOT_VERIFIED",
+      "same_WPO_project_parent": "NOT_VERIFIED"
+    }
+  ],
+  "status": "OFFICIAL_SOURCE_CHECK_RECORDED",
+  "source_driven_discovery": {
+    "schema": "reach-scout-source-driven-expansion-v1",
+    "seed_doi": "10.1007/s00382-025-07740-6",
+    "source_checks": [
+      {
+        "kind": "crossref_references",
+        "url": "https://api.crossref.org/works/10.1007/s00382-025-07740-6",
+        "status": "SOURCE_READ",
+        "source_sha256": "52eadaa924877d880715809c6b3af26acc29176b97ebd6953fbb630d829cf1cc",
+        "data_code_doi_matches": 0
+      },
+      {
+        "kind": "noaa_ir_landing",
+        "url": "https://repository.library.noaa.gov/view/noaa/71108",
+        "status": "SOURCE_READ",
+        "source_sha256": "d30fd705db0e0e3f3036b6953b09076bc0764f85ca82608c6081a3c7bf63d076"
+      },
+      {
+        "kind": "noaa_ir_accepted_manuscript",
+        "url": "https://repository.library.noaa.gov/view/noaa/71108",
+        "status": "SOURCE_ACCESS_OR_PARSE_HOLD",
+        "error_type": "ValueError"
+      }
+    ],
+    "discovered_doi_leads": [],
+    "status": "NO_DATA_CODE_DOI_IDENTIFIED",
+    "new_public_candidates": 0,
+    "private_hub_import": "NOT_VERIFIED"
+  },
+  "new_source_driven_leads_screened": [],
+  "new_distinct_doi_leads_found": 0,
+  "new_public_candidate_count": 0,
+  "new_related_output_eligibility_confirmed": 0,
+  "separate_expansion_decisions_completed": 0,
+  "reason_not_a_completed_expansion": "Source metadata and DOI edges are research leads; distinct output identity, preprint, public REACH/Scout duplicate and exact WPO project funding require independent checks.",
+  "next_action": "Investigate official metadata and full current REACH/Scout identity for distinct linked DOI(s); verify their OWN publisher award and primary SPARK parent before any Needs Investigation or New Candidate.",
+  "private_hub_import": "NOT_VERIFIED",
+  "human_approval": "NOT_VERIFIED"
+}
