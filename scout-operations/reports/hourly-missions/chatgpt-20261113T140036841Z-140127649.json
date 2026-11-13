@@ -1,0 +1,59 @@
+{
+  "schema": "reach-scout-hourly-mission-outcome-v1",
+  "producer": "chatgpt_hourly_mission",
+  "not_chatgpt_hourly_mission": false,
+  "mission_id": "20261113T140036841Z-140127649",
+  "started_at_utc": "2026-11-13T14:00:36.841Z",
+  "completed_at_utc": "2026-11-13T14:01:27.649Z",
+  "policy_commit_sha": "bacca5f7393c6466702aa33e8569b754d508af0c",
+  "memory_source_fingerprint": "8ee84bb5d4aa440dc99923c0ce5fec63a77b17e9488457dd2b36b15f052a2a13",
+  "memory_builder_policy_sha256": "6c77012241b8abd0544dcb9e8a22e38aad5b76bb6c3664afafcdeedbc2d4cc17",
+  "lane": "related_expansion",
+  "handoff_status": "NOT_ATTEMPTED",
+  "handoff_blocker": null,
+  "cache_hits_observed": null,
+  "external_requests_observed": null,
+  "avoided_requests_measured": null,
+  "private_hub_import": "NOT_VERIFIED",
+  "human_decision": "NOT_VERIFIED",
+  "public_reach_addition": "NOT_VERIFIED",
+  "selected_original_dois": [],
+  "selected_expansion_seed_dois": [
+    "10.1029/2024gl109890"
+  ],
+  "fast_exited_public_reach": [
+    "https://github.com/chrisrac/objective_thresholds"
+  ],
+  "fast_exited_public_scout": [],
+  "new_original_full_decisions": [],
+  "new_expansion_decisions": [],
+  "research_only_holds": [
+    "10.5281/zenodo.12627444",
+    "10.7302/17vn-x488"
+  ],
+  "technical_or_funding_holds": [
+    "10.5281/zenodo.12627444: PUBLIC_IDENTITY_GATE_INCOMPLETE; PROJECT_ATTRIBUTION_UNVERIFIED; Zenodo API inaccessible 2026-11-13; independently author-linked GitHub README verified; complete SHA-verified REACH cache, inbox, NOAA IR, version-family gates unverified",
+    "10.7302/17vn-x488: SOURCE_ACCESS_FAILURE DataCite API inaccessible 2026-11-13; PUBLIC_IDENTITY_GATE_INCOMPLETE"
+  ],
+  "published_public_batch_urls": [],
+  "guarded_handoff_run_urls": [],
+  "prior_note_sha256_reused": [],
+  "prior_metadata_fingerprints_reused": [],
+  "evidence_notes": [
+    {
+      "identity": "https://github.com/chrisrac/objective_thresholds",
+      "disposition": "VERIFIED_EXISTING_REACH_ARTIFACT",
+      "record_id": "reach-000079",
+      "reach_uid": "reachuid-v1-2db795d7c2e4513ff44d2c5a7fd97532",
+      "award": "NA19OAR4590411",
+      "proof": "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/index/part-001.csv",
+      "detail_shard": "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/details/part-010.csv",
+      "note": "Exact current primary URL verified in both live main shards; full comparison cache SHA not independently verified"
+    },
+    {
+      "identity": "10.5281/zenodo.12627444",
+      "native_source": "https://github.com/abkenyon/GLStormTrends_2024/blob/main/README.md",
+      "note": "Author-linked README explicitly identifies article and Zenodo DOI; release/version, full REACH/Scout/IR and project funding remain unverified"
+    }
+  ]
+}
