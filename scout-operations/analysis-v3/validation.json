@@ -1,8 +1,8 @@
 {
   "claim_label": "VERIFIED_SOURCE",
-  "checked_at_utc": "2026-11-12T13:25:34.603953+00:00",
+  "checked_at_utc": "2026-11-13T03:27:43.506462+00:00",
   "source_commit": "b21f3271c92ad1e7a4643104920bfb214c65b186",
-  "branch": "analysis-v3-read-only",
+  "branch": "analysis-v3-pr2-ledger-held",
   "checks": [
     {
       "claim_label": "VERIFIED_SOURCE",
@@ -105,6 +105,12 @@
       "check": "Report source citations resolve to existing lines",
       "passed": true,
       "evidence": "[]"
+    },
+    {
+      "claim_label": "VERIFIED_SOURCE",
+      "check": "Gold candidate supported pairs exactly match written proposal",
+      "passed": true,
+      "evidence": "{\"candidate_pairs\": 38, \"human_adjudicated_pairs\": 0, \"source_reviewed_relation_basis\": {\"DOCUMENT_DOI_MENTION_REQUIRES_REVIEW\": 6, \"EXPLICIT_TYPED_SUPPORT_RELATION\": 4}, \"source_supported_proposal_pairs\": 10, \"supported_pair_sets_equal\": true}"
     },
     {
       "claim_label": "VERIFIED_SOURCE",

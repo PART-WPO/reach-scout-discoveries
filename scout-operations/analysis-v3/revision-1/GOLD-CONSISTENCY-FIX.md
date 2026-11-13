@@ -1,0 +1,13 @@
+# Source-review proposal consistency correction
+
+VERIFIED_SOURCE: The earlier candidate CSV marked all ten explicit relations as source-supported. Only four of those pairs overlapped the ten rows in the written source-review proposal. The incorrect six comprised five IsCitedBy relationships and one IsDerivedFrom relationship; the missing six had written author-README or dataset-catalog review reasons (`scout-operations/analysis-v3/revision-1/test_gold_proposal.py:38`). The previous integrity checks did not compare the exact supported-pair sets.
+
+INFERRED: Treat `gold-source-reviewed.csv` as the proposal authority. Preserve its ten pair identities and written reasons. A registry relation, citation, derivation or title match alone does not grant membership in that proposal. This correction does not adjudicate the proposal as human truth.
+
+VERIFIED_SOURCE: Candidate source-support flags, claim tiers and written source-review reasons are now derived from that exact proposal. All ten proposal rows use the same source-supported-but-not-frozen state; the remaining 28 candidates remain unreviewed. Raw relation and evidence-class fields are retained as extraction provenance, while the added source_review_reason explains the agent's proposal (`scout-operations/analysis-v3/revision-1/gold_proposal.py:1`; `scout-operations/analysis-v3/revision-1/artifact-first-gold-candidates.csv:1`; `scout-operations/analysis-v3/revision-1/gold-source-reviewed.csv:1`).
+
+VERIFIED_SOURCE: Both generators use the shared labeling logic. The offline integrity verifier now checks exact artifact-record/paper-record/DOI membership, written reasons, evidence identity, claim tiers, unknown human adjudication and summary consistency. The regression suite reproduces the historical wrong-ten-pair set and proves it is rejected even when aggregate counts match (`scout-operations/analysis-v3/revision-1/gold_proposal.py:1`; `scout-operations/analysis-v3/revision-1/test_gold_proposal.py:1`; `scout-operations/analysis-v3/verify_analysis.py:1`).
+
+VERIFIED_SOURCE: The updated validation report contains 19 passing analysis checks. Nine offline regression tests pass. No external evidence was fetched again to relabel these rows (`scout-operations/analysis-v3/validation.json:1`; `scout-operations/analysis-v3/revision-1/gold_proposal.py:1`).
+
+NOT_DETERMINED: Human adjudication of the ten proposed pairs. All 38 candidates retain human_adjudication=NOT_DETERMINED; no frozen benchmark, approval, publication, funding assertion or operational scheduler was activated. The ledger PR remains on hold for owner review.

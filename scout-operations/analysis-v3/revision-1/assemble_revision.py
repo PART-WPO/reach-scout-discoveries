@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """INFERRED: Assemble follow-up analysis from saved public evidence; no network or operational writes."""
 import pathlib,json,csv,hashlib,re,collections,urllib.parse,datetime,html,subprocess
+from gold_proposal import SUPPORTED, synchronize_files
 O=pathlib.Path(__file__).resolve().parent;P=O.parent;R=P.parents[1];PREFIX='scout-operations/analysis-v3/revision-1/'
 def dump(n,d):
  p=O/n
@@ -37,8 +38,10 @@ for r in candidates:
  if r['evidence_class']=='EXPLICIT_TYPED_SUPPORT_RELATION':reason='Exact artifact metadata explicitly declares IsSupplementTo for the exact DOI associated with this REACH publication.'
  elif key in accepted_doc:reason=accepted_doc[key]
  if reason:
-  selected.append({**r,'claim_tier':'supporting output of a named paper','agent_source_review':'RELATIONSHIP_SUPPORTED','review_reason':reason,'human_adjudication':'NOT_DETERMINED','freeze_status':'PROPOSED_REFERENCE_CASE_AWAITING_OWNER_RATIFICATION','own_artifact_award':'NOT_DETERMINED'})
+  selected.append({**{k:v for k,v in r.items() if k != 'source_review_reason'},'gold_state':SUPPORTED,'claim_tier':'supporting output of a named paper','agent_source_review':'RELATIONSHIP_SUPPORTED','review_reason':reason,'human_adjudication':'NOT_DETERMINED','freeze_status':'PROPOSED_REFERENCE_CASE_AWAITING_OWNER_RATIFICATION','own_artifact_award':'NOT_DETERMINED'})
 writecsv('gold-source-reviewed.csv',selected)
+# Propagate exactly these reviewed members and reasons to the candidate view.
+synchronize_files(O)
 dump('gold-rebuild-summary.json',{'claim_label':'VERIFIED_SOURCE','direction':'234 existing artifacts toward named papers','candidate_pairs':len(candidates),'candidate_artifacts':len({r['artifact_record_id'] for r in candidates}),'source_reviewed_relationship_pairs':len(selected),'source_reviewed_unique_artifacts':len({r['artifact_record_id'] for r in selected}),'source_reviewed_relation_basis':dict(collections.Counter(r['evidence_class'] for r in selected)),'human_adjudicated_pairs':0,'frozen_benchmark_activated':False,'source':PREFIX+'gold-source-reviewed.csv:1','interpretation':'INFERRED: This rebuild enlarges the source-supported control proposal; owner ratification, work-family grouping and a frozen version precede benchmarking. It still measures rediscovery, not recall of outputs missing from REACH.'})
 # Full current public catalog manifest must match the earlier independently projected shards.
 live=load('live-reach-manifest.json')['body'];old=json.loads((P/'reach-manifest.json').read_text())['body'];same=live==old

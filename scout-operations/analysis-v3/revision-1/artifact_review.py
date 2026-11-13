@@ -4,6 +4,7 @@ No operational imports, credentials, publication, approval or catalog edits.
 """
 import concurrent.futures,csv,datetime,hashlib,html,json,re,threading,urllib.request,urllib.parse,urllib.error
 from pathlib import Path
+from gold_proposal import apply_source_review, read_csv
 O=Path(__file__).resolve().parent;PREV=O.parent;R=PREV.parents[1];RECEIPTS=O/'receipts';RECEIPTS.mkdir(exist_ok=True)
 from collections import defaultdict
 url_locks=defaultdict(threading.Lock)
@@ -88,7 +89,7 @@ strong={'IsSupplementTo','IsDocumentedBy','IsDescribedBy'}
 for a in reviews:
  for rel in a['explicit_relations']:
   for rid in rel['reach_publication_ids']:
-   pairs.append({'claim_label':'VERIFIED_SOURCE','artifact_record_id':a['artifact_record_id'],'artifact_title':a['artifact_title'],'paper_record_id':rid,'paper_doi':rel['target_doi'],'paper_title':pubbyid[rid]['Title'],'relation':rel['relation'],'evidence_class':'EXPLICIT_TYPED_SUPPORT_RELATION' if rel['relation'] in strong else 'EXPLICIT_RELATION_REQUIRES_ROLE_REVIEW','source':rel['source'],'human_adjudication':'NOT_DETERMINED','claim_tier':'supporting output of a named paper' if rel['relation'] in strong else 'unverified','gold_state':'SOURCE_SUPPORTED_CANDIDATE_NOT_FROZEN'})
+   pairs.append({'claim_label':'VERIFIED_SOURCE','artifact_record_id':a['artifact_record_id'],'artifact_title':a['artifact_title'],'paper_record_id':rid,'paper_doi':rel['target_doi'],'paper_title':pubbyid[rid]['Title'],'relation':rel['relation'],'evidence_class':'EXPLICIT_TYPED_SUPPORT_RELATION' if rel['relation'] in strong else 'EXPLICIT_RELATION_REQUIRES_ROLE_REVIEW','source':rel['source'],'human_adjudication':'NOT_DETERMINED','claim_tier':'supporting output of a named paper' if rel['relation'] in strong else 'unverified','gold_state':'CANDIDATE_NOT_FROZEN'})
  for mention in a['document_doi_mentions']:
   for rid in mention['reach_publication_ids']:
    if any(x['artifact_record_id']==a['artifact_record_id'] and x['paper_record_id']==rid and x['paper_doi']==mention['doi'] for x in pairs):continue
@@ -98,6 +99,10 @@ for a in reviews:
   title=normtitle(r['Title'])
   if len(title)>35 and title in normtitle(a['artifact_title']) and not any(x['artifact_record_id']==a['artifact_record_id'] and x['paper_record_id']==r['Record ID'] for x in pairs):
    pairs.append({'claim_label':'INFERRED','artifact_record_id':a['artifact_record_id'],'artifact_title':a['artifact_title'],'paper_record_id':r['Record ID'],'paper_doi':' | '.join(seedbyid[r['Record ID']]['seed_dois']),'paper_title':r['Title'],'relation':'Full publication title in artifact title','evidence_class':'TITLE_ASSOCIATION_REQUIRES_CONFIRMATION','source':'scout-operations/analysis-v3/reach-public-projection.json:1','human_adjudication':'NOT_DETERMINED','claim_tier':'unverified','gold_state':'CANDIDATE_NOT_FROZEN'})
+# Typed relations are evidence, not proposal membership. Reuse only the
+# specifically reasoned rows from the written source-review proposal.
+proposal_path = O/'gold-source-reviewed.csv'
+pairs = apply_source_review(pairs, read_csv(proposal_path) if proposal_path.exists() else [])
 with (O/'artifact-first-gold-candidates.csv').open('w',newline='') as f:
  w=csv.DictWriter(f,fieldnames=list(pairs[0]));w.writeheader();w.writerows(pairs)
 # Resolve DOI-less publication records via native authoritative page meta; title search remains a candidate only.

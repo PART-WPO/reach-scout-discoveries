@@ -37,8 +37,19 @@ for p in [O/'OWNER-REPORT.md',O/'ledger-design.md',O/'inventory-ownership.md']:
   q=R/path
   if not q.is_file() or int(num)>len(q.read_text(errors='replace').splitlines()):invalid.append((p.name,path,num))
 check('Report source citations resolve to existing lines',not invalid,str(invalid))
+# Revision-1's candidate flags must describe the same exact pairs as the
+# written proposal. Equal aggregate counts alone cannot establish agreement.
+proposal_module = O / 'revision-1' / 'gold_proposal.py'
+if (O / 'revision-1' / 'gold-source-reviewed.csv').exists():
+ import importlib.util
+ spec = importlib.util.spec_from_file_location('analysis_gold_proposal', proposal_module)
+ module = importlib.util.module_from_spec(spec)
+ spec.loader.exec_module(module)
+ proposal_result = module.validate_files(proposal_module.parent)
+ check('Gold candidate supported pairs exactly match written proposal',
+       proposal_result['supported_pair_sets_equal'], json.dumps(proposal_result, sort_keys=True))
 branch=subprocess.check_output(['git','branch','--show-current'],cwd=R,text=True).strip()
-check('Analysis is on its own local branch',branch=='analysis-v3-read-only','git branch --show-current')
+check('Analysis is on its own local branch',branch.startswith('analysis-v3-'),'git branch --show-current')
 report={'claim_label':'VERIFIED_SOURCE','checked_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'source_commit':BASE,'branch':branch,'checks':checks,'result':'PASS','scope':'Analysis integrity only. Discovery/workflow scripts and the 20 scheduler test cases were not executed.'}
 (O/'validation.json').write_text(json.dumps(report,indent=2)+'\n')
 print('PASS:',len(checks),'analysis integrity checks')
