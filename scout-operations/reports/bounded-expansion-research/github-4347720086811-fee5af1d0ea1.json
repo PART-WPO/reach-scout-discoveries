@@ -1,0 +1,72 @@
+{
+  "schema": "reach-scout-bounded-expansion-research-v1",
+  "observed_at_utc": "2026-11-13T17:53:35.391051+00:00",
+  "seed_doi": "10.1007/s00382-026-08137-9",
+  "source_graph_sha256": "8ee84bb5d4aa440dc99923c0ce5fec63a77b17e9488457dd2b36b15f052a2a13",
+  "seed_expansion_fingerprint": "3b12d139dd73fe30dfefc70aa2a64797e026e046498891bbf898fafcf57d904a",
+  "seed_reach_identity_verified_in_graph": true,
+  "explicit_related_dois_preserved": [],
+  "source_lookups": [
+    {
+      "doi": "10.1007/s00382-026-08137-9",
+      "role": "VERIFIED_REACH_EXPANSION_SEED",
+      "source_status": "ok",
+      "official_provider": "crossref",
+      "official_title": "Do our models capture the range of ENSO events?",
+      "official_metadata_url": "https://api.crossref.org/works/10.1007/s00382-026-08137-9",
+      "publication_status": "official_journal_article",
+      "official_award_numbers_observed": [
+        "AGS2223263",
+        "AGS2241538",
+        "NA20OAR4320472",
+        "NA22OAR4310603",
+        "NA23OAR4310457",
+        "NA23OAR4590384"
+      ],
+      "separate_output_uniqueness": "NOT_VERIFIED",
+      "same_WPO_project_parent": "NOT_VERIFIED"
+    }
+  ],
+  "status": "OFFICIAL_SOURCE_CHECK_RECORDED",
+  "source_driven_discovery": {
+    "schema": "reach-scout-source-driven-expansion-v1",
+    "seed_doi": "10.1007/s00382-026-08137-9",
+    "source_checks": [
+      {
+        "kind": "crossref_references",
+        "url": "https://api.crossref.org/works/10.1007/s00382-026-08137-9",
+        "status": "SOURCE_READ",
+        "source_sha256": "5ba4fed6bb2bfbeacc5d0cbc55e37266e1a63cace3f7c7e0241207241cb4230c",
+        "data_code_doi_matches": 0
+      },
+      {
+        "kind": "noaa_ir_landing",
+        "url": "https://repository.library.noaa.gov/view/noaa/77137",
+        "status": "SOURCE_READ",
+        "source_sha256": "754ae1db1ab657524dadd72d74b6929b44254260b44a606781f4e480029fe490"
+      },
+      {
+        "kind": "noaa_ir_manuscript_pdf",
+        "url": "https://repository.library.noaa.gov/view/noaa/77137/noaa_77137_DS1.pdf",
+        "status": "SOURCE_READ",
+        "source_sha256": "b9d96152edaca70419227e724e227d878056c5070cb61736671da30daf7963e3",
+        "data_code_doi_matches": 0,
+        "pdf_text_characters": 113260,
+        "pdf_doi_tokens_observed": 1
+      }
+    ],
+    "discovered_doi_leads": [],
+    "status": "NO_DATA_CODE_DOI_IDENTIFIED",
+    "new_public_candidates": 0,
+    "private_hub_import": "NOT_VERIFIED"
+  },
+  "new_source_driven_leads_screened": [],
+  "new_distinct_doi_leads_found": 0,
+  "new_public_candidate_count": 0,
+  "new_related_output_eligibility_confirmed": 0,
+  "separate_expansion_decisions_completed": 0,
+  "reason_not_a_completed_expansion": "Source metadata and DOI edges are research leads; distinct output identity, preprint, public REACH/Scout duplicate and exact WPO project funding require independent checks.",
+  "next_action": "Investigate official metadata and full current REACH/Scout identity for distinct linked DOI(s); verify their OWN publisher award and primary SPARK parent before any Needs Investigation or New Candidate.",
+  "private_hub_import": "NOT_VERIFIED",
+  "human_approval": "NOT_VERIFIED"
+}
