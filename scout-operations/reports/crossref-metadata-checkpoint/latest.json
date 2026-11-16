@@ -1,25 +1,25 @@
 {
   "counts": {
-    "abstract_missing_in_scout_and_crossref": 4,
+    "abstract_missing_in_scout_and_crossref": 7,
     "abstract_missing_in_scout_recoverable": 0,
-    "api_full_pub_date": 32,
-    "crossref_has_abstract": 48,
-    "crossref_has_funder_awards": 43,
-    "crossref_publications": 62,
+    "api_full_pub_date": 38,
+    "crossref_has_abstract": 60,
+    "crossref_has_funder_awards": 58,
+    "crossref_publications": 77,
     "crossref_vs_scout_date_differs": 17,
-    "first_of_month_defaults": 29,
+    "first_of_month_defaults": 38,
     "no_publication_date": 1,
-    "partial_only_pub_date": 29,
+    "partial_only_pub_date": 38,
     "preferred_date_differs_from_existing_scout": 17,
-    "preferred_date_matches_existing_scout": 37,
-    "reach_pub_date_satisfied": 61,
+    "preferred_date_matches_existing_scout": 52,
+    "reach_pub_date_satisfied": 76,
     "scout_missing_date": 7,
     "scout_missing_date_recoverable": 7,
     "scout_missing_date_resolved_by_exact_pub": 1,
     "scout_missing_date_resolved_by_month_first": 6,
     "scout_missing_date_still_unresolved": 0,
-    "source_field_online": 11,
-    "source_field_print": 48
+    "source_field_online": 14,
+    "source_field_print": 60
   },
   "policy": "WPO uses Crossref published-print first, else published-online (posted for preprints), else published/issued. If YYYY-MM only, use YYYY-MM-01 with a flag. Crossref created is DOI registration and not Pub Date. Preserve existing human reviews.",
   "records": [
@@ -459,6 +459,102 @@
       "work_type": "journal-article"
     },
     {
+      "abstract_already_in_scout": false,
+      "abstract_available_from_crossref": false,
+      "accepted_date_precision": "month",
+      "accepted_reach_pub_date": "2022-09-01",
+      "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
+      "authors": [
+        "Dong-Jun Seo",
+        "Haojing Shen",
+        "Haksu Lee"
+      ],
+      "awards_in_abstract": [],
+      "awards_in_crossref_funder": [
+        "NA16OAR4590232"
+      ],
+      "best_partial_basis": "published-print",
+      "best_partial_date": "2022-09",
+      "crossref_publication_date": "",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "matched",
+      "doi": "10.1016/j.cageo.2022.105193",
+      "doi_registered_date": {
+        "full_date": "2022-07-16",
+        "precision": "day",
+        "value": "2022-07-16"
+      },
+      "evidence": "https://api.crossref.org/works/10.1016/j.cageo.2022.105193",
+      "first_of_month_default": true,
+      "funder_names": [
+        "NOAA"
+      ],
+      "issue": "",
+      "journal": "Computers &amp; Geosciences",
+      "license_urls": [
+        "https://www.elsevier.com/tdm/userlicense/1.0/",
+        "https://www.elsevier.com/legal/tdmrep-license",
+        "http://www.elsevier.com/open-access/userlicense/1.0/",
+        "https://doi.org/10.15223/policy-017",
+        "https://doi.org/10.15223/policy-037",
+        "https://doi.org/10.15223/policy-012",
+        "https://doi.org/10.15223/policy-029",
+        "https://doi.org/10.15223/policy-004"
+      ],
+      "metadata_deposited_date": {
+        "full_date": "2025-09-25",
+        "precision": "day",
+        "value": "2025-09-25"
+      },
+      "pages": "105193",
+      "preferred_date_differs_from_existing_scout": false,
+      "preferred_date_matches_existing_scout": true,
+      "pub_date_satisfied": true,
+      "publication_dates": {
+        "issued": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2022-09"
+        },
+        "posted": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2022-09"
+        },
+        "published-online": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published-print": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2022-09"
+        }
+      },
+      "publisher": "Elsevier BV",
+      "reach_output_type": "1",
+      "related_record_evidence": {},
+      "review_keys": [],
+      "reviewable_recovered_fields": [],
+      "scout_origins": [
+        "staged"
+      ],
+      "scout_publication_dates": [
+        "2022-09-01"
+      ],
+      "scout_source_rows": 1,
+      "source": "crossref",
+      "title": "Adaptive conditional bias-penalized Kalman filter with minimization of degrees of freedom for noise for superior state estimation and prediction of extremes",
+      "volume": "166",
+      "work_type": "journal-article"
+    },
+    {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": false,
       "accepted_date_precision": "month",
@@ -651,6 +747,330 @@
       "source": "crossref",
       "title": "PyGeoweaver: Tangible workflow tool for enhancing scientific research productivity and FAIRness",
       "volume": "27",
+      "work_type": "journal-article"
+    },
+    {
+      "abstract_already_in_scout": false,
+      "abstract_available_from_crossref": false,
+      "accepted_date_precision": "month",
+      "accepted_reach_pub_date": "2025-06-01",
+      "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
+      "authors": [
+        "Liam Thompson",
+        "Chenghao Wang",
+        "Cenlin He",
+        "Tzu-Shun Lin",
+        "Changhai Liu",
+        "Jimy Dudhia"
+      ],
+      "awards_in_abstract": [],
+      "awards_in_crossref_funder": [
+        "80NSSC20K1262",
+        "80NSSC24K0357",
+        "80NSSC24K1056",
+        "CNS-2301858",
+        "G24AC00475",
+        "NA21OAR4590361",
+        "OIA-2327435",
+        "OIA-327435"
+      ],
+      "best_partial_basis": "published-print",
+      "best_partial_date": "2025-06",
+      "crossref_publication_date": "",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "matched",
+      "doi": "10.1016/j.uclim.2025.102375",
+      "doi_registered_date": {
+        "full_date": "2025-03-20",
+        "precision": "day",
+        "value": "2025-03-20"
+      },
+      "evidence": "https://api.crossref.org/works/10.1016/j.uclim.2025.102375",
+      "first_of_month_default": true,
+      "funder_names": [
+        "National Aeronautics and Space Administration",
+        "National Aeronautics and Space Administration",
+        "National Aeronautics and Space Administration",
+        "National Science Foundation",
+        "National Science Foundation",
+        "National Science Foundation",
+        "National Center for Atmospheric Research",
+        "US Geological Survey",
+        "National Oceanic and Atmospheric Administration",
+        "University of Oklahoma"
+      ],
+      "issue": "",
+      "journal": "Urban Climate",
+      "license_urls": [
+        "https://www.elsevier.com/tdm/userlicense/1.0/",
+        "https://www.elsevier.com/legal/tdmrep-license",
+        "http://www.elsevier.com/open-access/userlicense/1.0/",
+        "https://doi.org/10.15223/policy-017",
+        "https://doi.org/10.15223/policy-037",
+        "https://doi.org/10.15223/policy-012",
+        "https://doi.org/10.15223/policy-029",
+        "https://doi.org/10.15223/policy-004"
+      ],
+      "metadata_deposited_date": {
+        "full_date": "2026-05-15",
+        "precision": "day",
+        "value": "2026-05-15"
+      },
+      "pages": "102375",
+      "preferred_date_differs_from_existing_scout": false,
+      "preferred_date_matches_existing_scout": true,
+      "pub_date_satisfied": true,
+      "publication_dates": {
+        "issued": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2025-06"
+        },
+        "posted": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2025-06"
+        },
+        "published-online": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published-print": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2025-06"
+        }
+      },
+      "publisher": "Elsevier BV",
+      "reach_output_type": "1",
+      "related_record_evidence": {},
+      "review_keys": [],
+      "reviewable_recovered_fields": [],
+      "scout_origins": [
+        "staged"
+      ],
+      "scout_publication_dates": [
+        "2025-06-01"
+      ],
+      "scout_source_rows": 1,
+      "source": "crossref",
+      "title": "Assessment of convection-permitting hydroclimate modeling in urban areas across the contiguous United States",
+      "volume": "61",
+      "work_type": "journal-article"
+    },
+    {
+      "abstract_already_in_scout": true,
+      "abstract_available_from_crossref": true,
+      "accepted_date_precision": "day",
+      "accepted_reach_pub_date": "2024-02-16",
+      "accepted_reach_pub_date_source": "Crossref published-print",
+      "authors": [
+        "Lucas C. Laurindo",
+        "Leo Siqueira",
+        "R. Justin Small",
+        "LuAnne Thompson",
+        "Benjamin P. Kirtman"
+      ],
+      "awards_in_abstract": [],
+      "awards_in_crossref_funder": [
+        "80NSSC22K1283",
+        "AGS2241538",
+        "NA20OAR4320472",
+        "NA22OAR4310603",
+        "NA23OAR4590383"
+      ],
+      "best_partial_basis": "published-print",
+      "best_partial_date": "2024-02-16",
+      "crossref_publication_date": "2024-02-16",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "matched",
+      "doi": "10.1029/2023gl106354",
+      "doi_registered_date": {
+        "full_date": "2024-02-07",
+        "precision": "day",
+        "value": "2024-02-07"
+      },
+      "evidence": "https://api.crossref.org/works/10.1029/2023gl106354",
+      "first_of_month_default": false,
+      "funder_names": [
+        "National Aeronautics and Space Administration",
+        "National Oceanic and Atmospheric Administration",
+        "National Oceanic and Atmospheric Administration",
+        "National Oceanic and Atmospheric Administration",
+        "National Science Foundation"
+      ],
+      "issue": "3",
+      "journal": "Geophysical Research Letters",
+      "license_urls": [
+        "http://creativecommons.org/licenses/by-nc-nd/4.0/"
+      ],
+      "metadata_deposited_date": {
+        "full_date": "2024-10-26",
+        "precision": "day",
+        "value": "2024-10-26"
+      },
+      "pages": "e2023GL106354",
+      "preferred_date_differs_from_existing_scout": false,
+      "preferred_date_matches_existing_scout": true,
+      "pub_date_satisfied": true,
+      "publication_dates": {
+        "issued": {
+          "full_date": "2024-02-05",
+          "precision": "day",
+          "value": "2024-02-05"
+        },
+        "posted": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published": {
+          "full_date": "2024-02-05",
+          "precision": "day",
+          "value": "2024-02-05"
+        },
+        "published-online": {
+          "full_date": "2024-02-05",
+          "precision": "day",
+          "value": "2024-02-05"
+        },
+        "published-print": {
+          "full_date": "2024-02-16",
+          "precision": "day",
+          "value": "2024-02-16"
+        }
+      },
+      "publisher": "American Geophysical Union (AGU)",
+      "reach_output_type": "1",
+      "related_record_evidence": {
+        "has-preprint": [
+          {
+            "asserted-by": "object",
+            "id": "10.22541/essoar.169603592.22953523/v1",
+            "id-type": "doi"
+          }
+        ]
+      },
+      "review_keys": [],
+      "reviewable_recovered_fields": [],
+      "scout_origins": [
+        "staged"
+      ],
+      "scout_publication_dates": [
+        "2024-02-16"
+      ],
+      "scout_source_rows": 1,
+      "source": "crossref",
+      "title": "Quantifying the Contribution of Ocean Advection and Surface Flux to the Upper‐Ocean Salinity Variability Resolved by Climate Model Simulations",
+      "volume": "51",
+      "work_type": "journal-article"
+    },
+    {
+      "abstract_already_in_scout": true,
+      "abstract_available_from_crossref": true,
+      "accepted_date_precision": "day",
+      "accepted_reach_pub_date": "2024-03-16",
+      "accepted_reach_pub_date_source": "Crossref published-print",
+      "authors": [
+        "Kurt A. Hansen",
+        "Matthew A. Janiga",
+        "Sharanya J. Majumdar",
+        "Benjamin P. Kirtman"
+      ],
+      "awards_in_abstract": [],
+      "awards_in_crossref_funder": [
+        "AGS 2241538",
+        "AGS‐1747781",
+        "NA20OAR4320472",
+        "NA22OAR4310603",
+        "NA23OAR4590383",
+        "PE 62435N"
+      ],
+      "best_partial_basis": "published-print",
+      "best_partial_date": "2024-03-16",
+      "crossref_publication_date": "2024-03-16",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "matched",
+      "doi": "10.1029/2023gl106872",
+      "doi_registered_date": {
+        "full_date": "2024-03-06",
+        "precision": "day",
+        "value": "2024-03-06"
+      },
+      "evidence": "https://api.crossref.org/works/10.1029/2023gl106872",
+      "first_of_month_default": false,
+      "funder_names": [
+        "National Science Foundation",
+        "National Science Foundation",
+        "National Oceanic and Atmospheric Administration",
+        "National Oceanic and Atmospheric Administration",
+        "National Oceanic and Atmospheric Administration",
+        "U.S. Naval Research Laboratory"
+      ],
+      "issue": "5",
+      "journal": "Geophysical Research Letters",
+      "license_urls": [
+        "http://creativecommons.org/licenses/by-nc-nd/4.0/",
+        "http://creativecommons.org/licenses/by-nc-nd/4.0/",
+        "http://doi.wiley.com/10.1002/tdm_license_1.1"
+      ],
+      "metadata_deposited_date": {
+        "full_date": "2026-04-29",
+        "precision": "day",
+        "value": "2026-04-29"
+      },
+      "pages": "e2023GL106872",
+      "preferred_date_differs_from_existing_scout": false,
+      "preferred_date_matches_existing_scout": true,
+      "pub_date_satisfied": true,
+      "publication_dates": {
+        "issued": {
+          "full_date": "2024-03-06",
+          "precision": "day",
+          "value": "2024-03-06"
+        },
+        "posted": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published": {
+          "full_date": "2024-03-06",
+          "precision": "day",
+          "value": "2024-03-06"
+        },
+        "published-online": {
+          "full_date": "2024-03-06",
+          "precision": "day",
+          "value": "2024-03-06"
+        },
+        "published-print": {
+          "full_date": "2024-03-16",
+          "precision": "day",
+          "value": "2024-03-16"
+        }
+      },
+      "publisher": "American Geophysical Union (AGU)",
+      "reach_output_type": "1",
+      "related_record_evidence": {},
+      "review_keys": [],
+      "reviewable_recovered_fields": [],
+      "scout_origins": [
+        "staged"
+      ],
+      "scout_publication_dates": [
+        "2024-03-16"
+      ],
+      "scout_source_rows": 1,
+      "source": "crossref",
+      "title": "Impact of MJO Propagation Speed on Active Atlantic Tropical Cyclone Activity Periods",
+      "volume": "51",
       "work_type": "journal-article"
     },
     {
@@ -1231,6 +1651,105 @@
       "work_type": "journal-article"
     },
     {
+      "abstract_already_in_scout": false,
+      "abstract_available_from_crossref": false,
+      "accepted_date_precision": "day",
+      "accepted_reach_pub_date": "2024-10-18",
+      "accepted_reach_pub_date_source": "Crossref published-online",
+      "authors": [
+        "Thomas Enzminger",
+        "J. Toby Minear",
+        "Ben Livneh"
+      ],
+      "awards_in_abstract": [],
+      "awards_in_crossref_funder": [
+        "NA18OAR4590391"
+      ],
+      "best_partial_basis": "published-online",
+      "best_partial_date": "2024-10-18",
+      "crossref_publication_date": "2024-10-18",
+      "crossref_publication_date_basis": "published-online",
+      "date_comparison": "matched",
+      "doi": "10.1038/s41597-024-03916-7",
+      "doi_registered_date": {
+        "full_date": "2024-10-18",
+        "precision": "day",
+        "value": "2024-10-18"
+      },
+      "evidence": "https://api.crossref.org/works/10.1038/s41597-024-03916-7",
+      "first_of_month_default": false,
+      "funder_names": [
+        "United States Department of Commerce | National Oceanic and Atmospheric Administration",
+        "United States Department of Commerce | National Oceanic and Atmospheric Administration"
+      ],
+      "issue": "1",
+      "journal": "Scientific Data",
+      "license_urls": [
+        "https://creativecommons.org/licenses/by-nc-nd/4.0",
+        "https://creativecommons.org/licenses/by-nc-nd/4.0"
+      ],
+      "metadata_deposited_date": {
+        "full_date": "2024-10-18",
+        "precision": "day",
+        "value": "2024-10-18"
+      },
+      "pages": "1153",
+      "preferred_date_differs_from_existing_scout": false,
+      "preferred_date_matches_existing_scout": true,
+      "pub_date_satisfied": true,
+      "publication_dates": {
+        "issued": {
+          "full_date": "2024-10-18",
+          "precision": "day",
+          "value": "2024-10-18"
+        },
+        "posted": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published": {
+          "full_date": "2024-10-18",
+          "precision": "day",
+          "value": "2024-10-18"
+        },
+        "published-online": {
+          "full_date": "2024-10-18",
+          "precision": "day",
+          "value": "2024-10-18"
+        },
+        "published-print": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        }
+      },
+      "publisher": "Springer Science and Business Media LLC",
+      "reach_output_type": "1",
+      "related_record_evidence": {
+        "references": [
+          {
+            "asserted-by": "subject",
+            "id": "10.5281/zenodo.7868763",
+            "id-type": "doi"
+          }
+        ]
+      },
+      "review_keys": [],
+      "reviewable_recovered_fields": [],
+      "scout_origins": [
+        "staged"
+      ],
+      "scout_publication_dates": [
+        "2024-10-18"
+      ],
+      "scout_source_rows": 1,
+      "source": "crossref",
+      "title": "HyG: A hydraulic geometry dataset derived from historical stream gage measurements across the conterminous US",
+      "volume": "11",
+      "work_type": "journal-article"
+    },
+    {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": false,
       "accepted_date_precision": "day",
@@ -1401,6 +1920,103 @@
       "source": "crossref",
       "title": "The formation, character and changing nature of mesoscale convective systems",
       "volume": "1",
+      "work_type": "journal-article"
+    },
+    {
+      "abstract_already_in_scout": true,
+      "abstract_available_from_crossref": true,
+      "accepted_date_precision": "day",
+      "accepted_reach_pub_date": "2026-09-02",
+      "accepted_reach_pub_date_source": "Crossref published-online",
+      "authors": [
+        "Baoqiang Xiang",
+        "Lucas Harris",
+        "Gan Zhang",
+        "Xiuyuan Ding"
+      ],
+      "awards_in_abstract": [],
+      "awards_in_crossref_funder": [
+        "NA21OAR4310383",
+        "NA22OAR4590217",
+        "NA23OAR4320198",
+        "RISE-2530555"
+      ],
+      "best_partial_basis": "published-online",
+      "best_partial_date": "2026-09-02",
+      "crossref_publication_date": "2026-09-02",
+      "crossref_publication_date_basis": "published-online",
+      "date_comparison": "matched",
+      "doi": "10.1038/s43247-026-03991-1",
+      "doi_registered_date": {
+        "full_date": "2026-09-02",
+        "precision": "day",
+        "value": "2026-09-02"
+      },
+      "evidence": "https://api.crossref.org/works/10.1038/s43247-026-03991-1",
+      "first_of_month_default": false,
+      "funder_names": [
+        "United States Department of Commerce | National Oceanic and Atmospheric Administration",
+        "United States Department of Commerce | National Oceanic and Atmospheric Administration",
+        "United States Department of Commerce | National Oceanic and Atmospheric Administration",
+        "National Science Foundation"
+      ],
+      "issue": "",
+      "journal": "Communications Earth &amp; Environment",
+      "license_urls": [
+        "https://creativecommons.org/licenses/by/4.0",
+        "https://creativecommons.org/licenses/by/4.0"
+      ],
+      "metadata_deposited_date": {
+        "full_date": "2026-09-02",
+        "precision": "day",
+        "value": "2026-09-02"
+      },
+      "pages": "",
+      "preferred_date_differs_from_existing_scout": false,
+      "preferred_date_matches_existing_scout": true,
+      "pub_date_satisfied": true,
+      "publication_dates": {
+        "issued": {
+          "full_date": "2026-09-02",
+          "precision": "day",
+          "value": "2026-09-02"
+        },
+        "posted": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published": {
+          "full_date": "2026-09-02",
+          "precision": "day",
+          "value": "2026-09-02"
+        },
+        "published-online": {
+          "full_date": "2026-09-02",
+          "precision": "day",
+          "value": "2026-09-02"
+        },
+        "published-print": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        }
+      },
+      "publisher": "Springer Science and Business Media LLC",
+      "reach_output_type": "1",
+      "related_record_evidence": {},
+      "review_keys": [],
+      "reviewable_recovered_fields": [],
+      "scout_origins": [
+        "staged"
+      ],
+      "scout_publication_dates": [
+        "2026-09-02"
+      ],
+      "scout_source_rows": 1,
+      "source": "crossref",
+      "title": "Dual physical pathways shape subseasonal-to-seasonal predictability of North American summer heat extremes",
+      "volume": "",
       "work_type": "journal-article"
     },
     {
@@ -2708,6 +3324,98 @@
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
       "accepted_date_precision": "month",
+      "accepted_reach_pub_date": "2025-04-01",
+      "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
+      "authors": [
+        "Yingkai Sha",
+        "Ryan A. Sobash",
+        "David John Gagne"
+      ],
+      "awards_in_abstract": [],
+      "awards_in_crossref_funder": [
+        "NA19OAR4590128",
+        "RISE-2019758"
+      ],
+      "best_partial_basis": "published-print",
+      "best_partial_date": "2025-04",
+      "crossref_publication_date": "",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "matched",
+      "doi": "10.1175/aies-d-24-0063.1",
+      "doi_registered_date": {
+        "full_date": "2025-05-06",
+        "precision": "day",
+        "value": "2025-05-06"
+      },
+      "evidence": "https://api.crossref.org/works/10.1175/aies-d-24-0063.1",
+      "first_of_month_default": true,
+      "funder_names": [
+        "NOAA Oceanic and Atmospheric Research Grant",
+        "NSF National Center for Atmospheric Research Short-term Explicit Prediction Program",
+        "National Science Foundation"
+      ],
+      "issue": "2",
+      "journal": "Artificial Intelligence for the Earth Systems",
+      "license_urls": [
+        "http://www.ametsoc.org/PUBSReuseLicenses"
+      ],
+      "metadata_deposited_date": {
+        "full_date": "2025-10-13",
+        "precision": "day",
+        "value": "2025-10-13"
+      },
+      "pages": "",
+      "preferred_date_differs_from_existing_scout": false,
+      "preferred_date_matches_existing_scout": true,
+      "pub_date_satisfied": true,
+      "publication_dates": {
+        "issued": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2025-04"
+        },
+        "posted": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2025-04"
+        },
+        "published-online": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published-print": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2025-04"
+        }
+      },
+      "publisher": "American Meteorological Society",
+      "reach_output_type": "1",
+      "related_record_evidence": {},
+      "review_keys": [],
+      "reviewable_recovered_fields": [],
+      "scout_origins": [
+        "staged"
+      ],
+      "scout_publication_dates": [
+        "2025-04-01"
+      ],
+      "scout_source_rows": 1,
+      "source": "crossref",
+      "title": "Improving Ensemble Extreme Precipitation Forecasts Using Generative Artificial Intelligence",
+      "volume": "4",
+      "work_type": "journal-article"
+    },
+    {
+      "abstract_already_in_scout": true,
+      "abstract_available_from_crossref": true,
+      "accepted_date_precision": "month",
       "accepted_reach_pub_date": "2026-10-01",
       "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
       "authors": [
@@ -2742,9 +3450,9 @@
         "http://www.ametsoc.org/PUBSReuseLicenses"
       ],
       "metadata_deposited_date": {
-        "full_date": "2026-11-06",
+        "full_date": "2026-11-16",
         "precision": "day",
-        "value": "2026-11-06"
+        "value": "2026-11-16"
       },
       "pages": "",
       "preferred_date_differs_from_existing_scout": false,
@@ -3764,6 +4472,99 @@
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
+      "accepted_date_precision": "day",
+      "accepted_reach_pub_date": "2026-07-01",
+      "accepted_reach_pub_date_source": "Crossref published-print",
+      "authors": [
+        "Nakbin Choi",
+        "Jakub Stanczak",
+        "Cristiana Stan"
+      ],
+      "awards_in_abstract": [],
+      "awards_in_crossref_funder": [
+        "NA19NES4320002",
+        "NA22OAR4590216",
+        "NA24NESX432C0001"
+      ],
+      "best_partial_basis": "published-print",
+      "best_partial_date": "2026-07-01",
+      "crossref_publication_date": "2026-07-01",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "matched",
+      "doi": "10.1175/jcli-d-25-0247.1",
+      "doi_registered_date": {
+        "full_date": "2026-05-05",
+        "precision": "day",
+        "value": "2026-05-05"
+      },
+      "evidence": "https://api.crossref.org/works/10.1175/jcli-d-25-0247.1",
+      "first_of_month_default": false,
+      "funder_names": [
+        "NOAA Weather Program Office",
+        "NOAA Weather Program Office",
+        "NOAA Weather Program Office"
+      ],
+      "issue": "13",
+      "journal": "Journal of Climate",
+      "license_urls": [
+        "http://www.ametsoc.org/PUBSReuseLicenses"
+      ],
+      "metadata_deposited_date": {
+        "full_date": "2026-06-16",
+        "precision": "day",
+        "value": "2026-06-16"
+      },
+      "pages": "3669-3684",
+      "preferred_date_differs_from_existing_scout": false,
+      "preferred_date_matches_existing_scout": true,
+      "pub_date_satisfied": true,
+      "publication_dates": {
+        "issued": {
+          "full_date": "2026-07-01",
+          "precision": "day",
+          "value": "2026-07-01"
+        },
+        "posted": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published": {
+          "full_date": "2026-07-01",
+          "precision": "day",
+          "value": "2026-07-01"
+        },
+        "published-online": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published-print": {
+          "full_date": "2026-07-01",
+          "precision": "day",
+          "value": "2026-07-01"
+        }
+      },
+      "publisher": "American Meteorological Society",
+      "reach_output_type": "1",
+      "related_record_evidence": {},
+      "review_keys": [],
+      "reviewable_recovered_fields": [],
+      "scout_origins": [
+        "staged"
+      ],
+      "scout_publication_dates": [
+        "2026-07-01"
+      ],
+      "scout_source_rows": 1,
+      "source": "crossref",
+      "title": "The Role of Atmosphere–Ocean Coupling on the Prediction of Madden–Julian Oscillation",
+      "volume": "39",
+      "work_type": "journal-article"
+    },
+    {
+      "abstract_already_in_scout": true,
+      "abstract_available_from_crossref": true,
       "accepted_date_precision": "month",
       "accepted_reach_pub_date": "2019-11-01",
       "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
@@ -4219,6 +5020,185 @@
     {
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
+      "accepted_date_precision": "month",
+      "accepted_reach_pub_date": "2025-12-01",
+      "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
+      "authors": [
+        "Braedon C. Stouffer",
+        "David J. Stensrud",
+        "Yunji Zhang"
+      ],
+      "awards_in_abstract": [],
+      "awards_in_crossref_funder": [
+        "AGS-2045504",
+        "NA24OARX459C0006"
+      ],
+      "best_partial_basis": "published-print",
+      "best_partial_date": "2025-12",
+      "crossref_publication_date": "",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "matched",
+      "doi": "10.1175/mwr-d-25-0146.1",
+      "doi_registered_date": {
+        "full_date": "2025-10-23",
+        "precision": "day",
+        "value": "2025-10-23"
+      },
+      "evidence": "https://api.crossref.org/works/10.1175/mwr-d-25-0146.1",
+      "first_of_month_default": true,
+      "funder_names": [
+        "National Science Foundation",
+        "National Oceanic and Atmospheric Administration"
+      ],
+      "issue": "12",
+      "journal": "Monthly Weather Review",
+      "license_urls": [
+        "http://www.ametsoc.org/PUBSReuseLicenses"
+      ],
+      "metadata_deposited_date": {
+        "full_date": "2025-12-05",
+        "precision": "day",
+        "value": "2025-12-05"
+      },
+      "pages": "2829-2843",
+      "preferred_date_differs_from_existing_scout": false,
+      "preferred_date_matches_existing_scout": true,
+      "pub_date_satisfied": true,
+      "publication_dates": {
+        "issued": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2025-12"
+        },
+        "posted": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2025-12"
+        },
+        "published-online": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published-print": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2025-12"
+        }
+      },
+      "publisher": "American Meteorological Society",
+      "reach_output_type": "1",
+      "related_record_evidence": {},
+      "review_keys": [],
+      "reviewable_recovered_fields": [],
+      "scout_origins": [
+        "staged"
+      ],
+      "scout_publication_dates": [
+        "2025-12-01"
+      ],
+      "scout_source_rows": 1,
+      "source": "crossref",
+      "title": "Estimates of Entrainment Zone Depth across the United States from Dual-Polarization WSR-88D Radar Observations",
+      "volume": "153",
+      "work_type": "journal-article"
+    },
+    {
+      "abstract_already_in_scout": true,
+      "abstract_available_from_crossref": true,
+      "accepted_date_precision": "month",
+      "accepted_reach_pub_date": "2026-11-01",
+      "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
+      "authors": [
+        "Aaron Johnson",
+        "Xuguang Wang"
+      ],
+      "awards_in_abstract": [],
+      "awards_in_crossref_funder": [
+        "NA24OARX459C0001"
+      ],
+      "best_partial_basis": "published-print",
+      "best_partial_date": "2026-11",
+      "crossref_publication_date": "",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "matched",
+      "doi": "10.1175/mwr-d-26-0134.1",
+      "doi_registered_date": {
+        "full_date": "2026-09-23",
+        "precision": "day",
+        "value": "2026-09-23"
+      },
+      "evidence": "https://api.crossref.org/works/10.1175/mwr-d-26-0134.1",
+      "first_of_month_default": true,
+      "funder_names": [
+        "NOAA Weather Program Office"
+      ],
+      "issue": "11",
+      "journal": "Monthly Weather Review",
+      "license_urls": [
+        "http://www.ametsoc.org/PUBSReuseLicenses"
+      ],
+      "metadata_deposited_date": {
+        "full_date": "2026-11-16",
+        "precision": "day",
+        "value": "2026-11-16"
+      },
+      "pages": "2411-2427",
+      "preferred_date_differs_from_existing_scout": false,
+      "preferred_date_matches_existing_scout": true,
+      "pub_date_satisfied": true,
+      "publication_dates": {
+        "issued": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2026-11"
+        },
+        "posted": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2026-11"
+        },
+        "published-online": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published-print": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2026-11"
+        }
+      },
+      "publisher": "American Meteorological Society",
+      "reach_output_type": "1",
+      "related_record_evidence": {},
+      "review_keys": [],
+      "reviewable_recovered_fields": [],
+      "scout_origins": [
+        "staged"
+      ],
+      "scout_publication_dates": [
+        "2026-11-01"
+      ],
+      "scout_source_rows": 1,
+      "source": "crossref",
+      "title": "Convection-Allowing Ensemble-Based Land–Atmosphere Coupled Background Error Covariance and Its Sampling Error: A Dryline Case Study",
+      "volume": "154",
+      "work_type": "journal-article"
+    },
+    {
+      "abstract_already_in_scout": true,
+      "abstract_available_from_crossref": true,
       "accepted_date_precision": "day",
       "accepted_reach_pub_date": "2018-06-01",
       "accepted_reach_pub_date_source": "Crossref published-print",
@@ -4494,6 +5474,106 @@
       "source": "crossref",
       "title": "A Hazard Multiple: Overlapping Tornado and Flash Flood Warnings in a National Weather Service Forecast Office in the Southeastern United States",
       "volume": "35",
+      "work_type": "journal-article"
+    },
+    {
+      "abstract_already_in_scout": true,
+      "abstract_available_from_crossref": true,
+      "accepted_date_precision": "month",
+      "accepted_reach_pub_date": "2021-06-01",
+      "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
+      "authors": [
+        "Evan A. Kalina",
+        "Isidora Jankov",
+        "Trevor Alcott",
+        "Joseph Olson",
+        "Jeffrey Beck",
+        "Judith Berner",
+        "David Dowell",
+        "Curtis Alexander"
+      ],
+      "awards_in_abstract": [],
+      "awards_in_crossref_funder": [
+        "NA17OAR4320101",
+        "NA17OAR4590172",
+        "NA17OAR4590181",
+        "NA19OAR4320073"
+      ],
+      "best_partial_basis": "published-print",
+      "best_partial_date": "2021-06",
+      "crossref_publication_date": "",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "matched",
+      "doi": "10.1175/waf-d-20-0098.1",
+      "doi_registered_date": {
+        "full_date": "2021-04-05",
+        "precision": "day",
+        "value": "2021-04-05"
+      },
+      "evidence": "https://api.crossref.org/works/10.1175/waf-d-20-0098.1",
+      "first_of_month_default": true,
+      "funder_names": [
+        "National Oceanic and Atmospheric Administration",
+        "National Oceanic and Atmospheric Administration",
+        "National Oceanic and Atmospheric Administration",
+        "National Oceanic and Atmospheric Administration"
+      ],
+      "issue": "3",
+      "journal": "Weather and Forecasting",
+      "license_urls": [
+        "http://www.ametsoc.org/PUBSReuseLicenses"
+      ],
+      "metadata_deposited_date": {
+        "full_date": "2025-07-21",
+        "precision": "day",
+        "value": "2025-07-21"
+      },
+      "pages": "791-804",
+      "preferred_date_differs_from_existing_scout": false,
+      "preferred_date_matches_existing_scout": true,
+      "pub_date_satisfied": true,
+      "publication_dates": {
+        "issued": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2021-06"
+        },
+        "posted": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2021-06"
+        },
+        "published-online": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published-print": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2021-06"
+        }
+      },
+      "publisher": "American Meteorological Society",
+      "reach_output_type": "1",
+      "related_record_evidence": {},
+      "review_keys": [],
+      "reviewable_recovered_fields": [],
+      "scout_origins": [
+        "staged"
+      ],
+      "scout_publication_dates": [
+        "2021-06-01"
+      ],
+      "scout_source_rows": 1,
+      "source": "crossref",
+      "title": "A Progress Report on the Development of the High-Resolution Rapid Refresh Ensemble",
+      "volume": "36",
       "work_type": "journal-article"
     },
     {
@@ -4776,6 +5856,97 @@
       "abstract_already_in_scout": true,
       "abstract_available_from_crossref": true,
       "accepted_date_precision": "month",
+      "accepted_reach_pub_date": "2026-08-01",
+      "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
+      "authors": [
+        "Adam D. Werkema",
+        "Heather D. Reeves",
+        "Jonathan J. Gourley"
+      ],
+      "awards_in_abstract": [],
+      "awards_in_crossref_funder": [
+        "NA21OAR4320204",
+        "NA22OAR4590169"
+      ],
+      "best_partial_basis": "published-print",
+      "best_partial_date": "2026-08",
+      "crossref_publication_date": "",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "matched",
+      "doi": "10.1175/waf-d-25-0244.1",
+      "doi_registered_date": {
+        "full_date": "2026-07-10",
+        "precision": "day",
+        "value": "2026-07-10"
+      },
+      "evidence": "https://api.crossref.org/works/10.1175/waf-d-25-0244.1",
+      "first_of_month_default": true,
+      "funder_names": [
+        "NOAA Research",
+        "NOAA Research"
+      ],
+      "issue": "8",
+      "journal": "Weather and Forecasting",
+      "license_urls": [
+        "http://www.ametsoc.org/PUBSReuseLicenses"
+      ],
+      "metadata_deposited_date": {
+        "full_date": "2026-08-21",
+        "precision": "day",
+        "value": "2026-08-21"
+      },
+      "pages": "1649-1659",
+      "preferred_date_differs_from_existing_scout": false,
+      "preferred_date_matches_existing_scout": true,
+      "pub_date_satisfied": true,
+      "publication_dates": {
+        "issued": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2026-08"
+        },
+        "posted": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2026-08"
+        },
+        "published-online": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published-print": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2026-08"
+        }
+      },
+      "publisher": "American Meteorological Society",
+      "reach_output_type": "1",
+      "related_record_evidence": {},
+      "review_keys": [],
+      "reviewable_recovered_fields": [],
+      "scout_origins": [
+        "staged"
+      ],
+      "scout_publication_dates": [
+        "2026-08-01"
+      ],
+      "scout_source_rows": 1,
+      "source": "crossref",
+      "title": "On the Use of Freezing Rain Local Storm Reports for Quantitative Purposes",
+      "volume": "41",
+      "work_type": "journal-article"
+    },
+    {
+      "abstract_already_in_scout": true,
+      "abstract_available_from_crossref": true,
+      "accepted_date_precision": "month",
       "accepted_reach_pub_date": "2026-10-01",
       "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
       "authors": [
@@ -4954,6 +6125,188 @@
       "source": "crossref",
       "title": "Contextualizing Disaster Phases Using Social Media Data: Hurricane Risk Visualizations during the Forecast and Warning Phase of Hurricane Irma",
       "volume": "15",
+      "work_type": "journal-article"
+    },
+    {
+      "abstract_already_in_scout": true,
+      "abstract_available_from_crossref": true,
+      "accepted_date_precision": "month",
+      "accepted_reach_pub_date": "2026-07-01",
+      "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
+      "authors": [
+        "Blake Checkoway",
+        "Jen Henderson"
+      ],
+      "awards_in_abstract": [],
+      "awards_in_crossref_funder": [
+        "NA18OAR4590309"
+      ],
+      "best_partial_basis": "published-print",
+      "best_partial_date": "2026-07",
+      "crossref_publication_date": "",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "matched",
+      "doi": "10.1175/wcas-d-25-0019.1",
+      "doi_registered_date": {
+        "full_date": "2026-07-31",
+        "precision": "day",
+        "value": "2026-07-31"
+      },
+      "evidence": "https://api.crossref.org/works/10.1175/wcas-d-25-0019.1",
+      "first_of_month_default": true,
+      "funder_names": [
+        "NOAA Research"
+      ],
+      "issue": "3",
+      "journal": "Weather, Climate, and Society",
+      "license_urls": [
+        "http://www.ametsoc.org/PUBSReuseLicenses"
+      ],
+      "metadata_deposited_date": {
+        "full_date": "2026-10-05",
+        "precision": "day",
+        "value": "2026-10-05"
+      },
+      "pages": "823-841",
+      "preferred_date_differs_from_existing_scout": false,
+      "preferred_date_matches_existing_scout": true,
+      "pub_date_satisfied": true,
+      "publication_dates": {
+        "issued": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2026-07"
+        },
+        "posted": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2026-07"
+        },
+        "published-online": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published-print": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2026-07"
+        }
+      },
+      "publisher": "American Meteorological Society",
+      "reach_output_type": "1",
+      "related_record_evidence": {},
+      "review_keys": [],
+      "reviewable_recovered_fields": [],
+      "scout_origins": [
+        "staged"
+      ],
+      "scout_publication_dates": [
+        "2026-07-01"
+      ],
+      "scout_source_rows": 1,
+      "source": "crossref",
+      "title": "“As Ready as We Can Be”: The Dynamics of Preparedness in Hurricane Florence",
+      "volume": "18",
+      "work_type": "journal-article"
+    },
+    {
+      "abstract_already_in_scout": true,
+      "abstract_available_from_crossref": true,
+      "accepted_date_precision": "month",
+      "accepted_reach_pub_date": "2026-04-01",
+      "accepted_reach_pub_date_source": "Crossref published-print (month -> day 01)",
+      "authors": [
+        "Liam E. Llewellyn",
+        "Joseph E. Trujillo-Falcón",
+        "Todd D. Fagin",
+        "Monica L. Bozeman",
+        "Samuel T. Halvorson",
+        "Ennis Shabab"
+      ],
+      "awards_in_abstract": [],
+      "awards_in_crossref_funder": [
+        "NA22OAR4590187"
+      ],
+      "best_partial_basis": "published-print",
+      "best_partial_date": "2026-04",
+      "crossref_publication_date": "",
+      "crossref_publication_date_basis": "published-print",
+      "date_comparison": "matched",
+      "doi": "10.1175/wcas-d-25-0104.1",
+      "doi_registered_date": {
+        "full_date": "2026-02-20",
+        "precision": "day",
+        "value": "2026-02-20"
+      },
+      "evidence": "https://api.crossref.org/works/10.1175/wcas-d-25-0104.1",
+      "first_of_month_default": true,
+      "funder_names": [
+        "NOAA Weather Program Office",
+        "University of Illinois at Urbana-Champaign",
+        "University of Oklahoma"
+      ],
+      "issue": "2",
+      "journal": "Weather, Climate, and Society",
+      "license_urls": [
+        "http://www.ametsoc.org/PUBSReuseLicenses"
+      ],
+      "metadata_deposited_date": {
+        "full_date": "2026-09-18",
+        "precision": "day",
+        "value": "2026-09-18"
+      },
+      "pages": "595-601",
+      "preferred_date_differs_from_existing_scout": false,
+      "preferred_date_matches_existing_scout": true,
+      "pub_date_satisfied": true,
+      "publication_dates": {
+        "issued": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2026-04"
+        },
+        "posted": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2026-04"
+        },
+        "published-online": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published-print": {
+          "full_date": "",
+          "precision": "month",
+          "value": "2026-04"
+        }
+      },
+      "publisher": "American Meteorological Society",
+      "reach_output_type": "1",
+      "related_record_evidence": {},
+      "review_keys": [],
+      "reviewable_recovered_fields": [],
+      "scout_origins": [
+        "staged"
+      ],
+      "scout_publication_dates": [
+        "2026-04-01"
+      ],
+      "scout_source_rows": 1,
+      "source": "crossref",
+      "title": "Multilingual Community Visualizations (MCV): A GIS Dashboard for Linguistic Research and NWS Operations",
+      "volume": "18",
       "work_type": "journal-article"
     },
     {
@@ -5321,6 +6674,95 @@
       "source": "crossref",
       "title": "Rapid Update with EnVar Direct Radar Reflectivity Data Assimilation for the NOAA Regional Convection-Allowing NMMB Model over the CONUS: System Description and Initial Experiment Results",
       "volume": "12",
+      "work_type": "journal-article"
+    },
+    {
+      "abstract_already_in_scout": true,
+      "abstract_available_from_crossref": true,
+      "accepted_date_precision": "day",
+      "accepted_reach_pub_date": "2025-07-18",
+      "accepted_reach_pub_date_source": "Crossref published-online",
+      "authors": [
+        "Elizabeth Tirone",
+        "William A. Gallus",
+        "Alexander J. Hamilton"
+      ],
+      "awards_in_abstract": [],
+      "awards_in_crossref_funder": [
+        "NA19OAR4590133"
+      ],
+      "best_partial_basis": "published-online",
+      "best_partial_date": "2025-07-18",
+      "crossref_publication_date": "2025-07-18",
+      "crossref_publication_date_basis": "published-online",
+      "date_comparison": "matched",
+      "doi": "10.3390/atmos16070881",
+      "doi_registered_date": {
+        "full_date": "2025-07-18",
+        "precision": "day",
+        "value": "2025-07-18"
+      },
+      "evidence": "https://api.crossref.org/works/10.3390/atmos16070881",
+      "first_of_month_default": false,
+      "funder_names": [
+        "NOAA"
+      ],
+      "issue": "7",
+      "journal": "Atmosphere",
+      "license_urls": [
+        "https://creativecommons.org/licenses/by/4.0/"
+      ],
+      "metadata_deposited_date": {
+        "full_date": "2025-10-09",
+        "precision": "day",
+        "value": "2025-10-09"
+      },
+      "pages": "881",
+      "preferred_date_differs_from_existing_scout": false,
+      "preferred_date_matches_existing_scout": true,
+      "pub_date_satisfied": true,
+      "publication_dates": {
+        "issued": {
+          "full_date": "2025-07-18",
+          "precision": "day",
+          "value": "2025-07-18"
+        },
+        "posted": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        },
+        "published": {
+          "full_date": "2025-07-18",
+          "precision": "day",
+          "value": "2025-07-18"
+        },
+        "published-online": {
+          "full_date": "2025-07-18",
+          "precision": "day",
+          "value": "2025-07-18"
+        },
+        "published-print": {
+          "full_date": "",
+          "precision": "missing",
+          "value": ""
+        }
+      },
+      "publisher": "MDPI AG",
+      "reach_output_type": "1",
+      "related_record_evidence": {},
+      "review_keys": [],
+      "reviewable_recovered_fields": [],
+      "scout_origins": [
+        "staged"
+      ],
+      "scout_publication_dates": [
+        "2025-07-18"
+      ],
+      "scout_source_rows": 1,
+      "source": "crossref",
+      "title": "Exploring the Explainability of a Machine Learning Tool to Improve Severe Thunderstorm Wind Reports",
+      "volume": "16",
       "work_type": "journal-article"
     },
     {
@@ -5936,8 +7378,8 @@
       "rows": 13
     },
     "staged": {
-      "batches": 40,
-      "rows": 93
+      "batches": 55,
+      "rows": 108
     }
   }
 }

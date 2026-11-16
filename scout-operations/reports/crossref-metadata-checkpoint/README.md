@@ -7,26 +7,26 @@ For Crossref works the office prefers published-print, falling back to published
 
 | Measure | Count |
 |---|---:|
-| Crossref publications | 62 |
-| Api full pub date | 32 |
-| Partial only pub date | 29 |
+| Crossref publications | 77 |
+| Api full pub date | 38 |
+| Partial only pub date | 38 |
 | No publication date | 1 |
 | Scout missing date | 7 |
 | Scout missing date recoverable | 7 |
-| Reach pub date satisfied | 61 |
+| Reach pub date satisfied | 76 |
 | Scout missing date resolved by month first | 6 |
 | Scout missing date resolved by exact pub | 1 |
-| Source field print | 48 |
-| Source field online | 11 |
-| Preferred date matches existing scout | 37 |
+| Source field print | 60 |
+| Source field online | 14 |
+| Preferred date matches existing scout | 52 |
 | Preferred date differs from existing scout | 17 |
-| First of month defaults | 29 |
+| First of month defaults | 38 |
 | Scout missing date still unresolved | 0 |
 | Crossref vs scout date differs | 17 |
 | Abstract missing in scout recoverable | 0 |
-| Abstract missing in scout and crossref | 4 |
-| Crossref has funder awards | 43 |
-| Crossref has abstract | 48 |
+| Abstract missing in scout and crossref | 7 |
+| Crossref has funder awards | 58 |
+| Crossref has abstract | 60 |
 
 ## Individual Crossref publications
 
@@ -36,16 +36,22 @@ For Crossref works the office prefers published-print, falling back to published
 | 10.1007/s10596-024-10317-7 | Towards practical artificial intelligence in Earth sciences | 2024-12-01 | 2024-12-01 | 2024-12 (published-print) | matched | — |
 | 10.1007/s43762-024-00142-0 | Analysing trends of computational urban science and data science a | 2024-11-12 | 2024-11-12 | 2024-11-12 (published-online) | matched | — |
 | 10.1016/j.atmosenv.2021.118760 | Update of land use/land cover and soil texture for Brazil: Impact  | 2022-01-01 | 2022-01-01 | 2022-01 (published-print) | matched | — |
+| 10.1016/j.cageo.2022.105193 | Adaptive conditional bias-penalized Kalman filter with minimizatio | 2022-09-01 | 2022-09-01 | 2022-09 (published-print) | matched | — |
 | 10.1016/j.pdisas.2026.100696 | Extreme weather as an occupational hazard: Structural vulnerabilit | 2026-10-01 | 2026-10-01 | 2026-10 (published-print) | matched | — |
 | 10.1016/j.softx.2024.101863 | PyGeoweaver: Tangible workflow tool for enhancing scientific resea | 2024-09-01 | 2024-09-01 | 2024-09 (published-print) | matched | — |
+| 10.1016/j.uclim.2025.102375 | Assessment of convection-permitting hydroclimate modeling in urban | 2025-06-01 | 2025-06-01 | 2025-06 (published-print) | matched | — |
+| 10.1029/2023gl106354 | Quantifying the Contribution of Ocean Advection and Surface Flux t | 2024-02-16 | 2024-02-16 | 2024-02-16 (published-print) | matched | — |
+| 10.1029/2023gl106872 | Impact of MJO Propagation Speed on Active Atlantic Tropical Cyclon | 2024-03-16 | 2024-03-16 | 2024-03-16 (published-print) | matched | — |
 | 10.1029/2024gl109890 | Historical Trends in Cold‐Season Mid‐Latitude Cyclones in the Grea | 2024-08-15 | 2024-08-28 | 2024-08-28 (published-print) | different_date_review_option | — |
 | 10.1029/2024ms004319 | Detecting Instantaneous Tidal Signals in Ocean Models Utilizing St | 2024-10-13 | 2024-10-01 | 2024-10 (published-print) | different_date_review_option | — |
 | 10.1029/2024wr037507 | Assessing the Potential for Medium‐Range Ice Forecasts in the Laur | 2024-08-29 | 2024-09-01 | 2024-09 (published-print) | different_date_review_option | — |
 | 10.1029/2025ms005126 | Parameterization of Frequency‐Dependent Internal Wave Drag in Glob | 2025-11-10 | 2025-11-01 | 2025-11 (published-print) | different_date_review_option | — |
 | 10.1029/2026jd046327 | Meteorological and Emission Drivers of Compound Heat and Ozone Pol | 2026-09-16 | 2026-09-16 | 2026-09-16 (published-print) | matched | — |
 | 10.1029/2026jd046349 | The Synoptic, Microphysical, and Radar Characteristics of Upper Gr | 2026-07-28 | 2026-07-28 | 2026-07-28 (published-print) | matched | — |
+| 10.1038/s41597-024-03916-7 | HyG: A hydraulic geometry dataset derived from historical stream g | 2024-10-18 | 2024-10-18 | 2024-10-18 (published-online) | matched | — |
 | 10.1038/s41597-025-04554-3 | DeepFlood for Inundated Vegetation High-Resolution Dataset for Acc | 2025-02-15 | 2025-02-15 | 2025-02-15 (published-online) | matched | — |
 | 10.1038/s43017-020-0057-7 | The formation, character and changing nature of mesoscale convecti | 2020-06-02 | 2020-06-02 | 2020-06-02 (published-online) | matched | — |
+| 10.1038/s43247-026-03991-1 | Dual physical pathways shape subseasonal-to-seasonal predictabilit | 2026-09-02 | 2026-09-02 | 2026-09-02 (published-online) | matched | — |
 | 10.1061/(asce)st.1943-541x.0003275 | Experiments in a Large Boundary Layer Wind Tunnel: Propagation of  | 2022-02-17 | 2022-05-01 | 2022-05 (published-print) | different_date_review_option | — |
 | 10.1080/01431161.2026.2749622 | Improving extreme Fire Radiative Power forecasting with Gaussian l | 2026-10-30 | 2026-10-30 | 2026-10-30 (published-online) | matched | — |
 | 10.1080/02626667.2018.1430898 | Real-time assimilation of streamflow observations into a hydrologi | 2018-02-15 | 2018-02-17 | 2018-02-17 (published-print) | different_date_review_option | — |
@@ -60,6 +66,7 @@ For Crossref works the office prefers published-print, falling back to published
 | 10.1145/3794916.3794919 | Visualizing Probabilistic Forecast Information Around Community Ri | 2026-03-01 | 2026-03-01 | 2026-03-01 (published-print) | matched | — |
 | 10.1175/aies-d-23-0064.1 | Airborne Radar Quality Control with Machine Learning | 2024-01-30 | 2024-01-01 | 2024-01 (published-print) | different_date_review_option | — |
 | 10.1175/aies-d-23-0094.1 | Generative Ensemble Deep Learning Severe Weather Prediction from a | 2024-04-01 | 2024-04-01 | 2024-04 (published-print) | matched | — |
+| 10.1175/aies-d-24-0063.1 | Improving Ensemble Extreme Precipitation Forecasts Using Generativ | 2025-04-01 | 2025-04-01 | 2025-04 (published-print) | matched | — |
 | 10.1175/aies-d-26-0004.1 | The Impact of Target Dataset Choice on Machine Learning Prediction | 2026-10-01 | 2026-10-01 | 2026-10 (published-print) | matched | — |
 | 10.1175/bams-d-15-00283.1 | The HMT Multi-Radar Multi-Sensor Hydro Experiment | 2016-07-19 | 2017-02-01 | 2017-02-01 (published-print) | different_date_review_option | — |
 | 10.1175/bams-d-19-0245.1 | In the Dark: Public Perceptions of and National Weather Service Fo | (missing) | 2020-10-01 | 2020-10-01 (published-print) | no_scout_date | — |
@@ -72,23 +79,31 @@ For Crossref works the office prefers published-print, falling back to published
 | 10.1175/jas-d-20-0117.1 | Dynamics of Simulated High-Shear, Low-CAPE Supercells | (missing) | 2021-05-01 | 2021-05 (published-print) | no_scout_date | — |
 | 10.1175/jcli-d-14-00448.1 | Distributions of Shallow to Very Deep Precipitation–Convection in  | 2015-11-15 | 2015-11-15 | 2015-11-15 (published-print) | matched | — |
 | 10.1175/jcli-d-19-0908.1 | Contrasting Behaviors between the Rapidly Intensifying and Slowly  | 2021-01-06 | 2021-02-01 | 2021-02 (published-print) | different_date_review_option | — |
+| 10.1175/jcli-d-25-0247.1 | The Role of Atmosphere–Ocean Coupling on the Prediction of Madden– | 2026-07-01 | 2026-07-01 | 2026-07-01 (published-print) | matched | — |
 | 10.1175/jtech-d-18-0224.1 | Progress toward Characterization of the Atmospheric Boundary Layer | (missing) | 2019-11-01 | 2019-11 (published-print) | no_scout_date | — |
 | 10.1175/mwr-d-18-0246.1 | The Development of Severe Vortices within Simulated High-Shear, Lo | (missing) | 2019-06-01 | 2019-06 (published-print) | no_scout_date | — |
 | 10.1175/mwr-d-19-0146.1 | Observations of Extreme Short-Term Precipitation Associated with S | 2020-01-01 | 2020-01-01 | 2020-01-01 (published-print) | matched | — |
 | 10.1175/mwr-d-22-0051.1 | Factors Affecting the Rapid Recovery of CAPE on 31 March 2016 duri | (missing) | 2023-06-01 | 2023-06 (published-print) | no_scout_date | — |
 | 10.1175/mwr-d-23-0144.1 | Investigating Temporal Characteristics of Polarimetric and Electri | 2024-07-11 | 2024-07-01 | 2024-07 (published-print) | different_date_review_option | — |
+| 10.1175/mwr-d-25-0146.1 | Estimates of Entrainment Zone Depth across the United States from  | 2025-12-01 | 2025-12-01 | 2025-12 (published-print) | matched | — |
+| 10.1175/mwr-d-26-0134.1 | Convection-Allowing Ensemble-Based Land–Atmosphere Coupled Backgro | 2026-11-01 | 2026-11-01 | 2026-11 (published-print) | matched | — |
 | 10.1175/waf-d-17-0120.1 | Cold-Season Tornadoes: Climatological and Meteorological Insights | 2018-06-01 | 2018-06-01 | 2018-06-01 (published-print) | matched | — |
 | 10.1175/waf-d-19-0105.1 | Calibration of Machine Learning–Based Probabilistic Hail Predictio | 2020-01-01 | 2020-02-01 | 2020-02-01 (published-print) | different_date_review_option | — |
 | 10.1175/waf-d-19-0216.1 | A Hazard Multiple: Overlapping Tornado and Flash Flood Warnings in | 2020-08-01 | 2020-08-01 | 2020-08-01 (published-print) | matched | — |
+| 10.1175/waf-d-20-0098.1 | A Progress Report on the Development of the High-Resolution Rapid  | 2021-06-01 | 2021-06-01 | 2021-06 (published-print) | matched | — |
 | 10.1175/waf-d-22-0178.1 | M-PERC: A New Satellite Microwave-Based Model to Diagnose the Onse | 2023-08-02 | 2023-08-01 | 2023-08 (published-print) | different_date_review_option | — |
 | 10.1175/waf-d-24-0249.1 | Evaluating the Performance of Microphysics Schemes against Observa | 2025-10-10 | 2025-11-01 | 2025-11 (published-print) | different_date_review_option | — |
 | 10.1175/waf-d-25-0044.1 | A Blending Method for Multiscale Valid Time Shifting within an RRF | 2026-10-01 | 2026-10-01 | 2026-10 (published-print) | matched | — |
+| 10.1175/waf-d-25-0244.1 | On the Use of Freezing Rain Local Storm Reports for Quantitative P | 2026-08-01 | 2026-08-01 | 2026-08 (published-print) | matched | — |
 | 10.1175/waf-d-26-0084.1 | Evaluation of a Cumulus Scheme in the FV3-LAM and of Experimental  | 2026-10-01 | 2026-10-01 | 2026-10 (published-print) | matched | — |
 | 10.1175/wcas-d-23-0046.1 | Contextualizing Disaster Phases Using Social Media Data: Hurricane | 2023-11-10 | 2023-10-01 | 2023-10 (published-print) | different_date_review_option | — |
+| 10.1175/wcas-d-25-0019.1 | “As Ready as We Can Be”: The Dynamics of Preparedness in Hurricane | 2026-07-01 | 2026-07-01 | 2026-07 (published-print) | matched | — |
+| 10.1175/wcas-d-25-0104.1 | Multilingual Community Visualizations (MCV): A GIS Dashboard for L | 2026-04-01 | 2026-04-01 | 2026-04 (published-print) | matched | — |
 | 10.1177/10506519261455873 | Bridging the Gap Between Numbers and Experience: Identifying Commu | 2026-10-01 | 2026-10-01 | 2026-10 (published-print) | matched | — |
 | 10.15191/nwajom.2023.1107 | The NOAA Weather Prediction Center’s Use and Evaluation of Experim | 2023-09-07 | 2023-09-07 | 2023-09-07 (published-online) | matched | — |
 | 10.15191/nwajom.2023.1109 | Interpreting Warn-on-Forecast System Guidance, Part I: Review of P | 2023-12-19 | 2023-12-19 | 2023-12-19 (published-online) | matched | — |
 | 10.3390/atmos12101286 | Rapid Update with EnVar Direct Radar Reflectivity Data Assimilatio | 2021-10-02 | 2021-10-02 | 2021-10-02 (published-online) | matched | — |
+| 10.3390/atmos16070881 | Exploring the Explainability of a Machine Learning Tool to Improve | 2025-07-18 | 2025-07-18 | 2025-07-18 (published-online) | matched | — |
 | 10.3390/rs18193383 | Impact of Assimilating Remote Sensing Observations on Wind and Wav | 2026-10-02 | 2026-10-02 | 2026-10-02 (published-online) | matched | — |
 | 10.5194/egusphere-2026-4928 | Regime-aware retrieval of lower-tropospheric stability and a sensi | 2026-10-30 | 2026-10-30 | 2026-10-30 (posted) | matched | — |
 | 10.5194/egusphere-2026-5876 | We &lt;3 Skynet: Or, How We Learned to Stop Worrying and Love the  | 2026-10-22 | 2026-10-22 | 2026-10-22 (posted) | matched | — |
