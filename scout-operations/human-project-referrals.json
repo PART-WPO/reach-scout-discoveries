@@ -781,9 +781,20 @@
         ]
       },
       "public_identity": {
-        "status": "IN_PUBLIC_SCOUT_QUEUE",
-        "reason": "CONSISTENT_SCOUT_PUBLIC_MIRRORS",
+        "status": "CONFIRMED_PUBLIC_REACH_IDENTITY",
+        "reason": "UNIQUE_STRONG_IDENTIFIER_AND_TITLE",
         "matches": [
+          {
+            "source": "REACH",
+            "identity": "reachuid-v1-eb7af09119c0d4bfb555525d5c2772ef",
+            "title": "Extreme weather as an occupational hazard: Structural vulnerability among multilingual immigrant workers",
+            "location": "agent-data/details/part-094.csv",
+            "match_bases": [
+              "exact_doi",
+              "exact_url",
+              "normalized_title"
+            ]
+          },
           {
             "source": "SCOUT_PUBLISHED",
             "identity": "2026-11-02-monthly-preprint-hold-001:8",
@@ -820,8 +831,8 @@
         ],
         "caveat": "Public snapshot only; private Hub decisions are not asserted.",
         "noaa_ir_reach_check": {
-          "status": "VERIFIED_IR_URL_NOT_IN_PUBLIC_REACH",
-          "official_url": "https://repository.library.noaa.gov/view/noaa/77174",
+          "status": "NOT_NEEDED_DIRECT_REACH",
+          "official_url": null,
           "match_uid": null,
           "match_detail_shard": null
         }
@@ -2531,9 +2542,20 @@
         ]
       },
       "public_identity": {
-        "status": "IN_PUBLIC_SCOUT_QUEUE",
-        "reason": "CONSISTENT_SCOUT_PUBLIC_MIRRORS",
+        "status": "CONFIRMED_PUBLIC_REACH_IDENTITY",
+        "reason": "UNIQUE_STRONG_IDENTIFIER_AND_TITLE",
         "matches": [
+          {
+            "source": "REACH",
+            "identity": "reachuid-v1-0117eb8185241b58c871d0036ef11add",
+            "title": "Dynamical prediction of western North Pacific seasonal accumulated cyclone energy with experimental SFS reforecasts",
+            "location": "agent-data/details/part-060.csv",
+            "match_bases": [
+              "exact_doi",
+              "exact_url",
+              "normalized_title"
+            ]
+          },
           {
             "source": "SCOUT_PUBLISHED",
             "identity": "2026-11-02-monthly-preprint-hold-001:5",
@@ -2570,8 +2592,8 @@
         ],
         "caveat": "Public snapshot only; private Hub decisions are not asserted.",
         "noaa_ir_reach_check": {
-          "status": "VERIFIED_IR_URL_NOT_IN_PUBLIC_REACH",
-          "official_url": "https://repository.library.noaa.gov/view/noaa/76692",
+          "status": "NOT_NEEDED_DIRECT_REACH",
+          "official_url": null,
           "match_uid": null,
           "match_detail_shard": null
         }
