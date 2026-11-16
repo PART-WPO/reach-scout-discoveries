@@ -1,0 +1,54 @@
+{
+  "schema": "reach-scout-bounded-expansion-research-v1",
+  "observed_at_utc": "2026-11-16T11:46:37.166699+00:00",
+  "seed_doi": "10.1007/s00477-017-1442-8",
+  "source_graph_sha256": "8a48041ef050266ff00490ffce473bb77b784e5ef0003d9ecea27b9da2069c7b",
+  "seed_expansion_fingerprint": "b7c199bbd85b46de581594939b795256a9a13cc9064a00b154a787fac3517ddd",
+  "seed_reach_identity_verified_in_graph": true,
+  "explicit_related_dois_preserved": [],
+  "source_lookups": [
+    {
+      "doi": "10.1007/s00477-017-1442-8",
+      "role": "VERIFIED_REACH_EXPANSION_SEED",
+      "source_status": "ok",
+      "official_provider": "crossref",
+      "official_title": "Conditional bias-penalized Kalman filter for improved estimation and prediction of extremes",
+      "official_metadata_url": "https://api.crossref.org/works/10.1007/s00477-017-1442-8",
+      "publication_status": "official_journal_article",
+      "official_award_numbers_observed": [
+        "CYBERSEES-1442735",
+        "IIP-1237767",
+        "NA16OAR4590232"
+      ],
+      "separate_output_uniqueness": "NOT_VERIFIED",
+      "same_WPO_project_parent": "NOT_VERIFIED"
+    }
+  ],
+  "status": "OFFICIAL_SOURCE_CHECK_RECORDED",
+  "source_driven_discovery": {
+    "schema": "reach-scout-source-driven-expansion-v1",
+    "seed_doi": "10.1007/s00477-017-1442-8",
+    "source_checks": [
+      {
+        "kind": "crossref_references",
+        "url": "https://api.crossref.org/works/10.1007/s00477-017-1442-8",
+        "status": "SOURCE_READ",
+        "source_sha256": "5825be29dc74cb41a92e8fe9a30dff1345193a5a90ecc0a90c231f8fb58d3739",
+        "data_code_doi_matches": 0
+      }
+    ],
+    "discovered_doi_leads": [],
+    "status": "NO_DATA_CODE_DOI_IDENTIFIED",
+    "new_public_candidates": 0,
+    "private_hub_import": "NOT_VERIFIED"
+  },
+  "new_source_driven_leads_screened": [],
+  "new_distinct_doi_leads_found": 0,
+  "new_public_candidate_count": 0,
+  "new_related_output_eligibility_confirmed": 0,
+  "separate_expansion_decisions_completed": 0,
+  "reason_not_a_completed_expansion": "Source metadata and DOI edges are research leads; distinct output identity, preprint, public REACH/Scout duplicate and exact WPO project funding require independent checks.",
+  "next_action": "Investigate official metadata and full current REACH/Scout identity for distinct linked DOI(s); verify their OWN publisher award and primary SPARK parent before any Needs Investigation or New Candidate.",
+  "private_hub_import": "NOT_VERIFIED",
+  "human_approval": "NOT_VERIFIED"
+}
