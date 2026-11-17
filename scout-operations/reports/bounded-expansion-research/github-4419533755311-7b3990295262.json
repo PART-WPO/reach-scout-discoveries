@@ -1,0 +1,68 @@
+{
+  "schema": "reach-scout-bounded-expansion-research-v1",
+  "observed_at_utc": "2026-11-17T23:00:36.913924+00:00",
+  "seed_doi": "10.1007/s10661-025-14166-4",
+  "source_graph_sha256": "15ac23701de50ed47f31aad914159fcee9b2cc2acf84b87591b5b5490af850d5",
+  "seed_expansion_fingerprint": "a871a4cf2195c8a099c27a5df85f625ab14cc6b7f65d639ffada186135c69809",
+  "seed_reach_identity_verified_in_graph": true,
+  "explicit_related_dois_preserved": [],
+  "source_lookups": [
+    {
+      "doi": "10.1007/s10661-025-14166-4",
+      "role": "VERIFIED_REACH_EXPANSION_SEED",
+      "source_status": "ok",
+      "official_provider": "crossref",
+      "official_title": "Soil Temperature, Environment, and Moisture Monitoring Network—a low-cost sensing network for Alabama",
+      "official_metadata_url": "https://api.crossref.org/works/10.1007/s10661-025-14166-4",
+      "publication_status": "official_journal_article",
+      "official_award_numbers_observed": [
+        "2317820",
+        "NA20OAR4590495"
+      ],
+      "separate_output_uniqueness": "NOT_VERIFIED",
+      "same_WPO_project_parent": "NOT_VERIFIED"
+    }
+  ],
+  "status": "OFFICIAL_SOURCE_CHECK_RECORDED",
+  "source_driven_discovery": {
+    "schema": "reach-scout-source-driven-expansion-v1",
+    "seed_doi": "10.1007/s10661-025-14166-4",
+    "source_checks": [
+      {
+        "kind": "crossref_references",
+        "url": "https://api.crossref.org/works/10.1007/s10661-025-14166-4",
+        "status": "SOURCE_READ",
+        "source_sha256": "f265dc3edc8206c5a200ece07a094020b0e952ebce935cc0f9b78f1ac6c8ab1f",
+        "data_code_doi_matches": 0
+      },
+      {
+        "kind": "noaa_ir_landing",
+        "url": "https://repository.library.noaa.gov/view/noaa/71100",
+        "status": "SOURCE_READ",
+        "source_sha256": "80567be49afd983c237f213b0d81d1d652c5287a2eacb6410c648db7fa86f144"
+      },
+      {
+        "kind": "noaa_ir_manuscript_pdf",
+        "url": "https://repository.library.noaa.gov/view/noaa/71100/noaa_71100_DS1.pdf",
+        "status": "SOURCE_READ",
+        "source_sha256": "95f409367d0b2374f68d31c0e19417a42f4fe001cc146a7110629b3b1138e7ce",
+        "data_code_doi_matches": 0,
+        "pdf_text_characters": 77298,
+        "pdf_doi_tokens_observed": 3
+      }
+    ],
+    "discovered_doi_leads": [],
+    "status": "NO_DATA_CODE_DOI_IDENTIFIED",
+    "new_public_candidates": 0,
+    "private_hub_import": "NOT_VERIFIED"
+  },
+  "new_source_driven_leads_screened": [],
+  "new_distinct_doi_leads_found": 0,
+  "new_public_candidate_count": 0,
+  "new_related_output_eligibility_confirmed": 0,
+  "separate_expansion_decisions_completed": 0,
+  "reason_not_a_completed_expansion": "Source metadata and DOI edges are research leads; distinct output identity, preprint, public REACH/Scout duplicate and exact WPO project funding require independent checks.",
+  "next_action": "Investigate official metadata and full current REACH/Scout identity for distinct linked DOI(s); verify their OWN publisher award and primary SPARK parent before any Needs Investigation or New Candidate.",
+  "private_hub_import": "NOT_VERIFIED",
+  "human_approval": "NOT_VERIFIED"
+}
