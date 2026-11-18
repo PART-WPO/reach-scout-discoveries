@@ -1,0 +1,72 @@
+{
+  "schema": "reach-scout-bounded-expansion-research-v1",
+  "observed_at_utc": "2026-11-18T04:35:27.836025+00:00",
+  "seed_doi": "10.1007/s11069-025-07344-7",
+  "source_graph_sha256": "15ac23701de50ed47f31aad914159fcee9b2cc2acf84b87591b5b5490af850d5",
+  "seed_expansion_fingerprint": "ddfe008823e7a81b6c56c1a9e419d4b1f534cfa390f2d79a5f58da4c1fd1a88a",
+  "seed_reach_identity_verified_in_graph": true,
+  "explicit_related_dois_preserved": [],
+  "source_lookups": [
+    {
+      "doi": "10.1007/s11069-025-07344-7",
+      "role": "VERIFIED_REACH_EXPANSION_SEED",
+      "source_status": "ok",
+      "official_provider": "crossref",
+      "official_title": "Assessing WildfireGPT: a comparative analysis of AI models for quantitative wildfire spread prediction",
+      "official_metadata_url": "https://api.crossref.org/works/10.1007/s11069-025-07344-7",
+      "publication_status": "official_journal_article",
+      "official_award_numbers_observed": [
+        "2117834",
+        "2425687",
+        "80NSSC21M0028",
+        "NA22OAR4590512",
+        "NA23OAR4590387",
+        "NA23OAR4590388"
+      ],
+      "separate_output_uniqueness": "NOT_VERIFIED",
+      "same_WPO_project_parent": "NOT_VERIFIED"
+    }
+  ],
+  "status": "OFFICIAL_SOURCE_CHECK_RECORDED",
+  "source_driven_discovery": {
+    "schema": "reach-scout-source-driven-expansion-v1",
+    "seed_doi": "10.1007/s11069-025-07344-7",
+    "source_checks": [
+      {
+        "kind": "crossref_references",
+        "url": "https://api.crossref.org/works/10.1007/s11069-025-07344-7",
+        "status": "SOURCE_READ",
+        "source_sha256": "a834501ea3d041f187b342d1e6bf68127228f47359ca5d06b09b66848f813de1",
+        "data_code_doi_matches": 0
+      },
+      {
+        "kind": "noaa_ir_landing",
+        "url": "https://repository.library.noaa.gov/view/noaa/70851",
+        "status": "SOURCE_READ",
+        "source_sha256": "a135859860870173cb290527b23c159aa34191f0502fd2117cb59851abe5931e"
+      },
+      {
+        "kind": "noaa_ir_manuscript_pdf",
+        "url": "https://repository.library.noaa.gov/view/noaa/70851/noaa_70851_DS1.pdf",
+        "status": "SOURCE_READ",
+        "source_sha256": "2704ee032be82eb587741e1201f9f64a85034fffe14514ddc66109236b2556a2",
+        "data_code_doi_matches": 0,
+        "pdf_text_characters": 44715,
+        "pdf_doi_tokens_observed": 1
+      }
+    ],
+    "discovered_doi_leads": [],
+    "status": "NO_DATA_CODE_DOI_IDENTIFIED",
+    "new_public_candidates": 0,
+    "private_hub_import": "NOT_VERIFIED"
+  },
+  "new_source_driven_leads_screened": [],
+  "new_distinct_doi_leads_found": 0,
+  "new_public_candidate_count": 0,
+  "new_related_output_eligibility_confirmed": 0,
+  "separate_expansion_decisions_completed": 0,
+  "reason_not_a_completed_expansion": "Source metadata and DOI edges are research leads; distinct output identity, preprint, public REACH/Scout duplicate and exact WPO project funding require independent checks.",
+  "next_action": "Investigate official metadata and full current REACH/Scout identity for distinct linked DOI(s); verify their OWN publisher award and primary SPARK parent before any Needs Investigation or New Candidate.",
+  "private_hub_import": "NOT_VERIFIED",
+  "human_approval": "NOT_VERIFIED"
+}
