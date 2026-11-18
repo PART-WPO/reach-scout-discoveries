@@ -1,0 +1,68 @@
+{
+  "schema": "reach-scout-bounded-expansion-research-v1",
+  "observed_at_utc": "2026-11-18T22:12:15.227378+00:00",
+  "seed_doi": "10.1016/j.advwatres.2021.104075",
+  "source_graph_sha256": "15ac23701de50ed47f31aad914159fcee9b2cc2acf84b87591b5b5490af850d5",
+  "seed_expansion_fingerprint": "97ff7224b803574de2a354377703b17636556e93579a8db11182617926354d80",
+  "seed_reach_identity_verified_in_graph": true,
+  "explicit_related_dois_preserved": [],
+  "source_lookups": [
+    {
+      "doi": "10.1016/j.advwatres.2021.104075",
+      "role": "VERIFIED_REACH_EXPANSION_SEED",
+      "source_status": "ok",
+      "official_provider": "crossref",
+      "official_title": "Combining ground-based and remotely sensed snow data in a linear regression model for real-time estimation of snow water equivalent",
+      "official_metadata_url": "https://api.crossref.org/works/10.1016/j.advwatres.2021.104075",
+      "publication_status": "official_journal_article",
+      "official_award_numbers_observed": [
+        "80NSSC17K0071",
+        "80NSSC18K0427 P00001",
+        "DEB 1637686",
+        "NA18OAR4590367",
+        "NNX17AF50G"
+      ],
+      "separate_output_uniqueness": "NOT_VERIFIED",
+      "same_WPO_project_parent": "NOT_VERIFIED"
+    }
+  ],
+  "status": "OFFICIAL_SOURCE_CHECK_RECORDED",
+  "source_driven_discovery": {
+    "schema": "reach-scout-source-driven-expansion-v1",
+    "seed_doi": "10.1016/j.advwatres.2021.104075",
+    "source_checks": [
+      {
+        "kind": "crossref_references",
+        "url": "https://api.crossref.org/works/10.1016/j.advwatres.2021.104075",
+        "status": "SOURCE_READ",
+        "source_sha256": "22b8b30116959c349ac776ad2ecc98b8efd66e76be64cb99e569d136547e65e6",
+        "data_code_doi_matches": 0
+      },
+      {
+        "kind": "noaa_ir_landing",
+        "url": "https://repository.library.noaa.gov/view/noaa/59096",
+        "status": "SOURCE_READ",
+        "source_sha256": "6a1f0db3ce4069320063892659ef8cc231e8e9d5ae66c88e4263480d1342598f"
+      },
+      {
+        "kind": "noaa_ir_accepted_manuscript",
+        "url": "https://repository.library.noaa.gov/view/noaa/59096",
+        "status": "SOURCE_ACCESS_OR_PARSE_HOLD",
+        "error_type": "ValueError"
+      }
+    ],
+    "discovered_doi_leads": [],
+    "status": "NO_DATA_CODE_DOI_IDENTIFIED",
+    "new_public_candidates": 0,
+    "private_hub_import": "NOT_VERIFIED"
+  },
+  "new_source_driven_leads_screened": [],
+  "new_distinct_doi_leads_found": 0,
+  "new_public_candidate_count": 0,
+  "new_related_output_eligibility_confirmed": 0,
+  "separate_expansion_decisions_completed": 0,
+  "reason_not_a_completed_expansion": "Source metadata and DOI edges are research leads; distinct output identity, preprint, public REACH/Scout duplicate and exact WPO project funding require independent checks.",
+  "next_action": "Investigate official metadata and full current REACH/Scout identity for distinct linked DOI(s); verify their OWN publisher award and primary SPARK parent before any Needs Investigation or New Candidate.",
+  "private_hub_import": "NOT_VERIFIED",
+  "human_approval": "NOT_VERIFIED"
+}
