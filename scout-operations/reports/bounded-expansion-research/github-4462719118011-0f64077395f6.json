@@ -1,0 +1,200 @@
+{
+  "schema": "reach-scout-bounded-expansion-research-v1",
+  "observed_at_utc": "2026-11-19T22:17:53.828953+00:00",
+  "seed_doi": "10.1016/j.atmosenv.2024.120833",
+  "source_graph_sha256": "15ac23701de50ed47f31aad914159fcee9b2cc2acf84b87591b5b5490af850d5",
+  "seed_expansion_fingerprint": "931a9ff9e80d8ea38b2d1b7dececb067348f262cf7d01dba5c390f36b1f2db97",
+  "seed_reach_identity_verified_in_graph": true,
+  "explicit_related_dois_preserved": [],
+  "source_lookups": [
+    {
+      "doi": "10.1016/j.atmosenv.2024.120833",
+      "role": "VERIFIED_REACH_EXPANSION_SEED",
+      "source_status": "ok",
+      "official_provider": "crossref",
+      "official_title": "Comparison of CAMS and CMAQ analyses of surface-level PM2.5 and O3 over the conterminous United States (CONUS)",
+      "official_metadata_url": "https://api.crossref.org/works/10.1016/j.atmosenv.2024.120833",
+      "publication_status": "official_journal_article",
+      "official_award_numbers_observed": [
+        "1852977",
+        "NA21OAR4590185",
+        "NA21OAR4590186"
+      ],
+      "separate_output_uniqueness": "NOT_VERIFIED",
+      "same_WPO_project_parent": "NOT_VERIFIED"
+    }
+  ],
+  "status": "OFFICIAL_SOURCE_CHECK_RECORDED",
+  "source_driven_discovery": {
+    "schema": "reach-scout-source-driven-expansion-v1",
+    "seed_doi": "10.1016/j.atmosenv.2024.120833",
+    "source_checks": [
+      {
+        "kind": "crossref_references",
+        "url": "https://api.crossref.org/works/10.1016/j.atmosenv.2024.120833",
+        "status": "SOURCE_READ",
+        "source_sha256": "2a4ca5d8ace8b5e6551fae2ff6972b2854504963790ba8094ac8ddef78c75b7d",
+        "data_code_doi_matches": 0
+      },
+      {
+        "kind": "noaa_ir_landing",
+        "url": "https://repository.library.noaa.gov/view/noaa/73657",
+        "status": "SOURCE_READ",
+        "source_sha256": "308014ea1a6b77c3542b0d39577ad57b5feb05286bfc7faae873ef74850d50f5"
+      },
+      {
+        "kind": "noaa_ir_manuscript_pdf",
+        "url": "https://repository.library.noaa.gov/view/noaa/73657/noaa_73657_DS1.pdf",
+        "status": "SOURCE_READ",
+        "source_sha256": "f1ed1f4d72f7957a8e51e8e70e3f27e1a8bd293d4ea02e353df919c7768a6799",
+        "data_code_doi_matches": 5,
+        "pdf_text_characters": 62677,
+        "pdf_doi_tokens_observed": 40
+      }
+    ],
+    "discovered_doi_leads": [
+      {
+        "doi": "10.5194/gmd-10-1703-2017",
+        "evidence_kind": "noaa_ir_accepted_manuscript_pdf",
+        "source_url": "https://repository.library.noaa.gov/view/noaa/73657/noaa_73657_DS1.pdf",
+        "context_excerpt": "rwar, G., Fahey, K.M., Gantt, B., Gilliam, R.C., Heath, N.K., Kang, D., Mathur, R., Schwede, D.B., Spero, T.L., Wong, D.C., Young, J.O., 2017. Description and evaluation of the Community Multiscale Air Quality (CMAQ) modeling system version 5.1. Geosci. Model Dev. 10, 1703–1732. https://doi.org/10.5194/gmd-10-1703-2017",
+        "eligibility": "RESEARCH_LEAD_ONLY",
+        "source_sha256": "f1ed1f4d72f7957a8e51e8e70e3f27e1a8bd293d4ea02e353df919c7768a6799"
+      },
+      {
+        "doi": "10.1029/2018jd029900",
+        "evidence_kind": "noaa_ir_accepted_manuscript_pdf",
+        "source_url": "https://repository.library.noaa.gov/view/noaa/73657/noaa_73657_DS1.pdf",
+        "context_excerpt": "set/cams-near-real-time-global-analysis-and- forecast-daily-data (accessed 8.3.20). Crippa, P., Sullivan, R.C., Thota, A., Pryor, S.C., 2019. Sensitivity of simulated aerosol properties over eastern North America to WRF-Chem parameterizations. J. Geophys. Res. Atmos. 124, 3365–3383. https://doi.org/10.1029/2018JD029900",
+        "eligibility": "RESEARCH_LEAD_ONLY",
+        "source_sha256": "f1ed1f4d72f7957a8e51e8e70e3f27e1a8bd293d4ea02e353df919c7768a6799"
+      },
+      {
+        "doi": "10.1016/j.atmosenv.2012.01.032",
+        "evidence_kind": "noaa_ir_accepted_manuscript_pdf",
+        "source_url": "https://repository.library.noaa.gov/view/noaa/73657/noaa_73657_DS1.pdf",
+        "context_excerpt": "erica to WRF-Chem parameterizations. J. Geophys. Res. Atmos. 124, 3365–3383. https://doi.org/10.1029/2018JD029900 De Ridder, K., Kumar, U., Lauwaet, D., Blyth, L., Lefebvre, W., 2012. Kalman filter-based air quality forecast adjustment. Atmospheric Environment 50, 381–384. https://doi.org/10.1016/j.atmosenv.2012.01.032",
+        "eligibility": "RESEARCH_LEAD_ONLY",
+        "source_sha256": "f1ed1f4d72f7957a8e51e8e70e3f27e1a8bd293d4ea02e353df919c7768a6799"
+      }
+    ],
+    "status": "SOURCE_BACKED_LEADS_FOUND",
+    "new_public_candidates": 0,
+    "private_hub_import": "NOT_VERIFIED"
+  },
+  "new_source_driven_leads_screened": [
+    {
+      "doi": "10.5194/gmd-10-1703-2017",
+      "source_url": "https://repository.library.noaa.gov/view/noaa/73657/noaa_73657_DS1.pdf",
+      "source_sha256": "f1ed1f4d72f7957a8e51e8e70e3f27e1a8bd293d4ea02e353df919c7768a6799",
+      "source_context_type": "noaa_ir_accepted_manuscript_pdf",
+      "official_metadata_status": "ok",
+      "official_metadata_url": "https://api.crossref.org/works/10.5194/gmd-10-1703-2017",
+      "official_title": "Description and evaluation of the Community Multiscale Air Quality (CMAQ) modeling system version 5.1",
+      "official_resource_type": "journal-article",
+      "publication_status": "official_journal_article",
+      "exact_doi_publisher_deposited_wpo_awards": [],
+      "public_identity_status": "NO_PUBLIC_IDENTITY_MATCH",
+      "public_identity_detail": {
+        "doi": "10.5194/gmd-10-1703-2017",
+        "status": "NO_PUBLIC_IDENTITY_MATCH",
+        "noaa_ir_reach_check": {
+          "status": "DOI_NOT_IN_VERIFIED_IR_INDEX_UNKNOWN",
+          "official_url": null,
+          "match_uid": null,
+          "match_detail_shard": null
+        },
+        "checked_public_scout_manifest_and_inbox": true,
+        "checked_live_complete_reach": true,
+        "public_identity_source_fingerprint": "c55b0701c2b679e03dfd5a4042583bfed370b0e5746128bc6fba5ac38fa4dd62",
+        "live_reach_manifest_sha256": "8ad9e8e20cfc3953487463d4d3bb98eb2e64da2531877274a3e79d559df32f61",
+        "matches": [],
+        "reason": "SHA_VERIFIED_SCOUT_AND_LIVE_FULL_REACH_NEGATIVE"
+      },
+      "official_ir_reach_status": "DOI_NOT_IN_VERIFIED_IR_INDEX_UNKNOWN",
+      "native_source_recovery": null,
+      "new_public_candidate_count": 0,
+      "private_hub_import": "NOT_VERIFIED",
+      "next_gate": "REVIEW_READY_NEEDS_INVESTIGATION_NOT_DELIVERED",
+      "eligibility": "RESEARCH_LEAD_ONLY_NOT_STAGED"
+    },
+    {
+      "doi": "10.1029/2018jd029900",
+      "source_url": "https://repository.library.noaa.gov/view/noaa/73657/noaa_73657_DS1.pdf",
+      "source_sha256": "f1ed1f4d72f7957a8e51e8e70e3f27e1a8bd293d4ea02e353df919c7768a6799",
+      "source_context_type": "noaa_ir_accepted_manuscript_pdf",
+      "official_metadata_status": "ok",
+      "official_metadata_url": "https://api.crossref.org/works/10.1029/2018jd029900",
+      "official_title": "Sensitivity of Simulated Aerosol Properties Over Eastern North America to WRF‐Chem Parameterizations",
+      "official_resource_type": "journal-article",
+      "publication_status": "official_journal_article",
+      "exact_doi_publisher_deposited_wpo_awards": [],
+      "public_identity_status": "NO_PUBLIC_IDENTITY_MATCH",
+      "public_identity_detail": {
+        "doi": "10.1029/2018jd029900",
+        "status": "NO_PUBLIC_IDENTITY_MATCH",
+        "noaa_ir_reach_check": {
+          "status": "DOI_NOT_IN_VERIFIED_IR_INDEX_UNKNOWN",
+          "official_url": null,
+          "match_uid": null,
+          "match_detail_shard": null
+        },
+        "checked_public_scout_manifest_and_inbox": true,
+        "checked_live_complete_reach": true,
+        "public_identity_source_fingerprint": "c55b0701c2b679e03dfd5a4042583bfed370b0e5746128bc6fba5ac38fa4dd62",
+        "live_reach_manifest_sha256": "8ad9e8e20cfc3953487463d4d3bb98eb2e64da2531877274a3e79d559df32f61",
+        "matches": [],
+        "reason": "SHA_VERIFIED_SCOUT_AND_LIVE_FULL_REACH_NEGATIVE"
+      },
+      "official_ir_reach_status": "DOI_NOT_IN_VERIFIED_IR_INDEX_UNKNOWN",
+      "native_source_recovery": null,
+      "new_public_candidate_count": 0,
+      "private_hub_import": "NOT_VERIFIED",
+      "next_gate": "REVIEW_READY_NEEDS_INVESTIGATION_NOT_DELIVERED",
+      "eligibility": "RESEARCH_LEAD_ONLY_NOT_STAGED"
+    },
+    {
+      "doi": "10.1016/j.atmosenv.2012.01.032",
+      "source_url": "https://repository.library.noaa.gov/view/noaa/73657/noaa_73657_DS1.pdf",
+      "source_sha256": "f1ed1f4d72f7957a8e51e8e70e3f27e1a8bd293d4ea02e353df919c7768a6799",
+      "source_context_type": "noaa_ir_accepted_manuscript_pdf",
+      "official_metadata_status": "ok",
+      "official_metadata_url": "https://api.crossref.org/works/10.1016/j.atmosenv.2012.01.032",
+      "official_title": "Kalman filter-based air quality forecast adjustment",
+      "official_resource_type": "journal-article",
+      "publication_status": "official_journal_article",
+      "exact_doi_publisher_deposited_wpo_awards": [],
+      "public_identity_status": "NO_PUBLIC_IDENTITY_MATCH",
+      "public_identity_detail": {
+        "doi": "10.1016/j.atmosenv.2012.01.032",
+        "status": "NO_PUBLIC_IDENTITY_MATCH",
+        "noaa_ir_reach_check": {
+          "status": "DOI_NOT_IN_VERIFIED_IR_INDEX_UNKNOWN",
+          "official_url": null,
+          "match_uid": null,
+          "match_detail_shard": null
+        },
+        "checked_public_scout_manifest_and_inbox": true,
+        "checked_live_complete_reach": true,
+        "public_identity_source_fingerprint": "c55b0701c2b679e03dfd5a4042583bfed370b0e5746128bc6fba5ac38fa4dd62",
+        "live_reach_manifest_sha256": "8ad9e8e20cfc3953487463d4d3bb98eb2e64da2531877274a3e79d559df32f61",
+        "matches": [],
+        "reason": "SHA_VERIFIED_SCOUT_AND_LIVE_FULL_REACH_NEGATIVE"
+      },
+      "official_ir_reach_status": "DOI_NOT_IN_VERIFIED_IR_INDEX_UNKNOWN",
+      "native_source_recovery": null,
+      "new_public_candidate_count": 0,
+      "private_hub_import": "NOT_VERIFIED",
+      "next_gate": "REVIEW_READY_NEEDS_INVESTIGATION_NOT_DELIVERED",
+      "eligibility": "RESEARCH_LEAD_ONLY_NOT_STAGED"
+    }
+  ],
+  "new_distinct_doi_leads_found": 3,
+  "new_public_candidate_count": 0,
+  "new_related_output_eligibility_confirmed": 0,
+  "separate_expansion_decisions_completed": 0,
+  "reason_not_a_completed_expansion": "Source metadata and DOI edges are research leads; distinct output identity, preprint, public REACH/Scout duplicate and exact WPO project funding require independent checks.",
+  "next_action": "Investigate official metadata and full current REACH/Scout identity for distinct linked DOI(s); verify their OWN publisher award and primary SPARK parent before any Needs Investigation or New Candidate.",
+  "private_hub_import": "NOT_VERIFIED",
+  "human_approval": "NOT_VERIFIED"
+}
