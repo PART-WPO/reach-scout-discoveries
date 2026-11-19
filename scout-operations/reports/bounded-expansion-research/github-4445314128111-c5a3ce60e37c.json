@@ -1,0 +1,67 @@
+{
+  "schema": "reach-scout-bounded-expansion-research-v1",
+  "observed_at_utc": "2026-11-19T03:42:48.868181+00:00",
+  "seed_doi": "10.1016/j.apacoust.2023.109256",
+  "source_graph_sha256": "15ac23701de50ed47f31aad914159fcee9b2cc2acf84b87591b5b5490af850d5",
+  "seed_expansion_fingerprint": "d89a38ca79d36fcf8a87955b006cf4f7f6c6fe42266369cfd04c31c6f352e010",
+  "seed_reach_identity_verified_in_graph": true,
+  "explicit_related_dois_preserved": [],
+  "source_lookups": [
+    {
+      "doi": "10.1016/j.apacoust.2023.109256",
+      "role": "VERIFIED_REACH_EXPANSION_SEED",
+      "source_status": "ok",
+      "official_provider": "crossref",
+      "official_title": "A simplified semi-empirical model for long-range low-frequency noise propagation in the turbulent atmosphere",
+      "official_metadata_url": "https://api.crossref.org/works/10.1016/j.apacoust.2023.109256",
+      "publication_status": "official_journal_article",
+      "official_award_numbers_observed": [
+        "NA18OAR4590306"
+      ],
+      "separate_output_uniqueness": "NOT_VERIFIED",
+      "same_WPO_project_parent": "NOT_VERIFIED"
+    }
+  ],
+  "status": "OFFICIAL_SOURCE_CHECK_RECORDED",
+  "source_driven_discovery": {
+    "schema": "reach-scout-source-driven-expansion-v1",
+    "seed_doi": "10.1016/j.apacoust.2023.109256",
+    "source_checks": [
+      {
+        "kind": "crossref_references",
+        "url": "https://api.crossref.org/works/10.1016/j.apacoust.2023.109256",
+        "status": "SOURCE_READ",
+        "source_sha256": "3aa7f887d29303c1c84c711ba7be613319123206073dcafd51a89d22d3c4cb08",
+        "data_code_doi_matches": 0
+      },
+      {
+        "kind": "noaa_ir_landing",
+        "url": "https://repository.library.noaa.gov/view/noaa/67828",
+        "status": "SOURCE_READ",
+        "source_sha256": "6a65b15b1db4fa980077f520109a29216905d6f24aa90d8f85458a4c96819ad1"
+      },
+      {
+        "kind": "noaa_ir_manuscript_pdf",
+        "url": "https://repository.library.noaa.gov/view/noaa/67828/noaa_67828_DS1.pdf",
+        "status": "SOURCE_READ",
+        "source_sha256": "f7f0f679e6e5935b3de5f1947235fc11c415d44f7c384a359f1a5e120b2228c0",
+        "data_code_doi_matches": 0,
+        "pdf_text_characters": 66510,
+        "pdf_doi_tokens_observed": 17
+      }
+    ],
+    "discovered_doi_leads": [],
+    "status": "NO_DATA_CODE_DOI_IDENTIFIED",
+    "new_public_candidates": 0,
+    "private_hub_import": "NOT_VERIFIED"
+  },
+  "new_source_driven_leads_screened": [],
+  "new_distinct_doi_leads_found": 0,
+  "new_public_candidate_count": 0,
+  "new_related_output_eligibility_confirmed": 0,
+  "separate_expansion_decisions_completed": 0,
+  "reason_not_a_completed_expansion": "Source metadata and DOI edges are research leads; distinct output identity, preprint, public REACH/Scout duplicate and exact WPO project funding require independent checks.",
+  "next_action": "Investigate official metadata and full current REACH/Scout identity for distinct linked DOI(s); verify their OWN publisher award and primary SPARK parent before any Needs Investigation or New Candidate.",
+  "private_hub_import": "NOT_VERIFIED",
+  "human_approval": "NOT_VERIFIED"
+}
