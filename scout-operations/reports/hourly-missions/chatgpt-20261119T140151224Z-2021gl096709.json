@@ -1,0 +1,49 @@
+{
+  "schema": "reach-scout-hourly-mission-outcome-v1",
+  "producer": "chatgpt_hourly_mission",
+  "not_chatgpt_hourly_mission": false,
+  "mission_id": "20261119T140151224Z-2021gl096709",
+  "started_at_utc": "2026-11-19T14:01:51.224Z",
+  "completed_at_utc": "2026-11-19T14:02:05.647Z",
+  "policy_commit_sha": "NOT_VERIFIED",
+  "memory_source_fingerprint": "15ac23701de50ed47f31aad914159fcee9b2cc2acf84b87591b5b5490af850d5",
+  "memory_builder_policy_sha256": "6c77012241b8abd0544dcb9e8a22e38aad5b76bb6c3664afafcdeedbc2d4cc17",
+  "lane": "related_expansion",
+  "selected_original_dois": [],
+  "selected_expansion_seed_dois": [
+    "10.1029/2021gl096709"
+  ],
+  "fast_exited_public_reach": [],
+  "fast_exited_public_scout": [],
+  "new_original_full_decisions": [],
+  "new_expansion_decisions": [],
+  "research_only_holds": [
+    "10.1029/2021gl096709"
+  ],
+  "technical_or_funding_holds": [],
+  "published_public_batch_urls": [],
+  "guarded_handoff_run_urls": [],
+  "handoff_status": "NOT_ATTEMPTED",
+  "handoff_blocker": null,
+  "prior_note_sha256_reused": [],
+  "prior_metadata_fingerprints_reused": [],
+  "cache_hits_observed": null,
+  "external_requests_observed": null,
+  "avoided_requests_measured": null,
+  "private_hub_import": "NOT_VERIFIED",
+  "human_decision": "NOT_VERIFIED",
+  "public_reach_addition": "NOT_VERIFIED",
+  "research_note": {
+    "disposition": "BOUNDED_SEED_NO_NEW_OUTPUT_IDENTIFIED_IN_INSPECTED_EVIDENCE",
+    "source_urls": [
+      "https://repository.library.noaa.gov/view/noaa/43170",
+      "https://repository.library.noaa.gov/view/noaa/43170/noaa_43170_DS1.pdf",
+      "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021GL096709"
+    ],
+    "evidence": "NOAA IR official record and NOAA-hosted manuscript Data Availability Statement cite existing GPCP, GPCC, twentieth-century reanalysis and CMIP5 sources; no separately deposited original code or dataset DOI established by this inspection.",
+    "limits": "Crossref API inaccessible; no complete publisher source extraction. No novel artifact URL found requiring REACH artifact URL gate. Funding in NOAA IR record is 432/431 only; do not infer WPO funding for related artifacts.",
+    "official_crossref_access": "SOURCE_ACCESS_FAILURE",
+    "policy_blob_sha": "bacca5f7393c6466702aa33e8569b754d508af0c",
+    "public_identity_gate": "NOT_APPLICABLE_NO_DISTINCT_ARTIFACT_IDENTIFIED"
+  }
+}
