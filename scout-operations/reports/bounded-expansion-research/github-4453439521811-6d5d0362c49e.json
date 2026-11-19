@@ -1,0 +1,65 @@
+{
+  "schema": "reach-scout-bounded-expansion-research-v1",
+  "observed_at_utc": "2026-11-19T13:34:34.830705+00:00",
+  "seed_doi": "10.1016/j.atmosenv.2023.120165",
+  "source_graph_sha256": "15ac23701de50ed47f31aad914159fcee9b2cc2acf84b87591b5b5490af850d5",
+  "seed_expansion_fingerprint": "f102178001d518a7e4423cd336a6de3cec54809efa4b9ba7a757f00db7b23688",
+  "seed_reach_identity_verified_in_graph": true,
+  "explicit_related_dois_preserved": [],
+  "source_lookups": [
+    {
+      "doi": "10.1016/j.atmosenv.2023.120165",
+      "role": "VERIFIED_REACH_EXPANSION_SEED",
+      "source_status": "ok",
+      "official_provider": "crossref",
+      "official_title": "Enhancing Air Quality Forecasts Across the Contiguous United States (CONUS) During Wildfires Using Analog-Based Post-Processing Methods",
+      "official_metadata_url": "https://api.crossref.org/works/10.1016/j.atmosenv.2023.120165",
+      "publication_status": "official_journal_article",
+      "official_award_numbers_observed": [
+        "1852977",
+        "NA19OAR4590083"
+      ],
+      "separate_output_uniqueness": "NOT_VERIFIED",
+      "same_WPO_project_parent": "NOT_VERIFIED"
+    }
+  ],
+  "status": "OFFICIAL_SOURCE_CHECK_RECORDED",
+  "source_driven_discovery": {
+    "schema": "reach-scout-source-driven-expansion-v1",
+    "seed_doi": "10.1016/j.atmosenv.2023.120165",
+    "source_checks": [
+      {
+        "kind": "crossref_references",
+        "url": "https://api.crossref.org/works/10.1016/j.atmosenv.2023.120165",
+        "status": "SOURCE_READ",
+        "source_sha256": "470d6c9cde31f4ca3ab23adbfe0259bdbed677ee3e340e49560fa84fc0854ec4",
+        "data_code_doi_matches": 0
+      },
+      {
+        "kind": "noaa_ir_landing",
+        "url": "https://repository.library.noaa.gov/view/noaa/60777",
+        "status": "SOURCE_READ",
+        "source_sha256": "b9e71a1c424035ae0dd146283d5d96d1d2382bea5a25e3724284eab29da0457a"
+      },
+      {
+        "kind": "noaa_ir_accepted_manuscript",
+        "url": "https://repository.library.noaa.gov/view/noaa/60777",
+        "status": "SOURCE_ACCESS_OR_PARSE_HOLD",
+        "error_type": "ValueError"
+      }
+    ],
+    "discovered_doi_leads": [],
+    "status": "NO_DATA_CODE_DOI_IDENTIFIED",
+    "new_public_candidates": 0,
+    "private_hub_import": "NOT_VERIFIED"
+  },
+  "new_source_driven_leads_screened": [],
+  "new_distinct_doi_leads_found": 0,
+  "new_public_candidate_count": 0,
+  "new_related_output_eligibility_confirmed": 0,
+  "separate_expansion_decisions_completed": 0,
+  "reason_not_a_completed_expansion": "Source metadata and DOI edges are research leads; distinct output identity, preprint, public REACH/Scout duplicate and exact WPO project funding require independent checks.",
+  "next_action": "Investigate official metadata and full current REACH/Scout identity for distinct linked DOI(s); verify their OWN publisher award and primary SPARK parent before any Needs Investigation or New Candidate.",
+  "private_hub_import": "NOT_VERIFIED",
+  "human_approval": "NOT_VERIFIED"
+}
