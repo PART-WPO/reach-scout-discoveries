@@ -1,0 +1,70 @@
+{
+  "schema": "reach-scout-bounded-expansion-research-v1",
+  "observed_at_utc": "2026-11-20T13:14:11.486233+00:00",
+  "seed_doi": "10.1016/j.atmosres.2018.09.004",
+  "source_graph_sha256": "15ac23701de50ed47f31aad914159fcee9b2cc2acf84b87591b5b5490af850d5",
+  "seed_expansion_fingerprint": "2a921d52a689f7d87f4e58f792fdde76fa1f8d6f0df0a2d5069da8b0420adfc7",
+  "seed_reach_identity_verified_in_graph": true,
+  "explicit_related_dois_preserved": [],
+  "source_lookups": [
+    {
+      "doi": "10.1016/j.atmosres.2018.09.004",
+      "role": "VERIFIED_REACH_EXPANSION_SEED",
+      "source_status": "ok",
+      "official_provider": "crossref",
+      "official_title": "Sensitivity of WRF simulations with the YSU PBL scheme to the lowest model level height for a sea fog event over the Yellow Sea",
+      "official_metadata_url": "https://api.crossref.org/works/10.1016/j.atmosres.2018.09.004",
+      "publication_status": "official_journal_article",
+      "official_award_numbers_observed": [
+        "2017YFC1404100",
+        "2017YFC1404200",
+        "41276009",
+        "NA17OAR4590188"
+      ],
+      "separate_output_uniqueness": "NOT_VERIFIED",
+      "same_WPO_project_parent": "NOT_VERIFIED"
+    }
+  ],
+  "status": "OFFICIAL_SOURCE_CHECK_RECORDED",
+  "source_driven_discovery": {
+    "schema": "reach-scout-source-driven-expansion-v1",
+    "seed_doi": "10.1016/j.atmosres.2018.09.004",
+    "source_checks": [
+      {
+        "kind": "crossref_references",
+        "url": "https://api.crossref.org/works/10.1016/j.atmosres.2018.09.004",
+        "status": "SOURCE_READ",
+        "source_sha256": "90e5142248eedb1827489c5e72e7eb9b0b52b82a714e267540d078cbc5a7d620",
+        "data_code_doi_matches": 0
+      },
+      {
+        "kind": "noaa_ir_landing",
+        "url": "https://repository.library.noaa.gov/view/noaa/59088",
+        "status": "SOURCE_READ",
+        "source_sha256": "d6c634b70573dd9c1efeb99ebd4e26abb241ab9a64ee31120e393efdd6dd15c1"
+      },
+      {
+        "kind": "noaa_ir_manuscript_pdf",
+        "url": "https://repository.library.noaa.gov/view/noaa/59088/noaa_59088_DS1.pdf",
+        "status": "SOURCE_READ",
+        "source_sha256": "b5d134f38e06e68da0a8dd09b93633d71a2e55e0929877ab4a2254992607f3c9",
+        "data_code_doi_matches": 0,
+        "pdf_text_characters": 109335,
+        "pdf_doi_tokens_observed": 78
+      }
+    ],
+    "discovered_doi_leads": [],
+    "status": "NO_DATA_CODE_DOI_IDENTIFIED",
+    "new_public_candidates": 0,
+    "private_hub_import": "NOT_VERIFIED"
+  },
+  "new_source_driven_leads_screened": [],
+  "new_distinct_doi_leads_found": 0,
+  "new_public_candidate_count": 0,
+  "new_related_output_eligibility_confirmed": 0,
+  "separate_expansion_decisions_completed": 0,
+  "reason_not_a_completed_expansion": "Source metadata and DOI edges are research leads; distinct output identity, preprint, public REACH/Scout duplicate and exact WPO project funding require independent checks.",
+  "next_action": "Investigate official metadata and full current REACH/Scout identity for distinct linked DOI(s); verify their OWN publisher award and primary SPARK parent before any Needs Investigation or New Candidate.",
+  "private_hub_import": "NOT_VERIFIED",
+  "human_approval": "NOT_VERIFIED"
+}
