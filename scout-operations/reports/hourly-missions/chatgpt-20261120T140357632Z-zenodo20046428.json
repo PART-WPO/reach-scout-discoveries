@@ -1,0 +1,49 @@
+{
+  "schema": "reach-scout-hourly-mission-outcome-v1",
+  "producer": "chatgpt_hourly_mission",
+  "not_chatgpt_hourly_mission": false,
+  "mission_id": "20261120T140357632Z-zenodo20046428",
+  "started_at_utc": "2026-11-20T14:03:57.632Z",
+  "completed_at_utc": "2026-11-20T14:04:15.439Z",
+  "policy_commit_sha": "NOT_VERIFIED",
+  "memory_source_fingerprint": "15ac23701de50ed47f31aad914159fcee9b2cc2acf84b87591b5b5490af850d5",
+  "memory_builder_policy_sha256": "6c77012241b8abd0544dcb9e8a22e38aad5b76bb6c3664afafcdeedbc2d4cc17",
+  "lane": "related_expansion",
+  "selected_original_dois": [],
+  "selected_expansion_seed_dois": [
+    "10.5281/zenodo.20046428"
+  ],
+  "fast_exited_public_reach": [],
+  "fast_exited_public_scout": [],
+  "new_original_full_decisions": [],
+  "new_expansion_decisions": [],
+  "research_only_holds": [
+    "10.5281/zenodo.20046428"
+  ],
+  "technical_or_funding_holds": [
+    "SOURCE_ACCESS_FAILURE: official DataCite exact DOI https://api.datacite.org/dois/10.5281%2Fzenodo.20046428 and distinct Zenodo native API https://zenodo.org/api/records/20046428 inaccessible 2026-11-20; PUBLIC_IDENTITY_GATE_INCOMPLETE: complete REACH canonical URL/DOI, Scout inbox, IR/version checks not completed; no novelty or WPO attribution conclusion"
+  ],
+  "published_public_batch_urls": [],
+  "guarded_handoff_run_urls": [],
+  "handoff_status": "NOT_ATTEMPTED",
+  "handoff_blocker": null,
+  "prior_note_sha256_reused": [],
+  "prior_metadata_fingerprints_reused": [],
+  "cache_hits_observed": null,
+  "external_requests_observed": null,
+  "avoided_requests_measured": null,
+  "private_hub_import": "NOT_VERIFIED",
+  "human_decision": "NOT_VERIFIED",
+  "public_reach_addition": "NOT_VERIFIED",
+  "source_evidence": [
+    {
+      "url": "https://api.datacite.org/dois/10.5281%2Fzenodo.20046428",
+      "outcome": "ACCESS_FAILURE"
+    },
+    {
+      "url": "https://zenodo.org/api/records/20046428",
+      "outcome": "ACCESS_FAILURE"
+    }
+  ],
+  "policy_blob_sha": "bacca5f7393c6466702aa33e8569b754d508af0c"
+}
