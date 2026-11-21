@@ -1,0 +1,99 @@
+{
+  "schema": "reach-scout-bounded-expansion-research-v1",
+  "observed_at_utc": "2026-11-21T02:36:09.471549+00:00",
+  "seed_doi": "10.1016/j.atmosres.2023.106994",
+  "source_graph_sha256": "15ac23701de50ed47f31aad914159fcee9b2cc2acf84b87591b5b5490af850d5",
+  "seed_expansion_fingerprint": "c973abe8efc06537e69d47c2868ece79c2a15aab6ffbb2710de82d3ec09e5559",
+  "seed_reach_identity_verified_in_graph": true,
+  "explicit_related_dois_preserved": [],
+  "source_lookups": [
+    {
+      "doi": "10.1016/j.atmosres.2023.106994",
+      "role": "VERIFIED_REACH_EXPANSION_SEED",
+      "source_status": "ok",
+      "official_provider": "crossref",
+      "official_title": "The effects of boundary layer vertical turbulent diffusivity on the tropical cyclone intensity",
+      "official_metadata_url": "https://api.crossref.org/works/10.1016/j.atmosres.2023.106994",
+      "publication_status": "official_journal_article",
+      "official_award_numbers_observed": [
+        "2211307",
+        "42075072",
+        "NA22OAR4590177"
+      ],
+      "separate_output_uniqueness": "NOT_VERIFIED",
+      "same_WPO_project_parent": "NOT_VERIFIED"
+    }
+  ],
+  "status": "OFFICIAL_SOURCE_CHECK_RECORDED",
+  "source_driven_discovery": {
+    "schema": "reach-scout-source-driven-expansion-v1",
+    "seed_doi": "10.1016/j.atmosres.2023.106994",
+    "source_checks": [
+      {
+        "kind": "crossref_references",
+        "url": "https://api.crossref.org/works/10.1016/j.atmosres.2023.106994",
+        "status": "SOURCE_READ",
+        "source_sha256": "32c3a5f992d2a044e2d0ec681bd1409d29351061f79bc1e4eeca607233adea94",
+        "data_code_doi_matches": 1
+      }
+    ],
+    "discovered_doi_leads": [
+      {
+        "doi": "10.1016/j.atmosres.2020.105339",
+        "evidence_kind": "crossref_structured_data_code_citation",
+        "source_url": "https://api.crossref.org/works/10.1016/j.atmosres.2023.106994",
+        "context_excerpt": "How well is outer tropical cyclone size represented in the ERA5 reanalysis dataset?   ",
+        "eligibility": "RESEARCH_LEAD_ONLY",
+        "source_sha256": "32c3a5f992d2a044e2d0ec681bd1409d29351061f79bc1e4eeca607233adea94"
+      }
+    ],
+    "status": "SOURCE_BACKED_LEADS_FOUND",
+    "new_public_candidates": 0,
+    "private_hub_import": "NOT_VERIFIED"
+  },
+  "new_source_driven_leads_screened": [
+    {
+      "doi": "10.1016/j.atmosres.2020.105339",
+      "source_url": "https://api.crossref.org/works/10.1016/j.atmosres.2023.106994",
+      "source_sha256": "32c3a5f992d2a044e2d0ec681bd1409d29351061f79bc1e4eeca607233adea94",
+      "source_context_type": "crossref_structured_data_code_citation",
+      "official_metadata_status": "ok",
+      "official_metadata_url": "https://api.crossref.org/works/10.1016/j.atmosres.2020.105339",
+      "official_title": "How well is outer tropical cyclone size represented in the ERA5 reanalysis dataset?",
+      "official_resource_type": "journal-article",
+      "publication_status": "official_journal_article",
+      "exact_doi_publisher_deposited_wpo_awards": [],
+      "public_identity_status": "NO_PUBLIC_IDENTITY_MATCH",
+      "public_identity_detail": {
+        "doi": "10.1016/j.atmosres.2020.105339",
+        "status": "NO_PUBLIC_IDENTITY_MATCH",
+        "noaa_ir_reach_check": {
+          "status": "DOI_NOT_IN_VERIFIED_IR_INDEX_UNKNOWN",
+          "official_url": null,
+          "match_uid": null,
+          "match_detail_shard": null
+        },
+        "checked_public_scout_manifest_and_inbox": true,
+        "checked_live_complete_reach": true,
+        "public_identity_source_fingerprint": "c55b0701c2b679e03dfd5a4042583bfed370b0e5746128bc6fba5ac38fa4dd62",
+        "live_reach_manifest_sha256": "8ad9e8e20cfc3953487463d4d3bb98eb2e64da2531877274a3e79d559df32f61",
+        "matches": [],
+        "reason": "SHA_VERIFIED_SCOUT_AND_LIVE_FULL_REACH_NEGATIVE"
+      },
+      "official_ir_reach_status": "DOI_NOT_IN_VERIFIED_IR_INDEX_UNKNOWN",
+      "native_source_recovery": null,
+      "new_public_candidate_count": 0,
+      "private_hub_import": "NOT_VERIFIED",
+      "next_gate": "REVIEW_READY_NEEDS_INVESTIGATION_NOT_DELIVERED",
+      "eligibility": "RESEARCH_LEAD_ONLY_NOT_STAGED"
+    }
+  ],
+  "new_distinct_doi_leads_found": 1,
+  "new_public_candidate_count": 0,
+  "new_related_output_eligibility_confirmed": 0,
+  "separate_expansion_decisions_completed": 0,
+  "reason_not_a_completed_expansion": "Source metadata and DOI edges are research leads; distinct output identity, preprint, public REACH/Scout duplicate and exact WPO project funding require independent checks.",
+  "next_action": "Investigate official metadata and full current REACH/Scout identity for distinct linked DOI(s); verify their OWN publisher award and primary SPARK parent before any Needs Investigation or New Candidate.",
+  "private_hub_import": "NOT_VERIFIED",
+  "human_approval": "NOT_VERIFIED"
+}
