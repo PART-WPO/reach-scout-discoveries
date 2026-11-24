@@ -98,7 +98,7 @@
     "interpretation": "Distinct seeds, DOI leads and official metadata retrieval are research progress, not completed expansions or public candidate/REACH additions."
   },
   "source_sha256": {
-    "scout-operations/crossref-candidate-queue.json": "5ce98158b8b0b771d00ef15407d518ac54cf48a870807029d0b8d82a763b4810",
+    "scout-operations/crossref-candidate-queue.json": "a6a0ed58ee5f2ab8ab50da196c967e1ec6f1c1c72013af61c392cbf055c10513",
     "scout-operations/historical-crossref-coverage.json": "92d36650e2077bbfc4a8f27d2f166be40b6c3831b7dd33ffdbd5fafef7057860",
     "scout-operations/historical-coverage.json": "f0d440a18f983a07bef10c16047d9dfae2d67039178a22f56294d935403cfb59",
     "scout-discoveries/manifest.json": "e2772f6756ff04f4a5a1ec3847b37a64619cc2f5b2ab762b9281f1d93df5dbdc",
@@ -110,8 +110,8 @@
   "source_freshness": {
     "crossref_queue_source_checks": {
       "scout-operations/historical-crossref-screening/actionable-routing.json": {
-        "recorded_sha256": "f8d0a06a987cb6ed05e21973353755af3286deb2f4bacf4025b259cacb489107",
-        "current_sha256": "f8d0a06a987cb6ed05e21973353755af3286deb2f4bacf4025b259cacb489107",
+        "recorded_sha256": "5a2c057b093fa1145883b707f9c538bb76dcd89a65afd662bc30e79aba01de38",
+        "current_sha256": "5a2c057b093fa1145883b707f9c538bb76dcd89a65afd662bc30e79aba01de38",
         "fresh": true
       },
       "scout-operations/research-outcome-registry.json": {
@@ -170,26 +170,26 @@
         "fresh": true
       },
       "scout-operations/identity-cache/public-identity-index.json": {
-        "recorded_sha256": "4ad04743d9a680f04118df275817bff7c9a36d15a35818366120ee3501225a45",
-        "current_sha256": "4ad04743d9a680f04118df275817bff7c9a36d15a35818366120ee3501225a45",
+        "recorded_sha256": "baf72d1e5e8d61c8402ba74106737276510dd9e1d1dc8f72735ead601b598b35",
+        "current_sha256": "baf72d1e5e8d61c8402ba74106737276510dd9e1d1dc8f72735ead601b598b35",
         "fresh": true
       },
       "scout-operations/reach-comparison-cache/comparison-index.json": {
-        "recorded_sha256": "6660562e325a6a141198f59acce84f2e30d9a2d14e6cf5acd29769c8a4b68e1e",
+        "recorded_sha256": "5f5d00d9abe4cfbed55ccfadc5a1e84eee543ef9187818724298a4b7d6bc539a",
         "current_sha256": "5f5d00d9abe4cfbed55ccfadc5a1e84eee543ef9187818724298a4b7d6bc539a",
-        "fresh": false
+        "fresh": true
       }
     },
-    "crossref_queue_fresh": false,
+    "crossref_queue_fresh": true,
     "targeted_reconciliation_scope_is_snapshot": true
   },
   "screening_not_research": {
     "historical_crossref_dois": 614,
-    "identity_fast_exits": 426,
-    "bounded_identity_reviews": 51,
+    "identity_fast_exits": 438,
+    "bounded_identity_reviews": 47,
     "novel_research_candidates": 77,
     "preprint_holds": 6,
-    "published_version_leads": 11,
+    "published_version_leads": 12,
     "other_evidence_holds": 2
   },
   "verified_original_research": {
