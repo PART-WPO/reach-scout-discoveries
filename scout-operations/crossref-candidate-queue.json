@@ -2,7 +2,7 @@
   "schema": "reach-scout-crossref-candidate-queue-v2",
   "purpose": "Read-only selection; not completed research or approval",
   "completion_target": "Each hourly mission handles at least one full novel-output screening through a concrete disposition or public human-review handoff. Skipped known records do not count; technical blockers must be reported, not represented as completed.",
-  "one_mission_actionable_original_count": 130,
+  "one_mission_actionable_original_count": 126,
   "ledger_cooldown_excluded_count": 0,
   "live_manifest_verified_fast_exit_count": 53,
   "special_publication_type_review_count": 1,
@@ -72,22 +72,22 @@
       "action": "Complete one bounded identity/version check and record a final screening decision in this mission"
     },
     {
-      "doi": "10.1029/2021ms002774",
+      "doi": "10.1029/2022ms003230",
       "lane": "BOUNDED_IDENTITY_REVIEW",
       "priority": 70,
-      "funding_signal": "NON_WPO_OAR_AWARD",
+      "funding_signal": "CONFIRMED_WPO_459",
       "required_outcome": "FINISH_ORIGINAL_SCREENING_DECISION_THIS_RUN",
       "action": "Complete one bounded identity/version check and record a final screening decision in this mission"
     }
   ],
   "total": 614,
   "lane_counts": {
-    "ALREADY_IN_SCOUT_REVIEW_FAST_EXIT": 37,
-    "BOUNDED_IDENTITY_REVIEW": 51,
-    "EXISTING_REACH_FAST_EXIT": 426,
+    "ALREADY_IN_SCOUT_REVIEW_FAST_EXIT": 28,
+    "BOUNDED_IDENTITY_REVIEW": 47,
+    "EXISTING_REACH_FAST_EXIT": 438,
     "NON_459_PROJECT_EVIDENCE_CHECK": 2,
     "NOVEL_IDENTITY_RESEARCH": 77,
-    "PREPRINT_PUBLISHED_VERSION_LEAD": 11,
+    "PREPRINT_PUBLISHED_VERSION_LEAD": 12,
     "PREPRINT_WATCHLIST_HOLD": 6,
     "RETIRED_PREPRINT_EXISTING_REACH_FAST_EXIT": 1,
     "SPECIAL_PUBLICATION_TYPE_REVIEW": 1,
@@ -323,36 +323,6 @@
       "special_publication_type": null,
       "one_mission_disposition_required": true,
       "verified_published_dois": [],
-      "doi": "10.1029/2021ms002774",
-      "title": "using simple explainable neural networks to predict the madden julian oscillation",
-      "lane": "BOUNDED_IDENTITY_REVIEW",
-      "priority": 70,
-      "next_action": "Complete one bounded identity/version check and record a final screening decision in this mission",
-      "funding_signal": "NON_WPO_OAR_AWARD",
-      "crossref_structured_award_numbers": [
-        "NA18OAR4310296"
-      ],
-      "wpo_459_award_numbers": [],
-      "award_evidence_source_batches": [
-        "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part002.csv"
-      ],
-      "award_match_basis": "Historical Crossref publisher-deposited award for exact DOI; 459 identifies WPO funding. Exact SPARK parent and output identity still require verification before addition",
-      "prior_disposition": null,
-      "scout_overlap": false,
-      "verified_reach_uid": null,
-      "private_hub_review": "NOT_VERIFIED"
-    },
-    {
-      "preprint_status": null,
-      "already_in_public_scout_queue": false,
-      "matched_public_review_locations": [],
-      "live_public_title_conflict": false,
-      "handoff_ledger_state": null,
-      "handoff_ledger_reason": null,
-      "handoff_retry_after": null,
-      "special_publication_type": null,
-      "one_mission_disposition_required": true,
-      "verified_published_dois": [],
       "doi": "10.1029/2022ms003230",
       "title": "the effect of advection on the three dimensional distribution of turbulent kinetic energy and its generation in idealized tropical cyclone simulations",
       "lane": "BOUNDED_IDENTITY_REVIEW",
@@ -560,38 +530,6 @@
       "wpo_459_award_numbers": [
         "NA19OAR4590239",
         "NA21OAR4590370"
-      ],
-      "award_evidence_source_batches": [
-        "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part002.csv"
-      ],
-      "award_match_basis": "Historical Crossref publisher-deposited award for exact DOI; 459 identifies WPO funding. Exact SPARK parent and output identity still require verification before addition",
-      "prior_disposition": null,
-      "scout_overlap": false,
-      "verified_reach_uid": null,
-      "private_hub_review": "NOT_VERIFIED"
-    },
-    {
-      "preprint_status": null,
-      "already_in_public_scout_queue": false,
-      "matched_public_review_locations": [],
-      "live_public_title_conflict": false,
-      "handoff_ledger_state": null,
-      "handoff_ledger_reason": null,
-      "handoff_retry_after": null,
-      "special_publication_type": null,
-      "one_mission_disposition_required": true,
-      "verified_published_dois": [],
-      "doi": "10.1038/s41612-024-00687-1",
-      "title": "incorrect computation of madden julian oscillation prediction skill",
-      "lane": "BOUNDED_IDENTITY_REVIEW",
-      "priority": 70,
-      "next_action": "Complete one bounded identity/version check and record a final screening decision in this mission",
-      "funding_signal": "CONFIRMED_WPO_459",
-      "crossref_structured_award_numbers": [
-        "NA22OAR4590168"
-      ],
-      "wpo_459_award_numbers": [
-        "NA22OAR4590168"
       ],
       "award_evidence_source_batches": [
         "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part002.csv"
@@ -929,36 +867,6 @@
       "special_publication_type": null,
       "one_mission_disposition_required": true,
       "verified_published_dois": [],
-      "doi": "10.1175/waf-d-22-0160.1",
-      "title": "a multimodel real time system for global probabilistic subseasonal forecasts of precipitation and temperature",
-      "lane": "BOUNDED_IDENTITY_REVIEW",
-      "priority": 70,
-      "next_action": "Complete one bounded identity/version check and record a final screening decision in this mission",
-      "funding_signal": "NON_WPO_OAR_AWARD",
-      "crossref_structured_award_numbers": [
-        "NA18OAR4310295"
-      ],
-      "wpo_459_award_numbers": [],
-      "award_evidence_source_batches": [
-        "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part005.csv"
-      ],
-      "award_match_basis": "Historical Crossref publisher-deposited award for exact DOI; 459 identifies WPO funding. Exact SPARK parent and output identity still require verification before addition",
-      "prior_disposition": null,
-      "scout_overlap": false,
-      "verified_reach_uid": null,
-      "private_hub_review": "NOT_VERIFIED"
-    },
-    {
-      "preprint_status": null,
-      "already_in_public_scout_queue": false,
-      "matched_public_review_locations": [],
-      "live_public_title_conflict": false,
-      "handoff_ledger_state": null,
-      "handoff_ledger_reason": null,
-      "handoff_retry_after": null,
-      "special_publication_type": null,
-      "one_mission_disposition_required": true,
-      "verified_published_dois": [],
       "doi": "10.1175/waf-d-23-0002.1",
       "title": "subseasonal variability of us coastal sea level from mjo and enso teleconnection interference",
       "lane": "BOUNDED_IDENTITY_REVIEW",
@@ -1032,38 +940,6 @@
       ],
       "wpo_459_award_numbers": [
         "NA21OAR4590162"
-      ],
-      "award_evidence_source_batches": [
-        "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part005.csv"
-      ],
-      "award_match_basis": "Historical Crossref publisher-deposited award for exact DOI; 459 identifies WPO funding. Exact SPARK parent and output identity still require verification before addition",
-      "prior_disposition": null,
-      "scout_overlap": false,
-      "verified_reach_uid": null,
-      "private_hub_review": "NOT_VERIFIED"
-    },
-    {
-      "preprint_status": null,
-      "already_in_public_scout_queue": false,
-      "matched_public_review_locations": [],
-      "live_public_title_conflict": false,
-      "handoff_ledger_state": null,
-      "handoff_ledger_reason": null,
-      "handoff_retry_after": null,
-      "special_publication_type": null,
-      "one_mission_disposition_required": true,
-      "verified_published_dois": [],
-      "doi": "10.1175/waf-d-25-0181.1",
-      "title": "evaluation of severe weather forecasts from real time medium range convection allowing ensembles over the conterminous united states",
-      "lane": "BOUNDED_IDENTITY_REVIEW",
-      "priority": 70,
-      "next_action": "Complete one bounded identity/version check and record a final screening decision in this mission",
-      "funding_signal": "CONFIRMED_WPO_459",
-      "crossref_structured_award_numbers": [
-        "NA22OAR4590533"
-      ],
-      "wpo_459_award_numbers": [
-        "NA22OAR4590533"
       ],
       "award_evidence_source_batches": [
         "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part005.csv"
@@ -4167,6 +4043,40 @@
       "special_publication_type": null,
       "one_mission_disposition_required": false,
       "verified_published_dois": [
+        "10.5194/gmd-18-7969-2025"
+      ],
+      "doi": "10.5194/egusphere-2025-1142",
+      "title": "a python diagnostics package for evaluation of mjo teleconnections in s2s forecast systems",
+      "lane": "PREPRINT_PUBLISHED_VERSION_LEAD",
+      "priority": 15,
+      "next_action": "Investigate official published DOI(s) as separate identities; never stage preprint DOI",
+      "funding_signal": "CONFIRMED_WPO_459",
+      "crossref_structured_award_numbers": [
+        "NA22OAR4590216"
+      ],
+      "wpo_459_award_numbers": [
+        "NA22OAR4590216"
+      ],
+      "award_evidence_source_batches": [
+        "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part006.csv"
+      ],
+      "award_match_basis": "Historical Crossref publisher-deposited award for exact DOI; 459 identifies WPO funding. Exact SPARK parent and output identity still require verification before addition",
+      "prior_disposition": null,
+      "scout_overlap": false,
+      "verified_reach_uid": null,
+      "private_hub_review": "NOT_VERIFIED"
+    },
+    {
+      "preprint_status": "published_version_found",
+      "already_in_public_scout_queue": false,
+      "matched_public_review_locations": [],
+      "live_public_title_conflict": false,
+      "handoff_ledger_state": null,
+      "handoff_ledger_reason": null,
+      "handoff_retry_after": null,
+      "special_publication_type": null,
+      "one_mission_disposition_required": false,
+      "verified_published_dois": [
         "10.5194/gmd-18-5937-2025"
       ],
       "doi": "10.5194/egusphere-2025-1736",
@@ -6394,9 +6304,9 @@
       "verified_published_dois": [],
       "doi": "10.1016/j.pdisas.2026.100696",
       "title": "extreme weather as an occupational hazard structural vulnerability among multilingual immigrant workers",
-      "lane": "ALREADY_IN_SCOUT_REVIEW_FAST_EXIT",
+      "lane": "EXISTING_REACH_FAST_EXIT",
       "priority": 0,
-      "next_action": "Already in Scout's public review pipeline: do not repeat original research or create another proposal; keep independent expansion",
+      "next_action": "Already in REACH: skip original; keep independent expansion",
       "funding_signal": "CONFIRMED_WPO_459",
       "crossref_structured_award_numbers": [
         "NA22OAR4590187"
@@ -6410,7 +6320,7 @@
       "award_match_basis": "Historical Crossref publisher-deposited award for exact DOI; 459 identifies WPO funding. Exact SPARK parent and output identity still require verification before addition",
       "prior_disposition": "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
       "scout_overlap": true,
-      "verified_reach_uid": null,
+      "verified_reach_uid": "reachuid-v1-eb7af09119c0d4bfb555525d5c2772ef",
       "private_hub_review": "NOT_VERIFIED"
     },
     {
@@ -7479,6 +7389,36 @@
       "prior_disposition": null,
       "scout_overlap": false,
       "verified_reach_uid": "reachuid-v1-6c61f896f6390618df006b8015945f59",
+      "private_hub_review": "NOT_VERIFIED"
+    },
+    {
+      "preprint_status": null,
+      "already_in_public_scout_queue": false,
+      "matched_public_review_locations": [],
+      "live_public_title_conflict": false,
+      "handoff_ledger_state": null,
+      "handoff_ledger_reason": null,
+      "handoff_retry_after": null,
+      "special_publication_type": null,
+      "one_mission_disposition_required": false,
+      "verified_published_dois": [],
+      "doi": "10.1029/2021ms002774",
+      "title": "using simple explainable neural networks to predict the madden julian oscillation",
+      "lane": "EXISTING_REACH_FAST_EXIT",
+      "priority": 0,
+      "next_action": "Already in REACH: skip original; keep independent expansion",
+      "funding_signal": "NON_WPO_OAR_AWARD",
+      "crossref_structured_award_numbers": [
+        "NA18OAR4310296"
+      ],
+      "wpo_459_award_numbers": [],
+      "award_evidence_source_batches": [
+        "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part002.csv"
+      ],
+      "award_match_basis": "Historical Crossref publisher-deposited award for exact DOI; 459 identifies WPO funding. Exact SPARK parent and output identity still require verification before addition",
+      "prior_disposition": null,
+      "scout_overlap": false,
+      "verified_reach_uid": "reachuid-v1-6d7befd4038719fa793a03283f9db66e",
       "private_hub_review": "NOT_VERIFIED"
     },
     {
@@ -8958,6 +8898,38 @@
       "special_publication_type": null,
       "one_mission_disposition_required": false,
       "verified_published_dois": [],
+      "doi": "10.1038/s41612-024-00687-1",
+      "title": "incorrect computation of madden julian oscillation prediction skill",
+      "lane": "EXISTING_REACH_FAST_EXIT",
+      "priority": 0,
+      "next_action": "Already in REACH: skip original; keep independent expansion",
+      "funding_signal": "CONFIRMED_WPO_459",
+      "crossref_structured_award_numbers": [
+        "NA22OAR4590168"
+      ],
+      "wpo_459_award_numbers": [
+        "NA22OAR4590168"
+      ],
+      "award_evidence_source_batches": [
+        "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part002.csv"
+      ],
+      "award_match_basis": "Historical Crossref publisher-deposited award for exact DOI; 459 identifies WPO funding. Exact SPARK parent and output identity still require verification before addition",
+      "prior_disposition": null,
+      "scout_overlap": false,
+      "verified_reach_uid": "reachuid-v1-b67a78a47801d2e593b5b33e1e818f04",
+      "private_hub_review": "NOT_VERIFIED"
+    },
+    {
+      "preprint_status": null,
+      "already_in_public_scout_queue": false,
+      "matched_public_review_locations": [],
+      "live_public_title_conflict": false,
+      "handoff_ledger_state": null,
+      "handoff_ledger_reason": null,
+      "handoff_retry_after": null,
+      "special_publication_type": null,
+      "one_mission_disposition_required": false,
+      "verified_published_dois": [],
       "doi": "10.1038/s41612-025-01117-6",
       "title": "toward a unified parameterization of three dimensional turbulent transport in high resolution numerical weather prediction models",
       "lane": "EXISTING_REACH_FAST_EXIT",
@@ -9333,9 +9305,9 @@
       "verified_published_dois": [],
       "doi": "10.1088/2515-7620/aeaad2",
       "title": "dynamical prediction of western north pacific seasonal accumulated cyclone energy with experimental sfs reforecasts",
-      "lane": "ALREADY_IN_SCOUT_REVIEW_FAST_EXIT",
+      "lane": "EXISTING_REACH_FAST_EXIT",
       "priority": 0,
-      "next_action": "Already in Scout's public review pipeline: do not repeat original research or create another proposal; keep independent expansion",
+      "next_action": "Already in REACH: skip original; keep independent expansion",
       "funding_signal": "CONFIRMED_WPO_459",
       "crossref_structured_award_numbers": [
         "NA24OARX459C0015"
@@ -9349,7 +9321,7 @@
       "award_match_basis": "Historical Crossref publisher-deposited award for exact DOI; 459 identifies WPO funding. Exact SPARK parent and output identity still require verification before addition",
       "prior_disposition": "EVIDENCE_RECORDED_CONTINUE_OR_VERIFY",
       "scout_overlap": true,
-      "verified_reach_uid": null,
+      "verified_reach_uid": "reachuid-v1-0117eb8185241b58c871d0036ef11add",
       "private_hub_review": "NOT_VERIFIED"
     },
     {
@@ -9368,9 +9340,9 @@
       "verified_published_dois": [],
       "doi": "10.1109/access.2025.3636732",
       "title": "multi resolution data fusion for resilient flood mapping",
-      "lane": "ALREADY_IN_SCOUT_REVIEW_FAST_EXIT",
+      "lane": "EXISTING_REACH_FAST_EXIT",
       "priority": 0,
-      "next_action": "Already in Scout's public review pipeline: do not repeat original research or create another proposal; keep independent expansion",
+      "next_action": "Already in REACH: skip original; keep independent expansion",
       "funding_signal": "CONFIRMED_WPO_459",
       "crossref_structured_award_numbers": [
         "NA21OAR4590358"
@@ -9384,7 +9356,7 @@
       "award_match_basis": "Historical Crossref publisher-deposited award for exact DOI; 459 identifies WPO funding. Exact SPARK parent and output identity still require verification before addition",
       "prior_disposition": null,
       "scout_overlap": true,
-      "verified_reach_uid": null,
+      "verified_reach_uid": "reachuid-v1-5a3fc735e674f2abbda9068cfccde4d2",
       "private_hub_review": "NOT_VERIFIED"
     },
     {
@@ -10419,9 +10391,9 @@
       "verified_published_dois": [],
       "doi": "10.1175/aies-d-26-0004.1",
       "title": "the impact of target dataset choice on machine learning prediction of severe hail wind and tornadoes",
-      "lane": "ALREADY_IN_SCOUT_REVIEW_FAST_EXIT",
+      "lane": "EXISTING_REACH_FAST_EXIT",
       "priority": 0,
-      "next_action": "Already in Scout's public review pipeline: do not repeat original research or create another proposal; keep independent expansion",
+      "next_action": "Already in REACH: skip original; keep independent expansion",
       "funding_signal": "CONFIRMED_WPO_459",
       "crossref_structured_award_numbers": [
         "NA22OAR4590530"
@@ -10435,7 +10407,7 @@
       "award_match_basis": "Historical Crossref publisher-deposited award for exact DOI; 459 identifies WPO funding. Exact SPARK parent and output identity still require verification before addition",
       "prior_disposition": "PROJECT_EVIDENCE_HOLD",
       "scout_overlap": true,
-      "verified_reach_uid": null,
+      "verified_reach_uid": "reachuid-v1-da109b3a853eea5162367f803a80fc0e",
       "private_hub_review": "NOT_VERIFIED"
     },
     {
@@ -15689,6 +15661,36 @@
     },
     {
       "preprint_status": null,
+      "already_in_public_scout_queue": false,
+      "matched_public_review_locations": [],
+      "live_public_title_conflict": false,
+      "handoff_ledger_state": null,
+      "handoff_ledger_reason": null,
+      "handoff_retry_after": null,
+      "special_publication_type": null,
+      "one_mission_disposition_required": false,
+      "verified_published_dois": [],
+      "doi": "10.1175/waf-d-22-0160.1",
+      "title": "a multimodel real time system for global probabilistic subseasonal forecasts of precipitation and temperature",
+      "lane": "EXISTING_REACH_FAST_EXIT",
+      "priority": 0,
+      "next_action": "Already in REACH: skip original; keep independent expansion",
+      "funding_signal": "NON_WPO_OAR_AWARD",
+      "crossref_structured_award_numbers": [
+        "NA18OAR4310295"
+      ],
+      "wpo_459_award_numbers": [],
+      "award_evidence_source_batches": [
+        "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part005.csv"
+      ],
+      "award_match_basis": "Historical Crossref publisher-deposited award for exact DOI; 459 identifies WPO funding. Exact SPARK parent and output identity still require verification before addition",
+      "prior_disposition": null,
+      "scout_overlap": false,
+      "verified_reach_uid": "reachuid-v1-1dcb955eacf477443d5f1e218d5f4ad8",
+      "private_hub_review": "NOT_VERIFIED"
+    },
+    {
+      "preprint_status": null,
       "already_in_public_scout_queue": true,
       "matched_public_review_locations": [
         "scout-discoveries/batches/2026-10-21-30-award-followup-001.csv",
@@ -17112,9 +17114,9 @@
       "verified_published_dois": [],
       "doi": "10.1175/waf-d-25-0044.1",
       "title": "a blending method for multiscale valid time shifting within an rrfs like ensemble based data assimilation system",
-      "lane": "ALREADY_IN_SCOUT_REVIEW_FAST_EXIT",
+      "lane": "EXISTING_REACH_FAST_EXIT",
       "priority": 0,
-      "next_action": "Already in Scout's public review pipeline: do not repeat original research or create another proposal; keep independent expansion",
+      "next_action": "Already in REACH: skip original; keep independent expansion",
       "funding_signal": "CONFIRMED_WPO_459",
       "crossref_structured_award_numbers": [
         "NA19OAR4590138"
@@ -17128,7 +17130,7 @@
       "award_match_basis": "Historical Crossref publisher-deposited award for exact DOI; 459 identifies WPO funding. Exact SPARK parent and output identity still require verification before addition",
       "prior_disposition": null,
       "scout_overlap": true,
-      "verified_reach_uid": null,
+      "verified_reach_uid": "reachuid-v1-49a5adaaea02bb7313c851fff731d57e",
       "private_hub_review": "NOT_VERIFIED"
     },
     {
@@ -17261,6 +17263,38 @@
       "prior_disposition": null,
       "scout_overlap": false,
       "verified_reach_uid": "reachuid-v1-0fd086152b498dc95de83afbf3c2d087",
+      "private_hub_review": "NOT_VERIFIED"
+    },
+    {
+      "preprint_status": null,
+      "already_in_public_scout_queue": false,
+      "matched_public_review_locations": [],
+      "live_public_title_conflict": false,
+      "handoff_ledger_state": null,
+      "handoff_ledger_reason": null,
+      "handoff_retry_after": null,
+      "special_publication_type": null,
+      "one_mission_disposition_required": false,
+      "verified_published_dois": [],
+      "doi": "10.1175/waf-d-25-0181.1",
+      "title": "evaluation of severe weather forecasts from real time medium range convection allowing ensembles over the conterminous united states",
+      "lane": "EXISTING_REACH_FAST_EXIT",
+      "priority": 0,
+      "next_action": "Already in REACH: skip original; keep independent expansion",
+      "funding_signal": "CONFIRMED_WPO_459",
+      "crossref_structured_award_numbers": [
+        "NA22OAR4590533"
+      ],
+      "wpo_459_award_numbers": [
+        "NA22OAR4590533"
+      ],
+      "award_evidence_source_batches": [
+        "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part005.csv"
+      ],
+      "award_match_basis": "Historical Crossref publisher-deposited award for exact DOI; 459 identifies WPO funding. Exact SPARK parent and output identity still require verification before addition",
+      "prior_disposition": null,
+      "scout_overlap": false,
+      "verified_reach_uid": "reachuid-v1-fa73aa2d013d33973521a205ac4d6bad",
       "private_hub_review": "NOT_VERIFIED"
     },
     {
@@ -17477,9 +17511,9 @@
       "verified_published_dois": [],
       "doi": "10.1175/waf-d-26-0084.1",
       "title": "evaluation of a cumulus scheme in the fv3 lam and of experimental mpas forecasts for the summer 2025 flash flood and intense rainfall experiment",
-      "lane": "ALREADY_IN_SCOUT_REVIEW_FAST_EXIT",
+      "lane": "EXISTING_REACH_FAST_EXIT",
       "priority": 0,
-      "next_action": "Already in Scout's public review pipeline: do not repeat original research or create another proposal; keep independent expansion",
+      "next_action": "Already in REACH: skip original; keep independent expansion",
       "funding_signal": "CONFIRMED_WPO_459",
       "crossref_structured_award_numbers": [
         "NA22OAR4590522"
@@ -17493,7 +17527,7 @@
       "award_match_basis": "Historical Crossref publisher-deposited award for exact DOI; 459 identifies WPO funding. Exact SPARK parent and output identity still require verification before addition",
       "prior_disposition": null,
       "scout_overlap": true,
-      "verified_reach_uid": null,
+      "verified_reach_uid": "reachuid-v1-9ce5f0aa9a27b6efe03da43c7b1bebe1",
       "private_hub_review": "NOT_VERIFIED"
     },
     {
@@ -19169,9 +19203,9 @@
       "verified_published_dois": [],
       "doi": "10.3390/rs18193383",
       "title": "impact of assimilating remote sensing observations on wind and wave analysis offshore of the contiguous united states",
-      "lane": "ALREADY_IN_SCOUT_REVIEW_FAST_EXIT",
+      "lane": "EXISTING_REACH_FAST_EXIT",
       "priority": 0,
-      "next_action": "Already in Scout's public review pipeline: do not repeat original research or create another proposal; keep independent expansion",
+      "next_action": "Already in REACH: skip original; keep independent expansion",
       "funding_signal": "CONFIRMED_WPO_459",
       "crossref_structured_award_numbers": [
         "NA22OAR4590179"
@@ -19185,7 +19219,7 @@
       "award_match_basis": "Historical Crossref publisher-deposited award for exact DOI; 459 identifies WPO funding. Exact SPARK parent and output identity still require verification before addition",
       "prior_disposition": null,
       "scout_overlap": true,
-      "verified_reach_uid": null,
+      "verified_reach_uid": "reachuid-v1-eb33c965a194deb9e5f4a8f1cfc8c5c4",
       "private_hub_review": "NOT_VERIFIED"
     },
     {
@@ -19481,40 +19515,6 @@
       "private_hub_review": "NOT_VERIFIED"
     },
     {
-      "preprint_status": "published_version_found",
-      "already_in_public_scout_queue": false,
-      "matched_public_review_locations": [],
-      "live_public_title_conflict": false,
-      "handoff_ledger_state": null,
-      "handoff_ledger_reason": null,
-      "handoff_retry_after": null,
-      "special_publication_type": null,
-      "one_mission_disposition_required": false,
-      "verified_published_dois": [
-        "10.5194/gmd-18-7969-2025"
-      ],
-      "doi": "10.5194/egusphere-2025-1142",
-      "title": "a python diagnostics package for evaluation of mjo teleconnections in s2s forecast systems",
-      "lane": "EXISTING_REACH_FAST_EXIT",
-      "priority": 0,
-      "next_action": "Already in REACH: skip original; keep independent expansion",
-      "funding_signal": "CONFIRMED_WPO_459",
-      "crossref_structured_award_numbers": [
-        "NA22OAR4590216"
-      ],
-      "wpo_459_award_numbers": [
-        "NA22OAR4590216"
-      ],
-      "award_evidence_source_batches": [
-        "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part006.csv"
-      ],
-      "award_match_basis": "Historical Crossref publisher-deposited award for exact DOI; 459 identifies WPO funding. Exact SPARK parent and output identity still require verification before addition",
-      "prior_disposition": null,
-      "scout_overlap": false,
-      "verified_reach_uid": "reachuid-v1-5e51cfb8d4bb28f5094f75b0463b735b",
-      "private_hub_review": "NOT_VERIFIED"
-    },
-    {
       "preprint_status": "tracking_preprint",
       "already_in_public_scout_queue": true,
       "matched_public_review_locations": [
@@ -19663,9 +19663,9 @@
       "verified_published_dois": [],
       "doi": "10.5194/gmd-18-7969-2025",
       "title": "a python diagnostics package for evaluation of madden julian oscillation mjo teleconnections in subseasonal to seasonal s2s forecast systems",
-      "lane": "ALREADY_IN_SCOUT_REVIEW_FAST_EXIT",
+      "lane": "EXISTING_REACH_FAST_EXIT",
       "priority": 0,
-      "next_action": "Already in Scout's public review pipeline: do not repeat original research or create another proposal; keep independent expansion",
+      "next_action": "Already in REACH: skip original; keep independent expansion",
       "funding_signal": "CONFIRMED_WPO_459",
       "crossref_structured_award_numbers": [
         "NA22OAR4590216"
@@ -19679,7 +19679,7 @@
       "award_match_basis": "Historical Crossref publisher-deposited award for exact DOI; 459 identifies WPO funding. Exact SPARK parent and output identity still require verification before addition",
       "prior_disposition": null,
       "scout_overlap": true,
-      "verified_reach_uid": null,
+      "verified_reach_uid": "reachuid-v1-5e51cfb8d4bb28f5094f75b0463b735b",
       "private_hub_review": "NOT_VERIFIED"
     },
     {
@@ -19924,9 +19924,9 @@
       "verified_published_dois": [],
       "doi": "10.5194/tc-20-5973-2026",
       "title": "improving snow simulations through improved representations of vegetation conditions insights from high resolution simulations over california",
-      "lane": "ALREADY_IN_SCOUT_REVIEW_FAST_EXIT",
+      "lane": "EXISTING_REACH_FAST_EXIT",
       "priority": 0,
-      "next_action": "Already in Scout's public review pipeline: do not repeat original research or create another proposal; keep independent expansion",
+      "next_action": "Already in REACH: skip original; keep independent expansion",
       "funding_signal": "INCONCLUSIVE",
       "crossref_structured_award_numbers": [
         "NA25OARX459C0342-T1-01"
@@ -19938,14 +19938,14 @@
       "award_match_basis": "Historical Crossref publisher-deposited award for exact DOI; 459 identifies WPO funding. Exact SPARK parent and output identity still require verification before addition",
       "prior_disposition": null,
       "scout_overlap": true,
-      "verified_reach_uid": null,
+      "verified_reach_uid": "reachuid-v1-ab46f58cf14024babe9c14f1dd991770",
       "private_hub_review": "NOT_VERIFIED"
     }
   ],
   "original_dispositions_changed": 0,
   "new_review_proposals": 0,
   "source_sha256": {
-    "scout-operations/historical-crossref-screening/actionable-routing.json": "f8d0a06a987cb6ed05e21973353755af3286deb2f4bacf4025b259cacb489107",
+    "scout-operations/historical-crossref-screening/actionable-routing.json": "5a2c057b093fa1145883b707f9c538bb76dcd89a65afd662bc30e79aba01de38",
     "scout-operations/research-outcome-registry.json": "ef830f73430d6581b2e316e71af27c6f31a27dfcc9ba00ad90b817d2ad6c8a4f",
     "api-discoveries/historical-crossref/manifest.json": "799744c7e83f218d22cc19afacb7cfcf2762feb490659efde9f58bf19473b1fa",
     "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part001.csv": "df420ff561050c5f019ccddd19eb93124ab642eba8aa6f87dc0636b6d5ee2de3",
@@ -19957,8 +19957,8 @@
     "api-discoveries/historical-crossref/batches/2026-11-02-historical-crossref-spark-primary-41526471833-part007.csv": "c274d3c6d2f5643bc08f3184d5524dd86d139e2e89e3e1524353e431bcec9ad4",
     "scout-operations/preprint-watchlist.json": "1f0004aeac5f9d7613adcef010ad20eba7f157ff841227353181aaa0cd4d0aae",
     "scout-operations/preprint-retirement-archive.json": "5707f60b259e3bebac9adadfa04b5191971f4f5feed8472d127fb6f0ef82c2b5",
-    "scout-operations/identity-cache/public-identity-index.json": "4ad04743d9a680f04118df275817bff7c9a36d15a35818366120ee3501225a45",
-    "scout-operations/reach-comparison-cache/comparison-index.json": "6660562e325a6a141198f59acce84f2e30d9a2d14e6cf5acd29769c8a4b68e1e"
+    "scout-operations/identity-cache/public-identity-index.json": "baf72d1e5e8d61c8402ba74106737276510dd9e1d1dc8f72735ead601b598b35",
+    "scout-operations/reach-comparison-cache/comparison-index.json": "5f5d00d9abe4cfbed55ccfadc5a1e84eee543ef9187818724298a4b7d6bc539a"
   },
   "dynamic_selection_sha256": {
     "scout-operations/decision-handoff-ledger.json": "8f279c6fe744edc24646b745d2eaa314bfada0bd5f7b3df3ee71e2fe773a97f3",

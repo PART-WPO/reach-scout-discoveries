@@ -39,7 +39,20 @@ jobs:
             # live manifest and the newly published cache SHA without
             # downloading all shard files again.
             python scout-operations/tools/cache_attestation.py --live
-            git add scout-operations/reach-comparison-cache/comparison-index.json \
+            if git diff --quiet -- scout-operations/reach-comparison-cache/; then
+              echo "REACH comparison cache unchanged"
+              exit 0
+            fi
+            # Publish the verified snapshot and its dependent identity files atomically.
+            python scout-operations/tools/reconcile_derived_reporting.py
+            python scout-operations/tools/build_crosslane_research_memory.py
+            python scout-operations/tools/build_candidate_queue.py
+            python scout-operations/tools/build_candidate_queue.py --check
+            python -c 'import subprocess,sys; sys.path.insert(0,"scout-operations/tools"); from reconcile_derived_reporting import DERIVED_FILES; subprocess.run(["git","add","--",*DERIVED_FILES,"scout-operations/case-checkpoints/"],check=True)'
+            git add scout-operations/research-memory/crosslane-relationship-graph.json \
+              scout-operations/research-memory/mission-index.json \
+              scout-operations/crossref-candidate-queue.json \
+              scout-operations/reach-comparison-cache/comparison-index.json \
               scout-operations/reach-comparison-cache/cache-verification.json
             if git diff --cached --quiet; then
               echo "REACH comparison cache unchanged"

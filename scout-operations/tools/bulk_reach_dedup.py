@@ -46,7 +46,8 @@ def decide(matches, ir_evidence, *, title_available, previous_screening_status="
     all_ids = {m["reach_uid"] for m in matches}
     has_exact = bool(strong_doi)
     has_ir = ir_status == IR_VERIFIED and bool(strong_ir)
-    strong = bool(has_exact or has_ir)
+    has_publisher = any(m.get("publisher_url_hit") for m in matches)
+    strong = bool(has_exact or has_ir or has_publisher)
     one_match = len(all_ids) == 1
     same_title = one_match and bool(matches[0].get("title_hit"))
     # Never convert a version conflict, ambiguous IR link or multiple REACH
@@ -55,7 +56,8 @@ def decide(matches, ir_evidence, *, title_available, previous_screening_status="
     if strong and one_match and same_title and not conflict:
         m = matches[0]
         method = ("EXACT_REACH_DOI_AND_TITLE" if has_exact
-                  else "VERIFIED_NOAA_IR_DOI_TO_REACH_URL_AND_TITLE")
+                  else "VERIFIED_NOAA_IR_DOI_TO_REACH_URL_AND_TITLE" if has_ir
+                  else "VERIFIED_PUBLISHER_DOI_TO_REACH_URL_AND_TITLE")
         return {
             "status": "VERIFIED_EXISTING_REACH",
             "route": "SKIP_ORIGINAL_NEW_OUTPUT_RESEARCH_KEEP_EXPANSION_SEED",
@@ -132,6 +134,9 @@ def summarize(entries):
                 ir=(entry.get("noaa_ir_reach_check") or {})
                 if not match.get("official_ir_url_hit") or ir.get("status")!=IR_VERIFIED or ir.get("match_uid")!=match["reach_uid"]:
                     raise ValueError("Bulk IR confirmation missing trusted canonical URL: " + doi)
+            elif method=="VERIFIED_PUBLISHER_DOI_TO_REACH_URL_AND_TITLE":
+                if not match.get("publisher_url_hit"):
+                    raise ValueError("Bulk publisher confirmation missing validated URL hit: " + doi)
             else:
                 raise ValueError("Unsupported bulk evidence basis for confirmed DOI: " + doi)
             if gate["requires_human_identity_review"]:

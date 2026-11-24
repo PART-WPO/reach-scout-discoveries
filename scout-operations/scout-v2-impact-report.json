@@ -2,37 +2,37 @@
   "schema": "reach-scout-v2-impact-report-v1",
   "source_sha256": {
     "doi_recovery": "82c9611688aac24c3b26687300fbd3ad583154f19159b48d7104d12a9dd6f537",
-    "feedback": "a863ee557c83bf19ff67869209d0431ab7aad3e5ce21155021b8bebe2e410705",
+    "feedback": "3787677e847b7e6cdd06dac482567071f863b2957d2d2f2b3b75f828135a063e",
     "noaa_ir": "309ac0de5b9b050038c963371cae4228177c26c1a95c2bc055a68735494cc87c",
     "outcome_registry": "ef830f73430d6581b2e316e71af27c6f31a27dfcc9ba00ad90b817d2ad6c8a4f",
     "pilot_pointer": "1033f97a4129443487edfe2592b87de5c75abc9eea88cc33dc8bab63c9ff28b5",
     "preprint_leads": "1b7b0c1f5b87d99590be8e3b531f710d491ec95afc3903fa5344251dab900b02",
     "preprints": "1f0004aeac5f9d7613adcef010ad20eba7f157ff841227353181aaa0cd4d0aae",
     "project_referrals": "09e0990716d08f942bc2aa12b03ddfa67c68d141d317ea1a5b9ce23259f0bf95",
-    "relevance": "5b55dd725d615e3eef1fb5b5d89523c8f288ebcb9746997d5a3bfa150eeced62",
+    "relevance": "554f4387d34f9c1d1af7af38ccea369d02fd540646ea6c2f1779c113f7e64f5c",
     "repair": "2f6874e56b9e83679c5a76310829ab249ef0a2f3c16db97667e04ccd9f2feee6",
-    "research": "e4ba11ba5bf388f0539c39fa6d8e8a1bece48d2bc5a0599e923b966c894acca1",
-    "scorecard": "d5b2e038c2cb3c37e03e180b909d10fcc3b4f6cdbb49723788f9925d8a1cdb4c",
-    "unified": "279dc11ac30cde4b03849ff2ff1447a9ca91af7100ce25cfe996b521f01ff293",
-    "workstream": "7d8cf6a6243b20697b3d7f4c2933c7debd9095aa1cbc3f5816792f92b8c5d26e",
+    "research": "7dc034734e4d9776f9df2fa6fbc1369fdaa9cf0142c5d0f14506dcc2cb09e560",
+    "scorecard": "5ec058847a1192ee0065cbeff590acf78f740e7cbaa401cbdbb199804aaf24d7",
+    "unified": "d6f5939fc8440530a0dfe271383d6cd0233a1abe123cc7a6fb6668201c9968cb",
+    "workstream": "9fba2f8167e7ca5dc31122d449842db8a4ae071e783a4406dd0c4d6cbc2fa5fd",
     "supplemental_index_lead_archive": "f9d3e47518f39ba81ef8062bae0a071dee14e2cfcfd5aa577829674f30715061"
   },
   "priority_and_scope": {
     "related_output_relevance_priority_counts": {
       "DEFER_UNTIL_NEW_PROJECT_EVIDENCE": 2,
-      "PRIORITIZE_VERIFIED_WPO_SEED": 426,
-      "VERIFY_WPO_PROJECT_SCOPE_FIRST": 186
+      "PRIORITIZE_VERIFIED_WPO_SEED": 438,
+      "VERIFY_WPO_PROJECT_SCOPE_FIRST": 174
     },
-    "phase": "SOURCE_RECONCILIATION_REQUIRED",
-    "workstream_relevance_fresh": false,
+    "phase": "post_bulk_identity_triage",
+    "workstream_relevance_fresh": true,
     "monthly_originals_preempt_historical": true,
     "original_source_and_expansion_stages_separate": true
   },
   "pipeline": {
     "historical_crossref_screened": 614,
-    "verified_existing_reach_public_identities": 426,
-    "ambiguous_reach_identification": 54,
-    "index_negative_originals_pending_funding": 134,
+    "verified_existing_reach_public_identities": 438,
+    "ambiguous_reach_identification": 52,
+    "index_negative_originals_pending_funding": 124,
     "originals_verified_complete_crossref": 48,
     "originals_verified_complete_datacite": 186,
     "distinct_crossref_expansions_verified_complete": 0,
@@ -201,10 +201,10 @@
     "reviewer_minutes_per_accepted_output": "NOT_MEASURED"
   },
   "source_health": {
-    "public_reach_catalog_rows": 1238,
+    "public_reach_catalog_rows": 1281,
     "noaa_ir_manifest_sha256": "309ac0de5b9b050038c963371cae4228177c26c1a95c2bc055a68735494cc87c",
     "sha_verified_report_inputs": true,
-    "workstream_selector_status": "STALE_REBUILD_REQUIRED",
+    "workstream_selector_status": "CURRENT",
     "doi_metadata_recovery_current_registry_sha": true,
     "project_referrals_current_registry_sha": true,
     "post_research_handoff_status": "CURRENT",

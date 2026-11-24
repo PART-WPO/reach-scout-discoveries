@@ -74,7 +74,9 @@ jobs:
               route=next(x for x in routing["entries"] if x["doi"]==doi)
               if any({"exact_doi","normalized_title"}.issubset(set(m["basis"]))
                      and m["source"].startswith("SCOUT_") for m in route["scout_public_queue_matches"]):
-                  assert by_doi[doi]["lane"]=="ALREADY_IN_SCOUT_REVIEW_FAST_EXIT",doi
+                  lane = ("EXISTING_REACH_FAST_EXIT" if route["outcome"] == "CONFIRMED_IN_REACH"
+                          else "ALREADY_IN_SCOUT_REVIEW_FAST_EXIT")
+                  assert by_doi[doi]["lane"] == lane, doi
                   assert by_doi[doi]["one_mission_disposition_required"] is False,doi
           assert "10.1029/2026jd046327" not in [
               x["doi"] for x in q["next_one_mission_original_preview"]]

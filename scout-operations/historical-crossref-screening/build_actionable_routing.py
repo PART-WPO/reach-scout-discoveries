@@ -20,7 +20,7 @@ HERE = ROOT / "scout-operations/historical-crossref-screening"
 CACHE = ROOT / "scout-operations/reach-comparison-cache/comparison-index.json"
 SOURCE = ROOT / "api-discoveries/historical-crossref/manifest.json"
 sys.path.insert(0, str(ROOT / "scout-operations/tools"))
-from decision_pipeline import build_index, lookup, norm_title
+from decision_pipeline import build_index, lookup, norm_title, norm_url
 from ir_reach_identity import identity_check, trusted_index
 from bulk_reach_dedup import decide as bulk_decide, summarize as bulk_summarize
 
@@ -40,10 +40,30 @@ def require(condition, message):
     if not condition:
         raise ValueError(message)
 
+def publisher_match(evidence, source_doi, source_titles, record):
+    """Join independent DOI metadata to a current exact publisher URL."""
+    return (
+        evidence["doi"] == source_doi
+        and evidence["reach_uid"] == record["reach_uid"]
+        and norm_title(evidence["title"]) in source_titles
+        and norm_title(record["title"]) == norm_title(evidence["title"])
+        and norm_url(evidence["publisher_url"]) in {norm_url(url) for url in record["links"]}
+        and not ({doi(value) for value in record["dois"]} - {source_doi})
+    )
+
+
 def build():
     source = json.loads(SOURCE.read_text())
     screening = json.loads((HERE / "manifest.json").read_text())
     cache = json.loads(CACHE.read_text())
+    proof_path = HERE / "publisher-identity-evidence.json"
+    evidence = json.loads(proof_path.read_text())
+    proof = evidence["publisher_article"]
+    preprint = evidence["known_preprint_version"]
+    watch = json.loads((ROOT / "scout-operations/preprint-watchlist.json").read_text())
+    require(any(row["preprint_doi"] == preprint["doi"] and
+                preprint["published_doi"] in row.get("verified_published_dois", [])
+                for row in watch["entries"]), "Documented preprint family no longer agrees with watchlist")
     shared_identity = build_index(ROOT)  # one verified REACH+published Scout+inbox snapshot for all source DOIs
     ir_index = trusted_index(ROOT)  # verify all 16 shards ONCE, not per DOI
     require(ir_index is not None, "NOAA IR DOI index unavailable; cannot route negative REACH identities safely")
@@ -84,23 +104,28 @@ def build():
             if d:
                 source_titles.setdefault(d, set()).add(title(row.get("Title")))
     original = {}
+    historical_snapshots = set()
     for b in screening["batches"]:
         p = ROOT / b["path"]
         require(sha(p) == b["sha256"], "Screening batch SHA mismatch: " + str(p))
         obj = json.loads(p.read_text())
         require(obj.get("source_manifest_sha256") == sha(SOURCE), "Screening batch source mismatch")
-        require(obj.get("reach_snapshot") == cache["source_csv_sha256_declared"], "Screening batch REACH snapshot mismatch")
+        snapshot = obj.get("reach_snapshot")
+        require(isinstance(snapshot, str) and re.fullmatch(r"[a-f0-9]{64}", snapshot),
+                "Screening batch lacks a valid historical REACH snapshot")
+        historical_snapshots.add(snapshot)
         require(len(obj["records"]) == b["record_count"], "Screening batch row count mismatch")
         for row in obj["records"]:
             d = doi(row["doi"])
             require(d not in original, "Duplicate Crossref DOI: " + d)
-            original[d] = row
+            original[d] = (row, snapshot)
     require(len(original) == screening["counts"]["total"], "Missing Crossref source records")
+    require(original.keys() == source_titles.keys(), "Screening checkpoints and source DOI sets differ")
     results = []
-    for d, prior in sorted(original.items()):
+    for d, (prior, historical_snapshot) in sorted(original.items()):
         titles = set(source_titles.get(d, set()))
         cached_title = title((prior.get("cache_screening") or {}).get("title"))
-        if cached_title:
+        if cached_title and historical_snapshot == cache["source_csv_sha256_declared"]:
             titles.add(cached_title)
         titles.discard("")
         t = sorted(titles, key=len, reverse=True)[0] if titles else ""
@@ -122,6 +147,15 @@ def build():
             r = cache_by_uid[ir_uid]
             existing = matches.get(ir_uid)
             matches[ir_uid] = (r, bool(existing and existing[1]), bool(existing and existing[2]))
+        publisher_uid = None
+        if d == proof["doi"]:
+            url = norm_url(proof["publisher_url"])
+            publisher_records = [row for row in cache["records"]
+                                 if url in {norm_url(link) for link in row["links"]}]
+            if len(publisher_records) == 1 and publisher_match(proof, d, titles, publisher_records[0]):
+                record = publisher_records[0]
+                publisher_uid = record["reach_uid"]
+                matches.setdefault(publisher_uid, (record, False, True))
         match_rows = [
             {"reach_uid": uid, "record_id": r["record_id"],
              "doi_hit": hd, "title_hit": ht,
@@ -129,11 +163,19 @@ def build():
              "detail_path": r["detail_path"]}
             for uid, (r, hd, ht) in sorted(matches.items())
         ]
+        if publisher_uid:
+            next(row for row in match_rows if row["reach_uid"] == publisher_uid)["publisher_url_hit"] = True
         # The shared deterministic gate can clear strong, unique identity
         # comparisons in a single verified batch, never closing triage states.
         gate = bulk_decide(
             match_rows, ir_evidence, title_available=bool(titles),
             previous_screening_status=prior["screening_status"])
+        if gate["status"] == "NO_PUBLIC_REACH_MATCH" and (d == preprint["doi"] or d == proof["doi"]):
+            gate.update(status="NEEDS_IDENTITY_REVIEW",
+                        route="VERIFY_PUBLISHED_VERSION_ONCE" if d == preprint["doi"]
+                        else "VERIFY_PUBLISHER_IDENTITY_ONCE",
+                        basis="DOCUMENTED_VERSION_OR_PUBLISHER_LINK_REQUIRES_REVIEW",
+                        requires_human_identity_review=True)
         outcome = {
             "VERIFIED_EXISTING_REACH": "CONFIRMED_IN_REACH",
             "NEEDS_IDENTITY_REVIEW": "LIKELY_IN_REACH",
@@ -170,6 +212,8 @@ def build():
             "source_manifest_sha256": sha(SOURCE),
             "screening_manifest_sha256": sha(HERE / "manifest.json"),
             "reach_cache_sha256": cache_sha,
+            "publisher_identity_evidence_sha256": sha(proof_path),
+            "historical_screening_reach_csv_sha256": sorted(historical_snapshots),
             "reach_source_manifest_sha256": cache["source_manifest_sha256"],
             "noaa_ir_manifest_sha256": sha(ROOT / "scout-operations/noaa-ir/manifest.json"),
             "noaa_ir_existing_reach_url_matches": sum(r["noaa_ir_reach_check"]["status"] == "VERIFIED_OFFICIAL_IR_DOI_TO_EXISTING_REACH_URL" for r in results),
