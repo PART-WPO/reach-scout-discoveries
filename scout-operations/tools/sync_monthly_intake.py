@@ -70,6 +70,13 @@ def load_cases(root, manifest):
                 "research_notes": "Automatically queued from validated monthly API harvest. Scout investigation has not started; no REACH or Discovery Hub decision.",
                 "checked_sources": [],
                 "source_batch_sha256": batch["sha256"],
+                "expansion_seed": {
+                    "identity": identity,
+                    "source_url": row.get("Evidence URL", ""),
+                    "funding_evidence_url": row.get("Funding Evidence URL", ""),
+                    "method": "related_output_discovery",
+                    "status": "requires_separate_eligibility_check",
+                },
             }
     if len(result) != manifest["candidate_rows"]:
         raise ValueError("Monthly manifest aggregate count mismatch")

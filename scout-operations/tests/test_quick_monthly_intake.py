@@ -105,5 +105,137 @@ class MonthlyQuickIntakeTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "Source SHA mismatch"):
                 gather_feed(root,"","manifest.json",None)
 
-if __name__=="__main__":
+
+
+class MonthlyRoutingIntegrationTests(unittest.TestCase):
+    def test_routes_only_distinct_verified_sources_and_does_not_repeat_inbox(self):
+        import csv
+        from unittest.mock import patch
+        import quick_monthly_intake as intake
+
+        award = "NA22OAR4590179"
+        project = {"Record ID": "spark-1", "Award Number(s)": award, "Project Title": "Project"}
+        variants = [
+            ("full", {}, {}, "NEW CANDIDATE"),
+            ("abstract-gap", {"Brief Abstract": ""}, {}, "NEEDS INVESTIGATION"),
+            ("unresolved-funding", {}, {"funding_assessment": {"same_project_verified": False}}, "NEEDS INVESTIGATION"),
+            ("preprint", {}, {}, None),
+            ("registry-only", {}, {}, None),
+            ("version", {}, {}, None),
+            ("reviewed", {}, {}, None),
+            ("duplicate", {}, {}, None),
+            ("alias", {}, {}, None),
+            ("contradiction", {}, {"funding_assessment": {"reason": "objectives differ"}}, None),
+            ("no-date", {"Publication Date": ""}, {}, None),
+            ("bad-source", {"Funding Evidence URL": "https://example.org/unsupported"}, {}, None),
+        ]
+        rows, entries = [], []
+        for name, changes, research, expected in variants:
+            doi = "10.1234/" + name
+            source = "https://api.crossref.org/works/" + doi
+            basis = ("registration_only_publication_unverified;reach_pub_date_datacite_created"
+                     if name == "registry-only" else "published_exact")
+            note = {"preprint": "\nAPI publication status: Preprint",
+                    "version": "\nAPI explicit version relationship: present",
+                    "alias": "\nAPI output alias: https://example.org/publication"}.get(name, "")
+            rows.append({"DOI": doi, "Title": "Fixture study " + name, "Output Type": "1",
+                         "Publication Date": "2026-11-17", "Authors / PI": "Researcher",
+                         "Brief Abstract": "Available abstract of this test fixture.",
+                         "Output URL": "https://doi.org/" + doi, "Evidence URL": source,
+                         "Funding Evidence URL": source, "NOAA Award Number(s)": award,
+                         "Scout Discovery Rationale": "API date basis: " + basis + note, **changes})
+            entries.append({"source_batch_id": "2026-12-01-monthly-api-2026-11-part001",
+                            "identity": "doi:" + doi, "cohort": "2026-11",
+                            "status": "awaiting_research", "substantive_research": research})
+
+        project_root = Path(__file__).resolve().parents[2]
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            (root / "scout-operations").mkdir()
+            (root / "scout-discoveries/inbox").mkdir(parents=True)
+            (root / "scout-discoveries/tools").symlink_to(project_root / "scout-discoveries/tools")
+            (root / "api-discoveries").mkdir()
+            source_file = root / "api-discoveries/fixture.csv"
+            with source_file.open("w", newline="") as data:
+                writer = csv.DictWriter(data, fieldnames=rows[0])
+                writer.writeheader()
+                writer.writerows(rows)
+
+            def save(relative, obj):
+                (root / relative).write_text(json.dumps(obj))
+
+            save("api-discoveries/manifest.json", {"batches": [{
+                "id": entries[0]["source_batch_id"], "path": "api-discoveries/fixture.csv",
+                "record_count": len(rows), "sha256": hashlib.sha256(source_file.read_bytes()).hexdigest()
+            }]})
+            save("scout-operations/monthly-triage.json", {"entries": entries})
+            save("scout-operations/preprint-watchlist.json",
+                 {"schema": "reach-scout-preprint-watchlist-v1", "entries": []})
+            save("scout-operations/preprint-retirement-archive.json",
+                 {"schema": "reach-scout-preprint-retirement-archive-v1", "entries": []})
+            digest = "a" * 64
+            index = {"schema": "reach-scout-identity-index-v1",
+                     "sources": {"reach_manifest_sha256": digest}, "source_fingerprint": digest}
+            no_match = {"status": "NO_MATCH", "matches": []}
+
+            def lookup(_index, doi="", title="", url=""):
+                if url == "https://example.org/publication" or doi == "10.1234/duplicate":
+                    return {"status": "CONFIRMED_PUBLIC_REACH_IDENTITY", "matches": [{
+                        "source": "REACH", "title": "Fixture study duplicate",
+                        "match_bases": ["exact_doi", "normalized_title"]
+                    }]}
+                return no_match
+
+            with (patch.object(intake, "load_external", return_value=([], [], [project], digest, digest)),
+                  patch.object(intake, "shared_build_index", return_value=index),
+                  patch.object(intake, "shared_lookup", side_effect=lookup),
+                  patch.object(intake, "shared_disposition", return_value={
+                      "disposition": "NO_PUBLIC_IDENTITY_MATCH", "explicit_version_family": None}),
+                  patch.object(intake, "gather_feed", return_value=([], digest)),
+                  patch.object(intake, "reviewer_hold_for_proposal",
+                               side_effect=lambda doi, _: {} if doi.endswith("/reviewed") else None)):
+                report = intake.build(root, root, root, write_drafts=True)
+                by_name = {o["identity"].split("/")[-1]: o for o in report["originals"]}
+                for name, _, _, expected in variants:
+                    self.assertEqual(by_name[name]["classification"], expected, name)
+                self.assertEqual(len(report["draft_paths_created"]), 3)
+                for path in report["draft_paths_created"]:
+                    row = intake.rows_from_csv(root / path)[0]
+                    self.assertEqual(len(row), 24)
+                    self.assertEqual(row["Candidate ID"], "")
+                self.assertEqual(by_name["reviewed"]["status"], "prior_human_review_requires_reconciliation")
+                self.assertEqual(by_name["alias"]["status"], "alternate_identity_review")
+                self.assertEqual(by_name["registry-only"]["status"], "unverified_publication")
+                replay = intake.build(root, root, root, write_drafts=True)
+                self.assertEqual(replay["draft_paths_created"], [])
+
+            # Exercise the real public promotion boundary with a synthetic
+            # publication verdict. No rows are imported into the private Hub.
+            import promote_inbox as promotion
+            import os
+
+            inbox = root / "scout-discoveries/inbox"
+            batches = root / "scout-discoveries/batches"
+            with (patch.object(promotion, "REPO", root),
+                  patch.object(promotion, "INBOX", inbox),
+                  patch.object(promotion, "BATCHES", batches),
+                  patch.dict(os.environ, {"SCOUT_PREPRINT_GATE_REQUIRED": "1"})):
+                with self.assertRaisesRegex(ValueError, "gate report missing"):
+                    promotion.promote()
+                self.assertFalse(batches.exists())
+                save("scout-operations/preprint-intake-gate.json", {
+                    "schema": "reach-scout-preprint-intake-gate-v1",
+                    "checks": [{"path": path, "verdict": "eligible",
+                                "sha256": hashlib.sha256((root / path).read_bytes()).hexdigest()}
+                               for path in report["draft_paths_created"]],
+                })
+                promotion.promote()
+                first = {p.name: p.read_bytes() for p in batches.glob("*.csv")}
+                self.assertEqual(len(first), 3)
+                promotion.promote()
+                self.assertEqual(first, {p.name: p.read_bytes() for p in batches.glob("*.csv")})
+
+
+
+if __name__ == "__main__":
     unittest.main()

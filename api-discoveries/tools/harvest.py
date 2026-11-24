@@ -245,6 +245,18 @@ def query_crossref(award,month,max_pages):
     else:raise RuntimeError("Crossref pagination ceiling for "+award)
     return items
 
+VERSION_RELATIONS = {"isversionof", "hasversion", "isnewversionof", "ispreviousversionof",
+                     "ispreprintof", "haspreprint", "isvariantformof", "isoriginalformof",
+                     "isidenticalto", "ismanuscriptof", "hasmanuscript",
+                     "isexpressionof", "hasexpression"}
+
+
+def has_version_relation(relationships):
+    names = (relationships if isinstance(relationships, dict)
+             else [item.get("relationType", "") for item in relationships])
+    return any(re.sub(r"[^a-z]", "", name.casefold()) in VERSION_RELATIONS for name in names)
+
+
 def to_candidate(a,src,award,mode,month):
     citation=""
     doi=str(a.get("doi") or a.get("DOI") or "").strip().lower()
@@ -310,6 +322,8 @@ def to_candidate(a,src,award,mode,month):
       "title":title or "Provisional metadata for DOI "+doi,
       "authors":[x for x in authors if x],"abstract":text[:800],
       "date":pub if len(pub)==10 else "","date_basis":basis,
+      "output_alias": str(a.get("url" if src == "datacite" else "URL") or "").strip(),
+      "version_relationship": has_version_relation(relationships),
       "outtype":outtype,"evidence":evidence,"related":bool(relationships),
       "citation":citation,
       "published_month":month if mode=="monthly" else ""}

@@ -96,6 +96,29 @@ class UniversalPreprintGateTests(unittest.TestCase):
             self.assertEqual(len(json.loads((root/
                 "scout-operations/preprint-watchlist.json").read_text())["entries"]),1)
 
+    def test_monthly_investigation_cannot_duplicate_a_published_original(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.fixture(root, [("2026-12-01-monthly-fast-new", "10.1234/same",
+                                 "Scout classification: NEEDS INVESTIGATION")])
+            path = next((root / "scout-discoveries/inbox").glob("*.csv"))
+            with path.open() as stream:
+                row = next(csv.DictReader(stream))
+            row["Source Run ID"] = "REACH-SCOUT-MONTHLY-FAST-202611"
+            with path.open("w", newline="") as stream:
+                writer = csv.DictWriter(stream, fieldnames=row)
+                writer.writeheader()
+                writer.writerow(row)
+            published = root / "scout-discoveries/batches/prior.csv"
+            published.write_bytes(path.read_bytes())
+            (root / "scout-discoveries/manifest.json").write_text(json.dumps({
+                "batches": [{"path": "scout-discoveries/batches/prior.csv",
+                             "sha256": hashlib.sha256(published.read_bytes()).hexdigest(),
+                             "record_count": 1}]}))
+            report = verify(root, fetch_crossref=lambda _: JOURNAL, fetch_datacite=lambda _: None)
+            self.assertEqual(report["eligible_batches"], 0)
+            self.assertEqual(report["held_batches"], 1)
+
     def test_existing_published_batches_not_mutated_or_rechecked(self):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp)

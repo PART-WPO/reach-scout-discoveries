@@ -121,6 +121,16 @@ After recovery: fully populated eligible output -> fast-track to human new-candi
 **Existing October DOI abstract example:** `10.1016/j.pdisas.2026.100696` NOAA IR source `https://repository.library.noaa.gov/view/noaa/77174` provides exact DOI, summary and direct WPO award. Original immutable monthly batch is retained; the active Scout feed now uses the audited, single-record supersession `2026-11-02-monthly-enriched-pdisas-100696-001`, preserving identity, original discovery method and NEEDS INVESTIGATION decision. This correction is **not** a new output, human approval, private Hub import, or public REACH publication. Reviewer must Sync to Scout and check the new rationale; if a saved Hub importer still treats monthly FAST findings as provenance-only, apply the attached additive Hub fix before expecting metadata refresh. All existing human decisions and publication gates remain in place.
 
 
+## December 2026 monthly Direct API routing
+
+For verified monthly originals, missing author names or a missing abstract may
+be taken directly to human **Needs Investigation** after the minimum identity,
+publication date and source-funding gates pass. Include the missing fields and
+review questions explicitly. Other critical fields still block automated
+routing when unverifiable. The independent publication gate and exact
+24-column validation continue to run before public staging. See the
+[private Hub installation requirements](../integrations/DiscoveryHubMonthlySync.md).
+
 ## November 2 — monthly reviewer-story parity with historical discovery
 
 Every future **Monthly API** candidate must give a reviewer the same substantive plain-English investigation content already captured in Historical DataCite cases, *before* producing any new Scout feed draft. The strict 24-column format is unchanged; write these as individually labeled lines in **Scout Discovery Rationale**:

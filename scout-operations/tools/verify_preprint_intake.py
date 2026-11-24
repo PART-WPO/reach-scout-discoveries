@@ -142,11 +142,17 @@ def verify(root=ROOT, fetch_crossref=crossref, fetch_datacite=datacite,
                 classification = re.search(
                     r"(?im)^\s*Scout classification:\s*([^\r\n]+)", rationale)
                 class_text = classification.group(1).upper() if classification else ""
-                if doi in staged_dois and "NEW CANDIDATE" in class_text:
+                new_monthly_original = (
+                    path.parent.name == "inbox"
+                    and "-monthly-fast-" in path.name
+                    and row.get("Source Run ID", "").startswith("REACH-SCOUT-MONTHLY-FAST-")
+                    and class_text in {"NEW CANDIDATE", "NEEDS INVESTIGATION"}
+                )
+                if doi in staged_dois and ("NEW CANDIDATE" in class_text or new_monthly_original):
                     status = "identity_hold"
                     reason = ("DOI already exists in public Scout candidate batches; "
                               "a prior Hub decision is private and must not be inferred. "
-                              "Do not send a second NEW CANDIDATE.")
+                              "Do not send a second original-output proposal.")
                 elif doi in linked and str(row.get("Output Type", "")) == "1":
                     if not reach_index_checked:
                         reach_index_checked = True

@@ -3,6 +3,7 @@
 Never send raw API results directly to the Discovery Hub or modify source systems.
 """
 import argparse,csv,datetime as dt,hashlib,io,json,os,re,subprocess,sys
+from urllib.parse import urlsplit
 from collections import Counter,defaultdict
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2]
@@ -32,7 +33,20 @@ def merge_record(records):
     x["sources"]=sorted(set(r["src"] for r in records))
     x["evidence_urls"]=sorted(set(r["evidence"] for r in records))
     x["date_bases"]=sorted(set(r["date_basis"] for r in records))
+    x["version_relationship"] = any(r.get("version_relationship") for r in records)
+    x["output_aliases"] = sorted({r["output_alias"] for r in records
+                                  if safe_output_alias(r.get("output_alias", ""))})
     return x
+
+def safe_output_alias(value):
+    if not re.fullmatch(r"https?://[^\s<>]+", value):
+        return False
+    try:
+        u = urlsplit(value)
+        return bool(u.hostname and not u.username and not u.query and not u.fragment)
+    except ValueError:
+        return False
+
 def output_row(x,mode,month,run):
     doi=x["doi"]
     canonical="https://doi.org/"+doi
@@ -46,7 +60,10 @@ def output_row(x,mode,month,run):
             "API date basis: "+", ".join(x["date_bases"]),
             "API funding basis: Exact structured award number(s) in API funding metadata.",
             "Scout verification: Not started",
-            "API candidate only; Scout must verify against full REACH and investigate connected outputs before human review."
+            "API candidate only; Scout must verify the original before human review.",
+            *("API output alias: " + alias for alias in x.get("output_aliases", [])
+              if alias.casefold() != canonical.casefold()),
+            *(["API explicit version relationship: present"] if x.get("version_relationship") else []),
         ])
     else:
         reason="\n".join([

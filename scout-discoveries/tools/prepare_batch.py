@@ -289,7 +289,20 @@ def prepare(source, output):
                 notes = prov.get("notes", [])
                 recovered = any(str(n).startswith("Metadata recovery: Completed") for n in notes)
                 sourced = any(str(n).startswith("Metadata checks: https://") for n in notes)
-                if not recovered or not sourced:
+                optional_api_gaps = prov.get("monthly_api_optional_gaps")
+                api_gap_referral = (
+                    isinstance(optional_api_gaps, list)
+                    and sorted(optional_api_gaps) == sorted(missing)
+                    and set(missing) <= {"Authors / PI", "Brief Abstract"}
+                    and prov.get("route") == "Direct API"
+                    and record["Source Run ID"].startswith("REACH-SCOUT-MONTHLY-FAST-")
+                )
+                if api_gap_referral:
+                    prov["notes"] = list(notes) + [
+                        "Source metadata incomplete: " + ", ".join(missing)
+                        + "; resolve during human review. No independent recovery is asserted."
+                    ]
+                if not api_gap_referral and (not recovered or not sourced):
                     raise ValueError("Metadata recovery must be documented before new monthly staging: " +
                                      ", ".join(missing))
                 # An incomplete, investigated case remains a human Investigate

@@ -10,6 +10,14 @@ import harvest as h
 import publish_harvest as p
 
 class HarvestUnitTests(unittest.TestCase):
+    def test_version_relationships_and_safe_output_aliases(self):
+        self.assertTrue(h.has_version_relation({"is-version-of": [{"id": "10.1234/final"}]}))
+        self.assertTrue(h.has_version_relation([{"relationType": "IsNewVersionOf"}]))
+        self.assertFalse(h.has_version_relation([{"relationType": "IsSupplementTo"}]))
+        self.assertTrue(p.safe_output_alias("https://example.org/publication"))
+        self.assertFalse(p.safe_output_alias("https://example.org/publication?token=redacted"))
+        self.assertFalse(p.safe_output_alias("https://example.org@example.com/record"))
+
     def test_october_window_inclusive(self):
         self.assertEqual(h.month_window("2026-10"),("2026-10-01","2026-10-31"))
         self.assertEqual(h.month_window("2026-02"),("2026-02-01","2026-02-28"))

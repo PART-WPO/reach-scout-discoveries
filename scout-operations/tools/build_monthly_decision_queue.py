@@ -79,7 +79,7 @@ def build(root=ROOT):
         raise ValueError("Unrecognized preprint watchlist schema")
     preprints = {"doi:" + x["preprint_doi"].lower() for x in watch.get("entries", [])}
     cases = []
-    original_dois = set()
+    original_dois = {entry["identity"] for entry in ledger.get("archived_entries", [])}
     originals = set()
     counts = {}
     for e in ledger["entries"]:
@@ -111,6 +111,8 @@ def build(root=ROOT):
             "explicit_draft_gate_passed": draft_gate_passed,
             "unresolved_checks": blockers,
             "next_action": (
+                "Original screening is closed; preserve independent related-output research."
+                if track == "research_terminal" else
                 "Use existing validated inbox draft workflow; no private Hub delivery may be assumed."
                 if draft_gate_passed else
                 "Complete only the named blocker(s), then create evidence-backed candidate / no-action / human referral; do not repeat general discovery scans."

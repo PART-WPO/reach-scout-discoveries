@@ -48,6 +48,22 @@ class DecisionQueueTests(unittest.TestCase):
             self.assertTrue(queue["originals"][0]["original_review_independent_of_expansion"])
             self.assertEqual(queue["expansion_lead_count"], 1)
 
+    def test_closed_original_retains_distinct_expansion_work(self):
+        lead = {"identity": "doi:10.1234/software",
+                "original_seed_doi": "10.1234/original",
+                "origin_method": "API-seeded expansion",
+                "status": "awaiting_independent_verification",
+                "path_evidence_url": "https://example.org/release"}
+        for status in ("staged_for_hub_import", "already_in_reach"):
+            with self.subTest(status=status), tempfile.TemporaryDirectory() as folder:
+                root = Path(folder)
+                make(root, [original("10.1234/original", status=status)], [lead])
+                queue = build(root)
+                self.assertEqual(queue["originals"][0]["decision_track"], "research_terminal")
+                self.assertEqual(queue["expansion_leads_awaiting_independent_verification"], 1)
+                self.assertFalse(queue["expansion_leads"][0]["funding_verified"])
+                self.assertFalse(queue["expansion_leads"][0]["full_identity_verified"])
+
     def test_only_explicit_four_part_evidence_gate_can_enable_draft(self):
         row = original("10.1234/original", True)
         row["original_output_gate"] = {

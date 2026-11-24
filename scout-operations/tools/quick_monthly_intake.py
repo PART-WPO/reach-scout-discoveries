@@ -13,11 +13,15 @@ import io
 import json
 import re
 import sys
+from datetime import date
 from html.parser import HTMLParser
+from urllib.parse import unquote
 from pathlib import Path
 
-from decision_pipeline import build_index as shared_build_index, lookup as shared_lookup
+from decision_pipeline import build_index as shared_build_index, lookup as shared_lookup, norm_url
 from identity_disposition import decide as shared_disposition
+from reach_version_identity import version_links
+from wpo_awards import is_wpo_459
 from reviewer_feedback_guard import known_feedback_by_doi, reviewer_hold_for_proposal
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -251,6 +255,55 @@ def pre_stage_metadata_recovery(entry, source_row):
 
 
 
+API_ALIASES = re.compile(r"(?im)^API output alias:[ \t]*(https?://[^\s]+)$")
+
+
+REVIEWABLE_GAPS = {"Authors / PI", "Brief Abstract"}
+ORIGINAL_TERMINAL = {"no_action", "already_in_reach", "forwarded_to_hub",
+                     "staged_for_hub_import", "metadata_update_forwarded", "human_metadata_needed"}
+
+
+def sufficient_wpo_evidence(row, entry):
+    assessment = (entry.get("substantive_research") or {}).get("funding_assessment") or {}
+    if assessment.get("same_project_verified") is not None:
+        return assessment["same_project_verified"] is True
+    # Exact structured output-level award and unique primary SPARK match.
+    # The caller has already screened ambiguity and explicit contradictions.
+    awards = AWARD.findall(row.get("NOAA Award Number(s)", ""))
+    return len(awards) == 1 and is_wpo_459(awards[0])
+
+
+def monthly_source_gate(row, doi, rationale, recovery_state):
+    """Require exact registry identity and publication evidence before routing."""
+    if (not row.get("Title", "").strip()
+            or row["Title"].startswith("Provisional metadata for DOI ")
+            or row.get("Output Type") not in {"1", "2", "3", "4"}
+            or norm_doi(row.get("Output URL")) != doi):
+        return "unverified_output_identity"
+    evidence = {
+        f"https://api.crossref.org/works/{doi}",
+        f"https://api.datacite.org/dois/{doi}",
+    }
+    if any(unquote(row.get(field, "")).casefold() not in evidence
+           for field in ("Evidence URL", "Funding Evidence URL")):
+        return "unverified_source_evidence"
+    try:
+        pub = row.get("Publication Date", "")
+        if date.fromisoformat(pub).isoformat() != pub:
+            return "unverified_publication"
+    except ValueError:
+        return "unverified_publication"
+    bases = re.search(r"(?im)^API date basis:[ \t]*([^\r\n]+)", rationale)
+    if recovery_state != "resolved" and (not bases or not any(
+        re.search(r"\bpublished(?:_|\b)", basis)
+        and "registration_only_publication_unverified" not in basis
+        and "published_outside_window" not in basis
+        for basis in bases[1].split(",")
+    )):
+        return "unverified_publication"
+    return ""
+
+
 def monthly_review_guidance(entry, row, status, funding_status, missing, recovery_state):
     """Plain-English, evidence-limited reviewer narrative for every monthly proposal.
 
@@ -302,7 +355,9 @@ def monthly_review_guidance(entry, row, status, funding_status, missing, recover
         "Finding: The " + entry.get("cohort", "current") +
         " monthly API intake identified this " + kind + ". " +
         reach_summary + " " + funding_summary)
-    if missing and recovery_state == "exhausted":
+    if missing and recovery_state == "required":
+        finding += " The API record omits " + ", ".join(missing) + "; these fields remain open for review."
+    elif missing and recovery_state == "exhausted":
         finding += (
             " Targeted metadata recovery was completed, but " +
             ", ".join(missing) + " remains unavailable and requires human review.")
@@ -372,6 +427,7 @@ def build(root, reach_root, spark_root, write_drafts=False):
     if preprint_watch.get("schema") != "reach-scout-preprint-watchlist-v1":
         raise ValueError("Unverified monthly preprint watchlist")
     reviewer_feedback=known_feedback_by_doi(root)
+    known_versions = version_links(root)
     published, _ = gather_feed(root, "", "scout-discoveries/manifest.json", None)
     inbox = []
     for file in (root / "scout-discoveries/inbox").glob("*.csv"):
@@ -381,10 +437,17 @@ def build(root, reach_root, spark_root, write_drafts=False):
     for r in published:
         rationale = r.get("Scout Discovery Rationale", "")
         m = re.search(r"(?im)^Monthly intake:\s*(20\d{2}-\d{2})\s*$", rationale)
-        if m and r.get("Source Run ID", "").startswith("REACH-SCOUT-MONTHLY-FAST-"):
+        if m and re.search(r"(?im)^Intake origin: Monthly API[ \t]*$", rationale):
             staged_monthly_originals.add((norm_doi(r.get("DOI", "")), m.group(1)))
     existing_dois = {norm_doi(r.get("DOI", "")) for r in prior}
     existing_titles = {norm_title(r.get("Title", "")) for r in prior}
+    existing_urls = {norm_url(url) for r in prior for url in (
+        r.get("Output URL", ""), *API_ALIASES.findall(r.get("Scout Discovery Rationale", ""))
+    )}
+    retired_path = root / "scout-operations/preprint-retirement-archive.json"
+    retired_preprints = {norm_doi(e.get("preprint_doi")) for e in read_json(retired_path)["entries"]}
+    terminal_identities = {e["identity"] for e in ledger["entries"] + ledger.get("archived_entries", [])
+                           if e["status"] in ORIGINAL_TERMINAL}
     ledgers = {(e["source_batch_id"], e["identity"]): e for e in ledger["entries"]}
     outcomes, drafts = [], []
     for batch in source["batches"]:
@@ -403,8 +466,12 @@ def build(root, reach_root, spark_root, write_drafts=False):
             entry = ledgers[key]
             raw, missing_after_recovery, recovery_gate, recovery_checks = pre_stage_metadata_recovery(entry, raw)
             title = clean(raw.get("Title", ""))
-            if not title:
-                raise ValueError("Monthly DOI has no title")
+            rationale = raw.get("Scout Discovery Rationale", "")
+            aliases = API_ALIASES.findall(rationale)
+            alt_hits = [shared_lookup(shared_index, url=alias) for alias in aliases] if shared_index else []
+            alias_overlap = any(hit["matches"] for hit in alt_hits) or any(
+                norm_url(alias) in existing_urls for alias in aliases)
+            source_hold = monthly_source_gate(raw, doi, rationale, recovery_gate)
             found = match_reach(doi, title, raw.get("Output URL"), reach_index, reach_details)
             shared = (shared_lookup(shared_index, doi, title, raw.get("Output URL"))
                       if shared_index is not None else None)
@@ -419,7 +486,7 @@ def build(root, reach_root, spark_root, write_drafts=False):
             elif identity_route == "reach_identity_review":
                 status = "reach_identity_review"
                 issues.append("Possible REACH title, DOI or version identity overlap requires targeted comparison before a new-output proposal")
-            elif is_preprint_on_hold(root, doi, raw.get("Scout Discovery Rationale", "")):
+            elif doi in retired_preprints or is_preprint_on_hold(root, doi, rationale):
                 status = "preprint_watchlist_hold"
                 issues.append("Preprint DOI stays in the monthly Watchlist, not the Discovery Hub. A separately verified official journal DOI must complete normal REACH/Scout identity, funding, and metadata review.")
             elif (doi, entry["cohort"]) in staged_monthly_originals:
@@ -431,14 +498,20 @@ def build(root, reach_root, spark_root, write_drafts=False):
                 issues.append("A possible Scout queue title/version match needs focused review, not another public proposal")
             elif prior_human_review is not None:
                 status = "prior_human_review_requires_reconciliation"
-                issues.append("Authenticated prior Discovery Hub decision must be checked before another candidate proposal: "
-                              + prior_human_review["last_private_review_code"])
-            elif detect_version(entry, doi):
+                issues.append("Authenticated prior Discovery Hub decision must be checked before another candidate proposal")
+            elif (detect_version(entry, doi) or known_versions.get(doi)
+                  or re.search(r"(?im)^API explicit version relationship: present$", rationale)):
                 status = "cross_cohort_version_review"
-                issues.append("Existing DOI/version review must not be duplicated")
+                issues.append("Existing or explicit DOI version relationship requires reconciliation before staging")
+            elif alias_overlap or norm_url(raw.get("Output URL", "")) in existing_urls:
+                status = "alternate_identity_review"
             elif funding_status in {"funding_anomaly", "unmatched_primary_award"}:
                 status = "funding_exception"
-            elif recovery_gate == "required":
+            elif key[1] in terminal_identities:
+                status = "prior_original_disposition"
+            elif source_hold:
+                status = source_hold
+            elif recovery_gate == "required" and not set(missing_after_recovery) <= REVIEWABLE_GAPS:
                 status = "metadata_recovery_required"
                 issues.append("Critical metadata missing in API pull; Scout must document targeted exact-DOI and secondary-source recovery BEFORE preparing a Hub draft: " + ", ".join(missing_after_recovery))
             else:
@@ -453,16 +526,24 @@ def build(root, reach_root, spark_root, write_drafts=False):
                     status = "parent_attribution_review"
                 elif missing:
                     status = "metadata_review"
-                else:
+                elif sufficient_wpo_evidence(raw, entry):
                     status = "fast_track"
+                else:
+                    status = "funding_attribution_review"
             project = funding_matches[0] if len(funding_matches) == 1 else None
             if project and raw.get("Suggested Parent Project", "").strip():
                 if norm_title(raw["Suggested Parent Project"]) != norm_title(project["Project Title"]):
                     issues.append("Source parent and current SPARK title differ; verify")
                     if status == "fast_track":
                         status = "parent_attribution_review"
+            classification = {
+                "fast_track": "NEW CANDIDATE",
+                "metadata_review": "NEEDS INVESTIGATION",
+                "parent_attribution_review": "NEEDS INVESTIGATION",
+                "funding_attribution_review": "NEEDS INVESTIGATION",
+            }.get(status)
             output = {"identity": "doi:" + doi, "cohort": entry["cohort"],
-                      "status": status, "api_funding_basis": funding_status,
+                      "status": status, "classification": classification, "api_funding_basis": funding_status,
                       "funding_awards": raw.get("NOAA Award Number(s)", ""),
                       "reach_matches": found,
                       "shared_public_identity_result":shared["status"] if shared else "SOURCE_SHA_NOT_RECONCILED",
@@ -470,94 +551,109 @@ def build(root, reach_root, spark_root, write_drafts=False):
                       "shared_preprint_family":public_disposition["explicit_version_family"] if public_disposition else None,
                       "shared_identity_route":identity_route,
                       "shared_identity_index_fingerprint":shared_index["source_fingerprint"] if shared_index else None,
-                      "prior_authenticated_human_review":prior_human_review,
+                      "prior_authenticated_human_review": prior_human_review is not None,
                       "metadata_missing": missing_after_recovery,
               "metadata_recovery_state": recovery_gate,
               "metadata_recovery_checks": len(recovery_checks),
                       "exceptions": issues,
                       "source_batch_id": batch["id"],
-                      "review_feed_status": ("MANIFEST_PUBLISHED" if status == "staged_in_scout_feed" else "NOT_STAGED"),
+                      "review_feed_status": ("MANIFEST_PUBLISHED" if (doi, entry["cohort"]) in staged_monthly_originals else "NOT_STAGED"),
                       "private_hub_import": "NOT_VERIFIED",
                       "expansion_required_before_intake": False}
             # No fabricated metadata, no automatic human decision. A metadata-gap
             # candidate can use existing human Needs Investigation review format
             # only if the Hub's existing validated schema accepts the blanks.
-            if status in {"fast_track", "metadata_review", "parent_attribution_review"}:
-                if not raw.get("Publication Date", "").strip():
-                    output["status"] = "metadata_exception"
-                else:
-                    normalized = dict(raw)
-                    normalized["Title"] = title
-                    normalized["Candidate ID"] = ""
-                    normalized["Principal Investigator Email(s)"] = ""
-                    normalized["Existing REACH Match"] = "No DOI/normalized-title/URL match in full verified REACH index + details or published/pending Scout feed."
-                    normalized["Scout Confidence"] = "Medium" if status != "fast_track" else "High"
-                    normalized["Source Run ID"] = "REACH-SCOUT-MONTHLY-FAST-" + entry["cohort"].replace("-", "")
-                    normalized.pop("Scout Discovery Rationale", None)
-                    if not normalized.get("Principal Investigators", "").strip():
-                        issues.append("PI attribution requires human verification; author names are not assumed to be PIs")
-                    if project and not normalized.get("Suggested Parent Project", "").strip():
-                        normalized["Suggested Parent Project"] = project["Project Title"]
-                    if project and not normalized.get("Proposed Project Title", "").strip():
-                        normalized["Proposed Project Title"] = project["Project Title"]
-                    if project and not normalized.get("WPO Program", "").strip():
-                        normalized["WPO Program"] = project.get("Managing WPO Program", "")
-                    funding_source = raw.get("Funding Evidence URL", "")
-                    evidence = [raw.get("Evidence URL", ""),
-                                "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json",
-                                "https://github.com/PART-WPO/SPARK/blob/main/agent-data/manifest.json"]
-                    provenance = {
-                        "classification": ("NEW CANDIDATE" if status == "fast_track" else "NEEDS INVESTIGATION"),
-                        "route": "Direct API", "origin_method": "Direct API",
-                        "path_evidence": funding_source,
-                        "intake_origin": "Monthly API",
-                        "monthly_intake": entry["cohort"],
-                        "reach_snapshot": reach_hash,
-                        "sources_checked": evidence,
-                        "funding_basis": ("Crossref/DataCite structured grant number(s) "
-                                          + raw.get("NOAA Award Number(s)", "") +
-                                          " independently matched to SPARK PRIMARY award field. "
-                                          "Human reviewer confirms exact funded project."),
-                        "related_outputs_checked": "Initial monthly DOI verified independently of related-output expansion. Linked research must be tracked separately, never block intake.",
-                        "notes": ["Quick intake: review original DOI before DOI-seeded research expansion",
-                                  "Funding context: " + funding_status,
-                                  "PI attribution from authors not assumed; human review required."]
-                    }
-                    if recovery_gate in {"resolved", "exhausted"}:
-                        provenance["notes"].append("Metadata recovery: Completed")
+            if classification:
+                normalized = dict(raw)
+                normalized["Title"] = title
+                normalized["Candidate ID"] = ""
+                normalized["Principal Investigator Email(s)"] = ""
+                normalized["Existing REACH Match"] = "No DOI/normalized-title/URL match in full verified REACH index + details or published/pending Scout feed."
+                normalized["Scout Confidence"] = "Medium" if status != "fast_track" else "High"
+                normalized["Source Run ID"] = "REACH-SCOUT-MONTHLY-FAST-" + entry["cohort"].replace("-", "")
+                normalized.pop("Scout Discovery Rationale", None)
+                if not normalized.get("Principal Investigators", "").strip():
+                    issues.append("PI attribution requires human verification; author names are not assumed to be PIs")
+                if project and not normalized.get("Suggested Parent Project", "").strip():
+                    normalized["Suggested Parent Project"] = project["Project Title"]
+                if project and not normalized.get("Proposed Project Title", "").strip():
+                    normalized["Proposed Project Title"] = project["Project Title"]
+                if project and not normalized.get("WPO Program", "").strip():
+                    normalized["WPO Program"] = project.get("Managing WPO Program", "")
+                funding_source = raw.get("Funding Evidence URL", "")
+                evidence = [raw.get("Evidence URL", ""),
+                            "https://github.com/PART-WPO/reach-dashboard/blob/main/agent-data/manifest.json",
+                            "https://github.com/PART-WPO/SPARK/blob/main/agent-data/manifest.json"]
+                provenance = {
+                    "classification": classification,
+                    "route": "Direct API", "origin_method": "Direct API",
+                    "path_evidence": funding_source,
+                    "intake_origin": "Monthly API",
+                    "monthly_intake": entry["cohort"],
+                    "reach_snapshot": reach_hash,
+                    "sources_checked": evidence,
+                    "funding_basis": ("Crossref/DataCite structured grant number(s) "
+                                      + raw.get("NOAA Award Number(s)", "") +
+                                      " independently matched to SPARK PRIMARY award field. "
+                                      "Human reviewer confirms exact funded project."),
+                    "related_outputs_checked": "Initial monthly DOI verified independently of related-output expansion. Linked research must be tracked separately, never block intake.",
+                    "notes": ["Quick intake: review original DOI before DOI-seeded research expansion",
+                              "Funding context: " + funding_status,
+                              "PI attribution from authors not assumed; human review required."]
+                }
+                if funding_status == "multiple_project_matches":
+                    for candidate in funding_matches:
                         provenance["notes"].append(
-                            "Metadata checks: " + " ; ".join(check["url"] for check in recovery_checks))
-                        if missing_after_recovery:
-                            provenance["notes"].append(
-                                "Metadata still missing: " + ", ".join(missing_after_recovery))
-                    provenance["notes"].extend(monthly_review_guidance(
-                        entry, normalized, status, funding_status,
-                        missing_after_recovery, recovery_gate))
-                    name = batch["id"][:10] + "-monthly-fast-" + hashlib.sha256((batch["id"]+doi).encode()).hexdigest()[:14] + ".csv"
-                    target = root / "scout-discoveries/inbox" / name
-                    if target.exists():
-                        output["review_feed_status"] = "ALREADY_IN_INBOX"
-                    elif write_drafts:
-                        structured = root / "scout-operations" / (".quick-monthly-" + hashlib.sha256(doi.encode()).hexdigest()[:14] + ".json")
-                        structured.write_text(json.dumps({"candidates": [{"fields": normalized, "provenance": provenance}]}))
-                        try:
-                            prepare(structured, target)
-                        finally:
-                            structured.unlink(missing_ok=True)
-                        drafts.append(str(target.relative_to(root)))
-                        output["review_feed_status"] = "INBOX_DRAFT_PREVALIDATED"
-                    else:
-                        output["review_feed_status"] = "READY_FOR_VALIDATED_DRAFT"
+                            "Possible SPARK primary-award parent: " + clean(candidate["Project Title"])
+                        )
+                provenance["notes"].extend("API output alias: " + alias for alias in aliases)
+                provenance["notes"].append("Monthly source batch SHA-256: " + batch["sha256"])
+                if recovery_gate == "required" and set(missing_after_recovery) <= REVIEWABLE_GAPS:
+                    provenance["monthly_api_optional_gaps"] = missing_after_recovery
+                if recovery_gate in {"resolved", "exhausted"}:
+                    provenance["notes"].append("Metadata recovery: Completed")
+                    provenance["notes"].append(
+                        "Metadata checks: " + " ; ".join(check["url"] for check in recovery_checks))
+                    if missing_after_recovery:
+                        provenance["notes"].append(
+                            "Metadata still missing: " + ", ".join(missing_after_recovery))
+                provenance["notes"].extend(monthly_review_guidance(
+                    entry, normalized, status, funding_status,
+                    missing_after_recovery, recovery_gate))
+                name = batch["id"][:10] + "-monthly-fast-" + hashlib.sha256((batch["id"]+doi).encode()).hexdigest()[:14] + ".csv"
+                target = root / "scout-discoveries/inbox" / name
+                if target.exists():
+                    output["review_feed_status"] = "ALREADY_IN_INBOX"
+                elif write_drafts:
+                    structured = root / "scout-operations" / (".quick-monthly-" + hashlib.sha256(doi.encode()).hexdigest()[:14] + ".json")
+                    structured.write_text(json.dumps({"candidates": [{"fields": normalized, "provenance": provenance}]}))
+                    try:
+                        prepare(structured, target)
+                    finally:
+                        structured.unlink(missing_ok=True)
+                    drafts.append(str(target.relative_to(root)))
+                    output["review_feed_status"] = "INBOX_DRAFT_PREVALIDATED"
+                else:
+                    output["review_feed_status"] = "READY_FOR_VALIDATED_DRAFT"
+                existing_dois.add(doi)
+                existing_titles.add(norm_title(title))
+                existing_urls.update(norm_url(url) for url in [raw["Output URL"], *aliases])
             outcomes.append(output)
     counts = {}
     for item in outcomes:
         counts[item["status"]] = counts.get(item["status"], 0) + 1
+    eligible_counts = {label: sum(x["classification"] == label for x in outcomes)
+                       for label in ("NEW CANDIDATE", "NEEDS INVESTIGATION")}
     report = {"schema": "reach-scout-monthly-fast-intake-v1",
               "policy": "Monthly originals first; lightweight PRIMARY award provenance check and full snapshot-backed REACH/Scout duplicate screening. API grant metadata is strong review evidence, not human approval or project-level proof.",
               "reach_snapshot_sha256": reach_hash,
               "spark_snapshot_sha256": spark_hash,
               "source_monthly_records": len(outcomes),
               "counts": counts, "originals": outcomes,
+              "new_proposals_eligible_before_promotion": eligible_counts,
+              "existing_monthly_originals_manifest_published": sum(
+                  x["review_feed_status"] == "MANIFEST_PUBLISHED" for x in outcomes),
+              "new_private_hub_imports_confirmed": 0,
               "draft_paths_created": drafts,
               "published_scout_feed_unverified_for_new_drafts": True,
               "private_hub_import": "NOT_VERIFIED",
